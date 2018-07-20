@@ -1,0 +1,210 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[10pt, a4paper, openany]{memoir}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel}
+\usepackage{csquotes}
+\usepackage{subfiles}
+\usepackage{mathtools,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{graphicx}
+\usepackage[sorting=none, backend=biber, refsection=part]{biblatex}
+\usepackage{wasysym}
+\usepackage[hidelinks]{hyperref}
+
+\addbibresource{referencies.bib}
+\DeclareQuoteAlias{spanish}{catalan}
+
+\setsecnumdepth{subsection}
+\settocdepth{subsection}
+
+\setlength\cftpartnumwidth{2em}
+\setlength\cftchapternumwidth{2em}
+\setlength\cftsectionindent{2em}
+
+%\renewcommand*{\cftdotsep}{1} %separació punts horitzontals a l'índex
+\setpnumwidth{3em}
+\setrmarg{4em}
+
+\pagestyle{ruled}
+\setlength{\headheight}{12.1638pt}
+
+\newenvironment{history}[1][]{%
+	\mdfsetup{%
+		frametitle={%
+			\tikz[baseline=(current bounding box.east),outer sep=0pt]
+			\node[anchor=east,rectangle,fill=blue!20]
+			{\strut Coneix els teus herois:~#1};}%
+	}%
+% Both conditions
+\mdfsetup{%
+	innertopmargin=10pt,linecolor=blue!20,%
+	linewidth=2pt,topline=true,%
+	frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+}
+	% Code for box design goes here.
+	
+	\begin{mdframed}[]\relax}{%
+	\end{mdframed}}
+
+\hypersetup{colorlinks=true,linkcolor=[rgb]{0,0,0.5},urlcolor=red}
+
+\title{%\includegraphics[width=0.75\textwidth]{Portada.png}\\
+	\href{https://claudilleyda.github.io}{Apunts de matemàtiques}}
+\author{Claudi Lleyda Moltó}
+\date{Les matemàtiques són un joc de definicions.}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{proposition}[theorem]{Proposició}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Coro{\lgem}ari}
+\newtheorem{note}[theorem]{Nota} %Amb la meva veu?
+\newtheorem{observation}[theorem]{Observació} %Per reinterpretacions?
+\newtheorem{example}[theorem]{Exemple}
+\newtheorem{tautology}[theorem]{Tautologia}
+\newtheorem{axiom}[theorem]{Axioma}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definició}
+\newtheorem{notation}[theorem]{Notació}
+
+\graphicspath{{imatges/}{../imatges/}}
+
+\newenvironment{solution}
+	{\renewcommand\qedsymbol{\(\lozenge\)}
+		\renewcommand{\proofname}{Solució}
+		\begin{proof}}
+	{\end{proof}}
+
+\DeclareMathOperator{\Long}{L}
+\DeclareMathOperator{\Dist}{d}
+\DeclareMathOperator{\B}{B}
+\DeclareMathOperator{\R}{R}
+\DeclareMathOperator{\omicron}{o}
+\DeclareMathOperator{\Omicron}{O}
+\DeclareMathOperator{\rang}{rang}
+\DeclareMathOperator{\Ssup}{S}
+\DeclareMathOperator{\sinf}{s}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\St}{St}
+\DeclareMathOperator{\mcd}{mcd}
+\DeclareMathOperator{\mcm}{mcm}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\cont}{cont}
+\DeclareMathOperator{\grau}{grau}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\GrupSimetric}{S}
+\DeclareMathOperator{\Mou}{M}
+\DeclareMathOperator{\ordre}{\omicron}
+\DeclareMathOperator{\ncicles}{c}
+\DeclareMathOperator{\sig}{sig}
+
+\let\ker\relax
+\DeclareMathOperator*{\ker}{ker}
+\DeclareMathOperator*{\Ima}{Im}
+
+\let\originalnsim=\nsim
+\def\nsim{\mathbin{\originalnsim}}
+
+\newcommand{\divides}{\mathrel{|}}
+\newcommand{\ndivides}{\mathrel{\nmid}}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\lxor}{\veebar}
+
+%\setcounter{chapter}{-1}
+
+\newcommand*{\titleTMB}{\begingroup% Three Men in a Boat
+	\vspace*{0.1\textheight}
+	\centering
+	\settowidth{\unitlength}{\itshape Les matemàtiques són un joc de definicions}
+	\vspace*{\baselineskip}
+	{\large\scshape Claudi Lleyda Moltó}\\[\baselineskip]
+	\rule{\unitlength}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+	\rule{\unitlength}{0.4pt}\\[\baselineskip]
+	{\LARGE \href{https://claudilleyda.github.io}{Apunts de matemàtiques}}\\[\baselineskip] %{Apunts del grau}?
+	{\itshape Les matemàtiques són un joc de definicions}\\[0.2\baselineskip]
+	\rule{\unitlength}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+	\rule{\unitlength}{1.6pt}%\\[\baselineskip]
+	\vfill
+	{\centering\includegraphics[width=\unitlength]{Portada.png}}
+	\vfill
+	{\large\scshape Notes de classe}\\[\baselineskip]
+	{\small\scshape Promoció 2016-17}\par
+	\vspace*{0.1\textheight}
+	\endgroup}
+
+%\makeatletter
+%\def\thickhrulefill{\leavevmode \leaders \hrule height 1.2ex \hfill \kern \z@}
+%\def\@makechapterhead#1{
+%	\vspace*{10\p@}%
+%	{\parindent \z@ \centering \reset@font
+%		\thickhrulefill\quad
+%		\scshape\bfseries\text{\@chapapp{} \hfill \thechapter}
+%		\quad\thickhrulefill
+%		\par\nobreak
+%		\vspace*{10\p@}%
+%		\interlinepenalty\@M
+%		\hrule
+%		\vspace*{10\p@}%
+%		\Huge \bfseries #1 \par\nobreak
+%		\par
+%		\vspace*{10\p@}%
+%		\hrule
+%		\vspace*{15\p@}%
+%	}}
+%\makeatother
+
+\let\originalpart=\part
+\def\part{\cleardoublepage\originalpart}
+
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+
+%\newcommand{\myref}[1]{\ref{#1}}
+\newcommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
+
+\makeatletter
+\def\mynameref#1#2{%
+	\begingroup
+	\edef\@mytxt{#2}%
+	\edef\@mytst{\expandafter\@thirdoffive\@mytxt}%
+	\ifx\@mytst\empty\ref{#1}\else
+	\nameref{#1}\space\eqref{#1}\fi
+	\endgroup
+}
+\makeatother
+
+\makeatletter
+\newcommand{\labelname}[1]{
+	\def\@currentlabelname{#1}}
+\makeatother
+
+\begin{document}
+	{\hypersetup{urlcolor=black,linkcolor=black}
+	\begin{titlingpage*}
+		\calccentering{\unitlength}
+		\begin{adjustwidth*}{\unitlength}{-\unitlength}
+			\titleTMB
+		\end{adjustwidth*}
+	\end{titlingpage*}
+	\tableofcontents}
+	\part{Fonaments de les matemàtiques}
+		\subfile{parts/FNM.tex}
+	\part{Coses per fer a l'estiu}
+		\subfile{parts/Intro.tex}
+	\part{Càlcul en diverses variables i optimització}
+		\subfile{parts/CDVO.tex}
+	\part{Estructures algebraiques}
+		\subfile{parts/EA.tex}
+	\part{Mètodes numèrics}
+		\subfile{parts/MN.tex}
+\end{document} %WEB TO' MOLONA: http://www-history.mcs.st-and.ac.uk/BiogIndex.html
+
+% Canviar \[ per {$$ i \] per $$}, definir commanda per [x] i canviar-les totes. Potser amb paràmetres (per barra, claudators i superíndexos) Potser dues commandes per overline i claudators
+
+%\[\mathbb{A}\mathbb{B}\mathbb{C}\mathbb{D}\mathbb{E}\mathbb{F}\mathbb{G}\mathbb{H}\mathbb{I}\mathbb{J}\mathbb{K}\mathbb{L}\mathbb{M}\mathbb{N}\mathbb{O}\mathbb{P}\mathbb{Q}\mathbb{R}\mathbb{S}\mathbb{T}\mathbb{U}\mathbb{V}\mathbb{W}\mathbb{X}\mathbb{Y}\mathbb{Z}\]

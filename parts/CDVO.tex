@@ -1,0 +1,1307 @@
+\documentclass[../Apunts.tex]{subfiles}
+
+\begin{document}
+	\chapter{Càlcul diferencial}
+	\section{Arcs i conjunts connexos}
+	\subsection{Arcs en múltiples variables}
+	\begin{definition}[Arcs a l'espai]
+		\labelname{arc}\label{def:arc}
+		\labelname{arc continu}\label{def:arc continu}
+		\labelname{arc simple}\label{def:arc simple}
+		\labelname{arc tancat}\label{def:arc tancat}
+		\labelname{arc regular}\label{def:arc regular}
+		\labelname{arc de classe $\mathcal{C}^{n}$}\label{def:arc de classe de diferenciabilitat n}
+		Siguin \((a,b)\subseteq\mathbb{R}\) un interval, \(f\colon(a,b)\to\mathbb{R}^{m}\) una funció i \(\Gamma\) el conjunt definit per
+		\[\Gamma=\left\{x\in\mathbb{R}^{m}\mid x=f(t)\text{ per a tot }t\in(a,b)\right\},\]
+		aleshores direm que \(\Gamma\) és un arc a \(\mathbb{R}^{m}\). També direm que \(f\) defineix o recorre aquest arc.
+		Així mateix donem les següents definicions:
+		\begin{enumerate}
+			\item Direm que \(\Gamma\) és un arc continu si \(f\) és contínua en \((a,b)\).
+			\item Direm que \(\Gamma\) és un arc simple si \(f\) és injectiva en \((a,b)\).
+			\item Si \(f\) està definida en \([a,b]\) direm que \(f\) va de \(f(a)\) a \(f(b)\) o que \(f(a)\) n'és el punt inicial i \(f(b)\) el punt final. Si \(f(a)=f(b)\) direm que \(\Gamma\) és un arc tancat.
+			\item Direm que \(\Gamma\) és un arc regular si \(f\) és derivable en \((a,b)\).
+			\item Direm que \(\Gamma\) és un arc de classe \(\mathcal{C}^{n}\) si \(f^{(n)}\) existeix i és contínua en \((a,b)\).
+		\end{enumerate}
+	\end{definition}
+	\begin{definition}[Longitud d'un arc continu]
+		\labelname{longitud d'un arc continu}\label{def:long recorregut arc continu}
+		Sigui \(\Gamma\) un arc continu i \(f\) una manera de recórrer \(\Gamma\) donada per
+		\[f\colon(a,b)\subseteq\mathbb{R}\longrightarrow\mathbb{R}^{m}\]
+		Amb \(m\in\mathbb{N}\), \(m>1\).
+		
+		Considerem la partició \(a=t_{0}<\dots<t_{n}=b\). Observem que els punts donats per \(f(t_{i})\) per a tot \(i\in\{0,\dots,n\}\) determinen una poligonal, \(P_{n}\), la longitud de la qual és, per la definició de \myref{def:longitud de poligonal}
+		\[\Long(P_{n})=\sum_{i=0}^{n-1}\norm{f(t_{i+1})-f(t_{i})}.\]
+		Aleshores definim la longitud de \(f\) com
+		\[\Long(f)=\lim_{n\to\infty}\Long(P_{n}).\]
+		Direm que els arcs amb recorreguts de longitud finita són arcs rectificables.
+	\end{definition}
+	\begin{proposition}
+		Sigui \(\Gamma\) un arc de classe \(\mathcal{C}^{1}\). Aleshores \(\Gamma\) és rectificable.
+		\begin{proof}
+			Sigui \(f\) una funció que recorre \(\Gamma\) tal que
+			\begin{align*}
+			f\colon(a,b)\subseteq\mathbb{R}&\longrightarrow\mathbb{R}^{m}\\
+			t&\longmapsto(x_{1}(t),\dots,x_{m}(t)).
+			\end{align*}
+			
+			Donada una partició de \((a,b)\), \(a=t_{0}<\dots<t_{n}=b\) que defineix una poligonal \(P_{n}=f(t_{0}),\dots,f(t_{n})\). Aleshores la longitud de la poligonal  és, per la definició de \myref{def:partició},
+			\[\Long(P_n)=\sum_{i=0}^{n-1}\norm{f(t_{i+1})-f(t_{i})}=\sum_{i=0}^{n-1}\sqrt{\sum_{j=1}^{m}\left(x_{j}(t_{i+1})-x_{j}(t_{i}))\right)^{2}}.\]
+			
+			Per la proposició \myref{prop:Derivable implica contínua} \(f\) és contínua en \((a,b)\), i per tant pel \myref{thm:TVM} tenim
+			\[x_{j}(t_{i+1})-x_{j}(t_{i})=x_{j}'(\xi_{ij})(t_{i+1}-t_{i}),\]
+			amb \(t_{i}<\xi_{ij}<t_{i+1}\), per a tot \(i\in\{0,\dots,n-1\},\ j\in\{1,\dots,m\}\). Per tant
+			\begin{equation}\label{eq:1}
+			\Long(P_{n})=\sum_{i=0}^{n-1}(t_{i+1}-t_{i})\sqrt{\sum_{j=1}^{m}\left(x_{j}'(\xi_{ij})\right)^2}.
+			\end{equation}
+			
+			Ara volem veure que \(\xi_{ij}=\xi_{i}\) quan \(n\) tendeix a infinit. Observem que
+			\[\lim_{n\to\infty}t_{i}=\lim_{n\to\infty}t_{i+1}.\]
+			
+			I com que \(t_{i}<\xi_{ij}<t_{i+1}\) tenim que \(\xi_{ij}=\xi_{i}\) per a tot \(j\in\{1,\dots,m\}\). Així veiem que si \(n\to\infty\) podem reescriure \eqref{eq:1} com
+			\begin{displaymath}
+			\Long(P_{n})=\sum_{i=0}^{n-1}(t_{i+1}-t_{i})\norm{f'(\xi_{i})}=\int_{a}^{b}\norm{f'(t)}\text{d}t.
+			\end{displaymath}
+			
+			I ja hem acabat. Com que \(f\in\mathcal{C}^{1}\) tenim \(f'\) contínua, i \(a,b\in\mathbb{R}\), aquesta integral és finita i \(\Gamma\) és rectificable, com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\subsection{Oberts connexos}
+	\begin{definition}[Conjunt arc-connex o connex]
+		\labelname{conjunt arc-connex}\label{def:Arc-connex}
+		\labelname{conjunt connex}\label{def:connex}
+		Sigui \(U\subseteq\mathbb{R}^{d}\) un obert. Direm que \(U\) és arc-connex si donats dos punts \(P,Q\in U\) existeix una funció \(f\) que defineix un arc continu tal que \(f\colon[a,b]\longrightarrow U\) amb \(P=f(a),\ Q=f(b)\).
+		Direm que \(U\) és connex si el segment que els uneix està tot dins \(U\).
+	\end{definition}
+	\begin{proposition}
+		%Sigui \(U\subseteq\mathbb{R}^{d}\) un obert. Donats dos arc-connexos \(U_{1}, U_{2}\subseteq U\) amb \(U_{1}\cup U_{2}=U\), si \(U_{1}\cap U_{2}\neq\emptyset\Longrightarrow U\) és arc-connex.
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(U_{1}\), \(U_{2}\) dos subconjunts de \(U\) arc-connexos amb \(U_{1}\cup U_{2}=U\) tals que \(U_{1}\cap U_{2}\neq\emptyset\). Aleshores \(U\) és arc-connex.
+		\begin{proof}
+			Siguin \(P,Q\) dos punts en \(U\) tals que \(P\in U_{2}^{\complement}\) i \(Q\in U_{1}^{\complement}\), i \(R\in U_{1}\cap U_{2}\) un altre punt. Com que \(U_{1}\) i \(U_{2}\) són arc-connexos, per la definició de \myref{def:Arc-connex} existeixen dos arcs continus \(f,g\) tals que
+			\begin{displaymath}
+			f\colon[a,b]\longrightarrow U_{1},\quad
+			g\colon[b,c]\longrightarrow U_{2},
+			\end{displaymath}
+			on \(f(a)=P\), \(f(b)=g(b)=R\) i \(g(c)=Q\).
+			Aleshores definim la funció
+			\[h(t)=
+			\begin{cases}
+			f(t) & \text{si }a\leq t\leq b\\
+			g(t) & \text{si }b<t\leq b.
+			\end{cases}\]
+			
+			Tenim que \(h\) defineix un arc continu en \(U\), i per la definició de \myref{def:long recorregut arc continu}, \(U\) és arc-connex.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Distància en un arc-connex]
+		\labelname{distància en un arc-connex}\label{def:distància en un arc-connex}
+		Sigui \(U\subseteq\mathbb{R}^{d}\) un arc-connex, siguin \(P,Q\in U\) i \(F\) el conjunt de totes les funcions \(f\) que defineixen un arc continu en \(U\) amb \(f(a)=P\), \(f(b)=Q\). Definim la distància entre \(P\) i \(Q\) en \(U\) com
+		\begin{displaymath}
+		\Dist_{U}(P,Q)=\inf_{f\in F}\Long(f).
+		\end{displaymath}
+	\end{definition}
+	\begin{observation}\label{obs:connex metrica}
+		Notem que si \(U\) és connex \(\Dist_{U}(P,Q)=\norm{P-Q}\).
+	\end{observation}
+	\begin{proposition}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un arc-connex i \(P,Q,R\in U\) tres punts. Aleshores
+		\begin{enumerate}
+			\item\label{enum:distancies en arc-connexos 1} \(\Dist_{U}(P,Q)=\Dist_{U}(Q,P)\geq0\)
+			\item\label{enum:distancies en arc-connexos 2} \(\Dist_{U}(P,Q)=0\Longleftrightarrow P=Q\)
+			\item\label{enum:distancies en arc-connexos 3} \(\Dist_{U}(P,Q)\leq \Dist_{U}(P,R)+\Dist_{U}(R,Q)\) (desigualtat triangular) %aconseguir que aquesta merda vagi al final de la línia
+		\end{enumerate}
+		\begin{proof}
+			Sigui \(f\colon[a,b]\to U\) una funció contínua amb \(f(a)=P\) i \(f(b)=Q\), i  amb \(\Long(f)=\inf_{f\in F}\Long(f)\), on \(F\) és el conjunt de funcions contínues de \([a,b]\) en \(U\) que van de \(P\) a \(Q\). %revisar
+			
+			Per veure el punt \eqref{enum:distancies en arc-connexos 1} fem
+			\begin{align*}
+			\Dist_{U}(P,Q)&=\inf_{f\in F}\Long(f)\\
+			&=\inf_{f\in F}\lim_{n\to\infty}\left(\sum_{i=0}^{n-1}(t_{i+1}-t_{i})\sqrt{\sum_{j=1}^{d}\left(x_{j}'(\xi_{ij})\right)^2}\right)\\
+			&=\inf_{f\in F}\lim_{n\to\infty}\left(\sum_{i=0}^{n-1}(-1)(t_{n-(i+1)}-t_{n-i})\sqrt{\sum_{j=1}^{d}\left(x_{j}'(\xi_{ij})\right)^2}\right)\\
+			&=\inf_{f\in F}(-1)\lim_{n\to\infty}\left(\sum_{i=0}^{n-1}(t_{n-(i+1)}-t_{n-i})\sqrt{\sum_{j=1}^{d}\left(x_{j}'(\xi_{ij})\right)^2}\right)\\
+			&=\inf_{f\in F}(-1)\int_{a}^{b}\norm{f'(t)}\text{d}t\\
+			&=\inf_{f\in F}\int_{b}^{a}\norm{f'(t)}\text{d}t=\inf_{f\in F}\Long(f)=\Dist_{U}(Q,P)\geq0.
+			\end{align*}
+			
+			Continuem veient el punt \eqref{enum:distancies en arc-connexos 2}. Suposem \(P=Q\) i considerem, amb \(\varepsilon>0\), la bola oberta \(\B(\varepsilon,P)\subset U\). Aquesta bola és connexa i, pel coro{\lgem}ari \myref{obs:connex metrica}, \(\Dist_{U}(P,Q)=\norm{P-Q}=0\Longleftrightarrow P=Q\).%refer salts de línia potser
+			
+			Acabem veient el punt \eqref{enum:distancies en arc-connexos 3}. Sigui \(F_{1}\) el conjunt de funcions contínues en \(U\) que van de \(P\) a \(R\) i \(F_{2}\) el conjunt de funcions contínues en \(U\) que van de \(R\) a \(Q\). Aleshores
+			\begin{displaymath}
+			\Dist_{U}(P,Q)=\inf_{f\in F}\Long(f)\leq\inf\left(\inf_{F_{1}}\Long(g)+\inf_{F_{2}}\Long(h)\right)=\Dist_{U}(P,R)+\Dist_{U}(R,Q).
+			\end{displaymath}%revisar el 3 fort. Segurament fer per contradicció i ínfims.
+			Observem que aquestes són les mateixes propietats de una distància.
+		\end{proof}
+	\end{proposition}
+	\section{Funcions diferenciables}
+	\subsection{Diferencial d'una funció en múltiples variables}
+	\begin{definition}[Derivada direccional]
+		\labelname{derivada direccional}\label{def:derivada direccional}
+		Sigui \(U\subseteq\mathbb{R}^{d}\) un obert, \(t\in\mathbb{R}\) un escalar, \(a\in U\) un punt, \(\vec{u}\) un vector de \(\mathbb{R}^{d}\) i \(f\) una funció definida per
+		\begin{align*}
+		f\colon U&\longrightarrow\mathbb{R}^{m}\\
+		a&\longmapsto(f_{1}(a),\dots,f_{m}(a)),
+		\end{align*}
+		i considerem, per a tot \(i\in\{1,\dots,m\}\), els límits
+		\[D_{\vec{u}}f_{i}(a)=\lim_{t\to0}\frac{f_{i}(a+t\vec{u})-f_{i}(a)}{t}.\]
+		Si tots aquests límits existeixen, direm que la derivada de \(f\) en direcció \(\vec{u}\) és
+		\[D_{\vec{u}}f(a)=\left(D_{\vec{u}}f_{1}(a),\dots,D_{\vec{u}}f_{m}(a)\right).\]
+		
+		Si \(\vec{u}\) és l'\(i\)-èsim vector de la base canònica utilitzarem la notació \(D_{i}f(a)\).
+	\end{definition}
+	\begin{proposition}\label{prop:derivades direccionals lineals pel producte d'escalars}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(f\colon U\to\mathbb{R}^{m}\) una funció, \(D_{\vec{u}}f(a)\) la seva derivada direccional respecte el vector \(\vec{u}\) de \(\mathbb{R}^d\) i \(\lambda\in\mathbb{R}\) un escalar. Aleshores
+		\[D_{\lambda\vec{u}}f(a)=\lambda D_{\vec{u}}f(a).\]
+		\begin{proof}
+			Tenim que, per a tot \(i\in \{1,\dots,m\}\),
+			\begin{align*}
+			D_{\lambda\vec{u}}f_{i}(a)&=\lim_{t\to0}\frac{f_{i}(a+\lambda t\vec{u})-f_{i}(a)}{t}\\
+			&=\lim_{t\to0}\lambda\frac{f_{i}(a+\lambda t\vec{u})-f_{i}(a)}{\lambda t}\\
+			&=\lambda\lim_{t\to0}\frac{f_{i}(a+\lambda t\vec{u})-f_{i}(a)}{\lambda t}=\lambda D_{\vec{u}}f_{i}(a).\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Diferencial d'una funció]
+		\labelname{diferencial d'una funció}\label{def:diferencial}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}^{m}\) una funció i \(a\in U\) un punt. Direm que el diferencial de \(f\) en \(a\) és una aplicació lineal \(df(a)\colon U\to\mathbb{R}^{m}\) tal que, donat un vector \(\vec{h}\) de \(\mathbb{R}^{d}\)
+		\[f(a+\vec{h})=f(a)+df(a)(\vec{h})+\omicron(\vec{h}),\quad\lVert\vec{h}\rVert\to0.\]
+		Direm que \(f\) és diferenciable en \(a\) si existeix aquest \(df(a)\).
+	\end{definition}
+	\begin{observation}
+		Observem que en aquesta definició, si \(d=1\), \(f\) és diferenciable en \(a\) \(\Longleftrightarrow f\) és derivable en \(a\), i \(df(a)(\vec{h})=\vec{h}f'(a)\) (Si \(d=1\), multiplicar per un vector de \(\mathbb{R}\) és com multiplicar per un escalar).
+	\end{observation}
+	\begin{proposition}\label{prop:Diferenciable implica contínua}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}^{m}\) una funció diferenciable en un punt \(a\in U\). Aleshores \(f\) és contínua en \(a\).
+		\begin{proof}
+			Sigui \(df(a)\) el diferencial de \(f\) en \(a\). Per la definició de \myref{def:diferencial} tenim que, per a qualsevol vector \(\vec{h}\) de \(\mathbb{R}^d\)
+			\[f(a+\vec{h})=f(a)+df(a)(\vec{h})+\omicron(\vec{h}),\quad \lVert\vec{h}\rVert\to0.\]
+			Com que \(df(a)\) és lineal, \(df(a)(\vec{h})\to(0,\dots,0)\Leftrightarrow\lVert\vec{h}\rVert\to0\). Així veiem que
+			\[\lim_{\lVert\vec{h}\rVert\to0}f(a+\vec{h})-f(a)-df(a)(\vec{h})=\omicron(\vec{h}).\]
+			I això compleix la definició de \myref{def:funcio continua}, per tant \(f\) és contínua en el punt \(a\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}\label{prop:diferenciable iff components diferenciables}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(a\in U\) un punt i \(f\) una funció tal que
+		\begin{align*}
+		f\colon U&\longrightarrow\mathbb{R}^{m}\\
+		a&\longmapsto(f_{1}(a),\dots,f_{m}(a)).
+		\end{align*}
+		Aleshores
+		\[f\text{ és diferenciable en }a\Leftrightarrow f_{i}\text{ és diferenciable en a }\forall i\in \{1,\dots,m\}.\]
+		\begin{proof}
+			Per la definició de \myref{def:diferencial} tenim que, per a qualsevol vector \(\vec{h}\) de \(\mathbb{R}^d\)
+			\[f(a+\vec{h})=f(a)+df(a)(\vec{h})+\omicron(\vec{h}),\quad \lVert\vec{h}\rVert\to0.\]
+			El que és equivalent a
+			\[\lim_{\lVert\vec{h}\rVert\to0}\frac{f(a+\vec{h})-f(a)-df(a)(\vec{h})}{\lVert\vec{h}\rVert}=0.\]
+			Sabent que \(f(a)=(f_{1}(a),\dots,f_{m}(a))\) podem entendre aquest límit com el següent, amb un vector al numerador, que descomponem com
+			\[\lim_{\lVert\vec{h}\rVert\to0}\frac{(f_{1}(a+\vec{h})-f_{1}(a)-df_{1}(a)(\vec{h}),\dots,f_{m}(a+\vec{h})-f_{m}(a)-df_{m}(a)(\vec{h}))}{\lVert\vec{h}\rVert}=0\]
+			si i només si%límits respecten continuïtat
+			\[\lim_{\lVert\vec{h}\rVert\to0}\frac{f_{i}(a+\vec{h})-f_{i}(a)-df_{i}(a)(\vec{h})}{\lVert\vec{h}\rVert}=0\]
+			per a tot \(i\in\{1,\dots,m\}\).
+			
+			Tenint en compte la definició de \myref{def:diferencial}, és equivalent a dir que, per a tot \(i\in\{1,\dots,m\}\), \(f_{i}\) és diferenciable en el punt \(a\).
+			%Cal remarcar que podem fer això ja que \(f\) i \(f_{1},\dots,f_{m}\) (depenent del costat de la implicació) són contínues, per la proposició \myref{prop:Diferenciable implica contínua}.%revisar (potser no cal), buscar manera de marcar la línia llarga de la proof per fer-ne referència i dir a algun lloc que els límits "respecten" la continuïtat.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}\label{prop:derivades parcials i diferencial}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}^{m}\) una funció diferenciable en un punt \(a\in U\). Aleshores tenim que
+		\begin{enumerate}
+			\item Donat un vector \(\vec{u}\) de \(\mathbb{R}^d\), \(D_{\vec{u}}f(a)\) existeix i \(df(a)(\vec{u})=D_{\vec{u}}f(a)\).
+			\item El diferencial de \(f\) en \(a\), \(df(a)\), és únic.
+		\end{enumerate}
+		\begin{proof}
+			Sigui \(\vec{u}\) un vector de \(\mathbb{R}^d\). Tenim que, si \(\lambda\in\mathbb{R}\), \(\lambda\neq0\)
+			\[f(a+\lambda\vec{u})=f(a)+df(a)(\lambda\vec{u})+\omicron(\lambda\vec{u})\]
+			\[f(a+\lambda\vec{u})-f(a)=\lambda df(a)(\vec{u})+\omicron(\lambda\vec{u})\]
+			\[\frac{f(a+\lambda\vec{u})-f(a)}{\lambda}=df(a)(\vec{u})+\frac{\omicron(\lambda\vec{u})}{\lambda}\]
+			Per tant, amb \(\lambda\to0\), per la definició de \myref{def:derivada direccional} tenim
+			\[D_{\vec{u}}f(a)=df(a)(\vec{u}).\]
+			Amb aquesta demostració també es veu la unicitat del diferencial d'una funció en un punt. %xd revisar. Però crec que està bé.
+		\end{proof}
+	\end{proposition}
+	\begin{observation}\label{obs:derivades direccionals lineals}
+		Com a conseqüència del primer apartat veiem que si \(f\) és diferenciable en \(a\) existeixen totes les seves derivades direccionals i que aquestes compleixen que, donats dos vectors \(\vec{u},\vec{v}\) i dos escalars \(\lambda,\mu\), \(D_{\lambda\vec{u}+\mu\vec{v}}f(a)=\lambda D_{\vec{u}}f(a)+\mu D_{\vec{v}}(a)\).
+	\end{observation}
+	\begin{theorem}[Condició suficient per a la diferenciabilitat]
+		\labelname{Teorema d'una condició suficient per a la diferenciabilitat}\label{thm:Condició suficient per diferenciable}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(f\colon U\to\mathbb{R}^{m}\) una funció, \(a\in U\) un punt i \(\B(a,\varepsilon)\), una bola centrada en \(a\) de radi \(\varepsilon>0\). Si les derivades direccionals de \(f\), \(D_{i}f(x)\), existeixen per a tot punt \(x\in\B(a,\varepsilon)\), per a tot \( i\in\{1,\dots,d\}\) i són contínues en \(a\), aleshores \(f\) és diferenciable en \(a\).
+		\begin{proof}
+			Donat un vector \(\vec{h}\) de \(\mathbb{R}^{d}\), considerem la diferencia
+			\[f(a+\vec{h})-f(a),\]
+			amb \(a=(a_{1},\dots,a_{d})\) i \(\vec{h}=(h_{1},\dots,h_{d})=\sum_{i=1}^{d}h_{i}\vec{e}_{i}\), on \(\vec{e_{i}}\) és l'\(i\)-èsim vector de la base canònica, i denotarem \(\vec{h}_{n}=\sum_{i=1}^{n}h_{i}\vec{e}_{i}\) per a \(1\leq n\leq d\) i \(\vec{h}_{0}=(0,\dots,0)\). Escrivim la suma telescòpica
+			\begin{equation}\label{eq:thm:Condició suficient per diferenciable 1}
+			f(a+\vec{h})-f(a)=\sum_{i=1}^{d}\left(f(a+\vec{h}_{i})-f(a+\vec{h}_{i-1})\right).
+			\end{equation}
+			
+			El primer terme d'aquesta suma telescòpica és \(f(a+h_{1}\vec{e}_{1})-f(a)\), i per la definició de \myref{def:derivada direccional} això és
+			\[f(a+h_{1}\vec{e}_{1})-f(a)=h_{1}D_{1}f(a)+h_{1}\omicron(\vec{h}),\]
+			i la resta de termes de \eqref{eq:thm:Condició suficient per diferenciable 1} són
+			\[f(a+\vec{h}_{k-1}+h_{k}\vec{e}_{k})-f(a+\vec{h}_{k-1}).\]
+			Veiem que aquestes expressions varien només en \(h_{k}\vec{e}_{k}\), que correspon a la \(k\)-èsima component, i com que les derivades parcials de \(f\) existeixen, això vol dir que aquestes expressions són contínues, per tant podem aplicar el \myref{thm:TVM} per a funcions d'una variable i tenim que, per a tot \(2\leq k\leq d\) existeix un escalar \(\xi_{k}\) tal que
+			\[f(a+\vec{h}_{k-1}+h_{k}\vec{e}_{k})-f(a+\vec{h}_{k-1})=h_{k}D_{k}f(\xi_{k})\]
+			on \(\xi_{k}\) està al segment que uneix \(a+\vec{h}_{k-1}+h_{k}\vec{e}_{k}\) i \(a+\vec{h}_{k-1}\).
+			
+			Ara notem que quan \(\vec{h}\to0\) tindrem \(a+\vec{h}_{k-1}+h_{k}\vec{e}_{k}\to a\) i com que, per hipòtesi, les derivades direccionals són contínues
+			\[h_{k}D_{k}f(\xi_{k})=h_{k}D_{k}f(a)+h_{k}\omicron(\vec{h})\]
+			i obtenim
+			\begin{align*}
+			f(a+\vec{h})-f(a)&=\sum_{i=1}^{d}h_{i}D_{i}f(a)+\sum_{i=1}^{d}h_{i}\omicron(\vec{h})\\
+			&=\sum_{i=1}^{d}D_{h_{i}\vec{e}_{i}}f(a)+\sum_{i=1}^{d}h_{i}\omicron(\vec{h})
+			\end{align*}
+			i mentre \(a+\vec{h}\in\B(a,\varepsilon)\), el que tenim satisfà la definició de \myref{def:diferencial} per la proposició \myref{prop:derivades parcials i diferencial}, i per tant \(f\) és diferenciable en \(a\).
+		\end{proof}
+	\end{theorem}
+	\begin{note}
+		Notem que en aquesta demostració només hem hagut d'utilitzar la continuïtat de \(d-1\) de les derivades parcials de \(f\) en \(a\). per tant en veritat tenim prou amb veure que totes les derivades parcials de \(f\) existeixen en \(a\) i que almenys totes menys una d'aquestes són contínues en \(a\) per poder dir que \(f\) és diferenciable en \(a\), però a aquest curs només es dona l'enunciat reduït.
+	\end{note}
+	\begin{proposition}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f,g\colon U\to\mathbb{R}^{m}\) dues funcions diferenciables en un punt \(a\in U\) amb diferencials \(df(a),dg(a)\), respectivament. Aleshores \(f+g\) és diferenciable en \(a\) i té per diferencial \(df(a)+dg(a)\).
+		\begin{proof}
+			Siguin \(\vec{u}\) un vector de \(\mathbb{R}^{d}\) i \(D_{\vec{u}}f(a),\ D_{\vec{u}}g(a)\) les derivades parcials de \(f\) i \(g\), respectivament, en el punt \(a\) amb direcció \(\vec{u}\). La derivada parcial de \(f+g\) en \(a\) amb direcció \(\vec{u}\) és \(D_{\vec{u}}(f+g)(a)\). Com que les derivades direccionals es comporten, per definició, com les derivades d'una variable, tenim
+			\[D_{\vec{u}}f(a)+D_{\vec{u}}g(a)=D_{\vec{u}}(f+g)(a),\]
+			i per la proposició \myref{prop:derivades parcials i diferencial}, com que l'argument no depèn de \(\vec{u}\), ja hem acabat.
+		\end{proof}
+	\end{proposition}
+	\subsection{La Matriu Jacobiana i la regla de la cadena}
+	\begin{definition}[Matriu Jacobiana]
+		\labelname{matriu Jacobiana}\label{def:Jacobiana}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}^{m}\) una funció diferenciable en un punt \(a\in U\). Aleshores definim la matriu Jacobiana de \(f\) en \(a\) com
+		\[\left[\begin{matrix}
+		D_{1}f_{1}(a) & D_{2}f_{1}(a) & \cdots & D_{d}f_{1}(a)\\
+		D_{1}f_{2}(a) & D_{2}f_{2}(a) & \cdots & D_{d}f_{2}(a)\\
+		\vdots & \vdots && \vdots \\
+		D_{1}f_{m}(a) & D_{2}f_{m}(a) & \cdots & D_{d}f_{m}(a)
+		\end{matrix}\right].\]
+	\end{definition}
+	\begin{proposition}\label{prop:justificació Jacobiana}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(f\colon U\to\mathbb{R}^{m}\) una funció diferenciable en un punt \(a\in U\), \(df(a)\) el diferencial de \(f\) en el punt \(a\) i \(\vec{h}=(h_{1},\dots,h_{d})\) un vector de \(\mathbb{R}^{d}\). Aleshores
+		\[df(a)(\vec{h})=
+		\left[\begin{matrix}
+		D_{1}f_{1}(a) & \cdots & D_{d}f_{1}(a)\\
+		\vdots && \vdots \\
+		D_{1}f_{m}(a) & \cdots & D_{d}f_{m}(a)
+		\end{matrix}\right]
+		\left[\begin{matrix}
+		h_{1}\\
+		\vdots\\
+		h_{d}
+		\end{matrix}\right],\]
+		és a dir, la matriu Jacobiana de \(f\) en \(a\) és la matriu associada del diferencial de \(f\) en el punt \(a\).
+		\begin{proof}
+			Aquest enunciat té sentit per la definició de \myref{def:diferencial} i la definició de \myref{def:Jacobiana}.
+			
+			Donada la base canònica de \(\mathbb{R}^{d}\), \((\vec{e_{1}},\dots,\vec{e_{d}})\), tenim
+			\[df(a)(\vec{h})=\sum_{i=1}^{d}h_{i}df(a)(\vec{e_{i}})=\sum_{i=1}^{d}h_{i}D_{i}f(a),\]
+			i si \(f(a)=(f_{1}(a),\dots,f_{m}(a))\),
+			\begin{equation}\label{eq:2}
+			D_{i}f(a)=
+			\left[\begin{matrix}
+			D_{i}f_{1}(a)\\
+			\vdots\\
+			D_{i}f_{m}(a)
+			\end{matrix}\right].
+			\end{equation}
+			Per tant, podem reescriure aquestes dues igualtats com
+			\[df(a)(\vec{h})=
+			\left[\begin{matrix}
+			D_{1}f(a)~\cdots~D_{d}f(a)
+			\end{matrix}\right]
+			\left[\begin{matrix}
+			h_{1}\\\vdots\\h_{d}
+			\end{matrix}
+			\right].\]
+			On, recordant \eqref{eq:2},
+			\[\left[\begin{matrix}
+			D_{1}f(a)~\cdots~D_{d}f(a)
+			\end{matrix}\right]=
+			\left[\begin{matrix}
+			D_{1}f_{1}(a) & D_{2}f_{1}(a) & \cdots & D_{d}f_{1}(a)\\
+			D_{1}f_{2}(a) & D_{2}f_{2}(a) & \cdots & D_{d}f_{2}(a)\\
+			\vdots & \vdots && \vdots \\
+			D_{1}f_{m}(a) & D_{2}f_{m}(a) & \cdots & D_{d}f_{m}(a)
+			\end{matrix}\right].\]
+			Així que
+			\[df(a)(\vec{h})=
+			\left[\begin{matrix}
+			D_{1}f_{1}(a) & D_{2}f_{1}(a) & \cdots & D_{d}f_{1}(a)\\
+			D_{1}f_{2}(a) & D_{2}f_{2}(a) & \cdots & D_{d}f_{2}(a)\\
+			\vdots & \vdots && \vdots \\
+			D_{1}f_{m}(a) & D_{2}f_{m}(a) & \cdots & D_{d}f_{m}(a)
+			\end{matrix}\right]
+			\left[\begin{matrix}
+			h_{1}\\h_{2}\\\vdots\\h_{d}
+			\end{matrix}
+			\right].\]
+			Així veiem que la matriu Jacobiana de \(f\) en \(a\) està ben definida com a matriu associada del diferencial de \(f\) en \(a\).
+		\end{proof}
+	\end{proposition}
+	\begin{observation}\label{obs:diferencial defineix espai tangent}
+		Suposem \(m=1\). Recordant la definició de \myref{def:diferencial} i denotant \(x=a+\vec{h}\), \(a=(a_{1},\dots,a_{d}),\ x=(x_{1},\dots,x_{d})\)
+		\[f(x)-f(a)-\omicron(\norm{x-a})=df(a)(x-a)\]
+		i per la definició de \myref{def:Jacobiana} tenim
+		\[f(x)-f(a)-\omicron(\norm{x-a})=
+		\left[\begin{matrix}
+		D_{1}f(a)~\cdots~D_{d}f(a)
+		\end{matrix}\right]
+		\left[\begin{matrix}
+		x_{1}-a_{1}\\
+		\vdots\\
+		x_{d}-a_{d}
+		\end{matrix}\right].\]
+		El que, quan \(\vec{h}\to0\), ens diu que és una aproximació a
+		\[(x_{1}-a_{1})D_{1}f(a)+\dots+(x_{d}-a_{d})D_{d}f(a)=f(x)-f(a),\]
+		el que és un espai afí de dimensió \(d+1\) tangent a \(f\) en el punt \(a\).
+	\end{observation}
+	\begin{theorem}[Regla de la cadena]
+		\labelname{la regla de la cadena}\label{thm:regla de la cadena}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}^{m}\) una funció diferenciable en un punt \(a\in U\) i siguin \(V\subseteq\mathbb{R}^{m}\) un obert i \(g\colon V\to\mathbb{R}^{p}\) una funció diferenciable en un punt \(f(a)=b\in V\). Aleshores \(g(f(x))\) és diferenciable en \(a\) amb diferencial \(dg(b)(df(a)(\vec{h}))\), on \(df(a)\) i \(dg(b)\) són els diferencials de \(f\) i \(g\) en \(a\) i \(b\), respectivament, i \(\vec{h}\) és un vector de \(\mathbb{R^{d}}\).
+		\begin{proof}
+			Per la definició de \myref{def:diferencial}, tenim
+			\[f(a+\vec{h})=f(a)+df(a)(\vec{h})+\omicron(\vec{h}),\quad\lVert\vec{h}\rVert\to0.\]
+			Reescrivim amb \(x=a+\vec{h}\) i \(y=b+\vec{h}\)
+			\[f(x)=f(a)+df(a)(x-a)+\omicron(x-a),\]
+			\[g(y)=g(b)+dg(b)(y-b)+\omicron(y-b).\]
+			Si fem \(y=f(x)\) i substituïm en la segona equació obtenim
+			\[g(f(x))=g(b)+dg(b)(f(a)+df(a)(x-a)+\omicron(x-a)-b)+\omicron(f(x)-b)\]
+			Si simplifiquem i utilitzem la linealitat del diferencial obtenim
+			\[g(f(x))=g(b)+dg(b)(df(x-a))+dg(b)(\omicron(x-a))+\omicron(f(x)-b)\]
+			Ara només hem de veure que \(dg(b)(\omicron(x-a))\) i \(\omicron(f(x)-b)\) són \(\omicron(x-a)\). El primer el podem veure amb que
+			\[\norm{dg(b)(\omicron(x-a))}\leq\norm{dg(b)}\omicron(\norm{x-a}).\] % fer: explicar
+			I com que quan \(x\to a,\ f(a)\to b\) (donat per \(\vec{h}\to0\)), ja que \(f\) és contínua. Aleshores podem escriure
+			\[f(x)-b=df(a)(x-a)+\omicron(x-a),\]
+			i  observant el cas \(x\to a\) trobem que \(\norm{f(x)-b}\leq C\norm{x-a}\), on \(C\in\mathbb{R}\) és la norma de l'aplicació lineal \(dg(b)\). % referència
+		\end{proof}
+	\end{theorem}
+	\subsection{Gradient, punts crítics i extrems relatius}
+	\begin{definition}[Funció escalar]
+		\labelname{funció escalar}\label{def:funció escalar}
+		Sigui \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}\) una funció. Direm que \(f\) és una funció escalar de \(d\) variables si \(f\) és diferenciable per a tot \(x\in U\).%revisar
+	\end{definition}
+	\begin{definition}[Conjunts de nivell]
+		\labelname{conjunts de nivell}\label{def:conjunts de nivell}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}\) una funció. Aleshores direm que, per a tot \(C\in\mathbb{R}\),
+		\[L_{C}=\{x\in U\mid f(x)=C\}\]
+		és el conjunt de nivell \(C\) de la funció \(f\).
+	\end{definition}
+	\begin{definition}[Gradient d'una funció]
+		\labelname{gradient d'una funció}\label{def:gradient}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}\) una funció escalar. Definim el gradient de \(f\) en un punt \(a\in U\) com el vector
+		\[\nabla f(a)=(D_{1}f(a),\dots,D_{d}f(a)).\]
+	\end{definition}
+	\begin{proposition}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(f\colon U\to\mathbb{R}\) una funció escalar i \(\vec{u}=(u_{1},\dots,u_{d}\) un vector de \(\mathbb{R}^{d}\). Aleshores
+		\[\langle\nabla f(a),\vec{u}\rangle=D_{\vec{u}}f(a).\]
+		\begin{proof}
+			Ho veiem per la definició de \myref{def:gradient}, la definició de \myref{def:derivada direccional} i l'observació \myref{obs:derivades direccionals lineals}. Tenim
+			\begin{align*}
+			\langle\nabla f(a),\vec{u}\rangle&=u_{1}D_{1}f(a)+\dots+u_{d}D_{d}f(a)\tag{\myref{def:gradient}}\\
+			&=D_{u_{1}\vec{e}_{1}}f(a)+\dots+D_{u_{d}\vec{e}_{1}}f(a)\tag{\myref{def:derivada direccional}}\\
+			&=D_{u_{1}\vec{e}_{1}+\dots+u_{d}\vec{e}_{1}}f(a)\tag{Observació \myref{obs:derivades direccionals lineals}}\\
+			&=D_{\vec{u}}f(a),
+			\end{align*}
+			com volíem demostrar.
+		\end{proof}
+	\end{proposition}
+	\begin{observation}\label{obs:gradient ortogonal}
+		El gradient d'una funció en un punt és perpendicular al conjunt de nivell que conté el punt.%revisar una mica
+	\end{observation}
+	\begin{proposition}
+		Sigui \(U\subseteq\mathbb{R}^{d}\) un obert, \(f\colon U\to\mathbb{R}\) una funció escalar i \(D_{\vec{u}}f(a)\) la derivada direccional de \(f\) en la direcció \(\vec{u}\), on \(\vec{u}\) és un vector de \(\mathbb{R}^{d}\). Aleshores \(D_{\vec{u}}f(a)\) és màxim \(\Longleftrightarrow\ \vec{u}=\lambda\nabla f(a)\), amb \(\lambda\in\mathbb{R}\).
+		\begin{proof}
+			Pel \myref{thm:Desigualtat de C-S} tenim, amb \(\norm{\vec{u}}=1\)
+			\[-\norm{\nabla f(a)}\leq\norm{\langle\nabla f(a),\vec{u}\rangle}\leq\norm{\nabla f(a)}\]
+			\[-\norm{\nabla f(a)}\leq\norm{D_{\vec{u}}(a)}\leq\norm{\nabla f(a)},\]
+			però si prenem \(\vec{u}=\frac{\nabla f(a)}{\norm{\nabla f(a)}}\) tenim \(D_{\vec{u}}f(a)=\nabla f(a)\). Amb això es veu que el gradient d'una funció en un punt ens dona la direcció de màxim creixement de la funció en el punt.
+		\end{proof}
+	\end{proposition}
+	\begin{observation}
+		Veiem que, donat que \(\nabla f(a)\) ens diu la direcció de màxim creixement de \(f\) en el punt \(a\), \(-\nabla f(a)\) ens dirà la direcció de màxim decreixement de \(f\) en \(a\).
+	\end{observation}
+	\begin{definition}[Extrems relatius i punts crítics]
+		\labelname{extrem relatiu}\label{def:extrems relatius}
+		\labelname{punt crític}\label{punts crítics}
+		Sigui \(U\subseteq\mathbb{R}^{d}\) un obert, \(a\in U\) un punt i \(f\colon U\to\mathbb{R}\) una funció escalar. Direm que el punt \(a\) és un extrem relatiu de \(f\) si hi ha una bola de radi \(r>0\) centrada en el punt \(a\), \(\B(a,r)\), tal que, per a tot \(x\in\B(a,r)\), \(f(a)\geq f(x)\) (direm que \(a\) és un màxim relatiu) o tal que \(f(a)\leq f(x)\) (direm que \(a\) és un mínim relatiu).
+		
+		Si \(f(a)\geq f(x)\) o \(f(a)\leq f(x)\), per a tot \(x\in U\), direm que \(a\) és un màxim o un mínim absolut de \(f\) en \(U\), respectivament.
+		
+		També direm que \(a\) és un punt crític si \(\nabla f(a)=\vec{0}\).
+	\end{definition}
+	\begin{proposition}\label{prop:Identificació d'extrems relatius}
+		Sigui \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}\) una funció escalar diferenciable en \(a\). Aleshores
+		\[a\text{ és un màxim o un mínim relatiu de }f\Longrightarrow \nabla f(a)=\vec{0}.\]
+		\begin{proof}
+			Si \(\vec{u}\) és un vector qualsevol de \(\mathbb{R}^{d}\), la funció \(f(a+t\vec{u})\), amb \(t\in\mathbb{R}\) té un extrem relatiu en \(t=0\), i per tant la seva derivada ha de ser 0; \(D_{\vec{u}}f(a)=0\), i com això no depèn de \(\vec{u}\), per la definició de \myref{def:gradient}, \(D_{\vec{u}}=\langle\nabla f(a),\vec{u}\rangle=0\), el que és equivalent a \(\nabla f(a)=\vec{0}\).
+		\end{proof}
+	\end{proposition}
+	\begin{observation}\label{obs:extrem relatiu és punt crític}
+		Amb la definició de \myref{def:extrems relatius} i la proposició \myref{prop:Identificació d'extrems relatius} tenim que el punt \(a\) és un màxim o mínim relatiu de \(f\) si \(a\) és un punt crític de \(f\).
+	\end{observation}
+	\begin{definition}[Punt de sella d'una funció]
+		\labelname{punt de sella d'una funció}\label{def:punt de sella}
+		Sigui \(f\) una funció i \(a\) un punt del seu domini. Si \(a\) és un punt crític però no és ni màxim ni mínim local direm que \(a\) és un punt de sella de \(f\).
+		
+		Aquesta definició té sentit per l'observació \myref{obs:extrem relatiu és punt crític}.
+	\end{definition}
+	\subsection{Canvis de coordenades diferenciables}
+	\begin{definition}[Homeomorfisme i difeomorfisme]
+		\labelname{homeomorfisme}\label{def:homeomorfisme}
+		\labelname{difeomorfisme}\label{def:difeomorfisme}
+		Siguin \(U,V\subseteq\mathbb{R}^{d}\) dos oberts i \(\Phi\colon U\longleftrightarrow V\) una aplicació bijectiva tal que \(\Phi,\Phi^{-1}\) siguin contínues. Aleshores direm que \(\Phi\) és un homeomorfisme. Si pensem \(\Phi\) com
+		\begin{align*}
+		\Phi\colon U&\longleftrightarrow V\\
+		a&\longmapsto(v_{1}(a),\dots,v_{d}(a))
+		\end{align*}
+		aleshores donat un punt \(a\in U\), interpretem \(v_{1}(a),\dots,v_{d}(a)\) com les noves coordenades del punt \(a\). Amb aquest nou sistema els punts que fan d'eixos de coordenades, que són les famílies de punts definits per
+		\[\{x\in U\mid v_{i}(x)=v_{j}(a)\Leftrightarrow i\neq j,\forall i,j\in\{1,\dots,d\}\},\]
+		que són tots els punts amb totes les coordenades iguals, excepte la \(j\)-èsima.
+		
+		Si \(\Phi,\Phi^{-1}\) són diferenciables direm que és un canvi de coordenades diferenciable o que és un difeomorfisme.
+	\end{definition}
+	\begin{proposition}\label{prop:difeomorfisme diferenciable invertible}
+		Siguin \(U,V\subseteq\mathbb{R}^{d}\) dos oberts i \(\Phi\colon U\longleftrightarrow V\) un difeomorfisme. Aleshores
+		\[d(\Phi^{-1})=(d\Phi)^{-1}.\]
+		\begin{proof}
+			Suposem que \(\Phi\) és diferenciable en un punt \(a\in U\). Aleshores per la definició de \myref{def:difeomorfisme} tenim que \(\Phi^{-1}\) existeix i és diferenciable en el punt \(\Phi(a)\in V\). Volem veure que \(d(\Phi^{-1})=(d\Phi)^{-1}\).
+			
+			Considerem la funció \(\Phi^{-1}(\Phi)\) i un vector \(\vec{h}\) de \(\mathbb{R}^{d}\). Aleshores el diferencial de \(\Phi^{-1}(\Phi)\) en \(a\) aplicat a \(\vec{h}\) és, per \myref{thm:regla de la cadena},
+			%\[\Id_{U}(a)=d((\Phi^{-1}(\Phi))(a))(\vec{h})=d((\Phi^{-1})(b))(d\Phi(a)(\vec{h}))\]
+			\[\Id_{U}(\vec{h})=d(\Phi^{-1}(\Phi))(a)(\vec{h})=d(\Phi^{-1})(\Phi(a))(d\Phi(a)(\vec{h})).\]
+			Anàlogament, el diferencial de \(\Phi(\Phi^{-1})\) en \(\Phi(a)\) aplicat a \(\vec{h}\) és
+			\[\Id_{V}(\vec{h})=d(\Phi(\Phi^{-1}))(\Phi(a))(\vec{h})=d(\Phi)(a)(d\Phi^{-1}(\Phi(a))(\vec{h})),\]
+			%\[\Id_{V}(b)=d(\Phi((\Phi^{-1}))(b))(\vec{h})=d(\Phi(a))(d\Phi^{-1}(b)(\vec{h}))\]
+			i amb això tenim que \(d(\Phi^{-1})\) és la inversa de \(d\Phi\) pels dos costats, i per tant \(d(\Phi^{-1})=(d\Phi)^{-1}\), com volíem demostrar.
+		\end{proof}%REVISAR MOLT https://math.stackexchange.com/questions/207392/invertible-derivative
+	\end{proposition}
+	\begin{corollary}\label{corollary:difeomorfime determinant}
+		Sigui \(\Phi\) un difeomorfisme diferenciable en un punt \(a\). Aleshores
+		\[\det(df(a))\neq0.\]
+	\end{corollary}
+	\begin{definition}[Derivades parcials d'una funció]
+		\labelname{derivades parcials d'una funció}\label{def:Derivades parcials}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(a=(a_{1},\dots,a_{d})\) un punt de \(U\) i \(f\) una funció definida per
+		\begin{align*}
+		f\colon U&\longrightarrow\mathbb{R}^{m}\\
+		a&\longmapsto(f_{1}(a),\dots,f_{m}(a)).
+		\end{align*}
+		Aleshores, donat un \(t\in\mathbb{R}\), direm que la derivada parcial de \(f\) respecte la seva \(i\)-èsima coordenada és
+		\[\frac{\partial f}{\partial x_{i}}(a)=\lim_{t\to0}\frac{f(a_{1},\dots,a_{i}+t,\dots,a_{d})-f(a)}{t}.\]
+		Notem que això és equivalent a derivar respecte la \(i\)-èsima variable prenent les altres variables com a constants.
+	\end{definition}
+	\begin{proposition}
+		Siguin \(U,V\subset\mathbb{R}^{d}\) dos oberts i \(\Phi\colon U\to V\) un difeomorfisme tal que donat un punt \(a\in U\), \(\Phi(a)=(\Phi_{1}(a),\dots,\Phi_{d}(a))=(v_{1},\dots,v_{d})\). Aleshores, donada una funció \(f\colon U\to V\),\[\frac{\partial f}{\partial v_{i}}=\sum_{j=1}^{d}\frac{\partial f}{\partial x_{j}}\frac{\partial x_{j}}{\partial v_{i}}.\]		
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	%FER per regla de la cadena i després demostrar la mítica 2.7.2
+	\section{Teoremes de la funció implícita i inversa}
+	\subsection{Dependència i independència funcional}
+	\begin{definition}[Dependència funcional]
+		\labelname{dependència funcional}\label{def:dependència funcional}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}^{m}\) una funció. Donades \(v_{1},\dots,v_{k}\colon U\to\mathbb{R}\) \(k\) funcions, direm que \(f\) depèn funcionalment de \(v_{1},\dots,v_{k}\) si existeix una funció \(h\colon\mathbb{R}^{k}\to\mathbb{R}^{m}\) tal que
+		\[f(x)=h(v_{1}(x),\dots,v_{k}(x)),\quad\text{per a tot }x\in U.\]
+	\end{definition}
+	\begin{proposition}\label{prop:dependència funcional 4 punts}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(f\colon U\to\mathbb{R}^{m}\) una funció i \(v_{1},\dots,v_{d}\), \(d\) funcions escalars sobre \(U\) que defineixen un sistema de coordenades que anomenarem \(\Phi(x)=(v_{1}(x),\dots,v_{d}(x))\). Aleshores, donat un \(k<d\) els següents enunciats són equivalents:
+		\begin{enumerate}
+			\item\label{enum:dependència funcional 4 punts 1} \(f\) depèn funcionalment de \(v_{1},\dots,v_{k}\) per a tot \(x\in U\).
+			\item\label{enum:dependència funcional 4 punts 2} \(\nabla f(x)\) és combinació lineal de \(\nabla v_{1}(x),\dots,\nabla v_{k}(x)\) per a tot \(x\in U\).
+			\item\label{enum:dependència funcional 4 punts 3} La matriu que té per files \(\nabla v_{1}(x),\dots,\nabla v_{k}(x)\) i \(\nabla f(x)\) té rang \(k\) per a tot \(x\in U\).
+			\item\label{enum:dependència funcional 4 punts 4} \(\frac{\partial f}{\partial v_{k+1}}=\dots=\frac{\partial f}{\partial v_{d}}=0\)
+		\end{enumerate}
+		%		\begin{proof}
+		%			fer
+		%		\end{proof}
+		%		\textbf{Ignorar aquesta demostració per ara}
+		%		\begin{proof}
+		%			Tenim que \eqref{enum:dependència funcional 4 punts 2}\(\Leftrightarrow\)\eqref{enum:dependència funcional 4 punts 3} és clar ja que es tracta d'àlgebra lineal.
+		%			
+		%			Comencem veient \eqref{enum:dependència funcional 4 punts 1}\(\Rightarrow\)\eqref{enum:dependència funcional 4 punts 2}. Suposem que \(f\) depèn funcionalment de les \(v_{1},\dots,v_{k}\). Aleshores existeix una funció \(h\) tal que per a tot \(x\in U\), \(f(x)=h(v_{1}(x),\dots,v_{k}(x))\). Per \myref{thm:regla de la cadena} tenim, per a tot \(i\in\{1,\dots,d\}\),
+		%			\[\frac{\partial f}{\partial x_{i}}=\sum_{j=1}^{k}\frac{\partial h}{\partial y_{j}}\frac{\partial y_{j}}{\partial x_{i}},\]
+		%			on \(y_{j}\) es refereix a la \(j\)-èsima coordenada en \(h\).
+		%			
+		%			D'aquí deduïm que
+		%			\[\nabla f(x)=\frac{\partial h}{\partial y_{1}}(v_{1}(x),\dots,v_{k}(x))\nabla v_{1}(x)+\dots+\frac{\partial h}{\partial y_{k}}(v_{1}(x),\dots,v_{k}(x))\nabla v_{k}(x),\]
+		%			i tenim \((\mathit{1}\Rightarrow\mathit{2})\).
+		%			
+		%			Ara veiem \((\mathit{2}\Rightarrow\mathit{4})\). Com que, per hipòtesi, les funcions \(v_{1},\dots,v_{d}\) defineixen un sistema de coordenades, en aquest nou sistema de coordenades \(\frac{\partial f}{\partial v_{i}}\) quantifica la variació de \(f\) respecte la \(i\)-èsim eix, però com que tenim que \(\nabla f(x)\) és combinació lineal de \(\nabla v_{1}(x),\dots,\nabla v_{k}(x)\) per a tot \(x\in U\), la variació de \(f\) en les noves coordenades queda determinada per les primeres \(k\) funcions del sistema de coordenades donat per \(\Phi\), per tant tenim \(\frac{\partial f}{\partial v_{k+1}}=\dots=\frac{\partial f}{\partial v_{d}}=0\).
+		%			
+		%			Ara només ens queda demostrar que \((\mathit{4}\Rightarrow\mathit{1})\). Com que \(\Phi\) és un difeomorfisme i per tant bijectiva (per la definició de \myref{def:difeomorfisme}) considerem la seva inversa, \(\Phi^{-1}(y)=(u_{1}(y),\dots,u_{d}(y))\) i prenem
+		%			\[f(\Phi^{-1}(y))=f(u_{1}(y),\dots,u_{d}(y))\]
+		%			
+		%			Per tant, tenim \(\mathit{2}\Rightarrow\mathit{4}\Rightarrow\mathit{1}\Rightarrow\mathit{2}\Leftrightarrow\mathit{3}\) i hem acabat.
+		%		\end{proof}
+		%		\begin{proof}
+		%			Comencem veient \((\mathit{1}\Rightarrow\mathit{2})\).
+		%			
+		%			Suposem que \(f\) depèn funcionalment de les \(v_{1},\dots,v_{k}\). Aleshores existeix una funció \(h\) tal que per a tot \(x\in U\), \(f(x)=h(v_{1}(x),\dots,v_{k}(x))\). Per \myref{thm:regla de la cadena} tenim, per a tot \(i\in\{1,\dots,d\}\)
+		%			\[\frac{\partial f}{\partial x_{i}}=\sum_{j=1}^{k}\frac{\partial h}{\partial y_{j}}\frac{\partial y_{j}}{\partial x_{i}},\]
+		%			on \(y_{j}\) es refereix a la \(j\)-èsima coordenada en \(h\).
+		%			
+		%			D'aquí deduïm que
+		%			\[\nabla f(x)=\frac{\partial h}{\partial y_{1}}(v_{1}(x),\dots,v_{k}(x))\nabla v_{1}(x)+\dots+\frac{\partial h}{\partial y_{k}}(v_{1}(x),\dots,v_{k}(x))\nabla v_{k}(x),\]
+		%			i tenim \((\mathit{1}\Rightarrow\mathit{2})\).
+		%			
+		%			Per veure \((\mathit{1}\Leftarrow\mathit{2})\) en tindrem prou amb demostrar que \((\mathit{1}\Leftrightarrow\mathit{4})\), ja que es tractarà d'un cas particular.
+		%			
+		%			Per veure \((\mathit{1}\Leftrightarrow\mathit{4})\) observem que, ja que \(\Phi\) correspon a un sistema de coordenades, tenim que el diferencial de \(\Phi\), \(d\Phi\) existeix i és invertible (per la definició de \myref{def:difeomorfisme} i proposició \myref{prop:difeomorfisme diferenciable invertible}). Per tant, vist que \(d\Phi\) és invertible, la seva \myref{def:Jacobiana} té determinant diferent de 0 (pel coro{\lgem}ari \myref{corollary:difeomorfime determinant}) per a tot \(x\in U\). Per tant, \(\nabla v_{1}(x),\dots,\nabla v_{k}(x)\) són linealment independents per a tot \(x\in U\), i tenim que \(v_{1}(x),\dots,v_{k}(x)\) són funcionalment independents per a tot \(x\in U\) (a partir dels punts \eqref{enum:dependència funcional 4 punts 1} i \eqref{enum:dependència funcional 4 punts 2} d'aquesta mateixa proposició, que ja hem demostrat). %mirar de no repetir-me tant
+		%			
+		%			Fixant-nos en que \(\Phi\) és un nou sistema de coordenades, tenim que derivar respecte a \(v_{i}\) és equivalent a buscar la derivada parcial respecte la \(i\)-èsima coordenada en el nou sistema de coordenades. Per tant, com vam veure a la justificació de la definició de \myref{def:Jacobiana}, tenim
+		%			\[df=\frac{\partial f}{\partial v_{1}}dv_{1}+\dots+\frac{\partial f}{\partial v_{d}}dv_{d},\]
+		%			però com que \(\nabla f(x)\) és combinació lineal de \(\nabla v_{1}(x),\dots,\nabla v_{k}(x)\) per a tot \(x\in U\), ha de ser
+		%			\[\frac{\partial f}{\partial v_{k+1}}=\dots=\frac{\partial f}{\partial v_{d}}=0.\]
+		%			
+		%			I per acabar, vist que es tracta de dependència lineal és obvi que \((\mathit{2}\Leftrightarrow\mathit{3})\).
+		%		\end{proof}
+	\end{proposition}
+	\begin{theorem}\label{thm:sistema de coordenades en un entorn iff gradients linealment independents}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(v_{1},\dots,v_{k}\in\mathcal{C}^{1}\) \(k<d\) funcions escalars definides en \(U\). Aleshores, donat un punt \(a\in U\) i un real \(\varepsilon>0\), les funcions \(v_{1},\dots,v_{k}\) formen un sistema de coordenades en \(\B(\varepsilon,a)\subset U\) si i només si els seus gradients en \(a\), \(\nabla v_{1}(a),\dots,\nabla v_{k}(a)\), són linealment independents.
+		\begin{proof}
+			Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(v_{1},\dots,v_{k}\in\mathcal{C}^{1}\) \(k\) funcions escalars definides en \(U\) que formen un sistema de coordenades en \(\B(\varepsilon,a)\subset U\). Considerem les \(d-k\) funcions escalars definides en \(U\) \(v_{k+1},\dots,v_{d}\) tal que \(v_{1},\dots,v_{d}\) formin un sistema de coordenades de \(U\). Per la proposició \myref{prop:dependència funcional 4 punts} tenim que aquestes \(d\) funcions són funcionalment independents, el que ens diu que el determinant de la matriu composta per els seus gradients en un punt \(x\), \(\nabla v_{1}(x),\dots,\nabla v_{d}(x)\) té determinant no nul per a tot \(x\in U\). Per tant, tenim que \(\nabla v_{1}(x),\dots,\nabla v_{d}(x)\) són linealment independents per a tot \(x\in U\) i, en particular, que \(\nabla v_{1}(a),\dots,\nabla v_{k}(a)\) són linealment independents. %revisar maomeno
+		\end{proof}
+	\end{theorem}
+	\subsection{Varietats}
+	\begin{definition}[Varietat]
+		\labelname{varietat}\label{def:varietat}
+		Siguin, amb \(m<d\), \(U\subseteq\mathbb{R}^{m},\ S\subseteq\mathbb{R}^{d}\) dos oberts, \(M\subseteq\mathbb{R}^{d}\) un conjunt i \(r>0\) un radi. Aleshores, si per a tot punt \(p\in M\), existeix un homeomorfisme \(H\colon U\to S\cap\B(p,r)\) direm que \(M\) és una varietat de dimensió \(m\) de \(\mathbb{R}^{d}\).
+	\end{definition} %nota explicant que parametritza que
+	\begin{definition}[Varietat regular]
+		\labelname{varietat regular}\label{def:varietat regular o diferenciable}
+		Siguin, amb \(m<d\), \(U\subseteq\mathbb{R}^{m},\ S\subseteq\mathbb{R}^{d}\) dos oberts amb \((0,\dots,0)=0\in U\). Aleshores, donat un conjunt \(M\subseteq\mathbb{R}^{d}\), direm que \(M\) és una varietat regular de dimensió \(m\) o una varietat diferenciable de classe \(\mathcal{C}^{1}\) i de dimensió \(m\) si per a tot punt \(p\in M\) existeix un homeomorfisme \(H\colon U\to\B(p,r)\cap S\) tal que \(H(0)=p\) i el diferencial de \(H\) en \(t\in U\), \(dH(t)\), tingui rang \(m\) per a tot \(t\in U\). %mirar allò de 0\in U
+		
+		Si \(m=1\) tindrem un arc regular, i si \(m=2\) parlarem de superfície regular.
+	\end{definition}
+	\begin{observation}
+		Un cas particular d'aquesta definició és el dels gràfics. En aquest cas tenim que si
+		\begin{align*}
+		H\colon U&\longleftrightarrow\B(p,r)\cap S\\
+		t&\longmapsto(h_{1}(t),\dots,h_{d}(t))
+		\end{align*}
+		aleshores \(m\) de les components de \(H\) fan de paràmetres; suposem que són els \(m\) primers, així \(H\) seria de la forma
+		\[H(t_{1},\dots,t_{m})=(t_{1},\dots,t_{m},h_{m+1}(t_{1},\dots,t_{m}),\dots,h_{d}(t_{1},\dots,t_{m})).\] %per algun motiu el h_{d} em mata de riure al pdf
+	\end{observation}
+	\begin{definition}[Espai tangent en un punt]
+		\labelname{espai tangent en un punt}\label{def:espai tangent a una varietat regular en un punt}
+		Siguin \(U\subseteq\mathbb{R}^{m},\ S\subseteq\mathbb{R}^{d}\) dos oberts i \(M\subseteq\mathbb{R}^{m}\) una varietat regular de dimensió \(m\). Això vol dir que per a tot punt \(t\in M\) existeix un homeomorfisme \(H\colon U\to S\cap\B(p,r)\) amb \(H(0)=p\). Aleshores definim l'espai tangent a \(M\) en \(p\) com
+		\[T_{p}(M)=\{\vec{h}\text{ un vector de }\mathbb{R}^{d}\colon dH(0)(x)=\vec{h},\text{ per a algun }x\in\mathbb{R}^{d}\},\]
+		això és l'imatge de \(dH(0)\).
+	\end{definition}
+	\begin{proposition}
+		Siguin \(U\subseteq\mathbb{R}^{m}\) un obert, \(M\) una varietat regular de dimensió \(m\) d'un obert \(S\subseteq\mathbb{R}^{d}\), \(p\in M\) un punt i 
+		\begin{align*}
+		H\colon U&\longleftrightarrow\B(p,r)\cap S\\
+		t&\longmapsto(h_{1}(t),\dots,h_{d}(t))
+		\end{align*}
+		un homeomorfisme tal que \(H(0)=p\). Aleshores l'espai tangent a \(M\) en un punt \(p\in M\), \(T_{p}(M)\), té dimensió \(m\) i la seva base és
+		\[\left(\left(\frac{\partial h_{1}}{\partial t_{1}},\dots,\frac{\partial h_{d}}{\partial t_{1}}\right),\dots,\left(\frac{\partial h_{1}}{\partial t_{d}},\dots,\frac{\partial h_{d}}{\partial t_{d}}\right)\right).\] %REVISAR dimensió?
+		\begin{proof}
+			Considerem la \myref{def:Jacobiana} de \(H\) en \(0\). Per hipòtesi, aquesta té rang \(m\). Aleshores, per la definició d'espai tangent en \(p\) tenim
+			\[T_{p}(M)=\{\vec{h}\text{ un vector de }\mathbb{R}^{d}\mid dH(0)(x)=\vec{h},\text{ per a algun }x\in\mathbb{R}^{d}\},\]
+			per tant, els elements de \(T_{p}(M)\) venen donades pel sistema lineal
+			\[\left[\begin{matrix}
+			D_{1}h_{1}(0) & D_{2}h_{1}(0) & \cdots & D_{m}h_{1}(0)\\
+			D_{1}h_{2}(0) & D_{2}h_{2}(0) & \cdots & D_{m}h_{2}(0)\\
+			\vdots & \vdots && \vdots \\
+			D_{1}h_{d}(0) & D_{2}h_{d}(0) & \cdots & D_{m}h_{d}(0)
+			\end{matrix}\right]
+			\left[\begin{matrix}
+			x_{1}\\ x_{2}\\ \vdots\\ x_{d}
+			\end{matrix}\right]=
+			\left[\begin{matrix}
+			h_{1}\\ h_{2}\\ \vdots\\ h_{d}
+			\end{matrix}\right].\]
+			Per tant, \(T_{p}(M)\) està generat per les columnes de \(dH(0)\), i la seva base és
+			\[(D_{1}H(0),\dots,D_{d}H(0)),\]
+			que és equivalent a
+			\[\left(\left(\frac{\partial h_{1}}{\partial t_{1}},\dots,\frac{\partial h_{d}}{\partial t_{1}}\right),\dots,\left(\frac{\partial h_{1}}{\partial t_{d}},\dots,\frac{\partial h_{d}}{\partial t_{d}}\right)\right).\]
+			Amb això també veiem que \(T_{p}(M)\) té dimensió \(m\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(v_{1},\dots,v_{k}\in\mathcal{C}^{1}\) \(k<d\) funcions escalars definides en \(U\) funcionalment independents en cada punt de \(U\) de forma que els conjunts de nivell arc-connexos
+		\[M=\{x\in U\mid v_{1}(x)=c_{1},\dots,v_{k}(x)=c_{k}\}\]
+		siguin varietats regulars de dimensió \(m=d-k\). Aleshores, donada una funció \(f\colon U\to\mathbb{R}^{m}\) diferenciable depèn funcionalment de \(v_{1},\dots,v_{k}\) si i només si \(\nabla f(x)\) és combinació lineal de \(\nabla v_{1}(x),\dots,\nabla v_{k}(x)\) per a tot \(x\in U\).
+		\begin{proof}
+			La implicació cap a la dreta (\(\Rightarrow\)) està vista a la proposició \myref{prop:dependència funcional 4 punts}. Fem l'altre implicació (\(\Leftarrow\)).
+			Per l'observació \myref{obs:gradient ortogonal}, el subespai generat pels gradients \(\nabla v_{1}(x),\dots,\nabla v_{k}(x)\) és ortogonal a l'espai tangent \(T_{x}(M)\). Per tant, per a tot vector \(\vec{u}\) de \(T_{x}(M)\) tindrem \(D_{\vec{u}}f(x)=0\), el que significa que \(f(x)\) serà constant en \(M\), és a dir, \(f(x)=(k_{1},\dots,k_{m})\) per a tot \(x\in U\) tal que \(f(x)\in M\). Aleshores existeix una funció \(H\colon U\rightarrow M\) tal que
+			\[f(x)=H(v_{1}(x),\dots,v_{k}(x)).\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\subsection{Teorema de la funció inversa}
+	\begin{proposition}\label{prop:homeomorfisme a difeomorfisme}
+		Siguin \(U,V\subseteq\mathbb{R}^{d}\) dos oberts i \(f\colon U\leftrightarrow V\) un homeomorfisme diferenciable en un punt \(a\in U\), amb inversa \(g=f^{-1}\). Aleshores, \(g\) és diferenciable en \(f(a)\) si i només si la Jacobiana de \(f\) en \(a\) té determinant diferent de zero.
+		\begin{proof}
+			Demostrem la implicació cap a la dreta \((\Rightarrow)\). En un entorn de \(a\), \(f\) es comporta com un difeomorfisme per la definició de \myref{def:difeomorfisme}. Per tant, amb el coro{\lgem}ari \myref{corollary:difeomorfime determinant} queda demostrat.
+			
+			Demostrem ara l'altre implicació \((\Leftarrow)\). Denotem \(x=a+\vec{h}\), on \(\vec{h}\) és un vector de \(\mathbb{R}^{d}\). Per tant tenim, que amb un cert vector \(\vec{k}\) de \(\mathbb{R}^{d}\),
+			\[f(a+\vec{h})=f(a)+\vec{k},\]
+			i com que per la definició de \myref{def:homeomorfisme} \(f\) és un homeomorfisme  tenim que \(\vec{h}\to0\) si i només si \(\vec{k}\to0\). Per tant
+			\[\vec{k}=f(a+\vec{h})-f(a)\]
+			i per la definició de \myref{def:diferencial} quan \(\vec{k}\to0\)
+			\[\vec{k}=f(a+\vec{h})-f(a)=df(a)(\vec{h})+\omicron(\vec{h}).\]
+			Aplicant \(df(a)^{-1}\) als costats de la igualtat tenim
+			\[df(a)^{-1}(\vec{k})=df(a)^{-1}(df(a)(\vec{h})+\omicron(\vec{h})),\]
+			i com que \(df(a)^{-1}\) és lineal per la definició de \myref{def:diferencial} tenim que
+			\[df(a)^{-1}(\vec{k})=df(a)^{-1}(df(a)(\vec{h}))+df(a)^{-1}(\omicron(\vec{h})),\]
+			i aleshores
+			\[\vec{h}=df(a)^{-1}(\vec{k})-df(a)^{-1}(\omicron(\vec{h})),\]
+			que és equivalent a, amb \(b=f(a)\),
+			\[g(b+\vec{k})-g(b)=df(a)^{-1}(\vec{k})-df(a)^{-1}(\omicron(\vec{h})).\]
+			Ara en veure que \(df(a)^{-1}(\omicron(\vec{h}))\) és com \(\omicron(\vec{k})\) haurem acabat.
+			
+			Això ho podem veure fent
+			\[\norm{df(a)^{-1}(\vec{k})}+\norm{df(a)^{-1}(\omicron(\vec{h}))}\leq\norm{df(a)^{-1}}\norm{\vec{k}}+\norm{df(a)^{-1}}\norm{\omicron(\vec{h})}.\]
+			I per tant, quan \(\vec{h}\to0\) tenim \(\omicron(\vec{h})\to0\) i \(\vec{k}\to0\), i veiem que \(df(a)^{-1}(\omicron(\vec{h}))\) ha de ser com \(\omicron(\vec{k})\). %revisar merdes Landau
+		\end{proof}
+	\end{proposition}
+	\begin{lemma}\label{lemma:Funció inversa}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}^{d}\) una funció de classe \(\mathcal{C}^{1}\) amb diferencial de \(f\) en un punt \(a\in U\) de norma \(m\), \(df(a)\), invertible amb inversa \(df(a)^{-1}\). Aleshores existeix una bola tancada centrada en \(a\) de radi \(r>0\), \(\overline{\B}(a,r)\), que, per a tot \(x,y\in\overline{\B}(a,r)\) compleix
+		\begin{enumerate}
+			\item\label{enum:Funció inversa 1} \(\det(df(x))\neq0\)
+			\item\label{enum:Funció inversa 2} \(\norm{df(x)-df(a)}\leq\frac{m}{2}\)
+			\item\label{enum:Funció inversa 3} \(\frac{m}{2}\norm{x-y}\leq\norm{f(x)-f(y)}\leq\frac{3m}{2}\norm{x-y}\)
+		\end{enumerate}
+		\begin{proof}
+			Observem que el punt \eqref{enum:Funció inversa 1} és cert ja que si \(r\) és prou petita, per la proposició \myref{prop:Diferenciable implica contínua}, \(f\) és contínua.
+			
+			Per veure el punt \eqref{enum:Funció inversa 2} tenim que pel \myref{thm:Equivalència de normes} existeix \(C\in\mathbb{R}\) tal que
+			\[\norm{df(x)-df(a)}\leq C\sum_{i=1}^{n}\sum_{j=1}^{n}\abs{\frac{\partial f_{i}}{\partial x_{j}}(x)-\frac{\partial f_{i}}{\partial x_{j}}(a)},\]
+			i de nou, per a \(r\) prou petita, com que \(f\) és contínua, això és arbitràriament petit, i tenim \(\norm{df(x)-df(a)}\leq\frac{m}{2}\).
+			
+			Per tant, de moment tenim que, amb \(r\) prou petit, existeix una bola tancada \(\overline{\B}(a,r)\) que compleix els punts \eqref{enum:Funció inversa 1} i \eqref{enum:Funció inversa 2}; en veure que \(\mathit{2}\Rightarrow\mathit{3}\) haurem acabat aquesta part.
+			
+			Considerem l'aplicació \(\widehat{f}(x)=f(x)-df(a)(x)\) amb diferencial \(d\widehat{f}=d\widehat{f}(x)-d\widehat{f}(a)\). Per el punt \eqref{enum:Funció inversa 2} i el \myref{thm:TVM} tenim, per a \(x,y\in\overline{\B}(a,r)\), %revisar TVM multivariable?
+			\[\norm{f(x)-f(y)-df(a)(x-y)}=\norm{\widehat{f}(x)-\widehat{f}(y)}\leq\frac{m}{2}\norm{x-y}.\]
+			
+			Notem que, per a una funció \(T\) amb inversa \(T^{-1}\) per la definició de \myref{def:Norma d'una aplicació lineal} tenim que existeix \(K\in\mathbb{R}\) tal que
+			\[\norm{T(u)}\leq K\norm{u},\]
+			per tant
+			\[\norm{T^{-1}(u)}\leq K\norm{u}.\]
+			Amb això veiem que existeix una \(m\) tal que \(\norm{df(a)(x-y)}\leq m\norm{x-y}\), i aleshores
+			\begin{multline*}
+			\abs{\norm{f(x)-f(y)}-\norm{df(a)(x-y)}}\leq\norm{f(x)-f(y)-df(a)(x-y)}\leq\\\leq\frac{m}{2}\norm{x-y}\leq\frac{1}{2}\norm{df(a)(x-y)}.
+			\end{multline*}
+			amb el que obtenim
+			\[\frac{1}{2}\norm{df(a)(x-y)}\leq\norm{f(x)-f(y)}\leq\frac{3}{2}\norm{df(a)(x-y)},\]
+			i per tant
+			\[\frac{m}{2}\norm{x-y}\leq\norm{f(x)-f(y)}\leq\frac{3m}{2}\norm{x-y}.\qedhere\]
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}[Teorema de la funció inversa]
+		\labelname{Teorema de la funció inversa}\label{thm:Funció inversa}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}^{d}\) una funció de classe \(\mathcal{C}^{1}\) amb diferencial de \(f\) en un punt \(a\in U\), \(df(a)\), invertible. Aleshores existeix un obert \(W\subset U\) que conté \(a\) tal que, la restricció de \(f\) en \(W\) sigui un difeomorfisme.
+		\begin{proof}
+			Sigui \(df(a)^{-1}\) la inversa del diferencial de \(f\) en \(a\), \(df(a)\), i \(M=\frac{1}{m}=\norm{df(a)^{-1}}\) la seva norma. Per la definició de \myref{def:Norma d'una aplicació lineal} tenim que per a qualsevol vector \(\vec{u}\) de \(\mathbb{R}^{d}\),
+			\[\norm{df(a)(\vec{u})}\leq m\norm{\vec{u}}.\]
+			
+			Pel lemma \myref{lemma:Funció inversa} tenim que existeix una bola tancada centrada en \(a\) de radi \(r>0\), \(\overline{\B}(a,r)\), que, per a tot \(x,y\in\overline{\B}(a,r)\) compleix
+			\begin{enumerate}
+				\item\label{enum:thFunció inversa 1} \(\det(df(x))\neq0\)
+				\item\label{enum:thFunció inversa 2} \(\norm{df(x)-df(a)}\leq\frac{m}{2}\)
+				\item\label{enum:thFunció inversa 3} \(\frac{m}{2}\norm{x-y} \leq\norm{f(x)-f(y)}\leq\frac{3m}{2}\norm{x-y}\)
+			\end{enumerate}
+			
+			Considerem \(S\), la frontera de \(\overline{\B}(a,r)\), que és compacte. Per tant, el conjunt
+			\[S'=\{f(x)\mid\text{per a tot }x\in S\},\]
+			que és la imatge de \(S\) respecte \(f\) també és compacte i no conté \(f(a)\), ja que \(r>0\). Aleshores considerem
+			\[d=\inf_{x\in S'}\norm{f(a)-x}>0\]
+			com la distància mínima de la imatge de \(a\) respecte \(f\) al conjunt \(S'\), i definim la bola oberta centrada en \(f(a)\) de radi \(\frac{d}{2}\), \(\B\left(f(a),\tfrac{d}{2}\right)\), i així \(\norm{y-f(a)}<\norm{y-f(x)}\) per a tot \(x\in S\).
+			Ara considerem l'obert
+			\[W=\left\{x\in\overline{\B}(a,r)\mid f(x)\in\B\left(f(a),\tfrac{d}{2}\right)\right\}.\]
+			
+			Pel punt \eqref{enum:thFunció inversa 3} veiem que la restricció de \(f\) en \(\overline{\B}(a,r)\) és injectiva i, per tant, la restricció de \(f\) en \(W\) també és injectiva. Ara només ens queda veure que la restricció de \(f\) en \(W\) és exhaustiva i ja haurem acabat. Per a això hem de veure que per a tot \(p\in\B\left(f(a),\tfrac{d}{2}\right)\) existeix un \(q\in\overline{\B}(a,r)\) tal que \(f(q)=p\).
+			
+			Si entenem \(f\) com \(f(a)=(f_{1}(a),\dots,f_{d}(a))\) i un punt \(p\in\B\left(f(a),\tfrac{d}{2}\right)\) com \(p=(p_{1},\dots,p_{d})\), podem considerar la funció \(h\) tal que
+			\[h(x)=\norm{p-f(x)}=\sum_{i=1}^{d}(p_{i}-f_{i}(x))^{2}.\]
+			Aleshores \(h\) té un mínim absolut en el compacte \(\overline{\B}(a,r)\), que s'assoleix quan \(x=q\in\overline{\B}(a,r)\). Per tant, per la proposició \myref{prop:Identificació d'extrems relatius}, \(D_{j}h(q)=0\), per a tot \(j\in\{1,\dots,d\}\), que és equivalent a dir
+			\[\sum_{i=1}^{d}D_{j}f_{i}(p)(p_{i}-f_{i}(q))=0,\quad\forall j\in\{1,\dots,d\}.\]
+			
+			Així hem vist que la restricció de \(f\) en \(W\) és exhaustiva, i per tant bijectiva, i ja teníem que era contínua. Podem veure de nou pel punt \eqref{enum:thFunció inversa 3} del lema \myref{lemma:Funció inversa} que la seva inversa també és contínua. Amb tot això en tenim prou per dir que la restricció de \(f\) en \(W\) és un homeomorfisme diferenciable en un punt \(a\) però, com que, per hipòtesi, tenim \(\det(df(a))\neq0\), amb la proposició \myref{prop:homeomorfisme a difeomorfisme} queda demostrat el teorema.
+		\end{proof}
+	\end{theorem}
+	\begin{corollary} %revisar \mathbb{R}^{d}. El Bruna diu que va a \mathbb{R}
+		Una aplicació \(f\colon U\to \mathbb{R}^{d}\) de classe \(\mathcal{C}^{1}\) és un difeomorfisme si i només si \(f\) és injectiva i \(\det(df(a))\neq0\) per a tot \(x\in U\).
+	\end{corollary}
+	\begin{proposition}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(v_{1},\dots,v_{k}\in\mathcal{C}^{1}\) un sistema de \(k\) funcions escalars definides en \(U\). Aleshores, els seus gradients són linealment independents en un punt \(a\in U\) si i només si aquest sistema de \(k\) funcions escalars formen part d'un sistema de coordenades local en \(a\).
+		\begin{proof}
+			La matriu formada pels gradients de \(v_{1},\dots,v_{k}\) en \(a\) té un menor d'ordre \(k\) no nul. Per tant, podem expandir aquest sistema de \(k\) funcions amb \(d-k\) funcions escalars definides en \(U\) de classe \(\mathcal{C}^{1}\), \(v_{k+1}\dots,v_{d}\) amb gradients linealment independents en \(a\), i aquestes \(d\) funcions, \(v_{1},\dots,v_{d}\), formen un sistema de coordenades local en \(a\).
+		\end{proof}
+	\end{proposition}
+	\begin{corollary}\label{corollary:dependència funcional iff dependència lineal dels gradients}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(v_{1},\dots,v_{k}\in\mathcal{C}^{1}\) un sistema de \(k\) funcions escalars definides en \(U\). Aleshores una funció \(f\) definida en un entorn d'un punt \(a\) depèn funcionalment de \(v_{1},\dots,v_{k}\) en un entorn del punt \(a\) si i només si \(\nabla f(x)\) és combinació lineal de \(\nabla v_{1}(x),\dots,\nabla v_{k}(x)\) per a tot \(x\) en un entorn del punt \(a\).
+	\end{corollary}
+	\subsection{Teorema de la funció implícita}
+	\begin{notation}\label{notation:punts per grups}
+		Podem interpretar \(\mathbb{R}^{d}\) com \(\mathbb{R}^{d}=\mathbb{R}^{k}\times\mathbb{R}^{m}\), on \(d=k+m\). Per tant, denotarem un punt \(a=(a_{1},\dots,a_{d})\) de \(\mathbb{R}^{d}\) com \(a=(a';a'')\), on \(a'\) correspon a \((a_{1},\dots,a_{k})\) i \(a''\) a \((a_{k+1},\dots,a_{d})\).% No m'agrada aquesta notació :(
+		
+		També entenem que \(a'\in\mathbb{R}^{k}\) i \(a''\in\mathbb{R}^{m}\).
+	\end{notation}
+	\begin{theorem}[Teorema de la funció implícita]
+		\labelname{Teorema de la funció implícita}\label{thm:Funció implícita}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(a=(a';a'')\in U\) un punt, \(v_{1},\dots,v_{k}\in\mathcal{C}^{1}\) un sistema de \(k=d-m\) funcions escalars definides en \(U\) tals que \(v_{1}(a)=\dots=v_{k}(a)=0\) i els seus gradients en \(a\), \(\nabla v_{1}(a),\dots,\nabla v_{k}(a)\) són linealment independents i \(M\) un conjunt definit per \(M=\{x\in U\mid v_{1}(x)=\dots=v_{k}(x)=0\}\). Aleshores hi ha un obert \(W\subset\mathbb{R}^{d}\) que conté \(a\), un obert \(U''\subset\mathbb{R}^{m}\) que conté \(a''\) i una única funció \(h\colon U''\to\mathbb{R}^{k}\) tal que
+		\begin{align*}
+		M&=\{x\in U\mid v_{1}(x)=\dots=v_{k}(x)=0\}=\\
+		&=\{x=(x';x'')\in W\mid x'=h(x''),x''\in U''\}.
+		\end{align*}
+		\begin{proof}% FER demostrar unicitat lol
+			Per començar definirem un obert \(W\subseteq\mathbb{R}^{d}\), un obert \(V\subseteq\mathbb{R}^{d}\) tal que \((0,\dots,0)\in V\) i un difeomorfisme \(\Phi\) tals que
+			\begin{align*}
+			\Phi\colon W&\longleftrightarrow V\\
+			x=(x_{1},\dots,x_{d})&\longmapsto(v_{1}(x),\dots,v_{k}(x),x_{k+1},\dots,x_{d}),
+			\end{align*}
+			així \((v_{1}(x),\dots,v_{k}(x),x_{k+1},\dots,x_{d})\) forma un sistema de coordenades en \(W\).
+			
+			Observem que podem considerar \(a=(0,\dots,0)\) ja que si \((v_{1}(a),\dots,v_{k}(a))=(c_{1},\dots,c_{k})\) podem treballar amb les funcions \(v'_{1}(x)=v_{1}(x)-c_{1},\dots,v'_{k}(x)=v_{k}(x)-c_{k}\) que compleixen \(v'_{1}(a)=\dots=v'_{k}(a)=0\).
+			
+			Com que \(\Phi\) és un difeomorfisme, per la definició de \myref{def:difeomorfisme} és bijectiva, prenem la seva inversa
+			\begin{align*}
+			\Phi^{-1}\colon V&\longleftrightarrow W\\
+			y=(y_{1},\dots,y_{d})&\longmapsto(u_{1}(y),\dots,u_{k}(y),y_{k+1},\dots,y_{d}),
+			\end{align*}
+			i, de nou, com que \(\Phi\) és un difeomorfisme per la definició de \myref{def:difeomorfisme} tenim que \(u_{1},\dots,u_{k}\in\mathcal{C}^{1}\).
+			
+			Aleshores, per a tot \(x\in M\) tenim \(\Phi(x)=(0';x'')\). Definim un conjunt
+			\[U''=\{y''\in\mathbb{R}^{m}\mid(0;y'')\in V\},\]
+			i com que \(\Phi\) és una bijecció, ja que és un difeomorfisme, tenim
+			\[U''=\{x''\in\mathbb{R}^{m}\mid\text{Existeix }x'\in\mathbb{R}^{k}\text{ tal que }(x';x'')\in M\cap W\}.\]
+			Aleshores \(U''\) és un obert de \(\mathbb{R}^{d}\) i %explicar quan ho entengui
+			\[M=\{(x';x'')\in W\mid(u_{1}(0;x''),\dots,u_{k}(0;x'');y'')\text{ amb }y''\in U''\},\] %falta un detall
+			i la funció que volíem demostrar que existeix és
+			\[h(x'')=(u_{1}(0;x''),\dots,u_{k}(0;x'')).\qedhere\]
+		\end{proof}
+	\end{theorem}
+	\section{Extrems relatius}
+	\subsection{El mètode de multiplicadors de Lagrange} %Si hi ha ganes, adaptar les demos d'aquest link a múltiples variables https://ocw.mit.edu/courses/mathematics/18-02sc-multivariable-calculus-fall-2010/2.-partial-derivatives/part-c-lagrange-multipliers-and-constrained-differentials/session-40-proof-of-lagrange-multipliers/MIT18_02SC_notes_22.pdf
+	\begin{theorem}[Multiplicadors de Lagrange]
+		\labelname{Teorema dels multiplicadors de Lagrange}\label{thm:Multiplicadors de Lagrange}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(S\) un conjunt definit per
+		\[S=\{x\in U\mid g(x)=(g_{1}(x),\dots,g_{k}(x))=0\},\]
+		on \(g_{1},\dots,g_{k}\) són \(k<d\) funcions escalars definides en \(U\) de classe \(\mathcal{C}^{1}\).
+		
+		Considerem la funció escalar \(f\colon S\to\mathbb{R}\) tal que \(a\in S\) sigui un màxim o un mínim relatiu de \(f\) en \(S\) i les funcions \(g_{1},\dots,g_{k}\) siguin funcionalment independents en \(a\). Aleshores existeixen \(\lambda_{1},\dots,\lambda_{k}\) reals tals que
+		\[D_{i}f(a)+\sum_{j=1}^{k}\lambda_{j}D_{i}g_{j}(a)=0,\quad\forall i\in\{1,\dots,d\}.\]
+		\begin{proof}
+			Siguin \(\lambda_{1},\dots,\lambda_{k}\), aleshores considerem el següent sistema d'equacions lineals
+			\begin{equation}\label{eq:4}
+			\sum_{j=1}^{k}\lambda_{j}D_{i}g_{j}(a)=-D_{i}f(a)\quad\forall i\in\{1,\dots,k\}
+			\end{equation}
+			Com que \(g_{1},\dots,g_{k}\) són funcionalment independents en \(a\), la matriu formada pels gradients de \(g_{1},\dots,g_{k}\) en \(a\) té rang \(k\) (proposició \myref{prop:dependència funcional 4 punts}) el sistema d'equacions lineals \eqref{eq:4} té una única solució. Ara només ens cal veure que aquests mateixos reals \(\lambda_{1},\dots,\lambda_{k}\) també són solució de les \(m=d-k\) equacions restants.
+			
+			Per fer això ens caldrà el \myref{thm:Funció implícita}. Com que \(k<d\), amb la notació introduïda a \myref{notation:punts per grups}, denotem el punt \(a\) amb \(a=(a';a'')\), on \(a'=(a_{1},\dots,a_{k})\) i \(a''=(a_{k+1},\dots,a_{d})\) i entenem \(a'\in\mathbb{R}^{k},a''\in\mathbb{R}^{m}\). Aleshores definim una funció \(g(x)=(g_{1}(x),\dots,g_{k}(x))\), que compleix \(g(a',a'')=0\) i \(g\in\mathcal{C}^{1}\). Això, junt amb que per hipòtesi les funcions \(v_{1},\dots,v_{k}\) són funcionalment independents en \(a\) i, per la proposició \myref{prop:dependència funcional 4 punts}, la matriu
+			\[\left[\begin{matrix}
+			D_{1}g_{1}(a) & \cdots & D_{k}g_{1}(a)\\
+			\vdots & & \vdots\\
+			D_{1}g_{k}(a) & \cdots & D_{k}g_{k}(a)\\
+			\end{matrix}\right]\]
+			té determinant diferent de zero, complim les condicions del \myref{thm:Funció implícita} i l'apliquem. Per tant, existeix un obert \(U''\subset\mathbb{R}^{m}\) que conté \(a''\) i una única funció \(h\colon U''\to\mathbb{R}^{k}\), \(h\in\mathcal{C}^{1}\) amb  \(h(x)=(h_{1}(x),\dots,h_{k}(x))\), tal que \(h(a'')=a'\) i que per a tot \(y''\in U''\) compleix \(g(h(y'');y'')=0\). Això significa que el sistema d'equacions
+			\[g_{i}(x_{1},\dots,x_{d})=0,\quad\text{per a tot }i\in\{1,\dots,d\},\]
+			té una única solució de la forma \(a'=h(a'')\), per tant definim les funcions, definides en \(U''\),
+			\[F(y'')=f(h(y'');y'')\]
+			i, per a tot \(i\in\{1,\dots,k\}\)
+			\[G_{i}(y'')=g_{i}(h(y'');y'').\]
+			Degut a que \(G_{1}=\dots=G_{k}=0\), les seves derivades també són \(0\).
+		\end{proof}
+	\end{theorem}
+	\subsection{Teorema del rang constant} No fer molt cas d'aquesta part. La faré bé quan sàpiga geometria diferencial. La part important d'aquí és l'últim coro{\lgem}ari que ens diu que els difeomorfismes ``conserven'' els punts crítics.
+	\begin{definition}[Subvarietat regular]
+		\labelname{subvarietat regular}\label{def:subvarietat regular}
+		Sigui \(U\subseteq\mathbb{R}^{d}\) un obert i \(M\subseteq U\) un conjunt. Direm que \(M\) és una subvarietat regular de dimensió \(m\) si per a tot punt \(p\in M\) existeix una bola centrada en \(p\) de radi \(r>0\), \(\B(p,r)\subseteq U\), i \(k=d-m\) funcions escalars, \(v_{1},\dots,v_{k}\in\mathcal{C}^{1}\), definides en \(U\) amb gradients linealment independents tals que
+		\[M\cap\B(p,r)=\{x\in\B(p,r)\mid v_{1}(x)=\dots=v_{k}(x)=0\}.\]
+	\end{definition}
+	\begin{proposition}\label{prop:definicions subvarietat equivalents}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(M\subseteq U\) una subvarietat regular de dimensió \(m\) de \(\mathbb{R}^{d}\). Aleshores, les afirmacions següents són equivalents:
+		\begin{enumerate}
+			\item Per a tot punt \(p\in M\) existeix una bola centrada en \(p\) de radi \(r>0\), \(\B(p,r)\subseteq U\), i \(k=d-m\) funcions escalars, \(v_{1},\dots,v_{k}\in\mathcal{C}^{1}\), definides en \(U\) amb gradients linealment independents tals que
+			\[M\cap\B(p,r)=\{x\in\B(p,r)\mid v_{1}(x)=\dots=v_{k}(x)=0\}.\]
+			\item Per a tot punt \(p\in M\) existeix un obert \(V\subseteq U\) que conté \(p\) i un sistema de coordenades \(u_{1},\dots,u_{d}\) definit en \(V\) tal que
+			\[M\cap V=\{x\in V\mid u_{k+1}(x)=\dots=u_{d}(x)=0\}.\]
+			\item Per a tot punt \(p\in M\) existeixen un obert \(B\subseteq U\) que conté \(p\), un obert \(W\subseteq\mathbb{R}^{m}\) i un homeomorfisme \(\Phi\colon W\to M\cap B\).
+		\end{enumerate}
+		\begin{proof}
+			no %mirar fotos de classe i apunts d'en Reventós
+		\end{proof}
+	\end{proposition}
+	\begin{theorem}[Teorema del rang constant]
+		\labelname{Teorema del rang constant}\label{thm:Teorema del rang constant}
+		Sigui \(U\subseteq\mathbb{R}^{m}\) un obert i \(H\colon U\to\mathbb{R}^{d}\) una funció de classe \(\mathcal{C}^{1}\), amb \(\rang(dH(t))=n\) per a tot \(t\in U\).
+		Aleshores el conjunt
+		\[\{y\in\mathbb{R}^{d}\mid y=H(x)\text{ per algun }x\in U\}\]
+		és una subvarietat de dimensió \(n\).
+		\begin{proof}
+			Considerem \(H(x)=(h_{1}(x),\dots,h_{d}(x))\) i fixem un punt \(a\in U\) on es compleixin les condicions de la hipòtesi. Per la proposició \myref{prop:dependència funcional 4 punts}, hi haurà \(n\) components de \(H\) tals que els seus gradients siguin linealment independents en \(a\). Existeix una permutació \(\sigma\in S_{d}\) tal que aquestes \(n\) components de \(H\) siguin \(h_{\sigma(1)}\dots,h_{\sigma(n)}\).
+			
+			Per continuïtat, els gradients \(\nabla h_{\sigma(1)}(x),\dots,\nabla h_{\sigma(n)}(x)\) són linealment independents per a tot \(x\) en un entorn obert de \(a\), que denotarem per \(V\subset U\). Per tant, podem expandir-les a un sistema de coordenades de \(V\), \(v_{1},\dots,v_{m}\), on \(v_{i}=h_{\sigma(i)},\ \forall i\in\{1,\dots,n\}\). Com que \(\rang(dH(t))=n\) per a tot \(t\in V\), per la proposició \myref{prop:dependència funcional 4 punts}, els gradients \(\nabla h_{\sigma(n+1)},\dots,\nabla h_{\sigma(d)}\) depenen linealment dels gradients \(\nabla v_{1},\dots,\nabla v_{n}\) en \(V\), per tant, pel coro{\lgem}ari \myref{corollary:dependència funcional iff dependència lineal dels gradients}, per a cada \(i\in\{n+1,\dots,d\}\), existeix una funció \(\varphi_{i}\) que compleix \(h_{\sigma(i)}(x)=\varphi_{i}(v_{1}(x),\dots,v_{n}(x))\) i per tant, si denotem \(v(x)=(v_{1}(x),\dots,v_{n}(x))\),
+			\begin{align*}
+			H(x)&=G(v_{1}(x),\dots,v_{n}(x))\\
+			&=(v_{1}(x),\dots,v_{n}(x),\varphi_{n+1}(v(x)),\dots,\varphi_{d}(v(x)))
+			\end{align*}
+			i es compleix la definició de \myref{def:subvarietat regular} per la proposició \myref{prop:definicions subvarietat equivalents}, ja que, per la definició de \myref{def:homeomorfisme}, \(G\) és un homeomorfisme definit en \(V\). %revisar que potser no vaig entendre bé (pensava que era varietat, no subvarietat regular)
+		\end{proof}
+	\end{theorem}
+	\begin{proposition}
+		Siguin \(U,V\subseteq\mathbb{R}^{d}\) dos oberts, \(\Phi\colon U\longleftrightarrow V\) un difeomorfisme de classe \(\mathcal{C}^{1}\) i \(M\subseteq U\) una varietat regular de dimensió \(m\) de \(U\). Aleshores la imatge de \(M\) per \(\Phi\) és una subvarietat regular de dimensió \(m\) de \(V\). % fer
+		\begin{proof}[Demostració. No fer-ne molt cas]
+			Per la definició de \myref{def:varietat regular o diferenciable}, per a cada punt \(p\in M\) existeixen \(k=d-m\) equacions escalars, \(v_{1},\dots,v_{k}\) definides en \(U\) amb gradients linealment independents i una bola de radi \(r>0\) centrada en \(p\), \(\B(p,r)\), tals que
+			\[M\cap\B(p,r)=\{x\in\B(p,r)\mid v_{1}(x)=\dots=v_{k}(x)=0\}.\]
+			
+			Aleshores definim, per a tot \(j\in\{1,\dots,k\}\), \(u_{j}(x)=\Phi^{-1}(v_{j}(x))\). Aleshores tenim que si la imatge de \(M\) per \(\Phi\) és \(N\subset V\), per a tot punt \(q\in N\) hi ha una bola de radi \(r>0\), \(\B(q,r)\), tal que
+			\[N\cap\B(q,r)=\{y\in\B(q,r)\mid u_{1}(x)=\dots=u_{k}(x)=0\},\]
+			i tenim que \(u_{1},\dots,u_{d}\) tenen gradients linealment independents, ja que, per \myref{thm:regla de la cadena}, \(\nabla v_{j}(x)=(d\Phi(x))^{t}(\nabla u_{j}(\Phi(x)))\), i com que \(\Phi\) defineix un sistema de coordenades, per la proposició \myref{prop:dependència funcional 4 punts} els gradients de \(u_{1},\dots,u_{d}\) són linealment independents, i això compleix la definició de \myref{def:subvarietat regular}. %revisar
+		\end{proof}
+	\end{proposition}
+	\begin{corollary}
+		\(d\Phi(a)(T_{a}(M))=T_{\Phi(a)}(\Phi(M))\).
+	\end{corollary}
+	\subsection{Derivades d'ordre superior}
+	Fixem-nos en que en derivar una funció \(f\) obtenim una altre funció, i que aquesta, sota certes condicions, és derivable. En aquest capítol estudiarem algunes de les propietats d'aquest fet.
+	\begin{definition}[\(n\)-èsima derivada d'una funció]
+		\labelname{$n$-èsima derivada d'una funció}\label{def:n-èsima derivada d'una funció}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(\vec{v}_{1},\dots,\vec{v}_{n}\) \(n\) vectors de \(\mathbb{R}^{d}\) (no necessàriament diferents) i \(f\colon U\to\mathbb{R}^{m}\) una funció diferenciable en un punt \(a\in U\). Si \(\frac{\partial f}{\partial \vec{v}_{1}}\) és diferenciable en \(a\) i prenem la seva derivada respecte \(\vec{v}_{2}\) diem que
+		\[d^{2}f(a)(\vec{v}_{2},\vec{v}_{1})=\frac{\partial}{\partial \vec{v}_{2}}\left(\frac{\partial f}{\partial \vec{v}_{1}}\right)(a)=\frac{\partial^{2}f}{\partial \vec{v}_{2}\partial \vec{v}_{1}}(a)=D_{\vec{v}_{2},\vec{v}_{1}}f=D_{\vec{v}_{2}}(D_{\vec{v}_{1}}f)(a)\]
+		és la derivada de segon ordre de \(f\) o la segona derivada de \(f\).
+		
+		Si la segona derivada de \(f\) també és derivable podem parlar de la tercera derivada de \(f\), que és la segona derivada de \(\frac{\partial f}{\partial \vec{v}_{1}}\). Si iterem la suposició podem definir la \(n\)-èsima derivada de \(f\) o una derivada d'ordre \(n\) de \(f\). També direm que \(f\) és \(n\)-vegades diferenciable en \(a\). Ho denotarem amb
+		\[d^{n}f(a)(\vec{v}_{n}\dots\vec{v}_{1})=\frac{\partial^{n}f}{\partial \vec{v}_{n}\cdots\partial\vec{v}_{1}}=D_{\vec{v}_{n},\dots,\vec{v}_{1}}f(a).\]
+	\end{definition}
+	\begin{theorem}Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}^{d}\) una funció \(2\)-vegades diferenciable en \(a\in U\), aleshores
+		\[D_{\vec{v},\vec{u}}f(a)=D_{\vec{u},\vec{v}}f(a).\]
+		\begin{proof}
+			Notem que podem dir \(f(x)=(f_{1}(x),\dots,f_{m}(x))\), on \(f_{1},\dots,f_{m}\) són funcions escalars definides en \(U\), i per la proposició \myref{prop:diferenciable iff components diferenciables} només cal que fem la demostració pel cas \(m=1\), ja que implicarà el general. També observem que podem donar un canvi de variables on els vectors \(\vec{v},\vec{u}\) siguin els nous eixos de coordenades, \(\vec{e}_{1},\vec{e}_{2}\) respectivament. En aquesta base tindríem que volem demostrar \(D_{1,2}f(a)=D_{2,1}f(a)\), i com que això només afecta a una component del punt, podem considerar \(d=2\), i la demostració serà suficient per veure cas general. Per tant, ho demostrem per \(m=1,d=2\). Aprofitant el canvi de coordenades també suposarem \(a=(0,0)\). Per tant, només hem de demostrar que \(D_{2,1}f(0,0)=D_{1,2}f(0,0)\).
+			
+			Considerem, amb un escalar \(h>0\), la següent diferencia:
+			\begin{equation}\label{eq:Derivades direccionals commuten}
+			Q(h)=f(h,h)-f(h,0)-(f(0,h)-f(0,0))
+			\end{equation}
+			Si fem \(A(t)=f(t,h)-f(t,0)\) tenim \(Q(h)=A(h)-A(0)\), i pel \myref{thm:TVM} existeix un escalar \(0<\xi<h\) tal que
+			\begin{equation}\label{eq:5}
+			A(h)-A(0)=hA'(\xi)=h(D_{1}f(\xi,h)-D_{1}f(\xi,0))
+			\end{equation}
+			i com que, per hipòtesi, \(D_{1}f\) és diferenciable en \((0,0)\), per l'observació \myref{obs:diferencial defineix espai tangent} podem escriure,
+			\[D_{1}f(x,y)=D_{1}f(0,0)+xD_{1,1}f(0,0)+yD_{2,1}f(0,0)+\omicron(\norm{x,y}).\]
+			Ho apliquem a \eqref{eq:5} i obtenim
+			\begin{multline*}
+			hA'(c)=h\big(D_{1}f(0,0)+\xi D_{1,1}f(0,0)+\\+hD_{2,1}f(0,0)-D_{1}f(0,0)-\xi D_{1,1}f(0,0)+\omicron(h)\big)
+			\end{multline*}
+			simplifiquem, i per la definició de \(Q(h)\), \eqref{eq:Derivades direccionals commuten},
+			\[hA'(c)=h^{2}D_{2,1}f(0,0)+\omicron(h^{2})=Q(h).\]
+			i tenim
+			\[\lim_{h\to0}\frac{Q(h)}{h^{2}}=D_{2,1}f(0.0).\]
+			Repetint el mateix argument amb
+			\[Q(h)=f(h,h)-f(0,h)-(f(h,0)-f(0,0))\]
+			obtenim
+			\[\lim_{h\to0}\frac{Q(h)}{h^{2}}=D_{1,2}f(0,0),\]
+			i per tant
+			\[D_{2,1}f(0,0)=D_{1,2}f(0,0).\qedhere\]
+		\end{proof}
+		\begin{note}
+			Sospito que una demostració ``més general'' seria similar a la del \myref{thm:Condició suficient per diferenciable}, per si algun valent no ha quedat satisfet.
+		\end{note}
+	\end{theorem}
+	\begin{corollary}\label{obs:diferencial bilineal}
+		\(d^{2}f(a)\) és una aplicació bilineal simètrica. %\myref?
+		De fet, si generalitzem la proposició iterant-la, tenim que \(d^{n}f(a)\) és una aplicació \(n\)-lineal simètrica.
+	\end{corollary}
+	\subsection{Fórmula de Taylor en múltiples variables}
+	Aquesta secció la farem considerant només funcions escalars (amb \(m=1\) en la notació que hem estat utilitzant). En el cas de voler fer el desenvolupament de Taylor d'una funció \(f\) amb \(m>1\) només pensar \(f\) com un vector de \(m\) funcions escalars, \(f(x)=(f_{1}(x),\dots,f_{m}(x))\), i per tant el problema queda reduït a calcular \(m\) desenvolupaments de Taylor (donat que es satisfacin certes condicions que estudiarem més endavant) i posar-los en forma de vector.
+	\begin{notation}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(f\colon U\to\mathbb{R}\) una funció \(n\)-vegades diferenciable en un punt \(a\in U\) i un altre punt de \(U\), \(t=(t_{1},\dots,t_{d})\). Introduïm la següent notació:
+		\[f^{(k)}[a,t]=\sum_{i_{k}=1}^{d}\dots\sum_{i_{1}=1}^{d}D_{i_{k},\dots,i_{1}}f(a)t_{i_{1}}\dots t_{i_{k}}.\]
+	\end{notation}
+	\begin{theorem}[Fórmula de Taylor en múltiples variables]
+		\labelname{Teorema de la fórmula de Taylor en múltiples variables}\label{thm:Formula de Taylor multivariable}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(f\colon U\to\mathbb{R}\) una funció \(n\)-vegades diferenciable en un punt \(a\in U\) i \(b\in U\) un altre punt. Aleshores existeix un punt \(z\in U\) tal que, per a algun \(0<\xi<1\), \(z=a+(b-\xi a)\) (això és que el punt \(z\) es troba en el segment que uneix els punts \(a\) i \(b\)) tal que
+		\[f(b)-f(a)=\sum_{k=1}^{n-1}\frac{1}{k!}f^{(k)}[a,b-a]+\frac{1}{n}f^{(n)}[z,b-a].\]
+		\begin{proof}
+			Com que, per hipòtesi, \(U\) és obert, per la definició de \myref{def:obert} sabem que existeix un \(\varepsilon>0\) tal que, per a tot \(-\varepsilon<t<1+\varepsilon\), tenim que \(a+t(b-a)\in S\). Per tant, definim una funció \(g\) com
+			\begin{align*}
+			g\colon(-\varepsilon,1+\varepsilon)&\to\mathbb{R}\\
+			t&\mapsto f(a+t(b-a))
+			\end{align*}
+			Aleshores \(f(b)-f(a)=g(1)-g(0)\). Aleshores, amb \(\xi\in(0,1)\), pel \myref{thm:Teorema de Taylor} tenim
+			\begin{equation}\label{eq:6}
+			g(1)-g(0)=\sum_{k=1}^{n-1}\frac{1}{k!}g^{(k)}(0)+\frac{1}{m!}g^{(n)}(\xi).
+			\end{equation}
+			Si pensem, amb \(h(\xi)=a+\xi(b-a)\), que \(g(\xi)=f(p(\xi))\), ha de ser \(p(\xi)=(p_{1}(\xi),\dots,p_{d}(\xi))\), i si denotem \(a=(a_{1},\dots,a_{d}),b=(b_{1},\dots,b_{d})\), tenim, amb \(i\in\{1,\dots,d\}\), que \(\frac{\partial p}{\partial x_{i}}(\xi)=b_{i}-a_{i}\). Aplicant er \myref{thm:regla de la cadena} veiem que \(g'\) està definida en \((-\varepsilon,1+\varepsilon)\) i
+			\[g'(\xi)=\sum_{i=1}^{d}D_{i}f(p(\xi))(b_{i}-a_{i})=f^{(1)}[p(\xi),b-a],\]
+			i aplicant la regla de la cadena una segona vegada,
+			\[g''(\xi)=\sum_{j=1}^{d}\sum_{i=1}^{d}D_{j,i}f(p(\xi))(b_{i}-a_{i})(b_{j}-a_{j})=f^{(2)}[p(\xi),b-a].\]
+			Si ho iterem \(n\) vegades obtindrem que
+			\[g^{(n)}(t)=f^{(n)}[p(\xi),b-a],\]
+			i per tant, recordant \eqref{eq:6}, tenim
+			\[f(b)-f(a)=\sum_{k=1}^{n-1}\frac{1}{k!}f^{(k)}[a,b-a]+\frac{1}{n}f^{(n)}[z,b-a]\]
+			amb \(z=p(\xi)\).
+		\end{proof}
+	\end{theorem}
+	\subsection{Extrems lliures}\label{sec:Classificar extrems lliures}
+	En aquest apartat utilitzarem el que vam veure a l'observació \myref{obs:diferencial bilineal} per classificar els extrems lliures d'una funció.
+	
+	Això ens servirà per a classificar els punts crítics d'una funció escalar en un conjunt del seu domini, excloent-ne la frontera. Per exemple, en el cas d'utilitzar el \myref{thm:Multiplicadors de Lagrange} per obtenir un conjunt de punts crítics en el domini restringit de la funció. Més tard veurem com classificar els que es troben a la frontera.
+	\begin{proposition}\label{prop:criteris de la segona diferencial sobre maxims i minims relatius}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}\) una funció \(2\)-vegades diferenciable en un punt \(a\in U\) amb segones derivades contínues, i \(a\) és un punt crític de \(f\). Aleshores
+		\begin{enumerate}
+			\item\label{enum:criteris de la segona diferencial sobre maxims i minims relatius 1} \(d^{2}f(a)\) és definida estrictament positiva \(\Rightarrow\)  \(a\) és un mínim relatiu.
+			\item\label{enum:criteris de la segona diferencial sobre maxims i minims relatius 2} \(d^{2}f(a)\) és definida estrictament negativa \(\Rightarrow\)  \(a\) és un màxim relatiu.
+			\item\label{enum:criteris de la segona diferencial sobre maxims i minims relatius 3} \(d^{2}f(a)\) és definida positiva \(\Leftarrow\)  \(a\) és un mínim relatiu.
+			\item\label{enum:criteris de la segona diferencial sobre maxims i minims relatius 4} \(d^{2}f(a)\) és definida negativa \(\Leftarrow\)  \(a\) és un màxim relatiu.
+		\end{enumerate}
+		\begin{proof}
+			Comencem demostrant dels punts \eqref{enum:criteris de la segona diferencial sobre maxims i minims relatius 1} i \eqref{enum:criteris de la segona diferencial sobre maxims i minims relatius 2}, que són demostracions anàlogues. Suposem que \(d^{2}f(a)\) és definida positiva, i considerem el punt \(t\in U\), \(t=(t_{1},\dots,t_{d})\) i la funció
+			\[Q(t)=\tfrac{1}{2}f^{(2)}[a,t]=\sum_{j=0}^{d}\sum_{i=0}^{d}D_{j,i}f(a)t_{i}t_{j}.\]
+			Per hipòtesi, \(Q\) és contínua per a tot punt \(t\in U\). També tenim, per la definició de \myref{def:n-èsima derivada d'una funció}, que \(Q(t)\) és definida positiva per a tot \(t\neq(0,\dots,0)\).
+			
+			Definim ara la bola tancada de radi \(1\) centrada en \(a\), \(\overline{\B}(a,1)\subset U\) i la seva frontera, \(S=\Fr(\overline{\B}(a,1))\). Com que \(S\) és compacte, pel \myref{thm:Weierstrass màxims i mínims múltiples variables}  \(Q\) té un mínim relatiu en \(S\), suposem que en aquest punt \(Q\) val \(m\). Com que \(Q\) és definida estrictament positiva per a tot punt de \(S\), \(m>0\).
+			
+			Sabent que \(Q\) és una forma bilineal simètrica, tenim que, per a tot \(c\in\mathbb{R}\), \(Q(ct)=c^{2}Q(t)\). Si considerem \(c=\frac{1}{\norm{t}}\), per a \(t\neq(0,\dots,0)\), tenim que \(ct\in S\), i per tant \(Q(ct)\geq m\), el que significa \(Q(t)\geq m\norm{t} ^{2}\).
+			
+			Pel \myref{thm:Formula de Taylor multivariable} i la definició de \myref{def:gradient} tenim
+			\[f(a+t)-f(a)=\langle\nabla f(a),t\rangle+\tfrac{1}{2}f^{(2)}[z,t],\]
+			per a algun \(z=a+t+(a-\xi(a+t))\), amb \(0<\xi<1\). Però com que \(a\) és un punt crític de \(f\) (observació \myref{obs:extrem relatiu és punt crític}), tenim \(\nabla f(a)=0\), i per tant
+			\[f(a+t)-f(a)=\tfrac{1}{2}f^{(2)}[z,t],\]
+			i si escrivim \(\norm{t^{2}}\omicron(t)=\frac{1}{2}f^{(2)}[z,t]-\frac{1}{2}f^{(2)}[a,t]\) tenim
+			\[f(a+t)-f(a)=\tfrac{1}{2}f^{(2)}[a,t]+\norm{t^{2}}\omicron(t).\]
+			Per tant
+			\begin{equation}\label{eq:7}
+			f(a+t)-f(a)=Q(t)+\norm{t}^{2}\omicron(t)\geq m\norm{t}^{2}+\norm{t}^{2}\omicron(t).
+			\end{equation}
+			Com que \(\omicron(t)\to0\) és si i només si \(t\to0\), existeix un \(\varepsilon>0\) tal que, amb \(0<\norm{t}<\varepsilon\) tenim \(\omicron(t)<\frac{m}{2}\), i \(0\leq\norm{t}^{2}\omicron(t)<\frac{m}{2}\norm{t}^{2}\), i així
+			\[f(a+t)-f(a)>m\norm{t}^{2}-\frac{m}{2}\norm{t}^{2}=\frac{m}{2}\norm{t}^{2}>0,\]
+			i, com que això no depèn de \(t\), per la definició de \myref{def:extrems relatius} tenim que \(a\) és un mínim relatiu.
+			Ara només ens queda demostrar \eqref{enum:criteris de la segona diferencial sobre maxims i minims relatius 3} i \eqref{enum:criteris de la segona diferencial sobre maxims i minims relatius 4}, de nou, només ens caldrà demostrar-ne una, ja que l'altre demostració serà anàloga. Suposem doncs que \(a\) és un mínim relatiu.
+			
+			Seguint l'argument sobre la fórmula de Taylor per a múltiples variables que hem fet a la primera meitat d'aquesta demostració arribem a la desigualtat \eqref{eq:7} i tenim
+			\[f(a+t)-f(a)\leq m\norm{t}^{2}+\norm{t}^{2}\omicron(t).\]
+			Aleshores
+			\[\frac{f(a+t)-f(a)}{\norm{t}^{2}}\leq m+\omicron(t).\]
+			Per la definició de \myref{def:extrems relatius} tenim \(f(a+t)-f(a)\geq0\), i per tant, quan \(t\to0\), aleshores \(\omicron(t)\to0\) i
+			\[0\leq\frac{f(a+t)-f(a)}{\norm{t}^{2}}\leq m,\]
+			i ja hem acabat.
+		\end{proof}
+	\end{proposition}
+	%	\subsection{Extrems condicionats}\label{sec:Classificar extrems condicionats}		Aquesta secció ens servirà per classificar els punts crítics que trobem en la frontera d'una restricció d'una funció, tal com vam explicar a l'apartat \myref{sec:Classificar extrems lliures}.
+	\chapter{Càlcul integral}
+	\section{La integral Riemann}
+	\subsection{Funcions integrables Riemann}
+	\begin{definition}[Rectangle]
+		\labelname{rectangle}\label{def:Rectangle}
+		Siguin \([a_{1},b_{1}],\dots,[a_{d},b_{d}]\subset\mathbb{R}\) \(d\) intervals tancats. Direm que \(\mathfrak{R}=[a_{1},b_{1}]\times\dots\times[a_{d},b_{d}]\) és un rectangle de \(\mathbb{R}^{d}\).
+	\end{definition}
+	\begin{definition}[Partició d'un rectangle i finor d'una partició]
+		\labelname{partició d'un rectangle}\label{def:Partició d'un rectangle}
+		\labelname{finor d'una partició}\label{def:finor d'una partició}
+		Siguin \(\mathfrak{R}=[a_{1},b_{1}]\times\dots\times[a_{d},b_{d}]\) un rectangle de \(\mathbb{R}^{d}\) i \(P_{i}\) una partició de \([a_{i},b_{i}]\) per a tot \(i\in\{1,\dots,d\}\). Aleshores \(P=P_{1}\times\dots\times P_{d}\) és una partició de \(\mathfrak{R}\).
+		
+		Si \(P_{i}=\{t_{i,0},\dots,t_{i,n}\}\), amb \(a_{i}=t_{i,0}<\dots<t_{i,n}=b_{i}\), direm que els rectangles definits per \([t_{1,i_{1}},t_{1,i_{1}+1}]\times\dots\times[t_{d,i_{d}},t_{d,i_{d}+1}]\subset \mathfrak{R}\), amb \(0\leq i_{j}\leq d-1\) per a tot \(j\in\{1,\dots,d\}\), són subrectangles de \(\mathfrak{R}\).
+		
+		Sigui \(Q\) una altre partició de \(\mathfrak{R}\). Direm que \(Q\) és més fina que \(P\) si \(P\subset Q\).
+	\end{definition}
+	\begin{definition}[Suma superior i inferior]
+		\labelname{suma superior i inferior}\label{def:Suma superior i inferior}
+		Sigui \(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle, \(P\) una partició i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada. Per a cada subrectangle de \(\mathfrak{R}\), \(\mathfrak{R}_{i}\), amb \(i\in I\), on \(I\) és el conjunt d'índexs que denoten els subrectangles de \(\mathfrak{R}\) definits per \(P\), definim la suma superior de \(f\) per \(P\) com
+		\[\Ssup(f,P)=\sum_{i\in I}\sup_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}},\]
+		i la suma inferior de \(f\) per \(P\) com
+		\[\sinf(f,P)=\sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}.\]
+	\end{definition}
+	\begin{proposition}
+		\label{prop:finor, desigualtats i sumes}\label{prop:Particions supremes > ínfimes}
+		Siguin \(P,Q\) dues particions d'un rectangle \(\mathfrak{R}\subset\mathbb{R}^{d}\) i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada. Aleshores, si \(Q\) és més fina que \(P\)
+		\[\sinf(f,P)\leq\sinf(f,Q)\quad\text{i}\quad\Ssup(f,Q)\leq\Ssup(f,P).\]
+		\begin{proof}
+			Demostrarem només la primera desigualtat, ja que la segona té una demostració anàloga. Comencem notant que podem fer la demostració suposant \(P=P_{1}\times\dots\times P_{d}\), on \(P_{i}=t_{i,0}<\dots<t_{i,n}\) és una partició de \([a_{i},b_{i}]\) i \(Q=Q_{1}\times\dots\times Q_{d}\), on, per a tot \(j\in\{1,\dots,d\}\smallsetminus k\), \(P_{j}=Q_{j}\), i \(Q_{k}=t_{k,0}<\dots<t_{k,l}<q<t_{k,l+1}<\dots<t_{k,n}\), per algun \(l\in\{0,\dots,n-1\}\). Suposarem \(l=0,k=1\) per simplificar la notació.
+			Aleshores, per la definició de \myref{def:Suma superior i inferior} tenim
+			\[\sinf(f,P)=\sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}},\]
+			on \(I\) és el conjunt d'índexs dels subrectangles de \(\mathfrak{R}\) definits per \(P\).
+			
+			Observem que tots els subrectangles de \(\mathfrak{R}\) són els mateixos respecte les particions \(P\) i \(Q\), excepte els que s'obtenen fent \(\{t_{1,0},q,t_{1,1}\}\times Q_{2}\times\dots\times Q_{d}\). Per tant, els únics termes del sumatori que canvien són, amb un nou conjunt d'índexs \(J\), per a tot \(j\in J\),
+			\[\inf_{x\in \mathfrak{R}_{j}}f(x)\abs{\mathfrak{R}_{j}}.\]
+			Ara considerem el conjunt d'índex dels rectangles definits per \(\{t_{1,0},t_{1,1}\}\times Q_{2}\times\dots\times Q_{d}\), \(I'\subset I\), i tenim
+			\[\sum_{i'\in I'}\inf_{x\in \mathfrak{R}_{i'}}f(x)\abs{\mathfrak{R}_{i'}}\leq\sum_{j\in J}\inf_{x\in \mathfrak{R}_{j}}f(x)\abs{\mathfrak{R}_{j}}.\]
+			I per tant\marginpar{Cut my life into pieces\\
+				This is my last resort\\
+				Suffocation\hfil\twonotes\hfil\\
+				No breathing\\
+				Don't give a fuck\\
+				if I cut my arm, bleeding}
+			\begin{multline*}
+			\sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}=
+			\sum_{i\in I\smallsetminus I'}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}+\sum_{i'\in I'}\inf_{x\in \mathfrak{R}_{i'}}f(x)\abs{\mathfrak{R}_{i'}}\leq\\
+			\leq\sum_{j\in J}\inf_{x\in \mathfrak{R}_{j}}f(x)\abs{\mathfrak{R}_{j}}+\sum_{i\in I\smallsetminus J}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}
+			=\sum_{i\in I\cup J}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}.
+			\end{multline*}
+			però, per la definició de \myref{def:Suma superior i inferior},
+			\[\sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}=\sinf(f,P)\quad\text{i}\quad\sum_{i\in I\cup J}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}=\sinf(f,Q),\]
+			i per tant trobem
+			\[\sinf(f,P)=\sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}\leq\sum_{i\in I\cup J}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}=\sinf(f,Q).\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:Sumes i finor de particions}
+		Siguin \(P,Q\) dues particions arbitràries d'un rectangle \(\mathfrak{R}\subset\mathbb{R}^{d}\) i \(f\colon\mathfrak{R}\to\mathbb{R}^{d}\) una funció acotada. Aleshores
+		\[\sinf(f,P)\leq\Ssup(f,Q).\]
+		\begin{proof}
+			Considerem la partició definida per \(P\cup Q\). Com que \(Q\subseteq P\cup Q\) i \(Q\subseteq P\cup Q\), \(P\cup Q\) és més fina que \(P\) i \(Q\). Per tant, per la proposició \myref{prop:finor, desigualtats i sumes}, tenim
+			\[\sinf(f,P)\leq\sinf(f,P\cup Q)\leq\Ssup(f,P\cup Q)\leq\Ssup(f,Q).\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Integral superior i inferior]
+		\labelname{integral superior i inferior}\label{def:Integral superior i inferior}
+		Siguin \(\mathfrak{R}\) un rectangle de \(\mathbb{R}^{d}\) i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada. Aleshores definim la integral superior de \(f\) en \(\mathfrak{R}\) com
+		\[\int^{\mathfrak{R}^{+}}f=\inf_{P\in\mathcal{P}}\Ssup(f,P)\]
+		i la integral inferior de \(f\) en \(\mathfrak{R}\) com
+		\[\int_{\mathfrak{R}^{-}}f=\sup_{P\in\mathcal{P}}\sinf(f,P),\]
+		on \(\mathcal{P}\) és el conjunt de particions de \(\mathfrak{R}\).
+	\end{definition}
+	\begin{proposition}
+		Siguin \(R\) un rectangle de \(\mathbb{R}^{d}\) i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada. Aleshores
+		\[\int_{\mathfrak{R}^{-}}f\leq\int^{\mathfrak{R}^{+}}f.\]
+		\begin{proof}
+			Sigui \(\mathcal{P}\) el conjunt de particions de \(\mathfrak{R}\). Com que, per la proposició \myref{prop:Sumes i finor de particions}, tenim \(\sinf(f,P)\leq\Ssup(f,Q)\) per a \(P,Q\in\mathcal{P}\) arbitraris, ha de ser
+			\[\int_{\mathfrak{R}^{-}}f=\sup_{P\in\mathcal{P}}\sinf(f,P)\leq\inf_{P\in\mathcal{P}}\Ssup(f,P)=\int^{\mathfrak{R}^{+}}f.\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Funció integrable Riemann]
+		\labelname{funció integrable Riemann}\label{def:Integrable Riemann}
+		Siguin \(\mathfrak{R}\) un rectangle de \(\mathbb{R}^{d}\) i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada. Direm que \(f\) és integrable Riemann si \(\int_{\mathfrak{R}^{-}}f=\int^{\mathfrak{R}^{+}}f\).
+		
+		També direm que \(\int_\mathfrak{R}f=\int_{\mathfrak{R}^{-}}f=\int^{\mathfrak{R}^{+}}f\) és la integral Riemann de \(f\) en \(\mathfrak{R}\).
+	\end{definition}
+	\begin{theorem}[Criteri d'integrabilitat Riemann]
+		\labelname{Teorema del criteri d'integrabilitat Riemann}\label{thm:Criteri d'integrabilitat Riemann}
+		Siguin \(\mathfrak{R}\) un rectangle de \(\mathbb{R}^{d}\),\ \(\{\mathfrak{R}_{i}\}_{i\in I}\) la família de subrectangles de \(\mathfrak{R}\) definits per \(P\) i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada. Aleshores \(f\) és integrable Riemann si i només si per a tot \(\varepsilon>0\) existeix una partició \(P\) tal que
+		\[\Ssup(f,P)-\sinf(f,P)=\sum_{i\in I}\left(\sup_{x\in \mathfrak{R}_{i}}f(x)-\inf_{x\in \mathfrak{R}_{i}}f(x)\right)\abs{\mathfrak{R}_{j}}<\varepsilon.\]
+		\begin{proof}
+			Comencem demostrant que la condició és necessària \((\Rightarrow)\). Sigui \(\mathcal{P}\) el conjunt de particions de \(\mathfrak{R}\). Per la definició de \myref{def:Integrable Riemann} i la definició de \myref{def:Integral superior i inferior} tenim
+			\[\sup_{P\in\mathcal{P}}\sinf(f,P)=\int_{\mathfrak{R}^{-}}f=\int_{\mathfrak{R}}f=\int^{\mathfrak{R}^{+}}f=\inf_{P\in\mathcal{P}}\Ssup(f,P),\]
+			per tant, existeixen un \(\varepsilon>0\) i unes particions \(P,Q\in\mathcal{P}\) tals que
+			\[-\frac{\varepsilon}{2}+\int_{\mathfrak{R}}f<\sinf(f,P),\]
+			i
+			\[\Ssup(f,Q)<\frac{\varepsilon}{2}+\int_{\mathfrak{R}}f.\]
+			Per la proposició \myref{prop:finor, desigualtats i sumes} tenim \(\sinf(f,P)\leq\sinf(f,P\cup Q)\leq\Ssup(f,P\cup Q)\leq\Ssup(f,Q)\), per tant ha de ser \(\Ssup(f,P\cup Q)-\sinf(f,P\cup Q)<\varepsilon\), com calia veure.
+			
+			Per demostrar que la condició és suficient \((\Leftarrow)\) veiem que, per hipòtesi,
+			\[0\leq\int^{\mathfrak{R}^{+}}f-\int_{\mathfrak{R}^{-}}f\leq\Ssup(f,P)-\sinf(f,P)<\varepsilon,\]
+			i quan \(\varepsilon\to0\) ha de ser, per la definició de \myref{def:Integrable Riemann},
+			\[\int^{\mathfrak{R}^{+}}f=\int_{\mathfrak{R}^{-}}f=\int_{\mathfrak{R}}f.\qedhere\]
+		\end{proof}
+		\begin{notation}[Límit d'una partició]
+			Sigui \(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle i \(\mathcal{P}\) el conjunt de particions de \(\mathfrak{R}\).
+			Quan vulguem parlar d'una partició de \(\mathfrak{R}\) que es fa fina ho denotarem amb
+			\[\lim_{P\in\mathcal{P}},\]
+			que es refereix a definir una partició \(P\) de \(\mathfrak{R}\) tal que
+			\[\max_{i\in I}\max_{x,y\in \mathfrak{R}_{i}}\norm{x-y}\to0\]
+			on \(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles de \(\mathfrak{R}\) definits per \(P\).
+		\end{notation}
+		\begin{corollary}\label{corollary:Sumes superior i inferior iguals integrable Riemann}
+			Si \(\mathcal{P}\) és el conjunt de particions de \(\mathfrak{R}\), aleshores \(f\) és integrable Riemann si i només si
+			\[\lim_{P\in\mathcal{P}}\Ssup(f,P)-\sinf(f,P)=0.\]%potser reescriure el teorema anterior en aquests termes?
+		\end{corollary}
+	\end{theorem}
+	\begin{theorem}
+		\label{thm:Contínua + acotada implica integrable Riemann}
+		Siguin \(\mathfrak{R}\) un rectangle de \(\mathbb{R}^{d}\) i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada i contínua. Aleshores \(f\) és integrable Riemann en \(\mathfrak{R}\).
+		\begin{proof}
+			Pel \myref{thm:Teorema de Heine}, \(f\) és uniformement contínua en \(\mathfrak{R}\), per tant, per la definició de \myref{def:uniformement contínua}, donat un \(\varepsilon>0\) hi ha un \(\delta>0\) tal que
+			\[\abs{f(x)-f(y)}<\frac{\varepsilon}{\abs{\mathfrak{R}}}\text{ si }\norm{x-y}<\delta.\]
+			
+			Sigui \(\{\mathfrak{R}_{i}\}_{i\in I}\) el conjunt de subrectangles de \(\mathfrak{R}\) definits per una partició \(P\) de \(\mathfrak{R}\) tal que
+			\[\max_{i\in I}\max_{x,y\in \mathfrak{R}_{i}}\norm{x-y}<\delta,\]
+			això és que els diàmetres dels subrectangles definits per la partició \(P\) estiguin fitats per \(\delta\).
+			
+			Considerem
+			\begin{equation}\label{eq:thm:Contínua + acotada implica integrable Riemann}
+			\Ssup(f,P)-\sinf(f,P)=\sum_{i\in I}\left(\sup_{x\in \mathfrak{R}_{i}}f(x)-\inf_{x\in \mathfrak{R}_{i}}f(x)\right)\abs{\mathfrak{R}_{i}}.
+			\end{equation}
+			Com que, per hipòtesi, \(f\) és contínua en cada \(\mathfrak{R}_{i}\), pel \myref{thm:Weierstrass màxims i mínims múltiples variables} tenim que els màxims i mínims de \(f\) en cada \(\mathfrak{R}_{i}\) són accessibles. Denotem doncs amb \(M_{i},m_{i}\) els punts de \(\mathfrak{R}_{i}\) tals que \(f(M_{i})=\max_{x\in \mathfrak{R}_{i}}f(x)\) i \(f(m_{i})=\min_{x\in \mathfrak{R}_{i}}f(x)\). Per \eqref{eq:thm:Contínua + acotada implica integrable Riemann} tindrem \(\norm{M_{i}-m_{i}}<\delta\), i com que \(f\) és contínuament uniforme en cada \(\mathfrak{R}_{i}\), \(f(M_{i})-f(m_{i})<\frac{\varepsilon}{\abs{\mathfrak{R}}}\), i per tant tenim
+			\[\Ssup(f,P)-\sinf(f,P)=\sum_{i\in I}\left(\sup_{x\in \mathfrak{R}_{i}}f(x)-\inf_{x\in \mathfrak{R}_{i}}f(x)\right)\abs{\mathfrak{R}_{i}}\leq\frac{\varepsilon}{\abs{\mathfrak{R}}}\sum_{i\in \mathfrak{R}_{i}}\abs{\mathfrak{R}_{i}}=\varepsilon,\]
+			i això completa la prova.
+		\end{proof}
+	\end{theorem}
+	\subsection{La integral com a límit de sumes}
+	\begin{definition}[Suma de Riemann]
+		\labelname{suma de Riemann}\label{def:Suma de Riemann}
+		Siguin \(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle, \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada i \(P\) una partició de \(\mathfrak{R}\). Aleshores definim la suma de Riemann de \(f\) associada a \(P\) com
+		\[\Sigma(f,P)=\sum_{i\in I}f(\xi_{i})\abs{\mathfrak{R}_{i}},\]
+		on \(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles de \(\mathfrak{R}\) definits per \(P\) i \(\xi_{i}\) és un punt qualsevol de \(\mathfrak{R}_{i}\), per a tot \(i\in I\).
+	\end{definition}
+	\begin{observation}
+		\label{obs:Sumes inferior i superior i suma de riemann}
+		\[\sinf(f,P)\leq\Sigma(f,P)\leq\Ssup(f,P).\]
+	\end{observation}
+	\begin{proposition}
+		\label{prop:Integrable Riemann iff existeix la suma}
+		Siguin \(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle, \(\mathcal{P}\) el conjunt de particions de \(\mathfrak{R}\) i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada. Aleshores \(f\) és integrable Riemann si i només si existeix un \(L\in\mathbb{R}\) tal que
+		\[\lim_{P\in\mathcal{P}}\Sigma(f,P)=L.\]
+		\begin{proof}
+			Pel coro{\lgem}ari \myref{corollary:Sumes superior i inferior iguals integrable Riemann} tenim
+			\[\lim_{P\in\mathcal{P}}\Ssup(f,P)=\lim_{P\in\mathcal{P}}\sinf(f,P),\]
+			i per l'observació \myref{obs:Sumes inferior i superior i suma de riemann} i el \myref{thm:sandvitx} ha de ser
+			\[\lim_{P\in\mathcal{P}}\Ssup(f,P)=\lim_{P\in\mathcal{P}}\Sigma(f,P)=\lim_{P\in\mathcal{P}}\sinf(f,P),\]
+			i amb això es veu que ha de existir un real \(L\) tal que \(\lim_{P\in\mathcal{P}}\Sigma(f,P)=L\).
+		\end{proof}
+	\end{proposition}
+	\begin{notation}
+		Seguint el resultat de la proposició \myref{prop:Integrable Riemann iff existeix la suma} denotarem
+		\[\int_{\mathfrak{R}}f(x)dx=\Sigma(f,P_{n})=\sum_{i\in I}f(x)\abs{\mathfrak{R}_{i}}=L.\]
+		on \(\int\) es refereix al sumatori infinit, \(f(\xi_{i})\) es transforma en \(f(x)\) i \(\abs{\mathfrak{R}_{i}}\) s'escriu \(dx\), tot quan fem la partició ``infinitament més fina'', amb el límit \(\lim_{P\in\mathcal{P}}P\).%reescriure millor
+	\end{notation}
+	\subsection{Propietats de la integral Riemann definida}
+	\begin{proposition}
+		\label{prop:propietats basiques multiple integrals Riemann definides}
+		Siguin \(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle i \(f,g\colon\mathfrak{R}\to\mathbb{R}\) dues funcions integrables Riemann. Aleshores són certs els següents enunciats:
+		\begin{enumerate}
+			\item\label{enum:propietats basiques multiple integrals Riemann definides 1} Siguin \(\lambda,\mu\) dos escalars. Aleshores
+			\[\int_{\mathfrak{R}}(\lambda f+\mu g)=\lambda\int_{\mathfrak{R}}f+\mu\int_{\mathfrak{R}}g.\]
+			\item\label{enum:propietats basiques multiple integrals Riemann definides 2} La funció producte \(fg\) també és integrable Riemann.
+			\item\label{enum:propietats basiques multiple integrals Riemann definides 3} Sigui \(C\) un escalar. Si \(f(x)\leq Cg(x)\) per a tot \(x\in \mathfrak{R}\), aleshores \[\int_{\mathfrak{R}}f\leq C\int_{\mathfrak{R}}g.\]
+		\end{enumerate} 
+		\begin{proof}
+			Sigui \(\mathcal{P}\) el conjunt de particions de \(\mathfrak{R}\).
+			
+			Comencem demostrant el punt \eqref{enum:propietats basiques multiple integrals Riemann definides 1}, Per la proposició \myref{prop:Integrable Riemann iff existeix la suma} i la definició de \myref{def:Suma de Riemann} tenim
+			\[\sum_{i\in I}\left(\lambda f(\xi_{i})+\mu g(\xi_{i})\right)\abs{\mathfrak{R}_{i}},\]
+			on \(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles de \(\mathfrak{R}\) definits per una partició \(P\in\mathcal{P}\) i \(\xi_{i}\) és un punt qualsevol de \(\mathfrak{R}_{i}\) per a tot \(i\in I\). Això ho podem reescriure com
+			\[\lambda\sum_{i\in I}f(\xi_{i})\abs{\mathfrak{R}_{i}}+\mu\sum_{i\in I}g(\xi_{i})\abs{\mathfrak{R}_{i}}\]
+			i per tant
+			\[\int_{\mathfrak{R}}(\lambda f+\mu g)=\lambda\int_{\mathfrak{R}}f+\mu\int_{\mathfrak{R}}g,\]
+			com volíem demostrar.
+			
+			Demostrem ara el punt \eqref{enum:propietats basiques multiple integrals Riemann definides 2} (En veritat la demostraré quan em doni la gana, i resulta que això no és ara). %recordar acabar.
+			
+			Podem veure el punt \eqref{enum:propietats basiques multiple integrals Riemann definides 3} a partir del punt \eqref{enum:propietats basiques multiple integrals Riemann definides 1}, ja que si \(f(x)\leq Cg(x)\) per a tot \(x\in \mathfrak{R}\), amb \(\xi_{i}\) qualsevol punt de \(\mathfrak{R}_{i}\) per tot \(i\in I\), on \(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles de \(\mathfrak{R}\), tenim
+			\[\sum_{i\in I}f(\xi_{i})\abs{\mathfrak{R}_{i}}\leq C\sum_{i\in I}g(\xi_{i})\abs{\mathfrak{R}_{i}},\]
+			i ja hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{theorem}
+		Siguin \({{\mathfrak{R}}}\subset\mathbb{R}^{d}\) un rectangle, \(\mathcal{S}\) un conjunt de rectangles disjunts de \(\mathfrak{R}\) tals que \(\bigcup_{S\in\mathcal{S}}S=\mathfrak{R}\) i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada. Aleshores \(f\) és integrable Riemann en \(\mathfrak{R}\) si i només si \(f\) és integrable Riemann en cada \(S\in\mathcal{S}\), i
+		\[\int_{\mathfrak{R}}f=\sum_{S\in\mathcal{S}}\int_{S}f.\]
+		\begin{proof}
+			Comencem demostrant la doble implicació \((\Leftrightarrow)\). Suposem que \(f\) és integrable Riemann en \(\mathfrak{R}\). Com que \(f\) és integrable Riemann en \(\mathfrak{R}\), per la proposició \myref{prop:Integrable Riemann iff existeix la suma} i la definició de \myref{def:Suma de Riemann}. Tenim que, sent \(\mathcal{P}\) el conjunt de particions de \(\mathfrak{R}\), existeix un real \(L\) tal que
+			\[\sum_{i\in I}f(x)\abs{\mathfrak{R}_{i}}=L,\]
+			on \(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles de \(\mathfrak{R}\) definits per una partició \(P\in\mathcal{P}\). Considerem ara el conjunt de particions de \(S\), per a tot \(S\in\mathcal{S}\), que denotarem com \(\mathcal{P}_{S}\). Com que \(S\subset \mathfrak{R}\) per a tot \(S\in\mathcal{S}\), per la definició de \myref{def:Partició d'un rectangle}, tenim que
+			\[\lim_{P_{S}\in\mathcal{P}_{S}}P_{S}\subset\lim_{P\in\mathcal{P}}P,\]
+			per a tot \(S\in\mathcal{S}\); i com que \(\bigcup_{S\in\mathcal{S}}S=\mathfrak{R}\) tenim que
+			\[\bigcup_{S\in\mathcal{S}}\lim_{P_{S}\in\mathcal{P}_{S}}P_{S}=\lim_{P\in\mathcal{P}}P.\]
+			Per tant, si \(I_{S}\) és el conjunt d'índexs dels subrectangles \(\mathfrak{R}_{S,i}\) de \(S\) definits per una partició \(P_{S}\), per a tot \(S\in\mathcal{S}\), com que, per hipòtesi, els rectangles \(S\in\mathcal{S}\) són disjunts, tenim
+			\[\sum_{i\in I}f(x)\abs{\mathfrak{R}_{i}}=\sum_{S\in\mathcal{S}}\sum_{i\in I_{S}}f(x)\abs{\mathfrak{R}_{S,i}}=L,\]
+			i, de nou, per la proposició \myref{prop:Integrable Riemann iff existeix la suma} tenim que \(f\) és integrable en cada \(S\in\mathcal{S}\), com volíem veure.
+			
+			Aquesta demostració també ens serveix per veure que
+			\[\int_{\mathfrak{R}}f=\sum_{S\in\mathcal{S}}\int_{S}f,\]
+			per la definició de \myref{def:Suma de Riemann}. %revisar alguns subíndexs als límits i \bigcups.
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}
+		Siguin \(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció integrable Riemann amb \(\abs{f(x)}\leq M\) per a tot \(x\in \mathfrak{R}\). Aleshores la funció \(\abs{f}\) és integrable Riemann i
+		\[\abs{\int_{\mathfrak{R}}f}\leq\int_{\mathfrak{R}}\abs{f}\leq M\abs{\mathfrak{R}}.\]
+		\begin{proof}
+			Sigui \(\{\mathfrak{R}_{i}\}_{i\in I}\) el conjunt de subrectangles definits per una partició de \(\mathfrak{R}\). Aleshores
+			\[\sup_{x\in \mathfrak{R}_{i}}f(x)-\inf_{x\in \mathfrak{R}_{i}}f(x)=\sup_{x,y\in \mathfrak{R}_{i}}\abs{f(x)-f(y)},\quad\text{per a tot }i\in I,\]
+			i
+			\[\sup_{x\in \mathfrak{R}_{i}}\abs{f(x)}-\inf_{x\in \mathfrak{R}_{i}}\abs{f(x)}=\sup_{x,y\in \mathfrak{R}'_{i}}\abs{\abs{f(x)}-\abs{f(y)}},\quad\text{per a tot }i\in I.\]
+			Per tant, per la definició de \myref{def:Suma superior i inferior}, si \(P\) és una partició de \(\mathfrak{R}\) tenim
+			\[\Ssup(\abs{f},P)-\sinf(\abs{f},P)\leq\Ssup(f,P)-\sinf(f,P)\]
+			Com que, per hipòtesi, \(f\) és integrable Riemann, pel \myref{thm:Criteri d'integrabilitat Riemann} tenim que per a tot \(\varepsilon>0\) existeix una partició \(P\) de \(\mathfrak{R}\) tal que
+			\[\Ssup(f,P)-\sinf(f,P)<\varepsilon,\]
+			el que significa que
+			\[\Ssup(\abs{f},P)-\sinf(\abs{f},P)\leq\Ssup(f,P)-\sinf(f,P)<\varepsilon.\]
+			I pel mateix criteri d'integrabilitat Riemann \(\abs{f}\) també és integrable Riemann.
+			
+			Per veure les desigualtats de l'enunciat, amb \(\mathcal{P}\) el conjunt de particions de \(\mathfrak{R}\) i \(\{\mathfrak{R}_{i}\}_{i\in I}\) el conjunt de subrectangles definits per una partició \(\lim_{P\in\mathcal{P}}\) de \(\mathfrak{R}\), tenim
+			\[\abs{\int_{\mathfrak{R}}f}=\lim_{P\in\mathcal{P}}\abs{\sum_{i\in I}f(x)\abs{\mathfrak{R}_{i}}}\leq\lim_{P\in\mathcal{P}}\sum_{i\in I}\abs{f(x)}\abs{\mathfrak{R}_{i}}=\int_{\mathfrak{R}}\abs{f}.\]
+			Com que, per hipòtesi, \(\abs{f(x)}\leq M\) per a tot \(x\in \mathfrak{R}\), tenim
+			\[\int_{\mathfrak{R}}\abs{f}\leq\int_{\mathfrak{R}}M=M\abs{\mathfrak{R}}.\qedhere\]
+		\end{proof}
+	\end{theorem}
+	\begin{corollary}
+		Si \(f(x)\geq0\) per a tot \(x\in \mathfrak{R}\), \(\int_{\mathfrak{R}}f\geq0\).
+	\end{corollary}
+	\begin{proposition}
+		Siguin \(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció contínua i acotada tal que \(f(x)\geq0\) per a tot \(x\in \mathfrak{R}\) i \(\int_{\mathfrak{R}}f=0\). Aleshores \(f(x)=0\) per a tot \(x\in \mathfrak{R}\).
+		\begin{proof}
+			Observem que la proposició té sentit pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann}.
+			
+			Farem aquesta demostració per reducció a l'absurd. Suposem que existeix un punt \(c\in \mathfrak{R}\) tal que \(f(c)>0\). Com que, per hipòtesi, \(f\) és contínua en un rectangle \(\mathfrak{R}\), acotat per la definició de \myref{def:Rectangle}, pel \myref{thm:Teorema de Heine} \(f\) és uniformement contínua en \(\mathfrak{R}\), per tant, per la definició de \myref{def:uniformement contínua}, per a tot \(\varepsilon>0\) existeix un \(\delta>0\) tals que
+			\[\text{si }\abs{x-c}<\delta\text{ aleshores }\abs{f(x)-f(c)}t<\varepsilon=\frac{f(c)}{2}.\]
+			Per tant, si definim un rectangle \(S\) inscrit en la bola de radi \(\delta\) centrada en el punt \(c\), \(\B(c,\delta)\), tenim %afegir definició de rectangle d'aresta donada abans d'això i usar
+			\[\int_{\mathfrak{R}}f\geq\int_{S}f\geq\frac{f(x)}{2}\abs{S}>0,\]
+			però això contradiu la hipòtesi de que \(\int_{\mathfrak{R}}f=0\), per tant la proposició queda demostrada per reducció a l'absurd.
+		\end{proof}
+	\end{proposition}
+	\section{Les funcions integrables Riemann}
+	\subsection{Caracterització de les funcions integrables Riemann}
+	\begin{definition}[Osci{\lgem}ació d'una funció en un punt]
+		\labelname{osci{\lgem}ació d'una funció en un punt}\label{def:oscillacio d'una funcio en un punt}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(a\in U\) un punt, \(\B(a,\delta)\subseteq U\) una bola oberta centrada en \(a\) de radi \(\delta>0\) i \(f\colon U\to\mathbb{R}^{m}\) una funció. Aleshores definim l'aplicació
+		\[\omega_{f}(a)=\lim_{\delta\to0}\sup_{x,y\in B(a,\delta)}\norm{f(x)-f(y)}\]
+		com l'osci{\lgem}ació de la funció \(f\) en el punt \(a\).
+	\end{definition}
+	\begin{proposition}
+		\label{prop:oscillació equivalent a continua}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(f\colon U\to\mathbb{R}^{m}\) una funció definida en un punt \(a\in U\). Aleshores \(f\) és contínua en \(a\) si i només si \(\omega_{f}(a)=0\), on \(\omega_{f}(a)\) és la osci{\lgem}ació de \(f\) en \(a\).
+		\begin{proof}
+			Suposem que \(\omega_{f}(a)=0\). Observem que quan \(\delta\to0\), per a tot \(x,y,\in\B(a,\delta)\) tenim \(x\to a\) i \(y\to a\), i com que \(\omega_{f}(a)=0\), podem escriure
+			\begin{align*}
+			\omega_{f}(a)&=\lim_{\delta\to0}\sup_{x,y\in B(a,\delta)}\norm{f(x)-f(y)}\\
+			&=\lim_{x,y\to a}\norm{f(a)-f(x)}=0
+			\end{align*}
+			i per tant tenim \(\lim_{x\to a}f(x)=\lim_{y\to a}f(y)\), i equivalentment
+			\[\lim_{x\to a}f(x)=f(a),\]
+			que és la definició de \myref{def:funcio continua}.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Conjunt de discontinuïtats d'una funció]
+		\labelname{conjunt de discontinuïtats d'una funció}\label{def:conjunt de discontinuïtats d'una funció}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(f\colon U\to\mathbb{R}^{m}\) una funció, \(\tau\) un escalar positiu i \(\omega_{f}(x)\) l'osci{\lgem}ació de \(f\) en un punt \(x\in U\).
+		Aleshores denotem el conjunt
+		\[D_{\tau}=\{x\in U\mid\omega_{f}(x)\geq\tau\}\]
+		com el conjunt de desigualtats majors que \(\tau\) d'una funció.
+	\end{definition}
+	\begin{observation}
+		\(D_{\tau}\) és compacte.%demostrar el cas general del que diu la proposició i fer referències com Déu mana." per la proposició \myref{todo:conjunt definit per desigualtats estrictes és compacte}"
+	\end{observation}
+	\begin{definition}[Contingut exterior de Jordan]
+		\labelname{contingut exterior de Jordan}\label{def:contingut exterior de Jordan}
+		Siguin \(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle, \(A\subseteq \mathfrak{R}\) un conjunt, \(1_{A}\) la funció indicatriu de \(A\) i \(\{\mathfrak{R}_{i}\}_{i\in I}\) el conjunt de subrectangles definits per una partició de \(\mathfrak{R}\) amb la condició de que \(\mathfrak{R}_{i}\cap A\neq\emptyset\) per a tot \(i\in I\). Aleshores definim
+		\[c(A)=\sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}1_{A}(x)\abs{\mathfrak{R}_{i}}\]
+		com el contingut exterior de Jordan de \(A\).
+	\end{definition}
+	\begin{note}
+		La condició sobre \(\mathfrak{R}_{i}\) pot dir-se com que els \(\mathfrak{R}_{i}\) cobreixen \(A\).
+	\end{note}
+	\begin{observation}
+		Siguin \(\{A_{i}\}_{i\in I}\) un conjunt finit de conjunts amb \(c(A_{i})=0\) per a tot \(i\in I\) i \(A=\bigcup_{i\in I}A_{i}\). Aleshores \(c\left(A\right)=0\).
+	\end{observation}
+	\begin{theorem}
+		Siguin \(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada. Aleshores \(f\) és integrable Riemann en \(\mathfrak{R}\) si i només si el contingut exterior de Jordan del conjunt de desigualtats majors que \(\tau>0\) de \(f\) en \(\mathfrak{R}\) és cero, és a dir, \(c(D_{\tau})=0\) per a tot \(\tau>0\).
+		\begin{proof}
+			Comencem amb la implicació cap a l'esquerra (\(\Leftarrow\)). Suposem doncs que \(D_{\tau}=0\) per a tot \(\tau>0\). Per la definició de \myref{def:contingut exterior de Jordan} això és
+			\[\sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}1_{D_{\tau}}(x)\abs{\mathfrak{R}_{i}}=0\]
+			on \(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles de \(\mathfrak{R}\) definits per una partició del conjunt \(\mathcal{P}\) de particions de \(\mathfrak{R}\). Considerem el conjunt de subrectangles \(\{\mathfrak{R}_{j}\}_{j\in J}\) tals que \(\mathfrak{R}_{j}\cap D_{\tau}\neq\emptyset\). Ara bé, per la proposició \myref{prop:oscillació equivalent a continua} tenim que \(f\) és contínua, i pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann} veiem que \(f\) és integrable Riemann en \(\mathfrak{R}\).
+			
+			Comprovem ara la implicació cap a la dreta (\(\Rightarrow\)). Suposem doncs que \(f\) és integrable Riemann en \(\mathfrak{R}\) i fixem \(\varepsilon>0\). Pel \myref{thm:Criteri d'integrabilitat Riemann} tenim que per a tot \(\varepsilon>0\) existeix una partició \(P\) de \(\mathfrak{R}\) tal que
+			\[\sum_{i\in I}\left(\sup_{x\in \mathfrak{R}_{i}}f(x)-\inf_{x\in \mathfrak{R}_{i}}f(x)\right)\abs{\mathfrak{R}_{j}}<\varepsilon\]
+			on \(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles definits per \(P\). Sigui \(J\) el conjunt de subrectangles \(\{\mathfrak{R}_{j}\}_{j\in J}\) tals que \(\mathfrak{R}_{j}\cap D_{\tau}\neq\emptyset\). Tindrem
+			\[\sup_{x\in \mathfrak{R}_{j}}f(x)-\inf_{x\in \mathfrak{R}_{j}}f(x)\geq\tau\]
+			per a tot \(j\in J\), i per tant, amb \(\mathfrak{R}'=\bigcup_{j\in J}\mathfrak{R}_{j}\), per la definició de \myref{def:contingut exterior de Jordan}
+			\begin{align*}
+			\sum_{j\in J}\left(\sup_{x\in \mathfrak{R}_{j}}f(x)-\inf_{x\in \mathfrak{R}_{j}}f(x)\right)\abs{\mathfrak{R}_{j}}&\geq\sum_{j\in J}\tau\abs{\mathfrak{R}_{j}}\\
+			&=\tau\sum_{j\in J}\abs{\mathfrak{R}_{j}}\\
+			&\geq\tau\sum_{j\in I}\inf_{x\in \mathfrak{R}_{j}}1_{\mathfrak{R}'}(x)\abs{\mathfrak{R}_{j}}\\
+			&=\tau c(D_{\tau})
+			\end{align*}
+			Ara bé, com que \(f\) és integrable, pel \myref{thm:Criteri d'integrabilitat Riemann} tenim que
+			\[\sum_{j\in J}\left(\sup_{x\in \mathfrak{R}_{j}}f(x)-\inf_{x\in \mathfrak{R}_{j}}f(x)\right)\abs{\mathfrak{R}_{j}}<\varepsilon\]
+			per a tota \(\varepsilon>0\), i per tant quan \(\varepsilon\to0\) ha de ser \(D_{\tau}=0\), com volíem veure.
+		\end{proof}
+	\end{theorem}
+	\subsection{Integració sobre conjunts generals}
+	\begin{note}
+		Tota la teoria de l'integració Riemann que hem vist ha estat sobre rectangles. Ara tractem de generalitzar-la desfent-nos d'aquesta limitació.
+	\end{note}
+	\chapter{Càlcul vectorial}
+	\emph{sona divertit}
+	\printbibliography
+	Els apunts que he seguit per escriure la majoria d'aquesta part són els escrits pel professor de l'assignatura; \cite{ApuntsBrunaEspai,ApuntsBrunaDiff,ApuntsBrunaInt,ApuntsBrunaVect}. De moment no han estat publicats però en té pensat fer-ne un llibre. Es poden trobar al campus virtual.
+	
+	El llibre \cite{apostol1974mathematical} és molt útil per tenir una visió més organitzada i pautada del curs. També tracta temes més avançats als de l'assignatura.
+	
+	La bibliografia del curs inclou els textos \cite{MarsdenTrombaCalculoVectorial,WendellFlemingFSoV,BressoudDavidSecondYearCalculus}.
+\end{document}

@@ -1,0 +1,141 @@
+\documentclass[../Apunts.tex]{subfiles}
+
+\begin{document}
+	\chapter{Aviat}
+	Podeu trobar la versió actualitzada d'aquest pdf seguint aquest \href{https://claudilleyda.github.io}{link}.
+	%	\subsection{Ignorar}
+	%	\begin{enumerate}
+	%		\item Definir \(\mathbb{R}^{+}\). (fot mandra)
+	%		\item Adjuntar documents: llegir i aplicar punt \textsl{1.8 Big Projects} de lshort.pdf.
+	%		\item Afegir més notes explicant la vida quan acabi. %sarcasm anyone?
+	%		\item Definir \(\omicron(\vec{h})\) (que tendeix a \(\vec{0}\)).
+	%		\item Definir imatge d'un conjunt per una funció (\(\Ima_{f}(U)\), \(f[U]\)...).
+	%		\item Definit obert, tancat, compacte...
+	%		\item Relacions d'equivalència.
+	%	\end{enumerate}
+	\section{Àlgebra lineal}
+	\subsection{Definicions}
+	\begin{definition}[Forma bilineal definida estrictament positiva o negativa]
+		\labelname{forma bilineal definida estrictament positiva o negativa}\label{def:bilineal definida estrictament positiva/negativa}
+		Sigui \(M\) una forma bilineal simètrica. Preguntar a en Cedò.
+	\end{definition}
+	\begin{definition}[Norma d'una aplicació lineal]
+		\labelname{norma d'una aplicació lineal}\label{def:Norma d'una aplicació lineal}
+	\end{definition}
+	\subsection{Proposicions}
+	\begin{proposition}\label{prop:determinant diferent de zero linealment independents}
+		Vectors linealment independents \(\Leftrightarrow\) determinant no nul.
+	\end{proposition}
+	\subsection{Teoremes}
+	\begin{theorem}
+		Sigui \(A=(a_{i,j})\in M_{n}(\mathbb{R})\) una matriu simètrica. Aleshores \(A\) és definida positiva si i només si
+		\[\abs{\begin{matrix}
+		a_{1,1}&\cdots&a_{1,i}\\
+		\vdots&&\vdots\\
+		a_{i,1}&\cdots&a_{i,i}\\
+		\end{matrix}}>0\]
+		per a tot \(i\in\{1,\dots,n\}\).
+		\begin{proof}
+			Per inducció sobre \(n\).
+		\end{proof}
+	\end{theorem}
+	\section{Funcions de variable real}
+	\subsection{Definicions}
+	\begin{definition}[Funció contínua]
+		\labelname{funció contínua}\label{def:funcio continua}
+		Sigui \(f\) una funció. Direm que \(f\) és contínua en \(a\) si
+		\[\lim_{x\to a}f(x)=f(a).\]
+	\end{definition}
+	\begin{definition}[Partició, poligonal i longitud d'una poligonal]
+		\labelname{partició}\label{def:partició}
+		\labelname{poligonal}\label{def:poligonal}
+		\labelname{longitud d'una poligonal}\label{def:longitud de poligonal}
+		Sigui \((a,b)\) un interval de \(\mathbb{R}\). Direm que una partició de \((a,b)\) és un conjunt de escalars \(t_{0},\dots,t_{n}\in[a,b]\) que compleixen \(a=t_{0}<\dots<t_{n}=b\). Direm que \(t_{0},\dots,t_{n}\) són els nodes de la partició.
+		
+		Sigui \(f\colon(a,b)\to\mathbb{R}^{m}\) una funció. Definirem la poligonal \(P_{n}\) d'una partició en una funció \(f\) com
+		\[P_{n}=f(t_{0}),\dots,f(t_{n}).\]
+		Definim la longitud de la poligonal \(P_{n}\) com
+		\[\Long(P_{n})=\sum_{i=0}^{n-1}\left\lVert f(t_{i+1})-f(t_{i})\right\rVert.\]
+	\end{definition}
+	\begin{definition}[Classe de diferenciabilitat d'una funció]
+		\labelname{classe de diferenciabilitat d'una funció}\label{def:Classe de diferenciabilitat}
+		Sigui \(f\) una funció \(n\)-vegades diferenciable amb \(f^{(n)}\) contínua. Direm que \(f\) és de classe \(\mathcal{C}^{n}\) o que \(f\in\mathcal{C}^{n}\).
+	\end{definition}
+	\begin{definition}[Funció monòtona]
+		\labelname{funció monòtona}\label{def:funció monòtona}
+		Sigui \(f\colon[a,b]\to\mathbb{R}\) una funció. Direm que és \(f\) és monòtona si, per a qualsevol \(x,y\in[a,b]\), \(x>y\) implica \(f(x)\geq f(y)\).
+	\end{definition}
+	\begin{definition}[Notació de Landau]
+		\labelname{notació de Landau}\label{def:Landau}
+		\(A(h)=\omicron(B(h))\dots\)
+	\end{definition}
+	\subsection{Proposicions}
+	\begin{proposition}\label{prop:Derivable implica contínua}
+		Siguin \(I\subseteq\mathbb{R}\) un interval i \(f\colon I\to\mathbb{R}\) una funció. Aleshores, si \(f\) és derivable en un punt \(a\in I\), \(f\) és contínua en \(a\).
+	\end{proposition}
+	\begin{proposition}
+		Sigui \(f\colon[a,b]\to\mathbb{R}\) una funció acotada i monòtona. Aleshores \(f\) és integrable Riemann.
+	\end{proposition}
+	\subsection{Teoremes}
+	\begin{theorem}[Equivalència entre normes]
+		\labelname{Teorema de l'equivalència entre normes}\label{thm:Equivalència de normes}
+		Si \(q(x)\) és una norma existeixen \(m,M\in\mathbb{R}^{+}\) tals que \(m\left\lVert x\right\rVert\leq q(x)\leq M\left\lVert x\right\rVert\) per a tot \(x\in\mathbb{R}^{m}\).
+	\end{theorem}
+	\begin{theorem}[Teorema del Valor Mig]
+		\label{Teorema del Valor Mig}\label{thm:TVM}
+		\emph{hmm trivial}
+	\end{theorem}
+	\begin{theorem}[Desigualtat de Cauchy-Schwarz]
+		\labelname{Teorema de la Desigualtat de Cauchy-Schwarz}\label{thm:Desigualtat de C-S}
+	\end{theorem}
+	\begin{theorem}[Teorema de Taylor]%Teorema de l'error de Taylor?
+		\labelname{Teorema de Taylor}\label{thm:Teorema de Taylor} %caldrà adaptar-lo
+		Siguin \((a,b)\) un interval obert de \(\mathbb{R}\) i \(f\colon(a,b)\rightarrow\mathbb{R}\) una funció de classe \(\mathcal{C}^{n}\). Aleshores, per a dos punts \(x,c\in(a,b)\), amb \(x<c\), existeix un punt \(x_{1}\in(x,c)\) tal que
+		\[f(x)=f(c)+\sum_{k=1}^{n-1}\frac{f^{(k)}(c)}{k!}(x-c)^{k}+\frac{f^{(n)}(x_{1})}{n!}(x-c)^{n}.\]
+	\end{theorem}
+	\begin{theorem}[Teorema de Weierstrass]
+		\labelname{Teorema de Weierstrass}\label{thm:Weierstrass màxims i mínims múltiples variables}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}\) una funció. Aleshores, donat un compacte \(S\subset U\), si \(f\) és contínua en \(S\), \(f\) té un màxim i un mínim absoluts en \(S\).
+	\end{theorem}
+	\begin{theorem}[Teorema del sandvitx]
+		\labelname{Teorema del sandvitx}\label{thm:sandvitx}
+	\end{theorem}
+	\begin{theorem}[Teorema de Rolle]
+		\labelname{Teorema de Rolle}\label{thm:Teorema de Rolle}
+		Sigui \(f\colon[a,b]\subset\mathbb{R}\longrightarrow\mathbb{R}\) una funció derivable en \((a,b)\) tal que \(f(a)=f(b)\). Aleshores existeix un cert \(c\in(a,b)\) tal que \(f'(c)=0\).
+	\end{theorem}
+	\section{Trobar lloc per tot això}
+	\begin{definition}[Conjunt obert, tancat...]
+		\labelname{conjunt obert}\label{def:obert}
+		\labelname{conjunt tancat}\label{def:tancat}\label{conjunt obert, tancat...}\label{todo:conjunt definit per desigualtats estrictes és compacte}
+	\end{definition}
+	\begin{definition}[Continuïtat uniforme]
+		\labelname{continuïtat uniforme}\label{def:uniformement contínua}
+		Siguin \(U\subseteq\mathbb{R}^{d},V\subseteq\mathbb{R}^{m}\) dos oberts i \(f\colon U\to V\) una funció. Aleshores direm que \(f\) és uniformement contínua en un conjunt \(S\subseteq U\) si per a tot \(\varepsilon>0\) existeix un \(\delta>0\) tals que
+		\[d_{U}(x,y)<\varepsilon\text{ i }d_{V}(f(x)-f(y))<\delta\]
+		per a tot punt \(x,y\in U\).
+	\end{definition}
+	\begin{theorem}[Teorema de Heine]
+		\labelname{Teorema de Heine}\label{thm:Teorema de Heine}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) dos oberts, \(S\subset U\) un compacte i \(f\colon U\to\mathbb{R}^{m}\) una funció contínua. Aleshores \(f\) és uniformement contínua en \(S\). %pàg 91 de Mathematical Analysis d'en Apostol (55 del pdf)
+	\end{theorem}
+	\begin{definition}[Funció indicatriu]
+		\labelname{funció indicatriu}\label{def:funció indicatriu}
+		Siguin \(X\) un conjunt i \(A\subseteq X\) un subconjunt de \(X\). Definim la funció indicatriu de \(A\) com una funció
+		\[1_{A}\colon X\longrightarrow\{0,1\}\]
+		tal que
+		\begin{displaymath}
+		1_{A}(x)=\begin{cases}
+		1 & x\in A \\
+		0 & x\notin A.
+		\end{cases}
+		\end{displaymath}
+	\end{definition}
+%	\begin{theorem}[Teorema de la divisió Euclidiana]
+%		\labelname{Teorema de la divisió Euclidiana}\label{thm:divisió euclidiana}
+%	\end{theorem}
+%	\begin{history}[Who's it gonna be]
+%		In a right triangle, the square of the hypotenuse is equal to the sum of the squares of the catheti.
+%		$$a^2+b^2=c^2$$
+%	\end{history}
+\end{document}

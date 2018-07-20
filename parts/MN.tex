@@ -1,0 +1,346 @@
+\documentclass[../Apunts.tex]{subfiles}
+
+\begin{document}
+	\chapter{Interpolació numèrica}%CRONOLOGIA INTERPOLACIÓ LINK https://imagescience.org/meijering/research/chronology/
+	%LINK https://en.wikibooks.org/wiki/Introduction_to_Numerical_Methods/Interpolation
+	Sovint podem mesurar un procés físic com un número de punts (per exemple, la temperatura d'una habitació en diferents instants de temps), però no tenim una expressió analítica per aquest procés que ens permeti calcular el seu valor en un punt arbitrari. L'interpolació ens proporciona un mètode simple per estimar aquesta expressió analítica en el rang dels punts mesurats\footnote{Si el punt que avaluem es troba fora del rang aquest problema s'anomena extrapolació i sol ser menys precís que la interpolació.}.
+	%Source: http://web.cs.iastate.edu/~cs577/handouts/interpolate.pdf
+	\section{El problema d'interpolació}
+	\subsection{Problemes d'interpolació}
+	\begin{definition}[Problema d'interpolació]
+		\labelname{problema d'interpolació}\label{def:problema d'interpolació}
+		\labelname{punts de suport}\label{def:punts de suport}
+		\labelname{abscisses de suport}\label{def:abscisses de suport}
+		\labelname{ordenades de suport}\label{def:ordenades de suport}
+		\labelname{problema d'interpolació lineal}\label{def:problema d'interpolació lineal}
+		Siguin
+		\[\Phi(x;a_{1},\dots,a_{n})\colon\mathbb{R}\longrightarrow\mathbb{R}\]
+		una família de funcions que depenen dels paràmetres reals \(a_{0},\dots,a_{n}\), una família \(\{(x_{i},y_{i})\}_{i=0}^{n}\) de \(n\) punts. Direm que el problema d'interpolació de \(\{(x_{i},y_{i})\}_{i=0}^{n}\) per \(\Phi(x;a_{0},\dots,a_{n})\) consisteix a determinar \(a_{0},\dots,a_{n}\) tals que
+		\[\Phi(x_{i};a_{0},\dots,a_{n})=y_{i}\quad\text{per a tot }i\in\{1,\dots,n\}.\]
+		
+		També direm que \(\{(x_{i},y_{i})\}_{i=0}^{n}\) són els punts de suport, \(\{x_{i}\}_{i=0}^{n}\) són les abscisses de suport i \(\{y_{i}\}_{i=0}^{n}\) les ordenades de suport.
+		
+		Direm que un problema d'interpolació de \(\{(x_{i},y_{i})\}_{i=0}^{n}\) per \(\Phi(x;a_{0},\dots,a_{n})\) és un problema d'interpolació lineal si existeixen \(\Phi_{0},\dots,\Phi_{n}\colon\mathbb{R}\longrightarrow\mathbb{R}\) tals que
+		\[\Phi(x;a_{0},\dots,a_{n})=a_{0}\Phi_{0}(x)+\dots+a_{n}\Phi_{n}(x).\]
+	\end{definition}
+	\begin{example}
+		Exemples de problemes d'interpolació lineal són problemes com la interpolació polinòmica:
+		\[\Phi(x;a_{0},\dots,a_{n})=a_{0}+a_{1}x+\dots+a_{n}x^{n};\]
+		o la interpolació trigonomètrica:
+		\[\Phi(x;a_{0},\dots,a_{n})=a_{0}+a_{1}e^{xi}+\dots+a_{n}e^{nxi}.\]
+		Mentre que exemples de problemes d'interpolació no lineals són problemes com la interpolació racional: %ALGO: http://mathworld.wolfram.com/Bulirsch-StoerAlgorithm.html
+		\[\Phi(x;a_{0},\dots,a_{n},b_{0},\dots,b_{m})=\frac{a_{0}+a_{1}x+\dots+a_{n}x^{n}}{b_{0}+b_{1}x+\dots+b_{m}x^{m}};\]
+		o la interpolació exponencial:
+		\[\Phi(x;a_{0},\dots,a_{n},\lambda_{0},\dots,\lambda_{n})=a_{0}e^{\lambda_{0}x}+\dots+a_{n}e^{\lambda_{n}x}.\]
+		La interpolació trigonomètrica es fa servir en l'anàlisi numèric de les sèries de Fourier, la interpolació exponencial és útil en l'anàlisi de desintegració radioactiva.
+	\end{example}
+	\section{Polinomis interpoladors de Lagrange}
+	\subsection{Interpolació de Lagrange}
+	\begin{definition}[Problema d'interpolació de Lagrange]
+		\labelname{problema d'interpolació de Lagrange}\label{def:problema d'interpolació de Lagrange}
+		Sigui \(\{(x_{i},y_{i})\}_{i=0}^{n}\) un problema d'interpolació per \(P(x;a_{0},\dots,a_{n})\in\mathbb{R}_{n}[x]\) tal que \(x_{i}\neq x_{j}\) per a tot \(i,j\in\{0,\dots,n-1\}\), amb \(i\neq j\). Aleshores direm que el problema d'interpolació és un problema d'interpolació de Lagrange.
+	\end{definition}
+	\begin{definition}[Polinomis bàsics de Lagrange]
+		\labelname{problema polinomis bàsics de Lagrange}\label{def:problema polinomis bàsics de Lagrange}
+		Sigui \(\{(x_{i},y_{i})\}_{i=0}^{n}\) un problema d'interpolació de Lagrange per \(P(x;a_{0},\dots,a_{n})\) on, per a cert \(k\in\{0,\dots,n\}\) fix tenim que \(y_{k}=1\) i per a tot \(i\in I=\{0,\dots,k-1,k+1,\dots,n\}\) tenim \(y_{i}=0\). Aleshores direm que els polinomis
+		\[L_{k}(x)=\prod_{i\in I}\frac{x-x_{i}}{x_{k}-x_{i}}=\frac{(x-x_{0})\cdots(x-x_{k-1})(x-x_{k+1})\cdots(x-x_{n})}{(x_{k}-x_{0})\cdots(x_{k}-x_{k-1})(x_{k}-x_{k+1})\cdots(x_{k}-x_{n})}\]
+		són polinomis bàsics de Lagrange.
+	\end{definition}
+	\begin{observation}\label{obs:polinomis bàsics de Lagrange cases}
+		\[L_{k}(x_{i})=\begin{cases}
+		1&\textup{si }i=k,\\
+		0&\textup{si }i\neq k.
+		\end{cases}\]
+	\end{observation}
+	\begin{proposition}\label{prop:unicitat interpolació de Lagrange}
+		Sigui \(\{(x_{i},y_{i})\}_{i=0}^{n}\) un problema d'interpolació de Lagrange per \(P(x)\). Aleshores la funció \(P(x)\) que satisfà
+		\[P(x_{i})=y_{i}\]
+		per a tot \(i\in\{0,\dots,n\}\) és única.
+		\begin{proof}
+			Per l'observació \myref{obs:polinomis bàsics de Lagrange cases} veiem que una solució a aquest problema d'interpolació és
+			\[P(x)=y_{0}L_{0}(x)+y_{1}L_{1}(x)+\dots+y_{n}L_{n}(x).\]
+			Per veure'n la unicitat suposem que existeix un altre \(Q(x)\in\mathbb{R}_{n+1}[x]\) tal que
+			\[P(x_{i})=Q(x_{i})=y_{i}\]
+			per a tot \(i\in\{0,\dots,n\}\). Això és equivalent a que
+			\[P(x_{i})-Q(x_{i})=0\]
+			per a tot \(i\in\{0,\dots,n\}\). Ara bé, tenim que \(x_{0},\dots,x_{n}\) són arrels diferents de \(P(x)-Q(x)\) per la definició de \myref{def:problema d'interpolació de Lagrange}. Com que \(P(x)-Q(x)\in\mathbb{R}_{n+1}[x]\), aquests són els seus únics zeros, i pel Teorema Fonamental de l'Àlgebra tenim que ha de ser \(P(x)=Q(x)\). %REFERENCIES
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}\label{prop:Algorisme de Neville}
+		Siguin \(\{(x_{i},y_{i})\}_{i=0}^{n}\) un conjunt de punts de suport, \(I=\{i_{0},\dots,i_{k}\}\subseteq\{1,\dots,n\}\) un conjunt i \(\{(x_{i},y_{i})\}_{i\in I}\) un problema d'interpolació per \(P_{i_{0},\dots,i_{k}}\in\mathbb{R}_{k}[x]\), on
+		\[P_{i_{0},\dots,i_{k}}\left(x_{i_{j}}\right)=y_{i_{j}}\quad\text{per a tot }j\in\{0,\dots,k\}.\]
+		Aleshores
+		\[P_{i}(x)=y_{i}\]
+		i
+		\[P_{i_{0},\dots,i_{k}}(x)=\frac{\left(x-x_{i_{0}}\right)P_{i_{1},\dots,i_{k}}(x)-\left(x-x_{i_{k}}\right)P_{i_{0},\dots,i_{k-1}}(x)}{x_{i_{k}}-x_{i_{0}}}.\]
+		\begin{proof}
+			Fixem \(k=1\). Aleshores tenim
+			\[P_{i}(x)=y_{i}.\]
+			
+			Veiem la segona part. Definim 
+			\[G(x)=\frac{\left(x-x_{i_{0}}\right)P_{i_{1},\dots,i_{k}}(x)-\left(x-x_{i_{k}}\right)P_{i_{0},\dots,i_{k-1}}(x)}{x_{i_{k}}-x_{i_{0}}}\]
+			tenim \(G=P_{i_{0},\dots,i_{k}}\) per la proposició \myref{prop:unicitat interpolació de Lagrange}, i per tant
+			\[G(x_{i_{0}})=P_{i_{0},\dots,i_{k-1}}(x_{i_0})=y_{i_{0}}\]
+			i
+			\[G(x_{i_{k}})=P_{i_{1},\dots,i_{k}}(x_{i_k})=y_{i_{k}},\]
+			i per tant
+			\[G(x_{i_{j}})=\frac{(x_{i_{j}}-x_{i_{0}})y_{i_{j}}-(x_{i_{j}}-x_{i_{k}})y_{i_{j}}}{x_{i_{k}}-x_{i_{0}}}=y_{i_{j}}\]
+			per a tot \(j\in\{1,\dots,k-1\}\), com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{observation}[Algorisme de Neville]\labelname{algorisme de Neville}\label{obs:Algorisme de Neville}
+		Aquest mètode recurrent es pot organitzar en una taula com
+		\[\begin{array}{c|cccc}
+		& k=0 & k=1 & k=2 & \\\hline
+		x_{0} & y_{0}=P_{0}(x) & & & \\
+		& & P_{0,1}(x) & &\\
+		x_{1} & y_{1}=P_{1}(x) & & P_{0,1,2}(x) &\\
+		& & P_{1,2}(x) & & \\
+		x_{2} & y_{2}=P_{2}(x) & & &\\
+		\vdots & \vdots & & &
+		\end{array}\]
+		que s'omple de columna a columna de dreta a esquerra. Es coneix com a algorisme de Neville.
+	\end{observation}
+	\begin{example}\label{ex:Algorisme de Neville}
+		Sigui \(\{(0,1),(1,3),(3,2)\}\) un problema d'interpolació per \(P_{0,1,2}(x)\in\mathbb{R}_{2}[x]\). Volem avaluar el polinomi interpolador de Lagrange en \(x=2\), és a dir, volem trobar \(P_{0,1,2}(2)\).
+		\begin{solution}La taula de l'algoritme de Neville plantejada en l'observació \myref{obs:Algorisme de Neville} per aquest problema és
+			\[\begin{array}{c|ccc}
+			& k=0 & k=1 & k=2 \\\hline
+			x_{0}=0 & y_{0}=P_{0}(2)=1 & & \\
+			& & P_{0,1}(2)=5 &\\
+			x_{1}=1 & y_{1}=P_{1}(2)=3 & & P_{0,1,2}(2)=\frac{10}{3}\\
+			& & P_{1,2}(2)=\frac{5}{2} &\\
+			x_{2}=3 & y_{2}=P_{2}(2)=2 & &
+			\end{array}\]
+			i per tant trobem \(P_{0,1,2}(2)=\frac{10}{3}\).
+		\end{solution}
+	\end{example}
+	\subsection{Mètode de les diferències dividides de Newton}
+	El mètode de Neville és útil per avaluar un polinomi interpolador en un punt una vegada, però si es vol obtenir l'expressió general del polinomi interpolador per poder avaluar-lo múltiples vegades en diferents punts s'hauran d'emparar altres solucions.
+	\begin{definition}[Diferències dividides]
+		\labelname{diferències dividides}\label{def:diferències dividides}
+		Sigui \(P(x;a_{0},\dots,a_{n})\) el polinomi interpolador de Lagrange amb els punts de suport \(\{(x_{i},y_{i})\}_{i=0}^{n}\). Aleshores direm que
+		\[[x_{0},\dots,x_{k}]=a_{k}\]
+		és 	la diferència dividida d'ordre \(n\) del problema d'interpolació de Lagrange de \(\{(x_{i},y_{i})\}_{i=0}^{k}\) per \(P(x;a_{0},\dots,a_{k})\).
+		
+		Aquesta definició té sentit per la proposició \myref{prop:unicitat interpolació de Lagrange}.
+	\end{definition}
+	\begin{proposition}\label{prop:Mètode diferències dividides}
+		Sigui \(\{(x_{i},y_{i})\}_{i=0}^{n}\) un problema d'interpolació de Lagrange per \(P(x)\). Aleshores
+		\begin{multline*}
+		P(x)=[x_{0}]+[x_{0},x_{1}](x-x_{0})+[x_{0},x_{1},x_{2}](x-x_{0})(x-x_{1})+\cdots\\\cdots+[x_{0},\dots,x_{n}](x-x_{0})\cdots(x-x_{n-1})=\sum_{i=0}^{n}\left([x_{0},\dots,x_{i}]\prod_{j=0}^{i-1}(x-x_{j})\right).
+		\end{multline*}
+		\begin{proof}
+			Denotem per \(P_{1,\dots,k}\in\mathbb{K}_{k+1}[x]\) el polinomi que satisfà
+			\[P_{0,\dots,k}(x_{j})=y_{j}\quad\text{per a tot }j\in\{0,\dots,k\}.\]
+			Aleshores tenim que el polinomi
+			\[G_{k}(x)=P_{0,\dots,k}(x)-P_{0,\dots,k-1}(x)\]
+			té com arrels \(x_{0},\dots,x_{k-1}\), i per tant existeix una única costant \(C_{k}\) tal que
+			\[G_{k}(x)=C_{k}(x-x_{0})\cdots(x-x_{k-1})\]
+			i per tant, si fem
+			\[G_{k}(x)=a_{0}+a_{1}x+\dots+a_{k}x^{k}\]
+			tenim que \(C_{k}=a_{k}\). Aleshores per la definició de \myref{def:diferències dividides} tenim que
+			\[G_{k}(x)=[x_{0},\dots,x_{k}](x-x_{0})\cdots(x-x_{k-1})\]
+			i per la proposició \myref{prop:unicitat interpolació de Lagrange} tenim
+			\[P(x)=P_{n}\] i per tant trobem recursivament
+			\begin{align*}
+			P_{n}(x)=&P_{n-1}(x)+[x_{0},\dots,x_{n}](x-x_{0})\cdots(x-x_{n-1})\\
+			=&P_{n-2}(x)+[x_{0},\dots,x_{n-1}](x-x_{0})\cdots(x-x_{n-2})+\\&+[x_{0},\dots,x_{n}](x-x_{0})\cdots(x-x_{n-1})\\
+			\vdots&\\
+			=&P_{n-r}(x)+\sum_{i=0}^{n-r+1}\left([x_{0},\dots,x_{n-l+1}]\prod_{j=0}^{n-r}(x-x_{j})\right)\tag{r>0}\\
+			\vdots&\\
+			=&P_{1}(x)+[x_{0},x_{1}](x-x_{0})+[x_{0},x_{1},x_{2}](x-x_{0})(x-x_{1})+\cdots\\&\dots+[x_{0},\dots,x_{n-1}](x-x_{0})\cdots(x-x_{n-2})+\\&+[x_{0},\dots,x_{n}](x-x_{0})\cdots(x-x_{n-1})\\
+			\intertext{i per la definició de \myref{def:diferències dividides} tenim que \(P_{1}(x)=[x_{0}]\)}
+			=&[x_{0}]+[x_{0},x_{1}](x-x_{0})+\dots+[x_{0},\dots,x_{n-1}](x-x_{0})\cdots(x-x_{n-2})+\\&+[x_{0},\dots,x_{n}](x-x_{0})\cdots(x-x_{n-1})=P(x).\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{observation}\label{obs:mètode diferències dividides invariant per permutacions}
+		Sigui \(\{(x_{i},y_{i})\}_{i=0}^{n}\) un problema d'interpolació de Lagrange. Aleshores per a tot \(\sigma\in S_{4}\) tenim
+		\[[x_{0},\dots,x_{n}]=[x_{\sigma{0}},\dots,x_{\sigma(n)}].\]
+		\begin{proof}
+			Per la proposició \myref{prop:unicitat interpolació de Lagrange}. %refinar potser
+		\end{proof}
+	\end{observation}
+	\begin{proposition}\label{prop:algoritme diferències dividides de Newton}
+		Sigui \(\{(x_{i},y_{i})\}_{i=0}^{n}\) un problema d'interpolació de Lagrange per \(P(x)\). Aleshores
+		\begin{equation}\label{eq:prop:algoritme diferències dividides de Newton 1}
+		[x_{i}]=y_{i}\quad\text{per a tot }i\in\{0,\dots,n\}
+		\end{equation}
+		i
+		\begin{equation}\label{eq:prop:algoritme diferències dividides de Newton 2}
+		[x_{0},\dots,x_{n}]=\frac{[x_{1},\dots,x_{n}]-[x_{0},\dots,x_{n-1}]}{x_{n}-x_{0}}.
+		\end{equation}
+		\begin{proof}
+			Per veure \eqref{eq:prop:algoritme diferències dividides de Newton 1} tenim prou en veure que per a un problema d'interpolació de \(\{(x,y)\}\) per \(P(x)\) tenim que \(P(x)\in\mathbb{R}_{0}[x]\), i per tant és una constant i per la definició de \myref{def:diferències dividides} trobem \([x]=y\).
+			
+			Per veure \eqref{eq:prop:algoritme diferències dividides de Newton 2} tenim, per la proposició \myref{prop:Algorisme de Neville}
+			\[P_{0,\dots,n}(x)=\frac{\left(x-x_{0}\right)P_{1,\dots,n}(x)-\left(x-x_{n}\right)P_{0,\dots,n-1}(x)}{x_{n}-x_{0}},\]
+			on \(P_{i_{1},\dots,i_{k}}(x)\) és el polinomi interpolador de Lagrange del problema interpolador del problema \(\{(x_{i},y_{i})\}_{i\in\{i_{1},\dots,i_{k}\}}\). Per tant per la proposició \myref{prop:Mètode diferències dividides} trobem %REVISAR? fa mandra
+			\[[x_{0},\dots,x_{n}]=\frac{[x_{1},\dots,x_{n}]-[x_{0},\dots,x_{n-1}]}{x_{n}-x_{0}},\]
+			com volíem veure.
+		\end{proof}
+	\end{proposition}
+	%	\begin{example}
+	%		La velocitat vertical d'un coet \(v(t)\) en certs instants de temps ve donada per la taula
+	%		\[\begin{array}{r|rrrr}
+	%			t~(s) & 0 & 15 & 22.5 & 30\\\hline
+	%			v(t)~(\frac{m}{s}) & 0 & 375 & 600 & 900
+	%		\end{array}\]
+	%		Volem aproximar
+	%		\begin{enumerate}
+	%			\item La velocitat del coet en l'instant \(t'_{1}=16\).
+	%			\item La distància recorreguda pel coet entre els instants \(t'_{0}=11\) i \(t'_{1}=16\).
+	%			\item L'acceleració del coet en l'instant \(t'_{1}=16\).
+	%		\end{enumerate}
+	%		\begin{solution}
+	%			Denotem \(t_{0}=0\), \(t_{1}=15\), \(t_{2}=22.5\), \(t_{3}=30\). El conjunt \(\{t_{i}\}_{i=0}^{3}\) és el conjunt d'abscisses del problema d'interpolació de \(\{(t_{i},v(t_{i}))\}_{i=0}^{3}\) pel polinomi \(P_{0,1,2,3}(t)\). Com que els elements del conjunt d'abscisses són tots diferents dos a dos tenim que aquest problema d'interpolació és un problema d'interpolació de Lagrange per la definició de \myref{def:problema d'interpolació de Lagrange}.
+	%			
+	%			Per començar volem avaluar el polinomi de Lagrange \(P_{0,1,2,3}(t)\) en l'instant \(t'_{1}=16\), és a dir, volem calcular \(P_{0,1,2,3}(16)\). La taula de l'algoritme de Neville plantejada en l'observació \myref{obs:Algorisme de Neville} per aquest problema és
+	%			\[\begin{array}{c|ccccc}
+	%			& k=0 & k=1 & k=2 & k=3 \\\hline
+	%			x_{0}=0 & y_{0}=P_{0}(2)=1 & & \\
+	%			& & P_{0,1}(2)=5 &\\
+	%			x_{1}=1 & y_{1}=P_{1}(2)=3 & & P_{0,1,2}(2)=\frac{10}{3}\\
+	%			& & P_{1,2}(2)=\frac{5}{2} &\\
+	%			x_{2}=3 & y_{2}=P_{2}(2)=2 & &
+	%			\end{array}\]
+	%			
+	%			
+	%			\[\begin{array}{c|ccccc}
+	%			& k=0 & k=1 & k=2 & k=3 \\\hline
+	%			t_{0} & P_{0}(16)=0\\
+	%			&& P_{0,1}(16)=400\\
+	%			t_{1} & P_{1}(16)=375 & & P_{0,1,2}(16)=403.\widehat{5}\\
+	%			&& P_{1,2}(16)=405 & & P_{0,1,2,3}(16)=402.2\widehat{074}\\
+	%			t_{2} & P_{2}(16)=600 & & P_{1,2,3}(16)=400.\widehat{6}\\
+	%			&& P_{2,3}(16)=340\\
+	%			t_{3} & P_{3}(16)=900
+	%			\end{array}\]
+	%		\end{solution}
+	%	\end{example}
+	\subsection{Error en la interpolació de Lagrange}
+	\begin{theorem}\label{thm:primera fita de l'error en la interpolació de Lagrange}
+		Siguin \(f\colon[a,b]\longrightarrow\mathbb{R}\) una funció de classe de diferenciabilitat \(\mathcal{C}^{n+1}\) i \(\{(x_{i},f(x_{i}))\}_{i=0}^{n}\) un problema d'interpolació de Lagrange per \(P(x)\) amb abscisses de suport que satisfan \(\{x_{i}\}_{i=0}^{n}\subset[a,b]\). Aleshores per a tot \(x\in[a,b]\) tenim
+		\[f(x)-P(x)=\frac{f^{(n+1)}(\xi(x))}{(n+1)!}\omega(x),\]
+		on \(\omega(x)=(x-x_{0})\cdots(x-x_{n})\), per a una certa funció \(\xi(x)\colon[a,b]\longrightarrow[c,d]\) amb \(c=\min\left\{\min_{i\in[0,n]}\{x_{i}\},x\right\}\) i \(d=\max\left\{\max_{i\in[0,n]}\{x_{i}\},x\right\}\).
+		\begin{proof}
+			Fixem \(x\in[a,b]\). Tenim \(f(x_{i})-P(x_{i})=0\) per a tot \(i\in\{0,\dots,n\}\). Si imposem \(x\notin\{x_{0},\dots,x_{n}\}\) i definim la funció
+			\[F(z)=f(z)-P(z)-\omega(z)S(x)\]
+			on
+			\begin{equation}\label{eq:thm:primera fita de l'error en la interpolació de Lagrange 1}
+			S(x)=\frac{f(x)-P(x)}{\omega(x)}.
+			\end{equation}
+			Observem que \(S(x)\) està ben definida pel Teorema Fonamental de l'Àlgebra. %REF
+			
+			Observem també que
+			\[F(x_{i})=f(x_{i})-P(x_{i})-\omega(x_{i})S(x)=0\]
+			i
+			\[F(x)=f(x)-P(x)-\omega(x)\frac{f(x)-P(x)}{\omega(x)}=0\]
+			és a dir, \(F(z)\) existeixen \(\xi^{(0)}_{0},\dots,\xi^{(0)}_{n+1}\in[a,b]\) tals que \(F(\xi^{(0)}_{i})=0\) per a tot \(i\in\{0,\dots,n+1\}\) amb \(\xi^{(0)}_{i+1}>\xi^{(0)}_{i}\) per a tot \(i\in\{0,\dots,n\}\).
+			
+			Aplicant el \myref{thm:Teorema de Rolle} trobem que per a tot \(i\in\{1,\dots,n+1\}\) existeixen \(\{\xi^{(1)}_{i}\}_{i=1}^{n+1}\) tals que \(F'(\xi^{(1)}_{i})=0\) amb \(\xi^{(1)}_{i}\in(\xi^{(0)}_{i-1},\xi^{(0)}_{i})\). Iterant aquest argument trobem que per a \(k\in\{0,\dots,n+1\}\) tenim que per a tot \(i\in\{k,\dots,n+1\}\) existeixen \(\{\xi^{(k)}_{i}\}_{i=k}^{n+1}\) tals que \(F^{k}(\xi^{(k)}_{i})=0\) amb \(\xi^{(k)}_{i}\in(\xi^{(k-1)}_{i-1},\xi^{(k-1)}_{i})\); i per tant quan \(k=n+1\) tenim que existeix \(\xi^{(n+1)}_{n+1}\in(\xi^{(n)}_{n},\xi^{(n)}_{n+1})\) tal que \(F^{(n+1)}(\xi^{(n+1)}_{n+1})=0\) i trobem\marginpar{Dime si es verdad\\
+				Que alguien ha logrado escapar de esta tela de araña.\\
+				Dime cuanto cuesta\hfil\twonotes\hfil\\
+				Saber la puta verdad\\
+				Y quien le pone precio.}
+			\[F^{(n+1)}(\xi^{(n+1)}_{n+1})=f^{(n+1)}(\xi^{(n+1)}_{n+1})-(n+1)!S(x)\]%referencies derivades polinomis
+			i per tant, recordant \eqref{eq:thm:primera fita de l'error en la interpolació de Lagrange 1}, tenim
+			\[\frac{f^{(n+1)}(\xi^{(n+1)}_{n+1})}{(n+1)!}=\frac{f(x)-P(x)}{\omega(x)}\]
+			d'on trobem
+			\[f(x)-P(x)=\frac{f^{(n+1)}(\xi^{(n+1)}_{n+1})}{(n+1)!}\omega(x),\]
+			com volíem veure.
+		\end{proof}
+	\end{theorem}
+	\begin{observation}
+		\[f(x)-P(x)=[x_{0},\dots,x_{n},x]\omega(x)\]
+	\end{observation}
+	\begin{corollary}
+		Sigui \(\{(x_{i},f(x_{i}))\}_{i=0}^{n}\) un problema d'interpolació de Lagrange. Aleshores existeix un cert \(\xi\in[x_{0},x_{n}]\) tal que
+		\[[x_{0},\dots,x_{n}]=\frac{f^{(n)}(\xi)}{n!}.\]
+	\end{corollary}
+	\begin{example}
+		Considerem el següent problema d'interpolació
+		\[\begin{array}{c|rrrr}
+		i & 0 & 1 & 2 & 4\\\hline
+		x_{i} & 100 & 101 & 102 & 103\\
+		\log(x_{i}) & \log(100) & \log(101) & \log(102) & \log(103)
+		\end{array}\]
+		per \(P(x)\). Volem estimar l'error comés en calcular el valor de \(P(102.5)\).
+		\begin{solution}
+			Per la definició de \myref{def:problema d'interpolació de Lagrange} tenim que aquest problema d'interpolació és de Lagrange. Aleshores, pel Teorema \myref{thm:primera fita de l'error en la interpolació de Lagrange} tenim que
+			\[f(x)-P(x)=\frac{f^{(4)}(\xi(x))}{4!}\omega(x)\]
+			i per tant, amb \(f(x)=\log(x)\),
+			\[\log(x)-P(x)=\frac{-1}{\xi^{4}(x)4}(x-100)(x-101)(x-102)(x-103)\]
+			i si prenem \(x=102.5\) tenim
+			\[\log(102.5)-P(102.5)=\frac{-1}{\xi^{4}(102.5)4}\frac{5}{2}\frac{3}{2}\frac{1}{2}\frac{-1}{2}\]
+			amb \(\xi(102.5)\in[100,103]\), i per tant \(\frac{1}{103}\leq\frac{1}{\xi(102.5)}\leq\frac{1}{100}\). Aleshores tenim
+			\[\abs{\log(102.5)-P(x)}=\frac{3\cdot5}{2^{4}\cdot\xi^{4}(102.5)}\leq\frac{15}{64}\frac{1}{100^{4}}\approx2.34\cdot10^{-9}.\qedhere\]
+		\end{solution}
+	\end{example}
+	\subsection{Interpolació en nodes equiespaiats}
+	\begin{definition}[Nodes equiespaiats]
+		\labelname{nodes equiespaiats}\label{def:nodes equiespaiats}
+		Sigui \(\{x_{i}\}_{i=0}^{n}\) abscisses de suport que satisfacin
+		\[x_{i}=x_{0}+ih\]
+		amb \(h=\frac{x_{n}-x_{0}}{n}\) per a tot \(i\in\{0,\dots,n\}\).
+		Aleshores direm que les abscisses de suport \(\{x_{i}\}_{i=0}^{n}\) són equiespaiades o que un problema d'interpolació \(\{(x_{i},y_{i})\}_{i=0}^{n}\) és un problema d'interpolació amb nodes equiespaiats.
+		
+		També denotarem
+		\[\Delta f(x)=f(x+h)-f(x)\quad\text{i}\quad\Delta^{n+1}f(x)=\Delta(\Delta^{n}f(x)).\]
+	\end{definition}
+	\begin{theorem}\label{thm:diferències dividides en nodes equidistants}
+		Sigui \(\{(x_{i},f(x_{i}))\}_{i=0}^{n}\) un problema d'interpolació de Lagrange amb nodes equiespaiats. Aleshores, si \(h=\frac{x_{n}-x_{0}}{n}\) tenim
+		\[[x_{0},\dots,x_{n}]=\frac{\Delta^{n}f(x_{0})}{n!h^{n}}.\]
+		\begin{proof}
+			Ho farem per inducció sobre \(n\). El cas \(n=1\) és cert, ja que
+			\begin{align*}
+			\Delta f(x_{0})&=f(x_{0}+h)-f(x_{0})\tag{\myref{def:nodes equiespaiats}}\\
+			&=f(x_{1})-f(x_{0})\\
+			&=h\frac{f(x_{1})-f(x_{0})}{x_{1}-x_{0}}\\
+			&=h[x_{0},x_{n}]\tag{\myref{def:diferències dividides}}
+			\end{align*}
+			i per tant
+			\begin{equation}\label{eq:thm:diferències dividides en nodes equidistants 1}
+			[x_{0},x_{n}]=\frac{\Delta f(x_{0})}{h}.
+			\end{equation}
+			
+			Suposem ara que l'enunciat és cert per a \(k\) fix i demostrem-ho pel cas \(k+1\). Tenim que
+			\begin{align*}
+			\Delta^{k+1}f(x_{0})&=\Delta(\Delta^{k}(f(x_{0}))\tag{\myref{def:nodes equiespaiats}}\\
+			&=\Delta^{k}f(x_{1})-\Delta^{k}f(x_{0})\tag{\myref{def:nodes equiespaiats}}\\
+			&=k!h^{k}\left([x_{1},\dots,x_{k+1}]-[x_{0},\dots,x_{k}]\right)\tag{\myref{eq:thm:diferències dividides en nodes equidistants 1}}\\%\tag{hipòtesi d'inducció \eqref{eq:thm:diferències dividides en nodes equidistants 1}}\\%REF
+			&=k!h^{k}(k+1)h\frac{[x_{1},\dots,x_{k+1}]-[x_{0},\dots,x_{k}]}{x_{k+1}-x_{0}}\\
+			&=(k+1)!h^{k+1}[x_{0},\dots,x_{k+1}],\tag{\myref{def:diferències dividides}}
+			\end{align*}
+			i per tant tenim %l'axioma d'inducció?
+			\[[x_{0},\dots,x_{k+1}]=\frac{\Delta^{k+1}f(x_{0})}{(k+1)!h^{k+1}},\]
+			com volíem veure.
+		\end{proof}
+	\end{theorem}%FER error xat Alex Miranda
+	%FER un exemple, va. Pàgina 47 (49) apunts Alsedà
+	\section{Polinomis interpoladors per splines}
+	\subsection{Interpolació per splines}
+	\begin{definition}
+		Siguin \(\Delta=\{x_{i}\}_{i=0}^{n}\) una partició d'un interval \([a,b]\subset\mathbb{R}\) i \(s\colon[a,b]\longrightarrow\mathbb{R}\) una funció a trossos de classe \(\mathcal{C}^{p-1}\) de la forma
+		\[s(x)=\begin{cases}
+		s_{1}(x) & \text{si }x\in[x_{0},x_{1}]\\
+		& \vdots\\
+		s_{k+1}(x) & \text{si }x\in[x_{k},x_{k+1}]\\
+		& \vdots\\
+		s_{n}(x) & \text{si }x\in[x_{n-1},x_{n}]
+		\end{cases}\]
+		amb \(s_{i}\in\mathbb{R}_{p}[x]\) per a tot \(i\in\{1,\dots,n\}\). Aleshores direm que \(s\) és un spline de grau \(p\) associat a \(\Delta\).
+		
+		Denotarem
+		\[S_{p}(\Delta)=\{s\mid s\text{ és un spline de grau }p\text{ associat a }\Delta\}.\]
+	\end{definition}
+	\begin{note}
+		Només treballarem amb splines cúbics, és a dir, amb \(p=3\), que són els més emparats.
+	\end{note}
+	ai haig de córrer
+	\printbibliography
+	La bibliografia del curs inclou els textos \cite{MondeloApuntsMetodes,EinesBasiquesCalculNumeric,BurdenFairesNumericalAnalysis,GrauNogueraCalculnumeric,KincaidCheneyNumericalAnalysis,HenriciElementsOfNumericalAnalysis,DahlquistBjorck,IsaacsonKellerAnalysisOfNumericalMethods,StoerBulirschIntroductionToNumericalAnalysis,TheCProgrammingLanguage,ThePracticeOfProgramming}.
+\end{document}
+
+%PENSAR: Hermite és interpolar el polinomi de Taylor??????

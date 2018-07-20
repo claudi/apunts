@@ -1,0 +1,1852 @@
+\documentclass[../Apunts.tex]{subfiles}
+
+\begin{document}
+	\chapter{Lògica matemàtica}
+	\section{Els fonaments}
+	\subsection{Processos fonamentals de les matemàtiques}
+	Definirem de manera informal els conceptes d'\emph{objecte matemàtic}, de \emph{relació} entre objectes i de \emph{demostració} d'una relació. Aquests són els tres processos fonamentals de les matemàtiques.
+	
+	Els \emph{objectes matemàtics} són abstraccions de conceptes. Anomenem a les possibles propietats d'aquests objectes \emph{relacions}. Aquestes poden ser o bé vertaderes o bé falses.
+	
+	Anomenem a algunes d'aquestes relacions \emph{axiomes}, que són relacions que prenem com a vertaderes des d'un principi. Per determinar la veracitat d'altres relacions empararem les \emph{demostracions}. Direm que una relació és vertadera quan es pot deduir a partir dels axiomes amb una demostració, que és una successió d'arguments rigorosos per convèncer-nos de que una relació és vertadera.
+	\subsection{Operacions lògiques elementals}
+	\begin{definition}[Disjunció]
+		\labelname{disjunció}\label{def:disjunció}
+		Siguin \(R\) i \(S\) dues relacions. Aleshores definim una relació anomenada disjunció% que només és vertadera quan almenys una de les relacions \(R\) i \(S\) és vertadera
+		. L'escriurem \(R\lor S\), i ho llegirem ``\(R\) o \(S\)''.
+	\end{definition}
+	\begin{definition}[Negació]
+		\labelname{negació}\label{def:negació}
+		Sigui \(R\) una relació. Aleshores definim una relació anomenada negació% que només és vertadera quan \(R\) és falsa
+		. L'escriurem \(\lnot R\) i ho llegirem ``no \(R\)''.
+	\end{definition}
+	\begin{definition}[Conjunció]
+		\labelname{conjunció}\label{def:conjunció}
+		Siguin \(R\) i \(S\) dues relacions. Aleshores definim una relació anomenada conjunció definida com
+		\[R\land S=\lnot((\lnot R)\lor(\lnot S)).\]
+		Ho llegirem ``\(R\) i \(S\)''.
+	\end{definition}
+	\begin{definition}[Disjunció excloent]
+		\labelname{disjunció excloent}\label{def:disjunció excloent}
+		Siguin \(R\) i \(S\) dues relacions. Aleshores definim una relació anomenada disjunció excloent definida com
+		\[R\lxor S=(R\land(\lnot S))\lor((\lnot R)\land S).\]
+		Ho llegirem ``o bé \(R\) o bé \(S\)''.
+	\end{definition}
+	\begin{definition}[Implicació]
+		\labelname{implicació}\label{def:implicació}
+		Siguin \(R\) i \(S\) dues relacions. Aleshores definim una relació anomenada implicació definida com
+		\[R\Rightarrow S=S\lor(\lnot R).\]
+		Ho llegirem ``\(R\) implica \(S\)'' o ``si \(R\) aleshores \(S\)''.
+	\end{definition}
+	\begin{definition}[Doble implicació]
+		\labelname{doble implicació}\label{def:doble implicació}
+		Siguin \(R\) i \(S\) dues relacions. Aleshores definim una relació anomenada doble implicació definida com
+		\[R\Leftrightarrow S=(R\Rightarrow S)\land(S\Rightarrow R).\]
+		Ho llegirem com ``\(R\) si i només si \(S\)'' o ``\(R\) és equivalent a \(S\)''.
+	\end{definition}
+	\subsection{Relacions vertaderes}
+	\begin{axiom}
+		\label{axiom:relacions 1}
+		Sigui \(R\) una relació. Aleshores la relació
+		\[(R\lor R)\Rightarrow R\]
+		és vertadera.
+	\end{axiom}
+	\begin{axiom}
+		\label{axiom:relacions 2}
+		Siguin \(R\) i \(S\) dues relacions. Aleshores la relació
+		\[R\Rightarrow(R\lor S)\]
+		és vertadera.
+	\end{axiom}
+	\begin{axiom}
+		\label{axiom:relacions 3}
+		Siguin \(R\) i \(S\) dues relacions. Aleshores la relació
+		\[(R\lor S)\Rightarrow(S\lor R)\]
+		és vertadera.
+	\end{axiom}
+	\begin{axiom}
+		\label{axiom:relacions 4}
+		Siguin \(R\), \(S\) i \(T\) tres relacions. Aleshores la relació
+		\[(R\Rightarrow S)\Rightarrow((R\lor T)\Rightarrow(S\lor T))\]
+		és vertadera.
+	\end{axiom}
+	\begin{axiom}
+		\label{axiom:relacions 5}
+		Siguin \(R\) i \(S\) dues relacions tals que \(R\) i \(R\Rightarrow S\) siguin vertaderes. Aleshores \(S\) és vertadera.
+	\end{axiom}
+	\begin{definition}[Relació falsa]
+		Sigui \(R\) una relació tal que \(\lnot R\) sigui vertadera. Aleshores direm que \(R\) és falsa.
+	\end{definition}
+	\subsection{Tautologies}
+	\begin{tautology}
+		\label{taut:transitivitat implicacions}
+		Siguin \(R\), \(S\) i \(T\) tres relacions tals que \(R\Rightarrow S\) i \(S\Rightarrow T\) siguin vertaderes. Aleshores la relació \(R\Rightarrow T\) és vertadera.
+		\begin{proof}
+			Per l'axioma \myref{axiom:relacions 4} la relació
+			\[(S\Rightarrow T)\Rightarrow(S\lor(\lnot R)\Rightarrow(T\lor(\lnot R)))\]
+			és vertadera. Ara bé, per la definició d'\myref{def:implicació} això ho podem escriure com
+			\[(S\Rightarrow T)\Rightarrow((R\Rightarrow S)\Rightarrow(R\Rightarrow T))\]
+			i com que, per hipòtesi, la relació \(S\Rightarrow T\) és vertadera per l'axioma \myref{axiom:relacions 5} tenim que la relació \((R\Rightarrow S)\Rightarrow(R\Rightarrow T)\) és vertadera, i com que, de nou per hipòtesi, tenim que la relació \(R\Rightarrow S\) és vertadera tenim per l'axioma \myref{axiom:relacions 5} que la relació \(R\Rightarrow T\) és vertadera, com volíem veure.
+		\end{proof}
+	\end{tautology}
+	\begin{tautology}[Tercer exclòs]
+		\labelname{tercer exclòs}\label{taut:R o no R és vertadera}\label{taut:tercer exclòs}
+		Sigui \(R\) una relació. Aleshores la relació \(R\lor(\lnot R)\) és vertadera.
+		\begin{proof}
+			La relació \(R\lor(\lnot R)\) és equivalent, per la definició d'\myref{def:implicació}, a \(R\Rightarrow R\). Per l'axioma \myref{axiom:relacions 1} tenim que la relació \((R\lor R)\Rightarrow R\) és vertadera, i per l'axioma \myref{axiom:relacions 2} tenim que la relació \(R\Rightarrow(R\lor R)\) és vertadera. Per tant, per la tautologia \myref{taut:transitivitat implicacions}, veiem que \(R\Rightarrow R\).
+		\end{proof}
+	\end{tautology}
+	\begin{tautology}
+		\label{taut:disjunció és vertadera si una de les relaciones és vertadera}
+		Siguin \(R\) i \(S\) dues relacions tals que \(R\) sigui vertadera. Aleshores les relacions \(R\lor S\) i \(S\lor R\) són vertaderes.
+		\begin{proof}
+			Per l'axioma \myref{axiom:relacions 2} tenim que \(R\Rightarrow(R\lor S)\) és vertadera, i per l'axioma \myref{axiom:relacions 3} tenim que \((R\lor S)\Rightarrow(S\lor R)\) és vertadera.
+			
+			Ara bé, per hipòtesi tenim que \(R\) és vertadera, i per l'axioma \myref{axiom:relacions 5} veiem que les relacions \(R\lor S\) i \(S\lor R\) són vertaderes.
+		\end{proof}
+	\end{tautology}
+	\begin{tautology}
+		\label{taut:R és equivalent a no no R}
+		Sigui \(R\) una relació. Aleshores la relació \(R\Leftrightarrow\lnot(\lnot R)\) és vertadera.
+		\begin{proof}
+			Per la definició de \myref{def:doble implicació} hem de veure que la relació
+			\[(\lnot(\lnot R)\lor(\lnot R))\land(R\lor(\lnot(\lnot(\lnot R)))\]
+			és vertadera. Ara bé, si \(R\) és vertadera trobem per la definició de \myref{def:negació} que \(\lnot R\) és falsa, i aleshores per la tautologia del \myref{taut:R o no R és vertadera} les relacions \(\lnot(\lnot R)\lor(\lnot R)\) i \(R\lor(\lnot(\lnot(\lnot R))\) són vertaderes
+			
+			Si \(R\) és falsa trobem per la definició de \myref{def:negació} que \(\lnot R\) és vertadera, aleshores, de nou per la tautologia del \myref{taut:R o no R és vertadera}, les relacions \(\lnot(\lnot R)\lor(\lnot R)\) i \(R\lor(\lnot(\lnot(\lnot R))\) són vertaderes, com volíem veure.
+		\end{proof}
+	\end{tautology}
+	\begin{tautology}[Primera llei de De Morgan]
+		\labelname{llei de De Morgan}\label{taut:primera llei de De Morgan}
+		Siguin \(R\) i \(S\) dues relacions. Aleshores la relació
+		\[\lnot(R\lor S)\Leftrightarrow((\lnot R)\land(\lnot S))\]
+		és vertadera.
+		\begin{proof}
+			Per la definició de \myref{def:conjunció} volem veure que la relació
+			\[\lnot(R\lor S)\Leftrightarrow\lnot((\lnot(\lnot R))\lor(\lnot(\lnot S)))\]
+			és vertadera. Aleshores, per la tautologia del \myref{taut:R o no R és vertadera} això és equivalent a veure que la relació
+			\[\lnot(R\lor S)\Leftrightarrow\lnot(R\lor S)\]
+			és vertadera, i per l'axioma \myref{axiom:relacions 3} hem acabat.
+		\end{proof}
+	\end{tautology}
+	\begin{tautology}[Segona llei de De Morgan]
+		\labelname{llei de De Morgan}\label{taut:segona llei de De Morgan}
+		Siguin \(R\) i \(S\) dues relacions. Aleshores la relació
+		\[\lnot(R\land S)\Leftrightarrow((\lnot R)\lor(\lnot S))\]
+		és vertadera.
+		\begin{proof}
+			Per la definició de \myref{def:conjunció} hem de veure que la relació
+			\[((\lnot R)\lor(\lnot S))\Leftrightarrow\lnot((\lnot(\lnot R))\land(\lnot (\lnot S))),\]
+			i per la tautologia \myref{taut:R és equivalent a no no R} això és equivalent a veure que la relació
+			\[((\lnot R)\lor(\lnot S))\Leftrightarrow\lnot(R\land S),\]
+			que és conseqüència de la \myref{taut:primera llei de De Morgan}.
+		\end{proof}
+	\end{tautology}
+	\begin{tautology}[Llei de les contrarecíproques]
+		\labelname{la llei de les contrarecíproques}\label{taut:llei de les contrarecíproques}
+		Siguin \(R\) i \(S\) dues relacions. Aleshores la relació
+		\[(R\Rightarrow S)\Leftrightarrow((\lnot S)\Rightarrow(\lnot R))\]
+		és vertadera.
+		\begin{proof}
+			Per la definició d'\myref{def:implicació} hem de veure que la relació
+			\[(S\lor(\lnot R))\Leftrightarrow((\lnot R)\lor(\lnot(\lnot S)))\]
+			és vertadera. Ara bé, per la tautologia \myref{taut:R és equivalent a no no R} tenim que això és equivalent a veure que la relació
+			\[(S\lor(\lnot R))\Leftrightarrow((\lnot R)\lor S)\]
+			és vertadera, i pels axiomes \myref{axiom:relacions 3} i \myref{axiom:relacions 4} i la definició de \myref{def:doble implicació} tenim que aquesta relació és vertadera, com volíem veure.
+		\end{proof}
+	\end{tautology}
+	\begin{tautology}
+		\label{taut:condició equivalent a conjunció}
+		Siguin \(R\) i \(S\) dues relacions. Aleshores la relació \(R\land S\) és vertadera si i només si \(R\) és vertadera i \(S\) és vertadera.
+		\begin{proof}
+			Veiem primer l'implicació cap a la dreta (\(\Rightarrow\)). Suposem doncs que \(R\) i \(S\) són vertaderes. Per l'axioma \myref{axiom:relacions 2} la relació \(S\lor(\lnot R)\) és vertadera i, per la definició de \myref{def:implicació} tenim que \(R\Rightarrow S\) és vertadera. Ara bé, per la tautologia de \myref{taut:llei de les contrarecíproques} tenim que la relació \((\lnot S)\Rightarrow(\lnot R)\) és vertadera, i pels axiomes \myref{axiom:relacions 4} i \myref{axiom:relacions 1} tenim que la relació
+			\[((\lnot S)\lor(\lnot R))\Rightarrow(\lnot R)\]
+			és vertadera, i de nou per la tautologia de \myref{taut:llei de les contrarecíproques} trobem que la relació
+			\[(\lnot(\lnot R))\Rightarrow(\lnot(\lnot S)\lor(\lnot R))\]
+			és vertadera, i per la tautologia \myref{taut:R és equivalent a no no R} trobem que la relació
+			\[R\Rightarrow(\lnot((\lnot S)\lor(\lnot R)))\]
+			és vertadera, i per la definició de \myref{def:conjunció} això és equivalent a que la relació
+			\[R\Rightarrow(R\land S)\]
+			és vertadera, i per tant per l'axioma \myref{axiom:relacions 5} trobem que \(R\land S\) és vertadera, com volíem veure.
+			
+			Veiem ara l'implicació cap a l'esquerra (\(\Leftarrow\)). Suposem doncs que la relació \(R\land S\) és vertadera. Per la tautologia de \myref{taut:llei de les contrarecíproques} tenim que la relació \((R\land S)\Rightarrow S\) és vertadera si i només si la relació
+			\[(\lnot R)\Rightarrow(\lnot(\lnot((\lnot R)\lor(\lnot S))))\]
+			és vertadera. Ara bé, per la tautologia \myref{taut:R és equivalent a no no R} tenim que això és equivalent a veure que la relació
+			\[(\lnot R)\Rightarrow((\lnot R)\lor(\lnot S))\]
+			és vertadera, que és conseqüència de l'axioma \myref{axiom:relacions 2}, i per tant la relació \((R\land S)\Rightarrow R\) és vertadera. La demostració del cas \((R\land S)\Rightarrow S\) és anàloga.
+		\end{proof}
+	\end{tautology}
+	\begin{tautology}
+		\label{taut:condicions per disjunció}
+		Siguin \(R\) i \(S\) dues relacions tals que \(R\) sigui falsa i \(R\lor S\) sigui vertadera. Aleshores la relació \(S\) és vertadera.
+		\begin{proof}
+			Per la tautologia \ref{taut:R és equivalent a no no R} tenim que la relació \(R\Rightarrow(\lnot(\lnot R))\) és vertadera, i per l'axioma \myref{axiom:relacions 4} això és que la relació
+			\[(R\lor S)\Leftrightarrow(\lnot(\lnot R)\lor S)\]
+			és vertadera. Ara bé, per la definició d'\myref{def:implicació} tenim que això és equivalent a la relació
+			\[(R\lor S)\Leftrightarrow((\lnot R)\Rightarrow S).\]
+			I com que, per hipòtesi, \(R\lor S\) i \(\lnot R\) són vertaderes, tenim que \(S\) és vertadera, com volíem veure.
+		\end{proof}
+	\end{tautology}
+	\begin{tautology}
+		\label{taut:disjunció excloent 1}
+		Siguin \(R\) i \(S\) dues relacions tals que \(S\) sigui falsa i \(R\lxor S\) sigui vertadera. Aleshores \(R\) és vertadera.
+		\begin{proof}
+			Tenim, per la definició de \myref{def:disjunció excloent}, que la relació
+			\[(R\land(\lnot S))\lor((\lnot R)\land S)\]
+			és vertadera. Ara bé, com per hipòtesi \(S\) és falsa per la tautologia \myref{taut:condicions per disjunció} tenim que la relació \((\lor R)\land S\) és falsa. Per tant per la tautologia \myref{taut:condició equivalent a conjunció} tenim que la relació \(R\land(\lnot S)\) és vertadera, i per la tautologia \myref{taut:condició equivalent a conjunció} tenim que \(R\) és vertadera.
+		\end{proof}
+	\end{tautology}
+	\begin{tautology}
+		\label{taut:disjunció excloent 2}
+		Siguin \(R\) i \(S\) dues relacions tals que \(R\) i \(R\lxor S\) siguin vertaderes. Aleshores \(S\) és falsa.
+		\begin{proof}
+			Tenim, per la definició de \myref{def:disjunció excloent}, que la relació
+			\[(R\land(\lnot S))\lor((\lnot R)\land S)\]
+			és vertadera. Com per hipòtesi la relació \(R\) és vertadera, per la definició de \myref{def:negació} tenim que \(\lnot R\) és falsa. I per la tautologia \myref{taut:condició equivalent a conjunció} tenim que la relació \((\lnot R)\land S\) és falsa, i per la tautologia \myref{taut:condicions per disjunció} tenim que la relació \(R\land(\lnot S)\) és vertadera.
+			
+			Ara bé, de nou per la tautologia \myref{taut:condició equivalent a conjunció}, tenim que la relació \(\lnot S\) ha de ser vertadera, i per la definició de \myref{def:negació} trobem que \(S\) és falsa.
+		\end{proof}
+	\end{tautology}
+	\chapter{Teoria de conjunts}
+	\section{Conjunts}
+	\subsection{Elements i subconjunts}
+	Igual que en la secció anterior, només farem una introducció informal a la teoria de conjunts.
+	
+	Definirem \emph{conjunt} com un objecte matemàtic, i entre conjunts la relació \(\in\) de pertinència. Interpretem la relació \(x\in A\) com que \(x\) és un \emph{element} de \(A\) o que \(x\) pertany a \(A\). Si la relació \(x\in A\) és falsa aleshores ho denotarem com \(x\notin A\) i direm que \(x\) no pertany a \(A\).
+	\begin{axiom}[Axioma d'Extensionalitat]
+		\labelname{axioma d'extensionalitat}\label{axiom:axioma d'extensionalitat}
+		Siguin \(A\) i \(B\) dos conjunts tals que per a tot \(x\) tenim \(x\in A\) si i només si \(x\in B\). Aleshores \(A=B\).
+	\end{axiom}
+	\begin{definition}[Subconjunt]
+		\labelname{subconjunt}\label{def:subconjunt}
+		Siguin \(A\) i \(B\) dos conjunts tals que per a tot \(x\in B\) tenim \(x\in A\). Aleshores direm que \(B\) és un subconjunt de \(A\) i ho denotarem \(B\subseteq A\).
+	\end{definition}
+	\begin{theorem}[Doble inclusió]
+		\labelname{Teorema de la doble inclusió}\label{thm:doble inclusió}
+		Siguin \(A\) i \(B\) dos conjunts. Aleshores \(A=B\) si i només si \(A\subseteq B\) i \(B\subseteq A\).
+		\begin{proof}
+			Comencem veient que la condició és necessària (\(\Rightarrow\)). Suposem doncs que \(A\subseteq B\) i \(B\subseteq A\). Per la definició de \myref{def:subconjunt} tenim que si \(x\in A\) aleshores \(x\in B\), ja que per hipòtesi \(A\subset B\). De mateixa manera tenim que si \(x\in B\) aleshores \(x\in A\), ja que per hipòtesi \(B\subseteq A\). Per tant, per l'\myref{axiom:axioma d'extensionalitat} tenim que \(A=B\).
+			
+			Veiem ara que la condició és suficient (\(\Leftarrow\)). Suposem doncs que \(A=B\). Tenim que si \(x\in A\), aleshores \(x\in B\), i per la definició de \myref{def:subconjunt} això és que \(A\subseteq B\). De mateixa manera, si \(x\in B\) tenim \(x\in A\), i de nou per la definició de \myref{def:subconjunt} tenim que \(B\subseteq A\), com volíem veure.
+		\end{proof}
+	\end{theorem}
+	\begin{axiom}[Axioma del Conjunt Potència]
+		Sigui \(A\) un conjunt. Aleshores existeix un conjunt \(\mathcal{P}(A)\) tal que \(B\subseteq A\) si i només si \(B\in\mathcal{P}(A)\).
+	\end{axiom}
+	\begin{notation}
+		Denotarem els conjunts com claus separant els seus elements amb comes. Per exemple, si tinguéssim un conjunt \(X\) que conté únicament els elements \(a\), \(b\) i \(c\) el podríem denotar com
+		\[X=\{a,b,c\}.\]
+		
+		Si tots els elements de \(X\) satisfan una relació \(R\) denotarem
+		\[X=\{x\mid x\text{ satisfà }R\}.\]
+		%Per exemple, podríem construir el conjunt \(X\) que té per elements els caràcters \(\mathbb{A}\), \(\mathbb{B}\), \(\mathbb{C}\), \(\mathbb{D}\), \(\mathbb{E}\), \(\mathbb{F}\), \(\mathbb{G}\), \(\mathbb{H}\), \(\mathbb{I}\), \(\mathbb{J}\), \(\mathbb{K}\), \(\mathbb{L}\), \(\mathbb{M}\), \(\mathbb{N}\), \(\mathbb{O}\), \(\mathbb{P}\), \(\mathbb{Q}\), \(\mathbb{R}\), \(\mathbb{S}\), \(\mathbb{T}\), \(\mathbb{U}\), \(\mathbb{V}\), \(\mathbb{W}\), \(\mathbb{X}\), \(\mathbb{Y}\) i \(\mathbb{Z}\); i el denotaríem com \[X=\{\mathbb{A}, \mathbb{B}, \mathbb{C}, \mathbb{D}, \mathbb{E}, \mathbb{F}, \mathbb{G}, \mathbb{H}, \mathbb{I}, \mathbb{J}, \mathbb{K}, \mathbb{L}, \mathbb{M}, \mathbb{N}, \mathbb{O}, \mathbb{P}, \mathbb{Q}, \mathbb{R}, \mathbb{S}, \mathbb{T}, \mathbb{U}, \mathbb{V}, \mathbb{W}, \mathbb{X}, \mathbb{Y}, \mathbb{Z}\}.\]
+	\end{notation}
+	\begin{axiom}[Axioma de Separació]
+		\labelname{axioma de separació}\label{axiom:axioma de separació}
+		Siguin \(A\) un conjunt i \(R\) una relació. Aleshores el conjunt \(\{x\mid(x\in A)\land(x\text{ satisfà }R)\}\) existeix.
+	\end{axiom}
+	\begin{proposition}
+		\label{prop:conjunt buit}
+		Existeix un únic conjunt sense elements.
+		\begin{proof}
+			Considerem un conjunt \(A\). Aleshores, per l'\myref{axiom:axioma de separació} tenim que existeix un conjunt
+			\[X=\{x\mid(x\in A)\land(x\notin A)\},\]
+			i per la tautologia \myref{taut:condició equivalent a conjunció} tenim que la relació \((x\in A)\land(x\notin A)\) és falsa. Per tant el conjunt \(X\) no té elements.
+			
+			La unicitat la tenim per l'axioma \myref{axiom:axioma d'extensionalitat}.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Conjunt buit]
+		Direm que el conjunt que no té elements és el conjunt buit, i el denotarem com \(\emptyset\).
+		
+		Aquesta definició té sentit per la proposició \myref{prop:conjunt buit}.
+	\end{definition}
+	\begin{axiom}[Axioma de Regularitat]
+		Sigui \(A\) un conjunt. Aleshores tenim que \(\emptyset\subseteq A\).
+	\end{axiom}
+	\subsection{Unió i intersecció de conjunts}
+	\begin{axiom}[Axioma d'Infinitud]
+		Existeix un conjunt infinit.
+	\end{axiom}
+	\begin{axiom}[Axioma de la Unió]
+		\labelname{axioma de la unió}\label{axiom:axioma de la unió}
+		Sigui \(\{A_{i}\}_{i\in I}\) és una família de conjunts. Aleshores el conjunt \(\{x\mid x\in A_{i}\text{ per a cert }i\in I\}\) existeix.
+	\end{axiom}
+	\begin{definition}[Unió de conjunts]
+		\labelname{unió de conjunts}\label{def:unió de conjunts}
+		Siguin \(A\) i \(B\) dos conjunts. Aleshores direm que el conjunt
+		\[A\cup B=\{x\mid(x\in A)\lor(x\in B)\}\]
+		és la unió de \(A\) i \(B\).
+		
+		Aquesta definició té sentit per l'\myref{axiom:axioma de la unió}.
+	\end{definition}
+	\begin{definition}[Intersecció de conjunts]
+		\labelname{intersecció de conjunts}\label{def:intersecció de conjunts}
+		Siguin \(A\) i \(B\) dos conjunts. Aleshores direm que el conjunt
+		\[A\cap B=\{x\mid(x\in A)\land(x\in B)\}\]
+		és la intersecció de \(A\) i \(B\).
+		
+		Aquesta definició té sentit per l'\myref{axiom:axioma de separació}.
+	\end{definition}
+	\begin{notation}
+		Si \(\{A_{i}\}_{i\in I}\) és una família de conjunts, denotarem la unió de tots aquests com
+		\[\bigcup_{i\in I}A_{i}=\{x\mid x\in A_{i}\text{ per a cert }i\in I\}.\]
+		Denotem la intersecció de tots aquests com
+		\[\bigcap_{i\in I}A_{i}=\{x\mid x\in A_{i}\text{ per a tot }i\in I\}.\]
+	\end{notation}
+	\section{Aplicacions entre conjunts}
+	\subsection{Aplicacions}
+	\begin{axiom}[Axioma del Parell]
+		\labelname{axioma del parell}\label{axiom:axioma del parell}
+		Per a qualsevol parella d'elements \(a,b\) existeix un conjunt \(\{a,b\}\) que conté únicament \(a\) i \(b\).
+	\end{axiom}
+	\begin{definition}[Parelles ordenades]
+		\labelname{parelles ordenades}\label{def:parelles ordenades}
+		Siguin \(a\) i \(b\) dos elements. Aleshores direm que \((a,b)=\{a,\{a,b\}\}\) és una parella ordenada.
+		
+		Aquesta definició té sentit per l'\myref{axiom:axioma del parell}.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:parelles ordenades}
+		Siguin \((a,b)\) i \((c,d)\) dues parelles ordenades. Aleshores \((a,b)=(c,d)\) si i només si \(a=c\) i \(b=d\).
+		\begin{proof}
+			Suposem que \(a=c\) i \(b=d\). Aleshores tenim que \(a\in\{c,\{c,d\}\}\), \(\{a,b\}\in\{c,\{c,d\}\}\), \(c\in\{a,\{a,b\}\}\) i \(\{c,d\}\in\{a,\{a,b\}\}\), i per tant, per la definició de \myref{def:subconjunt} tenim que \(\{c,\{c,d\}\}\subseteq\{a,\{a,b\}\}\) i \(\{a,\{a,b\}\}\in\{c,\{c,d\}\}\), i pel \myref{thm:doble inclusió} tenim que això és si i només si \(\{a,\{a,b\}\}=\{c,\{c,d\}\}\), i per la definició de \myref{def:parelles ordenades} trobem que \((a,b)=(c,d)\).
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Producte cartesià de conjunts]
+		\labelname{producte cartesià de conjunts}\label{def:producte cartesià de conjunts}
+		Siguin \(A\) i \(B\) dos conjunts. Aleshores definim el conjunt
+		\[A\times B=\{(a,b)\mid a\in A,b\in B\}\]
+		com el producte cartesià de \(A\) i \(B\).
+	\end{definition}
+	\begin{definition}[Aplicació]
+		\labelname{aplicació}\label{def:aplicació}
+		Siguin \(A\) i \(B\) dos conjunts i \(f\) un subconjunt de \(A\times B\) tal que si \((a,b)\) i \((a,b')\) són elements de \(f\), aleshores \(b=b'\). Aleshores direm que \(f\) és una aplicació de \(A\) sobre \(B\) i escriurem \(b=f(a)\). També denotarem \(f\colon A\longrightarrow B\) i
+		\begin{align*}
+		f\colon A&\longrightarrow B\\
+		a&\longmapsto b
+		\end{align*}
+	\end{definition}
+%	\begin{notation}[Operació]
+%		\labelname{operació}\label{notation:operació}
+%		Siguin \(A\), \(B\) i \(C\) conjunts i \(\star\) una aplicació de \(A\times B\) en \(C\). Aleshores direm que \(\star\) és una operació i denotarem
+%		\[\star(a,b)=a\star b\quad\text{per a tot }a\in A,b\in B.\]
+%	\end{notation}
+	\begin{axiom}[Axioma de Reemplaçament]
+		Siguin \(A\) i \(B\) dos conjunts i \(f\) una aplicació de \(A\) sobre \(B\). Aleshores el conjunt \(\{f(x)\in B\mid x\in A\}\) existeix.
+	\end{axiom}
+%	\begin{axiom}[Axioma d'Elecció]
+%		Tota família de conjunts no buits té una aplicació que permet seleccionar un element de cada conjunt.
+%	\end{axiom}
+	\subsection{Tipus d'aplicacions}
+	\begin{definition}[Aplicació injectiva]
+		\labelname{aplicació injectiva}\label{def:aplicació injectiva}
+		Sigui \(f\colon X\longrightarrow Y\) una aplicació tal que per a tot \(a\), \(a'\) elements de \(X\) satisfent \(f(a)=f(a')\) tenim \(a=a'\). Aleshores direm que \(f\) és injectiva.
+	\end{definition}
+	\begin{definition}[Aplicació exhaustiva]
+		\labelname{aplicació exhaustiva}\label{def:aplicació exhaustiva}
+		Sigui \(f\colon X\longrightarrow Y\) una aplicació tal que per a tot \(b\in Y\) existeix \(a\in A\) satisfent \(f(a)=b\). Aleshores direm que \(f\) és exhaustiva.
+	\end{definition}
+	\begin{definition}[Aplicació bijectiva]
+		\labelname{aplicació bijectiva}\label{def:aplicació bijectiva}
+		Sigui \(f\colon X\longrightarrow Y\) una aplicació injectiva i exhaustiva. Aleshores direm que \(f\) és bijectiva.
+	\end{definition}
+	\subsection{Conjugació d'aplicacions}
+	\begin{proposition}
+		\label{prop:conjugació d'aplicacions}
+		Siguin \(f\colon A\rightarrow B\) i \(g\colon B\rightarrow C\) dues aplicacions. Aleshores \(h(a)=g(f(a))\) per a tot \(a\in A\) és una aplicació de \(A\) en \(C\).
+		\begin{proof}
+			Per la definició d'\myref{def:aplicació} hem de veure que \(h\) està ben definida. És a dir, que si prenem dos elements \(a\) i \(a'\) de \(A\) tals que \(a=a'\), aleshores \(h(a)=h(a')\).
+			
+			Siguin doncs \(a\) i \(a'\) dos elements de \(A\) tals que \(a=a'\). Com que, per hipòtesi, \(f\) és una aplicació tenim per la definició d'\myref{def:aplicació} que \(f(a)=f(a')=b\), per a cert \(b\in B\), i per tant, com que per hipòtesi \(g\) és una aplicació, trobem \(g(f(a))=g(b)=c\) i \(g(f(a'))=g(b)=c\) per a cert \(c\in C\), i per tant \(h(a)=h(a')\), com volíem veure.
+			
+			També tenim que \(f\subseteq A\times C\), ja que si \(c=h(a)\) tenim \(c=g(f(a))\), i per la definició d'\myref{def:aplicació} tenim que \(a\in A\) i \(c\in C\). Per tant, per la definició de \myref{def:subconjunt} tenim que \(h\) és una aplicació.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Conjugació d'aplicacions]
+		\labelname{conjugació d'aplicacions}\label{def:conjugació d'aplicacions}
+		Siguin \(f\colon A\rightarrow B\) i \(g\colon B\rightarrow C\) dues aplicacions. Aleshores direm que l'aplicació \(g(f)\) és la composició de \(g\) amb \(f\) i ho denotarem com
+		\begin{align*}
+		g\circ f\colon A&\longrightarrow C\\
+		a&\longmapsto g(f(a)).
+		\end{align*}
+		
+		Aquesta definició té sentit per la proposició \myref{prop:conjugació d'aplicacions}.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:associativitat de la conjugació de funcions}
+		Siguin \(f\colon A\rightarrow B\), \(g\colon B\rightarrow C\) i \(h\colon C\rightarrow D\) aplicacions. Aleshores
+		\[(h\circ g)\circ f=h\circ(g\circ f).\]
+		\begin{proof}
+			Hem de veure que per a tot \(a\in A\) tenim \(((h\circ g)\circ f)(a)=(h\circ(g\circ f))(a)\). Ara bé, tenim que
+			\[((h\circ g)\circ f)(a)=(h\circ g)(f(a))=h(g(f(a)))\]
+			i
+			\[(h\circ(g\circ f))(a)=h((g\circ f)(a))=h(g(f(a))).\]
+			Per tant, per la definició d'\myref{def:aplicació} tenim que \((h\circ g)\circ f=h\circ(g\circ f)\).
+		\end{proof}
+	\end{proposition}
+	\begin{theorem}
+		\label{thm:composició d'injectives injectiva}
+		Siguin \(f\colon A\rightarrow B\) i \(g\colon B\rightarrow C\) dues aplicacions injectives. Aleshores l'aplicació \(g\circ f\) és injectiva.
+		\begin{proof}
+			Prenem \(a\) i \(a'\) dos elements de \(A\) tals que \((g\circ f)(a)=(g\circ f)(a')\). Aleshores tenim \(g(f(a))=g(f(a'))\), i per la definició d'\myref{def:aplicació injectiva} com que, per hipòtesi \(g\) i és injectiva tenim que \(f(a)=f(a')\), i com que, per hipòtesi, \(f\) és injectiva, tenim que \(a=a'\), i de nou per la definició d'\myref{def:aplicació injectiva} tenim que \(g\circ f\) és injectiva.
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}
+		\label{thm:composició d'exhaustives exhaustiva}
+		Siguin \(f\colon A\rightarrow B\) i \(g\colon B\rightarrow C\) dues aplicacions exhaustives. Aleshores l'aplicació \(g\circ f\) és exhaustiva.
+		\begin{proof}
+			Prenem un element \(c\in C\). Aleshores per la definició de \myref{def:aplicació exhaustiva} tenim que existeixen \(a\in A\) i \(b\in B\) tals que \(b=f(a)\) i \(c=g(b)\). Per tant per la definició de \myref{def:aplicació exhaustiva} tenim que \(g\circ f\) és una aplicació exhaustiva, ja que per a tot \(c\in C\) existeix \(a\in A\) tal que \((g\circ f)(a)=c\).
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}
+		\label{thm:composició de bijectives bijectiva}
+		Siguin \(f\colon A\rightarrow B\) i \(g\colon B\rightarrow C\) dues aplicacions bijectiva. Aleshores l'aplicació \(g\circ f\) és bijectiva.
+		\begin{proof}
+			Per la definició d'\myref{def:aplicació bijectiva} hem de veure que \(g\circ f\) és injectiva i exhaustiva. Ara bé, per hipòtesi tenim que \(f\) i \(g\) són bijectives, i de nou per la definició d'\myref{def:aplicació bijectiva} tenim que \(f\) i \(g\) són ambdues injectives i exhaustives. Per tant, pel Teorema \myref{thm:composició d'injectives injectiva} tenim que \(g\circ f\) és injectiva, i pel Teorema \myref{thm:composició d'exhaustives exhaustiva} tenim que \(g\circ f\) és exhaustiva, com volíem veure.
+		\end{proof}
+	\end{theorem}
+	\subsection{Aplicacions invertibles}
+	\begin{definition}[Aplicació invertible]
+		\labelname{aplicació invertible}\label{def:aplicació invertible}
+		\labelname{inversa d'una aplicació}\label{def:inversa d'una aplicació}
+		Siguin \(f\colon A\rightarrow B\) i \(g\colon B\rightarrow A\) dues aplicacions tals que per a tot \(a\in A\) i \(b\in B\) es compleix
+		\[(f\circ g)(a)=a\quad\text{i}\quad(g\circ f)(b)=b.\]
+		Aleshores direm que \(f\) és la inversa de \(g\) i que \(f\) és una aplicació invertible o que \(f\) té inversa.
+	\end{definition}
+	\begin{theorem}
+		\label{thm:unicitat de les inverses de les aplicacions bijectives}
+		Siguin \(f\colon A\rightarrow B\) una aplicació invertible i \(g_{1}\colon B\rightarrow A\) i \(g_{2}\colon B\rightarrow A\) dues inverses de \(f\). Aleshores \(g_{1}=g_{2}\).
+		\begin{proof}
+			Per la definició de \myref{def:aplicació invertible} tenim que per a tot \(a\in A\), \(b\in B\)
+			\[(g_{1}\circ f)(a)=a\quad\text{i}\quad(f\circ g_{2})(b)=b.\]
+			Ara bé, tenim
+			\[((g_{1}\circ f)\circ g_{2})(b)=g_{2}(b)\quad\text{i}\quad(g_{1}\circ(f\circ g_{2}))(b)=g_{1}(b)\]
+			i per la proposició \myref{prop:associativitat de la conjugació de funcions} trobem que \(g_{1}=g_{2}\), com volíem veure.
+		\end{proof}
+	\end{theorem}
+	\begin{notation}
+		Aprofitant el Teorema \myref{thm:unicitat de les inverses de les aplicacions bijectives} denotarem l'inversa d'una aplicació \(f:A\rightarrow B\) amb \(f^{-1}\), i per tant definim l'aplicació
+		\[f^{-1}\circ f=\Id_{A}.\]
+		
+		Aleshores tenim que \(Id_{A}\colon A\rightarrow A\) és l'aplicació bijectiva que satisfà \(Id_{A}(a)=a\) per a tot \(a\in A\).
+		
+		També denotarem la conjugació d'una aplicació \(g\colon A\rightarrow A\) amb sí mateixa \(k\) de vegades com \[g^{k}=g\circ\overset{k)}{\cdots}\circ g.\]
+	\end{notation}
+	\begin{theorem}
+		\label{thm:bijectiva iff invertible}
+		Sigui \(f\colon A\rightarrow B\) una funció. Aleshores \(f\) és bijectiva si i només si \(f\) és invertible.
+		\begin{proof}
+			Comencem veient que la condició és necessària (\(\Rightarrow\)). Suposem doncs que \(f\) és una aplicació bijectiva. Per la definició d'\myref{def:aplicació bijectiva} tenim que \(f\) és injectiva i exhaustiva. Per tant per la definició d'\myref{def:aplicació injectiva} i la definició d'\myref{def:aplicació exhaustiva} tenim que per a tot \(b\in B\) existeix un únic \(a\in A\) tal que \(b=f(a)\).
+			
+			Per tant definim l'aplicació \(g\colon B\rightarrow A\) tal que \(g(b)=a\). Ara bé, tenim que per a tot \(a\in A\) i \(b\in B\)
+			\[(g\circ f)(a)=a\quad\text{i}\quad(f\circ g)(b)=b,\]
+			i per la definició de \myref{def:aplicació invertible} tenim que \(f\) és invertible, com volíem veure.
+			
+			Comprovem ara que la condició és suficient (\(\Leftarrow\)). Suposem doncs que \(f\) té inversa. Prenem dos elements \(a\) i \(a'\) de \(A\) tals que \(f(a)=f(a')\). Ara bé, per la definició de \myref{def:aplicació invertible} tenim que \((f^{-1}\circ f)(a)=a\) i \((f^{-1}\circ f)(a')=a'\) amb \((f^{-1}\circ f)(a)=(f^{-1}\circ f)(a')\), i per tant \(a=a'\) i per la definició d'\myref{def:aplicació injectiva} tenim que \(f\) és injectiva.
+			
+			Sigui \(b\) un element de \(B\) i prenem \(a\) de \(A\) tal que \(f^{-1}(b)=a\). Aleshores trobem
+			\[b=Id_{B}(b)=f\circ f^{-1}(b)=f(a),\]
+			i per la definició d'\myref{def:aplicació exhaustiva} tenim que \(f\) és un aplicació exhaustiva, i per la definició d'\myref{def:aplicació bijectiva} trobem que \(f\) és bijectiva.
+		\end{proof}
+	\end{theorem}
+	\begin{corollary}
+		Si \(f\) és invertible aleshores \(f^{-1}\) és invertible i \(\left(f^{-1}\right)^{-1}=f\).
+	\end{corollary}
+	\section{Relacions d'equivalència}
+	\subsection{Relacions d'equivalència}
+	\begin{definition}[Relació binària]
+		\labelname{relació binària}\label{def:relació binària}
+		Siguin \(X\) un conjunt no buit, \(\sim\) un subconjunt de \(X\times X\) i \((x,y)\) un element del subconjunt \(\sim\). Aleshores direm que els elements \(x\) i \(y\) estan relacionats i escriurem \(x\sim y\). També direm que \(\sim\) és una relació binària.
+		
+		Si \((x',y')\) no és un element de \(\sim\) escriurem \(x'\nsim y'\).
+	\end{definition}
+	\begin{definition}[Relació d'equivalència]
+		\labelname{relació d'equivalència}\label{def:relació d'equivalència}
+		Siguin \(X\) un conjunt no buit i \(\sim\) una relació que satisfà les propietats
+		\begin{enumerate}
+			\item Reflexiva: Si \(x\) és un element de \(X\), aleshores \(x\sim x\).
+			\item Simètrica: Si \(x,y\) són elements de \(X\) tals que \(x\sim y\), aleshores \(y\sim x\).
+			\item Transitiva: Si \(x,y,z\) són elements de \(X\) tals que \(x\sim y\) i \(y\sim z\), aleshores \(x\sim z\).
+		\end{enumerate}
+		Aleshores direm que \(\sim\) és una relació d'equivalència en \(X\).
+	\end{definition}
+	\subsection{Classes d'equivalència}
+	\begin{definition}[Classe d'equivalència]
+		\labelname{classe d'equivalència}\label{def:classe d'equivalència}
+		Siguin \(X\) un conjunt no buit, \(\sim\) una classe d'equivalència en \(X\) i
+		\[[x]=\{y\in X\mid x\sim y\}\]
+		un subconjunt de \(X\). Aleshores direm que \([x]\) és la classe d'equivalència de \(x\).
+		
+		També denotarem \([x]=\overline{x}\).
+	\end{definition}
+	\begin{proposition}
+		Siguin \(X\) un conjunt no buit i \(x,y\) elements de \(X\). Aleshores o bé \([x]=[y]\) o bé \([x]\cap[y]=\emptyset\).
+		\begin{proof}
+			Denotarem la relació d'equivalència amb \(\sim\).
+			
+			Suposem que \(x\sim y\). Tenim que \([x]\subseteq[y]\), ja que si prenem \(z\in X\) tal que \(z\in[x]\). Aleshores per la definició de \myref{def:classe d'equivalència} tenim que \(x\sim z\). Per hipòtesi tenim que \(x\sim y\), i per tant, per la definició de \myref{def:relació d'equivalència} tenim que \(y\sim z\), i per la definició de \myref{def:classe d'equivalència} trobem \(z\in[y]\). Per tant, per la definició de \myref{def:subconjunt} tenim que \([x]\subseteq[y]\).
+			
+			Ara bé, també tenim que \([y]\subseteq[x]\), ja que si prenem \(z\in X\) tal que \(z\in[y]\). Aleshores per la definició de \myref{def:classe d'equivalència} tenim que \(y\sim z\). Per hipòtesi tenim que \(x\sim y\), i per tant, per la definició de \myref{def:relació d'equivalència} tenim que \(z\sim z\), i per la definició de \myref{def:classe d'equivalència} trobem \(z\in[x]\). Per tant, per la definició de \myref{def:subconjunt} tenim que \([y]\subseteq[z]\). Per tant, pel \myref{thm:doble inclusió} tenim que \([x]=[y]\).
+			
+			Suposem ara que \(x\nsim y\) i prenem un element \(z\in[x]\cap[y]\). Aleshores, per la definició de \myref{def:classe d'equivalència} tenim que \(z\sim x\) i \(y\sim z\), i per la definició de \myref{def:relació d'equivalència} tenim que \(x\sim y\). Ara bé, havíem suposat que \(x\nsim y\). Per tant \(z\) no pot existir i trobem \([x]\cap[y]=\emptyset\).
+		\end{proof}
+	\end{proposition}
+	\subsection{Conjunt quocient}
+	\begin{definition}[Conjunt quocient]
+		\labelname{conjunt quocient}\label{def:conjunt quocient}
+		Siguin \(X\) un conjunt no buit i \(\sim\) una relació d'equivalència en \(X\). Aleshores definim el conjunt
+		\[X/\sim=\{[x]\mid x\in X\}\]
+		com el conjunt quocient de \(X\) per \(\sim\).
+	\end{definition}
+	\chapter{Conjunts amb operacions i els nombres}
+	\section{Els nombres naturals}
+	\subsection{Axiomes de Peano}
+	\begin{definition}[Nombres naturals]
+		\labelname{nombres naturals}\label{def:nombres naturals}
+		Siguin \(\mathbb{N}\) un conjunt i \(S\) una aplicació que satisfan
+		\begin{enumerate}
+			\item \(1\in\mathbb{N}\).
+			\item Si \(n\in\mathbb{N}\), aleshores \(S(n)\in\mathbb{N}\).
+			\item Si \(n\in\mathbb{N}\), aleshores \(S(n)\neq1\).
+			\item Si \(n,m\in\mathbb{N}\) amb \(S(n)=S(m)\), aleshores \(n=m\).
+			\item Si \(\mathbb{M}\) és un conjunt tal que \(1\in\mathbb{M}\) i tal que \(S(m)\in\mathbb{M}\) per a tot \(m\in\mathbb{M}\), aleshores \(\mathbb{N}\subseteq\mathbb{M}\).
+		\end{enumerate}
+		Aleshores direm que \(\mathbb{N}\) és el conjunt dels nombres naturals, i anomenarem els elements de \(\mathbb{N}\) nombres naturals.
+	\end{definition}
+	\begin{notation}
+		Denotarem \(S(1)=2\), \(S(2)=3\), \(S(3)=4\), etc. Per tant
+		\[\mathbb{N}=\{1,2,3,4\dots\}\]
+	\end{notation}
+	\begin{lemma}
+		\label{lemma:primer element}
+		\(\mathbb{N}=\{1,S(1),S(S(1)),S(S(S(1))),\dots\}\).
+		\begin{proof}
+			Ho farem pel principi de doble inclusió. Per la definició de \myref{def:nombres naturals} tenim que si \(n\in\mathbb{N}\), aleshores \(S(n)\in\mathbb{N}\). Per tant trobem que \(\mathbb{N}\supseteq\{1,S(1),S(S(1)),S(S(S(1))),\dots\}\).
+			
+			Tenim també, per la definició de \myref{def:nombres naturals}, que si \(\mathbb{M}\) és un conjunt tal que \(1\in\mathbb{M}\) i tal que \(S(m)\in\mathbb{M}\) per a tot \(m\in\mathbb{M}\), aleshores \(\mathbb{N}\subseteq\mathbb{M}\), i per tant \(\mathbb{N}\subseteq\{1,S(1),S(S(1)),S(S(S(1))),\dots\}\), i pel \myref{thm:doble inclusió} tenim que \(\mathbb{N}=\{1,S(1),S(S(1)),S(S(S(1))),\dots\}\), com volíem veure.
+		\end{proof}
+	\end{lemma}
+	\begin{notation}
+		Denotarem l'acció d'aplicar l'aplicació \(S\) a l'element \(1\) un nombre natural \(k\) de vegades com \(S^{k}(1)\).
+	\end{notation}
+	\begin{theorem}[Teorema del primer element]
+		\labelname{Teorema del primer element}\label{thm:primer element}
+		Sigui \(A\) un subconjunt no buit de \(\mathbb{N}\). Aleshores existeix \(a\in A\) tal que no existeixi cap \(b\in A\) satisfent \(S(b)=a\).
+		\begin{proof}
+			Sigui \(a\) un element de \(A\). Aleshores pel lemma \myref{lemma:primer element} tenim que \(a=S^{k}(1)\) per a cert \(k\in\mathbb{N}\). Si \(1\in A\) hem acabat per la definició de \myref{def:nombres naturals}. Suposem doncs que \(1\notin A\). Si \(S(1)\in A\) també hem vist el que volíem. Podem iterar aquest procés un màxim de \(k\) vegades, ja que \(S^{k}(1)\) és, per hipòtesi, un nombre natural, i per tant seria \(a\) un element de \(A\) tal que no existeix \(b\) satisfent \(S(b)=a\).
+		\end{proof}
+	\end{theorem}
+	\begin{definition}[Primer element]
+		\labelname{primer element}\label{def:primer element}
+		Sigui \(A\) un subconjunt no buit de \(\mathbb{N}\) i \(a\) un element de \(A\) tal que no existeix cap \(b\in A\) satisfent \(S(b)=a\). Aleshores direm que \(a\) és el primer element de \(A\).
+		
+		Aquesta definició té sentit per la definició de \myref{def:nombres naturals} i el Teorema \myref{thm:primer element}.
+	\end{definition}
+	\begin{theorem}[Principi d'inducció]
+		\labelname{principi d'inducció}\label{thm:principi d'inducció}
+		Sigui \(R(n)\) una relació depenent d'un paràmetre \(n\in\mathbb{N}\) tal que
+		\begin{enumerate}
+			\item\label{enum:thm:principi d'inducció 1} \(R(1)\) és vertadera.
+			\item\label{enum:thm:principi d'inducció 2} Si \(R(n)\) és vertadera aleshores \(R(S(n))\) és vertadera.
+		\end{enumerate}
+		Aleshores \(R(n)\) és vertadera per a tot \(n\in\mathbb{N}\).
+		\begin{proof}
+			Definim el conjunt
+			\[A=\{n\in\mathbb{N}\mid R(n)\text{ és falsa}\}.\]
+			Per la definició de \myref{def:subconjunt} tenim que \(A\subseteq\mathbb{N}\). Suposem que \(A\) és un conjunt no buit. Aleshores pel \myref{thm:primer element} tenim que existeix un primer element \(a\) de \(A\). Ara bé, pel punt \myref{enum:thm:principi d'inducció 1} tenim que \(a\neq1\). Per tant, pel lemma \myref{lemma:primer element} tenim que \(a=S(b)\) per a cert \(b\in\mathbb{N}\). Ara bé, com que \(a\) és el primer element de \(A\), per la definició de \myref{def:primer element} tenim que \(b\notin A\), i per tant \(P(b)\) és vertadera. Ara bé, pel punt \myref{enum:thm:principi d'inducció 2} tenim que \(P(S(b))=P(a)\) és vertadera, i per tant \(a\notin A\), arribant a contradicció. Per tant trobem que \(A\) és el conjunt buit, i trobem que \(R(n)\) és vertadera per a tot \(n\in\mathbb{N}\), com volíem veure.
+		\end{proof}
+	\end{theorem}
+	\subsection{Operacions sobre els nombres naturals} % https://math.stackexchange.com/questions/60432/how-to-prove-cancellation-property-of-integer-multiplication?rq=1
+	\begin{definition}[Suma de nombres naturals]
+		\labelname{suma de nombres naturals}\label{def:suma de nombres naturals}
+		Definim la suma de nombres naturals com una operació \(+\) que satisfà per a tot \(n,k\in\mathbb{N}\)
+		\[n+1=S(n)\quad\text{i}\quad n+S(k)=S(n+k).\]
+	\end{definition}
+	\begin{definition}[Producte de nombres naturals]
+		\labelname{producte de nombres naturals}\label{def:producte de nombres naturals}
+		Definim el producte de nombres naturals com una operació \(\cdot\) que satisfà per a tot \(n,k\in\mathbb{N}\)
+		\[n\cdot1=n\quad\text{i}\quad n\cdot S(k)=n\cdot k+n.\]
+		Denotarem \(n\cdot k=nk\) per a tot \(n,k\in\mathbb{N}\).
+	\end{definition}
+	\begin{proposition}
+		\label{prop:associativitat suma de naturals per Peano}
+		Siguin \(x,y,z\) tres nombres naturals. Aleshores
+		\[(x+y)+z=x+(y+z).\]
+		\begin{proof}
+			Definim el conjunt
+			\[A=\{z\in\mathbb{N}\mid (x+y)+z=x+(y+z)\text{ per a tot }x,y\in\mathbb{N}\}.\]
+			Per la definició de \myref{def:subconjunt} trobem que \(A\subseteq\mathbb{N}\).
+			
+			Tenim que \(1\in A\), ja que per a tot \(x,y\in\mathbb{N}\) tenim
+			\begin{align*}
+			x+(y+1)&=x+S(y)\tag{\myref{def:suma de nombres naturals}}\\
+			&=S(x+y)\tag{\myref{def:suma de nombres naturals}}\\
+			&=(x+y)+1.\tag{\myref{def:suma de nombres naturals}}
+			\end{align*}
+			També tenim que si \(z\in A\), aleshores \(S(z)\in A\). Efectivament, tenim per a tot \(x,y\in\mathbb{N}\)
+			\begin{align*}
+			x+(y+S(z))&=x+S(y+z)\tag{\myref{def:suma de nombres naturals}}\\
+			&=S(x+(y+z))\tag{\myref{def:suma de nombres naturals}}\\
+			&=S((x+y)+z)\tag{Per hipòtesi}\\
+			&=(x+y)+S(z).\tag{\myref{def:suma de nombres naturals}}
+			\end{align*}
+			Ara bé. Per la definició de \myref{def:nombres naturals}, tenim que si \(A\) és un conjunt tal que \(1\in A\) i tal que \(S(z)\in A\) per a tot \(z\in A\), aleshores \(\mathbb{N}\subseteq A\), i pel \myref{thm:doble inclusió} tenim que \(A=\mathbb{N}\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:lemma a commutativitat N per la suma}
+		Siguin \(x,y\) dos nombres naturals. Aleshores
+		\[x+S(y)=S(x)+y.\]
+		\begin{proof}
+			Definim el conjunt
+			\[A=\{y\in\mathbb{N}\mid x+S(y)=S(x)+y\text{ per a tot }x\in\mathbb{N}\}.\]
+			Per la definició de \myref{def:subconjunt} trobem que \(A\subseteq\mathbb{N}\).
+			
+			Tenim que \(1\in A\), ja que per a tot \(x\in\mathbb{N}\)
+			\begin{align}
+			x+S(1)&=S(x+1)\tag{\myref{def:suma de nombres naturals}}\\
+			&=S(S(x))\tag{\myref{def:suma de nombres naturals}}\\
+			&=S(x)+1.\tag{\myref{def:suma de nombres naturals}}
+			\end{align}
+			També tenim que si \(y\in A\), aleshores \(S(y)\in A\). Efectivament, tenim que per a tot \(x\in\mathbb{N}\)
+			\begin{align*}
+			x+S(S(y))&=S(x+S(y))\tag{\myref{def:suma de nombres naturals}}\\
+			&=S(S(x)+y)\tag{Per hipòtesi}\\
+			&=S(x)+S(y).\tag{\myref{def:suma de nombres naturals}}
+			\end{align*}
+			Ara bé. Per la definició de \myref{def:nombres naturals}, tenim que si \(A\) és un conjunt tal que \(1\in A\) i tal que \(S(y)\in A\) per a tot \(y\in A\), aleshores \(\mathbb{N}\subseteq A\), i pel \myref{thm:doble inclusió} tenim que \(A=\mathbb{N}\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:commutativitat naturals per Peano}
+		Siguin \(x,y\) dos nombres naturals. Aleshores
+		\[x+y=y+x.\]
+		\begin{proof}
+			Definim el conjunt
+			\[B=\{y\in\mathbb{N}\mid 1+y=y+1\}.\]
+			Per la definició de \myref{def:subconjunt} trobem que \(B\subseteq\mathbb{N}\).
+			
+			Tenim que \(1\in B\), ja que \(1+1=1+1\). També tenim que si \(y\in B\), aleshores \(S(y)\in B\). Efectivament,
+			\begin{align*}
+			S(y)+1&=y+S(1)\tag{Proposició \myref{prop:lemma a commutativitat N per la suma}}\\
+			&=S(y+1)\tag{\myref{def:suma de nombres naturals}}\\
+			&=S(1+y)\tag{Per hipòtesi}\\
+			&=1+S(y).\tag{\myref{def:suma de nombres naturals}}
+			\end{align*}
+			Ara bé. Per la definició de \myref{def:nombres naturals}, tenim que si \(B\) és un conjunt tal que \(1\in B\) i tal que \(S(y)\in B\) per a tot \(y\in B\), aleshores \(\mathbb{N}\subseteq B\), i pel \myref{thm:doble inclusió} tenim que \(\mathbb{N}=B\).
+			
+			Definim ara el conjunt
+			\[A=\{y\in\mathbb{N}\mid x+y=y+x\text{ per a tot }x\in\mathbb{N}\}.\]
+			Per la definició de \myref{def:subconjunt} trobem que \(B\subseteq A\subseteq\mathbb{N}\).
+			
+			Tenim que \(1\in A\), ja que \(1\in B\subseteq A\). També tenim que si \(y\in A\), aleshores \(S(y)\in A\). Efectivament, tenim que per a tot \(x\in\mathbb{N}\)
+			\begin{align*}
+			x+S(y)&=S(x+y)\tag{\myref{def:suma de nombres naturals}}\\
+			&=S(y+x)\tag{Per hipòtesi}\\
+			&=y+S(x).\tag{\myref{def:suma de nombres naturals}}\\
+			&=S(y)+x.\tag{Proposició \myref{prop:lemma a commutativitat N per la suma}}
+			\end{align*}
+			Ara bé. Per la definició de \myref{def:nombres naturals}, tenim que si \(A\) és un conjunt tal que \(1\in A\) i tal que \(S(y)\in A\) per a tot \(y\in A\), aleshores \(\mathbb{N}\subseteq A\), i pel \myref{thm:doble inclusió} tenim que \(A=\mathbb{N}\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:distributiva pel producte naturals per Peano}
+		Siguin \(x,y,z\) tres nombres naturals. Aleshores
+		\[x\cdot(y+z)=x\cdot y+x\cdot z.\]
+		\begin{proof}
+			Definim el conjunt
+			\[A=\{z\in\mathbb{N}\mid x\cdot(y+z)=x\cdot y+x\cdot z\text{ per a tot }x,y\in\mathbb{N}\}.\]
+			Per la definició de \myref{def:subconjunt} trobem que \(A\subseteq\mathbb{N}\).
+			
+			Tenim que \(1\in A\), ja que per a tot \(x,y\in\mathbb{N}\) tenim
+			\begin{align*}
+			x\cdot(y+1)&=x\cdot S(y)\tag{\myref{def:suma de nombres naturals}}\\
+			&=x\cdot y+x\tag{\myref{def:producte de nombres naturals}}\\
+			&=x\cdot y+x\cdot 1.\tag{\myref{def:producte de nombres naturals}}
+			\end{align*}
+			També tenim que si \(z\in A\), aleshores \(S(z)\in A\). Efectivament, tenim per a tot \(x,y\in\mathbb{N}\)
+			\begin{align*}
+			x\cdot(y+S(z))&=x\cdot S(y+z)\tag{\myref{def:suma de nombres naturals}}\\
+			&=x\cdot(y+z)+x\tag{\myref{def:producte de nombres naturals}}\\
+			&=(x\cdot y+x\cdot z)+x\tag{Per hipòtesi}\\
+			&=x\cdot y+(x\cdot z+x)\tag{Proposició \myref{prop:associativitat suma de naturals per Peano}}\\
+			&=x\cdot y+x\cdot S(z).\tag{\myref{def:producte de nombres naturals}}
+			\end{align*}
+			Ara bé. Per la definició de \myref{def:nombres naturals}, tenim que si \(A\) és un conjunt tal que \(1\in A\) i tal que \(S(z)\in A\) per a tot \(z\in A\), aleshores \(\mathbb{N}\subseteq A\), i pel \myref{thm:doble inclusió} tenim que \(A=\mathbb{N}\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		Siguin \(x,y,z\) tres nombres naturals. Aleshores
+		\[(x\cdot y)\cdot z=x\cdot(y\cdot z).\]
+		\begin{proof}
+			Definim el conjunt
+			\[A=\{z\in\mathbb{N}\mid (x\cdot y)\cdot z=x\cdot(y\cdot z)\text{ per a tot }x,y\in\mathbb{N}\}.\]
+			Per la definició de \myref{def:subconjunt} trobem que \(A\subseteq\mathbb{N}\).
+			
+			Tenim que \(1\in A\), ja que per a tot \(x,y\in\mathbb{N}\) tenim
+			\begin{align*}
+			x\cdot(y\cdot1)&=x+y\tag{\myref{def:producte de nombres naturals}}\\
+			&=(x\cdot1)\cdot y.\tag{\myref{def:producte de nombres naturals}}
+			\end{align*}
+			També tenim que si \(z\in A\), aleshores \(S(z)\in A\). Efectivament, tenim per a tot \(x,y\in\mathbb{N}\)
+			\begin{align*}
+			x\cdot(y\cdot S(z))&=x\cdot(y\cdot z+y)\tag{\myref{def:producte de nombres naturals}}\\
+			&=x\cdot(y\cdot z)+x\cdot y\tag{Proposició \myref{prop:distributiva pel producte naturals per Peano}}\\
+			&=(x\cdot y)\cdot z+x\cdot y\tag{Per hipòtesi}\\
+			&=(x\cdot y)\cdot S(z).\tag{\myref{def:producte de nombres naturals}}
+			\end{align*}
+			Ara bé. Per la definició de \myref{def:nombres naturals}, tenim que si \(A\) és un conjunt tal que \(1\in A\) i tal que \(S(z)\in A\) per a tot \(z\in A\), aleshores \(\mathbb{N}\subseteq A\), i pel \myref{thm:doble inclusió} tenim que \(A=\mathbb{N}\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:commutativitat producte naturals per Peano}
+		Siguin \(x,y\) dos nombres naturals. Aleshores
+		\[x\cdot y=y\cdot x.\]
+		\begin{proof}
+			Definim el conjunt
+			\[B=\{y\in\mathbb{N}\mid 1\cdot y=y\cdot 1\}.\]
+			Per la definició de \myref{def:subconjunt} trobem que \(B\subseteq\mathbb{N}\).
+			
+			Tenim que \(1\in B\), ja que \(1\cdot1=1\cdot1\). També tenim que si \(x\in B\), aleshores \(S(x)\in B\). Efectivament,
+			\begin{align*}
+			S(x)\cdot 1&=(x+1)\cdot 1\tag{\myref{def:suma de nombres naturals}}\\
+			&=x\cdot 1+1\cdot 1\tag{\myref{def:producte de nombres naturals}}\\
+			&=x\cdot 1+1\tag{\myref{def:producte de nombres naturals}}\\
+			&=1\cdot x+1\tag{Per hipòtesi}\\
+			&=1\cdot S(x).\tag{\myref{def:producte de nombres naturals}}
+			\end{align*}
+			Ara bé. Per la definició de \myref{def:nombres naturals}, tenim que si \(B\) és un conjunt tal que \(1\in B\) i tal que \(S(y)\in B\) per a tot \(y\in B\), aleshores \(\mathbb{N}\subseteq B\), i pel \myref{thm:doble inclusió} tenim que \(\mathbb{N}=B\).
+			
+			Definim ara el conjunt
+			\[A=\{y\in\mathbb{N}\mid x+y=y+x\text{ per a tot }x\in\mathbb{N}\}.\]
+			Per la definició de \myref{def:subconjunt} trobem que \(B\subseteq A\subseteq\mathbb{N}\).
+			
+			Tenim que \(1\in A\), ja que \(1\in B\subseteq A\). També tenim que si \(y\in A\), aleshores \(S(y)\in A\). Efectivament, tenim que per a tot \(x\in\mathbb{N}\)
+			\begin{align*}
+			x\cdot S(y)&=x\cdot y+x\tag{\myref{def:producte de nombres naturals}}\\
+			&=y\cdot x+x\tag{Per hipòtesi}\\
+			&=y\cdot x+x\cdot 1\tag{\myref{def:producte de nombres naturals}}\\
+			&=y\cdot x+1\cdot x\tag{\(1\in A\)}\\
+			&=(y+1)\cdot x\tag{Proposició \myref{prop:distributiva pel producte naturals per Peano}}\\
+			&=S(y)\cdot x.\tag{\myref{def:producte de nombres naturals}}
+			\end{align*}
+			Ara bé. Per la definició de \myref{def:nombres naturals}, tenim que si \(A\) és un conjunt tal que \(1\in A\) i tal que \(S(y)\in A\) per a tot \(y\in A\), aleshores \(\mathbb{N}\subseteq A\), i pel \myref{thm:doble inclusió} tenim que \(A=\mathbb{N}\).
+		\end{proof}
+	\end{proposition}
+	\begin{theorem}
+		\label{thm:podem tatxar per la suma nombres naturals}
+		Siguin \(x\), \(y\) i \(z\) tres nombres naturals tals que \(x+z=x+y\). Aleshores \(x=y\).
+		\begin{proof}
+			Definim el conjunt
+			\[A=\{z\in\mathbb{N}\mid x+z=y+z\Rightarrow x=y\text{ per a tot }x,y\in\mathbb{N}\}.\]
+			Per la definició de \myref{def:subconjunt} trobem que \(A\subseteq\mathbb{N}\).
+			
+			Tenim que \(1\in A\), ja que si \(x+1=y+1\) per la definició de \myref{def:suma de nombres naturals} trobem que \(S(x)=S(y)\), i per la definició de \myref{def:nombres naturals} trobem que \(x=y\). També tenim que si \(z\in A\), aleshores \(S(z)\in A\). Efectivament, per a tot \(x,y\in\mathbb{N}\) tals que \(x+S(z)=y+S(z)\) tenim per la definició de \myref{def:suma de nombres naturals} que
+			\[x+z+1=y+z+1,\]
+			i per la proposició \myref{prop:commutativitat naturals per Peano} tenim que
+			\[x+1+z=y+1+z.\]
+			Per tant, per la definició de \myref{def:suma de nombres naturals}, trobem
+			\[S(x)+z=S(y)+z,\]
+			i per hipòtesi, \(S(x)=S(y)\), i per la definició de \myref{def:nombres naturals} tenim que \(x=z\).
+			
+			Ara bé. Per la definició de \myref{def:nombres naturals}, tenim que si \(A\) és un conjunt tal que \(1\in A\) i tal que \(S(z)\in A\) per a tot \(z\in A\), aleshores \(\mathbb{N}\subseteq A\), i pel \myref{thm:doble inclusió} tenim que \(A=\mathbb{N}\).
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}
+		\label{thm:podem tatxar pel producte nombres naturals}
+		Siguin \(x\), \(y\) i \(z\) tres nombres naturals tals que \(xz=yz\). Aleshores \(x=y\).
+		\begin{proof}
+			Definim el conjunt
+			\[A=\{z\in\mathbb{N}\mid xz=yz\Rightarrow x=y\text{ per a tot }x,y\in\mathbb{N}\}.\]
+			Per la definició de \myref{def:subconjunt} trobem que \(A\subseteq\mathbb{N}\).
+			
+			Tenim que \(1\in A\), ja que si \(x\cdot1=y\cdot1\) per la definició de \myref{def:producte de nombres naturals} trobem que \(x=y\). També tenim que si \(z\in A\), aleshores \(S(z)\in A\). Efectivament, per a tot \(x,y\in\mathbb{N}\) tals que \(x\cdot S(z)=y\cdot S(z)\) tenim per la definició de \myref{def:producte de nombres naturals} que
+			\[x\cdot z+x\cdot1=y\cdot z+y\cdot1.\]
+			
+			Ara bé, per hipòtesi tenim que \(x\cdot z=y\cdot z\), i pel Teorema \myref{thm:podem tatxar per la suma nombres naturals} trobem \(x=y\).
+			
+			Ara bé. Per la definició de \myref{def:nombres naturals}, tenim que si \(A\) és un conjunt tal que \(1\in A\) i tal que \(S(z)\in A\) per a tot \(z\in A\), aleshores \(\mathbb{N}\subseteq A\), i pel \myref{thm:doble inclusió} tenim que \(A=\mathbb{N}\).
+		\end{proof}
+	\end{theorem}
+	\section{Els nombres enters}
+	\subsection{Construcció dels nombres enters}
+	\begin{proposition}
+		Sigui \(\sim\) una relació binària sobre \(A=\mathbb{N}\cup\{0\}\), amb \(n+0=0+n=n\) i \(n\cdot 0=0\cdot n=0\), tal que per a tot \((a,b)\) i \((c,d)\) elements de \(A\times A\)
+		\[(a,b)\sim(c,d)\Longleftrightarrow a+d=b+c.\]
+		Aleshores \(\sim\) és una relació d'equivalència.
+		\begin{proof}
+			Comprovem les propietats de la definició de relació d'equivalència:
+			\begin{enumerate}
+				\item Reflexiva: Sigui \((a,b)\) un element de \(A\times A\). Aleshores per la proposició \myref{prop:commutativitat naturals per Peano} tenim que \(a+b=b+a\), i per tant \((a,b)\sim(a,b)\).
+				\item Simètrica: Siguin \((a,b)\) i \((c,d)\) elements de \(A\times A\) tals que \((a,b)\sim(c,d)\). Aleshores significa que \(a+d=b+c\), i per la la proposició \myref{prop:commutativitat naturals per Peano} tenim que \(c+b=d+a\) i per tant \((c,d)\sim(a,b)\).
+				\item Transitiva: Siguin \((a,b)\), \((c,d)\) i \((e,f)\) elements de \(A\times A\) tals que \((a,b)\sim(c,d)\) i \((c,d)\sim(e,f)\). Això és que
+				\[a+d=b+c\quad\text{i}\quad c+f=d+e.\]
+				Ara bé, tenim
+				\[a+d+f=b+c+f\]
+				i per tant
+				\[a+d+f=b+d+e\]
+				d'on trobem \(a+f=b+e\), i per tant \((a,b)\sim(e,f)\).
+			\end{enumerate}
+			I per la definició de \myref{def:relació d'equivalència} hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Nombres enters]
+		\labelname{nombres enters}\label{def:nombres enters}
+		Sigui \(\sim\) una relació d'equivalència sobre \(A=\mathbb{N}\cup\{0\}\), amb \(n+0=0+n=n\) i \(n\cdot 0=0\cdot n=0\), i \(\sim\) una relació d'equivalència tal que per a tot \((a,b)\) i \((c,d)\) elements de \(A\times A\)
+		\[(a,b)\sim(c,d)\Longleftrightarrow a+d=b+c.\]
+		Aleshores direm que el conjunt quocient \(\mathbb{Z}=A\times A/\sim\) és el conjunt dels nombres enters. També direm que els elements de \(\mathbb{Z}\) són nombres enters.
+	\end{definition}
+	\begin{definition}[Resta de nombres naturals]
+		\labelname{resta de nombres naturals}\label{def:resta de nombres naturals}
+		Siguin \(a\), \(b\) i \(c\) nombres naturals tals que \(a\geq b\) i \(a=b+c\). Aleshores escriurem \(a-b=c\).
+	\end{definition}
+	\subsection{Operacions sobre els nombres enters} %Veure que les opreacions estan ben definides
+	\begin{definition}[Suma de nombres enters]
+		\labelname{suma de nombres enters}\label{def:suma de nombres enters}
+		Siguin \(\overline{(a,b)}\) i \(\overline{(c,d)}\) dos nombres enters. Definim la suma de nombres enters com una operació \(+\) que satisfà
+		\[\overline{(a,b)}+\overline{(c,d)}=\overline{(a+c,b+d)}.\]
+	\end{definition}
+	\begin{definition}[Producte de nombres enters]
+		\labelname{producte de nombres enters}\label{def:producte de nombres enters}
+		Siguin \(\overline{(a,b)}\) i \(\overline{(c,d)}\) dos nombres enters. Definim el producte de nombres enters com una operació \(\cdot\) que satisfà
+		\[\overline{(a,b)}\cdot\overline{(c,d)}=\overline{(ac+bd,ad+bc)}.\]
+	\end{definition}
+	\begin{proposition}
+		\label{prop:elements neutres dels nombres enters}
+		\label{prop:Z és un grup}\label{prop:Z és un anell}
+		Sigui \(\overline{(a,b)}\) un nombre enter. Aleshores
+		\begin{enumerate}
+			\item\label{enum:prop:elements neutres dels nombres enters 1} 
+			\(\overline{(a,b)}+\overline{(0,0)}=\overline{(a,b)}\).
+			\item\label{enum:prop:elements neutres dels nombres enters 2} 
+			\(\overline{(a,b)}\cdot\overline{(1,0)}=\overline{(a,b)}\).
+			\item\label{enum:prop:elements neutres dels nombres enters 3}
+			\(\overline{(a,b)}+\overline{(b,a)}=\overline{(0,0)}\).
+		\end{enumerate}
+		\begin{proof}
+			Comencem veient el punt \eqref{enum:prop:elements neutres dels nombres enters 1}. Per la definició de \myref{def:producte de nombres enters} tenim que
+			\[\overline{(a,b)}+\overline{(0,0)}=\overline{(a+0,0+b)},\]
+			i per la proposició \myref{prop:commutativitat naturals per Peano} i definició de \myref{def:nombres enters}  trobem
+			\[\overline{(a,b)}+\overline{(0,0)}=\overline{(a,b)}.\]
+			
+			Veiem ara el punt \eqref{enum:prop:elements neutres dels nombres enters 2}. Per la definició de \myref{def:producte de nombres enters} tenim que 
+			\[\overline{(a,b)}\cdot\overline{(1,0)}=\overline{(a\cdot 1+b\cdot 0,a\cdot0+b\cdot1)},\]
+			i per la definició de \myref{def:producte de nombres naturals} i la definició de \myref{def:nombres enters} trobem
+			\[\overline{(a,b)}\cdot\overline{(1,0)}=\overline{(a,b)}.\]
+			
+			Veiem el punt \eqref{enum:prop:elements neutres dels nombres enters 3}. Per la definició de \myref{def:suma de nombres enters} tenim que
+			\[\overline{(a,b)}+\overline{(b,a)}=\overline{(a+b,b+a)}.\]
+			Ara bé, per la proposició \myref{prop:commutativitat naturals per Peano} i la definició de \myref{def:nombres enters} tenim que
+			\[a+b+0=b+a+0\]
+			i, de nou per la definició de \myref{def:nombres enters}, trobem \((a+b,b+a)\sim(0,0)\), i per la definició de \myref{def:classe d'equivalència} tenim que \(\overline{(a+b,a+b)}=\overline{(0,0)}\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:notació nombres enters}
+		Sigui \(\overline{(a,b)}\) un nombre enter. Aleshores
+		\begin{enumerate}
+			\item\label{enum:prop:notació nombres enters 1} Si \(a\geq b\), \(\overline{(a,b)}=\overline{(a-b,0)}\).
+			\item\label{enum:prop:notació nombres enters 2} Si \(a\leq b\), \(\overline{(a,b)}=\overline{(0,b-a)}\).
+		\end{enumerate}
+		\begin{proof}
+			Comencem veient el punt \eqref{enum:prop:notació nombres enters 1}. Tenim que
+			\[a+0=a+b-b,\]
+			ja que \(b+0=b\), i per tant, per la definició de \myref{def:resta de nombres naturals} tenim que \(b-b=0\). Per tant, per la definició de \myref{def:nombres enters} tenim \((a,b)\sim(a-b,0)\), i per la definició de \myref{def:classe d'equivalència} trobem que \(\overline{(a,b)}=\overline{(a-b,0)}\).
+			
+			La demostració del punt \eqref{enum:prop:notació nombres enters 2} és anàloga.
+		\end{proof}
+	\end{proposition}
+	\begin{notation}
+		\label{notation:nombres enters}
+		Denotarem \(\overline{(a,0)}=a\) i \(\overline{(0,a)}=-a\). Per tant
+		\[\mathbb{Z}=\{\dots,-3,-2,-1,0,1,2,3,\dots\}.\]
+	\end{notation}
+	\begin{observation}
+		\label{obs:elements que es tatxen son iguals}
+		\(a-b=0\Longleftrightarrow a=b.\)
+	\end{observation}
+	\begin{theorem}
+		\label{thm:caracterització del 0 dels enters}
+		Sigui \(\overline{(a,b)}\) un nombre enter. Aleshores
+		\[\overline{(a,b)}=\overline{(0,0)}\Longleftrightarrow a=b.\]
+		\begin{proof}
+			Suposem que \(\overline{(a,b)}=\overline{(0,0)}\). Per la definició de \myref{def:classe d'equivalència} això és
+			\[(a,b)\sim(0,0),\]
+			i per la definició de \myref{def:nombres enters} tenim que això és
+			\[a+0=b+0\]
+			i de nou per la definició de \myref{def:nombres enters} això és
+			\[a=b.\qedhere\]
+		\end{proof}
+	\end{theorem}
+	\begin{proposition}
+		\label{prop:Z és un grup abelià}
+		Siguin \(\overline{(a,b)}\) i \(\overline{(c,d)}\) nombres enters. Aleshores
+		\[\overline{(a,b)}+\overline{(c,d)}=\overline{(c,d)}+\overline{(a,b)}.\]
+		\begin{proof}
+			Per la definició de \myref{def:suma de nombres enters} tenim que
+			\begin{align*}
+			\overline{(a,b)}+\overline{(c,d)}&=\overline{(a+d,b+c)}\\
+			&=\overline{(d+a,c+b)}\tag{\myref{prop:commutativitat naturals per Peano}}\\
+			&=\overline{(c,d)}+\overline{(a,b)},\tag{\myref{def:suma de nombres enters}}
+			\end{align*}
+			com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:Z és un anell commutatiu}
+		Siguin \(\overline{(a,b)}\) i \(\overline{(c,d)}\) nombres enters. Aleshores
+		\[\overline{(a,b)}\cdot\overline{(c,d)}=\overline{(c,d)}\cdot\overline{(a,b)}.\]
+		\begin{proof}
+			Per la definició de \myref{def:producte de nombres enters} tenim que
+			\begin{align*}
+			\overline{(a,b)}\cdot\overline{(c,d)}&=\overline{(ac+bd,ad+bc)}\\
+			&=\overline{(ca+db,da+cb)}\tag{\myref{prop:commutativitat producte naturals per Peano}}\\
+			&=\overline{(ca+db,cb+da)}\tag{\myref{prop:commutativitat naturals per Peano}}\\
+			&=\overline{(c,d)}\cdot\overline{(a,b)},\tag{\myref{def:producte de nombres enters}}
+			\end{align*}
+			com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:Z és un grup associativitat}
+		Siguin \(\overline{(a,b)}\), \(\overline{(c,d)}\) i \(\overline{(e,f)}\) nombres enters. Aleshores
+		\[\overline{(a,b)}+\left(\overline{(c,d)}+\overline{(e,f)}\right)=\left(\overline{(a,b)}+\overline{(c,d)}\right)+\overline{(e,f)}.\]
+		\begin{proof}
+			Per la definició de \myref{def:suma de nombres enters} tenim que
+			\begin{align*}
+			\overline{(a,b)}+\left(\overline{(c,d)}+\overline{(e,f)}\right)&=\overline{(a,b)}+\overline{(c+f,d+e)}\\
+			&=\overline{\left(a+(d+e),b+(c+f)\right)}\\
+			&=\overline{\left((a+d)+e,(b+c)+f\right)}\tag{\myref{prop:associativitat suma de naturals per Peano}}\\
+			&=\overline{(a+d,b+c)}+\overline{(e,f)}\\
+			&=\left(\overline{(a,b)}+\overline{(c,d)}\right)+\overline{(e,f)},
+			\end{align*}
+			com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:Z és un anell associativitat}
+		Siguin \(\overline{(a,b)}\), \(\overline{(c,d)}\) i \(\overline{(e,f)}\) nombres enters. Aleshores
+		\[\overline{(a,b)}\cdot\left(\overline{(c,d)}\cdot\overline{(e,f)}\right)=\left(\overline{(a,b)}\cdot\overline{(c,d)}\right)\cdot\overline{(e,f)}.\]
+		\begin{proof}
+			Per la definició de \myref{def:producte de nombres enters} tenim que
+			\begin{align*}
+			\overline{(a,b)}\cdot\left(\overline{(c,d)}\cdot\overline{(e,f)}\right)&=\overline{(a,b)}\cdot\overline{(ce+df,cf+de)}\\
+			&=\overline{\left(a(ce+df)+b(cf+de),a(cf+de)+b(cf+de)\right)}\\
+			\shortintertext{Per la proposició \myref{prop:distributiva pel producte naturals per Peano}}
+			&=\overline{(ace+adf+bcf+bde,acf+ade+bcf+bde)}\\
+			\shortintertext{i per la proposició \ref{prop:commutativitat producte naturals per Peano}}
+			&=\overline{(ace+bde+adf+bcf,acf+bdf+ade+bce)}\\
+			\shortintertext{i de nou per la proposició \myref{prop:distributiva pel producte naturals per Peano}}
+			&=\overline{\left((ac+bd)e+(ad+bc)f,(ac+bd)f+(ad+bc)e\right)}\\
+			&=\overline{(ac+bd,ad+bc)}\cdot\overline{(e,f)}\\
+			&=\left(\overline{(a,b)}\cdot\overline{(c,d)}\right)\cdot\overline{(e,f)},
+			\end{align*}
+			com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:distributiva suma pel producte enters}
+		\label{prop:Z és un anell distributiva suma pel producte}
+		Siguin \(\overline{(a,b)}\), \(\overline{(c,d)}\) i \(\overline{(e,f)}\) nombres enters. Aleshores
+		\[\overline{(a,b)}\cdot\left(\overline{(c,d)}+\overline{(e,f)}\right)=\overline{(a,b)}\cdot\overline{(c,d)}+\overline{(a,b)}\cdot\overline{(e,f)}\]
+		i
+		\[\left(\overline{(a,b)}+\overline{(c,d)}\right)\cdot\overline{(e,f)}=\overline{(a,b)}\cdot\overline{(e,f)}+\overline{(c,d)}\cdot\overline{(e,f)}.\]
+		\begin{proof}
+			Per la definició de \myref{def:suma de nombres enters} tenim que
+			\begin{align*}
+			\overline{(a,b)}\cdot\left(\overline{(c,d)}+\overline{(e,f)}\right)&=\overline{(a,b)}\cdot\overline{(c+e,d+f)}\\
+			\shortintertext{per la definició de \myref{def:producte de nombres enters}}
+			&=\overline{(a(c+e)+b(d+f),a(d+f)+b(c+e))}\\
+			\shortintertext{per la proposició \ref{prop:distributiva pel producte naturals per Peano}}
+			&=\overline{(ac+ae+bd+bf,ad+af+bc+be)}\\
+			\shortintertext{per la proposició \ref{prop:commutativitat naturals per Peano}}
+			&=\overline{(ac+bd+ae+bd,ad+bc+af+be)}\\
+			\shortintertext{per la definició de \myref{def:suma de nombres naturals}}
+			&=\overline{(ac+bd,ad+bc)}+\overline{(ae+bd,af+be)}\\
+			\shortintertext{i per la definició de \myref{def:producte de nombres naturals}}
+			&=\overline{(a,b)}\cdot\overline{(c,d)}+\overline{(a,b)}\cdot\overline{(e,f)}\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{theorem}
+		\label{thm:Z és un DI}
+		Siguin \(\overline{(a,b)}\) i \(\overline{(c,d)}\) dos nombres enters tals que \(\overline{(a,b)}\cdot\overline{(c,d)}=\overline{(0,0)}\). Aleshores \(\overline{(a,b)}=\overline{(0,0)}\) ó \(\overline{(c,d)}=\overline{(0,0)}\).
+		\begin{proof}
+			Per la definició de \myref{def:producte de nombres enters} tenim que
+			\[\overline{(a,b)}\cdot\overline{(c,d)}=\overline{(ac+bd,ad+bc)}.\]
+			Com que per hipòtesi \(\overline{(a,b)}\cdot\overline{(c,d)}=\overline{(0,0)}\), tenim que per la definició de \myref{def:nombres enters} tenim que
+			\[ac+bd+0=ad+bc+0,\]
+			i de nou per la definició de \myref{def:nombres enters} això és
+			\[ac+bd=ad+bc.\]
+			
+			Suposem que \(\overline{(c,d)}\neq\overline{(0,0)}\). Pel Teorema \myref{thm:caracterització del 0 dels enters} trobem que \(c\neq d\).
+			
+			Suposem també que \(c>d\). Això és que existeix un natural \(k\) satisfent \(c+k=d\). Per tant %REF
+			\[a(d+k)+db=ad+b(d+k)\]
+			i per la proposició \myref{prop:distributiva suma pel producte enters} i la proposició \myref{prop:Z és un grup abelià} tenim que
+			\[ad+db+ak=ad+bd+bk.\]
+			Ara bé, pel Teorema \myref{thm:podem tatxar per la suma nombres naturals} i el Teorema \myref{thm:podem tatxar pel producte nombres naturals} tenim que
+			\[a=b\]
+			i per la proposició \myref{thm:caracterització del 0 dels enters} trobem que \(\overline{(a,b)}=\overline{(0,0)}\).
+			
+			Les demostracions dels altres casos són anàlogues.
+		\end{proof}
+	\end{theorem}
+	\begin{corollary}
+		\label{corollary:podem tatxar pels costats en Z pel producte}
+		Siguin \(a\), \(b\) i \(c\) nombres enters amb \(c\neq0\) tals que
+		\[ac=bc.\]
+		Aleshores \(a=b\).
+		\begin{proof}
+			Per la proposició \myref{prop:distributiva suma pel producte enters} trobem
+			\[(a-b)c=0,\]
+			aleshores pel Teorema \myref{thm:Z és un DI} trobem que ha de ser \(a-b=0\), i per l'observació \myref{obs:elements que es tatxen son iguals} tenim \(a=b\), com volíem veure.
+		\end{proof}
+	\end{corollary}
+	\subsection{Divisibilitat dels nombres enters}
+	\begin{definition}[Divisors i múltiples]
+		\labelname{divisor}\label{def:divisor Z}
+		\labelname{múltiple}\label{def:múltiple Z}
+		Siguin \(a\) i \(b\) dos nombres enters tal que existeix un nombre enter \(c\) satisfent \(a=bc\). Aleshores direm que \(b\) divideix a \(a\) o que \(a\) és múltiple de \(b\).
+	\end{definition}
+	\begin{notation}
+		Siguin \(a\) i \(b\) enters tals que \(b\) divideix a \(a\). Denotarem \(b\divides a\).
+	\end{notation}
+	\begin{proposition}
+		\label{prop:oposats tenen els mateixos divisors}
+		\label{prop:oposats tenen els mateixos múltiples}
+		Siguin \(a\) i \(b\) enters. Aleshores
+		\begin{enumerate}
+			\item\label{enum:prop:oposats tenen els mateixos divisors} \(b\divides a\) si i només si \(b\divides-a\).
+			\item\label{enum:prop:oposats tenen els mateixos múltiples} \(b\divides a\) si i només si \(-b\divides a\).
+		\end{enumerate}
+		\begin{proof}
+			Comencem veient el punt \eqref{enum:prop:oposats tenen els mateixos divisors}. Si \(b\divides a\) per la definició de \myref{def:divisor Z} tenim que existeix un enter \(c\) tal que \(a=bc\), i per tant \(-a=b(-c)\), i equivalentment \(b\divides-a\).
+			
+			Veiem ara el punt \eqref{enum:prop:oposats tenen els mateixos múltiples}. Si \(b\divides a\) per la definició de \myref{def:divisor Z} tenim que existeix un enter \(c\) tal que \(a=bc\), i per tant \(a=(-c)(-b)\), i equivalentment \(-b\divides a\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:divisors divideixen el divident escalat}
+		Siguin \(c\), \(b\) i \(a\) enters tals que \(c|a\). Aleshores \(c\divides ab\).
+		\begin{proof}
+			Si \(c\divides a\) per la definició de \myref{def:divisor Z} tenim que existeix un \(k\) tal que \(a=kc\). Ara bé, també tenim \(ab=kbc\), i per tant \(c\divides ab\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:un divisor divideix la suma o la resta dels seus dividents}
+		Siguin \(a\), \(b\) i \(c\) enters tals que \(c\divides a\) i \(c\divides b\). Aleshores \(c\divides a+b\) i \(c\divides a-b\).
+		\begin{proof}
+			Per la definició de \myref{def:divisor Z} tenim que existeixen enters \(k\) i \(k'\) tals que \(a=kc\) i \(c=k'b\). Per tant per la proposició \ref{prop:distributiva suma pel producte enters} trobem
+			\[a+b=(k+k')c\quad\text{i}\quad a-b=(k-k')c.\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:transitivitat de la divisibilitat}
+		Siguin \(a\), \(b\) i \(c\) enters tal que \(a\divides b\) i \(b\divides c\). Aleshores \(a\divides c\).
+		\begin{proof}
+			Per la definició de \myref{def:divisor Z} tenim que existeixen enters \(k\) i \(k'\) tals que \(a=kb\) i \(b=k'c\). Per tant \(a=kk'c\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:simetria en la divisibilitat implica igualtat}
+		Siguin \(a\) i \(b\) enters tals que \(a\divides b\) i \(b\divides a\). Aleshores \(a=b\) ó \(a=-b\).
+		\begin{proof}
+			Per la definició de \myref{def:divisor Z} tenim que existeixen enters \(k\) i \(k'\) tals que \(a=kb\) i \(b=k'a\). Per tant trobem
+			\[b=kk'b\]
+			i tenim
+			\[0=kk'b-b\]
+			i per la proposició \myref{prop:distributiva suma pel producte enters} trobem
+			\[0=(kk'-1)b.\]
+			Ara bé, si \(b=0\) tenim que \(a=k0\) i \(a=0\), i per tant \(a=b\). Si \(b\neq0\) pel Teorema \myref{thm:Z és un DI} trobem que ha de ser \(kk'=1\) i per tant ha de ser \(k=1\) i \(k'=1\) ó \(k=-1\) i \(k'=-1\) i trobem que \(a=b\) ó \(a=-b\).
+		\end{proof}
+	\end{proposition}
+	\subsection{Màxim comú divisor}
+	\begin{definition}[Màxim comú divisor]
+		\labelname{màxim comú divisor}\label{def:màxim comú divisor}
+		Siguin \(a\) i \(b\) enters. Aleshores definim
+		\[\mcd(a,b)=\max_{c\in\mathbb{Z}}\{c\divides a\text{ i }c\divides b\}\]
+		com el màxim comú divisor de \(a\) i \(b\).
+	\end{definition}
+	\begin{proposition}
+		Siguin \(a\) i \(b\) enters. Aleshores \(\mcd(a,b)=\mcd(b,a)\).
+		\begin{proof}
+			Per la definició de \myref{def:màxim comú divisor} tenim que
+			\[\mcd(a,b)=\max_{c\in\mathbb{Z}}\{c\divides a\text{ i }c\divides b\}\quad\text{i}\quad\mcd(b,a)=\max_{c\in\mathbb{N}}\{c\divides b\text{ i }c\divides a\},\]
+			i per tant, per la Tautologia \myref{taut:condició equivalent a conjunció} trobem que \(\mcd(a,b)=\mcd(b,a)\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		Siguin \(a\) i \(b\) enters. Aleshores per a tot \(\lambda\) enter
+		\[\mcd(a,b)=\mcd(a-\lambda b,b)=\mcd(a,b-\lambda a).\]
+		\begin{proof}
+			Prenem un enter \(c\) tal que \(c\divides a\) i \(c\divides b\). Aleshores per la proposició \myref{prop:divisors divideixen el divident escalat} tenim que \(c\) divideix \(-\lambda b\), i per la proposició \myref{prop:un divisor divideix la suma o la resta dels seus dividents} trobem que \(c\divides a-\lambda b\), i per la definició de \myref{def:màxim comú divisor} tenim que, efectivament, \(\mcd(a,b)=\mcd(a-\lambda b,b)\).
+		\end{proof}
+	\end{proposition}
+	\subsection{La divisió euclidiana i l'identitat de Bézout}
+	\begin{lemma}
+		\label{lemma:criteri de divisibilitat d'Euclides}
+		Siguin \(D\) i \(d\) nombres enters amb \(D,d>0\). Aleshores existeixen dos únics \(q\), \(r\) enters tals que
+		\[D=dq+r\]
+		amb \(0\leq r<d\).
+		\begin{proof}
+			Definim el conjunt
+			\[S=\{x\in\mathbb{Z}\mid x\geq0\text{ i existeix }z\in\mathbb{Z}\text{ tal que }x=D-dz\}.\]
+			Observem que \(D\in S\), i per tant \(S\neq\emptyset\). Sigui doncs \(r=\min\{x\in S\}\). Per tant existeix un enter \(q\) tal que
+			\[r=D-dq.\]
+			
+			Ara bé, tenim que \(r<d\), ja que si \(r\geq d\) tindríem
+			\begin{align*}
+			0&\geq r-d\\
+			&=D-dq-d\\
+			&=D-d(q+1)\tag{\myref{prop:distributiva suma pel producte enters}}
+			\end{align*}
+			i per tant \(r-d\) seria un element de \(S\), amb \(r-d<r\), però això entraria amb contradicció amb que \(r=\min\{x\in S\}\). Per tant \(\leq r<d\) i hem acabat.
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}[Criteri de divisibilitat d'Euclides] %MOURE
+		\labelname{criteri de divisibilitat d'Euclides}\label{thm:divisió euclidiana}
+		\label{thm:criteri de divisibilitat d'Euclides} %Veure que les referències estan bé.
+		Siguin \(D\) i \(d\) nombres enters amb \(d\neq0\). Aleshores existeixen dos únics \(q\), \(r\) enters tals que
+		\[D=dq+r\]
+		amb \(0\leq r<\abs{d}\).
+		\begin{proof}
+			Veiem primer que si \(q\) i \(r\) existeixen aquests són únics. Suposem doncs que existeixen \(q_{1}, q_{2}, r_{1}, r_{2}\) tals que
+			\[D=dq_{1}+r_{1}=dq_{2}+r_{2}\]
+			amb \(0\leq r_{1}<\abs{d}\) i \(0\leq r_{2}<\abs{d}\). Aleshores tenim
+			\[D-D=d(q_{1}-q_{2})+(r_{1}-r_{2})\]
+			i per tant
+			\[r_{2}-r_{1}=d(q_{1}-q_{2}).\]
+			Ara bé, tenim que \(r_{2}-r_{1}<\abs{d}\), ja que per hipòtesi \(r_{1},r_{2}<\abs{d}\), i per tant ha de ser \(r_{2}-r_{1}=0\), i per l'observació \myref{obs:elements que es tatxen son iguals} tenim \(r_{1}=r_{2}\). Ara bé, aleshores tenim
+			\[0=d(q_{1}-q_{2})\]
+			i com que, per hipòtesi, \(d\neq0\), pel Teorema \myref{thm:Z és un DI} ha de ser \(q_{1}-q_{2}=0\), i de nou per l'observació \myref{obs:elements que es tatxen son iguals} tenim \(q_{1}=q_{2}\). Per tant la unicitat queda demostrada.
+			
+			Veiem ara que existeixen. Efectivament, si \(D,d>0\) l'enunciat és cert pel lemma \myref{lemma:criteri de divisibilitat d'Euclides}.
+			
+			Si \(D<0\) i \(d>0\) definim \(D'=-D\). Aleshores \(D'>0\), i pel lemma \myref{lemma:criteri de divisibilitat d'Euclides} tenim que existeixen \(q'\) i \(r'\) enters tals que
+			\[D'=dq'+r'\]
+			amb \(0\leq r'<d\). I per tant
+			\begin{align*}
+			D&=-(dq'+r')\\
+			&=d(-q')-r'\tag{\myref{prop:distributiva suma pel producte enters}}\\
+			&=d(-q')-d+d-r'\\
+			&=d(-q'-1)+(d-r')\tag{\myref{prop:distributiva suma pel producte enters}}
+			\end{align*}
+			i si prenem \(q=-q'-1\) i \(r=d-r'\) tenim
+			\[D=dq+r\]
+			amb \(0\leq d-r'<d\).
+			
+			Si \(d<0\) prenem \(d'=-d\), i aleshores \(d'>0\) i pels casos anteriors hem acabat.
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}[Identitat de Bézout]
+		\labelname{la identitat de Bézout}\label{thm:identitat de Bézout}
+		Siguin \(a\) i \(b\) dos enters. Aleshores existeixen enters \(\alpha\) i \(\beta\) tals que
+		\[a\alpha+b\beta=\mcd(a,b).\]
+		\begin{proof}
+			Considerem el conjunt
+			\[S=\{ax+by\mid x,y\in\mathbb{Z}, ax+by>0\}.\]
+			Observem que si \(x=1\) i \(y=0\), l'enter \(a\) pertany a \(S\). Per tant \(S\) és un conjunt no buit i tenim que existeixen enters \(s\) i \(t\) tals que \(as+bt=\min\{d\in S\}\). Posem \(d=as+bt\). Pel \myref{thm:criteri de divisibilitat d'Euclides} tenim que existeixen dos enters \(q\) i \(r\) amb \(0\leq r<d\) tals que
+			\[a=dq+r.\]
+			Tenim que \(r\) és un element de \(S\cup\{0\}\), ja que
+			\begin{align*}
+			r&=a-qd\\
+			&=a-q(as+bt)\\
+			&=a(1-qs)-b(qt).
+			\end{align*}
+			Ara bé, tenim que \(0\leq r<d\) i \(as+bt=\min\{d\in S\}\). Per tant ha de ser \(r=0\) i per la definició de \myref{def:divisor Z} trobem \(d\divides a\). Amb un argument anàleg podem veure que \(d\divides b\). Suposem ara que existeix \(c\) tal que \(c\divides a\) i \(c\divides b\). Per la definició de \myref{def:divisor Z} tenim que existeixen \(k\) i \(k'\) satisfent
+			\[a=kc\quad\text{i}\quad b=k'c\]
+			i per tant
+			\begin{align*}
+			d&=as+bt\\
+			&=cks+ck't\\
+			&=c(ks+k't),
+			\end{align*}
+			i per tant \(c<d\), i per la definició de \myref{def:màxim comú divisor} trobem que \(\mcd(a,b)=as+bt\).
+		\end{proof}
+	\end{theorem}
+	\begin{definition}[Coprimers]
+		\labelname{coprimers}\label{def:coprimers}
+		Siguin \(a\) i \(b\) dos enters tals que \(\mcd(a,b)=1\). Aleshores direm que \(a\) i \(b\) són coprimers.
+	\end{definition}
+	\begin{theorem}
+		\label{thm:condició equivalent a coprimers per Bézout}
+		Siguin \(a\) i \(b\) dos enters. Aleshores \(a\) i \(b\) són coprimers si i només si existeixen dos enters \(\alpha\) i \(\beta\) tals que
+		\[a\alpha+b\beta=1.\]
+		\begin{proof}
+			Veiem que la condició és suficient (\(\Rightarrow\)). Suposem doncs que \(a\) i \(b\) són coprimers. Per \myref{thm:identitat de Bézout} hem acabat.
+			
+			Veiem ara que la condició és necessària (\(\Leftarrow\)). Suposem doncs que existeixen dos enters \(\alpha\) i \(\beta\) tals que \(a\alpha+b\beta=1\). Tenim que si existeix un enter \(c\) tal que \(c\divides a\) i \(c\divides b\), aleshores \(c\divides 1\), i per la definició de \myref{def:màxim comú divisor} trobem que \(\mcd(a,b)=1\).
+		\end{proof}
+	\end{theorem}
+	\begin{proposition}
+		\label{prop:un enter que divideix al producte de dos, on un n'és coprimer, divideix a l'altre}
+		Siguin \(c\) un enter i \(a\) i \(b\) dos enters coprimers tals que \(a\divides bc\). Aleshores \(a\divides c\).
+		\begin{proof}
+			Pel Teorema \myref{thm:condició equivalent a coprimers per Bézout} tenim que existeixen dos enters \(\alpha\) i \(\beta\) tals que
+			\[1=a\alpha+b\beta.\]
+			Per tant
+			\[c=ca\alpha+cb\beta,\]
+			i per la definició de \myref{def:divisor Z} tenim que existeix un enter \(k\) tal que \(ak=bc\). Per tant
+			\[c=ca\alpha+ak\beta\]
+			i per la proposició \myref{prop:distributiva suma pel producte enters} tenim que \(c=(c\alpha+k\beta)a\) i per la definició de \myref{def:divisor Z} tenim que \(a\divides c\).
+		\end{proof}
+	\end{proposition}
+	\subsection{Mínim comú múltiple}
+	\begin{definition}[Mínim comú múltiple]
+		\labelname{mínim comú múltiple}\label{def:mínim comú múltiple}
+		Siguin \(a\) i \(b\) dos enters. Aleshores definim
+		\[\mcm(a,b)=\min\{m\in\mathbb{Z}\mid m>0, a\divides m\text{ i }a\divides m\}\]
+		com el mínim comú múltiple de \(a\) i \(b\).
+	\end{definition}
+	\begin{theorem}
+		Siguin \(a\) i \(b\) dos enters. Aleshores
+		\[\mcd(a,b)\mcm(a,b)=\abs{ab}.\]
+		\begin{proof}
+			Sigui \(d=\mcd(a,b)\). Per la definició de \myref{def:màxim comú divisor} existeixen \(a'\) i \(b'\) tals que \(a=da'\) i \(b=db'\). Per tant, per la proposició \myref{prop:divisors divideixen el divident escalat} trobem que \(d\divides ab\), i per la definició de \myref{def:divisor Z} trobem que existeix un enter \(l\) tal que \(dl=\abs{ab}\). Per tant \(dl=da'b\) i \(dl=adb'\), i pel corol·lari \myref{corollary:podem tatxar pels costats en Z pel producte} tenim que \(l=a'b\) i \(l=ab'\), i per la definició de \myref{def:divisor Z} tenim que \(a\divides l\) i \(b\divides l\).
+			
+			Sigui \(m\) un enter tal que \(a\divides m\) i \(b\divides m\). Per la definició de \myref{def:divisor Z} tenim que existeixen dos enters \(k_{1}\) i \(k_{2}\) tals que \(m=ak_{1}\) i \(m=bk_{2}\). Ara bé, per \myref{thm:identitat de Bézout} tenim que existeixen dos enters \(\alpha\) i \(\beta\) tals que \(a\alpha+b\beta=d\). Per tant
+			\begin{align*}
+			md&=ma\alpha+ma\beta\tag{\myref{prop:distributiva suma pel producte enters}}\\
+			&=bk_{2}a\alpha+ak_{1}b\beta\\
+			&=ab(bk_{2}+ak_{1})\tag{\myref{prop:distributiva suma pel producte enters}}\\
+			&=dl(bk_{2}+ak_{1})
+			\end{align*}
+			i de nou pel corol·lari \myref{corollary:podem tatxar pels costats en Z pel producte} trobem que \(m=l(bk_{2}+ak_{1})\), i per tant \(l\leq m\). Per tant, per la definició de \myref{def:mínim comú múltiple} tenim que \(l=\mcm(a,b)\), i per tant
+			\[|ab|=\mcd(a,b)\mcm(a,b).\qedhere\]
+		\end{proof}
+	\end{theorem}
+	\subsection{Teorema Fonamental de l'Aritmètica}
+	\begin{definition}[Enter primer]
+		\labelname{enter primer}\label{def:enter primer}
+		Siguin \(p>1\) un enter amb i \(d\) un enter tal que si \(d\divides p\) aleshores \(d\) és igual a \(1\) ó \(p\). Aleshores direm que \(p\) és primer.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:Si un primer divideix al producte aleshores divideix els elements}
+		Siguin \(a\) i \(b\) dos enters i \(p\) un primer tals que \(p\divides ab\). Aleshores \(p\divides a\) ó \(p\divides b\).
+		\begin{proof}
+			Suposem que \(p\ndivides a\). Aleshores per la definició de \myref{def:coprimers} tenim que \(p\) i \(a\) són coprimers. Per tant per la proposició \myref{prop:un enter que divideix al producte de dos, on un n'és coprimer, divideix a l'altre} tenim que \(p\divides b\). El cas \(p\ndivides b\) és anàleg.
+		\end{proof}
+	\end{proposition}
+	\begin{lemma}
+		\label{lemma:thm:Teorema Fonamental de l'Aritmètica 1}
+		Sigui \(a\) un enter amb \(a>1\). Aleshores existeixen \(p_{1},\dots,p_{n}\) primers tals que
+		\[a=p_{1}^{r_{n}}\cdots p_{n}^{r_{n}}.\]
+		\begin{proof}
+			Observem primer que si \(a\) és primer tenim \(a=a\) i aquest cas particular de l'enunciat és cert.
+			
+			Ho farem per inducció. Si \(a=2\) tenim que \(a\) és primer i hem acabat.
+			
+			Suposem ara que \(a>2\) i que l'enunciat és cert per a \(a\) fix. Volem veure que també és cert per a \(a+1\). Si \(a+1\) és primer, per la definició d'\myref{def:enter primer} hem acabat. Suposem doncs que \(a+1\) no és primer. Aleshores existeixen enters \(\alpha\) i \(\beta\) tals que \(a+1=\alpha\beta\). Bé, tenim que es compleix \(2\leq\alpha\leq a\) i \(2\leq\beta\leq a\). Ara bé, per l'hipòtesi d'inducció tenim que existeixen \(p_{1},\dots,p_{r}\), \(q_{1},\dots,q_{s}\) primers tals que
+			\[\alpha=p_{1}\cdots p_{r}\quad\text{i}\quad\beta=q_{1}\cdots q_{s},\]
+			i per tant
+			\[a+1=p_{1}\cdots p_{r}q_{1}\cdots q_{s},\]
+			i pel \myref{thm:principi d'inducció} tenim que l'enunciat és cert.
+		\end{proof}
+	\end{lemma}
+	\begin{lemma}
+		\label{lemma:thm:Teorema Fonamental de l'Aritmètica 2}
+		Siguin \(a>1\) un enter i \(p_{1},\dots,p_{n}\) i \(q_{1},\dots,q_{r}\) primers satisfent \(p_{1}\leq\dots\leq p_{n}\), \(q_{1}\leq\dots\leq q_{r}\) tals que
+		\[a=p_{1}\cdots p_{n}\quad\text{i}\quad a=q_{1}\cdots q_{r}.\]
+		Aleshores \(n=r\) i \(p_{i}=q_{i}\) per a tot \(i\in\{1,\dots,n\}\).
+		\begin{proof}
+			Tenim que
+			\[p_{1}\cdots p_{n}=q_{1}\cdots q_{r},\]
+			i per la definició de \myref{def:divisor Z} trobem que \(p_{1}\divides q_{1}\cdots q_{r}\), i per la proposició \myref{prop:Si un primer divideix al producte aleshores divideix els elements} trobem que \(p_{1}\divides q_{j_{1}}\) per a cert \(j_{1}\in\{1,\dots,r\}\) i per la definició d'\myref{def:enter primer} trobem que existeix un \(\{j_{1}\in\{1,\dots,r\}\) tal que \(p_{1}=q_{j_{1}}\). Aleshores pel corol·lari \myref{corollary:podem tatxar pels costats en Z pel producte} trobem que
+			\[p_{2}\cdots p_{n}=q_{1}\cdots q_{j_{1}-1}q_{j_{1}+1}\cdots q_{r}.\]
+			
+			Podem iterar aquest procés \(k=\min(n,r)\) vegades. Ara bé, si \(n>r\) tenim
+			\[p_{k+1}\cdots p_{n}=1,\]
+			que, per la definició d'\myref{def:enter primer}, no és possible, i si \(n<r\) trobem
+			\[1=q_{j_{k+1}}\cdots q_{j_{r}}\]
+			on \(j_{k+1},\dots,j_{r}\in\{1,\dots,r\}\setminus\{j_{1},\dots,j_{k}\}\), i de nou per la definició d'\myref{def:enter primer}, no és possible. Per tant ha de ser \(n=r\) i hem acabat.
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}[Teorema Fonamental de l'Aritmètica]
+		%https://proofwiki.org/wiki/Fundamental_Theorem_of_Arithmetic
+		\label{Teorema Fonomental de l'Aritmètica}\label{thm:Teorema Fonamental de l'Aritmètica}
+		Sigui \(a>1\) un enter. Aleshores existeixen \(p_{1},\dots,p_{n}\) primers amb \(p_{1}\geq p_{2}\geq\dots\geq p_{n}\) únics tals que \(a=p_{1}\cdots p_{n}\).
+		\begin{proof}
+			És conseqüència del lemma \myref{lemma:thm:Teorema Fonamental de l'Aritmètica 1} i el lemma \myref{lemma:thm:Teorema Fonamental de l'Aritmètica 2}.
+		\end{proof}
+	\end{theorem}
+	\section{Els nombres modulars}
+	\subsection{Construcció dels nombres modulars}
+	\begin{proposition}
+		\label{prop:relació d'equivalència Z/(m)}
+		Siguin \(m\) un nombre enter. Aleshores la relació
+		\[x\sim y\Longleftrightarrow x-y=mk\quad\text{per a cert }k\in\mathbb{Z}\text{ per a tot }x,y\in\mathbb{Z}\]
+		és una relació d'equivalència.
+		\begin{proof}
+			Comprovem les propietats de la definició de relació d'equivalència:
+			\begin{enumerate}
+				\item Reflexiva: Sigui \(x\) un nombre enter. Aleshores per l'observació \ref{obs:elements que es tatxen son iguals} tenim que \(x-x=0\) i per la definició de \myref{def:nombres enters} trobem que \(0=m\cdot 0\), i per tant \(x\sim x\).
+				\item Simètrica: Siguin \(x\) i \(y\) dos enters tals que \(x\sim y\). Per hipòtesi tenim que \(x-y=km\) per a cert \(k\) enter, i per tant \(y-x=-km\) i tenim \(y\sim x\).
+				\item Transitiva: Siguin \(x\), \(y\) i \(z\) nombres enters tals que \(x\sim y\) i \(y\sim z\). Per hipòtesi això és que \(x-y=mk\) i \(y-z=mk'\) per a cert \(k,k'\) enters. Per tant trobem
+				\begin{align*}
+				x-z&=x-y+y-z\\
+				&=mk+mk'\\
+				&=m(k+k')
+				\end{align*}
+				i per tant \(x\sim z\).
+			\end{enumerate}
+			I per la definició de \myref{def:relació d'equivalència} hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Nombres modulars]
+		\labelname{nombres modulars}\label{def:nombres modulars}\label{def:Z/(m)}
+		\labelname{nombres modulars congruents}\label{def:nombres modulars congruents}
+		Siguin \(m\) un enter i
+		\[x\sim y\Longleftrightarrow x-y=mk\quad\text{per a cert }k\in\mathbb{Z}\text{ per a tot }x,y\in\mathbb{Z}\]
+		una relació d'equivalència. Aleshores denotem el conjunt quocient \(\mathbb{Z}/\sim\) com \(\mathbb{Z}/(m)\), i si \(x\sim y\) escriurem \(x\equiv y\pmod{m}\). Direm que \(\mathbb{Z}/(m)\) són nombres modulars i si \(x\sim y\) direm que \(x\) i \(y\) són congruents mòdul \(m\).
+		
+		Aquesta definició té sentit per la proposició \myref{prop:relació d'equivalència Z/(m)}
+	\end{definition}
+	\subsection{Operacions sobre nombres modulars} %Veure que estan ben definides
+	\begin{definition}[Suma de nombres modulars]
+		\labelname{suma de nombres modulars}\label{def:suma de nombres modulars}
+		Siguin \(\overline{x}\) i \(\overline{y}\) dos elements de \(\mathbb{Z}/(m)\). Aleshores definim la seva suma com l'operació
+		\[\overline{x}+\overline{y}=\overline{x+y}.\]
+	\end{definition}
+	\begin{definition}[Producte de nombres modulars]
+		\labelname{producte de nombres modulars}\label{def:producte de nombres modulars}
+		Siguin \(\overline{x}\) i \(\overline{y}\) dos elements de \(\mathbb{Z}/(m)\). Aleshores definim el seu producte com l'operació
+		\[\overline{x}\cdot\overline{y}=\overline{x\cdot y}.\]
+	\end{definition}
+	\begin{proposition}
+		\label{prop:Z/(m) és un grup abelià}
+		Siguin \(\overline{a}\), \(\overline{b}\) i \(\overline{c}\) elements de \(\mathbb{Z}/(m)\). Aleshores
+		\begin{enumerate}
+			\item\label{enum:prop:Z/(m) és un grup abelià 1} \(\overline{a}+\overline{b}=\overline{b}+\overline{a}\).
+%			\item \(\overleftarrow{a}\cdot\overline{b}=\overline{b}\cdot\overline{a}\).
+			\item\label{enum:prop:Z/(m) és un grup abelià 2} \(\overline{a}+(\overline{b}+\overline{c})=(\overline{a}+\overline{b})+\overline{c}\).
+			\item\label{enum:prop:Z/(m) és un grup abelià 3} \(\overline{a}+\overline{0}=\overline{a}\).
+			\item\label{enum:prop:Z/(m) és un grup abelià 4} \(\overline{a}+\overline{-a}=\overline{0}\).
+		\end{enumerate}
+		\begin{proof}
+			Per veure el punt \eqref{enum:prop:Z/(m) és un grup abelià 1} fem
+			\begin{align*}
+			\overline{a}+\overline{b}&=\overline{a+b}\tag{\myref{def:suma de nombres modulars}}\\
+			&=\overline{b+a}\tag{\ref{prop:Z és un grup abelià}}\\
+			&=\overline{b}+\overline{a}.\tag{\myref{def:suma de nombres modulars}}
+			\end{align*}
+			Per veure el punt \eqref{enum:prop:Z/(m) és un grup abelià 2} fem
+			\begin{align*}
+			\overline{a}+(\overline{b}+\overline{c})&=\overline{a}+\overline{b+c}\tag{\myref{def:suma de nombres modulars}}\\
+			&=\overline{a+(b+c)}\tag{\myref{def:suma de nombres modulars}}\\
+			&=\overline{(a+b)+c}\tag{\myref{prop:Z és un grup associativitat}}\\
+			&=\overline{a+b}+\overline{c}\tag{\myref{def:suma de nombres modulars}}\\
+			&=(\overline{a}+\overline{b})+\overline{c}.\tag{\myref{def:suma de nombres modulars}}
+			\end{align*}
+			Per veure el punt \eqref{enum:prop:Z/(m) és un grup abelià 3} fem
+			\begin{align*}
+			\overline{a}+\overline{0}&=\overline{a+0}\tag{\myref{def:suma de nombres modulars}}\\
+			&=\overline{a}.\tag{\ref{prop:Z és un grup}}
+			\end{align*}
+			Per veure el punt \eqref{enum:prop:Z/(m) és un grup abelià 4} fem
+			\begin{align*}
+			\overline{a}+\overline{-a}&=\overline{a-a}\tag{\myref{def:suma de nombres modulars}}\\
+			&=\overline{0}.\tag{\myref{obs:elements que es tatxen son iguals}}
+			\end{align*}
+			I hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:Z/(m) és un anell commutatiu}
+		Siguin \(\overline{a}\), \(\overline{b}\) i \(\overline{c}\) elements de \(\mathbb{Z}/(m)\). Aleshores
+		\begin{enumerate}
+			\item\label{enum:prop:Z/(m) és un anell commutatiu 1}
+			\(\overline{a}\cdot\overline{b}=\overline{b}\cdot\overline{a}\).
+			\item\label{enum:prop:Z/(m) és un anell commutatiu 2}
+			\(\overline{a}\cdot\overline{1}=\overline{a}\).
+			\item\label{enum:prop:Z/(m) és un anell commutatiu 3}
+			\(\overline{a}\cdot(\overline{b}\cdot\overline{c})=(\overline{a}\cdot\overline{b})\cdot\overline{c}\).
+			\item\label{enum:prop:Z/(m) és un anell commutatiu 4}
+			\(\overline{a}\cdot(\overline{b}+\overline{c})=\overline{a}\cdot\overline{b}+\overline{a}\cdot\overline{c}\).
+		\end{enumerate}
+		\begin{proof}
+			Per veure el punt \eqref{enum:prop:Z/(m) és un anell commutatiu 1} fem
+			\begin{align*}
+			\overline{a}\cdot\overline{b}&=\overline{a\cdot b}\tag{\myref{def:producte de nombres modulars}}\\
+			&=\overline{b\cdot a}\tag{\myref{prop:Z és un anell commutatiu}}\\
+			&=\overline{b}\cdot\overline{a}.\tag{\myref{def:producte de nombres modulars}}\\
+			\end{align*}
+			Per veure el punt \eqref{enum:prop:Z/(m) és un anell commutatiu 2} fem, per la definició de \myref{def:producte de nombres modulars}
+			\[\overline{a}\cdot\overline{1}=\overline{a\cdot 1},\]
+			i per la proposició \myref{prop:Z és un anell} trobem
+			\[\overline{a}\cdot\overline{1}=\overline{a}.\]
+			Per veure el punt \eqref{enum:prop:Z/(m) és un anell commutatiu 3} fem
+			\begin{align*}
+			\overline{a}\cdot(\overline{b}\cdot\overline{c})&=\overline{a}\cdot\overline{b\cdot c}\tag{\myref{def:producte de nombres modulars}}\\
+			&=\overline{a\cdot(b\cdot c)}\tag{\myref{def:producte de nombres modulars}}\\
+			&=\overline{(a\cdot b)\cdot c}\tag{\myref{prop:Z és un anell associativitat}}\\
+			&=\overline{a\cdot b}\cdot\overline{c}\tag{\myref{def:producte de nombres modulars}}\\
+			&=(\overline{a}\cdot\overline{b})\cdot\overline{c}.\tag{\myref{def:producte de nombres modulars}}
+			\end{align*}
+			Per veure el punt \eqref{enum:prop:Z/(m) és un anell commutatiu 4} fem
+			\begin{align*}
+			\overline{a}\cdot(\overline{b}+\overline{c})&=\overline{a}\cdot\overline{b+c}\tag{\myref{def:suma de nombres modulars}}\\
+			&=\overline{a\cdot(b+c)}\tag{\myref{def:producte de nombres modulars}}\\
+			&=\overline{ab+ac}\tag{\myref{prop:distributiva suma pel producte enters}}\\
+			&=\overline{ab}+\overline{ac}\tag{\myref{def:suma de nombres modulars}}\\
+			&=\overline{a}\cdot\overline{b}+\overline{a}\cdot\overline{c}.\tag{\myref{def:producte de nombres modulars}}
+			\end{align*}
+			I hem acabat.
+		\end{proof}
+	\end{proposition}
+%	\begin{proposition}
+%		Veure que \(\mathbb{Z}/(p)\) és un DI i cos
+%	\end{proposition}
+	\subsection{Congruències i aritmètica modular}
+	\begin{proposition}
+		Siguin \(a\), \(a'\), \(b\), \(b'\) i \(m>1\) enters tals que
+		\[a\equiv a'\pmod{m}\quad\text{i}\quad b\equiv b'\pmod{m}.\]
+		Aleshores
+		\[a+b\equiv a'+b'\pmod{m}\quad\text{i}\quad ab\equiv a'b'\pmod{m}.\]
+		\begin{proof}
+			Per la definició d'\myref{def:nombres modulars congruents} tenim que existeixen enters \(\lambda\) i \(\mu\) tals que \(a-a'=\lambda m\) i \(b-b'=\mu m\). Per tant
+			\begin{align*}
+			(a+b)-(a'-b')&=(a-a')+(b-b')\\
+			&=\lambda m+\mu m\\
+			&=(\lambda+\mu)m,\tag{\ref{prop:Z/(m) és un anell commutatiu}}
+			\end{align*}
+			i per la definició de \myref{def:nombres modulars congruents} trobem que \(a+b\equiv a'+b'\pmod{m}\). També veiem que
+			\begin{align*}
+			ab-a'b'&=(a'+\lambda m)(b'-\mu m)-a'b'\\
+			&=a'b'+(a'\mu+b'\lambda+\lambda\mu m)m-a'b'\\
+			&=(a'\mu+b'\lambda+\lambda\mu m)m,
+			\end{align*}
+			i per tant \(ab\equiv a'b'\pmod{m}\).
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Nombre modular invertible]
+		\labelname{nombre modular invertible}\label{def:nombre modular invertible}
+		Sigui \(\overline{a}\) un element de \(\mathbb{Z}/(m)\) tal que existeix un element \(\overline{a'}\) de \(\mathbb{Z}/(m)\) satisfent \(\overline{a}\overline{a'}=\overline{1}\). Aleshores direm que \(\overline{a}\) és invertible pel producte i que \(\overline{a'}\) és la inversa de \(\overline{a}\).
+		
+		Denotarem \(\overline{a}^{-1}\) com la inversa de \(\overline{a}\)
+	\end{definition}
+	\begin{proposition}
+		Sigui \(\overline{a}\) un element de \(\mathbb{Z}/(m)\) Aleshores \(\overline{a}\) és invertible si i només si \(a\) i \(m\) són coprimers.
+		\begin{proof}
+			Per la definició de \myref{def:nombre modular invertible} tenim que \(\overline{a}\) és invertible si existeix un element \(a'\) tal que \(aa'\equiv1\pmod{m}\), i per la definició de \myref{def:nombres modulars congruents} tenim que això és si existeix un enter \(\lambda\) tal que \(aa'-1=\lambda m\).
+			
+			Això és equivalent a que \(aa'-\lambda m=1\), i per \myref{thm:identitat de Bézout} tenim que això és si i només si \(\mcd(a,m)=1\), i per la definició de \myref{def:coprimers} tenim que \(a\) i \(m\) són coprimers.
+		\end{proof}
+	\end{proposition}
+	\begin{corollary}
+		\label{corollary:Z/(p) és un cos}
+		Sigui \(p>1\) un enter. Aleshores \(p\) és primer si i només si \(\overline{a}\) és invertible per a tot \(\overline{a}\in\mathbb{Z}/(p)\setminus\{\overline{0}\}\).
+%		\begin{proof}\end{proof}
+	\end{corollary}
+	\begin{theorem}[El Petit Teorema de Fermat]
+		\labelname{el Petit Teorema de Fermat}\label{thm:el Petit Teorema de Fermat}
+		Siguin \(p\) un primer i \(a\) un enter tal que \(p\ndivides a\). Aleshores
+		\[a^{p-1}\equiv1\pmod{p}.\]
+		\begin{proof}
+			%FER
+		\end{proof}
+	\end{theorem}
+	\section{Les permutacions}
+	\subsection{El grup simètric}
+	\begin{definition}[Permutació]
+		\labelname{permutació}\label{def:permutació}
+		Sigui \(X\) un conjunt i \(\sigma\colon X\rightarrow X\) una aplicació bijectiva. Aleshores direm que \(\sigma\) és una permutació.
+	\end{definition}
+	\begin{definition}[Grup simètric]
+		\labelname{grup simètric}\label{def:grup simètric}
+		Siguin \(X\) un conjunt no buit i
+		\[\GrupSimetric_{X}=\{\sigma\colon X\rightarrow X\mid\sigma\text{ és una permutació}\}\]
+		un conjunt. Aleshores direm que \(\GrupSimetric_{X}\) és el grup simètric de \(X\).
+		
+		Si \(X=\{1,\dots,n\}\) aleshores denotarem el grup simètric de \(X\) com \(\GrupSimetric_{n}\).
+	\end{definition}
+	\begin{definition}[Elements moguts per una permutació]
+		\labelname{conjunt d'elements moguts per una permutació}\label{def:conjunt d'elements moguts per una permutació}
+		Siguin \(X\) un conjunt no buit, \(\sigma\in\GrupSimetric_{X}\) una permutació i
+		\[\Mou(\sigma)=\{x\in X\mid\sigma(x)\neq x\}\]
+		un conjunt. Aleshores direm que \(\Mou(\sigma)\) és el conjunt d'elements de \(X\) moguts per \(\sigma\).
+	\end{definition}
+	\begin{proposition}
+		\label{prop:permutació identitat si i només si no mou res}
+		\label{prop:permutació no mou res si i només si és la identitat}
+		Siguin \(X\) un conjunt no buit i \(\sigma\) una permutació de \(\GrupSimetric_{X}\). Aleshores
+		\[\Mou(\sigma)=\emptyset\Longleftrightarrow\sigma=\Id_{X}.\]
+		\begin{proof}
+			Comencem veient l'implicació cap a la dreta (\(\Rightarrow\)). Suposem doncs que \(\Mou(\sigma)=\emptyset\). Aleshores per la definició de \myref{def:conjunt d'elements moguts per una permutació} trobem que \(\{x\in X\mid\sigma(x)\neq x\}=\emptyset\), i per tant ha de ser \(\sigma(x)=x\) per a tot \(x\in X\), i per tant \(\sigma=\Id_{X}\).
+			
+			Veiem ara l'implicació cap a l'esquerra (\(\Leftarrow\)). Prenem \(\Id_{X}\). Aleshores ha de ser \(\Mou(\Id_{X})=\emptyset\), ja que per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que \(\Mou(\Id_{X})=\{x\in X\mid\Id_{X}(x)\neq x\}\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:Mou de la conjugació és unió dels Mous}
+		Siguin \(X\) un conjunt no buit i \(\sigma\) i \(\tau\) dues permutacions de \(\GrupSimetric_{X}\). Aleshores
+		\[\Mou(\sigma\circ\tau)\subseteq\Mou(\sigma)\cup\Mou(\tau).\]
+		\begin{proof}
+			Prenem \(a\in X\) tal que \(a\in\Mou(\sigma\circ\tau)\). Això és, per la definició de \myref{def:conjunt d'elements moguts per una permutació}, que \(a\in\{x\in X\mid\sigma\circ\tau(x)\neq x\}\). Volem veure que \(a\in\Mou(\sigma)\cup\Mou(\tau)\), i per la definició d'\myref{def:unió de conjunts} hem de veure que \(a\in\Mou(\sigma)\) ó \(a\in\Mou(\tau)\).
+			
+			Si \(a\notin\Mou(\tau)\) tenim que \(\tau(a)=a\), i tenim \(\sigma\circ\tau(a)=\sigma(a)\). Ara bé, ha de ser \(\sigma(a)\neq a\), ja que si no tindríem \(a\notin\Mou(\sigma\circ\tau)\). Per tant ha de ser \(a\in\Mou(\sigma)\).
+			
+			Si \(a\notin\Mou(\sigma)\) tenim que \(\sigma(a)=a\), i per tant tenim que \(\tau(a)\neq a\), ja que si \(\tau(a)=a\) tindríem \(\sigma\circ\tau(a)=\sigma(a)=a\), i seria \(a\notin\Mou(\sigma\circ\tau)\). Per tant ha de ser \(a\in\Mou(\tau)\).
+			
+			Per tant tenim que si \(a\in\Mou(\sigma\circ\tau)\) aleshores \(a\in\Mou(\sigma)\cup\Mou(\tau)\), i per la definició de \myref{def:subconjunt} trobem que \(\Mou(\sigma\circ\tau)\subseteq\Mou(\sigma)\cup\Mou(\tau)\), com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\subsection{Permutacions disjuntes}
+	\begin{definition}[Permutacions disjuntes]
+		\labelname{permutacions disjuntes}\label{def:permutacions disjuntes}
+		Siguin \(X\) un conjunt no buit i \(\sigma\) i \(\tau\) dues permutacions de \(\GrupSimetric_{X}\) tals que \(\Mou(\sigma)\cap\Mou(\tau)=\emptyset\). Aleshores direm que \(\sigma\) i \(\tau\) són disjuntes.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:mou de permutacions conjugades és unió dels mous de les permutacions}
+		Siguin \(X\) un conjunt no buit i \(\sigma\) i \(\tau\) dues permutacions disjuntes de \(\GrupSimetric_{X}\). Aleshores
+		\[\Mou(\sigma\circ\tau)=\Mou(\sigma)\cup\Mou(\tau).\]
+		\begin{proof}
+			Per la proposició \myref{prop:Mou de la conjugació és unió dels Mous} tenim que \(\Mou(\sigma\circ\tau)\subseteq\Mou(\sigma)\cup\Mou(\tau)\). Veiem doncs que \(\Mou(\sigma\circ\tau)\supseteq\Mou(\sigma)\cup\Mou(\tau)\).
+			
+			Prenem un element \(a\in\Mou(\sigma)\cup\Mou(\tau)\). Com que, per hipòtesi, \(\sigma\) i \(\tau\) són dues permutacions disjuntes, per la definició de \myref{def:permutacions disjuntes} tenim que \(\Mou(\sigma)\cap\Mou(\tau)=\emptyset\) i per la definició d'\myref{def:intersecció de conjunts} tenim que o bé \(a\in\Mou(\sigma)\) o bé \(a\in\Mou(\tau)\).
+			
+			Suposem que \(a\in\Mou(\sigma)\). Per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que \(\sigma(a)\neq a\) i \(\tau(a)=a\), ja que \(a\notin\Mou(\tau)\). Per tant \(\sigma\circ\tau(a)=\sigma(a)\neq a\), i per tant \(a\in\Mou(\sigma\circ\tau)\).
+			
+			Suposem ara que \(a\in\Mou(\tau)\). Per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que \(\tau(a)\neq a\) i \(\sigma(a)=a\), ja que \(a\notin\Mou(\sigma)\). Per tant \(\sigma\circ\tau(a)=\sigma(b)\) per a cert \(b\neq a\), \(b=\tau(a)\). Ara bé, com que per la definició de \myref{def:permutació} \(\sigma\) és una aplicació bijectiva, i per la definició d'\myref{def:aplicació bijectiva} trobem que \(\sigma\) és una aplicació injectiva, i per la definició d'\myref{def:aplicació injectiva} tenim que \(\sigma(b)\neq a\), ja que \(\sigma(a)=a\) i \(b\neq a\). Per hem vist que \[\Mou(\sigma\circ\tau)\subseteq\Mou(\sigma)\cup\Mou(\tau)\quad\text{i}\quad\Mou(\sigma\circ\tau)\supseteq\Mou(\sigma)\cup\Mou(\tau),\]
+			i pel \myref{thm:doble inclusió} tenim que
+			\[\Mou(\sigma\circ\tau)=\Mou(\sigma)\cup\Mou(\tau).\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\begin{lemma}
+		\label{lemma:permutacions disjuntes commuten}
+		Siguin \(X\) un conjunt no buit i \(\tau\) una permutació de \(\GrupSimetric_{X}\). Aleshores
+		\[x\in\Mou(\sigma)\Longleftrightarrow\sigma(x)\in\Mou(\sigma).\]
+		\begin{proof}
+			Per la definició de \myref{def:permutació} tenim que \(\sigma\) és bijectiva, i per tant \(\sigma(x)=x\) si i només si \(\sigma(\sigma(x))=\sigma(x)\). Prenent la negació d'això trobem que \(\sigma(x)\neq x\) si i només si \(\sigma(\sigma(x))\neq\sigma(x)\), que per la definició de \myref{def:conjunt d'elements moguts per una permutació} és equivalent a \(x\in\Mou(\sigma)\Longleftrightarrow\sigma(x)\in\Mou(\sigma)\).
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}
+		\label{thm:permutacions disjuntes commuten}
+		Siguin \(X\) un conjunt no buit i \(\sigma\) i \(\tau\) dues permutacions disjuntes de \(\GrupSimetric_{X}\). Aleshores
+		\[\sigma\circ\tau=\tau\circ\sigma.\]
+		\begin{proof}
+			Per la definició de \myref{def:permutacions disjuntes} i la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que, per hipòtesi, \(\Mou(\sigma)\cap\Mou(\tau)=\emptyset\). Per tant, per a tot \(x\in X\) tenim o bé \(x\in\Mou(\sigma)\), o bé \(x\in\Mou(\tau)\) o bé \(x\notin\Mou(\sigma)\cup\Mou(\tau)\). Estudiem els cassos.
+			
+			Suposem que \(x\in\Mou(\sigma)\), i per tant \(x\notin\Mou(\tau)\). Per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que \(\tau(x)=x\) i per tant \(\sigma(\tau(x))=\sigma(x)\). Ara bé, pel lemma \myref{lemma:permutacions disjuntes commuten} tenim que \(\sigma(x)\in\Mou(\sigma)\), d'on trobem que \(\sigma(x)\notin\Mou(\tau)\), ja que, per hipòtesi, \(\Mou(\sigma)\cap\Mou(\tau)=\emptyset\), i per tant \(\tau(\sigma(x))=\sigma(x)\).
+			
+			Suposem que \(x\in\Mou(\tau)\), i per tant \(x\notin\Mou(\sigma)\). Per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que \(\sigma(x)=x\) i per tant \(\tau(\sigma(x))=\tau(x)\). Ara bé, pel lemma \myref{lemma:permutacions disjuntes commuten} tenim que \(\tau(x)\in\Mou(\tau)\), d'on trobem que \(\tau(x)\notin\Mou(\sigma)\), ja que, per hipòtesi, \(\Mou(\tau)\cap\Mou(\sigma)=\emptyset\), i per tant \(\sigma(\tau(x))=\tau(x)\). %TODO: revisar copia y pega
+			
+			Suposem per acabar que \(x\notin\Mou(\sigma)\cup\Mou(\tau)\). Aleshores tenim que \(\sigma(x)=x\) i \(\tau(x)=x\), i per tant \(\sigma\circ\tau=\tau\circ\sigma\), com volíem veure.
+		\end{proof} % PROPO verure que dues aplicacions són iguals si tenen imatges iguals per antiimatges iguals. I fer referencies.
+	\end{theorem}
+	\subsection{Cicles}
+	\begin{definition}[\(r\)-cicle]
+		\labelname{$r$-cicle}
+		\label{def:r-cicle}
+		Siguin \(X\) un conjunt no buit i \(\sigma\) una permutació de \(\GrupSimetric_{X}\) tals que \(\Mou(\sigma)=\{a_{1},\dots,a_{r}\}\) amb \(\sigma(a_{i})=a_{i+1}\) per a tot \(i\in\{1,\dots,r-1\}\) i \(\sigma(a_{r})=a_{1}\). Aleshores direm que \(\sigma\) és un \(r\)-cicle, o un cicle, i denotarem
+		\[\sigma=(a_{1},\dots,a_{r}).\]
+	\end{definition}
+	\begin{proposition}
+		\label{prop:escriure r-cicles amb un representant}
+		Siguin \(X\) un conjunt no buit, \(a\) un element de \(\Mou(\sigma)\) i \(\sigma\) un \(r\)-cicle de \(\GrupSimetric_{X}\). Aleshores
+		\[\sigma=(a,\sigma(a),\sigma^{2}(a),\dots,\sigma^{r-1}(a)).\]
+		\begin{proof}
+			Per la definició d'\myref{def:r-cicle} tenim que \(\Mou(\sigma)=\{a_{1},\dots,a_{r}\}\), i com que \(a\in\Mou(\sigma)\) tenim que \(a=a_{k}\) per a cert \(k\in\{1,\dots,r\}\). Tenim doncs que
+			\[\sigma=(a,a_{k+1},\dots,a_{r-k}).\]
+			Ara bé, per la definició d'\myref{def:r-cicle} tenim que
+			\[a_{i+1}=\sigma(a_{i})\quad\text{per a tot }i\in\{1,\dots,r-1\}\]
+			i \(a_{1}=\sigma(a_{r})\). Per tant trobem
+			\[\sigma^{i}(a)=a_{k+i}\quad\text{per a tot }i\in\{-k+1,\dots,r-k-1\},\]
+			i per tant trobem
+			\[\sigma=(a,\sigma(a),\sigma^{2}(a),\dots,\sigma^{r-1}(a)).\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\begin{lemma}
+		\label{lemma:ordre d'un r-cicle}
+		\label{lemma:inversa d'un r-cicle}
+		Siguin \(X\) un conjunt no buit i \(\sigma\) un \(r\)-cicle de \(\GrupSimetric_{X}\). Aleshores \(r=\min\{k\in\mathbb{N}\mid\sigma^{k}=\Id_{X}\}\).
+		\begin{proof}
+			Per la definició d'\myref{def:r-cicle} tenim que existeixen \(a_{1},\dots,a_{r}\) tals que \(\Mou(\sigma)=\{a_{1},\dots,a_{r}\}\) amb \(\sigma(a_{i})=a_{i+1}\) per a tot \(i\in\{1,\dots,r-1\}\) i \(\sigma(a_{r})=a_{1}\), i per tant \(\sigma^{r}=\Id_{X}\) ja que tenim \(\sigma^{r}(x)=x\) per a tot \(x\in X\). Ara bé, per la proposició \myref{prop:escriure r-cicles amb un representant} tenim que, amb \(a\in\Mou(\sigma)\),
+			\[\sigma=(a,\sigma(a),\sigma^{2}(a),\dots,\sigma^{r-1}(a))\]
+			i per la definició d'\myref{def:r-cicle} tenim que \(\sigma^{i}(a)\neq a\) per a tot \(i\in\{0,\dots,r-1\}\), i per tant \(r=\min\{k\in\mathbb{N}\mid\sigma^{k}=\Id_{X}\}\), com volíem veure.
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}
+		\label{thm:inversa d'un r-cicle}
+		Siguin \(X\) un conjunt no buit i \(\sigma\) un \(r\)-cicle de \(\GrupSimetric_{X}\). Aleshores
+		\[\sigma^{-1}=\sigma^{r-1}.\]
+		\begin{proof}
+			Pel lemma \myref{lemma:inversa d'un r-cicle} tenim que \(\sigma^{r}=\Id_{X}\). Aleshores tenim \(\sigma\circ\sigma^{r-1}=\Id_{X}\) i \(\sigma^{r-1}\circ\sigma=\Id_{X}\). Per tant per la definició d'\myref{def:inversa d'una aplicació} trobem que \(\sigma^{-1}=\sigma^{r-1}\).
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}[Descomposició de permutacions en cicles disjunts]
+		\labelname{Teorema de descomposició de permutacions en cicles disjunts}\label{thm:descomposició d'una permutació en cicles disjunts}
+		Sigui \(X\) un conjunt finit no buit i \(\sigma\) una permutació de \(\GrupSimetric_{X}\). Aleshores existeixen \(\alpha_{1},\dots,\alpha_{s}\) cicles disjunts dos a dos de \(\GrupSimetric_{X}\) tals que
+		\[\sigma=\alpha_{1}\circ\dots\circ\alpha_{s},\]
+		i aquests \(\alpha_{1},\dots,\alpha_{s}\) són únics llevat de l'ordre en que es conjuguen.
+		\begin{proof}
+			Prenem \(a_{1}\in\Mou(\sigma)\) i el conjunt \(\{a_{1},\sigma(a_{1}),\sigma^{2}(a_{1}),\dots\}\). Com que, per hipòtesi, \(X\) és finit tenim que existeixen \(i\) i \(j\) tals que \(\sigma^{i}(a_{1})=\sigma^{j}(a_{1})\), i per tant \(\sigma^{i-j}(a_{1})=a_{1}\).
+			
+			Sigui doncs \(k_{1}=\min\{k\in\mathbb{N}\mid\sigma^{k}(a)=a\}\). Per la definició d'\myref{def:r-cicle} tenim que 
+			\begin{equation}
+			\label{eq:thm:descomposició de permutacions en cicles disjunts 2}
+			\alpha_{1}=(a_{1},\sigma(a_{1}),\dots,\sigma^{k_{1}-1}(a_{1}))
+			\end{equation}
+			és un \(k_{1}\)-cicle.
+			
+			Si existeix un \(a_{2}\in X\) que no pertanyi a \(\{a_{1},\sigma(a_{1}),\dots,\sigma^{k_{1}-1}(a_{1})\}\). Amb el mateix procés podem generar un nou \(k_{2}\)-cicle \(\alpha_{2}\) disjunt amb \(\alpha_{1}\), i així obtenim \(\alpha_{1},\dots,\alpha_{s}\) cicles disjunts dos a dos. Aleshores trobem
+			\[\sigma=\alpha_{1}\circ\dots\circ\alpha_{s},\]
+			ja que \(\sigma(x)=\alpha_{1}\circ\dots\circ\alpha_{s}(x)\) per a tot \(x\in X\).
+			
+			
+			Tenim doncs que
+			\begin{equation}
+			\label{eq:thm:descomposició de permutacions en cicles disjunts 3}
+			\alpha_{i}=\left(a_{i},\sigma(\alpha_{i}),\dots,\sigma^{k_{i}-1}(\alpha_{i})\right).
+			\end{equation}
+			Suposem ara que existeixen \(\beta_{1},\dots,\beta_{r}\) cicles disjunts dos a dos de \(\GrupSimetric_{X}\) tals que
+			\begin{equation}
+			\label{eq:thm:descomposició de permutacions en cicles disjunts 1}
+			\sigma=\alpha_{1}\circ\dots\circ\alpha_{s}=\beta_{1}\circ\dots\circ\beta_{r}.
+			\end{equation}
+			Per la proposició \myref{prop:mou de permutacions conjugades és unió dels mous de les permutacions} tenim que \(a_{i}\in\Mou(\beta_{j_{i}})\) per a cert \(j_{i}\in\{1,\dots,r\}\), i per la definició de \myref{def:permutacions disjuntes} i la definició d'\myref{def:intersecció de conjunts} tenim que aquest \(j_{i}\) és únic.
+			
+			Ara bé, com que per hipòtesi \(\beta_{j_{i}}\) és un cicle, per la proposició \myref{prop:escriure r-cicles amb un representant} tenim que
+			\[\beta_{j_{i}}=\left(a_{i},\beta_{j_{i}}(a_{i}),\dots,\beta^{k'_{j_{i}}-1}_{j_{i}}(a_{i})\right)\]
+			per a cert \(k'_{j_{i}}\). Ara bé, tenim per \eqref{eq:thm:descomposició de permutacions en cicles disjunts 1} que \(\beta^{k}_{j_{i}}(a_{i})=\sigma^{k}(a_{i})\) per a tot \(k\). Per tant
+			\[\beta_{j_{i}}=\left(a_{i},\sigma(a_{i}),\dots,\sigma^{k'_{j_{i}}-1}(a_{i})\right).\]
+			Ara bé, havíem definit \(k_{i}=\min\{k\in\mathbb{N}\mid\sigma^{k}(a_{i})=a_{i}\}\). Per tant \(k'_{j_{i}}=k_{i}\) i, com que per hipòtesi \(a_{i}\in\Mou(\alpha_{j_{i}})\) és un cicle, per la proposició \myref{prop:escriure r-cicles amb un representant}, per \eqref{eq:thm:descomposició de permutacions en cicles disjunts 2} i per \eqref{eq:thm:descomposició de permutacions en cicles disjunts 3} tenim que \(\alpha_{i}=\beta_{j_{i}}\). Per tant podem reescriure \eqref{eq:thm:descomposició de permutacions en cicles disjunts 2} com
+			\[\sigma=\alpha_{1}\circ\dots\circ\alpha_{s}=\alpha_{1}\circ\dots\circ\alpha_{s}\circ\beta_{j_{s+1}}\circ\dots\circ\beta_{j_{r}},\]
+			i per tant ha de ser \(\beta_{j_{s+1}}\circ\dots\circ\beta_{j_{r}}=\Id_{X}\).
+		\end{proof}
+	\end{theorem}
+	\subsection{Descomposició en transposicions i signe}
+	\begin{definition}[Transposició]
+		\labelname{transposició}\label{def:transposició}
+		Siguin \(X\) un conjunt no buit i \(\tau\) un \(2\)-cicle de \(\GrupSimetric_{X}\). Aleshores direm que \(\tau\) és una transposició.
+	\end{definition}
+	\begin{observation}
+		\(\tau=\tau^{-1}\).
+	\end{observation}
+	\begin{proposition}
+		Siguin \(X\) un conjunt finit no buit i \(\sigma\) una permutació de \(\GrupSimetric_{X}\). Aleshores existeixen transposicions \(\tau_{1},\dots,\tau_{s}\) de \(\GrupSimetric_{X}\) tals que
+		\[\sigma=\tau_{1}\circ\dots\circ\tau_{s}.\]
+		\begin{proof}
+			Observem que per a tot \(r\)-cicle \(\alpha\) de \(\GrupSimetric_{X}\) existeixen transposicions \(\tau_{1},\dots,\tau_{r}\) de \(\GrupSimetric_{X}\) tals que \(\alpha=\tau_{1}\circ\dots\circ\tau_{r}\). Efectivament, per la definició d'\myref{def:r-cicle} tenim que si \(\alpha=(a_{1},\dots,a_{r})\) aleshores
+			\[\alpha=(a_{1},\dots,a_{r})=(a_{1},a_{2})\circ(a_{2},a_{3})\circ\dots\circ(a_{n-1},a_{r}),\]
+			i per la definició de \myref{def:transposició} tenim que \((a_{i},a_{i+1})\) és una transposició de \(\GrupSimetric_{X}\) per a tot \(i\in\{1,\dots,r-1\}\).
+			
+			Per tant, pel \myref{thm:descomposició d'una permutació en cicles disjunts} hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{theorem}
+		\label{thm:paritat nombre de transposicions en la descomposició d'una permutació}
+		\label{thm:signe d'una permutació}
+		Siguin \(X\) un conjunt finit no buit, \(\sigma\) una permutació de \(\GrupSimetric_{X}\) i \(\tau_{1},\dots,\tau_{r}\), \(\tau'_{1},\dots,\tau'_{r'}\) transposicions de \(\GrupSimetric_{X}\) tals que
+		\[\sigma=\tau_{1}\circ\dots\circ\tau_{r}=\tau'_{1}\circ\dots\circ\tau'_{r'}.\]
+		Aleshores \(r-r'\) és parell.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{definition}[Signe d'una permutació]
+		\labelname{signe d'una permutació}\label{def:signe d'una permutació}
+		Siguin \(X\) un conjunt finit no buit, \(\sigma\) una permutació de \(\GrupSimetric_{X}\) i \(\tau_{1},\dots,\tau_{r}\) transposicions de \(\GrupSimetric_{X}\) tals que
+		\[\sigma=\tau_{1}\circ\dots\circ\tau_{r}.\]
+		Aleshores definim
+		\[\sig(\sigma)={(-1)}^{r}\]
+		com el signe de \(\sigma\).
+		
+		Aquesta definició té sentit pel Teorema \myref{thm:signe d'una permutació}.
+	\end{definition}
+	\section{Els nombres racionals}
+	\subsection{Construcció dels nombres racionals}
+	\begin{proposition}
+		\label{prop:nombres racionals}
+		Sigui \(\sim\) una relació tal que per a tot \((a,b)\), \((c,d)\) elements de \(\mathbb{Z}\times\mathbb{Z}\setminus\{0\}\) tenim
+		\[(a,b)\sim(c,d)\Longleftrightarrow ad=bc.\]
+		Aleshores \(\sim\) és una relació d'equivalència.
+		\begin{proof}
+			Comprovem les propietats de la definició de relació d'equivalència:
+			\begin{enumerate}
+				\item Reflexiva: Per la proposició \myref{prop:Z és un anell commutatiu} tenim \(ab=ba\), i per tant \((a,b)\sim(a,b)\).
+				\item Simètrica: Siguin \((a,b)\) i \((c,d)\) dos elements de \(\mathbb{Z}\times\mathbb{Z}\setminus\{0\}\) tals que \((a,b)\sim(c,d)\). Per hipòtesi tenim que \(ad=bc\), i per la proposició \myref{prop:Z és un anell commutatiu} tenim que \(cb=da\) i trobem \((c,d)\sim(a,b)\).
+				\item Transitiva:  Siguin \((a,b)\), \((c,d)\) i \((e,f)\) elements de \(\mathbb{Z}\times\mathbb{Z}\setminus\{0\}\) tals que \((a,b)\sim(c,d)\) i \((c,d)\sim(e,f)\). Per hipòtesi això és \(ad=bc\) i \(cf=de\). Ara bé, tenim
+				\[bcf=bde\]
+				i per tant
+				\[adf=bde\]
+				i pel corol·lari \myref{corollary:podem tatxar pels costats en Z pel producte} trobem que \(af=be\) i tenim que \((a,b)\sim(e,f)\).
+			\end{enumerate}
+			I per la definició de \myref{def:relació d'equivalència} hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Conjunt dels nombres racionals]
+		\labelname{nombres racionals}\label{def:nombres racionals}
+		Sigui \(\sim\) una relació d'equivalència tal que
+		\[(a,b)\sim(c,d)\Longleftrightarrow ad=bc\]
+		per a tot \((a,b)\), \((c,d)\) elements de \(\mathbb{Z}\times\mathbb{Z}\setminus\{0\}\).
+		Aleshores direm que el conjunt quocient \(\mathbb{Q}=\mathbb{Z}\times\mathbb{Z}\setminus\{0\}/\sim\) és el conjunt dels nombres racionals. Direm que els elements de \(\mathbb{Q}\) són nombres racionals.
+		
+		Aquesta definició té sentit per la proposició \myref{prop:nombres racionals}.
+	\end{definition}
+	\begin{notation}
+		Sigui \(\overline{(a,b)}\) un element de \(\mathbb{Q}\). Aleshores denotarem
+		\[\overline{(a,b)}=\frac{a}{b}.\]
+	\end{notation}
+	\begin{proposition}
+		\label{prop:element neutre del producte en racionals}
+		Sigui \(\frac{a}{b}\) un nombre racional. Aleshores
+		\[\frac{a}{b}=\frac{1}{1}\Longleftrightarrow a=b.\]
+		\begin{proof}
+			Per la definició de \myref{def:classe d'equivalència} tenim que
+			\[(a,b)\sim(1,1),\]
+			i per la definició de \myref{def:nombres enters} això és
+			\[a\cdot1=b\cdot1.\]
+			I per tant, per la proposició \ref{prop:Z és un anell} trobem que ha de ser \(a=b\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:element neutre per la suma Q}
+		Siguin \(\frac{0}{a}\) i \(\frac{0}{b}\) racionals. Aleshores
+		\[\frac{0}{a}=\frac{0}{b}.\]
+		\begin{proof}
+			Tenim que \(0\cdot b=0\cdot a\), i per tant per la definició de \myref{def:nombres racionals} trobem \(\overline{(0,a)}\sim\overline{(0,b)}\) i per la definició de \myref{def:classe d'equivalència} trobem
+			\[\frac{0}{a}=\frac{0}{b}.\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\subsection{Operacions entre nombres racionals}
+	\begin{definition}[Suma de nombres racionals]
+		\labelname{suma de nombres racionals}\label{def:suma de nombres racionals}
+		Siguin \(\frac{a}{b}\) i \(\frac{c}{d}\) nombres racionals. Aleshores definim la suma de \(\frac{a}{b}\) i \(\frac{c}{d}\) com una operació \(+\) que satisfà
+		\[\frac{a}{b}+\frac{c}{d}=\frac{ad+cb}{bd}.\]
+	\end{definition}
+	\begin{definition}[Producte de nombres racionals]
+		\labelname{producte de nombres racionals}\label{def:producte de nombres racionals}
+		Siguin \(\frac{a}{b}\) i \(\frac{c}{d}\) nombres racionals. Aleshores definim el producte de \(\frac{a}{b}\) i \(\frac{c}{d}\) com una operació \(\cdot\) que satisfà
+		\[\frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd}.\]
+		Escriurem
+		\[\frac{a}{b}\cdot\frac{c}{d}=\frac{a}{b}\frac{c}{d}.\]
+	\end{definition}
+	\begin{proposition}
+		\label{prop:Q és un grup abelià}
+		Siguin \(\frac{a}{b}\), \(\frac{c}{d}\) i \(\frac{e}{f}\) nombres racionals. Aleshores es satisfà
+		\begin{enumerate}
+			\item\label{enum:prop:Q és un grup abelià 1}
+			\(\frac{a}{b}+\frac{c}{d}=\frac{c}{d}+\frac{a}{b}\).
+			\item\label{enum:prop:Q és un grup abelià 2}
+			\(\frac{a}{b}+\left(\frac{c}{d}+\frac{e}{f}\right)=\left(\frac{a}{b}+\frac{c}{d}\right)+\frac{e}{f}\).
+			\item\label{enum:prop:Q és un grup abelià 3}
+			\(\frac{a}{b}+\frac{0}{1}=\frac{a}{b}\).
+			\item\label{enum:prop:Q és un grup abelià 4}
+			\(\frac{a}{b}+\frac{-a}{b}=\frac{0}{1}\).
+		\end{enumerate}
+		\begin{proof}
+			Per veure el punt \eqref{enum:prop:Q és un grup abelià 1} fem
+			\begin{align*}
+			\frac{a}{b}+\frac{c}{d}&=\frac{ad+cb}{bd}\tag{\myref{def:suma de nombres racionals}}\\
+			&=\frac{cb+ad}{bd}\tag{\myref{prop:Z és un grup abelià}}\\
+			&=\frac{cb+ad}{db}\tag{\myref{prop:Z és un anell commutatiu}}\\
+			&=\frac{c}{d}+\frac{a}{b}.\tag{\myref{def:suma de nombres racionals}}
+			\end{align*}
+			Per veure el punt \eqref{enum:prop:Q és un grup abelià 2} fem
+			\begin{align*}
+			\frac{a}{b}+\left(\frac{c}{d}+\frac{e}{f}\right)&=\frac{a}{b}+\frac{cf+ed}{df}\tag{\myref{def:suma de nombres racionals}}\\
+			&=\frac{adf+(cf+ed)b}{bdf}\tag{\myref{def:suma de nombres racionals}}\\
+			&=\frac{adf+cfb+edb}{bdf}\tag{\myref{prop:distributiva suma pel producte enters}}\\
+			&=\frac{adf+cbf+ebd}{bdf}\tag{\myref{prop:Z és un anell commutatiu}}\\
+			&=\frac{(ad+cb)f+ebd}{bdf}\tag{\myref{prop:distributiva suma pel producte enters}}\\
+			&=\frac{ad+cb}{bd}+\frac{e}{f}\tag{\myref{def:suma de nombres racionals}}\\
+			&=\left(\frac{a}{b}+\frac{c}{d}\right)+\frac{e}{f}.\tag{\myref{def:suma de nombres racionals}}
+			\end{align*}
+			Per veure el punt \eqref{enum:prop:Q és un grup abelià 3} fem
+			\begin{align*}
+			\frac{a}{b}+\frac{0}{1}&=\frac{a\cdot 1}{b\cdot 1}\tag{\myref{def:suma de nombres racionals}}\\
+			&=\frac{a}{b}.\tag{\myref{prop:Z és un anell}}
+			\end{align*}
+			Per veure el punt \eqref{enum:prop:Q és un grup abelià 4} fem
+			\begin{align*}
+			\frac{a}{b}+\frac{-a}{b}&=\frac{ab-ab}{bb}\tag{\myref{def:suma de nombres racionals}}\\
+			&=\frac{0}{bb}\tag{\myref{prop:Z és un grup}}\\
+			&=\frac{0}{1}.\tag{\myref{prop:element neutre per la suma Q}}
+			\end{align*}
+			i hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:Q és un anell commutatiu}
+		Siguin \(\frac{a}{b}\), \(\frac{c}{d}\) i \(\frac{e}{f}\) nombres racionals. Aleshores es satisfà
+		\begin{enumerate}
+			\item\label{enum:prop:Q és un anell commutatiu 1}
+			\(\frac{a}{b}\frac{c}{d}=\frac{c}{d}\frac{a}{b}\).
+			\item\label{enum:prop:Q és un anell commutatiu 2}
+			\(\frac{a}{b}\frac{1}{1}=\frac{a}{b}\).
+			\item\label{enum:prop:Q és un anell commutatiu 3}
+			\(\frac{a}{b}\left(\frac{c}{d}\frac{e}{f}\right)=\left(\frac{a}{b}\frac{c}{d}\right)\frac{e}{f}\).
+			\item\label{enum:prop:Q és un anell commutatiu 4}
+			\(\frac{a}{b}\left(\frac{c}{d}+\frac{e}{f}\right)=\frac{a}{b}\frac{c}{d}+\frac{a}{b}\frac{e}{f}\).
+		\end{enumerate}
+		\begin{proof}
+			Per veure el punt \eqref{enum:prop:Q és un anell commutatiu 1} fem
+			\begin{align*}
+			\frac{a}{b}\frac{c}{d}&=\frac{ac}{bd}\tag{\myref{def:producte de nombres racionals}}\\
+			&=\frac{ca}{db}\tag{\myref{prop:Z és un anell commutatiu}}\\
+			&=\frac{c}{d}\frac{a}{b}.\tag{\myref{def:producte de nombres racionals}}
+			\end{align*}
+			Per veure el punt \eqref{enum:prop:Q és un anell commutatiu 2} fem
+			\begin{align*}
+			\frac{a}{b}\frac{1}{1}&=\frac{a\cdot 1}{b\cdot 1}\tag{\myref{def:producte de nombres racionals}}\\
+			&=\frac{a}{b}.\tag{\myref{prop:Z és un grup}}
+			\end{align*}
+			Per veure el punt \eqref{enum:prop:Q és un anell commutatiu 3} fem
+			\begin{align*}
+			\frac{a}{b}\left(\frac{c}{d}\frac{e}{f}\right)&=\frac{a}{b}\frac{ce}{df}\tag{\myref{def:producte de nombres racionals}}\\
+			&=\frac{a(ce)}{b(df)}\tag{\myref{def:producte de nombres racionals}}\\
+			&=\frac{(ac)e}{(bd)f}\tag{\myref{prop:Z és un anell associativitat}}\\
+			&=\frac{ac}{bd}\frac{e}{f}\tag{\myref{def:producte de nombres racionals}}\\
+			&=\left(\frac{a}{b}\frac{c}{d}\right)\frac{e}{f}.\tag{\myref{def:producte de nombres racionals}}
+			\end{align*}
+			Per veure el punt \eqref{enum:prop:Q és un anell commutatiu 4} fem
+			\begingroup\allowdisplaybreaks
+			\begin{align*}
+			\frac{a}{b}\left(\frac{c}{d}+\frac{e}{f}\right)&=\frac{a}{b}\frac{cf+de}{df}\tag{\myref{def:suma de nombres racionals}}\\
+			&=\frac{a(cf+de)}{bdf}\tag{\myref{def:producte de nombres racionals}}\\
+			&=\frac{acf+ade}{bdf}\tag{\myref{prop:Z és un anell distributiva suma pel producte}}\\
+			&=\frac{acf+ade}{bdf}\frac{1}{1}\tag{\myref{def:producte de nombres racionals}}\\
+			&=\frac{acf+ade}{bdf}\frac{b}{b}\tag{\myref{prop:element neutre del producte en racionals}}\\
+			&=\frac{(acf+aeb)b}{bdfb}\tag{\myref{def:producte de nombres racionals}}\\
+			&=\frac{acfb+aedb}{bdfb}\tag{\myref{def:producte de nombres enters}}\\
+			&=\frac{acbf+aebd}{bdbf}\tag{\myref{prop:Z és un anell commutatiu}}\\
+			&=\frac{ac}{bd}+\frac{ae}{bf}\tag{\myref{def:suma de nombres racionals}}\\
+			&=\frac{a}{b}\frac{c}{d}+\frac{a}{b}\frac{e}{f}.\tag{\myref{def:producte de nombres racionals}}
+			\end{align*}
+			\endgroup
+			I hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{theorem}
+		\label{thm:Q és un DI}
+		Siguin \(\frac{a}{b}\) i \(\frac{c}{d}\) dos racionals tals que
+		\[\frac{a}{b}\frac{c}{d}=\frac{0}{1}.\]
+		Aleshores \(a=0\) ó \(c=0\).
+		\begin{proof}
+			Per la definició de \myref{def:producte de nombres racionals} trobem que
+			\[\frac{ac}{bd}=\frac{0}{1},\]
+			i per la definició de \myref{def:nombres racionals} tenim que es satisfà
+			\[ac\cdot1=bd\cdot0.\]
+			Per tant
+			\[ac=0,\]
+			i pel Teorema \myref{thm:Z és un DI} tenim que ha de ser \(a=0\) ó \(b=0\).
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}
+		\label{thm:Q és un cos}
+		Sigui \(\frac{a}{b}\) un racional amb \(a\neq0\). Aleshores
+		\[\frac{a}{b}\frac{b}{a}=\frac{1}{1}.\]
+		\begin{proof}
+			Per la definició de \myref{def:producte de nombres racionals} i la proposició \myref{prop:Z és un anell commutatiu} tenim que
+			\[\frac{a}{b}\frac{b}{a}=\frac{ab}{ab}\]
+			i per la proposició \myref{prop:element neutre del producte en racionals} tenim que
+			\[\frac{a}{b}\frac{b}{a}=\frac{1}{1}.\qedhere\]
+		\end{proof}
+	\end{theorem}
+%	\section{Els nombres reals}
+%	http://www.math.uni-konstanz.de/~krapp/Constructions_of_the_real_numbers.pdf
+	\printbibliography
+	La secció sobre els axiomes de Peano està fortament inspirada en \cite{notesKumar}.
+\end{document}
+%AFEGIR paradoxa de Russell
