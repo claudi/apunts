@@ -1142,7 +1142,7 @@
 	\begin{theorem}[Identitat de Bézout]
 		\labelname{la identitat de Bézout}\label{thm:identitat de Bézout}
 		Siguin \(a\) i \(b\) dos enters. Aleshores existeixen enters \(\alpha\) i \(\beta\) tals que
-		\[a\alpha+b\beta=\mcd(a,b).\]
+		\[\alpha a+\beta b=\mcd(a,b).\]
 		\begin{proof}
 			Considerem el conjunt
 			\[S=\{ax+by\mid x,y\in\mathbb{Z}, ax+by>0\}.\]
@@ -1172,11 +1172,11 @@
 	\begin{theorem}
 		\label{thm:condició equivalent a coprimers per Bézout}
 		Siguin \(a\) i \(b\) dos enters. Aleshores \(a\) i \(b\) són coprimers si i només si existeixen dos enters \(\alpha\) i \(\beta\) tals que
-		\[a\alpha+b\beta=1.\]
+		\[\alpha a+\beta b=1.\]
 		\begin{proof}
 			Veiem que la condició és suficient (\(\Rightarrow\)). Suposem doncs que \(a\) i \(b\) són coprimers. Per \myref{thm:identitat de Bézout} hem acabat.
 			
-			Veiem ara que la condició és necessària (\(\Leftarrow\)). Suposem doncs que existeixen dos enters \(\alpha\) i \(\beta\) tals que \(a\alpha+b\beta=1\). Tenim que si existeix un enter \(c\) tal que \(c\divides a\) i \(c\divides b\), aleshores \(c\divides 1\), i per la definició de \myref{def:màxim comú divisor} trobem que \(\mcd(a,b)=1\).
+			Veiem ara que la condició és necessària (\(\Leftarrow\)). Suposem doncs que existeixen dos enters \(\alpha\) i \(\beta\) tals que \(\alpha a+\beta b=1\). Tenim que si existeix un enter \(c\) tal que \(c\divides a\) i \(c\divides b\), aleshores \(c\divides 1\), i per la definició de \myref{def:màxim comú divisor} trobem que \(\mcd(a,b)=1\).
 		\end{proof}
 	\end{theorem}
 	\begin{proposition}
@@ -1184,11 +1184,11 @@
 		Siguin \(c\) un enter i \(a\) i \(b\) dos enters coprimers tals que \(a\divides bc\). Aleshores \(a\divides c\).
 		\begin{proof}
 			Pel Teorema \myref{thm:condició equivalent a coprimers per Bézout} tenim que existeixen dos enters \(\alpha\) i \(\beta\) tals que
-			\[1=a\alpha+b\beta.\]
+			\[1=\alpha a+\beta b.\]
 			Per tant
-			\[c=ca\alpha+cb\beta,\]
+			\[c=c\alpha a+c\beta b,\]
 			i per la definició de \myref{def:divisor Z} tenim que existeix un enter \(k\) tal que \(ak=bc\). Per tant
-			\[c=ca\alpha+ak\beta\]
+			\[c=c\alpha a+ak\beta\]
 			i per la proposició \myref{prop:distributiva suma pel producte enters} tenim que \(c=(c\alpha+k\beta)a\) i per la definició de \myref{def:divisor Z} tenim que \(a\divides c\).
 		\end{proof}
 	\end{proposition}
@@ -1205,10 +1205,10 @@
 		\begin{proof}
 			Sigui \(d=\mcd(a,b)\). Per la definició de \myref{def:màxim comú divisor} existeixen \(a'\) i \(b'\) tals que \(a=da'\) i \(b=db'\). Per tant, per la proposició \myref{prop:divisors divideixen el divident escalat} trobem que \(d\divides ab\), i per la definició de \myref{def:divisor Z} trobem que existeix un enter \(l\) tal que \(dl=\abs{ab}\). Per tant \(dl=da'b\) i \(dl=adb'\), i pel corol·lari \myref{corollary:podem tatxar pels costats en Z pel producte} tenim que \(l=a'b\) i \(l=ab'\), i per la definició de \myref{def:divisor Z} tenim que \(a\divides l\) i \(b\divides l\).
 			
-			Sigui \(m\) un enter tal que \(a\divides m\) i \(b\divides m\). Per la definició de \myref{def:divisor Z} tenim que existeixen dos enters \(k_{1}\) i \(k_{2}\) tals que \(m=ak_{1}\) i \(m=bk_{2}\). Ara bé, per \myref{thm:identitat de Bézout} tenim que existeixen dos enters \(\alpha\) i \(\beta\) tals que \(a\alpha+b\beta=d\). Per tant
+			Sigui \(m\) un enter tal que \(a\divides m\) i \(b\divides m\). Per la definició de \myref{def:divisor Z} tenim que existeixen dos enters \(k_{1}\) i \(k_{2}\) tals que \(m=ak_{1}\) i \(m=bk_{2}\). Ara bé, per \myref{thm:identitat de Bézout} tenim que existeixen dos enters \(\alpha\) i \(\beta\) tals que \(\alpha a+\beta b=d\). Per tant
 			\begin{align*}
-			md&=ma\alpha+ma\beta\tag{\myref{prop:distributiva suma pel producte enters}}\\
-			&=bk_{2}a\alpha+ak_{1}b\beta\\
+			md&=m\alpha a+ma\beta\tag{\myref{prop:distributiva suma pel producte enters}}\\
+			&=bk_{2}\alpha a+ak_{1}\beta b\\
 			&=ab(bk_{2}+ak_{1})\tag{\myref{prop:distributiva suma pel producte enters}}\\
 			&=dl(bk_{2}+ak_{1})
 			\end{align*}
@@ -1274,7 +1274,18 @@
 		\labelname{Teorema d'Euclides}\label{thm:Teorema d'Euclides}
 		Sigui \(m\) un natural. Aleshores existeix un nombre natural \(n>m\) tal que \(p_{1},\dots,p_{n}\) siguin nombres primers diferents dos a dos.
 		\begin{proof}
-			%FER
+			Siguin \(p_{1},\dots,p_{m}\) primers diferents. Definim
+			\[p=\left(\prod_{i=1}^{m}p_{i}\right)+1.\]
+			Per la definició de \myref{def:divisor Z} tenim que \(p_{j}\divides\prod_{i=0}^{m}p_{i}\) per a tot \(j\in\{1,\dots,m\}\). Fixem aquest \(j\in\{1,\dots,m\}\), i de nou per la definició de \myref{def:divisor Z} tenim que existeix un enter \(q\) tal que
+			\[qp_{j}=\prod_{i=0}^{m}p_{i}\]
+			i tenim que
+			\[p=qp_{j}+1,\]
+			o equivalentment,
+			\[p-qp_{j}=1.\]
+			
+			Per tant pel Teorema \myref{thm:condició equivalent a coprimers per Bézout} i la definició de \myref{def:coprimers} trobem que \(p\) i \(p_{j}\) són coprimers per a tot \(j\in\{1,\dots,m\}\).
+			
+			Si \(p\) és primer hem acabat, ja que \(p\) és més gran que \(p_{1},\dots,p_{n}\), i per tant diferent. Ara bé, si \(p\) no és primer pel lemma \myref{lemma:thm:Teorema Fonamental de l'Aritmètica 1} tenim que existeix un primer \(p'\) tal que \(p'\divides p\), però hem vist que \(p_{1}\,dots,p_{m}\ndivides p\), per tant \(p'\) és diferent de \(p_{1},\dots,p_{m}\) i hem acabat.
 		\end{proof}
 	\end{theorem}
 	\section{Els nombres modulars}
@@ -1433,6 +1444,7 @@
 		Denotarem \(\overline{a}^{-1}\) com la inversa de \(\overline{a}\)
 	\end{definition}
 	\begin{proposition}
+		\label{prop:condició equivalent a invertible en Z/(m)}
 		Sigui \(\overline{a}\) un element de \(\mathbb{Z}/(m)\) Aleshores \(\overline{a}\) és invertible si i només si \(a\) i \(m\) són coprimers.
 		\begin{proof}
 			Per la definició de \myref{def:nombre modular invertible} tenim que \(\overline{a}\) és invertible si existeix un element \(a'\) tal que \(aa'\equiv1\pmod{m}\), i per la definició de \myref{def:nombres modulars congruents} tenim que això és si existeix un enter \(\lambda\) tal que \(aa'-1=\lambda m\).
@@ -1442,6 +1454,7 @@
 	\end{proposition}
 	\begin{corollary}
 		\label{corollary:Z/(p) és un cos}
+		\label{corollary:Z/(p) és un cos sii p és primer}
 		Sigui \(p>1\) un enter. Aleshores \(p\) és primer si i només si \(\overline{a}\) és invertible per a tot \(\overline{a}\in\mathbb{Z}/(p)\setminus\{\overline{0}\}\).
 %		\begin{proof}\end{proof}
 	\end{corollary}
@@ -1450,7 +1463,18 @@
 		Siguin \(p\) un primer i \(a\) un enter tal que \(p\ndivides a\). Aleshores
 		\[a^{p-1}\equiv1\pmod{p}.\]
 		\begin{proof}
-			%FER
+			Observem que per la definició de \myref{def:divisor Z} i la definició de \myref{def:coprimers} tenim que \(a\) i \(p\) són coprimers. Per tant per la proposició \myref{prop:condició equivalent a invertible en Z/(m)} tenim que \(a\) és invertible.
+			
+			Considerem el conjunt
+			\[X=\{\overline{a},\overline{2a},\overline{3a},\dots,\overline{(p-1)a}\}.\]
+			Veiem que tots els elements de \(X\) són diferents. Efectivament, si \(na\equiv ma\pmod{p}\) per a certs enters \(n\) i \(m\) per la definició de \myref{def:nombre modular invertible} trobem que \(n\equiv m\pmod{p}\).
+			
+			També tenim que
+			\[a\cdot2a\cdot3a\cdots(p-1)a\equiv 1\cdot2\cdot3\cdots(p-1)\pmod{p},\]
+			i per tant
+			\[a^{n-1}(p-1)!\equiv(p-1)!\pmod{p},\]
+			i de nou per la definició de \myref{def:divisor Z} i la definició de \myref{def:coprimers} tenim que \((p-1)!\) i \(p\) són coprimers, per tant per la proposició \myref{prop:condició equivalent a invertible en Z/(m)} tenim que \((p-1)!\) és invertible i trobem
+			\[a^{p-1}\equiv1\pmod{p}.\qedhere\]
 		\end{proof}
 	\end{theorem}
 	\section{Les permutacions}
