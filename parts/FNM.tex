@@ -1477,6 +1477,62 @@
 			\[a^{p-1}\equiv1\pmod{p}.\qedhere\]
 		\end{proof}
 	\end{theorem}
+	\subsection{El Teorema xinès de les restes}
+	\begin{lemma}
+		\label{lemma:thm:Teorema xinès de les restes}
+		Siguin \(m_{1},\dots,m_{n}\) naturals més grans que \(1\), \(a_{1},\dots,a_{n}\) enters i \(x_{0}\) un enter tal que
+		\[\begin{cases}
+			x_{0}\equiv a_{1}\pmod{m_{1}}\\
+			\quad\ \vdots\\
+			x_{0}\equiv a_{n}\pmod{m_{n}}
+		\end{cases}\]
+		Aleshores, si \(x=x_{0}+\lambda M\) amb \(M=\mcm(m_{1},\dots,m_{n}\) i per a tot \(\lambda\) enter es satisfà
+		\[\begin{cases}
+		x\equiv a_{1}\pmod{m_{1}}\\
+		\quad\ \vdots\\
+		x\equiv a_{n}\pmod{m_{n}}
+		\end{cases}\]
+		\begin{proof}
+			Tenim que, per a tot \(i\in\{1,\dots,n\}\), és satisfà \(x\equiv a_{i}\pmod{m_{i}}\) si i només si es satisfà \(x\equiv x_{0}\pmod{m_{i}}\). Per tant hem de veure que es satisfà
+			\[\begin{cases}
+			x\equiv x_{0}\pmod{m_{1}}\\
+			\quad\ \vdots\\
+			x\equiv x_{0}\pmod{m_{n}}
+			\end{cases}\]
+			
+			Ara bé, per la definició de \myref{def:nombres modulars congruents} i la definició de \ref{def:màxim comú divisor} tenim que ha de ser
+			\[x-x_{0}=\lambda M\]
+			per a cert \(\lambda\) enter.
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}[Teorema xinès de les restes]
+		\labelname{Teorema xinès de les restes}\label{thm:TXR}\label{thm:Teorema xinès de les restes}
+		Siguin \(m_{1},\dots,m_{n}\) enters més grans que \(1\) coprimers dos a dos i \(a_{1},\dots,a_{n}\) enters. Aleshores el sistema
+		\[\begin{cases}
+		x\equiv a_{1}\pmod{m_{1}}\\
+		\quad\ \vdots\\
+		x\equiv a_{n}\pmod{m_{n}}
+		\end{cases}\]
+		té una única solució, que és \(\abs{m_{1}\cdots m_{n}}\).
+		\begin{proof}
+			Prenem \(M=\mcm(m_{1},\dots,m_{n})\). Per la definició de \myref{def:mínim comú múltiple} i la definició de \myref{def:coprimers} tenim que \[M=\mcm(m_{1},\dots,m_{n})=\abs{\prod_{i=1}^{n}m_{i}}.\]
+			Per a tot \(i\in\{1,\dots,n\}\) definim
+			\[M_{1}=m_{1}\cdots m_{i-1}m_{i+1}\cdots m_{n}\]
+			i tenim, per la definició de \myref{def:coprimers}, que \(M_{i}\) i \(m_{i}\) són coprimers.
+			
+			Per tant la congruència
+			\[M_{i}x\equiv a_{i}\pmod{m_{i}}\]
+			té solució, ja que per la proposició \myref{prop:condició equivalent a invertible en Z/(m)} tenim que \(M_{i}\) és invertible i per tant \(x\equiv a_{i}M_{i}^{-1}\pmod{m_{i}}\). Denotem \(b_{i}=a_{i}M_{i}^{-1}\) i considerem
+			\[x_{0}=M_{1}b_{1}+\dots+M_{n}b_{n}.\]
+			
+			Aleshores tenim per la definició de \myref{def:nombres modulars} tenim que
+			\[x_{0}\equiv M_{i}b_{i}\pmod{m_{i}}.\]
+			
+			Per tant, pel lemma \myref{lemma:thm:Teorema xinès de les restes} tenim que
+			\[x=x_{0}+\lambda M\]
+			amb \(M=\mcm(m_{1},\dots,m_{n})\) són les solucions del sistema, i per la definició de \myref{def:nombres modulars} trobem que \(x=x_{0}\) i per tant és única.
+		\end{proof}
+	\end{theorem}
 	\section{Les permutacions}
 	\subsection{El grup simètric}
 	\begin{definition}[Permutació]
