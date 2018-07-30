@@ -2,42 +2,350 @@
 
 \begin{document}
 \chapter{Matrius}
-\section{Matrius i operacions}
-\subsection{Cossos}
+	\section{Matrius i operacions}
+	\subsection{Cossos}
 	\begin{definition}[Cos]
+		\labelname{cos}\label{def:cos}
 		Aclarir on va aquest apartat.
 	\end{definition}
-\subsection{Les matrius}
+	\subsection{Les matrius}
 	\begin{definition}[Matriu]
-		\labelname{matriu}\labelname{matriu quadrada}
+		\labelname{matriu}\label{def:matriu}
+		\labelname{matriu quadrada}\label{def:matriu quadrada}
+		Siguin \(m\) i \(n\) dos enters i \(\{a_{i,j}\}^{1\leq i\leq m}_{1\leq j\leq n}\) elements d'un cos \(\mathbb{K}\). Aleshores direm que
+		\[[a_{i,j}]=
+		\left[\begin{matrix}
+		a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+		a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+		\vdots & \vdots &  & \vdots \\
+		a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+		\end{matrix}\right]\]
+		és una matriu de mida \(m\times n\) sobre \(\mathbb{K}\).
+		
+		Direm que \(a_{i,j}\) és el component \((i,j)\) de la matriu \([a_{i,j}]\). Si \(A=[a_{i,j}]\) també denotarem \([A]_{i,j}=a_{i,j}\).
+		
+		Si \(n=m\) direm que \((a_{i,j})\) és una matriu quadrada d'ordre \(n\).
 	\end{definition}
-	\begin{definition}[Conjunt de matrius]
-	\end{definition}
+	\begin{notation}[Conjunt de matrius]
+		\label{notation:conjunt de matrius}
+		Siguin \(m\) i \(n\) dos enters, \(\mathbb{K}\) un cos i
+		\[X=\{A\mid A\text{ és una matriu de mida }m\times n\text{ sobre }\mathbb{K}\}\]
+		un conjunt. Aleshores denotarem \(X=M_{m\times n}(\mathbb{K})\).
+		
+		Si \(n=m\) denotarem \(X=M_{n}(\mathbb{K})\).
+	\end{notation}
+	%Veure que estàn ben definides %TODO %FER
+	%Quan veiem que el producte té sentit veure que pertany a \(M_{m\times n}(\mathbb{K})\).
 	\begin{definition}[Suma de matrius]
+		\labelname{suma de matrius}\label{def:suma de matrius}
+		Siguin \(A\) i \(B\) dues matrius de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores definim la seva suma com una operació \(+\) que satisfà
+		\[[A+B]_{i,j}=[A]_{i,j}+[B]_{i,j}.\]
 	\end{definition}
 	\begin{definition}[Producte de matrius]
+		\labelname{producte de matrius}\label{def:producte de matrius}
+		Siguin \(A\) una matriu de mida \(m\times l\) sobre un cos \(\mathbb{K}\) i \(B\) una matriu de mida \(l\times n\) sobre un cos \(\mathbb{K}\). Aleshores definim el seu producte com una operació \(\cdot\) que satisfà
+		\[[A\cdot B]_{i,j}=\sum_{k=0}^{l}[A]_{i,k}[B]_{k,j}.\]
+		
+		Escriurem \(A\cdot B=AB\).
 	\end{definition}
-\subsection{Operacions amb matrius}
-\section{Rang d'una matriu}
-\subsection{Transformacions elementals}
-\subsection{Matrius esglaonades i mètode de Gauss}
-\subsection{Teorema de la PAQ}
-\subsection{Càlcul de la inversa d'una matriu invertible}
-\section{Sistemes d'equacions lineals}
-\subsection{Teorema de Rouché-Frobenius}
-\subsection{Determinant d'una matriu}
-
-\chapter{Espais vectorials i aplicacions lineals}
-\section{Espais vectorials}
-
-\section{Aplicacions lineals}
-
-\chapter{Classificació d'endomorfismes}
-\section{Endomorfismes similars}
-\section{Diagonalització}
-\section{Forma canònica de Jordan}
-\section{Forma canònica racional}
-
-\chapter{Espais vectorials euclidians}
+	\subsection{Propietats de les operacions amb matrius}
+	\begin{proposition}
+		\label{prop:associativitat suma matrius}
+		Siguin \(A\), \(B\) i \(C\) tres matrius de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores
+		\[(A+B)+C=A+(B+C).\]
+		\begin{proof}
+			Per la definició de \myref{def:suma de matrius} tenim que
+			\begin{align*}
+			[(A+B)+C]_{i,j}&=[A+B]_{i,j}+[C]_{i,j}\\
+			&=[A]_{i,j}+[B]_{i,j}+[C]_{i,j}\\
+			&=[A]_{i,j}+([B]_{i,j}+[C]_{i,j})\tag{\myref{def:cos}}\\
+			&=[A]_{i,j}+[B+C]_{i,j}\\
+			&=[A+(B+C)]_{i,j}.\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:commutativitat suma matrius}
+		Siguin \(A\) i \(B\) dues matrius de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores
+		\[A+B=B+A.\]
+		\begin{proof}
+			Per la definició de \myref{def:suma de matrius} tenim que
+			\begin{align*}
+			[A+B]_{i,j}&=[A]_{i,j}+[B]_{i,j}\\
+			&=[B]_{i,j}+[A]_{i,j}\tag{\myref{def:cos}}\\
+			&=[B+A]_{i,j}.\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{notation}[Matriu nul·la]
+		\labelname{matriu nul·la}\label{notation:matriu nula}\label{notation:matriu zero}
+		Denotarem la matriu de mida \(m\times n\)
+		\[\left[\begin{matrix}
+		0 & \cdots & 0 \\
+		\vdots & & \vdots \\
+		0 & \cdots & 0
+		\end{matrix}\right]
+		\in M_{m\times n}(\mathbb{K})\]
+		com \(0_{m\times n}\), ó \(0\) si és clar pel context.
+	\end{notation}
+	\begin{proposition}
+		\label{prop:element neutre per la suma de matrius}
+		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores
+		\[A+0=A.\]
+		\begin{proof}
+			Per la definició de \myref{def:suma de matrius} tenim que
+			\begin{align*}
+			[A+0]_{i,j}&=[A]_{i,j}+[0]_{i,j}\\
+			&=[A]_{i,j}+0\\
+			&=[A]_{i,j},\tag{\myref{def:cos}}
+			\end{align*}
+			com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Producte d'una matriu per escalars]
+		\labelname{producte d'una matriu per escalars}\label{def:producte d'una matriu per escalars}
+		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) i \(\alpha\) un escalar de \(\mathbb{K}\). Aleshores definim
+		\[[\alpha A]_{i,j}=\alpha[A]_{i,j}.\]
+		
+		Denotarem \((-1)A\) com \(-A\).
+	\end{definition}
+	\begin{proposition}
+		\label{prop:inverses per la suma de matrius}
+		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores
+		\[A-A=0.\]
+		\begin{proof}
+			Per la definició de \myref{def:suma de matrius} tenim que
+			\begin{align*}
+			[A-A]_{i,j}&=[A]_{i,j}+[-A]_{i,j}\\
+			&=[A]_{i,j}-[A]_{i,j}\tag{\myref{def:producte d'una matriu per escalars}}\\
+			&=0\tag{\myref{def:cos}} %REF?
+			\end{align*}
+			i trobem \(A-A=0\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:associativitat mixta producte escalars per matrius}
+		Siguin \(A\) una matriu de mida \(m\times n\) i \(\alpha\) i \(\beta\) dos escalars de \(\mathbb{K}\). Aleshores
+		\[(\alpha\beta)A=\alpha(\beta A).\]
+		\begin{proof}
+			Per la definició de \myref{def:producte d'una matriu per escalars} tenim que
+			\begin{align*}
+			[(\alpha\beta)A]_{i,j}&=\alpha\beta[A]_{i,j}\\
+			&=\alpha(\beta[A_{i,j}])\tag{\myref{def:cos}}\\
+			&=\alpha[\beta A]_{i,j}.\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:distributiva respecta la suma d'escalars del producte de matrius}
+		Siguin \(A\) una matriu de mida \(m\times n\) i \(\alpha\) i \(\beta\) dos escalars de \(\mathbb{K}\). Aleshores
+		\[(\alpha+\beta)A=\alpha A+\beta A.\]
+		\begin{proof}
+			Per la definició de \myref{def:producte d'una matriu per escalars} tenim que
+			\begin{align*}
+			[(\alpha+\beta)A]_{i,j}&=(\alpha+\beta)[A]_{i,j}\\
+			&=\alpha[A]_{i,j}+\beta[A]_{i,j},\tag{\myref{def:cos}}\\
+			&=[\alpha A]_{i,j}+[\beta A]_{i,j}.\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores
+		\[1A=A.\]
+		\begin{proof}
+			Per la definició de \myref{def:producte d'una matriu per escalars} tenim que
+			\begin{align*}
+			[1A]_{i,j}&=1[A]_{i,j}\\
+			&=[A]_{i,j},\tag{\myref{def:cos}}
+			\end{align*}
+			com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:associativitat producte de matrius}
+		Siguin \(\mathbb{K}\) un cos i \(A\) una matriu de mida \(m\times l\) sobre \(\mathbb{K}\), \(B\) una matriu de mida \(l\times s\) sobre \(\mathbb{K}\) i \(C\) una matriu de mida \(s\times m\) sobre \(\mathbb{K}\). Aleshores
+		\[(AB)C=A(BC).\]
+		\begin{proof}
+			Per la definició de \myref{def:producte de matrius} tenim que
+			\begin{align*}
+			[(AB)C]_{i,j}&=\sum_{r=1}^{s}[AB]_{i,r}[C]_{r,j}\\
+			&=\sum_{r=1}^{s}\left(\sum_{k=1}^{l}[A]_{i,k}[B]_{k,r}\right)[C]_{r,j}\\
+			&=\sum_{r=1}^{s}\sum_{k=1}^{l}[A]_{i,k}[B]_{k,r}[C]_{r,j}\tag{\myref{def:cos}}\\
+			&=\sum_{k=1}^{l}\sum_{r=1}^{s}[A]_{i,k}[B]_{k,r}[C]_{r,j}\tag{\myref{def:cos}}\\
+			&=\sum_{k=1}^{l}[A]_{i,k}\sum_{r=1}^{s}\left([B]_{k,r}[C]_{r,j}\right)\tag{\myref{def:cos}}\\
+			&=\sum_{k=1}^{l}[A]_{i,k}[BC]_{k,j}\\
+			&=[A(BC)]_{i,j}.\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:distributiva del producte de matrius respecte la suma}
+		Siguin \(A\) i \(A'\) dues matrius de mida \(m\times l\) sobre un cos \(\mathbb{K}\) i \(B\), \(B'\) dues matrius de mida \(l\times n\) sobre un cos \(\mathbb{K}\). Aleshores
+		\[(A+A')B=AB+A'B\quad\text{i}\quad A(B+B')=AB+AB'.\]
+		\begin{proof}
+			Per la definició de \myref{def:producte de matrius} tenim que
+			\begin{align*}
+			[(A+A')B]_{i,j}&=\sum_{k=1}^{l}[A+A']_{i,k}[B]_{k,j}\\
+			&=\sum_{k=1}^{l}\left([A]_{i,k}+[A']_{i,k}\right)[B]_{k,j}\tag{\myref{def:suma de matrius}}\\
+			&=\sum_{k=1}^{l}\left([A]_{i,k}[B]_{k,j}+[A']_{i,k}[B]_{k,j}\right)\tag{\myref{def:cos}}\\
+			&=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}+\sum_{k=1}^{l}[A']_{i,k}[B]_{k,j}\tag{\myref{def:cos}}\\
+			&=[AB]_{i,j}+[A'B]_{i,j}\\
+			&=[AB+AB']_{i,j},\tag{\myref{def:suma de matrius}}
+			\end{align*}
+			i
+			\begin{align*}
+			[A(B+B')]_{i,j}&=\sum_{k=1}^{l}[A]_{i,k}[B+B']_{k,j}\\
+			&=\sum_{k=1}^{l}[A]_{i,k}\left([B]_{k,j}+[B']_{k,j}\right)\tag{\myref{def:suma de matrius}}\\
+			&=\sum_{k=1}^{l}\left([A]_{i,k}[B]_{k,j}+[A]_{i,k}[B']_{k,j}\right)\tag{\myref{def:cos}}\\
+			&=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}+\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}\tag{\myref{def:cos}}\\
+			&=[AB]_{i,j}+[AB']_{i,j}\\
+			&=[AB+AB']_{i,j},\tag{\myref{def:suma de matrius}}
+			\end{align*}
+			com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\subsection{Matrius inverses i matrius transposades}
+	\begin{notation}[Matriu identitat]
+		\labelname{matriu nul·la}\label{notation:matriu identitat}
+		Denotarem la matriu d'ordre \(n\)
+		\[\left[\begin{matrix}
+		1 & 0 & \cdots & 0 \\
+		0 & 1 & \ddots & \vdots \\
+		\vdots & \ddots & \ddots & 0\\
+		0 & \cdots & 0 & 1
+		\end{matrix}\right]
+		\in M_{n}(\mathbb{K})\]
+		com \(I_{n}\) i direm que \(I_{n}\) és la matriu identitat d'ordre \(n\).
+	\end{notation}
+	\begin{proposition}
+		\label{prop:producte per la matriu identitat}
+		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores
+		\[I_{m}A=A=AI_{n}.\]
+		\begin{proof}
+			Per la definició de \myref{def:producte de matrius} tenim que
+			\[[I_{m}A]_{i,j}=\sum_{k=1}^{m}[I_{m}]_{i,k}[A]_{k,j}.\]
+			Ara bé, tenim que
+			\[[I_{m}]_{i,j}=
+			\begin{cases}
+			1 & i=j\\
+			0 & i\neq j
+			\end{cases}\]
+			i per la definició de \myref{def:cos} tenim que
+			\[\sum_{k=1}^{m}[I_{m}]_{i,k}[A]_{k,j}=[A]_{i,j}\]
+			i per tant \(I_{m}A=A\).
+			
+			La demostració de l'altre igualtat és anàloga.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:unicitat inverses de matrius pel producte}
+		Sigui \(A\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\) tal que existeixin dues matrius \(A_{1}\) i \(A_{2}\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que
+		\[AA_{1}=A_{1}A=I_{n}\quad\text{i}\quad AA_{2}=A_{2}A=I_{m}.\]
+		Aleshores \(A_{1}=A_{2}\).
+		\begin{proof}
+			Per la proposició \myref{prop:associativitat producte de matrius} tenim que
+			\[A_{1}(AA_{2})=(A_{1}A)A_{2}\]
+			i per hipòtesi trobem que \(A_{1}I_{m}=I_{m}A_{2}\), i per la proposició \myref{prop:producte per la matriu identitat} trobem que \(A_{1}=A_{2}\), com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Matriu invertible]
+		\labelname{matriu invertible}\label{def:matriu invertible}
+		\labelname{inversa d'una matriu}\label{def:inversa d'una matriu}
+		Sigui \(A\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\) tal que existeixi una matriu \(A'\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que
+		\[AA'=A'A=I_{n}.\]
+		Aleshores direm que \(A\) és una matriu invertible i que \(A'\) és la inversa de \(A\). També denotarem \(A'=A^{-1}\).
+		
+		Observem que aquesta definició té sentit per la proposició \myref{prop:unicitat inverses de matrius pel producte}.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:inversa del producte de matrius}
+		Siguin \(A\) i \(B\) dues matrius invertibles d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores
+		\[(AB)^{-1}=B^{-1}A^{-1}.\]
+		\begin{proof}
+			Per la definició de \myref{def:matriu invertible} tenim que
+			\[(AB)^{-1}AB=I_{n},\]
+			i com que, per hipòtesi, les matrius \(A\) i \(B\) són invertibles trobem
+			\begin{align*}
+			B^{-1}A^{-1}&=(AB)^{-1}ABB^{-1}A^{-1}\\
+			&=(AB)^{-1}AA^{-1}\\
+			&=(AB)^{-1}.\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:inversa de l'inversa d'una matriu és la matriu}
+		Sigui \(A\) una matriu invertible d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores
+		\[(A^{-1})^{-1}=A.\]
+		\begin{proof}
+			Per la proposició \myref{prop:inversa del producte de matrius} tenim que
+			\[A^{-1}(A^{-1})^{-1}=A^{-1}A\]
+			i com que, per hipòtesi, la matriu \(A\) és invertible trobem
+			\[AA^{-1}(A^{-1})^{-1}=AA^{-1}A\]
+			i tenim
+			\[(A^{-1})^{-1}=A.\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Matriu transposada]
+		\labelname{matriu transposada}\label{def:matriu transposada}
+		\labelname{transposició d'una matriu}\label{def:transposició d'una matriu}
+		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Definim la transposada de \(A\) com una matriu \(A^{t}\) de mida \(n\times m\) sobre \(\mathbb{K}\) que satisfà
+		\[[A^{t}]_{i,j}=[A]_{j,i}.\]
+	\end{definition}
+	\begin{proposition}
+		Siguin \(A\) i \(B\) dues matrius de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores
+		\[(A+B)^{t}=A^{t}+B^{t}.\]
+		\begin{proof}
+			Per la definició de \myref{def:matriu transposada} tenim que
+			\begin{align*}
+			[(A+B)^{t}]_{i,j}&=[A+B]_{j,i}\\
+			&=[A]_{j,i}+[B]_{j,i}\tag{\myref{def:suma de matrius}}\\
+			&=[A^{t}]_{i,j}+[B^{t}]_{i,j}\\
+			&=[A^{t}+B^{t}]_{i,j},\tag{\myref{def:suma de matrius}}
+			\end{align*}
+			com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		Siguin \(A\) una matriu de mida \(m\times l\) sobre un cos \(\mathbb{K}\) i \(B\) una matriu de mida \(l\times n\) sobre \(\mathbb{K}\). Aleshores
+		\[(AB)^{t}=B^{t}A^{t}.\]
+		\begin{proof}
+			Per la definició de \myref{def:matriu transposada} tenim que
+			\begin{align*}
+			[(AB)^{t}]_{i,j}&=[AB]_{j,i}\\
+			&=\sum_{k=1}^{l}[A]_{j,k}[B]_{k,i}\tag{\myref{def:producte de matrius}}\\
+			&=\sum_{k=1}^{l}[A^{t}]_{k,j}[B]_{i,k}\\
+			&=\sum_{k=1}^{l}[B^{t}]_{i,k}[A^{t}]_{k,j}\tag{\myref{def:cos}}\\
+			&=[B^{t}A^{t}]_{i,j},\tag{\myref{def:cos}}
+			\end{align*}
+			com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Matriu simètrica]
+		\labelname{matriu simètrica}\label{def:matriu simètrica}
+		Sigui \(A\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\) tal que \(A^{t}=A\). Aleshores direm que \(A\) és una matriu simètrica.
+	\end{definition}
+%	\subsection{Producte de matrius en blocs}%FER producte de matrius en blocs
+	\section{Rang d'una matriu}
+	\subsection{Transformacions elementals}
+	
+%	\subsection{Matrius esglaonades i mètode de Gauss}
+%	\subsection{Teorema de la PAQ}
+%	\subsection{Càlcul de la inversa d'una matriu invertible}
+%	\section{Sistemes d'equacions lineals}
+%	\subsection{Teorema de Rouché-Frobenius}
+%	\subsection{Determinant d'una matriu}
+%
+%\chapter{Espais vectorials i aplicacions lineals}
+%	\section{Espais vectorials}
+%	
+%	\section{Aplicacions lineals}
+%	
+%\chapter{Classificació d'endomorfismes}
+%	\section{Endomorfismes similars}
+%	\section{Diagonalització}
+%	\section{Forma canònica de Jordan}
+%	\section{Forma canònica racional}
+%
+%\chapter{Espais vectorials euclidians}
 
 \end{document}
