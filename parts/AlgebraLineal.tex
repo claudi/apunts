@@ -8,6 +8,7 @@
 		\labelname{cos}\label{def:cos}
 		Aclarir on va aquest apartat.
 	\end{definition}
+	% elements 1 i 0 i tal i qual
 	\subsection{Les matrius}
 	\begin{definition}[Matriu]
 		\labelname{matriu}\label{def:matriu}
@@ -324,9 +325,126 @@
 		\labelname{matriu simètrica}\label{def:matriu simètrica}
 		Sigui \(A\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\) tal que \(A^{t}=A\). Aleshores direm que \(A\) és una matriu simètrica.
 	\end{definition}
-%	\subsection{Producte de matrius en blocs}%FER producte de matrius en blocs
+	\subsection{Producte de matrius en blocs}%FER producte de matrius en blocs
+	\begin{definition}[Files i columnes]
+		\labelname{fila d'una matriu}\label{def:fila d'una matriu}
+		\labelname{columna d'una matriu}\label{def:columna d'una matriu}
+		Sigui \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores definim
+		\[F_{i}=\left[\begin{matrix}
+		a_{i,1} & \cdots & a_{i,n}
+		\end{matrix}\right]\]
+		com la \(i\)-èsima fila de \(A\) i
+		\[C_{i}=\left[\begin{matrix}
+		a_{1,i} \\
+		\vdots \\
+		a_{m,i}
+		\end{matrix}\right]\]
+		com la \(i\)-èsima columna de \(A\).
+	\end{definition}
+	\begin{observation}
+		\label{obs:on pertanyen les files i les columnes d'una matriu}
+		Si \(A\in M_{m\times n}(\mathbb{K})\) tenim \(F_{i}\in M_{1\times n}(\mathbb{K})\) i \(C_{i}\in M_{m\times 1}(\mathbb{K})\).
+	\end{observation}
+	\begin{notation}
+		Siguin \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(F_{1},\dots,F_{m}\) les files de \(A\) i \(C_{1},\dots,C_{n}\) les columnes de \(A\). Aleshores denotem
+		\[A=\left[\begin{matrix}
+		F_{1} \\
+		\vdots \\
+		F_{m}
+		\end{matrix}\right]=\left[\begin{matrix}
+		C_{1} & \cdots & C_{n}
+		\end{matrix}\right].\]
+	\end{notation}
+	\begin{notation}
+		Siguin \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(m_{1},\dots,m_{p}\) i \(n_{1},\dots,n_{q}\) nombres naturals tals que \(m_{1}+\dots+m_{p}=m\) i \(n_{1}+\dots+n_{q}=n\), \(m_{0}=n_{0}=1\) i
+		\[A_{i,j}=\left[\begin{matrix}
+		a_{m_{i-1},n_{i-1}} & \cdots & a_{m_{i-1},n_{i}}\\
+		\vdots & & \vdots \\
+		a_{m_{i},n_{i-1}} & \cdots & a_{m_{i},n_{i}}
+		\end{matrix}\right]\]
+		matrius sobre un cos \(\mathbb{K}\). Aleshores denotem
+		\[A=\left[\begin{matrix}
+		A_{1,1} & \cdots & A_{1,q} \\
+		\vdots & & \vdots \\
+		A_{p,1} & \cdots & A_{p,q}
+		\end{matrix}\right].\]
+	\end{notation}
 	\section{Rang d'una matriu}
 	\subsection{Transformacions elementals}
+	\begin{definition}[Transformacions elementals] %REFER per columnes i files
+		\labelname{transformacions elementals}\label{def:transformacions elementals}
+		Siguin \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) i \(i\) i \(j\) dos naturals amb \(i,j\leq m\). Aleshores definim les funcions
+		\[P_{i,j}(A)=\left[\begin{matrix}
+		a_{1,1} & \cdots & a_{1,n} \\
+		\vdots & & \vdots \\
+		a_{i-1,1} & \cdots & a_{i-1,n} \\
+		a_{j,1} & \cdots & a_{j,n} \\
+		a_{i+1,1} & \cdots & a_{i+1,n} \\
+		\vdots & & \vdots \\
+		a_{j-1,1} & \cdots & a_{j-1,n} \\
+		a_{i,1} & \cdots & a_{i,n} \\
+		a_{j+1,1} & \cdots & a_{j+1,n} \\
+		\vdots & & \vdots \\
+		a_{m,1} & \cdots & a_{m,n}
+		\end{matrix}\right]\]
+		
+		\[D_{i,\lambda}(A)=\left[\begin{matrix}
+		a_{1,1} & \cdots & a_{1,n} \\
+		\vdots & & \vdots \\
+		a_{i-1,1} & \cdots & a_{i-1,n} \\
+		\lambda a_{i,1} & \cdots & \lambda a_{i,n} \\
+		a_{i+1,1} & \cdots & a_{i+1,n} \\
+		\vdots & & \vdots \\
+		a_{m,1} & \cdots & a_{m,n}
+		\end{matrix}\right]\]
+		
+		\[E_{i,j,\lambda}(A)=\left[\begin{matrix}
+		a_{1,1} & \cdots & a_{1,n} \\
+		\vdots & & \vdots \\
+		a_{i-1,1} & \cdots & a_{i-1,n} \\
+		a_{i,1}-\lambda a_{j,1} & \cdots & a_{i,n}-\lambda a_{j,n}\\
+		a_{i+1,1} & \cdots & a_{i+1,n} \\
+		\vdots & & \vdots \\
+		a_{m,1} & & a_{m,n}
+		\end{matrix}\right]\]
+	\end{definition}
+	\begin{definition}[Matrius elementals]
+		\labelname{matrius elementals}\label{def:matrius elementals}
+		Sigui \(\lambda\) un escalar d'un cos \(\mathbb{K}\). Aleshores definim les matrius de \(M_{n}(\mathbb{K})\)
+		\[P_{n}(i,j)=\left[\begin{matrix}
+		1 & & & & & & & & & & \\
+		& \ddots & & & & & & & & & \\
+		& & 1 & & & & & & & & \\
+		& & & 0 & \cdots & \cdots & \cdots & 1 & & & \\
+		& & & \vdots & 1 & & & \vdots & & & \\
+		& & & \vdots & & \ddots & & \vdots & & & \\
+		& & & \vdots & & & 1 & \vdots & & & \\
+		& & & 1 & \cdots & \cdots & \cdots & 0 & & & \\
+		& & & & & & & & 1 & & \\
+		& & & & & & & & & \ddots & \\
+		& & & & & & & & & & 1
+		\end{matrix}\right],\]
+		\[D_{n}(i,\lambda)=\left[\begin{matrix}
+		1 & & & & & & & \\
+		& \ddots & & & & & \\
+		& & 1 & & & & \\
+		& & & \lambda & & & \\
+		& & & & 1 & & \\
+		& & & & & \ddots & \\
+		& & & & & & 1
+		\end{matrix}\right],\]
+		i
+		\[E_{n}(i,j,\lambda)=\left[\begin{matrix}
+		1 & & & & & & \\
+		& \ddots & & & & & \\
+		& & 1 & \cdots & \lambda & & \\
+		& & & \ddots & \vdots & \\
+		& & & & 1 & & \\
+		& & & & & \ddots & \\
+		& & & & & & 1
+		\end{matrix}\right],\]
+		com les matrius elementals de \(M_{n}(\mathbb{K})\).
+	\end{definition}
 	
 %	\subsection{Matrius esglaonades i mètode de Gauss}
 %	\subsection{Teorema de la PAQ}
