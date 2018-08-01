@@ -45,7 +45,7 @@
 	\begin{definition}[Producte de matrius]
 		\labelname{producte de matrius}\label{def:producte de matrius}
 		Siguin \(A\) una matriu de mida \(m\times l\) sobre un cos \(\mathbb{K}\) i \(B\) una matriu de mida \(l\times n\) sobre un cos \(\mathbb{K}\). Aleshores definim el seu producte com una operació \(\cdot\) que satisfà
-		\[[A\cdot B]_{i,j}=\sum_{k=0}^{l}[A]_{i,k}[B]_{k,j}.\]
+		\[[A\cdot B]_{i,j}=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.\]
 		
 		Escriurem \(A\cdot B=AB\).
 	\end{definition}
@@ -346,7 +346,7 @@
 		Si \(A\in M_{m\times n}(\mathbb{K})\) tenim \(F_{i}\in M_{1\times n}(\mathbb{K})\) i \(C_{i}\in M_{m\times 1}(\mathbb{K})\).
 	\end{observation}
 	\begin{notation}
-		Siguin \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(F_{1},\dots,F_{m}\) les files de \(A\) i \(C_{1},\dots,C_{n}\) les columnes de \(A\). Aleshores denotem
+		Si \(A\) és una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(F_{1},\dots,F_{m}\) les files de \(A\) i \(C_{1},\dots,C_{n}\) les columnes de \(A\). Aleshores denotem
 		\[A=\left[\begin{matrix}
 		F_{1} \\
 		\vdots \\
@@ -369,6 +369,38 @@
 		A_{p,1} & \cdots & A_{p,q}
 		\end{matrix}\right].\]
 	\end{notation}
+	\begin{proposition}
+		Siguin \(A\) una matriu de mida \(m\times l\) sobre un cos \(\mathbb{K}\), \(B\) una matriu de mida \(l\times n\) sobre \(\mathbb{K}\), \(m_{1},\dots,m_{p}\), \(l_{1},\dots,l_{q}\) i \(n_{1},\dots,n_{r}\) nombres naturals tals que \(m_{1}+\dots+m_{p}=m\), \(l_{1}+\dots+l_{q}=l\) i \(n_{1}+\dots+n_{r}=n\), i per a tot \(i\in\{1,\dots,p\}\), \(k\in\{1,\dots,q\}\) i \(j\in\{1,\dots,r\}\) nombres enters tals que \(A_{i,k}\) és una matriu de mida \(m_{i}\times l_{k}\) sobre \(\mathbb{K}\) i \(B_{k,j}\) és una matriu de mida \(l_{k}\times n_{j}\) sobre \(\mathbb{K}\). Aleshores
+		\[A=\left[\begin{matrix}
+		A_{1,1} & \cdots & A_{1,q} \\
+		\vdots & & \vdots \\
+		A_{p,1} & \cdots & A_{p,q}
+		\end{matrix}\right],\quad B=\left[\begin{matrix}
+		B_{1,1} & \cdots & B_{1,r} \\
+		\vdots & & \vdots \\
+		B_{q,1} & \cdots & B_{q,r}
+		\end{matrix}\right]\]
+		i
+		\[AB=\left[\begin{matrix}
+		\sum_{k=1}^{q}A_{1,k}B_{k,1} & \sum_{k=1}^{q}A_{1,k}B_{k,2} & \cdots & \sum_{k=1}^{q}A_{1,k}B_{k,r} \\
+		\sum_{k=1}^{q}A_{2,k}B_{k,1} & \sum_{k=1}^{q}A_{2,k}B_{k,2} & \cdots & \sum_{k=1}^{q}A_{2,k}B_{k,r} \\
+		\vdots & \vdots & & \vdots \\
+		\sum_{k=1}^{q}A_{p,k}B_{k,2} & \sum_{k=1}^{q}A_{p,k}B_{k,2} & \cdots & \sum_{k=1}^{q}A_{p,k}B_{k,r}
+		\end{matrix}\right].\]
+		\begin{proof}
+			Per la definició de \myref{def:producte de matrius} tenim que
+			\[[AB]_{i,j}=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.\]
+			
+			També tenim que \(i=m_{1}+\dots+m_{k_{i}}+i'\) i \(j=n_{1}+\dots+n_{k_{j}}+j'\) per a certs \(k_{i}\in\{1,\dots,p-1\}\), \(k_{j}\in\{1,\dots,r-1\}\), \(i'\leq m_{k_{i}+1}-m_{k_{i}}\) i \(j'\leq n_{k_{j}+1}-n_{k_{j}}\). Per tant només hem de veure que
+			\[\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}=\left[\sum_{k=1}^{q}A_{m_{k_{i}},k}B_{k,n_{k_{j}}}\right]_{i',j'}.\]
+			
+			Per la definició de \myref{def:suma de matrius} tenim que
+			\[\left[\sum_{k=1}^{q}A_{m_{k_{i}},k}B_{k,n_{k_{j}}}\right]_{i',j'}=\sum_{k=1}^{q}[A_{m_{k_{i}},k}B_{k,n_{k_{j}}}]_{i',j'},\]
+			i per la definició de \myref{def:producte de matrius} trobem
+			\[\sum_{k=1}^{q}[A_{m_{k_{i}},k}B_{k,n_{k_{j}}}]_{i',j'}=\sum_{k=1}^{q}\left(\sum_{h=1}^{l_{k}}[A_{m_{k_{i}},k}]_{i',h}[B_{k,n_{k_{j}}}]_{h,j'}\right)\]
+			Deu meu aquests subíndexs estan a punt de matar-me.
+		\end{proof}
+	\end{proposition}
 	%https://math.hecker.org/2011/04/07/multiplying-block-matrices/
 	\section{Rang d'una matriu}
 	\subsection{Transformacions elementals}
