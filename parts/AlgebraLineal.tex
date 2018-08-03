@@ -370,17 +370,18 @@
 		\end{matrix}\right].\]
 	\end{notation}
 	\begin{proposition}
-		Siguin \(A\) una matriu de mida \(m\times l\) sobre un cos \(\mathbb{K}\), \(B\) una matriu de mida \(l\times n\) sobre \(\mathbb{K}\), \(m_{1},\dots,m_{p}\), \(l_{1},\dots,l_{q}\) i \(n_{1},\dots,n_{r}\) nombres naturals tals que \(m_{1}+\dots+m_{p}=m\), \(l_{1}+\dots+l_{q}=l\) i \(n_{1}+\dots+n_{r}=n\), i per a tot \(i\in\{1,\dots,p\}\), \(k\in\{1,\dots,q\}\) i \(j\in\{1,\dots,r\}\) nombres enters tals que \(A_{i,k}\) és una matriu de mida \(m_{i}\times l_{k}\) sobre \(\mathbb{K}\) i \(B_{k,j}\) és una matriu de mida \(l_{k}\times n_{j}\) sobre \(\mathbb{K}\). Aleshores
+		\label{prop:producte de matrius en blocs}
+		Siguin \(A\) una matriu de mida \(m\times l\) sobre un cos \(\mathbb{K}\), \(B\) una matriu de mida \(l\times n\) sobre \(\mathbb{K}\), \(m_{1},\dots,m_{p}\), \(l_{1},\dots,l_{q}\) i \(n_{1},\dots,n_{r}\) nombres naturals satisfent \(m_{1}+\dots+m_{p}=m\), \(l_{1}+\dots+l_{q}=l\) i \(n_{1}+\dots+n_{r}=n\), i per a tot \(i\in\{1,\dots,p\}\), \(k\in\{1,\dots,q\}\) i \(j\in\{1,\dots,r\}\) tals que \(A_{i,k}\) és una matriu de mida \(m_{i}\times l_{k}\) sobre \(\mathbb{K}\) i \(B_{k,j}\) és una matriu de mida \(l_{k}\times n_{j}\) sobre \(\mathbb{K}\) tals que
 		\[A=\left[\begin{matrix}
 		A_{1,1} & \cdots & A_{1,q} \\
 		\vdots & & \vdots \\
 		A_{p,1} & \cdots & A_{p,q}
-		\end{matrix}\right],\quad B=\left[\begin{matrix}
+		\end{matrix}\right]\quad\text{i}\quad B=\left[\begin{matrix}
 		B_{1,1} & \cdots & B_{1,r} \\
 		\vdots & & \vdots \\
 		B_{q,1} & \cdots & B_{q,r}
-		\end{matrix}\right]\]
-		i
+		\end{matrix}\right].\]
+		Aleshores
 		\[AB=\left[\begin{matrix}
 		\sum_{k=1}^{q}A_{1,k}B_{k,1} & \sum_{k=1}^{q}A_{1,k}B_{k,2} & \cdots & \sum_{k=1}^{q}A_{1,k}B_{k,r} \\
 		\sum_{k=1}^{q}A_{2,k}B_{k,1} & \sum_{k=1}^{q}A_{2,k}B_{k,2} & \cdots & \sum_{k=1}^{q}A_{2,k}B_{k,r} \\
@@ -391,14 +392,26 @@
 			Per la definició de \myref{def:producte de matrius} tenim que
 			\[[AB]_{i,j}=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.\]
 			
-			També tenim que \(i=m_{1}+\dots+m_{k_{i}}+i'\) i \(j=n_{1}+\dots+n_{k_{j}}+j'\) per a certs \(k_{i}\in\{1,\dots,p-1\}\), \(k_{j}\in\{1,\dots,r-1\}\), \(i'\leq m_{k_{i}+1}-m_{k_{i}}\) i \(j'\leq n_{k_{j}+1}-n_{k_{j}}\). Per tant només hem de veure que
+			També tenim que \(i=m_{1}+\dots+m_{k_{i}}+i'\) i \(j=n_{1}+\dots+n_{k_{j}}+j'\) per a certs \(k_{i}\in\{1,\dots,p-1\}\), \(k_{j}\in\{1,\dots,r-1\}\), \(i'\leq m_{k_{i}+1}-m_{k_{i}}\) i \(j'\leq n_{k_{j}+1}-n_{k_{j}}\). Per tant hem de veure que
 			\[\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}=\left[\sum_{k=1}^{q}A_{m_{k_{i}},k}B_{k,n_{k_{j}}}\right]_{i',j'}.\]
 			
 			Per la definició de \myref{def:suma de matrius} tenim que
 			\[\left[\sum_{k=1}^{q}A_{m_{k_{i}},k}B_{k,n_{k_{j}}}\right]_{i',j'}=\sum_{k=1}^{q}[A_{m_{k_{i}},k}B_{k,n_{k_{j}}}]_{i',j'},\]
 			i per la definició de \myref{def:producte de matrius} trobem
-			\[\sum_{k=1}^{q}[A_{m_{k_{i}},k}B_{k,n_{k_{j}}}]_{i',j'}=\sum_{k=1}^{q}\left(\sum_{h=1}^{l_{k}}[A_{m_{k_{i}},k}]_{i',h}[B_{k,n_{k_{j}}}]_{h,j'}\right)\]
-			Deu meu aquests subíndexs estan a punt de matar-me.
+			\[\sum_{k=1}^{q}[A_{m_{k_{i}},k}B_{k,n_{k_{j}}}]_{i',j'}=\sum_{k=1}^{q}\left(\sum_{h=1}^{l_{k}}[A_{m_{k_{i}},k}]_{i',h}[B_{k,n_{k_{j}}}]_{h,j'}\right).\]
+			
+			Ara bé, com que per hipòtesi tenim que
+			\[A=\left[\begin{matrix}
+			A_{1,1} & \cdots & A_{1,q} \\
+			\vdots & & \vdots \\
+			A_{p,1} & \cdots & A_{p,q}
+			\end{matrix}\right]\quad\text{i}\quad B=\left[\begin{matrix}
+			B_{1,1} & \cdots & B_{1,r} \\
+			\vdots & & \vdots \\
+			B_{q,1} & \cdots & B_{q,r}
+			\end{matrix}\right].\]
+			i que \(i=m_{1}+\dots+m_{k_{i}}+i'\) i \(j=n_{1}+\dots+n_{k_{j}}+j'\), trobem
+			\[\sum_{k=1}^{q}\left(\sum_{h=1}^{l_{k}}[A_{m_{k_{i}},k}]_{i',h}[B_{k,n_{k_{j}}}]_{h,j'}\right)=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.\qedhere\]
 		\end{proof}
 	\end{proposition}
 	%https://math.hecker.org/2011/04/07/multiplying-block-matrices/
@@ -419,9 +432,7 @@
 		a_{j+1,1} & \cdots & a_{j+1,n} \\
 		\vdots & & \vdots \\
 		a_{m,1} & \cdots & a_{m,n}
-		\end{matrix}\right]\]
-		
-		\[D_{i,\lambda}(A)=\left[\begin{matrix}
+		\end{matrix}\right],\quad D_{i,\lambda}(A)=\left[\begin{matrix}
 		a_{1,1} & \cdots & a_{1,n} \\
 		\vdots & & \vdots \\
 		a_{i-1,1} & \cdots & a_{i-1,n} \\
@@ -430,8 +441,7 @@
 		\vdots & & \vdots \\
 		a_{m,1} & \cdots & a_{m,n}
 		\end{matrix}\right]\]
-		
-		\[E_{i,j,\lambda}(A)=\left[\begin{matrix}
+		\[\text{i}\quad E_{i,j,\lambda}(A)=\left[\begin{matrix}
 		a_{1,1} & \cdots & a_{1,n} \\
 		\vdots & & \vdots \\
 		a_{i-1,1} & \cdots & a_{i-1,n} \\
@@ -440,46 +450,76 @@
 		\vdots & & \vdots \\
 		a_{m,1} & & a_{m,n}
 		\end{matrix}\right]\]
+		com les transformacions elementals per files de \(M_{n}(\mathbb{K})\).
 	\end{definition}
-	\begin{definition}[Matrius elementals]
-		\labelname{matrius elementals}\label{def:matrius elementals}
-		Sigui \(\lambda\) un escalar d'un cos \(\mathbb{K}\). Aleshores definim les matrius de \(M_{n}(\mathbb{K})\)
-		\[P_{n}(i,j)=\left[\begin{matrix}
-		1 & & & & & & & & & & \\
-		& \ddots & & & & & & & & & \\
-		& & 1 & & & & & & & & \\
-		& & & 0 & \cdots & \cdots & \cdots & 1 & & & \\
-		& & & \vdots & 1 & & & \vdots & & & \\
-		& & & \vdots & & \ddots & & \vdots & & & \\
-		& & & \vdots & & & 1 & \vdots & & & \\
-		& & & 1 & \cdots & \cdots & \cdots & 0 & & & \\
-		& & & & & & & & 1 & & \\
-		& & & & & & & & & \ddots & \\
-		& & & & & & & & & & 1
-		\end{matrix}\right],\]
-		\[D_{n}(i,\lambda)=\left[\begin{matrix}
-		1 & & & & & & & \\
-		& \ddots & & & & & \\
-		& & 1 & & & & \\
-		& & & \lambda & & & \\
-		& & & & 1 & & \\
-		& & & & & \ddots & \\
-		& & & & & & 1
-		\end{matrix}\right],\]
-		i
-		\[E_{n}(i,j,\lambda)=\left[\begin{matrix}
-		1 & & & & & & \\
-		& \ddots & & & & & \\
-		& & 1 & \cdots & \lambda & & \\
-		& & & \ddots & \vdots & \\
-		& & & & 1 & & \\
-		& & & & & \ddots & \\
-		& & & & & & 1
-		\end{matrix}\right],\]
-		com les matrius elementals de \(M_{n}(\mathbb{K})\).
+%	\begin{observation}
+%		\label{obs:transformacions elementals}
+%		Tenim que
+%		\[P_{i,j}(I_{n})=\left[\begin{matrix}
+%		1 & & & & & & & & & & \\
+%		& \ddots & & & & & & & & & \\
+%		& & 1 & & & & & & & & \\
+%		& & & 0 & \cdots & \cdots & \cdots & 1 & & & \\
+%		& & & \vdots & 1 & & & \vdots & & & \\
+%		& & & \vdots & & \ddots & & \vdots & & & \\
+%		& & & \vdots & & & 1 & \vdots & & & \\
+%		& & & 1 & \cdots & \cdots & \cdots & 0 & & & \\
+%		& & & & & & & & 1 & & \\
+%		& & & & & & & & & \ddots & \\
+%		& & & & & & & & & & 1
+%		\end{matrix}\right],\]
+%		\[D_{i,\lambda}(I_{n})=\left[\begin{matrix}
+%		1 & & & & & & & \\
+%		& \ddots & & & & & \\
+%		& & 1 & & & & \\
+%		& & & \lambda & & & \\
+%		& & & & 1 & & \\
+%		& & & & & \ddots & \\
+%		& & & & & & 1
+%		\end{matrix}\right],\]
+%		i
+%		\[E_{i,j,\lambda}(I_{n})=\left[\begin{matrix}
+%		1 & & & & & & \\
+%		& \ddots & & & & & \\
+%		& & 1 & \cdots & \lambda & & \\
+%		& & & \ddots & \vdots & \\
+%		& & & & 1 & & \\
+%		& & & & & \ddots & \\
+%		& & & & & & 1
+%		\end{matrix}\right].\]
+%	\end{observation}
+	\begin{proposition}
+		\label{prop:transformacions elementals i matrius elementals}
+		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores per a tota successió de transformacions elementals per files \(f\) existeix una matriu \(P\) de mida \(m\times m\) sobre \(\mathbb{K}\) tal que \(f(A)=PA\) i per a tota successió de transformacions elementals per columnes \(g\) existeix una matriu \(Q\) de mida \(n\times n\) sobre \(\mathbb{K}\) tal que \(g(A)=AQ\).
+%		Siguin \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(f\) una transformació elemental per files i \(g\) una transformació elemental per columnes.
+%		
+%		Aleshores existeix una matriu \(P\) de mida \(m\times m\) sobre \(\mathbb{K}\) tal que \(f(A)=PA\) i existeix una matriu \(Q\) de mida \(n\times n\) sobre \(\mathbb{K}\) tal que \(g(A)=AQ\).
+		\begin{proof}
+			En tenim prou amb veure que \(P_{i,j}(A)=P_{i,j}(I_{m})A\), \(D_{i,\lambda}(A)=D_{i,\lambda}(I_{m})A\) i \(E_{i,j,\lambda}(A)=E_{i,j,\lambda}(I_{m})A\) i que \(P_{i,j}(A^{t})^{t}=AP_{i,j}(I_{n})\), \(D_{i,\lambda}(A^{t})^{t}=AD_{i,\lambda}(I_{n})\) i \(E_{i,j,\lambda}(A^{t})^{t}=AE_{i,j,\lambda}(I_{n})\), i això és conseqüència de la definició de \myref{def:producte de matrius}.
+		\end{proof}
+	\end{proposition}
+	\begin{notation}
+		Denotarem les transformacions elementals per files \(P_{i,j}\) com \(F_{i}\leftrightarrow F_{j}\), \(D_{i,\lambda}\) com \(F_{i}\rightarrow\lambda F_{i}\) i \(E_{i,j,\lambda}\) com \(F_{i}\rightarrow F_{i}+\lambda F_{j}\).
+		
+		Aprofitant la proposició \myref{prop:transformacions elementals i matrius elementals} també denotarem una successió de transformacions elementals com una matriu quadrada.
+		
+		Si apliquem una transformació elemental per files a una matriu transposada i transposem el resultat denotarem \(P_{i,j}\) com \(C_{i}\leftrightarrow C_{j}\), \(D_{i,\lambda}\) com \(C_{i}\rightarrow\lambda C_{i}\) i \(E_{i,j,\lambda}\) com \(C_{i}\rightarrow C_{i}+\lambda C_{j}\) i direm que són transformacions elementals per columnes.
+	\end{notation}
+	\subsection{Matrius esglaonades i mètode de Gauss}
+	\begin{definition}[Matriu esglaonada]
+		\labelname{matriu esglaonada}\label{def:matriu esglaonada}
+		Sigui \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) tal que existeixen \(j_{1}<\dots<j_{r}\) nombres naturals tals que per a tot \(i\in\{1,\dots,r\}\) i per a tot \(j<j_{i}\) tenim \(a_{i,j}=0\) i \(a_{i,j_{i}}\neq0\), i \(a_{i,j}=0\) per a tot \(i>j_{r}\) i \(j\in\{1,\dots,n\}\).
+		
+		Aleshores direm que \(A\) està esglaonada per files i que \(A^{t}\) està esglaonada per columnes.
+		
+		Direm que una matriu \(A\) es pot esglaonar per files si existeix una successió \(P\) de transformacions elementals per files tals que \(PA\) està esglaonada per files.
 	\end{definition}
-	
-%	\subsection{Matrius esglaonades i mètode de Gauss}
+	\begin{proposition}
+		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores \(A\) es pot esglaonar per files.
+		\begin{proof}
+			
+		\end{proof}
+	\end{proposition}
 %	\subsection{Teorema de la PAQ}
 %	\subsection{Càlcul de la inversa d'una matriu invertible}
 %	\section{Sistemes d'equacions lineals}
