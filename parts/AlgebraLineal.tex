@@ -515,11 +515,64 @@
 		Direm que una matriu \(A\) es pot esglaonar per files si existeix una successió \(P\) de transformacions elementals per files tals que \(PA\) està esglaonada per files.
 	\end{definition}
 	\begin{proposition}
+		\label{prop:es pot esglaonar qualsevol matriu per files}
 		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores \(A\) es pot esglaonar per files.
-		\begin{proof}
+		\begin{proof} %REFER a partir de l'hipotesi d'inducció
+			Denotem \(A=(a_{i,j})\). Ho farem per inducció sobre \(n\).
 			
+			Suposem que \(n=1\). Si \(a_{i,1}=0\) per a tot \(i\in\{1,\dots,m\}\) per la definició de \myref{def:matriu esglaonada} hem acabat. Suposem doncs que existeix un \(i\in\{1,\dots,m\}\) tal que \(a_{i,1}\neq0\). Aleshores podem fer les transformacions elementals
+			\[A
+			\overset{F_{i}\leftrightarrow F_{1}}{\longrightarrow}
+			\left[\begin{matrix}
+			a_{i,1}\\
+			\vdots\\
+			a_{i-1,1}\\
+			a_{1,1}\\
+			a_{i+1,1}\\
+			\vdots\\
+			a_{m,1}
+			\end{matrix}\right]
+			\overset{F_{1}\rightarrow a_{1,1}^{-1}F_{1}}{\longrightarrow}
+			\left[\begin{matrix}
+			1\\
+			a_{2,1}\\
+			\vdots\\
+			a_{m,1}
+			\end{matrix}\right]
+			\overset{\overset{F_{i}\rightarrow F_{i}-a_{i,1}F_{1}}{\text{per a tot }i\in\{2,\dots,m\}}}{\longrightarrow}
+			\left[\begin{matrix}
+			1\\
+			0\\
+			\vdots\\
+			0
+			\end{matrix}\right]\]
+			i per la definició de \myref{def:matriu esglaonada} hem acabat.
+			
+			Suposem doncs que la hipòtesi és certa per a \(n\). Veiem que també ho és per \(n+1\). Sigui \(A=(a_{i,j})\) una matriu de mida \(m\times(n+1)\) sobre \(\mathbb{K}\). Considerem la matriu
+			\[A'=\left[\begin{matrix}
+			a_{1,2} & \dots & a_{1,n+1} \\
+			\vdots & & \vdots \\
+			a_{m,2} & \dots & a_{m,n+1}
+			\end{matrix}\right].\]
+			Per la definició de \myref{def:matriu} tenim que \(A'\) és una matriu de mida \(m\times n\) sobre \(\mathbb{K}\), i per l'hipòtesi d'inducció tenim que podem esglaonar-la. Sigui doncs \(B\) la matriu \(A'\) esglaonada. Considerem la matriu
+			\[\left[\begin{matrix}
+			a_{1,1}\\
+			\vdots\\
+			a_{1,m}\\
+			\end{matrix}\right],\]
+			que correspon a la primera columna de la matriu \(A\). Hem vist que podem esglaonar-la, i per tant per la definició de \myref{def:matriu esglaonada} tenim que podem esglaonar la matriu \(A\), ja que
+			\[A=\left[\begin{array}{c|c}
+			a_{1,1} & \\
+			\vdots & A' \\
+			a_{1,m} & 
+			\end{array}\right],\]
+			i pel \myref{thm:principi d'inducció} hem acabat.
 		\end{proof}
 	\end{proposition}
+	\begin{corollary}
+		\label{col:es pot esglaonar qualsevol matriu per columnes}
+		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores \(A\) es pot esglaonar per columnes.
+	\end{corollary}
 %	\subsection{Teorema de la PAQ}
 %	\subsection{Càlcul de la inversa d'una matriu invertible}
 %	\section{Sistemes d'equacions lineals}
