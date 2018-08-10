@@ -139,15 +139,16 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:distributiva respecta la suma d'escalars del producte de matrius}
-		Siguin \(A\) una matriu de mida \(m\times n\) i \(\alpha\) i \(\beta\) dos escalars de \(\mathbb{K}\). Aleshores
+		Siguin \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) i \(\alpha\) i \(\beta\) dos escalars de \(\mathbb{K}\). Aleshores
 		\[(\alpha+\beta)A=\alpha A+\beta A.\]
 		\begin{proof}
 			Per la definició de \myref{def:producte d'una matriu per escalars} tenim que
 			\begin{align*}
 			[(\alpha+\beta)A]_{i,j}&=(\alpha+\beta)[A]_{i,j}\\
 			&=\alpha[A]_{i,j}+\beta[A]_{i,j},\tag{\myref{def:cos}}\\
-			&=[\alpha A]_{i,j}+[\beta A]_{i,j}.\qedhere
+			&=[\alpha A]_{i,j}+[\beta A]_{i,j}
 			\end{align*}
+			i hem acabat.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
@@ -155,10 +156,9 @@
 		\[1A=A.\]
 		\begin{proof}
 			Per la definició de \myref{def:producte d'una matriu per escalars} tenim que
-			\begin{align*}
-			[1A]_{i,j}&=1[A]_{i,j}\\
-			&=[A]_{i,j},\tag{\myref{def:cos}}
-			\end{align*}
+			\[[1A]_{i,j}=1[A]_{i,j}\]
+			i per la definició de \myref{def:cos} trobem que
+			\[1[A]_{i,j}=[A]_{i,j},\]
 			com volíem veure.
 		\end{proof}
 	\end{proposition}
@@ -175,8 +175,9 @@
 			&=\sum_{k=1}^{l}\sum_{r=1}^{s}[A]_{i,k}[B]_{k,r}[C]_{r,j}\tag{\myref{def:cos}}\\
 			&=\sum_{k=1}^{l}[A]_{i,k}\sum_{r=1}^{s}\left([B]_{k,r}[C]_{r,j}\right)\tag{\myref{def:cos}}\\
 			&=\sum_{k=1}^{l}[A]_{i,k}[BC]_{k,j}\\
-			&=[A(BC)]_{i,j}.\qedhere
+			&=[A(BC)]_{i,j},
 			\end{align*}
+			com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
@@ -191,18 +192,20 @@
 			&=\sum_{k=1}^{l}\left([A]_{i,k}[B]_{k,j}+[A']_{i,k}[B]_{k,j}\right)\tag{\myref{def:cos}}\\
 			&=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}+\sum_{k=1}^{l}[A']_{i,k}[B]_{k,j}\tag{\myref{def:cos}}\\
 			&=[AB]_{i,j}+[A'B]_{i,j}\\
-			&=[AB+AB']_{i,j},\tag{\myref{def:suma de matrius}}
+			&=[AB+AB']_{i,j}.\tag{\myref{def:suma de matrius}}
 			\end{align*}
-			i
-			\begin{align*}
-			[A(B+B')]_{i,j}&=\sum_{k=1}^{l}[A]_{i,k}[B+B']_{k,j}\\
-			&=\sum_{k=1}^{l}[A]_{i,k}\left([B]_{k,j}+[B']_{k,j}\right)\tag{\myref{def:suma de matrius}}\\
-			&=\sum_{k=1}^{l}\left([A]_{i,k}[B]_{k,j}+[A]_{i,k}[B']_{k,j}\right)\tag{\myref{def:cos}}\\
-			&=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}+\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}\tag{\myref{def:cos}}\\
-			&=[AB]_{i,j}+[AB']_{i,j}\\
-			&=[AB+AB']_{i,j},\tag{\myref{def:suma de matrius}}
-			\end{align*}
-			com volíem veure.
+			
+			L'altre demostració és anàloga.
+%			i també tenim que
+%			\begin{align*}
+%			[A(B+B')]_{i,j}&=\sum_{k=1}^{l}[A]_{i,k}[B+B']_{k,j}\\
+%			&=\sum_{k=1}^{l}[A]_{i,k}\left([B]_{k,j}+[B']_{k,j}\right)\tag{\myref{def:suma de matrius}}\\
+%			&=\sum_{k=1}^{l}\left([A]_{i,k}[B]_{k,j}+[A]_{i,k}[B']_{k,j}\right)\tag{\myref{def:cos}}\\
+%			&=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}+\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}\tag{\myref{def:cos}}\\
+%			&=[AB]_{i,j}+[AB']_{i,j}\\
+%			&=[AB+AB']_{i,j},\tag{\myref{def:suma de matrius}}
+%			\end{align*}
+%			com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\subsection{Matrius inverses i matrius transposades}
@@ -241,12 +244,12 @@
 	\begin{proposition}
 		\label{prop:unicitat inverses de matrius pel producte}
 		Sigui \(A\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\) tal que existeixin dues matrius \(A_{1}\) i \(A_{2}\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que
-		\[AA_{1}=A_{1}A=I_{n}\quad\text{i}\quad AA_{2}=A_{2}A=I_{m}.\]
+		\[AA_{1}=A_{1}A=I_{n}\quad\text{i}\quad AA_{2}=A_{2}A=I_{n}.\]
 		Aleshores \(A_{1}=A_{2}\).
 		\begin{proof}
 			Per la proposició \myref{prop:associativitat producte de matrius} tenim que
 			\[A_{1}(AA_{2})=(A_{1}A)A_{2}\]
-			i per hipòtesi trobem que \(A_{1}I_{m}=I_{m}A_{2}\), i per la proposició \myref{prop:producte per la matriu identitat} trobem que \(A_{1}=A_{2}\), com volíem veure.
+			i per hipòtesi trobem que \(A_{1}I_{n}=I_{n}A_{2}\), i per la proposició \myref{prop:producte per la matriu identitat} trobem que \(A_{1}=A_{2}\), com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Matriu invertible]
@@ -258,6 +261,13 @@
 		
 		Observem que aquesta definició té sentit per la proposició \myref{prop:unicitat inverses de matrius pel producte}.
 	\end{definition}
+	\begin{observation}
+		\label{obs:matrius amb una fila nula no són invertibles}
+		\label{obs:matrius amb una columna nula no són invertibles}
+		Sigui \(A=(a_{i,j}\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) tal que existeix un \(i\in\{1,\dots,n\}\) satisfent
+		\[a_{i,j}=0\text{ ó }a_{j,i}=0\quad\text{per a tot }j\in\{1,\dots,n\}.\]
+		Aleshores \(A\) no és invertible.
+	\end{observation}
 	\begin{proposition}
 		\label{prop:inversa del producte de matrius}
 		Siguin \(A\) i \(B\) dues matrius invertibles d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores
@@ -307,6 +317,7 @@
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
+		\label{prop:producte de matrius transposades}
 		Siguin \(A\) una matriu de mida \(m\times l\) sobre un cos \(\mathbb{K}\) i \(B\) una matriu de mida \(l\times n\) sobre \(\mathbb{K}\). Aleshores
 		\[(AB)^{t}=B^{t}A^{t}.\]
 		\begin{proof}
@@ -319,6 +330,15 @@
 			&=[B^{t}A^{t}]_{i,j},\tag{\myref{def:cos}}
 			\end{align*}
 			com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:transposada d'una invertible és invertible}
+		Sigui \(A\) una matriu invertible d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores la matriu \(A^{t}\) és invertible i \(\left(A^{t}\right)^{-1}=\left(A^{-1}\right)^{t}\).
+		\begin{proof}
+			Per la proposició \myref{prop:producte de matrius transposades} tenim que
+			\[A^{t}\left(A^{-1}\right)^{t}=\left(A^{-1}A\right)^{t}\quad\text{i}\quad [\left(A^{-1}\right)^{t}A^{t}=\left(AA^{-1}\right)^{t},\]
+			i per la definició de \myref{def:matriu invertible} tenim que \(A^{t}\) és invertible i que \(\left(A^{t}\right)^{-1}=\left(A^{-1}\right)^{t}\), com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Matriu simètrica]
@@ -490,10 +510,10 @@
 %	\end{observation}
 	\begin{proposition}
 		\label{prop:transformacions elementals i matrius elementals}
-		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores per a tota successió de transformacions elementals per files \(f\) existeix una matriu \(P\) de mida \(m\times m\) sobre \(\mathbb{K}\) tal que \(f(A)=PA\) i per a tota successió de transformacions elementals per columnes \(g\) existeix una matriu \(Q\) de mida \(n\times n\) sobre \(\mathbb{K}\) tal que \(g(A)=AQ\).
+		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores per a tota successió de transformacions elementals per files \(f\) existeix una matriu \(P\) d'ordre \(m\) sobre \(\mathbb{K}\) tal que \(f(A)=PA\) i per a tota successió de transformacions elementals per columnes \(g\) existeix una matriu \(Q\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que \(g(A)=AQ\).
 %		Siguin \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(f\) una transformació elemental per files i \(g\) una transformació elemental per columnes.
 %		
-%		Aleshores existeix una matriu \(P\) de mida \(m\times m\) sobre \(\mathbb{K}\) tal que \(f(A)=PA\) i existeix una matriu \(Q\) de mida \(n\times n\) sobre \(\mathbb{K}\) tal que \(g(A)=AQ\).
+%		Aleshores existeix una matriu \(P\) d'ordre \(m\) sobre \(\mathbb{K}\) tal que \(f(A)=PA\) i existeix una matriu \(Q\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que \(g(A)=AQ\).
 		\begin{proof}
 			En tenim prou amb veure que \(P_{i,j}(A)=P_{i,j}(I_{m})A\), \(D_{i,\lambda}(A)=D_{i,\lambda}(I_{m})A\) i \(E_{i,j,\lambda}(A)=E_{i,j,\lambda}(I_{m})A\) i que \(P_{i,j}(A^{t})^{t}=AP_{i,j}(I_{n})\), \(D_{i,\lambda}(A^{t})^{t}=AD_{i,\lambda}(I_{n})\) i \(E_{i,j,\lambda}(A^{t})^{t}=AE_{i,j,\lambda}(I_{n})\), i això és conseqüència de la definició de \myref{def:producte de matrius}.
 		\end{proof}
@@ -508,7 +528,7 @@
 	\subsection{Matrius esglaonades i mètode de Gauss}
 	\begin{definition}[Matriu esglaonada]
 		\labelname{matriu esglaonada}\label{def:matriu esglaonada}
-		Sigui \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) tal que existeixen \(j_{1}<\dots<j_{r}\) nombres naturals tals que per a tot \(i\in\{1,\dots,r\}\) i per a tot \(j<j_{i}\) tenim \(a_{i,j}=0\) i \(a_{i,j_{i}}\neq0\), i \(a_{i,j}=0\) per a tot \(i>j_{r}\) i \(j\in\{1,\dots,n\}\).
+		Sigui \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) tal que existeixen \(j_{1}<\dots<j_{r}\) nombres naturals tals que per a tot \(i\in\{1,\dots,r\}\) i per a tot \(j<j_{i}\) tenim \(a_{i,j}=0\) i \(a_{i,j_{i}}=1\), i \(a_{i,j}=0\) per a tot \(i>j_{r}\) i \(j\in\{1,\dots,n\}\).
 		
 		Aleshores direm que \(A\) està esglaonada per files i que \(A^{t}\) està esglaonada per columnes.
 		
@@ -573,10 +593,214 @@
 		\label{col:es pot esglaonar qualsevol matriu per columnes}
 		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores \(A\) es pot esglaonar per columnes.
 	\end{corollary}
-%	\subsection{Teorema de la PAQ}
+	\subsection{Teorema de la \texorpdfstring{\(PAQ\)}-reducció}
+	\begin{theorem}[Teorema de la \(PAQ\)-reducció]
+		\labelname{Teorema de la $PAQ$-reducció}\label{thm:Teorema de la PAQ-reducció}
+		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores existeixen un únic nombre natural \(r\) amb \(r\leq\min(m,n)\), una matriu invertible \(P\) d'ordre \(m\) sobre \(\mathbb{K}\) i una matriu invertible \(Q\) d'ordre \(n\) sobre \(\mathbb{K}\) tals que
+		\[PAQ=\left[\begin{array}{c|c}
+		I_{r} & 0\\\hline
+		0 & 0
+		\end{array}\right].\]
+		\begin{proof}
+			Denotem \(A=(a_{i,j})\). Si \(a_{i,j}=0\) per a tot \(i\in\{1,\dots,m\}\) i \(j\in\{1,\dots,n\}\) aleshores tenim \(r=0\) i hem acabat. Suposem doncs que existeixen \(i\in\{1,\dots,m\}\) i \(j\in\{1,\dots,n\}\) tals que \(a_{i,j}\neq0\).
+			
+			Per la proposició \myref{prop:es pot esglaonar qualsevol matriu per files} tenim que existeix una matriu \(P\) d'ordre \(m\) sobre \(\mathbb{K}\) tal que \(PA\) està esglaonada per files. Per la definició de \myref{def:matriu esglaonada} tenim que existeixen \(j_{i}\) per a tot \(i\in\{1,\dots,r\}\) amb \(j_{1}<\dots<j_{r}\) tals que per a tot \(j<j_{i}\) tenim \(a_{i,j}=0\) i \(a_{i,j_{i}}=1\). Fent les transformacions elementals
+			\[C_{1}\leftrightarrow C_{j_{1}},\quad C_{2}\leftrightarrow C_{j_{2}},\dots,C_{r}\leftrightarrow C_{j_{r}}\]
+			a la matriu \(PA\) obtenim la matriu
+			\[A_{1}=\left[\begin{array}{cccc|ccc}
+			1 & b_{1,2} & \cdots & b_{1,r} & b_{1,r+1} & \cdots & b_{1,n} \\
+			0 & 1 & \ddots & \vdots & \vdots & & \vdots\\
+			\vdots & \ddots & \ddots & b_{r-1,r} & \vdots & & \vdots \\
+			0 & \cdots & 0 & 1 & b_{r,r+1} & \cdots & b_{r,n} \\\hline
+			0 & \cdots & 0 & 0 & 0 & \cdots & 0 \\
+			\vdots & & \vdots & \vdots & \vdots & & \vdots \\
+			0 & \cdots & 0 & 0 & 0 & \cdots & 0
+			\end{array}\right],\]
+			i fent a la matriu \(A_{1}\) les transformacions elementals
+			\[C_{k_{i}}\rightarrow C_{k_{i}}-b_{i,k_{i}}C_{i},\quad\text{per a }k_{i}\in\{i+1,\dots,n\}\]
+			per a tot \(i\in\{1,\dots,r\}\), i per la proposició \myref{prop:transformacions elementals i matrius elementals} tenim que existeix una matriu \(P\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que
+			\[PAQ=\left[\begin{array}{c|c}
+			I_{r} & 0\\\hline
+			0 & 0
+			\end{array}\right],\]
+			i pel Teorema \(\dots\) tenim que les matrius \(P\) i \(Q\) són invertibles. %FER %TODO
+			
+			Veiem ara que \(r\) és únic. Suposem que existeixen un nombre natural \(s\leq\min(m,n)\), una matriu invertible \(P_{1}\) d'ordre \(m\) sobre \(\mathbb{K}\) i una matriu invertible \(Q_{1}\) d'ordre \(n\) sobre \(\mathbb{K}\) tals que
+			\[P_{1}AQ_{1}=\left[\begin{array}{c|c}
+			I_{s} & 0\\\hline
+			0 & 0
+			\end{array}\right].\]
+			Hem de veure que \(r=s\). Suposem que \(r\leq s\). Tenim que
+			\[PAQ=\left[\begin{array}{c|c}
+			I_{r} & 0\\\hline
+			0 & 0
+			\end{array}\right]
+			\quad\text{i}\quad
+			P_{1}AQ_{1}=\left[\begin{array}{c|c}
+			I_{s} & 0\\\hline
+			0 & 0
+			\end{array}\right].\]
+			Com que les matrius \(P\), \(Q\), \(P_{1}\) i \(Q_{1}\) són invertibles tenim que
+			\[A=P^{-1}\left[\begin{array}{c|c}
+			I_{r} & 0\\\hline
+			0 & 0
+			\end{array}\right]Q^{-1}=P_{1}^{-1}\left[\begin{array}{c|c}
+			I_{s} & 0\\\hline
+			0 & 0
+			\end{array}\right]Q_{1}^{-1},\]
+			i per tant
+			\[P_{1}P^{-1}\left[\begin{array}{c|c}
+			I_{r} & 0\\\hline
+			0 & 0
+			\end{array}\right]=
+			\left[\begin{array}{c|c}
+			I_{s} & 0\\\hline
+			0 & 0
+			\end{array}\right]Q_{1}^{-1}Q.\]
+			
+			Denotem \(P_{2}=P_{1}P^{-1}\) i \(Q_{2}=Q_{1}^{-1}Q\), \(P_{2}=(p_{i,j})\) i \(Q_{2}=(q_{i,j})\) i tenim
+			\begin{multline*}
+			\left[\begin{array}{ccc|ccc}
+			p_{1,1} & \cdots & p_{1,r} & p_{1,r+1} & \cdots & p_{1,m} \\
+			\vdots & & \vdots & \vdots & & \vdots \\
+			p_{s,1} & \cdots & p_{s,r} & p_{s,r+1} & \cdots & p_{s,m} \\\hline
+			p_{s+1,1} & \cdots & p_{s+1,r} & p_{s+1,r+1} & \cdots & p_{s+1,m} \\
+			\vdots & & \vdots & \vdots & & \vdots \\
+			p_{m,1} & \cdots & p_{m,r} & p_{m,r+1} & \cdots & p_{m,m}
+			\end{array}\right]
+			\left[\begin{array}{c|c}
+			I_{r} & 0\\\hline
+			0 & 0
+			\end{array}\right]=\\=
+			\left[\begin{array}{c|c}
+			I_{s} & 0\\\hline
+			0 & 0
+			\end{array}\right]
+			\left[\begin{array}{ccc|ccc}
+			q_{1,1} & \cdots & q_{1,r} & q_{1,r+1} & \cdots & q_{1,n} \\
+			\vdots & & \vdots & \vdots & & \vdots \\
+			q_{s,1} & \cdots & q_{s,r} & q_{s,r+1} & \cdots & q_{s,n} \\\hline
+			q_{s+1,1} & \cdots & q_{s+1,r} & q_{s+1,r+1} & \cdots & q_{s+1,n} \\
+			\vdots & & \vdots & \vdots & & \vdots \\
+			q_{n,1} & \cdots & q_{n,r} & q_{n,r+1} & \cdots & q_{n,n}
+			\end{array}\right],
+			\end{multline*}
+			i per la proposició \myref{prop:producte de matrius en blocs} tenim que
+			\[\left[\begin{array}{ccc|ccc}
+			p_{1,1} & \cdots & p_{1,r} & 0 & \cdots & 0 \\
+			\vdots & & \vdots & \vdots & & \vdots \\
+			p_{s,1} & \cdots & p_{s,r} & 0 & \cdots & 0 \\\hline
+			p_{s+1,1} & \cdots & p_{s+1,r} & 0 & \cdots & 0 \\
+			\vdots & & \vdots & \vdots & & \vdots \\
+			p_{m,1} & \cdots & p_{m,r} & 0 & \cdots & 0
+			\end{array}\right]=
+			\left[\begin{array}{ccc|ccc}
+			q_{1,1,} & \cdots & q_{1,r} & q_{1,r+1} & \cdots & q_{1,n} \\
+			\vdots & & \vdots & \vdots & & \vdots \\
+			q_{s,1} & \cdots & q_{s,r} & q_{s,r+1} & \cdots & q_{s,n} \\\hline
+			0 & \cdots & 0 & 0 & \cdots & 0 \\
+			\vdots & & \vdots & \vdots & & \vdots \\
+			0 & \cdots & 0 & 0 & \cdots & 0
+			\end{array}\right].\]
+			Per tant
+			\[\left[\begin{matrix}
+			0 & \cdots & 0 \\
+			\vdots & & \vdots \\
+			0 & \cdots & 0
+			\end{matrix}\right]=
+			\left[\begin{matrix}
+			q_{1,r+1} & \cdots & q_{1,n} \\
+			\vdots & & \vdots \\
+			q_{s,r+1} & \cdots & q_{s,n}
+			\end{matrix}\right]\]
+			i trobem que
+			\[Q_{2}=\left[\begin{array}{ccc|ccc}
+			q_{1,1} & \cdots & q_{1,r} & 0 & \cdots & 0 \\
+			\vdots & & \vdots & \vdots & & \vdots \\
+			q_{s,1} & \cdots & q_{s,r} & 0 & \cdots & 0 \\\hline
+			q_{s+1,1} & \cdots & q_{s+1,r} & q_{s+1,r+1} & \cdots & q_{s+1,n} \\
+			\vdots & & \vdots & \vdots & & \vdots \\
+			q_{n,1} & \cdots & q_{n,r} & q_{n,r+1} & \cdots & q_{n,n}
+			\end{array}\right].\]
+			
+			Denotem per tant
+			\[Q_{2}=\left[\begin{array}{c|c}
+			Q'_{2} & 0_{s\times(n-r)} \\\hline
+			Q''_{2} & Q'''_{2}
+			\end{array}\right].\]
+			
+			Ara bé, pel que hem vist abans, existeixen un nombre natural \(t\leq\min(r,s)\), una matriu invertible \(P_{3}\) d'ordre \(s\) sobre \(\mathbb{K}\) i una matriu invertible \(Q_{3}\) d'ordre \(r\) sobre \(\mathbb{K}\) tals que
+			\[P_{3}Q''_{2}Q_{3}=\left[\begin{array}{c|c}
+			I_{t} & 0 \\\hline
+			0 & 0
+			\end{array}\right],\]
+			i com que, per hipòtesi, \(r\leq s\) tenim \(t\leq r\leq s\).
+			
+			Per tant per la proposició \myref{prop:producte de matrius en blocs} tenim que
+			\begin{multline*}
+			\left[\begin{array}{c|c}
+			P_{3} & 0_{s\times(n-s)} \\\hline
+			0_{(n-s)\times s} & I_{n-s}
+			\end{array}\right]
+			\left[\begin{array}{c|c}
+			Q'_{2} & 0_{s\times(n-r)} \\\hline
+			Q''_{2} & Q'''_{2}
+			\end{array}\right]
+			\left[\begin{array}{c|c}
+			Q_{3} & 0_{r\times(n-r)} \\\hline
+			0_{(n-r)\times r} & I_{n-r}
+			\end{array}\right]=\\=
+			\left[\begin{array}{c|c}
+				\begin{array}{c|c}
+				I_{t} & 0_{t\times(r-t)} \\\hline
+				0_{(r-t)\times t} & 0_{(s-t)\times(r-t)}
+				\end{array}
+			& 0_{s\times(n-r)} \\\hline
+			Q''_{2}Q_{3} & Q'''_{2}
+			\end{array}\right]=B.
+			\end{multline*} %REF producte de matrius invertibles és invertible?
+			Per la proposició \myref{prop:inversa del producte de matrius} trobem que la matriu \(B\) és invertible. Ara bé, per l'observació \myref{obs:matrius amb una fila nula no són invertibles} trobem que ha de ser \(r-t=0\) o, equivalentment, \(r=t\), com volíem veure. La demostració del cas \(s\leq r\) és anàloga.
+		\end{proof}
+	\end{theorem}
+	\begin{definition}[Rang]
+		\labelname{rang d'una matriu}\label{def:rang d'una matriu}
+		Siguin \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(P\) una matriu invertible d'ordre \(n\) sobre \(\mathbb{K}\) i \(Q\) una matriu invertible d'ordre \(m\) sobre \(\mathbb{K}\) tals que
+		\[PAQ=\left[\begin{array}{c|c}
+		I_{r} & 0 \\\hline
+		0 & 0
+		\end{array}\right].\]
+		Aleshores direm que \(r\) és el rang de \(A\) i denotarem \(\rang(A)=r\).
+		
+		Observem que aquesta definició té sentit pel \myref{thm:Teorema de la PAQ-reducció}.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:rang de la matriu transposada és el rang de la matriu}
+		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores \(\rang(A)=\rang(A^{t})\).
+		\begin{proof}
+			Per la definició de \myref{def:rang d'una matriu} tenim que existeixen una matriu \(P\) invertible d'ordre \(n\) sobre \(\mathbb{K}\) i una matriu \(Q\) invertible d'ordre \(m\) sobre \(\mathbb{K}\) tals que
+			\[PAQ=\left[\begin{array}{c|c}
+			I_{r} & 0 \\\hline
+			0 & 0
+			\end{array}\right].\]
+			
+			Ara bé, per la proposició \myref{prop:producte de matrius transposades} tenim que
+			\[Q^{t}A^{t}P^{t}=\left[\begin{array}{c|c}
+			I_{r} & 0 \\\hline
+			0 & 0
+			\end{array}\right].\]
+			Per la proposició \myref{prop:transposada d'una invertible és invertible} tenim que les matrius \(Q^{t}\) i \(P^{t}\) són invertibles, i per tant, per la definició de \myref{def:rang d'una matriu} tenim que \(\rang{A^{t}}=r\).
+		\end{proof}
+	\end{proposition}
+	\begin{theorem}
+		\label{thm:una matriu és invertible sii és producte de matrius elementals}
+		Sigui \(A\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores \(A\) és invertible si i només si \(A\) és producte de matrius elementals.
+		\begin{proof}
+			wu
+		\end{proof}
+	\end{theorem}
 %	\subsection{Càlcul de la inversa d'una matriu invertible}
 %	\section{Sistemes d'equacions lineals}
-%	\subsection{Teorema de Rouché-Frobenius}
+%	\subsection{Teorema de Rouché-Frobenius}	% Mètode de Gauss?
 %	\subsection{Determinant d'una matriu}
 %
 %\chapter{Espais vectorials i aplicacions lineals}
