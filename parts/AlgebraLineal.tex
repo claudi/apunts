@@ -269,9 +269,20 @@
 		Aleshores \(A\) no és invertible.
 	\end{observation}
 	\begin{proposition}
+		\label{prop:el producte de matrius invertibles és invertible}
+		Siguin \(A\) i \(B\) dues matrius invertibles d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores la matriu \(AB\) és invertible.
+		\begin{proof}
+			Per la proposició \ref{prop:associativitat producte de matrius} i la definició de \myref{def:matriu invertible} tenim que
+			\[(AB)(B^{-1}A^{-1})=\Id\quad\text{i}\quad(B^{-1}A^{-1})(AB)=\Id,\]
+			i de nou per la definició tenim que \(AB\) és invertible.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
 		\label{prop:inversa del producte de matrius}
 		Siguin \(A\) i \(B\) dues matrius invertibles d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores
 		\[(AB)^{-1}=B^{-1}A^{-1}.\]
+		
+		Aquest enunciat té sentit per la proposició \myref{prop:el producte de matrius invertibles és invertible}.
 		\begin{proof}
 			Per la definició de \myref{def:matriu invertible} tenim que
 			\[(AB)^{-1}AB=I_{n},\]
@@ -518,6 +529,16 @@
 			En tenim prou amb veure que \(P_{i,j}(A)=P_{i,j}(I_{m})A\), \(D_{i,\lambda}(A)=D_{i,\lambda}(I_{m})A\) i \(E_{i,j,\lambda}(A)=E_{i,j,\lambda}(I_{m})A\) i que \(P_{i,j}(A^{t})^{t}=AP_{i,j}(I_{n})\), \(D_{i,\lambda}(A^{t})^{t}=AD_{i,\lambda}(I_{n})\) i \(E_{i,j,\lambda}(A^{t})^{t}=AE_{i,j,\lambda}(I_{n})\), i això és conseqüència de la definició de \myref{def:producte de matrius}.
 		\end{proof}
 	\end{proposition}
+	\begin{definition}[Matriu elemental]
+		\labelname{matriu elemental}\label{def:matriu elemental}
+		Sigui \(P\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\) tal que existeixi una sèrie de transformacions elementals tals que per a tota matriu \(A\) de mida \(m\times n\) sobre \(\mathbb{K}\) tenim \(f(A)=PA\). Aleshores direm que \(P\) és una matriu elemental.
+		
+		Aquesta definició té sentit per la proposició \myref{prop:transformacions elementals i matrius elementals}.
+	\end{definition}
+	\begin{observation}
+		\label{obs:producte de matrius elementals és matriu elemental}
+		Siguin \(P\) i \(Q\) dues matrius elementals d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores \(PQ\) és una matriu elemental.
+	\end{observation}
 	\begin{notation}
 		Denotarem les transformacions elementals per files \(P_{i,j}\) com \(F_{i}\leftrightarrow F_{j}\), \(D_{i,\lambda}\) com \(F_{i}\rightarrow\lambda F_{i}\) i \(E_{i,j,\lambda}\) com \(F_{i}\rightarrow F_{i}+\lambda F_{j}\).
 		
@@ -525,6 +546,13 @@
 		
 		Si apliquem una transformació elemental per files a una matriu transposada i transposem el resultat denotarem \(P_{i,j}\) com \(C_{i}\leftrightarrow C_{j}\), \(D_{i,\lambda}\) com \(C_{i}\rightarrow\lambda C_{i}\) i \(E_{i,j,\lambda}\) com \(C_{i}\rightarrow C_{i}+\lambda C_{j}\) i direm que són transformacions elementals per columnes.
 	\end{notation}
+	\begin{proposition}
+		\label{prop:les matrius elementals són invertibles}
+		Sigui \(P\) una matriu elemental d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores \(P\) és una matriu invertible.
+		\begin{proof}
+			En tenim prou amb veure que \(P_{i,j}^{-1}=P_{i,j}\), \(D_{i,\lambda}^{-1}=D_{i,\lambda^{-1}}\) i \(E_{i,j,\lambda}^{-1}=E_{i,j,-\lambda}\). Per tant, per la definició de \myref{def:matriu elemental} i la definició de \myref{def:matriu invertible} tenim que \(P\) és una matriu invertible.
+		\end{proof}
+	\end{proposition}
 	\subsection{Matrius esglaonades i mètode de Gauss}
 	\begin{definition}[Matriu esglaonada]
 		\labelname{matriu esglaonada}\label{def:matriu esglaonada}
@@ -590,13 +618,13 @@
 		\end{proof}
 	\end{proposition}
 	\begin{corollary}
-		\label{col:es pot esglaonar qualsevol matriu per columnes}
+		\label{corollary:es pot esglaonar qualsevol matriu per columnes}
 		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores \(A\) es pot esglaonar per columnes.
 	\end{corollary}
-	\subsection{Teorema de la \texorpdfstring{\(PAQ\)}-reducció}
+	\subsection{Teorema de la \texorpdfstring{\(PAQ\)}{}-reducció}
 	\begin{theorem}[Teorema de la \(PAQ\)-reducció]
 		\labelname{Teorema de la $PAQ$-reducció}\label{thm:Teorema de la PAQ-reducció}
-		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores existeixen un únic nombre natural \(r\) amb \(r\leq\min(m,n)\), una matriu invertible \(P\) d'ordre \(m\) sobre \(\mathbb{K}\) i una matriu invertible \(Q\) d'ordre \(n\) sobre \(\mathbb{K}\) tals que
+		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores existeixen un únic nombre natural \(r\) satisfent \(r\leq\min(m,n)\), una matriu elemental \(P\) d'ordre \(m\) sobre \(\mathbb{K}\) i una matriu elemental \(Q\) d'ordre \(n\) sobre \(\mathbb{K}\) tals que
 		\[PAQ=\left[\begin{array}{c|c}
 		I_{r} & 0\\\hline
 		0 & 0
@@ -604,7 +632,7 @@
 		\begin{proof}
 			Denotem \(A=(a_{i,j})\). Si \(a_{i,j}=0\) per a tot \(i\in\{1,\dots,m\}\) i \(j\in\{1,\dots,n\}\) aleshores tenim \(r=0\) i hem acabat. Suposem doncs que existeixen \(i\in\{1,\dots,m\}\) i \(j\in\{1,\dots,n\}\) tals que \(a_{i,j}\neq0\).
 			
-			Per la proposició \myref{prop:es pot esglaonar qualsevol matriu per files} tenim que existeix una matriu \(P\) d'ordre \(m\) sobre \(\mathbb{K}\) tal que \(PA\) està esglaonada per files. Per la definició de \myref{def:matriu esglaonada} tenim que existeixen \(j_{i}\) per a tot \(i\in\{1,\dots,r\}\) amb \(j_{1}<\dots<j_{r}\) tals que per a tot \(j<j_{i}\) tenim \(a_{i,j}=0\) i \(a_{i,j_{i}}=1\). Fent les transformacions elementals
+			Per la proposició \myref{prop:es pot esglaonar qualsevol matriu per files} tenim que existeix una matriu elemental \(P\) d'ordre \(m\) sobre \(\mathbb{K}\) tal que \(PA\) està esglaonada per files. Per la definició de \myref{def:matriu esglaonada} tenim que existeixen \(j_{i}\) per a tot \(i\in\{1,\dots,r\}\) amb \(j_{1}<\dots<j_{r}\) tals que per a tot \(j<j_{i}\) tenim \(a_{i,j}=0\) i \(a_{i,j_{i}}=1\). Fent les transformacions elementals
 			\[C_{1}\leftrightarrow C_{j_{1}},\quad C_{2}\leftrightarrow C_{j_{2}},\dots,C_{r}\leftrightarrow C_{j_{r}}\]
 			a la matriu \(PA\) obtenim la matriu
 			\[A_{1}=\left[\begin{array}{cccc|ccc}
@@ -617,30 +645,37 @@
 			0 & \cdots & 0 & 0 & 0 & \cdots & 0
 			\end{array}\right],\]
 			i fent a la matriu \(A_{1}\) les transformacions elementals
-			\[C_{k_{i}}\rightarrow C_{k_{i}}-b_{i,k_{i}}C_{i},\quad\text{per a }k_{i}\in\{i+1,\dots,n\}\]
-			per a tot \(i\in\{1,\dots,r\}\), i per la proposició \myref{prop:transformacions elementals i matrius elementals} tenim que existeix una matriu \(P\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que
+			\begin{align*}
+			C_{k_{1}}\rightarrow C_{k_{1}}-b_{1,k_{1}}C_{1},\quad&\text{per a }k_{1}\in\{2,\dots,n\} \\
+			C_{k_{2}}\rightarrow C_{k_{2}}-b_{2,k_{2}}C_{2},\quad&\text{per a }k_{2}\in\{3,\dots,n\} \\
+			\vdots & \\
+			C_{k_{r}}\rightarrow C_{k_{r}}-b_{r,k_{r}}C_{r},\quad&\text{per a }k_{r}\in\{r+1,\dots,n\},
+			\end{align*}
+			i per la proposició \myref{prop:transformacions elementals i matrius elementals} tenim que existeix una matriu \(P\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que
 			\[PAQ=\left[\begin{array}{c|c}
 			I_{r} & 0\\\hline
 			0 & 0
 			\end{array}\right],\]
-			i pel Teorema \(\dots\) tenim que les matrius \(P\) i \(Q\) són invertibles. %FER %TODO
+			i per la definició de \myref{prop:transformacions elementals i matrius elementals} tenim que les matrius \(P\) i \(Q\) són matrius elementals. %FER %TODO ?
 			
-			Veiem ara que \(r\) és únic. Suposem que existeixen un nombre natural \(s\leq\min(m,n)\), una matriu invertible \(P_{1}\) d'ordre \(m\) sobre \(\mathbb{K}\) i una matriu invertible \(Q_{1}\) d'ordre \(n\) sobre \(\mathbb{K}\) tals que
+			Veiem ara que \(r\) és únic. Suposem que existeixen un nombre natural \(s\leq\min(m,n)\), una matriu elemental \(P_{1}\) d'ordre \(m\) sobre \(\mathbb{K}\) i una matriu elemental \(Q_{1}\) d'ordre \(n\) sobre \(\mathbb{K}\) tals que
 			\[P_{1}AQ_{1}=\left[\begin{array}{c|c}
 			I_{s} & 0\\\hline
 			0 & 0
 			\end{array}\right].\]
-			Hem de veure que \(r=s\). Suposem que \(r\leq s\). Tenim que
+			Hem de veure que \(r=s\). Suposem que \(r\leq s\).
+			
+			Tenim que
 			\[PAQ=\left[\begin{array}{c|c}
 			I_{r} & 0\\\hline
 			0 & 0
-			\end{array}\right]
-			\quad\text{i}\quad
-			P_{1}AQ_{1}=\left[\begin{array}{c|c}
+			\end{array}\right]\]
+			i
+			\[P_{1}AQ_{1}=\left[\begin{array}{c|c}
 			I_{s} & 0\\\hline
 			0 & 0
 			\end{array}\right].\]
-			Com que les matrius \(P\), \(Q\), \(P_{1}\) i \(Q_{1}\) són invertibles tenim que
+			Com que, per la proposició \myref{prop:les matrius elementals són invertibles}, les matrius \(P\), \(Q\), \(P_{1}\) i \(Q_{1}\) són invertibles tenim que
 			\[A=P^{-1}\left[\begin{array}{c|c}
 			I_{r} & 0\\\hline
 			0 & 0
@@ -658,7 +693,7 @@
 			0 & 0
 			\end{array}\right]Q_{1}^{-1}Q.\]
 			
-			Denotem \(P_{2}=P_{1}P^{-1}\) i \(Q_{2}=Q_{1}^{-1}Q\), \(P_{2}=(p_{i,j})\) i \(Q_{2}=(q_{i,j})\) i tenim
+			Denotem \(P_{2}=P_{1}P^{-1}\), \(Q_{2}=Q_{1}^{-1}Q\), \(P_{2}=(p_{i,j})\) i \(Q_{2}=(q_{i,j})\) i tenim
 			\begin{multline*}
 			\left[\begin{array}{ccc|ccc}
 			p_{1,1} & \cdots & p_{1,r} & p_{1,r+1} & \cdots & p_{1,m} \\
@@ -758,8 +793,8 @@
 			& 0_{s\times(n-r)} \\\hline
 			Q''_{2}Q_{3} & Q'''_{2}
 			\end{array}\right]=B.
-			\end{multline*} %REF producte de matrius invertibles és invertible?
-			Per la proposició \myref{prop:inversa del producte de matrius} trobem que la matriu \(B\) és invertible. Ara bé, per l'observació \myref{obs:matrius amb una fila nula no són invertibles} trobem que ha de ser \(r-t=0\) o, equivalentment, \(r=t\), com volíem veure. La demostració del cas \(s\leq r\) és anàloga.
+			\end{multline*}
+			Per la proposició \myref{prop:el producte de matrius invertibles és invertible} trobem que la matriu \(B\) és invertible. Ara bé, per l'observació \myref{obs:matrius amb una fila nula no són invertibles} trobem que ha de ser \(r-t=s-t=0\), i per tant \(r=s\), com volíem veure. La demostració del cas \(s\leq r\) és anàloga.
 		\end{proof}
 	\end{theorem}
 	\begin{definition}[Rang]
@@ -791,16 +826,71 @@
 			Per la proposició \myref{prop:transposada d'una invertible és invertible} tenim que les matrius \(Q^{t}\) i \(P^{t}\) són invertibles, i per tant, per la definició de \myref{def:rang d'una matriu} tenim que \(\rang{A^{t}}=r\).
 		\end{proof}
 	\end{proposition}
-	\begin{theorem}
-		\label{thm:una matriu és invertible sii és producte de matrius elementals}
-		Sigui \(A\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores \(A\) és invertible si i només si \(A\) és producte de matrius elementals.
+	\begin{proposition}
+		\label{prop:una matriu invertible és producte de matrius elementals}
+		Sigui \(A\) una matriu invertible d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores \(A\) és una matriu elemental.
 		\begin{proof}
-			wu
+			Pel \myref{thm:Teorema de la PAQ-reducció} tenim que existeixen dues matrius invertibles \(P\) i \(Q\) d'ordre \(n\) sobre \(\mathbb{K}\) tals que
+			\[PAQ=\left[\begin{array}{c|c}
+			I_{r} & 0\\\hline
+			0 & 0
+			\end{array}\right].\]
+			
+			Ara bé, per la proposició \myref{prop:el producte de matrius invertibles és invertible} tenim que la matriu
+			\[\left[\begin{array}{c|c}
+			I_{r} & 0\\\hline
+			0 & 0
+			\end{array}\right]\]
+			ha de ser invertible, i per l'observació \myref{obs:matrius amb una fila nula no són invertibles} trobem que ha de ser \(r=n\). Per tant tenim \(PAQ=I_{n}\) i tenim que \(A=P^{-1}Q^{-1}\), i per l'observació \myref{obs:producte de matrius elementals és matriu elemental} tenim que \(A\) és una matriu elemental.
 		\end{proof}
-	\end{theorem}
+	\end{proposition}
+	\begin{corollary}
+		Sigui \(A\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores \(A\) és invertible si i només si \(\rang(A)=n\).
+	\end{corollary}
+	\begin{observation}
+		\label{obs:rang d'una matriu és invariant pel producte amb invertibles}
+		Siguin \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(P\) una matriu invertible d'ordre \(m\) sobre \(\mathbb{K}\) i \(Q\) una matriu invertible d'ordre \(n\) sobre \(\mathbb{K}\). Aleshores
+		\[\rang(A)=\rang(PAQ).\]
+		%FER \begin{proof}\end{proof}
+	\end{observation}
 %	\subsection{Càlcul de la inversa d'una matriu invertible}
-%	\section{Sistemes d'equacions lineals}
-%	\subsection{Teorema de Rouché-Frobenius}	% Mètode de Gauss?
+	\section{Sistemes d'equacions lineals}
+	\subsection{Sistemes d'equacions lineals}
+	\begin{definition}[Sistema d'equacions lineals]
+		\labelname{sistema d'equacions lineals}\label{def:sistema d'equacions lineals}
+		Siguin \(\mathbb{K}\) un cos i \(\{a_{i,j}\}_{1\leq i\leq m}^{1\leq j\leq n}\), \(\{b_{i}\}_{1\leq i\leq m}\) i \(\{x_{i}\}_{1\leq i\leq n}\) elements de \(\mathbb{K}\). Aleshores direm que l'expressió
+		\begin{equation}
+		\label{eq:def:sistema d'equacions lineals: 1}
+		\begin{cases}
+		a_{1,1}x_{1}+\dots+a_{1,n}x_{n}=b_{1}\\
+		\hfill\vdots\hfill\hfill\\
+		a_{m,1}x_{1}+\dots+a_{m,n}x_{n}=b_{m}
+		\end{cases}
+		\end{equation}
+		és un sistema d'equacions lineals sobre \(\mathbb{K}\). Direm que \(x_{1},\dots,x_{n}\) són les incògnites.
+		
+		Si existeixen \(a_{1},\dots,a_{n}\) elements de \(\mathbb{K}\) tals que
+		\[\begin{cases}
+		a_{1,1}a_{1}+\dots+a_{1,n}a_{n}=b_{1} \\
+		\hfill\vdots\hfill\hfill\\
+		a_{m,1}a_{1}+\dots+a_{m,n}a_{n}=b_{m}
+		\end{cases}\]
+		aleshores direm que \((a_{1},\dots,a_{n})\in\mathbb{K}^{n}\) és una solució del sistema \eqref{eq:def:sistema d'equacions lineals: 1}.
+		
+		Direm que el sistema \eqref{eq:def:sistema d'equacions lineals: 1} és compatible si existeix alguna solució, i direm que o bé és compatible determinat si aquesta solució és única o bé compatible indeterminat si la solució no és única.
+	\end{definition}
+	\begin{notation}
+		Sigui
+		\begin{equation}
+		\begin{cases}
+		a_{1,1}x_{1}+\dots+a_{1,n}x_{n}=b_{1}\\
+		\hfill\vdots\hfill\hfill\\
+		a_{m,1}x_{1}+\dots+a_{m,n}x_{n}=b_{m}
+		\end{cases}
+		\end{equation}
+		un sistema d'equacions lineals sobre un cos \(\mathbb{K}\).
+	\end{notation}
+	\subsection{Teorema de Rouché-Frobenius}	% Mètode de Gauss?
 %	\subsection{Determinant d'una matriu}
 %
 %\chapter{Espais vectorials i aplicacions lineals}
