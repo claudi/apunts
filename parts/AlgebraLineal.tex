@@ -854,83 +854,101 @@
 		%FER \begin{proof}\end{proof}
 	\end{observation}
 %	\subsection{Càlcul de la inversa d'una matriu invertible}
-	\section{Sistemes d'equacions lineals}
-	\subsection{Mètode de Gauss}
-	\begin{definition}[Sistema d'equacions lineals]
-		\labelname{sistema d'equacions lineals}\label{def:sistema d'equacions lineals}
-		Siguin \(\mathbb{K}\) un cos i \(\{a_{i,j}\}_{1\leq i\leq m}^{1\leq j\leq n}\), \(\{b_{i}\}_{1\leq i\leq m}\) i \(\{x_{i}\}_{1\leq i\leq n}\) elements de \(\mathbb{K}\). Aleshores direm que l'expressió
-		\begin{equation}
-		\label{eq:def:sistema d'equacions lineals: 1}
-		\begin{cases}
-		a_{1,1}x_{1}+\dots+a_{1,n}x_{n}=b_{1}\\
-		\hfill\vdots\hfill\hfill\\
-		a_{m,1}x_{1}+\dots+a_{m,n}x_{n}=b_{m}
-		\end{cases}
-		\end{equation}
-		és un sistema d'equacions lineals sobre \(\mathbb{K}\). Direm que \(x_{1},\dots,x_{n}\) són les incògnites.
-		
-		Si existeixen \(a_{1},\dots,a_{n}\) elements de \(\mathbb{K}\) tals que
-		\[\begin{cases}
-		a_{1,1}a_{1}+\dots+a_{1,n}a_{n}=b_{1} \\
-		\hfill\vdots\hfill\hfill\\
-		a_{m,1}a_{1}+\dots+a_{m,n}a_{n}=b_{m}
-		\end{cases}\]
-		aleshores direm que \((a_{1},\dots,a_{n})\in\mathbb{K}^{n}\) és una solució del sistema \eqref{eq:def:sistema d'equacions lineals: 1}.
-		
-		Direm que el sistema \eqref{eq:def:sistema d'equacions lineals: 1} és compatible si existeix alguna solució, i direm que o bé és compatible determinat si aquesta solució és única o bé compatible indeterminat si la solució no és única.
-		
-		Direm que dos sistemes d'equacions lineals són equivalents si tenen les mateixes solucions.
-	\end{definition}
-	\begin{notation}
-		Sigui
-		\begin{equation}
-		\begin{cases}
-		a_{1,1}x_{1}+\dots+a_{1,n}x_{n}=b_{1}\\
-		\hfill\vdots\hfill\hfill\\
-		a_{m,1}x_{1}+\dots+a_{m,n}x_{n}=b_{m}
-		\end{cases}
-		\end{equation}
-		un sistema d'equacions lineals sobre un cos \(\mathbb{K}\). Aleshores posarem
-		\[x=\left[\begin{matrix}
-		x_{1} \\
-		\vdots \\
-		x_{n}
-		\end{matrix}\right],\quad b=\left[\begin{matrix}
-		b_{1} \\
-		\vdots \\
-		b_{n}
-		\end{matrix}\right]\]
-		i \(A=(a_{i,j})\) i direm que \(A\) és la matriu associada al sistema, \(\left[A\vert b\right]\) és la matriu ampliada del sistema i escriurem el sistema en forma matricial fent
-		\[Ax=b.\]
-	\end{notation}
-	\begin{theorem}[Mètode de Gauss]
-		Sigui \(\mathbb{K}\) un cos, \(\left[A\vert b\right]\in M_{m\times(n+1)}(\mathbb{K})\) la matriu ampliada d'un sistema d'equacions i \(P\) una matriu invertible d'ordre \(n\) sobre \(\mathbb{K}\). Aleshores els sistemes d'equacions
-		\[Ax=b\quad\text{i}\quad PAx'=Pb\]
-		són equivalents.
-		\begin{proof} %Potser coses de cossos? Lo veo patatero
-			Considerem el sistema d'equacions lineals
-			\[PAx=Pb.\]
-			
-			Com que, per hipòtesi, la matriu \(P\) és invertible, per la definició de \myref{def:matriu invertible}, tenim que existeix una matriu \(P^{-1}\) tal que \(P^{-1}P=I_{n}\). Per tant tenim que
-			\[P^{-1}PAx=P^{-1}Pb\]
-			i trobem
-			\[Ax=b.\qedhere\]
-		\end{proof}
-	\end{theorem}
-	\subsection{Teorema de Rouché-Frobenius}
-	\begin{theorem}[Teorema de Rouché-Frobenius]
-		Sigui \(Ax=b\) un sistema d'equacions lineals sobre un cos \(\mathbb{K}\) amb \(A\in M_{m\times n}(\mathbb{K})\). Aleshores% el sistema és compatible si i només si
+%	\section{Sistemes d'equacions lineals}
+%	\subsection{Mètode de Gauss}
+%	\begin{definition}[Sistema d'equacions lineals]
+%		\labelname{sistema d'equacions lineals}\label{def:sistema d'equacions lineals}
+%		Siguin \(\mathbb{K}\) un cos i \(\{a_{i,j}\}_{1\leq i\leq m}^{1\leq j\leq n}\), \(\{b_{i}\}_{1\leq i\leq m}\) i \(\{x_{i}\}_{1\leq i\leq n}\) elements de \(\mathbb{K}\). Aleshores direm que l'expressió
+%		\begin{equation}
+%		\label{eq:def:sistema d'equacions lineals: 1}
+%		\begin{cases}
+%		a_{1,1}x_{1}+\dots+a_{1,n}x_{n}=b_{1}\\
+%		\hfill\vdots\hfill\hfill\\
+%		a_{m,1}x_{1}+\dots+a_{m,n}x_{n}=b_{m}
+%		\end{cases}
+%		\end{equation}
+%		és un sistema d'equacions lineals sobre \(\mathbb{K}\). Direm que \(x_{1},\dots,x_{n}\) són les incògnites.
+%		
+%		Si existeixen \(a_{1},\dots,a_{n}\) elements de \(\mathbb{K}\) tals que
+%		\[\begin{cases}
+%		a_{1,1}a_{1}+\dots+a_{1,n}a_{n}=b_{1} \\
+%		\hfill\vdots\hfill\hfill\\
+%		a_{m,1}a_{1}+\dots+a_{m,n}a_{n}=b_{m}
+%		\end{cases}\]
+%		aleshores direm que \((a_{1},\dots,a_{n})\in\mathbb{K}^{n}\) és una solució del sistema \eqref{eq:def:sistema d'equacions lineals: 1}.
+%		
+%		Direm que el sistema \eqref{eq:def:sistema d'equacions lineals: 1} és compatible si existeix alguna solució, i direm que o bé és compatible determinat si aquesta solució és única o bé compatible indeterminat si la solució no és única.
+%		
+%		Direm que dos sistemes d'equacions lineals són equivalents si tenen les mateixes solucions.
+%	\end{definition}
+%	\begin{notation}
+%		Sigui
+%		\begin{equation}
+%		\begin{cases}
+%		a_{1,1}x_{1}+\dots+a_{1,n}x_{n}=b_{1}\\
+%		\hfill\vdots\hfill\hfill\\
+%		a_{m,1}x_{1}+\dots+a_{m,n}x_{n}=b_{m}
+%		\end{cases}
+%		\end{equation}
+%		un sistema d'equacions lineals sobre un cos \(\mathbb{K}\). Aleshores posarem
+%		\[x=\left[\begin{matrix}
+%		x_{1} \\
+%		\vdots \\
+%		x_{n}
+%		\end{matrix}\right],\quad b=\left[\begin{matrix}
+%		b_{1} \\
+%		\vdots \\
+%		b_{n}
+%		\end{matrix}\right]\]
+%		i \(A=(a_{i,j})\) i direm que \(A\) és la matriu associada al sistema, \(\left[A\vert b\right]\) és la matriu ampliada del sistema i escriurem el sistema en forma matricial fent
+%		\[Ax=b.\]
+%	\end{notation}
+%	\begin{theorem}[Mètode de Gauss]
+%		Sigui \(\mathbb{K}\) un cos, \(\left[A\vert b\right]\in M_{m\times(n+1)}(\mathbb{K})\) la matriu ampliada d'un sistema d'equacions i \(P\) una matriu invertible d'ordre \(n\) sobre \(\mathbb{K}\). Aleshores els sistemes d'equacions
+%		\[Ax=b\quad\text{i}\quad PAx'=Pb\]
+%		són equivalents.
+%		\begin{proof} %Potser coses de cossos? Lo veo patatero
+%			Considerem el sistema d'equacions lineals
+%			\[PAx=Pb.\]
+%			
+%			Com que, per hipòtesi, la matriu \(P\) és invertible, per la definició de \myref{def:matriu invertible}, tenim que existeix una matriu \(P^{-1}\) tal que \(P^{-1}P=I_{n}\). Per tant tenim que
+%			\[P^{-1}PAx=P^{-1}Pb\]
+%			i trobem
+%			\[Ax=b.\qedhere\]
+%		\end{proof}
+%	\end{theorem}
+%	\subsection{Teorema de Rouché-Frobenius}
+%	\begin{theorem}[Teorema de Rouché-Frobenius]
+%		Sigui \(Ax=b\) un sistema d'equacions lineals sobre un cos \(\mathbb{K}\) amb \(A\in M_{m\times n}(\mathbb{K})\) i \(r=\rang(A)\). Aleshores el sistema és compatible si i només si
 %		\[\rang(A\vert b)=\rang(A).\]
-		\[\begin{cases}
-		\rang(A\vert b)=\rang(A) & \begin{cases}
-		\rang(A)=n & \text{el sistema és determinat} \\
-		\rang(A)<n & \text{el sistema és indeterminat}
-		\end{cases} \\
-		\rang(A\vert b)\neq\rang(A) & \text{es sistema és incompatible}
-		\end{cases}\]
-	\end{theorem}
-%	\subsection{Determinant d'una matriu}
-%
+%		A demés, Si \(\rang(A)=n\) el sistema és compatible determinat i si \(\rang(A)<n\) el sistema és compatible indeterminat.
+%		\begin{proof}
+%			
+%		\end{proof}
+%	\end{theorem}
+	\section{Determinant d'una matriu}
+	\subsection{Propietats dels determinants}
+	\begin{definition}[Determinant]
+		\labelname{determinant d'una matriu}\label{def:determinant d'una matriu}
+		Siguin \(\mathbb{K}\) un cos i \(\det\colon M_{n}(\mathbb{K})\) una aplicació que satisfà per a tot \(i\in\{1,\dots,n\}\) i \(j\in\{i+1,\dots,n\}\) i per a tot \(C_{i}\in M_{n\times1}(\mathbb{K})\)
+		\begin{enumerate}
+			\item Per a tot \(C'_{j}\in M_{n\times1}(\mathbb{K})\) es satisfà
+			\begin{multline*}
+			\det(C_{1},\dots,C_{i-1},C_{i}+C'_{i},C_{i+1},\dots,C_{n})=\\
+			=\det(C_{1},\dots,C_{n})+\det(C_{1},\dots,C_{i-1},C'_{i},C_{i+1},\dots,C_{n}).
+			\end{multline*}
+			\item Per a tot \(\alpha\in\mathbb{K}\) es satisfà 
+			\[\det(C_{1},\dots,C_{i-1},\alpha C_{i},C_{i+1},\dots,C_{n})=\alpha\det(C_{1},\dots,C_{n})\]
+			\item Si \(C_{i}=C_{j}\) es satisfà
+			\[\det(C_{1},\dots,C_{n})=0.\]
+			\item \(\det(I_{n})=1\).
+		\end{enumerate}
+		Aleshores direm que \(\det\) és un determinant.
+	\end{definition}
+	\begin{proposition}
+		
+	\end{proposition}
+
 %\chapter{Espais vectorials i aplicacions lineals}
 %	\section{Espais vectorials}
 %	
