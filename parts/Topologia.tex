@@ -1,0 +1,48 @@
+\documentclass[../Apunts.tex]{subfiles}
+
+\begin{document}
+\chapter{Les topologies}
+	\section{Espais mètrics}
+	\subsection{Distància en conjunts arbitraris}
+	\begin{definition}[Espai mètric]
+		\labelname{espai mètric}\label{def:espai mètric}
+		\labelname{distància}\label{def:distància}
+		Sigui \(X\) un conjunt i \(d\colon X\times X\longrightarrow\mathbb{R}\) una aplicació que per a tot \(x\), \(y\) i \(z\) de \(X\) satisfà
+		\begin{enumerate}
+			\item \(d(x,y)=0\) si i només si \(x=y\).
+			\item \(d(x,y)=d(y,x)\).
+			\item \(d(x,y)\leq d(x,z)+d(z,y)\).
+			\item \(d(x,y)\leq0\).
+		\end{enumerate}
+		Aleshores direm que \((X,d)\) és un espai mètric. També direm que \(d\) és la distància o mètrica de l'espai mètric.
+	\end{definition}
+	\begin{definition}[Bola]
+		\labelname{bola}\label{def:bola}
+		Siguin \((X,d)\) un espai mètric, \(a\) un element de \(X\) i \(r>0\) un nombre real. Aleshores definim
+		\[\B(a,r)=\{x\in X\mid d(x,a)<r\}\]
+		com la bola de radi \(r\) centrada en \(a\).
+	\end{definition}
+	\begin{definition}[Obert]
+		\labelname{obert}\label{def:obert}
+		Sigui \((X,d)\) un espai mètric tal que per a tot element \(a\) de \(X\) existeix un \(\varepsilon>0\) real tal que \(\B(a,\varepsilon)\subset A\). Aleshores direm que \(X\) és un obert.
+	\end{definition}
+	\begin{proposition}
+		Siguin \((X,d)\) un espai mètric i \(\B(a,r)\) una bola de \(X\). Aleshores \(\B(a,r)\) és un obert.
+		\begin{proof}
+			Prenem un element \(b\in\B(a,r)\) i definim
+			\[\varepsilon=\frac{r-d(a,b)}{2}.\]
+			Aleshores considerem la bola \(\B(b,\varepsilon)\) i tenim que \(\B(b,\varepsilon)\subset\B(a,r)\)
+		\end{proof}
+	\end{proposition}
+	\subsection{L'espai topològic}
+	\subsection{Entorns, interior i adherència}
+	\subsection{Aplicacions contínues}
+	\subsection{Subespais}
+	\subsection{La topologia producte}
+	\subsection{La topologia quocient}
+	\subsection{Espais compactes}
+	\subsection{Espais de Hausdorff}
+	\subsection{Connexió}
+	\subsection{Varietats}
+	\subsection{Teorema de classificació de les superfícies compactes}
+\end{document}

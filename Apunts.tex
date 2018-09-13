@@ -19,9 +19,13 @@
 \setsecnumdepth{subsection}
 \settocdepth{subsection}
 
-\setlength\cftpartnumwidth{2em}
-\setlength\cftchapternumwidth{2em}
-\setlength\cftsectionindent{2em}
+\renewcommand\partnumberlinebox[2]{#2\hspace{1em}}
+\renewcommand\chapternumberlinebox[2]{#2\hspace{1em}}
+%\renewcommand\sectionnumberlinebox[2]{#2\hspace{1em}}
+
+%\setlength\cftpartnumwidth{0em}
+%\setlength\cftchapternumwidth{2em}
+%\setlength\cftsectionindent{2em}
 
 %\renewcommand*{\cftdotsep}{1} %separació punts horitzontals a l'índex
 \setpnumwidth{3em}
@@ -203,10 +207,16 @@
 		\subfile{parts/Intro.tex}
 	\part{Càlcul en diverses variables i optimització}
 		\subfile{parts/CDVO.tex}
+	\part{Anàlisi matemàtica}
+		\subfile{parts/AM.tex}
 	\part{Estructures algebraiques}
 		\subfile{parts/EA.tex}
 	\part{Mètodes numèrics}
 		\subfile{parts/MN.tex}
+	\part{Topologia}
+		\subfile{parts/Topologia.tex}
+	\part{Equacions diferencials ordinàries I}
+		\subfile{parts/EDOS1.tex}
 \end{document} %WEB TO' MOLONA: http://www-history.mcs.st-and.ac.uk/BiogIndex.html
 
 % Canviar \[ per {$$ i \] per $$}, definir commanda per [x] i canviar-les totes. Potser amb paràmetres (per barra, claudators i superíndexos) Potser dues commandes per overline i claudators
