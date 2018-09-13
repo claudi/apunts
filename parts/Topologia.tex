@@ -27,13 +27,26 @@
 		Sigui \((X,d)\) un espai mètric tal que per a tot element \(a\) de \(X\) existeix un \(\varepsilon>0\) real tal que \(\B(a,\varepsilon)\subset A\). Aleshores direm que \(X\) és un obert.
 	\end{definition}
 	\begin{proposition}
+	\label{prop:les boles són oberts}
 		Siguin \((X,d)\) un espai mètric i \(\B(a,r)\) una bola de \(X\). Aleshores \(\B(a,r)\) és un obert.
 		\begin{proof}
 			Prenem un element \(b\in\B(a,r)\) i definim
-			\[\varepsilon=\frac{r-d(a,b)}{2}.\]
-			Aleshores considerem la bola \(\B(b,\varepsilon)\) i tenim que \(\B(b,\varepsilon)\subset\B(a,r)\)
+			\begin{equation}
+			\label{prop:les boles són oberts:eq1}
+				\varepsilon=\frac{r-d(a,b)}{2}.
+			\end{equation}
+			Aleshores considerem la bola \(\B(b,\varepsilon)\) i tenim que \(\B(b,\varepsilon)\subset\B(a,r)\), ja que si prenem un element \(x\) de \(\B(b,\varepsilon)\), per la definició de \myref{def:distància} trobem que
+			\begin{align*}
+				d(x,a)&\leq d(x,b)+d(b,a)\\
+				&<\varepsilon+d(b,a)\tag{\myref{def:bola}}\\
+				&=\frac{r-d(a,b)}{2}+d(b,a)\tag{\myref{prop:les boles són oberts:eq1}}\\
+				&=\frac{r-d(a,b)}{2}+d(a,b)\tag{\myref{def:distància}}\\
+				&=\frac{r+d(a,b)}{2}<r,
+			\end{align*}
+			ja que, per la definició de \myref{def:bola} tenim que \(d(a,b)<r\) i per tant \(r+d(a,b)<2r\).
 		\end{proof}
 	\end{proposition}
+	
 	\subsection{L'espai topològic}
 	\subsection{Entorns, interior i adherència}
 	\subsection{Aplicacions contínues}
