@@ -175,7 +175,7 @@
 			\[f(a+\vec{h})=f(a)+df(a)(\vec{h})+\omicron(\vec{h}),\quad \lVert\vec{h}\rVert\to0.\]
 			Com que \(df(a)\) és lineal, \(df(a)(\vec{h})\to(0,\dots,0)\Leftrightarrow\lVert\vec{h}\rVert\to0\). Així veiem que
 			\[\lim_{\lVert\vec{h}\rVert\to0}f(a+\vec{h})-f(a)-df(a)(\vec{h})=\omicron(\vec{h}).\]
-			I això compleix la definició de \myref{def:funcio continua}, per tant \(f\) és contínua en el punt \(a\).
+			I això compleix la definició de \myref{def:funció contínua}, per tant \(f\) és contínua en el punt \(a\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}\label{prop:diferenciable iff components diferenciables}
@@ -1228,13 +1228,13 @@
 	\section{Les funcions integrables Riemann}
 	\subsection{Caracterització de les funcions integrables Riemann}
 	\begin{definition}[Osci{\lgem}ació d'una funció en un punt]
-		\labelname{osci{\lgem}ació d'una funció en un punt}\label{def:oscillacio d'una funcio en un punt}
+		\labelname{osci{\lgem}ació d'una funció en un punt}\label{def:oscillacio d'una funció en un punt}
 		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(a\in U\) un punt, \(\B(a,\delta)\subseteq U\) una bola oberta centrada en \(a\) de radi \(\delta>0\) i \(f\colon U\to\mathbb{R}^{m}\) una funció. Aleshores definim l'aplicació
 		\[\omega_{f}(a)=\lim_{\delta\to0}\sup_{x,y\in B(a,\delta)}\norm{f(x)-f(y)}\]
 		com l'osci{\lgem}ació de la funció \(f\) en el punt \(a\).
 	\end{definition}
 	\begin{proposition}
-		\label{prop:oscillació equivalent a continua}
+		\label{prop:oscillació equivalent a contínua}
 		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(f\colon U\to\mathbb{R}^{m}\) una funció definida en un punt \(a\in U\). Aleshores \(f\) és contínua en \(a\) si i només si \(\omega_{f}(a)=0\), on \(\omega_{f}(a)\) és la osci{\lgem}ació de \(f\) en \(a\).
 		\begin{proof}
 			Suposem que \(\omega_{f}(a)=0\). Observem que quan \(\delta\to0\), per a tot \(x,y,\in\B(a,\delta)\) tenim \(x\to a\) i \(y\to a\), i com que \(\omega_{f}(a)=0\), podem escriure
@@ -1244,7 +1244,7 @@
 			\end{align*}
 			i per tant tenim \(\lim_{x\to a}f(x)=\lim_{y\to a}f(y)\), i equivalentment
 			\[\lim_{x\to a}f(x)=f(a),\]
-			que és la definició de \myref{def:funcio continua}.
+			que és la definició de \myref{def:funció contínua}.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Conjunt de discontinuïtats d'una funció]
@@ -1274,7 +1274,7 @@
 		\begin{proof}
 			Comencem amb la implicació cap a l'esquerra (\(\Leftarrow\)). Suposem doncs que \(D_{\tau}=0\) per a tot \(\tau>0\). Per la definició de \myref{def:contingut exterior de Jordan} això és
 			\[\sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}1_{D_{\tau}}(x)\abs{\mathfrak{R}_{i}}=0\]
-			on \(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles de \(\mathfrak{R}\) definits per una partició del conjunt \(\mathcal{P}\) de particions de \(\mathfrak{R}\). Considerem el conjunt de subrectangles \(\{\mathfrak{R}_{j}\}_{j\in J}\) tals que \(\mathfrak{R}_{j}\cap D_{\tau}\neq\emptyset\). Ara bé, per la proposició \myref{prop:oscillació equivalent a continua} tenim que \(f\) és contínua, i pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann} veiem que \(f\) és integrable Riemann en \(\mathfrak{R}\).
+			on \(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles de \(\mathfrak{R}\) definits per una partició del conjunt \(\mathcal{P}\) de particions de \(\mathfrak{R}\). Considerem el conjunt de subrectangles \(\{\mathfrak{R}_{j}\}_{j\in J}\) tals que \(\mathfrak{R}_{j}\cap D_{\tau}\neq\emptyset\). Ara bé, per la proposició \myref{prop:oscillació equivalent a contínua} tenim que \(f\) és contínua, i pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann} veiem que \(f\) és integrable Riemann en \(\mathfrak{R}\).
 			
 			Comprovem ara la implicació cap a la dreta (\(\Rightarrow\)). Suposem doncs que \(f\) és integrable Riemann en \(\mathfrak{R}\) i fixem \(\varepsilon>0\). Pel \myref{thm:Criteri d'integrabilitat Riemann} tenim que per a tot \(\varepsilon>0\) existeix una partició \(P\) de \(\mathfrak{R}\) tal que
 			\[\sum_{i\in I}\left(\sup_{x\in \mathfrak{R}_{i}}f(x)-\inf_{x\in \mathfrak{R}_{i}}f(x)\right)\abs{\mathfrak{R}_{j}}<\varepsilon\]

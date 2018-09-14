@@ -3,7 +3,7 @@
 \begin{document}
 \chapter{Les topologies}
 	\section{Espais mètrics}
-	\subsection{Distància en conjunts arbitraris}
+	\subsection{Les funcions contínues i les boles}
 	\begin{definition}[Espai mètric]
 		\labelname{espai mètric}\label{def:espai mètric}
 		\labelname{distància}\label{def:distància}
@@ -43,19 +43,54 @@
 				&=\frac{r-d(a,b)}{2}+d(a,b)\tag{\myref{def:distància}}\\
 				&=\frac{r+d(a,b)}{2}<r,
 			\end{align*}
-			ja que, per la definició de \myref{def:bola} tenim que \(d(a,b)<r\) i per tant \(r+d(a,b)<2r\).
+			ja que, per la definició de \myref{def:bola} tenim que \(d(a,b)<r\) i per tant trobem \(r+d(a,b)<2r\).
 		\end{proof}
 	\end{proposition}
-	
-	\subsection{L'espai topològic}
-	\subsection{Entorns, interior i adherència}
-	\subsection{Aplicacions contínues}
-	\subsection{Subespais}
-	\subsection{La topologia producte}
-	\subsection{La topologia quocient}
-	\subsection{Espais compactes}
-	\subsection{Espais de Hausdorff}
-	\subsection{Connexió}
-	\subsection{Varietats}
-	\subsection{Teorema de classificació de les superfícies compactes}
+%	\begin{definition}[Funció contínua] % Fer amb Teorema i la definició antiga
+%		\labelname{funció contínua}\label{def:funció contínua}
+%		Siguin \((X,d)\) i \((X',d')\) dos espais mètrics i \(f\colon X\longrightarrow X'\) una funció tal que per a cada \(x\in X\) i \(\varepsilon>0\) real existeix un \(\delta>0\) real tal que
+%		\[\Ima_{\B(x,\delta)}(f)\subset\B(f(x)),\varepsilon).\]
+%		Aleshores direm que \(f\) és contínua.
+%	\end{definition}
+	\begin{theorem}
+		Siguin \((X,d)\) i \((X',d')\) dos espais mètrics i \(f\colon X\longrightarrow X'\) una funció. Aleshores \(f\) és contínua si i només si per a tot \(\mathcal{U}\) obert de \(X'\) tenim que \(\Ima_{\mathcal{U}}(f^{-1})\) és obert.
+		\begin{proof}
+			Veiem primer que la condició és necessària (\(\Rightarrow\)). Suposem doncs que \(f\) és contínua. Prenem un obert \(\mathcal{U}\) de \(X'\) i un element \(y\) de \(X'\) tal que \(f^{-1}(y)\in\Ima_{\mathcal{U}}(f^{-1})\), i denotem \(x=f^{-1}(y)\). Per la definició d'\myref{def:obert} tenim que existeix un nombre real \(\varepsilon>0\) tal que \(\B(y,\varepsilon)\subset\Ima_{\mathcal{U}}(f^{-1})\).
+			
+			Prenem un element \(x'\) de \(\B(y,\varepsilon)\). Per la definició de \myref{def:bola} tenim que \(d(x,x')<\varepsilon\), i per la definició de \myref{def:funció contínua} tenim que existeix un \(\delta>0\) real tal que \(d'(f(x'),y)<\varepsilon\), i per la definició de \myref{def:bola} això és que \(f(x')\in\B(y,\varepsilon)\). Per tant tenim que \(\Ima_{\B(x,\delta)}(f)\subset\B(y,\varepsilon)\) i trobem que \(\B(x,\delta)\subset\Ima_{\mathcal{U}}(f^{-1})\), i per la definició de \myref{def:obert} trobem que \(\Ima_{\mathcal{U}}(f^{-1})\) és un obert, com volíem veure.
+			
+			Veiem ara que la condició és suficient (\(\Leftarrow\)). Suposem doncs que per a tot \(\mathcal{U}\) obert de \(X'\) tenim que \(\Ima_{\mathcal{U}}(f^{-1})\) és obert.
+			
+			Prenem un element \(xy\) de \(X\) i un real \(\varepsilon>0\). Si denotem \(y=f(x)\) tenim, per la proposició \myref{prop:les boles són oberts}, que la bola \(\B(y,\varepsilon)\) és un obert. Per hipòtesi tenim que \(\Ima_{\B(y,\varepsilon)}(f^{-1})\) és un obert, i per la definició d'\myref{def:obert} tenim que existeix un nombre real \(\delta>0\) tal que \(\B(x,\delta)\subset\Ima_{\B(y,\varepsilon)}(f^{-1})\).
+			
+			Ara bé, per la definició de \myref{def:bola} tenim que això és que per a tot \(x_{0}\) de \(x\) amb \(d'(y,f(x_{0})<\varepsilon\) tenim que \(d(x,x_{0}<\delta)\), i per tant, per la definició de \myref{def:funció contínua} tenim que \(f\) és contínua.
+		\end{proof}
+	\end{theorem}
+	\begin{definition}[Tancat]
+		\labelname{tancat}\label{def:tancat}
+		Sigui \(X\) un conjunt i \(C\) un subconjunt de \(X\) tal que \(X\setminus C\) sigui obert. Aleshores direm que \(C\) és tancat.
+	\end{definition}
+	\subsection{Axiomàtica de l'espai topològic}
+	\begin{definition}[Topologia]	% Reescriure amb notació
+		\labelname{topologia}\label{def:topologia}
+		\labelname{oberts topologia}\label{def:oberts topologia}
+		Sigui \(X\) un conjunt i \(\tau\) una família de subconjunts de \(X\) tals que
+		\begin{itemize}
+		\item \(\emptyset\) i \(X\) són elements de \(\tau\).
+		\item La intersecció d'una família finita d'elements de \(\tau\) és un element de \(\tau\).
+		\item La unió d'una família d'elements de \(\tau\) és un element de \(\tau\).
+		\end{itemize}
+		Aleshores direm que \(\tau\) és una topologia de \(X\). També direm que els elements de \(\tau\) són oberts.
+	\end{definition}
+%	\subsection{L'espai topològic}
+%	\subsection{Entorns, interior i adherència}
+%	\subsection{Aplicacions contínues}
+%	\subsection{Subespais}
+%	\subsection{La topologia producte}
+%	\subsection{La topologia quocient}
+%	\subsection{Espais compactes}
+%	\subsection{Espais de Hausdorff}
+%	\subsection{Connexió}
+%	\subsection{Varietats}
+%	\subsection{Teorema de classificació de les superfícies compactes}
 \end{document}
