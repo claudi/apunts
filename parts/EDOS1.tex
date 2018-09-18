@@ -13,8 +13,41 @@
 		és una equació diferencial ordinària. També direm que \(t\) és la variable temporal, \(u(x)\) la variable espacial.
 	\end{definition}
 	\begin{example}
+		\label{ex:edos1:1}
 		Considerem l'equació diferencial ordinària d'ordre \(1\) següent:
-		\[\frac{\partial u(x)}{\partial x}=f(t).\]
-		on \(I\) és un interval de \(\mathbb{R}\) i \(f\colon I\longrightarrow\mathbb{R}^{m}\).
+		\begin{equation}
+			\label{edos1:ex1:eq1}
+			\frac{\partial u(x)}{\partial x}=f(x).
+		\end{equation}
+		on \(I\) és un interval de \(\mathbb{R}\) i \(f\colon I\longrightarrow\mathbb{R}^{m}\) una funció contínua.
+		\begin{solution}
+			Observem primer que pel Teorema \myref{thm:Weierstrass màxims i mínims múltiples variables} la funció \(f(x)\) està acotada en \(I\), i pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann} tenim que la funció \(f(x)\) és integrable Riemann, i per tant, pel \myref{thm:Teorema Fonamental del Càlcul}, trobem que per a tot \(x_{0}\) de \(I\)
+			\[u(x)=\int_{x_{0}}^{x}f(t)dt\]
+			és una solució de l'equació diferencial ordinària \eqref{edos1:ex1:eq1}.
+		\end{solution}
+	\end{example}
+	\begin{observation}
+		Observem que, en l'exemple \myref{ex:edos1:1}, si la funció \(f\) no és integrable en \(I\) aleshores l'equació diferencial \eqref{edos1:ex1:eq1} no té solució. %Integrable Riemann?
+	\end{observation}
+	\begin{example}[Problema de Cauchy]
+		\label{ex:Problema de Cauchy}
+		Siguin \((a,b)\) un interval de \(\mathbb{R}\), \(f\colon(a,b)\longrightarrow\mathbb{R}\) una funció contínua tal que \(f(x)\neq0\) per a tot \(x\) de \((a,b)\), \(x_{0}\) un element de \((a,b)\) i \(t_{0}\) un real. Considerem el sistema
+		\begin{equation}
+			\label{ex:Problema de Cauchy:eq1}
+			\begin{cases}
+				\displaystyle \frac{\partial u(x)}{\partial x}=f(x) \\
+				\displaystyle u(t_{0})=x_{0}
+			\end{cases}.
+		\end{equation}
+		Volem trobar una solució a aquest sistema.
+		\begin{solution}
+			Observem que, per la definició de \myref{def:equació diferencial ordinària d'ordre n} l'equació
+			\[\frac{\partial u(x)}{\partial x}=f(x)\]
+			és una equació ordinària d'orde \(1\).
+			
+			Com que, per hipòtesi, la funció \(f(x)\) és contínua en \([a,b]\) trobem pel Teorema \myref{thm:Weierstrass màxims i mínims múltiples variables} que \(f(x)\) està acotada en \([a,b]\), i pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann} que la \(f(x)\) és integrable en \([a,b]\) 
+			
+			\eqref{ex:Problema de Cauchy:eq1}.
+		\end{solution}
 	\end{example}
 \end{document}
