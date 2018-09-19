@@ -17,12 +17,12 @@
 		Considerem l'equació diferencial ordinària d'ordre \(1\) següent:
 		\begin{equation}
 			\label{edos1:ex1:eq1}
-			\frac{\partial u(x)}{\partial x}=f(x).
+			\frac{\partial u(x)}{\partial x}=f(u(x)).
 		\end{equation}
 		on \(I\) és un interval de \(\mathbb{R}\) i \(f\colon I\longrightarrow\mathbb{R}^{m}\) una funció contínua.
 		\begin{solution}
 			Observem primer que pel Teorema \myref{thm:Weierstrass màxims i mínims múltiples variables} la funció \(f(x)\) està acotada en \(I\), i pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann} tenim que la funció \(f(x)\) és integrable Riemann, i per tant, pel \myref{thm:Teorema Fonamental del Càlcul}, trobem que per a tot \(x_{0}\) de \(I\)
-			\[u(x)=\int_{x_{0}}^{x}f(t)dt\]
+			\[u(x)=\int_{x_{0}}^{x}f(u(t))dt\]
 			és una solució de l'equació diferencial ordinària \eqref{edos1:ex1:eq1}.
 		\end{solution}
 	\end{example}
@@ -31,7 +31,7 @@
 	\end{observation}
 	\begin{example}[Problema de Cauchy]
 		\label{ex:Problema de Cauchy}
-		Siguin \((a,b)\) un interval de \(\mathbb{R}\), \(f\colon(a,b)\longrightarrow\mathbb{R}\) una funció contínua tal que \(f(x)\neq0\) per a tot \(x\) de \((a,b)\), \(x_{0}\) un element de \((a,b)\) i \(t_{0}\) un real. Considerem el sistema
+		Siguin \((a,b)\) un interval obert de \(\mathbb{R}\), \(f\colon(a,b)\longrightarrow\mathbb{R}\) una funció contínua tal que \(f(x)\neq0\) per a tot \(x\) de \((a,b)\), \(x_{0}\) un element de \((a,b)\) i \(t_{0}\) un real. Considerem el sistema
 		\begin{equation}
 			\label{ex:Problema de Cauchy:eq1}
 			\begin{cases}
@@ -39,15 +39,56 @@
 				\displaystyle u(t_{0})=x_{0}
 			\end{cases}.
 		\end{equation}
-		Volem trobar una solució a aquest sistema.
+		Volem trobar totes les solucions a aquest sistema.
 		\begin{solution}
 			Observem que, per la definició de \myref{def:equació diferencial ordinària d'ordre n} l'equació
 			\[\frac{\partial u(x)}{\partial x}=f(x)\]
 			és una equació ordinària d'orde \(1\).
 			
-			Com que, per hipòtesi, la funció \(f(x)\) és contínua en \([a,b]\) trobem pel Teorema \myref{thm:Weierstrass màxims i mínims múltiples variables} que \(f(x)\) està acotada en \([a,b]\), i pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann} que la \(f(x)\) és integrable en \([a,b]\) 
+			Com que, per hipòtesi, tenim \(f(x)\neq0\) per a tot \(x\) de \((a,b)\) trobem que la funció \(\frac{1}{f(x)}\) és derivable %REF
+			i per la proposició \myref{prop:Diferenciable implica contínua} trobem que \(\frac{1}{f(x)}\) és contínua. També tenim pel \myref{thm:Weierstrass màxims i mínims múltiples variables} que \(\frac{1}{f(x)}\) està acotada en \((a,b)\) i pel \myref{thm:Contínua + acotada implica integrable Riemann} trobem que \(\frac{1}{f(x)}\) és integrable en \((a,b)\). Definim doncs
+			\[F(x)=\int_{x_{0}}^{x}\frac{dt}{f(t)}.\]
+			Pel \myref{thm:Teorema Fonamental del Càlcul} tenim que
+			\begin{equation}
+				\label{ex:problema de Cauchy:eq1}
+				\frac{\partial F(x)}{\partial x}=\frac{1}{f(x)},
+			\end{equation}                
+			i com que \(\frac{1}{f(x)}\neq0\) per a tot \(x\) de \((a,b)\) tenim que \(F(x)\) és invertible en \((a,b)\). Denotem amb \(F^{-1}\) la seva inversa.
 			
-			\eqref{ex:Problema de Cauchy:eq1}.
+			Ara bé, tenim que
+			\begin{equation}
+				\label{ex:problema de Cauchy:eq2}
+				\frac{\partial F(u(x))}{\partial x}=1,
+			\end{equation}
+			ja que
+			\begin{align*}
+				\frac{\partial F(u(x))}{\partial x}&=\frac{\partial F(u(x))}{\partial u(x)}\frac{\partial u(x)}{\partial x}\tag{\myref{thm:regla de la cadena}}\\
+				&=\frac{1}{f(u(x))}\frac{\partial u(x)}{\partial x}\tag{\ref{ex:problema de Cauchy:eq1}}\\
+				&=\frac{1}{f(u(x))}f(u(x))=1.\tag{\ref{ex:Problema de Cauchy:eq1}}\\
+			\end{align*}
+			I per tant, pel \myref{thm:Teorema Fonamental del Càlcul} trobem que
+			\[\int_{t_{0}}^{t}\frac{\partial F(u(x))}{\partial x}dx=F(u(t))-F(u(t_{0})),\]
+			i per \eqref{ex:problema de Cauchy:eq2} trobem \(F(u(t))-F(u(t_{0}))=t-t_{0}\)
+			
+			Ara bé, per hipòtesi, tenim que \(u(t_{0})=x_{0}\), i trobem
+			\[F(x_{0})=\int_{x_{0}}^{x_{0}}\frac{1}{f(t)}dt=0.\]
+			Per tant
+			\[F(u(t))=t-t_{0},\]
+			i com que, com ja hem vist, \(F(x)\) és invertible en \((F(a),F(b))\) trobem
+			\[u(t)=F^{-1}(t-t_{0})\]
+			per a tot \(t\) de \((t_{0}+F(a), t_{0}+F(b))\).
+			
+			Amb aquesta solució també podem veure que aquesta és la única solució de l'equació diferencial.
 		\end{solution}
+	\end{example}
+	\begin{example}[Equacions de variables separades]
+		Siguin \((a,b)\) i \((t_{1},t_{2}\) dos intervals oberts de \(\mathbb{R}\), \(f\colon(a,b)\longrightarrow\mathbb{R}\) i \(g\colon(t_{1},t_{2})\longrightarrow\mathbb{R}\) dues funcions contínues amb \(f(x)\neq0\) per a tot \(x\) de \((a,b)\), \(x_{0}\) un element de \((a,b)\) i \(t_{0}\) un element de \((t_{1},t_{2})\). Considerem el problema de Cauchy
+		\begin{equation}
+			\begin{cases}
+				\displaystyle \frac{\partial u(x)}{\partial x}=g(t)f(u(x)) \\
+				\displaystyle u(t_{0})=x_{0}.
+			\end{cases}
+		\end{equation}
+		Volem trobar les solucions d'aquest problema de Cauchy.
 	\end{example}
 \end{document}
