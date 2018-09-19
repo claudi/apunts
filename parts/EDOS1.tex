@@ -82,6 +82,7 @@
 		\end{solution}
 	\end{example}
 	\begin{example}[Equacions de variables separades]
+		\label{ex:Equacions de variables separades}
 		Siguin \((a,b)\) i \((t_{1},t_{2}\) dos intervals oberts de \(\mathbb{R}\), \(f\colon(a,b)\longrightarrow\mathbb{R}\) i \(g\colon(t_{1},t_{2})\longrightarrow\mathbb{R}\) dues funcions contínues amb \(f(x)\neq0\) per a tot \(x\) de \((a,b)\), \(x_{0}\) un element de \((a,b)\) i \(t_{0}\) un element de \((t_{1},t_{2})\). Considerem el problema de Cauchy
 		\begin{equation}
 			\begin{cases}
@@ -90,5 +91,15 @@
 			\end{cases}
 		\end{equation}
 		Volem trobar les solucions d'aquest problema de Cauchy.
+		\begin{solution}
+			Podem seguir la solució de l'exemple \myref{ex:Problema de Cauchy} per trobar que les úniques solucions són
+			\[u(t)=F^{-1}\left(\int_{t_{0}}{t}g(x)dx\right)\]
+			on
+			\[F(x)=\int_{x_{0}}^{x}\frac{dt}{f(t)}.\]
+		\end{solution}
+	\end{example}
+	\begin{example}[Equacions diferencials lineals]
+		\label{ex:Equacions diferencials lineals}
+		:D
 	\end{example}
 \end{document}
