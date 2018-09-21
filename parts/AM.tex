@@ -1,9 +1,9 @@
 \documentclass[../Apunts.tex]{subfiles}
 
 \begin{document}
-\chapter{Sèries numèriques}
-	\section{Convergència d'una sèrie numèrica}
-	\subsection{TBD}
+\chapter{Sèries}
+	\section{Sèries numèriques}
+	\subsection{Convergència d'una sèrie numèrica}
 	\begin{definition}[Sèrie numèrica]
 		\labelname{sèrie numèrica}\label{def:sèrie numèrica}
 		Sigui \((a_{n})\) una successió de nombres reals. Aleshores direm que
@@ -83,7 +83,10 @@
 	\begin{example}[Sèrie harmònica]
 		\labelname{sèrie harmònica}\label{ex:sèrie harmònica}
 		Sigui \(\alpha\) un nombre real. Volem estudiar la convergència de la sèrie
-		\[\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}.\]
+		\begin{equation}
+			\label{ex:sèrie harmònica:eq1}
+			\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}.
+		\end{equation}
 		\begin{solution}
 			Observem que si \(\alpha\leq0\) tenim que
 			\[\lim_{n\to\infty}\frac{1}{n^{\alpha}}=\infty\]
@@ -92,6 +95,102 @@
 			Suposem que \(0<\alpha\leq1\). Definim la successió
 			\[S_{N}=\sum_{n=1}^{N}\frac{1}{n^{\alpha}}\]
 			i tenim que
+			\begin{align*}
+				S_{2^{N}}&=1+\frac{1}{2^{\alpha}}+\frac{1}{3^{\alpha}}+\dots+\frac{1}{2^{N\alpha}}\\
+				&\geq1+\frac{1}{2^{\alpha}}+\frac{2}{4^{\alpha}}+\dots+\frac{2^{N-1}}{2^{N\alpha}}\\
+				&=1+\sum_{i=0}^{N-1}\frac{2^{i}}{2^{i+1}\alpha}=1+\frac{1}{2^{\alpha}}\sum_{i=0}^{N-1}2^{1-\alpha}.
+			\end{align*}
+			Ara bé, tenim que \(1-\alpha>1\), i per tant trobem
+			\[\lim_{N\to\infty}1+\frac{1}{2^{\alpha}}\sum_{i=0}^{N-1}2^{1-\alpha}=\infty,\]
+			i tenim que \(\lim_{N\to\infty}S_{2^{N}}=\infty\) i per la definició de \myref{def:sèrie divergent} trobem que \(\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}\) és divergent.
+			
+			Veiem ara el cas \(\alpha>1\). Definim de nou la successió
+			\[S_{N}=\sum_{n=1}^{N}\frac{1}{n^{\alpha}}.\]
+			Tenim que
+			\begin{align*}
+				S_{2^{N}}&=1+\frac{1}{2^{\alpha}}+\frac{1}{3^{\alpha}}+\dots+\frac{1}{2^{N\alpha}}\\
+				&\leq1+\frac{1}{2^{\alpha}}+\frac{2}{4^{\alpha}}+\dots+\frac{2^{N-1}}{2^{N\alpha}}\\
+				&=\frac{1}{2^{N\alpha}}+\sum_{i=0}^{N-1}\frac{2^{i}}{2^{i\alpha}}\\
+				&=\frac{1}{2^{N\alpha}}+\sum_{i=0}^{N-1}2^{(1-\alpha)i}\\
+				&=\frac{1}{2^{N\alpha}}+\frac{1-2^{(1-\alpha)N}}{1-2^{1-\alpha}}\tag{\myref{ex:sèries geomètriques}}
+			\end{align*}
+			i tenim que
+			\[\lim_{N\to\infty}\frac{1}{2^{N\alpha}}+\frac{1-2^{(1-\alpha)N}}{1-2^{1-\alpha}}=\frac{1}{1-2^{1-\alpha}}.\]
+			Per tant tenim que la successió \((S_{N})\) està fitada, i degut a que \(S_{N+1}=S_{N}+\frac{1}{(N+1)^{\alpha}}\) tenim que és creixen i pel \myref{thm:Weierstrass màxims i mínims múltiples variables} tenim que és convergent. Per tant per la definició de \myref{def:sèrie convergent} tenim que la sèrie \eqref{ex:sèrie harmònica:eq1} és convergent.
+			
+			Per tant tenim que la sèrie
+			\[\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}\]
+			és convergent si i només si \(\alpha>1\).
 		\end{solution}
 	\end{example}
+	\subsection{Sèries de termes positius}
+	\begin{definition}[Sèrie de termes positius]
+		\labelname{sèrie de termes positius}\label{def:sèrie de termes positius}
+		Sigui \(\sum_{n=0}^{\infty}a_{n})\) una sèrie numèrica tal que \(a_{n}>0\) per a tot \(n\) natural. Aleshores direm que \(\sum_{n=0}^{\infty}a_{n}\) és una sèrie de termes positius.
+	\end{definition}
+	\begin{notation}
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius. Aleshores escriurem \(\sum_{n=0}^{\infty}a_{n}<\infty\) si \(\sum_{n=0}^{\infty}a_{n}\) és convergent i \(\sum_{n=0}^{\infty}a_{n}=\infty\) si \(\sum_{n=0}^{\infty}a_{n}\) és divergent
+	\end{notation}
+	\begin{lemma}
+		\label{lemma:criteri de comparació de sèries de termes positius}
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius, \(\sum_{n=0}^{\infty}b_{n}\) una sèrie de termes positius convergent, \(K\) un nombre real i \(n_{0}\) un natural tal que per a tot \(n>n_{0}\) es satisfà \(a_{n}\leq Kb_{n}\). Aleshores tenim que \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+		\begin{proof}
+			Tenim que
+			\begin{align*}
+				\sum_{n=0}^{N}a_{n}&=\sum_{n=0}^{n_{0}-1}a_{n}+\sum_{n=n_{0}}^{N}a_{n}\\
+				&\leq\sum_{n=0}^{n_{0}-1}a_{n}+K\sum_{n=n_{0}}^{N}b_{n}
+			\end{align*}
+			i per la definició de \myref{def:sèrie convergent} tenim que la sèrie \(K\sum_{n=n_{0}}^{N}b_{n}\) és convergent i, de nou per la definició de \myref{def:sèrie convergent}, tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent, com volíem veure.
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}[Criteri de comparació]
+		\labelname{criteri de comparació}\label{thm:criteri de comparació de sèries de termes positius}
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) dues sèries de termes positius i
+		\[\lim_{n\to\infty}\frac{a_{n}}{b_{n}}=L.\]
+		tals que
+		\begin{enumerate}
+			\item\label{thm:criteri de comparació de sèries de termes positius:enum1} \(L\neq0\) ó \(L\neq\infty\). Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si \(\sum_{n=0}^{\infty}b_{n}\)
+			\item\label{thm:criteri de comparació de sèries de termes positius:enum2} \(L=0\) i \(\sum_{n=0}^{\infty}b_{n}\) és convergent. Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			\item\label{thm:criteri de comparació de sèries de termes positius:enum3} \(L=\infty\) i \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Aleshores \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
+		\end{enumerate}
+		\begin{proof}
+			Comencem veient el punt \eqref{thm:criteri de comparació de sèries de termes positius:enum1}. Suposem que \(L\neq0\) ó \(L\neq\infty\). Observem que \(L>0\). Per tant prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>0\). Per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
+			\[\abs{\frac{a_{n}}{b_{n}}-L}<\varepsilon.\]
+			Per tant tenim que per a tot \(n>n_{0}\)
+			\[l-\varepsilon<\frac{a_{n}}{b_{n}}<l+\varepsilon.\]
+			
+			Suposem que \(\sum_{n=0}^{\infty}b_{n}\) és convergent. Aleshores tenim
+			\[b_{n}(l-\varepsilon)<a_{n}<b_{n}(l+\varepsilon),\]
+			i pel lemma \myref{lemma:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			
+			Suposem ara que \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Aleshores tenim
+			\[\frac{a_{n}}{L-\varepsilon}<b_{n}<\frac{a_{n}}{L+\varepsilon},\]
+			i pe lemma \myref{lemma:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
+			
+			Veiem ara el punt \eqref{thm:criteri de comparació de sèries de termes positius:enum2}. Suposem doncs que \(L=0\) i que \(\sum_{n=0}^{\infty}b_{n}\) és convergent. Per la definició de \myref{def:límit} tenim que per a tot \(\varepsilon>0\) existeix un natural \(n_{0}\) tal que
+			\[\abs{\frac{a_{n}}{b_{n}}}<\varepsilon,\]
+			i això és equivalent a
+			\[a_{n}<\varepsilon b_{n}\]
+			i pel lemma \myref{lemma:criteri de comparació de sèries de termes positius} trobem que la sèries \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			
+			Veiem ara el punt \eqref{thm:criteri de comparació de sèries de termes positius:enum2}. Suposem doncs que \(L=\infty\) i que \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Tenim que
+			\[\lim_{n\to\infty}\frac{b_{n}}{a_{n}}=0,\] %REF
+			i per tant pel punt \eqref{thm:criteri de comparació de sèries de termes positius:enum1} tenim que \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
+		\end{proof}
+	\end{theorem}
+	
+%	\subsection{Sèries alternades}
+%	\subsection{Convergència absoluta}
+%	\subsection{Reordenació de sèries}
+%	
+%	\section{Successions i sèries de funcions}
+%	\subsection{Successions de funcions}
+%	\subsection{Sèries de funcions}
+%	\subsection{Sèries de potències}
+%	\subsection{Teorema d'aproximació polinòmica de Weierstrass}
 \end{document}
+
+
+% Sèries de funcions amb Perelló (Càlcul infinitesimal)
+% Encara no se d'on treure integrals impròpies
+% Fourier amb Tolstov (Fourier Series)
