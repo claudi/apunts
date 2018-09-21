@@ -1,10 +1,97 @@
 \documentclass[../Apunts.tex]{subfiles}
 
 \begin{document}
-%\chapter{Sèries numèriques}
-%	\section{Convergència d'una sèrie numèrica}
-%	\subsection{Sèrie numèrica}
-%	\begin{definition}[Sèrie numèrica]
-%		
-%	\end{definition}
+\chapter{Sèries numèriques}
+	\section{Convergència d'una sèrie numèrica}
+	\subsection{TBD}
+	\begin{definition}[Sèrie numèrica]
+		\labelname{sèrie numèrica}\label{def:sèrie numèrica}
+		Sigui \((a_{n})\) una successió de nombres reals. Aleshores direm que
+		\[\sum_{n=1}^{\infty}a_{n}=a_{1}+a_{2}+a_{3}+\cdots\]
+		és una sèrie numèrica o la sèrie de \((a_{n})\).
+	\end{definition}
+	\begin{definition}[Sèrie convergent]
+		\labelname{sèrie convergent}\label{def:sèrie convergent}
+		\labelname{sèrie divergent}\label{def:sèrie divergent}
+		Siguin \(\sum_{n=1}^{\infty}a_{n}\) una sèrie numèrica i
+		\[S_{N}=\sum_{n=1}^{N}a_{n}\]
+		una successió tals que
+		\[\lim_{n\to\infty}S_{n}=L\]
+		on \(L\) és un nombre real. Aleshores direm que la sèrie \(\sum_{n=1}^{\infty}a_{n}\) és una sèrie convergent amb valor \(L\). Si \(L\) no és un nombre real direm que la sèrie \(\sum_{n=1}^{\infty}a_{n}\) és una sèrie divergent.
+	\end{definition}
+	\begin{example}[Sèries geomètriques]
+		\labelname{sèries geomètriques}\label{ex:sèries geomètriques}
+		Sigui \(r\neq0\) un nombre real. Volem estudiar la convergència de la sèrie
+		\[\sum_{n=0}^{\infty}r^{n}.\]
+		\begin{solution}
+			Tenim que per a tot \(N\) natural
+			\begin{equation}
+				\label{ex:sèries geomètriques:eq1}
+				\sum_{n=0}^{N}r^{n}=\frac{1-r^{N+1}}{1-r}
+			\end{equation}
+			ja que \(\sum_{n=0}^{N}r^{n}=r^{0}+r^{1}+r^{2}+\cdots\), i per tant
+			\begin{align*}
+				(1-r)\sum_{n=0}^{N}r^{n}&=(1-r)(r^{0}+r^{1}+r^{2}+\cdots)\\
+				&=r^{0}+r^{1}+r^{2}+\dots+r^{n}-(r^{1}+r^{2}+r^{3}+\dots+r^{n+1})\\
+				&=1-r^{N+1}\\
+			\end{align*}
+			i trobem
+			\[\sum_{n=0}^{N}r^{n}=\frac{1-r^{N+1}}{1-r}.\]
+			Ara bé, tenim
+			\[\lim_{N\to\infty}\frac{1-r^{N+1}}{1-r}=
+			\begin{cases}
+				\displaystyle \frac{1}{1-r} & \text{si }-1<r<1 \\
+				+\infty & \text{si }r\leq1 \\
+				\text{no existeix} & \text{si }r\leq-1 
+			\end{cases}\]
+			i per la definició de \myref{def:sèrie convergent} trobem que \eqref{ex:sèries geomètriques:eq1} és convergent si i només si \(r\) pertany a l'interval \((-1,1)\).
+		\end{solution}
+	\end{example}
+	\begin{theorem}[Condició de Cauchy]
+		\labelname{condició de Cauchy}\label{thm:condició de Cauchy}
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie numèrica. Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si per a tot \(\varepsilon>0\) existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N,M\geq n_{0}\) tenim
+		\[\abs{\sum_{n=N}^{M}a_{n}}<\varepsilon.\]
+		\begin{proof}
+			Suposem que \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Per la definició de \myref{def:sèrie convergent} això és que
+			\[\lim_{N\to\infty}\sum_{n=1}^{N}{a_{n}}=L\]
+			on \(L\) és un nombre real. Per la definició de \myref{def:límit} tenim que per a tot \(\delta_{1}>0\) existeix un \(N\) tal que
+			\[\abs{\sum_{n=1}^{N-1}{a_{n}}-L}<\delta_{1}\]
+			i de nou per la definició de \myref{def:límit} tenim que per a tot \(\varepsilon>0\) existeix un \(\delta_{2}>0\) amb \(\delta_{1}-\delta_{2}<\varepsilon\) tal que existeix un \(M\) satisfent
+			\[\abs{\sum_{n=1}^{M}-L}<\delta_{2}\]
+			Per tant trobem
+			\[\abs{\sum_{n=1}^{N-1}-L}-\abs{\sum_{n=1}^{M}-L}<\delta_{1}-\delta_{2}\]
+			i per la desigualtat triangular %TODO %REF
+			tenim que
+			\begin{align*}
+				\abs{\sum_{n=N}^{M}a_{n}}&=\abs{\sum_{n=1}^{N-1}-\sum_{n=1}^{M}}\\
+				&=\abs{\sum_{n=1}^{N-1}-L-\sum_{n=1}^{M}+L}\\
+				&\leq\abs{\sum_{n=1}^{N-1}-L}-\abs{\sum_{n=1}^{M}-L}\\
+				&<\delta_{1}-\delta_{2}<\varepsilon.\qedhere
+			\end{align*}
+		\end{proof}
+	\end{theorem}
+	\begin{corollary}
+		\label{cor:condició de Cauchy}\label{cor:terme general tendeix a zero en una sèrie convergent}
+		Sigui \(\sum_{n=1}^{\infty}a_{n}\) una sèrie convergent. Aleshores
+		\[\lim_{n\to\infty}a_{n}=0.\]
+		\begin{proof}
+			Per la \myref{thm:condició de Cauchy} tenim que per a tot \(\varepsilon>0\) existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N,M\leq n_{0}\) tenim
+			\[\sum_{n=N}^{M}a_{n}<\varepsilon.\]
+			En particular, si triem \(M=N+1\), tenim \(\abs{a_{n}}<\varepsilon\) per a tot \(n\leq n_{0}\), i per la definició de \myref{def:límit} veiem que \(\lim_{n\to\infty}a_{n}=0\), com volíem veure.
+		\end{proof}
+	\end{corollary}
+	\begin{example}[Sèrie harmònica]
+		\labelname{sèrie harmònica}\label{ex:sèrie harmònica}
+		Sigui \(\alpha\) un nombre real. Volem estudiar la convergència de la sèrie
+		\[\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}.\]
+		\begin{solution}
+			Observem que si \(\alpha\leq0\) tenim que
+			\[\lim_{n\to\infty}\frac{1}{n^{\alpha}}=\infty\]
+			i pel coro{\lgem}ari \myref{cor:condició de Cauchy} tenim que la sèrie és divergent.
+			
+			Suposem que \(0<\alpha\leq1\). Definim la successió
+			\[S_{N}=\sum_{n=1}^{N}\frac{1}{n^{\alpha}}\]
+			i tenim que
+		\end{solution}
+	\end{example}
 \end{document}

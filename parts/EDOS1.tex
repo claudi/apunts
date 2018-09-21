@@ -22,7 +22,7 @@
 		on \(I\) és un interval de \(\mathbb{R}\) i \(f\colon I\longrightarrow\mathbb{R}^{m}\) una funció contínua.
 		\begin{solution}
 			Observem primer que pel Teorema \myref{thm:Weierstrass màxims i mínims múltiples variables} la funció \(f(x)\) està acotada en \(I\), i pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann} tenim que la funció \(f(x)\) és integrable Riemann, i per tant, pel \myref{thm:Teorema Fonamental del Càlcul}, trobem que per a tot \(x_{0}\) de \(I\)
-			\[u(x)=\int_{x_{0}}^{x}f(u(t))dt\]
+			\[u(x)=\int_{x_{0}}^{x}f(u(t))\text{d}t\]
 			és una solució de l'equació diferencial ordinària \eqref{edos1:ex1:eq1}.
 		\end{solution}
 	\end{example}
@@ -47,7 +47,7 @@
 			
 			Com que, per hipòtesi, tenim \(f(x)\neq0\) per a tot \(x\) de \((a,b)\) trobem que la funció \(\frac{1}{f(x)}\) és derivable %REF
 			i per la proposició \myref{prop:Diferenciable implica contínua} trobem que \(\frac{1}{f(x)}\) és contínua. També tenim pel \myref{thm:Weierstrass màxims i mínims múltiples variables} que \(\frac{1}{f(x)}\) està acotada en \((a,b)\) i pel \myref{thm:Contínua + acotada implica integrable Riemann} trobem que \(\frac{1}{f(x)}\) és integrable en \((a,b)\). Definim doncs
-			\[F(x)=\int_{x_{0}}^{x}\frac{dt}{f(t)}.\]
+			\[F(x)=\int_{x_{0}}^{x}\frac{\text{d}t}{f(t)}.\]
 			Pel \myref{thm:Teorema Fonamental del Càlcul} tenim que
 			\begin{equation}
 				\label{ex:problema de Cauchy:eq1}
@@ -67,11 +67,11 @@
 				&=\frac{1}{f(u(x))}f(u(x))=1.\tag{\ref{ex:Problema de Cauchy:eq1}}\\
 			\end{align*}
 			I per tant, pel \myref{thm:Teorema Fonamental del Càlcul} trobem que
-			\[\int_{t_{0}}^{t}\frac{\partial F(u(x))}{\partial x}dx=F(u(t))-F(u(t_{0})),\]
+			\[\int_{t_{0}}^{t}\frac{\partial F(u(x))}{\partial x}\text{d}x=F(u(t))-F(u(t_{0})),\]
 			i per \eqref{ex:problema de Cauchy:eq2} trobem \(F(u(t))-F(u(t_{0}))=t-t_{0}\)
 			
 			Ara bé, per hipòtesi, tenim que \(u(t_{0})=x_{0}\), i trobem
-			\[F(x_{0})=\int_{x_{0}}^{x_{0}}\frac{1}{f(t)}dt=0.\]
+			\[F(x_{0})=\int_{x_{0}}^{x_{0}}\frac{1}{f(t)}\text{d}t=0.\]
 			Per tant
 			\[F(u(t))=t-t_{0},\]
 			i com que, com ja hem vist, \(F(x)\) és invertible en \((F(a),F(b))\) trobem
@@ -93,13 +93,37 @@
 		Volem trobar les solucions d'aquest problema de Cauchy.
 		\begin{solution}
 			Podem seguir la solució de l'exemple \myref{ex:Problema de Cauchy} per trobar que les úniques solucions són
-			\[u(t)=F^{-1}\left(\int_{t_{0}}{t}g(x)dx\right)\]
+			\[u(t)=F^{-1}\left(\int_{t_{0}}{t}g(x)\text{d}x\right)\]
 			on
-			\[F(x)=\int_{x_{0}}^{x}\frac{dt}{f(t)}.\]
+			\[F(x)=\int_{x_{0}}^{x}\frac{\text{d}t}{f(t)}.\qedhere\]
 		\end{solution}
 	\end{example}
 	\begin{example}[Equacions diferencials lineals]
 		\label{ex:Equacions diferencials lineals}
-		:D
+		Siguin \((t_{1},t_{2})\) un interval obert de \(\mathbb{R}\) i \(a\colon(t_{1},t_{2})\longrightarrow\mathbb{R}\), \(b\colon(t_{1},t_{2})\longrightarrow\mathbb{R}\) dues funcions contínues. Considerem el problema de Cauchy:
+		\begin{equation}
+			\label{ex:equacions diferencials lineals:eq1}
+			\begin{cases}
+				\displaystyle \frac{\partial u(x)}{\partial x}=a(t)u(x)+b(t)\\
+				\displaystyle u(t_{0})=x_{0}.
+			\end{cases}
+		\end{equation}
+		Volem trobar totes les solucions al sistema.
+		\begin{solution}
+			Considerem el canvi de variable
+			\begin{equation}
+				\label{ex:equacions diferencials lineals:eq2}
+				u(x)=c(x)e^{\int_{t_{0}}^{x}a(s)\text{d}s}.
+			\end{equation}
+			Aleshores tenim
+			\begin{equation}
+				\label{ex:equacions diferencials lineals:eq3}
+				\begin{cases}
+					\displaystyle \frac{\partial c(x)}{\partial x}=b(x)e^{\int_{t_{0}}^{x}a(s)\text{d}s}\\
+					\displaystyle u(t_{0})=x_{0}.
+				\end{cases}
+			\end{equation}
+			
+		\end{solution}
 	\end{example}
 \end{document}
