@@ -17,26 +17,26 @@
 		\[S_{N}=\sum_{n=1}^{N}a_{n}\]
 		una successió tals que
 		\[\lim_{n\to\infty}S_{n}=L\]
-		on \(L\) és un nombre real. Aleshores direm que la sèrie \(\sum_{n=1}^{\infty}a_{n}\) és una sèrie convergent amb valor \(L\). Si \(L\) no és un nombre real direm que la sèrie \(\sum_{n=1}^{\infty}a_{n}\) és una sèrie divergent.
+		on \(L\) és un nombre real. Aleshores direm que la sèrie \(\sum_{n=1}^{\infty}a_{n}\) és una sèrie convergent amb valor \(L\).
+		
+		Si \(L\) no és un nombre real direm que la sèrie \(\sum_{n=1}^{\infty}a_{n}\) és una sèrie divergent.
 	\end{definition}
 	\begin{example}[Sèries geomètriques]
 		\labelname{sèries geomètriques}\label{ex:sèries geomètriques}
 		Sigui \(r\neq0\) un nombre real. Volem estudiar la convergència de la sèrie
 		\[\sum_{n=0}^{\infty}r^{n}.\]
 		\begin{solution}
-			Tenim que per a tot \(N\) natural
-			\begin{equation}
-				\label{ex:sèries geomètriques:eq1}
-				\sum_{n=0}^{N}r^{n}=\frac{1-r^{N+1}}{1-r}
-			\end{equation}
-			ja que \(\sum_{n=0}^{N}r^{n}=r^{0}+r^{1}+r^{2}+\cdots\), i per tant
+			Tenim que \(\sum_{n=0}^{N}r^{n}=r^{0}+r^{1}+r^{2}+\cdots\), i per tant
 			\begin{align*}
 				(1-r)\sum_{n=0}^{N}r^{n}&=(1-r)(r^{0}+r^{1}+r^{2}+\cdots)\\
 				&=r^{0}+r^{1}+r^{2}+\dots+r^{n}-(r^{1}+r^{2}+r^{3}+\dots+r^{n+1})\\
 				&=1-r^{N+1}\\
 			\end{align*}
 			i trobem
-			\[\sum_{n=0}^{N}r^{n}=\frac{1-r^{N+1}}{1-r}.\]
+			\begin{equation}
+				\label{ex:sèries geomètriques:eq1}
+				\sum_{n=0}^{N}r^{n}=\frac{1-r^{N+1}}{1-r}
+			\end{equation}
 			Ara bé, tenim
 			\[\lim_{N\to\infty}\frac{1-r^{N+1}}{1-r}=
 			\begin{cases}
@@ -173,12 +173,78 @@
 			\[a_{n}<\varepsilon b_{n}\]
 			i pel lemma \myref{lemma:criteri de comparació de sèries de termes positius} trobem que la sèries \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			
-			Veiem ara el punt \eqref{thm:criteri de comparació de sèries de termes positius:enum2}. Suposem doncs que \(L=\infty\) i que \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Tenim que
+			Veiem ara el punt \eqref{thm:criteri de comparació de sèries de termes positius:enum3}. Suposem doncs que \(L=\infty\) i que \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Tenim que
 			\[\lim_{n\to\infty}\frac{b_{n}}{a_{n}}=0,\] %REF
-			i per tant pel punt \eqref{thm:criteri de comparació de sèries de termes positius:enum1} tenim que \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
+			i per tant pel punt \eqref{thm:criteri de comparació de sèries de termes positius:enum2} tenim que \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
 		\end{proof}
 	\end{theorem}
-	
+	\begin{example}
+		Considerem la sèrie
+		\[\sum_{n=1}^{\infty}\left(1+\frac{1}{n}\right)^{3}3^{-n}.\]
+		Volem estudiar si aquesta sèrie és convergent o divergent.
+		\begin{solution}
+			Definim
+			\[a_{n}=\left(1+\frac{1}{n}\right)^{3}3^{-n}\quad\text{i}\quad b_{n}=\frac{1}{3^{n}}\]
+			Observem que per a tot \(n\) natural tenim \(a_{n}>0\) i \(b_{n}>0\), i per la definició de \myref{def:sèrie de termes positius} tenim que les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}\) són sèries de termes positius.
+			
+			Considerem el límit
+			\begin{align*}
+				\lim_{n\to\infty}\frac{a_{n}}{b_{n}}&=\lim_{n\to\infty}\frac{\left(1+\frac{1}{n}\right)^{3}3^{-n}}{3^{-n}}\\
+				&=\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^{3}=1.
+			\end{align*}
+			
+			Ara bé, per l'exercici \myref{ex:sèries geomètriques} tenim que la sèrie \(\sum_{n=0}^{\infty}\frac{1}{3^{n}}\) és convergent, ja que \(-1<\frac{1}{3}<1\), i pel \myref{thm:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+		\end{solution}
+	\end{example}
+	\begin{proposition}[Criteri de l'arrel]
+		\labelname{criteri de l'arrel}\label{prop:criteri de l'arrel}
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius i
+		\[\lim_{n\to\infty}\sqrt[n]{a_{n}}=L\]
+		tal que
+		\begin{enumerate}
+		\item\label{prop:criteri de l'arrel:enum1} \(L<1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+		\item\label{prop:criteri de l'arrel:enum2} \(L>1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
+		\end{enumerate}
+		\begin{proof}
+			Comencem veient el punt \eqref{prop:criteri de l'arrel:enum1}.  Suposem doncs que \(L<1\). Prenem un \(\varepsilon>0\) tal que \(L+\varepsilon<1\). Per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
+			\[\abs{\sqrt[n]{a_{n}}-L}<\varepsilon,\]
+			i per tant per a tot \(n>n_{0}\) tenim
+			\[\sqrt[n]{a_{n}}<L+\varepsilon,\]
+			i per tant
+			\[a_{n}<\left(L+\varepsilon\right)^{n}.\]
+			Ara bé, tenim que \(L+\varepsilon<1\), per tant per l'exercici \myref{ex:sèries geomètriques} tenim que \(\sum_{n=0}^{\infty}(L+\varepsilon)^{n}\) és convergent, i per tant pel lemma \myref{lemma:criteri de comparació de sèries de termes positius} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			
+			Veiem ara el punt \eqref{prop:criteri de l'arrel:enum2}. Suposem doncs que \(L>1\). Prenem \(\varepsilon>0\) tal que \(L-\varepsilon>1\). Per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
+			\[\abs{\sqrt[n]{a_{n}}-L}<\varepsilon,\]
+			i per tant
+			\[L-\varepsilon<\sqrt[n]{a_{n}}.\]
+			Ara bé, tenim que \(L-\varepsilon>1\), per tant per l'exercici \myref{ex:sèries geomètriques} tenim que \(\sum_{n=0}^{\infty}(L-\varepsilon)^{n}\) és divergent, i per tant pel lemma \myref{lemma:criteri de comparació de sèries de termes positius} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
+		\end{proof}
+	\end{proposition}
+	\begin{example}
+		Siguin \(\alpha\geq0\) i \(\beta\geq0\) dos reals. Considerem la sèrie numèrica
+		\[\sum_{n=1}^{\infty}n^{\beta}\alpha^{n}.\]
+		Volem estudiar la convergència d'aquesta sèrie en funció dels valors de \(\alpha\) i \(\beta\).
+		\begin{solution}
+			Definim
+			\[a_{n}=n^{\beta}\alpha^{n}.\]
+			Observem primer que \(a_{n}>0\) per a tot \(n\) natural. Per tant per la definició de \myref{def:sèrie de termes positius} tenim que \(\sum_{n=1}^{\infty}a_{n}\) és una sèrie de termes positius. Veiem també que si \(\alpha=1\) tenim
+			\[\sum_{n=1}^{\infty}n^{\beta},\]
+			i com que \(\beta\geq0\) la sèrie és divergent.
+			
+			Considerem el límit
+			\begin{align*}
+			\lim_{n\to\infty}\sqrt[n]{a_{n}}&=\lim_{n\to\infty}\sqrt[n]{n^{\beta}\alpha^{n}}\\
+			&=\lim_{n\to\infty}\sqrt[n]{n^{\beta}}\sqrt[n]{\alpha^{n}}\\
+			&=\lim_{n\to\infty}\sqrt[n]{n}^{\beta}\alpha=\alpha.
+			\end{align*}
+			Per tant, pel \myref{prop:criteri de l'arrel} tenim que la sèrie és convergent quan \(\alpha>1\) i divergent quan \(\alpha\leq1\). 
+		\end{solution}
+	\end{example}
+	\begin{proposition}[Criteri del quocient]
+		\labelname{criteri del quocient}\label{prop:criteri del quocient}
+		ya llega
+	\end{proposition}
 %	\subsection{Sèries alternades}
 %	\subsection{Convergència absoluta}
 %	\subsection{Reordenació de sèries}
