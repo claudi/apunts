@@ -24,7 +24,10 @@
 	\begin{example}[Sèries geomètriques]
 		\labelname{sèries geomètriques}\label{ex:sèries geomètriques}
 		Sigui \(r\neq0\) un nombre real. Volem estudiar la convergència de la sèrie
-		\[\sum_{n=0}^{\infty}r^{n}.\]
+		\begin{equation}
+			\label{ex:sèries geomètriques:eq1}
+			\sum_{n=0}^{\infty}r^{n}.
+		\end{equation}
 		\begin{solution}
 			Tenim que \(\sum_{n=0}^{N}r^{n}=r^{0}+r^{1}+r^{2}+\cdots\), i per tant
 			\begin{align*}
@@ -33,10 +36,9 @@
 				&=1-r^{N+1}\\
 			\end{align*}
 			i trobem
-			\begin{equation}
-				\label{ex:sèries geomètriques:eq1}
+			\begin{equation*}
 				\sum_{n=0}^{N}r^{n}=\frac{1-r^{N+1}}{1-r}
-			\end{equation}
+			\end{equation*}
 			Ara bé, tenim
 			\[\lim_{N\to\infty}\frac{1-r^{N+1}}{1-r}=
 			\begin{cases}
@@ -44,28 +46,33 @@
 				+\infty & \text{si }r\geq1 \\
 				\text{no existeix} & \text{si }r\leq-1 
 			\end{cases}\]
-			i per la definició de \myref{def:sèrie convergent} trobem que \eqref{ex:sèries geomètriques:eq1} és convergent si i només si \(r\) pertany a l'interval \((-1,1)\).
+			i per la definició de \myref{def:sèrie convergent} trobem que \eqref{ex:sèries geomètriques:eq1} és convergent si i només si \(r\) pertany a l'interval \((-1,1)\), i si \(r\) pertany a l'interval \((-1,1)\) aleshores es compleix
+			\begin{equation*}
+				\sum_{n=0}^{N}r^{n}=\frac{1-r^{N+1}}{1-r}.\qedhere
+			\end{equation*}
 		\end{solution}
 	\end{example}
 	\begin{theorem}[Condició de Cauchy]
-		\labelname{condició de Cauchy}\label{thm:condició de Cauchy}
+		\labelname{condició de Cauchy}\label{thm:Condició de Cauchy per sèries numèriques}
 		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie numèrica. Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si per a tot \(\varepsilon>0\) existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N,M\geq n_{0}\) tenim
 		\[\abs{\sum_{n=N}^{M}a_{n}}<\varepsilon.\]
 		\begin{proof}
 			Suposem que \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Per la definició de \myref{def:sèrie convergent} això és que
 			\[\lim_{N\to\infty}\sum_{n=1}^{N}{a_{n}}=L\]
-			on \(L\) és un nombre real. Per la definició de \myref{def:límit} tenim que per a tot \(\delta_{1}>0\) existeix un \(N\) tal que
+			on \(L\) és un nombre real.
+			
+			Per la definició de \myref{def:límit} tenim que per a tot \(\delta_{1}>0\) real existeix un \(N\) tal que
 			\[\abs{\sum_{n=1}^{N-1}{a_{n}}-L}<\delta_{1}\]
-			i de nou per la definició de \myref{def:límit} tenim que per a tot \(\varepsilon>0\) existeix un \(\delta_{2}>0\) amb \(\delta_{1}-\delta_{2}<\varepsilon\) tal que existeix un \(M\) satisfent
-			\[\abs{\sum_{n=1}^{M}-L}<\delta_{2}\]
+			i de nou per la definició de \myref{def:límit} tenim que per a tot \(\varepsilon>0\) real existeix un \(\delta_{2}>0\) real tal que \(\delta_{1}-\delta_{2}<\varepsilon\) i que existeix un \(M\) natural satisfent
+			\[\abs{\sum_{n=1}^{M}a_{n}-L}<\delta_{2}.\]
 			Per tant trobem
-			\[\abs{\sum_{n=1}^{N-1}-L}-\abs{\sum_{n=1}^{M}-L}<\delta_{1}-\delta_{2}\]
+			\[\abs{\sum_{n=1}^{N-1}a_{n}-L}-\abs{\sum_{n=1}^{M}a_{n}-L}<\delta_{1}-\delta_{2}\]
 			i per la desigualtat triangular %TODO %REF
 			tenim que
 			\begin{align*}
-				\abs{\sum_{n=N}^{M}a_{n}}&=\abs{\sum_{n=1}^{N-1}-\sum_{n=1}^{M}}\\
-				&=\abs{\sum_{n=1}^{N-1}-L-\sum_{n=1}^{M}+L}\\
-				&\leq\abs{\sum_{n=1}^{N-1}-L}-\abs{\sum_{n=1}^{M}-L}\\
+				\abs{\sum_{n=N}^{M}a_{n}}&=\abs{\sum_{n=1}^{N-1}a_{n}-\sum_{n=1}^{M}a_{n}}\\
+				&=\abs{\sum_{n=1}^{N-1}a_{n}-L-\sum_{n=1}^{M}a_{n}+L}\\
+				&\leq\abs{\sum_{n=1}^{N-1}a_{n}-L}-\abs{\sum_{n=1}^{M}a_{n}-L}\\
 				&<\delta_{1}-\delta_{2}<\varepsilon.\qedhere
 			\end{align*}
 		\end{proof}
@@ -75,9 +82,9 @@
 		Sigui \(\sum_{n=1}^{\infty}a_{n}\) una sèrie convergent. Aleshores
 		\[\lim_{n\to\infty}a_{n}=0.\]
 		\begin{proof}
-			Per la \myref{thm:condició de Cauchy} tenim que per a tot \(\varepsilon>0\) existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N,M\leq n_{0}\) tenim
-			\[\sum_{n=N}^{M}a_{n}<\varepsilon.\]
-			En particular, si triem \(M=N+1\), tenim \(\abs{a_{n}}<\varepsilon\) per a tot \(n\leq n_{0}\), i per la definició de \myref{def:límit} veiem que \(\lim_{n\to\infty}a_{n}=0\), com volíem veure.
+			Per la \myref{thm:Condició de Cauchy per sèries numèriques} tenim que per a tot \(\varepsilon>0\) existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N,M\leq n_{0}\) tenim
+			\[\abs{\sum_{n=N}^{M}a_{n}}<\varepsilon.\]
+			En particular, si triem \(M=N+1\), tenim \(\abs{a_{n}}<\varepsilon\) per a tot \(n>n_{0}\), i per la definició de \myref{def:límit} veiem que \(\lim_{n\to\infty}a_{n}=0\), com volíem veure.
 		\end{proof}
 	\end{corollary}
 	\begin{example}[Sèrie harmònica]
@@ -202,8 +209,8 @@
 		\[\lim_{n\to\infty}\sqrt[n]{a_{n}}=L\]
 		tal que
 		\begin{enumerate}
-		\item\label{prop:criteri de l'arrel:enum1} \(L<1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
-		\item\label{prop:criteri de l'arrel:enum2} \(L>1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
+			\item\label{prop:criteri de l'arrel:enum1} \(L<1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			\item\label{prop:criteri de l'arrel:enum2} \(L>1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
 		\end{enumerate}
 		\begin{proof}
 			Comencem veient el punt \eqref{prop:criteri de l'arrel:enum1}.  Suposem doncs que \(L<1\). Prenem un \(\varepsilon>0\) tal que \(L+\varepsilon<1\). Per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
@@ -243,8 +250,113 @@
 	\end{example}
 	\begin{proposition}[Criteri del quocient]
 		\labelname{criteri del quocient}\label{prop:criteri del quocient}
-		ya llega
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius i
+		\[\lim_{n\to\infty}\frac{a_{n+1}}{a_{n}}=L\]
+		tal que
+		\begin{enumerate}
+			\item\label{prop:criteri del quocient:enum1} \(L<1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			\item\label{prop:criteri del quocient:enum2} \(L>1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
+		\end{enumerate}
+		\begin{proof}
+			Comencem veient el punt \eqref{prop:criteri del quocient:enum1}. Suposem doncs que \(L<1\). Prenem un \(\varepsilon>0\) tal que \(L+\varepsilon<1\). Aleshores per la definició de \myref{def:límit} tenim que existeix un \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
+			\[\abs{\frac{a_{n+1}}{a_{n}}-L}<\varepsilon,\]
+			i per tant per a tot \(n>n_{0}\) tenim
+			\[\frac{a_{n+1}}{a_{n}}<L+\varepsilon,\]
+			i per tant
+			\[a_{n+1}<(L+\varepsilon)a_{n}\]
+			i trobem
+			\begin{align*}
+				a_{n+1}<&(L+\varepsilon)a_{n}\\
+				<&(L+\varepsilon)^{2}a_{n-1}\\
+				&\vdots\\
+				<&(L+\varepsilon)^{n-n_{0}+1}a_{n_{0}}.
+			\end{align*}
+			Ara bé, com que \(L+\varepsilon<1\) tenim per l'exemple \myref{ex:sèries geomètriques} que la sèrie \(\sum_{n=0}^{\infty}(L+\varepsilon)^{n}\) és convergent, i pel lemma \myref{lemma:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			
+			Veiem ara el punt \eqref{prop:criteri del quocient:enum2}. Suposem doncs que \(L>1\). Prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>1\). Aleshores per la definició de \myref{def:límit} tenim que existeix un \(n_{0}\) natural tal que per a tot \(n>n_{0}\) es satisfà
+			\[\abs{\frac{a_{n+1}}{a_{n}}-L}<\varepsilon,\]
+			i per tant per a tot \(n>n_{0}\) tenim
+			\[L-\varepsilon<\frac{a_{n+1}}{a_{n}}\]
+			i per tant
+			\[(L-\varepsilon)a_{n}<a_{n+1}\]
+			i trobem
+			\begin{align*}
+				a_{n+1}>&(L-\varepsilon)a_{n}\\
+				>&(L-\varepsilon)^{2}a_{n-1}\\
+				&\vdots\\
+				>&(L-\varepsilon)^{n-n_{0}+1}a_{n_{0}}.
+			\end{align*}
+			Ara bé, com que \(L-\varepsilon>1\) tenim que
+			\[\lim_{n\to\infty}(L-\varepsilon)^{n}=\infty,\]
+			i per tant trobem
+			\[\lim_{n\to\infty}a_{n}=\infty\]
+			i tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent, com volíem veure.
+		\end{proof}
 	\end{proposition}
+	\begin{lemma}
+		\label{lemma:criteri de Raabe}
+		Siguin \(x\) i \(\alpha\) dos nombres reals no negatius. Aleshores
+		\[1-\frac{\alpha}{x}\leq\left(1-\frac{1}{x+1}\right)^{\alpha}.\]
+		\begin{proof}
+		:(
+%			Tenim que
+%			\[\left(1-\frac{1}{x+1}\right)^{\alpha}=\left(\frac{x}{x+1}\right)^{\alpha}\]
+%			i trobem %REF
+%			\[\left(\frac{x}{x+1}\right)^{\alpha}=\alpha\log\left(\frac{x}{x+1}\right),\]
+%			d'on veiem que %REF
+%			\[\alpha\log\left(\frac{x}{x+1}\right)=\log\left(x^{\alpha}\right)-\alpha\log(x+1)\]
+		\end{proof}
+	\end{lemma}
+	\begin{proposition}[Criteri de Raabe]
+		\labelname{criteri de Raabe}\label{prop:criteri de Raabe}
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius i
+		\[\lim_{n\to\infty}n\left(1-\frac{a_{n+1}}{a_{n}}\right)=L\]
+		tal que
+		\begin{enumerate}
+		\item\label{prop:criteri de Raabe:enum1} \(L>1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+		\item\label{prop:criteri de Raabe:enum2} \(L<1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
+		\end{enumerate}
+		\begin{proof}
+			Comencem veient el cas \eqref{prop:criteri de Raabe:enum1}. Suposem doncs que \(L>1\). Prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>1\). Aleshores per la definició de \myref{def:límit} tenim que existeix un \(n_{0}\) natural tal que per a tot \(n>n_{0}\) es satisfà
+			\[\abs{n\left(1-\frac{a_{n+1}}{a_{n}}\right)-L}<\varepsilon,\]
+			i per tant per a tot \(n>n_{0}\) tenim
+			\[L-\varepsilon<n\left(1-\frac{a_{n+1}}{a_{n}}\right),\]
+			i per tant
+			\[a_{n+1}<a_{n}\left(1-\frac{L-\varepsilon}{n}\right).\]
+			
+			Aleshores, pel lemma \myref{lemma:criteri de Raabe} trobem que
+			\[a_{n+1}<a_{n}\left(1-\frac{1}{n+1}\right)^{L-\varepsilon}\]
+			i tenim
+			\begin{equation}
+				\label{prop:criteri de Raabe:eq1}
+				a_{n+1}<a_{n}\left(\frac{n}{n+1}\right)^{L-\varepsilon}.
+			\end{equation}
+			Podem aplicar la desigualtat \eqref{prop:criteri de Raabe:eq1} recursivament per obtenir
+			\begin{align*}
+				a_{n+1}<&a_{n}\left(\frac{n}{n+1}\right)^{L-\varepsilon}\\
+				<&a_{n-1}\left(\frac{n-1}{n}\frac{n}{n+1}\right)^{L-\varepsilon}\\
+				&\vdots\\
+				<&a_{n_{0}}\left(\frac{n_{0}}{n_{0}+1}\frac{n_{0}+1}{n_{0}+2}\dots\frac{n-1}{n}\frac{n}{n+1}\right)^{L-\varepsilon}
+			\end{align*}
+			i per tant trobem
+			\[a_{n+1}<a_{n_{0}}\left(\frac{n_{0}}{n+1}\right)^{L-\varepsilon},\]
+			i com que \(L-\varepsilon>1\) trobem per l'exemple \myref{ex:sèrie harmònica} que la sèrie
+			\[\sum_{n=0}^{\infty}\left(\frac{1}{n+1}\right)^{L-\varepsilon}\]
+			és convergent, i pel lemma \myref{lemma:criteri de comparació de sèries de termes positius} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			
+			Veiem ara el punt \eqref{prop:criteri de Raabe:enum2}. Suposem doncs que \(L<1\).
+		\end{proof}
+	\end{proposition}
+	\begin{example}
+		Sigui \(\alpha>0\) un nombre real. Considerem la sèrie numèrica
+		\[\sum_{n=1}^{\infty}\frac{\alpha^{n}n!}{n^{n}}.\]
+		Volem estudiar la convergència d'aquesta sèrie en funció del valor de \(\alpha\).
+		\begin{solution}
+			Considerem
+			
+			Comparació + Raabe.
+		\end{solution}
+	\end{example}
 %	\subsection{Sèries alternades}
 %	\subsection{Convergència absoluta}
 %	\subsection{Reordenació de sèries}
