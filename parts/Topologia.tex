@@ -55,11 +55,11 @@
 	\begin{theorem}
 		Siguin \((X,d)\) i \((X',d')\) dos espais mètrics i \(f\colon X\longrightarrow X'\) una funció. Aleshores \(f\) és contínua si i només si per a tot \(\mathcal{U}\) obert de \(X'\) tenim que \(\Ima_{\mathcal{U}}(f^{-1})\) és obert.
 		\begin{proof}
-			Veiem primer que la condició és necessària (\(\Rightarrow\)). Suposem doncs que \(f\) és contínua. Prenem un obert \(\mathcal{U}\) de \(X'\) i un element \(y\) de \(X'\) tal que \(f^{-1}(y)\in\Ima_{\mathcal{U}}(f^{-1})\), i denotem \(x=f^{-1}(y)\). Per la definició d'\myref{def:obert} tenim que existeix un nombre real \(\varepsilon>0\) tal que \(\B(y,\varepsilon)\subset\Ima_{\mathcal{U}}(f^{-1})\).
+			Veiem primer que la condició és necessària (\(\implica\)). Suposem doncs que \(f\) és contínua. Prenem un obert \(\mathcal{U}\) de \(X'\) i un element \(y\) de \(X'\) tal que \(f^{-1}(y)\in\Ima_{\mathcal{U}}(f^{-1})\), i denotem \(x=f^{-1}(y)\). Per la definició d'\myref{def:obert} tenim que existeix un nombre real \(\varepsilon>0\) tal que \(\B(y,\varepsilon)\subset\Ima_{\mathcal{U}}(f^{-1})\).
 			
 			Prenem un element \(x'\) de \(\B(y,\varepsilon)\). Per la definició de \myref{def:bola} tenim que \(d(x,x')<\varepsilon\), i per la definició de \myref{def:funció contínua} tenim que existeix un \(\delta>0\) real tal que \(d'(f(x'),y)<\varepsilon\), i per la definició de \myref{def:bola} això és que \(f(x')\in\B(y,\varepsilon)\). Per tant tenim que \(\Ima_{\B(x,\delta)}(f)\subset\B(y,\varepsilon)\) i trobem que \(\B(x,\delta)\subset\Ima_{\mathcal{U}}(f^{-1})\), i per la definició de \myref{def:obert} trobem que \(\Ima_{\mathcal{U}}(f^{-1})\) és un obert, com volíem veure.
 			
-			Veiem ara que la condició és suficient (\(\Leftarrow\)). Suposem doncs que per a tot \(\mathcal{U}\) obert de \(X'\) tenim que \(\Ima_{\mathcal{U}}(f^{-1})\) és obert.
+			Veiem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que per a tot \(\mathcal{U}\) obert de \(X'\) tenim que \(\Ima_{\mathcal{U}}(f^{-1})\) és obert.
 			
 			Prenem un element \(xy\) de \(X\) i un real \(\varepsilon>0\). Si denotem \(y=f(x)\) tenim, per la proposició \myref{prop:les boles són oberts}, que la bola \(\B(y,\varepsilon)\) és un obert. Per hipòtesi tenim que \(\Ima_{\B(y,\varepsilon)}(f^{-1})\) és un obert, i per la definició d'\myref{def:obert} tenim que existeix un nombre real \(\delta>0\) tal que \(\B(x,\delta)\subset\Ima_{\B(y,\varepsilon)}(f^{-1})\).
 			

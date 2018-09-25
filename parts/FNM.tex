@@ -35,43 +35,43 @@
 	\begin{definition}[Implicació]
 		\labelname{implicació}\label{def:implicació}
 		Siguin \(R\) i \(S\) dues relacions. Aleshores definim una relació anomenada implicació definida com
-		\[R\Rightarrow S=S\lor(\lnot R).\]
+		\[R\implica S=S\lor(\lnot R).\]
 		Ho llegirem ``\(R\) implica \(S\)'' o ``si \(R\) aleshores \(S\)''.
 	\end{definition}
 	\begin{definition}[Doble implicació]
 		\labelname{doble implicació}\label{def:doble implicació}
 		Siguin \(R\) i \(S\) dues relacions. Aleshores definim una relació anomenada doble implicació definida com
-		\[R\Leftrightarrow S=(R\Rightarrow S)\land(S\Rightarrow R).\]
+		\[R\sii S=(R\implica S)\land(S\implica R).\]
 		Ho llegirem com ``\(R\) si i només si \(S\)'' o ``\(R\) és equivalent a \(S\)''.
 	\end{definition}
 	\subsection{Relacions vertaderes}
 	\begin{axiom}
 		\label{axiom:relacions 1}
 		Sigui \(R\) una relació. Aleshores la relació
-		\[(R\lor R)\Rightarrow R\]
+		\[(R\lor R)\implica R\]
 		és vertadera.
 	\end{axiom}
 	\begin{axiom}
 		\label{axiom:relacions 2}
 		Siguin \(R\) i \(S\) dues relacions. Aleshores la relació
-		\[R\Rightarrow(R\lor S)\]
+		\[R\implica(R\lor S)\]
 		és vertadera.
 	\end{axiom}
 	\begin{axiom}
 		\label{axiom:relacions 3}
 		Siguin \(R\) i \(S\) dues relacions. Aleshores la relació
-		\[(R\lor S)\Rightarrow(S\lor R)\]
+		\[(R\lor S)\implica(S\lor R)\]
 		és vertadera.
 	\end{axiom}
 	\begin{axiom}
 		\label{axiom:relacions 4}
 		Siguin \(R\), \(S\) i \(T\) tres relacions. Aleshores la relació
-		\[(R\Rightarrow S)\Rightarrow((R\lor T)\Rightarrow(S\lor T))\]
+		\[(R\implica S)\implica((R\lor T)\implica(S\lor T))\]
 		és vertadera.
 	\end{axiom}
 	\begin{axiom}
 		\label{axiom:relacions 5}
-		Siguin \(R\) i \(S\) dues relacions tals que \(R\) i \(R\Rightarrow S\) siguin vertaderes. Aleshores \(S\) és vertadera.
+		Siguin \(R\) i \(S\) dues relacions tals que \(R\) i \(R\implica S\) siguin vertaderes. Aleshores \(S\) és vertadera.
 	\end{axiom}
 	\begin{definition}[Relació falsa]
 		Sigui \(R\) una relació tal que \(\lnot R\) sigui vertadera. Aleshores direm que \(R\) és falsa.
@@ -79,34 +79,34 @@
 	\subsection{Tautologies}
 	\begin{tautology}
 		\label{taut:transitivitat implicacions}
-		Siguin \(R\), \(S\) i \(T\) tres relacions tals que \(R\Rightarrow S\) i \(S\Rightarrow T\) siguin vertaderes. Aleshores la relació \(R\Rightarrow T\) és vertadera.
+		Siguin \(R\), \(S\) i \(T\) tres relacions tals que \(R\implica S\) i \(S\implica T\) siguin vertaderes. Aleshores la relació \(R\implica T\) és vertadera.
 		\begin{proof}
 			Per l'axioma \myref{axiom:relacions 4} la relació
-			\[(S\Rightarrow T)\Rightarrow(S\lor(\lnot R)\Rightarrow(T\lor(\lnot R)))\]
+			\[(S\implica T)\implica(S\lor(\lnot R)\implica(T\lor(\lnot R)))\]
 			és vertadera. Ara bé, per la definició d'\myref{def:implicació} això ho podem escriure com
-			\[(S\Rightarrow T)\Rightarrow((R\Rightarrow S)\Rightarrow(R\Rightarrow T))\]
-			i com que, per hipòtesi, la relació \(S\Rightarrow T\) és vertadera per l'axioma \myref{axiom:relacions 5} tenim que la relació \((R\Rightarrow S)\Rightarrow(R\Rightarrow T)\) és vertadera, i com que, de nou per hipòtesi, tenim que la relació \(R\Rightarrow S\) és vertadera tenim per l'axioma \myref{axiom:relacions 5} que la relació \(R\Rightarrow T\) és vertadera, com volíem veure.
+			\[(S\implica T)\implica((R\implica S)\implica(R\implica T))\]
+			i com que, per hipòtesi, la relació \(S\implica T\) és vertadera per l'axioma \myref{axiom:relacions 5} tenim que la relació \((R\implica S)\implica(R\implica T)\) és vertadera, i com que, de nou per hipòtesi, tenim que la relació \(R\implica S\) és vertadera tenim per l'axioma \myref{axiom:relacions 5} que la relació \(R\implica T\) és vertadera, com volíem veure.
 		\end{proof}
 	\end{tautology}
 	\begin{tautology}[Tercer exclòs]
 		\labelname{tercer exclòs}\label{taut:R o no R és vertadera}\label{taut:tercer exclòs}
 		Sigui \(R\) una relació. Aleshores la relació \(R\lor(\lnot R)\) és vertadera.
 		\begin{proof}
-			La relació \(R\lor(\lnot R)\) és equivalent, per la definició d'\myref{def:implicació}, a \(R\Rightarrow R\). Per l'axioma \myref{axiom:relacions 1} tenim que la relació \((R\lor R)\Rightarrow R\) és vertadera, i per l'axioma \myref{axiom:relacions 2} tenim que la relació \(R\Rightarrow(R\lor R)\) és vertadera. Per tant, per la tautologia \myref{taut:transitivitat implicacions}, veiem que \(R\Rightarrow R\).
+			La relació \(R\lor(\lnot R)\) és equivalent, per la definició d'\myref{def:implicació}, a \(R\implica R\). Per l'axioma \myref{axiom:relacions 1} tenim que la relació \((R\lor R)\implica R\) és vertadera, i per l'axioma \myref{axiom:relacions 2} tenim que la relació \(R\implica(R\lor R)\) és vertadera. Per tant, per la tautologia \myref{taut:transitivitat implicacions}, veiem que \(R\implica R\).
 		\end{proof}
 	\end{tautology}
 	\begin{tautology}
 		\label{taut:disjunció és vertadera si una de les relaciones és vertadera}
 		Siguin \(R\) i \(S\) dues relacions tals que \(R\) sigui vertadera. Aleshores les relacions \(R\lor S\) i \(S\lor R\) són vertaderes.
 		\begin{proof}
-			Per l'axioma \myref{axiom:relacions 2} tenim que \(R\Rightarrow(R\lor S)\) és vertadera, i per l'axioma \myref{axiom:relacions 3} tenim que \((R\lor S)\Rightarrow(S\lor R)\) és vertadera.
+			Per l'axioma \myref{axiom:relacions 2} tenim que \(R\implica(R\lor S)\) és vertadera, i per l'axioma \myref{axiom:relacions 3} tenim que \((R\lor S)\implica(S\lor R)\) és vertadera.
 			
 			Ara bé, per hipòtesi tenim que \(R\) és vertadera, i per l'axioma \myref{axiom:relacions 5} veiem que les relacions \(R\lor S\) i \(S\lor R\) són vertaderes.
 		\end{proof}
 	\end{tautology}
 	\begin{tautology}
 		\label{taut:R és equivalent a no no R}
-		Sigui \(R\) una relació. Aleshores la relació \(R\Leftrightarrow\lnot(\lnot R)\) és vertadera.
+		Sigui \(R\) una relació. Aleshores la relació \(R\sii\lnot(\lnot R)\) és vertadera.
 		\begin{proof}
 			Per la definició de \myref{def:doble implicació} hem de veure que la relació
 			\[(\lnot(\lnot R)\lor(\lnot R))\land(R\lor(\lnot(\lnot(\lnot R)))\]
@@ -118,39 +118,39 @@
 	\begin{tautology}[Primera llei de De Morgan]
 		\labelname{llei de De Morgan}\label{taut:primera llei de De Morgan}
 		Siguin \(R\) i \(S\) dues relacions. Aleshores la relació
-		\[\lnot(R\lor S)\Leftrightarrow((\lnot R)\land(\lnot S))\]
+		\[\lnot(R\lor S)\sii((\lnot R)\land(\lnot S))\]
 		és vertadera.
 		\begin{proof}
 			Per la definició de \myref{def:conjunció} volem veure que la relació
-			\[\lnot(R\lor S)\Leftrightarrow\lnot((\lnot(\lnot R))\lor(\lnot(\lnot S)))\]
+			\[\lnot(R\lor S)\sii\lnot((\lnot(\lnot R))\lor(\lnot(\lnot S)))\]
 			és vertadera. Aleshores, per la tautologia del \myref{taut:R o no R és vertadera} això és equivalent a veure que la relació
-			\[\lnot(R\lor S)\Leftrightarrow\lnot(R\lor S)\]
+			\[\lnot(R\lor S)\sii\lnot(R\lor S)\]
 			és vertadera, i per l'axioma \myref{axiom:relacions 3} hem acabat.
 		\end{proof}
 	\end{tautology}
 	\begin{tautology}[Segona llei de De Morgan]
 		\labelname{llei de De Morgan}\label{taut:segona llei de De Morgan}
 		Siguin \(R\) i \(S\) dues relacions. Aleshores la relació
-		\[\lnot(R\land S)\Leftrightarrow((\lnot R)\lor(\lnot S))\]
+		\[\lnot(R\land S)\sii((\lnot R)\lor(\lnot S))\]
 		és vertadera.
 		\begin{proof}
 			Per la definició de \myref{def:conjunció} hem de veure que la relació
-			\[((\lnot R)\lor(\lnot S))\Leftrightarrow\lnot((\lnot(\lnot R))\land(\lnot (\lnot S))),\]
+			\[((\lnot R)\lor(\lnot S))\sii\lnot((\lnot(\lnot R))\land(\lnot (\lnot S))),\]
 			i per la tautologia \myref{taut:R és equivalent a no no R} això és equivalent a veure que la relació
-			\[((\lnot R)\lor(\lnot S))\Leftrightarrow\lnot(R\land S),\]
+			\[((\lnot R)\lor(\lnot S))\sii\lnot(R\land S),\]
 			que és conseqüència de la \myref{taut:primera llei de De Morgan}.
 		\end{proof}
 	\end{tautology}
 	\begin{tautology}[Llei de les contrarecíproques]
 		\labelname{la llei de les contrarecíproques}\label{taut:llei de les contrarecíproques}
 		Siguin \(R\) i \(S\) dues relacions. Aleshores la relació
-		\[(R\Rightarrow S)\Leftrightarrow((\lnot S)\Rightarrow(\lnot R))\]
+		\[(R\implica S)\sii((\lnot S)\implica(\lnot R))\]
 		és vertadera.
 		\begin{proof}
 			Per la definició d'\myref{def:implicació} hem de veure que la relació
-			\[(S\lor(\lnot R))\Leftrightarrow((\lnot R)\lor(\lnot(\lnot S)))\]
+			\[(S\lor(\lnot R))\sii((\lnot R)\lor(\lnot(\lnot S)))\]
 			és vertadera. Ara bé, per la tautologia \myref{taut:R és equivalent a no no R} tenim que això és equivalent a veure que la relació
-			\[(S\lor(\lnot R))\Leftrightarrow((\lnot R)\lor S)\]
+			\[(S\lor(\lnot R))\sii((\lnot R)\lor S)\]
 			és vertadera, i pels axiomes \myref{axiom:relacions 3} i \myref{axiom:relacions 4} i la definició de \myref{def:doble implicació} tenim que aquesta relació és vertadera, com volíem veure.
 		\end{proof}
 	\end{tautology}
@@ -158,31 +158,31 @@
 		\label{taut:condició equivalent a conjunció}
 		Siguin \(R\) i \(S\) dues relacions. Aleshores la relació \(R\land S\) és vertadera si i només si \(R\) és vertadera i \(S\) és vertadera.
 		\begin{proof}
-			Veiem primer l'implicació cap a la dreta (\(\Rightarrow\)). Suposem doncs que \(R\) i \(S\) són vertaderes. Per l'axioma \myref{axiom:relacions 2} la relació \(S\lor(\lnot R)\) és vertadera i, per la definició de \myref{def:implicació} tenim que \(R\Rightarrow S\) és vertadera. Ara bé, per la tautologia de \myref{taut:llei de les contrarecíproques} tenim que la relació \((\lnot S)\Rightarrow(\lnot R)\) és vertadera, i pels axiomes \myref{axiom:relacions 4} i \myref{axiom:relacions 1} tenim que la relació
-			\[((\lnot S)\lor(\lnot R))\Rightarrow(\lnot R)\]
+			Veiem primer l'implicació cap a la dreta (\(\implica\)). Suposem doncs que \(R\) i \(S\) són vertaderes. Per l'axioma \myref{axiom:relacions 2} la relació \(S\lor(\lnot R)\) és vertadera i, per la definició de \myref{def:implicació} tenim que \(R\implica S\) és vertadera. Ara bé, per la tautologia de \myref{taut:llei de les contrarecíproques} tenim que la relació \((\lnot S)\implica(\lnot R)\) és vertadera, i pels axiomes \myref{axiom:relacions 4} i \myref{axiom:relacions 1} tenim que la relació
+			\[((\lnot S)\lor(\lnot R))\implica(\lnot R)\]
 			és vertadera, i de nou per la tautologia de \myref{taut:llei de les contrarecíproques} trobem que la relació
-			\[(\lnot(\lnot R))\Rightarrow(\lnot(\lnot S)\lor(\lnot R))\]
+			\[(\lnot(\lnot R))\implica(\lnot(\lnot S)\lor(\lnot R))\]
 			és vertadera, i per la tautologia \myref{taut:R és equivalent a no no R} trobem que la relació
-			\[R\Rightarrow(\lnot((\lnot S)\lor(\lnot R)))\]
+			\[R\implica(\lnot((\lnot S)\lor(\lnot R)))\]
 			és vertadera, i per la definició de \myref{def:conjunció} això és equivalent a que la relació
-			\[R\Rightarrow(R\land S)\]
+			\[R\implica(R\land S)\]
 			és vertadera, i per tant per l'axioma \myref{axiom:relacions 5} trobem que \(R\land S\) és vertadera, com volíem veure.
 			
-			Veiem ara l'implicació cap a l'esquerra (\(\Leftarrow\)). Suposem doncs que la relació \(R\land S\) és vertadera. Per la tautologia de \myref{taut:llei de les contrarecíproques} tenim que la relació \((R\land S)\Rightarrow S\) és vertadera si i només si la relació
-			\[(\lnot R)\Rightarrow(\lnot(\lnot((\lnot R)\lor(\lnot S))))\]
+			Veiem ara l'implicació cap a l'esquerra (\(\implicatper\)). Suposem doncs que la relació \(R\land S\) és vertadera. Per la tautologia de \myref{taut:llei de les contrarecíproques} tenim que la relació \((R\land S)\implica S\) és vertadera si i només si la relació
+			\[(\lnot R)\implica(\lnot(\lnot((\lnot R)\lor(\lnot S))))\]
 			és vertadera. Ara bé, per la tautologia \myref{taut:R és equivalent a no no R} tenim que això és equivalent a veure que la relació
-			\[(\lnot R)\Rightarrow((\lnot R)\lor(\lnot S))\]
-			és vertadera, que és conseqüència de l'axioma \myref{axiom:relacions 2}, i per tant la relació \((R\land S)\Rightarrow R\) és vertadera. La demostració del cas \((R\land S)\Rightarrow S\) és anàloga.
+			\[(\lnot R)\implica((\lnot R)\lor(\lnot S))\]
+			és vertadera, que és conseqüència de l'axioma \myref{axiom:relacions 2}, i per tant la relació \((R\land S)\implica R\) és vertadera. La demostració del cas \((R\land S)\implica S\) és anàloga.
 		\end{proof}
 	\end{tautology}
 	\begin{tautology}
 		\label{taut:condicions per disjunció}
 		Siguin \(R\) i \(S\) dues relacions tals que \(R\) sigui falsa i \(R\lor S\) sigui vertadera. Aleshores la relació \(S\) és vertadera.
 		\begin{proof}
-			Per la tautologia \ref{taut:R és equivalent a no no R} tenim que la relació \(R\Rightarrow(\lnot(\lnot R))\) és vertadera, i per l'axioma \myref{axiom:relacions 4} això és que la relació
-			\[(R\lor S)\Leftrightarrow(\lnot(\lnot R)\lor S)\]
+			Per la tautologia \ref{taut:R és equivalent a no no R} tenim que la relació \(R\implica(\lnot(\lnot R))\) és vertadera, i per l'axioma \myref{axiom:relacions 4} això és que la relació
+			\[(R\lor S)\sii(\lnot(\lnot R)\lor S)\]
 			és vertadera. Ara bé, per la definició d'\myref{def:implicació} tenim que això és equivalent a la relació
-			\[(R\lor S)\Leftrightarrow((\lnot R)\Rightarrow S).\]
+			\[(R\lor S)\sii((\lnot R)\implica S).\]
 			I com que, per hipòtesi, \(R\lor S\) i \(\lnot R\) són vertaderes, tenim que \(S\) és vertadera, com volíem veure.
 		\end{proof}
 	\end{tautology}
@@ -224,9 +224,9 @@
 		\labelname{Teorema de la doble inclusió}\label{thm:doble inclusió}
 		Siguin \(A\) i \(B\) dos conjunts. Aleshores \(A=B\) si i només si \(A\subseteq B\) i \(B\subseteq A\).
 		\begin{proof}
-			Comencem veient que la condició és necessària (\(\Rightarrow\)). Suposem doncs que \(A\subseteq B\) i \(B\subseteq A\). Per la definició de \myref{def:subconjunt} tenim que si \(x\in A\) aleshores \(x\in B\), ja que per hipòtesi \(A\subset B\). De mateixa manera tenim que si \(x\in B\) aleshores \(x\in A\), ja que per hipòtesi \(B\subseteq A\). Per tant, per l'\myref{axiom:axioma d'extensionalitat} tenim que \(A=B\).
+			Comencem veient que la condició és necessària (\(\implica\)). Suposem doncs que \(A\subseteq B\) i \(B\subseteq A\). Per la definició de \myref{def:subconjunt} tenim que si \(x\in A\) aleshores \(x\in B\), ja que per hipòtesi \(A\subset B\). De mateixa manera tenim que si \(x\in B\) aleshores \(x\in A\), ja que per hipòtesi \(B\subseteq A\). Per tant, per l'\myref{axiom:axioma d'extensionalitat} tenim que \(A=B\).
 			
-			Veiem ara que la condició és suficient (\(\Leftarrow\)). Suposem doncs que \(A=B\). Tenim que si \(x\in A\), aleshores \(x\in B\), i per la definició de \myref{def:subconjunt} això és que \(A\subseteq B\). De mateixa manera, si \(x\in B\) tenim \(x\in A\), i de nou per la definició de \myref{def:subconjunt} tenim que \(B\subseteq A\), com volíem veure.
+			Veiem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que \(A=B\). Tenim que si \(x\in A\), aleshores \(x\in B\), i per la definició de \myref{def:subconjunt} això és que \(A\subseteq B\). De mateixa manera, si \(x\in B\) tenim \(x\in A\), i de nou per la definició de \myref{def:subconjunt} tenim que \(B\subseteq A\), com volíem veure.
 		\end{proof}
 	\end{theorem}
 	\begin{axiom}[Axioma del Conjunt Potència]
@@ -436,13 +436,13 @@
 		\label{thm:bijectiva iff invertible}
 		Sigui \(f\colon A\rightarrow B\) una funció. Aleshores \(f\) és bijectiva si i només si \(f\) és invertible.
 		\begin{proof}
-			Comencem veient que la condició és necessària (\(\Rightarrow\)). Suposem doncs que \(f\) és una aplicació bijectiva. Per la definició d'\myref{def:aplicació bijectiva} tenim que \(f\) és injectiva i exhaustiva. Per tant per la definició d'\myref{def:aplicació injectiva} i la definició d'\myref{def:aplicació exhaustiva} tenim que per a tot \(b\in B\) existeix un únic \(a\in A\) tal que \(b=f(a)\).
+			Comencem veient que la condició és necessària (\(\implica\)). Suposem doncs que \(f\) és una aplicació bijectiva. Per la definició d'\myref{def:aplicació bijectiva} tenim que \(f\) és injectiva i exhaustiva. Per tant per la definició d'\myref{def:aplicació injectiva} i la definició d'\myref{def:aplicació exhaustiva} tenim que per a tot \(b\in B\) existeix un únic \(a\in A\) tal que \(b=f(a)\).
 			
 			Per tant definim l'aplicació \(g\colon B\rightarrow A\) tal que \(g(b)=a\). Ara bé, tenim que per a tot \(a\in A\) i \(b\in B\)
 			\[(g\circ f)(a)=a\quad\text{i}\quad(f\circ g)(b)=b,\]
 			i per la definició de \myref{def:aplicació invertible} tenim que \(f\) és invertible, com volíem veure.
 			
-			Comprovem ara que la condició és suficient (\(\Leftarrow\)). Suposem doncs que \(f\) té inversa. Prenem dos elements \(a\) i \(a'\) de \(A\) tals que \(f(a)=f(a')\). Ara bé, per la definició de \myref{def:aplicació invertible} tenim que \((f^{-1}\circ f)(a)=a\) i \((f^{-1}\circ f)(a')=a'\) amb \((f^{-1}\circ f)(a)=(f^{-1}\circ f)(a')\), i per tant \(a=a'\) i per la definició d'\myref{def:aplicació injectiva} tenim que \(f\) és injectiva.
+			Comprovem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que \(f\) té inversa. Prenem dos elements \(a\) i \(a'\) de \(A\) tals que \(f(a)=f(a')\). Ara bé, per la definició de \myref{def:aplicació invertible} tenim que \((f^{-1}\circ f)(a)=a\) i \((f^{-1}\circ f)(a')=a'\) amb \((f^{-1}\circ f)(a)=(f^{-1}\circ f)(a')\), i per tant \(a=a'\) i per la definició d'\myref{def:aplicació injectiva} tenim que \(f\) és injectiva.
 			
 			Sigui \(b\) un element de \(B\) i prenem \(a\) de \(A\) tal que \(f^{-1}(b)=a\). Aleshores trobem
 			\[b=Id_{B}(b)=f\circ f^{-1}(b)=f(a),\]
@@ -738,7 +738,7 @@
 		Siguin \(x\), \(y\) i \(z\) tres nombres naturals tals que \(x+z=x+y\). Aleshores \(x=y\).
 		\begin{proof}
 			Definim el conjunt
-			\[A=\{z\in\mathbb{N}\mid x+z=y+z\Rightarrow x=y\text{ per a tot }x,y\in\mathbb{N}\}.\]
+			\[A=\{z\in\mathbb{N}\mid x+z=y+z\implica x=y\text{ per a tot }x,y\in\mathbb{N}\}.\]
 			Per la definició de \myref{def:subconjunt} trobem que \(A\subseteq\mathbb{N}\).
 			
 			Tenim que \(1\in A\), ja que si \(x+1=y+1\) per la definició de \myref{def:suma de nombres naturals} trobem que \(S(x)=S(y)\), i per la definició de \myref{def:nombres naturals} trobem que \(x=y\). També tenim que si \(z\in A\), aleshores \(S(z)\in A\). Efectivament, per a tot \(x,y\in\mathbb{N}\) tals que \(x+S(z)=y+S(z)\) tenim per la definició de \myref{def:suma de nombres naturals} que
@@ -757,7 +757,7 @@
 		Siguin \(x\), \(y\) i \(z\) tres nombres naturals tals que \(xz=yz\). Aleshores \(x=y\).
 		\begin{proof}
 			Definim el conjunt
-			\[A=\{z\in\mathbb{N}\mid xz=yz\Rightarrow x=y\text{ per a tot }x,y\in\mathbb{N}\}.\]
+			\[A=\{z\in\mathbb{N}\mid xz=yz\implica x=y\text{ per a tot }x,y\in\mathbb{N}\}.\]
 			Per la definició de \myref{def:subconjunt} trobem que \(A\subseteq\mathbb{N}\).
 			
 			Tenim que \(1\in A\), ja que si \(x\cdot1=y\cdot1\) per la definició de \myref{def:producte de nombres naturals} trobem que \(x=y\). També tenim que si \(z\in A\), aleshores \(S(z)\in A\). Efectivament, per a tot \(x,y\in\mathbb{N}\) tals que \(x\cdot S(z)=y\cdot S(z)\) tenim per la definició de \myref{def:producte de nombres naturals} que
@@ -772,7 +772,7 @@
 	\subsection{Construcció dels nombres enters}
 	\begin{proposition}
 		Sigui \(\sim\) una relació binària sobre \(A=\mathbb{N}\cup\{0\}\), amb \(n+0=0+n=n\) i \(n\cdot 0=0\cdot n=0\), tal que per a tot \((a,b)\) i \((c,d)\) elements de \(A\times A\)
-		\[(a,b)\sim(c,d)\Longleftrightarrow a+d=b+c.\]
+		\[(a,b)\sim(c,d)\sii a+d=b+c.\]
 		Aleshores \(\sim\) és una relació d'equivalència.
 		\begin{proof}
 			Comprovem les propietats de la definició de relació d'equivalència:
@@ -793,7 +793,7 @@
 	\begin{definition}[Nombres enters]
 		\labelname{nombres enters}\label{def:nombres enters}
 		Sigui \(\sim\) una relació d'equivalència sobre \(A=\mathbb{N}\cup\{0\}\), amb \(n+0=0+n=n\) i \(n\cdot 0=0\cdot n=0\), i \(\sim\) una relació d'equivalència tal que per a tot \((a,b)\) i \((c,d)\) elements de \(A\times A\)
-		\[(a,b)\sim(c,d)\Longleftrightarrow a+d=b+c.\]
+		\[(a,b)\sim(c,d)\sii a+d=b+c.\]
 		Aleshores direm que el conjunt quocient \(\mathbb{Z}=A\times A/\sim\) és el conjunt dels nombres enters. També direm que els elements de \(\mathbb{Z}\) són nombres enters.
 	\end{definition}
 	\begin{definition}[Resta de nombres naturals]
@@ -863,12 +863,12 @@
 	\end{notation}
 	\begin{observation}
 		\label{obs:elements que es tatxen son iguals}
-		\(a-b=0\Longleftrightarrow a=b.\)
+		\(a-b=0\sii a=b.\)
 	\end{observation}
 	\begin{theorem}
 		\label{thm:caracterització del 0 dels enters}
 		Sigui \(\overline{(a,b)}\) un nombre enter. Aleshores
-		\[\overline{(a,b)}=\overline{(0,0)}\Longleftrightarrow a=b.\]
+		\[\overline{(a,b)}=\overline{(0,0)}\sii a=b.\]
 		\begin{proof}
 			Suposem que \(\overline{(a,b)}=\overline{(0,0)}\). Per la definició de \myref{def:classe d'equivalència} això és
 			\[(a,b)\sim(0,0),\]
@@ -1174,9 +1174,9 @@
 		Siguin \(a\) i \(b\) dos enters. Aleshores \(a\) i \(b\) són coprimers si i només si existeixen dos enters \(\alpha\) i \(\beta\) tals que
 		\[\alpha a+\beta b=1.\]
 		\begin{proof}
-			Veiem que la condició és suficient (\(\Rightarrow\)). Suposem doncs que \(a\) i \(b\) són coprimers. Per \myref{thm:identitat de Bézout} hem acabat.
+			Veiem que la condició és suficient (\(\implica\)). Suposem doncs que \(a\) i \(b\) són coprimers. Per \myref{thm:identitat de Bézout} hem acabat.
 			
-			Veiem ara que la condició és necessària (\(\Leftarrow\)). Suposem doncs que existeixen dos enters \(\alpha\) i \(\beta\) tals que \(\alpha a+\beta b=1\). Tenim que si existeix un enter \(c\) tal que \(c\divides a\) i \(c\divides b\), aleshores \(c\divides 1\), i per la definició de \myref{def:màxim comú divisor} trobem que \(\mcd(a,b)=1\).
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que existeixen dos enters \(\alpha\) i \(\beta\) tals que \(\alpha a+\beta b=1\). Tenim que si existeix un enter \(c\) tal que \(c\divides a\) i \(c\divides b\), aleshores \(c\divides 1\), i per la definició de \myref{def:màxim comú divisor} trobem que \(\mcd(a,b)=1\).
 		\end{proof}
 	\end{theorem}
 	\begin{proposition}
@@ -1293,7 +1293,7 @@
 	\begin{proposition}
 		\label{prop:relació d'equivalència Z/(m)}
 		Siguin \(m\) un nombre enter. Aleshores la relació
-		\[x\sim y\Longleftrightarrow x-y=mk\quad\text{per a cert }k\in\mathbb{Z}\text{ per a tot }x,y\in\mathbb{Z}\]
+		\[x\sim y\sii x-y=mk\quad\text{per a cert }k\in\mathbb{Z}\text{ per a tot }x,y\in\mathbb{Z}\]
 		és una relació d'equivalència.
 		\begin{proof}
 			Comprovem les propietats de la definició de relació d'equivalència:
@@ -1315,7 +1315,7 @@
 		\labelname{nombres modulars}\label{def:nombres modulars}\label{def:Z/(m)}
 		\labelname{nombres modulars congruents}\label{def:nombres modulars congruents}
 		Siguin \(m\) un enter i
-		\[x\sim y\Longleftrightarrow x-y=mk\quad\text{per a cert }k\in\mathbb{Z}\text{ per a tot }x,y\in\mathbb{Z}\]
+		\[x\sim y\sii x-y=mk\quad\text{per a cert }k\in\mathbb{Z}\text{ per a tot }x,y\in\mathbb{Z}\]
 		una relació d'equivalència. Aleshores denotem el conjunt quocient \(\mathbb{Z}/\sim\) com \(\mathbb{Z}/(m)\), i si \(x\sim y\) escriurem \(x\equiv y\pmod{m}\). Direm que \(\mathbb{Z}/(m)\) són nombres modulars i si \(x\sim y\) direm que \(x\) i \(y\) són congruents mòdul \(m\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:relació d'equivalència Z/(m)}
@@ -1557,11 +1557,11 @@
 		\label{prop:permutació identitat si i només si no mou res}
 		\label{prop:permutació no mou res si i només si és la identitat}
 		Siguin \(X\) un conjunt no buit i \(\sigma\) una permutació de \(\GrupSimetric_{X}\). Aleshores
-		\[\Mou(\sigma)=\emptyset\Longleftrightarrow\sigma=\Id_{X}.\]
+		\[\Mou(\sigma)=\emptyset\sii\sigma=\Id_{X}.\]
 		\begin{proof}
-			Comencem veient l'implicació cap a la dreta (\(\Rightarrow\)). Suposem doncs que \(\Mou(\sigma)=\emptyset\). Aleshores per la definició de \myref{def:conjunt d'elements moguts per una permutació} trobem que \(\{x\in X\mid\sigma(x)\neq x\}=\emptyset\), i per tant ha de ser \(\sigma(x)=x\) per a tot \(x\in X\), i per tant \(\sigma=\Id_{X}\).
+			Comencem veient l'implicació cap a la dreta (\(\implica\)). Suposem doncs que \(\Mou(\sigma)=\emptyset\). Aleshores per la definició de \myref{def:conjunt d'elements moguts per una permutació} trobem que \(\{x\in X\mid\sigma(x)\neq x\}=\emptyset\), i per tant ha de ser \(\sigma(x)=x\) per a tot \(x\in X\), i per tant \(\sigma=\Id_{X}\).
 			
-			Veiem ara l'implicació cap a l'esquerra (\(\Leftarrow\)). Prenem \(\Id_{X}\). Aleshores ha de ser \(\Mou(\Id_{X})=\emptyset\), ja que per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que \(\Mou(\Id_{X})=\{x\in X\mid\Id_{X}(x)\neq x\}\).
+			Veiem ara l'implicació cap a l'esquerra (\(\implicatper\)). Prenem \(\Id_{X}\). Aleshores ha de ser \(\Mou(\Id_{X})=\emptyset\), ja que per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que \(\Mou(\Id_{X})=\{x\in X\mid\Id_{X}(x)\neq x\}\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
@@ -1602,9 +1602,9 @@
 	\begin{lemma}
 		\label{lemma:permutacions disjuntes commuten}
 		Siguin \(X\) un conjunt no buit i \(\tau\) una permutació de \(\GrupSimetric_{X}\). Aleshores
-		\[x\in\Mou(\sigma)\Longleftrightarrow\sigma(x)\in\Mou(\sigma).\]
+		\[x\in\Mou(\sigma)\sii\sigma(x)\in\Mou(\sigma).\]
 		\begin{proof}
-			Per la definició de \myref{def:permutació} tenim que \(\sigma\) és bijectiva, i per tant \(\sigma(x)=x\) si i només si \(\sigma(\sigma(x))=\sigma(x)\). Prenent la negació d'això trobem que \(\sigma(x)\neq x\) si i només si \(\sigma(\sigma(x))\neq\sigma(x)\), que per la definició de \myref{def:conjunt d'elements moguts per una permutació} és equivalent a \(x\in\Mou(\sigma)\Longleftrightarrow\sigma(x)\in\Mou(\sigma)\).
+			Per la definició de \myref{def:permutació} tenim que \(\sigma\) és bijectiva, i per tant \(\sigma(x)=x\) si i només si \(\sigma(\sigma(x))=\sigma(x)\). Prenent la negació d'això trobem que \(\sigma(x)\neq x\) si i només si \(\sigma(\sigma(x))\neq\sigma(x)\), que per la definició de \myref{def:conjunt d'elements moguts per una permutació} és equivalent a \(x\in\Mou(\sigma)\sii\sigma(x)\in\Mou(\sigma)\).
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}
@@ -1746,7 +1746,7 @@
 	\begin{proposition}
 		\label{prop:nombres racionals}
 		Sigui \(\sim\) una relació tal que per a tot \((a,b)\), \((c,d)\) elements de \(\mathbb{Z}\times\mathbb{Z}\setminus\{0\}\) tenim
-		\[(a,b)\sim(c,d)\Longleftrightarrow ad=bc.\]
+		\[(a,b)\sim(c,d)\sii ad=bc.\]
 		Aleshores \(\sim\) és una relació d'equivalència.
 		\begin{proof}
 			Comprovem les propietats de la definició de relació d'equivalència:
@@ -1765,7 +1765,7 @@
 	\begin{definition}[Conjunt dels nombres racionals]
 		\labelname{nombres racionals}\label{def:nombres racionals}
 		Sigui \(\sim\) una relació d'equivalència tal que
-		\[(a,b)\sim(c,d)\Longleftrightarrow ad=bc\]
+		\[(a,b)\sim(c,d)\sii ad=bc\]
 		per a tot \((a,b)\), \((c,d)\) elements de \(\mathbb{Z}\times\mathbb{Z}\setminus\{0\}\).
 		Aleshores direm que el conjunt quocient \(\mathbb{Q}=\mathbb{Z}\times\mathbb{Z}\setminus\{0\}/\sim\) és el conjunt dels nombres racionals. Direm que els elements de \(\mathbb{Q}\) són nombres racionals.
 		
@@ -1778,7 +1778,7 @@
 	\begin{proposition}
 		\label{prop:element neutre del producte en racionals}
 		Sigui \(\frac{a}{b}\) un nombre racional. Aleshores
-		\[\frac{a}{b}=\frac{1}{1}\Longleftrightarrow a=b.\]
+		\[\frac{a}{b}=\frac{1}{1}\sii a=b.\]
 		\begin{proof}
 			Per la definició de \myref{def:classe d'equivalència} tenim que
 			\[(a,b)\sim(1,1),\]

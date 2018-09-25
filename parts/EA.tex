@@ -55,8 +55,8 @@
 		\label{prop:podem tatxar pels costats en grups}
 		Siguin \(G\) un grup amb l'operació \(\ast\) i \(a,b,c\) tres elements de \(G\). Aleshores
 		\begin{enumerate}
-			\item\label{enum:podem tatxar pels costats en grups 1} \(a\ast c=b\ast c\Rightarrow a=b\).
-			\item\label{enum:podem tatxar pels costats en grups 2} \(c\ast a=c\ast b\Rightarrow a=b\).
+			\item\label{enum:podem tatxar pels costats en grups 1} \(a\ast c=b\ast c\implica a=b\).
+			\item\label{enum:podem tatxar pels costats en grups 2} \(c\ast a=c\ast b\implica a=b\).
 		\end{enumerate}
 		\begin{proof}
 			Farem només la demostració del punt \eqref{enum:podem tatxar pels costats en grups 1} ja que l'altre és anàloga.
@@ -158,9 +158,9 @@
 			\item\label{enum:definicions alternatives de grup 3} Existeix \(e\in G\) tal que per a tot \(x\in G\) tenim \(x\ast e=x\) i existeix un \(x^{-1}\in G\) tal que \(x\ast x^{-1}=e\).
 		\end{enumerate}
 		\begin{proof}
-			Comencem demostrant \eqref{enum:definicions alternatives de grup 1}\(\Rightarrow\)\eqref{enum:definicions alternatives de grup 2}. Suposem que \(G\) és un grup amb l'operació. Veiem que \(G\) no és buit per la definició de \myref{def:grup}, i la segona part és el lemma \myref{lemma:solucions úniques en grups a equacions}.
+			Comencem demostrant \eqref{enum:definicions alternatives de grup 1}\(\implica\)\eqref{enum:definicions alternatives de grup 2}. Suposem que \(G\) és un grup amb l'operació. Veiem que \(G\) no és buit per la definició de \myref{def:grup}, i la segona part és el lemma \myref{lemma:solucions úniques en grups a equacions}.
 			
-			Demostrem ara \eqref{enum:definicions alternatives de grup 2}\(\Rightarrow\)\eqref{enum:definicions alternatives de grup 3}. La primera part es pot veure fixant \(x\in G\). Pel punt \eqref{enum:definicions alternatives de grup 2} tenim que per a cada \(a\in G\) existeix un únic \(b\in G\) tal que
+			Demostrem ara \eqref{enum:definicions alternatives de grup 2}\(\implica\)\eqref{enum:definicions alternatives de grup 3}. La primera part es pot veure fixant \(x\in G\). Pel punt \eqref{enum:definicions alternatives de grup 2} tenim que per a cada \(a\in G\) existeix un únic \(b\in G\) tal que
 			\[a\ast b=x,\]
 			i podem fer
 			\[a\ast b\ast e=x\ast e\]
@@ -170,7 +170,7 @@
 			\[x\ast a=e,\]
 			i aleshores \(a=x^{-1}\).
 			
-			Ara només ens queda veure \eqref{enum:definicions alternatives de grup 3}\(\Rightarrow\)\eqref{enum:definicions alternatives de grup 1}. Tenim que per a tot \(x\in G\) existeix un \(x^{-1}\) tal que \(x\ast x^{-1}=e\), i de la mateixa manera, existeix un \(y\in G\) tal que \(x^{-1}\ast y=e\). Per tant
+			Ara només ens queda veure \eqref{enum:definicions alternatives de grup 3}\(\implica\)\eqref{enum:definicions alternatives de grup 1}. Tenim que per a tot \(x\in G\) existeix un \(x^{-1}\) tal que \(x\ast x^{-1}=e\), i de la mateixa manera, existeix un \(y\in G\) tal que \(x^{-1}\ast y=e\). Per tant
 			\begin{align*}
 			e&=x^{-1}\ast y\\
 			&=x^{-1}\ast e\ast y\\
@@ -179,7 +179,7 @@
 			\end{align*}
 			Així tenim que per a tot \(x\in G\) es compleix \(x\ast x^{-1}=x^{-1}\ast x=e\), d'on podem veure que \(e\ast x=x\ast e\), i com que, per hipòtesi, l'operació \(\ast\) satisfà \(x\ast(y\ast z)=(x\ast y)\ast z\) per a tot \(x,y,z\in G\) es compleix la definició de \myref{def:grup} i tenim que \(G\) és un grup amb l'operació \(\ast\).
 			
-			Així tenim \eqref{enum:definicions alternatives de grup 1}\(\Rightarrow\)\eqref{enum:definicions alternatives de grup 2}\(\Rightarrow\)\eqref{enum:definicions alternatives de grup 3}\(\Rightarrow\)\eqref{enum:definicions alternatives de grup 1}, com volíem veure.
+			Així tenim \eqref{enum:definicions alternatives de grup 1}\(\implica\)\eqref{enum:definicions alternatives de grup 2}\(\implica\)\eqref{enum:definicions alternatives de grup 3}\(\implica\)\eqref{enum:definicions alternatives de grup 1}, com volíem veure.
 		\end{proof}
 	\end{theorem}
 	\subsection{Subgrups i subgrups normals}
@@ -198,9 +198,9 @@
 		\label{prop:condició equivalent a subgrup}
 		Siguin \(G\) un grup amb l'operació \(\ast\) i element neutre \(e\) i \(H\) un subconjunt de \(G\). Aleshores \(H\) és un subgrup de \(G\) si i només si per a tot \(x,y\in H\) tenim que \(x\ast y^{-1}\in H\).
 		\begin{proof}
-			Demostrem primer que la condició és necessària (\(\Rightarrow\)). Això ho podem veure per la definició de \myref{def:grup}, ja que tenim que \(y^{-1}\) existeix i pertany a \(H\), i per tant \(x\ast y^{-1}\) també pertany a \(H\).
+			Demostrem primer que la condició és necessària (\(\implica\)). Això ho podem veure per la definició de \myref{def:grup}, ja que tenim que \(y^{-1}\) existeix i pertany a \(H\), i per tant \(x\ast y^{-1}\) també pertany a \(H\).
 			
-			Demostrem ara que la condició és suficient (\(\Leftarrow\)). Tenim que per a tot \(x\in H\) es compleix
+			Demostrem ara que la condició és suficient (\(\implicatper\)). Tenim que per a tot \(x\in H\) es compleix
 			\[x\ast x^{-1}=e,\]
 			i per tant \(e\in H\). També tenim que per a tot \(x\in H\) es compleix
 			\[e\ast x^{-1}=x^{-1},\]
@@ -254,9 +254,9 @@
 	\begin{proposition}
 		\label{prop:potencia element neutre en un grup}
 		Siguin \(G\) un grup amb l'operació \(\ast\) i element neutre \(e\) i \(g\) un element de \(G\). Aleshores
-		\[\abs{\langle\{g\}\rangle}=n\Longleftrightarrow n=\min\{k\in\mathbb{N}\mid g^{k}=e\}.\]
+		\[\abs{\langle\{g\}\rangle}=n\sii n=\min\{k\in\mathbb{N}\mid g^{k}=e\}.\]
 		\begin{proof}
-			Comencem amb la implicació cap a l'esquerra (\(\Leftarrow\)). Suposem doncs que \(n=\min\{k\in\mathbb{N}\mid g^{k}=e\}\). Pel \myref{thm:divisió euclidiana} tenim que per a tot \(t\in\mathbb{Z}\) existeixen uns únics \(Q\in\mathbb{Z}\), \(r\in\mathbb{N}\), amb \(r<n\) tals que \(t=Qn+r\). Per tant
+			Comencem amb la implicació cap a l'esquerra (\(\implicatper\)). Suposem doncs que \(n=\min\{k\in\mathbb{N}\mid g^{k}=e\}\). Pel \myref{thm:divisió euclidiana} tenim que per a tot \(t\in\mathbb{Z}\) existeixen uns únics \(Q\in\mathbb{Z}\), \(r\in\mathbb{N}\), amb \(r<n\) tals que \(t=Qn+r\). Per tant
 			\begin{align*}
 			g^{t}&=g^{Qm+r}\\
 			&=g^{Qm}\ast g^{r}\\
@@ -265,7 +265,7 @@
 			\end{align*}
 			Per tant, com que \(0\leq r<n\), \(\abs{\langle\{g\}\rangle}=n\).
 			
-			Fem ara la implicació cap a la dreta (\(\Rightarrow\)). Suposem doncs que \(\abs{\langle\{g\}\rangle}=n\). Com que el grup és finit per a cada \(i\in\mathbb{Z}\) existeix \(j\in\mathbb{Z}\) tal que \(g^{i}=g^{j}\) i, com que \(\langle\{g\}\rangle\) és un grup, per la definició de \myref{def:grup} existeix \(g^{-j}\in\langle\{g\}\rangle\) tal que \(g^{i-j}=e\).
+			Fem ara la implicació cap a la dreta (\(\implica\)). Suposem doncs que \(\abs{\langle\{g\}\rangle}=n\). Com que el grup és finit per a cada \(i\in\mathbb{Z}\) existeix \(j\in\mathbb{Z}\) tal que \(g^{i}=g^{j}\) i, com que \(\langle\{g\}\rangle\) és un grup, per la definició de \myref{def:grup} existeix \(g^{-j}\in\langle\{g\}\rangle\) tal que \(g^{i-j}=e\).
 			
 			Sigui doncs \(t\in\mathbb{N}\) tal que \(g^{t}=e\). Aleshores, pel \myref{thm:divisió euclidiana} existeixen uns únics \(Q,r\in\mathbb{N}\), amb \(r<n\) tals que \(t=Qn+r\). Per tant
 			\begin{align*}
@@ -300,18 +300,18 @@
 			\item\label{enum:condicions equivalents a subgrup normal 3} \(\{x^{-1}\}H\{x\}\subseteq H\) per a tot \(x\in G\).
 		\end{enumerate}
 		\begin{proof}
-			Comencem demostrant \eqref{enum:condicions equivalents a subgrup normal 1}\(\Rightarrow\)\eqref{enum:condicions equivalents a subgrup normal 2}. Suposem que \(H\) és un subgrup normal de \(G\), per la definició de \myref{def:subgrup normal} tenim \(\{x\}H=H\{x\}\) per a tot \(x\in G\). Aleshores tenim
+			Comencem demostrant \eqref{enum:condicions equivalents a subgrup normal 1}\(\implica\)\eqref{enum:condicions equivalents a subgrup normal 2}. Suposem que \(H\) és un subgrup normal de \(G\), per la definició de \myref{def:subgrup normal} tenim \(\{x\}H=H\{x\}\) per a tot \(x\in G\). Aleshores tenim
 			\begin{align*}
 			\{x\}H\{x^{-1}\}&=H\{x\}\{x^{-1}\}\\
 			&=\{h\ast x\ast x^{-1}\mid h\in H\}\\
 			&=\{h\mid h\in H\}=H.
 			\end{align*}
 			
-			Continuem demostrant \eqref{enum:condicions equivalents a subgrup normal 2}\(\Rightarrow\)\eqref{enum:condicions equivalents a subgrup normal 3}. Suposem que \(\{x\}H\{x^{-1}\}=H\). Tenim que \(\{x\}H\{x^{-1}\}=H\subseteq H\).
+			Continuem demostrant \eqref{enum:condicions equivalents a subgrup normal 2}\(\implica\)\eqref{enum:condicions equivalents a subgrup normal 3}. Suposem que \(\{x\}H\{x^{-1}\}=H\). Tenim que \(\{x\}H\{x^{-1}\}=H\subseteq H\).
 			
-			Demostrem ara \eqref{enum:condicions equivalents a subgrup normal 3}\(\Rightarrow\)\eqref{enum:condicions equivalents a subgrup normal 1}. Suposem doncs que \(\{x^{-1}\}H\{x\}\subseteq H\) per a tot \(x\in G\). Això significa que per a tot \(h\in H\) existeix un \(h'\in H\) tal que \(x\ast h\ast x^{-1}=h'\), i aleshores, per la definició de \myref{def:grup}, \(x\ast h=h'\ast x\in H\), i per tant \(x\ast h\in H\{x\}\) per a tot \(x\in G\). Així hem vist que \(\{x\}H\subseteq H\{x\}\). Per veure l'altre inclusió es pot donar un argument anàleg, i per tant \(\{x\}H= H\{x\}\). %REFERENCIA I POTSER MENYS MANDRA
+			Demostrem ara \eqref{enum:condicions equivalents a subgrup normal 3}\(\implica\)\eqref{enum:condicions equivalents a subgrup normal 1}. Suposem doncs que \(\{x^{-1}\}H\{x\}\subseteq H\) per a tot \(x\in G\). Això significa que per a tot \(h\in H\) existeix un \(h'\in H\) tal que \(x\ast h\ast x^{-1}=h'\), i aleshores, per la definició de \myref{def:grup}, \(x\ast h=h'\ast x\in H\), i per tant \(x\ast h\in H\{x\}\) per a tot \(x\in G\). Així hem vist que \(\{x\}H\subseteq H\{x\}\). Per veure l'altre inclusió es pot donar un argument anàleg, i per tant \(\{x\}H= H\{x\}\). %REFERENCIA I POTSER MENYS MANDRA
 			
-			I així hem vist que \eqref{enum:condicions equivalents a subgrup normal 1}\(\Rightarrow\)\eqref{enum:condicions equivalents a subgrup normal 2}\(\Rightarrow\)\eqref{enum:condicions equivalents a subgrup normal 3}\(\Rightarrow\)\eqref{enum:condicions equivalents a subgrup normal 1} i hem acabat.
+			I així hem vist que \eqref{enum:condicions equivalents a subgrup normal 1}\(\implica\)\eqref{enum:condicions equivalents a subgrup normal 2}\(\implica\)\eqref{enum:condicions equivalents a subgrup normal 3}\(\implica\)\eqref{enum:condicions equivalents a subgrup normal 1} i hem acabat.
 		\end{proof}
 	\end{proposition}
 	\subsection{Grups cíclics i grups abelians}
@@ -327,9 +327,9 @@
 		Sigui \(G\) un grup amb l'operació \(+\). Aleshores \(G\) és un grup abelià si i només si per a tot \(a,b\in G\) es compleix
 		\[-(a+b)=-a-b.\]
 		\begin{proof}
-			Que la condició és necessària (\(\Rightarrow\)) ho podem veure amb la definició de \myref{def:grup abelià} i la proposició \myref{prop:invers de a b = b invers a invers}.
+			Que la condició és necessària (\(\implica\)) ho podem veure amb la definició de \myref{def:grup abelià} i la proposició \myref{prop:invers de a b = b invers a invers}.
 			
-			Demostrem ara que la condició és suficient (\(\Leftarrow\)). Diem que l'element neutre de \(G\) és \(e\). Per la definició de \myref{def:grup} tenim que
+			Demostrem ara que la condició és suficient (\(\implicatper\)). Diem que l'element neutre de \(G\) és \(e\). Per la definició de \myref{def:grup} tenim que
 			\begin{equation}
 			\label{hipotesi:inverses grups}
 			(a+b)-(a+b)=e,
@@ -384,7 +384,7 @@
 		\label{prop:relacio entre grups és d'equivalència}
 		\label{TODO:grup quocient}
 		Siguin \(G\) un grup amb l'operació \(\ast\) i \(H\) un subgrup de \(G\). Aleshores la relació
-		\[x\sim y\Longleftrightarrow x\ast y^{-1}\in H\text{ per a tot }x,y\in G\]
+		\[x\sim y\sii x\ast y^{-1}\in H\text{ per a tot }x,y\in G\]
 		és una relació d'equivalència.
 		\begin{proof}
 			Sigui \(e\) l'element neutre del grup \(G\). Comprovem les propietats de la definició de relació d'equivalència:
@@ -402,7 +402,7 @@
 	\end{proposition}
 	\begin{proposition}\label{prop:grup quocient}
 		Siguin \(G\) un grup amb l'operació \(\ast\) i \(H\) un subgrup de \(G\) i \(\sim\) una relació d'equivalència tal que
-		\[x\sim y\Longleftrightarrow x\ast y^{-1}\in H\text{ per a tot }x,y\in G.\]
+		\[x\sim y\sii x\ast y^{-1}\in H\text{ per a tot }x,y\in G.\]
 		Aleshores el conjunt quocient \(G/H\) amb l'operació
 		\begin{align*}
 		\ast\colon G/H\times G/H&\longrightarrow G/H\\
@@ -594,9 +594,9 @@
 			\item\label{enum:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge 2} \(f\) és un epimorfisme si i només si \(\Ima(f)=G_{2}\).
 		\end{enumerate}
 		\begin{proof}
-			Comencem fent la demostració del punt \eqref{enum:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge 1} per la implicació cap a la dreta (\(\Rightarrow\)). Suposem doncs que \(f\) és un monomorfisme, i per tant injectiva. Per la definició de \myref{def:nucli d'un morfisme entre grups} tenim que \(\ker(f)=\{x\in G_{1}\mid f(x)=e'\}\). Suposem \(x\in G_{1}\), és a dir, \(f(x)=e'\). Ara bé, com que \(f\) és injectiva per la proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme} ha de ser \(\ker(f)=\{e\}\).%ref injectiva
+			Comencem fent la demostració del punt \eqref{enum:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge 1} per la implicació cap a la dreta (\(\implica\)). Suposem doncs que \(f\) és un monomorfisme, i per tant injectiva. Per la definició de \myref{def:nucli d'un morfisme entre grups} tenim que \(\ker(f)=\{x\in G_{1}\mid f(x)=e'\}\). Suposem \(x\in G_{1}\), és a dir, \(f(x)=e'\). Ara bé, com que \(f\) és injectiva per la proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme} ha de ser \(\ker(f)=\{e\}\).%ref injectiva
 			
-			Demostrem ara la implicació cal a l'esquerra (\(\Leftarrow\)). Suposem doncs que \(\ker(f)=\{e\}\). Siguin \(x,y\in G_{1}\) dos elements que satisfacin \(f(x)=f(y)\). Com que, per la proposició \myref{prop:el nucli d'un morfisme és un subgrup normal del grup de sortda} \(\ker(f)\) és un subgrup de \(G_{1}\), tenim que \(x\ast y^{-1}\in G_{1}\), i per tant
+			Demostrem ara la implicació cal a l'esquerra (\(\implicatper\)). Suposem doncs que \(\ker(f)=\{e\}\). Siguin \(x,y\in G_{1}\) dos elements que satisfacin \(f(x)=f(y)\). Com que, per la proposició \myref{prop:el nucli d'un morfisme és un subgrup normal del grup de sortda} \(\ker(f)\) és un subgrup de \(G_{1}\), tenim que \(x\ast y^{-1}\in G_{1}\), i per tant
 			\begin{align*}
 			f(x\ast y^{-1})&=f(x)\circ f(y^{-1})\tag{\myref{def:morfisme entre grups}}\\
 			&=f(x)\circ f(y)^{-1}\tag{Proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme}}\\
@@ -604,18 +604,18 @@
 			\end{align*}
 			i per tant \(x\ast y^{-1}\in\ker(f)\), però per hipòtesi teníem \(\ker(f)=\{e\}\), i per tant ha de ser \(x\ast y^{-1}=e\), el que és equivalent a \(x=y\), i per tant \(f\) és injectiva. %ref definició
 			
-			Demostrem ara el punt \eqref{enum:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge 2} començant per la implicació cap a la dreta (\(\Rightarrow\)). Suposem doncs que \(f\) és un epimorfisme, i per tant exhaustiva, i per tant per a cada \(y\in G_{2}\) existeix un \(x\in G_{1}\) tal que \(f(x)=y\), i per la definició d'\myref{def:imatge d'un morfisme entre grups} tenim que \(\Ima(f)=G_{2}\).
+			Demostrem ara el punt \eqref{enum:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge 2} començant per la implicació cap a la dreta (\(\implica\)). Suposem doncs que \(f\) és un epimorfisme, i per tant exhaustiva, i per tant per a cada \(y\in G_{2}\) existeix un \(x\in G_{1}\) tal que \(f(x)=y\), i per la definició d'\myref{def:imatge d'un morfisme entre grups} tenim que \(\Ima(f)=G_{2}\).
 			
-			Acabem demostrant la implicació cap a l'esquerra (\(\Leftarrow\)). Suposem doncs que \(\Ima(f)=G_{2}\) i prenem \(y\in G_{2}\). Aleshores per la definició d'\myref{def:imatge d'un morfisme entre grups} tenim que existeix un \(x\in G_{1}\) tal que \(f(x)=y\), i per tant \(f\) és exhaustiva. %ref definició
+			Acabem demostrant la implicació cap a l'esquerra (\(\implicatper\)). Suposem doncs que \(\Ima(f)=G_{2}\) i prenem \(y\in G_{2}\). Aleshores per la definició d'\myref{def:imatge d'un morfisme entre grups} tenim que existeix un \(x\in G_{1}\) tal que \(f(x)=y\), i per tant \(f\) és exhaustiva. %ref definició
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:les imatges dels subgrups son subgrups + el mateix amb subgrups normals}
 		Siguin \(G_{1}\) un grup amb l'operació \(\ast\), \(G_{2}\) un grup amb l'operació \(\circ\), i \(f\colon G_{1}\to G_{2}\) un morfisme entre grups. Aleshores
 		\begin{enumerate}
-			\item\label{enum:les imatges dels subgrups son subgrups + el mateix amb subgrups normals 1} Si \(H_{1}\leq G_{1}\Rightarrow\{f(h)\in G_{2}\mid h\in H_{1}\}\leq G_{2}\).
-			\item\label{enum:les imatges dels subgrups son subgrups + el mateix amb subgrups normals 2} Si \(H_{2}\leq G_{2}\Rightarrow\{h\in G_{1}\mid f(h)\in H_{2}\}\leq G_{1}\).
-			\item\label{enum:les imatges dels subgrups son subgrups + el mateix amb subgrups normals 3} Si \(H_{2}\trianglelefteq G_{2}\Rightarrow\{h\in G_{1}\mid f(h)\in H_{2}\}\trianglelefteq G_{1}\).
+			\item\label{enum:les imatges dels subgrups son subgrups + el mateix amb subgrups normals 1} Si \(H_{1}\leq G_{1}\implica\{f(h)\in G_{2}\mid h\in H_{1}\}\leq G_{2}\).
+			\item\label{enum:les imatges dels subgrups son subgrups + el mateix amb subgrups normals 2} Si \(H_{2}\leq G_{2}\implica\{h\in G_{1}\mid f(h)\in H_{2}\}\leq G_{1}\).
+			\item\label{enum:les imatges dels subgrups son subgrups + el mateix amb subgrups normals 3} Si \(H_{2}\trianglelefteq G_{2}\implica\{h\in G_{1}\mid f(h)\in H_{2}\}\trianglelefteq G_{1}\).
 		\end{enumerate}
 		\begin{proof}
 			Comprovem primer el punt \eqref{enum:les imatges dels subgrups son subgrups + el mateix amb subgrups normals 1}. Suposem doncs que \(H_{1}\) és un subgrup de \(G_{1}\). Denotarem \(H=\{f(h)\in G_{2}\mid h\in H_{1}\}\). Siguin \(x,y\in H_{1}\); per la proposició \myref{prop:condició equivalent a subgrup} només ens cal veure que \(f(x)\circ f(y)^{-1}\in H\). Això és
@@ -1262,9 +1262,9 @@
 			\item Per a tot \(r\in R\), \(x\in I\) tenim \(r\cdot x\in I\).
 		\end{enumerate}
 		\begin{proof}
-			Veiem que la condició és suficient (\(\Rightarrow\)). Suposem que \(I\) és un ideal de \(R\). Hem de veure que per a tot \(x,y\in I\), \(r\in R\) tenim \(x-y\in I\) i \(r\cdot x\in I\). Per la definició de \myref{def:grup} tenim que \(x-y\in I\), ja que, per la definició d'\myref{def:ideal d'un anell} tenim que \(I\) és un grup amb la suma \(+\). També trobem \(r\cdot x\in I\) per la definició d'\myref{def:ideal d'un anell}.
+			Veiem que la condició és suficient (\(\implica\)). Suposem que \(I\) és un ideal de \(R\). Hem de veure que per a tot \(x,y\in I\), \(r\in R\) tenim \(x-y\in I\) i \(r\cdot x\in I\). Per la definició de \myref{def:grup} tenim que \(x-y\in I\), ja que, per la definició d'\myref{def:ideal d'un anell} tenim que \(I\) és un grup amb la suma \(+\). També trobem \(r\cdot x\in I\) per la definició d'\myref{def:ideal d'un anell}.
 			
-			Veiem ara que la condició és necessària (\(\Leftarrow\)). Suposem que per a tot \(x,y\in I\), \(r\in R\) tenim \(x-y\in I\) i \(r\cdot x\in I\). Per la proposició \myref{prop:condició equivalent a subgrup} tenim que \(I\) és un subgrup del grup \(R\) amb la suma \(+\), i per la definició d'\myref{def:ideal d'un anell} tenim que \(I\) és un ideal de \(R\).
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem que per a tot \(x,y\in I\), \(r\in R\) tenim \(x-y\in I\) i \(r\cdot x\in I\). Per la proposició \myref{prop:condició equivalent a subgrup} tenim que \(I\) és un subgrup del grup \(R\) amb la suma \(+\), i per la definició d'\myref{def:ideal d'un anell} tenim que \(I\) és un ideal de \(R\).
 		\end{proof}
 	\end{proposition}
 	\begin{notation}
@@ -1328,15 +1328,15 @@
 		\label{prop:condició equivalent a cos per anells}
 		Sigui \(\mathbb{K}\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\). Aleshores tenim que \(\mathbb{K}\) és un cos si i només si els únics ideals de \(\mathbb{K}\) són \((0)\) i \(\mathbb{K}\).
 		\begin{proof}
-			Comencem comprovant que la condició és suficient (\(\Rightarrow\)). Suposem doncs que \(\mathbb{K}\) és un cos amb la suma \(+\) i el producte \(\cdot\) i que \(I\) és un ideal de \(\mathbb{K}\) amb \(I\neq(0)\), i per tant existeix \(a\in\mathbb{K}\), \(a\neq0\) tal que \(a\in I\). Com que, per hipòtesi, \((\mathbb{K}\setminus\{0\},\cdot)\) és un grup i \(a\ne0\) per la definició de \myref{def:l'invers d'un element d'un grup} existeix \(a^{-1}\in\mathbb{K}\) tal que \(a\cdot a^{-1}=1\), i per la definició d'\myref{def:ideal d'un anell} trobem que \(1\in I\), i per tant per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que per a tot \(x\in\mathbb{K}\) tenim \(x\cdot1=x\in I\), i per tant \(I=\mathbb{K}\).
+			Comencem comprovant que la condició és suficient (\(\implica\)). Suposem doncs que \(\mathbb{K}\) és un cos amb la suma \(+\) i el producte \(\cdot\) i que \(I\) és un ideal de \(\mathbb{K}\) amb \(I\neq(0)\), i per tant existeix \(a\in\mathbb{K}\), \(a\neq0\) tal que \(a\in I\). Com que, per hipòtesi, \((\mathbb{K}\setminus\{0\},\cdot)\) és un grup i \(a\ne0\) per la definició de \myref{def:l'invers d'un element d'un grup} existeix \(a^{-1}\in\mathbb{K}\) tal que \(a\cdot a^{-1}=1\), i per la definició d'\myref{def:ideal d'un anell} trobem que \(1\in I\), i per tant per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que per a tot \(x\in\mathbb{K}\) tenim \(x\cdot1=x\in I\), i per tant \(I=\mathbb{K}\).
 			
-			Veiem ara que la condició és necessària (\(\Leftarrow\)). Suposem que els únics ideals de \(\mathbb{K}\) són \((0)\) i \(\mathbb{K}\). Prenem un element \(a\in\mathbb{K}\), \(a\neq0\) i considerem l'ideal principal \((a)\), que per hipòtesi ha de ser \((a)=(1)=\mathbb{K}\), i per la definició d'\myref{def:ideal principal} tenim que existeix \(a'\in(1)\) tal que \(a\cdot a'=1\), i per tant, per la definició de \myref{def:grup} tenim que \(\mathbb{K}\setminus\{0\}\) és un grup amb el producte \(\cdot\) i per la definició de \myref{def:cos per anells} tenim que \(\mathbb{K}\) és un cos amb la suma \(+\) i el producte \(\cdot\).
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem que els únics ideals de \(\mathbb{K}\) són \((0)\) i \(\mathbb{K}\). Prenem un element \(a\in\mathbb{K}\), \(a\neq0\) i considerem l'ideal principal \((a)\), que per hipòtesi ha de ser \((a)=(1)=\mathbb{K}\), i per la definició d'\myref{def:ideal principal} tenim que existeix \(a'\in(1)\) tal que \(a\cdot a'=1\), i per tant, per la definició de \myref{def:grup} tenim que \(\mathbb{K}\setminus\{0\}\) és un grup amb el producte \(\cdot\) i per la definició de \myref{def:cos per anells} tenim que \(\mathbb{K}\) és un cos amb la suma \(+\) i el producte \(\cdot\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:relació d'equivalència en anells per ideals}
 		Sigui \(I\) un ideal d'un anell \(R\) amb la suma \(+\) i el producte \(\cdot\). Aleshores la relació
-		\[x\sim y\Longleftrightarrow x-y\in I\quad\text{per a tot }x,y\in R\]
+		\[x\sim y\sii x-y\in I\quad\text{per a tot }x,y\in R\]
 		és una relació d'equivalència.
 		\begin{proof}
 			Comprovem que \(\sim\) satisfà la definició de \myref{def:relació d'equivalència}:
@@ -1646,11 +1646,11 @@
 	\begin{proposition}
 		\label{prop:R/I domini d'integritat sii I ideal primer}
 		Sigui \(I\) un ideal d'un anell \(R\) amb la suma \(+\) i el producte \(\cdot\) amb \(I\neq R\). Aleshores
-		\[R/I\text{ és un domini d'integritat}\Longleftrightarrow I\text{ és un ideal primer de }R.\]
+		\[R/I\text{ és un domini d'integritat}\sii I\text{ és un ideal primer de }R.\]
 		\begin{proof}
-			Comencem demostrant que la condició és suficient (\(\Rightarrow\)). Suposem doncs que \(R/I\) és un domini d'integritat i prenem \([a],[b]\in R/I\) tals que \([a]\cdot[b]=[0]\). Aleshores per la definició de \myref{def:anell quocient} tenim que \(a\cdot b\in I\). Ara bé, com que per hipòtesi \(R/I\) és un domini d'integritat tenim que ha de ser \([a]=[0]\) ó \([b]=[0]\), i per tant trobem que ha de ser \(a\in I\) o \(b\in I\), i per la definició d'\myref{def:ideal primer} trobem que \(I\) és un ideal primer de \(R\).
+			Comencem demostrant que la condició és suficient (\(\implica\)). Suposem doncs que \(R/I\) és un domini d'integritat i prenem \([a],[b]\in R/I\) tals que \([a]\cdot[b]=[0]\). Aleshores per la definició de \myref{def:anell quocient} tenim que \(a\cdot b\in I\). Ara bé, com que per hipòtesi \(R/I\) és un domini d'integritat tenim que ha de ser \([a]=[0]\) ó \([b]=[0]\), i per tant trobem que ha de ser \(a\in I\) o \(b\in I\), i per la definició d'\myref{def:ideal primer} trobem que \(I\) és un ideal primer de \(R\).
 			
-			Veiem ara que la condició és necessària (\(\Leftarrow\)). Suposem doncs que \(I\) és un ideal primer de \(R\). Per la proposició \ref{prop:anell quocient} tenim que \(R/I\) és un anell commutatiu amb \(1\neq0\). Prenem doncs \(a\in R\), \(a\notin I\) i suposem que existeix \(b\in R\) tal que \([a]\cdot[b]=[0]\). Això és que \(a\cdot b\in I\), i com que per hipòtesi \(I\) és un ideal primer, per la definició d'\myref{def:ideal primer} trobem que ha de ser \(b\in I\), i per tant \([b]=[0]\) i per la definició de \myref{def:domini d'integritat} tenim que \(R/I\) és un domini d'integritat.
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que \(I\) és un ideal primer de \(R\). Per la proposició \ref{prop:anell quocient} tenim que \(R/I\) és un anell commutatiu amb \(1\neq0\). Prenem doncs \(a\in R\), \(a\notin I\) i suposem que existeix \(b\in R\) tal que \([a]\cdot[b]=[0]\). Això és que \(a\cdot b\in I\), i com que per hipòtesi \(I\) és un ideal primer, per la definició d'\myref{def:ideal primer} trobem que ha de ser \(b\in I\), i per tant \([b]=[0]\) i per la definició de \myref{def:domini d'integritat} tenim que \(R/I\) és un domini d'integritat.
 		\end{proof}
 	\end{proposition}
 	\begin{corollary}
@@ -1665,14 +1665,14 @@
 	\begin{proposition}
 		\label{prop:condició equivalent a ideal maximal per R/M cos}
 		Sigui \(M\) un ideal d'un anell \(R\) amb la suma \(+\) i el producte \(\cdot\) amb \(I\neq R\). Aleshores
-		\[R/M\text{ és un cos}\Longleftrightarrow M\text{ és un ideal maximal de }R.\]
+		\[R/M\text{ és un cos}\sii M\text{ és un ideal maximal de }R.\]
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:anell quocient}.
 			
-			Comencem veient la implicació cap a la dreta (\(\Rightarrow\)). Suposem doncs que \(R/M\) és un cos i prenem un ideal \(I/M\) %REF lemma teorema d'isomorfia anells per donar-li sentit
+			Comencem veient la implicació cap a la dreta (\(\implica\)). Suposem doncs que \(R/M\) és un cos i prenem un ideal \(I/M\) %REF lemma teorema d'isomorfia anells per donar-li sentit
 			 de \(R/M\). Aleshores ha de ser \(M\subseteq I\subseteq R\). Per la proposició \myref{prop:condició equivalent a cos per anells} tenim que els únics ideals de \(R/M\) són \(([0])\) i \(R/M\), i per tant ha de ser \(I=M\) o \(I=R\), i per la definició d'\myref{def:ideal maximal} tenim que \(M\) és un ideal maximal de \(R\).
 			
-			Veiem ara la implicació cap a l'esquerra (\(\Leftarrow\)). Suposem doncs que \(M\) és un ideal maximal de l'anell \(R\) i considerem, per la proposició \myref{prop:anell quocient}, l'anell \(R/M\). Per la proposició \myref{prop:condició equivalent a cos per anells} tenim que només hem de veure que els únics ideals de \(R/M\) són \((0)\) i \(R\). Prenem un ideal \(I/M\) de \(R/M\). Aquest ha de ser tal que \(M\subseteq I\subseteq R\), i per la definició d'\myref{def:ideal maximal} tenim que ha de ser \(I=M\) o \(I=R\), i per tant \(I/M\) ha de ser \(([0])\) o \(R/M\) i per la proposició \myref{prop:anell quocient} tenim que \(R/M\) és un cos.
+			Veiem ara la implicació cap a l'esquerra (\(\implicatper\)). Suposem doncs que \(M\) és un ideal maximal de l'anell \(R\) i considerem, per la proposició \myref{prop:anell quocient}, l'anell \(R/M\). Per la proposició \myref{prop:condició equivalent a cos per anells} tenim que només hem de veure que els únics ideals de \(R/M\) són \((0)\) i \(R\). Prenem un ideal \(I/M\) de \(R/M\). Aquest ha de ser tal que \(M\subseteq I\subseteq R\), i per la definició d'\myref{def:ideal maximal} tenim que ha de ser \(I=M\) o \(I=R\), i per tant \(I/M\) ha de ser \(([0])\) o \(R/M\) i per la proposició \myref{prop:anell quocient} tenim que \(R/M\) és un cos.
 		\end{proof}
 	\end{proposition}
 	\begin{corollary}
@@ -1758,7 +1758,7 @@
 	\end{definition}
 	\begin{observation}
 		\label{obs:divisors són ideals continguts}
-		\(b\divides a\Longleftrightarrow(a)\subseteq(b)\).
+		\(b\divides a\sii(a)\subseteq(b)\).
 	\end{observation}
 	\begin{proposition}
 		\label{prop:podem passar els múltiples de costat a costat}
@@ -1793,9 +1793,9 @@
 		\label{prop:màxim comú divisor anells}
 		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\), \(a,b\) dos elements de \(D\) i \(X\subseteq D\) un conjunt tal que per a tot \(d\in X\) tenim \(d\divides a\), \(d\divides b\) i per a tot \(c\in D\) tal que \(c\divides a\), \(c\divides b\) es compleix \(c\divides d\). Aleshores tenim que per a tot \(d'\in X\) si i només si \(d\sim d'\).
 		\begin{proof}
-			Comencem amb la implicació cap a la dreta (\(\Rightarrow\)). Suposem que \(d'\in X\). Hem de veure que \(d\sim d'\). Tenim \(d\divides d'\) i \(d'\divides d\) i per la definició de \myref{def:divisor per anells} trobem que \(d\sim d'\).
+			Comencem amb la implicació cap a la dreta (\(\implica\)). Suposem que \(d'\in X\). Hem de veure que \(d\sim d'\). Tenim \(d\divides d'\) i \(d'\divides d\) i per la definició de \myref{def:divisor per anells} trobem que \(d\sim d'\).
 			
-			Fem ara la implicació cap a l'esquerra (\(\Leftarrow\)). Suposem que \(d'\sim d\). Hem de veure que \(d'\in X\). Per hipòtesi tenim que \(d\divides a\) i \(d\divides b\). Per tant existeixen \(\alpha,\beta\in D\) tals que \(a=\alpha d\) i \(b=\beta d\), i per la proposició \myref{prop:podem passar els múltiples de costat a costat} tenim que si \(d'=d\cdot u\) amb \(u\in D\) invertible aleshores \(d=d'\cdot u^{-1}\). Per tant
+			Fem ara la implicació cap a l'esquerra (\(\implicatper\)). Suposem que \(d'\sim d\). Hem de veure que \(d'\in X\). Per hipòtesi tenim que \(d\divides a\) i \(d\divides b\). Per tant existeixen \(\alpha,\beta\in D\) tals que \(a=\alpha d\) i \(b=\beta d\), i per la proposició \myref{prop:podem passar els múltiples de costat a costat} tenim que si \(d'=d\cdot u\) amb \(u\in D\) invertible aleshores \(d=d'\cdot u^{-1}\). Per tant
 			\[a=\alpha\cdot d'\cdot u^{-1}\quad\text{i}\quad b=\beta\cdot d'\cdot u^{-1}\]
 			i per tant \(d'\divides a\) i \(d'\divides b\). Ara bé, com que per hipòtesi \(d\sim d'\), per la definició d'\myref{def:elements associats} tenim que \(d'\in X\).
 		\end{proof}
@@ -1813,9 +1813,9 @@
 		\label{prop:mínim comú múltiple anells}
 		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\), \(a,b\) dos elements de \(D\) i \(X\subseteq D\) un conjunt tal que per a tot \(m\in X\) tenim \(a\divides m\), \(b\divides m\) i per a tot \(c\in D\) tal que \(a\divides c\), \(b\divides c\) es compleix \(m\divides c\). Aleshores tenim que per a tot \(m'\in X\) si i només si \(m\sim m'\).
 		\begin{proof}
-			Comencem amb la implicació cap a la dreta (\(\Rightarrow\)). Suposem que \(m'\in X\). Hem de veure que \(m\sim m'\). Tenim \(m'\divides m\) i \(m\divides m'\) i per la definició de \myref{def:múltiple per anells} trobem que \(m\sim m'\). %REVISAR. Em feia mandra pensar i he copiat la de dalt :S
+			Comencem amb la implicació cap a la dreta (\(\implica\)). Suposem que \(m'\in X\). Hem de veure que \(m\sim m'\). Tenim \(m'\divides m\) i \(m\divides m'\) i per la definició de \myref{def:múltiple per anells} trobem que \(m\sim m'\). %REVISAR. Em feia mandra pensar i he copiat la de dalt :S
 			
-			Fem ara la implicació cap a l'esquerra (\(\Leftarrow\)). Suposem que \(m'\sim m\). Hem de veure que \(m'\in X\). Per hipòtesi tenim que \(a\divides m\) i \(b\divides m\). Per tant existeixen \(\alpha,\beta\in D\) tals que \(m=\alpha\cdot a\) i \(m=\beta\cdot b\), i per la proposició \myref{prop:podem passar els múltiples de costat a costat} tenim que si \(m'=u\cdot m\) amb \(u\in D\) invertible aleshores \(m=m'\cdot u^{-1}\). Per tant
+			Fem ara la implicació cap a l'esquerra (\(\implicatper\)). Suposem que \(m'\sim m\). Hem de veure que \(m'\in X\). Per hipòtesi tenim que \(a\divides m\) i \(b\divides m\). Per tant existeixen \(\alpha,\beta\in D\) tals que \(m=\alpha\cdot a\) i \(m=\beta\cdot b\), i per la proposició \myref{prop:podem passar els múltiples de costat a costat} tenim que si \(m'=u\cdot m\) amb \(u\in D\) invertible aleshores \(m=m'\cdot u^{-1}\). Per tant
 			\[m'=\alpha\cdot a\cdot u^{-1}\quad\text{i}\quad m'=\beta\cdot b\cdot{u'}^{-1}\]
 			i per tant \(m'\divides a\) i \(m'\divides b\). Ara bé, com que per hipòtesi \(m\sim m'\), per la definició d'\myref{def:elements associats} tenim que \(m'\in X\). %REVISAR. Em feia mandra pensar i he copiat la de dalt :S
 		\end{proof}
@@ -1924,7 +1924,7 @@
 			\item\label{enum:thm:condició equivalent per DI sii DFU 2} Si \(a\) és in element irreductible de \(D\) aleshores \(a\) és primer.
 		\end{enumerate}
 		\begin{proof}
-			Comencem demostrant que la condició és suficient (\(\Rightarrow\)). Suposem doncs que \(D\) és un domini de factorització única. El punt \eqref{enum:thm:condició equivalent per DI sii DFU 1} és conseqüència de la definició de \myref{def:domini de factorització única}. Per tant només ens queda veure que tot element irreductible és primer. Siguin \(p\) un element irreductible de \(D\) i \(a,b\) dos elements no invertibles no nuls de \(D\) tals que \(p\divides a\cdot b\). Per la definició de \myref{def:DFU} tenim que existeixen \(p_{1},\dots,p_{r},q_{1},\dots,q_{s}\) elements irreductibles de \(D\) tals que
+			Comencem demostrant que la condició és suficient (\(\implica\)). Suposem doncs que \(D\) és un domini de factorització única. El punt \eqref{enum:thm:condició equivalent per DI sii DFU 1} és conseqüència de la definició de \myref{def:domini de factorització única}. Per tant només ens queda veure que tot element irreductible és primer. Siguin \(p\) un element irreductible de \(D\) i \(a,b\) dos elements no invertibles no nuls de \(D\) tals que \(p\divides a\cdot b\). Per la definició de \myref{def:DFU} tenim que existeixen \(p_{1},\dots,p_{r},q_{1},\dots,q_{s}\) elements irreductibles de \(D\) tals que
 			\[a=p_{1}\cdot\ldots\cdot p_{r}\quad\text{i}\quad b=q_{1}\cdot\ldots\cdot q_{s}\]
 			i per tant
 			\[a\cdot b=p_{1}\cdot\ldots\cdot p_{r}\cdot q_{1}\cdot\ldots\cdot q_{s}\]
@@ -1934,7 +1934,7 @@
 			\[a\cdot b=p\cdot\alpha_{1}\cdot\ldots\cdot\alpha_{t}=p_{1}\cdot\ldots\cdot p_{r}\cdot q_{1}\cdot\ldots\cdot q_{s}\]
 			i, de nou, per la definició de \myref{def:DFU} tenim que \(p\sim p_{i}\) ó \(p\sim q_{j}\) per a certs \(i\in\{1,\dots,r\}\), \(j\in\{1,\dots,s\}\), i per tant \(p\divides a\) ó \(p\divides b\), i per la definició de \myref{def:primer en un anell} tenim que \(p\) és primer.
 			
-			Veiem ara que la condició és necessària (\(\Leftarrow\)). Suposem doncs que
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que
 			\begin{enumerate}
 				\item Per a tot \(a\) element no invertible de \(D\) existeixen \(p_{1},\dots,p_{r}\) elements irreductibles de \(D\) tals que
 				\[a=p_{1}\cdot\ldots\cdot p_{r}\]
@@ -2011,10 +2011,10 @@
 		\label{prop:irreductible sii ideal maximal}
 		Sigui \(D\) un domini d'ideals principals amb la suma \(+\) i el producte \(\cdot\). Aleshores un element \(a\in D\) és irreductible si i només si \((a)\) és un ideal maximal.
 		\begin{proof}
-			Comencem veient que la condició és suficient (\(\Leftarrow\)). Suposem doncs que \(a\) és un element irreductible de \(D\) i prenem \(b\in D\) tal que \((a)\subseteq(b)\neq D\). Aleshores, per l'observació \myref{obs:divisors són ideals continguts} tenim que \(b\divides a\), és a dir, existeix \(r\in D\) tal que \(a=b\cdot r\), i per la definició d'\myref{def:irreductible en un anell} tenim que \(r\) ó \(b\) són invertibles. Ara bé, com que, per hipòtesi, \((b)\neq D\) tenim que \(b\) no és invertible, %REF
+			Comencem veient que la condició és suficient (\(\implicatper\)). Suposem doncs que \(a\) és un element irreductible de \(D\) i prenem \(b\in D\) tal que \((a)\subseteq(b)\neq D\). Aleshores, per l'observació \myref{obs:divisors són ideals continguts} tenim que \(b\divides a\), és a dir, existeix \(r\in D\) tal que \(a=b\cdot r\), i per la definició d'\myref{def:irreductible en un anell} tenim que \(r\) ó \(b\) són invertibles. Ara bé, com que, per hipòtesi, \((b)\neq D\) tenim que \(b\) no és invertible, %REF
 			per tant ha de ser \(r\) invertible per la definició d'\myref{def:element invertible pel producte d'un anell} tenim que \(a\cdot r^{-1}=b\), per l'observació \myref{obs:divisors són ideals continguts} tenim que \((a)=(b)\), i per la definició d'\myref{def:ideal maximal} tenim que \((a)\) és un ideal maximal.
 			
-			Tenim que la condició és necessària (\(\Rightarrow\)) per la proposició \myref{prop:ideal primer en DI es maximal}. %REVISAR
+			Tenim que la condició és necessària (\(\implica\)) per la proposició \myref{prop:ideal primer en DI es maximal}. %REVISAR
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
@@ -2074,15 +2074,15 @@
 	\end{proposition}
 	\begin{proposition}
 		Sigui \(D\) un domini Euclidià amb la suma \(+\) i el producte \(\cdot\) amb la norma \(U\). Aleshores
-		\[U(u)=U(1)\Longleftrightarrow u\text{ és un element invertible de }D.\]
+		\[U(u)=U(1)\sii u\text{ és un element invertible de }D.\]
 		\begin{proof}			
-			Comencem veient l'implicació cap a la dreta (\(\Rightarrow\)). Suposem doncs que \(u\) és un element invertible de \(D\).
+			Comencem veient l'implicació cap a la dreta (\(\implica\)). Suposem doncs que \(u\) és un element invertible de \(D\).
 			
 			Per la proposició \myref{prop:norma de 1 és la més petita en DE} tenim que \(U(1)\leq U(u)\) i que \(U(u)\leq U(u\cdot u^{-1})\). Ara bé, per la definició de \myref{def:l'invers d'un element d'un anell} tenim que \(u\cdot u^{-1}=1\), i per tant
 			\[U(1)\leq U(u)\leq U(u\cdot u^{-1})=U(1),\]
 			i trobem \(U(u)=U(1)\).
 			
-			Veiem ara l'implicació cap a l'esquerra (\(\Leftarrow\)). Suposem que \(U(u)=U(1)\).
+			Veiem ara l'implicació cap a l'esquerra (\(\implicatper\)). Suposem que \(U(u)=U(1)\).
 			
 			Per la definició de \myref{def:DE} tenim que existeixen \(Q,r\) elements de \(D\) tals que
 			\[1=Q\cdot u+r\]
@@ -2118,7 +2118,7 @@
 	\begin{proposition}
 		\label{prop:relació d'equivalència cos de fraccions}
 		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) i \(\sim\) definida a \(D\times D\setminus\{0\}\) una relació binària tal que per a tot \(a,c\in D\), \(b,d\in D\setminus\{0\}\) 
-		\[(a,b)\sim(c,d)\Longleftrightarrow a\cdot d=b\cdot c.\]
+		\[(a,b)\sim(c,d)\sii a\cdot d=b\cdot c.\]
 		Aleshores \(\sim\) és una relació d'equivalència.
 		\begin{proof}
 			%TODO
@@ -2310,7 +2310,7 @@
 	\end{observation}
 	\begin{theorem}
 		Sigui \(\mathbb{K}\) un cos finit amb la suma \(+\) i el producte \(\cdot\). Aleshores
-		\[\ch(\mathbb{K})=p\Longleftrightarrow\abs{\mathbb{K}}=p^{n}\text{ per a cert }n\in\mathbb{N}.\]
+		\[\ch(\mathbb{K})=p\sii\abs{\mathbb{K}}=p^{n}\text{ per a cert }n\in\mathbb{N}.\]
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2384,7 +2384,7 @@
 	\end{proposition}
 	\begin{proposition}
 		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) amb \(\ch(\mathbb{K})=p\) no nul i \(f(x)=a_{0}+a_{1}\cdot x+\cdots+a_{n}\cdot x^{n}\) un polinomi de \(\mathbb{K}\) amb \(n\geq1\). Aleshores
-		\[f'(x)\neq0\Longleftrightarrow p\divides i\text{ per a tot }i\geq1\text{ tal que }a_{i}\neq0.\]
+		\[f'(x)\neq0\sii p\divides i\text{ per a tot }i\geq1\text{ tal que }a_{i}\neq0.\]
 		\begin{proof}
 			%TODO
 		\end{proof}
