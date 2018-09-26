@@ -54,7 +54,7 @@
 	\end{example}
 	\begin{theorem}[Condició de Cauchy]
 		\labelname{condició de Cauchy}\label{thm:Condició de Cauchy per sèries numèriques}
-		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie numèrica. Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si per a tot \(\varepsilon>0\) existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N,M\geq n_{0}\) tenim
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie numèrica. Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si per a tot \(\varepsilon>0\) existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N\),\(M\geq n_{0}\) tenim
 		\[\abs{\sum_{n=N}^{M}a_{n}}<\varepsilon.\]
 		\begin{proof}
 			Suposem que \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Per la definició de \myref{def:sèrie convergent} això és que
@@ -82,7 +82,7 @@
 		Sigui \(\sum_{n=1}^{\infty}a_{n}\) una sèrie convergent. Aleshores
 		\[\lim_{n\to\infty}a_{n}=0.\]
 		\begin{proof}
-			Per la \myref{thm:Condició de Cauchy per sèries numèriques} tenim que per a tot \(\varepsilon>0\) existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N,M\leq n_{0}\) tenim
+			Per la \myref{thm:Condició de Cauchy per sèries numèriques} tenim que per a tot \(\varepsilon>0\) existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N\),\(M\geq n_{0}\) tenim
 			\[\abs{\sum_{n=N}^{M}a_{n}}<\varepsilon.\]
 			En particular, si triem \(M=N+1\), tenim \(\abs{a_{n}}<\varepsilon\) per a tot \(n>n_{0}\), i per la definició de \myref{def:límit} veiem que \(\lim_{n\to\infty}a_{n}=0\), com volíem veure.
 		\end{proof}
@@ -105,10 +105,10 @@
 			\begin{align*}
 				S_{2^{N}}&=1+\frac{1}{2^{\alpha}}+\frac{1}{3^{\alpha}}+\dots+\frac{1}{2^{N\alpha}}\\
 				&\geq1+\frac{1}{2^{\alpha}}+\frac{2}{4^{\alpha}}+\dots+\frac{2^{N-1}}{2^{N\alpha}}\\
-				&=1+\sum_{i=0}^{N-1}\frac{2^{i}}{2^{i+1}\alpha}=1+\frac{1}{2^{\alpha}}\sum_{i=0}^{N-1}2^{1-\alpha}.
+				&=1+\sum_{i=0}^{N-1}\frac{2^{i}}{2^{(i+1)\alpha}}=1+\frac{1}{2^{\alpha}}\sum_{i=0}^{N-1}2^{i(1-\alpha)}.
 			\end{align*}
-			Ara bé, tenim que \(1-\alpha>1\), i per tant trobem
-			\[\lim_{N\to\infty}1+\frac{1}{2^{\alpha}}\sum_{i=0}^{N-1}2^{1-\alpha}=\infty,\]
+			Ara bé, tenim que \(1-\alpha\geq0\), i per tant trobem
+			\[\lim_{N\to\infty}1+\frac{1}{2^{\alpha}}\sum_{i=0}^{N-1}2^{i(1-\alpha)}=\infty,\]
 			i tenim que \(\lim_{N\to\infty}S_{2^{N}}=\infty\) i per la definició de \myref{def:sèrie divergent} trobem que \(\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}\) és divergent.
 			
 			Veiem ara el cas \(\alpha>1\). Definim de nou la successió
@@ -133,7 +133,7 @@
 	\subsection{Sèries de termes positius}
 	\begin{definition}[Sèrie de termes positius]
 		\labelname{sèrie de termes positius}\label{def:sèrie de termes positius}
-		Sigui \(\sum_{n=0}^{\infty}a_{n})\) una sèrie numèrica tal que \(a_{n}>0\) per a tot \(n\) natural. Aleshores direm que \(\sum_{n=0}^{\infty}a_{n}\) és una sèrie de termes positius.
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie numèrica tal que \(a_{n}>0\) per a tot \(n\) natural. Aleshores direm que \(\sum_{n=0}^{\infty}a_{n}\) és una sèrie de termes positius.
 	\end{definition}
 	\begin{notation}
 		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius. Aleshores escriurem \(\sum_{n=0}^{\infty}a_{n}<\infty\) si \(\sum_{n=0}^{\infty}a_{n}\) és convergent i \(\sum_{n=0}^{\infty}a_{n}=\infty\) si \(\sum_{n=0}^{\infty}a_{n}\) és divergent
@@ -156,7 +156,7 @@
 		\[\lim_{n\to\infty}\frac{a_{n}}{b_{n}}=L.\]
 		tals que
 		\begin{enumerate}
-			\item\label{thm:criteri de comparació de sèries de termes positius:enum1} \(L\neq0\) ó \(L\neq\infty\). Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si \(\sum_{n=0}^{\infty}b_{n}\)
+			\item\label{thm:criteri de comparació de sèries de termes positius:enum1} \(L\neq0\) i \(L\neq\infty\). Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si \(\sum_{n=0}^{\infty}b_{n}\)
 			\item\label{thm:criteri de comparació de sèries de termes positius:enum2} \(L=0\) i \(\sum_{n=0}^{\infty}b_{n}\) és convergent. Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			\item\label{thm:criteri de comparació de sèries de termes positius:enum3} \(L=\infty\) i \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Aleshores \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
 		\end{enumerate}
