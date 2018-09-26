@@ -123,19 +123,19 @@
 		on
 		\[F(x)=\int_{x_{0}}^{x}\frac{\text{d}t}{f(t)}.\]
 		\begin{proof}
-			Definim \(h=\frac{1}{f(u(x))}\) i observem que
+			Com que, per hipòtesi, \(f(x)\neq0\) per a tot \(x\) de \((a,b)\) definim \(h=\frac{1}{f(u(x))}\) i observem que
 			\[h(u(x))\frac{\partial u(x)}{\partial x}=g(x)\]
 			i per tant
-			\[\int_{t_{1}}^{t_{2}}h(u(x))\frac{\partial u(x)}{\partial x}\text{d}{x}=\int_{t_{1}}^{t_{2}}g(x)\text{d}x.\]
+			\[\int h(u(x))\frac{\partial u(x)}{\partial x}\text{d}{x}=\int g(x)\text{d}x.\]
 			
 			Ara bé, per la \myref{thm:regla de la cadena} i el \myref{thm:Teorema Fonamental del Càlcul} tenim que això és
 			\[H(x)=G(x)+C\]
 			on \(C\) és un real i
-			\[H(x)=\int h(x)\text{d}x\quad\text{i}\quad G(x)=\int g(x)\text{d}x\]
+			\[H(x)=\int_{t_{0}}^{x}h(t)\text{d}t\quad\text{i}\quad G(x)=\int_{t_{0}}^{x}g(t)\text{d}t\]
 			i per tant
 			\[H(u(x))=G(x)+C\]
 %			Podem seguir la solució de la proposició \myref{prop:problema de Cauchy} per trobar que les úniques solucions són
-%			\[u(x)=F^{-1}\left(\int_{t_{0}}^ {x}g(t)\text{d}t\right)\]
+%			\[u(x)=F^{-1}\left(\int_{t_{0}}^{x}g(t)\text{d}t\right)\]
 %			on
 %			\[F(x)=\int_{x_{0}}^{x}\frac{\text{d}t}{f(t)}.\qedhere\]
 		\end{proof}
