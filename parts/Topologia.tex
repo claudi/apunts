@@ -14,21 +14,21 @@
 			\item \(d(x,y)\leq d(x,z)+d(z,y)\).
 			\item \(d(x,y)\leq0\).
 		\end{enumerate}
-		Aleshores direm que \((X,d)\) és un espai mètric. També direm que \(d\) és la distància o mètrica de l'espai mètric.
+		Aleshores direm que \(X\) amb la distància \(d\) és un espai mètric. També direm que \(d\) és la distància o mètrica de l'espai mètric.
 	\end{definition}
 	\begin{definition}[Bola]
 		\labelname{bola}\label{def:bola}
-		Siguin \((X,d)\) un espai mètric, \(a\) un element de \(X\) i \(r>0\) un nombre real. Aleshores definim
+		Siguin \(X\) amb la distància \(d\) un espai mètric, \(a\) un element de \(X\) i \(r>0\) un nombre real. Aleshores definim
 		\[\B(a,r)=\{x\in X\mid d(x,a)<r\}\]
 		com la bola de radi \(r\) centrada en \(a\).
 	\end{definition}
 	\begin{definition}[Obert]
 		\labelname{obert}\label{def:obert}
-		Sigui \((X,d)\) un espai mètric tal que per a tot element \(a\) de \(X\) existeix un \(\varepsilon>0\) real tal que \(\B(a,\varepsilon)\subset A\). Aleshores direm que \(X\) és un obert.
+		Sigui \(X\) amb la distància \(d\) un espai mètric tal que per a tot element \(a\) de \(X\) existeix un \(\varepsilon>0\) real tal que \(\B(a,\varepsilon)\subset A\). Aleshores direm que \(X\) és un obert.
 	\end{definition}
 	\begin{proposition}
-	\label{prop:les boles són oberts}
-		Siguin \((X,d)\) un espai mètric i \(\B(a,r)\) una bola de \(X\). Aleshores \(\B(a,r)\) és un obert.
+		\label{prop:les boles són oberts}
+		Siguin \(X\) amb la distància \(d\) un espai mètric i \(\B(a,r)\) una bola de \(X\). Aleshores \(\B(a,r)\) és un obert.
 		\begin{proof}
 			Prenem un element \(b\in\B(a,r)\) i definim
 			\begin{equation}
@@ -46,14 +46,27 @@
 			ja que, per la definició de \myref{def:bola} tenim que \(d(a,b)<r\) i per tant trobem \(r+d(a,b)<2r\).
 		\end{proof}
 	\end{proposition}
-%	\begin{definition}[Funció contínua] % Fer amb Teorema i la definició antiga
-%		\labelname{funció contínua}\label{def:funció contínua}
-%		Siguin \((X,d)\) i \((X',d')\) dos espais mètrics i \(f\colon X\longrightarrow X'\) una funció tal que per a cada \(x\in X\) i \(\varepsilon>0\) real existeix un \(\delta>0\) real tal que
-%		\[\Ima_{\B(x,\delta)}(f)\subset\B(f(x)),\varepsilon).\]
-%		Aleshores direm que \(f\) és contínua.
-%	\end{definition}
+	\begin{proposition}[Propietat de Hausdorff]
+		\labelname{}\label{prop:propietat de Hausdorff}
+		Siguin \(X\) amb la distància \(d\) un espai mètric i \(x\) i \(y\) dos elements diferents de \(X\). Aleshores existeixen dos oberts \(\obert{U}\) i \(\obert{V}\) disjunts tals que \(x\) és un element de \(\obert{U}\) i \(y\) és un element de \(\obert{V}\).
+		\begin{proof}
+			Definim \(r=\frac{d(x,y)}{3}\) i considerem les boles \(\B(x,r)\) i \(\B(y,r)\). Per la definició de \myref{def:distància} i la definició de \myref{def:bola} tenim que \(x\) és un element de \(\B(x,r)\) i \(y\) és un element de \(\B(y,r)\).
+			
+			També tenim que les boles \(\B(x,r)\) i \(\B(y,r)\) són disjuntes, ja que si prenem un element \(a\) de \(X\) tal que \(a\) pertanyi a \(\B(x,r)\) i a \(\B(y,r)\) aleshores tenim, per la definició de \myref{def:bola}, que \(d(x,a)<r\) i \(d(a,y)<r\), i per la definició de \myref{def:distància} tenim que
+			\[d(x,a)+d(a,y)\geq d(x,y).\]
+			Ara bé, tenim per hipòtesi que \(r=\frac{d(x,y)}{3}\). Per tant
+			\begin{align*}
+				d(x,y) &\leq d(x,a)+d(a,y) \\
+				&\leq \frac{d(x,y)}{3} + \frac{d(x,y)}{3} \\
+				&\leq \frac{2d(x,y)}{3} < d(x,y),
+			\end{align*}
+			i per tant aquest \(a\) no existeix i trobem que \(\B(x,r)\) i \(\B(y,r)\) són disjunts.
+			
+			Per acabar, per la proposició \myref{prop:les boles són oberts} tenim que les boles \(\B(x,r)\) i \(\B(y,r)\) són oberts, i hem acabat.
+		\end{proof}
+	\end{proposition}
 	\begin{theorem}
-		Siguin \((X,d)\) i \((X',d')\) dos espais mètrics i \(f\colon X\longrightarrow X'\) una funció. Aleshores \(f\) és contínua si i només si per a tot \(\obert{U}\) obert de \(X'\) tenim que \(\Ima_{\obert{U}}(f^{-1})\) és obert.
+		Siguin \(X\) amb la distància \(d\) i \(X'\) amb la distància \(d'\) dos espais mètrics i \(f\colon X\longrightarrow X'\) una funció. Aleshores \(f\) és contínua si i només si per a tot \(\obert{U}\) obert de \(X'\) tenim que \(\Ima_{\obert{U}}(f^{-1})\) és obert.
 		\begin{proof}
 			Veiem primer que la condició és necessària (\(\implica\)). Suposem doncs que \(f\) és contínua. Prenem un obert \(\obert{U}\) de \(X'\) i un element \(y\) de \(X'\) tal que \(f^{-1}(y)\in\Ima_{\obert{U}}(f^{-1})\), i denotem \(x=f^{-1}(y)\). Per la definició d'\myref{def:obert} tenim que existeix un nombre real \(\varepsilon>0\) tal que \(\B(y,\varepsilon)\subset\Ima_{\obert{U}}(f^{-1})\).
 			
@@ -63,13 +76,9 @@
 			
 			Prenem un element \(xy\) de \(X\) i un real \(\varepsilon>0\). Si denotem \(y=f(x)\) tenim, per la proposició \myref{prop:les boles són oberts}, que la bola \(\B(y,\varepsilon)\) és un obert. Per hipòtesi tenim que \(\Ima_{\B(y,\varepsilon)}(f^{-1})\) és un obert, i per la definició d'\myref{def:obert} tenim que existeix un nombre real \(\delta>0\) tal que \(\B(x,\delta)\subset\Ima_{\B(y,\varepsilon)}(f^{-1})\).
 			
-			Ara bé, per la definició de \myref{def:bola} tenim que això és que per a tot \(x_{0}\) de \(x\) amb \(d'(y,f(x_{0})<\varepsilon\) tenim que \(d(x,x_{0}<\delta)\), i per tant, per la definició de \myref{def:funció contínua} tenim que \(f\) és contínua.
+			Ara bé, per la definició de \myref{def:bola} tenim que això és que per a tot \(x_{0}\) de \(x\) amb \(d'(y,f(x_{0}))<\varepsilon\) tenim que \(d(x,x_{0})<\delta\), i per tant, per la definició de \myref{def:funció contínua} tenim que \(f\) és contínua.
 		\end{proof}
 	\end{theorem}
-	\begin{definition}[Tancat]
-		\labelname{tancat}\label{def:tancat}
-		Sigui \(X\) un conjunt i \(C\) un subconjunt de \(X\) tal que \(X\setminus C\) sigui obert. Aleshores direm que \(C\) és tancat.
-	\end{definition}
 	\subsection{L'espai topològic}
 	\begin{definition}[Topologia]	% Reescriure amb notació
 		\labelname{topologia}\label{def:topologia}
@@ -82,7 +91,9 @@
 		\item La intersecció d'una família finita d'elements de \(\tau\) és un element de \(\tau\).
 		\item La unió d'una família d'elements de \(\tau\) és un element de \(\tau\).
 		\end{enumerate}
-		Aleshores direm que \(\tau\) és una topologia de \(X\) o que \(X\) amb \(\tau\) és un espai topològic. També direm que els elements de \(\tau\) són oberts i que els elements de \(X\) són punts.
+		Aleshores direm que \(\tau\) és una topologia de \(X\) o que \(X\) amb la topologia \(\tau\) és un espai topològic.
+		
+		També direm que els elements de \(\tau\) són oberts i que els elements de \(X\) són punts.
 	\end{definition}
 	\begin{example}[Topologia grollera]
 		\labelname{topologia grollera}\label{ex:topologia grollera}
@@ -106,6 +117,50 @@
 			i per tant, com que \(\tau=\mathcal{P}(X)\) trobem per la definició de \myref{def:topologia} que \(\tau\) és una topologia de \(X\).
 		\end{solution}
 	\end{example}
+%	\begin{definition}[Finor d'una topologia]
+%		\labelname{finor d'una topologia}\label{def:finor d'una topologia}
+%		Siguin \(X\) un conjunt i \(\tau\), \(\tau'\) dues topologies de \(X\) tals que \(\tau\subset\tau'\). Aleshores direm que \(\tau'\) és més fina que \(\tau\).
+%	\end{definition}
+%	\begin{proposition}
+%		Siguin \(X\) un conjunt i \(\tau\), \(\tau'\) dues topologies de \(X\) tals que \(\tau'\) sigui més fina que \(\tau\). Aleshores l'aplicació \(\Id\colon X\longrightarrow X'\) és una aplicació contínua.
+%		\begin{proof}
+%			
+%		\end{proof}
+%	\end{proposition}
+	\subsection{Tancats}
+	\begin{definition}[Tancat]
+		\labelname{tancat}\label{def:tancat}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(\tancat{C}\) un subconjunt de \(X\) tal que \(X\setminus\tancat{C}\) sigui obert. Aleshores direm que \(\tancat{C}\) és tancat.
+	\end{definition}
+	\begin{theorem}
+		\label{thm:equivalència obert tancat definició de topologia}
+		Sigui \(X\) amb la topologia \(\tau\) un espai topològic. Aleshores
+		\begin{enumerate}
+			\item\label{thm:equivalència obert tancat definició de topologia:enum 1} \(\emptyset\) i \(X\) són tancats.
+			\item\label{thm:equivalència obert tancat definició de topologia:enum 2} La unió de qualsevol família finita de tancats és un tancat.
+			\item\label{thm:equivalència obert tancat definició de topologia:enum 3} La intersecció de qualsevol família de tancats és un tancat.
+		\end{enumerate}
+		\begin{proof}
+			Comencem veient el punt \eqref{thm:equivalència obert tancat definició de topologia:enum 1}. Tenim que \(X\setminus\emptyset=X\). Per la definició d'\myref{def:espai topològic} tenim que \(X\) és un obert, i per la definició de \myref{def:tancat} trobem que \(\emptyset\) és un tancat.
+			
+			També tenim que \(X\setminus X=\emptyset\). Per la definició d'\myref{def:espai topològic} tenim que \(\emptyset\) és un obert, i per la definició de \myref{def:tancat} trobem que \(X\) és un tancat.
+			
+			Veiem ara el punt \eqref{thm:equivalència obert tancat definició de topologia:enum 2}. Prenem una família \(\{\tancat{C}_{i}\}_{i=1}^{n}\) de tancats de \(X\) i considerem
+			\[X\setminus\bigcup_{i=1}^{n}\tancat{C}_{i}=X\cap\left(\bigcup_{i=1}^{n}\tancat{C}_{i}\right)^{\complement}.\]
+			Per la \myref{taut:primera llei de De Morgan} trobem que
+			\begin{align*}
+				X\cap\left(\bigcup_{i=1}^{n}\tancat{C}_{i}\right)^{\complement}&=X\cap\left(\bigcap_{i=1}^{n}\tancat{C}_{i}^{\complement}\right) \\
+				&=\bigcap_{i=1}^{n}\left(X\cap\tancat{C}_{i}^{\complement}\right) \\
+				&=\bigcap_{i=1}^{n}\left(X\setminus\tancat{C}_{i}\right).
+			\end{align*}
+			Per hipòtesi tenim que per a tot \(i\in\{1,\dots,n\}\) el conjunt \(\tancat{C}_{i}\) és un tancat, i per la definició de \myref{def:tancat} tenim que per a tot \(i\in\{1,\dots,n\}\) el conjunt \(X\setminus\tancat{C}_{i}\) és un obert, i per la definició d'\myref{def:espai topològic} tenim que \(\bigcap_{i=1}^{n}\left(X\setminus\tancat{C}_{i}\right)\) és un obert. Ara bé, tenim que
+			\[X\setminus\bigcup_{i=1}^{n}\tancat{C}_{i}=\bigcap_{i=1}^{n}\left(X\setminus\tancat{C}_{i}\right),\]
+			i per tant, per la definició de \myref{def:tancat} trobem que \(\bigcup_{i=1}^{n}\tancat{C}_{i}\) és un tancat.
+			
+			Veiem per acabat el punt \eqref{thm:equivalència obert tancat definició de topologia:enum 3}. Prenem una família \(\{\tancat{C}_{i}\}_{i\in I}\) de tancats de \(X\) i considerem
+			\[X\setminus\bigcap_{i\in I}\tancat{C}_{i}=X\cap\left(\bigcap_{i\in I}\tancat{C}_{i}\right)^{\complement}.\qedhere\]
+		\end{proof}
+	\end{theorem}
 	\begin{definition}[Aplicació contínua i homeomorfisme]
 		\labelname{aplicació contínua}\label{def:aplicació contínua}
 		\labelname{homeomorfisme}\label{def:homeomorfisme topo}
@@ -115,20 +170,14 @@
 		
 		Si \(f\) és invertible i la seva inversa és una aplicació contínua direm que \(f\) és un homeomorfisme.
 	\end{definition}
-	\begin{definition}[Finor d'una topologia]
-		\labelname{finor d'una topologia}\label{def:finor d'una topologia}
-		Siguin \(X\) un conjunt i \(\tau\), \(\tau'\) dues topologies de \(X\) tals que \(\tau\subset\tau'\). Aleshores direm que \(\tau'\) és més fina que \(\tau\).
-	\end{definition}
+	\begin{observation}
+		\label{obs:les funcions contínues són aplicacions contínues}
+		Sigui \(f\) una funció contínua. Aleshores \(f\) és una aplicació contínua.
+	\end{observation}
 	\begin{proposition}
-		Siguin \(X\) un conjunt i \(\tau\), \(\tau'\) dues topologies de \(X\) tals que \(\tau'\) sigui més fina que \(\tau\). Aleshores l'aplicació \(\Id\colon X\longrightarrow X'\) és una aplicació contínua.
-		\begin{proof}
-			
-		\end{proof}
-	\end{proposition}
-	\begin{proposition}
-		Siguin \(X_{1}\) amb \(\tau_{1}\), \(X_{2}\) amb \(\tau_{2}\) i \(X_{3}\) amb \(\tau_{3}\) tres espais topològics i \(f\colon X_{1}\longrightarrow X_{2}\) i \(g\colon X_{2}\longrightarrow X_{3}\) dues aplicacions contínues. Aleshores l'aplicació
+		Siguin \(X_{1}\) amb la topologia \(\tau_{1}\), \(X_{2}\) amb la topologia \(\tau_{2}\) i \(X_{3}\) amb la topologia \(\tau_{3}\) tres espais topològics i \(f\colon X_{1}\longrightarrow X_{2}\) i \(g\colon X_{2}\longrightarrow X_{3}\) dues aplicacions contínues. Aleshores l'aplicació
 		\begin{align*}
-			h\colon&X_{1}\longrightarrow X_{3} \\
+			h\colon X_{1}&\longrightarrow X_{3} \\
 			x&\longmapsto f(g(x))
 		\end{align*}
 		és una aplicació contínua.
