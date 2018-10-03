@@ -52,7 +52,13 @@
 	\begin{mdframed}[]\relax}{%
 	\end{mdframed}}
 
-\hypersetup{colorlinks=true,linkcolor=[rgb]{0,0,0.5},urlcolor=red}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=[rgb]{0,0,0.5},
+	urlcolor=red,
+	pdftitle={Apunts UAB},
+	pdfauthor={Claudi Lleyda Moltó},
+}
 
 \title{%\includegraphics[width=0.75\textwidth]{Portada.png}\\
 	\href{https://claudilleyda.github.io}{Apunts de matemàtiques}}
@@ -124,6 +130,7 @@
 \newcommand{\obert}[1]{\mathcal{#1}}
 \newcommand{\tancat}[1]{\obert{#1}}
 \newcommand{\base}[1]{\mathcal{#1}}
+\newcommand{\gmid}{\mathbin{\vert}}
 
 %\setcounter{chapter}{-1}
 
@@ -180,6 +187,7 @@
 
 %\newcommand{\myref}[1]{\ref{#1}}
 \newcommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
+%\newcommand{\myref}[1]{\hyperref[#1]{\nameref{#1} \eqref{#1}}}
 
 \makeatletter
 \def\mynameref#1#2{%

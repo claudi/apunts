@@ -216,12 +216,59 @@
 		\label{prop:condició per que una topologia sigui la més fina que conté una base}
 		Siguin \(X\) un conjunt i \(\base{B}\) una família de subconjunts de \(X\) tals que
 		\[\bigcup_{B\in\base{B}}B=X\]
-		i tal que per a tot \(\obert{U}\) i \(\obert{V}\) de \(\base{B}\) i per a tot \(x\) de \(\obert{U}\cap\obert{V}\) existeix un \(\obert{W}\) de \(\base{B}\) tal que \(x\) pertanyi a \(\obert{W}\) i \(\obert{W}\subseteq\obert{U}\cap\obert{V}\). Aleshores existeix una única topologia \(\tau\) de \(X\) tal que \(\base{B}\) és una base de \(\tau\) i \(\tau\) és la topologia menys fina que conté \(\base{B}\).
+		i tal que per a tot \(\obert{U}\) i \(\obert{V}\) de \(\base{B}\) i per a tot \(x\) de \(\obert{U}\cap\obert{V}\) existeix un \(\obert{W}\) de \(\base{B}\) tal que \(x\) pertanyi a \(\obert{W}\) i \(\obert{W}\subseteq\obert{U}\cap\obert{V}\).	Aleshores existeix una única topologia \(\tau\) de \(X\) tal que \(\base{B}\) és una base de \(\tau\) i \(\tau\) és la topologia menys fina que conté els elements de \(\base{B}\).
 		\begin{proof}
 			Definim
-			\[\tau=\left\{\obert{U}\subseteq X\mid\obert{U}=\bigcup_{i\in I}B_{i}\text{ on }B_{i}\in\base{B}\right\}\]
+			\begin{equation}
+				\label{prop:condició equivalent a base d'una topologia:eq1}
+				\tau=\left\{\obert{U}\subseteq X\mid\obert{U}=\bigcup_{i\in I}B_{i}\subseteq\base{B}\right\}
+			\end{equation}
+			Observem que \(X\) i \(\emptyset\) pertanyen a \(\tau\).
+			
+			Siguin \(\obert{U}\) i \(\obert{V}\) dos elements de \(\base{B}\) i prenem un element \(x\) de \(\obert{U}\cap\obert{V}\). Per hipòtesi tenim que existeix un element  \(\obert{W}_{x}\) de \(\base{B}\) tal que \(x\in\obert{W}\subseteq\obert{U}\cap\obert{V}\). Per tant
+			\[\obert{U}\cap\obert{V}=\bigcup_{x\in\obert{U}\cap\obert{V}}\obert{W}_{x},\]
+			i per la definició del conjunt \(\tau\) tenim que \(\obert{U}\cap\obert{V}\) és un element de \(\tau\).
+			
+			Prenem dos elements \(\obert{U}\) i \(\obert{V}\) del conjunt \(\tau\). Per la definició \eqref{prop:condició equivalent a base d'una topologia:eq1} trobem que existeixen dues famílies \(\{\obert{U}_{i}\}_{i\in I}\) i \(\{\obert{V}_{j}\}_{j\in J}\) d'elements de \(\base{B}\) tals que
+			\[\obert{U}=\bigcup_{i\in I}\obert{U}_{i}\quad\text{i}\quad\obert{V}=\bigcup_{j\in J}\obert{V}_{j}.\]
+			
+			Per tant tenim que
+			\[\obert{U}\cap\obert{V}=\bigcup_{i\in I}\bigcup_{j\in J}(\obert{U}_{i}\cap\obert{V}_{j}),\]
+			i per la definició \eqref{prop:condició equivalent a base d'una topologia:eq1} trobem que \(\obert{U}\cap\obert{V}\) pertany a \(\tau\). Per tant per la definició de \myref{def:topologia} trobem que \(\tau\) és una topologia de \(X\).
+			
+			Veiem ara que \(\base{B}\) és base de la topologia \(\tau\). Prenem un obert \(\obert{U}\) de \(\tau\) i \(x\) un element de \(\obert{U}\). Per la definició \eqref{prop:condició equivalent a base d'una topologia:eq1} tenim que existeix una família \(\{B_{i}\}_{i\in I}\) d'elements de \(\base{B}\) tal que
+			\[\obert{U}=\bigcup_{i\in I}B_{i}.\]
+			Per tant existeix un element \(B\) de \(\base{B}\) tal que \(x\in B\) i \(B\subseteq\obert{U}\) i per la definició de \myref{def:base d'una topologia} trobem que \(\base{B}\) és una base de la topologia \(\tau\).
+			
+			Continuem veient que \(\tau\) és la topologia menys fina que conté els elements de \(\base{B}\). Suposem que existeix una topologia \(\tau'\) de \(X\) tal que \(\tau\) és més fina que \(\tau'\) i tal que \(\tau'\) conté els elements de \(\base{B}\). Per la definició de \myref{def:finor d'una topologia} això és que \(\tau'\subset\tau\).
+			
+			Prenem un obert \(\obert{U}\) de \(\tau\). Per la definició \eqref{prop:condició equivalent a base d'una topologia:eq1} trobem que existeix una família \(\{B_{i}\}_{i\in I}\) d'elements de \(\base{B}\) tals que
+			\[\obert{U}=\bigcup_{i\in I}B_{i}.\]
+			Ara bé, tenim per hipòtesi que \(\base{B}\) és un subconjunt de la topologia \(\tau'\), i per la definició de \myref{def:topologia} trobem que \(\obert{U}\) pertany a \(\tau'\). Per tant ha de ser \(\tau\subseteq\tau'\), i trobem que \(\tau\) és la topologia menys fina que conté els elements de \(\base{B}\).
+			
+			Veiem ara que aquesta topologia \(\tau\) és única. Suposem que existeix una altre topologia \(\tau'\) tal que \(\base{B}\) és una base de \(\tau'\) i \(\tau'\) és la topologia menys fina que conté els elements de \(\base{B}\).
+			
+			Prenem un obert \(\obert{U}\) de \(\tau\). Per la definició \eqref{prop:condició equivalent a base d'una topologia:eq1} trobem que existeix una família \(\{B_{i}\}_{i\in I}\) d'elements de \(\base{B}\) tals que
+			\[\obert{U}=\bigcup_{i\in I}B_{i}.\]
+			Ara bé, per la definició de \myref{def:topologia} tenim que \(\obert{U}\) és un element de \(\tau'\), ja que per hipòtesi \(\base{B}\) és un subconjunt de \(\tau'\). Per tant tenim que \(\tau\subseteq\tau'\). Ara bé, ja hem vist que \(\tau\) és la topologia menys fina que conté els elements de \(\base{B}\), i per la definició de \myref{def:finor d'una topologia} això és que \(\tau'\subseteq\tau\), i pel \myref{thm:doble inclusió} ha de ser \(\tau=\tau'\), com volíem veure.
 		\end{proof}
 	\end{proposition}
+	\begin{example}
+		\(\base{B}=\{[a,b)\mid a<b\text{ on }a,b\in\mathbb{R}\}\) és una base.
+		\begin{solution}
+			%FER
+		\end{solution}
+	\end{example}
+	\subsection{Entorns, interior i adherència}
+	\begin{definition}[Entorn]
+		\labelname{entorn}\label{def:entorn}
+	\end{definition}
+	\begin{definition}[Interior]
+		\labelname{interior}\label{def:interior}
+	\end{definition}
+	\begin{definition}[Adherència]
+		\labelname{adherència}\label{def:adherència}
+	\end{definition}
 %	\begin{definition}[Aplicació contínua i homeomorfisme]
 %		\labelname{aplicació contínua}\label{def:aplicació contínua}
 %		\labelname{homeomorfisme}\label{def:homeomorfisme topo}
@@ -247,7 +294,6 @@
 %		\end{proof}
 %	\end{proposition}
 
-%	\subsection{Entorns, interior i adherència}
 %	\subsection{Aplicacions contínues}
 %	\subsection{Subespais}
 %	\subsection{La topologia producte}
