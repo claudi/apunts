@@ -253,19 +253,34 @@
 			Ara bé, per la definició de \myref{def:topologia} tenim que \(\obert{U}\) és un element de \(\tau'\), ja que per hipòtesi \(\base{B}\) és un subconjunt de \(\tau'\). Per tant tenim que \(\tau\subseteq\tau'\). Ara bé, ja hem vist que \(\tau\) és la topologia menys fina que conté els elements de \(\base{B}\), i per la definició de \myref{def:finor d'una topologia} això és que \(\tau'\subseteq\tau\), i pel \myref{thm:doble inclusió} ha de ser \(\tau=\tau'\), com volíem veure.
 		\end{proof}
 	\end{proposition}
-	\begin{example}
-		\(\base{B}=\{[a,b)\mid a<b\text{ on }a,b\in\mathbb{R}\}\) és una base.
-		\begin{solution}
-			%FER
-		\end{solution}
-	\end{example}
 	\subsection{Entorns, interior i adherència}
 	\begin{definition}[Entorn]
 		\labelname{entorn}\label{def:entorn}
+		\labelname{punt interior}\label{def:punt interior}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(x\) un punt de \(X\) i \(A\) un conjunt tal que existeix un obert \(\obert{U}\) satisfent \(x\in\obert{U}\) i \(\obert{U}\subseteq A\). Aleshores direm que \(A\) és un entorn de \(x\).
+		
+		També direm que \(x\) és un punt interior de \(A\).
 	\end{definition}
 	\begin{definition}[Interior]
 		\labelname{interior}\label{def:interior}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(x\) un punt de \(X\), \(A\) subconjunt de \(X\) i
+		\[\Int(A)=\{x\in X\mid A\text{ és un entorn de }x\}.\]
+		Aleshores direm que \(\Int(A)\) és l'interior del conjunt \(A\).
 	\end{definition}
+	\begin{proposition}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(A\) un subconjunt de \(X\). Aleshores \(\Int(A)\) és un obert.
+		\begin{proof}
+			Prenem un element \(x\) de \(\Int(A)\). Per la definició de \myref{def:interior} tenim que existeix un obert \(\obert{U}_{x}\) tal que \(x\in\obert{U}_{x}\) i \(\obert{U}_{x}\subseteq A\). Aleshores tenim
+			\begin{align*}
+			\Int(A)&=\bigcup_{x\in\Int(A)}x \\
+			&\subseteq\bigcup_{x\in\Int(A)}\obert{U}_{x} \\
+			&\subseteq\bigcup_{x\in\Int(A)}\Int(A)=\Int(A)
+			\end{align*}
+			i per tant
+			\[\Int(A)=\bigcup_{x\in\Int(A)}\obert{U}_{x}\]
+			i per la definició de \myref{def:topologia} trobem que \(\Int(A)\) és un obert.
+		\end{proof}
+	\end{proposition}
 	\begin{definition}[Adherència]
 		\labelname{adherència}\label{def:adherència}
 	\end{definition}
