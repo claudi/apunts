@@ -91,6 +91,7 @@
 \DeclareMathOperator{\Long}{L}
 \DeclareMathOperator{\Dist}{d}
 \DeclareMathOperator{\B}{B}
+\DeclareMathOperator{\bola}{B}
 \DeclareMathOperator{\R}{R}
 \DeclareMathOperator{\omicron}{o}
 \DeclareMathOperator{\Omicron}{O}
@@ -110,7 +111,8 @@
 \DeclareMathOperator{\ordre}{\omicron}
 \DeclareMathOperator{\ncicles}{c}
 \DeclareMathOperator{\sig}{sig}
-\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\interior}{Int}
+\DeclareMathOperator{\clausura}{Cl}
 
 \let\ker\relax
 \DeclareMathOperator*{\ker}{ker}
@@ -131,6 +133,7 @@
 \newcommand{\obert}[1]{\mathcal{#1}}
 \newcommand{\tancat}[1]{\obert{#1}}
 \newcommand{\base}[1]{\mathcal{#1}}
+\newcommand{\diff}{\textrm{d}}
 
 %\setcounter{chapter}{-1}
 
@@ -192,13 +195,16 @@
 \makeatletter
 \def\mynameref#1#2{%
 	\begingroup
-	\edef\@mytxt{#2}%
-	\edef\@mytst{\expandafter\@thirdoffive\@mytxt}%
-	\ifx\@mytst\empty\ref{#1}\else
-	\nameref{#1}\space\eqref{#1}\fi
+		\edef\@mytxt{#2}%
+		\edef\@mytst{\expandafter\@thirdoffive\@mytxt}%
+		\ifx\@mytst\empty
+			\ref{#1}
+		\else
+			\nameref{#1}\space\eqref{#1}\fi
 	\endgroup
 }
 \makeatother
+
 \makeatletter
 \newcommand{\labelname}[1]{
 	\def\@currentlabelname{#1}}

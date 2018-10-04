@@ -5,7 +5,7 @@
 	\section{Teoremes d'existència i unicitat}
 	\subsection{Equacions diferencials ordinàries}
 	\begin{definition}[Equació diferencial ordinària d'ordre \(n\)]
-		\labelname{equació diferencial ordinària d'odre $n$}\label{def:equació diferencial ordinària d'ordre n}
+		\labelname{equació diferencial ordinària d'odre \ensuremath{n}}\label{def:equació diferencial ordinària d'ordre n}
 		\labelname{solució de l'equació diferencial ordinària}\label{def:solució de l'equació diferencial ordinària}
 		Siguin \(\Omega=\mathbb{R}\times\mathbb{R}^{n}\) un conjunt i \(F\colon\Omega\longrightarrow\mathbb{R}^{m}\), \(u\colon\mathbb{R}\longrightarrow\mathbb{R}^{m}\) dues funcions tals que
 		\[\frac{\partial^{n}u(x)}{\partial x^{n}}=F\left(t,u(x),\frac{\partial u(x)}{\partial x},\dots,\frac{\partial^{n-1}u(x)}{\partial x^{n-1}}\right).\]
@@ -20,10 +20,10 @@
 			\frac{\partial u(x)}{\partial x}=f(u(x)).
 		\end{equation}
 		té una única solució de la forma
-		\[u(x)=\int_{x_{0}}^{x}f(u(t))\text{d}t.\]
+		\[u(x)=\int_{x_{0}}^{x}f(u(t))\diff t.\]
 		\begin{proof}
 			Observem primer que pel \myref{thm:Weierstrass màxims i mínims múltiples variables} la funció \(f(x)\) està acotada en \(I\), i pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann} tenim que la funció \(f(x)\) és integrable Riemann, i per tant, pel \myref{thm:Teorema Fonamental del Càlcul}, trobem que per a tot \(x_{0}\) de \(I\)
-			\[u(x)=\int_{x_{0}}^{x}f(u(t))\text{d}t\]
+			\[u(x)=\int_{x_{0}}^{x}f(u(t))\diff t\]
 			és una solució de l'equació diferencial ordinària \eqref{edos1:prop1:eq1}.
 			
 			Aquesta demostració també ens serveix per veure la unicitat.
@@ -45,7 +45,7 @@
 		té una única solució de la forma
 		\[u(t)=F^{-1}(t-t_{0})\]
 		on
-		\[F(x)=\int_{x_{0}}^{x}\frac{\text{d}t}{f(t)}.\]
+		\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{f(t)}.\]
 		\begin{proof}
 			Observem que, per la definició de \myref{def:equació diferencial ordinària d'ordre n} l'equació
 			\[\frac{\partial u(x)}{\partial x}=f(x)\]
@@ -53,7 +53,7 @@
 			
 			Com que, per hipòtesi, tenim \(f(x)\neq0\) per a tot \(x\) de \((a,b)\) trobem que la funció \(\frac{1}{f(x)}\) és derivable %REF
 			i per la proposició \myref{prop:Diferenciable implica contínua} trobem que \(\frac{1}{f(x)}\) és contínua. També tenim pel \myref{thm:Weierstrass màxims i mínims múltiples variables} que \(\frac{1}{f(x)}\) està acotada en \((a,b)\) i pel \myref{thm:Contínua + acotada implica integrable Riemann} trobem que \(\frac{1}{f(x)}\) és integrable en \((a,b)\). Definim doncs
-			\[F(x)=\int_{x_{0}}^{x}\frac{\text{d}t}{f(t)}.\]
+			\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{f(t)}.\]
 			Pel \myref{thm:Teorema Fonamental del Càlcul} tenim que
 			\begin{equation}
 				\label{prop:problema de Cauchy:eq2}
@@ -73,11 +73,11 @@
 				&=\frac{1}{f(u(x))}f(u(x))=1.\tag{\ref{prop:problema de Cauchy:eq1}}\\
 			\end{align*}
 			I per tant, pel \myref{thm:Teorema Fonamental del Càlcul} trobem que
-			\[\int_{t_{0}}^{t}\frac{\partial F(u(x))}{\partial x}\text{d}x=F(u(t))-F(u(t_{0})),\]
+			\[\int_{t_{0}}^{t}\frac{\partial F(u(x))}{\partial x}\diff x=F(u(t))-F(u(t_{0})),\]
 			i per \eqref{prop:problema de Cauchy:eq2} trobem \(F(u(t))-F(u(t_{0}))=t-t_{0}\)
 			
 			Ara bé, per hipòtesi, tenim que \(u(t_{0})=x_{0}\), i trobem
-			\[F(x_{0})=\int_{x_{0}}^{x_{0}}\frac{1}{f(t)}\text{d}t=0.\]
+			\[F(x_{0})=\int_{x_{0}}^{x_{0}}\frac{1}{f(t)}\diff t=0.\]
 			Per tant
 			\[F(u(t))=t-t_{0},\]
 			i com que, com ja hem vist, \(F(x)\) és invertible en \((F(a),F(b))\) trobem
@@ -101,7 +101,7 @@
 			Observem que, per la definició de \myref{def:equació diferencial ordinària d'ordre n} que l'equació \(\frac{\partial u(x)}{\partial x}=\alpha x^{2}\) és una equació diferencial ordinària d'odre \(1\). per la proposició \myref{prop:problema de Cauchy} trobem que les solucions de \eqref{ex:edos problema de Cauchy 1:eq1} són de la forma
 			\[u(x)=F^{-1}(x-1)\]
 			on
-			\[F(x)=\int_{x_{0}}^{x}\frac{\text{d}t}{\alpha t^{2}}.\]
+			\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{\alpha t^{2}}.\]
 			
 			Per tant, tenim que
 			\[F(x)=\frac{x-1}{\alpha x}\]
@@ -119,25 +119,25 @@
 			\end{cases}
 		\end{equation}
 		té una única solució de la forma
-		\[u(x)=F^{-1}\left(\int_{t_{0}}^{x}g(t)\text{d}t\right)\]
+		\[u(x)=F^{-1}\left(\int_{t_{0}}^{x}g(t)\diff t\right)\]
 		on
-		\[F(x)=\int_{x_{0}}^{x}\frac{\text{d}t}{f(t)}.\]
+		\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{f(t)}.\]
 		\begin{proof}
 			Com que, per hipòtesi, \(f(x)\neq0\) per a tot \(x\) de \((a,b)\) definim \(h=\frac{1}{f(u(x))}\) i observem que
 			\[h(u(x))\frac{\partial u(x)}{\partial x}=g(x)\]
 			i per tant
-			\[\int h(u(x))\frac{\partial u(x)}{\partial x}\text{d}{x}=\int g(x)\text{d}x.\]
+			\[\int h(u(x))\frac{\partial u(x)}{\partial x}\diff {x}=\int g(x)\diff x.\]
 			
 			Ara bé, per la \myref{thm:regla de la cadena} i el \myref{thm:Teorema Fonamental del Càlcul} tenim que això és
 			\[H(x)=G(x)+C\]
 			on \(C\) és un real i
-			\[H(x)=\int_{t_{0}}^{x}h(t)\text{d}t\quad\text{i}\quad G(x)=\int_{t_{0}}^{x}g(t)\text{d}t\]
+			\[H(x)=\int_{t_{0}}^{x}h(t)\diff t\quad\text{i}\quad G(x)=\int_{t_{0}}^{x}g(t)\diff t\]
 			i per tant
 			\[H(u(x))=G(x)+C\]
 %			Podem seguir la solució de la proposició \myref{prop:problema de Cauchy} per trobar que les úniques solucions són
-%			\[u(x)=F^{-1}\left(\int_{t_{0}}^{x}g(t)\text{d}t\right)\]
+%			\[u(x)=F^{-1}\left(\int_{t_{0}}^{x}g(t)\diff t\right)\]
 %			on
-%			\[F(x)=\int_{x_{0}}^{x}\frac{\text{d}t}{f(t)}.\qedhere\]
+%			\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{f(t)}.\qedhere\]
 		\end{proof}
 	\end{proposition}
 	\begin{example}
@@ -157,13 +157,13 @@
 			\[f(u(x))\frac{\partial u(x)}{\partial x}=g(x)\]
 			
 			Observem que
-			\[u(x)=\int_{x_{0}}^{x}\frac{yu(x)}{\sqrt{1+y^{2}}}\text{d}x\]
+			\[u(x)=\int_{x_{0}}^{x}\frac{yu(x)}{\sqrt{1+y^{2}}}\diff x\]
 			Per la proposició \myref{prop:equacions de variables separades} tenim que les solucions al sistema \eqref{ex:equacions de variables separades:eq1} són de la forma
-			\[u(t)=F^{-1}\left(\int_{t_{0}}^ {t}\frac{y}{\sqrt{1+y^{2}}}\text{d}y\right)\]
+			\[u(t)=F^{-1}\left(\int_{t_{0}}^ {t}\frac{y}{\sqrt{1+y^{2}}}\diff y\right)\]
 			on
-			\[F(x)=\int_{x_{0}}^{x}\frac{\text{d}t}{u(t)^{3}}.\]
+			\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{u(t)^{3}}.\]
 			Per tant tenim que
-			\[\]
+			\[\] %TODO ACABAR
 		\end{solution}
 	\end{example}
 	\begin{proposition}[Equacions diferencials lineals]
@@ -177,34 +177,35 @@
 			\end{cases}
 		\end{equation}
 		té una única solució de la forma
-		\[u(x)=\left(x_{0}+\int_{t_{0}}^{t}b(s)e^{-\int_{t_{0}}^{s}a(\tau)\text{d}\tau}\text{d}s\right)e^{\int_{t_{0}}^{x}a(s)\text{d}s}.\]
+		\[u(x)=\left(x_{0}+\int_{t_{0}}^{t}b(s)e^{-\int_{t_{0}}^{s}a(\tau)\diff \tau}\diff s\right)e^{\int_{t_{0}}^{x}a(s)\diff s}.\]
 		\begin{proof}
 			Considerem el canvi de variable
 			\begin{equation}
 				\label{prop:equacions diferencials lineals:eq2}
-				u(x)=c(x)e^{\int_{t_{0}}^{x}a(s)\text{d}s}.
+				u(x)=c(x)e^{\int_{t_{0}}^{x}a(s)\diff s}.
 			\end{equation}
 			Aleshores pel \myref{thm:Teorema Fonamental del Càlcul} tenim %I ref de la derivada del producte
-			\[\frac{\partial u(x)}{\partial x}=\frac{\partial c(x)}{\partial x}e^{\int_{t_{0}}^{x}a(s)\text{d}s}+c(x)a(x)e^{\int_{t_{0}}^{x}a(s)\text{d}s}\]
+			\[\frac{\partial u(x)}{\partial x}=\frac{\partial c(x)}{\partial x}e^{\int_{t_{0}}^{x}a(s)\diff s}+c(x)a(x)e^{\int_{t_{0}}^{x}a(s)\diff s}\]
 			i per \eqref{prop:equacions diferencials lineals:eq1} i \eqref{prop:equacions diferencials lineals:eq2} tenim
-			\[a(t)u(x)+b(t)=\frac{\partial c(x)}{\partial x}e^{\int_{t_{0}}^{x}a(s)\text{d}s}+a(x)u(x).\]
+			\[a(t)u(x)+b(t)=\frac{\partial c(x)}{\partial x}e^{\int_{t_{0}}^{x}a(s)\diff s}+a(x)u(x).\]
 			Per tant trobem
-			\[\frac{\partial c(x)}{\partial x}=b(x)e^{\int_{t_{0}}^{x}a(s)\text{d}s}\]
+			\[\frac{\partial c(x)}{\partial x}=b(x)e^{\int_{t_{0}}^{x}a(s)\diff s}\]
 			i tenim
 			\begin{equation}
 				\label{prop:equacions diferencials lineals:eq3}
 				\begin{cases}
-					\displaystyle \frac{\partial c(x)}{\partial x}=b(x)e^{\int_{t_{0}}^{x}a(s)\text{d}s}\\
+					\displaystyle \frac{\partial c(x)}{\partial x}=b(x)e^{\int_{t_{0}}^{x}a(s)\diff s}\\
 					\displaystyle c(t_{0})=x_{0}.
 				\end{cases}
 			\end{equation}
 			
 			Aleshores per la proposició \myref{prop:problema de Cauchy} trobem que aquest problema té una única solució, i és de la forma
-			\[c(t)=x_{0}+\int_{t_{0}}^{t}b(s)e^{-\int_{t_{0}}^{s}a(\tau)\text{d}\tau}\text{d}s\]
+			\[c(t)=x_{0}+\int_{t_{0}}^{t}b(s)e^{-\int_{t_{0}}^{s}a(\tau)\diff \tau}\diff s\]
 			i desfent el canvi de variables \eqref{prop:equacions diferencials lineals:eq2} trobem que les solucions són de la forma
-			\[u(x)=\left(x_{0}+\int_{t_{0}}^{t}b(s)e^{-\int_{t_{0}}^{s}a(\tau)\text{d}\tau}\text{d}s\right)e^{\int_{t_{0}}^{x}a(s)\text{d}s}.\qedhere\]
+			\[u(x)=\left(x_{0}+\int_{t_{0}}^{t}b(s)e^{-\int_{t_{0}}^{s}a(\tau)\diff \tau}\diff s\right)e^{\int_{t_{0}}^{x}a(s)\diff s}.\qedhere\]
 		\end{proof}
 	\end{proposition}
+%	\printbibliography
 \end{document}
 
 % http://issc.uj.ac.za/downloads/problems/ordinary.pdf

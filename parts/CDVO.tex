@@ -10,7 +10,7 @@
 		\labelname{arc simple}\label{def:arc simple}
 		\labelname{arc tancat}\label{def:arc tancat}
 		\labelname{arc regular}\label{def:arc regular}
-		\labelname{arc de classe $\mathcal{C}^{n}$}\label{def:arc de classe de diferenciabilitat n}
+		\labelname{arc de classe \ensuremath{\mathcal{C}^{n}}}\label{def:arc de classe de diferenciabilitat n}
 		Siguin \((a,b)\subseteq\mathbb{R}\) un interval, \(f\colon(a,b)\to\mathbb{R}^{m}\) una funció i \(\Gamma\) el conjunt definit per
 		\[\Gamma=\left\{x\in\mathbb{R}^{m}\mid x=f(t)\text{ per a tot }t\in(a,b)\right\},\]
 		aleshores direm que \(\Gamma\) és un arc a \(\mathbb{R}^{m}\). També direm que \(f\) defineix o recorre aquest arc.
@@ -59,7 +59,7 @@
 			
 			I com que \(t_{i}<\xi_{ij}<t_{i+1}\) tenim que \(\xi_{ij}=\xi_{i}\) per a tot \(j\in\{1,\dots,m\}\). Així veiem que si \(n\to\infty\) podem reescriure \eqref{eq:1} com
 			\begin{displaymath}
-			\Long(P_{n})=\sum_{i=0}^{n-1}(t_{i+1}-t_{i})\norm{f'(\xi_{i})}=\int_{a}^{b}\norm{f'(t)}\text{d}t.
+			\Long(P_{n})=\sum_{i=0}^{n-1}(t_{i+1}-t_{i})\norm{f'(\xi_{i})}=\int_{a}^{b}\norm{f'(t)}\diff t.
 			\end{displaymath}
 			
 			I ja hem acabat. Com que \(f\in\mathcal{C}^{1}\) tenim \(f'\) contínua, i \(a,b\in\mathbb{R}\), aquesta integral és finita i \(\Gamma\) és rectificable, com volíem veure.
@@ -78,15 +78,15 @@
 		\begin{proof}
 			Siguin \(P,Q\) dos punts en \(U\) tals que \(P\in U_{2}^{\complement}\) i \(Q\in U_{1}^{\complement}\), i \(R\in U_{1}\cap U_{2}\) un altre punt. Com que \(U_{1}\) i \(U_{2}\) són arc-connexos, per la definició de \myref{def:Arc-connex} existeixen dos arcs continus \(f,g\) tals que
 			\begin{displaymath}
-			f\colon[a,b]\longrightarrow U_{1},\quad
-			g\colon[b,c]\longrightarrow U_{2},
+				f\colon[a,b]\longrightarrow U_{1},\quad
+				g\colon[b,c]\longrightarrow U_{2},
 			\end{displaymath}
 			on \(f(a)=P\), \(f(b)=g(b)=R\) i \(g(c)=Q\).
 			Aleshores definim la funció
 			\[h(t)=
 			\begin{cases}
-			f(t) & \text{si }a\leq t\leq b\\
-			g(t) & \text{si }b<t\leq b.
+				f(t) & \text{si }a\leq t\leq b\\
+				g(t) & \text{si }b<t\leq b.
 			\end{cases}\]
 			
 			Tenim que \(h\) defineix un arc continu en \(U\), i per la definició de \myref{def:long recorregut arc continu}, \(U\) és arc-connex.
@@ -118,8 +118,8 @@
 			&=\inf_{f\in F}\lim_{n\to\infty}\left(\sum_{i=0}^{n-1}(t_{i+1}-t_{i})\sqrt{\sum_{j=1}^{d}\left(x_{j}'(\xi_{ij})\right)^2}\right)\\
 			&=\inf_{f\in F}\lim_{n\to\infty}\left(\sum_{i=0}^{n-1}(-1)(t_{n-(i+1)}-t_{n-i})\sqrt{\sum_{j=1}^{d}\left(x_{j}'(\xi_{ij})\right)^2}\right)\\
 			&=\inf_{f\in F}(-1)\lim_{n\to\infty}\left(\sum_{i=0}^{n-1}(t_{n-(i+1)}-t_{n-i})\sqrt{\sum_{j=1}^{d}\left(x_{j}'(\xi_{ij})\right)^2}\right)\\
-			&=\inf_{f\in F}(-1)\int_{a}^{b}\norm{f'(t)}\text{d}t\\
-			&=\inf_{f\in F}\int_{b}^{a}\norm{f'(t)}\text{d}t=\inf_{f\in F}\Long(f)=\Dist_{U}(Q,P)\geq0.
+			&=\inf_{f\in F}(-1)\int_{a}^{b}\norm{f'(t)}\diff t\\
+			&=\inf_{f\in F}\int_{b}^{a}\norm{f'(t)}\diff t=\inf_{f\in F}\Long(f)=\Dist_{U}(Q,P)\geq0.
 			\end{align*}
 			
 			Continuem veient el punt \eqref{enum:distancies en arc-connexos 2}. Suposem \(P=Q\) i considerem, amb \(\varepsilon>0\), la bola oberta \(\B(\varepsilon,P)\subset U\). Aquesta bola és connexa i, pel coro{\lgem}ari \myref{obs:connex metrica}, \(\Dist_{U}(P,Q)=\norm{P-Q}=0\sii P=Q\).%refer salts de línia potser
@@ -855,7 +855,7 @@
 	\subsection{Derivades d'ordre superior}
 	Fixem-nos en que en derivar una funció \(f\) obtenim una altre funció, i que aquesta, sota certes condicions, és derivable. En aquest capítol estudiarem algunes de les propietats d'aquest fet.
 	\begin{definition}[\(n\)-èsima derivada d'una funció]
-		\labelname{$n$-èsima derivada d'una funció}\label{def:n-èsima derivada d'una funció}
+		\labelname{\ensuremath{n}-èsima derivada d'una funció}\label{def:n-èsima derivada d'una funció}
 		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(\vec{v}_{1},\dots,\vec{v}_{n}\) \(n\) vectors de \(\mathbb{R}^{d}\) (no necessàriament diferents) i \(f\colon U\to\mathbb{R}^{m}\) una funció diferenciable en un punt \(a\in U\). Si \(\frac{\partial f}{\partial \vec{v}_{1}}\) és diferenciable en \(a\) i prenem la seva derivada respecte \(\vec{v}_{2}\) diem que
 		\[d^{2}f(a)(\vec{v}_{2},\vec{v}_{1})=\frac{\partial}{\partial \vec{v}_{2}}\left(\frac{\partial f}{\partial \vec{v}_{1}}\right)(a)=\frac{\partial^{2}f}{\partial \vec{v}_{2}\partial \vec{v}_{1}}(a)=D_{\vec{v}_{2},\vec{v}_{1}}f=D_{\vec{v}_{2}}(D_{\vec{v}_{1}}f)(a)\]
 		és la derivada de segon ordre de \(f\) o la segona derivada de \(f\).
@@ -1140,8 +1140,8 @@
 	\end{proposition}
 	\begin{notation}
 		Seguint el resultat de la proposició \myref{prop:Integrable Riemann iff existeix la suma} denotarem
-		\[\int_{\mathfrak{R}}f(x)dx=\Sigma(f,P_{n})=\sum_{i\in I}f(x)\abs{\mathfrak{R}_{i}}=L.\]
-		on \(\int\) es refereix al sumatori infinit, \(f(\xi_{i})\) es transforma en \(f(x)\) i \(\abs{\mathfrak{R}_{i}}\) s'escriu \(dx\), tot quan fem la partició ``infinitament més fina'', amb el límit \(\lim_{P\in\mathcal{P}}P\).%reescriure millor
+		\[\int_{\mathfrak{R}}f(x)\diff x=\Sigma(f,P_{n})=\sum_{i\in I}f(x)\abs{\mathfrak{R}_{i}}=L.\]
+		on \(\int\) es refereix al sumatori infinit, \(f(\xi_{i})\) es transforma en \(f(x)\) i \(\abs{\mathfrak{R}_{i}}\) s'escriu \(\diff x\), tot quan fem la partició ``infinitament més fina'', amb el límit \(\lim_{P\in\mathcal{P}}P\).%reescriure millor
 	\end{notation}
 	\subsection{Propietats de la integral Riemann definida}
 	\begin{proposition}
