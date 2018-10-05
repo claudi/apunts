@@ -3,7 +3,7 @@
 \begin{document}
 \chapter{Les topologies}
 	\section{Espais mètrics}
-	\subsection{Les funcions contínues i les boles}
+	\subsection{Boles i oberts}
 	\begin{definition}[Espai mètric]
 		\labelname{espai mètric}\label{def:espai mètric}
 		\labelname{distància}\label{def:distància}
@@ -65,21 +65,8 @@
 			Per acabar, per la proposició \myref{prop:les boles són oberts} tenim que les boles \(\bola(x,r)\) i \(\bola(y,r)\) són oberts, i hem acabat.
 		\end{proof}
 	\end{proposition}
-	\begin{theorem}
-		Siguin \(X\) amb la distància \(d\) i \(X'\) amb la distància \(d'\) dos espais mètrics i \(f\colon X\longrightarrow X'\) una funció. Aleshores \(f\) és contínua si i només si per a tot \(\obert{U}\) obert de \(X'\) tenim que \(\Ima_{\obert{U}}(f^{-1})\) és obert.
-		\begin{proof}
-			Veiem primer que la condició és necessària (\(\implica\)). Suposem doncs que \(f\) és contínua. Prenem un obert \(\obert{U}\) de \(X'\) i un element \(y\) de \(X'\) tal que \(f^{-1}(y)\in\Ima_{\obert{U}}(f^{-1})\), i denotem \(x=f^{-1}(y)\). Per la definició d'\myref{def:obert espai mètric} tenim que existeix un nombre real \(\varepsilon>0\) tal que \(\bola(y,\varepsilon)\subset\Ima_{\obert{U}}(f^{-1})\).
-			
-			Prenem un element \(x'\) de \(\bola(y,\varepsilon)\). Per la definició de \myref{def:bola} tenim que \(d(x,x')<\varepsilon\), i per la definició de \myref{def:funció contínua} tenim que existeix un \(\delta>0\) real tal que \(d'(f(x'),y)<\varepsilon\), i per la definició de \myref{def:bola} això és que \(f(x')\in\bola(y,\varepsilon)\). Per tant tenim que \(\Ima_{\bola(x,\delta)}(f)\subset\bola(y,\varepsilon)\) i trobem que \(\bola(x,\delta)\subset\Ima_{\obert{U}}(f^{-1})\), i per la definició de \myref{def:obert espai mètric} trobem que \(\Ima_{\obert{U}}(f^{-1})\) és un obert, com volíem veure.
-			
-			Veiem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que per a tot \(\obert{U}\) obert de \(X'\) tenim que \(\Ima_{\obert{U}}(f^{-1})\) és obert.
-			
-			Prenem un element \(xy\) de \(X\) i un real \(\varepsilon>0\). Si denotem \(y=f(x)\) tenim, per la proposició \myref{prop:les boles són oberts}, que la bola \(\bola(y,\varepsilon)\) és un obert. Per hipòtesi tenim que \(\Ima_{\bola(y,\varepsilon)}(f^{-1})\) és un obert, i per la definició d'\myref{def:obert espai mètric} tenim que existeix un nombre real \(\delta>0\) tal que \(\bola(x,\delta)\subset\Ima_{\bola(y,\varepsilon)}(f^{-1})\).
-			
-			Ara bé, per la definició de \myref{def:bola} tenim que això és que per a tot \(x_{0}\) de \(x\) amb \(d'(y,f(x_{0}))<\varepsilon\) tenim que \(d(x,x_{0})<\delta\), i per tant, per la definició de \myref{def:funció contínua} tenim que \(f\) és contínua.
-		\end{proof}
-	\end{theorem}
-	\subsection{L'espai topològic}
+	\section{L'espai topològic}
+	\subsection{Una topologia d'un conjunt i els oberts}
 	\begin{definition}[Topologia]	% Reescriure amb notació
 		\labelname{topologia}\label{def:topologia}
 		\labelname{espai topològic}\label{def:espai topològic}
@@ -99,7 +86,7 @@
 		\labelname{}\label{ex:topologia induida per una mètrica}
 		Siguin \(X\) amb la distància \(d\) un espai mètric i \(\tau=\{\obert{U}\subseteq X\mid \obert{U}\text{ és un obert}\}\). Volem veure que \(X\) amb la topologia \(\tau\) és un espai topològic.
 		\begin{solution}
-			Per la definició d'\myref{def:obert espai mètric} trobem que \(\emptyset\) és un obert i que \(X\) és un obert, ja que per a tot \(x\) element de \(X\) per la proposició \myref{prop:les boles són oberts} tenim que \(\bola(x,\varepsilon)\) és un subconjunt de \(X\) per a tot \(\varepsilon>0\).
+			Per la definició d'\myref{def:obert espai mètric} trobem que \(\emptyset\) és un obert, ja que per l'\myref{axiom:axioma de regularitat} tenim que \(\emptyset\) és un subconjunt de \(X\), i per a tot \(x\) de \(X\) existeix un \(\varepsilon>0\) tal que \(\bola(x,\varepsilon)\) pertany a \(\emptyset\). També tenim que \(X\) és un obert, ja que pel \myref{thm:doble inclusió} tenim que \(X\subseteq X\) i si prenem un element \(x\) de \(X\) tenim que per a tot \(\varepsilon>0\) la bola \(\bola(x,\varepsilon)\) és un subconjunt de \(X\). Per tant \(\emptyset\) i \(X\) són elements de \(\tau\).
 			
 			Prenem \(\{\obert{U}_{i}\}_{i=1}^{n}\) una família d'elements de \(\tau\) i considerem
 			\[\obert{U}=\bigcap_{i=1}^{n}\obert{U}_{i}.\]
@@ -113,11 +100,7 @@
 			Prenem \(\{\obert{U}_{i}\}_{i\in I}\) una família d'oberts de \(\tau\) i considerem
 			\[\obert{U}=\bigcup_{i\in I}\obert{U}_{i}.\]
 			
-			Sigui \(x\) un element de \(\obert{U}\). Per la definició d'\myref{def:obert} tenim que per a tot \(i\in\{1,\dots,n\}\) existeix un \(\varepsilon_{i}>0\) real tal que
-			\[\bola(x,\varepsilon_{i})\subset\obert{U}_{i}.\]
-			Per tant, si definim \(\varepsilon=\min_{i\in\{1,\dots,n\}}\varepsilon_{i}\). Aleshores per la definició de \myref{def:bola} tenim que
-			\[\bola(x,\varepsilon)\subseteq\bola(x,\varepsilon_{i})\quad\text{per a tot }i\in\{1,\dots,n\}.\]
-			i per tant \(\bola(x,\varepsilon)\subset\obert{U}\) i per la definició de \myref{def:obert} tenim que \(\obert{U}\) és un obert, i per la definició de \myref{def:espai topològic} hem acabat.
+			Sigui \(x\) un element de \(\obert{U}\). Per la definició d'\myref{def:unió de conjunts} tenim que existeix un \(i\in I\) tal que \(\obert{U}_{i}\) conté \(x\). Ara bé, per hipòtesi tenim que \(\obert{U}_{i}\) és un obert, i per la definició d'\myref{def:obert espai mètric} trobem que existeix un \(\varepsilon>0\) tal que \(\bola(x,\varepsilon)\) és un subconjunt de \(\obert{U}_{i}\), i com que \(\obert{U}_{i}\) és un subconjunt de \(\obert{U}\) tenim que \(\bola(x,\varepsilon)\) també és un subconjunt de \(\obert{U}\), i per la definició d'\myref{def:obert espai mètric} trobem que \(\obert{U}\) és un obert, i per la definició de \myref{def:espai topològic} hem acabat.
 		\end{solution}
 	\end{example}
 	\begin{example}[Topologia grollera]
@@ -390,12 +373,39 @@
 	\begin{proposition}
 		\label{prop:la clausura d'un conjunt és el complementari de l'interior del complementari del conjunt}
 		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(A\) un subconjunt de \(X\). Aleshores
-		\[\clausura(A)=X\setminus\interior(X\setminus A).\]
+		\[\clausura(X\setminus A)=X\setminus\interior(A).\]
 		\begin{proof}
+			Prenem un element \(x\) de \(\clausura(X\setminus A)\). Per la definició de \myref{def:clausura} tenim que per a tot obert \(\obert{U}\) que conté \(x\) tenim que
+			\[\obert{U}\cap(X\setminus A)\neq\emptyset.\]
+			Ara bé, per la definició d'\myref{def:interior} que \(\interior(A)\) és un subconjunt de \(A\), i per tant \(X\setminus A\) és un subconjunt de \(X\setminus\interior(A)\), i per tant \(\obert{U}\cap(X\setminus\interior(A))\neq\emptyset\). Per tant per la definició d'\myref{def:interior} trobem que
+			\begin{equation}
+				\label{prop:la clausura d'un conjunt és el complementari de l'interior del complementari del conjunt:eq1}
+				\clausura(X\setminus A)\subseteq X\setminus\interior(A)
+			\end{equation}
 			
+			Prenem ara un element \(x\) de \(X\setminus\interior(A)\). Per la definició d'\myref{def:interior} tenim que no existeix cap obert \(\obert{U}\) tal que \(x\) sigui un element de \(\obert{U}\) i \(\obert{U}\) sigui un subconjunt de \(A\), o equivalentment, que \(\obert{U}\cap(X\setminus A)\neq\emptyset\) per a tot obert \(\obert{U}\) tal que \(x\) sigui un element de  \(\obert{U}\) i que \(\obert{U}\) sigui un subconjunt de \(A\). Ara bé, per la definició de \myref{def:clausura} tenim que \(\obert{U}\) és un element de \(\clausura(X\setminus A)\), i per tant trobem que
+			\begin{equation}
+				\label{prop:la clausura d'un conjunt és el complementari de l'interior del complementari del conjunt:eq2}
+				X\setminus\interior(A)\subseteq\clausura(X\setminus A).
+			\end{equation}
+			
+			Per tant, amb \eqref{prop:la clausura d'un conjunt és el complementari de l'interior del complementari del conjunt:eq1} i \eqref{prop:la clausura d'un conjunt és el complementari de l'interior del complementari del conjunt:eq2} i el \myref{thm:doble inclusió} trobem que \(\clausura(X\setminus A)=X\setminus\interior(A)\), com volíem veure.
 		\end{proof}
 	\end{proposition}
-	
+	\section{Aplicacions contínues}
+	\subsection{Aplicacions obertes, tancades i contínues}
+	\begin{definition}[Aplicació oberta]
+		\labelname{aplicació oberta}\label{def:aplicació oberta}
+		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i \(f:X\longrightarrow Y\) una aplicació tal que per a tot obert \(\obert{U}\) de \(X\) tenim que el conjunt \(\{f(x)\in Y\mid x\in\obert{U}\}\) és un obert de \(Y\). Aleshores direm que \(f\) és una aplicació oberta.
+	\end{definition}
+	\begin{definition}[Aplicació tancada]
+		\labelname{aplicació tancada}\label{def:aplicació tancada}
+		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i \(f:X\longrightarrow Y\) una aplicació tal que per a tot tancat \(\tancat{C}\) de \(X\) tenim que el conjunt \(\{f(x)\in Y\mid x\in\tancat{C}\}\) és un tancat de \(Y\). Aleshores direm que \(f\) és una aplicació tancada.
+	\end{definition}
+	\begin{definition}[Aplicació contínua]
+		\labelname{aplicació contínua}\label{def:aplicació contínua}
+		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i \(f:X\longrightarrow Y\) una aplicació tal que per a tot obert \(\obert{V}\) de \(Y\) el conjunt \(\{x\in X\mid f(x)\in\obert{V}\}\) és un obert de \(X\). Aleshores direm que \(f\) és una aplicació contínua.
+	\end{definition}
 %	\begin{definition}[Aplicació contínua i homeomorfisme]
 %		\labelname{aplicació contínua}\label{def:aplicació contínua}
 %		\labelname{homeomorfisme}\label{def:homeomorfisme topo}
@@ -420,6 +430,21 @@
 %			
 %		\end{proof}
 %	\end{proposition}
+
+%	\begin{theorem}
+%		Siguin \(X\) amb la distància \(d\) i \(X'\) amb la distància \(d'\) dos espais mètrics i \(f\colon X\longrightarrow X'\) una funció. Aleshores \(f\) és contínua si i només si per a tot \(\obert{U}\) obert de \(X'\) tenim que \(\Ima_{\obert{U}}(f^{-1})\) és obert.
+%		\begin{proof}
+%			Veiem primer que la condició és necessària (\(\implica\)). Suposem doncs que \(f\) és contínua. Prenem un obert \(\obert{U}\) de \(X'\) i un element \(y\) de \(X'\) tal que \(f^{-1}(y)\in\Ima_{\obert{U}}(f^{-1})\), i denotem \(x=f^{-1}(y)\). Per la definició d'\myref{def:obert espai mètric} tenim que existeix un nombre real \(\varepsilon>0\) tal que \(\bola(y,\varepsilon)\subset\Ima_{\obert{U}}(f^{-1})\).
+%			
+%			Prenem un element \(x'\) de \(\bola(y,\varepsilon)\). Per la definició de \myref{def:bola} tenim que \(d(x,x')<\varepsilon\), i per la definició de \myref{def:funció contínua} tenim que existeix un \(\delta>0\) real tal que \(d'(f(x'),y)<\varepsilon\), i per la definició de \myref{def:bola} això és que \(f(x')\in\bola(y,\varepsilon)\). Per tant tenim que \(\Ima_{\bola(x,\delta)}(f)\subset\bola(y,\varepsilon)\) i trobem que \(\bola(x,\delta)\subset\Ima_{\obert{U}}(f^{-1})\), i per la definició de \myref{def:obert espai mètric} trobem que \(\Ima_{\obert{U}}(f^{-1})\) és un obert, com volíem veure.
+%			
+%			Veiem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que per a tot \(\obert{U}\) obert de \(X'\) tenim que \(\Ima_{\obert{U}}(f^{-1})\) és obert.
+%			
+%			Prenem un element \(xy\) de \(X\) i un real \(\varepsilon>0\). Si denotem \(y=f(x)\) tenim, per la proposició \myref{prop:les boles són oberts}, que la bola \(\bola(y,\varepsilon)\) és un obert. Per hipòtesi tenim que \(\Ima_{\bola(y,\varepsilon)}(f^{-1})\) és un obert, i per la definició d'\myref{def:obert espai mètric} tenim que existeix un nombre real \(\delta>0\) tal que \(\bola(x,\delta)\subset\Ima_{\bola(y,\varepsilon)}(f^{-1})\).
+%			
+%			Ara bé, per la definició de \myref{def:bola} tenim que això és que per a tot \(x_{0}\) de \(x\) amb \(d'(y,f(x_{0}))<\varepsilon\) tenim que \(d(x,x_{0})<\delta\), i per tant, per la definició de \myref{def:funció contínua} tenim que \(f\) és contínua.
+%		\end{proof}
+%	\end{theorem}
 
 %	\subsection{Aplicacions contínues}
 %	\subsection{Subespais}
