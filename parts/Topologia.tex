@@ -330,6 +330,11 @@
 		\[\clausura(A)=\{x\in X\mid x\text{ és un punt adherent a }A\}\]
 		és la clausura de \(A\).
 	\end{definition}
+	\begin{observation}
+		\label{obs:la clausura d'un conjunt conté el conjunt}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(A\) un subconjunt de \(X\). Aleshores
+		\[A\subseteq\clausura(A).\]
+	\end{observation}
 	\begin{proposition}
 		\label{prop:la clausura d'un conjunt és un tancat}
 		Siguin \(X\) amb \(\tau\) un espai topològic i \(A\) un subconjunt de \(X\). Aleshores \(\clausura(A)\) és un tancat.
@@ -358,9 +363,39 @@
 		Aleshores
 		\[\clausura(A)=\bigcap_{\tancat{C}\in Y}\tancat{C}.\]
 		\begin{proof}
-			Sigui \(\tancat{C}\) un tancat tal que \(A\) sigui un subconjunt de \(\tancat{C}\) i \(x\) un punt de \(\clausura(A)\setminus\tancat{C}\). Per tant trobem que \(x\) és un element de \(X\setminus\tancat{C}\), i com que, per hipòtesi, \(\tancat{C}\) és un tancat, per la definició de \myref{def:tancat} trobem que \(X\setminus\obert{C}\) és un obert, i per tant \((X\setminus\tancat{C})\cap A\neq\emptyset\)
+			Sigui \(x\) un punt adherent a \(A\) amb \(x\notin A\). Suposem que existeix un tancat \(\tancat{C}\) tal que \(A\) és un subconjunt de \(\tancat{C}\) i tal que \(x\) no pertany a \(\tancat{C}\). Aleshores \(x\) és un element de \(X\setminus\tancat{C}\), i per la definició de \myref{def:tancat} tenim que \(\obert{U}=X\setminus\tancat{C}\) és un obert. Ara bé, per la definició d'\myref{def:entorn} tenim que \(\obert{U}\) és un entorn de \(x\), però \(A\) és un subconjunt de \(\tancat{C}\), i per tant tenim que \(X\setminus\tancat{C}\) és un subconjunt de \(X\setminus A\), i tenim que \(\obert{U}\) és un subconjunt de \(X\setminus A\), i per tant \(A\cap\obert{U}=\emptyset\). Ara bé, per la definició de \myref{def:punt adherent} tenim que \(A\cap\obert{U}\neq\emptyset\). Per tant ha de ser que \(x\) pertany a \(\tancat{C}\) i trobem que
+			\begin{equation}
+				\label{prop:la clausura d'un conjunt és l'intersecció de tots els tancats que contenen el conjunt:eq1}
+				\clausura(A)\subseteq\bigcap_{\tancat{C}\in Y}\tancat{C}.
+			\end{equation}
+			
+			Per la proposició \myref{prop:la clausura d'un conjunt és un tancat} tenim que \(\clausura(A)\) és un tancat, i per tant \(\clausura(A)\) és un element de \(Y\) i tenim que
+			\begin{equation}
+				\label{prop:la clausura d'un conjunt és l'intersecció de tots els tancats que contenen el conjunt:eq2}
+				\bigcap_{\tancat{C}\in Y}\tancat{C}\subseteq\clausura(A).
+			\end{equation}
+			
+			Ara bé, tenim \eqref{prop:la clausura d'un conjunt és l'intersecció de tots els tancats que contenen el conjunt:eq1} i \eqref{prop:la clausura d'un conjunt és l'intersecció de tots els tancats que contenen el conjunt:eq2}, i pel \myref{thm:doble inclusió} trobem que
+			\[\clausura(A)=\bigcap_{\tancat{C}\in Y}\tancat{C}.\qedhere\]
 		\end{proof}
 	\end{proposition}
+	\begin{corollary}
+		\label{cor:la clausura d'un conjunt és el tancat més petit que el conté}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(A\) un subconjunt de \(X\) i \(\tancat{C}\) un tancat tal que \(A\) és un subconjunt de \(\tancat{C}\). Aleshores \(\tancat{C}\subseteq\clausura(A)\).
+	\end{corollary}
+	\begin{corollary}
+		\label{cor:un conjunt és tancat si i només si és igual a la seva clausura}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(A\) un subconjunt de \(X\). Aleshores \(A\) és tancat si i només si \(A=\clausura(A)\).
+	\end{corollary}
+	\begin{proposition}
+		\label{prop:la clausura d'un conjunt és el complementari de l'interior del complementari del conjunt}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(A\) un subconjunt de \(X\). Aleshores
+		\[\clausura(A)=X\setminus\interior(X\setminus A).\]
+		\begin{proof}
+			
+		\end{proof}
+	\end{proposition}
+	
 %	\begin{definition}[Aplicació contínua i homeomorfisme]
 %		\labelname{aplicació contínua}\label{def:aplicació contínua}
 %		\labelname{homeomorfisme}\label{def:homeomorfisme topo}
