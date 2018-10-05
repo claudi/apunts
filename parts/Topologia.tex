@@ -257,10 +257,17 @@
 	\begin{definition}[Entorn]
 		\labelname{entorn}\label{def:entorn}
 		\labelname{punt interior}\label{def:punt interior}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(x\) un punt de \(X\) i \(A\) un conjunt tal que existeix un obert \(\obert{U}\) satisfent \(x\in\obert{U}\) i \(\obert{U}\subseteq A\). Aleshores direm que \(A\) és un entorn de \(x\).
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(x\) un punt i \(N\) un conjunt tal que existeix un obert \(\obert{U}\) satisfent que \(x\) és un element de \(\obert{U}\) i \(\obert{U}\) és un subconjunt de \(N\). Aleshores direm que \(N\) és un entorn de \(x\).
 		
-		També direm que \(x\) és un punt interior de \(A\).
+		També direm que \(x\) és un punt interior de \(N\).
 	\end{definition}
+	\begin{observation}
+		\label{obs:tot punt té un entorn}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(x\) un punt. Aleshores existeix un subconjunt \(N\) de \(X\) tal que \(N\) és un entorn de \(x\).
+		\begin{proof}
+			Si \(N=X\) tenim \(x\in X\subseteq N\). Per la definició de \myref{def:topologia} tenim que \(X\) és un obert i per la definició d'\myref{def:entorn} trobem que \(N\) és un entorn de \(x\).
+		\end{proof}
+	\end{observation}
 	\begin{definition}[Interior]
 		\labelname{interior}\label{def:interior}
 		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(x\) un punt de \(X\), \(A\) subconjunt de \(X\) i
@@ -279,9 +286,7 @@
 			\end{align*}
 			
 			Per tant tenim que
-			\[\interior(A)\subseteq\bigcup_{x\in\interior(A)}\obert{U}_{x}\]
-			i
-			\[\bigcup_{x\in\interior(A)}\obert{U}_{x}\subseteq\interior(A),\]
+			\[\interior(A)\subseteq\bigcup_{x\in\interior(A)}\obert{U}_{x}\quad\text{i}\quad\bigcup_{x\in\interior(A)}\obert{U}_{x}\subseteq\interior(A),\]
 			i pel \myref{thm:doble inclusió} trobem
 			\[\interior(A)=\bigcup_{x\in\interior(A)}\obert{U}_{x}\]
 			i per la definició de \myref{def:topologia} trobem que \(\interior(A)\) és un obert.
@@ -290,8 +295,8 @@
 	\begin{proposition}
 		\label{prop:l'interior d'un conjunt és l'unió de tots els oberts continguts en el conjunt}
 		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(A\) un subconjunt de \(X\) i
-		\[Y=\{\obert{U}\in\tau\mid\obert{U}\subseteq A\}\]
-		un conjunt. Aleshores
+		\[Y=\{\obert{U}\in\tau\mid\obert{U}\subseteq A\}.\]
+		Aleshores
 		\[\interior(A)=\bigcup_{\obert{U}\in Y}\obert{U}.\]
 		\begin{proof}
 			Sigui \(x\) un element de \(A\) tal que existeixi un obert \(\obert{U}_{x}\) satisfent que \(x\) és un element de \(\obert{U}_{x}\) i \(\obert{U}_{x}\) és un subconjunt de \(A\). Aleshores tenim
@@ -334,13 +339,26 @@
 			 	\label{prop:la clausura d'un conjunt és un tancat:eq1}
 				 A\cap N=\emptyset,
 			 \end{equation}
-			 i per la definició d'\myref{def:entorn} tenim que existeix un obert \(\obert{U}\) tal que \(x\) és un element de \(\obert{U}\) i que \(\obert{U}\) és un subconjunt de \(N\). Per tant, per \eqref{prop:la clausura d'un conjunt és un tancat:eq1} trobem que \(A\cap\obert{U}=\emptyset\).
+			 i per la definició d'\myref{def:entorn} tenim que existeix un obert \(\obert{U}_{x}\) tal que \(x\) és un element de \(\obert{U}_{x}\) i que \(\obert{U}_{x}\) és un subconjunt de \(N\). Per tant, per \eqref{prop:la clausura d'un conjunt és un tancat:eq1} tenim que \(A\cap\obert{U}_{x}=\emptyset\).
 			 
 			 Per tant trobem
 			 \begin{align*}
 				 X\setminus\clausura(A)&=\bigcup_{x\in X\setminus\clausura(A)}x \\
-				 &\supseteq\bigcup_{x\in\obert{U}}
+				 &\subseteq\bigcup_{x\in X\setminus\clausura(A)}\obert{U}_{x}\subseteq X\setminus\clausura(A),
 			 \end{align*}
+			 i pel \myref{thm:doble inclusió} trobem que
+			 \[X\setminus\clausura(A)=\subseteq\bigcup_{x\in X\setminus\clausura(A)}\obert{U}_{x},\]
+			 i com que \(\obert{U}_{x}\) és un obert, per la definició de \myref{def:topologia} tenim que \(X\setminus\clausura(A)\) és un obert, i per la definició de \myref{def:tancat} trobem que \(\clausura(A)\) és un tancat.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:la clausura d'un conjunt és l'intersecció de tots els tancats que contenen el conjunt}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(A\) un subconjunt de \(X\) i
+		\[Y=\{\tancat{C}\subseteq X\mid A\subseteq\tancat{C}\text{ i }\tancat{C}\text{ és un tancat}\}.\]
+		Aleshores
+		\[\clausura(A)=\bigcap_{\tancat{C}\in Y}\tancat{C}.\]
+		\begin{proof}
+			Sigui \(\tancat{C}\) un tancat tal que \(A\) sigui un subconjunt de \(\tancat{C}\) i \(x\) un punt de \(\clausura(A)\setminus\tancat{C}\). Per tant trobem que \(x\) és un element de \(X\setminus\tancat{C}\), i com que, per hipòtesi, \(\tancat{C}\) és un tancat, per la definició de \myref{def:tancat} trobem que \(X\setminus\obert{C}\) és un obert, i per tant \((X\setminus\tancat{C})\cap A\neq\emptyset\)
 		\end{proof}
 	\end{proposition}
 %	\begin{definition}[Aplicació contínua i homeomorfisme]
