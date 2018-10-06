@@ -348,13 +348,35 @@
 		\end{proof}
 	\end{proposition}
 	\begin{example}
+		\label{ex:quocient + Raabe}
 		Sigui \(\alpha>0\) un nombre real. Considerem la sèrie numèrica
-		\[\sum_{n=1}^{\infty}\frac{\alpha^{n}n!}{n^{n}}.\]
+		\begin{equation}
+			\label{ex:quocient + Raabe:eq1}
+			\sum_{n=1}^{\infty}\frac{\alpha^{n}n!}{n^{n}}.
+		\end{equation}
 		Volem estudiar la convergència d'aquesta sèrie en funció del valor de \(\alpha\).
 		\begin{solution}
-			Considerem
+			Considerem el límit
+			\begin{align*}
+				\lim_{n\to\infty}\frac{\frac{\alpha^{n+1}(n+1)!}{(n+1)^{n+1}}}{\frac{\alpha^{n}n!}{n^{n}}}&=\lim_{n\to\infty}\frac{\alpha^{n+1}(n+1)!n^{n}}{\alpha^{n}n!(n+1)^{n+1}} \\
+				&=\lim_{n\to\infty}\frac{\alpha(n+1)!n^{n}}{(n+1)!(n+1)^{n}} \\
+				&=\alpha\lim_{n\to\infty}\left(\frac{n}{n+1}\right)^{n}=\frac{\alpha}{\e} %REF
+			\end{align*}
+			Per tant, si \(\alpha>\e\) tenim que \(\frac{\alpha}{\e}>1\), i pel \myref{prop:criteri del quocient} trobem que la sèrie és divergent. Si \(\alpha<\e\) aleshores \(\frac{\alpha}{\e}<1\) i pel \myref{prop:criteri del quocient} trobem que la sèrie és convergent.
 			
-			Comparació + Raabe.
+			Estudiem el cas \(\alpha=\e\). Considerem el límit
+			\begin{align*}
+				\lim_{n\to\infty}n\left(1-\frac{\frac{\e^{n+1}(n+1)!}{(n+1)^{n+1}}}{\frac{\e^{n}n!}{n^{n}}}\right)&=\lim_{n\to\infty}n\left(\frac{\e^{n+1}(n+1)!n^{n}}{e^{n}n!(n+1)^{n+1}}\right) \\
+				&=\lim_{n\to\infty}n\left(\frac{\e(n+1)!n^{n}}{(n+1)!(n+1)^{n}}\right) \\
+				&=\lim_{n\to\infty}n\left(\frac{\e n^{n}}{(n+1)^{n}}\right) \\
+				&=\e\lim_{n\to\infty}n\left(\frac{n}{n+1}\right)^{n} \\
+				&=\e\lim_{n\to\infty}\left(\frac{n^{n+1}}{n+1}\right)^{n}=\infty
+			\end{align*}
+			i pel \myref{prop:criteri de Raabe} trobem que la sèrie \eqref{ex:quocient + Raabe:eq1} és convergent.
+			
+			Per tant la sèrie
+			\[\sum_{n=1}^{\infty}\frac{\alpha^{n}n!}{n^{n}}\]
+			és convergent si i només si \(\alpha\geq\e\).
 		\end{solution}
 	\end{example}
 %	\subsection{Sèries alternades}
