@@ -366,17 +366,16 @@
 			
 			Estudiem el cas \(\alpha=\e\). Considerem el límit
 			\begin{align*}
-				\lim_{n\to\infty}n\left(1-\frac{\frac{\e^{n+1}(n+1)!}{(n+1)^{n+1}}}{\frac{\e^{n}n!}{n^{n}}}\right)&=\lim_{n\to\infty}n\left(\frac{\e^{n+1}(n+1)!n^{n}}{e^{n}n!(n+1)^{n+1}}\right) \\
-				&=\lim_{n\to\infty}n\left(\frac{\e(n+1)!n^{n}}{(n+1)!(n+1)^{n}}\right) \\
-				&=\lim_{n\to\infty}n\left(\frac{\e n^{n}}{(n+1)^{n}}\right) \\
-				&=\e\lim_{n\to\infty}n\left(\frac{n}{n+1}\right)^{n} \\
-				&=\e\lim_{n\to\infty}\left(\frac{n^{n+1}}{n+1}\right)^{n}=\infty
+				\lim_{n\to\infty}n\left(1-\frac{\frac{\e^{n+1}(n+1)!}{(n+1)^{n+1}}}{\frac{\e^{n}n!}{n^{n}}}\right)&=\lim_{n\to\infty}n\left(1-\frac{\e^{n+1}(n+1)!n^{n}}{e^{n}n!(n+1)^{n+1}}\right) \\
+				&=\lim_{n\to\infty}n\left(1-\e\frac{(n+1)!n^{n}}{(n+1)!(n+1)^{n}}\right) \\
+				&=\lim_{n\to\infty}n\left(1-\e\left(\frac{n}{n+1}\right)^{n}\right) \\
+				&=\lim_{n\to\infty}n(1-e^{2})=-\infty %REF
 			\end{align*}
-			i pel \myref{prop:criteri de Raabe} trobem que la sèrie \eqref{ex:quocient + Raabe:eq1} és convergent.
+			i pel \myref{prop:criteri de Raabe} trobem que la sèrie \eqref{ex:quocient + Raabe:eq1} és divergent quan \(\alpha=e\).
 			
 			Per tant la sèrie
 			\[\sum_{n=1}^{\infty}\frac{\alpha^{n}n!}{n^{n}}\]
-			és convergent si i només si \(\alpha\geq\e\).
+			és convergent si i només si \(\alpha<\e\).
 		\end{solution}
 	\end{example}
 %	\subsection{Sèries alternades}
