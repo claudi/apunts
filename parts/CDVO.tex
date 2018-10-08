@@ -187,7 +187,7 @@
 		a&\longmapsto(f_{1}(a),\dots,f_{m}(a)).
 		\end{align*}
 		Aleshores
-		\[f\text{ és diferenciable en }a\sii f_{i}\text{ és diferenciable en a }\forall i\in \{1,\dots,m\}.\]
+		\[f\text{ és diferenciable en }a\sii f_{i}\text{ és diferenciable en }a\text{ per a tot } i\in \{1,\dots,m\}.\]
 		\begin{proof}
 			Per la definició de \myref{def:diferencial} tenim que, per a qualsevol vector \(\vec{h}\) de \(\mathbb{R}^d\)
 			\[f(a+\vec{h})=f(a)+df(a)(\vec{h})+\omicron(\vec{h}),\quad \lVert\vec{h}\rVert\to0.\]
@@ -452,7 +452,7 @@
 		a&\longmapsto(v_{1}(a),\dots,v_{d}(a))
 		\end{align*}
 		aleshores donat un punt \(a\in U\), interpretem \(v_{1}(a),\dots,v_{d}(a)\) com les noves coordenades del punt \(a\). Amb aquest nou sistema els punts que fan d'eixos de coordenades, que són les famílies de punts definits per
-		\[\{x\in U\mid v_{i}(x)=v_{j}(a)\sii i\neq j,\forall i,j\in\{1,\dots,d\}\},\]
+		\[\{x\in U\mid v_{i}(x)=v_{j}(a)\sii i\neq j,\text{ per a tot }i,j\in\{1,\dots,d\}\},\]
 		que són tots els punts amb totes les coordenades iguals, excepte la \(j\)-èsima.
 		
 		Si \(\Phi,\Phi^{-1}\) són diferenciables direm que és un canvi de coordenades diferenciable o que és un difeomorfisme.
@@ -713,7 +713,7 @@
 			Si entenem \(f\) com \(f(a)=(f_{1}(a),\dots,f_{d}(a))\) i un punt \(p\in\B\left(f(a),\tfrac{d}{2}\right)\) com \(p=(p_{1},\dots,p_{d})\), podem considerar la funció \(h\) tal que
 			\[h(x)=\norm{p-f(x)}=\sum_{i=1}^{d}(p_{i}-f_{i}(x))^{2}.\]
 			Aleshores \(h\) té un mínim absolut en el compacte \(\overline{\B}(a,r)\), que s'assoleix quan \(x=q\in\overline{\B}(a,r)\). Per tant, per la proposició \myref{prop:Identificació d'extrems relatius}, \(D_{j}h(q)=0\), per a tot \(j\in\{1,\dots,d\}\), que és equivalent a dir
-			\[\sum_{i=1}^{d}D_{j}f_{i}(p)(p_{i}-f_{i}(q))=0,\quad\forall j\in\{1,\dots,d\}.\]
+			\[\sum_{i=1}^{d}D_{j}f_{i}(p)(p_{i}-f_{i}(q))=0,\quad\text{per a tot }j\in\{1,\dots,d\}.\]
 			
 			Així hem vist que la restricció de \(f\) en \(W\) és exhaustiva, i per tant bijectiva, i ja teníem que era contínua. Podem veure de nou pel punt \eqref{enum:thFunció inversa 3} del lema \myref{lemma:Funció inversa} que la seva inversa també és contínua. Amb tot això en tenim prou per dir que la restricció de \(f\) en \(W\) és un homeomorfisme diferenciable en un punt \(a\) però, com que, per hipòtesi, tenim \(\det(df(a))\neq0\), amb la proposició \myref{prop:homeomorfisme a difeomorfisme} queda demostrat el teorema.
 		\end{proof}

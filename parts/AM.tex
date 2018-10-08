@@ -29,10 +29,16 @@
 			\sum_{n=0}^{\infty}r^{n}.
 		\end{equation}
 		\begin{solution}
-			Tenim que \(\sum_{n=0}^{N}r^{n}=r^{0}+r^{1}+r^{2}+\cdots\), i per tant
+			Observem que si \(r=1\), per la definició de \myref{def:límit}, el límit
+			\[\lim_{N\to\infty}\sum_{n=0}^{N}1^{n}=N\]
+			és divergent, i per la definició de \myref{def:sèrie convergent} tenim que la sèrie
+			\[\sum_{n=0}^{\infty}1^{n}\]
+			és divergent.
+			
+			Estudiem ara el cas \(r\neq1\). Tenim que \(\sum_{n=0}^{N}r^{n}=r^{0}+r^{1}+r^{2}+\cdots\), i per tant
 			\begin{align*}
-				(1-r)\sum_{n=0}^{N}r^{n}&=(1-r)(r^{0}+r^{1}+r^{2}+\cdots)\\
-				&=r^{0}+r^{1}+r^{2}+\dots+r^{n}-(r^{1}+r^{2}+r^{3}+\dots+r^{n+1})\\
+				(1-r)\sum_{n=0}^{N}r^{n}&=(1-r)(r^{0}+r^{1}+r^{2}+\cdots+r^{N})\\
+				&=r^{0}+r^{1}+r^{2}+\dots+r^{N}-(r^{1}+r^{2}+r^{3}+\dots+r^{N+1})\\
 				&=1-r^{N+1}\\
 			\end{align*}
 			i trobem
@@ -48,7 +54,7 @@
 			\end{cases}\]
 			i per la definició de \myref{def:sèrie convergent} trobem que \eqref{ex:sèries geomètriques:eq1} és convergent si i només si \(r\) pertany a l'interval \((-1,1)\), i si \(r\) pertany a l'interval \((-1,1)\) aleshores es compleix
 			\begin{equation*}
-				\sum_{n=0}^{N}r^{n}=\frac{1-r^{N+1}}{1-r}.\qedhere
+				\sum_{n=0}^{\infty}r^{n}=\frac{1}{1-r}.\qedhere
 			\end{equation*}
 		\end{solution}
 	\end{example}
@@ -105,10 +111,10 @@
 			\begin{align*}
 				S_{2^{N}}&=1+\frac{1}{2^{\alpha}}+\frac{1}{3^{\alpha}}+\dots+\frac{1}{2^{N\alpha}}\\
 				&\geq1+\frac{1}{2^{\alpha}}+\frac{2}{4^{\alpha}}+\dots+\frac{2^{N-1}}{2^{N\alpha}}\\
-				&=1+\sum_{i=0}^{N-1}\frac{2^{i}}{2^{(i+1)\alpha}}=1+\frac{1}{2^{\alpha}}\sum_{i=0}^{N-1}2^{i(1-\alpha)}.
+				&=1+\sum_{n=0}^{N-1}\frac{2^{n}}{2^{(n+1)\alpha}}=1+\frac{1}{2^{\alpha}}\sum_{n=0}^{N-1}2^{n(1-\alpha)}.
 			\end{align*}
 			Ara bé, tenim que \(1-\alpha\geq0\), i per tant trobem
-			\[\lim_{N\to\infty}1+\frac{1}{2^{\alpha}}\sum_{i=0}^{N-1}2^{i(1-\alpha)}=\infty,\]
+			\[\lim_{N\to\infty}1+\frac{1}{2^{\alpha}}\sum_{n=0}^{N-1}2^{n(1-\alpha)}=\infty,\]
 			i tenim que \(\lim_{N\to\infty}S_{2^{N}}=\infty\) i per la definició de \myref{def:sèrie divergent} trobem que \(\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}\) és divergent.
 			
 			Veiem ara el cas \(\alpha>1\). Definim de nou la successió
@@ -117,8 +123,8 @@
 			\begin{align*}
 				S_{2^{N}}&=1+\frac{1}{2^{\alpha}}+\frac{1}{3^{\alpha}}+\dots+\frac{1}{2^{N\alpha}}\\
 				&\leq1+\frac{1}{2^{\alpha}}+\frac{2}{4^{\alpha}}+\dots+\frac{2^{N-1}}{2^{N\alpha}}\\
-				&=\frac{1}{2^{N\alpha}}+\sum_{i=0}^{N-1}\frac{2^{i}}{2^{i\alpha}}\\
-				&=\frac{1}{2^{N\alpha}}+\sum_{i=0}^{N-1}2^{(1-\alpha)i}\\
+				&=\frac{1}{2^{N\alpha}}+\sum_{n=0}^{N-1}\frac{2^{n}}{2^{n\alpha}}\\
+				&=\frac{1}{2^{N\alpha}}+\sum_{n=0}^{N-1}2^{(1-\alpha)n}\\
 				&=\frac{1}{2^{N\alpha}}+\frac{1-2^{(1-\alpha)N}}{1-2^{1-\alpha}}\tag{\myref{ex:sèries geomètriques}}
 			\end{align*}
 			i tenim que
@@ -378,6 +384,10 @@
 			és convergent si i només si \(\alpha<\e\).
 		\end{solution}
 	\end{example}
+	\begin{proposition}
+		
+	\end{proposition}
+	
 %	\subsection{Sèries alternades}
 %	\subsection{Convergència absoluta}
 %	\subsection{Reordenació de sèries}

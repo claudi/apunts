@@ -2,8 +2,48 @@
 
 \begin{document}
 \chapter{Equacions diferencials de primer ordre en una variable}
+	\section{Espai de funcions contínues i acotades sobre un espai topològic}
+	\subsection{L'espai de funcions contínues i acotades és complet}
+	\begin{notation}[Espai de funcions contínues i acotades]
+		\labelname{espai de funcions contínues i acotades}\label{notation:espai de funcions contínues i acotades}
+		Sigui \(X\) amb la topologia \(\tau\) un espai topològic. Aleshores denotem
+		\[\mathcal{C}_{b}(X)=\{f(x)\mid\text{tal que }f(x)\text{ és una funció contínua i acotada sobre }X\}.\]
+	\end{notation}
+	\begin{definition}[Distància entre funcions]
+		\labelname{distància entre funcions acotades}\label{def:distància entre funcions acotades}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(f(x)\) una funció de \(\mathcal{C}_{g}(X)\). Aleshores definim
+		\[\norm{f}=\sup_{x\in X}\abs{f(x)}\]
+		con la norma de \(f\).
+	\end{definition}
+	\begin{proposition}
+		\labelname{l'espai de funcions contínues i acotades és un espai vectorial}\label{prop:l'espai de funcions contínues i acotades és un espai vectorial}
+		Sigui \(X\) amb la topologia \(\tau\) un espai topològic. Aleshores \(\mathcal{C}_{b}(X)\) és un espai vectorial.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Distància]
+		\labelname{distància entre funcions}\label{def:distància entre funcions}
+		
+	\end{definition}
+	\begin{proposition}
+		\labelname{l'espai de funcions contínues i acotades és un espai mètric}\label{prop:l'espai de funcions contínues i acotades és un espai mètric}
+		Sigui \(X\) amb la topologia \(\tau\) un espai topològic. Aleshores \(\mathcal{C}_{b}(X)\) 
+	\end{proposition}
+	
 	\section{Teoremes d'existència i unicitat}
 	\subsection{Equacions diferencials ordinàries}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	\begin{definition}[Equació diferencial ordinària d'ordre \(n\)]
 		\labelname{equació diferencial ordinària d'odre \ensuremath{n}}\label{def:equació diferencial ordinària d'ordre n}
 		\labelname{solució de l'equació diferencial ordinària}\label{def:solució de l'equació diferencial ordinària}
@@ -14,7 +54,7 @@
 	\end{definition}
 	\begin{proposition}
 		\label{prop:edos1:1}
-		Siguin \(I\) un interval de \(\mathbb{R}\) i \(f\colon I\longrightarrow\mathbb{R}^{m}\) una funció contínua. Aleshores l'equació diferencial ordinària d'ordre \(1\)
+		Siguin \(I\) un interval tancat i acotat de \(\mathbb{R}\) i \(f\colon I\longrightarrow\mathbb{R}^{m}\) una funció contínua. Aleshores l'equació diferencial ordinària d'ordre \(1\)
 		\begin{equation}
 			\label{edos1:prop1:eq1}
 			\frac{\partial u(x)}{\partial x}=f(u(x)).
@@ -29,7 +69,7 @@
 			Aquesta demostració també ens serveix per veure la unicitat.
 		\end{proof}
 	\end{proposition}
-	\begin{observation}
+	\begin{observation} %REVISAR
 		Observem que, en la proposició \myref{prop:edos1:1}, si la funció \(f\) no és integrable en \(I\) aleshores l'equació diferencial \eqref{edos1:prop1:eq1} no té solució. %Integrable Riemann?
 	\end{observation}
 	\begin{proposition}[Problema de Cauchy]
@@ -52,7 +92,7 @@
 			és una equació ordinària d'orde \(1\).
 			
 			Com que, per hipòtesi, tenim \(f(x)\neq0\) per a tot \(x\) de \((a,b)\) trobem que la funció \(\frac{1}{f(x)}\) és derivable %REF
-			i per la proposició \myref{prop:Diferenciable implica contínua} trobem que \(\frac{1}{f(x)}\) és contínua. També tenim pel \myref{thm:Weierstrass màxims i mínims múltiples variables} que \(\frac{1}{f(x)}\) està acotada en \((a,b)\) i pel \myref{thm:Contínua + acotada implica integrable Riemann} trobem que \(\frac{1}{f(x)}\) és integrable en \((a,b)\). Definim doncs
+			i per la proposició \myref{prop:Diferenciable implica contínua} trobem que \(\frac{1}{f(x)}\) és contínua. També tenim pel \myref{thm:Weierstrass màxims i mínims múltiples variables} que \(\frac{1}{f(x)}\) està acotada en \((a,b)\) i pel \myref{thm:Contínua + acotada implica integrable Riemann} trobem que \(\frac{1}{f(x)}\) és integrable en \((a,b)\). Definim doncs %NO és en (a,b). És en (x_{0},x)
 			\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{f(t)}.\]
 			Pel \myref{thm:Teorema Fonamental del Càlcul} tenim que
 			\begin{equation}
@@ -98,7 +138,7 @@
 			\end{cases*}
 		\end{equation}
 		\begin{solution}
-			Observem que, per la definició de \myref{def:equació diferencial ordinària d'ordre n} que l'equació \(\frac{\partial u(x)}{\partial x}=\alpha x^{2}\) és una equació diferencial ordinària d'odre \(1\). per la proposició \myref{prop:problema de Cauchy} trobem que les solucions de \eqref{ex:edos problema de Cauchy 1:eq1} són de la forma
+			Observem que, per la definició de \myref{def:equació diferencial ordinària d'ordre n} que l'equació \(\frac{\partial u(x)}{\partial x}=\alpha x^{2}\) és una equació diferencial ordinària d'odre \(1\). Per la proposició \myref{prop:problema de Cauchy} trobem que les solucions de \eqref{ex:edos problema de Cauchy 1:eq1} són de la forma
 			\[u(x)=F^{-1}(x-1)\]
 			on
 			\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{\alpha t^{2}}.\]
