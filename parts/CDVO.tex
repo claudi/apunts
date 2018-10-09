@@ -12,7 +12,7 @@
 		\labelname{arc regular}\label{def:arc regular}
 		\labelname{arc de classe \ensuremath{\mathcal{C}^{n}}}\label{def:arc de classe de diferenciabilitat n}
 		Siguin \((a,b)\subseteq\mathbb{R}\) un interval, \(f\colon(a,b)\to\mathbb{R}^{m}\) una funció i \(\Gamma\) el conjunt definit per
-		\[\Gamma=\left\{x\in\mathbb{R}^{m}\mid x=f(t)\text{ per a tot }t\in(a,b)\right\},\]
+		\[\Gamma=\left\{f(t)\in\mathbb{R}^{m}\mid t\in(a,b)\right\},\]
 		aleshores direm que \(\Gamma\) és un arc a \(\mathbb{R}^{m}\). També direm que \(f\) defineix o recorre aquest arc.
 		Així mateix donem les següents definicions:
 		\begin{enumerate}
@@ -48,18 +48,18 @@
 			\[\Long(P_n)=\sum_{i=0}^{n-1}\norm{f(t_{i+1})-f(t_{i})}=\sum_{i=0}^{n-1}\sqrt{\sum_{j=1}^{m}\left(x_{j}(t_{i+1})-x_{j}(t_{i}))\right)^{2}}.\]
 			
 			Per la proposició \myref{prop:Derivable implica contínua} \(f\) és contínua en \((a,b)\), i per tant pel \myref{thm:TVM} tenim
-			\[x_{j}(t_{i+1})-x_{j}(t_{i})=x_{j}'(\xi_{ij})(t_{i+1}-t_{i}),\]
-			amb \(t_{i}<\xi_{ij}<t_{i+1}\), per a tot \(i\in\{0,\dots,n-1\},\ j\in\{1,\dots,m\}\). Per tant
+			\[x_{j}(t_{i+1})-x_{j}(t_{i})=x_{j}'(\xi_{i,j})(t_{i+1}-t_{i}),\]
+			amb \(t_{i}<\xi_{i,j}<t_{i+1}\), per a tot \(i\in\{0,\dots,n-1\},\ j\in\{1,\dots,m\}\). Per tant
 			\begin{equation}\label{eq:1}
-			\Long(P_{n})=\sum_{i=0}^{n-1}(t_{i+1}-t_{i})\sqrt{\sum_{j=1}^{m}\left(x_{j}'(\xi_{ij})\right)^2}.
+			\Long(P_{n})=\sum_{i=0}^{n-1}(t_{i+1}-t_{i})\sqrt{\sum_{j=1}^{m}\left(x_{j}'(\xi_{i,j})\right)^2}.
 			\end{equation}
 			
-			Ara volem veure que \(\xi_{ij}=\xi_{i}\) quan \(n\) tendeix a infinit. Observem que
+			Ara volem veure que \(\xi_{i,j}=t_{i}\) quan \(n\) tendeix a infinit. Observem que
 			\[\lim_{n\to\infty}t_{i}=\lim_{n\to\infty}t_{i+1}.\]
 			
-			I com que \(t_{i}<\xi_{ij}<t_{i+1}\) tenim que \(\xi_{ij}=\xi_{i}\) per a tot \(j\in\{1,\dots,m\}\). Així veiem que si \(n\to\infty\) podem reescriure \eqref{eq:1} com
+			I com que \(t_{i}<\xi_{i,j}<t_{i+1}\) tenim que \(\xi_{i,j}=t_{i}\) per a tot \(j\in\{1,\dots,m\}\). Així veiem que si \(n\to\infty\) podem reescriure \eqref{eq:1} com
 			\begin{displaymath}
-			\Long(P_{n})=\sum_{i=0}^{n-1}(t_{i+1}-t_{i})\norm{f'(\xi_{i})}=\int_{a}^{b}\norm{f'(t)}\diff t.
+			\Long(P_{n})=\sum_{i=0}^{n-1}(t_{i+1}-t_{i})\norm{f'(t_{i})}=\int_{a}^{b}\norm{f'(t)}\diff t.
 			\end{displaymath}
 			
 			I ja hem acabat. Com que \(f\in\mathcal{C}^{1}\) tenim \(f'\) contínua, i \(a,b\in\mathbb{R}\), aquesta integral és finita i \(\Gamma\) és rectificable, com volíem veure.
@@ -115,9 +115,9 @@
 			Per veure el punt \eqref{enum:distancies en arc-connexos 1} fem
 			\begin{align*}
 			\Dist_{U}(P,Q)&=\inf_{f\in F}\Long(f)\\
-			&=\inf_{f\in F}\lim_{n\to\infty}\left(\sum_{i=0}^{n-1}(t_{i+1}-t_{i})\sqrt{\sum_{j=1}^{d}\left(x_{j}'(\xi_{ij})\right)^2}\right)\\
-			&=\inf_{f\in F}\lim_{n\to\infty}\left(\sum_{i=0}^{n-1}(-1)(t_{n-(i+1)}-t_{n-i})\sqrt{\sum_{j=1}^{d}\left(x_{j}'(\xi_{ij})\right)^2}\right)\\
-			&=\inf_{f\in F}(-1)\lim_{n\to\infty}\left(\sum_{i=0}^{n-1}(t_{n-(i+1)}-t_{n-i})\sqrt{\sum_{j=1}^{d}\left(x_{j}'(\xi_{ij})\right)^2}\right)\\
+			&=\inf_{f\in F}\lim_{n\to\infty}\left(\sum_{i=0}^{n-1}(t_{i+1}-t_{i})\sqrt{\sum_{j=1}^{d}\left(x_{j}'(\xi_{i,j})\right)^2}\right)\\
+			&=\inf_{f\in F}\lim_{n\to\infty}\left(\sum_{i=0}^{n-1}(-1)(t_{n-(i+1)}-t_{n-i})\sqrt{\sum_{j=1}^{d}\left(x_{j}'(\xi_{i,j})\right)^2}\right)\\
+			&=\inf_{f\in F}(-1)\lim_{n\to\infty}\left(\sum_{i=0}^{n-1}(t_{n-(i+1)}-t_{n-i})\sqrt{\sum_{j=1}^{d}\left(x_{j}'(\xi_{i,j})\right)^2}\right)\\
 			&=\inf_{f\in F}(-1)\int_{a}^{b}\norm{f'(t)}\diff t\\
 			&=\inf_{f\in F}\int_{b}^{a}\norm{f'(t)}\diff t=\inf_{f\in F}\Long(f)=\Dist_{U}(Q,P)\geq0.
 			\end{align*}

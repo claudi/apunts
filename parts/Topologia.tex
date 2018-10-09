@@ -7,58 +7,58 @@
 	\begin{definition}[Espai mètric]
 		\labelname{espai mètric}\label{def:espai mètric}
 		\labelname{distància}\label{def:distància}
-		Sigui \(X\) un conjunt i \(d\colon X\times X\longrightarrow\mathbb{R}\) una aplicació que per a tot \(x\), \(y\) i \(z\) de \(X\) satisfà
+		Sigui \(X\) un conjunt i \(\distancia\colon X\times X\longrightarrow\mathbb{R}\) una aplicació que per a tot \(x\), \(y\) i \(z\) de \(X\) satisfà
 		\begin{enumerate}
-			\item \(d(x,y)=0\) si i només si \(x=y\).
-			\item \(d(x,y)=d(y,x)\).
-			\item \(d(x,y)\leq d(x,z)+d(z,y)\).
-			\item \(d(x,y)\leq0\).
+			\item \(\distancia(x,y)=0\) si i només si \(x=y\).
+			\item \(\distancia(x,y)=\distancia(y,x)\).
+			\item \(\distancia(x,y)\leq\distancia(x,z)+\distancia(z,y)\).
+			\item \(\distancia(x,y)\leq0\).
 		\end{enumerate}
-		Aleshores direm que \(X\) amb la distància \(d\) és un espai mètric. També direm que \(d\) és la distància o mètrica de l'espai mètric.
+		Aleshores direm que \(X\) amb la distància \(\distancia\) és un espai mètric. També direm que \(\distancia\) és la distància o mètrica de l'espai mètric.
 	\end{definition}
 	\begin{definition}[Bola]
 		\labelname{bola}\label{def:bola}
-		Siguin \(X\) amb la distància \(d\) un espai mètric, \(a\) un element de \(X\) i \(r>0\) un nombre real. Aleshores definim
-		\[\bola(a,r)=\{x\in X\mid d(x,a)<r\}\]
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric, \(a\) un element de \(X\) i \(r>0\) un nombre real. Aleshores definim
+		\[\bola(a,r)=\{x\in X\mid\distancia(x,a)<r\}\]
 		com la bola de radi \(r\) centrada en \(a\).
 	\end{definition}
 	\begin{definition}[Obert]
 		\labelname{obert}\label{def:obert espai mètric}
-		Sigui \(X\) amb la distància \(d\) un espai mètric i \(\obert{U}\) un subconjunt de \(X\) tals que per a tot element \(x\) de \(\obert{U}\) existeix un \(\varepsilon>0\) real tal que \(\bola(x,\varepsilon)\subset\obert{U}\). Aleshores direm que \(\obert{U}\) és un obert.
+		Sigui \(X\) amb la distància \(\distancia\) un espai mètric i \(\obert{U}\) un subconjunt de \(X\) tals que per a tot element \(x\) de \(\obert{U}\) existeix un \(\varepsilon>0\) real tal que \(\bola(x,\varepsilon)\subset\obert{U}\). Aleshores direm que \(\obert{U}\) és un obert.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:les boles són oberts}
-		Siguin \(X\) amb la distància \(d\) un espai mètric i \(\bola(a,r)\) una bola de \(X\). Aleshores \(\bola(a,r)\) és un obert.
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric i \(\bola(a,r)\) una bola de \(X\). Aleshores \(\bola(a,r)\) és un obert.
 		\begin{proof}
 			Prenem un element \(b\in\bola(a,r)\) i definim
 			\begin{equation}
 			\label{prop:les boles són oberts:eq1}
-				\varepsilon=\frac{r-d(a,b)}{2}.
+				\varepsilon=\frac{r-\distancia(a,b)}{2}.
 			\end{equation}
 			Aleshores considerem la bola \(\bola(b,\varepsilon)\) i tenim que \(\bola(b,\varepsilon)\subset\bola(a,r)\), ja que si prenem un element \(x\) de \(\bola(b,\varepsilon)\), per la definició de \myref{def:distància} trobem que
 			\begin{align*}
-				d(x,a)&\leq d(x,b)+d(b,a)\\
-				&<\varepsilon+d(b,a)\tag{\myref{def:bola}}\\
-				&=\frac{r-d(a,b)}{2}+d(b,a)\tag{\myref{prop:les boles són oberts:eq1}}\\
-				&=\frac{r-d(a,b)}{2}+d(a,b)\tag{\myref{def:distància}}\\
-				&=\frac{r+d(a,b)}{2}<r,
+				\distancia(x,a)&\leq\distancia(x,b)+\distancia(b,a)\\
+				&<\varepsilon+\distancia(b,a)\tag{\myref{def:bola}}\\
+				&=\frac{r-\distancia(a,b)}{2}+\distancia(b,a)\tag{\myref{prop:les boles són oberts:eq1}}\\
+				&=\frac{r-\distancia(a,b)}{2}+\distancia(a,b)\tag{\myref{def:distància}}\\
+				&=\frac{r+\distancia(a,b)}{2}<r,
 			\end{align*}
-			ja que, per la definició de \myref{def:bola} tenim que \(d(a,b)<r\) i per tant trobem \(r+d(a,b)<2r\).
+			ja que, per la definició de \myref{def:bola} tenim que \(\distancia(a,b)<r\) i per tant trobem \(r+\distancia(a,b)<2r\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}[Propietat de Hausdorff]
 		\labelname{}\label{prop:propietat de Hausdorff}
-		Siguin \(X\) amb la distància \(d\) un espai mètric i \(x\) i \(y\) dos elements diferents de \(X\). Aleshores existeixen dos oberts \(\obert{U}\) i \(\obert{V}\) disjunts tals que \(x\) és un element de \(\obert{U}\) i \(y\) és un element de \(\obert{V}\).
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric i \(x\) i \(y\) dos elements diferents de \(X\). Aleshores existeixen dos oberts \(\obert{U}\) i \(\obert{V}\) disjunts tals que \(x\) és un element de \(\obert{U}\) i \(y\) és un element de \(\obert{V}\).
 		\begin{proof}
-			Definim \(r=\frac{d(x,y)}{3}\) i considerem les boles \(\bola(x,r)\) i \(\bola(y,r)\). Per la definició de \myref{def:distància} i la definició de \myref{def:bola} tenim que \(x\) és un element de \(\bola(x,r)\) i \(y\) és un element de \(\bola(y,r)\).
+			Definim \(r=\frac{\distancia(x,y)}{3}\) i considerem les boles \(\bola(x,r)\) i \(\bola(y,r)\). Per la definició de \myref{def:distància} i la definició de \myref{def:bola} tenim que \(x\) és un element de \(\bola(x,r)\) i \(y\) és un element de \(\bola(y,r)\).
 			
-			També tenim que les boles \(\bola(x,r)\) i \(\bola(y,r)\) són disjuntes, ja que si prenem un element \(a\) de \(X\) tal que \(a\) pertanyi a \(\bola(x,r)\) i a \(\bola(y,r)\) aleshores tenim, per la definició de \myref{def:bola}, que \(d(x,a)<r\) i \(d(a,y)<r\), i per la definició de \myref{def:distància} tenim que
-			\[d(x,a)+d(a,y)\geq d(x,y).\]
-			Ara bé, tenim per hipòtesi que \(r=\frac{d(x,y)}{3}\). Per tant
+			També tenim que les boles \(\bola(x,r)\) i \(\bola(y,r)\) són disjuntes, ja que si prenem un element \(a\) de \(X\) tal que \(a\) pertanyi a \(\bola(x,r)\) i a \(\bola(y,r)\) aleshores tenim, per la definició de \myref{def:bola}, que \(\distancia(x,a)<r\) i \(\distancia(a,y)<r\), i per la definició de \myref{def:distància} tenim que
+			\[\distancia(x,a)+\distancia(a,y)\geq \distancia(x,y).\]
+			Ara bé, tenim per hipòtesi que \(r=\frac{\distancia(x,y)}{3}\). Per tant
 			\begin{align*}
-				d(x,y) &\leq d(x,a)+d(a,y) \\
-				&\leq \frac{d(x,y)}{3} + \frac{d(x,y)}{3} \\
-				&\leq \frac{2d(x,y)}{3} < d(x,y),
+				\distancia(x,y) &\leq \distancia(x,a)+\distancia(a,y) \\
+				&\leq \frac{\distancia(x,y)}{3} + \frac{\distancia(x,y)}{3} \\
+				&\leq \frac{2\distancia(x,y)}{3} < \distancia(x,y),
 			\end{align*}
 			i per tant aquest \(a\) no existeix i trobem que \(\bola(x,r)\) i \(\bola(y,r)\) són disjunts.
 			
@@ -84,7 +84,7 @@
 	\end{definition}
 	\begin{example}[Topologia induïda per una mètrica]
 		\labelname{}\label{ex:topologia induida per una mètrica}
-		Siguin \(X\) amb la distància \(d\) un espai mètric i \(\tau=\{\obert{U}\subseteq X\mid \obert{U}\text{ és un obert}\}\). Volem veure que \(X\) amb la topologia \(\tau\) és un espai topològic.
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric i \(\tau=\{\obert{U}\subseteq X\mid \obert{U}\text{ és un obert}\}\). Volem veure que \(X\) amb la topologia \(\tau\) és un espai topològic.
 		\begin{solution}
 			Per la definició d'\myref{def:obert espai mètric} trobem que \(\emptyset\) és un obert, ja que per l'\myref{axiom:axioma de regularitat} tenim que \(\emptyset\) és un subconjunt de \(X\), i per a tot \(x\) de \(X\) existeix un \(\varepsilon>0\) tal que \(\bola(x,\varepsilon)\) pertany a \(\emptyset\). També tenim que \(X\) és un obert, ja que pel \myref{thm:doble inclusió} tenim que \(X\subseteq X\) i si prenem un element \(x\) de \(X\) tenim que per a tot \(\varepsilon>0\) la bola \(\bola(x,\varepsilon)\) és un subconjunt de \(X\). Per tant \(\emptyset\) i \(X\) són elements de \(\tau\).
 			
@@ -174,7 +174,7 @@
 		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(\base{B}\) una família d'oberts tals que per a tot obert \(\obert{U}\) de \(X\) i per a tot punt \(x\) de \(\obert{U}\) existeix un \(B\in\base{B}\) tal que \(x\in B\subseteq\obert{U}\). Aleshores direm que \(\base{B}\) és una base de la topologia \(\tau\).
 	\end{definition}
 	\begin{example}
-		Siguin \(X\) amb la distància \(d\) un espai mètric i
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric i
 		\[\base{B}=\{\bola(x,\varepsilon)\mid x\in X\text{ i }\varepsilon>0\}\]
 		un conjunt. Aleshores \(\base{B}\) és una base de la topologia \(\tau\) induïda per la mètrica.
 		\begin{solution}
@@ -432,17 +432,17 @@
 %	\end{proposition}
 
 %	\begin{theorem}
-%		Siguin \(X\) amb la distància \(d\) i \(X'\) amb la distància \(d'\) dos espais mètrics i \(f\colon X\longrightarrow X'\) una funció. Aleshores \(f\) és contínua si i només si per a tot \(\obert{U}\) obert de \(X'\) tenim que \(\Ima_{\obert{U}}(f^{-1})\) és obert.
+%		Siguin \(X\) amb la distància \(\distancia\) i \(X'\) amb la distància \(\distancia'\) dos espais mètrics i \(f\colon X\longrightarrow X'\) una funció. Aleshores \(f\) és contínua si i només si per a tot \(\obert{U}\) obert de \(X'\) tenim que \(\Ima_{\obert{U}}(f^{-1})\) és obert.
 %		\begin{proof}
 %			Veiem primer que la condició és necessària (\(\implica\)). Suposem doncs que \(f\) és contínua. Prenem un obert \(\obert{U}\) de \(X'\) i un element \(y\) de \(X'\) tal que \(f^{-1}(y)\in\Ima_{\obert{U}}(f^{-1})\), i denotem \(x=f^{-1}(y)\). Per la definició d'\myref{def:obert espai mètric} tenim que existeix un nombre real \(\varepsilon>0\) tal que \(\bola(y,\varepsilon)\subset\Ima_{\obert{U}}(f^{-1})\).
 %			
-%			Prenem un element \(x'\) de \(\bola(y,\varepsilon)\). Per la definició de \myref{def:bola} tenim que \(d(x,x')<\varepsilon\), i per la definició de \myref{def:funció contínua} tenim que existeix un \(\delta>0\) real tal que \(d'(f(x'),y)<\varepsilon\), i per la definició de \myref{def:bola} això és que \(f(x')\in\bola(y,\varepsilon)\). Per tant tenim que \(\Ima_{\bola(x,\delta)}(f)\subset\bola(y,\varepsilon)\) i trobem que \(\bola(x,\delta)\subset\Ima_{\obert{U}}(f^{-1})\), i per la definició de \myref{def:obert espai mètric} trobem que \(\Ima_{\obert{U}}(f^{-1})\) és un obert, com volíem veure.
+%			Prenem un element \(x'\) de \(\bola(y,\varepsilon)\). Per la definició de \myref{def:bola} tenim que \(\distancia(x,x')<\varepsilon\), i per la definició de \myref{def:funció contínua} tenim que existeix un \(\delta>0\) real tal que \(\distancia'(f(x'),y)<\varepsilon\), i per la definició de \myref{def:bola} això és que \(f(x')\in\bola(y,\varepsilon)\). Per tant tenim que \(\Ima_{\bola(x,\delta)}(f)\subset\bola(y,\varepsilon)\) i trobem que \(\bola(x,\delta)\subset\Ima_{\obert{U}}(f^{-1})\), i per la definició de \myref{def:obert espai mètric} trobem que \(\Ima_{\obert{U}}(f^{-1})\) és un obert, com volíem veure.
 %			
 %			Veiem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que per a tot \(\obert{U}\) obert de \(X'\) tenim que \(\Ima_{\obert{U}}(f^{-1})\) és obert.
 %			
 %			Prenem un element \(xy\) de \(X\) i un real \(\varepsilon>0\). Si denotem \(y=f(x)\) tenim, per la proposició \myref{prop:les boles són oberts}, que la bola \(\bola(y,\varepsilon)\) és un obert. Per hipòtesi tenim que \(\Ima_{\bola(y,\varepsilon)}(f^{-1})\) és un obert, i per la definició d'\myref{def:obert espai mètric} tenim que existeix un nombre real \(\delta>0\) tal que \(\bola(x,\delta)\subset\Ima_{\bola(y,\varepsilon)}(f^{-1})\).
 %			
-%			Ara bé, per la definició de \myref{def:bola} tenim que això és que per a tot \(x_{0}\) de \(x\) amb \(d'(y,f(x_{0}))<\varepsilon\) tenim que \(d(x,x_{0})<\delta\), i per tant, per la definició de \myref{def:funció contínua} tenim que \(f\) és contínua.
+%			Ara bé, per la definició de \myref{def:bola} tenim que això és que per a tot \(x_{0}\) de \(x\) amb \(\distancia'(y,f(x_{0}))<\varepsilon\) tenim que \(\distancia(x,x_{0})<\delta\), i per tant, per la definició de \myref{def:funció contínua} tenim que \(f\) és contínua.
 %		\end{proof}
 %	\end{theorem}
 

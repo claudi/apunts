@@ -7,13 +7,13 @@
 	\begin{notation}[Espai de funcions contínues i acotades]
 		\labelname{espai de funcions contínues i acotades}\label{notation:espai de funcions contínues i acotades}
 		Sigui \(X\) amb la topologia \(\tau\) un espai topològic. Aleshores denotem
-		\[\mathcal{C}_{b}(X)=\{f(x)\mid\text{tal que }f(x)\text{ és una funció contínua i acotada sobre }X\}.\]
+		\[\mathcal{C}_{b}(X,T)=\{f(x)\mid\text{tal que }f(x)\text{ és una funció contínua i acotada de }X\text{ a }T\}.\]
 	\end{notation}
 	\begin{definition}[Distància entre funcions]
 		\labelname{distància entre funcions acotades}\label{def:distància entre funcions acotades}
 		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(f(x)\) una funció de \(\mathcal{C}_{g}(X)\). Aleshores definim
 		\[\norm{f}=\sup_{x\in X}\abs{f(x)}\]
-		con la norma de \(f\).
+		com la norma de \(f\).
 	\end{definition}
 	\begin{proposition}
 		\labelname{l'espai de funcions contínues i acotades és un espai vectorial}\label{prop:l'espai de funcions contínues i acotades és un espai vectorial}
@@ -22,15 +22,130 @@
 			%TODO
 		\end{proof}
 	\end{proposition}
-	\begin{definition}[Distància]
+	\begin{definition}[Distància entre funcions]
 		\labelname{distància entre funcions}\label{def:distància entre funcions}
-		
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(f\) i \(g\) dues funcions de \(\mathcal{C}_{b}(X)\). Aleshores definim
+		\[\distancia(f,g)=\norm{f(x)-g(x)}\]
+		com la distància entre \(f\) i \(g\) en \(\mathcal{C}_{b}(X)\).
 	\end{definition}
 	\begin{proposition}
 		\labelname{l'espai de funcions contínues i acotades és un espai mètric}\label{prop:l'espai de funcions contínues i acotades és un espai mètric}
 		Sigui \(X\) amb la topologia \(\tau\) un espai topològic. Aleshores \(\mathcal{C}_{b}(X)\) 
 	\end{proposition}
-	
+	\begin{definition}[Successió de Cauchy]
+		\labelname{successió de Cauchy}\label{def:successió de Cauchy amb normes}
+		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió tal que per a tots naturals \(n\) i \(m\) existeix un real \(\varepsilon>0\) tal que
+		\[\norm{a_{n}-a_{m}}<\varepsilon.\]
+		Aleshores direm que \((a_{n})_{n\in\mathbb{N}}\) és de Cauchy.
+	\end{definition}
+	\begin{definition}[Espai mètric complet]
+		\labelname{espai mètric complet}\label{def:espai mètric complet}
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric tal que per a tota successió \((a_{n})_{n\in\mathbb{N}}\) de Cauchy tenim que
+		\[a=\lim_{n\to\infty}a_{n}\]
+		és un element de \(X\). Aleshores direm que \(X\) és complet.
+	\end{definition}
+	\begin{theorem}
+		\label{thm:l'espai de funcions contínues i acotades és complet}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic. Aleshores \(\mathcal{C}_{b}(X)\) és complet.
+		\begin{proof}
+			Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de Cauchy de \(\mathcal{C}_{b}(X)\). Per la definició de \myref{def:successió de Cauchy amb normes} tenim que per a tots naturals \(n\) i \(m\) existeix un real \(\varepsilon>0\) tal que
+			\[\norm{f_{n}-f_{m}}<\varepsilon.\]
+			Per la definició de \myref{def:distància entre funcions} trobem que
+			\[\sup_{x\in X}\abs{f_{n}(x)-f_{m}(x)}<\varepsilon\]
+			i trobem que per a tot \(x\) de \(X\) es satisfà
+			\[\abs{f_{n}(x)-f_{m}(x)}<\varepsilon\]
+			i per la definició de \myref{def:successió de Cauchy amb normes} trobem que la successió \((f_{n}(x))_{n\in\mathbb{N}}\) és de Cauchy, i per la definició de \myref{def:límit} trobem que la successió \((f_{n}(x))_{n\in\mathbb{N}}\) és convergent. Denotem
+			\begin{equation}
+				\label{thm:l'espai de funcions contínues i acotades és complet:eq1}
+				\lim_{n\to\infty}f_{n}(x)=f(x).
+			\end{equation}
+			
+			Sigui \(n_{0}\) un natural. Per la definició de \myref{def:límit} tenim que existeix un real \(\varepsilon>0\) tal que per a tot \(n\) i \(m\) enters amb \(n,m\geq n_{0}\)
+			\[\abs{f_{n}(x)-f_{m}(x)}<\frac{\varepsilon}{2}.\]
+			Ara bé, per \eqref{thm:l'espai de funcions contínues i acotades és complet:eq1} tenim que
+			\[\lim_{m\to\infty}\abs{f_{n}(x)-f_{m}(x)}=\abs{f_{n}(x)-f(x)}.\]
+			Per tant tenim que
+			\[\abs{f_{n}(x)-f(x)}\leq\frac{\varepsilon}{2}<\varepsilon\]
+			i per la definició de \myref{def:convergència uniforme} tenim que \((f_{n})_{n\in\mathbb{N}}\) convergeix uniformement a \(f(x)\), i per la definició de \myref{def:espai mètric complet} tenim que \(\mathcal{C}_{b}(X)\) és complet.
+		\end{proof}
+	\end{theorem}
+	\subsection{Aplicacions contractives i punts fixes}
+	\begin{definition}[Aplicació contractiva]
+		\labelname{aplicació contractiva}\label{def:aplicació contractiva}
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric i \(T\colon X\longrightarrow X\) una aplicació tal que existeixi un real \(0<k<1\) satisfent, per a tots \(x\) i \(y\) de \(X\),
+		\[\distancia(T(x),T(y))\leq k\distancia(x,y).\]
+		Aleshores direm que \(T\) és una aplicació contractiva sobre X.
+	\end{definition}
+	\begin{observation}
+		\label{obs:les aplicacions contractives són uniformement contínues}
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric i \(T\) una aplicació contractiva sobre \(X\). Aleshores \(T\) és uniformement contínua.
+	\end{observation}
+	\begin{definition}[Punt fix]
+		\labelname{punt fix d'una aplicació contractiva}\label{def:punt fix d'un aplicació contractiva}
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric, \(T\) una aplicació contractiva sobre \(X\) i \(a\) un punt tal que \(\distancia(a,T(a))=0\). Aleshores direm que \(a\) és un punt fix de \(T\).
+	\end{definition}
+	\begin{theorem}
+		\label{thm:les aplicacions contractives tenen un únic punt fix}
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric complet i \(T\) una aplicació contractiva sobre \(X\). Aleshores \(T\) té un únic punt fix.
+		\begin{proof}
+			Per la definició d'\myref{def:aplicació contractiva} tenim que existeix un real \(0<k<1\) tal que per a tots \(x\) i \(y\) de \(X\) es satisfà
+			\begin{equation}
+				\label{thm:les aplicacions contractives tenen un únic punt fix:eq1}
+				\distancia(T(x),T(y))\leq k\distancia(x,y).
+			\end{equation}
+			
+			Veiem que si existeix un punt fix aquest és únic. Suposem que existeixen dos punts \(a\) i \(b\) de \(X\) tals que \(a\) i \(b\) són punts fixos de \(T\). Aleshores tenim que
+			\[\distancia(a,b)=\distancia(T(a),T(b)),\]
+			i per \eqref{thm:les aplicacions contractives tenen un únic punt fix:eq1} tenim que
+			\[\distancia(a,b)\leq k\distancia(a,b).\]
+			Ara bé, com que \(0<k<1\), ha de ser \(\distancia(a,b)=0\), i per tant trobem que \(a=b\).
+			
+			Veiem ara que existeix un punt fix. Prenem un element \(x\) de \(X\) i considerem la successió \(\{T^{n}(x)\}_{n\in\mathbb{N}}\). Sigui \(r\)un natural. Aleshores tenim que per a tot \(n\) natural
+			\begin{align*}
+				\distancia(T^{n+r}(x),T^{n}(x))&\leq k\distancia(T^{n+r-1}(x),T^{n-1}(x))\tag{\myref{thm:les aplicacions contractives tenen un únic punt fix:eq1}}\\
+				&\leq k^{2}\distancia(T^{n+r-2}(x),T^{n-2}(x))\tag{\myref{thm:les aplicacions contractives tenen un únic punt fix:eq1}}\\
+				&~\vdots \\
+				&\leq k^{n}\distancia(T^{r}(x),x)\tag{\myref{thm:les aplicacions contractives tenen un únic punt fix:eq1}}\\
+				&\leq
+				 k^{n}(\distancia(T^{r}(x),T^{r-1}(x))+\distancia(T^{r-1}(x),T^{r-2}(x))+\dots\\
+				&\quad\dots+\distancia(T(x),x))\\
+				&k^{n}\left(k^{r-1}\distancia(T(x),x)+k^{r-2}\distancia(T(x),x)+\dots+\distancia(T(x),x)\right)\\
+				&=k^{n}(1+k+k^{2}+\dots+k^{r+1})\distancia(T(x),x)\\
+				&<\frac{k^{n}}{1-k}\distancia(T(x),x).\tag{\myref{ex:sèries geomètriques}}
+			\end{align*}
+			Ara bé, com que \(0<k<1\) tenim que existeix un real \(\varepsilon>0\) tal que
+			\[\distancia(T^{n+r}(x),T^{n}(x))<\varepsilon,\]
+			i per la definició de \myref{def:successió de Cauchy amb normes} tenim que la successió \(\{T^{n}(x)\}_{n\in\mathbb{N}}\) és una successió de Cauchy, i com que, per hipòtesi, \(X\) és complet, tenim que existeix un element \(p\) de \(X\) tal que
+			\begin{equation}
+				\label{thm:les aplicacions contractives tenen un únic punt fix:eq2}
+				p=\lim_{n\to\infty}T^{n}(x).
+			\end{equation}
+			
+			Considerem el límit
+			\[\lim_{n\to\infty}T(T^{n}(x)).\]
+			Com que, per hipòtesi, \(T\) és contínua, tenim que %REF
+			\[\lim_{n\to\infty}T(T^{n}(x))=T\left(\lim_{n\to\infty}T^{n}(x)\right)\]
+			i per \eqref{thm:les aplicacions contractives tenen un únic punt fix:eq2} trobem que
+			\[\lim_{n\to\infty}T(T^{n}(x))=T(p).\]
+			
+			Ara bé, tenim que 
+			\[\lim_{n\to\infty}T(T^{n}(x))=\lim_{n\to\infty}T^{n+1}(x)\]
+			i per tant trobem que
+			\[T(p)=p,\]
+			i per la definició de \myref{def:punt fix d'un aplicació contractiva} hem acabat.
+		\end{proof}
+	\end{theorem}
+	\begin{corollary}
+		\label{cor:si una funció té una potència contractiva aleshores aquesta té un únic punt fix}
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric complet i \(T\) una aplicació de \(X\) en \(X\) tal que existeix un natural \(k\) satisfent que \(T^{k}\) sigui una aplicació contractiva sobre \(X\). Aleshores \(T\) té un únic punt fix.
+		\begin{proof}
+			Suposem que existeixen dos punts \(x\) i \(y\) de \(X\) tals que \(x\) i \(y\) són punts fixos de \(T\). Aleshores per la definició de \myref{def:punt fix d'un aplicació contractiva} tenim que
+			\[T^{k}(a)=a\quad\text{i}\quad T^{k}(b)=b.\]
+			Ara bé, pel Teorema \myref{thm:les aplicacions contractives tenen un únic punt fix} tenim que ha de ser \(a=b\), i per tant aquest punt és únic. % CONTINUAR
+			
+			Veiem ara que
+		\end{proof}
+	\end{corollary}
 	\section{Teoremes d'existència i unicitat}
 	\subsection{Equacions diferencials ordinàries}
 	
@@ -92,7 +207,7 @@
 			és una equació ordinària d'orde \(1\).
 			
 			Com que, per hipòtesi, tenim \(f(x)\neq0\) per a tot \(x\) de \((a,b)\) trobem que la funció \(\frac{1}{f(x)}\) és derivable %REF
-			i per la proposició \myref{prop:Diferenciable implica contínua} trobem que \(\frac{1}{f(x)}\) és contínua. També tenim pel \myref{thm:Weierstrass màxims i mínims múltiples variables} que \(\frac{1}{f(x)}\) està acotada en \((a,b)\) i pel \myref{thm:Contínua + acotada implica integrable Riemann} trobem que \(\frac{1}{f(x)}\) és integrable en \((a,b)\). Definim doncs %NO és en (a,b). És en (x_{0},x)
+			i per la proposició \myref{prop:Diferenciable implica contínua} trobem que \(\frac{1}{f(x)}\) és contínua. També tenim pel \myref{thm:Weierstrass màxims i mínims múltiples variables} que \(\frac{1}{f(x)}\) està acotada en \((a,b)\) i pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann} trobem que \(\frac{1}{f(x)}\) és integrable en \((a,b)\). Definim doncs %NO és en (a,b). És en (x_{0},x)
 			\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{f(t)}.\]
 			Pel \myref{thm:Teorema Fonamental del Càlcul} tenim que
 			\begin{equation}
