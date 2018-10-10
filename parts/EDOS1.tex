@@ -2,36 +2,33 @@
 
 \begin{document}
 \chapter{Equacions diferencials de primer ordre en una variable}
-	\section{Espai de funcions contínues i acotades sobre un espai topològic}
+	\section{Espai de funcions contínues i acotades}
 	\subsection{L'espai de funcions contínues i acotades és complet}
 	\begin{notation}[Espai de funcions contínues i acotades]
 		\labelname{espai de funcions contínues i acotades}\label{notation:espai de funcions contínues i acotades}
-		Sigui \(X\) amb la topologia \(\tau\) un espai topològic. Aleshores denotem
-		\[\mathcal{C}_{b}(X,T)=\{f(x)\mid\text{tal que }f(x)\text{ és una funció contínua i acotada de }X\text{ a }T\}.\]
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\). Aleshores denotem
+		\[\mathcal{C}_{b}(X,T)=\{f(x)\mid f(x)\text{ és una funció contínua i acotada de }X\text{ a }T\}.\]
 	\end{notation}
-	\begin{definition}[Distància entre funcions]
-		\labelname{distància entre funcions acotades}\label{def:distància entre funcions acotades}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(f(x)\) una funció de \(\mathcal{C}_{g}(X)\). Aleshores definim
-		\[\norm{f}=\sup_{x\in X}\abs{f(x)}\]
+	\begin{definition}[Norma d'una funció funció]
+		\labelname{norma d'una funció funció}\label{def:norma d'una funció funció}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(T\) un compacte de \(\mathbb{R}^{n}\) i \(f(x)\) una funció de \(\mathcal{C}_{b}(X,T)\). Aleshores definim
+		\[\norm{f}=\sup_{x\in X}\norm{f(x)}\]
 		com la norma de \(f\).
 	\end{definition}
-	\begin{proposition}
-		\labelname{l'espai de funcions contínues i acotades és un espai vectorial}\label{prop:l'espai de funcions contínues i acotades és un espai vectorial}
-		Sigui \(X\) amb la topologia \(\tau\) un espai topològic. Aleshores \(\mathcal{C}_{b}(X)\) és un espai vectorial.
-		\begin{proof}
-			%TODO
-		\end{proof}
-	\end{proposition}
-	\begin{definition}[Distància entre funcions]
-		\labelname{distància entre funcions}\label{def:distància entre funcions}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(f\) i \(g\) dues funcions de \(\mathcal{C}_{b}(X)\). Aleshores definim
-		\[\distancia(f,g)=\norm{f(x)-g(x)}\]
-		com la distància entre \(f\) i \(g\) en \(\mathcal{C}_{b}(X)\).
-	\end{definition}
-	\begin{proposition}
-		\labelname{l'espai de funcions contínues i acotades és un espai mètric}\label{prop:l'espai de funcions contínues i acotades és un espai mètric}
-		Sigui \(X\) amb la topologia \(\tau\) un espai topològic. Aleshores \(\mathcal{C}_{b}(X)\) 
-	\end{proposition}
+%	\begin{proposition}
+%		\labelname{l'espai de funcions contínues i acotades és un espai vectorial}\label{prop:l'espai de funcions contínues i acotades és un espai vectorial}
+%		Sigui \(X\) amb la topologia \(\tau\) un espai topològic. Aleshores \(\mathcal{C}_{b}(X)\) és un espai vectorial.
+%		\begin{proof}
+%			%TODO
+%		\end{proof}
+%	\end{proposition}
+%	\begin{proposition}
+%		\labelname{l'espai de funcions contínues i acotades és un espai mètric}\label{prop:l'espai de funcions contínues i acotades és un espai mètric}
+%		Sigui \(X\) amb la topologia \(\tau\) un espai topològic. Aleshores \(\mathcal{C}_{b}(X)\) és un espai mètric.
+%		\begin{proof}
+%			%TODO
+%		\end{proof}
+%	\end{proposition}
 	\begin{definition}[Successió de Cauchy]
 		\labelname{successió de Cauchy}\label{def:successió de Cauchy amb normes}
 		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió tal que per a tots naturals \(n\) i \(m\) existeix un real \(\varepsilon>0\) tal que
@@ -44,13 +41,31 @@
 		\[a=\lim_{n\to\infty}a_{n}\]
 		és un element de \(X\). Aleshores direm que \(X\) és complet.
 	\end{definition}
+	\begin{definition}[Distància entre funcions]
+		\labelname{distància entre funcions}\label{def:distància entre funcions acotades}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(T\) un compacte de \(\mathbb{R}^{n}\) i \(f\) i \(g\) dues funcions de \(\mathcal{C}_{b}(X,T)\). Aleshores definim
+		\[\distancia(f,g)=\norm{f(x)-g(x)}\]
+		com la distància entre \(f\) i \(g\) en \(\mathcal{C}_{b}(X,T)\).
+	\end{definition}
+	\begin{lemma}
+		\label{thm:l'espai de funcions contínues i acotades és un espai mètric}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\). Aleshores \(\mathcal{C}_{b}(X,T)\) amb la distància \(\distancia\) és espai mètric.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{lemma}
+	\begin{notation}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\). Aleshores denotarem per \(\mathcal{C}_{b}(X,T)\) l'espai mètric de amb la distància entre funcions \(d\).
+		
+		Observem que això té sentit pel lemma \myref{thm:l'espai de funcions contínues i acotades és un espai mètric}.
+	\end{notation}
 	\begin{theorem}
 		\label{thm:l'espai de funcions contínues i acotades és complet}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic. Aleshores \(\mathcal{C}_{b}(X)\) és complet.
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\). Aleshores \(\mathcal{C}_{b}(X,T)\) és espai mètric complet.
 		\begin{proof}
-			Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de Cauchy de \(\mathcal{C}_{b}(X)\). Per la definició de \myref{def:successió de Cauchy amb normes} tenim que per a tots naturals \(n\) i \(m\) existeix un real \(\varepsilon>0\) tal que
+			Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de Cauchy de \(\mathcal{C}_{b}(X,T)\). Per la definició de \myref{def:successió de Cauchy amb normes} tenim que per a tots naturals \(n\) i \(m\) existeix un real \(\varepsilon>0\) tal que
 			\[\norm{f_{n}-f_{m}}<\varepsilon.\]
-			Per la definició de \myref{def:distància entre funcions} trobem que
+			Per la definició de \myref{def:distància entre funcions acotades} trobem que
 			\[\sup_{x\in X}\abs{f_{n}(x)-f_{m}(x)}<\varepsilon\]
 			i trobem que per a tot \(x\) de \(X\) es satisfà
 			\[\abs{f_{n}(x)-f_{m}(x)}<\varepsilon\]
@@ -66,7 +81,7 @@
 			\[\lim_{m\to\infty}\abs{f_{n}(x)-f_{m}(x)}=\abs{f_{n}(x)-f(x)}.\]
 			Per tant tenim que
 			\[\abs{f_{n}(x)-f(x)}\leq\frac{\varepsilon}{2}<\varepsilon\]
-			i per la definició de \myref{def:convergència uniforme} tenim que \((f_{n})_{n\in\mathbb{N}}\) convergeix uniformement a \(f(x)\), i per la definició de \myref{def:espai mètric complet} tenim que \(\mathcal{C}_{b}(X)\) és complet.
+			i per la definició de \myref{def:convergència uniforme} tenim que \((f_{n})_{n\in\mathbb{N}}\) convergeix uniformement a \(f(x)\), i per la definició de \myref{def:espai mètric complet} tenim que \(\mathcal{C}_{b}(X,T)\) és complet.
 		\end{proof}
 	\end{theorem}
 	\subsection{Aplicacions contractives i punts fixes}
@@ -148,8 +163,27 @@
 	\end{corollary}
 	\section{Teoremes d'existència i unicitat}
 	\subsection{Equacions diferencials ordinàries}
-	
-	
+	\begin{definition}[Funció Lipschitz respecte la segona variable]
+		\labelname{funció Lipschitz respecte la segona variable}\label{def:funció Lipschitz respecte la segona variable}
+		Siguin \(\Omega=\mathbb{R}\times\mathbb{R}^{n}\) un conjunt, \(K>0\) un real i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció tal que
+		\[\norm{f(t,x)-f(t,y)}\leq K\norm{x-y}\]
+		per a tot \((t,x)\) i \((t,y)\) de \(\Omega\). Aleshores direm que \(f\) és Lipschitz respecte la segona variable.
+	\end{definition}
+	\begin{theorem}[Teorema de Picard]
+		\labelname{Teorema de Picard}\label{thm:Teorema de Picard}
+		Siguin \(a\), \(b\) i \(t_{0}\) dos reals, \(x_{0}\) un punt de \(\mathbb{R}^{n}\), \(\Omega=(t_{0}-a,t_{0}+a)\times\bola(x_{0},b)\) un conjunt, \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i Lipschitz respecte la segona variable i
+		\[M=\max_{(t,x)\in\Omega}\norm{f(t,x)}.\]
+		Aleshores el problema de Cauchy
+		\[\begin{cases*}
+			\frac{\partial u(x)}{\partial x}=f(t,x) \\
+			u(t_{0})=x_{0}
+		\end{cases*}\]
+		té una única solució sobre
+		\[\left(t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right).\]
+		\begin{proof}
+			Definim una aplicació \(T\colon \)
+		\end{proof}
+	\end{theorem}
 	
 	
 	
