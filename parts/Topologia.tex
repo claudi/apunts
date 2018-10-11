@@ -398,14 +398,52 @@
 		\labelname{aplicació oberta}\label{def:aplicació oberta}
 		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i \(f:X\longrightarrow Y\) una aplicació tal que per a tot obert \(\obert{U}\) de \(X\) tenim que el conjunt \(\{f(x)\in Y\mid x\in\obert{U}\}\) és un obert de \(Y\). Aleshores direm que \(f\) és una aplicació oberta.
 	\end{definition}
+	\begin{observation}
+		\label{obs:la composició d'aplicacions obertes és oberta}
+		La composició d'aplicacions obertes és oberta.
+	\end{observation}
 	\begin{definition}[Aplicació tancada]
 		\labelname{aplicació tancada}\label{def:aplicació tancada}
 		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i \(f:X\longrightarrow Y\) una aplicació tal que per a tot tancat \(\tancat{C}\) de \(X\) tenim que el conjunt \(\{f(x)\in Y\mid x\in\tancat{C}\}\) és un tancat de \(Y\). Aleshores direm que \(f\) és una aplicació tancada.
 	\end{definition}
+	\begin{observation}
+		\label{obs:la composició d'aplicacions tancades és tancada}
+		La composició d'aplicacions tancades és tancada.
+	\end{observation}
 	\begin{definition}[Aplicació contínua]
 		\labelname{aplicació contínua}\label{def:aplicació contínua}
 		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i \(f:X\longrightarrow Y\) una aplicació tal que per a tot obert \(\obert{V}\) de \(Y\) el conjunt \(\{x\in X\mid f(x)\in\obert{V}\}\) és un obert de \(X\). Aleshores direm que \(f\) és una aplicació contínua.
 	\end{definition}
+	\begin{observation}
+		\label{obs:la composició d'aplicacions contínues és contínua}
+		La composició d'aplicacions contínues és contínua.
+	\end{observation}
+	\subsection{Homeomorfismes entre topologies}
+	\begin{definition}[Homeomorfisme]
+		\labelname{homeomorfisme entre topologies}\label{def:homeomorfisme entre topologies}
+		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i \(f\colon X\longrightarrow Y\) una aplicació bijectiva, oberta i contínua. Aleshores direm que \(f\) és un homeomorfisme.
+	\end{definition}
+	\begin{definition}[Espais topològics isomorfs]
+		\labelname{espais topològics isomorfs}\label{def:espais topològics isomorfs}
+		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics tals que existeix un homeomorfisme \(f\colon X\longrightarrow Y\). Aleshores direm que \(X\) i \(Y\) són dos espais topològics isomorfs. També denotarem
+		\[X\cong Y.\]
+	\end{definition}
+	\begin{proposition}
+			Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics. Aleshores la relació
+			\[X\cong Y\sii X\text{ és isomorf a }Y\]
+			és una relació d'equivalència.
+			\begin{proof}
+				Comprovem les propietats de la definició de relació d'equivalència:
+				\begin{enumerate}
+					\item Reflexiva: Tenim que l'aplicació \(\Id_{X}\) és bijectiva, oberta i contínua, i per la definició d'\myref{def:espais topològics isomorfs} tenim que \(X\cong X\).
+					\item Simètrica: Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics isomorfs. %FER
+					\item Transitiva: Siguin \(X_{1}\) amb la topologia \(\tau_{1}\), \(X_{2}\) amb la topologia \(\tau_{2}\) i \(X_{3}\) amb la topologia \(\tau_{3}\) tres espais topològics tals que \(X_{1}\cong X_{2}\) i \(X_{2}\cong X_{3}\). %FER
+				\end{enumerate}
+				I per la definició de \myref{def:relació d'equivalència} hem acabat.
+			\end{proof}
+	\end{proposition}
+	
+	
 %	\begin{definition}[Aplicació contínua i homeomorfisme]
 %		\labelname{aplicació contínua}\label{def:aplicació contínua}
 %		\labelname{homeomorfisme}\label{def:homeomorfisme topo}

@@ -175,13 +175,18 @@
 		\[M=\max_{(t,x)\in\Omega}\norm{f(t,x)}.\]
 		Aleshores el problema de Cauchy
 		\[\begin{cases*}
-			\frac{\partial u(x)}{\partial x}=f(t,x) \\
-			u(t_{0})=x_{0}
+			\displaystyle\frac{\partial u(x)}{\partial x}=f(t,x) \\
+			\displaystyle u(t_{0})=x_{0}
 		\end{cases*}\]
 		té una única solució sobre
 		\[\left(t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right).\]
 		\begin{proof}
-			Definim una aplicació \(T\colon \)
+			Denotem \(X=\mathcal{C}_{b}((t_{0}-a,t_{0}+a),\bola(x_{0},b))\) i definim una aplicació
+			\begin{align*}
+				T\colon X&\longrightarrow X \\
+				u(x)&\longmapsto x_{0}+\int_{t_{0}}^{t}f(s,u(s))\diff s.
+			\end{align*}
+			Tenim que si \(u(x)\) és un element de \(X\), aleshores \(T(u(x))\) també pertany a \(X\), ja que
 		\end{proof}
 	\end{theorem}
 	
