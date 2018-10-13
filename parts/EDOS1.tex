@@ -178,7 +178,7 @@
 			\displaystyle\frac{\partial u(x)}{\partial x}=f(t,x) \\
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases*}\]
-		té una única solució sobre
+		té una única solució sobre l'interval
 		\[\left(t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right).\]
 		\begin{proof}
 			Denotem \(X=\mathcal{C}_{b}((t_{0}-a,t_{0}+a),\bola(x_{0},b))\) i definim una aplicació
@@ -186,7 +186,61 @@
 				T\colon X&\longrightarrow X \\
 				u(x)&\longmapsto x_{0}+\int_{t_{0}}^{t}f(s,u(s))\diff s.
 			\end{align*}
-			Tenim que si \(u(x)\) és un element de \(X\), aleshores \(T(u(x))\) també pertany a \(X\), ja que
+			Observem que una funció \(u(x)\) és solució del problema de Cauchy de l'enunciat si i només si %REVISAR
+			\[T(u(x))=u(x).\]
+			
+			Tenim que si \(u(x)\) és un element de \(X\), aleshores \(T(u(x))\) també pertany a \(X\), ja que si prenem un \(t\) de \((t_{0}-a,t_{0}+a)\) trobem que
+			\begin{align*}
+				\norm{T(u(x))(t)-x_{0}}&=\norm{x_{0}-x_{0}+\int_{t_{0}}^{t}f(s,u(s))\diff s}\\
+				&=\norm{\int_{t_{0}}^{t}f(s,u(s))\diff s}\\
+				&\leq\abs{\int_{t_{0}}^{t}\norm{f(s,u(s))}\diff s}\tag{\myref{thm:la norma d'una integral és menos que l'integral de la norma}}\\
+				&\leq M\abs{t-t_{0}}\leq b.
+			\end{align*}
+			i per tant tenim que
+			\[\norm{T(u(x))(t)-x_{0}}\leq b.\]
+			Per la definició de \myref{def:bola} trobem que \(T(u(x))(t)\) és un element de \(\bola(x_{0},b)\), i per tant \(T(u(x))\) és un element de \(X\) per a tot \(u(x)\) de \(X\).
+			
+			Per hipòtesi tenim que \(f\) és Lipschitz respecte la segona variable, i per la definició de \myref{def:funció Lipschitz respecte la segona variable} trobem que existeix un real \(K>0\) tal que
+			\begin{equation}
+				\label{thm:Teorema de Picard:eq1}
+				\norm{f(t,x)-f(t,y)}\leq K\norm{x-y}.
+			\end{equation}
+			Volem veure que per a tot \(m\) natural, \(u(x)\) i \(v(x)\) funcions de \(X\) i \(t\) de \((t_{0}-a,t_{0}+a)\) tenim
+			\[\norm{T^{m}(u(x))(t)-T^{m}(v(x))(t)}\leq\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}\distancia(u(x),v(x)).\]
+			Ho fem per inducció. Veiem el cas \(m=1\). Tenim
+			\begin{align*}
+				\norm{T(u(x))(t)-T(v(x))(t)}&=\norm{\int_{t_{0}}^{t}{f(s,u(s))}\diff s-\int_{t_{0}}^{t}{f(s,v(s))}\diff s}\\
+				&=\norm{\int_{t_{0}}^{t}\left({f(s,u(s))}-{f(s,v(s))}\right)\diff s}\tag{\ref{prop:propietats basiques multiple integrals Riemann definides}}\\
+				&\leq\abs{\int_{t_{0}}^{t}\norm{f(s,u(s))-f(s,v(s))}\diff s}\tag{\myref{thm:la norma d'una integral és menos que l'integral de la norma}}\\
+				&\leq\abs{\int_{t_{0}}^{t}K\norm{u(s)-v(s)}\diff s}\tag{\ref{thm:Teorema de Picard:eq1}}\\
+				&=K\abs{\int_{t_{0}}^{t}\norm{u(s)-v(s)}\diff s}\tag{\ref{prop:propietats basiques multiple integrals Riemann definides}}\\
+				&\leq K\abs{t-t_{0}}\distancia(u(x),v(x)).
+			\end{align*}
+			Suposem ara que l'hipòtesi és certa per a \(m-1\) fix. És a dir, suposem que
+			\begin{equation}
+				\label{thm:Teorema de Picard:eq2}
+				\norm{T^{m-1}(u(x))(t)-T^{m-1}(v(x))(t)}\leq\frac{K^{m-1}}{(m-1)!}\abs{t-t_{0}}^{m-1}\distancia(u(x),v(x))
+			\end{equation}
+			i veiem que també és cert per \(m\). Tenim pel Teorema \myref{thm:la norma d'una integral és menos que l'integral de la norma} que
+			\begin{align*}
+				\norm{T^{m}(u)(t)-T^{m}(v)(t)}&=\norm{\int_{t_{0}}^{t}\left(f(s,T^{m-1}(u)(s))-f(s,T^{m-1}(v)(s))\right)\diff s}\\
+				&\leq\abs{\int_{t_{0}}^{t}\norm{f(s,T^{m-1}(u)(s))-f(s,T^{m-1}(v)(s))}\diff s}\\
+				&\leq\abs{\int_{t_{0}}^{t}K\norm{T^{m-1}(u)(s)-T^{m-1}(v)(s)}\diff s}\tag{\ref{thm:Teorema de Picard:eq1}}\\
+				&\leq\abs{\int_{t_{0}}^{t}\frac{K^{m}}{(m-1)!}\abs{s-t_{0}}^{m-1}\distancia(u(x),v(x))\diff s}\tag{\ref{thm:Teorema de Picard:eq2}}\\
+				&=\frac{K^{m}}{(m-1)!}\distancia(u(x),v(x))\int_{t_{0}}^{t}\abs{s-t_{0}}^{m-1}\diff s\tag{\ref{prop:propietats basiques multiple integrals Riemann definides}}\\
+				&=\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}\distancia(u(x),v(x)).%REF integrar polinomis
+			\end{align*}
+			Per tant, pel \myref{thm:principi d'inducció} tenim que per a tot \(m\) natural, \(u(x)\) i \(v(x)\) funcions de \(X\) i \(t\) de \((t_{0}-a,t_{0}+a)\) es satisfà
+			\[\norm{T^{m}(u(x))(t)-T^{m}(v(x))(t)}\leq\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}\distancia(u(x),v(x)),\]
+			com volíem veure.
+			
+			Ara bé, tenim que
+			\[\lim_{m\to\infty}\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}=0,\]%REF
+			i per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
+			\[0<{\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}}<1.\]
+			
+			Per tant, per la definició d'\myref{def:aplicació contractiva} tenim que per a tot \(n>n_{0}\) l'aplicació \(T^{n}\) és una aplicació contractiva, i pel coro{\lgem}ari \myref{cor:si una funció té una potència contractiva aleshores aquesta té un únic punt fix} tenim que existeix una única funció \(u(x)\) tal que
+			\[T(u(x))=u(x).\qedhere\]
 		\end{proof}
 	\end{theorem}
 	
