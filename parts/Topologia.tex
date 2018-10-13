@@ -396,7 +396,7 @@
 	\subsection{Aplicacions obertes, tancades i contínues}
 	\begin{definition}[Aplicació oberta]
 		\labelname{aplicació oberta}\label{def:aplicació oberta}
-		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i \(f:X\longrightarrow Y\) una aplicació tal que per a tot obert \(\obert{U}\) de \(X\) tenim que el conjunt \(\{f(x)\in Y\mid x\in\obert{U}\}\) és un obert de \(Y\). Aleshores direm que \(f\) és una aplicació oberta.
+		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i \(f\colon X\longrightarrow Y\) una aplicació tal que per a tot obert \(\obert{U}\) de \(X\) tenim que el conjunt \(\{f(x)\in Y\mid x\in\obert{U}\}\) és un obert de \(Y\). Aleshores direm que \(f\) és una aplicació oberta.
 	\end{definition}
 	\begin{observation}
 		\label{obs:la composició d'aplicacions obertes és oberta}
@@ -404,7 +404,7 @@
 	\end{observation}
 	\begin{definition}[Aplicació tancada]
 		\labelname{aplicació tancada}\label{def:aplicació tancada}
-		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i \(f:X\longrightarrow Y\) una aplicació tal que per a tot tancat \(\tancat{C}\) de \(X\) tenim que el conjunt \(\{f(x)\in Y\mid x\in\tancat{C}\}\) és un tancat de \(Y\). Aleshores direm que \(f\) és una aplicació tancada.
+		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i \(f\colon X\longrightarrow Y\) una aplicació tal que per a tot tancat \(\tancat{C}\) de \(X\) tenim que el conjunt \(\{f(x)\in Y\mid x\in\tancat{C}\}\) és un tancat de \(Y\). Aleshores direm que \(f\) és una aplicació tancada.
 	\end{definition}
 	\begin{observation}
 		\label{obs:la composició d'aplicacions tancades és tancada}
@@ -412,7 +412,7 @@
 	\end{observation}
 	\begin{definition}[Aplicació contínua]
 		\labelname{aplicació contínua}\label{def:aplicació contínua}
-		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i \(f:X\longrightarrow Y\) una aplicació tal que per a tot obert \(\obert{V}\) de \(Y\) el conjunt \(\{x\in X\mid f(x)\in\obert{V}\}\) és un obert de \(X\). Aleshores direm que \(f\) és una aplicació contínua.
+		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i \(f\colon X\longrightarrow Y\) una aplicació tal que per a tot obert \(\obert{V}\) de \(Y\) el conjunt \(\{x\in X\mid f(x)\in\obert{V}\}\) és un obert de \(X\). Aleshores direm que \(f\) és una aplicació contínua.
 	\end{definition}
 	\begin{observation}
 		\label{obs:la composició d'aplicacions contínues és contínua}
@@ -435,14 +435,61 @@
 			\begin{proof}
 				Comprovem les propietats de la definició de relació d'equivalència:
 				\begin{enumerate}
-					\item Reflexiva: Tenim que l'aplicació \(\Id_{X}\) és bijectiva, oberta i contínua, i per la definició d'\myref{def:espais topològics isomorfs} tenim que \(X\cong X\).
-					\item Simètrica: Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics isomorfs. %FER
-					\item Transitiva: Siguin \(X_{1}\) amb la topologia \(\tau_{1}\), \(X_{2}\) amb la topologia \(\tau_{2}\) i \(X_{3}\) amb la topologia \(\tau_{3}\) tres espais topològics tals que \(X_{1}\cong X_{2}\) i \(X_{2}\cong X_{3}\). %FER
+					\item Reflexiva: Tenim que l'aplicació \(\Id_{X}\) és bijectiva, oberta i contínua. Per la definició d'\myref{def:homeomorfisme entre topologies} tenim que \(\Id_{x}\) és un homeomorfisme, i per la definició d'\myref{def:espais topològics isomorfs} tenim que \(X\cong X\).
+					\item Simètrica: Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics isomorfs. Per la definició d'\myref{def:espais topològics isomorfs} tenim que existeix un homeomorfisme \(f\colon X\longrightarrow Y\).
+					
+					Pel Teorema \myref{thm:bijectiva iff invertible} trobem que existeix l'aplicació inversa \(f^{-1}\) de \(Y\) a \(X\), i pel coro{\lgem}ari \myref{cor:l'inversa d'una aplicació invertible és invertible} tenim que l'aplicació \(f^{-1}\) és bijectiva.
+					
+					També trobem que \(f^{-1}\) és oberta, ja que per la definició d'\myref{def:homeomorfisme entre topologies} tenim que \(f\) és contínua, i per la definició d'\myref{def:aplicació oberta} i la definició d'\myref{def:aplicació contínua} trobem que \(f^{1}\) és oberta. De mateixa manera trobem que \(f^{-1}\) és contínua, ja que per la definició d'\myref{def:homeomorfisme entre topologies} tenim que \(f\) és oberta, i per la definició d'\myref{def:aplicació contínua} i la definició d'\myref{def:aplicació oberta} trobem que \(f^{-1}\) és contínua.
+					
+					Per tant, per la definició d'\myref{def:homeomorfisme entre topologies} trobem que \(f^{-1}\) és un homeomorfisme entre topologies i per tant \(Y\cong X\).
+					\item Transitiva: Siguin \(X_{1}\) amb la topologia \(\tau_{1}\), \(X_{2}\) amb la topologia \(\tau_{2}\) i \(X_{3}\) amb la topologia \(\tau_{3}\) tres espais topològics tals que \(X_{1}\cong X_{2}\) i \(X_{2}\cong X_{3}\). Per la definició d'\myref{def:espais topològics isomorfs} tenim que existeixen dos homeomorfismes \(f\colon X_{1}\longrightarrow X_{2}\) i \(g\colon X_{2}\longrightarrow X_{3}\).
+					
+					Considerem l'aplicació \(h=g\circ f\). Pel Teorema \myref{thm:conjugació de bijectives bijectiva} trobem que \(h\) és bijectiva, i per l'observació \myref{obs:la composició d'aplicacions obertes és oberta} i l'observació \myref{obs:la composició d'aplicacions contínues és contínua} trobem que \(h\) és oberta i contínua, i per la definició d'\myref{def:homeomorfisme entre topologies} trobem que \(h\) és un homeomorfisme entre \(X_{1}\) i \(X_{3}\), i per la definició d'\myref{def:espais topològics isomorfs} trobem que \(X_{1}\cong X_{3}\).
 				\end{enumerate}
 				I per la definició de \myref{def:relació d'equivalència} hem acabat.
 			\end{proof}
 	\end{proposition}
-	
+	\section{Subespais}
+	\subsection{La topologia induïda per un subconjunt}
+	\begin{proposition}
+		\label{prop:topologia induida per un subconjunt}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(A\) un subconjunt de \(X\). Aleshores \(A\) amb la topologia
+		\begin{equation}
+			\label{prop:topologia induida per un subconjunt:eq1}
+			\tau_{A}=\{\obert{U}\subseteq A\mid\text{Existeix un obert }\obert{W}\text{ de }X\text{ tal que }\obert{U}=\obert{W}\cap A\}
+		\end{equation}
+		és un espai topològic.
+		\begin{proof}
+			Observem que \(A\) pertany a \(\tau_{A}\), ja que per la definició de \myref{def:topologia} tenim que \(X\) és un obert de \(X\), i trobem \(X\cap A=A\). També tenim que \(\emptyset\) pertany a \(\tau_{A}\), ja que per la definició de \myref{def:topologia} tenim que \(\emptyset\) és un obert de \(X\), i trobem \(\emptyset\cap A=\emptyset\).
+			
+			Sigui \(\{\obert{U}_{i}\}_{i\in I}\) una família d'elements de \(\tau_{A}\). Per la definició \eqref{prop:topologia induida per un subconjunt:eq1} tenim que existeix una família \(\{\obert{W}_{i}\}_{i\in I}\) d'oberts de \(X\) tals que \(\obert{U}_{i}=\obert{W}_{i}\cap A\), per a tot \(i\) de \(I\). Considerem ara
+			\[\obert{U}=\bigcup_{i\in I}\obert{U}_{i}.\]
+			Tenim que
+			\[\obert{U}=\bigcup_{i\in I}\obert{W}_{i}\cap A,\]
+			i tenim
+			\[\obert{U}=A\cap\left(\bigcup_{i\in I}\obert{W}_{i}\right),\]
+			i per la definició de \myref{def:topologia} tenim que \(\bigcup_{i\in I}\obert{W}_{i}\) és un obert de \(X\), i per la definició \eqref{prop:topologia induida per un subconjunt:eq1} trobem que \(\obert{U}\) pertany a \(\tau_{A}\).
+			
+			Sigui \(\{\obert{U}\}_{i=1}^{n}\) una família d'elements de \(\tau_{A}\). Per la definició \eqref{prop:topologia induida per un subconjunt:eq1} tenim que existeix una família \(\{\obert{W}_{i}\}_{i=1}^{n}\) d'oberts de \(X\) tals que \(\obert{U}_{i}=\obert{W}_{i}\cap A\), per a tot \(i\) de \(\{1,\dots,n\}\). Considerem ara
+			\[\obert{U}=\bigcap_{i=1}^{n}\obert{U}_{i}.\]
+			Tenim que
+			\[\obert{U}=\bigcap_{i=1}^{n}\obert{W}_{i}\cap A,\]
+			i tenim
+			\[\obert{U}=A\cap\left(\bigcap_{i=1}^{n}\obert{W}_{i}\right),\]
+			i per la definició de \myref{def:topologia} tenim que \(\bigcap_{i=1}^{n}\obert{W}_{i}\) és un obert de \(X\), i per la definició \eqref{prop:topologia induida per un subconjunt:eq1} trobem que \(\obert{U}\) pertany a \(\tau_{A}\). Per tant per la definició d'\myref{def:espai topològic} trobem que \(A\) amb la topologia \(\tau_{A}\) és un espai topològic.
+		\end{proof}
+	\end{proposition}
+	\begin{notation}[Topologia induïda per un subconjunt]
+		\labelname{topologia induïda per un subconjunt}\label{notation:topologia induida per un subconjunt}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(A\) un subconjunt de \(X\). Aleshores denotem
+		\[\tau_{A}=\{\obert{U}\subseteq A\mid\text{Existeix un obert }\obert{W}\text{ de }X\text{ tal que }\obert{U}=\obert{W}\cap A\}.\]
+	\end{notation}
+	\begin{definition}[Subespai topològic]
+		\labelname{subespai topològic}\label{def:subespai topològic}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(A\) un subconjunt de \(X\). Aleshores direm que \(A\) amb la topologia \(\tau_{A}\) és un subespai topològic de \(X\).
+	\end{definition}
+	propietats i exemples. exemples i propietats
 	
 %	\begin{definition}[Aplicació contínua i homeomorfisme]
 %		\labelname{aplicació contínua}\label{def:aplicació contínua}
