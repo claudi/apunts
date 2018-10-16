@@ -155,10 +155,21 @@
 		Siguin \(X\) amb la distància \(\distancia\) un espai mètric complet i \(T\) una aplicació de \(X\) en \(X\) tal que existeix un natural \(k\) satisfent que \(T^{k}\) sigui una aplicació contractiva sobre \(X\). Aleshores \(T\) té un únic punt fix.
 		\begin{proof}
 			Suposem que existeixen dos punts \(x\) i \(y\) de \(X\) tals que \(x\) i \(y\) són punts fixos de \(T\). Aleshores per la definició de \myref{def:punt fix d'un aplicació contractiva} tenim que
-			\[T^{k}(a)=a\quad\text{i}\quad T^{k}(b)=b.\]
-			Ara bé, pel Teorema \myref{thm:les aplicacions contractives tenen un únic punt fix} tenim que ha de ser \(a=b\), i per tant aquest punt és únic. % CONTINUAR
+			\[T^{k}(x)=x\quad\text{i}\quad T^{k}(y)=y.\]
+			Ara bé, pel Teorema \myref{thm:les aplicacions contractives tenen un únic punt fix} tenim que ha de ser \(x=y\), i per tant aquest punt és únic. % CONTINUAR
 			
-			Veiem ara que
+			Veiem ara que existeix un punt \(x\) tal que \(T(x)=x\). Tenim, per hipòtesi, que existeix un \(k\) natural tal que \(T^{k}\) és contractiva, i pel Teorema \myref{thm:les aplicacions contractives tenen un únic punt fix} tenim que existeix un punt \(x\) de \(X\) tal que \(T^{k}(x)=x\). Tenim també que
+			\begin{equation}
+				\label{cor:si una funció té una potència contractiva aleshores aquesta té un únic punt fix:eq1}
+				T^{k+1}(x)=T(T^{k}(x)),
+			\end{equation}
+			i per tant
+			\begin{equation}
+				\label{cor:si una funció té una potència contractiva aleshores aquesta té un únic punt fix:eq2}
+				T^{k+1}(x)=x
+			\end{equation}
+			i amb \eqref{cor:si una funció té una potència contractiva aleshores aquesta té un únic punt fix:eq1} i \eqref{cor:si una funció té una potència contractiva aleshores aquesta té un únic punt fix:eq2}, com que \(T^{k}(x)=x\), trobem que
+			\[T(x)=x.\qedhere\]
 		\end{proof}
 	\end{corollary}
 	\section{Teoremes d'existència i unicitat}
@@ -171,7 +182,7 @@
 	\end{definition}
 	\begin{theorem}[Teorema de Picard]
 		\labelname{Teorema de Picard}\label{thm:Teorema de Picard}
-		Siguin \(a\), \(b\) i \(t_{0}\) dos reals, \(x_{0}\) un punt de \(\mathbb{R}^{n}\), \(\Omega=(t_{0}-a,t_{0}+a)\times\bola(x_{0},b)\) un conjunt, \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i Lipschitz respecte la segona variable i
+		Siguin \(a\), \(b\) i \(t_{0}\) dos reals, \(x_{0}\) un punt de \(\mathbb{R}^{n}\), \(\Omega=[t_{0}-a,t_{0}+a]\times\overline{\bola}(x_{0},b)\) un conjunt, \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i Lipschitz respecte la segona variable i
 		\[M=\max_{(t,x)\in\Omega}\norm{f(t,x)}.\]
 		Aleshores el problema de Cauchy
 		\[\begin{cases*}
@@ -179,9 +190,9 @@
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases*}\]
 		té una única solució sobre l'interval
-		\[\left(t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right).\]
+		\[\left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].\]
 		\begin{proof}
-			Denotem \(X=\mathcal{C}_{b}((t_{0}-a,t_{0}+a),\bola(x_{0},b))\) i definim una aplicació
+			Denotem \(X=\mathcal{C}_{b}((t_{0}-a,t_{0}+a),\overline{\bola}(x_{0},b))\) i definim una aplicació
 			\begin{align*}
 				T\colon X&\longrightarrow X \\
 				u(x)&\longmapsto x_{0}+\int_{t_{0}}^{t}f(s,u(s))\diff s.
@@ -198,7 +209,7 @@
 			\end{align*}
 			i per tant tenim que
 			\[\norm{T(u(x))(t)-x_{0}}\leq b.\]
-			Per la definició de \myref{def:bola} trobem que \(T(u(x))(t)\) és un element de \(\bola(x_{0},b)\), i per tant \(T(u(x))\) és un element de \(X\) per a tot \(u(x)\) de \(X\).
+			Per la definició de \myref{def:bola} trobem que \(T(u(x))(t)\) és un element de \(\overline{\bola}(x_{0},b)\), i per tant \(T(u(x))\) és un element de \(X\) per a tot \(u(x)\) de \(X\).
 			
 			Per hipòtesi tenim que \(f\) és Lipschitz respecte la segona variable, i per la definició de \myref{def:funció Lipschitz respecte la segona variable} trobem que existeix un real \(K>0\) tal que
 			\begin{equation}
@@ -243,7 +254,60 @@
 			\[T(u(x))=u(x).\qedhere\]
 		\end{proof}
 	\end{theorem}
-	
+	\begin{corollary}
+		\label{cor:Teorema de Picard}
+		Siguin \(I=[a,b]\) un interval de \(\mathbb{R}\), \(\Omega=I\times\mathbb{R}^{n}\) un conjunt, \((t_{0},x_{0})\) un element de \(\Omega\) i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i Lipschitz respecte la segona variable. Aleshores el problema de Cauchy
+		\[\begin{cases*}
+			\displaystyle \frac{\partial u(x)}{\partial x}=f(t,u(x)) \\
+			\displaystyle u(t_{0})=x_{0}.
+		\end{cases*}\]
+		té una única solució definida en l'interval \(I\).
+		\begin{proof}
+			Quan \(b\) tendeix a infinit tenim que \(\overline{\bola}(x_{0},b)=\mathbb{R}^{n}\).
+		\end{proof}
+	\end{corollary}
+	\subsection{Teorema de Peano}
+	\begin{definition}[Família de funcions puntualment acotada]
+		\labelname{família de funcions puntualment acotada}\label{def:família de funcions puntualment acotada}
+		Sigui \(H\) una família de funcions de \(\mathcal{C}_{b}(X,T)\) tal que per a tot \(x\) de \(X\) existeix un real \(M_{x}\) tal que
+		\[\norm{f(x)}<M_{x}\]
+		per a tot \(f\) de \(H\). Aleshores direm que \(H\) és puntualment acotada.
+	\end{definition}
+	\begin{definition}[Família de funcions equicontínua]
+		\labelname{família de funcions equicontínua en un punt}\label{def:família de funcions equicontínua en un punt}
+		\labelname{família de funcions equicontínua}\label{def:família de funcions equicontínua}
+		Siguin \(H\) un una família de funcions de \(\mathcal{C}_{b}(X,T)\) i \(x\) un punt de \(X\) tal que per a tot \(\varepsilon>0\) existeix un entorn \(N_{x}\) de \(x\) tal que per a tot \(y\) de \(N_{x}\) i \(f\) de \(H\) es satisfà
+		\[\norm{f(y)-f(x)}<\varepsilon.\]
+		Aleshores direm que \(H\) és equicontínua en \(x\). Si \(H\) és equicontínua en \(x\) per a tot \(x\) de \(X\) direm que \(H\) és equicontínua en \(X\).
+	\end{definition}
+	\begin{theorem}[Teorema de Arzelà-Ascoli]
+		\labelname{Teorema de Arzelà-Ascoli}\label{thm:Teorema de Arzelà-Ascoli}
+		Siguin \(X\) un compacte i \(\{f_{n}\}_{n\in\mathbb{N}}\) una successió de funcions de \(\mathcal{C}_{b}(X,T)\) equicontínua i puntualment acotada. Aleshores la successió \(\{f_{n}\}_{n\in\mathbb{N}}\) té una parcial acotada.
+		\begin{proof}
+			Sigui \(\{f_{i}\}_{i\in I}\) una  família de funcions de \(\mathcal{C}_{b}(X)\). Prenem un real \(\varepsilon>0\). Per la definició de \myref{def:família de funcions equicontínua} tenim que per a tot punt \(x\) de \(X\) existeix un entorn \(N_{x}\) de \(x\) tal que per a tot \(y\) de \(N_{x}\) tenim, per a tot \(i\) de \(I\), que
+			\[\norm{f_{i}(y)-f_{i}(x)}<\varepsilon.\]
+			Ara bé, per la definició d'\myref{def:entorn} tenim que existeix un obert \(\obert{V}_{x}\) de \(X\) tal que \(x\) és un element de \(\obert{V}_{x}\) i \(\obert{V}_{x}\) és un subconjunt de \(N_{x}\). Per tant tenim que per a tot \(y\) de \(\obert{V}_{x}\), per a tot \(i\) de \(I\), es satisfà
+			\[\norm{f_{i}(y)-f_{i}(x)}<\varepsilon.\]
+			
+			Com que, per hipòtesi, \(X\) és compacte, tenim que existeix una família \(\{x_{i}\}_{i=1}^{k}\) de punts de \(X\) tals que
+			\[X=\bigcup_{i=1}^{k}\obert{V}_{x_{i}}.\]
+			
+			
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}[Teorema Peano]
+		\labelname{Teorema de Peano}\label{thm:Teorema de Peano}
+		Siguin \(a\), \(b\) i \(t_{0}\) dos reals, \(x_{0}\) un punt de \(\mathbb{R}^{n}\), \(\Omega=[t_{0}-a,t_{0}+a]\times\overline{\bola}(x_{0},b)\) un conjunt, \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i \(M\) un real tal que \(\norm{f(t,x)}<M\) per a tot \((t,x)\) de \(\Omega\). Aleshores el problema de Cauchy
+		\[\begin{cases*}
+			\displaystyle\frac{\partial u(x)}{\partial x}=f(t,x) \\
+			\displaystyle u(t_{0})=x_{0}
+		\end{cases*}\]
+		té una única solució sobre l'interval
+		\[\left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].\]
+		\begin{proof}
+			% https://arxiv.org/pdf/1202.1152.pdf
+		\end{proof}
+	\end{theorem}
 	
 	
 	
@@ -457,3 +521,5 @@
 \end{document}
 
 % http://issc.uj.ac.za/downloads/problems/ordinary.pdf
+% https://arxiv.org/pdf/1202.1152.pdf
+% Link del Suso al Cedò
