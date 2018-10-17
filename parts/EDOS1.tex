@@ -284,14 +284,26 @@
 		\labelname{Teorema de Arzelà-Ascoli}\label{thm:Teorema de Arzelà-Ascoli}
 		Siguin \(X\) un compacte i \(\{f_{n}\}_{n\in\mathbb{N}}\) una successió de funcions de \(\mathcal{C}_{b}(X,T)\) equicontínua i puntualment acotada. Aleshores la successió \(\{f_{n}\}_{n\in\mathbb{N}}\) té una parcial acotada.
 		\begin{proof}
-			Sigui \(\{f_{i}\}_{i\in I}\) una  família de funcions de \(\mathcal{C}_{b}(X)\). Prenem un real \(\varepsilon>0\). Per la definició de \myref{def:família de funcions equicontínua} tenim que per a tot punt \(x\) de \(X\) existeix un entorn \(N_{x}\) de \(x\) tal que per a tot \(y\) de \(N_{x}\) tenim, per a tot \(i\) de \(I\), que
-			\[\norm{f_{i}(y)-f_{i}(x)}<\varepsilon.\]
-			Ara bé, per la definició d'\myref{def:entorn} tenim que existeix un obert \(\obert{V}_{x}\) de \(X\) tal que \(x\) és un element de \(\obert{V}_{x}\) i \(\obert{V}_{x}\) és un subconjunt de \(N_{x}\). Per tant tenim que per a tot \(y\) de \(\obert{V}_{x}\), per a tot \(i\) de \(I\), es satisfà
-			\[\norm{f_{i}(y)-f_{i}(x)}<\varepsilon.\]
+			Prenem un real \(\varepsilon>0\). Per la definició de \myref{def:família de funcions equicontínua} tenim que per a tot punt \(x\) de \(X\) existeix un entorn \(N_{x}\) de \(x\) tal que per a tot \(y\) de \(N_{x}\) tenim, per a tot \(n\) natural, que
+			\[\norm{f_{n}(y)-f_{n}(x)}<\varepsilon.\]
+			Ara bé, per la definició d'\myref{def:entorn} tenim que existeix un obert \(\obert{V}_{x}\) de \(X\) tal que \(x\) és un element de \(\obert{V}_{x}\) i \(\obert{V}_{x}\) és un subconjunt de \(N_{x}\). Per tant tenim que per a tot \(y\) de \(\obert{V}_{x}\), per a tot \(n\) natural, es satisfà
+			\[\norm{f_{n}(y)-f_{n}(x)}<\varepsilon.\]
+			També tenim, per hipòtesi, que \(X\) és compacte, i per tant existeix una família \(\{x_{i}\}_{i=1}^{k}\) de punts de \(X\) tals que
+			\begin{equation}
+				\label{thm:Teorema de Arzelà-Ascoli:eq1}
+				X=\bigcup_{i=1}^{k}\obert{V}_{x_{i}}.
+			\end{equation}
 			
-			Com que, per hipòtesi, \(X\) és compacte, tenim que existeix una família \(\{x_{i}\}_{i=1}^{k}\) de punts de \(X\) tals que
-			\[X=\bigcup_{i=1}^{k}\obert{V}_{x_{i}}.\]
+			Com que, per hipòtesi, la \(\{f_{n}\}_{n\in\mathbb{N}}\) és una successió de funcions puntualment acotada, per la definició de \myref{def:família de funcions puntualment acotada} tenim que existeix un real \(M\) tal que per a tot \(n\) natural tenim
+			\[\norm{f_{n}(x_{i})}<M,\]
+			i tenim pel \myref{thm:Teorema de Bolzano-Weierstrass} que existeix una parcial \(\{f_{n}^{1}(x_{1})\}_{n\in\mathbb{N}}\) de \(\{f_{n}(x_{i})\}_{n\in\mathbb{N}}\) convergent. Podem repetir l'argument per trobar una successió de la forma
+			\[\{f^{k}_{n}(x_{i})\}_{n\in\mathbb{N}}\quad\text{per a tot }i\text{ de }\{1,\dots,k\}.\]
 			
+			Prenem ara un element \(x\) de \(X\). Per \eqref{thm:Teorema de Arzelà-Ascoli:eq1} tenim que existeix un \(i\) de \(\{1,\dots,k\}\) tal que \(x\) és un element de \(V_{x_{i}}\), i tenim que
+			\begin{align*}
+				\norm{f^{k}_{n}(x)-f^{k}_{m}(x)}\leq&\norm{f^{k}_{n}(x)-f^{k}_{n}(x_{i})}+\norm{f^{k}_{n}(x_{i})-f^{k}_{m}(x)} \\
+				\leq&\norm{f^{k}_{n}(x)-f^{k}_{n}(x_{i})}+\norm{f^{k}_{n}(x_{i})-f^{k}_{m}(x_{i})}+\\&+\norm{f^{k}_{m}(x_{i})-f^{k}_{m}(x)}
+			\end{align*}
 			
 		\end{proof}
 	\end{theorem}

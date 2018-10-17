@@ -1,1 +1,1 @@
- 
+Afegida més teoria a EDOS fins el Teorema de Peano. Encara estic demostrant el Teorema de Arzelà-Ascoli.
