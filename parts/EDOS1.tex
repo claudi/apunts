@@ -266,7 +266,7 @@
 			Quan \(b\) tendeix a infinit tenim que \(\overline{\bola}(x_{0},b)=\mathbb{R}^{n}\).
 		\end{proof}
 	\end{corollary}
-	\subsection{Teorema de Peano}
+	\subsection{El Teorema de Peano}
 	\begin{definition}[Família de funcions puntualment acotada]
 		\labelname{família de funcions puntualment acotada}\label{def:família de funcions puntualment acotada}
 		Sigui \(H\) una família de funcions de \(\mathcal{C}_{b}(X,T)\) tal que per a tot \(x\) de \(X\) existeix un real \(M_{x}\) tal que
@@ -280,14 +280,17 @@
 		\[\norm{f(y)-f(x)}<\varepsilon.\]
 		Aleshores direm que \(H\) és equicontínua en \(x\). Si \(H\) és equicontínua en \(x\) per a tot \(x\) de \(X\) direm que \(H\) és equicontínua en \(X\).
 	\end{definition}
-	\begin{theorem}[Teorema de Arzelà-Ascoli]
-		\labelname{Teorema de Arzelà-Ascoli}\label{thm:Teorema de Arzelà-Ascoli}
+	\begin{lemma}[Teorema de Arzelà-Ascoli]
+		\labelname{Teorema de Arzelà-Ascoli}\label{thm:Teorema de Arzelà-Ascoli}\label{lemma:Teorema de Peano}
 		Siguin \(X\) un compacte i \(\{f_{n}\}_{n\in\mathbb{N}}\) una successió de funcions de \(\mathcal{C}_{b}(X,T)\) equicontínua i puntualment acotada. Aleshores la successió \(\{f_{n}\}_{n\in\mathbb{N}}\) té una parcial acotada.
 		\begin{proof}
 			Prenem un real \(\varepsilon>0\). Per la definició de \myref{def:família de funcions equicontínua} tenim que per a tot punt \(x\) de \(X\) existeix un entorn \(N_{x}\) de \(x\) tal que per a tot \(y\) de \(N_{x}\) tenim, per a tot \(n\) natural, que
-			\[\norm{f_{n}(y)-f_{n}(x)}<\varepsilon.\]
+			\[\norm{f_{n}(y)-f_{n}(x)}<\frac{\varepsilon}{3}.\]
 			Ara bé, per la definició d'\myref{def:entorn} tenim que existeix un obert \(\obert{V}_{x}\) de \(X\) tal que \(x\) és un element de \(\obert{V}_{x}\) i \(\obert{V}_{x}\) és un subconjunt de \(N_{x}\). Per tant tenim que per a tot \(y\) de \(\obert{V}_{x}\), per a tot \(n\) natural, es satisfà
-			\[\norm{f_{n}(y)-f_{n}(x)}<\varepsilon.\]
+			\begin{equation}
+				\label{thm:Teorema de Arzelà-Ascoli:eq2}
+				\norm{f_{n}(y)-f_{n}(x)}<\frac{\varepsilon}{3}.
+			\end{equation}
 			També tenim, per hipòtesi, que \(X\) és compacte, i per tant existeix una família \(\{x_{i}\}_{i=1}^{k}\) de punts de \(X\) tals que
 			\begin{equation}
 				\label{thm:Teorema de Arzelà-Ascoli:eq1}
@@ -298,15 +301,46 @@
 			\[\norm{f_{n}(x_{i})}<M,\]
 			i tenim pel \myref{thm:Teorema de Bolzano-Weierstrass} que existeix una parcial \(\{f_{n}^{1}(x_{1})\}_{n\in\mathbb{N}}\) de \(\{f_{n}(x_{i})\}_{n\in\mathbb{N}}\) convergent. Podem repetir l'argument per trobar una successió de la forma
 			\[\{f^{k}_{n}(x_{i})\}_{n\in\mathbb{N}}\quad\text{per a tot }i\text{ de }\{1,\dots,k\}.\]
-			
-			Prenem ara un element \(x\) de \(X\). Per \eqref{thm:Teorema de Arzelà-Ascoli:eq1} tenim que existeix un \(i\) de \(\{1,\dots,k\}\) tal que \(x\) és un element de \(V_{x_{i}}\), i tenim que
+			Tenim que la successió \(\{f^{k}_{n}(x_{i})\}_{n\in\mathbb{N}}\) és convergent. Per tant, per la definició de \myref{def:límit} trobem que existeix un element de \(X\), \(f^{k}(x_{i})\) tal que existeix un natural \(n'_{\varepsilon}\) satisfent que per a tot \(n>n'_{\varepsilon}\) es compleix
+			\begin{equation}
+				\label{thm:Teorema de Arzelà-Ascoli:eq3}
+				\norm{f^{k}_{n}(x_{i})-f^{k}(x_{i})}<\frac{\varepsilon}{6},
+			\end{equation}
+			per tant trobem, si \(m>n\) i \(n>n'_{\varepsilon}\), que
 			\begin{align*}
-				\norm{f^{k}_{n}(x)-f^{k}_{m}(x)}\leq&\norm{f^{k}_{n}(x)-f^{k}_{n}(x_{i})}+\norm{f^{k}_{n}(x_{i})-f^{k}_{m}(x)} \\
-				\leq&\norm{f^{k}_{n}(x)-f^{k}_{n}(x_{i})}+\norm{f^{k}_{n}(x_{i})-f^{k}_{m}(x_{i})}+\\&+\norm{f^{k}_{m}(x_{i})-f^{k}_{m}(x)}
+				\norm{f^{k}_{n}(x_{i})-f^{k}_{m}(x_{i})}&\leq\norm{f^{k}_{n}(x_{i})-f^{k}(x_{i})}+\norm{f^{k}(x_{i})-f^{k}_{m}(x_{i})} \\
+				&\leq\frac{\varepsilon}{6}+\frac{\varepsilon}{6} \tag{\ref{thm:Teorema de Arzelà-Ascoli:eq3}}
 			\end{align*}
+			i per tant
+			\begin{equation}
+				\label{thm:Teorema de Arzelà-Ascoli:eq4}
+				\norm{f^{k}_{n}(x_{i})-f^{k}_{m}(x_{i})}\leq\frac{\varepsilon}{3}.
+			\end{equation}
 			
+			Prenem ara un element \(x\) de \(X\). Per \eqref{thm:Teorema de Arzelà-Ascoli:eq1} tenim que existeix un \(j\) de \(\{1,\dots,k\}\) tal que \(x\) és un element de \(V_{x_{j}}\), i tenim que
+			\begin{align*}
+				\norm{f^{k}_{n}(x)-f^{k}_{m}(x)}\leq&\norm{f^{k}_{n}(x)-f^{k}_{n}(x_{j})}+\norm{f^{k}_{n}(x_{j})-f^{k}_{m}(x)} \\
+				\leq&\norm{f^{k}_{n}(x)-f^{k}_{n}(x_{j})}+\norm{f^{k}_{n}(x_{j})-f^{k}_{m}(x_{j})}+\\&+\norm{f^{k}_{m}(x_{j})-f^{k}_{m}(x)} \\
+				\leq&\frac{\varepsilon}{3}+\norm{f^{k}_{n}(x_{j})-f^{k}_{m}(x_{j})}+\frac{\varepsilon}{3}\tag{\ref{thm:Teorema de Arzelà-Ascoli:eq2}} \\
+				\leq&\frac{\varepsilon}{3}+\frac{\varepsilon}{3}+\frac{\varepsilon}{3}=\varepsilon\tag{\ref{thm:Teorema de Arzelà-Ascoli:eq4}}
+			\end{align*}
+			Tenim doncs que per a tot \(\varepsilon>0\) real existeix una parcial \(\{g^{(\varepsilon)}_{n'_{\varepsilon}+n}\}_{n\in\mathbb{N}}\) de \(\{f_{n}\}_{n\in\mathbb{N}}\) que satisfà
+			\[\norm{g^{(\varepsilon)}_{n'_{\varepsilon}+n}-g^{(\varepsilon)}_{n'_{\varepsilon}+m}}\leq\varepsilon\]
+			per a tot \(n\) i \(m\) enters.
+			
+			Definim, per simplificar la notació, la successió
+			\[\left\{g^{(\varepsilon)}_{n'_{\varepsilon}+n}\right\}_{n\in\mathbb{N}}=\left\{f^{(\varepsilon^{-1})}_{n'_{\varepsilon^{-1}}+n}\right\}_{n\in\mathbb{N}}.\]
+			
+			Per tant tenim que per a \(\varepsilon=1\) es satisfà
+			\[\norm{f^{(1)}_{n'_{1}+n}(x)-f^{(1)}_{n'_{1}+m}(x)}\leq1.\]
+			Si prenem \(\varepsilon=\frac{1}{2}\) trobem una parcial \(\{f^{2}_{n_{2}+n}\}_{n\in\mathbb{N}}\) de \(\{f^{1}_{n_{1}+n}\}_{n\in\mathbb{N}}\) que satisfà
+			\[\norm{f^{(2)}_{n_{2}+n}(x)-f^{(2)}_{n_{2}+m}(x)}\leq\frac{1}{2}.\]
+			
+			Tenim doncs que per a tot \(i\) natural la successió \(\{f^{i+1}_{n_{i+1}+n}\}_{n\in\mathbb{N}}\) és una parcial de la successió \(\{f^{i+1}_{n_{i+1}+n}\}_{n\in\mathbb{N}}\) i per a tot \(n\) i \(m\) naturals tenim
+			\[\norm{f^{i+1}_{n_{i+1}+n}(x)-f^{i+1}_{n_{i+1}+m}(x)}<\frac{1}{i},\]
+			i per tant, per la definició de \myref{def:successió de Cauchy amb normes} trobem que la successió \(\{f^{i+1}_{n_{i+1}+n}\}_{n\in\mathbb{N}}\) és de Cauchy per a tot \(i\) natural, i com que pel Teorema \myref{thm:l'espai de funcions contínues i acotades és complet} tenim que \(\mathcal{C}_{b}(X,T)\) és un espai complet, per la definició d'\myref{def:espai mètric complet} trobem que la parcial \(\{f^{i+1}_{n_{i+1}+n}\}_{n\in\mathbb{N}}\) de \(\{f_{n}\}_{n\in\mathbb{N}}\) és convergent, com volíem veure.
 		\end{proof}
-	\end{theorem}
+	\end{lemma}
 	\begin{theorem}[Teorema Peano]
 		\labelname{Teorema de Peano}\label{thm:Teorema de Peano}
 		Siguin \(a\), \(b\) i \(t_{0}\) dos reals, \(x_{0}\) un punt de \(\mathbb{R}^{n}\), \(\Omega=[t_{0}-a,t_{0}+a]\times\overline{\bola}(x_{0},b)\) un conjunt, \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i \(M\) un real tal que \(\norm{f(t,x)}<M\) per a tot \((t,x)\) de \(\Omega\). Aleshores el problema de Cauchy

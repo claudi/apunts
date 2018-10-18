@@ -1,1 +1,3 @@
 Afegida més teoria a EDOS fins el Teorema de Peano. Encara estic demostrant el Teorema de Arzelà-Ascoli.
+Avançat una mica en la demostració del Teorema de Arzelà-Ascoli i afegit el Teorema de Bolzano-Weierstrass a la part de FVR.
+Acabada la demostració del Teorema de Arzelà-Ascoli.
