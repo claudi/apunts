@@ -9,8 +9,9 @@
 		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\). Aleshores denotem
 		\[\mathcal{C}_{b}(X,T)=\{f(x)\mid f(x)\text{ és una funció contínua i acotada de }X\text{ a }T\}.\]
 	\end{notation}
-	\begin{definition}[Norma d'una funció funció]
-		\labelname{norma d'una funció funció}\label{def:norma d'una funció funció}
+	%TODO %VEURE QUE ÉS UNA NORMA (p(Ku)=|K|p(u), p(u+v)<=p(u)+p(v), 0<=p(v), p(v)=0 sii v=0)
+	\begin{definition}[Norma d'una funció]
+		\labelname{norma d'una funció}\label{def:norma d'una funció}
 		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(T\) un compacte de \(\mathbb{R}^{n}\) i \(f(x)\) una funció de \(\mathcal{C}_{b}(X,T)\). Aleshores definim
 		\[\norm{f}=\sup_{x\in X}\norm{f(x)}\]
 		com la norma de \(f\).
@@ -41,11 +42,51 @@
 		\[a=\lim_{n\to\infty}a_{n}\]
 		és un element de \(X\). Aleshores direm que \(X\) és complet.
 	\end{definition}
+	\begin{proposition}
+		\label{prop:distància entre funcions acotades}
+		Siguin \(f\) i \(g\) dues funcions de \(\mathcal{C}_{b}(X,T)\) i
+		\[\distancia(f,g)=\norm{f-g}.\]
+		Aleshores per a tot \(f\), \(g\) i \(h\) de \(\mathcal{C}_{b}(X,T)\) es satisfà
+		\begin{enumerate}
+			\item\label{prop:distància entre funcions acotades:enum1} \(\distancia(f,g)\geq0\).
+			\item\label{prop:distància entre funcions acotades:enum2} \(\distancia(f,g)=0\) si i només si \(f=g\).
+			\item\label{prop:distància entre funcions acotades:enum3} \(\distancia(f,g)\leq\distancia(f,h)+\distancia(h,g)\).
+			\item\label{prop:distància entre funcions acotades:enum4} \(\distancia(f,g)=\distancia(g,f)\).
+		\end{enumerate}
+		\begin{proof}
+			Comencem veient el punt \eqref{prop:distància entre funcions acotades:enum1}. Per la definició de \myref{def:norma d'una funció} tenim que
+			\[\distancia(f,g)=\sup_{x\in X}\norm{f(x)-g(x)},\]
+			i per tant ha de ser \(\distancia(f,g)\geq0\).
+			
+			Veiem ara el punt \eqref{prop:distància entre funcions acotades:enum2}. Si \(f=g\) aleshores tenim que per a tot \(x\) de \(X\) es satisfà \(f(x)=g(x)\), i per tant trobem
+			\[\sup_{x\in X}\norm{f(x)-g(x)}=0,\]
+			i això és que \(\distancia(f,g)=0\).
+			
+			Suposem ara que \(\distancia(f,g)=0\). Per la definició de \myref{def:norma d'una funció} ha de ser
+			\[\sup_{x\in X}\norm{f(x)-g(x)}=0,\]
+			i per tant trobem que \(f(x)=g(x)\) per a tot \(x\) de \(X\) i per tant tenim que ha de ser \(f=g\).
+			
+			Veiem ara el punt \eqref{prop:distància entre funcions acotades:enum3}. Tenim que
+			\begin{align*}
+				\distancia(f,g)&=\sup_{x\in X}\norm{f(x)-g(x)} \\
+				&=\sup_{x\in X}\norm{f(x)-h(x)+h(x)-g(x)} \\
+				&\leq\sup_{x\in X}\norm{f(x)-h(x)}+\sup_{x\in X}\norm{h(x)-g(x)}=\distancia(f,h)+\distancia(h,g).
+			\end{align*}
+			
+			Per acabar veiem el punt \eqref{prop:distància entre funcions acotades:enum4}. Tenim que
+			\begin{align*}
+				\distancia(f,g)&=\sup_{x\in X}\norm{f(x)-g(x)} \\
+				&=\sup_{x\in X}\norm{g(x)-f(x)}=\distancia(g,f).\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
 	\begin{definition}[Distància entre funcions]
 		\labelname{distància entre funcions}\label{def:distància entre funcions acotades}
 		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(T\) un compacte de \(\mathbb{R}^{n}\) i \(f\) i \(g\) dues funcions de \(\mathcal{C}_{b}(X,T)\). Aleshores definim
-		\[\distancia(f,g)=\norm{f(x)-g(x)}\]
+		\[\distancia(f,g)=\norm{f-g}\]
 		com la distància entre \(f\) i \(g\) en \(\mathcal{C}_{b}(X,T)\).
+		
+		Aquesta definició té sentit per la proposició \myref{prop:distància entre funcions acotades}.
 	\end{definition}
 	\begin{lemma}
 		\label{thm:l'espai de funcions contínues i acotades és un espai mètric}
@@ -63,25 +104,25 @@
 		\label{thm:l'espai de funcions contínues i acotades és complet}
 		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\). Aleshores \(\mathcal{C}_{b}(X,T)\) és espai mètric complet.
 		\begin{proof}
-			Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de Cauchy de \(\mathcal{C}_{b}(X,T)\). Per la definició de \myref{def:successió de Cauchy amb normes} tenim que per a tots naturals \(n\) i \(m\) existeix un real \(\varepsilon>0\) tal que
+			Sigui \(\{f_{n}\}_{n\in\mathbb{N}}\) una successió de Cauchy de \(\mathcal{C}_{b}(X,T)\). Per la definició de \myref{def:successió de Cauchy amb normes} tenim que per a tots naturals \(n\) i \(m\) existeix un real \(\varepsilon>0\) tal que
 			\[\norm{f_{n}-f_{m}}<\varepsilon.\]
 			Per la definició de \myref{def:distància entre funcions acotades} trobem que
-			\[\sup_{x\in X}\abs{f_{n}(x)-f_{m}(x)}<\varepsilon\]
+			\[\sup_{x\in X}\norm{f_{n}(x)-f_{m}(x)}<\varepsilon\]
 			i trobem que per a tot \(x\) de \(X\) es satisfà
-			\[\abs{f_{n}(x)-f_{m}(x)}<\varepsilon\]
-			i per la definició de \myref{def:successió de Cauchy amb normes} trobem que la successió \((f_{n}(x))_{n\in\mathbb{N}}\) és de Cauchy, i per la definició de \myref{def:límit} trobem que la successió \((f_{n}(x))_{n\in\mathbb{N}}\) és convergent. Denotem
+			\[\norm{f_{n}(x)-f_{m}(x)}<\varepsilon\]
+			i per la definició de \myref{def:successió de Cauchy amb normes} trobem que la successió \(\{f_{n}(x)\}_{n\in\mathbb{N}}\) és de Cauchy, i per la definició de \myref{def:límit} trobem que la successió \(\{f_{n}(x)\}_{n\in\mathbb{N}}\) és convergent. Denotem, per a tot \(x\) de \(X\),
 			\begin{equation}
 				\label{thm:l'espai de funcions contínues i acotades és complet:eq1}
 				\lim_{n\to\infty}f_{n}(x)=f(x).
 			\end{equation}
 			
 			Sigui \(n_{0}\) un natural. Per la definició de \myref{def:límit} tenim que existeix un real \(\varepsilon>0\) tal que per a tot \(n\) i \(m\) enters amb \(n,m\geq n_{0}\)
-			\[\abs{f_{n}(x)-f_{m}(x)}<\frac{\varepsilon}{2}.\]
-			Ara bé, per \eqref{thm:l'espai de funcions contínues i acotades és complet:eq1} tenim que
-			\[\lim_{m\to\infty}\abs{f_{n}(x)-f_{m}(x)}=\abs{f_{n}(x)-f(x)}.\]
-			Per tant tenim que
-			\[\abs{f_{n}(x)-f(x)}\leq\frac{\varepsilon}{2}<\varepsilon\]
-			i per la definició de \myref{def:convergència uniforme} tenim que \((f_{n})_{n\in\mathbb{N}}\) convergeix uniformement a \(f(x)\), i per la definició de \myref{def:espai mètric complet} tenim que \(\mathcal{C}_{b}(X,T)\) és complet.
+			\[\norm{f_{n}(x)-f_{m}(x)}<\frac{\varepsilon}{2}.\]
+			Ara bé, per \eqref{thm:l'espai de funcions contínues i acotades és complet:eq1} tenim, per a tot \(x\) de \(X\), que
+			\[\lim_{m\to\infty}\norm{f_{n}(x)-f_{m}(x)}=\norm{f_{n}(x)-f(x)}.\]
+			Per tant tenim que per a tot \(x\) de \(X\) es satisfà
+			\[\norm{f_{n}(x)-f(x)}\leq\frac{\varepsilon}{2}<\varepsilon\]
+			i per la definició de \myref{def:convergència uniforme} tenim que \(\{f_{n}\}_{n\in\mathbb{N}}\) convergeix uniformement a \(f(x)\), i per la definició de \myref{def:espai mètric complet} tenim que \(\mathcal{C}_{b}(X,T)\) és complet.
 		\end{proof}
 	\end{theorem}
 	\subsection{Aplicacions contractives i punts fixes}
@@ -155,7 +196,9 @@
 		Siguin \(X\) amb la distància \(\distancia\) un espai mètric complet i \(T\) una aplicació de \(X\) en \(X\) tal que existeix un natural \(k\) satisfent que \(T^{k}\) sigui una aplicació contractiva sobre \(X\). Aleshores \(T\) té un únic punt fix.
 		\begin{proof}
 			Suposem que existeixen dos punts \(x\) i \(y\) de \(X\) tals que \(x\) i \(y\) són punts fixos de \(T\). Aleshores per la definició de \myref{def:punt fix d'un aplicació contractiva} tenim que
-			\[T^{k}(x)=x\quad\text{i}\quad T^{k}(y)=y.\]
+			\[T^{k}(x)=x\]
+			i
+			\[T^{k}(y)=y.\]
 			Ara bé, pel Teorema \myref{thm:les aplicacions contractives tenen un únic punt fix} tenim que ha de ser \(x=y\), i per tant aquest punt és únic. % CONTINUAR
 			
 			Veiem ara que existeix un punt \(x\) tal que \(T(x)=x\). Tenim, per hipòtesi, que existeix un \(k\) natural tal que \(T^{k}\) és contractiva, i pel Teorema \myref{thm:les aplicacions contractives tenen un únic punt fix} tenim que existeix un punt \(x\) de \(X\) tal que \(T^{k}(x)=x\). Tenim també que
