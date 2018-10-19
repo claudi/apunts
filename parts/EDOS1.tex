@@ -156,7 +156,7 @@
 			\[\distancia(a,b)\leq k\distancia(a,b).\]
 			Ara bé, com que \(0<k<1\), ha de ser \(\distancia(a,b)=0\), i per tant trobem que \(a=b\).
 			
-			Veiem ara que existeix un punt fix. Prenem un element \(x\) de \(X\) i considerem la successió \(\{T^{n}(x)\}_{n\in\mathbb{N}}\). Sigui \(r\)un natural. Aleshores tenim que per a tot \(n\) natural
+			Veiem ara que existeix un punt fix. Prenem un element \(x\) de \(X\) i considerem la successió \(\{T^{n}(x)\}_{n\in\mathbb{N}}\). Sigui \(r\) un natural. Aleshores tenim que per a tot \(n\) natural
 			\begin{align*}
 				\distancia(T^{n+r}(x),T^{n}(x))&\leq k\distancia(T^{n+r-1}(x),T^{n-1}(x))\tag{\myref{thm:les aplicacions contractives tenen un únic punt fix:eq1}}\\
 				&\leq k^{2}\distancia(T^{n+r-2}(x),T^{n-2}(x))\tag{\myref{thm:les aplicacions contractives tenen un únic punt fix:eq1}}\\
@@ -179,7 +179,7 @@
 			
 			Considerem el límit
 			\[\lim_{n\to\infty}T(T^{n}(x)).\]
-			Com que, per hipòtesi, \(T\) és contínua, tenim que %REF
+			Com que, per l'observació \myref{obs:les aplicacions contractives són uniformement contínues}, \(T\) és contínua, tenim que %REF
 			\[\lim_{n\to\infty}T(T^{n}(x))=T\left(\lim_{n\to\infty}T^{n}(x)\right)\]
 			i per \eqref{thm:les aplicacions contractives tenen un únic punt fix:eq2} trobem que
 			\[\lim_{n\to\infty}T(T^{n}(x))=T(p).\]
