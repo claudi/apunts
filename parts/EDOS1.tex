@@ -219,7 +219,7 @@
 	\subsection{El Teorema de Picard}
 	\begin{definition}[Funció Lipschitz respecte la segona variable]
 		\labelname{funció Lipschitz respecte la segona variable}\label{def:funció Lipschitz respecte la segona variable}
-		Siguin \(\Omega=\mathbb{R}\times\mathbb{R}^{n}\) un conjunt, \(K>0\) un real i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció tal que
+		Siguin \(\Omega=\mathbb{R}\times\mathbb{R}^{n}\) un conjunt, \(K\geq0\) un real i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció tal que
 		\[\norm{f(t,x)-f(t,y)}\leq K\norm{x-y}\]
 		per a tot \((t,x)\) i \((t,y)\) de \(\Omega\). Aleshores direm que \(f\) és Lipschitz respecte la segona variable.
 	\end{definition}
@@ -229,7 +229,7 @@
 		\[M=\max_{(t,x)\in\Omega}\norm{f(t,x)}.\]
 		Aleshores el problema de Cauchy
 		\[\begin{cases*}
-			\displaystyle\frac{\partial u(x)}{\partial x}=f(t,x) \\
+			\displaystyle\frac{\partial u(x)}{\partial x}=f(t,u(x)) \\
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases*}\]
 		té una única solució sobre l'interval
@@ -254,7 +254,7 @@
 			\[\norm{T(u(x))(t)-x_{0}}\leq b.\]
 			Per la definició de \myref{def:bola} trobem que \(T(u(x))(t)\) és un element de \(\overline{\bola}(x_{0},b)\), i per tant \(T(u(x))\) és un element de \(X\) per a tot \(u(x)\) de \(X\).
 			
-			Per hipòtesi tenim que \(f\) és Lipschitz respecte la segona variable, i per la definició de \myref{def:funció Lipschitz respecte la segona variable} trobem que existeix un real \(K>0\) tal que
+			Per hipòtesi tenim que \(f\) és Lipschitz respecte la segona variable, i per la definició de \myref{def:funció Lipschitz respecte la segona variable} trobem que existeix un real \(K\geq0\) tal que
 			\begin{equation}
 				\label{thm:Teorema de Picard:eq1}
 				\norm{f(t,x)-f(t,y)}\leq K\norm{x-y}.
@@ -388,7 +388,7 @@
 		\labelname{Teorema de Peano}\label{thm:Teorema de Peano}
 		Siguin \(a\), \(b\) i \(t_{0}\) dos reals, \(x_{0}\) un punt de \(\mathbb{R}^{n}\), \(\Omega=[t_{0}-a,t_{0}+a]\times\overline{\bola}(x_{0},b)\) un conjunt, \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i \(M\) un real tal que \(\norm{f(t,x)}<M\) per a tot \((t,x)\) de \(\Omega\). Aleshores el problema de Cauchy
 		\[\begin{cases*}
-			\displaystyle\frac{\partial u(x)}{\partial x}=f(t,x) \\
+			\displaystyle\frac{\partial u(x)}{\partial x}=f(t,u(x)) \\
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases*}\]
 		té una única solució sobre l'interval
@@ -397,6 +397,18 @@
 			% https://arxiv.org/pdf/1202.1152.pdf
 		\end{proof}
 	\end{theorem}
+	\begin{corollary}
+		Siguin \(\Omega\subset\mathbb{R}\times\mathbb{R}^{n}\) un obert, \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i \(K\) un compacte de \(\Omega\). Aleshores existeix un real \(\alpha>0\) tal que per a tot punt \((t_{0},x_{0})\) de \(K\) el problema
+		\[\begin{cases*}
+			\displaystyle \frac{\partial u(x)}{\partial x}=f(t,u(x)) \\
+			\displaystyle x(t_{0})=x_{0}
+		\end{cases*}\]
+		té solució sobre l'interval
+		\[\left[t_{0}-a,t_{0}+a\right].\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{corollary}
 	
 	
 	
@@ -404,7 +416,7 @@
 	
 	
 	
-	
+	\begin{comment}
 	\begin{definition}[Equació diferencial ordinària d'ordre \(n\)]
 		\labelname{equació diferencial ordinària d'odre \ensuremath{n}}\label{def:equació diferencial ordinària d'ordre n}
 		\labelname{solució de l'equació diferencial ordinària}\label{def:solució de l'equació diferencial ordinària}
@@ -606,6 +618,7 @@
 			\[u(x)=\left(x_{0}+\int_{t_{0}}^{t}b(s)e^{-\int_{t_{0}}^{s}a(\tau)\diff \tau}\diff s\right)e^{\int_{t_{0}}^{x}a(s)\diff s}.\qedhere\]
 		\end{proof}
 	\end{proposition}
+	\end{comment}
 %	\printbibliography
 \end{document}
 
