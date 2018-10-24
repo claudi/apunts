@@ -418,6 +418,34 @@
 		\label{obs:la composició d'aplicacions contínues és contínua}
 		La composició d'aplicacions contínues és contínua.
 	\end{observation}
+	\begin{example}
+		\label{ex:les esferes són tancats}
+		Considerem
+		\[\esfera^{n}=\{x\in\mathbb{R}^{n+1}\mid\norm{x}=1\}.\]
+		Volem veure que \(\esfera^{n}\) és un tancat de \(\mathbb{R}^{n+1}\).
+		\begin{solution}
+			Definim l'aplicació
+			\begin{align*}
+				f:\mathbb{R}^{n+1}&\longrightarrow\mathbb{R} \\
+				x&\longmapsto\norm{x}.
+			\end{align*}
+			\begin{comment}
+				Veiem que \(f\) és una aplicació tancada. Sigui \(\tancat{C}\) un tancat de \(\mathbb{R}^{n+1}\) i considerem el conjunt
+				\[\tancat{K}=\{f(x)\in\mathbb{R}\mid x\in\tancat{C}\}.\]
+				Tenim que \(\tancat{K}\) és un tancat de \(\mathbb{R}\), ja que si \(y\) és un element de \(\tancat{K}\), aleshores \(y\neq f(x)\) per a tot \(x\) de \(\obert{C}\), i per tant existeix un real \(d>0\) tal que
+				\[d=\min_{x\in\tancat{C}}\abs{f(x)-y},\]
+				i per tant tenim que per a tot \(y\) de \(\mathbb{R}\setminus\tancat{K}\) existeix una bola \(\bola(y,d)\) tal que \(\bola(y,d)\cap\tancat{K}=\emptyset\), i per la definició d'\myref{def:obert espai mètric} trobem que \(\mathbb{R}\setminus\tancat{K}\) és un obert de \(\mathbb{R}\). Aleshores per la definició de \myref{def:tancat} trobem que \(\tancat{K}\) és un tancat, i per la definició de \myref{def:aplicació tancada} trobem que \(f\) és una aplicació tancada.
+				
+				Ara bé, tenim que \(\{1\}\) és un tancat de \(\mathbb{R}\)
+			\end{comment}
+			Veiem que \(f\) és una aplicació contínua. Sigui \(\obert{V}\) un obert de \(\mathbb{R}\) i considerem el conjunt
+			\begin{equation}
+				\label{ex:les esferes són tancats:eq1}
+				\obert{U}=\{x\in\mathbb{R}^{n+1}\mid f(x)\in\obert{V}\}.
+			\end{equation}
+			Prenem un element \(x\) de \(\mathbb{R}^{n+1}\). Com que, per hipòtesi, tenim que \(\obert{V}\) és un obert de \(\mathbb{R}\), per la definició de \myref{def:obert espai mètric} tenim que existeix un real \(\delta>0\) tal que la bola \(\bola(f(x),\delta)\) és un subconjunt de \(\mathbb{R}\), i per la definició \eqref{ex:les esferes són tancats:eq1} tenim que existeix un element \(y\) de \(\mathbb{R}^{n+1}\) tal que \(f(y)\) és un element de \(\bola(f(x),\delta)\), i per la definició de \myref{def:bola} trobem que \(\abs{f(x)-f(y)}<\delta\).
+		\end{solution}
+	\end{example}
 	\subsection{Homeomorfismes entre topologies}
 	\begin{definition}[Homeomorfisme]
 		\labelname{homeomorfisme entre topologies}\label{def:homeomorfisme entre topologies}
@@ -480,16 +508,58 @@
 			i per la definició de \myref{def:topologia} tenim que \(\bigcap_{i=1}^{n}\obert{W}_{i}\) és un obert de \(X\), i per la definició \eqref{prop:topologia induida per un subconjunt:eq1} trobem que \(\obert{U}\) pertany a \(\tau_{A}\). Per tant per la definició d'\myref{def:espai topològic} trobem que \(A\) amb la topologia \(\tau_{A}\) és un espai topològic.
 		\end{proof}
 	\end{proposition}
-	\begin{notation}[Topologia induïda per un subconjunt]
-		\labelname{topologia induïda per un subconjunt}\label{notation:topologia induida per un subconjunt}
+	\begin{definition}[Topologia induïda per un subconjunt]
+		\labelname{topologia induïda per un subconjunt}\label{def:topologia induida per un subconjunt}
 		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(A\) un subconjunt de \(X\). Aleshores denotem
-		\[\tau_{A}=\{\obert{U}\subseteq A\mid\text{Existeix un obert }\obert{W}\text{ de }X\text{ tal que }\obert{U}=\obert{W}\cap A\}.\]
-	\end{notation}
+		\[\tau_{A}=\{\obert{U}\subseteq A\mid\text{Existeix un obert }\obert{W}\text{ de }X\text{ tal que }\obert{U}=\obert{W}\cap A\}\]
+		i direm que \(\tau_{A}\) és la topologia induïda per \(A\).
+		
+		Aquesta definició té sentit per la proposició \myref{prop:topologia induida per un subconjunt}.
+	\end{definition}
 	\begin{definition}[Subespai topològic]
 		\labelname{subespai topològic}\label{def:subespai topològic}
 		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(A\) un subconjunt de \(X\). Aleshores direm que \(A\) amb la topologia \(\tau_{A}\) és un subespai topològic de \(X\).
 	\end{definition}
-	propietats i exemples. exemples i propietats
+	\begin{proposition}
+		\label{prop:C és un tancat si i només si existeix un tancat K tal que l'intersecció de A i K és C}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(\tau_{A}\) la topologia induïda per un subconjunt \(A\) de \(X\). Aleshores \(\tancat{C}\) és un tancat de \(A\) si i només si existeix un tancat \(\tancat{K}\) de \(\tau\) tal que \(\tancat{C}=A\cap\tancat{K}\).
+		\begin{proof}
+			Comencem veient que la condició és suficient (\(\implica\)). Sigui \(\tancat{C}\) un tancat de \(A\). Per la definició de \myref{def:tancat} tenim que això és equivalent a que \(A\setminus\tancat{C}\) és un obert. Per la definició de \myref{def:topologia induida per un subconjunt} tenim que això és si i només si existeix un obert \(\obert{U}\) de \(X\) tal que \(A\setminus\tancat{C}=\obert{U}\cap A\). Ara bé, tenim que \(\obert{U}=X\setminus(X\setminus\obert{U})\), i per la definició de \myref{def:tancat} tenim que \(\tancat{K}=X\setminus\obert{U}\) és un tancat, i tenim que
+			\begin{align*}
+				\tancat{C}&=A\setminus A\setminus\tancat{C} \\
+				&=A\setminus(\obert{U}\cap A) \\
+				&=A\setminus\obert{U} \\
+				&=A\cap(X\setminus\obert{U}) \\
+				&=A\cap\tancat{K}
+			\end{align*}
+			i hem acabat.
+			
+			Veiem ara que la condició és necessària (\(\implicatper\)). Sigui \(\tancat{K}\) un tancat de \(X\). Prenem \(\tancat{C}=A\cap\tancat{K}\). Aleshores tenim
+			\begin{align*}
+				A\setminus\tancat{C}&=A\setminus(A\cap\tancat{K}) \\
+				&=A\cap(X\setminus\tancat{K}).
+			\end{align*}
+			Ara bé, per hipòtesi, tenim que \(\tancat{K}\) és un tancat de \(X\), i per tant \(X\setminus\tancat{K}\) és un obert, i per la definició de \myref{def:topologia induida per un subconjunt} trobem que \(A\cap(X\setminus\tancat{K})\) és un obert de \(A\), i per la definició de \myref{def:tancat} tenim que \(A\setminus\tancat{C}\) és un tancat de \(A\), com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:un subconjunt d'un subespai topològic obert és un obert si i només si també és un obert de la topologia}
+		Siguin \(X\) amb la topologia \(\tau\) una espai topològic, \(\obert{A}\) un obert de \(X\), \(\tau_{A}\) la topologia induïda per \(A\) i \(\obert{U}\) un subconjunt de \(A\). Aleshores \(\obert{U}\) és un obert de \(A\) si i només si \(\obert{U}\) és un obert de \(X\).
+		\begin{proof}
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(\obert{U}\) és un obert de \(A\). Per la definició de \myref{def:topologia induida per un subconjunt} tenim que existeix un obert \(\obert{W}\) de \(X\) tal que \(\obert{U}=A\cap\obert{W}\). Ara bé, com que, per hipòtesi, \(A\) i \(\obert{W}\) són dos oberts de \(X\) per la definició de \myref{def:topologia} trobem que \(\obert{U}\) és un obert de \(X\).
+			
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que \(\obert{U}\) és un obert de \(X\). Com que, per la definició de \myref{def:topologia}, \(\obert{U}\) és un subconjunt de \(A\), tenim que \(\obert{U}=A\cap\obert{U}\), i per la definició de \myref{def:topologia induida per un subconjunt} trobem que \(\obert{U}\) és un obert de \(A\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:un subconjunt d'un subespai topològic és un tancat si i només si també és un tancat de la topologia}
+		Siguin \(X\) amb la topologia \(\tau\) una espai topològic, \(\tancat{A}\) un tancat de \(X\), \(\tau_{A}\) la topologia induïda per \(A\) i \(\tancat{C}\) un subconjunt de \(A\). Aleshores \(\tancat{C}\) és un tancat de \(A\) si i només si \(\tancat{C}\) és un tancat de \(X\).
+		\begin{proof}
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(\tancat{C}\) és un tancat de \(A\). Per la proposició \myref{prop:C és un tancat si i només si existeix un tancat K tal que l'intersecció de A i K és C} tenim que existeix un tancat \(tancat{K}\) de \(X\) tal que \(\tancat{C}=A\cap\tancat{K}\). Ara bé, com que \(A\) i \(\tancat{K}\) són dos tancats de \(X\), pel Teorema \myref{thm:equivalència obert tancat definició de topologia} trobem que \(\tancat{C}\) és un tancat de \(X\).
+			
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que \(\tancat{C}\) és un tancat de \(X\). Com que, per la definició de \myref{def:topologia}, \(\tancat{C}\) és un subconjunt de \(A\), tenim que \(\tancat{C}=A\cap\tancat{C}\), i per la definició de \myref{def:topologia induida per un subconjunt} trobem que \(\tancat{C}\) és un tancat de \(A\).
+		\end{proof}
+	\end{proposition}
 	
 %	\begin{definition}[Aplicació contínua i homeomorfisme]
 %		\labelname{aplicació contínua}\label{def:aplicació contínua}
