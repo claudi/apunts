@@ -299,7 +299,7 @@
 	\end{theorem}
 	\begin{corollary}
 		\label{cor:Teorema de Picard}
-		Siguin \(I=[a,b]\) un interval de \(\mathbb{R}\), \(\Omega=I\times\mathbb{R}^{n}\) un conjunt, \((t_{0},x_{0})\) un element de \(\Omega\) i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i Lipschitz respecte la segona variable. Aleshores el problema de Cauchy
+		Siguin \(I\) un interval tancat de \(\mathbb{R}\), \(\Omega=I\times\mathbb{R}^{n}\) un conjunt, \((t_{0},x_{0})\) un element de \(\Omega\) i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i Lipschitz respecte la segona variable. Aleshores el problema de Cauchy
 		\[\begin{cases*}
 			\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}.
@@ -410,9 +410,67 @@
 		\end{proof}
 	\end{corollary}
 	
+	% Veure que si \(f\) és decreixent (o creixent també?) en \(u(x)\) i contínua el problema de Cauchy té solució única. Xat amb l'Aure
 	
-	
-	
+	\subsection{Solucions improrrogables}
+	\begin{definition}[Conjunt de solucions d'un problema de Cauchy]
+		\labelname{conjunt de solucions d'un problema de Cauchy}\label{def:conjunt de solucions d'un problema de Cauchy}
+		Sigui
+		\begin{equation}
+			\label{def:conjunt de solucions d'un problema de Cauchy:eq1}
+			\begin{cases*}
+				\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(x)) \\
+				\displaystyle u(t_{0})=x_{0}
+			\end{cases*}
+		\end{equation}
+		un problema de Cauchy. Aleshores definirem
+		\[A(t_{0},x_{0})=\{(u,I)\mid u\text{ és solució del problema de Cauchy en l'interval }I\}\]
+		con el conjunt de solucions del problema de Cauchy \eqref{def:conjunt de solucions d'un problema de Cauchy:eq1}.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:la prolongació és una relació d'ordre}
+		Siguin \(A(t_{0},x_{0})\) el conjunt de solucions d'un problema de Cauchy i \(\leq\) una relació tal que per a dos elements \((u,I)\) i \((v,J)\) de \(A(t_{0},x_{0})\) tenim
+		\[(u,I)\geq(v,J)\]
+		si i només si
+		\[J\subseteq I\quad\text{i}\quad u(x)=v(x)\text{ per a tot }x\in J.\]
+		Aleshores la relació \(\leq\) és una relació d'ordre.
+		\begin{proof}
+			Comprovem les propietats de la definició de relació d'ordre:
+			\begin{enumerate}
+				\item Reflexiva: Pel \myref{thm:doble inclusió} tenim que \(I\subseteq I\) i per la definició d'\myref{def:aplicació} tenim que \(u(x)=u(x)\) per a tot \(x\) de \(I\). Per tant trobem \((u,I)\geq(u,I)\).
+				
+				\item Antisimètrica: Suposem que \((u,I)\geq(v,J)\) i \((v,J)\geq(u,I)\). Aleshores tenim que \(J\subseteq I\) i \(I\subseteq J\), i pel \myref{thm:doble inclusió} trobem que \(I=J\). També tenim que \(u(x)=v(x)\) per a tot \(x\) de \(I\), i per la definició d'\myref{def:aplicació} trobem que \(u=v\), i per tant \((u,I)=(v,J)\).
+				
+				\item Transitiva: Siguin \((u_{1},I_{1})\), \((u_{2},I_{2})\) i \((u_{3},I_{3})\) tres elements de \(A(t_{0},x_{0})\) tals que \((u_{1},I_{1})\geq(u_{2},I_{2})\) i \((u_{2},I_{2})\geq(u_{3},I_{3})\). Aleshores tenim que \(I_{3}\subseteq I_{2}\) i \(I_{2}\subseteq I_{1}\), i per la definició de \myref{def:subconjunt} trobem que \(I_{3}\subseteq I_{1}\).
+				
+				També tenim que \(u_{1}(x)=u_{2}(x)\) per a tot \(x\) de \(I_{2}\), i \(u_{2}(x)=u_{3}(x)\) per a tot \(x\) de \(I_{3}\). Ara bé, com que \(I_{3}\) és un subconjunt de \(I_{1}\) tenim que \(u_{1}(x)=u_{2}(x)\) per a tot \(x\) de \(I_{3}\), i per tant \(u_{1}(x)=u_{3}(x)\) per a tot \(x\) de \(I_{3}\), i trobem que \((u_{1},I_{1})\geq(u_{3},I_{3})\).
+			\end{enumerate}
+			I per la definició de \myref{def:relació d'ordre} hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Prolongació]
+		\labelname{prolongació}\label{def:prolongació}
+		\labelname{solució improrrogable}\label{def:improrrogable}
+		Siguin \(A(t_{0},x_{0})\) el conjunt de solucions d'un problema de Cauchy i \((u,I)\) i \((v,J)\) dos elements de \(A(t_{0},x_{0})\) tals que
+		\[J\subseteq I\quad\text{i}\quad u(x)=v(x)\text{ per a tot }x\in J.\]
+		Aleshores direm que \((u,I)\) és una prolongació de \((v,J)\).
+		
+		Si \((u,I)\) és un element maximal direm que \((u,I)\) és una solució improrrogable.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:existeixen solucions improrrogables}
+		Sigui \(A(t_{0},x_{0})\) el conjunt de solucions d'un problema de Cauchy. Aleshores existeix un element \((u,I)\) de \(A(t_{0},x_{0})\) tal que \((u,I)\) és una solució improrrogable.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:les solucions improrrogables estàn definides sobre intervals oberts}
+		Sigui \(A(t_{0},x_{0})\) el conjunt de solucions d'un problema de Cauchy i \((u,I)\) una solució improrrogable. Aleshores \(I\) és un interval obert.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
 	
 	
 	

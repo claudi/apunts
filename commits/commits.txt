@@ -1,0 +1,4 @@
+Arreglada la notació a EDOS I.
+Afegida teoria a topologia i començat un exemple a la secció d'aplicacions contínues.
+Hi havia una cosa fora d'ordre a la secció dels nombres naturals a fonaments. Ja no ho està.
+Afegits alguns enunciats a EDOS I.
