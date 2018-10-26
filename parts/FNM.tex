@@ -519,7 +519,7 @@
 		Aleshores direm que \(\mathbb{N}\) és el conjunt dels nombres naturals, i anomenarem els elements de \(\mathbb{N}\) nombres naturals.
 	\end{definition}
 	\begin{lemma}
-		\label{lemma:primer element}
+		\label{lema:primer element}
 		\(\mathbb{N}=\{1,S(1),S(S(1)),S(S(S(1))),\dots\}\).
 		\begin{proof}
 			Ho farem pel principi de doble inclusió. Per la definició de \myref{def:nombres naturals} tenim que si \(n\in\mathbb{N}\), aleshores \(S(n)\in\mathbb{N}\). Per tant trobem que \(\mathbb{N}\supseteq\{1,S(1),S(S(1)),S(S(S(1))),\dots\}\).
@@ -530,7 +530,7 @@
 	\begin{notation}
 		Denotarem \(S(1)=2\), \(S(2)=3\), \(S(3)=4\), etc. Per tant
 		\[\mathbb{N}=\{1,2,3,4\dots\}.\]
-		Això té sentit pel lema \myref{lemma:primer element}.
+		Això té sentit pel lema \myref{lema:primer element}.
 	\end{notation}
 	\begin{notation}
 		Denotarem l'acció d'aplicar l'aplicació \(S\) al nombre natural \(n\) un nombre natural \(k\) de vegades com \(S^{k}(n)\).
@@ -539,7 +539,7 @@
 		\labelname{Teorema del primer element}\label{thm:primer element}
 		Sigui \(A\) un subconjunt no buit de \(\mathbb{N}\). Aleshores existeix \(a\in A\) tal que no existeixi cap \(b\in A\) satisfent \(S(b)=a\).
 		\begin{proof}
-			Sigui \(a\) un element de \(A\). Aleshores pel lemma \myref{lemma:primer element} tenim que \(a=S^{k}(1)\) per a cert \(k\in\mathbb{N}\). Si \(1\in A\) hem acabat per la definició de \myref{def:nombres naturals}. Suposem doncs que \(1\notin A\). Si \(S(1)\in A\) també hem vist el que volíem. Podem iterar aquest procés un màxim de \(k\) vegades, ja que \(S^{k}(1)\) és, per hipòtesi, un nombre natural, i per tant seria \(a\) un element de \(A\) tal que no existeix \(b\) satisfent \(S(b)=a\).
+			Sigui \(a\) un element de \(A\). Aleshores pel lema \myref{lema:primer element} tenim que \(a=S^{k}(1)\) per a cert \(k\in\mathbb{N}\). Si \(1\in A\) hem acabat per la definició de \myref{def:nombres naturals}. Suposem doncs que \(1\notin A\). Si \(S(1)\in A\) també hem vist el que volíem. Podem iterar aquest procés un màxim de \(k\) vegades, ja que \(S^{k}(1)\) és, per hipòtesi, un nombre natural, i per tant seria \(a\) un element de \(A\) tal que no existeix \(b\) satisfent \(S(b)=a\).
 		\end{proof}
 	\end{theorem}
 	\begin{definition}[Primer element]
@@ -559,7 +559,7 @@
 		\begin{proof}
 			Definim el conjunt
 			\[A=\{n\in\mathbb{N}\mid R(n)\text{ és falsa}\}.\]
-			Per la definició de \myref{def:subconjunt} tenim que \(A\subseteq\mathbb{N}\). Suposem que \(A\) és un conjunt no buit. Aleshores pel \myref{thm:primer element} tenim que existeix un primer element \(a\) de \(A\). Ara bé, pel punt \myref{enum:thm:principi d'inducció 1} tenim que \(a\neq1\). Per tant, pel lemma \myref{lemma:primer element} tenim que \(a=S(b)\) per a cert \(b\in\mathbb{N}\). Ara bé, com que \(a\) és el primer element de \(A\), per la definició de \myref{def:primer element} tenim que \(b\notin A\), i per tant \(P(b)\) és vertadera. Ara bé, pel punt \myref{enum:thm:principi d'inducció 2} tenim que \(P(S(b))=P(a)\) és vertadera, i per tant \(a\notin A\), arribant a contradicció. Per tant trobem que \(A\) és el conjunt buit, i trobem que \(R(n)\) és vertadera per a tot \(n\in\mathbb{N}\), com volíem veure.
+			Per la definició de \myref{def:subconjunt} tenim que \(A\subseteq\mathbb{N}\). Suposem que \(A\) és un conjunt no buit. Aleshores pel \myref{thm:primer element} tenim que existeix un primer element \(a\) de \(A\). Ara bé, pel punt \myref{enum:thm:principi d'inducció 1} tenim que \(a\neq1\). Per tant, pel lema \myref{lema:primer element} tenim que \(a=S(b)\) per a cert \(b\in\mathbb{N}\). Ara bé, com que \(a\) és el primer element de \(A\), per la definició de \myref{def:primer element} tenim que \(b\notin A\), i per tant \(P(b)\) és vertadera. Ara bé, pel punt \myref{enum:thm:principi d'inducció 2} tenim que \(P(S(b))=P(a)\) és vertadera, i per tant \(a\notin A\), arribant a contradicció. Per tant trobem que \(A\) és el conjunt buit, i trobem que \(R(n)\) és vertadera per a tot \(n\in\mathbb{N}\), com volíem veure.
 		\end{proof}
 	\end{theorem}
 	\subsection{Operacions sobre els nombres naturals} % https://math.stackexchange.com/questions/60432/how-to-prove-cancellation-property-of-integer-multiplication?rq=1
@@ -600,7 +600,7 @@
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
-		\label{prop:lemma a commutativitat N per la suma}
+		\label{prop:lema a commutativitat N per la suma}
 		Siguin \(x,y\) dos nombres naturals. Aleshores
 		\[x+S(y)=S(x)+y.\]
 		\begin{proof}
@@ -634,7 +634,7 @@
 			
 			Tenim que \(1\in B\), ja que \(1+1=1+1\). També tenim que si \(y\in B\), aleshores \(S(y)\in B\). Efectivament,
 			\begin{align*}
-			S(y)+1&=y+S(1)\tag{Proposició \myref{prop:lemma a commutativitat N per la suma}}\\
+			S(y)+1&=y+S(1)\tag{Proposició \myref{prop:lema a commutativitat N per la suma}}\\
 			&=S(y+1)\tag{\myref{def:suma de nombres naturals}}\\
 			&=S(1+y)\tag{Per hipòtesi}\\
 			&=1+S(y).\tag{\myref{def:suma de nombres naturals}}
@@ -650,7 +650,7 @@
 			x+S(y)&=S(x+y)\tag{\myref{def:suma de nombres naturals}}\\
 			&=S(y+x)\tag{Per hipòtesi}\\
 			&=y+S(x).\tag{\myref{def:suma de nombres naturals}}\\
-			&=S(y)+x.\tag{Proposició \myref{prop:lemma a commutativitat N per la suma}}
+			&=S(y)+x.\tag{Proposició \myref{prop:lema a commutativitat N per la suma}}
 			\end{align*}
 			Ara bé. Per la definició de \myref{def:nombres naturals}, tenim que si \(A\) és un conjunt tal que \(1\in A\) i tal que \(S(y)\in A\) per a tot \(y\in A\), aleshores \(\mathbb{N}\subseteq A\), i pel \myref{thm:doble inclusió} tenim que \(A=\mathbb{N}\).
 		\end{proof}
@@ -1091,7 +1091,7 @@
 	\end{proposition}
 	\subsection{La divisió euclidiana i l'identitat de Bézout}
 	\begin{lemma}
-		\label{lemma:criteri de divisibilitat d'Euclides}
+		\label{lema:criteri de divisibilitat d'Euclides}
 		Siguin \(D\) i \(d\) nombres enters amb \(D,d>0\). Aleshores existeixen dos únics \(q\), \(r\) enters tals que
 		\[D=dq+r\]
 		amb \(0\leq r<d\).
@@ -1127,9 +1127,9 @@
 			\[0=d(q_{1}-q_{2})\]
 			i com que, per hipòtesi, \(d\neq0\), pel Teorema \myref{thm:Z és un DI} ha de ser \(q_{1}-q_{2}=0\), i de nou per l'observació \myref{obs:elements que es tatxen son iguals} tenim \(q_{1}=q_{2}\). Per tant la unicitat queda demostrada.
 			
-			Veiem ara que existeixen. Efectivament, si \(D,d>0\) l'enunciat és cert pel lemma \myref{lemma:criteri de divisibilitat d'Euclides}.
+			Veiem ara que existeixen. Efectivament, si \(D,d>0\) l'enunciat és cert pel lema \myref{lema:criteri de divisibilitat d'Euclides}.
 			
-			Si \(D<0\) i \(d>0\) definim \(D'=-D\). Aleshores \(D'>0\), i pel lemma \myref{lemma:criteri de divisibilitat d'Euclides} tenim que existeixen \(q'\) i \(r'\) enters tals que
+			Si \(D<0\) i \(d>0\) definim \(D'=-D\). Aleshores \(D'>0\), i pel lema \myref{lema:criteri de divisibilitat d'Euclides} tenim que existeixen \(q'\) i \(r'\) enters tals que
 			\[D'=dq'+r'\]
 			amb \(0\leq r'<d\). I per tant
 			\begin{align*}
@@ -1235,7 +1235,7 @@
 		\end{proof}
 	\end{proposition}
 	\begin{lemma}
-		\label{lemma:thm:Teorema Fonamental de l'Aritmètica 1}
+		\label{lema:thm:Teorema Fonamental de l'Aritmètica 1}
 		Sigui \(a\) un enter amb \(a>1\). Aleshores existeixen \(p_{1},\dots,p_{n}\) primers tals que
 		\[a=p_{1}^{r_{n}}\cdots p_{n}^{r_{n}}.\]
 		\begin{proof}
@@ -1251,7 +1251,7 @@
 		\end{proof}
 	\end{lemma}
 	\begin{lemma}
-		\label{lemma:thm:Teorema Fonamental de l'Aritmètica 2}
+		\label{lema:thm:Teorema Fonamental de l'Aritmètica 2}
 		Siguin \(a>1\) un enter i \(p_{1},\dots,p_{n}\) i \(q_{1},\dots,q_{r}\) primers satisfent \(p_{1}\leq\dots\leq p_{n}\), \(q_{1}\leq\dots\leq q_{r}\) tals que
 		\[a=p_{1}\cdots p_{n}\quad\text{i}\quad a=q_{1}\cdots q_{r}.\]
 		Aleshores \(n=r\) i \(p_{i}=q_{i}\) per a tot \(i\in\{1,\dots,n\}\).
@@ -1273,7 +1273,7 @@
 		\label{Teorema Fonomental de l'Aritmètica}\label{thm:Teorema Fonamental de l'Aritmètica}
 		Sigui \(a>1\) un enter. Aleshores existeixen \(p_{1},\dots,p_{n}\) primers amb \(p_{1}\geq p_{2}\geq\dots\geq p_{n}\) únics tals que \(a=p_{1}\cdots p_{n}\).
 		\begin{proof}
-			És conseqüència del lemma \myref{lemma:thm:Teorema Fonamental de l'Aritmètica 1} i el lemma \myref{lemma:thm:Teorema Fonamental de l'Aritmètica 2}.
+			És conseqüència del lema \myref{lema:thm:Teorema Fonamental de l'Aritmètica 1} i el lema \myref{lema:thm:Teorema Fonamental de l'Aritmètica 2}.
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}[Teorema d'Euclides]
@@ -1291,7 +1291,7 @@
 			
 			Per tant pel Teorema \myref{thm:condició equivalent a coprimers per Bézout} i la definició de \myref{def:coprimers} trobem que \(p\) i \(p_{j}\) són coprimers per a tot \(j\in\{1,\dots,m\}\).
 			
-			Si \(p\) és primer hem acabat, ja que \(p\) és més gran que \(p_{1},\dots,p_{n}\), i per tant diferent. Ara bé, si \(p\) no és primer pel lemma \myref{lemma:thm:Teorema Fonamental de l'Aritmètica 1} tenim que existeix un primer \(p'\) tal que \(p'\divides p\), però hem vist que \(p_{1}\,dots,p_{m}\ndivides p\), per tant \(p'\) és diferent de \(p_{1},\dots,p_{m}\) i hem acabat.
+			Si \(p\) és primer hem acabat, ja que \(p\) és més gran que \(p_{1},\dots,p_{n}\), i per tant diferent. Ara bé, si \(p\) no és primer pel lema \myref{lema:thm:Teorema Fonamental de l'Aritmètica 1} tenim que existeix un primer \(p'\) tal que \(p'\divides p\), però hem vist que \(p_{1}\,dots,p_{m}\ndivides p\), per tant \(p'\) és diferent de \(p_{1},\dots,p_{m}\) i hem acabat.
 		\end{proof}
 	\end{theorem}
 	\section{Els nombres modulars}
@@ -1485,7 +1485,7 @@
 	\end{theorem}
 	\subsection{El Teorema xinès de les restes}
 	\begin{lemma}
-		\label{lemma:thm:Teorema xinès de les restes}
+		\label{lema:thm:Teorema xinès de les restes}
 		Siguin \(m_{1},\dots,m_{n}\) naturals més grans que \(1\), \(a_{1},\dots,a_{n}\) enters i \(x_{0}\) un enter tal que
 		\[\begin{cases}
 			x_{0}\equiv a_{1}\pmod{m_{1}}\\
@@ -1534,7 +1534,7 @@
 			Aleshores tenim per la definició de \myref{def:nombres modulars} tenim que
 			\[x_{0}\equiv M_{i}b_{i}\pmod{m_{i}}.\]
 			
-			Per tant, pel lemma \myref{lemma:thm:Teorema xinès de les restes} tenim que
+			Per tant, pel lema \myref{lema:thm:Teorema xinès de les restes} tenim que
 			\[x=x_{0}+\lambda M\]
 			amb \(M=\mcm(m_{1},\dots,m_{n})\) són les solucions del sistema, i per la definició de \myref{def:nombres modulars} trobem que \(x=x_{0}\) i per tant és única.
 		\end{proof}
@@ -1606,7 +1606,7 @@
 		\end{proof}
 	\end{proposition}
 	\begin{lemma}
-		\label{lemma:permutacions disjuntes commuten}
+		\label{lema:permutacions disjuntes commuten}
 		Siguin \(X\) un conjunt no buit i \(\tau\) una permutació de \(\GrupSimetric_{X}\). Aleshores
 		\[x\in\Mou(\sigma)\sii\sigma(x)\in\Mou(\sigma).\]
 		\begin{proof}
@@ -1620,9 +1620,9 @@
 		\begin{proof}
 			Per la definició de \myref{def:permutacions disjuntes} i la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que, per hipòtesi, \(\Mou(\sigma)\cap\Mou(\tau)=\emptyset\). Per tant, per a tot \(x\in X\) tenim o bé \(x\in\Mou(\sigma)\), o bé \(x\in\Mou(\tau)\) o bé \(x\notin\Mou(\sigma)\cup\Mou(\tau)\). Estudiem els cassos.
 			
-			Suposem que \(x\in\Mou(\sigma)\), i per tant \(x\notin\Mou(\tau)\). Per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que \(\tau(x)=x\) i per tant \(\sigma(\tau(x))=\sigma(x)\). Ara bé, pel lemma \myref{lemma:permutacions disjuntes commuten} tenim que \(\sigma(x)\in\Mou(\sigma)\), d'on trobem que \(\sigma(x)\notin\Mou(\tau)\), ja que, per hipòtesi, \(\Mou(\sigma)\cap\Mou(\tau)=\emptyset\), i per tant \(\tau(\sigma(x))=\sigma(x)\).
+			Suposem que \(x\in\Mou(\sigma)\), i per tant \(x\notin\Mou(\tau)\). Per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que \(\tau(x)=x\) i per tant \(\sigma(\tau(x))=\sigma(x)\). Ara bé, pel lema \myref{lema:permutacions disjuntes commuten} tenim que \(\sigma(x)\in\Mou(\sigma)\), d'on trobem que \(\sigma(x)\notin\Mou(\tau)\), ja que, per hipòtesi, \(\Mou(\sigma)\cap\Mou(\tau)=\emptyset\), i per tant \(\tau(\sigma(x))=\sigma(x)\).
 			
-			Suposem que \(x\in\Mou(\tau)\), i per tant \(x\notin\Mou(\sigma)\). Per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que \(\sigma(x)=x\) i per tant \(\tau(\sigma(x))=\tau(x)\). Ara bé, pel lemma \myref{lemma:permutacions disjuntes commuten} tenim que \(\tau(x)\in\Mou(\tau)\), d'on trobem que \(\tau(x)\notin\Mou(\sigma)\), ja que, per hipòtesi, \(\Mou(\tau)\cap\Mou(\sigma)=\emptyset\), i per tant \(\sigma(\tau(x))=\tau(x)\). %TODO: revisar copia y pega
+			Suposem que \(x\in\Mou(\tau)\), i per tant \(x\notin\Mou(\sigma)\). Per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que \(\sigma(x)=x\) i per tant \(\tau(\sigma(x))=\tau(x)\). Ara bé, pel lema \myref{lema:permutacions disjuntes commuten} tenim que \(\tau(x)\in\Mou(\tau)\), d'on trobem que \(\tau(x)\notin\Mou(\sigma)\), ja que, per hipòtesi, \(\Mou(\tau)\cap\Mou(\sigma)=\emptyset\), i per tant \(\sigma(\tau(x))=\tau(x)\). %TODO: revisar copia y pega
 			
 			Suposem per acabar que \(x\notin\Mou(\sigma)\cup\Mou(\tau)\). Aleshores tenim que \(\sigma(x)=x\) i \(\tau(x)=x\), i per tant \(\sigma\circ\tau=\tau\circ\sigma\), com volíem veure.
 		\end{proof} % PROPO verure que dues aplicacions són iguals si tenen imatges iguals per antiimatges iguals. I fer referencies.
@@ -1650,8 +1650,8 @@
 		\end{proof}
 	\end{proposition}
 	\begin{lemma}
-		\label{lemma:ordre d'un r-cicle}
-		\label{lemma:inversa d'un r-cicle}
+		\label{lema:ordre d'un r-cicle}
+		\label{lema:inversa d'un r-cicle}
 		Siguin \(X\) un conjunt no buit i \(\sigma\) un \(r\)-cicle de \(\GrupSimetric_{X}\). Aleshores \(r=\min\{k\in\mathbb{N}\mid\sigma^{k}=\Id_{X}\}\).
 		\begin{proof}
 			Per la definició d'\myref{def:r-cicle} tenim que existeixen \(a_{1},\dots,a_{r}\) tals que \(\Mou(\sigma)=\{a_{1},\dots,a_{r}\}\) amb \(\sigma(a_{i})=a_{i+1}\) per a tot \(i\in\{1,\dots,r-1\}\) i \(\sigma(a_{r})=a_{1}\), i per tant \(\sigma^{r}=\Id_{X}\) ja que tenim \(\sigma^{r}(x)=x\) per a tot \(x\in X\). Ara bé, per la proposició \myref{prop:escriure r-cicles amb un representant} tenim que, amb \(a\in\Mou(\sigma)\),
@@ -1664,7 +1664,7 @@
 		Siguin \(X\) un conjunt no buit i \(\sigma\) un \(r\)-cicle de \(\GrupSimetric_{X}\). Aleshores
 		\[\sigma^{-1}=\sigma^{r-1}.\]
 		\begin{proof}
-			Pel lemma \myref{lemma:inversa d'un r-cicle} tenim que \(\sigma^{r}=\Id_{X}\). Aleshores tenim \(\sigma\circ\sigma^{r-1}=\Id_{X}\) i \(\sigma^{r-1}\circ\sigma=\Id_{X}\). Per tant per la definició d'\myref{def:inversa d'una aplicació} trobem que \(\sigma^{-1}=\sigma^{r-1}\).
+			Pel lema \myref{lema:inversa d'un r-cicle} tenim que \(\sigma^{r}=\Id_{X}\). Aleshores tenim \(\sigma\circ\sigma^{r-1}=\Id_{X}\) i \(\sigma^{r-1}\circ\sigma=\Id_{X}\). Per tant per la definició d'\myref{def:inversa d'una aplicació} trobem que \(\sigma^{-1}=\sigma^{r-1}\).
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}[Descomposició de permutacions en cicles disjunts]

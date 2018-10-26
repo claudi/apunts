@@ -134,7 +134,7 @@
 		\end{proof}
 	\end{proposition}
 	\begin{lemma}
-		\label{lemma:solucions úniques en grups a equacions}
+		\label{lema:solucions úniques en grups a equacions}
 		Siguin \(G\) un grup amb l'operació \(\ast\) i \(a,b\) dos elements de \(G\). Aleshores existeixen \(x,y\in G\) únics tals que
 		\[b\ast x=a\quad\text{i}\quad y\ast b=a.\]
 		\begin{proof}
@@ -158,7 +158,7 @@
 			\item\label{enum:definicions alternatives de grup 3} Existeix \(e\in G\) tal que per a tot \(x\in G\) tenim \(x\ast e=x\) i existeix un \(x^{-1}\in G\) tal que \(x\ast x^{-1}=e\).
 		\end{enumerate}
 		\begin{proof}
-			Comencem demostrant \eqref{enum:definicions alternatives de grup 1}\(\implica\)\eqref{enum:definicions alternatives de grup 2}. Suposem que \(G\) és un grup amb l'operació. Veiem que \(G\) no és buit per la definició de \myref{def:grup}, i la segona part és el lemma \myref{lemma:solucions úniques en grups a equacions}.
+			Comencem demostrant \eqref{enum:definicions alternatives de grup 1}\(\implica\)\eqref{enum:definicions alternatives de grup 2}. Suposem que \(G\) és un grup amb l'operació. Veiem que \(G\) no és buit per la definició de \myref{def:grup}, i la segona part és el lema \myref{lema:solucions úniques en grups a equacions}.
 			
 			Demostrem ara \eqref{enum:definicions alternatives de grup 2}\(\implica\)\eqref{enum:definicions alternatives de grup 3}. La primera part es pot veure fixant \(x\in G\). Pel punt \eqref{enum:definicions alternatives de grup 2} tenim que per a cada \(a\in G\) existeix un únic \(b\in G\) tal que
 			\[a\ast b=x,\]
@@ -425,7 +425,7 @@
 		Aquesta definició té sentit per la proposició \myref{prop:grup quocient}.
 	\end{definition}
 	\begin{lemma}
-		\label{lemma:operar en grups és bijectiu}
+		\label{lema:operar en grups és bijectiu}
 		Siguin \(G\) un grup amb l'operació \(\ast\), \(H\) un subgrup de \(G\), \(x\) un element de \(G\) i
 		\begin{align*}
 		f_{x}\colon H&\longrightarrow\{x\}H\\
@@ -455,7 +455,7 @@
 			h&\longmapsto x\ast h
 			\end{align*}
 			
-			Pel lemma \myref{lemma:operar en grups és bijectiu} trobem \(\abs{H}=\abs{\{x\}H}\). Tenim que \(\abs{G}\) és el resultat de multiplicar el número de classes d'equivalència pel nombre d'elements d'una de les classes, és a dir %REFERENCIES fonaments
+			Pel lema \myref{lema:operar en grups és bijectiu} trobem \(\abs{H}=\abs{\{x\}H}\). Tenim que \(\abs{G}\) és el resultat de multiplicar el número de classes d'equivalència pel nombre d'elements d'una de les classes, és a dir %REFERENCIES fonaments
 			\[\abs{G}=\abs{G/H}\abs{H}\]
 			i per tant \(\abs{H}\) divideix \(\abs{G}\).
 		\end{proof}
@@ -773,7 +773,7 @@
 		\end{proof}
 	\end{proposition}
 	\begin{lemma}
-		\label{lemma:Segon Teorema de l'isomorfisme entre grups}
+		\label{lema:Segon Teorema de l'isomorfisme entre grups}
 		Siguin \(G\) un grup amb l'operació \(\ast\), \(H\) un subgrup de \(G\) i \(K\) un subgrup normal de \(G\). Aleshores \(H\cap K\trianglelefteq H\).
 		\begin{proof}
 			Prenem \(x\in H\) i \(y\in H\cap K\). Per la proposició \myref{prop:condicions equivalents a subgrup normal} només hem de veure que per a tot \(x\in H\) i \(y\in H\cap K\), es satisfà \(x^{-1}\ast y\ast x\in H\). Ara bé, com que \(K\) és un grup normal, per la mateixa proposició \myref{prop:condicions equivalents a subgrup normal}, com que per hipòtesi \(y\in H\cap K\), i en particular \(y\in K\), tenim que \(x^{-1}\ast y\ast x\in K\). Per veure que \(x^{-1}\ast y\ast x\in H\) tenim prou amb veure que \(x,y\in H\), i com que \(H\) és un subgrup de \(G\), i per tant un grup, per la definició de \myref{def:grup} tenim que \(x^{-1}\ast y\ast x\in H\), i per tant \(x^{-1}\ast y\ast x\in H\cap K\), com volíem veure.
@@ -785,7 +785,7 @@
 		Siguin \(G\) un grup amb l'operació \(\ast\), \(H\) un subgrup de \(G\) i \(K\) un subgrup normal de \(G\). Aleshores
 		\[(HK)/K\cong H/(H\cap K).\]
 		\begin{proof}
-			Aquest enunciat té sentit pel lemma \myref{lemma:Segon Teorema de l'isomorfisme entre grups}.
+			Aquest enunciat té sentit pel lema \myref{lema:Segon Teorema de l'isomorfisme entre grups}.
 			
 			Definim
 			\begin{align}\label{hipotesi:definició f per segon teorea de l'isomorfisme}
@@ -930,11 +930,11 @@
 		Siguin \(G\) un grup amb l'operació \(\ast\) tal que \(\abs{G}=p^{n}m\) amb \(p\) primer que no divideix \(m\) i \(P\) un subgrup de \(G\) amb \(\abs{P}=p^{n}\). Aleshores direm que \(P\) és un \(p\)-subgrup de Sylow de \(G\).
 	\end{definition}
 	\begin{lemma}
-		\label{lemma:Primer Teorema de Sylow}
+		\label{lema:Primer Teorema de Sylow}
 		Siguin \(p\) un primer i \(m\) un enter positiu tal que \(p\) no divideixi \(m\). Aleshores per a tot \(n\) natural tenim que
 		\begin{equation}
 		\left(\begin{matrix}
-		\label{eq:lemma:Primer Teorema de Sylow 0}
+		\label{eq:lema:Primer Teorema de Sylow 0}
 		p^{n}m\\p^{n}
 		\end{matrix}\right)
 		\end{equation}
@@ -942,15 +942,15 @@
 		\begin{proof}
 			Tenim que
 			\begin{equation}
-		\label{eq:lemma:Primer Teorema de Sylow 1}
+		\label{eq:lema:Primer Teorema de Sylow 1}
 			\left(\begin{matrix}
 			p^{n}m\\p^{n}
 			\end{matrix}\right)
 			=\frac{p^{n}m(p^{n}m-1)\cdots(p^{n}m-p^{n}+1)}{p^{n}(p^{n}-1)\cdots(p^{n}-p^{n}+1)}=\prod_{i=0}^{p^{n}-1}\frac{p^{n}m-i}{p^{n}-i}.
 			\end{equation}
-			Com que, per hipòtesi, \(p\) és primer aquesta expressió només serà divisible per \(p\) si ho són els elements del numerador. Fixem doncs \(i\in\{0,\dots,p^{n}+1\}\) i estudiem l'\(i\)-èsim terme del producte de \eqref{eq:lemma:Primer Teorema de Sylow 1}. Notem primer que si \(i=0\) aquest terme no és divisible per \(p\). Imposem ara també que \(i\neq0\). Si el denominador, \(p^{n}m-i\), és divisible per \(p\) tindrem que \(p^{n}m-i=p^{k}m'\), on \(m'\) no és divisible per \(p\), i per tant \(k\) serà l'exponent més gran que satisfaci la igualtat. Si aïllem \(i\) obtindrem \(i=p^{k}(p^{n-k}m-m')\). Ara bé, tenim doncs que \(p^{n}-i=p^{n}-p^{k}(p^{n-k}m-m')\), i això és \(p^{n}-p^{k}(p^{n-k}m-m')=p^{k}(p^{n-k}(1-m)-m')\), i per tant tindrem que l'\(i\)-èsim terme del producte de \eqref{eq:lemma:Primer Teorema de Sylow 1} serà de la forma
+			Com que, per hipòtesi, \(p\) és primer aquesta expressió només serà divisible per \(p\) si ho són els elements del numerador. Fixem doncs \(i\in\{0,\dots,p^{n}+1\}\) i estudiem l'\(i\)-èsim terme del producte de \eqref{eq:lema:Primer Teorema de Sylow 1}. Notem primer que si \(i=0\) aquest terme no és divisible per \(p\). Imposem ara també que \(i\neq0\). Si el denominador, \(p^{n}m-i\), és divisible per \(p\) tindrem que \(p^{n}m-i=p^{k}m'\), on \(m'\) no és divisible per \(p\), i per tant \(k\) serà l'exponent més gran que satisfaci la igualtat. Si aïllem \(i\) obtindrem \(i=p^{k}(p^{n-k}m-m')\). Ara bé, tenim doncs que \(p^{n}-i=p^{n}-p^{k}(p^{n-k}m-m')\), i això és \(p^{n}-p^{k}(p^{n-k}m-m')=p^{k}(p^{n-k}(1-m)-m')\), i per tant tindrem que l'\(i\)-èsim terme del producte de \eqref{eq:lema:Primer Teorema de Sylow 1} serà de la forma
 			\[\frac{p^{n}m-i}{p^{n}-i}=\frac{p^{k}m'}{p^{k}(p^{n-k}(1-m)-m')}=\frac{m'}{p^{n-k}(1-m)-m'},\]
-			i així veiem que aquest \(i\)-èsim terme del producte no serà divisible per \(p\); i com que això és cert per a qualsevol \(i\in\{0,\dots,p^{n}+1\}\) tenim que \eqref{eq:lemma:Primer Teorema de Sylow 0} tampoc ho serà, com volíem veure.
+			i així veiem que aquest \(i\)-èsim terme del producte no serà divisible per \(p\); i com que això és cert per a qualsevol \(i\in\{0,\dots,p^{n}+1\}\) tenim que \eqref{eq:lema:Primer Teorema de Sylow 0} tampoc ho serà, com volíem veure.
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Primer Teorema de Sylow]
@@ -962,7 +962,7 @@
 			\begin{displaymath}
 			k=\abs{\mathcal{P}_{p^{n}}(G)}=\left(\begin{matrix}p^{n}m\\p^{n}\end{matrix}\right),
 			\end{displaymath}
-			i pel lemma \myref{lemma:Primer Teorema de Sylow} tenim que \(p\) no divideix \(k\). %Fer això a fonaments, definint \mathcal{P}_{n}(G)
+			i pel lema \myref{lema:Primer Teorema de Sylow} tenim que \(p\) no divideix \(k\). %Fer això a fonaments, definint \mathcal{P}_{n}(G)
 			
 			Sigui \(e\) l'element neutre de \(G\). Definim
 			\begin{align}\label{eq:thm:Primer Teorema de Sylow 1}
@@ -995,7 +995,7 @@
 		\end{proof}
 	\end{corollary}
 	\begin{lemma}
-		\label{lemma:Segon Teorema de Sylow}
+		\label{lema:Segon Teorema de Sylow}
 		Siguin \(G\) un grup d'ordre \(p^{n}\) on \(p\) és un primer amb l'operació \(\ast\), \(X\) un \(G\)-conjunt d'ordre finit amb una acció \(\cdot\) i \(X_{G}=\{x\in X\mid g\cdot x=x\text{ per a tot }g\in G\}\) un conjunt. Aleshores
 		\[\abs{X_{G}}\equiv\abs{X}\pmod{p}.\]
 		\begin{proof}
@@ -1003,12 +1003,12 @@
 			\[X=\bigcup_{i=1}^{r}\mathcal{O}(x_{i}),\]
 			i com que aquestes òrbites són disjuntes per ser classes d'equivalència
 			\begin{equation}
-		\label{eq:lemma:Segon Teorema de Sylow 1}
+		\label{eq:lema:Segon Teorema de Sylow 1}
 			\abs{X}=\sum_{i=0}^{r}\abs{\mathcal{O}(x_{i})}.
 			\end{equation}
 			Ara bé, per les proposicions \myref{prop:cardinal del grup dividit per cardinal de l'estabilitzador és el cardinal de l'òrbita} i \myref{prop:l'estabilitzador és un subgrup} i el \myref{thm:Teorema de Lagrange} tenim que l'ordre \(\mathcal{O}(x_{i})\) divideix l'ordre de \(X\), i per tant els únics elements amb òrbites que tinguin un ordre que no sigui divisible per \(p\) són els elements del conjunt \(X_{G}\); i com que les òrbites d'aquests elements tenen un únic element tenim que
 			\[\abs{X_{G}}=\sum_{x\in X_{G}}\abs{\mathcal{O}(x)},\]
-			i per tant, recordant que totes les altres òrbites tenen ordre divisible per \(p\), trobem, amb \eqref{eq:lemma:Segon Teorema de Sylow 1}, que
+			i per tant, recordant que totes les altres òrbites tenen ordre divisible per \(p\), trobem, amb \eqref{eq:lema:Segon Teorema de Sylow 1}, que
 			\[\abs{X_{G}}\equiv\abs{X}\pmod{p}.\qedhere\]
 		\end{proof}
 	\end{lemma}
@@ -1048,7 +1048,7 @@
 		\label{eq:thm:Segon Teorema de Sylow 2}
 			X_{P_{2}}=\{\{x\}P_{1}\in X\mid y\cdot\{x\}P_{1}=\{x\}P_{1}\text{ per a tot }y\in P_{2}\}.
 			\end{equation}
-			Aleshores pel lemma \myref{lemma:Segon Teorema de Sylow} tenim que
+			Aleshores pel lema \myref{lema:Segon Teorema de Sylow} tenim que
 			\begin{equation*}
 			\abs{X_{P_{2}}}\equiv\abs{X}\pmod{p}.
 			\end{equation*}
@@ -1092,7 +1092,7 @@
 			
 			Definim el conjunt
 			\[X_{P}=\{T\in X\mid g\cdot T=T\text{ per a tot }g\in P\},\]
-			i per la definició \eqref{eq:thm:Tercer Teorema de Sylow 1} tenim que si \(T\in X_{P}\) aleshores per a tot \(g\in G\) es compleix \(\{g\}T\{g^{-1}\}=T\). Ara bé, això és que \(T=P\) per a tot \(T\in X_{P}\), i per tant \(\abs{X_{P}}=1\). Aleshores pel lemma \myref{lemma:Segon Teorema de Sylow} tenim que
+			i per la definició \eqref{eq:thm:Tercer Teorema de Sylow 1} tenim que si \(T\in X_{P}\) aleshores per a tot \(g\in G\) es compleix \(\{g\}T\{g^{-1}\}=T\). Ara bé, això és que \(T=P\) per a tot \(T\in X_{P}\), i per tant \(\abs{X_{P}}=1\). Aleshores pel lema \myref{lema:Segon Teorema de Sylow} tenim que
 			\[\abs{X}\equiv\abs{X_{P}}\pmod{p},\]
 			o equivalentment
 			\[\abs{X}\equiv1\pmod{p}.\]
@@ -1505,8 +1505,8 @@
 		Si \(f,g\) són isomorfismes aleshores \(g\circ f\) és isomorfisme.
 	\end{corollary}
 	\begin{lemma}
-		\label{lemma:ker(f) és ideal de l'anell d'entrada}
-		\label{lemma:Ima(f) és subanell de l'anell de sortida}
+		\label{lema:ker(f) és ideal de l'anell d'entrada}
+		\label{lema:Ima(f) és subanell de l'anell de sortida}
 			Siguin \(R\) un anell commutatiu amb la suma \(+_{R}\) i el producte \(\ast_{R}\), \(S\) un anell commutatiu amb la suma \(+_{S}\) i el producte \(\ast_{S}\) amb \(1_{R}\neq0_{R}\) i \(1_{S}\neq0_{S}\) i \(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
 		\[\ker(f)\text{ és un ideal de }R\quad\text{i}\quad\Ima(f)\text{ és un subanell de }S.\]
 		\begin{proof}
@@ -1550,7 +1550,7 @@
 		\end{proof}
 	\end{theorem}
 	\begin{lemma}
-		\label{lemma:Tercer Teorema de l'isomorfisme entre anells}
+		\label{lema:Tercer Teorema de l'isomorfisme entre anells}
 		Siguin \(R\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\) i \(I\), \(J\) dos ideals de \(R\) tals que \(I\subseteq J\). Aleshores \(J/I\) és un ideal de \(R/I\). %Definr \(I\subseteq J\), (projecció)
 		\begin{proof}
 			%TODO % J/I hauria de ser \bar{J}, \bar{J}^{I} o algo aixi.
@@ -1561,7 +1561,7 @@
 		Siguin \(R\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\) i \(I\), \(J\) dos ideals de \(R\) tals que \(I\subseteq J\). Aleshores
 		\[(R/I)/(J/I)\cong R/J.\]
 		\begin{proof}
-			Aquest enunciat té sentit pel lemma \myref{lemma:Tercer Teorema de l'isomorfisme entre anells}. %TODO
+			Aquest enunciat té sentit pel lema \myref{lema:Tercer Teorema de l'isomorfisme entre anells}. %TODO
 		\end{proof}
 	\end{theorem}
 	\subsection{Característica d'un anell}
@@ -1669,7 +1669,7 @@
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:anell quocient}.
 			
-			Comencem veient la implicació cap a la dreta (\(\implica\)). Suposem doncs que \(R/M\) és un cos i prenem un ideal \(I/M\) %REF lemma teorema d'isomorfia anells per donar-li sentit
+			Comencem veient la implicació cap a la dreta (\(\implica\)). Suposem doncs que \(R/M\) és un cos i prenem un ideal \(I/M\) %REF lema teorema d'isomorfia anells per donar-li sentit
 			 de \(R/M\). Aleshores ha de ser \(M\subseteq I\subseteq R\). Per la proposició \myref{prop:condició equivalent a cos per anells} tenim que els únics ideals de \(R/M\) són \(([0])\) i \(R/M\), i per tant ha de ser \(I=M\) o \(I=R\), i per la definició d'\myref{def:ideal maximal} tenim que \(M\) és un ideal maximal de \(R\).
 			
 			Veiem ara la implicació cap a l'esquerra (\(\implicatper\)). Suposem doncs que \(M\) és un ideal maximal de l'anell \(R\) i considerem, per la proposició \myref{prop:anell quocient}, l'anell \(R/M\). Per la proposició \myref{prop:condició equivalent a cos per anells} tenim que només hem de veure que els únics ideals de \(R/M\) són \((0)\) i \(R\). Prenem un ideal \(I/M\) de \(R/M\). Aquest ha de ser tal que \(M\subseteq I\subseteq R\), i per la definició d'\myref{def:ideal maximal} tenim que ha de ser \(I=M\) o \(I=R\), i per tant \(I/M\) ha de ser \(([0])\) o \(R/M\) i per la proposició \myref{prop:anell quocient} tenim que \(R/M\) és un cos.
@@ -1985,7 +1985,7 @@
 		\((\{I_{1},I_{2},I_{3}\dots\},\subseteq)\) és una cadena.
 	\end{observation}
 	\begin{lemma}
-		\label{lemma:DIP és DFU}
+		\label{lema:DIP és DFU}
 		Siguin \(N\) un domini d'integritat Noetherià amb la suma \(+\) i el producte \(\cdot\) i \(a\neq0\) un element no invertible de \(N\). Aleshores existeixen \(p_{1},\dots,p_{n}\) elements irreductibles de \(N\) tals que
 		\[a=p_{1}\cdot\ldots\cdot p_{n}.\]
 		\begin{proof}
@@ -2043,7 +2043,7 @@
 		\label{thm:DIP és DFU}
 		Sigui \(D\) un domini d'ideals principals amb la suma \(+\) i el producte \(\cdot\). Aleshores \(D\) és un domini de factorització única.
 		\begin{proof}
-			Pel Teorema \myref{thm:DIP es Noetherià} tenim que \(D\) és un anell Noetherià, i pel lemma \myref{lemma:DIP és DFU} tenim que per a tot element no irreductible \(a\) de \(D\) existeixen \(p_{1},\dots,p_{n}\) elements irreductibles de \(N\) tals que
+			Pel Teorema \myref{thm:DIP es Noetherià} tenim que \(D\) és un anell Noetherià, i pel lema \myref{lema:DIP és DFU} tenim que per a tot element no irreductible \(a\) de \(D\) existeixen \(p_{1},\dots,p_{n}\) elements irreductibles de \(N\) tals que
 			\[a=p_{1}\cdot\ldots\cdot p_{n}.\]
 			
 			També tenim, per la proposició \myref{prop:en DIP irreductible implica primer} que si \(a\) és un element irreductible de \(D\) aleshores \(a\) és primer.
@@ -2128,7 +2128,7 @@
 		Denotarem el conjunt quocient \(D\times D\setminus\{0\}/\sim\) com \(\mathbb{Q}(D)\) i la classe d'equivalència \(\overline{(a,b)}\in\mathbb{Q}(D)\) com \(\frac{a}{b}\).
 	\end{notation}
 	\begin{lemma}
-		\label{lemma:cos de fraccions}
+		\label{lema:cos de fraccions}
 		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\). Aleshores \(\mathbb{Q}(D)\) és un anell commutatiu amb \(1\neq0\) amb les operacions
 		\[\frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+c\cdot b}{b\cdot d}\quad\text{i}\quad\frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}.\quad\text{per a tot }a,c\in D\text{, }b,d\in D\setminus\{0\}.\]
 		\begin{proof}
@@ -2206,8 +2206,8 @@
 		Aleshores direm que \(f(x)\) és un polinomi primitiu.
 	\end{definition}
 	\begin{lemma}[Lema de Gauss]
-		\labelname{lemma de Gauss}
-		\label{lemma:lemma de Gauss}
+		\labelname{lema de Gauss}
+		\label{lema:lema de Gauss}
 		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\) i \(f(x),g(x)\) dos polinomis primitius de \(D[x]\). Aleshores \(f(x)\cdot g(x)\) és un polinomi primitiu.
 		\begin{proof}
 			%TODO

@@ -145,7 +145,7 @@
 		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius. Aleshores escriurem \(\sum_{n=0}^{\infty}a_{n}<\infty\) si \(\sum_{n=0}^{\infty}a_{n}\) és convergent i \(\sum_{n=0}^{\infty}a_{n}=\infty\) si \(\sum_{n=0}^{\infty}a_{n}\) és divergent
 	\end{notation}
 	\begin{lemma}
-		\label{lemma:criteri de comparació de sèries de termes positius}
+		\label{lema:criteri de comparació de sèries de termes positius}
 		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius, \(\sum_{n=0}^{\infty}b_{n}\) una sèrie de termes positius convergent, \(K\) un nombre real i \(n_{0}\) un natural tal que per a tot \(n>n_{0}\) es satisfà \(a_{n}\leq Kb_{n}\). Aleshores tenim que \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 		\begin{proof}
 			Tenim que
@@ -174,17 +174,17 @@
 			
 			Suposem que \(\sum_{n=0}^{\infty}b_{n}\) és convergent. Aleshores tenim
 			\[b_{n}(l-\varepsilon)<a_{n}<b_{n}(l+\varepsilon),\]
-			i pel lemma \myref{lemma:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			i pel lema \myref{lema:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			
 			Suposem ara que \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Aleshores tenim
 			\[\frac{a_{n}}{L-\varepsilon}<b_{n}<\frac{a_{n}}{L+\varepsilon},\]
-			i pe lemma \myref{lemma:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
+			i pe lema \myref{lema:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
 			
 			Veiem ara el punt \eqref{thm:criteri de comparació de sèries de termes positius:enum2}. Suposem doncs que \(L=0\) i que \(\sum_{n=0}^{\infty}b_{n}\) és convergent. Per la definició de \myref{def:límit} tenim que per a tot \(\varepsilon>0\) existeix un natural \(n_{0}\) tal que
 			\[\abs{\frac{a_{n}}{b_{n}}}<\varepsilon,\]
 			i això és equivalent a
 			\[a_{n}<\varepsilon b_{n}\]
-			i pel lemma \myref{lemma:criteri de comparació de sèries de termes positius} trobem que la sèries \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			i pel lema \myref{lema:criteri de comparació de sèries de termes positius} trobem que la sèries \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			
 			Veiem ara el punt \eqref{thm:criteri de comparació de sèries de termes positius:enum3}. Suposem doncs que \(L=\infty\) i que \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Tenim que
 			\[\lim_{n\to\infty}\frac{b_{n}}{a_{n}}=0,\] %REF
@@ -225,13 +225,13 @@
 			\[\sqrt[n]{a_{n}}<L+\varepsilon,\]
 			i per tant
 			\[a_{n}<\left(L+\varepsilon\right)^{n}.\]
-			Ara bé, tenim que \(L+\varepsilon<1\), per tant per l'exercici \myref{ex:sèries geomètriques} tenim que \(\sum_{n=0}^{\infty}(L+\varepsilon)^{n}\) és convergent, i per tant pel lemma \myref{lemma:criteri de comparació de sèries de termes positius} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			Ara bé, tenim que \(L+\varepsilon<1\), per tant per l'exercici \myref{ex:sèries geomètriques} tenim que \(\sum_{n=0}^{\infty}(L+\varepsilon)^{n}\) és convergent, i per tant pel lema \myref{lema:criteri de comparació de sèries de termes positius} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			
 			Veiem ara el punt \eqref{prop:criteri de l'arrel:enum2}. Suposem doncs que \(L>1\). Prenem \(\varepsilon>0\) tal que \(L-\varepsilon>1\). Per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
 			\[\abs{\sqrt[n]{a_{n}}-L}<\varepsilon,\]
 			i per tant
 			\[L-\varepsilon<\sqrt[n]{a_{n}}.\]
-			Ara bé, tenim que \(L-\varepsilon>1\), per tant per l'exercici \myref{ex:sèries geomètriques} tenim que \(\sum_{n=0}^{\infty}(L-\varepsilon)^{n}\) és divergent, i per tant pel lemma \myref{lemma:criteri de comparació de sèries de termes positius} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
+			Ara bé, tenim que \(L-\varepsilon>1\), per tant per l'exercici \myref{ex:sèries geomètriques} tenim que \(\sum_{n=0}^{\infty}(L-\varepsilon)^{n}\) és divergent, i per tant pel lema \myref{lema:criteri de comparació de sèries de termes positius} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
 		\end{proof}
 	\end{proposition}
 	\begin{example}
@@ -277,7 +277,7 @@
 				&\vdots\\
 				<&(L+\varepsilon)^{n-n_{0}+1}a_{n_{0}}.
 			\end{align*}
-			Ara bé, com que \(L+\varepsilon<1\) tenim per l'exemple \myref{ex:sèries geomètriques} que la sèrie \(\sum_{n=0}^{\infty}(L+\varepsilon)^{n}\) és convergent, i pel lemma \myref{lemma:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			Ara bé, com que \(L+\varepsilon<1\) tenim per l'exemple \myref{ex:sèries geomètriques} que la sèrie \(\sum_{n=0}^{\infty}(L+\varepsilon)^{n}\) és convergent, i pel lema \myref{lema:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			
 			Veiem ara el punt \eqref{prop:criteri del quocient:enum2}. Suposem doncs que \(L>1\). Prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>1\). Aleshores per la definició de \myref{def:límit} tenim que existeix un \(n_{0}\) natural tal que per a tot \(n>n_{0}\) es satisfà
 			\[\abs{\frac{a_{n+1}}{a_{n}}-L}<\varepsilon,\]
@@ -300,7 +300,7 @@
 		\end{proof}
 	\end{proposition}
 	\begin{lemma}
-		\label{lemma:criteri de Raabe}
+		\label{lema:criteri de Raabe}
 		Siguin \(x\) i \(\alpha\) dos nombres reals no negatius. Aleshores
 		\[1-\frac{\alpha}{x}\leq\left(1-\frac{1}{x+1}\right)^{\alpha}.\]
 		\begin{proof}
@@ -330,7 +330,7 @@
 			i per tant
 			\[a_{n+1}<a_{n}\left(1-\frac{L-\varepsilon}{n}\right).\]
 			
-			Aleshores, pel lemma \myref{lemma:criteri de Raabe} trobem que
+			Aleshores, pel lema \myref{lema:criteri de Raabe} trobem que
 			\[a_{n+1}<a_{n}\left(1-\frac{1}{n+1}\right)^{L-\varepsilon}\]
 			i tenim
 			\begin{equation}
@@ -348,7 +348,7 @@
 			\[a_{n+1}<a_{n_{0}}\left(\frac{n_{0}}{n+1}\right)^{L-\varepsilon},\]
 			i com que \(L-\varepsilon>1\) trobem per l'exemple \myref{ex:sèrie harmònica} que la sèrie
 			\[\sum_{n=0}^{\infty}\left(\frac{1}{n+1}\right)^{L-\varepsilon}\]
-			és convergent, i pel lemma \myref{lemma:criteri de comparació de sèries de termes positius} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			és convergent, i pel lema \myref{lema:criteri de comparació de sèries de termes positius} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			
 			Veiem ara el punt \eqref{prop:criteri de Raabe:enum2}. Suposem doncs que \(L<1\).
 		\end{proof}

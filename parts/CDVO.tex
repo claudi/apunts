@@ -653,7 +653,7 @@
 			I per tant, quan \(\vec{h}\to0\) tenim \(\omicron(\vec{h})\to0\) i \(\vec{k}\to0\), i veiem que \(df(a)^{-1}(\omicron(\vec{h}))\) ha de ser com \(\omicron(\vec{k})\). %revisar merdes Landau
 		\end{proof}
 	\end{proposition}
-	\begin{lemma}\label{lemma:Funció inversa}
+	\begin{lemma}\label{lema:Funció inversa}
 		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}^{d}\) una funció de classe \(\mathcal{C}^{1}\) amb diferencial de \(f\) en un punt \(a\in U\) de norma \(m\), \(df(a)\), invertible amb inversa \(df(a)^{-1}\). Aleshores existeix una bola tancada centrada en \(a\) de radi \(r>0\), \(\overline{\B}(a,r)\), que, per a tot \(x,y\in\overline{\B}(a,r)\) compleix
 		\begin{enumerate}
 			\item\label{enum:Funció inversa 1} \(\det(df(x))\neq0\)
@@ -693,7 +693,7 @@
 			Sigui \(df(a)^{-1}\) la inversa del diferencial de \(f\) en \(a\), \(df(a)\), i \(M=\frac{1}{m}=\norm{df(a)^{-1}}\) la seva norma. Per la definició de \myref{def:Norma d'una aplicació lineal} tenim que per a qualsevol vector \(\vec{u}\) de \(\mathbb{R}^{d}\),
 			\[\norm{df(a)(\vec{u})}\leq m\norm{\vec{u}}.\]
 			
-			Pel lemma \myref{lemma:Funció inversa} tenim que existeix una bola tancada centrada en \(a\) de radi \(r>0\), \(\overline{\B}(a,r)\), que, per a tot \(x,y\in\overline{\B}(a,r)\) compleix
+			Pel lema \myref{lema:Funció inversa} tenim que existeix una bola tancada centrada en \(a\) de radi \(r>0\), \(\overline{\B}(a,r)\), que, per a tot \(x,y\in\overline{\B}(a,r)\) compleix
 			\begin{enumerate}
 				\item\label{enum:thFunció inversa 1} \(\det(df(x))\neq0\)
 				\item\label{enum:thFunció inversa 2} \(\norm{df(x)-df(a)}\leq\frac{m}{2}\)
@@ -715,7 +715,7 @@
 			Aleshores \(h\) té un mínim absolut en el compacte \(\overline{\B}(a,r)\), que s'assoleix quan \(x=q\in\overline{\B}(a,r)\). Per tant, per la proposició \myref{prop:Identificació d'extrems relatius}, \(D_{j}h(q)=0\), per a tot \(j\in\{1,\dots,d\}\), que és equivalent a dir
 			\[\sum_{i=1}^{d}D_{j}f_{i}(p)(p_{i}-f_{i}(q))=0,\quad\text{per a tot }j\in\{1,\dots,d\}.\]
 			
-			Així hem vist que la restricció de \(f\) en \(W\) és exhaustiva, i per tant bijectiva, i ja teníem que era contínua. Podem veure de nou pel punt \eqref{enum:thFunció inversa 3} del lema \myref{lemma:Funció inversa} que la seva inversa també és contínua. Amb tot això en tenim prou per dir que la restricció de \(f\) en \(W\) és un homeomorfisme diferenciable en un punt \(a\) però, com que, per hipòtesi, tenim \(\det(df(a))\neq0\), amb la proposició \myref{prop:homeomorfisme a difeomorfisme} queda demostrat el teorema.
+			Així hem vist que la restricció de \(f\) en \(W\) és exhaustiva, i per tant bijectiva, i ja teníem que era contínua. Podem veure de nou pel punt \eqref{enum:thFunció inversa 3} del lema \myref{lema:Funció inversa} que la seva inversa també és contínua. Amb tot això en tenim prou per dir que la restricció de \(f\) en \(W\) és un homeomorfisme diferenciable en un punt \(a\) però, com que, per hipòtesi, tenim \(\det(df(a))\neq0\), amb la proposició \myref{prop:homeomorfisme a difeomorfisme} queda demostrat el teorema.
 		\end{proof}
 	\end{theorem}
 	\begin{corollary} %revisar \mathbb{R}^{d}. El Bruna diu que va a \mathbb{R}

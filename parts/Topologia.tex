@@ -107,9 +107,7 @@
 		\labelname{topologia grollera}\label{ex:topologia grollera}
 		Siguin \(X\) i \(\tau=\{\emptyset,X\}\) dos conjunts. Aleshores \(\tau\) és una topologia de \(X\).
 		\begin{solution}
-			Comprovem les condicions de la definició de topologia. Com que \(\tau=\{\emptyset,X\}\) tenim que \(\emptyset\) i \(X\) són elements de \(\tau\). Observem també que
-			\[\emptyset\cap X=\emptyset,\quad X\cap X=X\quad\text{i}\quad\emptyset\cup X=X\cup X=X,\]
-			I per la definició de \myref{def:topologia}, tenim que \(\tau\) és una topologia de \(X\).
+			Comprovem les condicions de la definició de topologia. Com que \(\tau=\{\emptyset,X\}\) tenim que \(\emptyset\) i \(X\) són elements de \(\tau\). Observem també que \(\emptyset\cap X=\emptyset\), \(X\cap X=X\) i \(\emptyset\cup X=X\cup X=X\), i per la definició de \myref{def:topologia}, tenim que \(\tau\) és una topologia de \(X\).
 		\end{solution}
 	\end{example}
 	\begin{example}[Topologia discreta]
@@ -125,6 +123,24 @@
 			i per tant, com que \(\tau=\mathcal{P}(X)\) trobem per la definició de \myref{def:topologia} que \(\tau\) és una topologia de \(X\).
 		\end{solution}
 	\end{example}
+	\subsection{Topologia d'Alexandroff}
+	\begin{definition}[Topologia d'Alexandroff]
+		\labelname{topologia d'Alexandroff}\label{def:topologia d'Alexandroff}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic tal que per a tota família d'oberts \(\{\obert{U}_{i}\}_{i\in I}\) de \(X\) tenim que
+		\[\bigcap_{i\in I}\obert{U}_{i}\]
+		és un element obert de \(X\). Aleshores direm que \(\tau\) és una topologia d'Alexandroff.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:els espais topològics finits són d'Alexandroff}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic amb \(X\) finit. Aleshores \(\tau\) és una topologia d'Alexandroff.
+		\begin{proof}
+			Com que \(X\) és finit tenim que \(\mathcal{P}(X)\) és finit, i com que \(\tau\) és, per la definició de \myref{def:topologia}, un subconjunt de \(\mathcal{P}(X)\) trobem que \(\tau\) és finit. %REF
+			
+			Sigui \(\{\obert{U}_{i}\}_{i\in I}\) una família d'oberts de \(X\) i definim
+			\[\obert{U}=\bigcap_{i\in I}\obert{U}_{i}.\]
+			Tenim que \(\{\obert{U}_{i}\}_{i\in I}\) és un subconjunt de \(\tau\), i tenim també que \(\tau\) és finit, per tant \(\{\obert{U}_{i}\}_{i\in I}\) ha de ser finit i per tant existeix un natural \(n\) tal que \(\{\obert{U}_{i}\}_{i\in I}=\{\obert{U}_{i}\}_{i=1}^{n}\), i per la definició de \myref{def:topologia} hem acabat.
+		\end{proof}
+	\end{proposition}
 	\subsection{Tancats}
 	\begin{definition}[Tancat]
 		\labelname{tancat}\label{def:tancat}
