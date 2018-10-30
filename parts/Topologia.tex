@@ -390,7 +390,7 @@
 		\label{prop:la clausura d'un conjunt és el complementari de l'interior del complementari del conjunt}
 		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(A\) un subconjunt de \(X\). Aleshores
 		\[\clausura(X\setminus A)=X\setminus\interior(A).\]
-		\begin{proof}
+		\begin{proof} % https://math.stackexchange.com/questions/970825/prove-that-the-closure-of-complement-is-the-complement-of-the-interior
 			Prenem un element \(x\) de \(\clausura(X\setminus A)\). Per la definició de \myref{def:clausura} tenim que per a tot obert \(\obert{U}\) que conté \(x\) tenim que
 			\[\obert{U}\cap(X\setminus A)\neq\emptyset.\]
 			Ara bé, per la definició d'\myref{def:interior} que \(\interior(A)\) és un subconjunt de \(A\), i per tant \(X\setminus A\) és un subconjunt de \(X\setminus\interior(A)\), i per tant \(\obert{U}\cap(X\setminus\interior(A))\neq\emptyset\). Per tant per la definició d'\myref{def:interior} trobem que
@@ -629,3 +629,5 @@
 	
 %	\printbibliography
 \end{document}
+
+% https://arxiv.org/pdf/0708.2136.pdf (L) Sorprenentment elegant
