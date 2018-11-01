@@ -239,11 +239,14 @@
 			\[F(x)=f(x)-P(x)-\omega(x)\frac{f(x)-P(x)}{\omega(x)}=0\]
 			és a dir, \(F(z)\) existeixen \(\xi^{(0)}_{0},\dots,\xi^{(0)}_{n+1}\in[a,b]\) tals que \(F(\xi^{(0)}_{i})=0\) per a tot \(i\in\{0,\dots,n+1\}\) amb \(\xi^{(0)}_{i+1}>\xi^{(0)}_{i}\) per a tot \(i\in\{0,\dots,n\}\).
 			
-			Aplicant el \myref{thm:Teorema de Rolle} trobem que per a tot \(i\in\{1,\dots,n+1\}\) existeixen \(\{\xi^{(1)}_{i}\}_{i=1}^{n+1}\) tals que \(F'(\xi^{(1)}_{i})=0\) amb \(\xi^{(1)}_{i}\in(\xi^{(0)}_{i-1},\xi^{(0)}_{i})\). Iterant aquest argument trobem que per a \(k\in\{0,\dots,n+1\}\) tenim que per a tot \(i\in\{k,\dots,n+1\}\) existeixen \(\{\xi^{(k)}_{i}\}_{i=k}^{n+1}\) tals que \(F^{k}(\xi^{(k)}_{i})=0\) amb \(\xi^{(k)}_{i}\in(\xi^{(k-1)}_{i-1},\xi^{(k-1)}_{i})\); i per tant quan \(k=n+1\) tenim que existeix \(\xi^{(n+1)}_{n+1}\in(\xi^{(n)}_{n},\xi^{(n)}_{n+1})\) tal que \(F^{(n+1)}(\xi^{(n+1)}_{n+1})=0\) i trobem\marginpar{Dime si es verdad\\
-				Que alguien ha logrado escapar de esta tela de araña.\\
-				Dime cuanto cuesta\hfil\twonotes\hfil\\
-				Saber la puta verdad\\
-				Y quien le pone precio.}
+			Aplicant el \myref{thm:Teorema de Rolle} trobem que per a tot \(i\in\{1,\dots,n+1\}\) existeixen \(\{\xi^{(1)}_{i}\}_{i=1}^{n+1}\) tals que \(F'(\xi^{(1)}_{i})=0\) amb \(\xi^{(1)}_{i}\in(\xi^{(0)}_{i-1},\xi^{(0)}_{i})\). Iterant aquest argument trobem que per a \(k\in\{0,\dots,n+1\}\) tenim que per a tot \(i\in\{k,\dots,n+1\}\) existeixen \(\{\xi^{(k)}_{i}\}_{i=k}^{n+1}\) tals que \(F^{k}(\xi^{(k)}_{i})=0\) amb \(\xi^{(k)}_{i}\in(\xi^{(k-1)}_{i-1},\xi^{(k-1)}_{i})\); i per tant quan \(k=n+1\) tenim que existeix \(\xi^{(n+1)}_{n+1}\in(\xi^{(n)}_{n},\xi^{(n)}_{n+1})\) tal que \(F^{(n+1)}(\xi^{(n+1)}_{n+1})=0\) i trobem%
+				\begin{comment}
+					\marginpar{Dime si es verdad\\
+					Que alguien ha logrado escapar de esta tela de araña.\\
+					Dime cuanto cuesta\hfil\twonotes\hfil\\
+					Saber la puta verdad\\
+					Y quien le pone precio.}
+				\end{comment}
 			\[F^{(n+1)}(\xi^{(n+1)}_{n+1})=f^{(n+1)}(\xi^{(n+1)}_{n+1})-(n+1)!S(x)\]%referencies derivades polinomis
 			i per tant, recordant \eqref{eq:thm:primera fita de l'error en la interpolació de Lagrange 1}, tenim
 			\[\frac{f^{(n+1)}(\xi^{(n+1)}_{n+1})}{(n+1)!}=\frac{f(x)-P(x)}{\omega(x)}\]
