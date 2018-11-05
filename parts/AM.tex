@@ -537,13 +537,129 @@
 			%TODO
 		\end{proof}
 	\end{theorem}
-	\section{Successions i sèries de funcions}
-	\subsection{Successions de funcions}
-	\begin{definition}
-		wooo dale papi
+	\section{Successions funcions}
+	\subsection{Convergència d'una successió de funcions}
+	\begin{definition}[Successió de funcions]
+		\labelname{successió de funcions}\label{def:successió de funcions}
+		Siguin \(I\) un interval de \(\mathbb{R}\) i \(f_{i}\colon I\longrightarrow\mathbb{R}\) una funció real per a tot \(i\) natural. Aleshores direm que \((f_{n})_{n\in\mathbb{N}}\) és una successió de funcions definides en \(I\).
 	\end{definition}
-	
-%	\subsection{Sèries de funcions}
+	\begin{definition}[Convergència puntual]
+		\labelname{convergència puntual}\label{def:convergència puntual}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions definides en un interval \(I\) tal que existeix una funció \(f\) de \(I\) a \(\mathbb{R}\) tal que
+		\[\lim_{n\to\infty}f_{n}(x)=f(x)\]
+		per a tot \(x\) de \(I\). Aleshores direm que la successió \(f_{n}\) convergeix puntualment a \(f\).
+	\end{definition}
+	\begin{example}
+		Convergència puntual d'alguna sèrie de funcions interessant.
+	\end{example}
+	\subsection{Convergència uniforme}
+	\begin{definition}[Convergència uniforme]
+		\labelname{convergència uniforme}\label{def:convergència uniforme}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions definides en \(I\) que convergeix puntualment a una funció \(f\) tal que per a tot \(\varepsilon>0\) real existeix un \(n_{0}\) natural tal que per a tot \(n>n_{0}\) es satisfà
+		\[\sup_{x\in I}\abs{f_{n}(x)-f(x)}<\varepsilon.\]
+		Aleshores direm que la successió \((f_{n})_{n\in\mathbb{N}}\) convergeix uniformement a \(f\) i ho denotarem com \(f_{n}\convergeixuniformement f\).
+	\end{definition}
+	\begin{observation}
+		\label{obs:convergència uniforme amb límits}
+		Una successió de funcions \((f_{n})_{n\in\mathbb{N}}\) sobre \(I\) convergeix uniformement a una funció \(f\) si i només si
+		\[\lim_{n\to\infty}\sup_{x\in I}\abs{f_{n}(x)-f(x)}=0.\]
+		\begin{proof}
+			Per la definició de \myref{def:límit}.
+		\end{proof}
+	\end{observation}
+	\begin{example}
+		Convergència uniforme d'alguna sèrie de funcions interessant. % Continuar la d'abans?
+	\end{example}
+	\begin{theorem}[Condició de Cauchy]
+		\labelname{condició de Cauchy per successions de funcions}\label{thm:condició de Cauchy per successions de funcions}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre \(I\). Aleshores la successió \((f_{n})_{n\in\mathbb{N}}\) convergeix uniformement a una funció \(f\) de \(I\) si i només si per a tot \(\varepsilon>0\) real existeix un \(n_{0}\) natural tal que per a tots enters \(n\) i \(m\) amb \(n_{0}<m<n\) es satisfà
+		\[\sup_{x\in I}\abs{f_{n}(x)-f_{m}(x)}<\varepsilon.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+%	\subsection{Convergència uniforme i continuïtat, integrabilitat i derivabilitat}
+	\subsection{Continuïtat, integrabilitat i derivabilitat}
+	\begin{theorem}
+		\label{thm:si una successió de funcions contínues convergeix uniformement, ho fa a una funció contínua}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions contínues sobre \(I\) tal que \(f_{n}\convergeixuniformement f\). Aleshores \(f\) és contínua.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}
+		\label{thm:si una successió de funcions integrables Riemann convergix unifoemement, ho fa a una funció integrable Riemann}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre \(I\) tal que \(f_{n}\convergeixuniformement f\). Aleshores \(f\) és integrable Riemann.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}
+		\label{thm:si una successió de funcions convergeix uniformement aleshores el límit de la integral dels elements de la succesió és la integral del límit dels elements de la successió}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre \(I\) tal que \(f_{n}\convergeixuniformement f\). Aleshores
+		\[\lim_{n\to\infty}\int_{I}f_{n}(x)\diff x=\int_{I}\lim_{n\to\infty}f_{n}(x)\diff x.\]
+		\begin{proof}
+%			Aquest enunciat té sentit pel Teorema \myref{thm:si una successió de funcions integrables Riemann convergix unifoemement, ho fa a una funció integrable Riemann}.
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions derivables sobre \(I\) que convergeix uniformement a una funció \(f\) tal que la successió \((f'_{n})_{n\in\mathbb{N}}\) convergeix uniformement a una funció \(g\). Aleshores tenim que \(f\) és derivable i que \(f'(x)=g(x)\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\section{Sèries de funcions}
+	\subsection{Convergència d'una sèrie de funcions}
+	\begin{definition}[Sèrie de funcions]
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre \(I\). Aleshores definim, per a tot \(x\) de \(I\),
+		\[F(x)=\sum_{n=0}^{\infty}f_{n}(x)\]
+		com la sèrie de funcions de la successió \((f_{n})_{n\in\mathbb{N}}\).
+	\end{definition}
+	\begin{definition}[Convergència puntual]
+		\labelname{convergència puntual d'una sèrie de funcions}\label{def:convergència puntual d'una sèrie de funcions}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre \(I\) i
+		\[F_{N}(x)=\sum_{n=0}^{N}f_{n}(x)\]
+		tal que la successió de funcions \((F_{n})_{n\in\mathbb{N}}\) sigui puntualment convergent en \(I\). Aleshores direm que la sèrie de funcions de la successió \((f_{n})_{n\in\mathbb{N}}\) és convergent puntualment en \(I\).
+	\end{definition}
+	\begin{definition}[Convergència uniforme]
+		\labelname{convergència uniforme d'una sèrie de funcions}\label{def:convergència uniforme d'una sèrie de funcions}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre \(I\) i
+		\[F_{N}(x)=\sum_{n=0}^{N}f_{n}(x)\]
+		tal que la successió de funcions \((F_{n})_{n\in\mathbb{N}}\) sigui uniformement convergent en \(I\). Aleshores direm que la sèrie de funcions de la successió \((f_{n})_{n\in\mathbb{N}}\) és convergent uniformement en \(I\).
+	\end{definition}
+	\begin{theorem}[Condició de Cauchy]
+		\labelname{condició de Cauchy per sèries de funcions}\label{def:condició de Cauchy per sèries de funcions}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre \(I\). Aleshores la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) és convergent si i només si per a tot \(\varepsilon>0\) real existeixen enters \(N\) i \(M\) amb \(M<N\) tals que
+		\[\sup_{x\in I}\abs{\sum_{n=M}^{N}f_{n}(x)}<\varepsilon.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\subsection{Continuïtat, integrabilitat i derivabilitat}
+	\begin{theorem}
+		\label{thm:si la sèrie de d'una successió de funcions contínues convergeix uniformement, el seu límit és una funció contínua}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions contínues sobre \(I\) tals que la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) convergeixi uniformement a una funció \(F\) en \(I\). Aleshores \(F\) és contínua en \(I\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}
+		\label{thm:si la sèrie de d'una successió de funcions integrables Riemann convergeix uniformement, el seu límit és una funció integrable Riemann}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre \(I\) tals que la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) convergeixi uniformement a una funció \(F\) en \(I\). Aleshores \(F\) és integrable Riemann en \(I\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}
+		\label{thm:si la sèrie d'una successió de funcions convergeix uniformement aleshores el límit de la integral dels elements de la sèrie de la succesió és la integral del límit del la sèrie de la successió}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre \(I\) tal que la sèrie de funcions de \((f_{n})_{n\in\mathbb{N}}\) sigui uniformement convergent en \(I\). Aleshores
+		\[\sum_{n=0}^{\infty}\int_{I}f_{n}(x)\diff x=\int_{I}\sum_{n=0}^{\infty}f_{n}(x)\diff x.\]
+		\begin{proof}
+			%Aquest enunciat té sentit pel Teorema \myref{thm:si la sèrie de d'una successió de funcions integrables Riemann convergeix uniformement, el seu límit és una funció integrable Riemann}.
+		\end{proof}
+	\end{theorem}
+
 %	\subsection{Sèries de potències}
 %	\subsection{Teorema d'aproximació polinòmica de Weierstrass}
 %	\printbibliography
