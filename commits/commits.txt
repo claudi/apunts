@@ -1,5 +1,1 @@
-Arreglada la notació a EDOS I.
-Afegida teoria a topologia i començat un exemple a la secció d'aplicacions contínues.
-Hi havia una cosa fora d'ordre a la secció dels nombres naturals a fonaments. Ja no ho està.
-Afegits enunciats a EDOS I fins al Lema de Wintner.
-Afegit a topologia teoria sobre les topologies d'Alexandroff.
+Afegit teoria i exemples a anàlisi, sense demostracions o solucions, fins al tema de successions i sèries de funcions.

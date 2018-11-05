@@ -384,16 +384,165 @@
 			és convergent si i només si \(\alpha<\e\).
 		\end{solution}
 	\end{example}
-	\begin{proposition}
-		
+	\begin{proposition}[Criteri de condensació]
+		\labelname{criteri de condensació}\label{prop:criteri de condensació}
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius amb \((a_{n})_{n\in\mathbb{N}}\) decreixent. Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si la sèrie \(\sum_{n=0}^{\infty}2^{n}a_{2^{n}}\) és convergent.
+		\begin{proof}
+			%TODO
+		\end{proof}
 	\end{proposition}
+	\begin{proposition}[Criteri logarítmic]
+		\labelname{criteri logarítmic}\label{prop:criteri logarítmic}
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius i
+		\[\lim_{n\to\infty}\frac{\log\left(\frac{1}{a_{n}}\right)}{\log(n)}=L\]
+		tal que
+		\begin{enumerate}
+			\item\label{prop:criteri logarítmic:enum1} \(L>1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			\item\label{prop:criteri logarítmic:enum2} \(L<1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
+		\end{enumerate}
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{example}
+		Sigui \(\alpha\) un real. Volem estudiar per a quins valors de \(\alpha\) la sèrie
+		\[\sum_{n=0}^{\infty}\frac{1}{n^{\alpha}\log(n)}\]
+		és convergent.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{proposition}[Criteri de la integral]
+		\labelname{criteri de la integral}\label{prop:criteri de la integral}
+		Siguin \(f\colon[1,\infty)\longrightarrow(0,\infty)\) una funció decreixent. Aleshores la sèrie \(\sum_{n=0}^{\infty}f(n)\) és convergent si i només si existeix un real \(C>0\) tal que per a tot \(N\) natural es satisfà \(\int_{1}^{N}f(x)\diff x\leq C\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	% EXEMPLE?
+	\subsection{Sèries alternades}
+	\begin{definition}[Sèrie alternada]
+		\labelname{sèrie alternada}\label{def:sèrie alternada}
+		Sigui \((a_{n})_{n\in\mathbb{N}}\) una sèrie de termes positius. Aleshores direm que la sèrie
+		\[\sum_{n=0}^{\infty}(-1)^{n}a_{n}\]
+		és la sèrie alternada de \((a_{n})_{n\in\mathbb{N}}\).
+	\end{definition}
+	\begin{theorem}[Criteri de Leibniz]
+		\labelname{criteri de Leibniz per sèries alternades}\label{thm:criteri de Leibniz per sèries alternades}
+		Siguin \((a_{n})_{n\in\mathbb{N}}\) una sèrie de termes positius decreixent amb 
+		\[\lim_{n\to\infty}a_{n}=0.\]
+		Aleshores la sèrie alternada de \((a_{n})_{n\in\mathbb{N}}\) és convergent.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		Sigui \(\alpha\) un real. Volem estudiar per a quins valors de \(\alpha\) la sèrie
+		\[\sum_{n=0}^{\infty}\frac{(-1)^{n}}{\alpha^{n}}\]
+		és convergent.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	% Mirar si el Morelo té més teoria d'alternades. Encara que és normal que sigui curta.
+	\subsection{Convergència absoluta}
+	\begin{definition}[Convergència absoluta]
+		\labelname{convergència absoluta d'una sèrie}\label{def:convergència absoluta d'una sèrie}
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie numèrica tal que la sèrie
+		\[\sum_{n=0}^{\infty}\abs{a_{n}}\]
+		sigui convergent. Aleshores direm que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:si una sèrie és absolutament convegent és convergent}
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie absolutament convergent. Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{example}
+		Sèrie absolutament convergent.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{example}
+		Sèrie convergent però no absolutament convergent.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\subsection{Sèries del producte de successions}
+	\begin{lemma}[Fórmula de sumació d'Abel]
+		\labelname{fórmula de sumació d'Abel}\label{lema:fórmula de sumació d'Abel}
+		Siguin \((a_{n})_{n\in\mathbb{N}}\) i \((b_{n})_{n\in\mathbb{N}}\) dues sèries numèriques. Aleshores per a tots naturals \(N\) i \(M\) tenim, amb \(A_{N}=\sum_{n=0}^{N}a_{n}\), que
+		\[\sum_{n=M}^{N}a_{n}b_{n}=A_{N}b_{N}-A_{M-1}b_{M}+\sum_{n=M}^{N}A_{n}(b_{n}-b_{n-1}+1).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}[Teorema de Dirichlet]
+		\labelname{Teorema de Dirichlet per sèries numèriques}\label{thm:Teorema de Dirichlet per sèries numèriques}
+		Siguin \((a_{n})_{n\in\mathbb{N}}\) una successió numèrica tal que existeix un real \(C\) tal que \(\abs{\sum_{n=0}^{N}a_{n}}\leq C\) per a tot \(N\) natural i \((b_{n})_{n\in\mathbb{N}}\) una successió numèrica monòtona amb \(\lim_{n\to\infty}b_{n}=0\). Aleshores la sèrie
+		\[\sum_{n=0}^{\infty}a_{n}b_{n}\]
+		és convergent.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		\[\sum_{n=1}^{\infty}\frac{\sin(n)}{n}.\]
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{theorem}[Criteri d'Abel]
+		\labelname{criteri d'Abel}\label{thm:Criteri d'Abel}
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent i \((b_{n})_{n\in\mathbb{N}}\) una successió numèrica monòtona i convergent. Aleshores la sèrie
+		\[\sum_{n=0}^{N}a_{n}b_{n}\]
+		és convergent.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}	
+	\subsection{Reordenació de sèries}
+	\begin{definition}[Reordenada d'una sèrie]
+		\labelname{reordenada d'una sèrie}\label{def:reordenada d'una sèrie}
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) dues sèries tals que existeix una permutació \(\sigma\) de \(\mathbb{N}\) tal que
+		\[\sum_{n=0}^{\infty}a_{n}=\sum_{n=0}^{\infty}b_{\sigma(n)}.\]
+		Aleshores direm que la sèrie \(\sum_{n=0}^{\infty}b_{n}\) és una reordenada de la sèrie \(\sum_{n=0}^{\infty}a_{n}\)
+	\end{definition}
+	\begin{lemma}
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius convergent i \(\sigma\) una permutació de \(\mathbb{N}\). Aleshores tenim que
+		\[\sum_{n=0}^{\infty}a_{\sigma(n)}\leq\sum_{n=0}^{\infty}a_{n}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{lemma}
+	\begin{corollary}
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius convergent i \(\sigma\) una permutació de \(\mathbb{N}\). Aleshores tenim que
+		\[\sum_{n=0}^{\infty}a_{\sigma(n)}=\sum_{n=0}^{\infty}a_{n}.\]
+	\end{corollary}
+	\begin{lemma}
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie absolutament convergent i \(\sigma\) una permutació de \(\mathbb{N}\). Aleshores tenim que
+		\[\sum_{n=0}^{\infty}a_{n}=\sum_{n=0}^{\infty}a_{\sigma(n)}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}[Teorema de la reordenació de sèries de Riemann]
+		\labelname{Teorema de la reordenació de sèries de Riemann}\label{thm:Teorema de la reordenació de sèries de Riemann}
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent i \(L\) un nombre real. Aleshores existeix una permutació \(\sigma\) de \(\mathbb{N}\) tal que
+		\[\sum_{n=0}^{\infty}a_{\sigma(n)}=L.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\section{Successions i sèries de funcions}
+	\subsection{Successions de funcions}
+	\begin{definition}
+		wooo dale papi
+	\end{definition}
 	
-%	\subsection{Sèries alternades}
-%	\subsection{Convergència absoluta}
-%	\subsection{Reordenació de sèries}
-%	
-%	\section{Successions i sèries de funcions}
-%	\subsection{Successions de funcions}
 %	\subsection{Sèries de funcions}
 %	\subsection{Sèries de potències}
 %	\subsection{Teorema d'aproximació polinòmica de Weierstrass}
