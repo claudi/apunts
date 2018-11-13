@@ -1,1 +1,3 @@
 Afegit teoria i exemples a anàlisi, sense demostracions o solucions, fins al tema de successions i sèries de funcions.
+Amagada una part de EDOS I que no m'agrada.
+Afegit teoria a topologia fins la topologia quocient.

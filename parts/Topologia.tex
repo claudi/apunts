@@ -220,7 +220,7 @@
 			Definim
 			\begin{equation}
 				\label{prop:condició equivalent a base d'una topologia:eq1}
-				\tau=\left\{\obert{U}\subseteq X\mid\obert{U}=\bigcup_{i\in I}B_{i}\text{ amb }B_{i}\in\base{B}\right\}
+				\tau=\left\{\obert{U}\subseteq X\mid\obert{U}=\cup_{i\in I}B_{i}\text{ amb }B_{i}\in\base{B}\right\}
 			\end{equation}
 			Observem que \(X\) i \(\emptyset\) pertanyen a \(\tau\).
 			
@@ -576,6 +576,122 @@
 			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que \(\tancat{C}\) és un tancat de \(X\). Com que, per la definició de \myref{def:topologia}, \(\tancat{C}\) és un subconjunt de \(A\), tenim que \(\tancat{C}=A\cap\tancat{C}\), i per la definició de \myref{def:topologia induida per un subconjunt} trobem que \(\tancat{C}\) és un tancat de \(A\).
 		\end{proof}
 	\end{proposition}
+	\subsection{La topologia producte}
+	\begin{proposition}
+		\label{prop:la topologia producte}
+		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics,
+		\[\base{B}=\{\obert{V}_{X}\times\obert{V}_{Y}\subseteq X\times Y\mid\obert{V}_{X}\in\tau_{X}\text{ i }\obert{V}_{Y}\in\tau_{Y}\}\]
+		i
+		\[\tau=\{\obert{U}\subseteq X\times Y\mid\text{Existeix una família }\{\obert{U}_{i}\}_{i\in I}\subseteq\base{B}\text{ tal que }\obert{U}=\cup_{i\in I}\obert{U}_{i}\}.\]
+		Aleshores \(\tau\) és una topologia de \(X\times Y\).
+		\begin{proof}
+			Per l'\myref{axiom:axioma de regularitat} trobem que \(\emptyset\) és un subconjunt de \(\base{B}\), i per la definició de \(\tau\) trobem que \(\emptyset\) és un element de \(\tau\).
+			
+			Per la definició de \myref{def:topologia} trobem que \(X\) és un obert de \(X\) i \(Y\) és un obert de \(Y\). Per tant \(X\times Y\) és un element de \(\base{B}\) i per la definició de \(\tau\) trobem que \(X\times Y\) és un element de \(\tau\).
+			
+			Prenem una família \(\{\obert{U}_{i}\}_{i\in I}\) d'elements de \(\tau\) i considerem
+			\[\obert{U}=\bigcup_{i\in I}\obert{U}_{i}.\]
+			Per la definició de \(\tau\) trobem que per a cada \(i\) de \(I\) existeix una família \(\{\obert{V}_{j}\}_{j\in J_{i}}\) d'elements de \(\base{B}\) tals que
+			\[\obert{U}_{i}=\bigcup_{j\in J_{i}}V_{j}.\]
+			Ara bé, per la definició de \(\base{B}\) trobem que per a tot \(j\) de \(J_{i}\) existeixen oberts \(\obert{V}_{j,X}\) de \(X\) i oberts \(\obert{V}_{j,Y}\) de \(Y\) tals que
+			\[\obert{V}_{j}=\obert{V}_{j,X}\times\obert{V}_{j,Y},\]
+			i per tant trobem que
+			\[\obert{U}=\bigcup_{i\in I}\bigcup_{j\in J_{i}}\left(\obert{V}_{j,X}\times\obert{V}_{j,Y}\right),\]
+			i per la definició de \(\tau\) trobem que \(\obert{U}\) és un element de \(\tau\).
+			
+			Siguin \(\obert{U}\) i \(\obert{V}\) dos elements de \(\tau\) i considerem
+			\[\obert{W}=\obert{U}\cap\obert{V}.\]
+			Per la definició de \(\tau\) tenim que existeixen dues famílies \(\{\obert{U}_{i}\}_{i\in I}\) i \(\{\obert{V}_{j}\}_{j\in J}\) de \(\base{B}\) tals que
+			\[\obert{U}=\bigcup_{i\in I}\obert{U}_{i}\quad\text{i}\quad\obert{V}=\bigcup_{j\in J}\obert{V}_{j},\]
+			i per la definició de \(\base{B}\) trobem que per a cada \(i\) de \(I\) existeixen un obert \(\obert{U}_{i,X}\) de \(X\) i un obert \(\obert{U}_{i,Y}\) de \(Y\) tals que
+			\[\obert{U}_{i}=\obert{U}_{i,X}\times\obert{U}_{i,Y}\]
+			i per a cada \(j\) de \(J\) existeixen un obert \(\obert{V}_{j,X}\) de \(X\) i un obert \(\obert{V}_{j,Y}\) de \(Y\) tals que
+			\[\obert{V}_{j}=\obert{V}_{j,X}\times\obert{V}_{j,Y}.\]
+			
+			Per tant tenim que
+			\[\obert{U}=\left(\bigcup_{i\in I}\left(\obert{U}_{i,X}\times\obert{U}_{i,Y}\right)\right)\cap\left(\bigcup_{j\in J}\left(\obert{V}_{j,X}\times\obert{V}_{j,Y}\right)\right)\]
+			i trobem que
+			\[\obert{U}=\left(\bigcup_{i\in I}\obert{U}_{i,X}\times\bigcup_{i\in I}\obert{U}_{i,Y}\right)\cap\left(\bigcup_{j\in J}\obert{V}_{j,X}\times\bigcup_{j\in J}\obert{V}_{j,Y}\right)\]
+			i per tant
+			\[\obert{U}=\left(\bigcup_{i\in I}\obert{U}_{i,X}\cap\bigcup_{j\in J}\obert{V}_{j,X}\right)\times\left(\bigcup_{i\in I}\obert{U}_{i,Y}\cap\bigcup_{j\in J}\obert{V}_{j,Y}\right),\]
+			i per la definició de \myref{def:topologia} trobem que
+			\[\bigcup_{i\in I}\obert{U}_{i,X}\cap\bigcup_{j\in J}\obert{V}_{j,X}\quad\text{i}\quad\bigcup_{i\in I}\obert{U}_{i,Y}\cap\bigcup_{j\in J}\obert{V}_{j,Y}\]
+			són oberts, i per la definició de \(\tau\) trobem que \(\obert{U}\) és un element de \(\tau\), i per la definició de \myref{def:topologia} trobem que \(\tau\) és una topologia de \(X\times Y\), com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Topologia producte]
+		\labelname{topologia producte}\label{def:topologia producte}
+		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i
+		\[\base{B}=\{\obert{V}_{X}\times\obert{V}_{Y}\subseteq X\times Y\mid\obert{V}_{X}\in\tau_{X}\text{ i }\obert{V}_{Y}\in\tau_{Y}\}.\]
+		Aleshores direm que \(X\times Y\) amb la topologia
+		\[\tau=\{\obert{U}\subseteq X\times Y\mid\text{Existeix una família }\{\obert{U}_{i}\}_{i\in I}\subseteq\base{B}\text{ tal que }\obert{U}=\cup_{i\in I}\obert{U}_{i}\}\]
+		és l'espai topològic producte de \(X\) i \(Y\) i que \(\tau\) és la topologia producte de \(X\) i \(Y\).
+		
+		Aquesta definició té sentit per la proposició \myref{prop:la topologia producte}
+	\end{definition}
+	\begin{example}[Projeccions]
+		\label{ex:les projeccions en la topologia producte són contínues i obertes}
+		Siguin \(X\times Y\) amb la topologia \(\tau\) la topologia producte de \(X\) i \(Y\) i
+		\begin{align*}
+			\pi_{X}\colon X\times Y&\longrightarrow X \\
+			(x,y)&\longmapsto x
+		\end{align*}
+		un aplicació. Volem veure que \(\pi_{X}\) és contínua i oberta.
+		\begin{solution}
+			Comencem veient que \(\pi_{X}\) és contínua. Prenem un obert \(\obert{U}\) de \(X\) i considerem
+			\[\{(x,y)\in X\times Y\mid \pi_{X}(x,y)\in\obert{U}\}.\]
+			Tenim doncs que
+			\[\obert{U}\times Y=\{(x,y)\in X\times Y\mid \pi_{X}(x,y)\in\obert{U}\},\]
+			i com que, per hipòtesi, \(Y\) és un espai topològic, tenim que \(Y\) és un obert de \(Y\), i de nou per hipòtesi tenim que \(\obert{U}\) és un obert de \(X\). Per tant trobem que \(\obert{U}\times Y\) és un obert de \(X\times Y\), i per la definició d'\myref{def:aplicació contínua} trobem que \(\pi_{X}\) és contínua.
+			
+			Veiem ara que \(\pi_{X}\) és oberta. Prenem un obert \(A\) de \(X\times Y\) i un punt \(x\) de \(\{\pi_{X}(x,y)\in X\mid(x,y)\in A\}\). Aleshores tenim que existeix un punt \(a\) de \(A\) tal que \(\pi_{X}(a)=x\). Per la definició de \myref{def:topologia producte} tenim que existeixen un obert \(\obert{U}_{x}\) de \(X\) i un obert \(\obert{V}_{x}\) de \(Y\) tals que
+			\[a\in\obert{U}_{x}\times\obert{V}_{x}\subseteq A.\]
+			Observem que
+			\[\obert{U}=\{\pi_{X}(x,y)\in X\mid(x,y)\in\obert{U}_{x}\times\obert{V}_{x}\}\]
+			és un obert de \(X\), i per tant
+			\[x\in\obert{U}_{x}\subseteq\{\pi_{X}(x,y)\in X\mid(x,y)\in A\},\]
+			i, denotant \(B=\{\pi_{X}(x,y)\in X\mid(x,y)\in A\}\), trobem que
+			\begin{align*}
+				B&\subseteq\bigcup_{x\in B}x \\
+				&\subseteq\bigcup_{x\in B}\obert{U}_{x} \\ &\subseteq B,
+			\end{align*}
+			i per tant trobem que \(\{\pi_{X}(x,y)\in X\mid(x,y)\in A\}\) és un obert de \(X\), i per la definició d'\myref{def:aplicació oberta} trobem que \(\pi_{X}\) és una aplicació oberta. % REVISAR? Estic medio empanado
+		\end{solution}
+	\end{example}
+	\begin{theorem}
+		\label{thm:una aplicació és contínua si i només si les seves components són contínues}
+		Siguin \(Z\) amb la topologia \(\tau_{Z}\) un espai topològic, \(X\times Y\) amb la topologia \(\tau\) la topologia producte de \(X\) i \(Y\), \(f\colon Z\longrightarrow X\times Y\) una aplicació. Aleshores \(f\) és contínua si i només si les aplicacions \(\pi_{X}\circ f\) i \(\pi_{Y}\circ f\) són contínues.
+		\begin{proof}
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(f\) és contínua. Aleshores per l'exercici \myref{ex:les projeccions en la topologia producte són contínues i obertes} trobem que les aplicacions \(\pi_{X}\) i \(\pi_{Y}\) són contínues i per l'observació \myref{obs:la composició d'aplicacions contínues és contínua} hem acabat.
+			
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que les aplicacions \(\pi_{X}\circ f\) i \(\pi_{Y}\circ f\) són contínues.
+			
+			\emph{hmm} %TODO
+		\end{proof}
+	\end{theorem}
+	\begin{proposition}
+		Siguin \(X_{1}\) amb la topologia \(\tau_{X_{1}}\),  \(X_{2}\) amb la topologia \(\tau_{X_{2}}\), \(Y_{1}\) amb la topologia \(\tau_{_{1}}\) i \(Y_{2}\) amb la topologia \(\tau_{Y_{2}}\) quatre espais topològics tals que
+		\[X_{1}\cong X_{2}\quad\text{i}\quad Y_{1}\cong Y_{2}.\]
+		Aleshores
+		\[X_{1}\times Y_{1}\cong X_{2}\times Y_{2}.\]
+		\begin{proof}
+			Per la definició d'\myref{def:espais topològics isomorfs} trobem que existeixen dos homeomorfismes \(f\colon X_{1}\longrightarrow X_{2}\) i \(g\colon Y_{1}\longrightarrow Y_{2}\). Considerem doncs l'aplicació
+			\begin{align*}
+				h\colon X_{1}\times Y_{1}&\longrightarrow X_{2}\times Y_{2} \\
+				(x,y)&\longmapsto(f(x),g(y)).
+			\end{align*}
+			Com que, per hipòtesi, les aplicacions \(f\) i \(g\) són homeomorfismes, tenim per la definició d'\myref{def:homeomorfisme entre topologies} que \(f\) i \(g\) són bijectives. Ara bé, trobem que \(h\) també és bijectiva, ja que té per inversa la funció
+			\begin{align*}
+				h^{-1}\colon X_{2}\times Y_{2}&\longrightarrow X_{1}\times Y_{1} \\
+				(x,y)&\longmapsto(f^{-1}(x),g^{-1}(y)).
+			\end{align*}
+			
+			Veiem ara que \(h\) és oberta. Sigui \(\obert{U}\) un obert de \(X_{1}\times Y_{1}\) i denotem
+			\[\obert{V}=\{f(x,y)\in X_{2}\times Y_{2}\mid(x,y)\in\obert{U}\}.\]
+			Volem veure que \(\obert{V}\) és un obert de \(X_{2}\times Y_{2}\).
+		\end{proof}
+	\end{proposition}
+	\subsection{La topologia quocient}
 	
 %	\begin{definition}[Aplicació contínua i homeomorfisme]
 %		\labelname{aplicació contínua}\label{def:aplicació contínua}
@@ -617,10 +733,17 @@
 %		\end{proof}
 %	\end{theorem}
 
-%	\subsection{Aplicacions contínues}
-%	\subsection{Subespais}
-%	\subsection{La topologia producte}
-%	\subsection{La topologia quocient}
+%	\begin{definition}[El conjunt de Cantor]
+%		\labelname{conjunt de Cantor}\label{def:conjunt de Cantor}
+%		Siguin
+%		\[X_{1}=\left(\frac{1}{3},\frac{2}{3}\right)\quad\text{i}\quad I_{1}=[0,1]\setminus X_{1}.\]
+%		Definim
+%		\[X_{n+1}=X_{n}\cup\left(\bigcup_{i=0}^{3^{n}-1}\left(\frac{1+3i}{3^{n+1}},\frac{2+3i}{3^{n+1}}\right)\right)\]
+%		i \(I_{n+1}=[0,1]\setminus X_{n+1}\). Aleshores direm que
+%		\[C=\bigcap_{i=0}^{\infty}I_{n}\]
+%		és el conjunt de Cantor.
+%	\end{definition}
+
 %	\subsection{Espais compactes}
 %	\subsection{Espais de Hausdorff}
 %	\subsection{Connexió}
