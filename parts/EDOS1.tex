@@ -409,7 +409,6 @@
 			%TODO
 		\end{proof}
 	\end{corollary}	% Veure que si \(f\) és decreixent (o creixent també?) en \(u(x)\) i contínua el problema de Cauchy té solució única. Xat amb l'Aure
-	\begin{comment}
 	\subsection{Solucions improrrogables}
 	\begin{definition}[Conjunt de solucions d'un problema de Cauchy]
 		\labelname{conjunt de solucions d'un problema de Cauchy}\label{def:conjunt de solucions d'un problema de Cauchy}
@@ -499,11 +498,50 @@
 			%TODO
 		\end{proof}
 	\end{theorem}
-	\end{comment}
 	\section{Dependència de les solucions d'un problema de Cauchy}
-	\begin{definition}
-		content...
+	\begin{lemma}
+		\label{lema:continuitat respecte les condicions inicials}
+		Sigui \((\varphi_{n})_{n\in\mathbb{N}}\) una successió uniformement equicontínua i uniformement acota de funcions contínues reals sobre un espai mètric compacte \(F\) tal que tota parcial uniformement convergent de la successió té per límit una funció \(\varphi\). Aleshores la successió \((\varphi_{n})\) convergeix uniformement a \(\varphi\).
+		\begin{proof}
+			Suposem que la successió \((\varphi_{n})_{n\in\mathbb{N}}\) no convergeix uniformement a \(\varphi\). Per la definició de \myref{def:límit} tenim que existeix un \(\varepsilon>0\) tal que per a tot \(N\) natural existeix un \(n_{N}>N\) tal que
+			\[\norm{\varphi_{n_{N}}-\varphi}\geq\varepsilon.\]
+			Per tant podem construir una successió \((\varphi_{n_{N}})_{N\in\mathbb{N}}\) tal que
+			\begin{equation}
+				\label{lema:continuitat respecte les condicions inicials:eq1}
+				\norm{\varphi_{n_{N}}-\varphi}\geq\varepsilon
+			\end{equation}
+			per a tot \(N\) natural. Ara bé, pel Teorema d'\myref{thm:Teorema de Arzelà-Ascoli} la successió \((\varphi_{n_{N}})_{N\in\mathbb{N}}\) té una parcial uniformement convergent, que contradiu \eqref{lema:continuitat respecte les condicions inicials:eq1}. Per tant tenim que la successió \((\varphi_{n})\) convergeix uniformement a \(\varphi\).
+		\end{proof}
+	\end{lemma}
+	\begin{definition}[Convergència uniforme sobre compactes]
+		\labelname{convergència uniforme sobre compactes}\label{def:convergència uniforme sobre compactes}
+		Sigui \(X\) un espai mètric i \((f_{m})_{m\in\mathbb{N}}\) una successió de funcions contínues sobre \(\mathbb{R}\) tal que per a tot compacte \(K\) la successió de funcions \((f_{m}^{K})_{m\in\mathbb{R}}\) definides com
+		
 	\end{definition}
+	\begin{theorem}[Continuïtat respecte les condicions inicials]
+		\labelname{continuïtat respecte les condicions inicials}\label{thm:continuitat respecte les condicions inicials}
+		Siguin \(\Omega\) un obert de \(\mathbb{R}\times\mathbb{R}^{n}\), \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua tal que per a cada punt \((t_{0},x_{0})\) de \(\Omega\) el problema de Cauchy
+		\[\begin{cases*}
+			\frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+			u(t_{0})=x_{0}
+		\end{cases*}\]
+		té una única solució maximal \(\varphi_{t_{0},x_{0}}\) definida en un interval \(I_{t_{0},x_{0}}\) i
+		\[D=\{(t,t_{0},x_{0})\in\mathbb{R}\times\mathbb{R}\times\mathbb{R}^{n}\mid(t_{0},x_{0})\in\Omega,t\in I_{t_{0},x_{0}}\}.\]
+		Aleshores \(D\) és un obert i l'aplicació
+		\begin{align*}
+			\varphi\colon D&\longrightarrow\mathbb{R} \\
+			(t,t_{0},x_{0})&\longmapsto\varphi_{t_{0},x_{0}}(t)
+		\end{align*}
+		és contínua.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	
+	
+	
+	
+	
 	
 	\begin{comment}
 	\begin{definition}[Equació diferencial ordinària d'ordre \(n\)]
@@ -714,3 +752,4 @@
 % http://issc.uj.ac.za/downloads/problems/ordinary.pdf
 % https://arxiv.org/pdf/1202.1152.pdf
 % Link del Suso al Cedò
+% https://www.math.uni-bielefeld.de/~grigor/odelec2007.pdf

@@ -1,3 +1,6 @@
-Afegit teoria i exemples a anàlisi, sense demostracions o solucions, fins al tema de successions i sèries de funcions.
-Amagada una part de EDOS I que no m'agrada.
-Afegit teoria a topologia fins la topologia quocient.
+Petit canvi tipogràfic sobre quin costat s'obren els capítols i les parts, tenint en compte el cas particular de les bibliografies.
+Afegida teoria a EDOS I fins 
+
+
+% Línies: EDOS I 755, Topo 760, Am 676
+% +333 per 10k
