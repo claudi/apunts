@@ -22,7 +22,7 @@
 		Si \(L\) no és un nombre real direm que la sèrie \(\sum_{n=1}^{\infty}a_{n}\) és una sèrie divergent.
 	\end{definition}
 	\begin{example}[Sèries geomètriques]
-		\labelname{sèries geomètriques}\label{ex:sèries geomètriques}
+		\labelname{}\label{ex:sèries geomètriques}
 		Sigui \(r\neq0\) un nombre real. Volem estudiar la convergència de la sèrie
 		\begin{equation}
 			\label{ex:sèries geomètriques:eq1}
@@ -94,7 +94,7 @@
 		\end{proof}
 	\end{corollary}
 	\begin{example}[Sèrie harmònica]
-		\labelname{sèrie harmònica}\label{ex:sèrie harmònica}
+		\labelname{}\label{ex:sèrie harmònica}
 		Sigui \(\alpha\) un nombre real. Volem estudiar la convergència de la sèrie
 		\begin{equation}
 			\label{ex:sèrie harmònica:eq1}
@@ -232,7 +232,7 @@
 			\[\abs{\sqrt[n]{a_{n}}-L}<\varepsilon,\]
 			i per tant
 			\[L-\varepsilon<\sqrt[n]{a_{n}}.\]
-			Ara bé, tenim que \(L-\varepsilon>1\), per tant per l'exercici \myref{ex:sèries geomètriques} tenim que \(\sum_{n=0}^{\infty}(L-\varepsilon)^{n}\) és divergent, i per tant pel lema \myref{lema:criteri de comparació de sèries de termes positius} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
+			Ara bé, tenim que \(L-\varepsilon>1\), per tant per l'exercici \myref{ex:sèries geomètriques} tenim que la sèrie \(\sum_{n=0}^{\infty}(L-\varepsilon)^{n}\) és divergent, i per tant pel lema \myref{lema:criteri de comparació de sèries de termes positius} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
 		\end{proof}
 	\end{proposition}
 	\begin{example}
@@ -389,7 +389,45 @@
 		\labelname{criteri de condensació}\label{prop:criteri de condensació}
 		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius amb \((a_{n})_{n\in\mathbb{N}}\) decreixent. Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si la sèrie \(\sum_{n=0}^{\infty}2^{n}a_{2^{n}}\) és convergent.
 		\begin{proof}
-			%TODO
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent i definim
+			\[S_{N}=\sum_{n=0}^{N}a_{n}\quad\text{i}\quad T_{N}=\sum_{n=0}^{N}2^{n}a_{2^{n}}.\]
+			Per la definició de \myref{def:sèrie convergent} tenim que existeix un real \(C\) tal que per a tot \(N\) natural
+			\begin{equation}
+				\label{prop:criteri de condensació:eq1}
+				S_{N}\leq\frac{C}{2}
+			\end{equation}
+			Aleshores tenim que la successió \(T_{N}\) és creixent, ja que \((2^{n})_{n\in\mathbb{N}}\) és una successió de termes positius creixent i \((a_{n})\) és, per hipòtesi, una successió de termes positius. %REF
+			
+			Veiem ara que \(T(N)\) està fitada. Tenim que
+			\begin{align*}
+				T_{N}&=2a_{2}+4x_{4}+8x_{6}+\dots+2^{N}a_{2^{N}} \\
+				&=2(a_{2}+2a_{4}+4a_{6}+\dots+2^{N-1}a_{2^{N}}) \\
+				&\leq2\left(a_{2}+(a_{3}+a_{4})+(a_{5}+a_{6}+a_{7}+a_{8})+\dots+(a_{2^{N-1}}+\dots+a_{2^{N}})\right) \\
+				&=2S_{2^{N}}\leq C \tag{\ref{prop:criteri de condensació:eq1}}
+			\end{align*}
+			i per tant la successió \(T_{N}\) és creixent i està fitada, i per tant és convergent, i per la definició de \myref{def:sèrie convergent} trobem que la sèrie
+			\[\sum_{n=0}^{\infty}2^{n}a_{2^{n}}\]
+			és convergent.
+			
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que la sèrie
+			\[\sum_{n=0}^{\infty}2^{n}a_{2^{n}}\]
+			és convergent. Definim
+			\[S_{N}=\sum_{n=0}^{N}a_{n}\quad\text{i}\quad T_{N}=\sum_{n=0}^{N}2^{n}a_{2^{n}},\]
+			i com que, per hipòtesi, la sèrie \(\sum_{n=0}^{\infty}2^{n}a_{2^{n}}\) és convergent tenim que existeix un real \(C\) tal que per a tot \(N\) es satisfà
+			\begin{equation}
+				\label{prop:criteri de condensació:eq2}
+				T(N)\leq C
+			\end{equation}
+			Aleshores, com que per hipòtesi la successió \(a_{n}\) és decreixent, tenim que
+			\begin{align*}
+				S_{N}&=a_{1}+(a_{2}+a_{3}+)+(a_{4}+\dots+a_{7})+\dots+a_{N} \\
+				&\leq a_{1}+2x_{2}+8a_{8}+\dots+2^{N}a_{N} \\
+				&=a_{1}+T(N)\leq a_{1}+C.\tag{\ref{prop:criteri de condensació:eq2}}
+			\end{align*}
+			Per tant tenim que la successió \((S_{N})\) és acotada, i com que per hipòtesi la successió \((a_{n})\) és una successió de termes positius trobem que la sèrie \(S_{N}\) és creixent, i per tant convergent, %REF
+			i per la definició de \myref{def:sèrie convergent} trobem que la sèrie
+			\[\sum_{n=0}^{\infty}a_{n}\]
+			és convergent, com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}[Criteri logarítmic]
@@ -402,7 +440,23 @@
 			\item\label{prop:criteri logarítmic:enum2} \(L<1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
 		\end{enumerate}
 		\begin{proof}
-			%TODO
+			Comencem veient el punt \eqref{prop:criteri logarítmic:enum1}. Suposem doncs que \(L>1\). Prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>1\). Aleshores per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
+			\[\abs{\frac{\log\left(\frac{1}{a_{n}}\right)}{\log(n)}-L}<\varepsilon,\]
+			i per tant per a tot \(n>n_{0}\) tenim
+			\[L-\varepsilon<\frac{\log\left(\frac{1}{a_{n}}\right)}{\log(n)},\]
+			i per tant
+			\[(L-\varepsilon)\log(n)<\log\left(\frac{1}{a_{n}}\right)\]
+			o, equivalentment,
+			\[\log\left(n^{L-\varepsilon}\right)<\log\left(\frac{1}{a_{n}}\right)\]
+			i tenim que %REF
+			\[n^{L-\varepsilon}<\frac{1}{a_{n}}.\]
+			Per tant,
+			\[a_{n}>\frac{1}{n^{L-\varepsilon}}\]
+			Ara bé, com que per hipòtesi \(L-\varepsilon>1\), per l'exercici \myref{ex:sèrie harmònica} trobem que la sèrie
+			\[\sum_{n=0}^{\infty}\frac{1}{n^{L-\varepsilon}}\]
+			és convergent, i pel lemma \myref{lema:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			
+			Veiem ara el punt \eqref{prop:criteri logarítmic:enum1}. Suposem doncs que \(L<1\). Prenem un \(\varepsilon>0\) tal que \(L+\varepsilon<1\).
 		\end{proof}
 	\end{proposition}
 	\begin{example}
