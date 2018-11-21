@@ -1,5 +1,6 @@
 Petit canvi tipogràfic sobre quin costat s'obren els capítols i les parts, tenint en compte el cas particular de les bibliografies.
-Afegida teoria a EDOS I fins 
+Afegida teoria a EDOS I
+He afegit més demostracions a la teoria d'anàlisi matemàtic.
 
 
 % Línies: EDOS I 755, Topo 760, Am 676

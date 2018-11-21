@@ -440,7 +440,7 @@
 			\item\label{prop:criteri logarítmic:enum2} \(L<1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
 		\end{enumerate}
 		\begin{proof}
-			Comencem veient el punt \eqref{prop:criteri logarítmic:enum1}. Suposem doncs que \(L>1\). Prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>1\). Aleshores per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
+			Comencem veient el punt \eqref{prop:criteri logarítmic:enum2}. Suposem doncs que \(L>1\). Prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>1\). Aleshores per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
 			\[\abs{\frac{\log\left(\frac{1}{a_{n}}\right)}{\log(n)}-L}<\varepsilon,\]
 			i per tant per a tot \(n>n_{0}\) tenim
 			\[L-\varepsilon<\frac{\log\left(\frac{1}{a_{n}}\right)}{\log(n)},\]
@@ -456,15 +456,53 @@
 			\[\sum_{n=0}^{\infty}\frac{1}{n^{L-\varepsilon}}\]
 			és convergent, i pel lemma \myref{lema:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			
-			Veiem ara el punt \eqref{prop:criteri logarítmic:enum1}. Suposem doncs que \(L<1\). Prenem un \(\varepsilon>0\) tal que \(L+\varepsilon<1\).
+			Veiem ara el punt \eqref{prop:criteri logarítmic:enum1}. Suposem doncs que \(L<1\). Prenem un \(\varepsilon>0\) tal que \(L+\varepsilon<1\). Per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
+			\[\abs{\frac{\log\left(\frac{1}{a_{n}}\right)}{\log(n)}-L}<\varepsilon,\]
+			i per tant trobem que
+			\[\frac{\log\left(\frac{1}{a_{n}}\right)}{\log(n)}<\varepsilon+L,\]
+			o equivalentment,
+			\[\log\left(\frac{1}{a_{n}}\right)<(\varepsilon+L)\log(n)\]
+			i tenim que
+			\[\log\left(\frac{1}{a_{n}}\right)<\log\left(n^{\varepsilon+L}\right)\]
+			i per tant
+			\[\frac{1}{a_{n}}<n^{\varepsilon+L}\]
+			i trobem
+			\begin{equation}
+				\label{prop:criteri logarítmic:eq1}
+				a_{n}>\frac{1}{n^{\varepsilon+L}}.
+			\end{equation}
+			
+			Ara bé, com que per hipòtesi \(L+\varepsilon<1\), per l'exemple \myref{ex:sèrie harmònica} que la sèrie
+			\[\sum_{n=0}^{\infty}\frac{1}{n^{L+\varepsilon}}\]
+			és divergent, i pel lema \myref{lema:criteri de comparació de sèries de termes positius} i \eqref{prop:criteri logarítmic:eq1} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
 		\end{proof}
 	\end{proposition}
 	\begin{example}
+		\label{ex:sèrie harmònica amb logarítme del factorial}
 		Sigui \(\alpha\) un real. Volem estudiar per a quins valors de \(\alpha\) la sèrie
-		\[\sum_{n=0}^{\infty}\frac{1}{n^{\alpha}\log(n)}\]
+		\begin{equation}
+			\label{ex:sèrie harmònica amb logarítme:eq1}
+			\sum_{n=0}^{\infty}\frac{\log(n!)}{n^{\alpha}}
+		\end{equation}
 		és convergent.
 		\begin{solution}
-			%TODO
+			Veiem primer que
+			\[\lim_{n\to\infty}\frac{\log(n!)}{n\log(n)}=1.\]
+			Tenim que %REF
+			\begin{align*}
+				\log(n!)&=\log(1)+\log(2)+\dots+\log(n) \\
+				&\leq\log(n)+\log(n)+\dots+\log(n)=n\log(n),
+			\end{align*}
+			i que, amb \(m\) un natural tal que \(m\leq n\),
+			\begin{align*}
+				\log(n!)&=\log(1)+\log(2)+\dots+\log(n) \\
+				&\geq\log(n-m)+\log(n-m+1)+\dots+\log(n)\geq(n-m)\log(n-m),
+			\end{align*}
+			i per tant tenim %REF
+			\begin{equation}
+				\label{ex:sèrie harmònica amb logarítme del factorial:eq1}
+				\lim_{n\to\infty}\frac{\log(n!)}{n\log(n)}=1.
+			\end{equation}
 		\end{solution}
 	\end{example}
 	\begin{proposition}[Criteri de la integral]
