@@ -123,24 +123,6 @@
 			i per tant, com que \(\tau=\mathcal{P}(X)\) trobem per la definició de \myref{def:topologia} que \(\tau\) és una topologia de \(X\).
 		\end{solution}
 	\end{example}
-	\subsection{Topologia d'Alexandroff}
-	\begin{definition}[Topologia d'Alexandroff]
-		\labelname{topologia d'Alexandroff}\label{def:topologia d'Alexandroff}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic tal que per a tota família d'oberts \(\{\obert{U}_{i}\}_{i\in I}\) de \(X\) tenim que
-		\[\bigcap_{i\in I}\obert{U}_{i}\]
-		és un obert de \(X\). Aleshores direm que \(\tau\) és una topologia d'Alexandroff.
-	\end{definition}
-	\begin{proposition}
-		\label{prop:els espais topològics finits són d'Alexandroff}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic amb \(X\) finit. Aleshores \(\tau\) és una topologia d'Alexandroff.
-		\begin{proof}
-			Com que \(X\) és finit tenim que \(\mathcal{P}(X)\) és finit, i com que \(\tau\) és, per la definició de \myref{def:topologia}, un subconjunt de \(\mathcal{P}(X)\) trobem que \(\tau\) és finit. %REF
-			
-			Sigui \(\{\obert{U}_{i}\}_{i\in I}\) una família d'oberts de \(X\) i definim
-			\[\obert{U}=\bigcap_{i\in I}\obert{U}_{i}.\]
-			Tenim que \(\{\obert{U}_{i}\}_{i\in I}\) és un subconjunt de \(\tau\), i tenim també que \(\tau\) és finit, per tant \(\{\obert{U}_{i}\}_{i\in I}\) ha de ser finit i per tant existeix un natural \(n\) tal que \(\{\obert{U}_{i}\}_{i\in I}=\{\obert{U}_{i}\}_{i=1}^{n}\), i per la definició de \myref{def:topologia} hem acabat.
-		\end{proof}
-	\end{proposition}
 	\subsection{Tancats}
 	\begin{definition}[Tancat]
 		\labelname{tancat}\label{def:tancat}
@@ -494,7 +476,7 @@
 				I per la definició de \myref{def:relació d'equivalència} hem acabat.
 			\end{proof}
 	\end{proposition}
-	\chapter{Topologies}
+\chapter{Altres topologies}
 	\section{Topologies induïdes}
 	\subsection{La topologia induïda per un subconjunt}
 	\begin{proposition}
@@ -706,7 +688,25 @@
 		\end{proof}
 	\end{proposition}
 	\subsection{La topologia quocient}
-	
+	\section{Espai d'Alexandroff}
+	\subsection{Propietats bàsiques}
+	\begin{definition}[Topologia d'Alexandroff]
+		\labelname{topologia d'Alexandroff}\label{def:topologia d'Alexandroff}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic tal que per a tota família d'oberts \(\{\obert{U}_{i}\}_{i\in I}\) de \(X\) tenim que
+		\[\bigcap_{i\in I}\obert{U}_{i}\]
+		és un obert de \(X\). Aleshores direm que \(\tau\) és una topologia d'Alexandroff o que \(X\) amb \(\tau\) és un espai topològic d'Alexandroff.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:els espais topològics finits són d'Alexandroff}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic amb \(X\) finit. Aleshores \(\tau\) és una topologia d'Alexandroff.
+		\begin{proof}
+			Com que \(X\) és finit tenim que \(\mathcal{P}(X)\) és finit, i com que \(\tau\) és, per la definició de \myref{def:topologia}, un subconjunt de \(\mathcal{P}(X)\) trobem que \(\tau\) és finit. %REF
+			
+			Sigui \(\{\obert{U}_{i}\}_{i\in I}\) una família d'oberts de \(X\) i definim
+			\[\obert{U}=\bigcap_{i\in I}\obert{U}_{i}.\]
+			Tenim que \(\{\obert{U}_{i}\}_{i\in I}\) és un subconjunt de \(\tau\), i tenim també que \(\tau\) és finit, per tant \(\{\obert{U}_{i}\}_{i\in I}\) ha de ser finit i per tant existeix un natural \(n\) tal que \(\{\obert{U}_{i}\}_{i\in I}=\{\obert{U}_{i}\}_{i=1}^{n}\), i per la definició de \myref{def:topologia} hem acabat.
+		\end{proof}
+	\end{proposition}
 	
 	
 %	\begin{definition}[Aplicació contínua i homeomorfisme]
