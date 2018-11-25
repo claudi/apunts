@@ -1,7 +1,7 @@
 \documentclass[../Apunts.tex]{subfiles}
 
 \begin{document}
-\chapter{Les topologies}
+\chapter{L'espai topològic}
 	\section{Espais mètrics}
 	\subsection{Boles i oberts}
 	\begin{definition}[Espai mètric]
@@ -128,7 +128,7 @@
 		\labelname{topologia d'Alexandroff}\label{def:topologia d'Alexandroff}
 		Siguin \(X\) amb la topologia \(\tau\) un espai topològic tal que per a tota família d'oberts \(\{\obert{U}_{i}\}_{i\in I}\) de \(X\) tenim que
 		\[\bigcap_{i\in I}\obert{U}_{i}\]
-		és un element obert de \(X\). Aleshores direm que \(\tau\) és una topologia d'Alexandroff.
+		és un obert de \(X\). Aleshores direm que \(\tau\) és una topologia d'Alexandroff.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:els espais topològics finits són d'Alexandroff}
@@ -494,7 +494,8 @@
 				I per la definició de \myref{def:relació d'equivalència} hem acabat.
 			\end{proof}
 	\end{proposition}
-	\section{Subespais}
+	\chapter{Topologies}
+	\section{Topologies induïdes}
 	\subsection{La topologia induïda per un subconjunt}
 	\begin{proposition}
 		\label{prop:topologia induida per un subconjunt}
@@ -630,7 +631,7 @@
 		Aquesta definició té sentit per la proposició \myref{prop:la topologia producte}
 	\end{definition}
 	\begin{example}[Projeccions]
-		\label{ex:les projeccions en la topologia producte són contínues i obertes}
+		\labelname{}\label{ex:les projeccions en la topologia producte són contínues i obertes}
 		Siguin \(X\times Y\) amb la topologia \(\tau\) la topologia producte de \(X\) i \(Y\) i
 		\begin{align*}
 			\pi_{X}\colon X\times Y&\longrightarrow X \\
@@ -666,11 +667,18 @@
 			
 			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que les aplicacions \(\pi_{X}\circ f\) i \(\pi_{Y}\circ f\) són contínues.
 			
-			\emph{ànims, Claudi del futur} %TODO
+			Sigui \(\obert{V}\times\obert{W}\) un obert de \(X\times Y\). Per la definició de \myref{def:topologia producte} tenim que \(\obert{V}\) és un obert de \(X\) i \(\obert{W}\) és un obert de \(Y\). Ara bé, com que per hipòtesi les aplicacions \(\pi_{X}\circ f\) i \(\pi_{Y}\circ f\) són contínues, tenim per la definició d'\myref{def:aplicació contínua} que els conjunts
+			\[\obert{U}_{X}=\{x\in Z\mid \pi_{X}\circ f(x)\in\obert{V}\}\quad\text{i}\quad
+			\obert{U}_{Y}=\{x\in Z\mid \pi_{Y}\circ f(x)\in\obert{W}\}\]
+			són oberts de \(Z\), i per la definició de \myref{def:topologia} trobem que el conjunt
+			\[\obert{U}=\obert{U}_{X}\cup\obert{U}_{Y}\]
+			és un obert de \(Z\). Per tant tenim que
+			\[\obert{U}=\{x\in Z\mid f(x)\in\obert{V}\times\obert{W}\},\]
+			és un obert de \(Z\), i com que per hipòtesi el conjunt \(\obert{V}\times\obert{W}\) és un obert de \(X\times Y\), per la definició de \myref{def:aplicació oberta} trobem que \(f\) és una aplicació oberta. %REVISAR
 		\end{proof}
 	\end{theorem}
 	\begin{proposition}
-		Siguin \(X_{1}\) amb la topologia \(\tau_{X_{1}}\),  \(X_{2}\) amb la topologia \(\tau_{X_{2}}\), \(Y_{1}\) amb la topologia \(\tau_{_{1}}\) i \(Y_{2}\) amb la topologia \(\tau_{Y_{2}}\) quatre espais topològics tals que
+		Siguin \(X_{1}\) amb la topologia \(\tau_{X_{1}}\),  \(X_{2}\) amb la topologia \(\tau_{X_{2}}\), \(Y_{1}\) amb la topologia \(\tau_{Y_{1}}\) i \(Y_{2}\) amb la topologia \(\tau_{Y_{2}}\) quatre espais topològics tals que
 		\[X_{1}\cong X_{2}\quad\text{i}\quad Y_{1}\cong Y_{2}.\]
 		Aleshores
 		\[X_{1}\times Y_{1}\cong X_{2}\times Y_{2}.\]
@@ -686,9 +694,15 @@
 				(x,y)&\longmapsto(f^{-1}(x),g^{-1}(y)).
 			\end{align*}
 			
-			Veiem ara que \(h\) és oberta. Sigui \(\obert{U}\) un obert de \(X_{1}\times Y_{1}\) i denotem
-			\[\obert{V}=\{f(x,y)\in X_{2}\times Y_{2}\mid(x,y)\in\obert{U}\}.\]
-			Volem veure que \(\obert{V}\) és un obert de \(X_{2}\times Y_{2}\).
+			Continuem veient que \(h\) és una aplicació oberta. Per la definició d'\myref{def:aplicació oberta} i la definició d'\myref{def:aplicació contínua} en tenim prou amb veure que \(h^{-1}\) és una aplicació contínua. Observem que per a tot \((x,y)\) de \(X_{2}\times Y_{2}\) tenim
+			\[\pi_{X_{1}}\circ h^{-1}(x,y)=f^{-1}(x)\quad\text{i}\quad\pi_{Y_{1}}\circ h^{-1}(x,y)=g^{-1}(y),\]
+			i com que, per hipòtesi, les aplicacions \(f^{-1}\) i \(g^{-1}\) són contínues tenim pel Teorema \myref{thm:una aplicació és contínua si i només si les seves components són contínues} que l'aplicació \(h^{-1}\) és contínua, i per tant \(h\) és una aplicació oberta.
+			
+			Per acabar veiem ara que \(h\) és una aplicació contínua. Observem que per a tot \((x,y)\) de \(X_{1}\times Y_{1}\) tenim
+			\[\pi_{X_{2}}\circ h(x,y)=f(x)\quad\text{i}\quad\pi_{Y_{2}}\circ h(x,y)=g(y),\]
+			i com que, per hipòtesi, les aplicacions \(f\) i \(g\) són aplicacions contínues tenim pel Teorema \myref{thm:una aplicació és contínua si i només si les seves components són contínues} que l'aplicació \(h\) és contínua.
+			
+			Per tant per la definició d'\myref{def:homeomorfisme entre topologies} trobem que \(h\) és un homeomorfisme, i per la definició d'\myref{def:espais topològics isomorfs} trobem que \(X_{1}\times Y_{1}\cong X_{2}\times Y_{2}\), com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\subsection{La topologia quocient}
