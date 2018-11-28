@@ -206,7 +206,7 @@
 		\edef\@mytxt{#2}%
 		\edef\@mytst{\expandafter\@thirdoffive\@mytxt}%
 		\ifx\@mytst\empty
-			\ref{#1}
+			\ref{#1}%
 		\else
 			\nameref{#1}\space\eqref{#1}\fi
 	\endgroup

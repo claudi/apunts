@@ -545,9 +545,30 @@
 	\end{comment}
 	\begin{proposition}[Criteri de la integral]
 		\labelname{criteri de la integral}\label{prop:criteri de la integral}
-		Siguin \(f\colon[1,\infty)\longrightarrow(0,\infty)\) una funció decreixent. Aleshores la sèrie \(\sum_{n=0}^{\infty}f(n)\) és convergent si i només si existeix un real \(C>0\) tal que per a tot \(N\) natural es satisfà \(\int_{1}^{N}f(x)\diff x\leq C\).
+		Siguin \(f\colon[1,\infty)\longrightarrow(0,\infty)\) una funció decreixent. Aleshores la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent si i només si existeix un real \(C>0\) tal que per a tot \(N\) natural es satisfà \(\int_{1}^{N}f(x)\diff x\leq C\).
 		\begin{proof}
-			%TODO
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent. Com que, per hipòtesi, la sèrie és de termes positius, per la definició de \myref{def:sèrie convergent} tenim que existeix un real \(C\) tal que per a tot \(N\) natural es satisfà
+			\[\sum_{n=1}^{N}f(n)\leq C.\]
+			Considerem la integral
+			\[\int_{1}^{N}f(x)\diff x.\]
+			Com que per hipòtesi la funció \(f\) és decreixent trobem que
+			\begin{align*}
+				\int_{1}^{N}f(x)\diff x&\leq(2-1)f(1)+(3-2)f(2)+\dots+(N-(N-1))f(N-1)\\
+				&=f(1)+1f(2)+\dots+1f(N-1)\\
+				&=\sum_{n=1}^{N-1}f(n)\leq C,
+			\end{align*}
+			i hem acabat.
+			
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que existeix un real \(C>0\) tal que per a tot \(N\) natural es satisfà
+			\[\int_{1}^{N}f(x)\diff x\leq C.\]
+			Tenim doncs que per a tot \(N\) natural
+			\begin{align*}
+				C&\geq\int_{1}^{N}f(x)\diff x \\
+				&\geq(1-0)f(1)+(2-1)f(2)+\dots+(N+1-N)f(N) \\
+				&=f(1)+1f(2)+\dots+1f(N) \\
+				&=\sum_{n=1}^{N}f(n),
+			\end{align*}
+			i per la definició de \myref{def:sèrie convergent} trobem que la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent.
 		\end{proof}
 	\end{proposition}
 	% EXEMPLE?
@@ -564,15 +585,63 @@
 		\[\lim_{n\to\infty}a_{n}=0.\]
 		Aleshores la sèrie alternada de \((a_{n})_{n\in\mathbb{N}}\) és convergent.
 		\begin{proof}
-			%TODO
+			Definim
+			\begin{equation}
+				\label{thm:criteri de Leibniz per sèries alternades:eq1}
+				S_{N}=\sum_{n=0}^{N}(-1)^{n}a_{n}
+			\end{equation}
+			i considerem les parcials
+			\[S_{2N+1}=\sum_{n=0}^{2N+1}(-1)^{n}a_{n}\quad\text{i}\quad S_{2N}=\sum_{n=0}^{2N}(-1)^{n}a_{n}.\]
+			
+			Tenim que
+			\[S_{2(N+1)+1}=S_{2N+1}-a_{2N+2}+a_{2N+3},\]
+			i com que, per hipòtesi, la successió \((a_{n})\) és decreixent trobem que
+			\[S_{2(N+1)+1}\leq S_{2N+1},\]
+			i per tant la successió \((S_{2N+1})_{N\in\mathbb{N}}\) és decreixent. També tenim que
+			\[S_{2(N+1)}=S_{2N}+a_{2N+1}-a_{2N+2},\]
+			i de nou, com que la successió \((a_{n})\) és decreixent trobem que
+			\[S_{2(N+1)}\geq S_{2N},\]
+			i per tant la successió \((S_{2N})_{N\in\mathbb{N}}\) és creixent.
+			
+			Ara bé, com que per hipòtesi la successió \((a_{n})\) és de termes positius tenim que
+			\[S_{2N+1}-S_{2N}=a_{2N+1}\geq0,\]
+			i per tant \(S_{2N+1}<S_{2N}\). Així trobem que
+			\begin{align*}
+				a_{1}-a_{2}&=S_{2} \tag{\ref{thm:criteri de Leibniz per sèries alternades:eq1}} \\
+				&\leq S_{2N} \\
+				&< S_{2N+1} \\
+				&\leq S_{1}=a_{1},
+			\end{align*}
+			i tenim que
+			\[\lim_{N\to\infty}\left(S_{2N+1}-S_{2N}\right)=\lim_{N\to\infty}a_{2N+1},\]
+			i com que per hipòtesi
+			\[\lim_{n\to\infty}a_{n}=0\]
+			tenim que
+			\begin{equation}
+				\label{thm:criteri de Leibniz per sèries alternades:eq2}
+				\lim_{N\to\infty}S_{2N+1}=\lim_{N\to\infty}S_{2N}.
+			\end{equation}
+			Per tant tenim que \((S_{2N+1})\) és una successió superiorment acotada i creixent, i per tant convergent, i \((S_{2N})\) és una successió inferiorment acotada i decreixent, i per tant convergent. També tenim per \eqref{thm:criteri de Leibniz per sèries alternades:eq2} que tenen el mateix límit, i per tant la successió \((S_{N})\) és convergent, i per la definició de \myref{def:sèrie convergent} trobem que la sèrie \(\sum_{n=0}^{\infty}(-1)^{n}a_{n}\) és convergent, com volíem veure. %REF
 		\end{proof}
 	\end{theorem}
-	\begin{example}
+	\begin{example}[Sèrie harmònica alternada]
+		\labelname{}\label{ex:sèrie harmònica alternada}
 		Sigui \(\alpha\) un real. Volem estudiar per a quins valors de \(\alpha\) la sèrie
-		\[\sum_{n=0}^{\infty}\frac{(-1)^{n}}{\alpha^{n}}\]
+		\begin{equation}
+			\label{ex:sèrie harmònica alternada:eq1}
+			\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n^{\alpha}}
+		\end{equation}
 		és convergent.
 		\begin{solution}
-			%TODO
+			Si \(\alpha\leq0\) tenim que el límit
+			\[\lim_{n\to\infty}\frac{(-1)^{n}}{n^{\alpha}}\]
+			és divergent, i pel coro{\lgem}ari \myref{cor:terme general tendeix a zero en una sèrie convergent} trobem que la sèrie és divergent.
+			
+			Estudiem ara el cas \(\alpha>0\). Si denotem
+			\[a_{n}=\frac{1}{n^{\alpha}}\]
+			tenim que la successió \((a_{n})_{n\in\mathbb{N}}\) és decreixent, i pel \myref{thm:criteri de Leibniz per sèries alternades} trobem que la sèrie és convergent.
+			
+			Per tant tenim que si \(\alpha>0\) la sèrie \eqref{ex:sèrie harmònica alternada:eq1} és convergent, i si \(\alpha\leq0\) la sèrie és divergent.
 		\end{solution}
 	\end{example}
 	% Mirar si el Morelo té més teoria d'alternades. Encara que és normal que sigui curta.
