@@ -478,33 +478,71 @@
 		\end{proof}
 	\end{proposition}
 	\begin{example}
-		\label{ex:sèrie harmònica amb logarítme del factorial}
-		Sigui \(\alpha\) un real. Volem estudiar per a quins valors de \(\alpha\) la sèrie
+		\label{ex:sèrie de la inversa de alpha elevat a un logarítme}
+		Sigui \(\alpha\) un real. Volem estudiar per a quins valors de \(\alpha>0\) la sèrie
 		\begin{equation}
-			\label{ex:sèrie harmònica amb logarítme:eq1}
-			\sum_{n=0}^{\infty}\frac{\log(n!)}{n^{\alpha}}
+			\label{ex:sèrie de la inversa de alpha elevat a un logarítme:eq1}
+			\sum_{n=1}^{\infty}\frac{1}{\alpha^{\log(n)}}
 		\end{equation}
 		és convergent.
 		\begin{solution}
-			Veiem primer que
-			\[\lim_{n\to\infty}\frac{\log(n!)}{n\log(n)}=1.\]
-			Tenim que %REF
+			Considerem el límit
 			\begin{align*}
-				\log(n!)&=\log(1)+\log(2)+\dots+\log(n) \\
-				&\leq\log(n)+\log(n)+\dots+\log(n)=n\log(n),
+				\lim_{n\to\infty}\frac{\log\left(\alpha^{\log(n)}\right)}{\log(n)}&=\lim_{n\to\infty}\frac{\log(n)\log(\alpha)}{\log(n)} \\
+				&=\log(\alpha)\lim_{n\to\infty}\frac{\log(n)}{\log(n)}=\log(\alpha).
 			\end{align*}
-			i que, amb \(m\) un natural tal que \(m\leq n\),
-			\begin{align*}
-				\log(n!)&=\log(1)+\log(2)+\dots+\log(n) \\
-				&\geq\log(n-m)+\log(n-m+1)+\dots+\log(n)\geq(n-m)\log(n-m),
-			\end{align*}
-			i per tant tenim %REF
-			\begin{equation}
-				\label{ex:sèrie harmònica amb logarítme del factorial:eq1}
-				\lim_{n\to\infty}\frac{\log(n!)}{n\log(n)}=1.
-			\end{equation}
+			Per tant, pel \myref{prop:criteri logarítmic} trobem que si \(\alpha>\e\) la sèrie \eqref{ex:sèrie de la inversa de alpha elevat a un logarítme:eq1} és convergent, i si \(\alpha<\e\) la sèrie \eqref{ex:sèrie de la inversa de alpha elevat a un logarítme:eq1} és convergent. Estudiem el cas \(\alpha=\e\). Això és la sèrie
+			\[\sum_{n=1}^{\infty}\frac{1}{\e^{\log(n)}}=\sum_{n=1}^{\infty}\frac{1}{n},\]
+			i per l'exercici \myref{ex:sèrie harmònica} trobem que és divergent.
+			
+			Per tant, la sèrie \eqref{ex:sèrie de la inversa de alpha elevat a un logarítme:eq1} és convergent quan \(\alpha>\e\) i divergent quan \(\alpha\leq\e\).
 		\end{solution}
 	\end{example}
+	\begin{comment}
+		\begin{example}
+			\label{ex:sèrie harmònica amb logarítme del factorial}
+			Sigui \(\alpha\) un real. Volem estudiar per a quins valors de \(\alpha\) la sèrie
+			\begin{equation}
+				\label{ex:sèrie harmònica amb logarítme:eq1}
+				\sum_{n=1}^{\infty}\frac{\log(n!)}{n^{\alpha}}
+			\end{equation}
+			és convergent.
+			\begin{solution}
+				Veiem primer que
+				\[\lim_{n\to\infty}\frac{\log(n!)}{n\log(n)}=1.\]
+				Tenim que %REF
+				\begin{align*}
+					\log(n!)&=\log(1)+\log(2)+\dots+\log(n) \\
+					&\leq\log(n)+\log(n)+\dots+\log(n)=n\log(n),
+				\end{align*}
+				i que, amb \(m\) un natural tal que \(m\leq n\),
+				\begin{align*}
+					\log(n!)&=\log(1)+\log(2)+\dots+\log(n) \\
+					&\geq\log(n-m)+\log(n-m+1)+\dots+\log(n)\geq(n-m)\log(n-m),
+				\end{align*}
+				i per tant tenim %REF
+				\begin{equation}
+					\label{ex:sèrie harmònica amb logarítme del factorial:eq1}
+					\lim_{n\to\infty}\frac{\log(n!)}{n\log(n)}=1.
+				\end{equation}
+				
+				Estudiem ara el límit
+				\begin{align*}
+					\lim_{n\to\infty}\frac{\log(n!)}{n^{\alpha}}\frac{n^{\alpha}}{n\log(n)}&=\lim_{n\to\infty}\frac{\log(n!)}{n\log(n)}\frac{n^{\alpha}}{n^{\alpha}} \\
+					&=\lim_{n\to\infty}\frac{\log(n!)}{n\log(n)}=1. \tag{\ref{ex:sèrie harmònica amb logarítme del factorial:eq1}}
+				\end{align*}
+				i pel \myref{thm:criteri de comparació de sèries de termes positius} tenim que la sèrie \eqref{ex:sèrie harmònica amb logarítme:eq1} és convergent si i només si la sèrie
+				\[\sum_{n=1}^{\infty}\frac{n\log(n)}{n^{\alpha}}\]
+				és convergent. Observem que
+				\[\sum_{n=1}^{\infty}\frac{n\log(n)}{n^{\alpha}}=\sum_{n=1}^{\infty}\frac{\log(n)}{n^{\alpha-1}}\]
+				i considerem el límit
+				\begin{align*}
+					\lim_{n\to\infty}\frac{\log\left(\frac{n^{\alpha-1}}{\log(n)}\right)}{\log(n)}&=(\alpha-1)\lim_{n\to\infty}\frac{\log\left(\frac{n}{\log(n)}\right)}{\log(n)}\\
+					&=
+				\end{align*}
+			\end{solution}
+		\end{example}
+	\end{comment}
 	\begin{proposition}[Criteri de la integral]
 		\labelname{criteri de la integral}\label{prop:criteri de la integral}
 		Siguin \(f\colon[1,\infty)\longrightarrow(0,\infty)\) una funció decreixent. Aleshores la sèrie \(\sum_{n=0}^{\infty}f(n)\) és convergent si i només si existeix un real \(C>0\) tal que per a tot \(N\) natural es satisfà \(\int_{1}^{N}f(x)\diff x\leq C\).

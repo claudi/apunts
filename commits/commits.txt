@@ -1,3 +1,5 @@
+Afegit un exemple a anàlisi.
+
 % Línies: EDOS I 755, Topo 760, Am 676
 % Línies: EDOS I 755, Topo 771, Am 768 (+100)
 % +333 per 10k
