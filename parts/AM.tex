@@ -60,7 +60,7 @@
 	\end{example}
 	\begin{theorem}[Condició de Cauchy]
 		\labelname{condició de Cauchy}\label{thm:Condició de Cauchy per sèries numèriques}
-		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie numèrica. Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si per a tot \(\varepsilon>0\) existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N\),\(M\geq n_{0}\) tenim
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie numèrica. Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si per a tot \(\varepsilon>0\) existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N\),\(M\geq n_{0}\) i \(N\leq M\) tenim
 		\[\abs{\sum_{n=N}^{M}a_{n}}<\varepsilon.\]
 		\begin{proof}
 			Suposem que \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Per la definició de \myref{def:sèrie convergent} això és que
@@ -645,7 +645,7 @@
 		\end{solution}
 	\end{example}
 	% Mirar si el Morelo té més teoria d'alternades. Encara que és normal que sigui curta.
-	\subsection{Convergència absoluta}
+	\subsection{Convergència absoluta d'una sèrie}
 	\begin{definition}[Convergència absoluta]
 		\labelname{convergència absoluta d'una sèrie}\label{def:convergència absoluta d'una sèrie}
 		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie numèrica tal que la sèrie
@@ -653,31 +653,77 @@
 		sigui convergent. Aleshores direm que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent.
 	\end{definition}
 	\begin{proposition}
-		\label{prop:si una sèrie és absolutament convegent és convergent}
+		\label{prop:una sèrie absolutament convergent és convergent}
 		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie absolutament convergent. Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 		\begin{proof}
-			%TODO
+			Com que, per hipòtesi, la sèrie \(\sum_{n=0}^{\infty}\abs{a_{n}}\) és convergent tenim per la \myref{thm:Condició de Cauchy per sèries numèriques} que per a tot \(\varepsilon>0\) real existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N,M\geq n_{0}\) i \(N\leq M\) tenim
+			\begin{equation}
+				\label{prop:una sèrie absolutament convegent és convergent:eq1}
+				\abs{\sum_{n=N}^{N}\abs{a_{n}}}<\varepsilon.
+			\end{equation}
+			Ara bé, com que \(\abs{a_{n}}\) és no negatiu per a tot \(n\) natural trobem que
+			\[\abs{\sum_{n=N}^{N}\abs{a_{n}}}=\sum_{n=N}^{N}\abs{a_{n}},\]
+			i per la desigualtat triangular %REF
+			tenim que
+			\[\abs{\sum_{n=N}^{M}a_{n}}\leq\sum_{n=N}^{M}\abs{a_{n}}\]
+			i per \eqref{prop:una sèrie absolutament convegent és convergent:eq1} trobem que per a tot \(N\) i \(M\) naturals amb \(N,M\geq n_{0}\) i \(N\leq M\) tenim
+			\[\abs{\sum_{n=N}^{M}a_{n}}<\varepsilon,\]
+			i per la \myref{thm:Condició de Cauchy per sèries numèriques} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 		\end{proof}
 	\end{proposition}
 	\begin{example}
-		Sèrie absolutament convergent.
+		\label{ex:sèrie absolutament convergent}
+		Volem estudiar la convergència de la sèrie numèrica
+		\begin{equation}
+			\label{ex:sèrie absolutament convergent:eq1}
+			\sum_{n=1}^{\infty}\frac{\sin(n)}{n^{3}}.
+		\end{equation}
 		\begin{solution}
-			%TODO
+			Observem que no tots els termes de la sèrie \eqref{ex:sèrie absolutament convergent:eq1} són positius. Per tant no podem aplicar els criteris de convergència de sèries de termes positius.
+			
+			Estudiem la convergència absoluta de la sèrie. Per la definició de \myref{def:convergència absoluta d'una sèrie} això és estudiar la convergència de la sèrie
+			\begin{equation}
+				\label{ex:sèrie absolutament convergent:eq2}
+				\sum_{n=1}^{\infty}\abs{\frac{\sin(n)}{n^{3}}},
+			\end{equation}
+			que podem reescriure com
+			\[\sum_{n=1}^{\infty}\frac{\abs{\sin(n)}}{n^{3}.}\]
+			Observem que \(\abs{\sin(n)}\leq1\). Per tant trobem que
+			\[\sum_{n=1}^{\infty}\abs{\frac{\sin(n)}{n^{3}}}\leq\sum_{n=1}^{\infty}\frac{1}{n^{3}}.\]
+			Ara bé, tenim per l'exemple \myref{ex:sèrie harmònica} que la sèrie
+			\[\sum_{n=1}^{\infty}\frac{1}{n^{3}}\]
+			és convergent, i pel lema \myref{lema:criteri de comparació de sèries de termes positius} trobem que la sèrie \eqref{ex:sèrie absolutament convergent:eq2} és convergent.
+			
+			Per tant, per la definició de \myref{def:convergència absoluta d'una sèrie} trobem que la sèrie \eqref{ex:sèrie absolutament convergent:eq1} és absolutament convergent, i per la proposició \myref{prop:una sèrie absolutament convergent és convergent} trobem que la sèrie \eqref{ex:sèrie absolutament convergent:eq1} és convergent.
 		\end{solution}
 	\end{example}
-	\begin{example}
-		Sèrie convergent però no absolutament convergent.
+	\begin{example} % Buscar exemple amb més xixa?
+		\label{ex:sèrie convergent però no absolutament convergent}
+		Volem estudiar la convergència i la convergència absoluta de la sèrie
+		\begin{equation}
+			\label{ex:sèrie convergent però no absolutament convergent:eq1}
+			\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n}.
+		\end{equation}
 		\begin{solution}
-			%TODO
+			Tenim per l'exemple \myref{ex:sèrie harmònica alternada} que la sèrie \eqref{ex:sèrie convergent però no absolutament convergent:eq1} és convergent, i per l'exemple \myref{ex:sèrie harmònica} trobem que la sèrie \eqref{ex:sèrie convergent però no absolutament convergent:eq1} no és absolutament convergent.
 		\end{solution}
 	\end{example}
 	\subsection{Sèries del producte de successions}
 	\begin{lemma}[Fórmula de sumació d'Abel]
 		\labelname{fórmula de sumació d'Abel}\label{lema:fórmula de sumació d'Abel}
-		Siguin \((a_{n})_{n\in\mathbb{N}}\) i \((b_{n})_{n\in\mathbb{N}}\) dues sèries numèriques. Aleshores per a tots naturals \(N\) i \(M\) tenim, amb \(A_{N}=\sum_{n=0}^{N}a_{n}\), que
-		\[\sum_{n=M}^{N}a_{n}b_{n}=A_{N}b_{N}-A_{M-1}b_{M}+\sum_{n=M}^{N}A_{n}(b_{n}-b_{n-1}+1).\]
+		Siguin \((a_{n})_{n\in\mathbb{N}}\) i \((b_{n})_{n\in\mathbb{N}}\) dues sèries numèriques i
+		\[A_{N}=\sum_{n=0}^{N}a_{n}.\]
+		Aleshores per a tot naturals \(N\) i \(M\) amb \(N\leq M\) tenim que
+		\[\sum_{n=N}^{M}a_{n}b_{n}=A_{M}b_{M}-A_{N-1}b_{N}+\sum_{n=N}^{M-1}A_{n}(b_{n}-b_{n+1}).\]
 		\begin{proof}
-			%TODO
+			Tenim que
+			\begin{align*}
+				\sum_{n=N}^{M}a_{n}b_{n}&=\sum_{n=N}^{M}(A_{n}-A_{n-1})b_{n} \\
+				&=\sum_{n=N}^{M}A_{n}b_{n}-\sum_{n=N}^{M}A_{n-1}b_{n} \\
+				&=\sum_{n=N}^{M}A_{n}b_{n}-\sum_{n=N-1}^{M-1}A_{n}b_{n+1} \\
+				&=A_{M}b_{M}-A_{N-1}b_{N}+\sum_{n=N}^{M-1}A_{n}b_{n}-\sum_{n=N-1}^{M-1}A_{n}b_{n+1} \\
+				&=A_{M}b_{M}-A_{N-1}b_{N}+\sum_{n=N}^{M-1}A_{n}(b_{n}-b_{n+1}).\qedhere
+			\end{align*}
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Teorema de Dirichlet]
@@ -686,14 +732,76 @@
 		\[\sum_{n=0}^{\infty}a_{n}b_{n}\]
 		és convergent.
 		\begin{proof}
-			%TODO
+			Definim
+			\[A_{N}=\sum_{n=0}^{N}a_{n}.\]
+			Pel lema \myref{lema:fórmula de sumació d'Abel} tenim que per a tot naturals \(N\) i \(M\) amb \(N<M\)
+			\[\sum_{n=N}^{M}a_{n}b_{n}=A_{M}b_{M}-A_{N-1}b_{N}+\sum_{n=N}^{M-1}A_{n}(b_{n}-b_{n+1}),\]
+			i per la desigualtat triangular %REF
+			tenim que
+			\begin{equation}
+				\label{thm:Teorema de Dirichlet per sèries numèriques:eq1}
+				\abs{\sum_{n=N}^{M}a_{n}b_{n}}\leq\abs{A_{M}b_{M}}+\abs{A_{N-1}b_{N}}+\abs{\sum_{n=N}^{M-1}A_{n}(b_{n}-b_{n+1})}.
+			\end{equation}
+			
+			Ara bé, com que per hipòtesi tenim que
+			\[\lim_{n\to\infty}b_{n}=0,\]
+			per la definició de \myref{def:límit} trobem que per a tot \(\varepsilon>0\) real existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) tenim
+			\[\abs{b_{n}}<\frac{\varepsilon}{4C}.\]
+			Per tant, per a tot \(N>n_{0}\) tenim que
+			\begin{align*}
+				\abs{A_{M}b_{M}}&=\abs{b_{M}}\abs{A_{M}} \\
+				&\leq\abs{b_{M}}\abs{\sum_{n=0}^{M}a_{n}} \\ %REF
+				&\leq\frac{\varepsilon}{4C}C=\frac{\varepsilon}{4},
+			\end{align*}
+			també tenim
+			\begin{align*}
+				\abs{A_{M-1}b_{M}}&=\abs{b_{M}}\abs{A_{M-1}} \\
+				&\leq\abs{b_{M}}\abs{\sum_{n=0}^{M-1}a_{n}} \\ %REF
+				&\leq\frac{\varepsilon}{4C}C=\frac{\varepsilon}{4},
+			\end{align*}
+			i
+			\begin{align*}
+				\abs{\sum_{n=N}^{M-1}A_{n}(b_{n}-b_{n+1})}&\leq\sum_{n=N}^{M-1}\abs{A_{n}}\abs{b_{n}-b_{n-1}} \\
+				&\leq\sum_{n=N}^{M-1}C\abs{b_{n}-b_{n-1}} \\
+				&=C\sum_{n=N}^{M-1}\abs{b_{n}-b_{n-1}} \\
+				&=C\abs{b_{N}-b_{M}} \\
+				&\leq C(\abs{b_{N}}+\abs{b_{M}}) \\
+				&\leq C\left(\frac{\varepsilon}{4C}+\frac{\varepsilon}{4C}\right)=\frac{2\varepsilon}{4}.
+			\end{align*}
+			Per \eqref{thm:Teorema de Dirichlet per sèries numèriques:eq1} trobem
+			\[\abs{\sum_{n=N}^{M}a_{n}b_{n}}\leq\frac{\varepsilon}{4}+\frac{\varepsilon}{4}+\frac{2\varepsilon}{4},\]
+			i per tant tenim que per a tot \(\varepsilon>0\) real existeix un natural \(n_{0}\) tal que per a tot natural \(N\) i \(M\) amb \(N,M\geq n_{0}\) i \(N\leq M\) tenim
+			\[\abs{\sum_{n=N}^{M}a_{n}b_{n}}\leq\varepsilon,\]
+			i per la \myref{thm:Condició de Cauchy per sèries numèriques} tenim que la sèrie
+			\[\sum_{n=0}^{\infty}a_{n}b_{n}\]
+			és convergent, com volíem veure.
 		\end{proof}
 	\end{theorem}
-	\begin{example}
+	\begin{example}%Buscar un altre exemple. Conflicte amb \ref{ex:sèrie absolutament convergent}
+		\label{ex:Teorema de Dirichlet per sèries numèriques}
+		Volem estudiar la convergència de la sèrie
 		\[\sum_{n=1}^{\infty}\frac{\sin(n)}{n}.\]
-		\begin{solution}
-			%TODO
-		\end{solution}
+		\begin{solution} % ULTRA REFS
+			Tenim que
+			\[\e^{n\iu}=\cos(n)+\iu\sin(n).\]
+			Per tant tenim que per a tot \(N\) natural
+			\[\sum_{n=0}^{N}\e^{n\iu}=\sum_{n=0}^{N}\cos(n)+\iu\sum_{n=0}^{N}\sin(n).\]
+			Aleshores
+			\begin{align*}
+				\abs{\sum_{n=0}^{N}\sin(n)}&\leq\abs{\sum_{n=0}^{N}\e^{n\iu}} \\
+				&=\abs{\sum_{n=0}^{N}\left(\e^{\iu}\right)^{n}} \\
+				&=\abs{\frac{1-\left(\e^{\iu}\right)^{N+1}}{1-\e^{\iu}}} \tag{\ref{ex:sèries geomètriques}}\\
+				&\leq\abs{\frac{\e^{\iu}-\e^{\iu}\e^{N\iu}}{\e^{\iu}-1}} \\
+				&=\abs{\e^{\iu}}\abs{\frac{1-\e^{N\iu}}{\e^{\iu}-1}} \\
+				&\leq\abs{\frac{1+\e^{\iu}}{\e^{\iu}-1}} \\
+				&\leq\frac{1+\abs{\e^{\iu}}}{\abs{\e^{\iu}-1}}<C \\
+			\end{align*}
+			per a cert \(C\) real. També tenim que la successió \((n^{-1})_{n\in\mathbb{N}}\) és monòtonament decreixent amb
+			\[\lim_{n\to\infty}\frac{1}{n}=0,\]
+			i pel \myref{thm:Teorema de Dirichlet per sèries numèriques} trobem que la sèrie
+			\[\sum_{n=1}^{\infty}\frac{\sin(n)}{n}\]
+			és convergent.
+		\end{solution} % REFS lol
 	\end{example}
 	\begin{theorem}[Criteri d'Abel]
 		\labelname{criteri d'Abel}\label{thm:Criteri d'Abel}
@@ -830,8 +938,8 @@
 	\end{definition}
 	\begin{theorem}[Condició de Cauchy]
 		\labelname{condició de Cauchy per sèries de funcions}\label{def:condició de Cauchy per sèries de funcions}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre \(I\). Aleshores la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) és convergent si i només si per a tot \(\varepsilon>0\) real existeixen enters \(N\) i \(M\) amb \(M<N\) tals que
-		\[\sup_{x\in I}\abs{\sum_{n=M}^{N}f_{n}(x)}<\varepsilon.\]
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre \(I\). Aleshores la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) és convergent si i només si per a tot \(\varepsilon>0\) real existeixen enters \(N\) i \(M\) amb \(N<M\) tals que
+		\[\sup_{x\in I}\abs{\sum_{n=N}^{M}f_{n}(x)}<\varepsilon.\]
 		\begin{proof}
 			%TODO
 		\end{proof}

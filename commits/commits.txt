@@ -1,4 +1,4 @@
-Afegit un exemple a anàlisi.
+He completat la teoria i exercicis a anàlisi fins arribar al criteri d'Abel per sèries numèriques.
 
 % Línies: EDOS I 755, Topo 760, Am 676
 % Línies: EDOS I 755, Topo 771, Am 768 (+100)

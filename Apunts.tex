@@ -82,11 +82,12 @@
 
 \graphicspath{{imatges/}{../imatges/}}
 
-\newenvironment{solution}
-	{\renewcommand\qedsymbol{\ensuremath{\lozenge}}
-		\renewcommand{\proofname}{Solució}
-		\begin{proof}}
-	{\end{proof}}
+\newenvironment{solution}{%
+		\renewcommand\qedsymbol{\ensuremath{\lozenge}}%
+		\begin{proof}[Solució]%
+	}{%
+		\end{proof}%
+	}
 
 \DeclareMathOperator{\Long}{L}
 \DeclareMathOperator{\Dist}{d}
@@ -139,6 +140,7 @@
 \newcommand{\base}[1]{\mathcal{#1}}
 \newcommand{\diff}{\textrm{d}}
 \newcommand{\e}{\textrm{e}}
+\newcommand{\iu}{\textrm{i}}
 
 %\setcounter{chapter}{-1}
 
@@ -208,7 +210,7 @@
 		\ifx\@mytst\empty
 			\ref{#1}%
 		\else
-			\nameref{#1}\space\eqref{#1}\fi
+			\nameref{#1}\space\eqref{#1}\fi%
 	\endgroup
 }
 \makeatother
