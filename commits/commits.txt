@@ -1,5 +1,2 @@
-Afegit teoria a anàlisi fins reordenació de sèries.
-
-% Línies: EDOS I 755, Topo 760, Am 676
-% Línies: EDOS I 755, Topo 771, Am 768 (+100)
-% +333 per 10k
+Afegit teoria a anàlisi fins el Teorema de la reordenació de Riemann.
+10k línies.

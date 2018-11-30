@@ -937,9 +937,19 @@
 			
 			Per la definició de \ref{def:convergència absoluta d'una sèrie} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent si i només si les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són convergents. Per tant trobem que
 			\begin{align*}
-				\sum_{n=0}^{\infty}a_{n}&=\sum_{n=0}^{\infty}\left(a^{+}_{n}-a^{-}_{n}\right)\tag{\ref{obs:sumes de la part positiva i negativa d'un nombre}} \\
-				&=\sum_{n=0}^{\infty}a^{+}_{n}-\sum_{n=0}^{\infty}a^{-}_{n}
+				\sum_{n=0}^{\infty}a_{n}&=\sum_{n=0}^{\infty}\left(a^{+}_{n}-a^{-}_{n}\right) \tag{\ref{obs:sumes de la part positiva i negativa d'un nombre}}\\
+				&=\sum_{n=0}^{\infty}a^{+}_{n}-\sum_{n=0}^{\infty}a^{-}_{n} \\
+				&=\sum_{n=0}^{\infty}a^{+}_{\sigma(n)}-\sum_{n=0}^{\infty}a^{-}_{\sigma(n)} \tag{\ref{cor:la reordenada d'una sèrie de termes positius convergent conserva la sèrie}}\\
+				&=\sum_{n=0}^{\infty}\left(a^{+}_{\sigma(n)}-a^{-}_{\sigma(n)}\right)=\sum_{n=0}^{\infty}a_{\sigma(n)}, \tag{\ref{obs:sumes de la part positiva i negativa d'un nombre}}
 			\end{align*}
+			com volíem veure.
+		\end{proof}
+	\end{lemma}
+	\begin{lemma}
+		\label{lemma:Teorema de la reordenació de sèries de Riemann}
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie. Aleshores tenim que \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent si i només si les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són convergents.
+		\begin{proof}
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent. Per la proposició \myref{prop:una sèrie absolutament convergent és convergent} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent. 
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Teorema de la reordenació de sèries de Riemann]
@@ -947,7 +957,17 @@
 		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent i \(L\) un nombre real. Aleshores existeix una permutació \(\sigma\) de \(\mathbb{N}\) tal que
 		\[\sum_{n=0}^{\infty}a_{\sigma(n)}=L.\]
 		\begin{proof}
-			%TODO
+			Prenem un \(\alpha\) real. Tenim per hipòtesi i la definició de \ref{def:convergència absoluta d'una sèrie} que la sèrie \(\sum_{n=0}^{\infty}a^{+}_{n}-a^{-}_{n}\) és convergent i la sèrie \(\sum_{n=0}^{\infty}a^{+}_{n}+a^{-}_{n}\) és divergent. Per tant ha de ser que les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són divergents.
+			
+			Definim
+			\[S_{N}=\sum_{n=0}^{N}a^{+}_{n}\quad\text{i}\quad T_{N}=\sum_{n=0}^{N}a^{-}_{n}.\]
+			
+			Com que la sèrie \(\sum_{n=0}^{\infty}a^{+}_{n}\) és divergent tenim que existeix un natural mínim \(n_{1}\) tal que
+			\[S_{n_{1}}\geq\alpha,\]
+			i tenim que
+			\[S_{n_{1}}+a^{+}_{n_{1}}\geq\alpha+a^{+}_{n_{1}}.\]
+			
+			Com que %TODO
 		\end{proof}
 	\end{theorem}
 	\section{Successions funcions}
@@ -1082,7 +1102,8 @@
 %	\printbibliography
 \end{document}
 
-
+% Reordenació de sèries https://math.uchicago.edu/~j.e.hickman/163%20Lecture%20notes/Lecture%207%20and%208.pdf
+% Útil en general http://math.uchicago.edu/~j.e.hickman/math163
 % Sèries de funcions amb Perelló (Càlcul infinitesimal)
 % Encara no se d'on treure integrals impròpies
 % Fourier amb Tolstov (Fourier Series)
