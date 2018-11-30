@@ -709,8 +709,8 @@
 		\end{solution}
 	\end{example}
 	\subsection{Sèries del producte de successions}
-	\begin{lemma}[Fórmula de sumació d'Abel]
-		\labelname{fórmula de sumació d'Abel}\label{lema:fórmula de sumació d'Abel}
+	\begin{lemma}[Fórmula de sumació parcial d'Abel]
+		\labelname{fórmula de sumació parcial d'Abel}\label{lema:fórmula de sumació parcial d'Abel}
 		Siguin \((a_{n})_{n\in\mathbb{N}}\) i \((b_{n})_{n\in\mathbb{N}}\) dues sèries numèriques i
 		\[A_{N}=\sum_{n=0}^{N}a_{n}.\]
 		Aleshores per a tot naturals \(N\) i \(M\) amb \(N\leq M\) tenim que
@@ -734,7 +734,7 @@
 		\begin{proof}
 			Definim
 			\[A_{N}=\sum_{n=0}^{N}a_{n}.\]
-			Pel lema \myref{lema:fórmula de sumació d'Abel} tenim que per a tot naturals \(N\) i \(M\) amb \(N<M\)
+			Per la \myref{lema:fórmula de sumació parcial d'Abel} tenim que per a tot naturals \(N\) i \(M\) amb \(N<M\)
 			\[\sum_{n=N}^{M}a_{n}b_{n}=A_{M}b_{M}-A_{N-1}b_{N}+\sum_{n=N}^{M-1}A_{n}(b_{n}-b_{n+1}),\]
 			i per la desigualtat triangular %REF
 			tenim que
@@ -804,14 +804,77 @@
 		\end{solution} % REFS lol
 	\end{example}
 	\begin{theorem}[Criteri d'Abel]
-		\labelname{criteri d'Abel}\label{thm:Criteri d'Abel}
+		\labelname{criteri d'Abel per sèries numèriques}\label{thm:Criteri d'Abel per sèries numèriques}
 		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent i \((b_{n})_{n\in\mathbb{N}}\) una successió numèrica monòtona i convergent. Aleshores la sèrie
 		\[\sum_{n=0}^{N}a_{n}b_{n}\]
 		és convergent.
 		\begin{proof}
-			%TODO
+			Definim
+			\[A_{N}=\sum_{n=0}^{N}a_{n}.\]
+			Aleshores tenim que
+			\begin{equation}
+				\label{thm:Criteri d'Abel per sèries numèriques:eq1}
+				a_{n}=A_{n}-A_{n-1}
+			\end{equation}
+			i per tant
+			\begin{align*}
+				\sum_{n=0}^{N}a_{n}b_{n}&=A_{0}b_{0}+\sum_{n=1}^{N}(A_{n}-A_{n-1})b_{n} \tag{\ref{thm:Criteri d'Abel per sèries numèriques:eq1}}\\
+				&=A_{0}b_{0}+(A_{1}-A_{0})b_{1}+(A_{2}-A_{1})b_{2}+\dots+(A_{N}-A_{N-1})b_{N} \\
+				&=A_{0}(b_{0}-b_{1})+A_{1}(b_{1}-b_{2})+\dots+A_{N-1}(b_{N-1}-b_{N})+A_{N}b_{N} \\
+				&=A_{N}b_{N}+\sum_{n=0}^{N-1}A_{n}(b_{n}-b_{n+1}).
+			\end{align*}
+			
+			Per hipòtesi tenim que \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent, i per la definició de \myref{def:sèrie convergent} tenim que existeix un real \(L\) tal que
+			\begin{equation}
+				\label{thm:Criteri d'Abel per sèries numèriques:eq2}
+				\lim_{N\to\infty}A_{N}=L.
+			\end{equation}
+			També tenim, per hipòtesi, que la successió \((b_{n})\) és convergent, i per tant existeix un real \(b\) tal que %REF
+			\begin{equation}
+				\label{thm:Criteri d'Abel per sèries numèriques:eq4}
+				\lim_{n\to\infty}b_{n}=b.
+			\end{equation}
+			
+			Estudiem la convergència absoluta de la sèrie \(\sum_{n=0}^{\infty}A_{n}(b_{n}-b_{n+1})\). Com que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent tenim que existeix un real \(C>0\) tal que per a tot \(N\) natural es satisfà
+			\begin{equation}
+				\label{thm:Criteri d'Abel per sèries numèriques:eq3}
+				\abs{A_{N}}\leq C.
+			\end{equation}
+			Per tant, com que la successió \((b_{n})\) és monòtona, trobem que
+			\begin{align*}
+				\sum_{n=0}^{N}\abs{A_{n}(b_{n}-b_{n+1})}&\leq\sum_{n=0}^{N}\abs{C(b_{n}-b_{n+1})} \tag{\ref{thm:Criteri d'Abel per sèries numèriques:eq3}}\\
+				&\leq C\sum_{n=0}^{N}\abs{b_{n}-b_{n+1}} \\
+				&=C\abs{b_{0}-b_{N+1}},
+			\end{align*}
+			i per \eqref{thm:Criteri d'Abel per sèries numèriques:eq4} tenim que
+			\[\lim_{N\to\infty}C\abs{b_{0}-b_{N+1}}=C\abs{b_{0}-b},\]
+			i per tant la sèrie \(\sum_{n=0}^{\infty}A_{n}(b_{n}-b_{n+1})\) és absolutament convergent, % REFS parcials creixents acotades
+			i per la proposició \myref{prop:una sèrie absolutament convergent és convergent} tenim que la sèrie \(\sum_{n=0}^{\infty}A_{n}(b_{n}-b_{n+1})\) és convergent.
+			
+			Ara bé, per \eqref{thm:Criteri d'Abel per sèries numèriques:eq2} i \eqref{thm:Criteri d'Abel per sèries numèriques:eq4} trobem que
+			\[\lim_{N\to\infty}A_{N}b_{N}=Lb,\]
+			i per tant tenim que
+			\[\lim_{N\to\infty}\left(A_{N}b_{N}+\sum_{n=0}A_{n}(b_{n}-b_{n+1})\right)=Lb+C\abs{b_{0}-b}\]
+			i per tant
+			\[\lim_{N\to\infty}\sum_{n=0}^{N}a_{n}b_{n}=Lb+C\abs{b_{0}-b}\]
+			és convergent, i per la definició de \myref{def:sèrie convergent} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}b_{n}\) és convergent, com volíem veure.
 		\end{proof}
-	\end{theorem}	
+	\end{theorem}
+	\begin{example}
+		\label{ex:criteri d'Abel per sèries numèriques}
+		Volem estudiar la convergència de la sèrie
+		\begin{equation}
+			\label{ex:criteri d'Abel per sèries numèriques:eq1}
+			\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n}\left(1+\frac{1}{n}\right)^{n}.
+		\end{equation}
+		\begin{solution}
+			Tenim que la successió %REF
+			\[\left(\left(1+\frac{1}{n}\right)^{n}\right)_{n\in\mathbb{N}}\]
+			és monòtona i convergent, i per l'exercici \myref{ex:sèrie harmònica alternada} trobem que la sèrie
+			\[\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n}\]
+			és convergent. Per tant pel \myref{thm:Criteri d'Abel per sèries numèriques} tenim que la sèrie \eqref{ex:criteri d'Abel per sèries numèriques:eq1} és convergent.
+		\end{solution}
+	\end{example}	
 	\subsection{Reordenació de sèries}
 	\begin{definition}[Reordenada d'una sèrie]
 		\labelname{reordenada d'una sèrie}\label{def:reordenada d'una sèrie}
@@ -820,21 +883,63 @@
 		Aleshores direm que la sèrie \(\sum_{n=0}^{\infty}b_{n}\) és una reordenada de la sèrie \(\sum_{n=0}^{\infty}a_{n}\)
 	\end{definition}
 	\begin{lemma}
+		\label{lema:la reordenada d'una sèrie de termes positius convergent és més petita que la sèrie}
 		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius convergent i \(\sigma\) una permutació de \(\mathbb{N}\). Aleshores tenim que
 		\[\sum_{n=0}^{\infty}a_{\sigma(n)}\leq\sum_{n=0}^{\infty}a_{n}.\]
 		\begin{proof}
-			%TODO
+			Fixem un natural \(N\) i considerem
+			\[M=\max\{\sigma(1),\dots,\sigma(N)\}\]
+			i com que, per la definició de \ref{def:sèrie de termes positius}, tenim que \(a_{n}\geq0\) per a tot \(n\) natural trobem que
+			\[\sum_{n=0}^{N}a_{\sigma(n)}\leq\sum_{n=0}^{M}a_{n},\]
+			i per la definició de \myref{def:sèrie convergent} trobem que
+			\[\sum_{n=0}^{\infty}a_{\sigma(n)}\leq\sum_{n=0}^{\infty}a_{n}.\qedhere\]
 		\end{proof}
 	\end{lemma}
 	\begin{corollary}
+		\label{cor:la reordenada d'una sèrie de termes positius convergent conserva la sèrie}
 		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius convergent i \(\sigma\) una permutació de \(\mathbb{N}\). Aleshores tenim que
 		\[\sum_{n=0}^{\infty}a_{\sigma(n)}=\sum_{n=0}^{\infty}a_{n}.\]
 	\end{corollary}
+	\begin{proposition}
+		\label{prop:la reordenada d'una sèrie absolutament convergent és absolutament convergent}
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie absolutament convergent i \(\sigma\) una permutació de \(\mathbb{N}\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{\sigma(n)}\) és absolutament convergent.
+		\begin{proof}
+			Per la definició de \myref{def:convergència absoluta d'una sèrie} tenim que la sèrie
+			\[\sum_{n=0}^{\infty}\abs{a_{n}}\]
+			és convergent, i pel coro{\lgem}ari \myref{cor:la reordenada d'una sèrie de termes positius convergent conserva la sèrie} trobem que
+			\[\sum_{n=0}^{\infty}\abs{a_{\sigma(n)}}=\sum_{n=0}^{\infty}\abs{a_{n}},\]
+			i per tant tenim que \(\sum_{n=0}^{\infty}a_{\sigma(n)}\) és absolutament convergent.
+		\end{proof}
+	\end{proposition}
+	\begin{notation}
+		\label{notation:part positiva d'un nombre}
+		\label{notation:part negativa d'un nombre}
+		Definim
+		\[a^{+}_{n}=\begin{cases}
+			a_{n} & \text{si }a_{n}\geq0 \\
+			0 & \text{si }a_{n}<0
+		\end{cases}\quad\text{i}\quad
+		a^{-}_{n}=\begin{cases}
+			0 & \text{si }a_{n}\geq0 \\
+			-a_{n} & \text{si }a_{n}<0
+		\end{cases}\]
+	\end{notation}
+	\begin{observation}
+		\label{obs:sumes de la part positiva i negativa d'un nombre}
+		Tenim que
+		\[a_{n}=a^{+}_{n}-a^{-}_{n}\quad\text{i}\quad\abs{a_{n}}=a^{+}_{n}+a^{-}_{n}\]
+	\end{observation}
 	\begin{lemma}
 		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie absolutament convergent i \(\sigma\) una permutació de \(\mathbb{N}\). Aleshores tenim que
 		\[\sum_{n=0}^{\infty}a_{n}=\sum_{n=0}^{\infty}a_{\sigma(n)}.\]
 		\begin{proof}
-			%TODO
+			Aquest enunciat té sentit per la proposició \myref{prop:la reordenada d'una sèrie absolutament convergent és absolutament convergent}.
+			
+			Per la definició de \ref{def:convergència absoluta d'una sèrie} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent si i només si les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són convergents. Per tant trobem que
+			\begin{align*}
+				\sum_{n=0}^{\infty}a_{n}&=\sum_{n=0}^{\infty}\left(a^{+}_{n}-a^{-}_{n}\right)\tag{\ref{obs:sumes de la part positiva i negativa d'un nombre}} \\
+				&=\sum_{n=0}^{\infty}a^{+}_{n}-\sum_{n=0}^{\infty}a^{-}_{n}
+			\end{align*}
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Teorema de la reordenació de sèries de Riemann]
