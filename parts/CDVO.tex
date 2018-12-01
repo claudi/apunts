@@ -122,7 +122,7 @@
 			&=\inf_{f\in F}\int_{b}^{a}\norm{f'(t)}\diff t=\inf_{f\in F}\Long(f)=\Dist_{U}(Q,P)\geq0.
 			\end{align*}
 			
-			Continuem veient el punt \eqref{enum:distancies en arc-connexos 2}. Suposem \(P=Q\) i considerem, amb \(\varepsilon>0\), la bola oberta \(\B(\varepsilon,P)\subset U\). Aquesta bola és connexa i, pel coro{\lgem}ari \myref{obs:connex metrica}, \(\Dist_{U}(P,Q)=\norm{P-Q}=0\sii P=Q\).%refer salts de línia potser
+			Continuem veient el punt \eqref{enum:distancies en arc-connexos 2}. Suposem \(P=Q\) i considerem, amb \(\varepsilon>0\), la bola oberta \(\B(\varepsilon,P)\subset U\). Aquesta bola és connexa i, pel \corollari \myref{obs:connex metrica}, \(\Dist_{U}(P,Q)=\norm{P-Q}=0\sii P=Q\).%refer salts de línia potser
 			
 			Acabem veient el punt \eqref{enum:distancies en arc-connexos 3}. Sigui \(F_{1}\) el conjunt de funcions contínues en \(U\) que van de \(P\) a \(R\) i \(F_{2}\) el conjunt de funcions contínues en \(U\) que van de \(R\) a \(Q\). Aleshores
 			\begin{displaymath}
@@ -544,7 +544,7 @@
 		%			
 		%			Per veure \((\mathit{1}\implicatper\mathit{2})\) en tindrem prou amb demostrar que \((\mathit{1}\sii\mathit{4})\), ja que es tractarà d'un cas particular.
 		%			
-		%			Per veure \((\mathit{1}\sii\mathit{4})\) observem que, ja que \(\Phi\) correspon a un sistema de coordenades, tenim que el diferencial de \(\Phi\), \(d\Phi\) existeix i és invertible (per la definició de \myref{def:difeomorfisme} i proposició \myref{prop:difeomorfisme diferenciable invertible}). Per tant, vist que \(d\Phi\) és invertible, la seva \myref{def:Jacobiana} té determinant diferent de 0 (pel coro{\lgem}ari \myref{corollary:difeomorfime determinant}) per a tot \(x\in U\). Per tant, \(\nabla v_{1}(x),\dots,\nabla v_{k}(x)\) són linealment independents per a tot \(x\in U\), i tenim que \(v_{1}(x),\dots,v_{k}(x)\) són funcionalment independents per a tot \(x\in U\) (a partir dels punts \eqref{enum:dependència funcional 4 punts 1} i \eqref{enum:dependència funcional 4 punts 2} d'aquesta mateixa proposició, que ja hem demostrat). %mirar de no repetir-me tant
+		%			Per veure \((\mathit{1}\sii\mathit{4})\) observem que, ja que \(\Phi\) correspon a un sistema de coordenades, tenim que el diferencial de \(\Phi\), \(d\Phi\) existeix i és invertible (per la definició de \myref{def:difeomorfisme} i proposició \myref{prop:difeomorfisme diferenciable invertible}). Per tant, vist que \(d\Phi\) és invertible, la seva \myref{def:Jacobiana} té determinant diferent de 0 (pel \corollari \myref{corollary:difeomorfime determinant}) per a tot \(x\in U\). Per tant, \(\nabla v_{1}(x),\dots,\nabla v_{k}(x)\) són linealment independents per a tot \(x\in U\), i tenim que \(v_{1}(x),\dots,v_{k}(x)\) són funcionalment independents per a tot \(x\in U\) (a partir dels punts \eqref{enum:dependència funcional 4 punts 1} i \eqref{enum:dependència funcional 4 punts 2} d'aquesta mateixa proposició, que ja hem demostrat). %mirar de no repetir-me tant
 		%			
 		%			Fixant-nos en que \(\Phi\) és un nou sistema de coordenades, tenim que derivar respecte a \(v_{i}\) és equivalent a buscar la derivada parcial respecte la \(i\)-èsima coordenada en el nou sistema de coordenades. Per tant, com vam veure a la justificació de la definició de \myref{def:Jacobiana}, tenim
 		%			\[df=\frac{\partial f}{\partial v_{1}}dv_{1}+\dots+\frac{\partial f}{\partial v_{d}}dv_{d},\]
@@ -630,7 +630,7 @@
 	\begin{proposition}\label{prop:homeomorfisme a difeomorfisme}
 		Siguin \(U,V\subseteq\mathbb{R}^{d}\) dos oberts i \(f\colon U\leftrightarrow V\) un homeomorfisme diferenciable en un punt \(a\in U\), amb inversa \(g=f^{-1}\). Aleshores, \(g\) és diferenciable en \(f(a)\) si i només si la Jacobiana de \(f\) en \(a\) té determinant diferent de zero.
 		\begin{proof}
-			Demostrem la implicació cap a la dreta \((\implica)\). En un entorn de \(a\), \(f\) es comporta com un difeomorfisme per la definició de \myref{def:difeomorfisme}. Per tant, amb el coro{\lgem}ari \myref{corollary:difeomorfime determinant} queda demostrat.
+			Demostrem la implicació cap a la dreta \((\implica)\). En un entorn de \(a\), \(f\) es comporta com un difeomorfisme per la definició de \myref{def:difeomorfisme}. Per tant, amb el \corollari \myref{corollary:difeomorfime determinant} queda demostrat.
 			
 			Demostrem ara l'altre implicació \((\implicatper)\). Denotem \(x=a+\vec{h}\), on \(\vec{h}\) és un vector de \(\mathbb{R}^{d}\). Per tant tenim, que amb un cert vector \(\vec{k}\) de \(\mathbb{R}^{d}\),
 			\[f(a+\vec{h})=f(a)+\vec{k},\]
@@ -802,7 +802,7 @@
 			Degut a que \(G_{1}=\dots=G_{k}=0\), les seves derivades també són \(0\).
 		\end{proof}
 	\end{theorem}
-	\subsection{Teorema del rang constant} No fer molt cas d'aquesta part. La faré bé quan sàpiga geometria diferencial. La part important d'aquí és l'últim coro{\lgem}ari que ens diu que els difeomorfismes ``conserven'' els punts crítics.
+	\subsection{Teorema del rang constant} No fer molt cas d'aquesta part. La faré bé quan sàpiga geometria diferencial. La part important d'aquí és l'últim \corollari que ens diu que els difeomorfismes ``conserven'' els punts crítics.
 	\begin{definition}[Subvarietat regular]
 		\labelname{subvarietat regular}\label{def:subvarietat regular}
 		Sigui \(U\subseteq\mathbb{R}^{d}\) un obert i \(M\subseteq U\) un conjunt. Direm que \(M\) és una subvarietat regular de dimensió \(m\) si per a tot punt \(p\in M\) existeix una bola centrada en \(p\) de radi \(r>0\), \(\B(p,r)\subseteq U\), i \(k=d-m\) funcions escalars, \(v_{1},\dots,v_{k}\in\mathcal{C}^{1}\), definides en \(U\) amb gradients linealment independents tals que
@@ -830,7 +830,7 @@
 		\begin{proof}
 			Considerem \(H(x)=(h_{1}(x),\dots,h_{d}(x))\) i fixem un punt \(a\in U\) on es compleixin les condicions de la hipòtesi. Per la proposició \myref{prop:dependència funcional 4 punts}, hi haurà \(n\) components de \(H\) tals que els seus gradients siguin linealment independents en \(a\). Existeix una permutació \(\sigma\in S_{d}\) tal que aquestes \(n\) components de \(H\) siguin \(h_{\sigma(1)}\dots,h_{\sigma(n)}\).
 			
-			Per continuïtat, els gradients \(\nabla h_{\sigma(1)}(x),\dots,\nabla h_{\sigma(n)}(x)\) són linealment independents per a tot \(x\) en un entorn obert de \(a\), que denotarem per \(V\subset U\). Per tant, podem expandir-les a un sistema de coordenades de \(V\), \(v_{1},\dots,v_{m}\), on \(v_{i}=h_{\sigma(i)},\ \forall i\in\{1,\dots,n\}\). Com que \(\rang(dH(t))=n\) per a tot \(t\in V\), per la proposició \myref{prop:dependència funcional 4 punts}, els gradients \(\nabla h_{\sigma(n+1)},\dots,\nabla h_{\sigma(d)}\) depenen linealment dels gradients \(\nabla v_{1},\dots,\nabla v_{n}\) en \(V\), per tant, pel coro{\lgem}ari \myref{corollary:dependència funcional iff dependència lineal dels gradients}, per a cada \(i\in\{n+1,\dots,d\}\), existeix una funció \(\varphi_{i}\) que compleix \(h_{\sigma(i)}(x)=\varphi_{i}(v_{1}(x),\dots,v_{n}(x))\) i per tant, si denotem \(v(x)=(v_{1}(x),\dots,v_{n}(x))\),
+			Per continuïtat, els gradients \(\nabla h_{\sigma(1)}(x),\dots,\nabla h_{\sigma(n)}(x)\) són linealment independents per a tot \(x\) en un entorn obert de \(a\), que denotarem per \(V\subset U\). Per tant, podem expandir-les a un sistema de coordenades de \(V\), \(v_{1},\dots,v_{m}\), on \(v_{i}=h_{\sigma(i)},\ \forall i\in\{1,\dots,n\}\). Com que \(\rang(dH(t))=n\) per a tot \(t\in V\), per la proposició \myref{prop:dependència funcional 4 punts}, els gradients \(\nabla h_{\sigma(n+1)},\dots,\nabla h_{\sigma(d)}\) depenen linealment dels gradients \(\nabla v_{1},\dots,\nabla v_{n}\) en \(V\), per tant, pel \corollari \myref{corollary:dependència funcional iff dependència lineal dels gradients}, per a cada \(i\in\{n+1,\dots,d\}\), existeix una funció \(\varphi_{i}\) que compleix \(h_{\sigma(i)}(x)=\varphi_{i}(v_{1}(x),\dots,v_{n}(x))\) i per tant, si denotem \(v(x)=(v_{1}(x),\dots,v_{n}(x))\),
 			\begin{align*}
 			H(x)&=G(v_{1}(x),\dots,v_{n}(x))\\
 			&=(v_{1}(x),\dots,v_{n}(x),\varphi_{n+1}(v(x)),\dots,\varphi_{d}(v(x)))
@@ -1134,7 +1134,7 @@
 		Siguin \(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle, \(\mathcal{P}\) el conjunt de particions de \(\mathfrak{R}\) i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada. Aleshores \(f\) és integrable Riemann si i només si existeix un \(L\in\mathbb{R}\) tal que
 		\[\lim_{P\in\mathcal{P}}\Sigma(f,P)=L.\]
 		\begin{proof}
-			Pel coro{\lgem}ari \myref{corollary:Sumes superior i inferior iguals integrable Riemann} tenim
+			Pel \corollari \myref{corollary:Sumes superior i inferior iguals integrable Riemann} tenim
 			\[\lim_{P\in\mathcal{P}}\Ssup(f,P)=\lim_{P\in\mathcal{P}}\sinf(f,P),\]
 			i per l'observació \myref{obs:Sumes inferior i superior i suma de riemann} i el \myref{thm:sandvitx} ha de ser
 			\[\lim_{P\in\mathcal{P}}\Ssup(f,P)=\lim_{P\in\mathcal{P}}\Sigma(f,P)=\lim_{P\in\mathcal{P}}\sinf(f,P),\]

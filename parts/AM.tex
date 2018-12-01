@@ -103,7 +103,7 @@
 		\begin{solution}
 			Observem que si \(\alpha\leq0\) tenim que
 			\[\lim_{n\to\infty}\frac{1}{n^{\alpha}}=\infty\]
-			i pel coro{\lgem}ari \myref{cor:condició de Cauchy} tenim que la sèrie és divergent.
+			i pel \corollari \myref{cor:condició de Cauchy} tenim que la sèrie és divergent.
 			
 			Suposem que \(0<\alpha\leq1\). Definim la successió
 			\[S_{N}=\sum_{n=1}^{N}\frac{1}{n^{\alpha}}\]
@@ -635,7 +635,7 @@
 		\begin{solution}
 			Si \(\alpha\leq0\) tenim que el límit
 			\[\lim_{n\to\infty}\frac{(-1)^{n}}{n^{\alpha}}\]
-			és divergent, i pel coro{\lgem}ari \myref{cor:terme general tendeix a zero en una sèrie convergent} trobem que la sèrie és divergent.
+			és divergent, i pel \corollari \myref{cor:terme general tendeix a zero en una sèrie convergent} trobem que la sèrie és divergent.
 			
 			Estudiem ara el cas \(\alpha>0\). Si denotem
 			\[a_{n}=\frac{1}{n^{\alpha}}\]
@@ -906,7 +906,7 @@
 		\begin{proof}
 			Per la definició de \myref{def:convergència absoluta d'una sèrie} tenim que la sèrie
 			\[\sum_{n=0}^{\infty}\abs{a_{n}}\]
-			és convergent, i pel coro{\lgem}ari \myref{cor:la reordenada d'una sèrie de termes positius convergent conserva la sèrie} trobem que
+			és convergent, i pel \corollari \myref{cor:la reordenada d'una sèrie de termes positius convergent conserva la sèrie} trobem que
 			\[\sum_{n=0}^{\infty}\abs{a_{\sigma(n)}}=\sum_{n=0}^{\infty}\abs{a_{n}},\]
 			i per tant tenim que \(\sum_{n=0}^{\infty}a_{\sigma(n)}\) és absolutament convergent.
 		\end{proof}
@@ -947,9 +947,22 @@
 	\end{lemma}
 	\begin{lemma}
 		\label{lemma:Teorema de la reordenació de sèries de Riemann}
-		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie. Aleshores tenim que \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent si i només si les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són convergents.
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent. Aleshores les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són divergents.
 		\begin{proof}
-			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent. Per la proposició \myref{prop:una sèrie absolutament convergent és convergent} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent. 
+			Per l'observació \myref{obs:sumes de la part positiva i negativa d'un nombre} tenim que
+			\begin{equation}
+				\label{lemma:Teorema de la reordenació de sèries de Riemann:eq1}
+				\sum_{n=0}^{\infty}a_{n}=\sum_{n=0}^{\infty}\left(a^{+}_{n}-a^{-}_{n}\right),
+			\end{equation}
+			i per tant
+			\begin{equation}
+				\label{lemma:Teorema de la reordenació de sèries de Riemann:eq2}
+				\sum_{n=0}^{\infty}a^{-}_{n}=\sum_{n=0}^{\infty}a^{+}_{n}-\sum_{n=0}^{\infty}a_{n}.
+			\end{equation}
+			
+			Suposem que \(\sum_{n=0}^{\infty}a^{+}_{n}\) és convergent. Aleshores per \eqref{lemma:Teorema de la reordenació de sèries de Riemann:eq2} tenim que la sèrie \(\sum_{n=0}^{\infty}a^{-}_{n}\) és convergent.
+			
+			Ara bé, per la definició de \myref{def:convergència absoluta d'una sèrie} tenim que les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són absolutament convergents, i per \eqref{lemma:Teorema de la reordenació de sèries de Riemann:eq1} tenim que \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent, però això contradiu l'hipòtesi que \(\sum_{n=0}^{\infty}a_{n}\) no és absolutament convergent. Per tant ha de ser que la sèrie \(\sum_{n=0}^{\infty}a^{+}_{n}\) és divergent. El cas en que suposem que \(\sum_{n=0}^{\infty}a^{+}_{n}\) és convergent és anàleg.
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Teorema de la reordenació de sèries de Riemann]
@@ -957,17 +970,57 @@
 		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent i \(L\) un nombre real. Aleshores existeix una permutació \(\sigma\) de \(\mathbb{N}\) tal que
 		\[\sum_{n=0}^{\infty}a_{\sigma(n)}=L.\]
 		\begin{proof}
-			Prenem un \(\alpha\) real. Tenim per hipòtesi i la definició de \ref{def:convergència absoluta d'una sèrie} que la sèrie \(\sum_{n=0}^{\infty}a^{+}_{n}-a^{-}_{n}\) és convergent i la sèrie \(\sum_{n=0}^{\infty}a^{+}_{n}+a^{-}_{n}\) és divergent. Per tant ha de ser que les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són divergents.
+			Prenem un \(\alpha\) real. Tenim per hipòtesi que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent, i pel lema \myref{lemma:Teorema de la reordenació de sèries de Riemann} trobem que les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són divergents.
 			
 			Definim
 			\[S_{N}=\sum_{n=0}^{N}a^{+}_{n}\quad\text{i}\quad T_{N}=\sum_{n=0}^{N}a^{-}_{n}.\]
-			
-			Com que la sèrie \(\sum_{n=0}^{\infty}a^{+}_{n}\) és divergent tenim que existeix un natural mínim \(n_{1}\) tal que
+			Tenim que \(S_{N}\) no està fitada superiorment i \(T_{N}\) no està fitada inferiorment. Per tant tenim que existeix un mínim natural \(n_{1}\) tal que
 			\[S_{n_{1}}\geq\alpha,\]
 			i tenim que
-			\[S_{n_{1}}+a^{+}_{n_{1}}\geq\alpha+a^{+}_{n_{1}}.\]
+			\begin{align*}
+				\alpha&\leq S_{n_{1}} \\
+				&=S_{n_{1}-1}+a^{+}_{n_{1}} \\
+				&<\alpha+a^{+}_{n_{1}},
+			\end{align*}
+			i per tant
+			\[\alpha<\alpha+a^{+}_{n_{1}}.\]
 			
-			Com que %TODO
+			També tenim que existeix un mínim natural \(m_{1}\) tal que
+			\[S_{n_{1}}+T_{m_{1}}\leq\alpha,\]
+			i tenim que
+			\begin{align*}
+				\alpha&\geq S_{n_{1}}-T_{m_{1}} \\
+				&=S_{n_{1}}-T_{m_{1}-1}-a^{-}_{m_{1}} \\
+				&>\alpha-a^{-}_{m_{1}},
+			\end{align*}
+			i per tant
+			\[\alpha>\alpha-a^{-}_{m_{1}}.\]
+			
+			Definim doncs per a tot \(i\) natural
+			\[n_{i}=\min_{n>n_{i-1}}\{S_{n}-T_{m_{i}-1}\geq\alpha\}\quad\text{i}\quad m_{i}=\min_{m>m_{i-1}}\{S_{n_{i}}-T_{m}\leq\alpha\},\]
+			i trobem que
+			\begin{align*}
+				\alpha&\geq S_{n_{i}}-T_{n_{i}} \\
+				&=S_{n_{i}}-T_{m_{i}-1}-a^{-}_{m_{i}} \\
+				&\geq\alpha-a^{-}_{m_{i}}.
+			\end{align*}
+			
+			Ara bé, tenim per hipòtesi que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent, i pel \corollari \myref{cor:terme general tendeix a zero en una sèrie convergent} tenim que \(\lim_{n\to\infty}a_{n}=0\), i per tant \(\lim_{n\to\infty}a^{-}_{n}=0\), i pel \myref{thm:sandvitx} trobem que
+			\[\lim_{i\to\infty}S_{n_{i}}-T_{m_{i}}=\alpha.\qedhere\]
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}[Teorema de Cauchy]
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) dues sèries absolutament convergents, \(\sigma\) i \(\tau\) dues permutacions de \(\mathbb{N}\). Aleshores tenim que
+		\[\sum_{n=0}^{\infty}a_{\sigma(n)}b_{\tau(n)}=\left(\sum_{n=0}^{\infty}a_{n}\right)\left(\sum_{n=0}^{\infty}b_{n}\right).\]
+		\begin{proof}
+			Per la proposició \myref{prop:una sèrie absolutament convergent és convergent} tenim que les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) són convergents, i per tant tenim que la successió
+			\[p_{N}=\left(\sum_{n=0}^{N}a_{n}\right)\left(\sum_{n=0}^{N}b_{n}\right)\]
+			és convergent.
+			
+			Com que per hipòtesi les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) són absolutament convergents, per la definició de \myref{def:convergència absoluta d'una sèrie}, trobem que lesa sèries \(\sum_{n=0}^{\infty}\abs{a_{n}}\) i \(\sum_{n=0}^{\infty}\abs{b_{n}}\) són convergents, i per la definició de \myref{def:límit} trobem que per a tot \(\varepsilon>0\) existeix un natural \(N\) satisfent
+			\[\sum_{n=N}^{\infty}\sum_{m=N}^{\infty}\abs{a_{n}}\abs{b_{m}}\leq\frac{\varepsilon}{2},\]
+			i
+			\[\abs{\sum_{n=0}^{N}a_{n}\sum_{n=0}^{N}b_{n}-\sum_{n=0}^{\infty}a_{n}\sum_{n=0}^{\infty}b_{n}}\leq\frac{\varepsilon}{2}.\]
 		\end{proof}
 	\end{theorem}
 	\section{Successions funcions}
