@@ -1010,17 +1010,75 @@
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}[Teorema de Cauchy]
-		Siguin \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) dues sèries absolutament convergents, \(\sigma\) i \(\tau\) dues permutacions de \(\mathbb{N}\). Aleshores tenim que
-		\[\sum_{n=0}^{\infty}a_{\sigma(n)}b_{\tau(n)}=\left(\sum_{n=0}^{\infty}a_{n}\right)\left(\sum_{n=0}^{\infty}b_{n}\right).\]
+		\label{Teorema de Cauchy}\label{thm:Teorema de Cauchy}
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) dues sèries absolutament convergents i \((c_{n})_{n\in\mathbb{N}}\) una successió tal que per a tot \((i,j)\) de \(\mathbb{N}\times\mathbb{N}\) existeix un únic \(n\) tal que \(c_{n}=a_{i}b_{j}\) i tal que per a tot \(n\) de \(\mathbb{N}\) existeix un únic \((i,j)\) de \(\mathbb{N}\times\mathbb{N}\) tal que \(c_{n}=a_{i}b_{j}\). Aleshores tenim que
+		\[\sum_{n=0}^{\infty}c_{n}=\left(\sum_{n=0}^{\infty}a_{n}\right)\left(\sum_{n=0}^{\infty}b_{n}\right).\]
 		\begin{proof}
-			Per la proposició \myref{prop:una sèrie absolutament convergent és convergent} tenim que les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) són convergents, i per tant tenim que la successió
-			\[p_{N}=\left(\sum_{n=0}^{N}a_{n}\right)\left(\sum_{n=0}^{N}b_{n}\right)\]
+		%	Per la proposició \myref{prop:una sèrie absolutament convergent és convergent} tenim que les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) són convergents, i per tant tenim que la successió
+		%	\[p_{N}=\left(\sum_{n=0}^{N}a_{n}\right)\left(\sum_{n=0}^{N}b_{n}\right)\]
+		%	és convergent.
+			
+%			Com que per hipòtesi les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) són absolutament convergents, per la definició de \myref{def:convergència absoluta d'una sèrie}, trobem que les sèries \(\sum_{n=0}^{\infty}\abs{a_{n}}\) i \(\sum_{n=0}^{\infty}\abs{b_{n}}\) són convergents, i per tant tenim que la successió
+%			\[p_{N}=\sum_{n=0}^{N}\abs{a_{n}}\sum_{n=0}^{N}\abs{b_{n}}\]
+%			és convergent.
+%			
+%			Per la definició de \myref{def:límit} trobem que per a tot \(\varepsilon>0\) existeix un natural \(n_{0}\) tal que per a tot \(N\geq n_{0}\) es satisfà
+%			\begin{equation}
+%				\label{thm:Teorema de Cauchy:eq1}
+%				\abs{\sum_{n=0}^{N}\abs{a_{n}}\sum_{n=0}^{N}\abs{b_{n}}-\sum_{n=0}^{\infty}\abs{a_{n}}\sum_{n=0}^{\infty}\abs{b_{n}}}\leq\frac{\varepsilon}{2},
+%			\end{equation}
+%			i per \eqref{thm:Teorema de Cauchy:eq1} tenim que per a tot \(N\geq n_{0}\) es satisfà
+%			\begin{equation}
+%				\label{thm:Teorema de Cauchy:eq3}
+%				\sum_{n=N}^{\infty}\abs{a_{n}}\sum_{n=N}^{\infty}\abs{b_{n}}\leq\frac{\varepsilon}{2}.
+%			\end{equation}
+			
+			Com que per hipòtesi les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) són absolutament convergents, per la proposició \myref{prop:una sèrie absolutament convergent és convergent} tenim que les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) són convergents, i per la definició de \myref{def:sèrie convergent} trobem que la successió
+			\[p_{N}=\sum_{n=0}^{N}a_{n}\sum_{n=0}^{N}b_{n}\]
 			és convergent.
 			
-			Com que per hipòtesi les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) són absolutament convergents, per la definició de \myref{def:convergència absoluta d'una sèrie}, trobem que lesa sèries \(\sum_{n=0}^{\infty}\abs{a_{n}}\) i \(\sum_{n=0}^{\infty}\abs{b_{n}}\) són convergents, i per la definició de \myref{def:límit} trobem que per a tot \(\varepsilon>0\) existeix un natural \(N\) satisfent
-			\[\sum_{n=N}^{\infty}\sum_{m=N}^{\infty}\abs{a_{n}}\abs{b_{m}}\leq\frac{\varepsilon}{2},\]
-			i
-			\[\abs{\sum_{n=0}^{N}a_{n}\sum_{n=0}^{N}b_{n}-\sum_{n=0}^{\infty}a_{n}\sum_{n=0}^{\infty}b_{n}}\leq\frac{\varepsilon}{2}.\]
+			Per la definició de \myref{def:límit} trobem que per a tot \(\varepsilon>0\) existeix un natural \(n_{0}\) tal que per a tot \(N\geq n_{0}\) es satisfà
+			\begin{equation}
+				\label{thm:Teorema de Cauchy:eq1}
+				\abs{\sum_{n=0}^{N}a_{n}\sum_{n=0}^{N}b_{n}-\sum_{n=0}^{\infty}a_{n}\sum_{n=0}^{\infty}b_{n}}\leq\frac{\varepsilon}{2}.
+			\end{equation}
+			
+			Aleshores per a tot natural \(m\geq N\) tenim que
+			\[\abs{\sum_{n=1}^{m}a_{\sigma(n)}b_{\tau(n)}-\sum_{n=0}^{\infty}a_{n}\sum_{n=0}^{\infty}b_{n}}\leq\abs{\sum_{n=N}^{\infty}a_{n}\sum_{n=N}^{\infty}b_{n}},\]
+			i per \eqref{thm:Teorema de Cauchy:eq1} trobem
+			\begin{equation}
+				\label{thm:Teorema de Cauchy:eq2}
+				\abs{\sum_{n=1}^{m}a_{\sigma(n)}b_{\tau(n)}-\sum_{n=0}^{\infty}a_{n}\sum_{n=0}^{\infty}b_{n}}\leq\frac{\varepsilon}{2}.
+			\end{equation}
+			
+			
+			\begin{comment}
+			Per la definició de \myref{def:límit} trobem que per a tot \(\varepsilon>0\) existeix un natural \(n_{0}\) tal que per a tot \(N\geq n_{0}\) es satisfà
+			\begin{equation}
+				%\label{thm:Teorema de Cauchy:eq1}
+				\abs{\sum_{n=0}^{N}a_{n}\sum_{n=0}^{N}b_{n}-\sum_{n=0}^{\infty}a_{n}\sum_{n=0}^{\infty}b_{n}}\leq\frac{\varepsilon}{2},
+			\end{equation}
+			i per \eqref{thm:Teorema de Cauchy:eq1} tenim que per a tot \(N\geq n_{0}\) es satisfà
+			\begin{equation}
+				%\label{thm:Teorema de Cauchy:eq3}
+				\abs{\sum_{n=N}^{\infty}a_{n}\sum_{n=N}^{\infty}b_{n}}\leq\frac{\varepsilon}{2}.
+			\end{equation}
+			
+			Sigui \(M\) un natural tal que per a tot \(N\geq n_{0}\) tenim
+			\[\max_{1\leq n\leq N}\{\sigma(n),\tau(n)\}\leq M.\]
+			Aleshores per a tot natural \(m\geq M\) tenim que
+			\[\abs{\sum_{n=1}^{m}a_{\sigma(n)}b_{\tau(n)}-\sum_{n=0}^{\infty}a_{n}\sum_{n=0}^{\infty}b_{n}}\leq\abs{\sum_{n=N}^{\infty}a_{n}\sum_{n=N}^{\infty}b_{n}},\]
+			i per \eqref{thm:Teorema de Cauchy:eq3} trobem
+			\begin{equation}
+				%\label{thm:Teorema de Cauchy:eq2}
+				\abs{\sum_{n=1}^{m}a_{\sigma(n)}b_{\tau(n)}-\sum_{n=0}^{\infty}a_{n}\sum_{n=0}^{\infty}b_{n}}\leq\frac{\varepsilon}{2}.
+			\end{equation}
+			
+			Aleshores amb \eqref{thm:Teorema de Cauchy:eq1} i \eqref{thm:Teorema de Cauchy:eq2} tenim que
+			\[\abs{\sum_{n=1}^{m}a_{\sigma(n)}b_{\tau(n)}-\sum_{n=0}^{\infty}a_{n}\sum_{n=0}^{\infty}b_{n}}+\abs{\sum_{n=0}^{N}a_{n}\sum_{n=0}^{N}b_{n}-\sum_{n=0}^{\infty}a_{n}\sum_{n=0}^{\infty}b_{n}}\leq\varepsilon,\]
+			i per la desigualtat triangular %REF
+			\[\abs{\sum_{n=1}^{m}a_{\sigma(n)}b_{\tau(n)}-\sum_{n=0}^{N}a_{n}\sum_{n=0}^{N}b_{n}}+\abs{\sum_{n=0}^{N}a_{n}\sum_{n=0}^{N}b_{n}-\sum_{n=0}^{\infty}a_{n}\sum_{n=0}^{\infty}b_{n}}\leq\varepsilon,\]
+			\end{comment}
 		\end{proof}
 	\end{theorem}
 	\section{Successions funcions}
