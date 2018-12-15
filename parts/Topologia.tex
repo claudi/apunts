@@ -261,7 +261,7 @@
 		\begin{proof}
 			Prenem un element \(x\) de \(\interior(A)\). Per la definició de \myref{def:interior} tenim que existeix un obert \(\obert{U}_{x}\) tal que \(x\in\obert{U}_{x}\) i \(\obert{U}_{x}\subseteq A\). Aleshores tenim
 			\begin{align*}
-				\interior(A)&=\bigcup_{x\in\interior(A)}x \\
+				\interior(A)&=\bigcup_{x\in\interior(A)}\{x\} \\
 				&\subseteq\bigcup_{x\in\interior(A)}\obert{U}_{x} \\
 				&\subseteq\bigcup_{x\in\interior(A)}\interior(A)=\interior(A).
 			\end{align*}
@@ -282,7 +282,7 @@
 		\begin{proof}
 			Sigui \(x\) un element de \(A\) tal que existeixi un obert \(\obert{U}_{x}\) satisfent que \(x\) és un element de \(\obert{U}_{x}\) i \(\obert{U}_{x}\) és un subconjunt de \(A\). Aleshores tenim
 			\begin{align*}
-				\interior(A)&=\bigcup_{x\in\interior(A)}x \\
+				\interior(A)&=\bigcup_{x\in\interior(A)}\{x\} \\
 				&\subseteq\bigcup_{x\in\interior(A)}\obert{U}_{x} \\
 				&\subseteq\bigcup_{x\in\interior(A)}\interior(A)=\interior(A)
 			\end{align*}
@@ -329,7 +329,7 @@
 			 
 			 Per tant trobem
 			 \begin{align*}
-				 X\setminus\clausura(A)&=\bigcup_{x\in X\setminus\clausura(A)}x \\
+				 X\setminus\clausura(A)&=\bigcup_{x\in X\setminus\clausura(A)}\{x\} \\
 				 &\subseteq\bigcup_{x\in X\setminus\clausura(A)}\obert{U}_{x}\subseteq X\setminus\clausura(A),
 			 \end{align*}
 			 i pel \myref{thm:doble inclusió} trobem que
@@ -635,8 +635,8 @@
 			\[x\in\obert{U}_{x}\subseteq\{\pi_{X}(x,y)\in X\mid(x,y)\in A\},\]
 			i, denotant \(B=\{\pi_{X}(x,y)\in X\mid(x,y)\in A\}\), trobem que
 			\begin{align*}
-				B&\subseteq\bigcup_{x\in B}x \\
-				&\subseteq\bigcup_{x\in B}\obert{U}_{x} \\ &\subseteq B,
+				B&\subseteq\bigcup_{x\in B}\{x\} \\
+				&\subseteq\bigcup_{x\in B}\obert{U}_{x}\subseteq B,
 			\end{align*}
 			i per tant trobem que \(\{\pi_{X}(x,y)\in X\mid(x,y)\in A\}\) és un obert de \(X\), i per la definició d'\myref{def:aplicació oberta} trobem que \(\pi_{X}\) és una aplicació oberta. % REVISAR? Estic medio empanado
 		\end{solution}

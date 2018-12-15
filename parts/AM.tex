@@ -1013,25 +1013,28 @@
 		\label{Teorema de Cauchy}\label{thm:Teorema de Cauchy}
 		Siguin \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) dues sèries absolutament convergents i \((c_{n})_{n\in\mathbb{N}}\) una successió tal que per a tot \((i,j)\) de \(\mathbb{N}\times\mathbb{N}\) existeix un únic \(n\) tal que \(c_{n}=a_{i}b_{j}\) i tal que per a tot \(n\) de \(\mathbb{N}\) existeix un únic \((i,j)\) de \(\mathbb{N}\times\mathbb{N}\) tal que \(c_{n}=a_{i}b_{j}\). Aleshores tenim que
 		\[\sum_{n=0}^{\infty}c_{n}=\left(\sum_{n=0}^{\infty}a_{n}\right)\left(\sum_{n=0}^{\infty}b_{n}\right).\]
-		\begin{proof}
-		%	Per la proposició \myref{prop:una sèrie absolutament convergent és convergent} tenim que les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) són convergents, i per tant tenim que la successió
-		%	\[p_{N}=\left(\sum_{n=0}^{N}a_{n}\right)\left(\sum_{n=0}^{N}b_{n}\right)\]
-		%	és convergent.
+		\begin{proof} %TODO
+		\begin{comment}
+			Per la proposició \myref{prop:una sèrie absolutament convergent és convergent} tenim que les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) són convergents, i per tant tenim que la successió
+			\[p_{N}=\left(\sum_{n=0}^{N}a_{n}\right)\left(\sum_{n=0}^{N}b_{n}\right)\]
+			és convergent.
 			
-%			Com que per hipòtesi les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) són absolutament convergents, per la definició de \myref{def:convergència absoluta d'una sèrie}, trobem que les sèries \(\sum_{n=0}^{\infty}\abs{a_{n}}\) i \(\sum_{n=0}^{\infty}\abs{b_{n}}\) són convergents, i per tant tenim que la successió
-%			\[p_{N}=\sum_{n=0}^{N}\abs{a_{n}}\sum_{n=0}^{N}\abs{b_{n}}\]
-%			és convergent.
-%			
-%			Per la definició de \myref{def:límit} trobem que per a tot \(\varepsilon>0\) existeix un natural \(n_{0}\) tal que per a tot \(N\geq n_{0}\) es satisfà
-%			\begin{equation}
-%				\label{thm:Teorema de Cauchy:eq1}
-%				\abs{\sum_{n=0}^{N}\abs{a_{n}}\sum_{n=0}^{N}\abs{b_{n}}-\sum_{n=0}^{\infty}\abs{a_{n}}\sum_{n=0}^{\infty}\abs{b_{n}}}\leq\frac{\varepsilon}{2},
-%			\end{equation}
-%			i per \eqref{thm:Teorema de Cauchy:eq1} tenim que per a tot \(N\geq n_{0}\) es satisfà
-%			\begin{equation}
-%				\label{thm:Teorema de Cauchy:eq3}
-%				\sum_{n=N}^{\infty}\abs{a_{n}}\sum_{n=N}^{\infty}\abs{b_{n}}\leq\frac{\varepsilon}{2}.
-%			\end{equation}
+			Com que per hipòtesi les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) són absolutament convergents, per la definició de \myref{def:convergència absoluta d'una sèrie}, trobem que les sèries \(\sum_{n=0}^{\infty}\abs{a_{n}}\) i \(\sum_{n=0}^{\infty}\abs{b_{n}}\) són convergents, i per tant tenim que la successió
+			\[p_{N}=\sum_{n=0}^{N}\abs{a_{n}}\sum_{n=0}^{N}\abs{b_{n}}\]
+			és convergent.
+			
+			Per la definició de \myref{def:límit} trobem que per a tot \(\varepsilon>0\) existeix un natural \(n_{0}\) tal que per a tot \(N\geq n_{0}\) es satisfà
+			\begin{equation}
+				\label{thm:Teorema de Cauchy:eq1}
+				\abs{\sum_{n=0}^{N}\abs{a_{n}}\sum_{n=0}^{N}\abs{b_{n}}-\sum_{n=0}^{\infty}\abs{a_{n}}\sum_{n=0}^{\infty}\abs{b_{n}}}\leq\frac{\varepsilon}{2},
+			\end{equation}
+			i per \eqref{thm:Teorema de Cauchy:eq1} tenim que per a tot \(N\geq n_{0}\) es satisfà
+			\begin{equation}
+				\label{thm:Teorema de Cauchy:eq3}
+				\sum_{n=N}^{\infty}\abs{a_{n}}\sum_{n=N}^{\infty}\abs{b_{n}}\leq\frac{\varepsilon}{2}.
+			\end{equation}
+			
+			
 			
 			Com que per hipòtesi les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) són absolutament convergents, per la proposició \myref{prop:una sèrie absolutament convergent és convergent} tenim que les sèries \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) són convergents, i per la definició de \myref{def:sèrie convergent} trobem que la successió
 			\[p_{N}=\sum_{n=0}^{N}a_{n}\sum_{n=0}^{N}b_{n}\]
@@ -1052,7 +1055,7 @@
 			\end{equation}
 			
 			
-			\begin{comment}
+			
 			Per la definició de \myref{def:límit} trobem que per a tot \(\varepsilon>0\) existeix un natural \(n_{0}\) tal que per a tot \(N\geq n_{0}\) es satisfà
 			\begin{equation}
 				%\label{thm:Teorema de Cauchy:eq1}
@@ -1078,7 +1081,7 @@
 			\[\abs{\sum_{n=1}^{m}a_{\sigma(n)}b_{\tau(n)}-\sum_{n=0}^{\infty}a_{n}\sum_{n=0}^{\infty}b_{n}}+\abs{\sum_{n=0}^{N}a_{n}\sum_{n=0}^{N}b_{n}-\sum_{n=0}^{\infty}a_{n}\sum_{n=0}^{\infty}b_{n}}\leq\varepsilon,\]
 			i per la desigualtat triangular %REF
 			\[\abs{\sum_{n=1}^{m}a_{\sigma(n)}b_{\tau(n)}-\sum_{n=0}^{N}a_{n}\sum_{n=0}^{N}b_{n}}+\abs{\sum_{n=0}^{N}a_{n}\sum_{n=0}^{N}b_{n}-\sum_{n=0}^{\infty}a_{n}\sum_{n=0}^{\infty}b_{n}}\leq\varepsilon,\]
-			\end{comment}
+		\end{comment}
 		\end{proof}
 	\end{theorem}
 	\section{Successions funcions}
@@ -1091,32 +1094,59 @@
 		\labelname{convergència puntual}\label{def:convergència puntual}
 		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions definides en un interval \(I\) tal que existeix una funció \(f\) de \(I\) a \(\mathbb{R}\) tal que
 		\[\lim_{n\to\infty}f_{n}(x)=f(x)\]
-		per a tot \(x\) de \(I\). Aleshores direm que la successió \(f_{n}\) convergeix puntualment a \(f\).
+		per a tot \(x\) de \(I\). Aleshores direm que la successió \((f_{n})\) convergeix puntualment a la funció \(f\).
 	\end{definition}
 	\begin{example}
-		Convergència puntual d'alguna sèrie de funcions interessant.
+		\label{ex:convergència puntual d'una successió de funcions}
+		Volem estudiar la convergència puntual de la successió de funcions \((f_{n})_{n\in\mathbb{N}}\) definida per
+		\[f_{n}(x)=\frac{nx^{2}+1}{nx+1}\]
+		en l'interval \([1,2]\).
+		\begin{solution}
+			Considerem el límit
+			\begin{align*}
+				\lim_{n\to\infty}f_{n}(x)&=\lim_{n\to\infty}\frac{nx^{2}+1}{nx+1} \\
+				&=\lim_{n\to\infty}\frac{nx^{2}+1}{nx+1}\frac{\frac{1}{n}}{\frac{1}{n}} \\
+				&=\lim_{n\to\infty}\frac{x^{2}+\frac{1}{n}}{x+\frac{1}{n}} \\
+				&=\frac{x^{2}}{x}=x,
+			\end{align*}
+			i per la definició de \myref{def:convergència puntual d'una sèrie de funcions} trobem que la successió \((f_{n})\) convergeix puntualment a la funció \(f(x)=x\).
+		\end{solution}
 	\end{example}
 	\subsection{Convergència uniforme}
 	\begin{definition}[Convergència uniforme]
 		\labelname{convergència uniforme}\label{def:convergència uniforme}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions definides en \(I\) que convergeix puntualment a una funció \(f\) tal que per a tot \(\varepsilon>0\) real existeix un \(n_{0}\) natural tal que per a tot \(n>n_{0}\) es satisfà
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions definides en un interval \(I\) que convergeix puntualment a una funció \(f\) tal que per a tot \(\varepsilon>0\) real existeix un \(n_{0}\) natural tal que per a tot \(n>n_{0}\) es satisfà
 		\[\sup_{x\in I}\abs{f_{n}(x)-f(x)}<\varepsilon.\]
 		Aleshores direm que la successió \((f_{n})_{n\in\mathbb{N}}\) convergeix uniformement a \(f\) i ho denotarem com \(f_{n}\convergeixuniformement f\).
 	\end{definition}
 	\begin{observation}
 		\label{obs:convergència uniforme amb límits}
-		Una successió de funcions \((f_{n})_{n\in\mathbb{N}}\) sobre \(I\) convergeix uniformement a una funció \(f\) si i només si
+		Una successió de funcions \((f_{n})_{n\in\mathbb{N}}\) sobre un interval \(I\) convergeix uniformement a una funció \(f\) si i només si
 		\[\lim_{n\to\infty}\sup_{x\in I}\abs{f_{n}(x)-f(x)}=0.\]
 		\begin{proof}
 			Per la definició de \myref{def:límit}.
 		\end{proof}
 	\end{observation}
 	\begin{example}
-		Convergència uniforme d'alguna sèrie de funcions interessant. % Continuar la d'abans?
+		\label{ex:convergència uniforme d'una successió de funcions}
+		Volem estudiar la convergència uniforme de la successió de funcions \((f_{n})_{n\in\mathbb{N}}\) definida per
+		\[f_{n}(x)=\frac{nx^{2}+1}{nx+1}\]
+		en l'interval \([1,2]\).
+		\begin{proof}
+			Per l'exercici \myref{ex:convergència puntual d'una successió de funcions} tenim que la successió de funcions \((f_{n})\) convergeix puntualment a la funció \(f(x)=x\) en l'interval \([1,2]\). Considerem el límit
+			\begin{align*}
+				\lim_{n\to\infty}\sup_{x\in[1,2]}\abs{f_{n}(x)-f(x)}&=\lim_{n\to\infty}\sup_{x\in[1,2]}\abs{\frac{nx^{2}+1}{nx+1}-x} \\
+				&=\lim_{n\to\infty}\sup_{x\in[1,2]}\abs{\frac{nx^{2}+1-nx^{2}-x}{nx+1}} \\
+				&=\lim_{n\to\infty}\sup_{x\in[1,2]}\abs{\frac{1-x}{nx+1}} \\
+				&\leq\lim_{n\to\infty}\sup_{x\in[1,2]}\frac{1+\abs{x}}{nx+1} \\
+				&\leq\lim_{n\to\infty}\frac{3}{n+1}=0,
+			\end{align*}
+			i per l'observació \myref{obs:convergència uniforme amb límits} trobem que la successió de funcions \((f_{n})\) convergeix uniformement a \(f(x)\) en l'interval \([1,2]\). 
+		\end{proof}
 	\end{example}
 	\begin{theorem}[Condició de Cauchy]
 		\labelname{condició de Cauchy per successions de funcions}\label{thm:condició de Cauchy per successions de funcions}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre \(I\). Aleshores la successió \((f_{n})_{n\in\mathbb{N}}\) convergeix uniformement a una funció \(f\) de \(I\) si i només si per a tot \(\varepsilon>0\) real existeix un \(n_{0}\) natural tal que per a tots enters \(n\) i \(m\) amb \(n_{0}<m<n\) es satisfà
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\). Aleshores la successió \((f_{n})_{n\in\mathbb{N}}\) convergeix uniformement a una funció \(f\) de \(I\) si i només si per a tot \(\varepsilon>0\) real existeix un \(n_{0}\) natural tal que per a tots enters \(n\) i \(m\) amb \(n_{0}<m<n\) es satisfà
 		\[\sup_{x\in I}\abs{f_{n}(x)-f_{m}(x)}<\varepsilon.\]
 		\begin{proof}
 			%TODO
@@ -1126,21 +1156,21 @@
 	\subsection{Continuïtat, integrabilitat i derivabilitat}
 	\begin{theorem}
 		\label{thm:si una successió de funcions contínues convergeix uniformement, ho fa a una funció contínua}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions contínues sobre \(I\) tal que \(f_{n}\convergeixuniformement f\). Aleshores \(f\) és contínua.
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions contínues sobre un interval \(I\) tal que \(f_{n}\convergeixuniformement f\). Aleshores \(f\) és contínua.
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
 		\label{thm:si una successió de funcions integrables Riemann convergix unifoemement, ho fa a una funció integrable Riemann}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre \(I\) tal que \(f_{n}\convergeixuniformement f\). Aleshores \(f\) és integrable Riemann.
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre un interval \(I\) tal que \(f_{n}\convergeixuniformement f\). Aleshores \(f\) és integrable Riemann.
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
 		\label{thm:si una successió de funcions convergeix uniformement aleshores el límit de la integral dels elements de la succesió és la integral del límit dels elements de la successió}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre \(I\) tal que \(f_{n}\convergeixuniformement f\). Aleshores
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre un interval \(I\) tal que \(f_{n}\convergeixuniformement f\). Aleshores
 		\[\lim_{n\to\infty}\int_{I}f_{n}(x)\diff x=\int_{I}\lim_{n\to\infty}f_{n}(x)\diff x.\]
 		\begin{proof}
 %			Aquest enunciat té sentit pel Teorema \myref{thm:si una successió de funcions integrables Riemann convergix unifoemement, ho fa a una funció integrable Riemann}.
@@ -1148,33 +1178,46 @@
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions derivables sobre \(I\) que convergeix uniformement a una funció \(f\) tal que la successió \((f'_{n})_{n\in\mathbb{N}}\) convergeix uniformement a una funció \(g\). Aleshores tenim que \(f\) és derivable i que \(f'(x)=g(x)\).
-		\begin{proof}
+		\label{thm:condició per la derivabilitat d'una successió de funcions}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions derivables sobre un interval \(I\) que convergeix uniformement a una funció \(f\) tal que la successió \((f'_{n})_{n\in\mathbb{N}}\) convergeix uniformement a una funció \(g\). Aleshores tenim que \(f\) és derivable i que \(f'(x)=g(x)\).
+		\begin{proof} % I acotat?
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\section{Sèries de funcions}
 	\subsection{Convergència d'una sèrie de funcions}
 	\begin{definition}[Sèrie de funcions]
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre \(I\). Aleshores definim, per a tot \(x\) de \(I\),
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\). Aleshores definim, per a tot \(x\) de \(I\),
 		\[F(x)=\sum_{n=0}^{\infty}f_{n}(x)\]
 		com la sèrie de funcions de la successió \((f_{n})_{n\in\mathbb{N}}\).
 	\end{definition}
 	\begin{definition}[Convergència puntual]
 		\labelname{convergència puntual d'una sèrie de funcions}\label{def:convergència puntual d'una sèrie de funcions}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre \(I\) i
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\) i
 		\[F_{N}(x)=\sum_{n=0}^{N}f_{n}(x)\]
 		tal que la successió de funcions \((F_{n})_{n\in\mathbb{N}}\) sigui puntualment convergent en \(I\). Aleshores direm que la sèrie de funcions de la successió \((f_{n})_{n\in\mathbb{N}}\) és convergent puntualment en \(I\).
 	\end{definition}
+	\begin{example}
+		Exemple de convergència puntual d'una sèrie de funcions.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
 	\begin{definition}[Convergència uniforme]
 		\labelname{convergència uniforme d'una sèrie de funcions}\label{def:convergència uniforme d'una sèrie de funcions}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre \(I\) i
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\) i
 		\[F_{N}(x)=\sum_{n=0}^{N}f_{n}(x)\]
 		tal que la successió de funcions \((F_{n})_{n\in\mathbb{N}}\) sigui uniformement convergent en \(I\). Aleshores direm que la sèrie de funcions de la successió \((f_{n})_{n\in\mathbb{N}}\) és convergent uniformement en \(I\).
 	\end{definition}
+	\begin{example}
+		Exemple de convergència uniforme d'una sèrie de funcions.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
 	\begin{theorem}[Condició de Cauchy]
 		\labelname{condició de Cauchy per sèries de funcions}\label{def:condició de Cauchy per sèries de funcions}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre \(I\). Aleshores la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) és convergent si i només si per a tot \(\varepsilon>0\) real existeixen enters \(N\) i \(M\) amb \(N<M\) tals que
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\). Aleshores la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) és convergent si i només si per a tot \(\varepsilon>0\) real existeixen enters \(N\) i \(M\) amb \(N<M\) tals que
 		\[\sup_{x\in I}\abs{\sum_{n=N}^{M}f_{n}(x)}<\varepsilon.\]
 		\begin{proof}
 			%TODO
@@ -1183,32 +1226,100 @@
 	\subsection{Continuïtat, integrabilitat i derivabilitat}
 	\begin{theorem}
 		\label{thm:si la sèrie de d'una successió de funcions contínues convergeix uniformement, el seu límit és una funció contínua}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions contínues sobre \(I\) tals que la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) convergeixi uniformement a una funció \(F\) en \(I\). Aleshores \(F\) és contínua en \(I\).
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions contínues sobre un interval \(I\) tals que la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) convergeixi uniformement a una funció \(F\) en \(I\). Aleshores \(F\) és contínua en \(I\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
 		\label{thm:si la sèrie de d'una successió de funcions integrables Riemann convergeix uniformement, el seu límit és una funció integrable Riemann}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre \(I\) tals que la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) convergeixi uniformement a una funció \(F\) en \(I\). Aleshores \(F\) és integrable Riemann en \(I\).
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre un interval \(I\) tals que la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) convergeixi uniformement a una funció \(F\) en \(I\). Aleshores \(F\) és integrable Riemann en \(I\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
 		\label{thm:si la sèrie d'una successió de funcions convergeix uniformement aleshores el límit de la integral dels elements de la sèrie de la succesió és la integral del límit del la sèrie de la successió}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre \(I\) tal que la sèrie de funcions de \((f_{n})_{n\in\mathbb{N}}\) sigui uniformement convergent en \(I\). Aleshores
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre un interval \(I\) tal que la sèrie de funcions de \((f_{n})_{n\in\mathbb{N}}\) sigui uniformement convergent en \(I\). Aleshores
 		\[\sum_{n=0}^{\infty}\int_{I}f_{n}(x)\diff x=\int_{I}\sum_{n=0}^{\infty}f_{n}(x)\diff x.\]
 		\begin{proof}
-			%Aquest enunciat té sentit pel Teorema \myref{thm:si la sèrie de d'una successió de funcions integrables Riemann convergeix uniformement, el seu límit és una funció integrable Riemann}.
+			%TODO Aquest enunciat té sentit pel Teorema \myref{thm:si la sèrie de d'una successió de funcions integrables Riemann convergeix uniformement, el seu límit és una funció integrable Riemann}.
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
-		\label{thm:FER}
-				
+		\label{thm:condició per la derivabilitat d'una sèrie de funcions}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions derivables sobre un interval \(I\) acotat tal que la sèrie de funcions \(\sum_{n=0}^{\infty}f'_{n}(x)\) convergeix uniformement en \(I\) i existeix un \(x_{0}\in I\) tal que la sèrie de funcions \(\sum_{n=0}^{\infty}f_{n}(x_{0})\) sigui convergent. Aleshores tenim que la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) és derivable i
+		\[\left(\sum_{n=0}^{\infty}f_{n}(x)\right)'=\sum_{n=0}^{\infty}f'_{n}(x).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
 	\end{theorem}
-
-%	\subsection{Sèries de potències}
+	\subsection{Convergència d'una sèrie de funcions}
+	\begin{proposition}
+		\label{prop:si una sêrie de funcions convergeix uniformement aleshores la successió de funcions convergeix uniformement a 0}
+		Sigui \(f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\) tal que la sèrie de funcions \(\sum_{n=0}^{\infty}f_{n}(x)\) convergeix uniformement en \(I\). Aleshores la successió de funcions \((f_{n})\) convergeix uniformement a \(0\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{theorem}[Criteri \ensuremath{M} de Weierstrass]
+		\labelname{criteri \ensuremath{M} de Weierstrass}\label{thm:criteri M de Weierstrass}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\) i \((M_{n})_{n\in\mathbb{N}}\) una successió de termes no negatius tals que per a tot \(n\) natural tenim 
+		\[\sup_{x\in I}\abs{f_{n}(x)}\leq M_{n}\]
+		i la sèrie \(\sum_{n=0}^{\infty}M_{n}\) és convergent. Aleshores la sèrie de funcions \(\sum_{n=0}^{\infty}f_{n}(x)\) és uniformement convergent en \(I\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		Volem estudiar la convergència de la sèrie de funcions
+		\[\sum_{n=1}^{\infty}\frac{\sin(nx)}{n^{3}}\]
+		en tot \(\mathbb{R}\).
+		\begin{solution}
+			Observem que
+			\[\sup_{x\in\mathbb{R}}\abs{\frac{\sin(nx)}{n^{3}}}\leq\frac{1}{n^{3}},\]
+			i per l'exemple \myref{ex:sèrie harmònica} tenim que la sèrie
+			\[\sum_{n=1}^{\infty}\frac{1}{n^{3}}\]
+			és convergent. Per tant pel \myref{thm:criteri M de Weierstrass} tenim que la sèrie de funcions
+			\[\sum_{n=1}^{\infty}\frac{\sin(nx)}{n^{3}}\]
+			és convergent en tot \(\mathbb{R}\).
+		\end{solution}
+	\end{example}
+	\begin{theorem}[Criteri de Dirichlet]
+		\labelname{criteri de Dirichlet}\label{thm:criteri de Dirichlet}
+		Siguin \((f_{n})_{n\in\mathbb{N}}\) i \((g_{n})_{n\in\mathbb{N}}\) dues successions de funcions sobre un interval \(I\) tals que \(g_{n}(x)\) és monòtona per a tot \(n\) natural, la successió de funcions \((g_{n})\) convergeix uniformement a \(0\) i existeix un real \(M\) tal que
+		\[\sup_{x\in I}\abs{\sum_{n=0}^{\infty}}\leq M\quad\text{per a tot }n\text{ natural}.\]
+		Aleshores la sèrie de funcions
+		\[\sum_{n=0}^{\infty}f_{n}(x)g_{n}(x)\]
+		és uniformement convergent en \(I\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		Exemple del criteri de Dirichlet.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{theorem}[Criteri d'Abel]
+		\labelname{criteri d'Abel}\label{thm:criteri d'Abel}
+		Siguin \((f_{n})_{n\in\mathbb{N}}\) i \((g_{n})_{n\in\mathbb{N}}\) dues sèries de funcions sobre un interval \(I\) tals que \(g_{n}\) és monòtona per a tot \(n\) natural, existeix un real \(L\) tal que per a tot \(n\) natural
+		\[\sup_{x\in I}\abs{g_{n}(x)}\leq L\]
+		i tal que la sèrie de funcions \(\sum_{n=0}^{\infty}f_{n}(x)\) sigui uniformement convergent en \(I\). Aleshores la sèrie de funcions
+		\[\sum_{n=0}^{\infty}f_{n}(x)g_{n}(x)\]
+		és absolutament convergent en \(I\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		Exemple del criteri d'Abel.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\subsection{Sèries de potències}
 %	\subsection{Teorema d'aproximació polinòmica de Weierstrass}
 %	\printbibliography
 \end{document}
@@ -1218,3 +1329,5 @@
 % Sèries de funcions amb Perelló (Càlcul infinitesimal)
 % Encara no se d'on treure integrals impròpies
 % Fourier amb Tolstov (Fourier Series)
+
+%sin(arccos(x)) (utilitzar sin(x)=sqrt(1+cos(x)^2)

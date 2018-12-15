@@ -11,10 +11,10 @@
 \usepackage{tkz-euclide}
 \usetkzobj{all}
 \usetikzlibrary{decorations.text}
+\usepackage{anyfontsize}
 \usepackage[scaled=0.92]{helvet}
 \usepackage{graphicx}
 \usepackage[sorting=none, backend=biber, refsection=part]{biblatex}
-\usepackage{wasysym}
 \usepackage[hidelinks]{hyperref}
 
 \addbibresource{referencies.bib}
@@ -260,13 +260,14 @@
 		reverse path,text align=center,
 		text={|\sffamily\color{black}|Universitat Aut{ò}noma de Barcelona}}}] (-30:3cm+0.3em) arc (-30:210:3cm+0.3em);
 		\node[black,rotate=180-338.5-90] at (180-338.5:3cm+0.6em)
-		{\includegraphics[width=0.667em]{imatges/UABLogo.eps}};
+		{\includegraphics[width=0.667em]{imatges/UABLogo.pdf}};
 		\node[black,rotate=338.5-90] at (338.5:3cm+0.6em)%
-		{\includegraphics[width=0.667em]{imatges/UABLogo.eps}};
+		{\includegraphics[width=0.667em]{imatges/UABLogo.pdf}};
 		\path [postaction={decorate,decoration={text along path, text align=center,
 		text={|\color{black}|Grau en Matem{à}tiques }}}] (210:3cm+0.9em) arc (210:330:3cm+0.9em);
 	\end{tikzpicture}}
 	\vfill
+%	{\large\scshape Get formal \ensuremath{\blacksquare}}\\[\baselineskip]
 	{\large\scshape Notes de classe}\\[\baselineskip]
 	{\small\scshape Promoció 2016-17}\par
 	\vspace*{0.1\textheight}
@@ -305,7 +306,7 @@
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 
 %\newcommand{\myref}[1]{\ref{#1}}
-\DeclareRobustCommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
+\newcommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
 %\newcommand{\myref}[1]{\hyperref[#1]{\nameref{#1} \eqref{#1}}}
 
 \makeatletter
