@@ -335,8 +335,8 @@
 \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 
-\newcommand{\myref}[1]{\ref{#1}}
-%\newcommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
+%\newcommand{\myref}[1]{\ref{#1}}
+\newcommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
 %\newcommand{\myref}[1]{\hyperref[#1]{\nameref{#1} \eqref{#1}}}
 
 \makeatletter
