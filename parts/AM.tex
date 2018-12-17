@@ -159,10 +159,10 @@
 	\begin{theorem}[Criteri de comparació]
 		\labelname{criteri de comparació de sèries de termes positius}\label{thm:criteri de comparació de sèries de termes positius}
 		Siguin \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) dues sèries de termes positius i
-		\[\lim_{n\to\infty}\frac{a_{n}}{b_{n}}=L.\]
+		\[\lim_{n\to\infty}\frac{a_{n}}{b_{n}}=L\]
 		tals que
 		\begin{enumerate}
-			\item\label{thm:criteri de comparació de sèries de termes positius:enum1} \(L\neq0\) i \(L\neq\infty\). Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si \(\sum_{n=0}^{\infty}b_{n}\)
+			\item\label{thm:criteri de comparació de sèries de termes positius:enum1} \(L\neq0\) i \(L\neq\infty\). Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
 			\item\label{thm:criteri de comparació de sèries de termes positius:enum2} \(L=0\) i \(\sum_{n=0}^{\infty}b_{n}\) és convergent. Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			\item\label{thm:criteri de comparació de sèries de termes positius:enum3} \(L=\infty\) i \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Aleshores \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
 		\end{enumerate}
@@ -499,7 +499,7 @@
 		\end{solution}
 	\end{example}
 	\begin{comment}
-		\begin{example}
+		\begin{example} %TODO
 			\label{ex:sèrie harmònica amb logarítme del factorial}
 			Sigui \(\alpha\) un real. Volem estudiar per a quins valors de \(\alpha\) la sèrie
 			\begin{equation}
@@ -543,9 +543,9 @@
 			\end{solution}
 		\end{example}
 	\end{comment}
-	\begin{proposition}[Criteri de la integral]
-		\labelname{criteri de la integral}\label{prop:criteri de la integral}
-		Siguin \(f\colon[1,\infty)\longrightarrow(0,\infty)\) una funció decreixent. Aleshores la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent si i només si existeix un real \(C>0\) tal que per a tot \(N\) natural es satisfà \(\int_{1}^{N}f(x)\diff x\leq C\).
+	\begin{lemma}[Criteri de la integral]
+		\labelname{criteri de la integral}\label{lema:criteri de la integral}
+		Sigui \(f\colon[1,\infty)\longrightarrow(0,\infty)\) una funció decreixent. Aleshores la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent si i només si existeix un real \(C>0\) tal que per a tot \(N\) natural es satisfà \(\int_{1}^{N}f(x)\diff x\leq C\).
 		\begin{proof}
 			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent. Com que, per hipòtesi, la sèrie és de termes positius, per la definició de \myref{def:sèrie convergent} tenim que existeix un real \(C\) tal que per a tot \(N\) natural es satisfà
 			\[\sum_{n=1}^{N}f(n)\leq C.\]
@@ -570,7 +570,7 @@
 			\end{align*}
 			i per la definició de \myref{def:sèrie convergent} trobem que la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent.
 		\end{proof}
-	\end{proposition}
+	\end{lemma}
 	% EXEMPLE?
 	\subsection{Sèries alternades}
 	\begin{definition}[Sèrie alternada]
@@ -1521,12 +1521,54 @@
 	\subsection{Integrals impròpies de funcions positives}
 	\begin{lemma}
 		\label{lema:criteri de comparació d'integrals impròpies}
-		
+		Siguin \(f\) i \(g\) dues funcions positives localment integrables en un interval \([a,b)\) tals que existeixen dos reals \(C>0\) i \(x_{0}<b\) satisfent, per a tot \(x\) en \([x_{0},b)\), que
+		\[f(x)\leq Cg(x)\]
+		i tals que la integral impròpia de \(g\) és convergent. Aleshores la integral impròpia de \(f\) és convergent.
+		\begin{proof}
+			%TODO
+		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Criteri de comparació]
 		\labelname{criteri de comparació d'integrals impròpies}\label{def:criteri de comapració d'integrals impròpies}
-		Siguin \(f\) i \(g\) dues funcions positives localment integrables en un interval \([a,b)\).
+		Siguin \(f\) i \(g\) dues funcions positives localment integrables en un interval \([a,b)\) i
+		\[L=\lim_{x\to b}\frac{f(x)}{g(x)}\]
+		tals que
+		\begin{enumerate}
+			\item\label{def:criteri de comapració d'integrals impròpies:eq1} \(L\neq\) i \(L\neq\infty\). Aleshores \(\int_{a}^{b}f(x)\diff x\) és convergent si i només si \(\int_{a}^{b}g(x)\diff x\) és convergent.
+			\item\label{def:criteri de comapració d'integrals impròpies:eq2} \(L=0\) i \(\int_{a}^{b}g(x)\diff x\) és convergent. Aleshores \(\int_{a}^{b}f(x)\diff x\) és convergent.
+			\item\label{def:criteri de comapració d'integrals impròpies:eq3} \(L=\infty\) i \(\int_{a}^{b}f(x)\diff x\) és convergent. Aleshores \(\int_{a}^{b}g(x)\diff x\) és convergent.
+		\end{enumerate}
+		\begin{proof}
+			%TODO
+		\end{proof}
 	\end{theorem}
+	\begin{example}
+		\label{ex:criteri de comapració d'integrals impròpies}
+		Exemple de criteri de comparació d'integrals impròpies. % Buscar als exàmens
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{theorem}[Criteri de la integral]
+		\labelname{criteri de la integral}\label{thm:criteri de la integral per integrals impròpies}
+		Sigui \(f\colon[1,\infty)\longrightarrow(0,\infty)\) una funció decreixent. Aleshores la integral impròpia \(\int_{1}^{\infty}f(x)\diff x\) és convergent si i només si la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent.
+		\begin{proof}
+			És conseqüència del lema \myref{lema:criteri de la integral} i la definició de \myref{def:integral impròpia convergent}.
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		\label{ex:criteri de la integral per integrals impròpies}
+		Volem veure per a quins valors de \(\alpha>0\) real la integral
+		\begin{equation}
+			\label{ex:criteri de la integral per integrals impròpies:eq1}
+			\int_{0}^{\infty}\alpha^{x}\diff x
+		\end{equation}
+		és convergent.
+		\begin{solution}
+			%TODO
+			% Definim \(f(x)=\alpha^{x}\). Observem que \(f(x)\) és localment integrable en \([1,\infty)\). Partir integral.
+		\end{solution}
+	\end{example}
 %	\subsection{Derivació sota el signe integral}
 %	\section{Aplicacions de les integrals impròpies}
 %	\subsection{La funció Gamma d'Euler}

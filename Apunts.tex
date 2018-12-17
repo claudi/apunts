@@ -274,58 +274,58 @@
 	\vspace*{0.1\textheight}
 	\endgroup}
 
-%\makeatletter
-%\def\thickhrulefill{\leavevmode \leaders \hrule height 1.2ex \hfill \kern \z@}
-%\def\@makechapterhead#1{
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1.2ex \hfill \kern \z@}
+\def\@makechapterhead#1{
 %	\vspace*{10\p@}%
-%	{\parindent \z@ \centering \reset@font
-%		\thickhrulefill\quad
-%		\scshape\bfseries\text{\@chapapp{} \hfill \thechapter}
-%		\quad\thickhrulefill
-%		\par\nobreak
-%		\vspace*{10\p@}%
-%		\interlinepenalty\@M
-%		\hrule
-%		\vspace*{10\p@}%
-%		\Huge \bfseries #1 \par\nobreak
-%		\par
-%		\vspace*{10\p@}%
-%		\hrule
-%		\vspace*{15\p@}%
-%	}}
-%\makeatother
+	{\parindent \z@ \centering \reset@font
+		\thickhrulefill\quad
+		\scshape\bfseries\text{\@chapapp{} \hfill \thechapter}
+		\quad\thickhrulefill
+		\par\nobreak
+		\vspace*{10\p@}%
+		\interlinepenalty\@M
+		\hrule
+		\vspace*{10\p@}%
+		\Huge \bfseries #1 \par\nobreak
+		\par
+		\vspace*{10\p@}%
+		\hrule
+		\vspace*{15\p@}%
+	}}
+\makeatother
 
 \let\originalpart=\part
 \def\part{\cleartoevenpage[\thispagestyle{empty}]\originalpart}
 
-\makeatletter
-\newlength{\numberheight}
-\newlength{\barlength}
-\makechapterstyle{cveelo}{%
-  \setlength{\afterchapskip}{40pt}
-  \renewcommand*{\chapterheadstart}{\vspace*{40pt}}
-  \renewcommand*{\afterchapternum}{\par\nobreak\vskip 25pt}
-  \renewcommand*{\chapnamefont}{\normalfont\LARGE\flushright\color{black}}
-  \renewcommand*{\chapnumfont}{\normalfont\HUGE}
-  \renewcommand*{\chaptitlefont}{\normalfont\Huge\bfseries\flushright\color{black}}
-  \renewcommand*{\printchaptername}{%
-    \chapnamefont\scshape{\@chapapp}}
-  \renewcommand*{\chapternamenum}{}
-  \setlength{\beforechapskip}{18mm}
-  \setlength{\midchapskip}{\paperwidth}
-  \addtolength{\midchapskip}{-\textwidth}
-  \addtolength{\midchapskip}{-\spinemargin}
-  \renewcommand*{\printchapternum}{%
-    \makebox[0pt][l]{\hspace{.8em}%
-      \resizebox{!}{\beforechapskip}{\chapnumfont \thechapter}%
-      \hspace{.8em}%
-      \rule{\midchapskip}{\beforechapskip}%
-    }}%
-}
-\makeatother
-
-\chapterstyle{cveelo}
-%\hangsecnum
+%\makeatletter
+%\newlength{\numberheight}
+%\newlength{\barlength}
+%\makechapterstyle{cveelo}{%
+%  \setlength{\afterchapskip}{40pt}
+%  \renewcommand*{\chapterheadstart}{\vspace*{40pt}}
+%  \renewcommand*{\afterchapternum}{\par\nobreak\vskip 25pt}
+%  \renewcommand*{\chapnamefont}{\LARGE\flushright}
+%  \renewcommand*{\chapnumfont}{\HUGE}
+%  \renewcommand*{\chaptitlefont}{\bfseries\Huge\flushright}
+%  \renewcommand*{\printchaptername}{%
+%    \chapnamefont\scshape{\@chapapp}}
+%  \renewcommand*{\chapternamenum}{}
+%  \setlength{\beforechapskip}{4em}
+%  \setlength{\midchapskip}{\paperwidth}
+%  \addtolength{\midchapskip}{-\textwidth}
+%  \addtolength{\midchapskip}{-\spinemargin}
+%  \renewcommand*{\printchapternum}{%
+%    \makebox[0pt][l]{\hspace{.8em}%
+%      \resizebox{!}{\beforechapskip}{\chapnumfont \thechapter}%
+%      \hspace{.8em}%
+%      \rule{\midchapskip}{\beforechapskip}%
+%    }}%
+%}
+%\makeatother
+%
+%\chapterstyle{cveelo}
+%%\hangsecnum
 
 \let\originalbibliography=\printbibliography
 \def\printbibliography{\openany\originalbibliography\openright}
