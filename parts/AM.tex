@@ -157,7 +157,7 @@
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Criteri de comparació]
-		\labelname{criteri de comparació}\label{thm:criteri de comparació de sèries de termes positius}
+		\labelname{criteri de comparació de sèries de termes positius}\label{thm:criteri de comparació de sèries de termes positius}
 		Siguin \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) dues sèries de termes positius i
 		\[\lim_{n\to\infty}\frac{a_{n}}{b_{n}}=L.\]
 		tals que
@@ -1320,7 +1320,216 @@
 		\end{solution}
 	\end{example}
 	\subsection{Sèries de potències}
-%	\subsection{Teorema d'aproximació polinòmica de Weierstrass}
+	\begin{definition}[Sèries de potències]
+		\labelname{sèrie de potències}\label{def:sèries de potències}
+		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió de reals i \(x_{0}\) un nombre real. Aleshores direm que la sèrie
+		\[\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\]
+		és una sèrie de funcions amb terme general \(a_{n}\) al voltant de \(x_{0}\).
+	\end{definition}
+	\begin{observation}
+		\label{obs:les sèries de potències són sèries de funcions}
+		Les sèries de potències són sèries de funcions.
+	\end{observation}
+	\begin{proposition}
+		\label{prop:radi de convergència d'una sèrie de potències}
+		Sigui \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) una sèrie de potències tal que existeix un real \(x_{1}\) tal que la sèrie
+		\[\sum_{n=0}^{\infty}a_{n}(x_{1}-x_{0})^{n}\]
+		és convergent. Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) és convergent per a tot \(x\) tal que
+		\[\abs{x-x_{0}}<\abs{x_{1}-x_{0}}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{lemma}
+		\label{lema:les successions creixents tenen límit i aquest és el suprem de la successió}
+		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió creixent de nombres reals. Aleshores el límit de \((a_{n})\) existeix i
+		\[\lim_{n\to\infty}a_{n}=\sup_{n\in\mathbb{N}}a_{n}.\]
+		\begin{proof}
+			%TODO Em falta maquinària?
+		\end{proof}
+	\end{lemma}
+	\begin{corollary}
+		\label{cor:les successions decreixent tenen límit i aquest és el ínfim de la successió}
+		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió decreixent de nombres reals. Aleshores el límit de \((a_{n})\) existeix i
+		\[\lim_{n\to\infty}a_{n}=\inf_{n\in\mathbb{N}}a_{n}.\]
+	\end{corollary}
+	\begin{definition}[Límit superior i inferior]
+		\labelname{límit superior d'una successió}\label{def:límit superior d'una successió}
+		\labelname{límit inferior d'una successió}\label{def:límit inferior d'una successió}
+		Siguin \((a_{n})_{n\in\mathbb{N}}\) una successió de nombres reals i \((b_{n})_{n\in\mathbb{N}}\) i \((c_{n})_{n\in\mathbb{N}}\) dues successions satisfent
+		\[b_{n}=\sup_{k\in\mathbb{N}}\{a_{k}\mid k\geq n\}\quad\text{i}\quad c_{n}=\sup_{k\in\mathbb{N}}\{a_{k}\mid k\leq n\}.\]
+		Aleshores definim
+		\[\limsup_{n\to\infty}a_{n}=\lim_{n\to\infty}b_{n}\quad\text{i}\quad\liminf_{n\to\infty}a_{n}=\lim_{n\to\infty}c_{n}\]
+		com el límit superior i límit inferior de \((a_{n})\).
+		
+		Aquesta definició té sentit pel lema \myref{lema:les successions creixents tenen límit i aquest és el suprem de la successió} i el \corollari \myref{cor:les successions decreixent tenen límit i aquest és el ínfim de la successió}.
+	\end{definition}
+	\begin{theorem}
+		\label{thm:radi de convergència d'una sèrie de potències}
+		Sigui \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) una sèrie de potències i \(R\) un real tal que
+		\[R^{-1}=\limsup_{n\to\infty}\sqrt[n]{\abs{a_{n}}}.\]
+		Aleshores
+		\begin{enumerate}
+			\item\label{thm:radi de convergència d'una sèrie de potències:enum1} la sèrie \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) és absolutament convergent per a tot \(x\) satisfent \(\abs{x-x_{0}}<R\).
+			\item\label{thm:radi de convergència d'una sèrie de potències:enum2} per a tot real \(r<R\) la sèrie de funcions \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) convergeix uniformement per a tot \(x\) satisfent \(\abs{x-x_{0}}\leq r\).
+			\item\label{thm:radi de convergència d'una sèrie de potències:enum3} La sèrie \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) és divergent per a tot \(x\) satisfent \(\abs{x-x_{0}}>R\).
+		\end{enumerate}
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{proposition}
+		\label{prop:quocient per calcular radis de convergència de sèries de potències}
+		Sigui \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) una sèrie de potències i \(R\) un real tal que
+		\[R^{-1}=\limsup_{n\to\infty}\frac{\abs{a_{n+1}}}{\abs{a_{n}}}.\]
+		Aleshores
+		\[R^{-1}=\limsup_{n\to\infty}\sqrt[n]{\abs{a_{n}}}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{definition}
+		Sigui \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) una sèrie de potències tal que existeix un real \(R\) satisfent
+		\begin{enumerate}
+			\item la sèrie \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) és absolutament convergent per a tot \(x\) satisfent \(\abs{x-x_{0}}<R\).
+			\item per a tot real \(r<R\) la sèrie de funcions \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) convergeix uniformement per a tot \(x\) satisfent \(\abs{x-x_{0}}\leq r\).
+			\item La sèrie \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) és divergent per a tot \(x\) satisfent \(\abs{x-x_{0}}>R\).
+		\end{enumerate}
+		Aleshores direm que \(R\) és el radi de convergència de la sèrie de potències.
+	\end{definition}
+	\begin{theorem}[Teorema d'Abel]
+		\labelname{Teorema d'Abel}\label{thm:Teorema d'Abel}
+		Sigui \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) una sèrie de potències i \(L\) un real tal que la sèrie \(\sum_{n=0}^{\infty}a_{n}L^{n}\) és convergent. Aleshores la sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) és uniformement convergent per a tot \(x\) en l'interval \([x_{0},x_{0}+L]\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		\label{ex:radi de convergència d'una sèrie de potències}
+		Volem estudiar per a quins valor de \(x\) la sèrie
+		\[\sum_{n=0}^{\infty}\frac{x^{2n}}{2n}\]
+		és convergent.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{example}
+		\label{ex:calcular una suma trobant un Taylor equivalent}
+		Volem calcular la suma
+		\[\sum_{n=0}^{\infty}\frac{(-1)^{n}}{n+1}.\] % Molero Exemple 2.3.27 (pàg 45)
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{example}
+		\label{ex:calcular el radi de convergència i suma d'una sèrie de potències}
+		Volem calcular la suma
+		\[\sum_{n=0}^{\infty}\frac{x^{2n}}{4^{n}(2n+1)}.\] % Final Gener 2018.
+		\begin{solution}
+			%TODO
+		\end{solution}
+%		Buscar la que va sortir a un dels exàmens. El de la recu?
+	\end{example}
+	\subsection{Teorema d'aproximació polinòmica de Weierstrass}
+	\begin{definition}[Suport d'una funció]
+		\labelname{suport d'una funció}\label{def:suport d'una funció}
+		Sigui \(f\colon\mathbb{R}\longrightarrow\mathbb{R}\) una funció. Aleshores definim
+		\[\suport(f)=\{x\in\mathbb{R}\mid f(x)\neq0\}\]
+		com el suport de \(f\).
+	\end{definition}
+	\begin{definition}[Suport compacte]
+		\labelname{funció amb suport compacte}\label{def:funció amb suport compacte}
+		Sigui \(f\colon\mathbb{R}\longrightarrow\mathbb{R}\) una funció tal que \(\suport(f)\) sigui un compacte. Aleshores direm que \(f\) té suport compacte.
+	\end{definition}
+	\begin{definition}[Convolució]
+		\labelname{convolució de dues funcions}\label{def:convolució de dues funcions}
+		Siguin \(f\colon\mathbb{R}\longrightarrow\mathbb{R}\) i \(g\colon\mathbb{R}\longrightarrow\mathbb{R}\) dues funcions amb suport compacte. Aleshores definim
+		\[(f\convolucio g)(x)=\int_{\mathbb{R}}f(t)g(x-t)\diff t\]
+		com la convolució de \(f\) amb \(g\).
+	\end{definition}
+	\begin{definition}[Aproximació de l'unitat]
+		\labelname{aproximació de l'unitat}\label{def:aproximació de l'unitat}
+		Sigui \((\phi_{\varepsilon})_{\varepsilon\in\mathbb{R}}\) una successió de funcions amb suport compacte tal que
+		\begin{enumerate}
+			\item \(\phi_{\varepsilon}\geq0\).
+			\item \(\int_{\mathbb{R}}\phi_{\varepsilon}(x)\diff x=1\).
+			\item per a tot \(\delta>0\) tenim que la successió \((\phi_{\varepsilon})\) convergeix uniformement a \(0\) quan \(\varepsilon\) tendeix a \(0\) en l'interval \((-\delta,\delta)\).
+		\end{enumerate}
+		Aleshores direm que \((\phi_{\varepsilon})\) és una aproximació de l'unitat.
+	\end{definition}
+	\begin{lemma}
+		\label{lema:Teorema d'aproximació polinòmica de Weierstrass}
+		Sigui \(f\colon\mathbb{R}\longrightarrow\mathbb{R}\) una funció contínua amb suport compacte i \((\phi_{\varepsilon})_{\varepsilon\in\mathbb{R}}\) una aproximació de l'unitat. Aleshores \(f\convolucio\phi_{\varepsilon}\) convergeix uniformement a \(f\) quan \(\varepsilon\) tendeix a \(0\).
+		\begin{proof}
+			%TODO %lol se ve to' tocha
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}[Teorema d'aproximació polinòmica de Weierstrass]
+		\labelname{Teorema d'aproximació polinòmica de Weierstrass}\label{thm:Teorema d'aproximació polinòmica de Weierstrass}
+		Sigui \(f\colon[a,b]\longrightarrow\mathbb{R}\) una funció contínua. Aleshores existeix una successió de polinomis \((p_{n})_{n\in\mathbb{N}}\) que convergeix uniformement a \(f\) en l'interval \([a,b]\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{corollary}
+		Sigui \(f\colon[a,b]\longrightarrow\mathbb{R}\) una funció contínua tal que per a tot \(n\) natural es satisfà
+		\[\int_{a}^{b}f(x)x^{n}\diff x=0.\]
+		Aleshores \(f(x)=0\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{corollary}
+	\chapter{Integrals impròpies}
+	\section{Integral impròpia de Riemann}
+	\subsection{Funcions localment integrables}
+	\begin{definition}[Funció localment integrable]
+		\labelname{funció localment integrable}\label{def:funció localment integrable}
+		Sigui \(f\colon[a,b)\longrightarrow\mathbb{R}\) amb \(b\in\mathbb{R}\cup\infty\) una funció tal que \(f\) és integrable Riemann per en \([a,x]\) per a tot \(x<b\). Aleshores direm que \(f\) és localment integrable en un interval \([a,b)\).
+	\end{definition}
+	\begin{definition}[Integral impròpia]
+		\labelname{integral impròpia}\label{def:integral impròpia}
+		\labelname{integral impròpia convergent}\label{def:integral impròpia convergent}
+		\labelname{integral impròpia divergent}\label{def:integral impròpia divergent}
+		Sigui \(f\) una funció localment integrable en un interval \([a,b)\) tal que existeix el límit
+		\[\lim_{x\to b}\int_{a}^{x}f(t)\diff t.\]
+		Aleshores denotarem
+		\[\lim_{x\to b}\int_{a}^{x}f(t)\diff t=\int_{a}^{b}f(t)\diff t,\]
+		i direm que \(\int_{a}^{b}f(t)\diff t\) és la integral impròpia de \(f\), i que la integral impròpia de \(f\) és divergent.
+		
+		Si el límit
+		\[\lim_{x\to b}\int_{a}^{x}f(t)\diff t.\]
+		no existeix direm que la integral impròpia de \(f\) és divergent.
+	\end{definition}
+	\begin{example}
+		\label{ex:funció de la sèrie harmònica en integrals impròpies entre 1 i infinit}
+		Volem estudiar la convergència de la integral impròpia
+		\[\int_{1}^{\infty}\frac{1}{x^{\alpha}}\diff x\]
+		segons els valors de \(\alpha\) real.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{example}
+		\label{ex:funció de la sèrie harmònica en integrals impròpies entre 0 i 1}
+		Volem estudiar la convergència de la integral impròpia
+		\[\int_{0}^{1}\frac{1}{x^{\alpha}}\diff x\]
+		segons els valors de \(\alpha\) real.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\subsection{Integrals impròpies de funcions positives}
+	\begin{lemma}
+		\label{lema:criteri de comparació d'integrals impròpies}
+		
+	\end{lemma}
+	\begin{theorem}[Criteri de comparació]
+		\labelname{criteri de comparació d'integrals impròpies}\label{def:criteri de comapració d'integrals impròpies}
+		Siguin \(f\) i \(g\) dues funcions positives localment integrables en un interval \([a,b)\).
+	\end{theorem}
+%	\subsection{Derivació sota el signe integral}
+%	\section{Aplicacions de les integrals impròpies}
+%	\subsection{La funció Gamma d'Euler}
 %	\printbibliography
 \end{document}
 
@@ -1330,4 +1539,4 @@
 % Encara no se d'on treure integrals impròpies
 % Fourier amb Tolstov (Fourier Series)
 
-%sin(arccos(x)) (utilitzar sin(x)=sqrt(1+cos(x)^2)
+% sin(arccos(f(x))) (utilitzar sin(x)=sqrt(1+cos(f(x))^2)

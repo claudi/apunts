@@ -1,2 +1,4 @@
-Afegit teoria a anàlisi fins el Teorema de la reordenació de Riemann.
+Afegit demostracions a anàlisi fins el tema de reordenació de sèries.
+Afegit enunciats a anàlisi fins el tema de sèries de potències.
+Arreglat un error d'escriptura a topologia.
 10k línies.

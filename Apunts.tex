@@ -124,6 +124,7 @@
 \let\ker\relax
 \DeclareMathOperator*{\ker}{ker}
 \DeclareMathOperator*{\Ima}{Im}
+\DeclareMathOperator*{\suport}{Supp}
 
 \let\originalnsim=\nsim
 \def\nsim{\mathbin{\originalnsim}}
@@ -134,6 +135,7 @@
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\lxor}{\veebar}
 \newcommand{\convergeixuniformement}{\rightrightarrows}
+\newcommand{\convolucio}{\ast}
 
 \newcommand{\sii}{\iff}
 \newcommand{\implica}{\implies}
@@ -267,7 +269,6 @@
 		text={|\color{black}|Grau en Matem{à}tiques }}}] (210:3cm+0.9em) arc (210:330:3cm+0.9em);
 	\end{tikzpicture}}
 	\vfill
-%	{\large\scshape Get formal \ensuremath{\blacksquare}}\\[\baselineskip]
 	{\large\scshape Notes de classe}\\[\baselineskip]
 	{\small\scshape Promoció 2016-17}\par
 	\vspace*{0.1\textheight}
@@ -297,6 +298,35 @@
 \let\originalpart=\part
 \def\part{\cleartoevenpage[\thispagestyle{empty}]\originalpart}
 
+\makeatletter
+\newlength{\numberheight}
+\newlength{\barlength}
+\makechapterstyle{cveelo}{%
+  \setlength{\afterchapskip}{40pt}
+  \renewcommand*{\chapterheadstart}{\vspace*{40pt}}
+  \renewcommand*{\afterchapternum}{\par\nobreak\vskip 25pt}
+  \renewcommand*{\chapnamefont}{\normalfont\LARGE\flushright\color{black}}
+  \renewcommand*{\chapnumfont}{\normalfont\HUGE}
+  \renewcommand*{\chaptitlefont}{\normalfont\Huge\bfseries\flushright\color{black}}
+  \renewcommand*{\printchaptername}{%
+    \chapnamefont\scshape{\@chapapp}}
+  \renewcommand*{\chapternamenum}{}
+  \setlength{\beforechapskip}{18mm}
+  \setlength{\midchapskip}{\paperwidth}
+  \addtolength{\midchapskip}{-\textwidth}
+  \addtolength{\midchapskip}{-\spinemargin}
+  \renewcommand*{\printchapternum}{%
+    \makebox[0pt][l]{\hspace{.8em}%
+      \resizebox{!}{\beforechapskip}{\chapnumfont \thechapter}%
+      \hspace{.8em}%
+      \rule{\midchapskip}{\beforechapskip}%
+    }}%
+}
+\makeatother
+
+\chapterstyle{cveelo}
+%\hangsecnum
+
 \let\originalbibliography=\printbibliography
 \def\printbibliography{\openany\originalbibliography\openright}
 
@@ -305,8 +335,8 @@
 \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 
-%\newcommand{\myref}[1]{\ref{#1}}
-\newcommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
+\newcommand{\myref}[1]{\ref{#1}}
+%\newcommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
 %\newcommand{\myref}[1]{\hyperref[#1]{\nameref{#1} \eqref{#1}}}
 
 \makeatletter
@@ -336,6 +366,7 @@
 			\end{adjustwidth*}
 		\end{titlingpage*}
 	\tableofcontents}
+	Moltes gràcies a qui m'ha ajudat.
 	\part{Fonaments de les matemàtiques}
 		\subfile{parts/FNM.tex}
 	\part{Àlgebra Lineal}
