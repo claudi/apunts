@@ -594,7 +594,7 @@
 			\item\label{enum:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge 2} \(f\) és un epimorfisme si i només si \(\Ima(f)=G_{2}\).
 		\end{enumerate}
 		\begin{proof}
-			Comencem fent la demostració del punt \eqref{enum:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge 1} per la implicació cap a la dreta (\(\implica\)). Suposem doncs que \(f\) és un monomorfisme, i per tant injectiva. Per la definició de \myref{def:nucli d'un morfisme entre grups} tenim que \(\ker(f)=\{x\in G_{1}\mid f(x)=e'\}\). Suposem \(x\in G_{1}\), és a dir, \(f(x)=e'\). Ara bé, com que \(f\) és injectiva per la proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme} ha de ser \(\ker(f)=\{e\}\).%ref injectiva
+			Comencem fent la demostració del punt \eqref{enum:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge 1} per la implicació cap a la dreta (\(\implica\)). Suposem doncs que \(f\) és un monomorfisme, i per tant injectiva. Per la definició de \myref{def:nucli d'un morfisme entre grups} tenim que \(\ker(f)=\{x\in G_{1}\mid f(x)=e'\}\). Suposem \(x\in G_{1}\), és a dir, \(f(x)=e'\). Ara bé, com que \(f\) és injectiva per la proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme} ha de ser \(\ker(f)=\{e\}\).%REF injectiva
 			
 			Demostrem ara la implicació cal a l'esquerra (\(\implicatper\)). Suposem doncs que \(\ker(f)=\{e\}\). Siguin \(x,y\in G_{1}\) dos elements que satisfacin \(f(x)=f(y)\). Com que, per la proposició \myref{prop:el nucli d'un morfisme és un subgrup normal del grup de sortda} \(\ker(f)\) és un subgrup de \(G_{1}\), tenim que \(x\ast y^{-1}\in G_{1}\), i per tant
 			\begin{align*}
@@ -602,11 +602,11 @@
 			&=f(x)\circ f(y)^{-1}\tag{Proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme}}\\
 			&=f(y)\circ f(y)^{-1}=e',
 			\end{align*}
-			i per tant \(x\ast y^{-1}\in\ker(f)\), però per hipòtesi teníem \(\ker(f)=\{e\}\), i per tant ha de ser \(x\ast y^{-1}=e\), el que és equivalent a \(x=y\), i per tant \(f\) és injectiva. %ref definició
+			i per tant \(x\ast y^{-1}\in\ker(f)\), però per hipòtesi teníem \(\ker(f)=\{e\}\), i per tant ha de ser \(x\ast y^{-1}=e\), el que és equivalent a \(x=y\), i per tant \(f\) és injectiva. %REF definició
 			
 			Demostrem ara el punt \eqref{enum:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge 2} començant per la implicació cap a la dreta (\(\implica\)). Suposem doncs que \(f\) és un epimorfisme, i per tant exhaustiva, i per tant per a cada \(y\in G_{2}\) existeix un \(x\in G_{1}\) tal que \(f(x)=y\), i per la definició d'\myref{def:imatge d'un morfisme entre grups} tenim que \(\Ima(f)=G_{2}\).
 			
-			Acabem demostrant la implicació cap a l'esquerra (\(\implicatper\)). Suposem doncs que \(\Ima(f)=G_{2}\) i prenem \(y\in G_{2}\). Aleshores per la definició d'\myref{def:imatge d'un morfisme entre grups} tenim que existeix un \(x\in G_{1}\) tal que \(f(x)=y\), i per tant \(f\) és exhaustiva. %ref definició
+			Acabem demostrant la implicació cap a l'esquerra (\(\implicatper\)). Suposem doncs que \(\Ima(f)=G_{2}\) i prenem \(y\in G_{2}\). Aleshores per la definició d'\myref{def:imatge d'un morfisme entre grups} tenim que existeix un \(x\in G_{1}\) tal que \(f(x)=y\), i per tant \(f\) és exhaustiva. %REF definició
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
@@ -922,7 +922,7 @@
 			
 			Veiem ara que \(f\) és injectiva. Prenem \(g\cdot x,g'\cdot x\in\mathcal{O}(x)\) tals que \(g\cdot x=g'\cdot x\). Això, per la definició de \myref{def:acció d'un grup sobre un conjunt}, és equivalent a dir \(x=(g^{-1}\ast g')\cdot x\), i per la definició de \myref{def:l'estabilitzador d'un element per una acció} tenim que \(g^{-1}\ast g\in\St(x)\). Per tant, per la definició de \myref{def:relació d'equivalència entre grups} tenim que \([g]=[g']\), i per tant \(f\) és injectiva.
 			
-			Per veure que \(f\) és exhaustiva veiem que per a qualsevol \(g\cdot x\in\mathcal{O}(x)\), \(f([g])=g\cdot x\), i per tant \(f\) és exhaustiva i tenim que \(\abs{\St(x)}=\abs{\mathcal{O}(x)}\), ja que \(f\) és una bijecció. %referencies fonaments!
+			Per veure que \(f\) és exhaustiva veiem que per a qualsevol \(g\cdot x\in\mathcal{O}(x)\), \(f([g])=g\cdot x\), i per tant \(f\) és exhaustiva i tenim que \(\abs{\St(x)}=\abs{\mathcal{O}(x)}\), ja que \(f\) és una bijecció. %REFerencies fonaments!
 		\end{proof}
 	\end{proposition}
 	\subsection{Teoremes de Sylow}

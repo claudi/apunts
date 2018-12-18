@@ -777,7 +777,7 @@
 			és convergent, com volíem veure.
 		\end{proof}
 	\end{theorem}
-	\begin{example}%Buscar un altre exemple. Conflicte amb \ref{ex:sèrie absolutament convergent}
+	\begin{example}%Buscar un altre exemple. Conflicte amb \ref{ex:sèrie absolutament convergent} %Crec que al final no, però comprovar amb calma (Claudi del futur)
 		\label{ex:Teorema de Dirichlet per sèries numèriques}
 		Volem estudiar la convergència de la sèrie
 		\[\sum_{n=1}^{\infty}\frac{\sin(n)}{n}.\]
@@ -801,7 +801,7 @@
 			i pel \myref{thm:Teorema de Dirichlet per sèries numèriques} trobem que la sèrie
 			\[\sum_{n=1}^{\infty}\frac{\sin(n)}{n}\]
 			és convergent.
-		\end{solution} % REFS lol
+		\end{solution} %REFS lol
 	\end{example}
 	\begin{theorem}[Criteri d'Abel]
 		\labelname{criteri d'Abel per sèries numèriques}\label{thm:Criteri d'Abel per sèries numèriques}
@@ -848,7 +848,7 @@
 			\end{align*}
 			i per \eqref{thm:Criteri d'Abel per sèries numèriques:eq4} tenim que
 			\[\lim_{N\to\infty}C\abs{b_{0}-b_{N+1}}=C\abs{b_{0}-b},\]
-			i per tant la sèrie \(\sum_{n=0}^{\infty}A_{n}(b_{n}-b_{n+1})\) és absolutament convergent, % REFS parcials creixents acotades
+			i per tant la sèrie \(\sum_{n=0}^{\infty}A_{n}(b_{n}-b_{n+1})\) és absolutament convergent, %REFS parcials creixents acotades
 			i per la proposició \myref{prop:una sèrie absolutament convergent és convergent} tenim que la sèrie \(\sum_{n=0}^{\infty}A_{n}(b_{n}-b_{n+1})\) és convergent.
 			
 			Ara bé, per \eqref{thm:Criteri d'Abel per sèries numèriques:eq2} i \eqref{thm:Criteri d'Abel per sèries numèriques:eq4} trobem que
@@ -1553,7 +1553,7 @@
 		\labelname{criteri de la integral}\label{thm:criteri de la integral per integrals impròpies}
 		Sigui \(f\colon[1,\infty)\longrightarrow(0,\infty)\) una funció decreixent. Aleshores la integral impròpia \(\int_{1}^{\infty}f(x)\diff x\) és convergent si i només si la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent.
 		\begin{proof}
-			És conseqüència del lema \myref{lema:criteri de la integral} i la definició de \myref{def:integral impròpia convergent}.
+			És conseqüència del lema \myref{lema:criteri de la integral} i la definició d'\myref{def:integral impròpia convergent}.
 		\end{proof}
 	\end{theorem}
 	\begin{example}
@@ -1569,9 +1569,189 @@
 			% Definim \(f(x)=\alpha^{x}\). Observem que \(f(x)\) és localment integrable en \([1,\infty)\). Partir integral.
 		\end{solution}
 	\end{example}
-%	\subsection{Derivació sota el signe integral}
-%	\section{Aplicacions de les integrals impròpies}
-%	\subsection{La funció Gamma d'Euler}
+	\subsection{Convergència d'una integral impròpia}
+	\begin{theorem}[Condició de Cauchy]
+		\labelname{condició de Cauchy}\label{thm:Condició de Cauchy per integrals impròpies}
+		Sigui \(\int_{a}^{b}f(x)\diff x\) una funció localment integrable en \([a,b)\). Aleshores la integral \(\int_{a}^{b}f(x)\diff x\) és convergent si i només si per a tot \(\varepsilon>0\) existeix un \(x_{0}\) real tal que per a tot \(N\) i \(M\) reals amb \(N,M\geq x_{0}\) i \(N\leq M<b\) tenim
+		\[\abs{\int_{N}^{M}f(x)\diff x}<\varepsilon.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{definition}[Convergència absoluta]
+		\labelname{convergència absoluta d'una integral impròpia}\label{def:convergència absoluta d'una integral impròpia}
+		Sigui \(\int_{a}^{b}f(x)\diff x\) una funció localment integrable en \([a,b)\) tal que la integral
+		\[\int_{a}^{b}\abs{f(x)}\diff x\]
+		és convergent. Aleshores direm que la integral \(\int_{a}^{b}f(x)\diff x\) és absolutament convergent.
+	\end{definition}
+	\begin{proposition}
+		Sigui \(\int_{a}^{b}f(x)\diff x\) una integral absolutament convergent. Aleshores la integral \(\int_{a}^{b}f(x)\diff x\) és convergent.
+		\begin{proof}
+			%TODO % Desigualtats ràpides + Cauchy
+		\end{proof}
+	\end{proposition}
+	\begin{example}
+		\label{ex:convèrgencia absoluta d'una integral impròpia amb un polinomi i una exponencial}
+		Siguin \(\alpha\) i \(\beta\) dos reals no negatius i \(p(x)\) un polinomi.
+		Volem estudiar la convergència de la integral
+		\[\int_{0}^{\infty}p(x)\e^{\alpha x^{\beta}}.\]
+	\end{example}
+	\begin{theorem}[Criteri de Dirichlet]
+		\labelname{criteri de Dirichlet}\label{thm:criteri de Dirichlet per integrals impròpies}
+		Siguin \(f\) i \(g\) dues funcions localment integrables de classe \(\mathcal{C}^{1}\) satisfent que existeix un real \(C\) tal que \(\int_{a}^{x}\abs{f(x)}\diff x<C\) per a tot \(x\in[a,b)\) i que \(g\) és una funció decreixent amb
+		\[\lim_{x\to\infty}g(x)=0.\]
+		Aleshores la integral
+		\[\int_{a}^{b}f(x)g(x)\diff x\]
+		és convergent.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		Sigui \(\alpha>0\) un real. Volem estudiar la convergència de la integral
+		\[\int_{0}^{\infty}\frac{\sin(x)}{x^{\alpha}}\diff x.\]
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{theorem}[Criteri d'Abel]
+		\labelname{criteri d'Abel}\label{thm:criteri d'Abel per integrals impròpies}
+		Siguin \(f\) i \(g\) dues funcions localment integrables satisfent que \(f\) és monòtona i acotada i que la integral
+		\[\int_{a}^{b}g(x)\diff x\]
+		és convergent. Aleshores la integral
+		\[\int_{a}^{b}f(x)g(x)\diff x\]
+		és convergent.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		\label{ex:criteri d'Abel per integrals impròpies}
+		Volem estudiar la convergència de la integral
+		\[\int_{0}^{\infty}\frac{\sin(x)}{\e^{x}}\diff x.\]
+		\begin{solution}
+%			\[\int_{0}^{\infty}\e^{-x}x^{\alpha}\frac{\sin(x)}{x^{\alpha}}\diff x.\]
+%			Potser buscar un millor exemple pel criteri d'Abel
+		%TODO
+		\end{solution}
+	\end{example}
+	\section{Aplicacions de les integrals impròpies}
+	\subsection{Integrals dependents d'un paràmetre}
+	\begin{theorem}
+		\label{thm:criteri per la derivació sota el signe de la integral}
+		Sigui \(f\colon[a,b]\times[c,d]\longrightarrow\mathbb{R}\) una funció contínua tal que \(f\) és derivable respecte la segona variable i \(\frac{\partial f}{\partial y}(x,y)\) és contínua en \([a,b]\times[c,d]\). Aleshores la funció
+		\[F(y)=\int_{a}^{b}f(x,y)\diff x\]
+		és derivable en l'interval \((c,d)\) i
+		\[F'(y)=\int_{a}^{b}\frac{\partial f}{\partial y}(x,y)\diff x.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{example}[Integral de Gauss]
+		\label{ex:integral de Gauss}
+		Volem calcular el valor de la integral
+		\[\int_{-\infty}^{\infty}e^{-x^{2}}\diff x.\] % Partir en el 0 i veure que és simètrica. Seguir exemple de classe.
+		\begin{solution}
+			\(\sqrt{\pi}\).
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{theorem}
+		\label{thm:criteri per la derivabilitat sota el signe de la integral}
+		Siguin \(f\colon[a,b)\times[c,d]\) una funció contínua tal que la seva derivada respecte la segona variable existeix i és contínua en \([a,b)\times[c,d]\) i \(y_{0}\) un real en \([c,d]\) tal que existeixi un \(\delta>0\) satisfent que la integral
+		\[\int_{a}^{b}\sup_{y\in(y_{0}-\delta,y_{0}+\delta)}\abs{\frac{\partial f}{\partial y}(x,y)}\diff x\]
+		és convergent. Aleshores la funció
+		\[F(y)=\int_{a}^{b}f(x,y)\diff x\]
+		és derivable en \(y_{0}\) i
+		\[F'(y_{0})=\int_{a}^{b}\frac{\partial f}{\partial y}(x,y_{0})\diff x.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		\label{ex:trobar una funció derivant sota el signe de la integral}
+		Volem calcular
+		\[\int_{0}^{\infty}\e^{-tx}\frac{\sin(x)}{x}\diff x\]
+		per \(t>0\).
+		\begin{solution}
+			\(\frac{\pi}{2}-\arctan(t)\). %TODO
+		\end{solution}
+	\end{example}
+	\begin{example}
+		\label{ex:trobar un valor derivant sota el signe de la integral inventant-se una funció}
+		Volem calcular
+		\[\int_{0}^{1}\frac{x^{2}-1}{\log(x)}\diff x.\]
+		\begin{solution}
+			\(\log(3)\). %TODO
+		\end{solution}
+	\end{example}
+	\subsection{La funció Gamma d'Euler}
+	\begin{definition}[Gamma d'Euler]
+		\labelname{Gamma d'Euler}\label{def:Gamma d'Euler}
+		Sigui \(x\) un real positiu. Aleshores definim
+		\[\Gamma(x)=\int_{0}^{\infty}t^{n}\e^{-t}\diff t\]
+		com la funció Gamma d'Euler.
+	\end{definition}
+	\begin{theorem}
+		\label{thm:la funció Gamma d'Euler és convergent}
+		La funció Gamma d'Euler és convergent.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{lemma} % Repassar, fa aquesta part una mica al revés?
+		\label{lema:la Gamma d'Euler es comporta com un factorial amb reals}
+		Sigui \(x>0\) un real. Aleshores
+		\[\Gamma(x+1)=x\Gamma(x).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{lemma}
+	\begin{observation}
+		\label{obs:valor n=1 per la Gamma d'Euler}
+		Es satisfà
+		\[\Gamma(1)=1.\]
+		\begin{proof} %REFS? % NOTACIÓ EVALUACIÓ
+			Per la definició de \myref{def:Gamma d'Euler} tenim que
+			\[\Gamma(1)=\int_{0}^{\infty}\e^{-t}\diff t=\left.\frac{\e^{-t}}{-1}\right\vert_{0}^{\infty}=1.\qedhere\]
+		\end{proof}
+	\end{observation}
+	\begin{lemma} % Repassar, fa aquesta part una mica al revés?
+		\label{lema:la Gamma d'Euler es comporta com un factorial}
+		Sigui \(n\) un natural. Aleshores
+		\[\Gamma(n+1)=n!\]
+		\begin{proof}
+			És conseqüència del lema \myref{lema:la Gamma d'Euler es comporta com un factorial amb reals} i l'observació \myref{obs:valor n=1 per la Gamma d'Euler}.
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}
+		\label{thm:fórmula d'Stirling}
+		Es satisfà
+		\[\lim_{x\to\infty}\frac{\Gamma(x+1)}{e^{-x}x^{x}\sqrt{2\pi x}}=1.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{corollary}[Fórmula d'Stirling]
+		\labelname{fórmula d'Stirling}\label{cor:fórmula d'Stirling}
+		Es satisfà
+		\[\lim_{n\to\infty}\frac{n!}{e^{-n}n^{n}\sqrt{2\pi n}}=1.\]
+	\end{corollary}
+	\begin{example}
+		Volem calcular
+		\[\Gamma\left(\frac{1}{2}\right).\]
+		\begin{solution}
+			\(\sqrt{\pi}\). %TODO
+		\end{solution}
+	\end{example}
+	% Buscar un exemple sabroso a \url{http://www.math.uconn.edu/~kconrad/blurbs/analysis/diffunderint.pdf} per acabar tot aquest tema a lo grande.
+	\chapter{Sèries de Fourier}
+	\section{Funcions periòdiques}
+%	\subsection{Els nombres complexos}
+	\subsection{Funcions periòdiques complexes}
+	\begin{definition}
+		\emph{Comença la festa.}
+	\end{definition}
 %	\printbibliography
 \end{document}
 
@@ -1582,3 +1762,4 @@
 % Fourier amb Tolstov (Fourier Series)
 
 % sin(arccos(f(x))) (utilitzar sin(x)=sqrt(1+cos(f(x))^2)
+% http://www.math.uconn.edu/~kconrad/blurbs/analysis/diffunderint.pdf lol
