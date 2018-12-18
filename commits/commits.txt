@@ -1,4 +1,2 @@
-Afegit demostracions a anàlisi fins el tema de reordenació de sèries.
-Afegit enunciats a anàlisi fins al capítol de sèries de Fourier.
-Arreglat un error d'escriptura a topologia.
-+10k línies de codi!
+Afegits enunciats a anàlisi fins la secció de transformacions de Fourier.
+Afegida la bibliogradia a anàlisi.

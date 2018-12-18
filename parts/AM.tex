@@ -1749,10 +1749,151 @@
 	\section{Funcions periòdiques}
 %	\subsection{Els nombres complexos}
 	\subsection{Funcions periòdiques complexes}
-	\begin{definition}
-		\emph{Comença la festa.}
+	\begin{definition}[Funció \ensuremath{T}-periòdica]
+		\labelname{funció \ensuremath{T}-periòdica}\label{def:funció periòdica}
+		Sigui \(f\colon\mathbb{R}\longrightarrow\mathbb{C}\) una funció tal que existeix un \(T>0\) real satisfent
+		\[T=\min_{T\in\mathbb{R}^{+}}\{f(x+T)=f(x)\text{ per a tot }x\in\mathbb{R}\}.\]
+		Aleshores direm que \(f\) és una funció \(T\)-periòdica.
 	\end{definition}
-%	\printbibliography
+	\begin{example}
+		\label{ex:periòde del sinus}
+		\label{ex:periòde del cosinus}
+		\label{ex:periòde de l'exponencial complexa}
+		Volem veure que les funcions
+		\[f(t)=\sin(2\pi\omega t),\quad g(t)=\cos(2\pi\omega t)\quad\text{i}\quad h(t)=\e^{2\pi\iu\omega t}\]
+		són funcions \(\frac{1}{\omega}\)-periòdiques.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{lemma}
+		Sigui \(f\) una funció \(T\) periòdica. Aleshores \(f(x+T')=f(x)\) per a tot \(x\) real si i només si existeix un enter \(K\) tal que \(T'=KT\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{lemma}
+	\begin{proposition}
+		Sigui \(f\) una funció \(T\)-periòdica i integrable. Aleshores per a tot \(a\) real es satisfà
+		\[\int_{0}^{T}f(x)\diff x=\int_{a}^{a+T}f(x)\diff x.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{lemma}
+		\label{lema:les funciones periòdiques i contínues estàn acotades}
+		Sigui \(f\) una funció \(T\)-periòdica i contínua. Aleshores \(\abs{f}\) està acotada.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{lemma}
+	\begin{lemma}
+		\label{lema:les funcions periòdiques no poden ser aproximades per una sèrie de potències}
+		Sigui \(f\) una funció \(T\)-periòdica. Aleshores no existeix cap sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) tal que \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) convergeixi uniformement a \(f\) en \(\mathbb{R}\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{lemma}
+	\subsection{Funcions contínues a trossos}
+	\begin{definition}[Funció contínua a trossos]
+		\labelname{funció contínua a trossos}\label{def:funció contínua a trossos}
+		Sigui \(f\colon[0,1]\longrightarrow\mathbb{C}\) una funció tal que el conjunt
+		\[\{x\in[0,1]\mid f\text{ té una discontinuïtat salt finit en }x\}\]
+		és finit. Aleshores direm que \(f\) és contínua a trossos.
+		
+		Denotarem
+		\[\mathcal{C}=\{f\colon[0,1]\longrightarrow\mathbb{C}\mid f\text{ és contínua a trossos}\}.\]
+	\end{definition}
+	\begin{observation}
+		\label{obs:les funcions contínues a trossos són integrables}
+		Si \(f\) pertany a \(\mathcal{C}\) aleshores \(f\) és integrable Riemann.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{observation}
+	\begin{definition}[Conjunt d'extensions periòdiques]
+		\labelname{conjunt d'extensions periòdiques}\label{def:conjunt d'extensions periòdiques}
+		Denotarem
+		\labelname{extensió periòdica}\label{def:extensió periòdica}
+		\[\mathcal{P}=\{f\colon\mathbb{R}\longrightarrow\mathbb{C}\mid g\in\mathcal{C}\text{ i }f(x)=g(x-k)\text{ per }x\in[k,k+1),k\in\mathbb{Z}\}\]
+		com el conjunt d'extensions periòdiques. Direm que els elements de \(\mathcal{P}\) són extensions periòdiques.
+	\end{definition}
+	\begin{lemma}
+		\label{lema:l'espai d'extensions periòdiques és un espai vectorial}
+		Siguin \(f\) i \(g\) dues extensions periòdiques i \(\lambda\) un nombre complex. Aleshores el conjunt \(\mathcal{P}\) amb les operacions
+		\[(f+g)(x)=f(x)+g(x)\quad\text{i}\quad(\lambda f)(x)=\lambda f(x)\]
+		és un espai vectorial.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}
+		\label{thm:l'espai d'extensions periòdiques és un espai vectorial euclidià}
+		Sigui \(E\) un \(\mathcal{P}\)-espai vectorial amb el producte escalar
+		\begin{equation}
+			\label{thm:l'espai d'extensions periòdiques és un espai vectorial euclidià:eq1}
+			\langle f,g\rangle=\int_{0}^{1}f(x)\conjugat{g(x)}\diff x.
+		\end{equation}
+		Aleshores \(E\) amb la norma \eqref{thm:l'espai d'extensions periòdiques és un espai vectorial euclidià:eq1} és un espai vectorial euclidià.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		\label{ex:base ortonormal de les extensions periòdiques}
+		Volem veure que el conjunt
+		\[\{e_{n}(x)=e^{2\pi\iu nx}\mid n\in\mathbb{Z}\}\]
+		és un conjunt ortonormal de \(\mathcal{P}\).
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\subsection{Coeficients de Fourier}
+	\begin{definition}[Coeficients de Fourier]
+		\labelname{coeficients de Fourier}\label{def:coeficients de Fourier}
+		Sigui \(f\) una extensió periòdica. Definim
+		\[\widehat{f}(n)=\langle f(x),\e^{2\pi\iu nx}\rangle=\int_{0}^{1}f(x)\e^{-2\pi\iu nx}\diff x\]
+		com l'\(n\)-èsim coeficient de Fourier de \(f\).
+	\end{definition}
+	\begin{proposition}
+		Siguin \(f\) i \(g\) dues extensions periòdiques i \(\lambda\) i \(\mu\) dos nombres complexos. Aleshores
+		\[\widehat{\lambda f+\mu g}(n)=\lambda\widehat{f}(n)+\mu\widehat{g}(n).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		Sigui \(f\) una extensió periòdica, \(\tau\) un nombre de \((0,1)\) i \(f_{\tau}\) una funció definida com \(f_{\tau}(x)=f(x-\tau)\). Aleshores
+		\[\widehat{f_{\tau}}(n)=\e^{-2\pi\iu n\tau}\widehat{f}(n).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		Sigui \(f\) una extensió periòdica derivable. Aleshores
+		\[\widehat{f'}(n)=2\pi\iu n\widehat{f}(n).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		Siguin \(f\) i \(g\) dues extensions periòdiques. Aleshores
+		\[\widehat{f\convolucio g}(n)=\widehat{f}(n)\widehat{g}(n).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\section{Transformació de Fourier}
+	\subsection{Sèries de Fourier en termes de sinus i cosinus}
+	\begin{definition}[Sèrie de Fourier]
+		\labelname{sèrie de Fourier}\label{def:sèrie de Fourier}
+		Sigui \(f\) una extensió periòdica. Aleshores definim
+		\[\sfourier(f)(x)=\sum_{n\in\mathbb{Z}}\widehat{f}(n)\e^{2\pi\iu nx}\]
+		com la sèrie de Fourier de \(f\).
+	\end{definition}
+	\printbibliography
+	Els apunts estan escrits seguint la teoria donada a classe i complementats amb \cite{ApuntsMorelo}. La secció de reordenació de sèries està fortament inspirada també en \cite{HickmanRiemannSeriesTheoremNotes}. He copiat un exemple de \cite{KeithDifferentiatingUnderIntegralSignNotes}.
+	
+	La bibliografia del curs inclou els textos \cite{GalindoGuiaPracticaCalculoInfinitesimal,OrtegaIntroduccioAnalisiMatematica,PerelloCalculInfinitesimal,RudinPrinciplesOfMathematicalAnalysis,TolstovFourier}.
 \end{document}
 
 % Reordenació de sèries https://math.uchicago.edu/~j.e.hickman/163%20Lecture%20notes/Lecture%207%20and%208.pdf
