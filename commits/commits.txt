@@ -1,2 +1,1 @@
-Afegits enunciats a anàlisi fins la secció de transformacions de Fourier.
-Afegida la bibliogradia a anàlisi.
+Afegits exemples i reordenat el temari a la part d'anàlisi.

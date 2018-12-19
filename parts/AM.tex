@@ -1652,7 +1652,7 @@
 		Volem calcular el valor de la integral
 		\[\int_{-\infty}^{\infty}e^{-x^{2}}\diff x.\] % Partir en el 0 i veure que és simètrica. Seguir exemple de classe.
 		\begin{solution}
-			\(\sqrt{\pi}\).
+			\(\sqrt{\uppi}\).
 			%TODO
 		\end{solution}
 	\end{example}
@@ -1674,7 +1674,7 @@
 		\[\int_{0}^{\infty}\e^{-tx}\frac{\sin(x)}{x}\diff x\]
 		per \(t>0\).
 		\begin{solution}
-			\(\frac{\pi}{2}-\arctan(t)\). %TODO
+			\(\frac{\uppi}{2}-\arctan(t)\). %TODO
 		\end{solution}
 	\end{example}
 	\begin{example}
@@ -1689,7 +1689,7 @@
 	\begin{definition}[Gamma d'Euler]
 		\labelname{Gamma d'Euler}\label{def:Gamma d'Euler}
 		Sigui \(x\) un real positiu. Aleshores definim
-		\[\Gamma(x)=\int_{0}^{\infty}t^{n}\e^{-t}\diff t\]
+		\[\Gamma(x)=\int_{0}^{\infty}t^{x-1}\e^{-t}\diff t\]
 		com la funció Gamma d'Euler.
 	\end{definition}
 	\begin{theorem}
@@ -1727,7 +1727,7 @@
 	\begin{theorem}
 		\label{thm:fórmula d'Stirling}
 		Es satisfà
-		\[\lim_{x\to\infty}\frac{\Gamma(x+1)}{e^{-x}x^{x}\sqrt{2\pi x}}=1.\]
+		\[\lim_{x\to\infty}\frac{\Gamma(x+1)}{e^{-x}x^{x}\sqrt{2\uppi x}}=1.\]
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1735,13 +1735,13 @@
 	\begin{corollary}[Fórmula d'Stirling]
 		\labelname{fórmula d'Stirling}\label{cor:fórmula d'Stirling}
 		Es satisfà
-		\[\lim_{n\to\infty}\frac{n!}{e^{-n}n^{n}\sqrt{2\pi n}}=1.\]
+		\[\lim_{n\to\infty}\frac{n!}{e^{-n}n^{n}\sqrt{2\uppi n}}=1.\]
 	\end{corollary}
 	\begin{example}
 		Volem calcular
 		\[\Gamma\left(\frac{1}{2}\right).\]
 		\begin{solution}
-			\(\sqrt{\pi}\). %TODO
+			\(\sqrt{\uppi}\). %TODO
 		\end{solution}
 	\end{example}
 	% Buscar un exemple sabroso a \url{http://www.math.uconn.edu/~kconrad/blurbs/analysis/diffunderint.pdf} per acabar tot aquest tema a lo grande.
@@ -1760,7 +1760,7 @@
 		\label{ex:periòde del cosinus}
 		\label{ex:periòde de l'exponencial complexa}
 		Volem veure que les funcions
-		\[f(t)=\sin(2\pi\omega t),\quad g(t)=\cos(2\pi\omega t)\quad\text{i}\quad h(t)=\e^{2\pi\iu\omega t}\]
+		\[f(t)=\sin(2\uppi\omega t),\quad g(t)=\cos(2\uppi\omega t)\quad\text{i}\quad h(t)=\e^{2\uppi\iu\omega t}\]
 		són funcions \(\frac{1}{\omega}\)-periòdiques.
 		\begin{solution}
 			%TODO
@@ -1841,17 +1841,18 @@
 	\begin{example}
 		\label{ex:base ortonormal de les extensions periòdiques}
 		Volem veure que el conjunt
-		\[\{e_{n}(x)=e^{2\pi\iu nx}\mid n\in\mathbb{Z}\}\]
+		\[\{e_{n}(x)=e^{2\uppi\iu nx}\mid n\in\mathbb{Z}\}\]
 		és un conjunt ortonormal de \(\mathcal{P}\).
 		\begin{solution}
 			%TODO
 		\end{solution}
 	\end{example}
+	\section{Sèries de Fourier}
 	\subsection{Coeficients de Fourier}
 	\begin{definition}[Coeficients de Fourier]
 		\labelname{coeficients de Fourier}\label{def:coeficients de Fourier}
 		Sigui \(f\) una extensió periòdica. Definim
-		\[\widehat{f}(n)=\langle f(x),\e^{2\pi\iu nx}\rangle=\int_{0}^{1}f(x)\e^{-2\pi\iu nx}\diff x\]
+		\[\widehat{f}(n)=\langle f(x),\e^{2\uppi\iu nx}\rangle=\int_{0}^{1}f(x)\e^{-2\uppi\iu nx}\diff x\]
 		com l'\(n\)-èsim coeficient de Fourier de \(f\).
 	\end{definition}
 	\begin{proposition}
@@ -1863,14 +1864,14 @@
 	\end{proposition}
 	\begin{proposition}
 		Sigui \(f\) una extensió periòdica, \(\tau\) un nombre de \((0,1)\) i \(f_{\tau}\) una funció definida com \(f_{\tau}(x)=f(x-\tau)\). Aleshores
-		\[\widehat{f_{\tau}}(n)=\e^{-2\pi\iu n\tau}\widehat{f}(n).\]
+		\[\widehat{f_{\tau}}(n)=\e^{-2\uppi\iu n\tau}\widehat{f}(n).\]
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		Sigui \(f\) una extensió periòdica derivable. Aleshores
-		\[\widehat{f'}(n)=2\pi\iu n\widehat{f}(n).\]
+		\[\widehat{f'}(n)=2\uppi\iu n\widehat{f}(n).\]
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1882,14 +1883,110 @@
 			%TODO
 		\end{proof}
 	\end{proposition}
-	\section{Transformació de Fourier}
-	\subsection{Sèries de Fourier en termes de sinus i cosinus}
 	\begin{definition}[Sèrie de Fourier]
 		\labelname{sèrie de Fourier}\label{def:sèrie de Fourier}
 		Sigui \(f\) una extensió periòdica. Aleshores definim
-		\[\sfourier(f)(x)=\sum_{n\in\mathbb{Z}}\widehat{f}(n)\e^{2\pi\iu nx}\]
+		\[\sfourier(f)(x)=\sum_{n\in\mathbb{Z}}\widehat{f}(n)\e^{2\uppi\iu nx}\]
 		com la sèrie de Fourier de \(f\).
 	\end{definition}
+	\begin{example}
+		\label{ex:trobar una sèrie de Fourier}
+		Volem trobar la sèrie de Fourier de la extensió periòdica de la funció
+		\[f(x)=\begin{cases}
+			\sin(\uppi x) & \text{si } 0\leq x\leq\frac{1}{2} \\
+			0 & \text{si }\frac{1}{2}\leq x\leq 1
+		\end{cases}\]
+		\begin{solution}
+			\(\sfourier(f)(x)=\frac{1}{2}\sin(\uppi x)-\frac{4}{\uppi}\sum_{n=1}^{\infty}(-1)^{n}\frac{n}{4n^{2}-1}\sin(2\uppi nx)\).
+		\end{solution}
+	\end{example}
+	\begin{proposition}
+		\label{prop:les sèries de Fourier són lineals}
+		Siguin \(f\) i \(g\) dues extensions periòdiques i \(\lambda\) i \(\mu\) dos nombres complexos. Aleshores
+		\[\sfourier(\lambda f+\mu g)(n)=\lambda\sfourier(f)(n)+\mu\sfourier(g)(n).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\subsection{Paritat d'una funció}
+	\begin{definition}[Paritat d'una funció]
+		\labelname{funció parell}\label{def:funció parell}
+		\labelname{funció senar}\label{def:funció senar}
+		Sigui \(f\colon\mathbb{R}\longrightarrow\mathbb{C}\) una funció tal que per a tot \(x\) real es satisfà
+		\begin{enumerate}
+			\item \(f(x)=f(-x)\). Aleshores direm que \(f\) és una funció parell.
+			\item \(f(x)=-f(-x)\). Aleshores direm que \(f\) és una funció senar.
+		\end{enumerate}
+	\end{definition}
+	\begin{example}
+		\label{ex:el sinus és una funció senar}
+		\label{ex:el cosinus és una funció parell}
+		Volem veure que la funció
+		\[f(x)=\sin(x)\]
+		és senar i que la funció
+		\[g(x)=\cos(x)\]
+		és parell.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{proposition}
+		\label{prop:la paritat de funcions es comporta com el producte de signes}
+		Siguin \(f\) una funció parell i \(g\) una funció senar. Aleshores les funcions \(f^{2}\) i \(g^{2}\) són parells i la funció \(fg\) és senar.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:la integral d'una funció parell en un interval simètric és el doble que en mig interval}
+		\label{prop:la integral d'una funció senar en un interval simètric és 0}
+		Siguin \(f\) una funció parell i \(g\) una funció senar tals que \(f\) i \(g\) són integrables en l'interval \([-a,a]\). Aleshores
+		\[\int_{-a}^{a}f(x)\diff x=2\int_{0}^{a}f(x)\diff x\quad\text{i}\quad\int_{-a}^{a}g(x)\diff x=0.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{lemma}
+		\label{lema:la paritat d'una funció es conserva en els coeficients de fourier}
+		Sigui \(f\) una extensió periòdica tal que
+		\begin{enumerate}
+			\item \(f\) és parell. Aleshores \(\widehat{f}\) és parell.
+			\item \(f\) és senar. Aleshores \(\widehat{f}\) és senar.
+		\end{enumerate}
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{lemma}
+	\subsection{Sèries de Fourier en termes de sinus i cosinus}
+	\begin{proposition}
+		\label{prop:sèrie de Fourier d'una funció parell}
+		Sigui \(f\) una extensió periòdica parell. Aleshores
+		\[\sfourier(f)(x)=A_{0}+2\sum_{n=1}^{\infty}A_{n}\cos(2\uppi nx),\]
+		on
+		\[A_{n}=\int_{0}^{1}f(x)\cos(2\uppi nx).\] % A_{0}=\int_{0}^{1}f(x)\diff x
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:sèrie de Fourier d'una funció senar}
+		Sigui \(f\) una extensió periòdica senar. Aleshores
+		\[\sfourier(f)(x)=2\sum_{n=1}^{\infty}B_{n}\sin(2\uppi nx),\]
+		on
+		\[B_{n}=\int_{0}^{1}f(x)\sin(2\uppi nx).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{theorem}
+		Sigui \(f\) una extensió periòdica. Aleshores
+		\[\sfourier(f)(x)=A_{0}+2\sum_{n=1}^{\infty}A_{n}\cos(2\uppi nx)+2\sum_{n=1}^{\infty}B_{n}\sin(2\uppi nx),\]
+		on
+		\[A_{n}=\int_{0}^{1}f(x)\cos(2\uppi nx)\quad\text{i}\quad B_{n}=\int_{0}^{1}f(x)\sin(2\uppi nx).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
 	\printbibliography
 	Els apunts estan escrits seguint la teoria donada a classe i complementats amb \cite{ApuntsMorelo}. La secció de reordenació de sèries està fortament inspirada també en \cite{HickmanRiemannSeriesTheoremNotes}. He copiat un exemple de \cite{KeithDifferentiatingUnderIntegralSignNotes}.
 	
