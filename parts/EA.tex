@@ -227,22 +227,33 @@
 			Comprovem que \(H\) existeix, és a dir, que \(H\neq\emptyset\) tenim prou amb veure que \(e\in H\). Veiem que \(H\) és un subgrup de \(G\) ho podem veure per la proposició \myref{prop:intersecció de subgrups es subgrup}.
 		\end{proof}
 	\end{proposition}
-	\begin{definition}[Mínim subgrup generat per un conjunt]
+	\begin{definition}[Mínim subgrup generat per un conjunt] %vspace
 		\labelname{mínim subgrup generat per un conjunt}
 		\label{def:mínim subgrup generat per un subconjunt}
-		Siguin \(G\) un grup amb l'operació \(\ast\), \(S\) un subconjunt de \(G\), \(\{H_{i}\}_{i\in I}\) una família de subgrups de \(G\) tals que \(S\subseteq H_{i}\) per a tot \(i\in I\) i \(H=\bigcap_{i\in I}H_{i}\). Aleshores direm que el subgrup \(H\leq G\) és el mínim subgrup generat per \(S\) i ho denotarem amb \(\langle S\rangle\).
+		Siguin \(G\) un grup amb l'operació \(\ast\), \(S\) un subconjunt de \(G\), \(\{H_{i}\}_{i\in I}\) una família de subgrups de \(G\) tals que \(S\subseteq H_{i}\) per a tot \(i\in I\) i tal que
+		\[H=\bigcap_{i\in I}H_{i}.\]
+		Aleshores direm que el subgrup \(H\leq G\) és el mínim subgrup generat per \(S\) i ho denotarem amb \(\langle S\rangle\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:els subgrups generats per un conjunt existeixen}.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:forma grups cíclics}
-		Siguin \(G\) un grup amb l'operació \(\ast\) i \(g\) un element de \(G\). Aleshores \(\langle\{g\}\rangle=\{g^{i}\}_{i\in\mathbb{Z}}\).
+		Siguin \(G\) un grup amb l'operació \(\ast\) i \(g\) un element de \(G\). Aleshores
+		\[\langle\{g\}\rangle=\{g^{i}\}_{i\in\mathbb{Z}}.\]
 		\begin{proof}
 			Ho demostrem per doble inclusió.
 			
-			Comencem veient que \(\{g^{i}\}_{i\in\mathbb{Z}}\subseteq\langle\{g\}\rangle\). Per la definició de \myref{def:mínim subgrup generat per un subconjunt} tenim que existeix una família de subconjunts de \(G\) que denotarem per \(\{H_{i}\}_{i\in I}\), amb \(\{g\}\subseteq H=\bigcap_{i\in I}H_{i}\). Com que \(\{H_{i}\}_{i\in I}\) són subgrups de \(G\) tenim que, donat que \(g\in H_{i}\), \(g^{n}\in H_{i}\) per a tot \(i\in I\) i tot \(n\in\mathbb{Z}\) per la definició de \myref{def:grup}, i per tant \(g^{n}\in H\), el que és equivalent a dir que \(g^{n}\in \langle g\rangle\) per a tot \(n\in\mathbb{Z}\)
+			Comencem veient que
+			\[\{g^{i}\}_{i\in\mathbb{Z}}\subseteq\langle\{g\}\rangle.\]
+			Per la definició de \myref{def:mínim subgrup generat per un subconjunt} tenim que existeix una família de subconjunts de \(G\) que denotarem per \(\{H_{i}\}_{i\in I}\), amb
+			\[\{g\}\subseteq H=\bigcap_{i\in I}H_{i}.\]
+			Com que \(\{H_{i}\}_{i\in I}\) són subgrups de \(G\) tenim que, donat que \(g\in H_{i}\), \(g^{n}\in H_{i}\) per a tot \(i\in I\) i tot \(n\in\mathbb{Z}\) per la definició de \myref{def:grup}, i per tant \(g^{n}\in H\), el que és equivalent a dir que \(g^{n}\in \langle g\rangle\) per a tot \(n\in\mathbb{Z}\)
 			
-			Ara veiem que \(\langle\{g\}\rangle\subseteq\{g^{i}\}_{i\in\mathbb{Z}}\). Denotarem \(H_{g}=\{g^{i}\}_{i\in\mathbb{Z}}\). Hem de veure que \(H_{g}\) és un grup amb l'operació \(\ast\). Observem que per a tot \(g^{i},g^{j}\in H_{g}\), \(g^{i}\ast g^{-j}=g^{i-j}\in H_{g}\), i per tant \(H_{g}\leq G\). Ara bé, com que \(\{g\}\subseteq H_{g}\), tenim que \(H_{g}\in\{H_{i}\}_{i\in I}\), és a dir, que \(H_{g}\) pertany a la família de subconjunts de \(G\) que contenen \(\{g\}\); el que significa que \(\langle\{g\}\rangle\leq H_{g}\), i per tant \(\langle\{g\}\rangle\subseteq\{g^{i}\}_{i\in\mathbb{Z}}\).
+			Ara veiem que
+			\[\langle\{g\}\rangle\subseteq\{g^{i}\}_{i\in\mathbb{Z}}.\]
+			Denotarem \(H_{g}=\{g^{i}\}_{i\in\mathbb{Z}}\). Hem de veure que \(H_{g}\) és un grup amb l'operació \(\ast\).
+			
+			Observem que per a tot \(g^{i},g^{j}\in H_{g}\) es satisfà \(g^{i}\ast g^{-j}=g^{i-j}\in H_{g}\), i per tant \(H_{g}\leq G\). Ara bé, com que \(\{g\}\subseteq H_{g}\), tenim que \(H_{g}\in\{H_{i}\}_{i\in I}\), és a dir, que \(H_{g}\) pertany a la família de subconjunts de \(G\) que contenen \(\{g\}\); el que significa que \(\langle\{g\}\rangle\leq H_{g}\), i per tant \[\langle\{g\}\rangle\subseteq\{g^{i}\}_{i\in\mathbb{Z}}.\qedhere\]
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Ordre d'un grup]

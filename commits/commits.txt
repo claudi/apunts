@@ -1,1 +1,1 @@
-Afegida teoria a topologia.
+Afegida teoria i exemples a topologia fins accions de grups sobre espais topòlogics.

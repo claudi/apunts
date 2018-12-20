@@ -758,9 +758,30 @@
 	\subsection{Acció d'un grup sobre un espai}
 	\begin{definition}[Acció d'un grup sobre un espai topològic]
 		\labelname{acció d'un grup sobre un espai topològic}\label{def:acció d'un grup sobre un espai topològic}
-		\emph{Quina definició més difícil d'escriure bé.}
-		%No dir \(G\)-conjunt.
+		Siguin \(G\) amb l'operació \(\ast\) un grup amb element neutre \(e\) i \(X\) amb \(\tau\) un espai topològic tal que per a tot \(g\) de \(G\) existeix una aplicació contínua \(\theta_{g}\colon X\longrightarrow X\) satisfent
+		\[\theta_{e}=\Id_{X},\quad\text{i per a tot }g,h\in G\quad \theta_{g}\circ\theta_{h}=\theta_{g\ast h}.\]
+		Aleshores direm que \(G\) actua sobre \(X\).
 	\end{definition}
+	\begin{definition}[Domini fonamental]
+		\labelname{domini fonamental}\label{def:domini fonamental}
+		Siguin \(G\) un grup que actua sobre un espai topològic \(X\) i \(D\) un subespai de \(X\) tal que per a tot \(x\) de \(X\) existeixen un \(g\) de \(G\) i \(d\) de \(D\) tals que
+		\[x=\theta_{g}(d).\]
+		Aleshores direm que \(D\) és un domini fonamental de \(X\).
+	\end{definition}
+	\begin{example}
+		\label{ex:domini fonamental}
+		Considerem les aplicacions
+		\[S(x,y)=(x,y+1)\quad\text{i}\quad T(x,y)=(x-1,-y)\]
+		sobre l'espai topològic \(\mathbb{R}^{2}\) i el grup \(G=\langle\{S,T\}\rangle\).
+		Volem veure que \([0,1)\times[0,1)\) és un domini fonamental de \(X\).
+		\begin{solution} %REFS (part entera?)
+			Observem que la inversa de \(T\) és \(T^{-1}=(x+1,y)\), i \(T^{-1}\) per la definició de pertany a \(G\).
+			
+			Prenem un punt \((x,y)\) de \(\mathbb{R}^{2}\). Tenim que existeixen dos enters \(x_{0}\) i \(y_{0}\) tals que \(x_{0}\leq x<x_{0}+1\) i \(y_{0}\leq y<y_{0}+1\). Per tant
+			\[(x_{0},y_{0})=S^{x_{0}}(x-x_{0},0)+T^{-y_{0}}(0,y-y_{0}),\]
+			i per la definició de \myref{def:domini fonamental} hem acabat.
+		\end{solution} % REVISAR
+	\end{example}
 	
 	\begin{comment}
 	\section{Espai d'Alexandroff}
