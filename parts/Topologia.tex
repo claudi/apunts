@@ -643,7 +643,7 @@
 	\end{example}
 	\begin{theorem}
 		\label{thm:una aplicació és contínua si i només si les seves components són contínues}
-		Siguin \(Z\) amb la topologia \(\tau_{Z}\) un espai topològic, \(X\times Y\) amb la topologia \(\tau\) la topologia producte de \(X\) i \(Y\), \(f\colon Z\longrightarrow X\times Y\) una aplicació. Aleshores \(f\) és contínua si i només si les aplicacions \(\pi_{X}\circ f\) i \(\pi_{Y}\circ f\) són contínues.
+		Siguin \(Z\) amb la topologia \(\tau_{Z}\) un espai topològic, \(X\times Y\) amb la topologia producte de \(X\) i \(Y\), \(f\colon Z\longrightarrow X\times Y\) una aplicació. Aleshores \(f\) és contínua si i només si les aplicacions \(\pi_{X}\circ f\) i \(\pi_{Y}\circ f\) són contínues.
 		\begin{proof}
 			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(f\) és contínua. Aleshores per l'exercici \myref{ex:les projeccions en la topologia producte són contínues i obertes} trobem que les aplicacions \(\pi_{X}\) i \(\pi_{Y}\) són contínues i per l'observació \myref{obs:la composició d'aplicacions contínues és contínua} hem acabat.
 			
@@ -688,6 +688,81 @@
 		\end{proof}
 	\end{proposition}
 	\subsection{La topologia quocient}
+	\begin{proposition}
+		\label{prop:topologia quocient}
+		Siguin \(X\) amb la topologia \(\tau_{X}\) un espai topològic, \(Y\) un conjunt i \(p\colon X\longrightarrow Y\) una aplicació exhaustiva. Aleshores
+		\begin{equation}
+			\label{prop:topologia quocient:eq1}
+			\tau_{Y}=\{\obert{U}\subseteq Y\mid\Antiima_{\obert{U}}(p)\in\tau_{X}\}
+		\end{equation}
+		és una topologia de \(Y\).
+		\begin{proof} %REFS
+			Comprovem que \(\tau_{Y}\) satisfà la definició de \myref{def:topologia}. Tenim que \(\emptyset\) pertany a \(\tau_{Y}\). Per la definició d'\myref{def:antiimatge d'una aplicació} trobem que \(\Ima_{\emptyset}(p)=\emptyset\), i com que per la definició de \myref{def:topologia} tenim que \(\emptyset\) pertany a \(\tau_{X}\) trobem que \(\emptyset\) és un element de \(\tau_{Y}\).
+			
+			Veiem ara que \(Y\) pertany a \(\tau_{Y}\). Per la definició d'\myref{def:antiimatge d'una aplicació} i com que, per hipòtesi, \(p\) és exhaustiva, per la definició d'\myref{def:aplicació exhaustiva} tenim que \(\Ima_{Y}^{-1}(p)=X\), i per la definició de \myref{def:topologia} tenim que \(X\) és un obert, i per tant \(Y\) pertany a \(\tau_{Y}\).
+			
+			Sigui \(\{\obert{U}_{i}\}_{i\in I}\) una família d'elements de \(\tau_{Y}\). Aleshores tenim que
+			\[\Antiima_{\bigcup_{i\in I}\obert{U}_{i}}(p)=\bigcup_{i\in I}\Antiima_{\obert{U}_{i}}(p),\]
+			i com que. per \eqref{prop:topologia quocient:eq1} trobem que \(\Antiima_{\obert{U}_{i}}(p)\) és un obert de \(X\) per a tot \(i\) de \(I\), i per la definició de topologia trobem que
+			\[\bigcup_{i\in I}\Antiima_{\obert{U}_{i}}(p)\]
+			és un obert de \(X\), i per tant tenim que \(\bigcup_{i\in I}\obert{U}_{i}\) és un element de \(\tau_{Y}\).
+			
+			Prenem ara una família \(\{\obert{U}_{i}\}_{i=1}^{n}\) d'elements de \(\tau_{Y}\). Tenim que
+			\[\Antiima_{\bigcup_{i=1}^{n}\obert{U}_{i}}(p)=\bigcup_{i=1}^{n}\Antiima_{\obert{U}_{i}}(p),\]
+			i com que. per \eqref{prop:topologia quocient:eq1} trobem que \(\Antiima_{\obert{U}_{i}}(p)\) és un obert de \(X\) per a tot \(i\) de \(\{1,\dots,n\}\), i per la definició de topologia trobem que
+			\[\bigcup_{i=1}^{n}\Antiima_{\obert{U}_{i}}(p)\]
+			és un obert de \(X\), i per tant tenim que \(\bigcup_{i=1}^{n}\obert{U}_{i}\) és un element de \(\tau_{Y}\).
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Topologia quocient]
+		\labelname{topologia quocient}\label{def:topologia quocient}
+		Siguin \(X\) amb la topologia \(\tau_{X}\) un espai topològic, \(Y\) un conjunt i \(p\colon X\longrightarrow Y\) una aplicació exhaustiva. Aleshores direm que \(Y\) amb la topologia
+		\[\tau_{Y}=\{\obert{U}\subseteq Y\mid\Antiima_{\obert{U}}(p)\in\tau_{X}\}\]
+		és un espai topològic quocient, o que \(Y\) té la topologia quocient per \(p\).
+		
+		Aquesta definició té sentit per la proposició \myref{prop:topologia quocient}.
+	\end{definition}
+	\begin{observation}
+		\label{obs:l'aplicació que indueix la topologia en un espai quocient és contínua}
+		Sigui \(Y\) un espai topològic amb la topologia quocient per una aplicació \(p\). Aleshores \(p\) és contínua.
+	\end{observation}
+	\begin{proposition}
+		\label{prop:la topologia quocient és equivalent per tancats}
+		Sigui \(Y\) un espai topològic amb la topologia quocient per una aplicació \(p\). Aleshores un subconjunt \(\tancat{C}\) de \(Y\) és tancat si i només si \(\Antiima_{\tancat{C}}(p)\) és un tancat.
+		\begin{proof} %REFS
+			Denotem per \(X\) l'espai topològic sobre el que \(p\) està definida. Sigui \(\tancat{C}\) un tancat de \(Y\). Aleshores, per la definició de \myref{def:tancat}, tenim que \(Y\setminus\tancat{C}\) és un obert de \(Y\). Ara bé, tenim que \(\Antiima_{Y\setminus\tancat{C}}(p)\) és un obert de \(X\). Ara bé, tenim que
+			\[\Antiima_{Y\setminus\tancat{C}}(p)=X\setminus\Antiima_{\tancat{C}}(p),\]
+			i per la definició de \myref{def:tancat} trobem que \(\Antiima_{\tancat{C}}(p)\) és un tancat de \(X\), com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{theorem}
+		\label{thm:la composició d'una aplicació amb l'aplicació que indueix la topologia en un espai quocient és contínua si i només si aquesta aplicació és contínua}
+		Siguin \(Y\) un espai topològic amb la topologia quocient per una aplicació \(p\), \(Z\) un espai topològic i \(f\colon Y\longrightarrow Z\) una aplicació. Aleshores \(f\circ p\) és contínua si i només si \(f\) és contínua.
+		\begin{proof}
+			Denotem per \(X\) l'espai topològic sobre el que \(p\) està definida.
+			
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(f\circ p\) és contínua. Sigui \(\obert{U}\) un obert de \(Z\). Per la definició d'\myref{def:aplicació contínua} en tenim prou en veure que \(\Antiima_{\obert{U}}(f)\) és un obert. Tenim per la definició d'\myref{def:aplicació contínua} que \(\Antiima_{\obert{U}}(p\circ f)\) és un obert de \(X\)., i per tant, per la definició de \myref{def:topologia quocient} tenim que \(\Antiima_{\obert{U}}(f)\) és un obert de \(Y\), com volíem.
+			
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que \(f\) és contínua. Aleshores per l'observació \myref{obs:la composició d'aplicacions contínues és contínua} hem acabat.
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		Volem veure que l'espai quocient
+		\[Y=[0,1]/\{0\sim1\}\]
+		amb la projecció \(\pi\) és homeomorf a
+		\[\esfera^{1}=\{x\in\mathbb{R}^{2}\mid\norm{x}=1\}.\]
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\subsection{Acció d'un grup sobre un espai}
+	\begin{definition}[Acció d'un grup sobre un espai topològic]
+		\labelname{acció d'un grup sobre un espai topològic}\label{def:acció d'un grup sobre un espai topològic}
+		\emph{Quina definició més difícil d'escriure bé.}
+		%No dir \(G\)-conjunt.
+	\end{definition}
+	
+	\begin{comment}
 	\section{Espai d'Alexandroff}
 	\subsection{Propietats bàsiques}
 	\begin{definition}[Topologia d'Alexandroff]
@@ -707,7 +782,7 @@
 			Tenim que \(\{\obert{U}_{i}\}_{i\in I}\) és un subconjunt de \(\tau\), i tenim també que \(\tau\) és finit, per tant \(\{\obert{U}_{i}\}_{i\in I}\) ha de ser finit i per tant existeix un natural \(n\) tal que \(\{\obert{U}_{i}\}_{i\in I}=\{\obert{U}_{i}\}_{i=1}^{n}\), i per la definició de \myref{def:topologia} hem acabat.
 		\end{proof}
 	\end{proposition}
-	
+	\end{comment}
 	
 %	\begin{definition}[Aplicació contínua i homeomorfisme]
 %		\labelname{aplicació contínua}\label{def:aplicació contínua}

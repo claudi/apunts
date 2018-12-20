@@ -121,10 +121,11 @@
 \DeclareMathOperator{\distancia}{d}
 \DeclareMathOperator{\esfera}{S}
 \DeclareMathOperator{\sfourier}{S}
-
 \let\ker\relax
-\DeclareMathOperator*{\ker}{ker}
-\DeclareMathOperator*{\Ima}{Im}
+	\DeclareMathOperator{\ker}{ker}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\Antiima}{\Ima^{-1}}
+
 \DeclareMathOperator*{\suport}{Supp}
 
 \let\originalnsim=\nsim
@@ -338,8 +339,8 @@
 \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 
-%\newcommand{\myref}[1]{\ref{#1}}
-\newcommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
+\newcommand{\myref}[1]{\ref{#1}}
+%\newcommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
 %\newcommand{\myref}[1]{\hyperref[#1]{\nameref{#1} \eqref{#1}}}
 
 \makeatletter
