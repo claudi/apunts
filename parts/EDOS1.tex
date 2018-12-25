@@ -228,10 +228,10 @@
 		Siguin \(a\), \(b\) i \(t_{0}\) tres reals, \(x_{0}\) un punt de \(\mathbb{R}^{n}\), \(\Omega=[t_{0}-a,t_{0}+a]\times\overline{\bola}(x_{0},b)\) un conjunt, \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i Lipschitz respecte la segona variable i
 		\[M=\max_{(t,x)\in\Omega}\norm{f(t,x)}.\]
 		Aleshores el problema de Cauchy
-		\[\begin{cases*}
+		\[\begin{cases}
 			\displaystyle\frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}
-		\end{cases*}\]
+		\end{cases}\]
 		té una única solució sobre l'interval
 		\[\left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].\]
 		\begin{proof}
@@ -300,10 +300,10 @@
 	\begin{corollary}
 		\label{cor:Teorema de Picard}
 		Siguin \(I\) un interval tancat de \(\mathbb{R}\), \(\Omega=I\times\mathbb{R}^{n}\) un conjunt, \((t_{0},x_{0})\) un element de \(\Omega\) i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i Lipschitz respecte la segona variable. Aleshores el problema de Cauchy
-		\[\begin{cases*}
+		\[\begin{cases}
 			\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}.
-		\end{cases*}\]
+		\end{cases}\]
 		té una única solució definida en l'interval \(I\).
 		\begin{proof}
 			Quan \(b\) tendeix a infinit tenim que \(\overline{\bola}(x_{0},b)=\mathbb{R}^{n}\).
@@ -387,10 +387,10 @@
 	\begin{theorem}[Teorema Peano]
 		\labelname{Teorema de Peano}\label{thm:Teorema de Peano}
 		Siguin \(a\), \(b\) i \(t_{0}\) dos reals, \(x_{0}\) un punt de \(\mathbb{R}^{n}\), \(\Omega=[t_{0}-a,t_{0}+a]\times\overline{\bola}(x_{0},b)\) un conjunt, \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i \(M\) un real tal que \(\norm{f(t,x)}<M\) per a tot \((t,x)\) de \(\Omega\). Aleshores el problema de Cauchy
-		\[\begin{cases*}
+		\[\begin{cases}
 			\displaystyle\frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}
-		\end{cases*}\]
+		\end{cases}\]
 		té una solució sobre l'interval
 		\[\left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].\]
 		\begin{proof}
@@ -399,10 +399,10 @@
 	\end{theorem}
 	\begin{corollary}
 		Siguin \(\Omega\subset\mathbb{R}\times\mathbb{R}^{n}\) un obert, \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i \(K\) un compacte de \(\Omega\). Aleshores existeix un real \(\alpha>0\) tal que per a tot punt \((t_{0},x_{0})\) de \(K\) el problema
-		\[\begin{cases*}
+		\[\begin{cases}
 			\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
 			\displaystyle x(t_{0})=x_{0}
-		\end{cases*}\]
+		\end{cases}\]
 		té solució sobre l'interval
 		\[\left[t_{0}-\alpha,t_{0}+\alpha\right].\]
 		\begin{proof}
@@ -415,10 +415,10 @@
 		Sigui
 		\begin{equation}
 			\label{def:conjunt de solucions d'un problema de Cauchy:eq1}
-			\begin{cases*}
+			\begin{cases}
 				\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(x)) \\
 				\displaystyle u(t_{0})=x_{0}
-			\end{cases*}
+			\end{cases}
 		\end{equation}
 		un problema de Cauchy. Aleshores definirem
 		\[A(t_{0},x_{0})=\{(I,u)\mid u\text{ és solució del problema de Cauchy en l'interval }I\}\]
@@ -477,10 +477,10 @@
 		Siguin \(\Omega\subseteq\mathbb{R}\times\mathbb{R}^{n}\) un obert i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció tal que per a tot \((t_{0},x_{0})\) de \(\Omega\) el problema de Cauchy
 		\begin{equation}
 			\label{prop:la solució improrrogable és única:eq1}
-			\begin{cases*}
+			\begin{cases}
 				\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
 				\displaystyle u(t_{0})=x_{0}
-			\end{cases*}
+			\end{cases}
 		\end{equation}
 		té una única solució. Aleshores per a cada \((t_{0},x_{0})\) de \(\Omega\) el problema de Cauchy \eqref{prop:la solució improrrogable és única:eq1} té una única solució improrrogable.
 		\begin{proof}
@@ -521,10 +521,10 @@
 	\begin{theorem}[Continuïtat respecte les condicions inicials]
 		\labelname{continuïtat respecte les condicions inicials}\label{thm:continuitat respecte les condicions inicials}
 		Siguin \(\Omega\) un obert de \(\mathbb{R}\times\mathbb{R}^{n}\), \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua tal que per a cada punt \((t_{0},x_{0})\) de \(\Omega\) el problema de Cauchy
-		\[\begin{cases*}
+		\[\begin{cases}
 			\frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
 			u(t_{0})=x_{0}
-		\end{cases*}\]
+		\end{cases}\]
 		té una única solució maximal \(\varphi_{t_{0},x_{0}}\) definida en un interval \(I_{t_{0},x_{0}}\) i
 		\[D=\{(t,t_{0},x_{0})\in\mathbb{R}\times\mathbb{R}\times\mathbb{R}^{n}\mid(t_{0},x_{0})\in\Omega,t\in I_{t_{0},x_{0}}\}.\]
 		Aleshores \(D\) és un obert i l'aplicació
@@ -632,10 +632,10 @@
 		Sigui \(\alpha\) un real. Volem trobar una solució al sistema
 		\begin{equation}
 			\label{ex:edos problema de Cauchy 1:eq1}
-			\begin{cases*}
+			\begin{cases}
 				\frac{\partial u(t)}{\partial t}=\alpha x^{2} \\
 				u(1)=1.
-			\end{cases*}
+			\end{cases}
 		\end{equation}
 		\begin{solution}
 			Observem que, per la definició de \myref{def:equació diferencial ordinària d'ordre n} que l'equació \(\frac{\partial u(t)}{\partial t}=\alpha x^{2}\) és una equació diferencial ordinària d'odre \(1\). Per la proposició \myref{prop:problema de Cauchy} trobem que les solucions de \eqref{ex:edos problema de Cauchy 1:eq1} són de la forma
@@ -685,10 +685,10 @@
 		Volem trobar una solució al sistema
 		\begin{equation}
 			\label{ex:equacions de variables separades:eq1}
-			\begin{cases*}
+			\begin{cases}
 				\displaystyle \frac{\partial u(t)}{\partial t}=\frac{u(t)^{3}x}{\sqrt{1+x^{2}}} \\
 				u(0)=1.
-			\end{cases*}
+			\end{cases}
 		\end{equation}
 		\begin{solution}
 			Definim

@@ -687,6 +687,140 @@
 			Per tant per la definició d'\myref{def:homeomorfisme entre topologies} trobem que \(h\) és un homeomorfisme, i per la definició d'\myref{def:espais topològics isomorfs} trobem que \(X_{1}\times Y_{1}\cong X_{2}\times Y_{2}\), com volíem veure.
 		\end{proof}
 	\end{proposition}
+	\section{La topologia quocient}
+	\subsection{Topologia quocient per una aplicació}
+	\begin{proposition}
+		\label{prop:topologia quocient}
+		Siguin \(X\) amb la topologia \(\tau_{X}\) un espai topològic, \(Y\) un conjunt i \(p\colon X\longrightarrow Y\) una aplicació exhaustiva. Aleshores
+		\begin{equation}
+			\label{prop:topologia quocient:eq1}
+			\tau_{Y}=\{\obert{U}\subseteq Y\mid\Antiima_{\obert{U}}(p)\in\tau_{X}\}
+		\end{equation}
+		és una topologia de \(Y\).
+		\begin{proof} %REFS
+			Comprovem que \(\tau_{Y}\) satisfà la definició de \myref{def:topologia}. Tenim que \(\emptyset\) pertany a \(\tau_{Y}\). Per la definició d'\myref{def:antiimatge d'una aplicació} trobem que \(\Ima_{\emptyset}(p)=\emptyset\), i com que per la definició de \myref{def:topologia} tenim que \(\emptyset\) pertany a \(\tau_{X}\) trobem que \(\emptyset\) és un element de \(\tau_{Y}\).
+			
+			Veiem ara que \(Y\) pertany a \(\tau_{Y}\). Per la definició d'\myref{def:antiimatge d'una aplicació} i com que, per hipòtesi, \(p\) és exhaustiva, per la definició d'\myref{def:aplicació exhaustiva} tenim que \(\Ima_{Y}^{-1}(p)=X\), i per la definició de \myref{def:topologia} tenim que \(X\) és un obert, i per tant \(Y\) pertany a \(\tau_{Y}\).
+			
+			Sigui \(\{\obert{U}_{i}\}_{i\in I}\) una família d'elements de \(\tau_{Y}\). Aleshores tenim que
+			\[\Antiima_{\bigcup_{i\in I}\obert{U}_{i}}(p)=\bigcup_{i\in I}\Antiima_{\obert{U}_{i}}(p),\]
+			i com que. per \eqref{prop:topologia quocient:eq1} trobem que \(\Antiima_{\obert{U}_{i}}(p)\) és un obert de \(X\) per a tot \(i\) de \(I\), i per la definició de topologia trobem que
+			\[\bigcup_{i\in I}\Antiima_{\obert{U}_{i}}(p)\]
+			és un obert de \(X\), i per tant tenim que \(\bigcup_{i\in I}\obert{U}_{i}\) és un element de \(\tau_{Y}\).
+			
+			Prenem ara una família \(\{\obert{U}_{i}\}_{i=1}^{n}\) d'elements de \(\tau_{Y}\). Tenim que
+			\[\Antiima_{\bigcup_{i=1}^{n}\obert{U}_{i}}(p)=\bigcup_{i=1}^{n}\Antiima_{\obert{U}_{i}}(p),\]
+			i com que. per \eqref{prop:topologia quocient:eq1} trobem que \(\Antiima_{\obert{U}_{i}}(p)\) és un obert de \(X\) per a tot \(i\) de \(\{1,\dots,n\}\), i per la definició de topologia trobem que
+			\[\bigcup_{i=1}^{n}\Antiima_{\obert{U}_{i}}(p)\]
+			és un obert de \(X\), i per tant tenim que \(\bigcup_{i=1}^{n}\obert{U}_{i}\) és un element de \(\tau_{Y}\).
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Topologia quocient]
+		\labelname{topologia quocient}\label{def:topologia quocient}
+		Siguin \(X\) amb la topologia \(\tau_{X}\) un espai topològic, \(Y\) un conjunt i \(p\colon X\longrightarrow Y\) una aplicació exhaustiva. Aleshores direm que \(Y\) amb la topologia
+		\[\tau_{Y}=\{\obert{U}\subseteq Y\mid\Antiima_{\obert{U}}(p)\in\tau_{X}\}\]
+		és un espai topològic quocient, o que \(Y\) té la topologia quocient per \(p\).
+		
+		Aquesta definició té sentit per la proposició \myref{prop:topologia quocient}.
+	\end{definition}
+	\begin{observation}
+		\label{obs:l'aplicació que indueix la topologia en un espai quocient és contínua}
+		Sigui \(Y\) un espai topològic amb la topologia quocient per una aplicació \(p\). Aleshores \(p\) és contínua.
+	\end{observation}
+	\begin{proposition}
+		\label{prop:la topologia quocient és equivalent per tancats}
+		Sigui \(Y\) un espai topològic amb la topologia quocient per una aplicació \(p\). Aleshores un subconjunt \(\tancat{C}\) de \(Y\) és tancat si i només si \(\Antiima_{\tancat{C}}(p)\) és un tancat.
+		\begin{proof} %REFS
+			Denotem per \(X\) l'espai topològic sobre el que \(p\) està definida. Sigui \(\tancat{C}\) un tancat de \(Y\). Aleshores, per la definició de \myref{def:tancat}, tenim que \(Y\setminus\tancat{C}\) és un obert de \(Y\). Ara bé, tenim que \(\Antiima_{Y\setminus\tancat{C}}(p)\) és un obert de \(X\). Ara bé, tenim que
+			\[\Antiima_{Y\setminus\tancat{C}}(p)=X\setminus\Antiima_{\tancat{C}}(p),\]
+			i per la definició de \myref{def:tancat} trobem que \(\Antiima_{\tancat{C}}(p)\) és un tancat de \(X\), com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{theorem}
+		\label{thm:la composició d'una aplicació amb l'aplicació que indueix la topologia en un espai quocient és contínua si i només si aquesta aplicació és contínua}
+		Siguin \(Y\) un espai topològic amb la topologia quocient per una aplicació \(p\), \(Z\) un espai topològic i \(f\colon Y\longrightarrow Z\) una aplicació. Aleshores \(f\circ p\) és contínua si i només si \(f\) és contínua.
+		\begin{proof}
+			Denotem per \(X\) l'espai topològic sobre el que \(p\) està definida.
+			
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(f\circ p\) és contínua. Sigui \(\obert{U}\) un obert de \(Z\). Per la definició d'\myref{def:aplicació contínua} en tenim prou en veure que \(\Antiima_{\obert{U}}(f)\) és un obert.
+			
+			Tenim per la definició d'\myref{def:aplicació contínua} que \(\Antiima_{\obert{U}}(p\circ f)\) és un obert de \(X\)., i per tant, per la definició de \myref{def:topologia quocient} tenim que \(\Antiima_{\obert{U}}(f)\) és un obert de \(Y\), com volíem.
+			
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que \(f\) és contínua. Aleshores per l'observació \myref{obs:la composició d'aplicacions contínues és contínua} hem acabat.
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		Volem calcular la topologia de l'espai quocient \(A=\{a,b,c\}\) induït per l'aplicació \(p\colon\mathbb{R}\longrightarrow A\), definida per
+		\begin{equation}
+			\label{ex:topologia quocient caracteritzacio signe d'un real}
+			p(x)=\begin{cases}
+				a & \text{si }x>0 \\
+				b & \text{si }x<0 \\
+				c & \text{si }x=0.
+			\end{cases}
+		\end{equation}
+		\begin{solution}
+			Calculem els oberts de \(A\). Tenim per la definició de \myref{def:topologia quocient} que aquests són les antiimatges dels oberts de \(\mathbb{R}\) per \(p\). Prenem un obert \(\obert{U}\) de \(\mathbb{R}\).
+			
+			Observem primer que si \(\obert{U}=\emptyset\) aleshores
+			\[\Antiima_{\obert{U}}(p)=\emptyset,\]
+			i si \(0\) pertany a \(\obert{U}\) aleshores, per la definició de \myref{def:obert espai mètric} tenim que existeixen un \(x\) de \(\obert{U}\) positiu i un \(y\) de \(\obert{U}\) negatiu, i per tant
+			\[\Antiima_{\obert{U}}(p)=\{a,b,c\}.\]
+			Suposem doncs que \(0\) no pertany a \(\obert{U}\).
+			
+			Suposem que per a tot \(x\) de \(\obert{U}\) tenim que \(x>0\). Aleshores, per la definició d'\myref{def:antiimatge d'una aplicació} i \eqref{ex:topologia quocient caracteritzacio signe d'un real} tenim que
+			\[\Antiima_{\obert{U}}(p)=\{a\}.\]
+			
+			Suposem ara que per a tot \(x\) detext{ si }0 \(\obert{U}\) tenim que \(x>0\). Aleshores, de nou per la definició d'\myref{def:antiimatge d'una aplicació} i \eqref{ex:topologia quocient caracteritzacio signe d'un real} tenim que
+			\[\Antiima_{\obert{U}}(p)=\{b\}.\]
+			
+			Suposem ara que existeixen un \(x\) de \(\obert{U}\) positiu i un \(y\) de \(\obert{U}\) negatiu. Aleshores, com que tenim que \(0\) no pertany a \(\obert{U}\), trobem que
+			\[\Antiima_{\obert{U}}(p)=\{a,b\}.\]
+			
+			Per tant trobem que els oberts de \(A\) són
+			\[\tau=\{\emptyset,\{a\},\{b\},\{a,b\},\{a,b,c\}\}.\qedhere\]
+		\end{solution}
+	\end{example}
+	\subsection{Topologia quocient per una relació d'equivalència}
+	\begin{example}[Projecció a un quocient]
+		\labelname{}\label{ex:topologia projecció a un quocient}
+		Siguin \(X\) un espai topològic i \(\sim\) una relació d'equivalència. Volem veure que \(X/\sim\) té la topologia quocient per l'aplicació
+		\begin{align*}
+			\pi\colon X&\longrightarrow X/\sim \\
+			x&\longmapsto\overline{x}.
+		\end{align*}
+		\begin{solution}
+			Hem de veure que \(\pi\) és exhaustiva. Prenem un element \(\overline{x}\) de \(X/\sim\). Aleshores tenim que \(\pi(x)=\overline{x}\) i per la definició de \myref{def:topologia quocient} hem acabat.
+		\end{solution}
+	\end{example}
+	\begin{definition}
+		\label{def:topologia projecció a un quocient}
+		Siguin \(X\) un espai topològic, \(\sim\) una relació d'equivalència sobre \(X\) i \(\pi\) la projecció de \(X\) en \(X/\sim\) donada per
+		\begin{align*}
+			\pi\colon X&\longrightarrow X/\sim \\
+			x&\longmapsto\overline{x}.
+		\end{align*}
+		Aleshores denotem la topologia \(Y\) induïda per \(\pi\) com \(X/\sim\).
+		
+		Aquesta definició té sentit per l'exercici \myref{ex:topologia projecció a un quocient}.
+	\end{definition}
+	\begin{example}
+		Volem veure que l'espai quocient
+		\[Y=[0,1]/\{0\sim1\}\]
+		amb la projecció \(\pi\) és homeomorf a
+		\[\esfera^{1}=\{x\in\mathbb{R}^{2}\mid\norm{x}=1\}.\]
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\subsection{Topologia quocient per un grup}
+	\begin{definition}
+		
+	\end{definition}
+	
+	
+	
+	\begin{comment}
 	\subsection{La topologia quocient}
 	\begin{proposition}
 		\label{prop:topologia quocient}
@@ -755,6 +889,16 @@
 			%TODO
 		\end{solution}
 	\end{example}
+	\begin{example}[Projecció a un quocient]
+		Siguin \(X\) un espai topològic i \(\sim\) una relació d'equivalència. Volem veure que \(X/\sim\) té la topologia quocient per l'aplicació
+		\begin{align*}
+			\pi\colon X&\longrightarrow X/\sim \\
+			x&\longmapsto\overline{x}.
+		\end{align*}
+		\begin{solution}
+			Hem de veure que \(\pi\) és exhaustiva. Prenem un element \(\overline{x}\) de \(X/\sim\). Aleshores tenim que \(\pi(x)=\overline{x}\) i per la definició de \myref{def:topologia quocient} hem acabat.
+		\end{solution}
+	\end{example}
 	\subsection{Acció d'un grup sobre un espai}
 	\begin{definition}[Acció d'un grup sobre un espai topològic]
 		\labelname{acció d'un grup sobre un espai topològic}\label{def:acció d'un grup sobre un espai topològic}
@@ -782,6 +926,15 @@
 			i per la definició de \myref{def:domini fonamental} hem acabat.
 		\end{solution} % REVISAR
 	\end{example}
+	\begin{definition}[Quocient d'un espai per l'acció d'un grup]
+		Sigui \(G\) amb l'operació \(\ast\) un grup que actua sobre un espai topològic \(X\) i \(\sim\) la relació d'equivalència definida per a tot \(x\) i \(y\) de \(X\) com
+		\[x\sim y\sii\text{existeix un }g\in G\text{ tal que }\theta_{g}(x)=y.\]
+		Aleshores denotarem per
+		\[X/\sim=X/G\]
+		la topologia quocient de \(X\) per \(\pi\)
+	\end{definition}
+	\end{comment}
+	
 	
 	\begin{comment}
 	\section{Espai d'Alexandroff}
