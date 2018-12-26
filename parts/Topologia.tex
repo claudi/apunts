@@ -805,6 +805,7 @@
 		Aquesta definició té sentit per l'exercici \myref{ex:topologia projecció a un quocient}.
 	\end{definition}
 	\begin{example}
+		\label{ex:l'esfera en el pla és isomorfa a la recta [0,1] amb 0sim1}
 		Volem veure que l'espai quocient
 		\[Y=[0,1]/\{0\sim1\}\]
 		amb la projecció \(\pi\) és homeomorf a
@@ -814,97 +815,9 @@
 		\end{solution}
 	\end{example}
 	\subsection{Topologia quocient per un grup}
-	\begin{definition}
-		
-	\end{definition}
-	
-	
-	
-	\begin{comment}
-	\subsection{La topologia quocient}
-	\begin{proposition}
-		\label{prop:topologia quocient}
-		Siguin \(X\) amb la topologia \(\tau_{X}\) un espai topològic, \(Y\) un conjunt i \(p\colon X\longrightarrow Y\) una aplicació exhaustiva. Aleshores
-		\begin{equation}
-			\label{prop:topologia quocient:eq1}
-			\tau_{Y}=\{\obert{U}\subseteq Y\mid\Antiima_{\obert{U}}(p)\in\tau_{X}\}
-		\end{equation}
-		és una topologia de \(Y\).
-		\begin{proof} %REFS
-			Comprovem que \(\tau_{Y}\) satisfà la definició de \myref{def:topologia}. Tenim que \(\emptyset\) pertany a \(\tau_{Y}\). Per la definició d'\myref{def:antiimatge d'una aplicació} trobem que \(\Ima_{\emptyset}(p)=\emptyset\), i com que per la definició de \myref{def:topologia} tenim que \(\emptyset\) pertany a \(\tau_{X}\) trobem que \(\emptyset\) és un element de \(\tau_{Y}\).
-			
-			Veiem ara que \(Y\) pertany a \(\tau_{Y}\). Per la definició d'\myref{def:antiimatge d'una aplicació} i com que, per hipòtesi, \(p\) és exhaustiva, per la definició d'\myref{def:aplicació exhaustiva} tenim que \(\Ima_{Y}^{-1}(p)=X\), i per la definició de \myref{def:topologia} tenim que \(X\) és un obert, i per tant \(Y\) pertany a \(\tau_{Y}\).
-			
-			Sigui \(\{\obert{U}_{i}\}_{i\in I}\) una família d'elements de \(\tau_{Y}\). Aleshores tenim que
-			\[\Antiima_{\bigcup_{i\in I}\obert{U}_{i}}(p)=\bigcup_{i\in I}\Antiima_{\obert{U}_{i}}(p),\]
-			i com que. per \eqref{prop:topologia quocient:eq1} trobem que \(\Antiima_{\obert{U}_{i}}(p)\) és un obert de \(X\) per a tot \(i\) de \(I\), i per la definició de topologia trobem que
-			\[\bigcup_{i\in I}\Antiima_{\obert{U}_{i}}(p)\]
-			és un obert de \(X\), i per tant tenim que \(\bigcup_{i\in I}\obert{U}_{i}\) és un element de \(\tau_{Y}\).
-			
-			Prenem ara una família \(\{\obert{U}_{i}\}_{i=1}^{n}\) d'elements de \(\tau_{Y}\). Tenim que
-			\[\Antiima_{\bigcup_{i=1}^{n}\obert{U}_{i}}(p)=\bigcup_{i=1}^{n}\Antiima_{\obert{U}_{i}}(p),\]
-			i com que. per \eqref{prop:topologia quocient:eq1} trobem que \(\Antiima_{\obert{U}_{i}}(p)\) és un obert de \(X\) per a tot \(i\) de \(\{1,\dots,n\}\), i per la definició de topologia trobem que
-			\[\bigcup_{i=1}^{n}\Antiima_{\obert{U}_{i}}(p)\]
-			és un obert de \(X\), i per tant tenim que \(\bigcup_{i=1}^{n}\obert{U}_{i}\) és un element de \(\tau_{Y}\).
-		\end{proof}
-	\end{proposition}
-	\begin{definition}[Topologia quocient]
-		\labelname{topologia quocient}\label{def:topologia quocient}
-		Siguin \(X\) amb la topologia \(\tau_{X}\) un espai topològic, \(Y\) un conjunt i \(p\colon X\longrightarrow Y\) una aplicació exhaustiva. Aleshores direm que \(Y\) amb la topologia
-		\[\tau_{Y}=\{\obert{U}\subseteq Y\mid\Antiima_{\obert{U}}(p)\in\tau_{X}\}\]
-		és un espai topològic quocient, o que \(Y\) té la topologia quocient per \(p\).
-		
-		Aquesta definició té sentit per la proposició \myref{prop:topologia quocient}.
-	\end{definition}
-	\begin{observation}
-		\label{obs:l'aplicació que indueix la topologia en un espai quocient és contínua}
-		Sigui \(Y\) un espai topològic amb la topologia quocient per una aplicació \(p\). Aleshores \(p\) és contínua.
-	\end{observation}
-	\begin{proposition}
-		\label{prop:la topologia quocient és equivalent per tancats}
-		Sigui \(Y\) un espai topològic amb la topologia quocient per una aplicació \(p\). Aleshores un subconjunt \(\tancat{C}\) de \(Y\) és tancat si i només si \(\Antiima_{\tancat{C}}(p)\) és un tancat.
-		\begin{proof} %REFS
-			Denotem per \(X\) l'espai topològic sobre el que \(p\) està definida. Sigui \(\tancat{C}\) un tancat de \(Y\). Aleshores, per la definició de \myref{def:tancat}, tenim que \(Y\setminus\tancat{C}\) és un obert de \(Y\). Ara bé, tenim que \(\Antiima_{Y\setminus\tancat{C}}(p)\) és un obert de \(X\). Ara bé, tenim que
-			\[\Antiima_{Y\setminus\tancat{C}}(p)=X\setminus\Antiima_{\tancat{C}}(p),\]
-			i per la definició de \myref{def:tancat} trobem que \(\Antiima_{\tancat{C}}(p)\) és un tancat de \(X\), com volíem veure.
-		\end{proof}
-	\end{proposition}
-	\begin{theorem}
-		\label{thm:la composició d'una aplicació amb l'aplicació que indueix la topologia en un espai quocient és contínua si i només si aquesta aplicació és contínua}
-		Siguin \(Y\) un espai topològic amb la topologia quocient per una aplicació \(p\), \(Z\) un espai topològic i \(f\colon Y\longrightarrow Z\) una aplicació. Aleshores \(f\circ p\) és contínua si i només si \(f\) és contínua.
-		\begin{proof}
-			Denotem per \(X\) l'espai topològic sobre el que \(p\) està definida.
-			
-			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(f\circ p\) és contínua. Sigui \(\obert{U}\) un obert de \(Z\). Per la definició d'\myref{def:aplicació contínua} en tenim prou en veure que \(\Antiima_{\obert{U}}(f)\) és un obert. Tenim per la definició d'\myref{def:aplicació contínua} que \(\Antiima_{\obert{U}}(p\circ f)\) és un obert de \(X\)., i per tant, per la definició de \myref{def:topologia quocient} tenim que \(\Antiima_{\obert{U}}(f)\) és un obert de \(Y\), com volíem.
-			
-			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que \(f\) és contínua. Aleshores per l'observació \myref{obs:la composició d'aplicacions contínues és contínua} hem acabat.
-		\end{proof}
-	\end{theorem}
-	\begin{example}
-		Volem veure que l'espai quocient
-		\[Y=[0,1]/\{0\sim1\}\]
-		amb la projecció \(\pi\) és homeomorf a
-		\[\esfera^{1}=\{x\in\mathbb{R}^{2}\mid\norm{x}=1\}.\]
-		\begin{solution}
-			%TODO
-		\end{solution}
-	\end{example}
-	\begin{example}[Projecció a un quocient]
-		Siguin \(X\) un espai topològic i \(\sim\) una relació d'equivalència. Volem veure que \(X/\sim\) té la topologia quocient per l'aplicació
-		\begin{align*}
-			\pi\colon X&\longrightarrow X/\sim \\
-			x&\longmapsto\overline{x}.
-		\end{align*}
-		\begin{solution}
-			Hem de veure que \(\pi\) és exhaustiva. Prenem un element \(\overline{x}\) de \(X/\sim\). Aleshores tenim que \(\pi(x)=\overline{x}\) i per la definició de \myref{def:topologia quocient} hem acabat.
-		\end{solution}
-	\end{example}
-	\subsection{Acció d'un grup sobre un espai}
 	\begin{definition}[Acció d'un grup sobre un espai topològic]
 		\labelname{acció d'un grup sobre un espai topològic}\label{def:acció d'un grup sobre un espai topològic}
-		Siguin \(G\) amb l'operació \(\ast\) un grup amb element neutre \(e\) i \(X\) amb \(\tau\) un espai topològic tal que per a tot \(g\) de \(G\) existeix una aplicació contínua \(\theta_{g}\colon X\longrightarrow X\) satisfent
-		\[\theta_{e}=\Id_{X},\quad\text{i per a tot }g,h\in G\quad \theta_{g}\circ\theta_{h}=\theta_{g\ast h}.\]
-		Aleshores direm que \(G\) actua sobre \(X\).
+		Siguin \(G\) amb l'operació \(\ast\) un grup amb element neutre \(e\) i \(X\) un espai topològic tals que per a tot \(g\) de \(G\) existeix una aplicació contínua \(\theta_{g}\colon X\longrightarrow X\) tal que per a tot \(x\) de \(X\) es satisfà \(\theta_{e}(x)=x\) i per a tot \(g\) i \(h\) de \(G\) es satisfà \(\theta_{g}\circ\theta_{h}=\theta_{g\ast h}\). Aleshores direm que \(G\) actua sobre \(X\).
 	\end{definition}
 	\begin{definition}[Domini fonamental]
 		\labelname{domini fonamental}\label{def:domini fonamental}
@@ -918,7 +831,7 @@
 		\[S(x,y)=(x,y+1)\quad\text{i}\quad T(x,y)=(x-1,-y)\]
 		sobre l'espai topològic \(\mathbb{R}^{2}\) i el grup \(G=\langle\{S,T\}\rangle\).
 		Volem veure que \([0,1)\times[0,1)\) és un domini fonamental de \(X\).
-		\begin{solution} %REFS (part entera?)
+		\begin{solution} %REFS (part entera?) % Veure que el grup actua i tal i qual
 			Observem que la inversa de \(T\) és \(T^{-1}=(x+1,y)\), i \(T^{-1}\) per la definició de pertany a \(G\).
 			
 			Prenem un punt \((x,y)\) de \(\mathbb{R}^{2}\). Tenim que existeixen dos enters \(x_{0}\) i \(y_{0}\) tals que \(x_{0}\leq x<x_{0}+1\) i \(y_{0}\leq y<y_{0}+1\). Per tant
@@ -926,15 +839,83 @@
 			i per la definició de \myref{def:domini fonamental} hem acabat.
 		\end{solution} % REVISAR
 	\end{example}
+	\begin{proposition}
+		\label{prop:quocient d'un espai per l'acció d'un grup relació}
+		Sigui \(G\) amb l'operació \(\ast\) un grup que actua sobre un espai topològic \(X\). Aleshores la relació \(\sim\) definida per a tot \(x\) i \(y\) de \(X\) com
+		\[x\sim y\sii\text{existeix un }g\in G\text{ tal que }\theta_{g}(x)=y\]
+		és una relació d'equivalència.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
 	\begin{definition}[Quocient d'un espai per l'acció d'un grup]
+		\labelname{quocient d'un espai per l'acció d'un grup}\label{def:quocient d'un es[ai per l'acció d'un grup}
 		Sigui \(G\) amb l'operació \(\ast\) un grup que actua sobre un espai topològic \(X\) i \(\sim\) la relació d'equivalència definida per a tot \(x\) i \(y\) de \(X\) com
 		\[x\sim y\sii\text{existeix un }g\in G\text{ tal que }\theta_{g}(x)=y.\]
 		Aleshores denotarem per
 		\[X/\sim=X/G\]
-		la topologia quocient de \(X\) per \(\pi\)
+		la topologia quocient de \(X\) per \(G\)/
+		
+		Aquesta definició té sentit per la proposició \myref{prop:quocient d'un espai per l'acció d'un grup relació}.
 	\end{definition}
-	\end{comment}
-	
+	\chapter{Espais topològics}
+	\section{Espais compactes}
+	\subsection{Recobriments}
+	\begin{definition}[Recobriment]
+		\labelname{recobriment d'un espai}\label{def:recobriment d'un espai}
+		\labelname{recobriment finit d'un espai}\label{def:recobriment finit d'un espai}
+		\labelname{recobriment infinit d'un espai}\label{def:recobriment infinit d'un espai}
+		Siguin \(X\) un espai topològic i \(\{\obert{U}_{i}\}_{i\in I}\) una família de subespais de \(X\) tals que
+		\[X=\bigcup_{i\in I}\obert{U}_{i}.\]
+		Aleshores direm que \(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment de \(X\).
+		
+		Si \(I\) és finit direm que \(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment finit de \(X\), i si \(I\) és infinit direm que \(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment infinit de \(X\).
+	\end{definition}
+	\begin{definition}[Recobriment obert]
+		\labelname{Recobriment obert}\label{def:recobriment obert}
+		Sigui \(\{\obert{U}_{i}\}_{i\in I}\) un recobriment d'un espai topològic \(X\) tal que per a tot \(i\) de \(I\) tenim que \(\obert{U}_{i}\) és un obert de \(X\). Aleshores direm que \(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment obert de \(X\).
+	\end{definition}
+	\begin{definition}[Subrecobriment]
+		\labelname{subrecobriment}\label{def:subrecobriment}
+		\labelname{subrecobriment finit}\label{def:subrecobriment finit}
+		\labelname{subrecobriment infinit}\label{def:subrecobriment infinit}
+		Siguin \(\{\obert{U}_{i}\}_{i\in I}\) un recobriment d'un espai topològic \(X\) i \(J\) un subconjunt de \(I\) tal que la família \(\{\obert{U}_{j}\}_{j\in J}\) és un recobriment de \(X\). Aleshores direm que \(\{\obert{U}_{j}\}_{j\in J}\) és un subrecobriment de \(\{\obert{U}_{i}\}_{i\in I}\).
+		
+		Si \(J\) és finit direm que \(\{\obert{U}_{j}\}_{j\in J}\) és un recobriment finit de \(\{\obert{U}_{i}\}_{i\in I}\), i si \(J\) és infinit direm que \(\{\obert{U}_{j}\}_{j\in J}\) és un recobriment infinit de \(\{\obert{U}_{i}\}_{i\in I}\).
+	\end{definition}
+	\begin{example}
+		Volem veure que el recobriment \(\{(-i,i)\}_{i\in\mathbb{N}}\) de \(\mathbb{R}\) no admet cap subrecobriment finit.
+		\begin{solution}
+			Suposem que existeix un subrecobriment finit de \(\{(-i,i)\}_{i\in\mathbb{N}}\). Això és que existeix un subconjunt \(I\) de \(\mathbb{N}\) finit tal que \(\{(-i,i)\}_{i\in I}\) és un recobriment de \(\mathbb{R}\).
+			
+			Ara bé, com que \(I\) és finit tenim que existeix un natural \(m\) tal que
+			\[m=\max\{i\in I\},\]
+			i tenim que \(m+1\) no pertany a cap interval de la família \(\{(-i,i)\}_{i\in I}\). Per tant trobem que
+			\[m+1\notin\bigcup_{i\in I}(-i,i).\]
+			
+			Ara bé, per la definició de \myref{def:recobriment d'un espai} trobem que ha de ser
+			\[m+1\in\mathbb{R}=\bigcup_{i\in I}(-i,i),\]
+			i arribem a contradicció, trobant que no pot existir un subrecobriment finit de \(\{(-i,i)\}_{i\in\mathbb{N}}\).
+		\end{solution}
+	\end{example}
+	\subsection{Compacitat}
+	\begin{definition}[Compacte]
+		\labelname{espai topològic compacte}\label{def:espai topològic compacte}
+		Sigui \(X\) un espai topològic tal que tot recobriment obert de \(X\) admet un subrecobriment finit. Aleshores direm que \(X\) és compacte.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:la compacitat és una propietat topològica}
+		Siguin \(X\) i \(Y\) dos espais topològics isomorfs. Aleshores \(X\) és compacte si i només si \(Y\) és compacte.
+		\begin{proof}
+			Per la definició de \myref{def:relació d'equivalència} tenim que si \(X\cong Y\) aleshores \(Y\cong X\), i per tant només ens cal veure que si \(X\) és compacte aleshores \(Y\) és compacte.
+			
+			Suposem doncs que \(X\) és compacte. Per la definició de \myref{def:espais topològics isomorfs} tenim que existeix un homeomorfisme \(f\colon X\longrightarrow Y\).
+			
+			Sigui \(\{\obert{U}_{i}\}_{i\in I}\) un recobriment obert de \(Y\). Per la definició de \myref{def:homeomorfisme entre topologies} i la definició de \myref{def:recobriment obert} tenim que la família \(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in I}\) és un recobriment obert de \(X\).
+			
+			Ara bé, per la definició d'\myref{def:espai topològic compacte} trobem que existeix un subrecobriment finit \(\{\Antiima_{\obert{U}_{j}}(f)\}_{j\in J}\) de \(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in I}\), i de nou per la definició de \myref{def:homeomorfisme entre topologies} i la definició de \myref{def:recobriment obert} tenim que la família \(\{\obert{U}_{j}\}_{j\in J}\) és un subrecobriment obert de \(\{\obert{U}_{i}\}_{i\in I}\), i per la definició d'\myref{def:espai topològic compacte} trobem que \(Y\) és compacte.
+		\end{proof}
+	\end{proposition}
 	
 	\begin{comment}
 	\section{Espai d'Alexandroff}

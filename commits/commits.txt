@@ -1,2 +1,1 @@
-Afegida teoria i exemples a topologia fins accions de grups sobre espais topòlogics.
-La secció de topologia quocient ha estat una mica reestructurada.
+Afegida teoria i exemples a topologia fins a compacitat.
