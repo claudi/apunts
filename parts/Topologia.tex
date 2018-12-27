@@ -104,14 +104,14 @@
 		\end{solution}
 	\end{example}
 	\begin{example}[Topologia grollera]
-		\labelname{topologia grollera}\label{ex:topologia grollera}
+		\labelname{}\label{ex:topologia grollera}
 		Siguin \(X\) i \(\tau=\{\emptyset,X\}\) dos conjunts. Aleshores \(\tau\) és una topologia de \(X\).
 		\begin{solution}
 			Comprovem les condicions de la definició de topologia. Com que \(\tau=\{\emptyset,X\}\) tenim que \(\emptyset\) i \(X\) són elements de \(\tau\). Observem també que \(\emptyset\cap X=\emptyset\), \(X\cap X=X\) i \(\emptyset\cup X=X\cup X=X\), i per la definició de \myref{def:topologia}, tenim que \(\tau\) és una topologia de \(X\).
 		\end{solution}
 	\end{example}
 	\begin{example}[Topologia discreta]
-		\labelname{topologia discreta}\label{ex:topologia discreta}
+		\labelname{}\label{ex:topologia discreta}
 		Siguin \(X\) i \(\tau=\mathcal{P}(X)\) dos conjunts. Aleshores \(\tau\) és una topologia de \(X\).
 		\begin{solution}
 			Tenim per l'\myref{axiom:conjunt potència} que \(\emptyset\) i \(X\) són subconjunts de \(\tau\), ja que per l'\myref{axiom:axioma de regularitat} trobem que \(\emptyset\subseteq X\), i pel \myref{thm:doble inclusió} trobem que \(X\subseteq X\).
@@ -296,8 +296,8 @@
 		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(A\) un subconjunt de \(X\) i \(\obert{U}\) un obert tal que \(\obert{U}\) sigui un subconjunt de \(A\). Aleshores \(\obert{U}\) és un subconjunt de \(\interior(A)\).
 	\end{corollary}
 	\begin{corollary}
-		\label{cor:un conjunt és obert si i només si el seu interior és obert}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(A\) un subconjunt de \(X\). Aleshores \(A\) és un obert si i només si \(\interior(A)\) és un obert.
+		\label{cor:un conjunt és obert si i només si és el seu interior}
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(A\) un subconjunt de \(X\). Aleshores \(A\) és un obert si i només si \(A=\interior(A)\).
 	\end{corollary}
 	\begin{definition}[Punt adherent]
 		\labelname{punt adherent}\label{def:punt adherent}
@@ -362,7 +362,7 @@
 	\end{proposition}
 	\begin{corollary}
 		\label{cor:la clausura d'un conjunt és el tancat més petit que el conté}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(A\) un subconjunt de \(X\) i \(\tancat{C}\) un tancat tal que \(A\) és un subconjunt de \(\tancat{C}\). Aleshores \(\tancat{C}\subseteq\clausura(A)\).
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(A\) un subconjunt de \(X\) i \(\tancat{C}\) un tancat tal que \(A\) és un subconjunt de \(\tancat{C}\). Aleshores \(\clausura(A)\subseteq\tancat{C}\).
 	\end{corollary}
 	\begin{corollary}
 		\label{cor:un conjunt és tancat si i només si és igual a la seva clausura}
@@ -449,32 +449,39 @@
 		\labelname{homeomorfisme entre topologies}\label{def:homeomorfisme entre topologies}
 		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics i \(f\colon X\longrightarrow Y\) una aplicació bijectiva, oberta i contínua. Aleshores direm que \(f\) és un homeomorfisme.
 	\end{definition}
-	\begin{definition}[Espais topològics isomorfs]
-		\labelname{espais topològics isomorfs}\label{def:espais topològics isomorfs}
-		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics tals que existeix un homeomorfisme \(f\colon X\longrightarrow Y\). Aleshores direm que \(X\) i \(Y\) són dos espais topològics isomorfs. També denotarem
+	\begin{definition}[Espais topològics homeomorfs]
+		\labelname{espais topològics homeomorfs}\label{def:espais topològics homeomorfs}
+		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics tals que existeix un homeomorfisme \(f\colon X\longrightarrow Y\). Aleshores direm que \(X\) i \(Y\) són dos espais topològics homeomorfs. També denotarem
 		\[X\cong Y.\]
 	\end{definition}
+	\begin{example}
+		\label{ex:R és homeomorf a l'interval (0,1)}
+		Volem veure que \(\mathbb{R}\) és homeomorf a l'interval \((0,1)\).
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
 	\begin{proposition}
-			Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics. Aleshores la relació
-			\[X\cong Y\sii X\text{ és isomorf a }Y\]
-			és una relació d'equivalència.
-			\begin{proof}
-				Comprovem les propietats de la definició de relació d'equivalència:
-				\begin{enumerate}
-					\item Reflexiva: Tenim que l'aplicació \(\Id_{X}\) és bijectiva, oberta i contínua. Per la definició d'\myref{def:homeomorfisme entre topologies} tenim que \(\Id_{x}\) és un homeomorfisme, i per la definició d'\myref{def:espais topològics isomorfs} tenim que \(X\cong X\).
-					\item Simètrica: Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics isomorfs. Per la definició d'\myref{def:espais topològics isomorfs} tenim que existeix un homeomorfisme \(f\colon X\longrightarrow Y\).
-					
-					Pel Teorema \myref{thm:bijectiva iff invertible} trobem que existeix l'aplicació inversa \(f^{-1}\) de \(Y\) a \(X\), i pel \corollari \myref{cor:l'inversa d'una aplicació invertible és invertible} tenim que l'aplicació \(f^{-1}\) és bijectiva.
-					
-					També trobem que \(f^{-1}\) és oberta, ja que per la definició d'\myref{def:homeomorfisme entre topologies} tenim que \(f\) és contínua, i per la definició d'\myref{def:aplicació oberta} i la definició d'\myref{def:aplicació contínua} trobem que \(f^{1}\) és oberta. De mateixa manera trobem que \(f^{-1}\) és contínua, ja que per la definició d'\myref{def:homeomorfisme entre topologies} tenim que \(f\) és oberta, i per la definició d'\myref{def:aplicació contínua} i la definició d'\myref{def:aplicació oberta} trobem que \(f^{-1}\) és contínua.
-					
-					Per tant, per la definició d'\myref{def:homeomorfisme entre topologies} trobem que \(f^{-1}\) és un homeomorfisme entre topologies i per tant \(Y\cong X\).
-					\item Transitiva: Siguin \(X_{1}\) amb la topologia \(\tau_{1}\), \(X_{2}\) amb la topologia \(\tau_{2}\) i \(X_{3}\) amb la topologia \(\tau_{3}\) tres espais topològics tals que \(X_{1}\cong X_{2}\) i \(X_{2}\cong X_{3}\). Per la definició d'\myref{def:espais topològics isomorfs} tenim que existeixen dos homeomorfismes \(f\colon X_{1}\longrightarrow X_{2}\) i \(g\colon X_{2}\longrightarrow X_{3}\).
-					
-					Considerem l'aplicació \(h=g\circ f\). Pel Teorema \myref{thm:conjugació de bijectives bijectiva} trobem que \(h\) és bijectiva, i per l'observació \myref{obs:la composició d'aplicacions obertes és oberta} i l'observació \myref{obs:la composició d'aplicacions contínues és contínua} trobem que \(h\) és oberta i contínua, i per la definició d'\myref{def:homeomorfisme entre topologies} trobem que \(h\) és un homeomorfisme entre \(X_{1}\) i \(X_{3}\), i per la definició d'\myref{def:espais topològics isomorfs} trobem que \(X_{1}\cong X_{3}\).
-				\end{enumerate}
-				I per la definició de \myref{def:relació d'equivalència} hem acabat.
-			\end{proof}
+		Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics. Aleshores la relació
+		\[X\cong Y\sii X\text{ és homeomorf a }Y\]
+		és una relació d'equivalència.
+		\begin{proof}
+			Comprovem les propietats de la definició de relació d'equivalència:
+			\begin{enumerate}
+				\item Reflexiva: Tenim que l'aplicació \(\Id_{X}\) és bijectiva, oberta i contínua. Per la definició d'\myref{def:homeomorfisme entre topologies} tenim que \(\Id_{x}\) és un homeomorfisme, i per la definició d'\myref{def:espais topològics homeomorfs} tenim que \(X\cong X\).
+				\item Simètrica: Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics homeomorfs. Per la definició d'\myref{def:espais topològics homeomorfs} tenim que existeix un homeomorfisme \(f\colon X\longrightarrow Y\).
+				
+				Pel Teorema \myref{thm:bijectiva iff invertible} trobem que existeix l'aplicació inversa \(f^{-1}\) de \(Y\) a \(X\), i pel \corollari \myref{cor:l'inversa d'una aplicació invertible és invertible} tenim que l'aplicació \(f^{-1}\) és bijectiva.
+				
+				També trobem que \(f^{-1}\) és oberta, ja que per la definició d'\myref{def:homeomorfisme entre topologies} tenim que \(f\) és contínua, i per la definició d'\myref{def:aplicació oberta} i la definició d'\myref{def:aplicació contínua} trobem que \(f^{1}\) és oberta. De mateixa manera trobem que \(f^{-1}\) és contínua, ja que per la definició d'\myref{def:homeomorfisme entre topologies} tenim que \(f\) és oberta, i per la definició d'\myref{def:aplicació contínua} i la definició d'\myref{def:aplicació oberta} trobem que \(f^{-1}\) és contínua.
+				
+				Per tant, per la definició d'\myref{def:homeomorfisme entre topologies} trobem que \(f^{-1}\) és un homeomorfisme entre topologies i per tant \(Y\cong X\).
+				\item Transitiva: Siguin \(X_{1}\) amb la topologia \(\tau_{1}\), \(X_{2}\) amb la topologia \(\tau_{2}\) i \(X_{3}\) amb la topologia \(\tau_{3}\) tres espais topològics tals que \(X_{1}\cong X_{2}\) i \(X_{2}\cong X_{3}\). Per la definició d'\myref{def:espais topològics homeomorfs} tenim que existeixen dos homeomorfismes \(f\colon X_{1}\longrightarrow X_{2}\) i \(g\colon X_{2}\longrightarrow X_{3}\).
+				
+				Considerem l'aplicació \(h=g\circ f\). Pel Teorema \myref{thm:conjugació de bijectives bijectiva} trobem que \(h\) és bijectiva, i per l'observació \myref{obs:la composició d'aplicacions obertes és oberta} i l'observació \myref{obs:la composició d'aplicacions contínues és contínua} trobem que \(h\) és oberta i contínua, i per la definició d'\myref{def:homeomorfisme entre topologies} trobem que \(h\) és un homeomorfisme entre \(X_{1}\) i \(X_{3}\), i per la definició d'\myref{def:espais topològics homeomorfs} trobem que \(X_{1}\cong X_{3}\).
+			\end{enumerate}
+			I per la definició de \myref{def:relació d'equivalència} hem acabat.
+		\end{proof}
 	\end{proposition}
 \chapter{Altres topologies}
 	\section{Topologies induïdes}
@@ -660,12 +667,13 @@
 		\end{proof}
 	\end{theorem}
 	\begin{proposition}
+		\label{prop:si dues parelles d'espais topològics són isomorfs els seus productes cartesians també ho són}
 		Siguin \(X_{1}\) amb la topologia \(\tau_{X_{1}}\),  \(X_{2}\) amb la topologia \(\tau_{X_{2}}\), \(Y_{1}\) amb la topologia \(\tau_{Y_{1}}\) i \(Y_{2}\) amb la topologia \(\tau_{Y_{2}}\) quatre espais topològics tals que
 		\[X_{1}\cong X_{2}\quad\text{i}\quad Y_{1}\cong Y_{2}.\]
 		Aleshores
 		\[X_{1}\times Y_{1}\cong X_{2}\times Y_{2}.\]
 		\begin{proof}
-			Per la definició d'\myref{def:espais topològics isomorfs} trobem que existeixen dos homeomorfismes \(f\colon X_{1}\longrightarrow X_{2}\) i \(g\colon Y_{1}\longrightarrow Y_{2}\). Considerem doncs l'aplicació
+			Per la definició d'\myref{def:espais topològics homeomorfs} trobem que existeixen dos homeomorfismes \(f\colon X_{1}\longrightarrow X_{2}\) i \(g\colon Y_{1}\longrightarrow Y_{2}\). Considerem doncs l'aplicació
 			\begin{align*}
 				h\colon X_{1}\times Y_{1}&\longrightarrow X_{2}\times Y_{2} \\
 				(x,y)&\longmapsto(f(x),g(y)).
@@ -684,7 +692,7 @@
 			\[\pi_{X_{2}}\circ h(x,y)=f(x)\quad\text{i}\quad\pi_{Y_{2}}\circ h(x,y)=g(y),\]
 			i com que, per hipòtesi, les aplicacions \(f\) i \(g\) són aplicacions contínues tenim pel Teorema \myref{thm:una aplicació és contínua si i només si les seves components són contínues} que l'aplicació \(h\) és contínua.
 			
-			Per tant per la definició d'\myref{def:homeomorfisme entre topologies} trobem que \(h\) és un homeomorfisme, i per la definició d'\myref{def:espais topològics isomorfs} trobem que \(X_{1}\times Y_{1}\cong X_{2}\times Y_{2}\), com volíem veure.
+			Per tant per la definició d'\myref{def:homeomorfisme entre topologies} trobem que \(h\) és un homeomorfisme, i per la definició d'\myref{def:espais topològics homeomorfs} trobem que \(X_{1}\times Y_{1}\cong X_{2}\times Y_{2}\), com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\section{La topologia quocient}
@@ -805,7 +813,7 @@
 		Aquesta definició té sentit per l'exercici \myref{ex:topologia projecció a un quocient}.
 	\end{definition}
 	\begin{example}
-		\label{ex:l'esfera en el pla és isomorfa a la recta [0,1] amb 0sim1}
+		\label{ex:l'esfera en el pla és homeomorfa a la recta [0,1] amb 0sim1}
 		Volem veure que l'espai quocient
 		\[Y=[0,1]/\{0\sim1\}\]
 		amb la projecció \(\pi\) és homeomorf a
@@ -872,9 +880,18 @@
 		Si \(I\) és finit direm que \(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment finit de \(X\), i si \(I\) és infinit direm que \(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment infinit de \(X\).
 	\end{definition}
 	\begin{definition}[Recobriment obert]
-		\labelname{Recobriment obert}\label{def:recobriment obert}
+		\labelname{recobriment obert}\label{def:recobriment obert}
 		Sigui \(\{\obert{U}_{i}\}_{i\in I}\) un recobriment d'un espai topològic \(X\) tal que per a tot \(i\) de \(I\) tenim que \(\obert{U}_{i}\) és un obert de \(X\). Aleshores direm que \(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment obert de \(X\).
 	\end{definition}
+	\begin{example}
+		\label{ex:un recobriment obert de R}
+		Volem trobar un recobriment de \(\mathbb{R}\).
+		\begin{solution}
+			Prenem la família d'oberts \(\{(-i,i)\}_{i\in\mathbb{N}}\). Aleshores tenim que
+			\[\mathbb{R}=\bigcup_{i\in\mathbb{N}}(-i,i),\]
+			ja que si \(x\) és un element de \(\mathbb{R}\) trobem que existeix un natural \(m\) tal que \(\abs{x}<m\), i per tant \(x\) pertany a l'interval \((-m,m)\).
+		\end{solution}
+	\end{example}
 	\begin{definition}[Subrecobriment]
 		\labelname{subrecobriment}\label{def:subrecobriment}
 		\labelname{subrecobriment finit}\label{def:subrecobriment finit}
@@ -883,37 +900,69 @@
 		
 		Si \(J\) és finit direm que \(\{\obert{U}_{j}\}_{j\in J}\) és un recobriment finit de \(\{\obert{U}_{i}\}_{i\in I}\), i si \(J\) és infinit direm que \(\{\obert{U}_{j}\}_{j\in J}\) és un recobriment infinit de \(\{\obert{U}_{i}\}_{i\in I}\).
 	\end{definition}
-	\begin{example}
-		Volem veure que el recobriment \(\{(-i,i)\}_{i\in\mathbb{N}}\) de \(\mathbb{R}\) no admet cap subrecobriment finit.
-		\begin{solution}
-			Suposem que existeix un subrecobriment finit de \(\{(-i,i)\}_{i\in\mathbb{N}}\). Això és que existeix un subconjunt \(I\) de \(\mathbb{N}\) finit tal que \(\{(-i,i)\}_{i\in I}\) és un recobriment de \(\mathbb{R}\).
-			
-			Ara bé, com que \(I\) és finit tenim que existeix un natural \(m\) tal que
-			\[m=\max\{i\in I\},\]
-			i tenim que \(m+1\) no pertany a cap interval de la família \(\{(-i,i)\}_{i\in I}\). Per tant trobem que
-			\[m+1\notin\bigcup_{i\in I}(-i,i).\]
-			
-			Ara bé, per la definició de \myref{def:recobriment d'un espai} trobem que ha de ser
-			\[m+1\in\mathbb{R}=\bigcup_{i\in I}(-i,i),\]
-			i arribem a contradicció, trobant que no pot existir un subrecobriment finit de \(\{(-i,i)\}_{i\in\mathbb{N}}\).
-		\end{solution}
-	\end{example}
 	\subsection{Compacitat}
 	\begin{definition}[Compacte]
 		\labelname{espai topològic compacte}\label{def:espai topològic compacte}
 		Sigui \(X\) un espai topològic tal que tot recobriment obert de \(X\) admet un subrecobriment finit. Aleshores direm que \(X\) és compacte.
 	\end{definition}
+	\begin{example}
+		\label{ex:R no és compacte}
+		Volem veure que \(\mathbb{R}\) no és compacte.
+		\begin{solution}
+			Per l'exercici \myref{ex:un recobriment obert de R} tenim que \(\{(-i,i)\}_{i\in\mathbb{N}}\) és un recobriment obert de \(\mathbb{R}\).
+			
+			Suposem que existeix un subrecobriment finit de \(\{(-i,i)\}_{i\in\mathbb{N}}\). Això és que existeix un subconjunt \(I\) de \(\mathbb{N}\) finit tal que \(\{(-i,i)\}_{i\in I}\) és un recobriment de \(\mathbb{R}\). Com que \(I\) és finit tenim que existeix un natural \(m\) tal que \(m=\max\{i\in I\}\), i tenim que \(m+1\) no pertany a cap interval de la família \(\{(-i,i)\}_{i\in I}\). Per tant trobem que
+			\[m+1\notin\bigcup_{i\in I}(-i,i).\]
+			
+			Ara bé, per la definició de \myref{def:recobriment d'un espai} trobem que ha de ser
+			\[m+1\in\mathbb{R}=\bigcup_{i\in I}(-i,i),\]
+			i arribem a contradicció, trobant que no existeix cap subrecobriment finit de \(\{(-i,i)\}_{i\in\mathbb{N}}\).
+		\end{solution}
+	\end{example}
 	\begin{proposition}
 		\label{prop:la compacitat és una propietat topològica}
-		Siguin \(X\) i \(Y\) dos espais topològics isomorfs. Aleshores \(X\) és compacte si i només si \(Y\) és compacte.
+		Siguin \(X\) i \(Y\) dos espais topològics homeomorfs. Aleshores \(X\) és compacte si i només si \(Y\) és compacte.
 		\begin{proof}
 			Per la definició de \myref{def:relació d'equivalència} tenim que si \(X\cong Y\) aleshores \(Y\cong X\), i per tant només ens cal veure que si \(X\) és compacte aleshores \(Y\) és compacte.
 			
-			Suposem doncs que \(X\) és compacte. Per la definició de \myref{def:espais topològics isomorfs} tenim que existeix un homeomorfisme \(f\colon X\longrightarrow Y\).
+			Suposem doncs que \(X\) és compacte. Per la definició de \myref{def:espais topològics homeomorfs} tenim que existeix un homeomorfisme \(f\colon X\longrightarrow Y\).
 			
 			Sigui \(\{\obert{U}_{i}\}_{i\in I}\) un recobriment obert de \(Y\). Per la definició de \myref{def:homeomorfisme entre topologies} i la definició de \myref{def:recobriment obert} tenim que la família \(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in I}\) és un recobriment obert de \(X\).
 			
 			Ara bé, per la definició d'\myref{def:espai topològic compacte} trobem que existeix un subrecobriment finit \(\{\Antiima_{\obert{U}_{j}}(f)\}_{j\in J}\) de \(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in I}\), i de nou per la definició de \myref{def:homeomorfisme entre topologies} i la definició de \myref{def:recobriment obert} tenim que la família \(\{\obert{U}_{j}\}_{j\in J}\) és un subrecobriment obert de \(\{\obert{U}_{i}\}_{i\in I}\), i per la definició d'\myref{def:espai topològic compacte} trobem que \(Y\) és compacte.
+		\end{proof}
+	\end{proposition}
+	\begin{example}
+		\label{ex:l'interval (0,1) no és compacte}
+		Volem veure que l'interval \((0,1)\) no és compacte.
+		\begin{solution}
+			Per l'exercici \myref{ex:R és homeomorf a l'interval (0,1)} tenim que l'interval \((0,1)\) és homeomorf a \(\mathbb{R}\), per l'exercici \myref{ex:R no és compacte} trobem que \(\mathbb{R}\) no és compacte i per la proposició \myref{prop:la compacitat és una propietat topològica} tenim que \((0,1)\) no és compacte.
+		\end{solution}
+	\end{example}
+	\begin{proposition}
+		\label{prop:un espai topològic finit és compacte}
+		Sigui \(X\) un espai topològic finit. Aleshores \(X\) és compacte.
+		\begin{proof}
+			Sigui \(\{\obert{U}_{i}\}_{i\in I}\) un recobriment obert de \(X\), i per la definició de \myref{def:recobriment obert} tenim que \(\{\obert{U}_{i}\}_{i\in I}\subseteq\tau\).
+			
+			Ara bé, tenim que \(\tau\subseteq\mathcal{P}(X)\), i com que \(X\) és finit, \(\mathcal{P}(X)\) també ho és, i per tant \(\{\obert{U}_{i}\}_{i\in I}\) és finit i per la definició de \myref{def:recobriment finit d'un espai} trobem que \(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment finit de \(X\), i per la definició d'\myref{def:espai topològic compacte} tenim que \(X\) és compacte.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:un espai topològic discret és compacte si i només si és finit}
+		Sigui \(X\) un espai topològic amb la topologia discreta. Aleshores \(X\) és compacte si i només si \(X\) és finit.
+		\begin{proof}
+			Comencem veient que la condició és suficient (\(\implica\)). Veurem que si \(X\) és infinit aleshores \(X\) no és compacte.
+			
+			Per l'exercici \myref{ex:topologia discreta} tenim que tot subconjunt de \(X\) és un obert, i com que
+			\[X=\bigcup_{x\in X}\{x\}\]
+			per la definició de \myref{def:recobriment obert} trobem que \(\{\{x\}\}_{x\in X}\) és un recobriment obert de \(X\).
+			
+			Ara bé, com que \(X\) és infinit, si \(\{\{x\}\}_{x\in I}\) és un subrecobriment finit de \(\{\{x\}\}_{x\in X}\) tenim que existeix algun \(x_{0}\) de \(X\) tal que \(x_{0}\notin I\), i per tant
+			\[x_{0}\notin\bigcup_{x\in I}\{x\}\]
+			i trobem que el recobriment \(\{\{x\}\}_{x\in X}\) no admet cap subrecobriment finit, i per la definició d'\myref{def:espai topològic compacte} trobem que \(X\) no és compacte.
+			
+			Per veure que la condició és necessària (\(\implicatper\)) en tenim prou amb la proposició \myref{prop:un espai topològic finit és compacte}.
 		\end{proof}
 	\end{proposition}
 	
