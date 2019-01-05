@@ -862,7 +862,7 @@
 		\[x\sim y\sii\text{existeix un }g\in G\text{ tal que }\theta_{g}(x)=y.\]
 		Aleshores denotarem per
 		\[X/\sim=X/G\]
-		la topologia quocient de \(X\) per \(G\)/
+		la topologia quocient de \(X\) per \(G\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:quocient d'un espai per l'acció d'un grup relació}.
 	\end{definition}
@@ -965,7 +965,88 @@
 			Per veure que la condició és necessària (\(\implicatper\)) en tenim prou amb la proposició \myref{prop:un espai topològic finit és compacte}.
 		\end{proof}
 	\end{proposition}
-	
+	\begin{definition}[Compacitat per tancats]
+		\labelname{compacitat per tancats}\label{def:compacitat per tancats}
+		\labelname{compacte per tancats}\label{def:compacte per tancats}
+		Sigui \(X\) un espai topològic tal que per a tota família de tancats \(\{\tancat{C}_{i}\}_{i\in I}\) de \(X\) amb
+		\[\bigcap_{i\in I}\tancat{C}_{i}=\emptyset\]
+		existeix una subfamília finita \(\{\tancat{C}_{i}\}_{i\in J}\) tal que
+		\[\bigcap_{i\in J}\tancat{C}_{i}=\emptyset.\]
+		Aleshores direm que \(X\) és compacte per tancats.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:compacte si i només si compacte per tancats}
+		\label{prop:equivalència entre compacitat i compacitat per tancats}
+		Sigui \(X\) un espai topològic. Aleshores \(X\) és compacte si i només si \(X\) és compacte per tancats.
+		\begin{proof}
+			Siguin \(X\) un espai topològic compacte i \(\{\tancat{C}_{i}\}_{i\in I}\) una família de tancats de \(X\) tals que
+			\[\bigcap_{i\in I}\tancat{C}_{i}=\emptyset.\]
+			Per la definició de \myref{def:tancat} tenim que per a tot \(i\) de \(I\) el conjunt \(\obert{U}_{i}=X\setminus\tancat{C}_{i}\) és un obert de \(X\), i tenim que
+			\begin{align*}
+				X&=X\setminus\emptyset \\
+				&=X\setminus\left(\bigcap_{i\in I}\tancat{C}_{i}\right) \\
+				&=\bigcup_{i\in I}(X\setminus\tancat{C}_{i})=\bigcup_{i\in I}\obert{U}_{i},
+			\end{align*}
+			i per la definició de \myref{def:recobriment obert} trobem que \(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment obert de \(X\). Ara bé, per la definició d'\myref{def:espai topològic compacte} tenim que existeix un subrecobriment finit \(\{\obert{U}_{i}\}_{i\in J}\) de \(\{\obert{U}_{i}\}_{i\in I}\), i per la definició de \myref{def:subrecobriment} tenim que
+			\begin{align*}
+				X&=\bigcup_{i\in J}\obert{U}_{i} \\
+				&=\bigcup_{i\in J}(X\setminus\tancat{C}_{i})=X\setminus\bigcap_{i\in J}\tancat{C}_{i},
+			\end{align*} %REFS
+			i per tant trobem que
+			\[\bigcap_{i\in J}\tancat{C}_{i}=\emptyset\]
+			i per la definició de \myref{def:compacte per tancats} trobem que \(X\) és compacte per tancats.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Compacitat de subconjunts]
+		\labelname{compacitat d'un subconjunt}\label{def:compacitat d'un subconjunt}
+		\labelname{subconjunt compacte}\label{def:subconjunt compacte}
+		\labelname{recobriment obert d'un subconjunt}\label{def:recobriment obert d'un subconjunt}
+		Sigui \(A\) un subconjunt d'un espai topològic \(X\) tal que per a tota família d'oberts \(\{\obert{U}_{i}\}_{i\in I}\) de \(X\) tal que
+		\[A\subseteq\bigcup_{i\in I}\obert{U}_{i}\]
+		existeix una subfamília finita \(\{\obert{U}_{i}\}_{i\in J}\) de \(\{\obert{U}_{i}\}_{i\in I}\) tal que
+		\[A\subseteq\bigcup_{i\in J}\obert{U}_{i}.\]
+		Aleshores direm que \(A\) és un subconjunt compacte de \(X\). També direm que \(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment obert de \(A\).
+	\end{definition}
+	\subsection{Propietats dels espais compactes}
+	\begin{theorem}
+		\label{thm:la imatge d'un compacte per una aplicació contínua és un compacte}
+		Siguin \(A\) un subconjunt compacte d'un espai topològic \(X\), \(Y\) un espai topològic i \(f\colon X\longrightarrow Y\) una aplicació contínua. Aleshores \(\Ima_{A}(f)\) és un subconjunt compacte de \(Y\).
+		\begin{proof} %REFS infinites
+			Sigui \(\{\obert{U}_{i}\}_{i\in I}\) un recobriment obert de \(\Ima_{A}(f)\). Per la definició de \myref{def:recobriment obert d'un subconjunt} trobem que
+			\[\Ima_{A}(f)\subseteq\bigcup_{i\in I}\obert{U}_{i},\]
+			i per tant tenim que
+			\[A\subseteq\bigcup_{i\in I}\Antiima_{\obert{U}_{i}}(f).\]
+			Com que, per la definició de \myref{def:recobriment obert d'un subconjunt}, per a tot \(i\) de \(I\) el conjunt \(\obert{U}_{i}\) és un obert de \(Y\), per la definició de \myref{def:funció contínua} tenim que \(\Antiima_{\obert{U}_{i}}(f)\) és un obert de \(X\), i trobem per la definició de \myref{def:recobriment obert d'un subconjunt} que \(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in I}\) és un recobriment obert de \(A\).
+			
+			Ara bé, tenim per hipòtesi que \(A\) és un subconjunt compacte de \(X\), i per la definició de \myref{def:subconjunt compacte} tenim que existeix una subfamília finita \(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in J}\) de \(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in I}\) tal que
+			\[A\subseteq\bigcup_{i\in J}\Antiima_{\obert{U}_{i}}(f).\]
+			
+			Tenim doncs que
+			\[\Ima_{A}(f)\subseteq\bigcup_{i\in J}\obert{U}_{i},\]
+			i per la definició de \myref{def:compacitat d'un subconjunt} hem acabat.
+		\end{proof}
+	\end{theorem}
+	\begin{corollary}
+		\label{cor:el quocient d'un compacte és un compacte}
+		Siguin \(X\) un espai topològic compacte i \(p\) una aplicació exhaustiva. Aleshores \(X/p\) és compacte.
+		\begin{proof}
+			Per l'observació \myref{obs:l'aplicació que indueix la topologia en un espai quocient és contínua} tenim que \(p\colon X\longrightarrow X/p\) és contínua. Per la definició d'\myref{def:imatge d'una aplicació} i la definició d'\myref{def:aplicació exhaustiva} tenim que \(X/p=\Ima(p)\), i pel Teorema \myref{thm:la imatge d'un compacte per una aplicació contínua és un compacte} trobem que \(X/p\) és compacte.
+		\end{proof}
+	\end{corollary}
+	\begin{theorem}
+		\label{thm:un tancat en un compacte és compacte}
+		Sigui \(\tancat{C}\) un tancat d'un espai topològic compacte \(X\). Aleshores \(\tancat{C}\) és compacte.
+		\begin{proof}
+			Sigui \(\{\obert{U}_{i}\}_{i\in I}\) un recobriment obert de \(\tancat{C}\). Per la definició de \myref{def:recobriment obert d'un subconjunt} tenim que
+			\[\tancat{C}\subseteq\bigcup_{i\in I}\obert{U}_{i}.\]
+			Per tant %REF
+			\[X=\left(\bigcup_{i\in I}\obert{U}_{i}\right)\cup(X\setminus\tancat{C}),\]
+			i per la definició de \myref{def:recobriment obert} tenim que \(\{\obert{U}_{i}\}_{i\in I}\cup(X\setminus\tancat{C})\) és un recobriment obert de \(X\).
+			
+			Ara bé, per hipòtesi tenim que \(X\) és un compacte, i per la definició d'\myref{def:espai topològic compacte} tenim que existeix un subrecobriment finit de~\(\{\obert{U}_{i}\}_{i\in I}\cup(X\setminus\tancat{C})\).
+			%FER
+		\end{proof}
+	\end{theorem}
 	\begin{comment}
 	\section{Espai d'Alexandroff}
 	\subsection{Propietats bàsiques}
