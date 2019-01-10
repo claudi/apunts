@@ -1963,7 +1963,7 @@
 		Sigui \(f\) una extensió periòdica parell. Aleshores
 		\[\sfourier(f)(x)=A_{0}+2\sum_{n=1}^{\infty}A_{n}\cos(2\uppi nx),\]
 		on
-		\[A_{n}=\int_{0}^{1}f(x)\cos(2\uppi nx).\] % A_{0}=\int_{0}^{1}f(x)\diff x
+		\[A_{n}=\int_{0}^{1}f(x)\cos(2\uppi nx)\diff x.\] % A_{0}=\int_{0}^{1}f(x)\diff x
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1973,7 +1973,7 @@
 		Sigui \(f\) una extensió periòdica senar. Aleshores
 		\[\sfourier(f)(x)=2\sum_{n=1}^{\infty}B_{n}\sin(2\uppi nx),\]
 		on
-		\[B_{n}=\int_{0}^{1}f(x)\sin(2\uppi nx).\]
+		\[B_{n}=\int_{0}^{1}f(x)\sin(2\uppi nx)\diff x.\]
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1982,7 +1982,7 @@
 		Sigui \(f\) una extensió periòdica. Aleshores
 		\[\sfourier(f)(x)=A_{0}+2\sum_{n=1}^{\infty}A_{n}\cos(2\uppi nx)+2\sum_{n=1}^{\infty}B_{n}\sin(2\uppi nx),\]
 		on
-		\[A_{n}=\int_{0}^{1}f(x)\cos(2\uppi nx)\quad\text{i}\quad B_{n}=\int_{0}^{1}f(x)\sin(2\uppi nx).\]
+		\[A_{n}=\int_{0}^{1}f(x)\cos(2\uppi nx)\diff x\quad\text{i}\quad B_{n}=\int_{0}^{1}f(x)\sin(2\uppi nx)\diff x.\]
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1999,5 +1999,9 @@
 % Encara no se d'on treure integrals impròpies
 % Fourier amb Tolstov (Fourier Series)
 
-% sin(arccos(f(x))) (utilitzar sin(x)=sqrt(1+cos(f(x))^2)
+% sin(arccos(f(x))), utilitzar sin(x)=sqrt(1+cos(f(x))^2)
+% ens queda sqrt(1+f(x)^2)
+
 % http://www.math.uconn.edu/~kconrad/blurbs/analysis/diffunderint.pdf lol
+
+% Exemple: \[\varphi=1+2\sin\left(\frac{\pi}{10}\right)\]

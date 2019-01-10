@@ -1,1 +1,1 @@
-Afegida teoria i exemples a topologia fins als tres resultats importants de compacitat.
+Afegida teoria i exemples a topologia fins a haver demostrat els tres resultats importants de compacitat.

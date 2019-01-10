@@ -652,7 +652,7 @@
 		\label{thm:una aplicació és contínua si i només si les seves components són contínues}
 		Siguin \(Z\) amb la topologia \(\tau_{Z}\) un espai topològic, \(X\times Y\) amb la topologia producte de \(X\) i \(Y\), \(f\colon Z\longrightarrow X\times Y\) una aplicació. Aleshores \(f\) és contínua si i només si les aplicacions \(\pi_{X}\circ f\) i \(\pi_{Y}\circ f\) són contínues.
 		\begin{proof}
-			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(f\) és contínua. Aleshores per l'exercici \myref{ex:les projeccions en la topologia producte són contínues i obertes} trobem que les aplicacions \(\pi_{X}\) i \(\pi_{Y}\) són contínues i per l'observació \myref{obs:la composició d'aplicacions contínues és contínua} hem acabat.
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(f\) és contínua. Aleshores per l'exemple \myref{ex:les projeccions en la topologia producte són contínues i obertes} trobem que les aplicacions \(\pi_{X}\) i \(\pi_{Y}\) són contínues i per l'observació \myref{obs:la composició d'aplicacions contínues és contínua} hem acabat.
 			
 			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que les aplicacions \(\pi_{X}\circ f\) i \(\pi_{Y}\circ f\) són contínues.
 			
@@ -810,7 +810,7 @@
 		\end{align*}
 		Aleshores denotem la topologia \(Y\) induïda per \(\pi\) com \(X/\sim\).
 		
-		Aquesta definició té sentit per l'exercici \myref{ex:topologia projecció a un quocient}.
+		Aquesta definició té sentit per l'exemple \myref{ex:topologia projecció a un quocient}.
 	\end{definition}
 	\begin{example}
 		\label{ex:l'esfera en el pla és homeomorfa a la recta [0,1] amb 0sim1}
@@ -909,7 +909,7 @@
 		\label{ex:R no és compacte}
 		Volem veure que \(\mathbb{R}\) no és compacte.
 		\begin{solution}
-			Per l'exercici \myref{ex:un recobriment obert de R} tenim que \(\{(-i,i)\}_{i\in\mathbb{N}}\) és un recobriment obert de \(\mathbb{R}\).
+			Per l'exemple \myref{ex:un recobriment obert de R} tenim que \(\{(-i,i)\}_{i\in\mathbb{N}}\) és un recobriment obert de \(\mathbb{R}\).
 			
 			Suposem que existeix un subrecobriment finit de \(\{(-i,i)\}_{i\in\mathbb{N}}\). Això és que existeix un subconjunt \(I\) de \(\mathbb{N}\) finit tal que \(\{(-i,i)\}_{i\in I}\) és un recobriment de \(\mathbb{R}\). Com que \(I\) és finit tenim que existeix un natural \(m\) tal que \(m=\max\{i\in I\}\), i tenim que \(m+1\) no pertany a cap interval de la família \(\{(-i,i)\}_{i\in I}\). Per tant trobem que
 			\[m+1\notin\bigcup_{i\in I}(-i,i).\]
@@ -936,7 +936,7 @@
 		\label{ex:l'interval (0,1) no és compacte}
 		Volem veure que l'interval \((0,1)\) no és compacte.
 		\begin{solution}
-			Per l'exercici \myref{ex:R és homeomorf a l'interval (0,1)} tenim que l'interval \((0,1)\) és homeomorf a \(\mathbb{R}\), per l'exercici \myref{ex:R no és compacte} trobem que \(\mathbb{R}\) no és compacte i per la proposició \myref{prop:la compacitat és una propietat topològica} tenim que \((0,1)\) no és compacte.
+			Per l'exemple \myref{ex:R és homeomorf a l'interval (0,1)} tenim que l'interval \((0,1)\) és homeomorf a \(\mathbb{R}\), per l'exemple \myref{ex:R no és compacte} trobem que \(\mathbb{R}\) no és compacte i per la proposició \myref{prop:la compacitat és una propietat topològica} tenim que \((0,1)\) no és compacte.
 		\end{solution}
 	\end{example}
 	\begin{proposition}
@@ -954,7 +954,7 @@
 		\begin{proof}
 			Comencem veient que la condició és suficient (\(\implica\)). Veurem que si \(X\) és infinit aleshores \(X\) no és compacte.
 			
-			Per l'exercici \myref{ex:topologia discreta} tenim que tot subconjunt de \(X\) és un obert, i com que
+			Per l'exemple \myref{ex:topologia discreta} tenim que tot subconjunt de \(X\) és un obert, i com que
 			\[X=\bigcup_{x\in X}\{x\}\]
 			per la definició de \myref{def:recobriment obert} trobem que \(\{\{x\}\}_{x\in X}\) és un recobriment obert de \(X\).
 			
@@ -1043,10 +1043,84 @@
 			\[X=\left(\bigcup_{i\in I}\obert{U}_{i}\right)\cup(X\setminus\tancat{C}),\]
 			i per la definició de \myref{def:recobriment obert} tenim que \(\{\obert{U}_{i}\}_{i\in I}\cup(X\setminus\tancat{C})\) és un recobriment obert de \(X\).
 			
-			Ara bé, per hipòtesi tenim que \(X\) és un compacte, i per la definició d'\myref{def:espai topològic compacte} tenim que existeix un subrecobriment finit de~\(\{\obert{U}_{i}\}_{i\in I}\cup(X\setminus\tancat{C})\).
-			%FER
+			Ara bé, per hipòtesi tenim que \(X\) és un compacte, i per la definició d'\myref{def:espai topològic compacte} tenim que existeix un subrecobriment finit de~\(\{\obert{U}_{i}\}_{i\in I}\cup(X\setminus\tancat{C})\), i per tant existeix un subconjunt finit \(J\) de \(I\) tal que
+			\[\tancat{C}\subseteq\bigcup_{i\in J}\obert{U}_{i},\]
+			i per la definició de \myref{def:compacitat d'un subconjunt} hem acabat.
 		\end{proof}
 	\end{theorem}
+	\begin{theorem}[Teorema de Tychonoff]
+		\labelname{Teorema de Tychonoff}\label{thm:Teorema de Tychonoff}
+		Siguin \(X\) i \(Y\) dos espais topològics no buits. Aleshores \(X\times Y\) és compacte si i només si \(X\) i \(Y\) són compactes.
+		\begin{proof}
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(X\times Y\) és un compacte. Per l'exemple \myref{ex:les projeccions en la topologia producte són contínues i obertes} trobem que les projeccions
+			\begin{align*}
+				\pi_{X}\colon X\times Y&\longrightarrow X \\
+				(x,y)&\longmapsto x
+			\end{align*}
+			i
+			\begin{align*}
+				\pi_{Y}\colon X\times Y&\longrightarrow Y \\
+				(x,y)&\longmapsto y
+			\end{align*}
+			són aplicacions contínues, i per la proposició \ref{prop:la compacitat és una propietat topològica} trobem que \(X\) i \(Y\) són compactes.
+			
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que \(X\) i \(Y\) són compactes i sigui \(\{\obert{W}_{i}\}_{i\in I}\) un recobriment obert de \(X\times Y\).
+			
+			Prenem un punt \(x_{0}\) de \(X\). Aleshores per la definició de \myref{def:recobriment d'un espai} tenim que per a tot \(y\) de \(Y\) existeix un \(i_{x_{0},y}\) de \(I\) tal que el punt~\((x_{0},y)\) pertany a \(\obert{W}_{i_{x_{0},y}}\), i per la definició de \myref{def:topologia quocient} tenim que existeixen oberts \(\obert{U}_{i_{x_{0},y}}\) i \(\obert{V}_{i_{x_{0},y}}\) de \(X\) i \(Y\), respectivament, tals que
+			\[(x_{0},y)\in\obert{U}_{i_{x_{0},y}}\times\obert{V}_{i_{x_{0},y}}\subseteq\obert{W}_{i_{x_{0},y}}.\]
+			
+			Trobem doncs que
+			\begin{align*}
+				Y&=\bigcup_{y\in Y}\{y\} \\
+				&\subseteq\bigcup_{y\in Y}\obert{V}_{i_{x_{0},y}}\subseteq Y,
+			\end{align*}
+			i pel \myref{thm:doble inclusió} trobem que
+			\[\bigcup_{y\in Y}\obert{V}_{i_{x_{0},y}}=Y.\]
+			Aleshores per la definició de \myref{def:recobriment obert} trobem que \(\{\obert{V}_{i_{x_{0},y}}\}_{y\in Y}\) és un recobriment obert de \(Y\), i com que, per hipòtesi, \(Y\) és compacte, tenim per la definició d'\myref{def:espai topològic compacte} que existeix un subrecobriment finit \(\{\obert{V}_{i_{x_{0},y}}\}_{y\in Y_{x_{0}}}\) de \(\{\obert{V}_{i_{x_{0},y}}\}_{y\in Y}\).
+			
+			Definim ara
+			\begin{equation}
+				\label{thm:Teorema de Tychonoff:eq2}
+				\obert{U}_{x_{0}}=\bigcap_{y\in Y_{x_{0}}}\obert{U}_{i_{x_{0},y}}.
+			\end{equation}
+			Com que \(Y_{x_{0}}\) és finit, trobem per la definició de \myref{def:topologia} que \(\obert{U}_{x_{0}}\) és un obert de \(X\). Tenim doncs que
+			\begin{align*}
+				X&=\bigcup_{x\in X}\{x\} \\
+				&\subseteq\bigcup_{x\in X}\obert{U}_{x}\subseteq X,
+			\end{align*}
+			i pel \myref{thm:doble inclusió} trobem que
+			\[\bigcup_{x\in X}\obert{U}_{x}=X,\]
+			i de nou per la definició de \myref{def:recobriment obert} trobem que \(\{\obert{U}_{x}\}_{x\in X}\) és un recobriment obert de \(X\), i per la definició d'\myref{def:espai topològic compacte} trobem que existeix un subrecobriment finit \(\{\obert{U}_{x}\}_{x\in J'}\) de \(\{\obert{U}_{x}\}_{x\in X}\).
+			
+			Definim el conjunt
+			\begin{equation}
+				\label{thm:Teorema de Tychonoff:eq1}
+				J=\{(x,y)\in X\times Y\mid x\in J'\text{ i }y\in Y_{x}\}
+			\end{equation}
+			i considerem la subfamília
+			\[\{\obert{W}_{i_{x,y}}\}_{(x,y)\in J}\]
+			de \(\{\obert{W}_{i}\}_{i\in I}\). Sigui \((x,y)\) un punt de \(X\times Y\). Aleshores, com que la família \(\{\obert{U}_{x}\}_{x\in J'}\) és un recobriment de \(X\) trobem per la definició de \myref{def:recobriment d'un espai} que existeix un \(p\) de \(J'\) tal que \(x\) pertany a \(\obert{U}_{p}\), i com que la família \(\{\obert{V}_{i_{x_{0},y}}\}_{y\in Y_{p}}\) és un recobriment de \(Y\) trobem que existeix un \(q\) de \(Y_{p}\) tal que \(y\) pertany a \(\obert{V}_{q}\).
+			
+			Ara bé, també tenim per \eqref{thm:Teorema de Tychonoff:eq2} i la definició d'\myref{def:intersecció de conjunts} que \(x\) pertany a \(\obert{U}_{i_{p,q}}\), i per tant
+			\[(x,y)\in\obert{U}_{i_{p,q}}\times\obert{V}_{i_{p,q}}\subseteq\obert{W}_{i_{p,q}},\]
+			i per tant tenim que \(\{\obert{W}_{i_{x,y}}\}_{(x,y)\in J}\) és un subrecobriment de \(\{\obert{W}_{i}\}_{i\in I}\), i com que els conjunts \(J'\) i \(Y_{x}\) són finits, trobem per \eqref{thm:Teorema de Tychonoff:eq1} que \(J\) és finit, aleshores per la definició de \myref{def:subrecobriment finit} trobem que \(\{\obert{W}_{i_{x,y}}\}_{(x,y)\in J}\) és un subrecobriment finit de \(\{\obert{W}_{i}\}_{i\in I}\) i per la definició d'\myref{def:espai topològic compacte} tenim que \(X\times Y\) és compacte, com volíem.
+		\end{proof}
+	\end{theorem}
+%	\section{Els compactes de \ensuremath{\mathbb{R}^{n}}}
+%	\subsection{Teorema de Heine-Borel}
+%	\begin{theorem}[Teorema de Heine-Borel]
+%		\labelname{Teorema de Heine-Borel}\label{thm:Teorema de Heine-Borel}
+%		Sigui \(S\) un subconjunt de \(\mathbb{R}^{n}\). Aleshores \(S\) és compacte si i només si \(S\) és tancat i acotat.
+%		\begin{proof}
+%			%TODO
+%		\end{proof}
+%	\end{theorem}
+%	\subsection{Compactificació per un punt}
+%	\begin{definition}[Compactificació per un punt]
+%		\labelname{compactificació per un punt}\label{def:compactificació per un punt}
+%		Siguin \(X\) un espai topològic i \(x_{0}\) un element que no pertany a \(X\).
+%	\end{definition}
+	
 	\begin{comment}
 	\section{Espai d'Alexandroff}
 	\subsection{Propietats bàsiques}
