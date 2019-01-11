@@ -741,7 +741,7 @@
 	\begin{observation}
 		\label{obs:l'aplicació que indueix la topologia en un espai quocient és contínua}
 		Sigui \(Y\) un espai topològic amb la topologia quocient per una aplicació \(p\). Aleshores \(p\) és contínua.
-	\end{observation}
+	\end{observation} %REF prove?
 	\begin{proposition}
 		\label{prop:la topologia quocient és equivalent per tancats}
 		Sigui \(Y\) un espai topològic amb la topologia quocient per una aplicació \(p\). Aleshores un subconjunt \(\tancat{C}\) de \(Y\) és tancat si i només si \(\Antiima_{\tancat{C}}(p)\) és un tancat.
@@ -834,6 +834,10 @@
 		\labelname{acció d'un grup sobre un espai topològic}\label{def:acció d'un grup sobre un espai topològic}
 		Siguin \(G\) amb l'operació \(\ast\) un grup amb element neutre \(e\) i \(X\) un espai topològic tals que per a tot \(g\) de \(G\) existeix una aplicació contínua \(\theta_{g}\colon X\longrightarrow X\) tal que per a tot \(x\) de \(X\) es satisfà \(\theta_{e}(x)=x\) i per a tot \(g\) i \(h\) de \(G\) es satisfà \(\theta_{g}\circ\theta_{h}=\theta_{g\ast h}\). Aleshores direm que \(G\) actua sobre \(X\).
 	\end{definition}
+	\begin{observation}
+		\label{obs:els accions de grup en un espai topològic són homeomorfismes}
+		Sigui \(G\) un grup que actua sobre \(X\) i \(g\) un element de \(G\). Aleshores \(\theta_{g}\) és un homeomorfisme.
+	\end{observation} %FER Prove?
 	\begin{definition}[Domini fonamental]
 		\labelname{domini fonamental}\label{def:domini fonamental}
 		Siguin \(G\) un grup que actua sobre un espai topològic \(X\) i \(D\) un subespai de \(X\) tal que per a tot \(x\) de \(X\) existeixen un \(g\) de \(G\) i \(d\) de \(D\) tals que
@@ -864,7 +868,7 @@
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Quocient d'un espai per l'acció d'un grup]
-		\labelname{quocient d'un espai per l'acció d'un grup}\label{def:quocient d'un es[ai per l'acció d'un grup}
+		\labelname{quocient d'un espai per l'acció d'un grup}\label{def:quocient d'un espai per l'acció d'un grup}
 		Sigui \(G\) amb l'operació \(\ast\) un grup que actua sobre un espai topològic \(X\) i \(\sim\) la relació d'equivalència definida per a tot \(x\) i \(y\) de \(X\) com
 		\[x\sim y\sii\text{existeix un }g\in G\text{ tal que }\theta_{g}(x)=y.\]
 		Aleshores denotarem per
@@ -1224,11 +1228,11 @@
 	\end{proposition}
 	\begin{definition}[Espai regular]
 		\labelname{espai regular}\label{def:espai regular}
-		Sigui \(X\) un espai de Fréchet tal que donats un tancat \(\tancat{C}\) i un punt \(x\) que no pertany a \(\tancat{C}\) existeixen dos oberts disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(x\) pertany a \(\obert{U}\) i \(\obert{V}\) és un subconjunt de \(\tancat{C}\). Aleshores direm que \(X\) és un espai regular.
+		Sigui \(X\) un espai de Fréchet tal que donats un tancat \(\tancat{C}\) i un punt \(x\) que no pertany a \(\tancat{C}\) existeixen dos oberts disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(x\) pertany a \(\obert{U}\) i \(\tancat{C}\) és un subconjunt de \(\obert{V}\). Aleshores direm que \(X\) és un espai regular.
 	\end{definition}
 	\begin{definition}[Espai normal]
 		\labelname{espai normal}\label{def:espai normal}
-		Sigui \(X\) un espai de Fréchet tal que donats dos tancats disjunts \(\tancat{C}\) i \(\tancat{K}\) existeixen dos oberts disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(\obert{U}\) és un subconjunt de \(\tancat{C}\) i \(\obert{V}\) és un subconjunt de \(\tancat{K}\). Aleshores direm que \(X\) és un espai normal.
+		Sigui \(X\) un espai de Fréchet tal que donats dos tancats disjunts \(\tancat{C}\) i \(\tancat{K}\) existeixen dos oberts disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(\tancat{C}\) és un subconjunt de \(\obert{U}\) i \(\tancat{K}\) és un subconjunt de \(\obert{V}\). Aleshores direm que \(X\) és un espai normal.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:els espais normals són espais regulars}
@@ -1236,7 +1240,7 @@
 		\begin{proof}
 			Sigui \(\tancat{C}\) un tancat de \(X\) i \(x\) un punt de \(X\setminus\tancat{C}\). Com que per hipòtesi \(X\) és un espai normal, per la definició d'\myref{def:espai normal} trobem que \(X\) és un espai de Fréchet, i per la proposició \myref{prop:en un espai de Fréchet els punts són tancats} trobem que el conjunt \(\{x\}\) és un tancat, i tenim que \(\{x\}\) i \(\tancat{C}\) són disjunts.
 			
-			Ara bé, per la definició d'\myref{def:espai normal} trobem que existeixen dos oberts disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(\obert{U}\) és un subconjunt de \(\{x\}\) i \(\obert{V}\) és un subconjunt de \(\tancat{C}\). Aleshores tenim que \(\obert{U}=\{x\}\), i per tant \(x\) pertany a \(\obert{U}\), i per la definició d'\myref{def:espai regular} trobem que \(X\) és un espai regular.
+			Ara bé, per la definició d'\myref{def:espai normal} trobem que existeixen dos oberts disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(\{x\}\) és un subconjunt de \(\obert{U}\) i \(\tancat{C}\) és un subconjunt de \(\obert{V}\). Aleshores tenim que \(x\) pertany a \(\obert{U}\), i per la definició d'\myref{def:espai regular} trobem que \(X\) és un espai regular.
 		\end{proof}
 	\end{proposition}
 	\subsection{Propietats dels espais Hausdorff}
@@ -1299,6 +1303,7 @@
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
+		\label{thm:els espais Hausdorff compactes són espais normals}
 		Sigui \(X\) un espai Hausdorff compacte. Aleshores \(X\) és un espai normal.
 		\begin{proof} % Llegir. L'he copiat com un loro
 			Siguin \(\tancat{C}\) i \(\tancat{K}\) dos tancats disjunts i fixem un punt \(x\) de \(\tancat{C}\). Com que, per hipòtesi, \(X\) és Hausdorff, per la definició de \myref{def:espai Hausdorff} trobem que per a tot \(y\) de \(\tancat{K}\) existeixen dos oberts disjunts \(\obert{U}_{x,y}\) i \(\obert{V}_{x,y}\) tals que \(x\) pertany a \(\obert{U}_{x,y}\) i \(y\) pertany a \(\obert{V}_{x,y}\). Tenim doncs que
@@ -1324,12 +1329,44 @@
 			i \(\tancat{C}\) és un subconjunt de \(\obert{U}\) i \(\tancat{K}\) és un subconjunt de \(\obert{V}\), i per la definició d'\myref{def:espai normal} hem acabat.
 		\end{proof}
 	\end{theorem}
-	\begin{proposition}
-		Sigui \(G\) un grup que actua sobre un espai Hausdorff compacte \(X\). Aleshores \(X/G\) és un espai Hausdorff compacte.
+	\begin{lemma}
+		\label{lemma:els elements del quocient d'un Hausdorff compacte per un grup finit són tancats en l'espai original}
+		Siguin \(G\) un grup finit que actua sobre un espai Hausdorff compacte \(X\) i \(x\) un punt de \(X\). Aleshores \(\overline{x}\) és un tancat de \(X\).
 		\begin{proof}
-			%TODO
+			Per la definició de \myref{def:classe d'equivalència} trobem que
+			\[\overline{y}=\{x\in X\mid x\sim y\},\]
+			i per la definició de \myref{def:quocient d'un espai per l'acció d'un grup} trobem que
+			\[\overline{y}=\{x\in X\mid\text{ existeix un }g\in G\text{ tal que }y=\theta_{g}(x)\}.\]
+			
+			Com que per hipòtesi \(G\) és finit, trobem que \(\overline{y}\) és finit. Tenim també que
+			\[\overline{y}=\bigcup_{x\in\overline{y}}\{x\},\]
+			i com que \(\overline{y}\) és finit aquesta és una unió finita. Ara bé, per la proposició \myref{prop:els punts en un Hausdorff són tancats} trobem que els conjunts \(\{x\}\) són tancats i pel Teorema \myref{thm:equivalència obert tancat definició de topologia} hem acabat.
 		\end{proof}
-	\end{proposition}
+	\end{lemma}
+	\begin{theorem}
+		\label{thm:el quocient d'un Hausdorff compacte per un grup finit és Hausdorff compacte}
+		Sigui \(G\) un grup finit que actua sobre un espai Hausdorff compacte \(X\). Aleshores \(X/G\) és un espai Hausdorff compacte.
+		\begin{proof} % http://math.ucr.edu/~res/math205C-2011/freeactions.pdf % Revisar
+			Siguin \(x\) i \(y\) dos punts de \(X\) tals que \(\overline{x}\) és diferent de \(\overline{y}\). Pel lema \myref{lemma:els elements del quocient d'un Hausdorff compacte per un grup finit són tancats en l'espai original} trobem que \(\overline{y}\) és un tancat, i per la proposició \myref{prop:els punts en un Hausdorff són tancats} trobem que el conjunt \(\{x\}\) és un tancat.
+			
+			Per hipòtesi tenim que \(X\) és un espai Hausdorff compacte, i pel Teorema \myref{thm:els espais Hausdorff compactes són espais normals} trobem que \(X\) és un espai normal. Aleshores per la definició d'\myref{def:espai normal} trobem que existeixen dos oberts disjunts \(\obert{U}'\) i \(\obert{V}'\) tals que \(\{x\}\) és un subconjunt de \(\obert{U}'\) i \(\overline{y}\) és un subconjunt de \(\obert{V}'\).
+			
+			Sigui
+			\[\obert{V}=\bigcap_{g\in G}\Ima_{\obert{V}'}(\theta_{g}).\]
+			Per la definició de \myref{def:topologia quocient} trobem que \(\Ima_{\obert{V}'}(\theta_{g})\) és un obert de \(X/G\), i com que per hipòtesi \(G\) és finit, pel Teorema \myref{thm:equivalència obert tancat definició de topologia} trobem que \(\obert{V}\) és un obert de \(X/G\). També tenim per la definició de \myref{def:quocient d'un espai per l'acció d'un grup} que \(\overline{y}\) és un element de \(\obert{V}\). Per l'observació{obs:els accions de grup en un espai topològic són homeomorfismes} tenim que \(\theta_{g}\) és un homeomorfisme, i per la definició d'\myref{def:homeomorfisme entre topologies} trobem que \(\theta_{g}\) és bijectiva. Aleshores, com que tenim que \(\obert{U}'\) i \(\obert{V}'\) són disjunts tenim que \(\obert{U}'\) i \(\obert{V}\) són disjunts. Sigui ara
+			\[\obert{U}=\bigcup_{g\in G}\Ima_{\obert{U}'}(\theta_{g}).\]
+			Per la definició de \myref{def:topologia quocient} trobem que \(\Ima_{\obert{U}'}(\theta_{g})\) és un obert de \(X/G\), i per la definició de \myref{def:topologia} trobem que \(\obert{U}\) és un obert de \(X/G\). Per l'observació{obs:els accions de grup en un espai topològic són homeomorfismes} tenim que \(\theta_{g}\) és un homeomorfisme, i per la definició d'\myref{def:homeomorfisme entre topologies} trobem que \(\theta_{g}\) és bijectiva. Aleshores, com que tenim que \(\obert{U}'\) i \(\obert{V}\) són disjunts tenim que \(\obert{U}\) i \(\obert{V}\) són disjunts.
+			
+			Sigui \(\pi\) la projecció
+			\begin{align*}
+				\pi\colon X&\longrightarrow X/G \\
+				x&\longmapsto\overline{x}.
+			\end{align*}
+			Per la definició de \myref{def:topologia quocient} trobem que els conjunts \(\Ima_{\obert{U}}(\pi)\) i \(\Ima_{\obert{V}}(\pi)\) són oberts de \(X/G\), i tenim que aquests són disjunts ja que si \(\pi(z)\) pertany a la seva intersecció, per la definició de \myref{def:quocient d'un espai per l'acció d'un grup} trobem que \(\overline{z}\) ha de ser un element de \(\obert{U}\cap\obert{V}\), i tenim que aquests són disjunts. Per tant per la definició d'\myref{def:espai Hausdorff} tenim que \(X/G\) és Hausdorff.
+			
+			Per l'observació \myref{obs:l'aplicació que indueix la topologia en un espai quocient és contínua} tenim que \(\pi\) és contínua, i pel Teorema \myref{thm:la imatge d'un compacte per una aplicació contínua és un compacte} trobem que \(X/G\) és compacte i hem acabat.
+		\end{proof}
+	\end{theorem}
 	\section{La topologia de Zariski}
 	\subsection{Propietats de la topologia de Zariski}
 	
@@ -1414,3 +1451,4 @@
 \end{document}
 
 % https://arxiv.org/pdf/0708.2136.pdf (L) Sorprenentment elegant (Espais d'Alexandroff)
+% http://math.ucr.edu/~res/math205C-2011/freeactions.pdf El quocient d'un espai Hausdorff compacte per un grup és Hausdorff compacte
