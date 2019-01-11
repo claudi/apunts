@@ -650,6 +650,11 @@
 			i per tant trobem que \(\{\pi_{X}(x,y)\in X\mid(x,y)\in A\}\) és un obert de \(X\), i per la definició d'\myref{def:aplicació oberta} trobem que \(\pi_{X}\) és una aplicació oberta. % REVISAR? Estic medio empanado
 		\end{solution}
 	\end{example}
+	\begin{corollary} %REF
+		\label{cor:un espai topològic producte amb un element és homeomorf a l'espai topològic}
+		Sigui \(X\) un espai topològic i \(y\) un element. Aleshores
+		\[X\times\{y\}\cong X.\]
+	\end{corollary}
 	\begin{theorem}
 		\label{thm:una aplicació és contínua si i només si les seves components són contínues}
 		Siguin \(Z\) amb la topologia \(\tau_{Z}\) un espai topològic, \(X\times Y\) amb la topologia producte de \(X\) i \(Y\), \(f\colon Z\longrightarrow X\times Y\) una aplicació. Aleshores \(f\) és contínua si i només si les aplicacions \(\pi_{X}\circ f\) i \(\pi_{Y}\circ f\) són contínues.
@@ -1147,9 +1152,17 @@
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
+		\label{prop:els punts en un Hausdorff són tancats}
 		Sigui \(X\) un espai Hausdorff. Aleshores per a tot \(x\) el conjunt \(\{x\}\) és un tancat.
 		\begin{proof}
-			Per la definició d'\myref{def:espai Hausdorff} trobem que per a tot punt \(y\) diferent de \(x\) existeixen dos oberts disjunts \(\obert{U}_{y}\) i \(\obert{V}_{y}\) tals que \(x\) pertany a \(\obert{U}_{y}\) i \(y\) pertany a \(\obert{V}_{y}\). %TODO
+			Per la definició d'\myref{def:espai Hausdorff} trobem que per a tot punt \(y\) diferent de \(x\) existeixen dos oberts disjunts \(\obert{U}_{y}\) i \(\obert{V}_{y}\) tals que \(x\) pertany a \(\obert{U}_{y}\) i \(y\) pertany a \(\obert{V}_{y}\). Aleshores tenim que
+			\begin{align*}
+				X\setminus\{x\}&=\bigcup_{y\in X\setminus\{x\}}\{y\} \\
+				&\subseteq\bigcup_{y\in X\setminus\{x\}}\obert{U}_{y}\subseteq X\setminus\{x\}
+			\end{align*}
+			i pel \myref{thm:doble inclusió} trobem que
+			\[X\setminus\{x\}=\bigcup_{y\in X\setminus\{x\}}\obert{U}_{y}.\]
+			Ara bé, per la definició de \myref{def:topologia} trobem que \(X\setminus\{x\}\) és un obert, i per la definició de \myref{def:tancat} trobem que \(\{x\}\) és un tancat.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
@@ -1159,7 +1172,7 @@
 			Siguin \(x\) i \(y\) dos elements diferents de \(A\). Aleshores per la definició d'espai Hausdorff tenim que existeixen dos oberts disjunts \(\obert{U}\) i \(\obert{V}\) de \(X\) tals que \(x\) pertany a \(\obert{U}\) i \(y\) pertany a \(\obert{V}\). Aleshores per la definició de \myref{def:topologia induida per un subconjunt} trobem que els conjunts \(\obert{U}\cap A\) i \(\obert{V}\cap A\) són oberts disjunts de \(A\) que contenen \(x\) i \(y\), respectivament, i per la definició de \myref{def:espai Hausdorff} hem acabat.
 		\end{proof}
 	\end{proposition}
-	\subsection{Axiomes de separació}
+	\subsection{Axiomes de separació de Tychonoff}
 	\begin{definition}[Espai de Kolmogorov]
 		\labelname{espai de Kolmogorov}\label{def:espai de Kolmogorov}
 		Sigui \(X\) un espai topològic tal que per a tots dos punts diferents \(x\) i \(y\) existeix un obert tal que \(\obert{U}\) o bé conté \(x\) i no \(y\) o bé conté \(y\) i no \(x\). Aleshores direm que \(X\) és un espai de Kolmogorov.
@@ -1169,33 +1182,69 @@
 		Sigui \(X\) un espai topològic tal que per a tots dos punts diferents \(x\) i \(y\) existeixen dos oberts \(\obert{U}\) i \(\obert{V}\) tals que \(x\) pertany a \(\obert{U}\setminus\obert{V}\) i \(y\) pertany a \(\obert{V}\setminus\obert{U}\).
 	\end{definition}
 	\begin{proposition}
+		\label{prop:els espais de Fréchet són de Kolmogorov}
+		Sigui \(X\) un espai de Fréchet. Aleshores \(X\) és un espai de Kolmogorov.
+		\begin{proof}
+			Siguin \(x\) i \(y\) dos punts diferents de \(X\). Aleshores per la definició d'\myref{def:espai de Fréchet} trobem que existeixen dos oberts \(\obert{U}\) i \(\obert{V}\) tals que \(x\) pertany a \(\obert{U}\setminus\obert{V}\) i \(y\) pertany a \(\obert{V}\setminus\obert{U}\). En particular \(x\) pertany a \(\obert{U}\) i \(y\) no pertany a \(\obert{U}\), i per la definició d'\myref{def:espai de Kolmogorov} hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
 		\label{prop:si en un espai topològic tots els punts són tancats aquest és Fréchet}
 		Sigui \(X\) un espai tal que per a tot \(x\) de \(X\), el conjunt \(\{x\}\) és un tancat. Aleshores \(X\) és un espai de Fréchet.
 		\begin{proof}
-			Siguin \(x\) i \(y\) dos punts diferents de \(X\). Per hipòtesi tenim que els conjunts \(\{x\}\) i \(\{y\}\) són tancats i per la definició de \myref{def:tancat} trobem que els conjunts \(X\setminus\{x\}\) i \(X\setminus\{y\}\) són oberts. Ara bé, com que per hipòtesi els punts \(x\) i \(y\) són diferents trobem que \(x\) pertany a \(X\setminus\{y\}\) i \(y\) pertany a \(X\setminus\{x\}\), i per la definició d'\myref{def:espai de Fréchet} trobem que \(X\) és un espai Fréchet, com volíem veure.
+			Siguin \(x\) i \(y\) dos punts diferents de \(X\). Per hipòtesi tenim que els conjunts \(\{x\}\) i \(\{y\}\) són tancats i per la definició de \myref{def:tancat} trobem que els conjunts \(X\setminus\{x\}\) i \(X\setminus\{y\}\) són oberts. Ara bé, com que per hipòtesi els punts \(x\) i \(y\) són diferents trobem que \(x\) pertany a \(X\setminus\{y\}\) i \(y\) pertany a \(X\setminus\{x\}\), i per la definició d'\myref{def:espai de Fréchet} trobem que \(X\) és un espai de Fréchet, com volíem veure.
 		\end{proof}
 	\end{proposition}
-%	\begin{proposition}
-%		\label{prop:ser espai de Fréchet és equivalent a que tots els punts són tancats}
-%		Siguin \(X\) un espai de Fréchet i \(x\) un punt de \(X\). Aleshores \(\{x\}\) és un tancat.
-%		\begin{proof}
-%			%TODO
-%		\end{proof}
-%	\end{proposition}
+	\begin{corollary}
+		\label{cor:els espais Hausdorff són Fréchet}
+		Sigui \(X\) un espai Hausdorff. Aleshores \(X\) és un espai de Fréchet.
+		\begin{proof}
+			Per la proposició \myref{prop:els punts en un Hausdorff són tancats} trobem que si \(x\) és un punt de \(X\) aleshores el conjunt \(\{x\}\) és un tancat, i per la proposició \myref{prop:si en un espai topològic tots els punts són tancats aquest és Fréchet} trobem que \(X\) és un espai de Fréchet.
+		\end{proof}
+	\end{corollary}
+	\begin{proposition}
+		\label{prop:en un espai de Fréchet els punts són tancats}
+		Siguin \(X\) un espai de Fréchet i \(x\) un punt de \(X\). Aleshores \(\{x\}\) és un tancat.
+		\begin{proof}
+			Per la definició d'\myref{def:espai de Fréchet} trobem que per a tot punt \(y\) de \(X\) diferent de \(x\) existeixen dos oberts \(\obert{U}_{y}\) i \(\obert{V}_{y}\) tals que \(x\) pertany a \(\obert{U}_{y}\setminus\obert{V}_{y}\) i \(y\) pertany a \(\obert{V}_{y}\setminus\obert{U}_{y}\). Considerem
+			\begin{equation}
+				\label{prop:en un espai de Fréchet els punts són tancats:eq1}
+				\obert{V}=\bigcup_{y\in X\setminus\{x\}}\obert{V}_{y}.
+			\end{equation}
+			Tenim que \(x\) no pertany a \(\obert{V}\), ja que \(x\) no pertany a cap dels \(\obert{V}_{y}\), i tenim que
+			\begin{align*}
+				X\setminus\{x\}&\subseteq\bigcup_{y\in X\setminus\{x\}}\{y\} \\
+				&\subseteq\bigcup_{y\in X\setminus\{x\}}\obert{V}_{y}\subseteq X\setminus\{x\},
+			\end{align*}
+			i pel \myref{thm:doble inclusió} trobem que
+			\[\obert{V}=\subseteq X\setminus\{x\}.\]
+			
+			Per la definició de \myref{def:topologia} i \eqref{prop:en un espai de Fréchet els punts són tancats:eq1} trobem que \(\obert{V}\) és un obert, i per la definició de \myref{def:tancat}  trobem que \(\{x\}\) és un tancat.
+		\end{proof}
+	\end{proposition}
 	\begin{definition}[Espai regular]
 		\labelname{espai regular}\label{def:espai regular}
-		Sigui \(X\) un espai de Kolmogorov tal que donats un tancat \(\tancat{C}\) i un punt \(x\) que no pertany a \(\tancat{C}\) existeixen dos oberts disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(x\) pertany a \(\obert{U}\) i \(\obert{V}\) és un subconjunt de \(\tancat{C}\). Aleshores direm que \(X\) és un espai regular.
+		Sigui \(X\) un espai de Fréchet tal que donats un tancat \(\tancat{C}\) i un punt \(x\) que no pertany a \(\tancat{C}\) existeixen dos oberts disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(x\) pertany a \(\obert{U}\) i \(\obert{V}\) és un subconjunt de \(\tancat{C}\). Aleshores direm que \(X\) és un espai regular.
 	\end{definition}
 	\begin{definition}[Espai normal]
 		\labelname{espai normal}\label{def:espai normal}
-		Sigui \(X\) un espai de Kolmogorov tal que donats dos tancats disjunts \(\tancat{C}\) i \(\tancat{K}\) existeixen dos oberts disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(\obert{U}\) és un subconjunt de \(\tancat{C}\) i \(\obert{V}\) és un subconjunt de \(\tancat{K}\). Aleshores direm que \(X\) és un espai normal.
+		Sigui \(X\) un espai de Fréchet tal que donats dos tancats disjunts \(\tancat{C}\) i \(\tancat{K}\) existeixen dos oberts disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(\obert{U}\) és un subconjunt de \(\tancat{C}\) i \(\obert{V}\) és un subconjunt de \(\tancat{K}\). Aleshores direm que \(X\) és un espai normal.
 	\end{definition}
+	\begin{proposition}
+		\label{prop:els espais normals són espais regulars}
+		Sigui \(X\) un espai normal. Aleshores \(X\) és un espai regular.
+		\begin{proof}
+			Sigui \(\tancat{C}\) un tancat de \(X\) i \(x\) un punt de \(X\setminus\tancat{C}\). Com que per hipòtesi \(X\) és un espai normal, per la definició d'\myref{def:espai normal} trobem que \(X\) és un espai de Fréchet, i per la proposició \myref{prop:en un espai de Fréchet els punts són tancats} trobem que el conjunt \(\{x\}\) és un tancat, i tenim que \(\{x\}\) i \(\tancat{C}\) són disjunts.
+			
+			Ara bé, per la definició d'\myref{def:espai normal} trobem que existeixen dos oberts disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(\obert{U}\) és un subconjunt de \(\{x\}\) i \(\obert{V}\) és un subconjunt de \(\tancat{C}\). Aleshores tenim que \(\obert{U}=\{x\}\), i per tant \(x\) pertany a \(\obert{U}\), i per la definició d'\myref{def:espai regular} trobem que \(X\) és un espai regular.
+		\end{proof}
+	\end{proposition}
 	\subsection{Propietats dels espais Hausdorff}
 	\begin{proposition}
 		\label{prop:els compactes en un Hausdorff són tancats}
 		Sigui \(X\) un espai Hausdorff i \(A\) un compacte de \(X\). Aleshores \(A\) és un tancat de \(X\).
 		\begin{proof} % REVISAR i arreglar wording
-			Si \(A=X\) o \(A=\emptyset\) aleshores pel Teorema \myref{thm:equivalència obert tancat definició de topologia} trobem que \(A\) és tancat i hem acabat.
+			Si \(A=X\) ó \(A=\emptyset\) aleshores pel Teorema \myref{thm:equivalència obert tancat definició de topologia} trobem que \(A\) és tancat i hem acabat.
 			
 			Suposem doncs que \(A\) no és \(X\) ni \(\emptyset\). Tenim que existeix un punt \(x\) de \(X\setminus A\). Per la definició d'\myref{def:espai Hausdorff} trobem que per a tot \(a\) de \(A\) existeixen dos oberts disjunts \(\obert{U}_{a,x}\) i \(\obert{V}_{a,x}\) tals que \(x\) pertany a \(\obert{U}_{a,x}\) i \(a\) pertany a \(\obert{V}_{a,x}\). Aleshores trobem que
 			\begin{align*}
@@ -1234,9 +1283,55 @@
 		\label{thm:dos espais són Hausdorff si i només si el seu producte és Hausdorff}
 		Siguin \(X\) i \(Y\) dos espais topològics no buits. Aleshores \(X\times Y\) és Hausdorff si i només si \(X\) i \(Y\) són Hausdorff.
 		\begin{proof}
-			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(X\times Y\) és Hausdorff. Prenem un element \(y\) de \(Y\).
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(X\times Y\) és Hausdorff. Prenem un element \(y\) de \(Y\). Tenim pel \corollari \myref{cor:un espai topològic producte amb un element és homeomorf a l'espai topològic} que \(X\times\{y\}\cong X\) i tenim que \(X\times\{y\}\subseteq X\times Y\). Per hipòtesi tenim que \(X\times Y\) és Hausdorff. Aleshores per la proposició \myref{prop:els subespais d'un Hausdorff són Hausdorff} trobem que \(X\times\{y\}\) és Hausdorff i per la proposició \myref{prop:ser Hausdorff és una propietat topològica} trobem que \(X\) és Hausdorff.
+			
+			La demostració per veure que \(Y\) és Hausdorff és anàloga.
+			
+			Veiem ara que la condició és necessària. Suposem doncs que \(X\) i \(Y\) són Hausdorff. Prenem dos punts diferents \((x_{1},y_{1})\) i \((x_{2},y_{2})\) de \(X\times Y\). Si \(y_{1}=y_{2}\) tenim per la proposició \myref{prop:parelles ordenades} que \(x_{1}\neq x_{2}\). Com que, per hipòtesi, \(X\) és Hausdorff tenim per la definició d'\myref{def:espai Hausdorff} que existeixen dos oberts disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(x_{1}\) pertany a \(\obert{U}\) i \(x_{2}\) pertany a \(\obert{V}\). Aleshores per la definició de \myref{def:topologia producte} i la definició de \myref{def:topologia} trobem que els conjunts \((\obert{U},Y)\) i \((\obert{V},Y)\) són oberts disjunts de \(X\times Y\) i per la definició de \myref{def:espai Hausdorff} tenim que \(X\times Y\) és Hausdorff.
+			
+			Si \(x_{1}=x_{2}\) tenim de nou per la proposició \myref{prop:parelles ordenades} que \(y_{1}\neq y_{2}\) i l'argument per veure que \(X\times Y\) és Hausdorff és anàleg.
 		\end{proof}
 	\end{theorem}
+	\begin{theorem}
+		Siguin \(X\) un espai compacte, \(Y\) un espai Hausdorff i \(f\colon X\longrightarrow Y\) una aplicació contínua i bijectiva. Aleshores \(X\cong Y\).
+		\begin{proof}
+			per la definició d'\myref{def:espais topològics homeomorfs} en tenim prou amb veure que \(f\) és un homeomorfisme, i per la definició d'\myref{def:homeomorfisme entre topologies} en tenim prou amb veure que \(f\) és una aplicació tancada. Sigui \(\tancat{C}\) un tancat de \(X\). Com que, per hipòtesi, \(X\) és un compacte, pel Teorema \myref{thm:un tancat en un compacte és compacte} trobem que \(\tancat{C}\) és un compacte. Per hipòtesi tenim també que \(f\) és contínua, i pel teorema \myref{thm:la imatge d'un compacte per una aplicació contínua és un compacte} trobem doncs que \(\Ima_{\tancat{C}}(f)\) és un compacte de \(Y\). De nou per hipòtesi tenim que \(Y\) és Hausdorff i per la proposició \myref{prop:els compactes en un Hausdorff són tancats} trobem que \(\Ima_{\tancat{C}}(f)\) és un tancat de \(Y\). Per tant per la definició de \myref{def:aplicació tancada} trobem que \(f\) és tancada i hem acabat.
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}
+		Sigui \(X\) un espai Hausdorff compacte. Aleshores \(X\) és un espai normal.
+		\begin{proof} % Llegir. L'he copiat com un loro
+			Siguin \(\tancat{C}\) i \(\tancat{K}\) dos tancats disjunts i fixem un punt \(x\) de \(\tancat{C}\). Com que, per hipòtesi, \(X\) és Hausdorff, per la definició de \myref{def:espai Hausdorff} trobem que per a tot \(y\) de \(\tancat{K}\) existeixen dos oberts disjunts \(\obert{U}_{x,y}\) i \(\obert{V}_{x,y}\) tals que \(x\) pertany a \(\obert{U}_{x,y}\) i \(y\) pertany a \(\obert{V}_{x,y}\). Tenim doncs que
+			\begin{align*}
+				\tancat{K}&=\bigcup_{y\in\tancat{K}}\{y\} \\
+				&\subseteq\bigcup_{y\in\tancat{K}}\obert{V}_{x,y},
+			\end{align*}
+			i per la definició de \myref{def:recobriment obert} trobem que la família \(\{\obert{V}_{x,y}\}_{y\in\tancat{K}}\) és un recobriment obert de \(\tancat{K}\). Aleshores, com que per hipòtesi \(X\) és un espai compacte, pel Teorema \myref{thm:un tancat en un compacte és compacte} trobem que \(\tancat{K}\) és un compacte i per la definició de \myref{def:subconjunt compacte} tenim que existeix un subrecobriment finit \(\{\obert{V}_{x,y}\}_{y\in I_{x}}\) de \(\{\obert{V}_{x,y}\}_{y\in\tancat{K}}\). Considerem els conjunts
+			\[\obert{U}_{x}=\bigcap_{y\in I_{x}}\obert{U}_{x,y}\quad\text{i}\quad\obert{V}_{x}=\bigcup_{y\in I_{x}}\obert{V}_{x,y}.\]
+			Com que \(I_{x}\) és finit, per la definició de \myref{def:topologia} trobem que \(\obert{U}_{x}\) i \(\obert{V}_{x}\) són oberts de \(X\) i tenim que
+			\[\obert{U}_{x}\cap\obert{V}_{x}=\emptyset\]
+			i \(x\) pertany a \(\obert{U}_{x}\) i \(y\) pertany a \(\obert{V}_{x}\).
+			
+			Ara bé, tenim que
+			\begin{align*}
+				\tancat{C}&=\bigcup_{x\in\tancat{C}}\{x\} \\
+				&\subseteq\bigcup_{x\in\tancat{C}}\obert{U}_{x},
+			\end{align*}
+			i per la definició de \myref{def:recobriment obert} trobem que la família \(\{\obert{U}_{x}\}_{y\in\tancat{C}}\) és un recobriment obert de \(\tancat{C}\). Aleshores, com que per hipòtesi \(X\) és un espai compacte, pel Teorema \myref{thm:un tancat en un compacte és compacte} trobem que \(\tancat{C}\) és un compacte i per la definició de \myref{def:subconjunt compacte} tenim que existeix un subrecobriment finit \(\{\obert{U}_{x}\}_{y\in I}\) de \(\{\obert{U}_{x}\}_{y\in\tancat{X}}\). Definim
+			\[\obert{U}=\bigcap_{x\in I}\obert{U}_{x}\quad\text{i}\quad\obert{V}=\bigcup_{x\in I}\obert{V}_{x}.\]
+			Com que \(I\) és finit, per la definició de \myref{def:topologia} trobem que \(\obert{U}\) i \(\obert{V}\) són oberts de \(X\) i tenim que
+			\[\obert{U}\cap\obert{V}=\emptyset\]
+			i \(\tancat{C}\) és un subconjunt de \(\obert{U}\) i \(\tancat{K}\) és un subconjunt de \(\obert{V}\), i per la definició d'\myref{def:espai normal} hem acabat.
+		\end{proof}
+	\end{theorem}
+	\begin{proposition}
+		Sigui \(G\) un grup que actua sobre un espai Hausdorff compacte \(X\). Aleshores \(X/G\) és un espai Hausdorff compacte.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\section{La topologia de Zariski}
+	\subsection{Propietats de la topologia de Zariski}
 	
 	\begin{comment}
 	\section{Espai d'Alexandroff}

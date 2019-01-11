@@ -1,1 +1,1 @@
-Afegida teoria i exemples a topologia fins a espais Hausdorff.
+Gairebé acabades les propietats dels espais Hausdorff.
