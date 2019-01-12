@@ -1,1 +1,2 @@
 Acabada la secció dels espais de Hausdorff.
+Afegits enunciats i exemples fins a la secció de connexió.
