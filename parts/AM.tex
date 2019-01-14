@@ -1447,19 +1447,19 @@
 		\[(f\convolucio g)(x)=\int_{\mathbb{R}}f(t)g(x-t)\diff t\]
 		com la convolució de \(f\) amb \(g\).
 	\end{definition}
-	\begin{definition}[Aproximació de l'unitat]
-		\labelname{aproximació de l'unitat}\label{def:aproximació de l'unitat}
+	\begin{definition}[Aproximació de la unitat]
+		\labelname{aproximació de la unitat}\label{def:aproximació de la unitat}
 		Sigui \((\phi_{\varepsilon})_{\varepsilon\in\mathbb{R}}\) una successió de funcions amb suport compacte tal que
 		\begin{enumerate}
 			\item \(\phi_{\varepsilon}\geq0\).
 			\item \(\int_{\mathbb{R}}\phi_{\varepsilon}(x)\diff x=1\).
-			\item per a tot \(\delta>0\) tenim que la successió \((\phi_{\varepsilon})\) convergeix uniformement a \(0\) quan \(\varepsilon\) tendeix a \(0\) en l'interval \((-\delta,\delta)\).
+			\item per a tot \(\delta>0\) tenim que \((\phi_{\varepsilon})\) convergeix uniformement a \(0\) quan \(\varepsilon\) tendeix a \(0\) en l'interval \((-\delta,\delta)\).
 		\end{enumerate}
-		Aleshores direm que \((\phi_{\varepsilon})\) és una aproximació de l'unitat.
+		Aleshores direm que \((\phi_{\varepsilon})\) és una aproximació de la unitat.
 	\end{definition}
 	\begin{lemma}
 		\label{lema:Teorema d'aproximació polinòmica de Weierstrass}
-		Sigui \(f\colon\mathbb{R}\longrightarrow\mathbb{R}\) una funció contínua amb suport compacte i \((\phi_{\varepsilon})_{\varepsilon\in\mathbb{R}}\) una aproximació de l'unitat. Aleshores \(f\convolucio\phi_{\varepsilon}\) convergeix uniformement a \(f\) quan \(\varepsilon\) tendeix a \(0\).
+		Sigui \(f\colon\mathbb{R}\longrightarrow\mathbb{R}\) una funció contínua amb suport compacte i \((\phi_{\varepsilon})_{\varepsilon\in\mathbb{R}}\) una aproximació de la unitat. Aleshores \(f\convolucio\phi_{\varepsilon}\) convergeix uniformement a \(f\) quan \(\varepsilon\) tendeix a \(0\).
 		\begin{proof}
 			%TODO %lol se ve to' tocha
 		\end{proof}
@@ -1773,6 +1773,7 @@
 		\end{proof}
 	\end{lemma}
 	\begin{proposition}
+		\label{prop:podem desplaçar la integral d'una funció T periòdica}
 		Sigui \(f\) una funció \(T\)-periòdica i integrable. Aleshores per a tot \(a\) real es satisfà
 		\[\int_{0}^{T}f(x)\diff x=\int_{a}^{a+T}f(x)\diff x.\]
 		\begin{proof}
@@ -1987,6 +1988,63 @@
 			%TODO
 		\end{proof}
 	\end{theorem}
+	\section{Transformació de Fourier}
+	\subsection{Convolució de funcions \ensuremath{1}-periòdiques}
+	\begin{definition}[Convolució de dues extensions periòdiques]
+		\labelname{convolució de dues extensions periòdiques}\label{def:convolució de dues extensions periòdiques}
+		Siguin \(f\) i \(g\) dues extensions periòdiques. Aleshores definim
+		\[(f\convolucio g)(x)=\int_{0}^{1}f(t)g(x-t)\diff t\]
+		com la convolució de \(f\) amb \(g\).
+	\end{definition}
+	\begin{definition}[Aproximació de la unitat en extensions periòdiques]
+		\labelname{aproximació de la unitat en extensions periòdiques}\label{def:aproximació de la unitat en extensions periòdiques}
+		Sigui \((\phi_{\varepsilon})_{\varepsilon\in\mathbb{R}}\) una successió de funcions tals que \(\phi_{\varepsilon}\) és una extensió periòdica satisfent
+		\begin{enumerate}
+			\item \(\phi_{\varepsilon}\geq0\).
+			\item \(\int_{0}^{1}\phi_{\varepsilon}(x)\diff x=1\).
+			\item per a tot \(\delta>0\) tenim que
+			\[\lim_{\varepsilon\to0}\sup_{x\in[\delta,1-\delta]}\abs{\phi_{\varepsilon}}=0.\]
+		\end{enumerate}
+		Aleshores direm que \((\phi_{\varepsilon})\) és una aproximació de la unitat.
+	\end{definition}
+	\begin{theorem}
+		\label{thm:la convolució per extensions periòdiques és invariant per aproximacions de la unitat en extensions periòdiques}
+		Sigui \(f\) una extensió periòdica contínua i \((\phi_{\varepsilon})_{\varepsilon>0}\) una aproximació de la unitat en extensions periòdiques. Aleshores \(f\convolucio\phi_{\varepsilon}\) convergeix uniformement a \(f\) en \(\mathbb{R}\) quan \(\varepsilon\) tendeix a \(0\).
+		\begin{proof}
+			Per la definició d'\myref{def:aproximació de la unitat en extensions periòdiques} trobem que
+			\[\int_{0}^{1}\phi_{\varepsilon}(x)\diff x=1,\]
+			i per \myref{prop:podem desplaçar la integral d'una funció T periòdica} tenim que
+			\[\int_{0}^{1}\phi_{\varepsilon}(x-t)\diff t=1,\]
+			i per tant
+			\[f(x)=\int_{0}^{1}f(x)\phi_{\varepsilon}(x-t)\diff t.\]
+			
+			Considerem
+			\[\sup_{x\in[0,1]}\abs{(f\convolucio\phi_{\varepsilon})(x)-f(x)}.\]
+			Tenim qe
+			\begin{align*}
+				\sup_{x\in[0,1]}\abs{(f\convolucio\phi_{\varepsilon})(x)-f(x)}&=\sup_{x\in[0,1]}\abs{\int_{0}^{1}f(t)\phi_{\varepsilon}(x-t)\diff t-f(x)} \tag{\ref{def:convolució de dues extensions periòdiques}} \\
+				&=\sup_{x\in[0,1]}\abs{\int_{0}^{1}f(t)\phi_{\varepsilon}(x-t)\diff t-\int_{0}^{1}f(x)\phi_{\varepsilon}(x-t)\diff t} \\
+				&=\sup_{x\in[0,1]}\abs{\int_{0}^{1}(f(t)-f(x))\phi_{\varepsilon}(x-t)\diff t} \\
+				&\leq\sup_{x\in[0,1]}\int_{0}^{1}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t \tag{\ref{thm:la norma d'una integral és menos que l'integral de la norma}} \\
+				&=\sup_{x\in[0,1]}\int_{x-\frac{1}{2}}^{x+\frac{1}{2}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t. \tag{\ref{prop:podem desplaçar la integral d'una funció T periòdica}}
+			\end{align*}
+			 Tenim per hipòtesi que \(f\) és contínua, i per la definició de \myref{def:funcio continua} trobem que per a tot \(\eta>0\) existeix un \(\delta>0\) tal que per a tot \(t\) satisfent \(\abs{x-t}>\delta\) tenim
+			 \[\abs{f(x)-f(x)}\leq\frac{\eta}{2}.\]
+			 Per tant, amb \(I=[x-\frac{1}{2},x+\frac{1}{2}]\),
+			 \begin{multline*}
+				 \sup_{x\in[0,1]}\int_{x-\frac{1}{2}}^{x+\frac{1}{2}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t = \\
+				 =\sup_{x\in[0,1]}\left(\int_{\substack{t\in I\\\abs{x-t}<\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t+\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t\right) \hfill\\
+				 \leq\sup_{x\in[0,1]}\left(\frac{\eta}{2}\int_{\substack{t\in I\\\abs{x-t}<\delta}}\phi_{\varepsilon}(x-t)\diff t+\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t\right) \hfill\\
+				 <\sup_{x\in[0,1]}\left(\frac{\eta}{2}+\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t\right), \hfill
+			 \end{multline*}
+			 i, amb \(y=x-t\) tenim que %REFS
+			 \[\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t=\int_{\substack{t\in[-\frac{1}{2},\frac{1}{2}]\\\abs{y}>\delta}}\abs{f(x-y)-f(x)}\phi_{\varepsilon}(y)\diff y\]
+		\end{proof}
+	\end{theorem}
+	\subsection{Polinomis trigonomètrics}
+	\begin{definition}
+		
+	\end{definition}
 	\printbibliography
 	Els apunts estan escrits seguint la teoria donada a classe i complementats amb \cite{ApuntsMorelo}. La secció de reordenació de sèries està fortament inspirada també en \cite{HickmanRiemannSeriesTheoremNotes}. He copiat un exemple de \cite{KeithDifferentiatingUnderIntegralSignNotes}.
 	
