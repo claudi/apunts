@@ -1420,27 +1420,24 @@
 		
 		Aquesta definició té sentit per la proposició \myref{prop:topologia a la unió disjunta}.
 	\end{definition}
-	\begin{definition}[Espai ple]
-		\labelname{espai ple}\label{def:espai ple}
-		\labelname{obert ple}\label{def:obert ple}
-		\labelname{tancat ple}\label{def:tancat ple}
-		Sigui \(X\) un espai topològic no buit. Aleshores direm que \(X\) és un espai ple. També direm que un obert no buit de \(X\) és un obert ple i que un tancat no buit de \(X\) és un tancat ple.
-	\end{definition}
 	\begin{definition}[Espai connex]
 		\labelname{espai connex}\label{def:espai connex}
-		Sigui \(X\) un espai topològic tal que no existeixen dos espais plens \(Y_{1}\) i \(Y_{2}\) tals que \(X\cong Y_{1}\uniodisjunta Y_{2}\). Aleshores direm que \(X\) és connex.
+		Sigui \(X\) un espai topològic tal que no existeixen dos espais no buits \(Y_{1}\) i \(Y_{2}\) tals que \(X\cong Y_{1}\uniodisjunta Y_{2}\). Aleshores direm que \(X\) és connex.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:condicions equivalents a espai connex}
 		Sigui \(X\) un espai topològic. Aleshores són equivalents
 		\begin{enumerate}
 			\item\label{prop:condicions equivalents a espai connex:eq1} \(X\) és connex.
-			\item\label{prop:condicions equivalents a espai connex:eq2} No existeixen dos oberts plens disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(X=\obert{U}\cup\obert{V}\).
-			\item\label{prop:condicions equivalents a espai connex:eq3} No existeixen dos tancats plens disjunts \(\tancat{C}\) i \(\tancat{K}\) tals que \(X=\tancat{C}\cup\tancat{K}\).
+			\item\label{prop:condicions equivalents a espai connex:eq2} No existeixen dos oberts no buits disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(X=\obert{U}\cup\obert{V}\).
+			\item\label{prop:condicions equivalents a espai connex:eq3} No existeixen dos tancats no buits disjunts \(\tancat{C}\) i \(\tancat{K}\) tals que \(X=\tancat{C}\cup\tancat{K}\).
 			\item\label{prop:condicions equivalents a espai connex:eq4} Si \(A\) és un subconjunt de \(X\) tal que \(A\) és obert i tancat aleshores \(A=\emptyset\) ó \(A=X\).
 		\end{enumerate}
 		\begin{proof}
 			%TODO
+%			Veiem que \eqref{prop:condicions equivalents a espai connex:eq1}\(\implica\)\eqref{prop:condicions equivalents a espai connex:eq2}. Suposem que \(X\) és connex i prenem dos oberts no buits disjunts \(\obert{U}\) i \(\obert{V}\). Pel \corollari \myref{cor:un espai topològic producte amb un element és homeomorf a l'espai topològic} tenim que \(\obert{U}\times\{0\}\cong\obert{U}\) i \(\obert{V}\times\{1\}\cong\obert{V}\), i com que per hipòtesi \(\obert{U}\) i \(\obert{V}\) són disjunts tenim que
+%			\[\obert{U}\cup\obert{V}\cong\obert{U}\uniodisjunta\obert{V},\] %REF
+%			i aleshores per la definició d'\myref{def:espai connex} trobem que no existeixen dos oberts no buits disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(X=\obert{U}\cup\obert{V}\).
 		\end{proof}
 	\end{proposition}
 	\begin{example}
@@ -1459,8 +1456,7 @@
 		\[\obert{U}=\bigcup_{i\in I}\obert{U}_{i}\]
 		és un espai topològic connex.
 		\begin{proof}
-			%TODO
-%			Sigui \(A\) un subespai obert i tancat de \(\obert{U}\). Si \(A=\emptyset\) tenim per la proposició \myref{prop:condicions equivalents a espai connex} hem acabat. Suposem doncs que \(A\neq\emptyset\). Aleshores 
+%			Sigui \(A\) un subespai obert i tancat de \(\obert{U}\). Si \(A=\emptyset\) tenim per la proposició \myref{prop:condicions equivalents a espai connex} hem acabat. Suposem doncs que \(A\neq\emptyset\). Aleshores
 		\end{proof}
 	\end{proposition}
 	\begin{corollary}
@@ -1482,17 +1478,27 @@
 		\end{solution}
 	\end{example}
 	\begin{proposition}
-		\label{prop:la connexió és manté per aplicacions contínues}
+		\label{prop:la connexió és conserva per aplicacions contínues}
 		Siguin \(A\) un subespai connex d'un espai topològic \(X\) i \(f\colon X\longrightarrow Y\) una aplicació contínua. Aleshores \(\Ima_{A}(f)\) és connex.
 		\begin{proof}
 			%TODO
+%			Considerem l'aplicació
+%			\begin{align*}
+%				g\colon A&\longrightarrow\Ima_{A}(f) \\
+%				g(x)&\longmapsto f(x).
+%			\end{align*}
+%			Per la definició d'\myref{def:imatge d'una aplicació} i la definició d'\myref{def:aplicació contínua} tenim que \(g\) és contínua. Prenem un subespai \(S\) de \(\Ima_{A}(g)\) tal que \(S\) sigui obert i tancat en \(\Ima_{A}(g)\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:dos espais topològics són connexos si i només si el seu producte cartesià ho és}
 		Siguin \(X\) i \(Y\) dos espais topològics. Aleshores \(X\times Y\) és un espai connex si i només si \(X\) i \(Y\) són espais connexos.
 		\begin{proof}
-			%TODO
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(X\times Y\) és un espai connex. Tenim per l'exemple \myref{ex:les projeccions en la topologia producte són contínues i obertes} que les projeccions \(\pi_{X}\) i \(\pi_{Y}\) són contínues, i per la proposició \myref{prop:la connexió és conserva per aplicacions contínues} tenim que \(X\) i \(Y\) són connexos.
+			
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que \(X\) i \(Y\) són espais connexos i fixem un \(y\) de \(Y\). Aleshores tenim que
+			\[X\times Y=\bigcup_{x\in X}\left((X\times\{y\})\cup(\{x\}\times Y)\right)\]
+			i per la proposició \myref{prop:la unió d'una família no disjunta de connexos és connexa} hem acabat.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
@@ -1606,7 +1612,7 @@
 		\end{proof}
 	\end{proposition}
 	\end{comment}
-	
+%	
 %	\begin{definition}[Aplicació contínua i homeomorfisme]
 %		\labelname{aplicació contínua}\label{def:aplicació contínua}
 %		\labelname{homeomorfisme}\label{def:homeomorfisme topo}
@@ -1666,6 +1672,8 @@
 	
 	La bibliografia del curs inclou els textos \cite{AFirstCourseInAlgebraicTopologyKosniowski,ABasicCourseInAlgebraicTopologyKosniowski,TopologyKlaus,ACTEAguade}.
 \end{document}
+
+% Treure la merda de unió disjunta. Fer-ho com a \cite{AFirstCourseInAlgebraicTopologyKosniowski}. Pàgina 54 del llibre, abans del teorema 8.11, per X/A i el tema de connexitat
 
 % https://arxiv.org/pdf/0708.2136.pdf (L) Sorprenentment elegant (Espais d'Alexandroff)
 % http://math.ucr.edu/~res/math205C-2011/freeactions.pdf El quocient d'un espai Hausdorff compacte per un grup és Hausdorff compacte

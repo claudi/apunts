@@ -1,2 +1,3 @@
 Ara hi ha una bibliografia a topologia.
 Afegida una mica de teoria a la part de la convergència de la transformació de Fourier a anàlisi matemàtica.
+Acabada la secció de connexió a topologia, excepte per algunes demostracions.
