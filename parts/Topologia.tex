@@ -473,7 +473,7 @@
 				\item Reflexiva: Tenim que l'aplicació \(\Id_{X}\) és bijectiva, oberta i contínua. Per la definició d'\myref{def:homeomorfisme entre topologies} tenim que \(\Id_{x}\) és un homeomorfisme, i per la definició d'\myref{def:espais topològics homeomorfs} tenim que \(X\cong X\).
 				\item Simètrica: Siguin \(X\) amb la topologia \(\tau_{X}\) i \(Y\) amb la topologia \(\tau_{Y}\) dos espais topològics homeomorfs. Per la definició d'\myref{def:espais topològics homeomorfs} tenim que existeix un homeomorfisme \(f\colon X\longrightarrow Y\).
 				
-				Pel Teorema \myref{thm:bijectiva iff invertible} trobem que existeix l'aplicació inversa \(f^{-1}\) de \(Y\) a \(X\), i pel \corollari \myref{cor:l'inversa d'una aplicació invertible és invertible} tenim que l'aplicació \(f^{-1}\) és bijectiva.
+				Pel Teorema \myref{thm:bijectiva iff invertible} trobem que existeix l'aplicació inversa \(f^{-1}\) de \(Y\) a \(X\), i pel \corollari{} \myref{cor:l'inversa d'una aplicació invertible és invertible} tenim que l'aplicació \(f^{-1}\) és bijectiva.
 				
 				També trobem que \(f^{-1}\) és oberta, ja que per la definició d'\myref{def:homeomorfisme entre topologies} tenim que \(f\) és contínua, i per la definició d'\myref{def:aplicació oberta} i la definició d'\myref{def:aplicació contínua} trobem que \(f^{1}\) és oberta. De mateixa manera trobem que \(f^{-1}\) és contínua, ja que per la definició d'\myref{def:homeomorfisme entre topologies} tenim que \(f\) és oberta, i per la definició d'\myref{def:aplicació contínua} i la definició d'\myref{def:aplicació oberta} trobem que \(f^{-1}\) és contínua.
 				
@@ -1294,7 +1294,7 @@
 		\label{thm:dos espais són Hausdorff si i només si el seu producte és Hausdorff}
 		Siguin \(X\) i \(Y\) dos espais topològics no buits. Aleshores \(X\times Y\) és Hausdorff si i només si \(X\) i \(Y\) són Hausdorff.
 		\begin{proof}
-			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(X\times Y\) és Hausdorff. Prenem un element \(y\) de \(Y\). Tenim pel \corollari \myref{cor:un espai topològic producte amb un element és homeomorf a l'espai topològic} que \(X\times\{y\}\cong X\) i tenim que \(X\times\{y\}\subseteq X\times Y\). Per hipòtesi tenim que \(X\times Y\) és Hausdorff. Aleshores per la proposició \myref{prop:els subespais d'un Hausdorff són Hausdorff} trobem que \(X\times\{y\}\) és Hausdorff i per la proposició \myref{prop:ser Hausdorff és una propietat topològica} trobem que \(X\) és Hausdorff.
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(X\times Y\) és Hausdorff. Prenem un element \(y\) de \(Y\). Tenim pel \corollari{} \myref{cor:un espai topològic producte amb un element és homeomorf a l'espai topològic} que \(X\times\{y\}\cong X\) i tenim que \(X\times\{y\}\subseteq X\times Y\). Per hipòtesi tenim que \(X\times Y\) és Hausdorff. Aleshores per la proposició \myref{prop:els subespais d'un Hausdorff són Hausdorff} trobem que \(X\times\{y\}\) és Hausdorff i per la proposició \myref{prop:ser Hausdorff és una propietat topològica} trobem que \(X\) és Hausdorff.
 			
 			La demostració per veure que \(Y\) és Hausdorff és anàloga.
 			
@@ -1442,7 +1442,7 @@
 		\end{enumerate}
 		\begin{proof}
 			%TODO
-%			Veiem que \eqref{prop:condicions equivalents a espai connex:eq1}\(\implica\)\eqref{prop:condicions equivalents a espai connex:eq2}. Suposem que \(X\) és connex i prenem dos oberts no buits disjunts \(\obert{U}\) i \(\obert{V}\). Pel \corollari \myref{cor:un espai topològic producte amb un element és homeomorf a l'espai topològic} tenim que \(\obert{U}\times\{0\}\cong\obert{U}\) i \(\obert{V}\times\{1\}\cong\obert{V}\), i com que per hipòtesi \(\obert{U}\) i \(\obert{V}\) són disjunts tenim que
+%			Veiem que \eqref{prop:condicions equivalents a espai connex:eq1}\(\implica\)\eqref{prop:condicions equivalents a espai connex:eq2}. Suposem que \(X\) és connex i prenem dos oberts no buits disjunts \(\obert{U}\) i \(\obert{V}\). Pel \corollari{} \myref{cor:un espai topològic producte amb un element és homeomorf a l'espai topològic} tenim que \(\obert{U}\times\{0\}\cong\obert{U}\) i \(\obert{V}\times\{1\}\cong\obert{V}\), i com que per hipòtesi \(\obert{U}\) i \(\obert{V}\) són disjunts tenim que
 %			\[\obert{U}\cup\obert{V}\cong\obert{U}\uniodisjunta\obert{V},\] %REF
 %			i aleshores per la definició d'\myref{def:espai connex} trobem que no existeixen dos oberts no buits disjunts \(\obert{U}\) i \(\obert{V}\) tals que \(X=\obert{U}\cup\obert{V}\).
 		\end{proof}
