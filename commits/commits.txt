@@ -1,3 +1,4 @@
 Ara hi ha una bibliografia a topologia.
 Afegida una mica de teoria a la part de la convergència de la transformació de Fourier a anàlisi matemàtica.
 Acabada la secció de connexió a topologia, excepte per algunes demostracions.
+Afegida demostració que els espais regulars són Hausdorff i retocada la part dels axiomes de separació de Tychonoff a topologia.
