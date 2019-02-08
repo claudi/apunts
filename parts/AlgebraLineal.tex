@@ -266,7 +266,7 @@
 	\begin{observation}
 		\label{obs:matrius amb una fila nula no són invertibles}
 		\label{obs:matrius amb una columna nula no són invertibles}
-		Sigui \(A=(a_{i,j}\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) tal que existeix un \(i\in\{1,\dots,n\}\) satisfent
+		Sigui \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) tal que existeix un \(i\in\{1,\dots,n\}\) satisfent
 		\[a_{i,j}=0\text{ ó }a_{j,i}=0\quad\text{per a tot }j\in\{1,\dots,n\}.\]
 		Aleshores \(A\) no és invertible.
 	\end{observation}
@@ -291,8 +291,7 @@
 			i com que, per hipòtesi, les matrius \(A\) i \(B\) són invertibles trobem
 			\begin{align*}
 			B^{-1}A^{-1}&=(AB)^{-1}ABB^{-1}A^{-1}\\
-			&=(AB)^{-1}AA^{-1}\\
-			&=(AB)^{-1}.\qedhere
+			&=(AB)^{-1}AA^{-1}=(AB)^{-1}.\qedhere
 			\end{align*}
 		\end{proof}
 	\end{proposition}
@@ -350,7 +349,7 @@
 		Sigui \(A\) una matriu invertible d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores la matriu \(A^{t}\) és invertible i \(\left(A^{t}\right)^{-1}=\left(A^{-1}\right)^{t}\).
 		\begin{proof}
 			Per la proposició \myref{prop:producte de matrius transposades} tenim que
-			\[A^{t}\left(A^{-1}\right)^{t}=\left(A^{-1}A\right)^{t}\quad\text{i}\quad [\left(A^{-1}\right)^{t}A^{t}=\left(AA^{-1}\right)^{t},\]
+			\[A^{t}\left(A^{-1}\right)^{t}=\left(A^{-1}A\right)^{t}\quad\text{i}\quad \left(A^{-1}\right)^{t}A^{t}=\left(AA^{-1}\right)^{t},\]
 			i per la definició de \myref{def:matriu invertible} tenim que \(A^{t}\) és invertible i que \(\left(A^{t}\right)^{-1}=\left(A^{-1}\right)^{t}\), com volíem veure.
 		\end{proof}
 	\end{proposition}
@@ -452,7 +451,7 @@
 	\subsection{Transformacions elementals}
 	\begin{definition}[Transformacions elementals] %REFER per columnes i files
 		\labelname{transformacions elementals}\label{def:transformacions elementals}
-		Siguin \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) i \(i\) i \(j\) dos naturals amb \(i,j\leq m\). Aleshores definim les funcions
+		Siguin \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) i \(i\) i \(j\) dos naturals diferents amb \(i,j\leq m\) i \(\lambda\) un element no nul de \(\mathbb{K}\). Aleshores definim les funcions
 		\[P_{i,j}(A)=\left[\begin{matrix}
 		a_{1,1} & \cdots & a_{1,n} \\
 		\vdots & & \vdots \\
@@ -558,7 +557,7 @@
 	\subsection{Matrius esglaonades i mètode de Gauss}
 	\begin{definition}[Matriu esglaonada]
 		\labelname{matriu esglaonada}\label{def:matriu esglaonada}
-		Sigui \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) tal que existeixen \(j_{1}<\dots<j_{r}\) nombres naturals tals que per a tot \(i\in\{1,\dots,r\}\) i per a tot \(j<j_{i}\) tenim \(a_{i,j}=0\) i \(a_{i,j_{i}}=1\), i \(a_{i,j}=0\) per a tot \(i>j_{r}\) i \(j\in\{1,\dots,n\}\).
+		Sigui \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) tal que existeixen \(j_{1}<\dots<j_{r}\) nombres naturals tals que per a tot \(i\in\{1,\dots,r\}\) i per a tot \(j<j_{i}\) tenim \(a_{i,j}=0\) i \(a_{i,j_{i}}=1\); i per a tot \(i>j_{r}\) i \(j\in\{1,\dots,n\}\) tenim \(a_{i,j}=0\).
 		
 		Aleshores direm que \(A\) està esglaonada per files i que \(A^{t}\) està esglaonada per columnes.
 		
@@ -571,7 +570,12 @@
 			Denotem \(A=(a_{i,j})\). Ho farem per inducció sobre \(n\).
 			
 			Suposem que \(n=1\). Si \(a_{i,1}=0\) per a tot \(i\in\{1,\dots,m\}\) per la definició de \myref{def:matriu esglaonada} hem acabat. Suposem doncs que existeix un \(i\in\{1,\dots,m\}\) tal que \(a_{i,1}\neq0\). Aleshores podem fer les transformacions elementals
-			\[A
+			\[A=
+			\left[\begin{matrix}
+			a_{i,1}\\
+			\vdots\\
+			a_{m,1}
+			\end{matrix}\right]
 			\overset{F_{i}\leftrightarrow F_{1}}{\longrightarrow}
 			\left[\begin{matrix}
 			a_{i,1}\\
@@ -932,7 +936,7 @@
 	\subsection{Propietats dels determinants}
 	\begin{definition}[Determinant]
 		\labelname{determinant d'una matriu}\label{def:determinant d'una matriu}
-		Siguin \(\mathbb{K}\) un cos i \(\det\colon M_{n}(\mathbb{K})\) una aplicació que satisfà per a tot \(i\in\{1,\dots,n\}\) i \(j\in\{i+1,\dots,n\}\) i per a tot \(C_{i}\in M_{n\times1}(\mathbb{K})\)
+		Siguin \(\mathbb{K}\) un cos i \(\det\colon M_{n}(\mathbb{K})\longrightarrow\mathbb{K}\) una aplicació que satisfà per a tot \(i\in\{1,\dots,n\}\) i \(j\in\{i+1,\dots,n\}\) i per a tot \(C_{i}\in M_{n\times1}(\mathbb{K})\)
 		\begin{enumerate}
 			\item Per a tot \(C'_{j}\in M_{n\times1}(\mathbb{K})\) es satisfà
 			\begin{multline*}

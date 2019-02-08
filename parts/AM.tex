@@ -273,10 +273,10 @@
 			\[a_{n+1}<(L+\varepsilon)a_{n}\]
 			i trobem
 			\begin{align*}
-				a_{n+1}<&(L+\varepsilon)a_{n}\\
-				<&(L+\varepsilon)^{2}a_{n-1}\\
-				&\vdots\\
-				<&(L+\varepsilon)^{n-n_{0}+1}a_{n_{0}}.
+				a_{n+1}&<(L+\varepsilon)a_{n}\\
+				&<(L+\varepsilon)^{2}a_{n-1}\\
+				&\quad\vdots\\
+				&<(L+\varepsilon)^{n-n_{0}+1}a_{n_{0}}.
 			\end{align*}
 			Ara bé, com que \(L+\varepsilon<1\) tenim per l'exemple \myref{ex:sèries geomètriques} que la sèrie \(\sum_{n=0}^{\infty}(L+\varepsilon)^{n}\) és convergent, i pel lema \myref{lema:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			
@@ -288,10 +288,10 @@
 			\[(L-\varepsilon)a_{n}<a_{n+1}\]
 			i trobem
 			\begin{align*}
-				a_{n+1}>&(L-\varepsilon)a_{n}\\
-				>&(L-\varepsilon)^{2}a_{n-1}\\
-				&\vdots\\
-				>&(L-\varepsilon)^{n-n_{0}+1}a_{n_{0}}.
+				a_{n+1}&>(L-\varepsilon)a_{n}\\
+				&>(L-\varepsilon)^{2}a_{n-1}\\
+				&\quad\vdots\\
+				&>(L-\varepsilon)^{n-n_{0}+1}a_{n_{0}}.
 			\end{align*}
 			Ara bé, com que \(L-\varepsilon>1\) tenim que
 			\[\lim_{n\to\infty}(L-\varepsilon)^{n}=\infty,\]
@@ -2065,4 +2065,4 @@
 
 % http://www.math.uconn.edu/~kconrad/blurbs/analysis/diffunderint.pdf lol
 
-% Exemple: \[\varphi=1+2\sin\left(\frac{\pi}{10}\right)\]
+% Exemple: \[\varphi=1+2\sin\left(\frac{\pi}{10}\right)\] % 2cos(pi/5) = 1.618...
