@@ -196,9 +196,9 @@
 	\end{observation}
 	\begin{proposition}
 		\label{prop:condició equivalent a subgrup}
-		Siguin \(G\) un grup amb l'operació \(\ast\) i element neutre \(e\) i \(H\) un subconjunt de \(G\). Aleshores \(H\) és un subgrup de \(G\) si i només si per a tot \(x,y\in H\) tenim que \(x\ast y^{-1}\in H\).
+		Siguin \(G\) un grup amb l'operació \(\ast\) i \(H\) un subconjunt de \(G\). Aleshores \(H\) és un subgrup de \(G\) si i només si per a tot \(x,y\in H\) tenim que \(x\ast y^{-1}\in H\).
 		\begin{proof}
-			Demostrem primer que la condició és necessària (\(\implica\)). Això ho podem veure per la definició de \myref{def:grup}, ja que tenim que \(y^{-1}\) existeix i pertany a \(H\), i per tant \(x\ast y^{-1}\) també pertany a \(H\).
+			Sigui \(e\) l'element neutre de \(G\). Demostrem primer que la condició és necessària (\(\implica\)). Això ho podem veure per la definició de \myref{def:grup}, ja que tenim que \(y^{-1}\) existeix i pertany a \(H\), i per tant \(x\ast y^{-1}\) també pertany a \(H\).
 			
 			Demostrem ara que la condició és suficient (\(\implicatper\)). Tenim que per a tot \(x\in H\) es compleix
 			\[x\ast x^{-1}=e,\]
@@ -215,22 +215,22 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:intersecció de subgrups es subgrup}
-		Siguin \(G\) un grup amb l'operació \(\ast\) i element neutre \(e\), \(\{H_{i}\}_{i\in I}\) una família de subgrups de \(G\) i \(H=\bigcap_{i\in I}H_{i}\). Aleshores \(H\) és un subgrup de \(G\).
+		Siguin \(G\) un grup, \(\{H_{i}\}_{i\in I}\) una família de subgrups de \(G\) i \(H=\bigcap_{i\in I}H_{i}\). Aleshores \(H\) és un subgrup de \(G\).
 		\begin{proof}
-			Ho demostrarem amb la proposició \myref{prop:condició equivalent a subgrup}. Tenim \(H\subseteq G\) i \(H\neq\emptyset\), ja que \(e\in H\). Comprovem ara que per a tot \(x,y\in H\) tenim \(x\ast y^{-1}\in H\). Tenim que si \(x,y\in H\), per la definició de \(H\), \(x,y\in H_{i\in I}\); i com que \(H_{i\in I}\) és un subgrup de \(G\), \(x\ast y^{-1}\in H_{i\in I}\) per la proposició \myref{prop:condició equivalent a subgrup}, i per tant \(x\ast y^{-1}\in H\), com volíem veure.
+			Ho demostrarem amb la proposició \myref{prop:condició equivalent a subgrup}. Siguin \(\ast\) l'operació de \(G\) i \(e\) l'element neutre de \(G\). Tenim \(H\subseteq G\) i \(H\neq\emptyset\), ja que per l'observació \myref{obs:l'element neutre d'un grup pertany als subgrups} tenim que \(e\in H\). Comprovem ara que per a tot \(x,y\in H\) tenim \(x\ast y^{-1}\in H\). Tenim que si \(x,y\in H\), per la definició de \(H\), \(x,y\in H_{i\in I}\); i com que \(H_{i\in I}\) és un subgrup de \(G\), \(x\ast y^{-1}\in H_{i\in I}\) per la proposició \myref{prop:condició equivalent a subgrup}, i per tant \(x\ast y^{-1}\in H\), com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:els subgrups generats per un conjunt existeixen}
-		Siguin \(G\) un grup amb l'operació \(\ast\) i element neutre \(e\), \(S\neq\emptyset\) un subconjunt de \(G\), \(\{H_{i}\}_{i\in I}\) una família de subgrups de \(G\) tals que \(S\subseteq H_{i}\) per a tot \(i\in I\) i \(H=\bigcap_{i\in I}H_{i}\). Aleshores \(H\) i és un subgrup de \(G\).
+		Siguin \(G\) un grup, \(S\neq\emptyset\) un subconjunt de \(G\), \(\{H_{i}\}_{i\in I}\) una família de subgrups de \(G\) tals que \(S\subseteq H_{i}\) per a tot \(i\in I\) i \(H=\bigcap_{i\in I}H_{i}\). Aleshores \(H\) i és un subgrup de \(G\).
 		\begin{proof}
-			Comprovem que \(H\) existeix, és a dir, que \(H\neq\emptyset\) tenim prou amb veure que \(e\in H\). Veiem que \(H\) és un subgrup de \(G\) ho podem veure per la proposició \myref{prop:intersecció de subgrups es subgrup}.
+			Sigui \(e\) l'element neutre de \(G\). Comprovem que \(H\neq\emptyset\). En tenim prou amb veure que \(e\in H\). Per veure que \(H\) és un subgrup de \(G\) ho podem fer per la proposició \myref{prop:intersecció de subgrups es subgrup}.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Mínim subgrup generat per un conjunt] %vspace
 		\labelname{mínim subgrup generat per un conjunt}
 		\label{def:mínim subgrup generat per un subconjunt}
-		Siguin \(G\) un grup amb l'operació \(\ast\), \(S\) un subconjunt de \(G\), \(\{H_{i}\}_{i\in I}\) una família de subgrups de \(G\) tals que \(S\subseteq H_{i}\) per a tot \(i\in I\) i tal que
+		Siguin \(G\) un grup, \(S\) un subconjunt de \(G\), \(\{H_{i}\}_{i\in I}\) una família de subgrups de \(G\) tals que \(S\subseteq H_{i}\) per a tot \(i\in I\) i tal que
 		\[H=\bigcap_{i\in I}H_{i}.\]
 		Aleshores direm que el subgrup \(H\leq G\) és el mínim subgrup generat per \(S\) i ho denotarem amb \(\langle S\rangle\).
 		
@@ -238,10 +238,10 @@
 	\end{definition}
 	\begin{proposition}
 		\label{prop:forma grups cíclics}
-		Siguin \(G\) un grup amb l'operació \(\ast\) i \(g\) un element de \(G\). Aleshores
+		Siguin \(G\) un grup i \(g\) un element de \(G\). Aleshores
 		\[\langle\{g\}\rangle=\{g^{i}\}_{i\in\mathbb{Z}}.\]
 		\begin{proof}
-			Ho demostrem per doble inclusió.
+			Sigui \(\ast\) l'operació de \(G\). Ho demostrem per doble inclusió.
 			
 			Comencem veient que
 			\[\{g^{i}\}_{i\in\mathbb{Z}}\subseteq\langle\{g\}\rangle.\]
@@ -259,15 +259,15 @@
 	\begin{definition}[Ordre d'un grup]
 		\labelname{ordre d'un grup}
 		\label{def:ordre d'un grup}
-		Sigui \(G\) un grup amb l'operació \(\ast\). Direm que \(\abs{G}\) és l'ordre del grup.
+		Sigui \(G\) un grup. Direm que \(\abs{G}\) és l'ordre del grup.
 		Si \(\abs{G}\) és finit direm que \(G\) és un grup d'ordre finit, i si \(\abs{G}\) no és finit direm que \(G\) és un grup d'ordre infinit.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:potencia element neutre en un grup}
-		Siguin \(G\) un grup amb l'operació \(\ast\) i element neutre \(e\) i \(g\) un element de \(G\). Aleshores
+		Siguin \(G\) un grup amb element neutre \(e\) i \(g\) un element de \(G\). Aleshores
 		\[\abs{\langle\{g\}\rangle}=n\sii n=\min\{k\in\mathbb{N}\mid g^{k}=e\}.\]
 		\begin{proof}
-			Comencem amb la implicació cap a l'esquerra (\(\implicatper\)). Suposem doncs que \(n=\min\{k\in\mathbb{N}\mid g^{k}=e\}\). Pel \myref{thm:divisió euclidiana} tenim que per a tot \(t\in\mathbb{Z}\) existeixen uns únics \(Q\in\mathbb{Z}\), \(r\in\mathbb{N}\), amb \(r<n\) tals que \(t=Qn+r\). Per tant
+			Sigui \(\ast\) l'operació de \(G\). Comencem amb la implicació cap a l'esquerra (\(\implicatper\)). Suposem doncs que \(n=\min\{k\in\mathbb{N}\mid g^{k}=e\}\). Pel \myref{thm:divisió euclidiana} tenim que per a tot \(t\in\mathbb{Z}\) existeixen uns únics \(Q\in\mathbb{Z}\), \(r\in\mathbb{N}\), amb \(r<n\) tals que \(t=Qn+r\). Per tant
 			\begin{align*}
 			g^{t}&=g^{Qm+r}\\
 			&=g^{Qm}\ast g^{r}\\
@@ -298,20 +298,20 @@
 	\begin{definition}[Subgrup normal]
 		\labelname{subgrup normal}
 		\label{def:subgrup normal}
-		Siguin \(G\) un grup amb l'operació \(\ast\) i \(H\) un subgrup de \(G\). Aleshores direm que \(H\) és un subgrup normal de \(G\) si per a tot \(x\in G\) tenim
+		Siguin \(G\) un grup i \(H\) un subgrup de \(G\). Aleshores direm que \(H\) és un subgrup normal de \(G\) si per a tot \(x\in G\) tenim
 		\[\{x\}H=H\{x\}.\]
 		Ho denotarem com \(H\trianglelefteq G\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:condicions equivalents a subgrup normal}
-		Siguin \(G\) un grup amb l'operació \(\ast\) i \(H\) un subgrup de \(G\). Aleshores són equivalents
+		Siguin \(G\) un grup i \(H\) un subgrup de \(G\). Aleshores són equivalents
 		\begin{enumerate}
 			\item\label{enum:condicions equivalents a subgrup normal 1} \(\{x\}H=H\{x\}\) per a tot \(x\in G\).
 			\item\label{enum:condicions equivalents a subgrup normal 2} \(\{x^{-1}\}H\{x\}=H\) per a tot \(x\in G\).
 			\item\label{enum:condicions equivalents a subgrup normal 3} \(\{x^{-1}\}H\{x\}\subseteq H\) per a tot \(x\in G\).
 		\end{enumerate}
 		\begin{proof}
-			Comencem demostrant \eqref{enum:condicions equivalents a subgrup normal 1}\(\implica\)\eqref{enum:condicions equivalents a subgrup normal 2}. Suposem que \(H\) és un subgrup normal de \(G\), per la definició de \myref{def:subgrup normal} tenim \(\{x\}H=H\{x\}\) per a tot \(x\in G\). Aleshores tenim
+			Sigui \(\ast\) l'operació de \(G\). Comencem demostrant \eqref{enum:condicions equivalents a subgrup normal 1}\(\implica\)\eqref{enum:condicions equivalents a subgrup normal 2}. Suposem que \(H\) és un subgrup normal de \(G\), per la definició de \myref{def:subgrup normal} tenim \(\{x\}H=H\{x\}\) per a tot \(x\in G\). Aleshores tenim
 			\begin{align*}
 			\{x\}H\{x^{-1}\}&=H\{x\}\{x^{-1}\}\\
 			&=\{h\ast x\ast x^{-1}\mid h\in H\}\\
@@ -363,9 +363,9 @@
 		Siguin \(G\) un grup amb l'operació \(\ast\) i \(g\) un element de \(G\). Aleshores diem que el grup \(\langle\{g\}\rangle\) amb l'operació \(\ast\) és un grup cíclic i que \(g\) és un generador del grup.
 	\end{definition}
 	\begin{proposition}
-		Sigui \(G\) un grup cíclic amb l'operació \(\ast\). Aleshores \(G\) és un grup abelià.
+		Sigui \(G\) un grup cíclic. Aleshores \(G\) és un grup abelià.
 		\begin{proof}
-			Com que \(G\) és un grup cíclic, per la definició de \myref{def:grup cíclic} tenim que existeix un \(g\) tal que \(\langle\{g\}\rangle=G\). Siguin \(a,b\) dos  elements de \(G\), i com que \(G\) és un grup cíclic, ha de ser \(a=g^{m}\) i \(b=g^{n}\) per a certs \(m,n\in\mathbb{N}\). Ara bé, tenim que \(g^{m}\ast g^{n}=g^{m}\ast g^{n}\), ja que
+			Sigui \(\ast\) l'operació de \(G\). Com que \(G\) és un grup cíclic, per la definició de \myref{def:grup cíclic} tenim que existeix un \(g\) tal que \(\langle\{g\}\rangle=G\). Siguin \(a,b\) dos  elements de \(G\), i com que \(G\) és un grup cíclic, ha de ser \(a=g^{m}\) i \(b=g^{n}\) per a certs \(m,n\in\mathbb{N}\). Ara bé, tenim que \(g^{m}\ast g^{n}=g^{m}\ast g^{n}\), ja que
 			\begin{align*}
 			g^{n}\ast g^{m}&=g^{n+m}\\
 			&=g^{m+n}=g^{m}\ast g^{n}
@@ -374,9 +374,9 @@
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
-		Sigui \(G\) un grup cíclic amb l'operació \(\ast\) i \(H\) un subgrup de \(G\). Aleshores \(H\) és un grup cíclic.
+		Siguin \(G\) un grup cíclic i \(H\) un subgrup de \(G\). Aleshores \(H\) és un grup cíclic.
 		\begin{proof}
-			Sigui \(e\) l'element neutre de \(G\). Per l'observació \myref{obs:l'element neutre d'un grup pertany als subgrups} tenim que \(e\in H\). Si \(H=\{e\}\) no hi ha res a demostrar. Suposem que \(H\neq\{e\}\), aleshores existeix un \(g\in G\) tal que \(g^{n}\in H\) per a cert \(n\in\mathbb{N}\). Sigui doncs \(m\) l'enter més petit tal que \(g^{m}\in H\); volem demostrar que \(H=\langle\{g^{m}\}\rangle\).
+			Siguin \(\ast\) l'operació de \(G\) i \(e\) l'element neutre de \(G\). Per l'observació \myref{obs:l'element neutre d'un grup pertany als subgrups} tenim que \(e\in H\). Si \(H=\{e\}\) no hi ha res a demostrar. Suposem que \(H\neq\{e\}\), aleshores existeix un \(g\in G\) tal que \(g^{n}\in H\) per a cert \(n\in\mathbb{N}\). Sigui doncs \(m\) l'enter més petit tal que \(g^{m}\in H\); volem demostrar que \(H=\langle\{g^{m}\}\rangle\).
 			
 			Sigui \(a\) un element de \(H\). Aleshores com que \(a\in H\subseteq G\), \(a=g^{t}\) per a cert \(t\in\mathbb{N}\), i pel \myref{thm:divisió euclidiana} existeixen \(Q,r\in\mathbb{N}\), amb \(r<m\) tals que \(t=Qm+r\), i per tant \(g^{t}=g^{Qm+r}\). Aleshores tenim
 			\[g^{r}=\left(g^{m}\right)^{-Q}\ast g^{t},\]
@@ -384,8 +384,8 @@
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
-		\label{prop:existència de subgrups cíclics d'ordres divisors}
-		Siguin \(G\) un grup cíclic amb l'operació \(\ast\) d'ordre \(n\) finit i \(d\in\mathbb{N}\) un divisor de \(n\). Aleshores existeix un únic subgrup de \(G\) d'ordre \(d\).
+		\label{prop:existència i unicitat de subgrups cíclics d'ordres divisors}
+		Siguin \(G\) un grup cíclic d'ordre \(n\) finit i \(d\in\mathbb{N}\) un divisor de \(n\). Aleshores existeix un únic subgrup de \(G\) d'ordre \(d\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -458,9 +458,9 @@
 	\begin{theorem}[Teorema de Lagrange]
 		\labelname{Teorema de Lagrange}
 		\label{thm:Teorema de Lagrange}
-		Siguin \(G\) un grup d'ordre finit amb l'operació \(\ast\) i \(H\) un subgrup de \(G\). Aleshores \(\abs{H}\) divideix \(\abs{G}\).
+		Siguin \(G\) un grup d'ordre finit i \(H\) un subgrup de \(G\). Aleshores \(\abs{H}\) divideix \(\abs{G}\).
 		\begin{proof}
-			Fixem \(x\in G\) i considerem la funció
+			Sigui \(\ast\) l'operació de \(G\). Fixem \(x\in G\) i considerem la funció
 			\begin{align*}
 			f_{x}\colon H&\longrightarrow\{x\}H\\
 			h&\longmapsto x\ast h
@@ -471,16 +471,16 @@
 			i per tant \(\abs{H}\) divideix \(\abs{G}\).
 		\end{proof}
 	\end{theorem}
-	\begin{corollary}
-		Sigui \(G\) un grup d'ordre \(p\) primer amb l'operació \(\ast\). Aleshores \(G\) és un grup cíclic.
+	\begin{corollary} % matar salt de línia
+		Sigui \(G\) un grup d'ordre \(p\) primer. Aleshores \(G\) és un grup cíclic.
 		\begin{proof}
-			Sigui \(e\) l'element neutre de \(G\).
-			
-			Prenem un element \(g\in G\) diferent de \(e\) i considerem el subgrup de \(G\) generat per \(g\). Pel \myref{thm:Teorema de Lagrange} tenim que l'ordre de \(\langle\{g\}\rangle\) divideix l'ordre de \(G\) i com que per hipòtesi l'orde de \(G\) és primer i \(g^{1}\neq e\), ja que \(g\) és per hipòtesi diferent de l'element neutre, tenim que \(\abs{\langle\{g\}\rangle}=p\), i per tant \(\langle\{g\}\rangle=G\) i per la definició de \myref{def:grup cíclic} tenim que \(G\) és un grup cíclic.
+			Sigui \(e\) l'element neutre de \(G\). Prenem un element \(g\in G\) diferent de \(e\) i considerem el subgrup de \(G\) generat per \(g\). Pel \myref{thm:Teorema de Lagrange} tenim que l'ordre de \(\langle\{g\}\rangle\) divideix l'ordre de \(G\) i com que per hipòtesi l'orde de \(G\) és primer i \(g^{1}\neq e\), ja que \(g\) és per hipòtesi diferent de l'element neutre, tenim que \(\abs{\langle\{g\}\rangle}=p\), i per tant \(\langle\{g\}\rangle=G\) i per la definició de \myref{def:grup cíclic} tenim que \(G\) és un grup cíclic.
 		\end{proof}
 	\end{corollary}
-	\begin{definition}[l'índex d'un subgrup en un grup]\label{def:l'índex d'un subgrup en un grup}
-		Siguin \(G\) un grup amb l'operació \(\ast\) i \(H\) un subgrup de \(G\). Aleshores definim
+	\begin{definition}[L'índex d'un subgrup en un grup]
+		\labelname{l'índex d'un subgrup en un grup}
+		\label{def:l'índex d'un subgrup en un grup}
+		Siguin \(G\) un grup i \(H\) un subgrup de \(G\). Aleshores definim
 		\[[G:H]=\frac{\abs{G}}{\abs{H}}\]
 		com l'índex de \(H\) a \(G\).
 	\end{definition}
@@ -505,20 +505,20 @@
 		\begin{enumerate}
 			\item Si \(f\) és injectiva direm que \(f\) és un monomorfisme entre grups.
 			\item Si \(f\) és exhaustiva direm que \(f\) és un epimorfisme entre grups.
-			\item Si \(f\) és bijectiva direm que \(f\) és un isomorfisme entre grups. També escriurem \(G_{1}\cong G_{2}\) i direm qe \(G_{1}\) i \(G_{2}\) són grups isomorfs.
+			\item Si \(f\) és bijectiva direm que \(f\) és un isomorfisme entre grups. També escriurem \(G_{1}\cong G_{2}\) i direm que \(G_{1}\) i \(G_{2}\) són grups isomorfs.
 			\item Si \(G_{1}=G_{2}\) direm que \(f\) és un endomorfisme entre grups.
 			\item Si \(G_{1}=G_{2}\) i \(f\) és bijectiva direm que \(f\) és un automorfisme entre grups.
 		\end{enumerate}
 	\end{definition}
 	\begin{proposition}
 		\label{prop:morfismes conserven neutre i l'invers commuta amb el morfisme}
-			Siguin \(G_{1}\) un grup amb l'operació \(\ast\) amb element neutre \(e\), \(G_{2}\) un grup amb l'operació \(\circ\) amb element neutre \(e'\) i \(f\colon G_{1}\to G_{2}\) un morfisme entre grups. Aleshores
+			Siguin \(G_{1}\) un grup amb element neutre \(e\), \(G_{2}\) un grup amb element neutre \(e'\) i \(f\colon G_{1}\to G_{2}\) un morfisme entre grups. Aleshores
 		\begin{enumerate}
 			\item\label{enum:morfismes conserven neutre i l'invers commuta amb el morfisme 1} \(f(e)=e'\).
 			\item\label{enum:morfismes conserven neutre i l'invers commuta amb el morfisme 2} \(f\left(x^{-1}\right)=f(x)^{-1}\) per a tot \(x\in G_{1}\).
 		\end{enumerate}
 		\begin{proof}
-			Demostrem primer el punt \eqref{enum:morfismes conserven neutre i l'invers commuta amb el morfisme 1}. Per la definició de morfisme tenim que per a tot \(x\in G_{1}\)
+			Siguin \(\ast\) l'operació del grup \(G_{1}\) i \(\circ\) l'operació del grup \(G_{2}\). Veiem primer el punt \eqref{enum:morfismes conserven neutre i l'invers commuta amb el morfisme 1}. Per la definició de morfisme tenim que per a tot \(x\in G_{1}\)
 			\begin{align*}
 			f(x)\circ f(e)&=f(x\ast e)\tag{\myref{def:morfisme entre grups}}\\
 			&=f(x)\tag{\myref{def:l'element neutre del grup}}\\
@@ -537,16 +537,16 @@
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}\label{prop:conjugació de morfismes entre grups és morfisme entre grups}
-		Siguin \(G\), \(H\) i \(K\) tres grups amb les operacions \(\ast\), \(\circ\) i \(+\), respectivament, i \(f\colon G\longrightarrow H\) i \(g\colon H\longrightarrow K\) dos morfismes entre grups. Aleshores \(g(f)\colon G\longrightarrow K\) és un morfisme entre grups.
+		Siguin \(G\), \(H\) i \(K\) tres grups i \(f\colon G\longrightarrow H\) i \(g\colon H\longrightarrow K\) dos morfismes entre grups. Aleshores \(g(f)\colon G\longrightarrow K\) és un morfisme entre grups.
 		\begin{proof}
-			Per la definició de \myref{def:morfisme entre grups} tenim que per a tot \(g_{1},g_{2}\in H\) i \(h_{1},h_{2}\in H\) tenim \(f(g_{1}\ast g_{2})=f(g_{1})\circ f(g_{2})\) i \(g(h_{1}\circ h_{2})=g(h_{1})+g(h_{2})\). Per tant
+			Siguin \(\ast\), \(\circ\) i \(+\) les operacions de \(G\), \(H\) i \(K\), respectivament. Per la definició de \myref{def:morfisme entre grups} tenim que per a tot \(g_{1},g_{2}\in H\) i \(h_{1},h_{2}\in H\) tenim \(f(g_{1}\ast g_{2})=f(g_{1})\circ f(g_{2})\) i \(g(h_{1}\circ h_{2})=g(h_{1})+g(h_{2})\). Per tant
 			\[g(f(g_{1}\ast g_{2}))=g(f(g_{1})\circ f(g_{2}))=g(f(g_{1}))+g(f(g_{2})),\]
 			i per la definició de \myref{def:morfisme entre grups} hem acabat.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:condicions equivalents abelià i cíclic per isomorfismes}
-		Siguin \(G_{1}\) un grup amb l'operació \(\ast\) i \(G_{2}\) un grup amb l'operació \(\circ\) tal que
+		Siguin \(G_{1}\) i \(G_{2}\) dos grups tals que
 		\[G_{1}\cong G_{2}.\]
 		Aleshores
 		\begin{enumerate}
@@ -554,7 +554,7 @@
 			\item\label{enum:condicions equivalents abelià i cíclic per isomorfismes 2} \(G_{1}\) és un grup cíclic si i només si \(G_{2}\) és un grup cíclic.
 		\end{enumerate}
 		\begin{proof}
-			Sigui \(f\colon G_{1}\to G_{2}\) un isomorfisme entre grups.
+			Siguin \(\ast\) l'operació de \(G_{1}\) i \(\circ\) l'operació de \(G_{2}\). Per la definició de \myref{def:isomorfisme entre grups} tenim que existeix un \(f\colon G_{1}\to G_{2}\) un isomorfisme entre grups.
 			
 			Comencem demostrant el punt \eqref{enum:condicions equivalents abelià i cíclic per isomorfismes 1}. Suposem doncs que \(G_{1}\) és un grup abelià. Per la definició de \myref{def:grup abelià} tenim que per a tot \(a,b\in G_{1}\) es compleix \(a\ast b=b\ast a\). Aleshores tenim
 			\[f(a\ast b)=f(b\ast a)\]
@@ -570,7 +570,7 @@
 		\label{def:nucli d'un morfisme entre grups}
 		\labelname{imatge d'un morfisme entre grups}
 		\label{def:imatge d'un morfisme entre grups}
-			Siguin \(G_{1}\) un grup amb l'operació \(\ast\) amb element neutre \(e\), \(G_{2}\) un grup amb l'operació \(\circ\) amb  element neutre \(e'\) i \(f\colon G_{1}\to G_{2}\) un morfisme entre grups. Aleshores definim el nucli de \(f\) com
+		Siguin \(G_{1}\) un grup amb element neutre \(e\), \(G_{2}\) un grup amb  element neutre \(e'\) i \(f\colon G_{1}\to G_{2}\) un morfisme entre grups. Aleshores definim el nucli de \(f\) com
 		\[\ker(f)=\{x\in G_{1}\mid f(x)=e'\},\]
 		i la imatge de \(f\) com
 		\[\Ima(f)=\{f(x)\in G_{2}\mid x\in G_{1}\}.\]
@@ -582,7 +582,7 @@
 	\begin{proposition}
 		\label{prop:el nucli d'un morfisme és un subgrup normal del grup de sortda}
 		\label{prop:la imatge d'un morfisme és un subgrup del grup d'arribada}
-			Siguin \(G_{1}\) un grup amb l'operació \(\ast\) amb element neutre \(e\), \(G_{2}\) un grup amb l'operació \(\circ\) amb element neutre \(e'\), i \(f\colon G_{1}\to G_{2}\) un morfisme entre grups. Aleshores
+		Siguin \(G_{1}\) i \(G_{2}\) dos grups i \(f\colon G_{1}\to G_{2}\) un morfisme entre grups. Aleshores
 		\begin{enumerate}
 			\item\label{enum:el nucli d'un morfisme és un subgrup normal del grup de sortda 1} \(\ker(f)\) és un subgrup normal de \(G_{1}\).
 			\item\label{enum:la imatge d'un morfisme és un subgrup del grup d'arribada 2} \(\Ima(f)\) és un subgrup de \(G_{2}\).
@@ -590,7 +590,7 @@
 		\begin{proof}
 			Aquest enunciat té sentit per l'observació \myref{obs:nucli d'un morfisme entre grups es subconjunt del grup d'entrada, imatge n'és del de sortida}.
 			
-			Primer comprovem el punt \eqref{enum:el nucli d'un morfisme és un subgrup normal del grup de sortda 1}. Comencem veient que \(\ker(f)\) és un subgrup de \(G_{1}\). Per la proposició \myref{prop:condició equivalent a subgrup} tenim que ens cal amb veure que si \(a,b\in\ker(f)\), aleshores \(a\ast b^{-1}\in\ker(f)\). Això és cert ja que si \(a,b\in\ker(f)\) aleshores \(f(a)=e'\) i \(f(b^{-1})=e'\), i per tant \(a\ast b^{-1}=e\ast e^{-1}=e\), el que significa que \(f(a\ast b^{-1})=e'\), i tenim \(a\ast b^{-1}\in\ker(f)\).
+			Siguin \(\ast\) l'operació de \(G_{1}\) i \(\circ\) l'operació de \(G_{2}\) i \(e\) l'element neutre de \(G_{1}\) i \(e'\) l'element neutre de \(G_{2}\). Primer comprovem el punt \eqref{enum:el nucli d'un morfisme és un subgrup normal del grup de sortda 1}. Comencem veient que \(\ker(f)\) és un subgrup de \(G_{1}\). Per la proposició \myref{prop:condició equivalent a subgrup} tenim que ens cal amb veure que si \(a,b\in\ker(f)\), aleshores \(a\ast b^{-1}\in\ker(f)\). Això és cert ja que si \(a,b\in\ker(f)\) aleshores \(f(a)=e'\) i \(f(b^{-1})=e'\), i per tant \(a\ast b^{-1}=e\ast e^{-1}=e\), el que significa que \(f(a\ast b^{-1})=e'\), i tenim \(a\ast b^{-1}\in\ker(f)\).
 			
 			Comprovem ara que el subgrup és normal. Per la proposició \myref{prop:condicions equivalents a subgrup normal} en tenim prou en veure que per a tot \(x\in\ker(f)\) i \(g\in G\), \(x\ast g\ast x^{-1}\in\ker(f)\). Això ho veiem notant que si \(g\in\ker(f)\), \(f(g)=e'\), i per tant \(f(x\ast g\ast x^{-1})=f(x)\circ e'\circ f(x^{-1})\)i això és \(f(x\ast x^{-1})=e'\), i per tant \(x\ast g\ast x^{-1}\in\ker(f)\).
 			
@@ -599,13 +599,13 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge}
-		Siguin \(G_{1}\) un grup amb l'operació \(\ast\) amb element neutre \(e\), \(G_{2}\) un grup amb l'operació \(\circ\) amb element neutre \(e'\), i \(f\colon G_{1}\to G_{2}\) un morfisme entre grups. Aleshores
+		Siguin \(G_{1}\) un grup amb element neutre \(e\), \(G_{2}\) un grup, i \(f\colon G_{1}\to G_{2}\) un morfisme entre grups. Aleshores
 		\begin{enumerate}
 			\item\label{enum:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge 1} \(f\) és un monomorfisme si i només si \(\ker(f)=\{e\}\).
 			\item\label{enum:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge 2} \(f\) és un epimorfisme si i només si \(\Ima(f)=G_{2}\).
 		\end{enumerate}
 		\begin{proof}
-			Comencem fent la demostració del punt \eqref{enum:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge 1} per la implicació cap a la dreta (\(\implica\)). Suposem doncs que \(f\) és un monomorfisme, i per tant injectiva. Per la definició de \myref{def:nucli d'un morfisme entre grups} tenim que \(\ker(f)=\{x\in G_{1}\mid f(x)=e'\}\). Suposem \(x\in G_{1}\), és a dir, \(f(x)=e'\). Ara bé, com que \(f\) és injectiva per la proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme} ha de ser \(\ker(f)=\{e\}\).%REF injectiva
+			Siguin \(\ast\) l'operació de \(G_{1}\), \(\circ\) l'operació de \(G_{2}\) i \(e'\) l'element neutre de \(G_{2}\). Comencem fent la demostració del punt \eqref{enum:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge 1} per la implicació cap a la dreta (\(\implica\)). Suposem doncs que \(f\) és un monomorfisme, i per tant injectiva. Per la definició de \myref{def:nucli d'un morfisme entre grups} tenim que \(\ker(f)=\{x\in G_{1}\mid f(x)=e'\}\). Suposem \(x\in G_{1}\), és a dir, \(f(x)=e'\). Ara bé, com que \(f\) és injectiva per la proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme} ha de ser \(\ker(f)=\{e\}\).%REF injectiva
 			
 			Demostrem ara la implicació cal a l'esquerra (\(\implicatper\)). Suposem doncs que \(\ker(f)=\{e\}\). Siguin \(x,y\in G_{1}\) dos elements que satisfacin \(f(x)=f(y)\). Com que, per la proposició \myref{prop:el nucli d'un morfisme és un subgrup normal del grup de sortda} \(\ker(f)\) és un subgrup de \(G_{1}\), tenim que \(x\ast y^{-1}\in G_{1}\), i per tant
 			\begin{align*}
@@ -622,14 +622,14 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:les imatges dels subgrups son subgrups + el mateix amb subgrups normals}
-		Siguin \(G_{1}\) un grup amb l'operació \(\ast\), \(G_{2}\) un grup amb l'operació \(\circ\), i \(f\colon G_{1}\to G_{2}\) un morfisme entre grups. Aleshores
+		Siguin \(G_{1}\) i \(G_{2}\) dos grups i \(f\colon G_{1}\to G_{2}\) un morfisme entre grups. Aleshores
 		\begin{enumerate}
 			\item\label{enum:les imatges dels subgrups son subgrups + el mateix amb subgrups normals 1} Si \(H_{1}\leq G_{1}\implica\{f(h)\in G_{2}\mid h\in H_{1}\}\leq G_{2}\).
 			\item\label{enum:les imatges dels subgrups son subgrups + el mateix amb subgrups normals 2} Si \(H_{2}\leq G_{2}\implica\{h\in G_{1}\mid f(h)\in H_{2}\}\leq G_{1}\).
 			\item\label{enum:les imatges dels subgrups son subgrups + el mateix amb subgrups normals 3} Si \(H_{2}\trianglelefteq G_{2}\implica\{h\in G_{1}\mid f(h)\in H_{2}\}\trianglelefteq G_{1}\).
 		\end{enumerate}
 		\begin{proof}
-			Comprovem primer el punt \eqref{enum:les imatges dels subgrups son subgrups + el mateix amb subgrups normals 1}. Suposem doncs que \(H_{1}\) és un subgrup de \(G_{1}\). Denotarem \(H=\{f(h)\in G_{2}\mid h\in H_{1}\}\). Siguin \(x,y\in H_{1}\); per la proposició \myref{prop:condició equivalent a subgrup} només ens cal veure que \(f(x)\circ f(y)^{-1}\in H\). Això és
+			Siguin \(\ast\) l'operació de \(G_{1}\) i \(\circ\) l'operació de \(G_{2}\). Comprovem primer el punt \eqref{enum:les imatges dels subgrups son subgrups + el mateix amb subgrups normals 1}. Suposem doncs que \(H_{1}\) és un subgrup de \(G_{1}\). Denotarem \(H=\{f(h)\in G_{2}\mid h\in H_{1}\}\). Siguin \(x,y\in H_{1}\); per la proposició \myref{prop:condició equivalent a subgrup} només ens cal veure que \(f(x)\circ f(y)^{-1}\in H\). Això és
 			\begin{align*}
 			f(x)\circ f(y)^{-1}&=f(x)\circ f(y^{-1})\tag{Proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme}}\\
 			&=f(x\ast y^{-1}).\tag{\myref{def:morfisme entre grups}}
@@ -651,7 +651,7 @@
 		\label{thm:Cayley Teorema de representació}
 		Sigui \(G\) un grup amb l'operació \(\ast\). Aleshores \(G\) és isomorf a un subgrup de \(\GrupSimetric_{G}\) amb l'operació \(\circ\), on \(\GrupSimetric_{G}\) és el grup simètric dels elements de \(G\). %REPASSAR
 		\begin{proof}
-			Definim
+			Sigui \(e\) l'element neutre de \(G\). Definim
 			\begin{alignat}{2}
 			\varphi\colon G&\longrightarrow\GrupSimetric_{G}&&\label{eq:thm:Cayley Teorema de representació 1}\\
 			g&\longmapsto\sigma_{g}&\colon G&\longrightarrow G\label{eq:thm:Cayley Teorema de representació 2}\\
@@ -728,7 +728,7 @@
 	\begin{theorem}[Primer Teorema de l'isomorfisme]
 		\labelname{Primer Teorema de l'isomorfisme entre grups}
 		\label{thm:Primer Teorema de l'isomorfisme entre grups}
-			Siguin \(G_{1}\) un grup amb l'operació \(\ast\), \(G_{2}\) un grup amb l'operació \(\circ\) i \(f\colon G_{1}\to G_{2}\) un epimorfisme entre grups. Aleshores
+			Siguin \(G_{1}\) i \(G_{2}\) dos grups i \(f\colon G_{1}\to G_{2}\) un epimorfisme entre grups. Aleshores
 		\begin{enumerate}
 			\item\label{enum:Primer Teorema de l'isomorfisme entre grups 1} \(G_{1}/\ker(f)\cong G_{2}\).
 			\item\label{enum:Primer Teorema de l'isomorfisme entre grups 2} L'aplicació
@@ -738,9 +738,7 @@
 			H&\longmapsto\{f(h)\in G_{2}\mid h\in H\}\nonumber
 			\end{align}
 			és bijectiva.
-			\begin{comment}
-				\marginpar{Si ningú ve del futur per aturar-te, com de dolenta pot ser la decisió que estàs prenent?}
-			\end{comment}
+%			\marginpar{Si ningú ve del futur per aturar-te, com de dolenta pot ser la decisió que estàs prenent?}
 			\item\label{enum:Primer Teorema de l'isomorfisme entre grups 3} L'aplicació
 			\begin{align}
 			\label{eq:primer teorema de l'isomorfisme eq3}
@@ -750,7 +748,7 @@
 			és bijectiva.
 		\end{enumerate}
 		\begin{proof}
-			Siguin \(e\) l'element neutre de \(G_{1}\) i \(e'\) l'element neutre de \(G_{2}\).
+			Siguin \(\ast\) l'operació de \(G_{1}\), \(e\) l'element neutre de \(G_{1}\) i \(e'\) l'element neutre de \(G_{2}\).
 			
 			El punt \eqref{enum:Primer Teorema de l'isomorfisme entre grups 1} és conseqüència del Teorema \myref{thm:Teorema fonamental dels isomorfismes}, ja que si \(f\) és exhaustiva, \(\Ima(f)=G_{2}\), i per tant \(G_{1}/\ker(f)\cong G_{2}\).
 			
@@ -767,13 +765,13 @@
 	\end{theorem}
 	\begin{proposition}
 		\label{prop:producte de subgrups amb un de normal es subgrup}
-		Siguin \(G\) un grup amb l'operació \(\ast\) i \(H\), \(K\) subgrups de \(G\). Aleshores
+		Siguin \(G\) un grup i \(H\), \(K\) subgrups de \(G\). Aleshores
 		\begin{enumerate}
 			\item\label{enum:producte de subgrups amb un de normal es subgrup 1} Si \(K\trianglelefteq G\), aleshores \(HK\leq G\).
 			\item\label{enum:producte de subgrups amb un de normal es subgrup 2} Si \(H,K\trianglelefteq G\), aleshores \(HK\trianglelefteq G\).
 		\end{enumerate}
 		\begin{proof}
-			Comencem veient el punt \eqref{enum:producte de subgrups amb un de normal es subgrup 1}. Per la proposició \myref{prop:condició equivalent a subgrup} només ens cal comprovar que per a tot \(x,y\in HK\) es satisfà \(x\ast y^{-1}\in HK\). Siguin doncs \(x,y\in HK\), que podem reescriure com \(x=h_{1}\ast k_{1}\) i \(y=h_{2}\ast k_{2}\). Calculem \(x\ast y^{-1}\):
+			Sigui \(\ast\) l'operació de \(G\). Comencem veient el punt \eqref{enum:producte de subgrups amb un de normal es subgrup 1}. Per la proposició \myref{prop:condició equivalent a subgrup} només ens cal comprovar que per a tot \(x,y\in HK\) es satisfà \(x\ast y^{-1}\in HK\). Siguin doncs \(x,y\in HK\), que podem reescriure com \(x=h_{1}\ast k_{1}\) i \(y=h_{2}\ast k_{2}\). Calculem \(x\ast y^{-1}\):
 			\begin{align*}
 			x\ast y^{-1}&=h_{1}\ast k_{1}\ast (h_{2}\ast k_{2})^{-1}\\
 			&=h_{1}\ast k_{1}\ast k_{2}^{-1}\ast h_{2}^{-1}\tag{Proposició \myref{prop:invers de a b = b invers a invers}}\\
@@ -787,20 +785,20 @@
 	\end{proposition}
 	\begin{lemma}
 		\label{lema:Segon Teorema de l'isomorfisme entre grups}
-		Siguin \(G\) un grup amb l'operació \(\ast\), \(H\) un subgrup de \(G\) i \(K\) un subgrup normal de \(G\). Aleshores \(H\cap K\trianglelefteq H\).
+		Siguin \(G\) un grup, \(H\) un subgrup de \(G\) i \(K\) un subgrup normal de \(G\). Aleshores \(H\cap K\trianglelefteq H\).
 		\begin{proof}
-			Prenem \(x\in H\) i \(y\in H\cap K\). Per la proposició \myref{prop:condicions equivalents a subgrup normal} només hem de veure que per a tot \(x\in H\) i \(y\in H\cap K\), es satisfà \(x^{-1}\ast y\ast x\in H\). Ara bé, com que \(K\) és un grup normal, per la mateixa proposició \myref{prop:condicions equivalents a subgrup normal}, com que per hipòtesi \(y\in H\cap K\), i en particular \(y\in K\), tenim que \(x^{-1}\ast y\ast x\in K\). Per veure que \(x^{-1}\ast y\ast x\in H\) tenim prou amb veure que \(x,y\in H\), i com que \(H\) és un subgrup de \(G\), i per tant un grup, per la definició de \myref{def:grup} tenim que \(x^{-1}\ast y\ast x\in H\), i per tant \(x^{-1}\ast y\ast x\in H\cap K\), com volíem veure.
+			Siguin \(\ast\) l'operació de \(G\). Prenem \(x\in H\) i \(y\in H\cap K\). Per la proposició \myref{prop:condicions equivalents a subgrup normal} només hem de veure que per a tot \(x\in H\) i \(y\in H\cap K\), es satisfà \(x^{-1}\ast y\ast x\in H\). Ara bé, com que \(K\) és un grup normal, per la mateixa proposició \myref{prop:condicions equivalents a subgrup normal}, com que per hipòtesi \(y\in H\cap K\), i en particular \(y\in K\), tenim que \(x^{-1}\ast y\ast x\in K\). Per veure que \(x^{-1}\ast y\ast x\in H\) tenim prou amb veure que \(x,y\in H\), i com que \(H\) és un subgrup de \(G\), i per tant un grup, per la definició de \myref{def:grup} tenim que \(x^{-1}\ast y\ast x\in H\), i per tant \(x^{-1}\ast y\ast x\in H\cap K\).
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Segon Teorema de l'isomorfisme]
 		\labelname{Segon Teorema de l'isomorfisme entre grups}
 		\label{thm:Segon Teorema de l'isomorfisme entre grups}
-		Siguin \(G\) un grup amb l'operació \(\ast\), \(H\) un subgrup de \(G\) i \(K\) un subgrup normal de \(G\). Aleshores
+		Siguin \(G\) un grup, \(H\) un subgrup de \(G\) i \(K\) un subgrup normal de \(G\). Aleshores
 		\[(HK)/K\cong H/(H\cap K).\]
 		\begin{proof}
 			Aquest enunciat té sentit pel lema \myref{lema:Segon Teorema de l'isomorfisme entre grups}.
 			
-			Definim
+			Siguin \(\ast\) l'operació de \(G\) i \(e\) l'element neutre de \(G\). Definim
 			\begin{align}\label{hipotesi:definició f per segon teorea de l'isomorfisme}
 			f\colon HK&\longrightarrow H/(H\cap K)\\
 			h\ast k&\longmapsto [h].\nonumber
@@ -827,7 +825,7 @@
 	\begin{theorem}[Tercer Teorema de l'isomorfisme]
 		\labelname{Tercer Teorema de l'isomorfisme entre grups}
 		\label{thm:Tercer Teorema de l'isomorfisme entre grups}
-		Siguin \(G\) un grup amb l'operació \(\ast\) i \(H\), \(K\) dos subgrups normals de \(G\) amb \(K\subseteq H\). Aleshores
+		Siguin \(G\) un grup i \(H\), \(K\) dos subgrups normals de \(G\) amb \(K\subseteq H\). Aleshores
 		\[G/H\cong (G/K)/(H/K).\]
 		\begin{proof}
 			Definim les aplicacions
@@ -877,70 +875,70 @@
 	\end{definition}
 	\begin{proposition}
 		\label{prop:relacio d'òrbites és d'equivalència}
-		Siguin \(G\) un grup amb l'operació \(\ast\), \(X\) un conjunt, \(\cdot\) una acció de \(G\) sobre \(X\) i \(\sim\) una relació sobre \(X\) tal que per a tot \(x_{1},x_{2}\in X\) diem que \(x_{1}\sim x_{2}\) si i només si existeix un \(g\in G\) tal que \(x_{1}=g\cdot x_{2}\). Aleshores la relació \(\sim\) és una relació d'equivalència.
+		Siguin \(X\) un \(G\)-conjunt amb l'acció \(\cdot\) i \(\sim\) una relació sobre el conjunt \(X\) tal que per a tot \(x_{1},x_{2}\in X\) diem que \(x_{1}\sim x_{2}\) si i només si existeix un \(g\in G\) tal que \(x_{1}=g\cdot x_{2}\). Aleshores la relació \(\sim\) és una relació d'equivalència.
 		\begin{proof}
-			Sigui \(e\) l'element neutre del grup \(G\). Comprovem que \(\sim\) satisfà la definició de \myref{def:relació d'equivalència}:
+			Siguin \(\ast\) l'operació de \(G\) i \(e\) l'element neutre del grup \(G\). Comprovem que \(\sim\) satisfà la definició de \myref{def:relació d'equivalència}:
 			\begin{enumerate}
-				\item Reflexiva: Sigui \(x\in X\). Per la definició de \myref{def:acció d'un grup sobre un conjunt} tenim que \(x=x\cdot e\), i per tant \(x\sim x\).
-				\item Simètrica: Siguin \(x_{1},x_{2}\in X\) tals que \(x_{1}\sim x_{2}\). Per tant existeix \(g\in G\) tal que \(x_{1}=g\cdot x_{2}\). Per la definició de \myref{def:acció d'un grup sobre un conjunt} tenim que \(g\cdot x_{2}\in X\), i per tant podem prendre \(g^{-2}\cdot(g\ast x_{2})\), que és equivalent a \(g^{-2}\cdot(g\cdot x_{2})=g^{-2}\cdot x_{1}\), i així \(x_{2}=g^{-1}\cdot x_{1}\), i per tant \(x_{2}\sim x_{1}\).
-				\item Transitiva: Siguin \(x_{1},x_{2},x_{3}\in X\) tals que \(x_{1}\sim x_{2}\) i \(x_{2}\sim x_{3}\). Per tant existeixen \(g_{1},g_{2}\in G\) tals que \(x_{1}=g_{1}\cdot x_{2}\) i \(x_{2}=g_{2}\cdot x_{3}\), i per tant \(x_{1}=g_{1}\cdot(g_{2}\cdot x_{3})\), i per la definició de \myref{def:acció d'un grup sobre un conjunt} això és \(x_{1}=(g_{1}\ast g_{2})\cdot x_{3}\), i com que \(G\) és un grup, \(g_{1}\ast g_{2}\in G\), i tenim que \(x_{1}\sim x_{3}\).
+				\item Reflexiva: Sigui \(x\in X\). Per la definició d'\myref{def:acció d'un grup sobre un conjunt} tenim que \(x=x\cdot e\), i per tant \(x\sim x\).
+				\item Simètrica: Siguin \(x_{1},x_{2}\in X\) tals que \(x_{1}\sim x_{2}\). Per tant existeix \(g\in G\) tal que \(x_{1}=g\cdot x_{2}\). Per la definició d'\myref{def:acció d'un grup sobre un conjunt} tenim que \(g\cdot x_{2}\in X\), i per tant podem prendre \(g^{-2}\cdot(g\ast x_{2})\), que és equivalent a \(g^{-2}\cdot(g\cdot x_{2})=g^{-2}\cdot x_{1}\), i així \(x_{2}=g^{-1}\cdot x_{1}\), i per tant \(x_{2}\sim x_{1}\).
+				\item Transitiva: Siguin \(x_{1},x_{2},x_{3}\in X\) tals que \(x_{1}\sim x_{2}\) i \(x_{2}\sim x_{3}\). Per tant existeixen \(g_{1},g_{2}\in G\) tals que \(x_{1}=g_{1}\cdot x_{2}\) i \(x_{2}=g_{2}\cdot x_{3}\), i per tant \(x_{1}=g_{1}\cdot(g_{2}\cdot x_{3})\), i per la definició d'\myref{def:acció d'un grup sobre un conjunt} això és \(x_{1}=(g_{1}\ast g_{2})\cdot x_{3}\), i com que \(G\) és un grup, \(g_{1}\ast g_{2}\in G\), i tenim que \(x_{1}\sim x_{3}\).
 			\end{enumerate}
 			per tant \(\sim\) és una relació d'equivalència.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Òrbita d'un element d'un \(G\)-conjunt]
 		\labelname{l'òrbita d'un element d'un \ensuremath{G}-conjunt}\label{def:òrbita d'un element d'un G-conjunt}
-		Siguin \(G\) un grup amb l'operació \(\ast\), \(\cdot\) una acció de \(G\) sobre un conjunt \(X\) i \(\sim\) una relació d'equivalència sobre \(X\) tal que per a tot \(x_{1},x_{2}\in X\) diem que \(x_{1}\sim x_{2}\) si i només si existeix un \(g\in G\) tal que \(x_{1}=g\cdot x_{2}\). Aleshores direm que \(\mathcal{O}(x)=[x]\) és l'òrbita de \(x\).
+		Siguin \(X\) un \(G\)-conjunt amb l'acció \(\cdot\) i \(\sim\) una relació d'equivalència sobre \(X\) tal que per a tot \(x_{1},x_{2}\in X\) diem que \(x_{1}\sim x_{2}\) si i només si existeix un \(g\in G\) tal que \(x_{1}=g\cdot x_{2}\). Aleshores direm que \(\mathcal{O}(x)=[x]\) és l'òrbita de \(x\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:relacio d'òrbites és d'equivalència}.
 	\end{definition}
 	\begin{definition}[Estabilitzador d'un element per una acció]
 		\labelname{l'estabilitzador d'un element per una acció}
 		\label{def:l'estabilitzador d'un element per una acció}
-		Siguin \(G\) un grup amb l'operació \(\ast\), \(X\) un conjunt i \(\cdot\) una acció de \(G\) sobre \(X\). Aleshores direm que el conjunt
+		Siguin \(X\) un \(G\)-conjunt amb l'acció \(\cdot\) i \(x\) un element de \(X\). Aleshores direm que el conjunt
 		\[\St(x)=\{g\in G\mid g\cdot x=x\}\]
 		és l'estabilitzador de \(x\) per l'acció \(\cdot\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:l'invers d'un element pertany a l'estabilitzador per una acció}
-		Siguin \(G\) un grup amb l'operació \(\ast\), \(\cdot\) una acció de \(G\) sobre un conjunt \(X\) i \(\St(x)\) l'estabilitzador d'un element \(x\) de \(X\) per l'acció \(\cdot\). Aleshores \(g\in\St(x)\) si i només si \(g^{-1}\in\St(x)\).
+		Siguin \(X\) un \(G\)-conjunt amb l'acció \(\cdot\) i \(\St(x)\) l'estabilitzador d'un element \(x\) de \(X\) per l'acció \(\cdot\). Aleshores \(g\in\St(x)\) si i només si \(g^{-1}\in\St(x)\).
 		\begin{proof}
-			Per la definició de \myref{def:l'estabilitzador d'un element per una acció} tenim que \(g\in\St(x)\) si i només si \(g\cdot x=x\). Ara bé, si prenem \(g^{-1}\cdot (g\cdot x)=g^{-1}\cdot x\), i per la definició de \myref{def:acció d'un grup sobre un conjunt} tenim que \(g^{-1}\cdot(g\cdot x)=(g^{-1}\ast g)\cdot x\), i per la definició de \myref{def:l'invers d'un element d'un grup} tenim que \(g^{-1}\cdot x\) i per tant \(g^{-1}\in\St(x)\).
+			Sigui \(\ast\) l'operació de \(G\). Per la definició de \myref{def:l'estabilitzador d'un element per una acció} tenim que \(g\in\St(x)\) si i només si \(g\cdot x=x\). Ara bé, si prenem \(g^{-1}\cdot (g\cdot x)=g^{-1}\cdot x\), i per la definició d'\myref{def:acció d'un grup sobre un conjunt} tenim que \(g^{-1}\cdot(g\cdot x)=(g^{-1}\ast g)\cdot x\), i per la definició de \myref{def:l'invers d'un element d'un grup} tenim que \(g^{-1}\cdot x\) i per tant \(g^{-1}\in\St(x)\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:l'estabilitzador és un subgrup}
-		Siguin \(G\) un grup amb l'operació \(\ast\), \(\cdot\) una acció de \(G\) sobre un conjunt \(X\) i \(\St(x)\) l'estabilitzador de \(x\) per l'acció \(\cdot\). Aleshores \(\St(x)\) és un subgrup de \(G\).
+		Siguin \(X\) un \(G\)-conjunt amb l'acció \(\cdot\) i \(\St(x)\) l'estabilitzador de \(x\) per l'acció \(\cdot\). Aleshores \(\St(x)\) és un subgrup de \(G\).
 		\begin{proof}
-			Per la proposició \myref{prop:condició equivalent a subgrup} només ens cal veure que per a tot \(g_{1},g_{2}\in\St(x)\) es compleix \(g_{1}\ast g_{2}^{-1}\in\St(x)\).
+			Sigui \(\ast\) l'operació de \(G\). Per la proposició \myref{prop:condició equivalent a subgrup} només ens cal veure que per a tot \(g_{1},g_{2}\in\St(x)\) es compleix \(g_{1}\ast g_{2}^{-1}\in\St(x)\).
 			
 			Prenem doncs \(g_{1},g_{2}\in\St(x)\). Per la proposició \myref{prop:l'invers d'un element pertany a l'estabilitzador per una acció} tenim que \(g_{2}^{-1}\in\St(x)\), i per tant, per la definició de \myref{def:l'estabilitzador d'un element per una acció} tenim que \((g_{1}\ast g_{2}^{-1})\cdot x=x\), i per tant \(g_{1}\ast g_{2}^{-1}\in\St(x)\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:cardinal del grup dividit per cardinal de l'estabilitzador és el cardinal de l'òrbita}
-		Siguin \(G\) un grup d'ordre finit amb l'operació \(\ast\), \(X\) un \(G\)-conjunt finit amb una acció \(\cdot\) i \(\St(x)\) l'estabilitzador d'un element \(x\) de \(X\) per l'acció \(\cdot\). Aleshores
+		Siguin \(G\) un grup d'ordre finit, \(X\) un \(G\)-conjunt finit amb una acció \(\cdot\) i \(\St(x)\) l'estabilitzador d'un element \(x\) de \(X\) per l'acció \(\cdot\). Aleshores
 		\[\abs{G/\St(x)}=\abs{\mathcal{O}(x)}=[G:\St(x)].\]
 		\begin{proof}
-			Considerem
+			Sigui \(\ast\) l'operació de \(G\). Considerem
 			\begin{align*}
 			f\colon G/\St(x)&\longrightarrow\mathcal{O}(x)\\
 			[g]&\longmapsto g\cdot x
 			\end{align*}
 			Volem veure que \(f\) és una aplicació bijectiva, per tant mirem si està ben definida:
 			
-			Siguin \([g_{1}],[g_{2}]\in G/\St(x)\) tals que \([g_{1}]=[g_{2}]\). Per tant \(g_{1}=g_{2}\ast g'\) per a cert \(g'\in\St(x)\), i per la definició de \myref{def:l'estabilitzador d'un element per una acció} tenim \(g_{1}\cdot x=x\), \((g_{2}\ast g')\cdot x=x\), i per la definició de \myref{def:acció d'un grup sobre un conjunt} això és \(g_{2}\cdot(g'\cdot x)=x\), i per la proposició \myref{prop:l'invers d'un element pertany a l'estabilitzador per una acció} \(g_{2}\cdot x=x\), i per tant \(f\) està ben definida.
+			Siguin \([g_{1}],[g_{2}]\in G/\St(x)\) tals que \([g_{1}]=[g_{2}]\). Per tant \(g_{1}=g_{2}\ast g'\) per a cert \(g'\in\St(x)\), i per la definició de \myref{def:l'estabilitzador d'un element per una acció} tenim \(g_{1}\cdot x=x\), \((g_{2}\ast g')\cdot x=x\), i per la definició d'\myref{def:acció d'un grup sobre un conjunt} això és \(g_{2}\cdot(g'\cdot x)=x\), i per la proposició \myref{prop:l'invers d'un element pertany a l'estabilitzador per una acció} \(g_{2}\cdot x=x\), i per tant \(f\) està ben definida.
 			
-			Veiem ara que \(f\) és injectiva. Prenem \(g\cdot x,g'\cdot x\in\mathcal{O}(x)\) tals que \(g\cdot x=g'\cdot x\). Això, per la definició de \myref{def:acció d'un grup sobre un conjunt}, és equivalent a dir \(x=(g^{-1}\ast g')\cdot x\), i per la definició de \myref{def:l'estabilitzador d'un element per una acció} tenim que \(g^{-1}\ast g\in\St(x)\). Per tant, per la definició de \myref{def:relació d'equivalència entre grups} tenim que \([g]=[g']\), i per tant \(f\) és injectiva.
+			Veiem ara que \(f\) és injectiva. Prenem \(g\cdot x,g'\cdot x\in\mathcal{O}(x)\) tals que \(g\cdot x=g'\cdot x\). Això, per la definició d'\myref{def:acció d'un grup sobre un conjunt}, és equivalent a dir \(x=(g^{-1}\ast g')\cdot x\), i per la definició de \myref{def:l'estabilitzador d'un element per una acció} tenim que \(g^{-1}\ast g\in\St(x)\). Per tant, per la definició de \myref{def:relació d'equivalència entre grups} tenim que \([g]=[g']\), i per tant \(f\) és injectiva.
 			
-			Per veure que \(f\) és exhaustiva veiem que per a qualsevol \(g\cdot x\in\mathcal{O}(x)\), \(f([g])=g\cdot x\), i per tant \(f\) és exhaustiva i tenim que \(\abs{\St(x)}=\abs{\mathcal{O}(x)}\), ja que \(f\) és una bijecció. %REFerencies fonaments!
+			Per veure que \(f\) és exhaustiva veiem que per a qualsevol \(g\cdot x\in\mathcal{O}(x)\), \(f([g])=g\cdot x\), i per tant \(f\) és exhaustiva i tenim que \(\abs{\St(x)}=\abs{\mathcal{O}(x)}\), ja que per la definició d'\myref{def:aplicació bijectiva} tenim que \(f\) és una bijecció. %REFerencies fonaments! Cardinalitat
 		\end{proof}
 	\end{proposition}
 	\subsection{Teoremes de Sylow}
 	\begin{definition}[\(p\)-subgrup de Sylow]
 		\labelname{\ensuremath{p}-subgrup de Sylow}
 		\label{def:p-subgrup de Sylow}
-		Siguin \(G\) un grup amb l'operació \(\ast\) tal que \(\abs{G}=p^{n}m\) amb \(p\) primer que no divideix \(m\) i \(P\) un subgrup de \(G\) amb \(\abs{P}=p^{n}\). Aleshores direm que \(P\) és un \(p\)-subgrup de Sylow de \(G\).
+		Siguin \(G\) un grup tal que \(\abs{G}=p^{n}m\) amb \(p\) primer que no divideix \(m\) i \(P\) un subgrup de \(G\) amb \(\abs{P}=p^{n}\). Aleshores direm que \(P\) és un \(p\)-subgrup de Sylow de \(G\).
 	\end{definition}
 	\begin{lemma}
 		\label{lema:Primer Teorema de Sylow}
@@ -969,29 +967,29 @@
 	\begin{theorem}[Primer Teorema de Sylow]
 		\labelname{Primer Teorema de Sylow}
 		\label{thm:Primer Teorema de Sylow}
-		Siguin \(G\) un grup amb l'operació \(\ast\) tal que \(\abs{G}=p^{n}m\) amb \(p\) primer que no divideix \(m\). Aleshores existeix un subconjunt \(P\subseteq G\) tal que \(P\) sigui un \(p\)-subgrup de Sylow de \(G\).
-		\begin{proof}%Demostració de Wielandt
+		Siguin \(G\) un grup tal que \(\abs{G}=p^{n}m\) amb \(p\) primer que no divideix \(m\). Aleshores existeix un subconjunt \(P\subseteq G\) tal que \(P\) sigui un \(p\)-subgrup de Sylow de \(G\).
+		\begin{proof} % Demostració de Wielandt
 			Sigui \(\mathcal{P}_{p^{n}}(G)=\{H\subseteq G\mid\lvert H\rvert=p^{n}\}=\{H_{1},\dots,H_{k}\}\) el conjunt de subconjunts d'ordre \(p^{n}\) de \(G\). Aleshores tenim que
 			\begin{displaymath}
 			k=\abs{\mathcal{P}_{p^{n}}(G)}=\left(\begin{matrix}p^{n}m\\p^{n}\end{matrix}\right),
 			\end{displaymath}
 			i pel lema \myref{lema:Primer Teorema de Sylow} tenim que \(p\) no divideix \(k\). %Fer això a fonaments, definint \mathcal{P}_{n}(G)
 			
-			Sigui \(e\) l'element neutre de \(G\). Definim
+			Siguin \(\ast\) l'operació de \(G\) i \(e\) l'element neutre de \(G\). Definim
 			\begin{align}\label{eq:thm:Primer Teorema de Sylow 1}
 			\cdot\colon G\times\mathcal{P}_{p^{n}}(G)&\longrightarrow \mathcal{P}_{p^{n}}(G)\\
 			(g,X)&\longmapsto\{g\}X.\nonumber
 			\end{align}
 			Veurem que \(\cdot\) és una acció de \(G\) sobre \(\mathcal{P}_{p^{n}}(G)\). Primer hem de veure que, efectivament, \(\cdot\) està ben definida. Prenem \(g_{1},g_{2}\in G\) i \(X_{1},X_{2}\in \mathcal{P}_{p^{n}}(G)\) tals que \(g_{1}=g_{2}\) i \(X_{1}=X_{2}\). Per tant tenim \(g_{1}\cdot X_{1}=g_{2}\cdot X_{2}\) ja que \(\{g_{1}\}X_{1}=\{g_{2}\}X_{2}\). Per veure que \(g_{1}\cdot X_{1}\in\mathcal{P}_{p^{n}}(G)\) en tenim prou amb veure que, per a tot \(X\in\mathcal{P}_{p^{n}}(G)\), si fixem \(g\in G\) l'aplicació \(g\cdot X\) té inversa, que per la definició de \myref{def:l'invers d'un element d'un grup} és \(x^{-1}\cdot X\), i per tant \(X\in\mathcal{P}_{p^{n}}(G)\).
 			
-			Comprovem que \(\cdot\) satisfà la definició de \myref{def:acció d'un grup sobre un conjunt}. Tenim que \(e\cdot X=X\) per a tot \(X\in\mathcal{P}_{p^{n}}(G)\) ja que, per la definició de \myref{def:conjugació entre conjunts sobre grups}, \(eX=X\).
+			Comprovem que \(\cdot\) satisfà la definició d'\myref{def:acció d'un grup sobre un conjunt}. Tenim que \(e\cdot X=X\) per a tot \(X\in\mathcal{P}_{p^{n}}(G)\) ja que, per la definició de \myref{def:conjugació entre conjunts sobre grups}, \(eX=X\).
 			
 			De nou per la definició de \myref{def:conjugació entre conjunts sobre grups} veiem que per a tot \(g_{1},g_{2}\in G\) i \(X\in\mathcal{P}_{p^{n}}(G)\) tenim que \begin{align*}
 			(g_{1}\ast g_{2})\cdot X&=\{g_{1}\ast g_{2}\}X\\
 			&=\{g_{1}\}\{g_{2}\}X\\
 			&=\{g_{1}\}(\{g_{2}\}X)=g_{1}\cdot(g_{2}\cdot X).
 			\end{align*}
-			i per tant \(\cdot\) satisfà la definició de \myref{def:acció d'un grup sobre un conjunt}.
+			i per tant \(\cdot\) satisfà la definició d'\myref{def:acció d'un grup sobre un conjunt}.
 			
 			Veiem ara que existeix almenys un element \(X\in\mathcal{P}_{p^{n}}(G)\) tal que la seva òrbita, \(\mathcal{O}(X)\), tingui ordre no divisible per \(p\). Per veure això observem que per la definició de \myref{def:òrbita d'un element d'un G-conjunt} veiem que \(\mathcal{O}(X)\) és un classe d'equivalència, i per tant l'ordre del conjunt \(\mathcal{P}_{p^{n}}\) és la suma dels ordres de les òrbites dels seus elements, \(\mathcal{O}(X)\), i si \(p\) dividís l'ordre de \(\mathcal{O}(X)\) per a tot \(X\in\mathcal{P}_{p^{n}}\) tindríem que \(p\) també divideix \(k\), però ja hem vist que això no pot ser. Per tant existeix almenys un element \(X\in\mathcal{P}_{p^{n}}\) tal que \(\abs{\mathcal{O}(X)}\) no és divisible per \(p\). Fixem aquest conjunt \(X\).
 			
@@ -1001,15 +999,17 @@
 	\begin{corollary}[Teorema de Cauchy per grups]
 		\labelname{Teorema de Cauchy per grups}
 		\label{thm:Teorema de Cauchy per grups}
-		Siguin \(G\) un grup d'ordre finit amb l'operació \(\ast\) i \(p\) un primer que divideix l'ordre de \(G\). Aleshores existeix un element \(g\in G\) tal que l'ordre de \(g\) sigui \(p\).
+		Siguin \(G\) un grup d'ordre finit i \(p\) un primer que divideix l'ordre de \(G\). Aleshores existeix un element \(g\in G\) tal que l'ordre de \(g\) sigui \(p\).
 		\begin{proof}
-			Direm que \(e\) és l'element neutre de \(G\). Pel \myref{thm:Primer Teorema de Sylow} tenim que existeix un \(p\)-subgrup de Sylow \(P\) de \(G\), que per la definició de \myref{def:p-subgrup de Sylow} té ordre \(p^{n}\) per a cert \(n\in\mathbb{N}\). Ara bé, pel \myref{thm:Teorema de Lagrange} tenim que per a tot \(x\in P\) diferent del neutre el grup cíclic generar per \(x\) ha de tenir ordre \(p^{t}\) amb \(t\in\{2,\dots,n\}\), i per tant l'element \(x^{p^{t-1}}\) té ordre \(p\), ja que 
+			Sigui \(e\) l'element neutre de \(G\). Pel \myref{thm:Primer Teorema de Sylow} tenim que existeix un \(p\)-subgrup de Sylow \(P\) de \(G\), que per la definició de \myref{def:p-subgrup de Sylow} té ordre \(p^{n}\) per a cert \(n\in\mathbb{N}\). Ara bé, pel \myref{thm:Teorema de Lagrange} tenim que per a tot \(x\in P\) diferent del neutre el grup cíclic generar per \(x\) ha de tenir ordre \(p^{t}\) amb \(t\in\{2,\dots,n\}\), i per tant l'element \(x^{p^{t-1}}\) té ordre \(p\), ja que 
 			\[\left(x^{p^{t-1}}\right)^{p}=x^{p^{t}}=e.\qedhere\]
 		\end{proof}
 	\end{corollary}
 	\begin{lemma}
 		\label{lema:Segon Teorema de Sylow}
-		Siguin \(G\) un grup d'ordre \(p^{n}\) on \(p\) és un primer amb l'operació \(\ast\), \(X\) un \(G\)-conjunt d'ordre finit amb una acció \(\cdot\) i \(X_{G}=\{x\in X\mid g\cdot x=x\text{ per a tot }g\in G\}\) un conjunt. Aleshores
+		Siguin \(G\) un grup d'ordre \(p^{n}\) on \(p\) és un primer, \(X\) un \(G\)-conjunt finit amb una acció \(\cdot\) i
+		\[X_{G}=\{x\in X\mid g\cdot x=x\text{ per a tot }g\in G\}\]
+		un conjunt. Aleshores
 		\[\abs{X_{G}}\equiv\abs{X}\pmod{p}.\]
 		\begin{proof}
 			Siguin \(\mathcal{O}(x_{1}),\dots,\mathcal{O}(x_{r})\) les òrbites dels elements de \(X\). Aleshores, com que per la definició de \myref{def:òrbita d'un element d'un G-conjunt} aquestes són classes d'equivalència, tenim que %REFERENCIES fonaments
@@ -1028,10 +1028,10 @@
 	\begin{theorem}[Segon Teorema de Sylow]
 		\labelname{Segon Teorema de Sylow}
 		\label{thm:Segon Teorema de Sylow}
-		Siguin \(G\) un grup d'ordre finit amb l'operació \(\ast\), \(p\) un primer que divideixi l'ordre de \(G\) i \(P_{1}\), \(P_{2}\) dos \(p\)-subgrups de Sylow de \(G\). Aleshores existeix \(g\in G\) tal que
+		Siguin \(G\) un grup d'ordre finit, \(p\) un primer que divideixi l'ordre de \(G\) i \(P_{1}\), \(P_{2}\) dos \(p\)-subgrups de Sylow de \(G\). Aleshores existeix \(g\in G\) tal que
 		\[\{g\}P_{1}\{g^{-1}\}=P_{2}.\]
 		\begin{proof}
-			Primer observem que aquest enunciat té sentit pel \myref{thm:Primer Teorema de Sylow}.
+			Observem que aquest enunciat té sentit pel \myref{thm:Primer Teorema de Sylow}.
 			
 			Definim el conjunt \(X=\{\{x\}P_{1}\mid x\in G\}\) i 
 			\begin{align}\label{eq:thm:Segon Teorema de Sylow 1}
@@ -1041,9 +1041,9 @@
 			
 			Primer veurem que \(\cdot\) és una acció. Per veure que \(\cdot\) està ben definida prenem \(\{x\}P_{1},\{x'\}P_{1}\in X\) tals que \(\{x\}P_{1}=\{x'\}P_{1}\).  Aleshores per a tot \(y\in P_{2}\) tindrem \(y\cdot\{x\}P_{1}=\{y\}\{x\}P_{1}\) i \(y\cdot\{x'\}P_{1}=\{y\}\{x'\}P_{1}\), i com que per hipòtesi \(\{x\}P_{1}=\{x'\}P_{1}\), ha de ser \(\{y\}\{x\}P_{1}=\{y\}\{x'\}P_{1}\).
 			
-			Comprovem que \(\cdot\) satisfà la definició de \myref{def:acció d'un grup sobre un conjunt}. Veiem que per a tot \(y\in P_{2}\), \(\{x\}P_{1}\in X\) es compleix que \(y\cdot\{x\}P_{1}\in X\). Per la definició \eqref{eq:thm:Segon Teorema de Sylow 1} tenim \(y\cdot\{x\}P_{1}\in X=\{y\}\{x\}P_{1}=\{y\ast x\}P_{1}\), i com que per hipòtesi \(G\) és un grup i \(x,y\in G\), per la definició de \myref{def:grup} tenim que \(y\ast x\in G\), i per tant \(y\cdot\{x\}P_{1}\in X\).
+			Siguin \(\ast\) l'operació de \(G\) i \(e\) l'element neutre de \(G\). Comprovem que \(\cdot\) satisfà la definició d'\myref{def:acció d'un grup sobre un conjunt}. Veiem que per a tot \(y\in P_{2}\), \(\{x\}P_{1}\in X\) es compleix que \(y\cdot\{x\}P_{1}\in X\). Per la definició \eqref{eq:thm:Segon Teorema de Sylow 1} tenim \(y\cdot\{x\}P_{1}\in X=\{y\}\{x\}P_{1}=\{y\ast x\}P_{1}\), i com que per hipòtesi \(G\) és un grup i \(x,y\in G\), per la definició de \myref{def:grup} tenim que \(y\ast x\in G\), i per tant \(y\cdot\{x\}P_{1}\in X\).
 			
-			Sigui \(e\) l'element neutre de \(G\). Tenim que
+			Tenim que
 			\begin{align*}
 			e\cdot \{x\}P_{1}&=\{e\}\{x\}P_{1}\\
 			&=\{e\ast x\}P_{1}=\{x\}P_{1}.\tag{\myref{def:l'element neutre del grup}}
@@ -1054,7 +1054,7 @@
 			&=\{y\}\{y'\}P_{1}\\
 			&=\{y\}(\{y'\}P_{1})=y\cdot(y'\cdot P_{1}).\tag{Definició \eqref{eq:thm:Segon Teorema de Sylow 1}}
 			\end{align*}
-			i per la definició de \myref{def:acció d'un grup sobre un conjunt} tenim que \(X\) és un \(G\)-conjunt.
+			i per la definició d'\myref{def:acció d'un grup sobre un conjunt} tenim que \(X\) és un \(G\)-conjunt.
 			
 			Definim el conjunt
 			\begin{equation}
@@ -1070,12 +1070,12 @@
 	\end{theorem}
 	\begin{corollary}
 		\label{corollary:Segon Teorema de Sylow}
-		\(G\) té un únic \(p\)-subgrup de Sylow si i només si aquest és un subgrup normal.
+		Un grup \(G\) finit té un únic \(p\)-subgrup de Sylow si i només si aquest és un subgrup normal.
 	\end{corollary}
 	\begin{theorem}[Tercer Teorema de Sylow]
 		\labelname{Tercer Teorema de Sylow}
 		\label{thm:Tercer Teorema de Sylow}
-		Siguin \(G\) un grup d'ordre \(p^{n}m\) on \(p\) és un primer que no divideix \(m\) amb l'operació \(\ast\) i \(n_{p}\) el número de \(p\)-subgrups de Sylow de \(G\). Aleshores
+		Siguin \(G\) un grup d'ordre \(p^{n}m\) on \(p\) és un primer que no divideix \(m\) i \(n_{p}\) el número de \(p\)-subgrups de Sylow de \(G\). Aleshores
 		\(n_{p}\equiv1\pmod{p}\) i \(n_{p}\) divideix l'ordre de \(G\).
 		\begin{proof}
 			Definim el conjunt
@@ -1084,24 +1084,24 @@
 			
 			Definim
 			\begin{align}
-		\label{eq:thm:Tercer Teorema de Sylow 1}
-			\cdot\colon P\times X&\longrightarrow X\\
-			(g,T)&\longmapsto\{g\}T\{g^{-1}\}.\nonumber
+				\label{eq:thm:Tercer Teorema de Sylow 1}
+				\cdot\colon P\times X&\longrightarrow X\\
+				(g,T)&\longmapsto\{g\}T\{g^{-1}\}.\nonumber
 			\end{align}
-			Anem a veure que \(\cdot\) és una acció. Veiem que \(\cdot\) està ben definida, ja que si \(T\in X\), aleshores per a tot \(x\in G\), i en particular per a tot \(x\in P\) ja que \(P\leq G\), tenim \(\abs{\{x\}T\{x^{-1}\}}=\abs{T}\), i per tant \(\abs{\{x\}T\{x^{-1}\}}\in X\) per la definició de \myref{def:p-subgrup de Sylow}. Veiem ara que \(\cdot\) satisfà les condicions de la definició de \myref{def:acció d'un grup sobre un conjunt}. Sigui \(e\) l'element neutre de \(G\). Tenim que per a tot \(T\in X\)
+			Siguin \(\ast\) l'operació de \(G\) i \(e\) l'element neutre de \(G\). Anem a veure que \(\cdot\) és una acció. Veiem que \(\cdot\) està ben definida, ja que si \(T\in X\), aleshores per a tot \(x\in G\), i en particular per a tot \(x\in P\) ja que \(P\leq G\), tenim \(\abs{\{x\}T\{x^{-1}\}}=\abs{T}\), i per tant \(\abs{\{x\}T\{x^{-1}\}}\in X\) per la definició de \myref{def:p-subgrup de Sylow}. Veiem ara que \(\cdot\) satisfà les condicions de la definició d'\myref{def:acció d'un grup sobre un conjunt}. Sigui \(e\) l'element neutre de \(G\). Tenim que per a tot \(T\in X\)
 			\begin{align*}
-			e\cdot T&=\{e\}T\{e^{-1}\}\tag{Definició \eqref{eq:thm:Tercer Teorema de Sylow 1}}\\
-			&=T
+				e\cdot T&=\{e\}T\{e^{-1}\}\tag{Definició \eqref{eq:thm:Tercer Teorema de Sylow 1}}\\
+				&=T
 			\end{align*}
 			i per a tot \(g_{1},g_{2}\in P\) i \(T\in X\)
 			\begin{align*}
-			(g_{1}\ast g_{2})\cdot T&=\{g_{1}\ast g_{2}\}T\{{g_{1}\ast g_{2}}^{-1}\}			\tag{Definició \eqref{eq:thm:Tercer Teorema de Sylow 1}}\\
-			&=\{g_{1}\ast g_{2}\}T\{g_{2}^{-1}\ast g_{1}^{-1}\}\tag{Proposició \myref{prop:invers de a b = b invers a invers}}\\
-			&=\{g_{1}\}\{g_{2}\}T\{g_{2}^{-1}\}\{g_{1}^{-1}\}\\
-			&=\{g_{1}\}(g_{2}\cdot T)\{g_{1}^{-1}\}\tag{Definició \eqref{eq:thm:Tercer Teorema de Sylow 1}}\\
-			&=g_{1}\cdot(g_{2}\cdot T)\tag{Definició \eqref{eq:thm:Tercer Teorema de Sylow 1}}
+				(g_{1}\ast g_{2})\cdot T&=\{g_{1}\ast g_{2}\}T\{{g_{1}\ast g_{2}}^{-1}\}			\tag{Definició \eqref{eq:thm:Tercer Teorema de Sylow 1}}\\
+				&=\{g_{1}\ast g_{2}\}T\{g_{2}^{-1}\ast g_{1}^{-1}\}\tag{Proposició \myref{prop:invers de a b = b invers a invers}}\\
+				&=\{g_{1}\}\{g_{2}\}T\{g_{2}^{-1}\}\{g_{1}^{-1}\}\\
+				&=\{g_{1}\}(g_{2}\cdot T)\{g_{1}^{-1}\}\tag{Definició \eqref{eq:thm:Tercer Teorema de Sylow 1}}\\
+				&=g_{1}\cdot(g_{2}\cdot T)\tag{Definició \eqref{eq:thm:Tercer Teorema de Sylow 1}}
 			\end{align*}
-			i per tant, per la definició de \myref{def:acció d'un grup sobre un conjunt} \(X\) és un \(P\)-conjunt amb l'acció \(\cdot\).
+			i per tant, per la definició d'\myref{def:acció d'un grup sobre un conjunt} \(X\) és un \(P\)-conjunt amb l'acció \(\cdot\).
 			
 			Definim el conjunt
 			\[X_{P}=\{T\in X\mid g\cdot T=T\text{ per a tot }g\in P\},\]
@@ -1118,7 +1118,7 @@
 		\end{proof}
 	\end{theorem}
 	\begin{corollary}
-		Si \(G\) té ordre \(p^{n}q^{m}\) on \(p,q\) són primers amb \(p<q\) aleshores \(n_{q}=1\), i pel corol·lari \myref{corollary:Segon Teorema de Sylow}, aquest és normal en \(G\).
+		Si \(G\) té ordre \(p^{n}q^{m}\) on \(p,q\) són primers amb \(p<q\) aleshores \(n_{q}=1\), i pel corol·lari \myref{corollary:Segon Teorema de Sylow}, el \(p\)-subgrup de Sylow de \(G\) és un subgrup normal.
 	\end{corollary}
 	\chapter{Teoria d'anells}
 	\section{Anells}
@@ -1147,13 +1147,13 @@
 	\end{definition}
 	\begin{proposition}
 		\label{prop:unicitat neutre del producte anell}
-		Sigui \(R\) un anell amb la suma \(+\) i el producte \(\cdot\) i element neutre pel producte \(e\). Aleshores l'element neutre pel producte de \(R\) és únic.
+		Sigui \(R\) un anell amb element neutre pel producte \(e\). Aleshores l'element neutre pel producte de \(R\) és únic.
 		\begin{proof}
-			Suposem que existeix un altre \(e'\neq e\) tal que \(x\cdot e'=e'\cdot x=x\) per a tot \(x\in R\). Aleshores tindríem
+			Sigui \(\cdot\) el producte de \(R\). Suposem que existeix un altre \(e'\) tal que \(x\cdot e'=e'\cdot x=x\) per a tot \(x\in R\). Aleshores tindríem
 			\[e\cdot e'=e'\cdot e=e\]
 			a la vegada que
 			\[e\cdot e'=e'\cdot e=e'\]
-			i per tant ha de ser \(e=e'\), que contradiu la hipòtesi que existeix un altre element neutre pel producte a \(R\), i en conseqüència aquest és únic.
+			i per tant ha de ser \(e=e'\) i tenim que aquest és únic.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Elements neutres d'un anell]
@@ -1161,15 +1161,15 @@
 		\label{def:l'element neutre d'un anell per la suma}
 		\labelname{l'element neutre d'un anell pel producte}
 		\label{def:l'element neutre d'un anell pel producte}
-		Sigui \(R\) un anell amb la suma \(+\) i el producte \(\cdot\). Aleshores direm que \(0_{R}\) és l'element neutre de \(R\) per la suma i \(1_{R}\) és l'element neutre de \(R\) pel producte i els denotarem per \(0_{R}\) i \(1_{R}\), respectivament.
+		Sigui \(R\) un anell. Aleshores direm que \(0_{R}\) és l'element neutre de \(R\) per la suma i \(1_{R}\) és l'element neutre de \(R\) pel producte i els denotarem per \(0_{R}\) i \(1_{R}\), respectivament.
 		
 		Aquesta definició té sentit per la proposició \myref{prop:unicitat neutre del grup} i la proposició \myref{prop:unicitat neutre del producte anell}.
 	\end{definition}
 	\begin{notation}
-		Donat un anell \(R\) un anell amb la suma \(+\) i el producte \(\cdot\), aprofitant que el producte \(\cdot\) és associatiu escriurem
+		Donat un anell \(R\) un anell amb el producte \(\cdot\). Aleshores escriurem
 		\[(x_{1}\cdot x_{2})\cdot x_{3}=x_{1}\cdot x_{2}\cdot x_{3}.\]
 		
-		També, si el context ho permet (quan treballem amb un únic anell \(R\)), denotarem \(1_{R}=1\) i \(0_{R}=0\).
+		Això té sentit per la definició d'\myref{def:anell}. També, si el context ho permet (quan treballem amb un únic anell \(R\)), denotarem \(1_{R}=1\) i \(0_{R}=0\).
 	\end{notation}
 	%EXPLICAR notació aditiva pel -a inversa de a per la suma.
 	\begin{proposition}
@@ -1217,7 +1217,7 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:unicitat invers en anells}
-		Siguin \(R\) un anell amb la suma \(+\) i el producte \(\cdot\) i \(a\) un element de \(R\) tal que existeixi \(b\in R\) que satisfaci
+		Siguin \(R\) un anell amb el producte \(\cdot\) i \(a\) un element de \(R\) tal que existeixi \(b\in R\) que satisfaci
 		\[a\cdot b=b\cdot a=1.\]
 		Aleshores \(b\) és únic.
 		\begin{proof}
@@ -1234,14 +1234,14 @@
 	\begin{definition}[Element invertible]
 		\labelname{element invertible}
 		\label{def:element invertible pel producte d'un anell}
-		Siguin \(R\) un anell amb la suma \(+\) i el producte \(\cdot\) i \(x\) un element de \(R\) tal que existeixi \(x'\in R\) tals que
+		Siguin \(R\) un anell amb el producte \(\cdot\) i \(x\) un element de \(R\) tal que existeixi \(x'\in R\) tals que
 		\[x\cdot x'=x'\cdot x=1.\] 
 		Aleshores direm que \(x\) és invertible o que \(x\) és un element invertible de \(R\).
 	\end{definition}
 	\begin{definition}[L'invers d'un element]
 		\labelname{l'invers d'un element invertible}
 		\label{def:l'invers d'un element d'un anell}
-		Siguin \(R\) un anell amb la suma \(+\) i el producte \(\cdot\) i \(x\) un element invertible de \(R\). Aleshores denotarem per \(x^{-1}\) l'element de \(R\) tal que
+		Siguin \(R\) un anell amb el producte \(\cdot\) i \(x\) un element invertible de \(R\). Aleshores denotarem per \(x^{-1}\) l'element de \(R\) tal que
 		\[x\cdot x^{-1}=x^{-1}\cdot x=1.\]
 		Direm que \(x^{-1}\) és l'invers de \(x\).
 		
@@ -1254,7 +1254,7 @@
 		
 		Ho denotarem amb \(S\leq R\).
 	\end{definition}
-	\subsection{Ideals i ideals principals}%completar dividir lol
+	\subsection{Ideals i ideals principals} % completar dividir lol
 	\begin{definition}[Ideal]
 		\labelname{ideal d'un anell}
 		\label{def:ideal d'un anell}
@@ -1305,7 +1305,7 @@
 			r\cdot a&=r\cdot(a_{1}+a_{2})\tag{\myref{def:anell}}\\
 			&=r\cdot a_{1}+r\cdot a_{2}\tag{\myref{def:anell}}
 			\end{align*}
-			i per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que \(r\cdot a_{1}\in I\) i \(r\cdot a_{2}\in J\), i per tant \(r\cdot a=r\cdot a_{1}+r\cdot a_{2}\in I+J\). Aleshores per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que \(I+J\) és un ideal de \((R,+,\cdot)\).
+			i per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que \(r\cdot a_{1}\in I\) i \(r\cdot a_{2}\in J\), i per tant \(r\cdot a=r\cdot a_{1}+r\cdot a_{2}\in I+J\). Aleshores per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que \(I+J\) és un ideal de l'anell \(R\).
 			
 			Veiem ara el punt \eqref{enum:prop:combinació d'ideals per obtenir ideals 2}. Per la proposició \myref{prop:condició equivalent a ideal d'un anell} només ens cal veure que per a tot \(a,b\in I\cap J\), \(r\in R\)  tenim \(a-b\in I\cap J\) i \(r\cdot a\in I\cap J\). Prenem doncs \(a,b\in I\cap J\), i per tant \(a,b\in I\) i \(a,b\in J\), i per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que \(a-b\in I\) i \(a-b\in J\), i tenim que \(a-b\in I\cap J\).
 			
@@ -1329,30 +1329,30 @@
 	\begin{definition}[Ideal principal]
 		\labelname{ideal principal}
 		\label{def:ideal principal}
-		Sigui \(I\) un ideal d'un anell \(R\) amb la suma \(+\) i el producte \(\cdot\) tal que \(I=\{a\}R=R\{a\}=\{r\cdot a\mid r\in R\}\) per a cert \(a\in I\). Aleshores direm que \(I\) és un anell principal de \(R\). Ho denotarem amb \(I=(a)\).
+		Sigui \(I\) un ideal d'un anell \(R\) amb el producte \(\cdot\) tal que \(I=\{a\}R=R\{a\}=\{r\cdot a\mid r\in R\}\) per a cert \(a\in I\). Aleshores direm que \(I\) és un anell principal de \(R\). Ho denotarem amb \(I=(a)\).
 	\end{definition}
 	\subsection{Cossos i l'anell quocient}
-	\begin{definition}[Cos]
+	\begin{definition}[Cos] % Refer amb la definició de cos nova
 		\labelname{cos}
 		\label{def:cos per anells}
 		Sigui \(\mathbb{K}\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\) tal que \(\mathbb{K}\setminus\{0\}\) sigui un grup abelià amb el producte \(\cdot\). Aleshores direm que \(\mathbb{K}\) és un cos amb la suma \(+\) i el producte \(\cdot\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:condició equivalent a cos per anells}
-		Sigui \(\mathbb{K}\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\). Aleshores tenim que \(\mathbb{K}\) és un cos si i només si els únics ideals de \(\mathbb{K}\) són \((0)\) i \(\mathbb{K}\).
+		Sigui \(\mathbb{K}\) un anell commutatiu amb \(1\neq0\). Aleshores tenim que \(\mathbb{K}\) és un cos si i només si els únics ideals de \(\mathbb{K}\) són \((0)\) i \(\mathbb{K}\).
 		\begin{proof}
-			Comencem comprovant que la condició és suficient (\(\implica\)). Suposem doncs que \(\mathbb{K}\) és un cos amb la suma \(+\) i el producte \(\cdot\) i que \(I\) és un ideal de \(\mathbb{K}\) amb \(I\neq(0)\), i per tant existeix \(a\in\mathbb{K}\), \(a\neq0\) tal que \(a\in I\). Com que, per hipòtesi, \((\mathbb{K}\setminus\{0\},\cdot)\) és un grup i \(a\ne0\) per la definició de \myref{def:l'invers d'un element d'un grup} existeix \(a^{-1}\in\mathbb{K}\) tal que \(a\cdot a^{-1}=1\), i per la definició d'\myref{def:ideal d'un anell} trobem que \(1\in I\), i per tant per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que per a tot \(x\in\mathbb{K}\) tenim \(x\cdot1=x\in I\), i per tant \(I=\mathbb{K}\).
+			Siguin \(+\) la suma de \(R\) i \(\cdot\) el producte de \(R\). Comencem comprovant que la condició és suficient (\(\implica\)). Suposem doncs que \(\mathbb{K}\) és un cos amb la suma \(+\) i el producte \(\cdot\) i que \(I\) és un ideal de \(\mathbb{K}\) amb \(I\neq(0)\), i per tant existeix \(a\in\mathbb{K}\), \(a\neq0\) tal que \(a\in I\). Com que, per hipòtesi, \(\mathbb{K}\setminus\{0\}\) és un grup amb l'operació \(\cdot\) i \(a\ne0\) per la definició de \myref{def:l'invers d'un element d'un grup} existeix \(a^{-1}\in\mathbb{K}\) tal que \(a\cdot a^{-1}=1\), i per la definició d'\myref{def:ideal d'un anell} trobem que \(1\in I\), i per tant per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que per a tot \(x\in\mathbb{K}\) tenim \(x\cdot1=x\in I\), i per tant \(I=\mathbb{K}\).
 			
 			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem que els únics ideals de \(\mathbb{K}\) són \((0)\) i \(\mathbb{K}\). Prenem un element \(a\in\mathbb{K}\), \(a\neq0\) i considerem l'ideal principal \((a)\), que per hipòtesi ha de ser \((a)=(1)=\mathbb{K}\), i per la definició d'\myref{def:ideal principal} tenim que existeix \(a'\in(1)\) tal que \(a\cdot a'=1\), i per tant, per la definició de \myref{def:grup} tenim que \(\mathbb{K}\setminus\{0\}\) és un grup amb el producte \(\cdot\) i per la definició de \myref{def:cos per anells} tenim que \(\mathbb{K}\) és un cos amb la suma \(+\) i el producte \(\cdot\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:relació d'equivalència en anells per ideals}
-		Sigui \(I\) un ideal d'un anell \(R\) amb la suma \(+\) i el producte \(\cdot\). Aleshores la relació
+		Sigui \(I\) un ideal d'un anell \(R\) amb la suma \(+\). Aleshores la relació
 		\[x\sim y\sii x-y\in I\quad\text{per a tot }x,y\in R\]
 		és una relació d'equivalència.
 		\begin{proof}
-			Comprovem que \(\sim\) satisfà la definició de \myref{def:relació d'equivalència}:
+			Sigui \(\cdot\) el producte de \(R\). Comprovem que \(\sim\) satisfà la definició de \myref{def:relació d'equivalència}:
 			\begin{enumerate}
 				\item Reflexiva: Prenem \(x\in R\). Per l'observació \myref{obs:l'element neutre per la suma pertany a l'ideal} tenim que \(0\in I\), i per tant \(x-x=0\in I\) i veiem que \(x\sim x\).
 				\item Simètrica: Siguin \(x_{1},x_{2}\in I\) tals que \(x_{1}\sim x_{2}\). Això és que \(x_{1}-x_{2}\in I\). Per la definició d'\myref{def:ideal d'un anell} tenim que \((-1)\cdot(x_{1}-x_{2})\in I\), i per la proposició \myref{prop:propietats bàsiques anells} tenim que \(x_{2}-x_{1}\in I\), és a dir, \(x_{2}\sim x_{1}\).
@@ -1361,38 +1361,39 @@
 			Per tant \(\sim\) és una relació d'equivalència.
 		\end{proof}
 	\end{proposition}
+	% Definir R/I = R/~ ? No sé si ho he fet abans.
 	\begin{proposition}
 		\label{prop:anell quocient}
 		Sigui \(I\) un ideal d'un anell \(R\) amb la suma \(+\) i el producte \(\cdot\). Aleshores \(R/I\) amb la suma \([x]+[y]=[x+y]\) i el producte \([x]\cdot[y]=[x\cdot y]\) és un anell.
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:relació d'equivalència en anells per ideals}.
 			
-			Per la proposició \myref{TODO:grup quocient} tenim que \((R/I,+)\) és un grup, i com que
+			Per la proposició \myref{TODO:grup quocient} tenim que \(R/I\) és un grup amb l'operació \(+\), i com que
 			\begin{align*}
-			[x]+[y]&=[x+y]\\
-			&=[y+x]\tag{\myref{def:grup abelià}}\\
-			&=[y]+[x]
+				[x]+[y]&=[x+y]\\
+				&=[y+x]\tag{\myref{def:grup abelià}}\\
+				&=[y]+[x]
 			\end{align*}
 			tenim que \(R/I\) és un grup abelià amb la suma \(+\). Veiem ara que per a tot \(x,y,z\in R/I\) tenim \([x]\cdot([y]\cdot[z])=([x]\cdot[y])\cdot[z]\) i \([x]\cdot([y]+[z])=[x]\cdot[y]+[x]\cdot[z]\). Tenim
 			\begin{align*}
-			[x]\cdot([y]\cdot[z])&=[x]\cdot[y\cdot z]\\
-			&=[x\cdot(y\cdot z)]\\
-			&=[(x\cdot y)\cdot z]\\
-			&=[x\cdot y]\cdot[z]=([x]\cdot[y])\cdot[z]
+				[x]\cdot([y]\cdot[z])&=[x]\cdot[y\cdot z]\\
+				&=[x\cdot(y\cdot z)]\\
+				&=[(x\cdot y)\cdot z]\\
+				&=[x\cdot y]\cdot[z]=([x]\cdot[y])\cdot[z]
 			\end{align*}
 			i
 			\begin{align*}
-			[x]\cdot([y]+[z])&=[x]\cdot[y+z]\\
-			&=[x\cdot(y+z)]\\
-			&=[x\cdot y+x\cdot z]=[x]\cdot[y]+[x]\cdot[z]
+				[x]\cdot([y]+[z])&=[x]\cdot[y+z]\\
+				&=[x\cdot(y+z)]\\
+				&=[x\cdot y+x\cdot z]=[x]\cdot[y]+[x]\cdot[z]
 			\end{align*}
-			i per la definició d'\myref{def:anell} tenim que \(R/I\) és un anell amb la suma \(+\) i el producte \(\cdot\).
+			i per la definició d'\myref{def:anell} tenim que \(R/I\) és un anell amb la suma \(+\) i el producte \(\cdot\), com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Anell quocient]
 		\labelname{anell quocient}
 		\label{def:anell quocient}
-		Siguin \(R\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\) i \(I\) un ideal de \(R\). Aleshores direm que \(R/I\) és un anell quocient.
+		Siguin \(R\) un anell commutatiu amb \(1\neq0\) i \(I\) un ideal de \(R\). Aleshores direm que \(R/I\) és un anell quocient.
 		
 		Aquesta definició té sentit per la proposició \myref{prop:anell quocient}.
 	\end{definition}
@@ -1430,13 +1431,13 @@
 	\end{observation}
 	\begin{proposition}
 		\label{prop:propietats morfismes entre anells}
-			Siguin \(R\) un anell commutatiu amb la suma \(+_{R}\) i el producte \(\ast_{R}\), \(S\) un anell commutatiu amb la suma \(+_{S}\) i el producte \(\ast_{S}\) amb \(1_{R}\neq0_{R}\) i \(1_{S}\neq0_{S}\) i \(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
+			Siguin \(R\) i \(S\) dos anells commutatius amb \(1_{R}\neq0_{R}\) i \(1_{S}\neq0_{S}\) i \(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
 		\begin{enumerate}
 			\item \(f(0_{R})=0_{S}\).
 			\item \(f(-x)=-f(x)\) per a tot \(x\in R\).
 		\end{enumerate}
 		\begin{proof}
-			Per l'observació \myref{obs:morfisme entre anells és morfisme entre grups} tenim que \(f\) és un morfisme entre els grups \(R\) amb la suma \(+_{R}\) i \(S\) amb la suma \(+_{S}\), i per la proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme} tenim que \(f(0_{R})=0_{S}\) i \(f(-x)=-f(x)\) per a tot \(x\in R\).
+			Siguin \(+_{R}\) la suma de \(R\) i \(+_{S}\) la suma de \(S\). Per l'observació \myref{obs:morfisme entre anells és morfisme entre grups} tenim que \(f\) és un morfisme entre els grups \(R\) amb la suma \(+_{R}\) i \(S\) amb la suma \(+_{S}\), i per la proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme} tenim que \(f(0_{R})=0_{S}\) i \(f(-x)=-f(x)\) per a tot \(x\in R\).
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Nucli i imatge]
@@ -1444,7 +1445,7 @@
 		\label{def:nucli d'un morfisme entre anells}
 		\labelname{imatge d'un morfisme entre anells}
 		\label{def:imatge d'un morfisme entre anells}
-			Siguin \(R\) un anell commutatiu amb la suma \(+_{R}\) i el producte \(\ast_{R}\), \(S\) un anell commutatiu amb la suma \(+_{S}\) i el producte \(\ast_{S}\) amb \(1_{R}\neq0_{R}\) i \(1_{S}\neq0_{S}\) i \(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores definim
+		Siguin \(R\) i \(S\) dos anells commutatius amb \(1_{R}\neq0_{R}\) i \(1_{S}\neq0_{S}\) i \(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores definim
 		\[\ker(f)=\{x\in R\mid f(x)=0_{S}\}\]
 		com el nucli de \(f\), i
 		\[\Ima(f)=\{y\in S\mid f(x)=y\text{ per a cert }x\in R\}\]
@@ -1456,7 +1457,7 @@
 	\end{observation}
 	\begin{proposition}
 		\label{prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell}
-			Siguin \(R\) un anell commutatiu amb la suma \(+_{R}\) i el producte \(\ast_{R}\), \(S\) un anell commutatiu amb la suma \(+_{S}\) i el producte \(\ast_{S}\) amb \(1_{R}\neq0_{R}\) i \(1_{S}\neq0_{S}\) i \(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
+			Siguin \(R\) i \(S\) dos anells commutatius amb \(1_{R}\neq0_{R}\) i \(1_{S}\neq0_{S}\) i \(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
 		\begin{enumerate}
 			\item\label{enum:prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell 1} \(\ker(f)\triangleleft R\).
 			\item\label{enum:prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell 2} \(\Ima(f)\leq S\).
@@ -1464,12 +1465,12 @@
 		\begin{proof}
 			Aquest enunciat té sentit per l'observació \myref{prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell}
 			
-			Comencem veient el punt \eqref{enum:prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell 1}. Com que, per la proposició \myref{prop:propietats morfismes entre anells}, tenim que \(f(0_{R})=0_{S}\) veiem, per la definició de \myref{def:nucli d'un morfisme entre anells}, que \(\ker(f)\neq\emptyset\). Prenem doncs \(a\in\ker(f)\). Observem que, per la definició de \myref{def:morfisme entre anells}, tenim que \(f(r\ast_{R}a)=f(r)\ast_{S}f(a)\) per a tot \(r\in R\), i per tant, com que per la definició de \myref{def:nucli d'un morfisme entre anells} es compleix \(f(a)=0_{S}\) tenim que \[f(r\ast_{R}a)=f(r)\ast_{S}f(a)=f(r)\ast_{S}0_{S}=0_{S}\]
-			i per tant \(r\ast_{R}a\in\ker(f)\) per a tot \(r\in R\), \(a\in\ker(f)\). Ara bé per la definició de \myref{def:ideal d'un anell} tenim que \(\ker(f)\) és un ideal de \(R\).
+			Siguin \(+_{R}\) la suma de \(R\), \(\ast_{R}\) el producte de \(R\), \(+_{S}\) la suma de \(S\) i \(\ast_{S}\) el producte de \(S\). Comencem veient el punt \eqref{enum:prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell 1}. Com que, per la proposició \myref{prop:propietats morfismes entre anells}, tenim que \(f(0_{R})=0_{S}\) veiem, per la definició de \myref{def:nucli d'un morfisme entre anells}, que \(\ker(f)\neq\emptyset\). Prenem doncs \(a\in\ker(f)\). Observem que, per la definició de \myref{def:morfisme entre anells}, tenim que \(f(r\ast_{R}a)=f(r)\ast_{S}f(a)\) per a tot \(r\in R\), i per tant, com que per la definició de \myref{def:nucli d'un morfisme entre anells} es compleix \(f(a)=0_{S}\) tenim que \[f(r\ast_{R}a)=f(r)\ast_{S}f(a)=f(r)\ast_{S}0_{S}=0_{S}\]
+			i per tant \(r\ast_{R}a\in\ker(f)\) per a tot \(r\in R\), \(a\in\ker(f)\). Ara bé per la definició d'\myref{def:ideal d'un anell} tenim que \(\ker(f)\) és un ideal de \(R\).
 			
 			Veiem ara el punt \eqref{enum:prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell 2}. Veiem que per a tot \(x,y\in\Ima(f)\) tenim \(x\ast_{S}y\in\Ima(f)\). Per la definició d'\myref{def:imatge d'un morfisme entre anells} tenim que existeixen \(a,b\in R\) tals que \(f(a)=x\) i \(f(b)=y\). Ara bé, per la definició d'\myref{def:anell} tenim que \(a\ast_{R}b=c\in R\), i per tant per la definició d'\myref{def:imatge d'un morfisme entre anells} tenim que \(f(c)=x\ast_{S}y\in\Ima(f)\). Veiem ara que \(\Ima(f)\) és un anell amb la suma \(+_{S}\) i el producte \(\ast_{S}\). Com que, per l'observació \myref{obs:morfisme entre anells és morfisme entre grups} tenim que \(f\) és un morfisme entre grups per la proposició \myref{prop:la imatge d'un morfisme és un subgrup del grup d'arribada} tenim que \(\Ima(f)\) és un subgrup del grup \(S\) amb la suma \(+_{S}\); i per la definició d'\myref{def:anell} tenim que per a tot \(x,y,z\in R\) es satisfà
 			\[x\ast_{R}(y\ast_{R}z)=(x\ast_{R}y)\ast_{R}z\quad\text{i}\quad x\ast_{R}(y+_{R}z)=x\ast_{R}y+_{R}x\ast_{R}z,\]
-			i per la definició de \myref{def:subanell} tenim que \(\Ima(f)\) és un subanell de \(S\), com volíem veure.
+			i per la definició de \myref{def:subanell} tenim que \(\Ima(f)\) és un subanell de \(S\).
 		\end{proof}
 	\end{proposition}
 %	\begin{proposition}
@@ -1486,7 +1487,7 @@
 %%	\begin{proposition}
 %			Siguin \(R\) un anell commutatiu amb la suma \(+_{R}\) i el producte \(\ast_{R}\), \(S\) un anell commutatiu amb la suma \(+_{S}\) i el producte \(\ast_{S}\) amb \(1_{R}\neq0_{R}\) i \(1_{S}\neq0_{S}\), \((R',+_{R},\ast_{R})\) un subanell de \((R,+_{R},\ast_{R})\), \((S',+_{S},\ast_{S})\) un subanell de \((S,+_{S},\ast_{S})\) i \(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
 %		\begin{enumerate}
-%			\item \((\{f(x)\in S\mid x\in R\},+_{S},\ast_{S})\) és un subanell de \((S,+_{S},\ast_{S})\).
+%			\item \((\{f(x)\in S\mid x\in R\},+_{S},\ast_{S})\) és un subanell de \((S,+_{S},\ast_{S})\). % Notació lletja
 %			\item \((\{x\in R\mid f(x)\in S\},+_{R},\ast_{R})\) és un subanell de \((R,+_{R},\ast_{R})\).
 %		\end{enumerate}
 %		\begin{proof}
@@ -1495,10 +1496,10 @@
 %	\end{proposition}
 	\begin{proposition}
 		\label{prop:operació morfismes entre anells és morfisme entre anells}
-		Siguin \(R\) un anell commutatiu amb la suma \(+_{R}\) i el producte \(\ast_{R}\), \(S\) un anell commutatiu amb la suma \(+_{S}\) i el producte \(\ast_{S}\), \(D\) un anell commutatiu amb la suma \(+_{D}\) i el producte \(\ast_{D}\) tres anells commutatius amb \(1_{R}\neq0_{R}\), \(1_{S}\neq0_{S}\) i \(1_{D}\neq0_{D}\) i \(f\colon R\longrightarrow S\), \(g\colon S\longrightarrow D\) dos morfismes entre anells.
+		Siguin \(R\) , \(S\) i \(D\) tres anells commutatius amb \(1_{R}\neq0_{R}\), \(1_{S}\neq0_{S}\) i \(1_{D}\neq0_{D}\) i \(f\colon R\longrightarrow S\), \(g\colon S\longrightarrow D\) dos morfismes entre anells.
 		Aleshores \(g\circ f\colon R\longrightarrow D\) és un morfisme entre anells.
 		\begin{proof}
-			Per la definició de \myref{def:morfisme entre anells} trobem que
+			Siguin \(+_{R}\) la suma de \(R\), \(\ast_{R}\) el producte de \(R\), \(+_{S}\) la suma de \(S\), \(\ast_{S}\) el producte de \(S\), \(+_{D}\) la suma de \(D\) i \(\ast_{D}\) el producte de \(D\). Per la definició de \myref{def:morfisme entre anells} trobem que
 			\begin{align*}
 			g(f(x+_{R}y))&=g(f(x)+_{S}g(y))\\
 			&=g(f(x))+_{D}g(f(x)),
@@ -1510,7 +1511,7 @@
 			\end{align*}
 			També tenim
 			\[g(f(1_{R}))=g(1_{S})=1_{D}\]
-			i per la definició de \myref{def:morfisme entre anells} tenim que \(g\circ f\) és un morfisme entre anells.
+			i per la definició de \myref{def:morfisme entre anells} tenim que \(g\circ f\) és un morfisme entre anells, com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\begin{corollary}
@@ -1520,10 +1521,10 @@
 	\begin{lemma}
 		\label{lema:ker(f) és ideal de l'anell d'entrada}
 		\label{lema:Ima(f) és subanell de l'anell de sortida}
-			Siguin \(R\) un anell commutatiu amb la suma \(+_{R}\) i el producte \(\ast_{R}\), \(S\) un anell commutatiu amb la suma \(+_{S}\) i el producte \(\ast_{S}\) amb \(1_{R}\neq0_{R}\) i \(1_{S}\neq0_{S}\) i \(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
+		Siguin \(R\) i \(S\) dos anells commutatius amb \(1_{R}\neq0_{R}\) i \(1_{S}\neq0_{S}\) i \(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
 		\[\ker(f)\text{ és un ideal de }R\quad\text{i}\quad\Ima(f)\text{ és un subanell de }S.\]
 		\begin{proof}
-			Comencem veient que \(\ker(f)\) és un ideal de \(R\). Per l'observació \myref{obs:morfisme entre anells és morfisme entre grups} tenim que \(\ker(f)\) és un morfisme entre grups, i per la proposició \ref{prop:el nucli d'un morfisme és un subgrup normal del grup de sortda} tenim que \(\ker(f)\) és un subgrup del grup \(R\) amb la suma \(+_{R}\).
+			Siguin \(+_{R}\) la suma de \(R\), \(\ast_{R}\) el producte de \(R\), \(+_{S}\) la suma de \(S\) i \(\ast_{S}\) el producte de \(S\). Comencem veient que \(\ker(f)\) és un ideal de \(R\). Per l'observació \myref{obs:morfisme entre anells és morfisme entre grups} tenim que \(\ker(f)\) és un morfisme entre grups, i per la proposició \ref{prop:el nucli d'un morfisme és un subgrup normal del grup de sortda} tenim que \(\ker(f)\) és un subgrup del grup \(R\) amb la suma \(+_{R}\).
 			
 			Prenem \(x\in\ker(f)\) i \(r\in R\). Volem veure que \(r\ast_{R}r\in\ker(f)\). Tenim
 			\begin{align*}
@@ -1548,7 +1549,7 @@
 	\subsection{Teoremes d'isomorfisme entre anells} %TODO
 	\begin{theorem}[Primer Teorema de l'isomorfisme]
 		\labelname{Primer Teorema de l'isomorfisme entre anells}\label{thm:Primer Teorema de l'isomorfisme entre anells}
-		Siguin \(R\) un anell amb la suma \(+_{R}\) i el producte \(\ast_{R}\), \(S\) un anell amb la suma \(+_{S}\) i el producte \(\ast_{S}\) i \(\varphi\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
+		Siguin \(R\) i \(S\) dos anells i \(\varphi\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
 		\[R/\ker(\varphi)\cong\Ima(\varphi).\]
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell}. %TODO
@@ -1556,7 +1557,7 @@
 	\end{theorem}
 	\begin{theorem}[Segon Teorema de l'isomorfisme]
 		\labelname{Segon Teorema de l'isomorfisme entre anells}\label{thm:Segon Teorema de l'isomorfisme entre anells}
-		Siguin \(R\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\) i \(I,J\) dos ideals de \(R\). Aleshores
+		Siguin \(R\) un anell commutatiu amb \(1\neq0\) i \(I\) i \(J\) dos ideals de \(R\). Aleshores
 		\[(I+J)/I\cong J/(I\cap J).\]
 		\begin{proof}
 			%TODO 
@@ -1564,14 +1565,14 @@
 	\end{theorem}
 	\begin{lemma}
 		\label{lema:Tercer Teorema de l'isomorfisme entre anells}
-		Siguin \(R\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\) i \(I\), \(J\) dos ideals de \(R\) tals que \(I\subseteq J\). Aleshores \(J/I\) és un ideal de \(R/I\). %Definr \(I\subseteq J\), (projecció)
+		Siguin \(R\) un anell commutatiu amb \(1\neq0\) i \(I\) i \(J\) dos ideals de \(R\) tals que \(I\subseteq J\). Aleshores \(J/I\) és un ideal de \(R/I\). %Definr \(I\subseteq J\), (projecció)
 		\begin{proof}
-			%TODO % J/I hauria de ser \bar{J}, \bar{J}^{I} o algo aixi.
+			%TODO % J/I hauria de ser \bar{J}, \bar{J}^{I} o algo aixi, com a referència pel Claudi del futur.
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Tercer Teorema de l'isomorfisme]
 		\labelname{Tercer Teorema de l'isomorfisme entre anells}\label{thm:Tercer Teorema de l'isomorfisme entre anells}
-		Siguin \(R\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\) i \(I\), \(J\) dos ideals de \(R\) tals que \(I\subseteq J\). Aleshores
+		Siguin \(R\) un anell commutatiu amb \(1\neq0\) i \(I\) i \(J\) dos ideals de \(R\) tals que \(I\subseteq J\). Aleshores
 		\[(R/I)/(J/I)\cong R/J.\]
 		\begin{proof}
 			Aquest enunciat té sentit pel lema \myref{lema:Tercer Teorema de l'isomorfisme entre anells}. %TODO
@@ -1581,44 +1582,43 @@
 	\begin{definition}[Característica]
 		\labelname{característica d'un anell}
 		\label{def:característica d'un anell}
-		Sigui \(R\) un anell amb la suma \(+\) i el producte \(\cdot\). Direm que \(R\) té característica \(n>0\) si \(n=\min_{n\in\mathbb{N}}\{n\cdot1=0\}\). Ho denotarem amb \(\ch(R)=n\). Si aquest \(n\) no existeix diem que \(R\) té característica \(0\) i \(\ch(R)=0\).
+		Sigui \(R\) un anell amb la suma \(+\). Direm que \(R\) té característica \(n>0\) si \[n=\min_{m\in\mathbb{N}}\left\{1+\overset{n)}{\cdots}+1=0\right\}.\]
+		Ho denotarem amb \(\ch(R)=n\). Si aquest \(n\) no existeix diem que \(R\) té característica \(0\) i \(\ch(R)=0\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:morfisme entre anells per trobar característica}
-		Siguin \(R\) un anell amb la suma \(+\) i el producte \(\cdot\) i
+		Siguin \(R\) un anell amb la suma \(+\) i
 		\begin{align*}
 		f\colon\mathbb{Z}&\longrightarrow R\\
-		n&\longmapsto n\cdot1=1+\overset{n)}{\cdots}+1
+		n&\longmapsto 1+\overset{n)}{\cdots}+1
 		\end{align*}
 		una aplicació. Aleshores \(f\) és un morfisme entre anells i \(\ker(f)=(\ch(R))\).
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell}. %Té sentit ja que \(\mathbb{N}\) és un anell. %AFEGIR
 			
-			Comencem veient que \(f\) és un morfisme entre anells. Veiem que \(f\) és un morfisme entre els grup. Tenim que per a tot \(n,m\in\mathbb{Z}\)
+			Sigui \(\cdot\) el producte de \(R\). Comencem veient que \(f\) és un morfisme entre anells. Veiem que \(f\) és un morfisme entre els grup. Tenim que per a tot \(n,m\in\mathbb{Z}\)
 			\begin{align*}
-			f(n+m)&=1+\overset{n+m)}{\cdots}+1\\
-			&=(1+\overset{n)}{\cdots}+1)+(1+\overset{m)}{\cdots}+1)\\
-			&=f(n)+f(m)
+				f(n+m)&=1+\overset{n+m)}{\cdots}+1\\
+				&=(1+\overset{n)}{\cdots}+1)+(1+\overset{m)}{\cdots}+1)\\
+				&=f(n)+f(m)
 			\end{align*}
 			i per la definició de \myref{def:morfisme entre grups} tenim que \(f\) és un morfisme entre grups. Veiem ara que \(f(1)=1\). Tenim que \(f(1)=1\cdot1=1\) i per tant per la definició de \myref{def:morfisme entre anells} tenim que \(f\) és un morfisme entre anells.
 			
 			Veiem ara que \(\ker(f)=(\ch(n))\). Per la definició de \myref{def:nucli d'un morfisme entre anells} tenim que \(\ker(f)=\{x\in\mathbb{N}\mid f(n)=0\}\).	Per tant
 			\[\ker(f)=\{n\in\mathbb{N}\mid n\cdot1=0\}\]
-			i per la definició de \myref{def:característica d'un anell} tenim que \(n=\ch(R)\), i per tant \(\ker(f)=\{k\cdot n\mid k\in\mathbb{N}\}\). Ara bé, per la definició de \myref{def:ideal d'un anell} tenim que \(\ker(f)=(n)\), com volíem veure.
+			i per la definició de \myref{def:característica d'un anell} tenim que \(n=\ch(R)\), i per tant \(\ker(f)=\{k\cdot n\mid k\in\mathbb{N}\}\). Ara bé, per la definició d'\myref{def:ideal d'un anell} tenim que \(\ker(f)=(n)\), com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\begin{corollary}
 		\label{corollary:subcos isomorf respecte caracteristica}
-		Si \(\ch(R)=0\) aleshores existeix un subanell \(S\) de \(R\) tal que \(S\cong\mathbb{Z}\).
-		
-		Si \(\ch(R)=n\) aleshores existeix un subanell \(S\) de \(R\) tal que \(S\cong\mathbb{Z}/(n)\).
+		Si \(\ch(R)=0\) aleshores existeix un subanell \(S\) de \(R\) tal que \(S\cong\mathbb{Z}\). Si \(\ch(R)=n\) aleshores existeix un subanell \(S\) de \(R\) tal que \(S\cong\mathbb{Z}/(n)\).
 	\end{corollary}
 	%\begin{proposition}\(\ch(K)=0\) ó \(\ch(K)=p\) primer.\end{proposition}
 	%	\begin{corollary}
 	%\(x\in R\) invertible, \(S\) subanell de \(R\) amb \(x\in S\) no implica \(x^{-1}\in S\).
 	%		Sigui \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) i \(p\) un primer. Aleshores
 	%		\begin{enumerate}
-	%			\item Si \(\ch(\mathbb{K})=0\), el cos \((\mathbb{K},+,\cdot)\) conté un subcòs isomorf a \(\mathbb{Q}\).
+	%			\item Si \(\ch(\mathbb{K})=0\), el cos \((\mathbb{K},+,\cdot)\) conté un subcòs isomorf a \(\mathbb{Q}\). % Treure notació (A,+,*)
 	%			\item Si \(\ch(\mathbb{K})=p\), el cos \((\mathbb{K},+,\cdot)\) conté un subcòs isomorf a \(\mathbb{Z}/(p)\).
 	%		\end{enumerate}
 	%		\begin{proof}
@@ -1630,20 +1630,20 @@
 	\begin{definition}[Divisor de 0]
 		\labelname{divisor de 0 en un anell}
 		\label{def:divisor de 0 en un anell}
-		Siguin \(R\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\) i \(a,b\neq0\) dos elements de \(R\) tals que \(a\cdot b=0\). Aleshores diem que \(a\) és un divisor de 0 en \(R\).
+		Siguin \(R\) amb el producte \(\cdot\) un anell commutatiu amb \(1\neq0\) i \(a,b\neq0\) dos elements de \(R\) tals que \(a\cdot b=0\). Aleshores diem que \(a\) és un divisor de 0 en \(R\).
 	\end{definition}
 	\begin{definition}[Dominis d'integritat]
 		\labelname{domini d'integritat}
 		\label{def:domini d'integritat}
 		\label{def:DI}
-		Sigui \(D\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\) tal que no existeix cap \(a\in D\) tal que \(a\) sigui un divisor de \(0\) en \(D\). Aleshores direm que \(D\) és un domini d'integritat.
+		Sigui \(D\) un anell commutatiu amb \(1\neq0\) tal que no existeix cap \(a\in D\) tal que \(a\) sigui un divisor de \(0\) en \(D\). Aleshores direm que \(D\) és un domini d'integritat.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:podem tatxar pels costats en DI}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) i \(a\neq0\) un element de \(D\). Aleshores
+		Siguin \(D\) un domini d'integritat amb el producte \(\cdot\) i \(a\neq0\) un element de \(D\). Aleshores
 		\[a\cdot x=a\cdot y\Longrightarrow x=y.\]
 		\begin{proof}
-			Tenim
+			Sigui \(+\) la suma de \(D\). Tenim
 			\[a\cdot x-a\cdot y=0\]
 			i per la proposició \myref{prop:propietats bàsiques anells} tenim que
 			\[(x-y)\cdot a=0.\]
@@ -1654,38 +1654,38 @@
 	\begin{definition}[Ideal primer]
 		\labelname{ideal primer}
 		\label{def:ideal primer}
-		Sigui \(I\) un ideal d'un anell \(R\) amb la suma \(+\) i el producte \(\cdot\) amb \(I\neq R\) tal que si \(a\cdot b\in I\) tenim \(a\in I\) o \(b\in I\). Aleshores direm que \(I\) és un ideal primer de \(R\).
+		Sigui \(I\) un ideal d'un anell \(R\) amb \(I\neq R\) tal que si \(a\cdot b\in I\) tenim \(a\in I\) o \(b\in I\). Aleshores direm que \(I\) és un ideal primer de \(R\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:R/I domini d'integritat sii I ideal primer}
-		Sigui \(I\) un ideal d'un anell \(R\) amb la suma \(+\) i el producte \(\cdot\) amb \(I\neq R\). Aleshores
+		Sigui \(I\) un ideal d'un anell \(R\) amb \(I\neq R\). Aleshores
 		\[R/I\text{ és un domini d'integritat}\sii I\text{ és un ideal primer de }R.\]
-		\begin{proof}
-			Comencem demostrant que la condició és suficient (\(\implica\)). Suposem doncs que \(R/I\) és un domini d'integritat i prenem \([a],[b]\in R/I\) tals que \([a]\cdot[b]=[0]\). Aleshores per la definició de \myref{def:anell quocient} tenim que \(a\cdot b\in I\). Ara bé, com que per hipòtesi \(R/I\) és un domini d'integritat tenim que ha de ser \([a]=[0]\) ó \([b]=[0]\), i per tant trobem que ha de ser \(a\in I\) o \(b\in I\), i per la definició d'\myref{def:ideal primer} trobem que \(I\) és un ideal primer de \(R\).
+		\begin{proof} % Dreta i esquerra en comptes de suficient i necessàri
+			Siguin \(+\) la suma de \(R\) i \(\cdot\) el producte de \(R\). Comencem demostrant que la condició és suficient (\(\implica\)). Suposem doncs que \(R/I\) és un domini d'integritat i prenem \([a],[b]\in R/I\) tals que \([a]\cdot[b]=[0]\). Aleshores per la definició de \myref{def:anell quocient} tenim que \(a\cdot b\in I\). Ara bé, com que per hipòtesi \(R/I\) és un domini d'integritat tenim que ha de ser \([a]=[0]\) ó \([b]=[0]\), i per tant trobem que ha de ser \(a\in I\) o \(b\in I\), i per la definició d'\myref{def:ideal primer} trobem que \(I\) és un ideal primer de \(R\).
 			
 			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que \(I\) és un ideal primer de \(R\). Per la proposició \ref{prop:anell quocient} tenim que \(R/I\) és un anell commutatiu amb \(1\neq0\). Prenem doncs \(a\in R\), \(a\notin I\) i suposem que existeix \(b\in R\) tal que \([a]\cdot[b]=[0]\). Això és que \(a\cdot b\in I\), i com que per hipòtesi \(I\) és un ideal primer, per la definició d'\myref{def:ideal primer} trobem que ha de ser \(b\in I\), i per tant \([b]=[0]\) i per la definició de \myref{def:domini d'integritat} tenim que \(R/I\) és un domini d'integritat.
 		\end{proof}
 	\end{proposition}
 	\begin{corollary}
 		\label{corollary:domini d'integritat sii (0) ideal primer}
-		\(R\) és un domini d'integritat si i només si \((0)\) és un ideal primer.
+		Un anell \(R\) és un domini d'integritat si i només si \((0)\) és un ideal primer.
 	\end{corollary}
 	\begin{definition}[Ideal maximal]
 		\labelname{ideal maximal}
 		\label{def:ideal maximal}
-		Sigui \(M\) un ideal d'un anell \(R\) amb la suma \(+\) i el producte \(\cdot\) amb \(M\neq R\) tal que  per a tot ideal \(I\) de \(R\) amb \(M\subseteq I\subseteq R\) ha de ser \(I=M\) o \(I=R\). Aleshores direm que \(M\) és un ideal maximal de \(R\).
+		Sigui \(M\) un ideal d'un anell \(R\) amb \(M\neq R\) tal que  per a tot ideal \(I\) de \(R\) amb \(M\subseteq I\subseteq R\) ha de ser \(I=M\) o \(I=R\). Aleshores direm que \(M\) és un ideal maximal de \(R\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:condició equivalent a ideal maximal per R/M cos}
-		Sigui \(M\) un ideal d'un anell \(R\) amb la suma \(+\) i el producte \(\cdot\) amb \(I\neq R\). Aleshores
+		Sigui \(M\) un ideal d'un anell \(R\) amb \(1\neq 0\). Aleshores %TODO revisar enunciat
 		\[R/M\text{ és un cos}\sii M\text{ és un ideal maximal de }R.\]
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:anell quocient}.
 			
 			Comencem veient la implicació cap a la dreta (\(\implica\)). Suposem doncs que \(R/M\) és un cos i prenem un ideal \(I/M\) %REF lema teorema d'isomorfia anells per donar-li sentit
-			 de \(R/M\). Aleshores ha de ser \(M\subseteq I\subseteq R\). Per la proposició \myref{prop:condició equivalent a cos per anells} tenim que els únics ideals de \(R/M\) són \(([0])\) i \(R/M\), i per tant ha de ser \(I=M\) o \(I=R\), i per la definició d'\myref{def:ideal maximal} tenim que \(M\) és un ideal maximal de \(R\).
+			 de \(R/M\). Aleshores ha de ser \(M\subseteq I\subseteq R\). Per la proposició \myref{prop:condició equivalent a cos per anells} tenim que els únics ideals de \(R/M\) són \(([0])\) i \(R/M\), i per tant ha de ser \(I=M\) ó \(I=R\), i per la definició d'\myref{def:ideal maximal} tenim que \(M\) és un ideal maximal de \(R\).
 			
-			Veiem ara la implicació cap a l'esquerra (\(\implicatper\)). Suposem doncs que \(M\) és un ideal maximal de l'anell \(R\) i considerem, per la proposició \myref{prop:anell quocient}, l'anell \(R/M\). Per la proposició \myref{prop:condició equivalent a cos per anells} tenim que només hem de veure que els únics ideals de \(R/M\) són \((0)\) i \(R\). Prenem un ideal \(I/M\) de \(R/M\). Aquest ha de ser tal que \(M\subseteq I\subseteq R\), i per la definició d'\myref{def:ideal maximal} tenim que ha de ser \(I=M\) o \(I=R\), i per tant \(I/M\) ha de ser \(([0])\) o \(R/M\) i per la proposició \myref{prop:anell quocient} tenim que \(R/M\) és un cos.
+			Veiem ara la implicació cap a l'esquerra (\(\implicatper\)). Suposem doncs que \(M\) és un ideal maximal de l'anell \(R\) i considerem, per la proposició \myref{prop:anell quocient}, l'anell \(R/M\). Per la proposició \myref{prop:condició equivalent a cos per anells} tenim que només hem de veure que els únics ideals de \(R/M\) són \((0)\) i \(R\). Prenem un ideal \(I/M\) de \(R/M\). Aquest ha de ser tal que \(M\subseteq I\subseteq R\), i per la definició d'\myref{def:ideal maximal} tenim que ha de ser \(I=M\) o \(I=R\), i per tant \(I/M\) ha de ser \(([0])\) ó \(R/M\) i per la proposició \myref{prop:anell quocient} tenim que \(R/M\) és un cos.
 		\end{proof}
 	\end{proposition}
 	\begin{corollary}
@@ -1693,18 +1693,18 @@
 		\(M\) és maximal \(\Longrightarrow\) \(M\) és primer.
 	\end{corollary}
 	\begin{theorem}
-		Sigui \(R\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\). Aleshores \(R\) és un domini d'integritat si i només si \(R\setminus\{0\}\) és un cos amb la suma \(+\) i el producte \(\cdot\). %Ha de ser \abs{R} finit?
+		Sigui \(R\) un anell commutatiu amb \(1\neq0\). Aleshores \(R\) és un domini d'integritat si i només si \(R\setminus\{0\}\) és un cos. %Ha de ser \abs{R} finit?
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{proposition}
 		\label{prop:ideal primer en DI es maximal}
-		Sigui \(I\neq(0)\) un ideal primer d'un domini d'integritat \(D\) amb la suma \(+\) i el producte \(\cdot\). Aleshores \(I\) és maximal.
+		Sigui \(I\neq(0)\) un ideal primer d'un domini d'integritat \(D\). Aleshores \(I\) és maximal.
 		\begin{proof}
-			Posem \(I=(a)\). Per hipòtesi tenim que \(a\neq0\) i que \(I\) és un ideal primer. Sigui \(b\in D\) tal que \((a)\subseteq(b)\). Aleshores tenim que \(a\in(b)\), i per la definició d'\myref{def:ideal principal} tenim que \(a=a'\cdot b\) per a cert \(a'\in D\). Aleshores, per la definició d'\myref{def:ideal primer}, tenim que \(a'\in(a)\) o \(b\in(a)\).
+			Sigui \(\cdot\) el producte de \(D\). Posem \(I=(a)\). Per hipòtesi tenim que \(a\neq0\) i que \(I\) és un ideal primer. Sigui \(b\in D\) tal que \((a)\subseteq(b)\). Aleshores tenim que \(a\in(b)\), i per la definició d'\myref{def:ideal principal} tenim que \(a=a'\cdot b\) per a cert \(a'\in D\). Aleshores, per la definició d'\myref{def:ideal primer}, tenim que \(a'\in(a)\) ó \(b\in(a)\).
 			
-			Suposem que \(a'\in(a)\). Aleshores tenim que \(a'=a\cdot\beta\) per a cert \(\beta\in D\), i per tant \(a=a\cdot\beta\cdot b\), i per la proposició \myref{prop:podem tatxar pels costats en DI} tenim que \(1=\beta\cdot b\), i per tant \(1\in(b)\), d'on trobem \((b)=R\). Suposem ara que \(b\in I\). Aleshores \((a)=(b)\), i per la definició de \myref{def:ideal maximal} tenim que \(I=(a)\) és un ideal maximal de \(D\).
+			Suposem que \(a'\in(a)\). Aleshores tenim que \(a'=a\cdot\beta\) per a cert \(\beta\in D\), i per tant \(a=a\cdot\beta\cdot b\), i per la proposició \myref{prop:podem tatxar pels costats en DI} tenim que \(1=\beta\cdot b\), i per tant \(1\in(b)\), d'on trobem \((b)=R\). Suposem ara que \(b\in I\). Aleshores \((a)=(b)\), i per la definició d'\myref{def:ideal maximal} tenim que \(I=(a)\) és un ideal maximal de \(D\), com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\subsection{Lema de Zorn}
@@ -1752,22 +1752,22 @@
 	\end{axiom}
 	\begin{theorem}
 		\label{thm:ideal maximal exsiteix}
-		Sigui \(R\) un anell amb la suma \(+\) i el producte \(\cdot\) commutatiu amb \(1\neq0\). Aleshores existeix \(M\subseteq R\) tal que \(M\) sigui un ideal maximal de \(R\).
+		Sigui \(R\) un anell commutatiu amb \(1\neq0\). Aleshores existeix \(M\subseteq R\) tal que \(M\) sigui un ideal maximal de \(R\).
 		\begin{proof}
-			Definim el conjunt
+			Siguin \(+\) la suma de \(R\) i \(\cdot\) el producte de \(R\). Definim el conjunt
 			\[A=\{I\triangleleft R\mid I\neq R\}.\]
-			i amb un subconjunt \(\mathcal{C}\subseteq A\) considerem, per la proposició \myref{prop:subconjunts d'un conjunt amb inclusió són una cadena}, la cadena \((\mathcal{C},\subseteq)\). Considerem ara el conjunt
+			i amb un subconjunt \(\mathcal{C}\subseteq A\) considerem, per la proposició \myref{prop:subconjunts d'un conjunt amb inclusió són una cadena}, la cadena \(\mathcal{C}\) amb \(\subseteq\). Considerem ara el conjunt
 			\[J=\bigcup_{I\in\mathcal{C}}I\]
 			i veiem que \(J\) és un ideal de \(R\), ja que si \(x,y\in J\) tenim \(x\in J_{1}\) i \(y\in J_{2}\) per a certs \(J_{1},J_{2}\in\mathcal{C}\). Ara bé, si \(J_{2}\subseteq J_{1}\) tenim que \(x-y\in J_{1}\), i per tant \(x-y\in J\), i si \(J_{1}\subseteq J_{2}\) tenim que \(x-y\in J_{2}\), i per tant \(x-y\in J\). Si prenem \(x\in J\) i \(r\in R\) aleshores \(r\cdot x\in J\), ja que tenim \(x\in J_{1}\) per a cert \(J_{1}\in\mathcal{C}\), i per tant \(r\cdot x\in J_{1}\), i en particular \(r\cdot x\in J\). Per tant per la definició d'\myref{def:ideal d'un anell} tenim que \(J\) és un ideal de \(R\). Per veure que \(J\in A\) hem de comprovar que \(J\neq R\). Ho fem per contradicció. Suposem que \(J=R\). Aleshores \(1\in J\), i per tant \(1\in I\) per a cert \(I\in A\), però això no pot ser ja que si \(I\in A\) s'ha de complir \(I\neq A\), i per tant \(1\notin I\). Per tant \(J\neq R\) i tenim que \(J\in A\).
 			
-			Ara bé, pel \myref{lema de Zorn} tenim que existeix \(M\in\mathcal{C}\) tal que per a tot \(I\in\mathcal{C}\) tenim \(I\subseteq M\) i per la definició d'\myref{def:ideal maximal} tenim que \(M\) és un ideal maximal de \((R,+,\cdot)\).
+			Ara bé, pel \myref{lema de Zorn} tenim que existeix \(M\in\mathcal{C}\) tal que per a tot \(I\in\mathcal{C}\) tenim \(I\subseteq M\) i per la definició d'\myref{def:ideal maximal} tenim que \(M\) és un ideal maximal de \(R\).
 		\end{proof}
 	\end{theorem}
 	\subsection{Divisibilitat}
 	\begin{definition}[Divisors i múltiples]
 		\labelname{divisor}\label{def:divisor per anells}
 		\labelname{múltiple}\label{def:múltiple per anells}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) i \(a,b\in D\) tals que existeix \(c\in D\) tal que \(b=a\cdot c\). Aleshores direm que \(a\) divideix \(b\) o que \(b\) és múltiple de \(a\). Ho denotarem amb \(a\divides b\).
+		Siguin \(D\) un domini d'integritat amb el producte \(\cdot\) i \(a,b\in D\) tals que existeix \(c\in D\) tal que \(b=a\cdot c\). Aleshores direm que \(a\) divideix \(b\) o que \(b\) és múltiple de \(a\). Ho denotarem amb \(a\divides b\).
 	\end{definition}
 	\begin{observation}
 		\label{obs:divisors són ideals continguts}
@@ -1775,22 +1775,22 @@
 	\end{observation}
 	\begin{proposition}
 		\label{prop:podem passar els múltiples de costat a costat}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) i \(a,b,c,c'\) quatre elements, amb \(a\neq0\), \(b\neq0\), tals que \(a\divides b\) i \(b\divides a\), i \(a=c\cdot b\) i \(b=c'\cdot a\). Aleshores \(c'=c^{-1}\).
+		Siguin \(D\) un domini d'integritat amb el producte \(\cdot\) i \(a,b,c,c'\) quatre elements de \(D\) amb \(a\neq0\), \(b\neq0\), tals que \(a\divides b\) i \(b\divides a\), i \(a=c\cdot b\) i \(b=c'\cdot a\). Aleshores \(c'=c^{-1}\).
 		\begin{proof}
 			Tenim que \(b=c'\cdot c\cdot b\), i per la proposició \myref{prop:podem tatxar pels costats en DI} tenim que \(1=c'\cdot c\), i per la definició d'\myref{def:element invertible pel producte d'un anell} tenim que \(c'=c^{-1}\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:associats és relació d'equivalència}
-		Sigui \(R\) un anell amb la suma \(+\) i el producte \(\cdot\) commutatiu amb \(1\neq0\) i \(\sim\) una relació binària tal que per a tot \(x,y\in R\) tenim
+		Sigui \(R\) un anell commutatiu amb el producte \(\cdot\) amb \(1\neq0\) i \(\sim\) una relació binària tal que per a tot \(x,y\in R\) tenim
 		\[x\sim y\Longrightarrow x=u\cdot y\text{ per a algun }u\in R\text{ invertible}.\]
 		Aleshores \(\sim\) és una relació d'equivalència.
 		\begin{proof}
 			Comprovem les condicions de la definició de \myref{def:relació d'equivalència}:
 			\begin{enumerate}
 				\item Simètrica: Per a tot \(x\in R\) tenim \(x=1\cdot x\).
-				\item Reflexiva: Siguin \(x,y\in R\) tals que \(x\sim y\). Aleshores tenim que existeix \(u\in R\) invertible tal que \(x=u\cdot y\). Ara bé, com que \(u\) és invertible tenim per la definició de \myref{def:element invertible pel producte d'un anell} que \(y=u^{-1}\cdot x\), i per tant \(y\sim x\).
-				\item Transitiva: Siguin \(x,y,z\in R\) tals que \(x\sim y\) i \(y\sim z\). Aleshores tenim que \(x=u\cdot y\) i \(y=u'\cdot z\) per a certs \(u,u'\in R\) invertibles, i per tant \(x=u\cdot u'\cdot z\), i com que \(1=u\cdot u'\cdot {u'}^{-1}\cdot{u}^{-1}\) per la definició de \myref{def:element invertible pel producte d'un anell} tenim que \(x\sim z\).
+				\item Reflexiva: Siguin \(x,y\in R\) tals que \(x\sim y\). Aleshores tenim que existeix \(u\in R\) invertible tal que \(x=u\cdot y\). Ara bé, com que \(u\) és invertible tenim per la definició d'\myref{def:element invertible pel producte d'un anell} que \(y=u^{-1}\cdot x\), i per tant \(y\sim x\).
+				\item Transitiva: Siguin \(x,y,z\in R\) tals que \(x\sim y\) i \(y\sim z\). Aleshores tenim que \(x=u\cdot y\) i \(y=u'\cdot z\) per a certs \(u,u'\in R\) invertibles, i per tant \(x=u\cdot u'\cdot z\), i com que \(1=u\cdot u'\cdot {u'}^{-1}\cdot{u}^{-1}\) per la definició d'\myref{def:element invertible pel producte d'un anell} tenim que \(x\sim z\).
 			\end{enumerate}
 			i per la definició de \myref{def:relació d'equivalència} tenim que \(\sim\) és una relació d'equivalència.
 		\end{proof}
@@ -1798,15 +1798,15 @@
 	\begin{definition}[Elements associats]
 		\labelname{elements associats}
 		\label{def:elements associats}
-		Siguin \(R\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\) i \(a,b\in R\) dos elements tals que existeix un element invertible \(u\in R\) tal que \(a=u\cdot b\). Aleshores direm que \(a\) i \(b\) són associats i escriurem \(a\sim b\).
+		Siguin \(R\) un anell commutatiu amb \(1\neq0\) i \(a,b\in R\) dos elements tals que existeix un element invertible \(u\in R\) tal que \(a=u\cdot b\). Aleshores direm que \(a\) i \(b\) són associats i escriurem \(a\sim b\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:associats és relació d'equivalència}.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:màxim comú divisor anells}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\), \(a,b\) dos elements de \(D\) i \(X\subseteq D\) un conjunt tal que per a tot \(d\in X\) tenim \(d\divides a\), \(d\divides b\) i per a tot \(c\in D\) tal que \(c\divides a\), \(c\divides b\) es compleix \(c\divides d\). Aleshores tenim que per a tot \(d'\in X\) si i només si \(d\sim d'\).
+		Siguin \(D\) un domini d'integritat, \(a\) i \(b\) dos elements de \(D\) i \(X\subseteq D\) un conjunt tal que per a tot \(d\in X\) tenim \(d\divides a\), \(d\divides b\) i per a tot \(c\in D\) tal que \(c\divides a\), \(c\divides b\) es compleix \(c\divides d\). Aleshores per a tot \(d'\in D\) tenim que \(d'\in X\) si i només si \(d\sim d'\).
 		\begin{proof}
-			Comencem amb la implicació cap a la dreta (\(\implica\)). Suposem que \(d'\in X\). Hem de veure que \(d\sim d'\). Tenim \(d\divides d'\) i \(d'\divides d\) i per la definició de \myref{def:divisor per anells} trobem que \(d\sim d'\).
+			Sigui \(\cdot\) el producte de \(D\). Comencem amb la implicació cap a la dreta (\(\implica\)). Suposem que \(d'\in X\). Hem de veure que \(d\sim d'\). Tenim \(d\divides d'\) i \(d'\divides d\) i per la definició de \myref{def:divisor per anells} trobem que \(d\sim d'\).
 			
 			Fem ara la implicació cap a l'esquerra (\(\implicatper\)). Suposem que \(d'\sim d\). Hem de veure que \(d'\in X\). Per hipòtesi tenim que \(d\divides a\) i \(d\divides b\). Per tant existeixen \(\alpha,\beta\in D\) tals que \(a=\alpha d\) i \(b=\beta d\), i per la proposició \myref{prop:podem passar els múltiples de costat a costat} tenim que si \(d'=d\cdot u\) amb \(u\in D\) invertible aleshores \(d=d'\cdot u^{-1}\). Per tant
 			\[a=\alpha\cdot d'\cdot u^{-1}\quad\text{i}\quad b=\beta\cdot d'\cdot u^{-1}\]
@@ -1817,16 +1817,16 @@
 		\labelname{màxim comú divisor}
 		\label{def:màxim comú divisor anells}
 		\label{def:mcd anells}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) i \(a,b,d\in D\) tres elements tals que \(d\divides a\) i \(d\divides b\) i tals que per a tot \(c\in D\) que satisfaci \(c\divides a\) i \(c\divides b\) tenim \(c\divides d\). Aleshores direm que \(d\) és el màxim comú divisor de \(a\) i \(b\). Direm que \(d\) és un màxim comú divisor de \(a\) i \(b\) o que \(d\sim\mcd(a,b)\).
+		Siguin \(D\) un domini d'integritat i \(a,b,d\in D\) tres elements tals que \(d\divides a\) i \(d\divides b\) i tals que per a tot \(c\in D\) que satisfaci \(c\divides a\) i \(c\divides b\) tenim \(c\divides d\). Aleshores direm que \(d\) és el màxim comú divisor de \(a\) i \(b\). Direm que \(d\) és un màxim comú divisor de \(a\) i \(b\) o que \(d\sim\mcd(a,b)\).
 		Entendrem que \(\mcd(a,b)\) és un element de \(D\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:màxim comú divisor anells}.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:mínim comú múltiple anells}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\), \(a,b\) dos elements de \(D\) i \(X\subseteq D\) un conjunt tal que per a tot \(m\in X\) tenim \(a\divides m\), \(b\divides m\) i per a tot \(c\in D\) tal que \(a\divides c\), \(b\divides c\) es compleix \(m\divides c\). Aleshores tenim que per a tot \(m'\in X\) si i només si \(m\sim m'\).
+		Siguin \(D\) un domini d'integritat, \(a\) i \(b\) dos elements de \(D\) i \(X\subseteq D\) un conjunt tal que per a tot \(m\in X\) tenim \(a\divides m\), \(b\divides m\) i per a tot \(c\in D\) tal que \(a\divides c\), \(b\divides c\) es compleix \(m\divides c\). Aleshores tenim que per a tot \(m'\in X\) si i només si \(m\sim m'\).
 		\begin{proof}
-			Comencem amb la implicació cap a la dreta (\(\implica\)). Suposem que \(m'\in X\). Hem de veure que \(m\sim m'\). Tenim \(m'\divides m\) i \(m\divides m'\) i per la definició de \myref{def:múltiple per anells} trobem que \(m\sim m'\). %REVISAR. Em feia mandra pensar i he copiat la de dalt :S
+			Sigui \(\cdot\) el producte de \(D\). Comencem amb la implicació cap a la dreta (\(\implica\)). Suposem que \(m'\in X\). Hem de veure que \(m\sim m'\). Tenim \(m'\divides m\) i \(m\divides m'\) i per la definició de \myref{def:múltiple per anells} trobem que \(m\sim m'\). %REVISAR. Em feia mandra pensar i he copiat la de dalt :S
 			
 			Fem ara la implicació cap a l'esquerra (\(\implicatper\)). Suposem que \(m'\sim m\). Hem de veure que \(m'\in X\). Per hipòtesi tenim que \(a\divides m\) i \(b\divides m\). Per tant existeixen \(\alpha,\beta\in D\) tals que \(m=\alpha\cdot a\) i \(m=\beta\cdot b\), i per la proposició \myref{prop:podem passar els múltiples de costat a costat} tenim que si \(m'=u\cdot m\) amb \(u\in D\) invertible aleshores \(m=m'\cdot u^{-1}\). Per tant
 			\[m'=\alpha\cdot a\cdot u^{-1}\quad\text{i}\quad m'=\beta\cdot b\cdot{u'}^{-1}\]
@@ -1837,14 +1837,14 @@
 		\labelname{mínim comú múltiple}
 		\label{def:mínim comú múltiple anells}
 		\label{def:mcm anells}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) i \(a,b,m\in D\) tres elements tals que \(a\divides m\) i \(b\divides m\) i tals que per a tot \(c\in D\) que satisfaci \(a\divides c\) i \(b\divides c\) tenim \(m\divides c\). Aleshores direm que \(m\) és el mínim comú múltiple de \(a\) i \(b\). Direm que \(m\) és un mínim comú múltiple de \(a\) i \(b\) o que \(m\sim\mcm(a,b)\).
+		Siguin \(D\) un domini d'integritat i \(a,b,m\in D\) tres elements tals que \(a\divides m\) i \(b\divides m\) i tals que per a tot \(c\in D\) que satisfaci \(a\divides c\) i \(b\divides c\) tenim \(m\divides c\). Aleshores direm que \(m\) és el mínim comú múltiple de \(a\) i \(b\). Direm que \(m\) és un mínim comú múltiple de \(a\) i \(b\) o que \(m\sim\mcm(a,b)\).
 		Entendrem que \(\mcm(a,b)\) és un element de \(D\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:mínim comú múltiple anells}.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:combinació d'ideals principals per obtenir ideals principals}
-		Siguin \((a),(b)\) dos ideals principals d'un domini d'integritat \((D,+,\cdot)\). Aleshores tenim les igualtats
+		Siguin \((a),(b)\) dos ideals principals d'un domini d'integritat \(D\) amb la suma \(+\) i el producte \(\cdot\). Aleshores tenim les igualtats
 		\begin{enumerate}
 			\item\label{enum:prop:combinació d'ideals principals per obtenir ideals principals 1} \((a)+(b)=(\mcd(a,b))\).
 			\item\label{enum:prop:combinació d'ideals principals per obtenir ideals principals 2} \((a)\cap(b)=(\mcm(a,b))\).
@@ -1892,7 +1892,7 @@
 	\begin{definition}[Primer]
 		\labelname{primer}
 		\label{def:primer en un anell}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\), \(p\neq0\) un element de \(D\) tal que per a tot \(a,b\) dos elements de \(D\) que satisfacin \(p\divides a\cdot b\) tenim \(p\divides a\) ó \(p\divides b\). Aleshores direm que \(p\) és primer.
+		Siguin \(D\) un domini d'integritat, \(p\neq0\) un element de \(D\) tal que per a tot \(a,b\) dos elements de \(D\) que satisfacin \(p\divides a\cdot b\) tenim \(p\divides a\) ó \(p\divides b\). Aleshores direm que \(p\) és primer.
 	\end{definition}
 	\begin{observation}
 		\label{obs:ideals primer iff primer}
@@ -1901,12 +1901,14 @@
 	\begin{definition}[Element irreductible]
 		\labelname{irreductible}
 		\label{def:irreductible en un anell}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\), \(a\neq0\) un element no invertible de \(D\) i \(b,c\) dos elements de \(D\) tals que \(a=b\cdot c\). Aleshores direm que \(a\) és irreductible si \(b\) ó \(c\) són invertibles.
+		Siguin \(D\) un domini d'integritat amb el producte \(\cdot\), \(a\neq0\) un element no invertible de \(D\) i \(b,c\) dos elements de \(D\) tals que \(a=b\cdot c\). Aleshores direm que \(a\) és irreductible si \(b\) ó \(c\) són invertibles.
 	\end{definition}
 	\begin{proposition}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) i \(p\) un element primer de \(D\). Aleshores \(p\) és irreductible.
+		Siguin \(D\) un domini d'integritat i \(p\) un element primer de \(D\). Aleshores \(p\) és irreductible.
 		\begin{proof}
-			Suposem que \(a,b\) són dos elements de \(D\) tals que \(p=a\cdot b\). Per la definició de \myref{def:primer en un anell} tenim que ha de ser \(p\divides a\) ó \(p\divides b\). Si \(p\divides a\) tenim que \(a=\alpha\cdot p\) per a cert \(\alpha\in D\). Ara bé, per hipòtesi, tenim que \(p=a\cdot b\). Per tant \(a=\alpha\cdot a\cdot b\), i per la proposició \myref{prop:podem tatxar pels costats en DI} tenim que \(1=\alpha\cdot b\), i per la definició d'\myref{def:element invertible pel producte d'un anell} tenim que \(b\) és invertible i per la definició d'\myref{def:irreductible en un anell} tenim que \(p\) és irreductible.
+			Sigui \(\cdot\) el producte de \(D\). Suposem que \(a\) i \(b\) són dos elements de \(D\) tals que \(p=a\cdot b\). Per la definició de \myref{def:primer en un anell} tenim que ha de ser \(p\divides a\) ó \(p\divides b\). Si \(p\divides a\) tenim que \(a=\alpha\cdot p\) per a cert \(\alpha\in D\).
+			
+			Ara bé, per hipòtesi, tenim que \(p=a\cdot b\). Per tant \(a=\alpha\cdot a\cdot b\), i per la proposició \myref{prop:podem tatxar pels costats en DI} tenim que \(1=\alpha\cdot b\), i per la definició d'\myref{def:element invertible pel producte d'un anell} tenim que \(b\) és invertible i per la definició d'\myref{def:irreductible en un anell} tenim que \(p\) és irreductible.
 			
 			El cas \(p\divides b\) és anàleg.
 		\end{proof}
@@ -1916,7 +1918,7 @@
 		\labelname{domini de factorització única}
 		\label{def:domini de factorització única}
 		\label{def:DFU}
-		Sigui \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) tal que per a tot element no invertible \(a\neq0\) de \(D\)
+		Sigui \(D\) un domini d'integritat amb el producte \(\cdot\) tal que per a tot element no invertible \(a\neq0\) de \(D\)
 		\begin{enumerate}
 			\item Existeixen \(p_{1},\dots,p_{n}\) elements irreductibles de \(D\) tals que
 			\[a=p_{1}\cdot\ldots\cdot p_{n}.\]
@@ -1930,14 +1932,16 @@
 	\end{definition}
 	\begin{theorem}
 		\label{thm:condició equivalent per DI sii DFU}
-		Sigui \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\). Aleshores \(D\) és un domini de factorització única si i només si tenim
+		Sigui \(D\) un domini d'integritat amb i el producte \(\cdot\). Aleshores \(D\) és un domini de factorització única si i només si tenim
 		\begin{enumerate}
 			\item\label{enum:thm:condició equivalent per DI sii DFU 1} Per a tot \(a\neq0\) element no invertible de \(D\) existeixen \(p_{1},\dots,p_{r}\) elements irreductibles de \(D\) tals que
 			\[a=p_{1}\cdot\ldots\cdot p_{r}\]
 			\item\label{enum:thm:condició equivalent per DI sii DFU 2} Si \(a\) és in element irreductible de \(D\) aleshores \(a\) és primer.
 		\end{enumerate}
 		\begin{proof}
-			Comencem demostrant que la condició és suficient (\(\implica\)). Suposem doncs que \(D\) és un domini de factorització única. El punt \eqref{enum:thm:condició equivalent per DI sii DFU 1} és conseqüència de la definició de \myref{def:domini de factorització única}. Per tant només ens queda veure que tot element irreductible és primer. Siguin \(p\) un element irreductible de \(D\) i \(a,b\) dos elements no invertibles no nuls de \(D\) tals que \(p\divides a\cdot b\). Per la definició de \myref{def:DFU} tenim que existeixen \(p_{1},\dots,p_{r},q_{1},\dots,q_{s}\) elements irreductibles de \(D\) tals que
+			Comencem demostrant que la condició és suficient (\(\implica\)). Suposem doncs que \(D\) és un domini de factorització única. El punt \eqref{enum:thm:condició equivalent per DI sii DFU 1} és conseqüència de la definició de \myref{def:domini de factorització única}. Per tant només ens queda veure que tot element irreductible és primer.
+			
+			Siguin \(p\) un element irreductible de \(D\) i \(a,b\) dos elements no invertibles no nuls de \(D\) tals que \(p\divides a\cdot b\). Per la definició de \myref{def:DFU} tenim que existeixen \(p_{1},\dots,p_{r},q_{1},\dots,q_{s}\) elements irreductibles de \(D\) tals que
 			\[a=p_{1}\cdot\ldots\cdot p_{r}\quad\text{i}\quad b=q_{1}\cdot\ldots\cdot q_{s}\]
 			i per tant
 			\[a\cdot b=p_{1}\cdot\ldots\cdot p_{r}\cdot q_{1}\cdot\ldots\cdot q_{s}\]
@@ -1945,7 +1949,7 @@
 			\[a\cdot b=p\cdot\alpha_{1}\cdot\ldots\cdot\alpha_{t}\]
 			per a certs \(\alpha_{1},\cdots,\alpha_{t}\) elements irreductibles de \(D\). Per tant tenim
 			\[a\cdot b=p\cdot\alpha_{1}\cdot\ldots\cdot\alpha_{t}=p_{1}\cdot\ldots\cdot p_{r}\cdot q_{1}\cdot\ldots\cdot q_{s}\]
-			i, de nou, per la definició de \myref{def:DFU} tenim que \(p\sim p_{i}\) ó \(p\sim q_{j}\) per a certs \(i\in\{1,\dots,r\}\), \(j\in\{1,\dots,s\}\), i per tant \(p\divides a\) ó \(p\divides b\), i per la definició de \myref{def:primer en un anell} tenim que \(p\) és primer.
+			i, de nou per la definició de \myref{def:DFU}, tenim que \(p\sim p_{i}\) ó \(p\sim q_{j}\) per a certs \(i\in\{1,\dots,r\}\), \(j\in\{1,\dots,s\}\), i per tant \(p\divides a\) ó \(p\divides b\), i per la definició de \myref{def:primer en un anell} tenim que \(p\) és primer.
 			
 			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que
 			\begin{enumerate}
@@ -1966,11 +1970,11 @@
 			\[p_{1}\cdot p_{2}\cdot\ldots\cdot p_{r}=u_{1}\cdot q_{\sigma(1)}\cdot\ldots\cdot q_{s}\]
 			per a cert \(u_{1}\) element invertible de \(D\). Podem iterar aquest argument per a \(p_{2},\dots,p_{t}\), on \(t=\min(r,s)\) per obtenir
 			\[p_{1}\cdot\ldots\cdot p_{t}\cdot p_{t+1}\cdot\ldots\cdot p_{r}=(u_{1}\cdot q_{1})\cdot\ldots\cdot(u_{t}\cdot q_{t})\cdot p_{t+1}\cdot\ldots \cdot p_{s}\]
-			per a certs \(u_{1},\dots, u_{t}\) elements invertibles de \(D\). Ara bé, tenim que \(r=s\), ja que si \(r>s\) tindríem que \(p_{s+1},\dots,p_{r}\) són invertibles, i si \(s>r\) tindríem que \(q_{r+1},\dots,q_{s}\) són invertibles, però per la definició d'\myref{def:irreductible en un anell} i la definició de \myref{def:element invertible pel producte d'un anell} tenim que això no pot ser, i per tant \(r=s\) i per la definició de \myref{def:DFU} tenim que \(D\) és un domini de factorització única, com volíem veure.
+			per a certs \(u_{1},\dots, u_{t}\) elements invertibles de \(D\). Ara bé, tenim que \(r=s\), ja que si \(r>s\) tindríem que \(p_{s+1},\dots,p_{r}\) són invertibles, i si \(s>r\) tindríem que \(q_{r+1},\dots,q_{s}\) són invertibles, però per la definició d'\myref{def:irreductible en un anell} i la definició d'\myref{def:element invertible pel producte d'un anell} tenim que això no pot ser, i per tant \(r=s\) i per la definició de \myref{def:DFU} tenim que \(D\) és un domini de factorització única, com volíem veure.
 		\end{proof}
 	\end{theorem}
 	\begin{proposition}
-		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\) i \(a,b\) dos elements no invertibles i no nuls de \(D\) tals que existeixen \(p_{1},\dots,p_{r}\) tals que
+		Siguin \(D\) un domini de factorització única amb i el producte \(\cdot\) i \(a,b\) dos elements no invertibles i no nuls de \(D\) tals que existeixen \(p_{1},\dots,p_{r}\) tals que
 		\[a=p_{1}^{\alpha_{1}}\cdot\ldots\cdot p_{r}^{\alpha_{r}}\quad\text{i}\quad b=p_{1}^{\beta_{1}}\cdot\ldots\cdot p_{r}^{\beta_{r}}\]
 		per a certs \(\alpha_{1},\dots,\alpha_{r},\beta_{1},\dots,\beta_{r}\in\mathbb{N}\). Aleshores
 		\[\prod_{i=1}^{r}p_{i}^{\min(\alpha_{i},\beta_{i})}\sim\mcd(a,b)\quad\text{i}\quad\prod_{i=1}^{r}p_{i}^{\max(\alpha_{i},\beta_{i})}\sim\mcm(a,b).\]
@@ -1990,16 +1994,16 @@
 	\begin{definition}[Anell Noetherià]
 		\labelname{anell Noetherià}
 		\label{def:anell Noetherià}
-		Sigui \(N\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\) tal que si
+		Sigui \(N\) un anell commutatiu amb \(1\neq0\) tal que si
 		\[I_{1}\subseteq I_{2}\subseteq I_{3}\subseteq\dots\]
 		són ideals de \(N\) existeix \(n_{0}\) tal que per a tot \(i\geq n_{0}\) tenim \(I_{i}=I_{i+1}\). Aleshores diem que \(N\) és Noetherià.
 	\end{definition}
 	\begin{observation}
-		\((\{I_{1},I_{2},I_{3}\dots\},\subseteq)\) és una cadena.
+		\(\{I_{1},I_{2},I_{3}\dots\}\) amb la relació d'ordre \(\subseteq\) és una cadena.
 	\end{observation}
 	\begin{lemma}
 		\label{lema:DIP és DFU}
-		Siguin \(N\) un domini d'integritat Noetherià amb la suma \(+\) i el producte \(\cdot\) i \(a\neq0\) un element no invertible de \(N\). Aleshores existeixen \(p_{1},\dots,p_{n}\) elements irreductibles de \(N\) tals que
+		Siguin \(N\) un domini d'integritat Noetherià amb el producte \(\cdot\) i \(a\neq0\) un element no invertible de \(N\). Aleshores existeixen \(p_{1},\dots,p_{n}\) elements irreductibles de \(N\) tals que
 		\[a=p_{1}\cdot\ldots\cdot p_{n}.\]
 		\begin{proof}
 			Ho farem per reducció a l'absurd. Definim el conjunt
@@ -2018,13 +2022,13 @@
 		\labelname{domini d'ideals principals}
 		\label{def:domini d'ideals principals}
 		\label{def:DIP}
-		Sigui \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) tal que tot ideal de \(D\) és un ideal principal. Aleshores direm que \(D\) és un domini d'ideals principals.
+		Sigui \(D\) un domini d'integritat tal que tot ideal de \(D\) és un ideal principal. Aleshores direm que \(D\) és un domini d'ideals principals.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:irreductible sii ideal maximal}
-		Sigui \(D\) un domini d'ideals principals amb la suma \(+\) i el producte \(\cdot\). Aleshores un element \(a\in D\) és irreductible si i només si \((a)\) és un ideal maximal.
+		Sigui \(D\) un domini d'ideals principals. Aleshores un element \(a\in D\) és irreductible si i només si \((a)\) és un ideal maximal.
 		\begin{proof}
-			Comencem veient que la condició és suficient (\(\implicatper\)). Suposem doncs que \(a\) és un element irreductible de \(D\) i prenem \(b\in D\) tal que \((a)\subseteq(b)\neq D\). Aleshores, per l'observació \myref{obs:divisors són ideals continguts} tenim que \(b\divides a\), és a dir, existeix \(r\in D\) tal que \(a=b\cdot r\), i per la definició d'\myref{def:irreductible en un anell} tenim que \(r\) ó \(b\) són invertibles. Ara bé, com que, per hipòtesi, \((b)\neq D\) tenim que \(b\) no és invertible, %REF
+			Sigui \(\cdot\) el producte de \(D\). Comencem veient que la condició és suficient (\(\implicatper\)). Suposem doncs que \(a\) és un element irreductible de \(D\) i prenem \(b\in D\) tal que \((a)\subseteq(b)\neq D\). Aleshores, per l'observació \myref{obs:divisors són ideals continguts} tenim que \(b\divides a\), és a dir, existeix \(r\in D\) tal que \(a=b\cdot r\), i per la definició d'\myref{def:irreductible en un anell} tenim que \(r\) ó \(b\) són invertibles. Ara bé, com que, per hipòtesi, \((b)\neq D\) tenim que \(b\) no és invertible, %REF
 			per tant ha de ser \(r\) invertible per la definició d'\myref{def:element invertible pel producte d'un anell} tenim que \(a\cdot r^{-1}=b\), per l'observació \myref{obs:divisors són ideals continguts} tenim que \((a)=(b)\), i per la definició d'\myref{def:ideal maximal} tenim que \((a)\) és un ideal maximal.
 			
 			Tenim que la condició és necessària (\(\implica\)) per la proposició \myref{prop:ideal primer en DI es maximal}. %REVISAR
@@ -2032,14 +2036,14 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:en DIP irreductible implica primer}
-		Siguin \(D\) un domini d'ideals principals amb la suma \(+\) i el producte \(\cdot\) i \(a\) un element irreductible de \(D\). Aleshores \(a\) és primer.
+		Siguin \(D\) un domini d'ideals principals i \(a\) un element irreductible de \(D\). Aleshores \(a\) és primer.
 		\begin{proof}
 			Per la proposició \myref{prop:irreductible sii ideal maximal} tenim que \((a)\) és maximal, pel corol·lari \myref{corollary:M maximal implica M primer} veiem que \((a)\) és primer, i per l'observació \myref{obs:ideals primer iff primer} trobem que \(a\) és primer, com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\begin{theorem}
 		\label{thm:DIP es Noetherià}
-		Sigui \(D\) un domini d'ideals principals amb la suma \(+\) i el producte \(\cdot\). Aleshores \(D\) és Noetherià.
+		Sigui \(D\) un domini d'ideals principals. Aleshores \(D\) és Noetherià.
 		\begin{proof}
 			Siguin \(I_{1},\dots,I_{i},\dots\) ideals de \(D\) tals que
 			\[I_{1}\subseteq I_{2}\subseteq I_{3}\subseteq\dots\]
@@ -2049,14 +2053,14 @@
 			
 			Ara bé, com que per hipòtesi \(D\) és un domini d'ideals principals tenim, per la definició de \myref{def:DIP} que existeix \(a\in D\) tal que \(\mathcal{I}=(a)\), i per tant existeix \(n\) tal que \(a\in I_{n}\), i trobem que
 			\[\mathcal{I}=(a)\subseteq I_{n}\subseteq I_{n+k}\subseteq\mathcal{I}\]
-			per a tot \(k\in\mathbb{N}\), i per tant \(I_{n}=I_{n+k}\) per a tot \(k\in\mathbb{N}\), i per la definició de \myref{def:anell Noetherià} trobem que \(D\) és un anell Noetherià.
+			per a tot \(k\in\mathbb{N}\), i pel \myref{thm:doble inclusió} trobem que \(I_{n}=I_{n+k}\) per a tot \(k\in\mathbb{N}\), i per la definició de \myref{def:anell Noetherià} trobem que \(D\) és un anell Noetherià.
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
 		\label{thm:DIP és DFU}
-		Sigui \(D\) un domini d'ideals principals amb la suma \(+\) i el producte \(\cdot\). Aleshores \(D\) és un domini de factorització única.
+		Sigui \(D\) un domini d'ideals principals. Aleshores \(D\) és un domini de factorització única.
 		\begin{proof}
-			Pel Teorema \myref{thm:DIP es Noetherià} tenim que \(D\) és un anell Noetherià, i pel lema \myref{lema:DIP és DFU} tenim que per a tot element no irreductible \(a\) de \(D\) existeixen \(p_{1},\dots,p_{n}\) elements irreductibles de \(N\) tals que
+			Sigui \(\cdot\) el producte de \(D\). Pel Teorema \myref{thm:DIP es Noetherià} tenim que \(D\) és un anell Noetherià, i pel lema \myref{lema:DIP és DFU} tenim que per a tot element no irreductible \(a\) de \(D\) existeixen \(p_{1},\dots,p_{n}\) elements irreductibles de \(N\) tals que
 			\[a=p_{1}\cdot\ldots\cdot p_{n}.\]
 			
 			També tenim, per la proposició \myref{prop:en DIP irreductible implica primer} que si \(a\) és un element irreductible de \(D\) aleshores \(a\) és primer.
@@ -2078,18 +2082,18 @@
 	\end{definition}
 	\begin{proposition}
 		\label{prop:norma de 1 és la més petita en DE}
-		Sigui \(D\) un domini Euclidià amb la suma \(+\) i el producte \(\cdot\) amb la norma \(U\). Aleshores
+		Sigui \(D\) un domini Euclidià amb la norma \(U\). Aleshores
 		\[U(1)\leq U(x)\quad\text{per a tot }x\in D\setminus\{0\}.\]
 		\begin{proof}
-			Per la definició de \myref{def:DE} tenim que \(U(x)\leq U(x\cdot y)\) per a tot \(x,y\in D\setminus\{0\}\). Per tant
+			Sigui \(\cdot\) el producte de \(D\). Per la definició de \myref{def:DE} tenim que \(U(x)\leq U(x\cdot y)\) per a tot \(x,y\in D\setminus\{0\}\). Per tant
 			\[U(1)\leq U(1\cdot x)=U(x)\quad\text{per a tot }x\in D\setminus\{0\}.\qedhere\]
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
-		Sigui \(D\) un domini Euclidià amb la suma \(+\) i el producte \(\cdot\) amb la norma \(U\). Aleshores
+		Sigui \(D\) un domini Euclidià amb la norma \(U\). Aleshores
 		\[U(u)=U(1)\sii u\text{ és un element invertible de }D.\]
 		\begin{proof}			
-			Comencem veient l'implicació cap a la dreta (\(\implica\)). Suposem doncs que \(u\) és un element invertible de \(D\).
+			Siguin \(+\) la suma de \(D\) i \(\cdot\) el producte de \(D\). Comencem veient l'implicació cap a la dreta (\(\implica\)). Suposem doncs que \(u\) és un element invertible de \(D\).
 			
 			Per la proposició \myref{prop:norma de 1 és la més petita en DE} tenim que \(U(1)\leq U(u)\) i que \(U(u)\leq U(u\cdot u^{-1})\). Ara bé, per la definició de \myref{def:l'invers d'un element d'un anell} tenim que \(u\cdot u^{-1}=1\), i per tant
 			\[U(1)\leq U(u)\leq U(u\cdot u^{-1})=U(1),\]
@@ -2097,7 +2101,7 @@
 			
 			Veiem ara l'implicació cap a l'esquerra (\(\implicatper\)). Suposem que \(U(u)=U(1)\).
 			
-			Per la definició de \myref{def:DE} tenim que existeixen \(Q,r\) elements de \(D\) tals que
+			Per la definició de \myref{def:DE} tenim que existeixen \(Q\) i \(r\) elements de \(D\) tals que
 			\[1=Q\cdot u+r\]
 			amb \(r=0\) ó \(U(r)<U(u)\). Ara bé, per hipòtesi \(U(u)=U(1)\), i per la proposició \myref{prop:norma de 1 és la més petita en DE} trobem que ha de ser \(r=0\). Per tant tenim
 			\[1=Q\cdot u\]
@@ -2105,13 +2109,13 @@
 		\end{proof}
 	\end{proposition}
 	\begin{theorem}
-		Sigui \(D\) un domini Euclidià amb la suma \(+\) i el producte \(\cdot\). Aleshores \((D,+,\cdot)\) és un domini d'ideals principals.
+		Sigui \(D\) un domini Euclidià. Aleshores \(D\) és un domini d'ideals principals.
 		\begin{proof}
-			Siguin \(U\) una norma de \(D\) i \(I\) un ideal de \(D\). Si \(I=\{0\}\) aleshores \(I=(0)\). Suposem doncs que \(I\neq(0)\) i prenem \(b\in I\) tal que \(U(b)\leq U(x)\) per a tot \(x\in I\), \(x\neq0\).
+			Siguin \(+\) la suma de \(D\), \(\cdot\) el producte de \(D\), \(U\) una norma de \(D\) i \(I\) un ideal de \(D\). Si \(I=\{0\}\) aleshores \(I=(0)\). Suposem doncs que \(I\neq(0)\) i prenem \(b\in I\) tal que \(U(b)\leq U(x)\) per a tot \(x\in I\), \(x\neq0\).
 			
 			Prenem ara \(a\in I\). Per la definició de \myref{def:DE} tenim que existeixen \(Q,r\in D\) tals que
 			\[a=Q\cdot b+r\]
-			amb \(r=0\) ó \(U(r)<U(b)\). I com que, per la definició de \myref{def:anell} tenim que \((D,+)\) és un grup tenim
+			amb \(r=0\) ó \(U(r)<U(b)\). I com que, per la definició d'\myref{def:anell} tenim que \(D\) és un grup amb l'operació \(+\) tenim
 			\[r=a-Q\cdot b,\]
 			i per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que
 			\[r=a-Q\cdot b\in I\]
@@ -2121,7 +2125,7 @@
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
-		Sigui \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\). Aleshores \(\mathbb{K}\) és un domini Euclidià.
+		Sigui \(\mathbb{K}\) un cos. Aleshores \(\mathbb{K}\) és un domini Euclidià.
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2130,7 +2134,7 @@
 	\subsection{Cos de fraccions d'un domini d'integritat}
 	\begin{proposition}
 		\label{prop:relació d'equivalència cos de fraccions}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) i \(\sim\) definida a \(D\times D\setminus\{0\}\) una relació binària tal que per a tot \(a,c\in D\), \(b,d\in D\setminus\{0\}\) 
+		Siguin \(D\) un domini d'integritat amb el producte \(\cdot\) i \(\sim\) definida a \(D\times D\setminus\{0\}\) una relació binària tal que per a tot \(a,c\in D\), \(b,d\in D\setminus\{0\}\) 
 		\[(a,b)\sim(c,d)\sii a\cdot d=b\cdot c.\]
 		Aleshores \(\sim\) és una relació d'equivalència.
 		\begin{proof}
@@ -2138,11 +2142,11 @@
 		\end{proof}
 	\end{proposition}
 	\begin{notation}
-		Denotarem el conjunt quocient \(D\times D\setminus\{0\}/\sim\) com \(\mathbb{Q}(D)\) i la classe d'equivalència \(\overline{(a,b)}\in\mathbb{Q}(D)\) com \(\frac{a}{b}\).
+		Denotarem el conjunt quocient \(D\times D\setminus\{0\}/\sim\) com \(\cosdefraccions(D)\) i la classe d'equivalència \(\overline{(a,b)}\in\cosdefraccions(D)\) com \(\frac{a}{b}\).
 	\end{notation}
 	\begin{lemma}
 		\label{lema:cos de fraccions}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\). Aleshores \(\mathbb{Q}(D)\) és un anell commutatiu amb \(1\neq0\) amb les operacions
+		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\). Aleshores \(\cosdefraccions(D)\) és un anell commutatiu amb \(1\neq0\) amb les operacions
 		\[\frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+c\cdot b}{b\cdot d}\quad\text{i}\quad\frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}.\quad\text{per a tot }a,c\in D\text{, }b,d\in D\setminus\{0\}.\]
 		\begin{proof}
 			%TODO
@@ -2150,22 +2154,23 @@
 	\end{lemma}
 	\begin{theorem}
 		\label{thm:cos de fraccions}
-		Sigui \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\). Aleshores \(\mathbb{Q}(D)\) és un cos amb la suma \(+\) i el producte \(\cdot\).
+		Sigui \(D\) un domini d'integritat. Aleshores \(\cosdefraccions(D)\) és un cos.
+%		Sigui \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\). Aleshores \(\cosdefraccions(D)\) és un cos amb la suma \(+\) i el producte \(\cdot\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
-	\begin{theorem}[Unicitat de \(\mathbb{Q}(D)\)]
+	\begin{theorem}[Unicitat de \ensuremath{\cosdefraccions(D)}]
 		\labelname{Teorema d'unicitat del cos de fraccions d'un domini}\label{tmh:unicitat del cos de fraccions d'un domini}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) i \(\mathbb{Q}_{1}(D)\) i \(\mathbb{Q}_{2}(D)\) dos cossos  amb la suma \(+\) i el producte \(\cdot\). Aleshores
-		\[\mathbb{Q}_{1}(D)\cong\mathbb{Q}_{2}(D)\]
+		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) i \(\cosdefraccions_{1}(D)\) i \(\cosdefraccions_{2}(D)\) dos cossos  amb la suma \(+\) i el producte \(\cdot\). Aleshores
+		\[\cosdefraccions_{1}(D)\cong\cosdefraccions_{2}(D)\]
 		\begin{proof}
-			%TODO%Té sentit per l'anterior?
+			%TODO %Té sentit per l'anterior?
 		\end{proof}
 	\end{theorem}
 	\begin{definition}[Cos de fraccions]
 		\labelname{cos de fraccions d'un domini}\label{def:cos de fraccions}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\). Aleshores direm que \(\mathbb{Q}(D)\) és el cos de fraccions de \(D\).
+		Siguin \(D\) un domini d'integritat. Aleshores direm que \(\cosdefraccions(D)\) és el cos de fraccions de \(D\).
 		%Té sentit per l'anterior
 	\end{definition}
 	\subsection{El Teorema de Gauss}
@@ -2199,7 +2204,7 @@
 		\(D\subseteq D[x]\).
 	\end{observation}
 	\begin{theorem}[Teorema de la base de Hilbert]
-		Sigui \(R\) un anell amb la suma \(+\) i el producte \(\cdot\) Noetherià. Aleshores l'anell de fraccions de \(R\), \(R[x]\) és un anell Noetherià.
+		Sigui \(R\) un anell Noetherià. Aleshores \(R[x]\) és un anell Noetherià.
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2207,52 +2212,52 @@
 	\begin{definition}[Contingut d'un polinomi]
 		\labelname{contingut d'un polinomi}
 		\label{def:contingut d'un polinomi}
-		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\) i \(f(x)=\sum_{i=0}^{n}a_{i}x^{i}\) un element de \(D[x]\). Aleshores definim
+		Siguin \(D\) un domini de factorització única i \(f(x)=a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}\) un element de \(D[x]\). Aleshores definim
 		\[\cont(f)\sim\mcd(a_{0},\dots,a_{n})\]
 		com el contingut de \(f\). %Veure que en DFU el mcd existeix (última pagina lila) i associativitat mcd (crec que ja ho tinc fet).
 		
 		Interpretarem \(\cont(f(x))\) com un element de \(D\).
 	\end{definition}
 	\begin{definition}[Polinomi primitiu]
-		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\) i \(f(x)\) un element de \(D[x]\) tal que
+		Siguin \(D\) un domini de factorització única i \(f(x)\) un element de \(D[x]\) tal que
 		\[\cont(f(x))\sim1.\]
 		Aleshores direm que \(f(x)\) és un polinomi primitiu.
 	\end{definition}
 	\begin{lemma}[Lema de Gauss]
 		\labelname{lema de Gauss}
 		\label{lema:lema de Gauss}
-		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\) i \(f(x),g(x)\) dos polinomis primitius de \(D[x]\). Aleshores \(f(x)\cdot g(x)\) és un polinomi primitiu.
+		Siguin \(D\) un domini de factorització única i \(f(x),g(x)\) dos polinomis primitius de \(D[x]\). Aleshores \(f(x)\cdot g(x)\) és un polinomi primitiu.
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{lemma}
 	\begin{corollary}
-		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\) i \(f(x)\), \(g(x)\) dos elements de \(D[x]\). Aleshores
+		Siguin \(D\) un domini de factorització única i \(f(x)\) i \(g(x)\) dos elements de \(D[x]\). Aleshores
 		\[\cont(f(x)\cdot g(x))\sim\cont(f(x))\cdot\cont(g(x)).\]
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{corollary}
 	\begin{lemma}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) i \(p\) un element irreductible de \(D\). Aleshores tenim que \(p\) és un element irreductible de \(D[x]\).
+		Siguin \(D\) un domini d'integritat i \(p\) un element irreductible de \(D\). Aleshores tenim que \(p\) és un element irreductible de \(D[x]\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}
-		Sigui \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\) i \(f(x)\) un polinomi de \(D[x]\). Aleshores \(\grau(f(x))\geq1\) i \(f(x)\) és un polinomi irreductible de \(D[x]\) si i només si \(\cont(f(x))\sim1\) i \(f(x)\) és irreductible en \(\mathbb{Q}(D)[x]\).
+		Sigui \(D\) un domini de factorització única i \(f(x)\) un polinomi de \(D[x]\). Aleshores \(\grau(f(x))\geq1\) i \(f(x)\) és un polinomi irreductible de \(D[x]\) si i només si \(\cont(f(x))\sim1\) i \(f(x)\) és irreductible en \(\cosdefraccions(D)[x]\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}[Teorema de Gauss]
-		Sigui \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\). Aleshores \(D[x]\) és un domini de factorització única.
+		Sigui \(D\) un domini de factorització única. Aleshores \(D[x]\) és un domini de factorització única.
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
-		Sigui \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\). Aleshores són equivalents
+		Sigui \(D\) un domini d'integritat. Aleshores són equivalents
 		\begin{enumerate}
 			\item \(D\) és un domini de factorització única.
 			\item \(D[x]\) és un domini de factorització única.
@@ -2265,10 +2270,10 @@
 	\subsection{Criteris d'irreductibilitat}
 	\begin{definition}[Arrel]
 		\labelname{arrel d'un polinomi}\label{def:arrel d'un polinomi}
-		Siguin \(R\) un anell commutatiu amb la suma \(+\) i el producte \(\cdot\) amb \(1\neq0\), \(f(x)\) un element de \(R[x]\) i \(\alpha\) un element de \(R\) tal que \(f(\alpha)=0\). Aleshores direm que \(\alpha\) és una arrel de \(f(x)\).
+		Siguin \(R\) un anell commutatiu amb \(1\neq0\), \(f(x)\) un element de \(R[x]\) i \(\alpha\) un element de \(R\) tal que \(f(\alpha)=0\). Aleshores direm que \(\alpha\) és una arrel de \(f(x)\).
 	\end{definition}
 	\begin{proposition}
-		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) i \(f(x)\) un element de \(\mathbb{K}[x]\). Aleshores
+		Siguin \(\mathbb{K}\) un cos i \(f(x)\) un element de \(\mathbb{K}[x]\). Aleshores
 		\begin{enumerate}
 			\item Si \(\grau(f(x))=1\) aleshores \(f(x)\) és irreductible.
 			\item Si \(\grau(f(x))=2\text{ ó }3\) aleshores \(f(x)\) és irreductible si i nomé si \(f(x)\) no té cap arrel.
@@ -2278,14 +2283,14 @@
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
-		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\), \(f(x)=a_{0}+a_{1}\cdot x+\dots+a_{n}\cdot x^{n}\) un polinomi de \(D[x]\) i \(\frac{a}{b}\in\mathbb{Q}(D)\) una arrel de \(f(x)\) amb \(\mcd(a,b)\sim1\). Aleshores tenim que \(a\divides a_{0}\) ó \(b\divides a_{n}\).
+		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\), \(f(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n}\) un polinomi de \(D[x]\) i \(\frac{a}{b}\in\cosdefraccions(D)\) una arrel de \(f(x)\) amb \(\mcd(a,b)\sim1\). Aleshores tenim que \(a\divides a_{0}\) ó \(b\divides a_{n}\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{proposition}
 	\begin{theorem}[Criteri modular]
 		\labelname{Teorema del criteri modular}\label{thm:Criteri modular}
-		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\), \(f(x)=a_{0}+a_{1}\cdot x+\dots+a_{n}\cdot x^{n}\) un polinomi primitiu de \(D[x]\) i \(p\) un element irreductible de \(D\) amb \(p\ndivides a_{n}\) tals que
+		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\), \(f(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n}\) un polinomi primitiu de \(D[x]\) i \(p\) un element irreductible de \(D\) amb \(p\ndivides a_{n}\) tals que
 		\[\overline{f(x)}=\overline{a_{0}}+\overline{a_{1}}\cdot\overline{x}+\dots+\overline{a_{n}}\cdot\overline{x}^{n}\]
 		sigui un polinomi irreductible de \(D/(p)[x]\). Aleshores \(f(x)\) és un polinomi irreductible de \(D[x]\).
 		\begin{proof}
@@ -2294,13 +2299,13 @@
 	\end{theorem}
 	\begin{theorem}[Criteri d'Eisenstein]
 		\labelname{Teorema del Criteri d'Eisenstein}\label{thm:Criteri d'Eisenstein}
-		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\), \(f(x)=a_{0}+a_{1}\cdot x+\dots+a_{n}\cdot x^{n}\) un polinomi primitiu de \(D[x]\) amb \(n\geq1\) i \(p\) un element irreductible de \(D\) tal que \(p\divides a_{0},\dots,p\divides a_{n-1}\) i \(p\ndivides a_{n},p^{2}\ndivides a_{0}\). Aleshores \(f(x)\) és un polinomi irreductible de \(D[x]\).
+		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\), \(f(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n}\) un polinomi primitiu de \(D[x]\) amb \(n\geq1\) i \(p\) un element irreductible de \(D\) satisfent \(p\divides a_{0},\dots,p\divides a_{n-1}\) i \(p\ndivides a_{n},p^{2}\ndivides a_{0}\). Aleshores \(f(x)\) és un polinomi irreductible de \(D[x]\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{corollary}
-		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\), \(f(x)=a_{0}+a_{1}\cdot x+\dots+a_{n}\cdot x^{n}\) un polinomi de \(D[x]\) amb \(n\geq1\) i \(p\) un element irreductible de \(D\) tal que \(p\divides a_{0},\dots,p\divides a_{n-1}\) i \(p\ndivides a_{n},p^{2}\ndivides a_{0}\). Aleshores \(f(x)\) és un polinomi irreductible de \(\mathbb{Q}(D)[x]\).
+		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\), \(f(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n}\) un polinomi de \(D[x]\) amb \(n\geq1\) i \(p\) un element irreductible de \(D\) tal que \(p\divides a_{0},\dots,p\divides a_{n-1}\) i \(p\ndivides a_{n},p^{2}\ndivides a_{0}\). Aleshores \(f(x)\) és un polinomi irreductible de \(\cosdefraccions(D)[x]\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2309,46 +2314,46 @@
 	\section{Cossos finits}
 	\subsection{Propietats bàsiques dels cossos finits}
 	\begin{proposition}
-		Siguin \(\mathbb{K}\) i \(\mathbb{E}\) dos cossos amb la suma \(+\) i el producte \(\cdot\) tals que \(\mathbb{K}\subseteq\mathbb{E}\). Aleshores \(\mathbb{E}\) és un \(\mathbb{K}\)-espai vectorial.
+		Siguin \(\mathbb{K}\) i \(\mathbb{E}\) dos cossos tals que \(\mathbb{K}\subseteq\mathbb{E}\). Aleshores \(\mathbb{E}\) és un \(\mathbb{K}\)-espai vectorial.
 		\begin{proof}
 			%TODO - Fer àlgebra lineal primer.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Cos finit]
 		\labelname{cos finit}\label{def:cos finit}
-		Sigui \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) tal que \(\abs{\mathbb{K}}\in\mathbb{N}\). Aleshores direm que \(\mathbb{K}\) és un cos finit.
+		Sigui \(\mathbb{K}\) un cos tal que \(\abs{\mathbb{K}}\in\mathbb{N}\). Aleshores direm que \(\mathbb{K}\) és un cos finit.
 	\end{definition}
 	\begin{observation}
-		Sigui \(\mathbb{K}\) un cos finit amb la suma \(+\) i el producte \(\cdot\). Aleshores \(\ch(\mathbb{K})\) és primer.
+		Sigui \(\mathbb{K}\) un cos finit. Aleshores \(\ch(\mathbb{K})\) és primer.
 	\end{observation}
 	\begin{theorem}
-		Sigui \(\mathbb{K}\) un cos finit amb la suma \(+\) i el producte \(\cdot\). Aleshores
+		Sigui \(\mathbb{K}\) un cos finit. Aleshores
 		\[\ch(\mathbb{K})=p\sii\abs{\mathbb{K}}=p^{n}\text{ per a cert }n\in\mathbb{N}.\]
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{corollary}
-		Siguin \(\mathbb{K}\) un cos finit amb la suma \(+\) i el producte \(\cdot\) i \(\mathbb{F}\) un subcòs de \(\mathbb{K}\) amb \(\abs{\mathbb{K}}=p^{n}\). Aleshores \(\abs{\mathbb{F}}=p^{d}\) amb \(d\divides n\).
+		Siguin \(\mathbb{K}\) un cos finit i \(\mathbb{F}\) un subcòs de \(\mathbb{K}\) amb \(\abs{\mathbb{K}}=p^{n}\). Aleshores \(\abs{\mathbb{F}}=p^{d}\) amb \(d\divides n\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{corollary}
 	\begin{theorem}[Teorema de l'element primitiu]
 		\labelname{Teorema de l'element primitiu}\label{thm:teorema de l'element primitiu}
-		Sigui \(\mathbb{K}\) un cos finit amb la suma \(+\) i el producte \(\cdot\). Aleshores \(\mathbb{K}\setminus\{0\}\) és un grup cíclic amb el producte \(\cdot\).
+		Sigui \(\mathbb{K}\) un cos finit. Aleshores \(\mathbb{K}\setminus\{0\}\) és un grup cíclic amb el producte \(\cdot\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{definition}[Element primitiu]
 		\labelname{element primitiu d'un cos finit}\label{def:element primitiu d'un cos finit}
-		Sigui \(\mathbb{K}\) un cos finit amb la suma \(+\) i el producte \(\cdot\) i \(\beta\) un element de \(\mathbb{K}\) tal que \(\langle\{\beta\}\rangle=\mathbb{K}\setminus\{0\}\). Aleshores direm que \(\beta\) és un element primitiu de \(\mathbb{K}\).
+		Sigui \(\mathbb{K}\) un cos finit i \(\beta\) un element de \(\mathbb{K}\) tal que \(\langle\{\beta\}\rangle=\mathbb{K}\setminus\{0\}\). Aleshores direm que \(\beta\) és un element primitiu de \(\mathbb{K}\).
 		
 		Aquesta definició té sentit pel \myref{thm:teorema de l'element primitiu}.
 	\end{definition}
 	\begin{theorem}
-		Sigui \(\mathbb{K}\) un cos finit amb la suma \(+\) i el producte \(\cdot\) amb \(\abs{\mathbb{K}}=p\). Aleshores existeix un polinomi irreductible \(f(x)\) en \(\mathbb{Z}/(p)[x]\) tal que
+		Sigui \(\mathbb{K}\) un cos finit amb \(\abs{\mathbb{K}}=p\). Aleshores existeix un polinomi irreductible \(f(x)\) en \(\mathbb{Z}/(p)[x]\) tal que
 		\[\mathbb{K}\cong\mathbb{Z}/(p)[x]/(f(x)).\]
 		\begin{proof}
 			%TODO
@@ -2361,7 +2366,7 @@
 	\end{definition}
 	\begin{theorem}[Teorema de Kronecker]
 		\labelname{Teorema de Kronecker}\label{thm:Teorema de Kronecker}
-		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) i \(f(x)\) un polinomi de \(\mathbb{K}[x]\). Aleshores existeix un cos \(\mathbb{L}\), amb \(\mathbb{K}\subseteq\mathbb{L}\), tal que \(f(x)\) descompon en \(\mathbb{L}\).
+		Siguin \(\mathbb{K}\) un cos i \(f(x)\) un polinomi de \(\mathbb{K}[x]\). Aleshores existeix un cos \(\mathbb{L}\), amb \(\mathbb{K}\subseteq\mathbb{L}\), tal que \(f(x)\) descompon en \(\mathbb{L}\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2374,8 +2379,8 @@
 	\end{definition}
 	\begin{definition}[Derivada formal]
 		\labelname{derivada formal}\label{def:derivada formal}
-		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) i \(f(x)=a_{0}+a_{1}\cdot x+\dots+a_{n}\cdot x^{n}\) un polinomi de \(\mathbb{K}\). Aleshores definim la derivada formal de \(f(x)\) com
-		\[f'(x)=a_{1}+2\cdot a_{2}x+3\cdot a_{3}\cdot x^{2}+\dots+n\cdot a_{n}\cdot x^{n-1}.\]
+		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) i \(f(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n}\) un polinomi de \(\mathbb{K}\). Aleshores definim la derivada formal de \(f(x)\) com
+		\[f'(x)=a_{1}+2\cdot a_{2}x+3\cdot a_{3}x^{2}+\dots+n\cdot a_{n}x^{n-1}.\]
 	\end{definition}
 	\begin{proposition}
 		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) i \(f(x)\), \(g(x)\) dos polinomis de \(\mathbb{K}\). Aleshores es compleix
@@ -2390,13 +2395,13 @@
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
-		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) amb \(\ch(\mathbb{K})=0\) i \(f(x)=a_{0}+a_{1}\cdot x+\cdots+a_{n}\cdot x^{n}\) un polinomi de \(\mathbb{K}\) amb \(n\geq1\). Aleshores \(n\cdot a_{n}\neq0\) i \(f'(x)\neq0\).
+		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) amb \(\ch(\mathbb{K})=0\) i \(f(x)=a_{0}+a_{1}x+\cdots+a_{n}x^{n}\) un polinomi de \(\mathbb{K}\) amb \(n\geq1\). Aleshores \(n\cdot a_{n}\neq0\) i \(f'(x)\neq0\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
-		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) amb \(\ch(\mathbb{K})=p\) no nul i \(f(x)=a_{0}+a_{1}\cdot x+\cdots+a_{n}\cdot x^{n}\) un polinomi de \(\mathbb{K}\) amb \(n\geq1\). Aleshores
+		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) amb \(\ch(\mathbb{K})=p\) no nul i \(f(x)=a_{0}+a_{1}x+\cdots+a_{n}x^{n}\) un polinomi de \(\mathbb{K}\) amb \(n\geq1\). Aleshores
 		\[f'(x)\neq0\sii p\divides i\text{ per a tot }i\geq1\text{ tal que }a_{i}\neq0.\]
 		\begin{proof}
 			%TODO
@@ -2409,13 +2414,13 @@
 		amb \(m\geq2\). Aleshores direm que \(\alpha\) és una arrel múltiple de \(f(x)\).
 	\end{definition}
 	\begin{proposition}
-		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) i \(f(x)\) un polinomi de \(\mathbb{K}[x]\). Aleshores \(\alpha\) és una arrel múltiple de \(f(x)\) si i només si \(\alpha\) és una arrel de \(f'(x)\).
+		Siguin \(\mathbb{K}\) un cos i \(f(x)\) un polinomi de \(\mathbb{K}[x]\). Aleshores \(\alpha\) és una arrel múltiple de \(f(x)\) si i només si \(\alpha\) és una arrel de \(f'(x)\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{proposition}
 	\begin{corollary}
-		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) i \(f(x)\) un polinomi de \(\mathbb{K}[x]\) amb \(\grau(f(x))\geq1\). Aleshores \(\mcd(f(x),f'(x))=1\) si i només si \(f(x)\) no té arrels múltiples.
+		Siguin \(\mathbb{K}\) un cos i \(f(x)\) un polinomi de \(\mathbb{K}[x]\) amb \(\grau(f(x))\geq1\). Aleshores \(\mcd(f(x),f'(x))=1\) si i només si \(f(x)\) no té arrels múltiples.
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2423,7 +2428,7 @@
 	\section{Caracterització dels cossos finits i els seus subcossos}
 	\subsection{Teoremes d'existència i unicitat dels cossos finits}
 	\begin{theorem}[Teorema d'existència dels cossos finits]
-		Siguin \(p\) un primer i \(n\) un natural. Aleshores existeix un cos \(\mathbb{K}\) amb la suma \(+\) i el producte \(\cdot\) tal que \(\abs{\mathbb{K}}=p^{n}\).
+		Siguin \(p\) un primer i \(n\) un natural. Aleshores existeix un cos \(\mathbb{K}\) tal que \(\abs{\mathbb{K}}=p^{n}\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2441,20 +2446,20 @@
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Teorema d'unicitat dels cossos finits]
-		Siguin \(\mathbb{K}\) un cos finit amb la suma \(+_{\mathbb{K}}\) i el producte \(\ast_{\mathbb{K}}\) i \(\mathbb{F}\) un cos finit amb la suma \(+_{\mathbb{F}}\) i el producte \(\ast_{\mathbb{F}}\) amb \(\abs{\mathbb{K}}=\abs{\mathbb{F}}=p^{n}\). Aleshores
-		\[(\mathbb{K},+_{\mathbb{K}},\ast_{\mathbb{K}})\cong(\mathbb{F},+_{\mathbb{F}},\ast_{\mathbb{F}}).\]
+		Siguin \(\mathbb{K}\) i \(\mathbb{F}\) dos cossos finits amb \(\abs{\mathbb{K}}=\abs{\mathbb{F}}=p^{n}\). Aleshores % puc treure =p^{n} ?
+		\[\mathbb{K}\cong\mathbb{F}.\]
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}[Teorema d'existència dels subcossos finits]
-		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) amb \(\abs{\mathbb{K}}=p^{n}\) i \(d\) un natural tal que \(d\divides n\). Aleshores existeix un \(\mathbb{L}\subseteq\mathbb{K}\) amb \(\abs{\mathbb{L}}=p^{d}\) tal que \(\mathbb{L}\) és un subcòs de \(\mathbb{K}\).
+		Siguin \(\mathbb{K}\) un cos amb \(\abs{\mathbb{K}}=p^{n}\) i \(d\) un natural tal que \(d\divides n\). Aleshores existeix un \(\mathbb{L}\subseteq\mathbb{K}\) amb \(\abs{\mathbb{L}}=p^{d}\) tal que \(\mathbb{L}\) és un subcòs de \(\mathbb{K}\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}[Teorema d'unicitat dels subcossos finits]
-		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) amb \(\abs{\mathbb{K}}=p^{n}\), \(d\) un natural tal que \(d\divides n\) i \(\mathbb{L}_{1}\), \(\mathbb{L}_{2}\) dos subcossos de \(\mathbb{K}\) amb \(\abs{\mathbb{L}_{1}}=\abs{\mathbb{L}_{2}}=p^{d}\). Aleshores \(\mathbb{L}_{1}=\mathbb{L}_{2}\).
+		Siguin \(\mathbb{K}\) un cos amb \(\abs{\mathbb{K}}=p^{n}\), \(d\) un natural tal que \(d\divides n\) i \(\mathbb{L}_{1}\), \(\mathbb{L}_{2}\) dos subcossos de \(\mathbb{K}\) amb \(\abs{\mathbb{L}_{1}}=\abs{\mathbb{L}_{2}}=p^{d}\). Aleshores \(\mathbb{L}_{1}=\mathbb{L}_{2}\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2473,7 +2478,7 @@
 		\end{proof}
 	\end{theorem}
 	\begin{proposition}[Morfisme de Frobenius]
-		Sigui \(\mathbb{K}\) un cos finit amb la suma \(+\) i el producte \(\cdot\) amb \(\ch(\mathbb{K})=p\). Aleshores l'aplicació
+		Sigui \(\mathbb{F}_{p^{n}}\) un cos finit. Aleshores l'aplicació
 		\begin{align*}
 		\Phi\colon\mathbb{K}&\longrightarrow\mathbb{K}\\
 		a&\longmapsto a^{p}
@@ -2484,13 +2489,13 @@
 		\end{proof}
 	\end{proposition}
 	\begin{theorem}
-		Siguin \(p\) un primer, \(f(x)\) un polinomi irreductible de l'anell de polinomis \(\mathbb{Z}/(p)[x]\) amb \(\grau(f(x))=n\) i \(\alpha\) una arrel de \(f(x)\) en \(\mathbb{K}(p(x))\). Aleshores les arrels de \(f(x)\) són \(\alpha,\alpha^{p^{2}},\alpha^{p^{3}},\dots,\alpha^{p{n-1}}\) i \(\alpha^{p^{n}}=\alpha\).
+		Siguin \(p\) un primer, \(f(x)\) un polinomi irreductible de l'anell de polinomis \(\mathbb{Z}/(p)[x]\) amb \(\grau(f(x))=n\) i \(\alpha\) una arrel de \(f(x)\) en \(\mathbb{K}(p(x))\). Aleshores les arrels de \(f(x)\) són \(\alpha,\alpha^{p},\alpha^{p^{2}},\alpha^{p^{3}},\dots,\alpha^{p^{n-1}}\) i \(\alpha^{p^{n}}=\alpha\).
 		\begin{proof}
 			%TODO %Aquest enunciat té sentit pel \myref{thm:Teorema de Kronecker}
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
-		Siguin \(p\) un primer, \(f(x)\) un polinomi irreductible de l'anell de polinomis \(\mathbb{Z}/(p)[x]\) amb \(\grau(f(x))=n\) i \(\alpha\) una arrel de \(f(x)\) en \(\mathbb{K}(p(x))\). Aleshores les arrels de \(f(x)\) són \(\alpha,\alpha^{p^{2}},\alpha^{p^{3}},\dots,\alpha^{p^{n-1}}\) i \(\alpha^{p^{i}}\neq\alpha^{p^{j}}\) per a tot \(i\neq j\), \(i,j\in\{0,\dots,n-1\}\).
+		Siguin \(p\) un primer, \(f(x)\) un polinomi irreductible de l'anell de polinomis \(\mathbb{Z}/(p)[x]\) amb \(\grau(f(x))=n\) i \(\alpha\) una arrel de \(f(x)\) en \(\mathbb{K}(p(x))\). Aleshores les arrels de \(f(x)\) són \(\alpha,\alpha^{p},\alpha^{p^{2}},\alpha^{p^{3}},\dots,\alpha^{p^{n-1}}\) i \(\alpha^{p^{i}}\neq\alpha^{p^{j}}\) per a tot \(i\neq j\), \(i,j\in\{0,\dots,n-1\}\).
 		\begin{proof}
 			%TODO. sentit pel teorema previ
 		\end{proof}
@@ -2498,7 +2503,7 @@
 	\printbibliography
 	El capítol de teoria de grups està molt ben explicat en \cite{NumerosGruposyAnillos}, i la teoria de cossos finits està complementada amb \cite{AntoineRosaCampsMoncasiIntroduccioAlgebraAbstracta} sobre la teoria de classe.
 	
-	La bibliografia del curs inclou els textos \cite{AntoineRosaCampsMoncasiIntroduccioAlgebraAbstracta, CedoAlgebraBasica, CohnBasicAlgebra, NumerosGruposyAnillos, FelixConcepcionSebastianIntroduccionAlAlgebra, FraleighFirstCourseAbstractAlgebra, HungerfordAlgebra}.
+	La bibliografia del curs inclou els textos \cite{NumerosGruposyAnillos, AntoineRosaCampsMoncasiIntroduccioAlgebraAbstracta, CedoAlgebraBasica, CohnBasicAlgebra, FelixConcepcionSebastianIntroduccionAlAlgebra, FraleighFirstCourseAbstractAlgebra, HungerfordAlgebra}.
 \end{document}
 
 % Teorema d'òrbita-estabilitzador i lema de Burnside
