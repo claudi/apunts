@@ -1321,7 +1321,7 @@
 	\end{example}
 	\subsection{Sèries de potències}
 	\begin{definition}[Sèries de potències]
-		\labelname{sèrie de potències}\label{def:sèries de potències}
+		\labelname{sèrie de potències}\label{def:sèrie de potències}
 		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió de reals i \(x_{0}\) un nombre real. Aleshores direm que la sèrie
 		\[\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\]
 		és una sèrie de funcions amb terme general \(a_{n}\) al voltant de \(x_{0}\).
@@ -2033,12 +2033,12 @@
 			\end{align*}
 			 Tenim per hipòtesi que \(f\) és contínua, i per la definició de \myref{def:funcio continua} trobem que per a tot \(\eta>0\) existeix un \(\delta>0\) tal que per a tot \(t\) satisfent \(\abs{x-t}>\delta\) tenim
 			 \[\abs{f(x)-f(x)}\leq\frac{\eta}{2}.\]
-			 Per tant, amb \(I=[x-\frac{1}{2},x+\frac{1}{2}]\),
+			 Per tant, amb \(I=[x-\frac{1}{2},x+\frac{1}{2}]\) i \(J=[0,1]\), % Treure la notació de la J i arreglar el hspace
 			 \begin{multline*}
-				 \sup_{x\in[0,1]}\int_{x-\frac{1}{2}}^{x+\frac{1}{2}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t = \\
-				 =\sup_{x\in[0,1]}\left(\int_{\substack{t\in I\\\abs{x-t}<\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t+\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t\right) \hfill\\
-				 \leq\sup_{x\in[0,1]}\left(\frac{\eta}{2}\int_{\substack{t\in I\\\abs{x-t}<\delta}}\phi_{\varepsilon}(x-t)\diff t+\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t\right) \hfill\\
-				 <\sup_{x\in[0,1]}\left(\frac{\eta}{2}+\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t\right), \hfill
+				 \sup_{x\in J}\int_{x-\frac{1}{2}}^{x+\frac{1}{2}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t = \\
+				 =\sup_{x\in J}\left(\int_{\substack{t\in I\\\abs{x-t}<\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t+\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t\right) \hfill\\
+				 \leq\sup_{x\in J}\left(\frac{\eta}{2}\int_{\substack{t\in I\\\abs{x-t}<\delta}}\phi_{\varepsilon}(x-t)\diff t+\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t\right) \hfill\\
+				 <\sup_{x\in J}\left(\frac{\eta}{2}+\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t\right), \hfill
 			 \end{multline*}
 			 i, amb \(y=x-t\) tenim que %REFS
 			 \[\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t=\int_{\substack{t\in[-\frac{1}{2},\frac{1}{2}]\\\abs{y}>\delta}}\abs{f(x-y)-f(x)}\phi_{\varepsilon}(y)\diff y\]

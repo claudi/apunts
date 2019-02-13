@@ -1,1 +1,2 @@
-
+Canvi en com l'assignatura d'estructures estava escrita.
+Començades les assignatures de geometria diferencial i edos II, encara que a la segona no hi he escrit res per ara.

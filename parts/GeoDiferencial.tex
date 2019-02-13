@@ -1,0 +1,46 @@
+\documentclass[../Apunts.tex]{subfiles}
+
+\begin{document}
+\chapter{Corbes}
+	\section{Difeomorfismes de classe \ensuremath{\mathcal{C}^{\infty}}}
+	\subsection{Funcions analítiques}
+	\begin{definition}[Classe de diferenciabilitat infinita]
+		\labelname{classe de diferenciabilitat infinita}\label{def:classe de diferenciabilitat infinita}
+		Sigui \(\obert{U}\subseteq\mathbb{R}^{d}\) un obert i
+		\begin{align*}
+			f\colon\obert{U}&\longrightarrow\mathbb{R}^{m} \\
+			x&\longmapsto(f_{1}(x),\dots,f_{m}(x))
+		\end{align*}
+		una funció tal que per a tot \(i\in\{1,\dots,m\}\) la funció \(f_{i}\) és de classe \(\mathcal{C}^{k}\) per a tot natural \(k\in\mathbb{N}\). Aleshores direm que \(f\) és de classe de diferenciabilitat infinita. També direm que \(f\) és de classe \(\mathcal{C}^{\infty}\).
+	\end{definition}
+	\begin{definition}[Funció analítica]
+		\labelname{funció analítica}\label{def:funció analítica}
+		Sigui \(\obert{U}\subseteq\mathbb{R}^{d}\) un obert i
+		\begin{align*}
+			f\colon\obert{U}&\longrightarrow\mathbb{R}^{m} \\
+			x&\longmapsto(f_{1}(x),\dots,f_{m}(x))
+		\end{align*}
+		una funció de classe \(\mathcal{C}^{\infty}\) tal que per a tot \(x_{0}\) de \(\obert{U}\) existeix una sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) tal que existeix un entorn \(N_{x_{0}}\) satisfent que per a tot \(x\in N_{x_{0}}\) la sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) convergeix puntualment a \(f(x)\). Aleshores direm que \(f\) és una funció analítica. També direm que \(f\) és de classe \(\mathcal{C}^{\omega}\).
+	\end{definition}
+	\begin{example}
+		\label{ex:els polinomis són funcions analítiques}
+		Volem veure que tot polinomi és una funció analítica.
+		\begin{solution}
+			Prenem un polinomi
+			\[p(x)=a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}\]
+			i un natural \(k\in\mathbb{N}\). Si \(k\leq n\) tenim que % REFS
+			\[p^{(k)}(x)=k!a_{k}+(k+1)a_{k+1}x+\dots+\frac{k!}{(n-k)!}a_{n}x^{n-k},\]
+			i si \(k>n\) tenim que
+			\[p^{(k)}(x)=0.\]
+			Aleshores per la definició de \myref{def:classe de diferenciabilitat infinita} tenim que \(p(x)\) és de classe \(\mathcal{C}^{\infty}\). Observem que
+			\[p(x)=\sum_{i=0}^{n}a_{i}x^{i}\]
+			i per la definició de \myref{def:sèrie de potències} tenim que \(p(x)\) és una sèrie de potències, i per la definició de \myref{def:convergència puntual} trobem que \(p(x)\) convergeix puntualment a \(\sum_{i=0}^{n}a_{i}x^{i}\) per a tot \(x\in\mathbb{R}\), i per la definició de \myref{def:funció analítica} tenim que \(p(x)\) és una funció analítica.
+		\end{solution}
+	\end{example}
+	\begin{definition}[Difeomorfisme de classe \ensuremath{\mathcal{C}^{\infty}}]
+		\labelname{difeomorfisme de classe \ensuremath{\mathcal{C}^{\infty}}}\label{def:difeomorfisme de classe C infinit}\label{def:difeomorfisme de classe de diferenciabilitat infinita}
+		Siguin \(\obert{U}\) i \(\obert{V}\) dos oberts de \(\mathbb{R}^{d}\) i \(\Phi\colon\obert{U}\longrightarrow\obert{V}\) un difeomorfisme tal que les funcions \(\Phi\) i \(\Phi^{-1}\) siguin de classe \(\mathcal{C}^{\infty}\). Aleshores direm que \(\Phi\) és un difeomorfisme de classe de diferenciabilitat infinita o que \(\Phi\) és un difeomorfisme de classe \(\mathcal{C}^{\infty}\).
+		
+		Aquesta definició té sentit per la definició de \myref{def:difeomorfisme}.
+	\end{definition}
+\end{document}

@@ -434,7 +434,7 @@
 		\end{proof}
 	\end{proposition}
 	\begin{observation}\label{obs:extrem relatiu és punt crític}
-		Amb la definició de \myref{def:extrems relatius} i la proposició \myref{prop:Identificació d'extrems relatius} tenim que el punt \(a\) és un màxim o mínim relatiu de \(f\) si \(a\) és un punt crític de \(f\).
+		Amb la definició d'\myref{def:extrems relatius} i la proposició \myref{prop:Identificació d'extrems relatius} tenim que el punt \(a\) és un màxim o mínim relatiu de \(f\) si \(a\) és un punt crític de \(f\).
 	\end{observation}
 	\begin{definition}[Punt de sella d'una funció]
 		\labelname{punt de sella d'una funció}\label{def:punt de sella}
@@ -470,11 +470,11 @@
 			\[\Id_{V}(\vec{h})=d(\Phi(\Phi^{-1}))(\Phi(a))(\vec{h})=d(\Phi)(a)(d\Phi^{-1}(\Phi(a))(\vec{h})),\]
 			%\[\Id_{V}(b)=d(\Phi((\Phi^{-1}))(b))(\vec{h})=d(\Phi(a))(d\Phi^{-1}(b)(\vec{h}))\]
 			i amb això tenim que \(d(\Phi^{-1})\) és la inversa de \(d\Phi\) pels dos costats, i per tant \(d(\Phi^{-1})=(d\Phi)^{-1}\), com volíem demostrar.
-		\end{proof}%REVISAR MOLT https://math.stackexchange.com/questions/207392/invertible-derivative
+		\end{proof} % REVISAR MOLT https://math.stackexchange.com/questions/207392/invertible-derivative
 	\end{proposition}
 	\begin{corollary}\label{corollary:difeomorfime determinant}
-		Sigui \(\Phi\) un difeomorfisme diferenciable en un punt \(a\). Aleshores
-		\[\det(df(a))\neq0.\]
+		Sigui \(\Phi\) un difeomorfisme diferenciable en un punt \(a\in U\). Aleshores
+		\[\det(d\Phi(a))\neq0.\]
 	\end{corollary}
 	\begin{definition}[Derivades parcials d'una funció]
 		\labelname{derivades parcials d'una funció}\label{def:Derivades parcials}
@@ -965,14 +965,14 @@
 			\end{equation}
 			Com que \(\omicron(t)\to0\) és si i només si \(t\to0\), existeix un \(\varepsilon>0\) tal que, amb \(0<\norm{t}<\varepsilon\) tenim \(\omicron(t)<\frac{m}{2}\), i \(0\leq\norm{t}^{2}\omicron(t)<\frac{m}{2}\norm{t}^{2}\), i així
 			\[f(a+t)-f(a)>m\norm{t}^{2}-\frac{m}{2}\norm{t}^{2}=\frac{m}{2}\norm{t}^{2}>0,\]
-			i, com que això no depèn de \(t\), per la definició de \myref{def:extrems relatius} tenim que \(a\) és un mínim relatiu.
+			i, com que això no depèn de \(t\), per la definició d'\myref{def:extrems relatius} tenim que \(a\) és un mínim relatiu.
 			Ara només ens queda demostrar \eqref{enum:criteris de la segona diferencial sobre maxims i minims relatius 3} i \eqref{enum:criteris de la segona diferencial sobre maxims i minims relatius 4}, de nou, només ens caldrà demostrar-ne una, ja que l'altre demostració serà anàloga. Suposem doncs que \(a\) és un mínim relatiu.
 			
 			Seguint l'argument sobre la fórmula de Taylor per a múltiples variables que hem fet a la primera meitat d'aquesta demostració arribem a la desigualtat \eqref{eq:7} i tenim
 			\[f(a+t)-f(a)\leq m\norm{t}^{2}+\norm{t}^{2}\omicron(t).\]
 			Aleshores
 			\[\frac{f(a+t)-f(a)}{\norm{t}^{2}}\leq m+\omicron(t).\]
-			Per la definició de \myref{def:extrems relatius} tenim \(f(a+t)-f(a)\geq0\), i per tant, quan \(t\to0\), aleshores \(\omicron(t)\to0\) i
+			Per la definició d'\myref{def:extrems relatius} tenim \(f(a+t)-f(a)\geq0\), i per tant, quan \(t\to0\), aleshores \(\omicron(t)\to0\) i
 			\[0\leq\frac{f(a+t)-f(a)}{\norm{t}^{2}}\leq m,\]
 			i ja hem acabat.
 		\end{proof}
