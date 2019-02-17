@@ -1069,7 +1069,7 @@
 		\end{proof}
 	\end{theorem}
 	\begin{corollary}
-		\label{corollary:Segon Teorema de Sylow}
+		\label{corollary:Segon Teorema de Sylow} %TODO FER revisar doble implicació
 		Un grup \(G\) finit té un únic \(p\)-subgrup de Sylow si i només si aquest és un subgrup normal.
 	\end{corollary}
 	\begin{theorem}[Tercer Teorema de Sylow]
@@ -1582,7 +1582,7 @@
 	\begin{definition}[Característica]
 		\labelname{característica d'un anell}
 		\label{def:característica d'un anell}
-		Sigui \(R\) un anell amb la suma \(+\). Direm que \(R\) té característica \(n>0\) si \[n=\min_{m\in\mathbb{N}}\left\{1+\overset{n)}{\cdots}+1=0\right\}.\]
+		Sigui \(R\) un anell amb la suma \(+\). Direm que \(R\) té característica \(n>0\) si \[n=\min_{m\in\mathbb{N}}\left\{1+\overset{m)}{\cdots}+1=0\right\}.\]
 		Ho denotarem amb \(\ch(R)=n\). Si aquest \(n\) no existeix diem que \(R\) té característica \(0\) i \(\ch(R)=0\).
 	\end{definition}
 	\begin{proposition}
@@ -1976,7 +1976,7 @@
 	\begin{proposition}
 		Siguin \(D\) un domini de factorització única amb i el producte \(\cdot\) i \(a,b\) dos elements no invertibles i no nuls de \(D\) tals que existeixen \(p_{1},\dots,p_{r}\) tals que
 		\[a=p_{1}^{\alpha_{1}}\cdot\ldots\cdot p_{r}^{\alpha_{r}}\quad\text{i}\quad b=p_{1}^{\beta_{1}}\cdot\ldots\cdot p_{r}^{\beta_{r}}\]
-		per a certs \(\alpha_{1},\dots,\alpha_{r},\beta_{1},\dots,\beta_{r}\in\mathbb{N}\). Aleshores
+		per a certs \(\alpha_{1},\dots,\alpha_{r},\beta_{1},\dots,\beta_{r}\) enters no negatius. Aleshores
 		\[\prod_{i=1}^{r}p_{i}^{\min(\alpha_{i},\beta_{i})}\sim\mcd(a,b)\quad\text{i}\quad\prod_{i=1}^{r}p_{i}^{\max(\alpha_{i},\beta_{i})}\sim\mcm(a,b).\]
 		\begin{proof}
 			Denotem \(d=\prod_{i=1}^{r}p_{i}^{\min(\alpha_{i},\beta_{i})}\) i \(m=\prod_{i=1}^{r}p_{i}^{\max(\alpha_{i},\beta_{i})}\).
@@ -1987,7 +1987,7 @@
 			
 			Prenem ara \(c\) un element de \(D\) tal que \(a\divides c\) i \(b\divides c\). Aleshores tenim que
 			\[c=q\cdot p_{1}^{\gamma_{1}}\cdot\ldots\cdot p_{r}^{\gamma_{r}}\]
-			per a cert \(q\) element de \(D\) i certs \(\gamma_{i}\geq\max(\alpha_{i},\beta_{i})\) per a tot \(i\in\{1,\dots,r\}\). Ara bé, com que \(\gamma_{i}\geq\max(\alpha_{i},\beta_{i})\) per a tot \(i\in\{1,\dots,r\}\), i per tant \(m\divides c\), i per la definició de \myref{def:mínim comú múltiple anells} tenim que \(m\sim\mcm(a,b)\).
+			per a cert \(q\in D\) i certs \(\gamma_{i}\geq\max(\alpha_{i},\beta_{i})\) per a tot \(i\in\{1,\dots,r\}\). Ara bé, com que \(\gamma_{i}\geq\max(\alpha_{i},\beta_{i})\) per a tot \(i\in\{1,\dots,r\}\), i per tant \(m\divides c\), i per la definició de \myref{def:mínim comú múltiple anells} tenim que \(m\sim\mcm(a,b)\).
 		\end{proof}
 	\end{proposition}
 	\subsection{Anells Noetherians}
@@ -2073,7 +2073,7 @@
 		\labelname{domini Euclidià}
 		\label{def:domini Euclidià}
 		\label{def:DE}
-		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) i \(U\mid D\setminus\{0\}\longrightarrow\mathbb{N}\) una aplicació tal que
+		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) i \(U\colon D\setminus\{0\}\longrightarrow\mathbb{N}\) una aplicació tal que
 		\begin{enumerate}
 			\item \(U(x)\leq U(x\cdot y)\) per a tot \(x,y\in D\setminus\{0\}\).
 			\item Per a tot \(x,y\in D\), \(y\neq0\) existeixen \(Q,r\in D\) tals que \(x=Q\cdot y+r\), amb \(r=0\) ó \(U(r)<U(y)\).
@@ -2276,7 +2276,7 @@
 		Siguin \(\mathbb{K}\) un cos i \(f(x)\) un element de \(\mathbb{K}[x]\). Aleshores
 		\begin{enumerate}
 			\item Si \(\grau(f(x))=1\) aleshores \(f(x)\) és irreductible.
-			\item Si \(\grau(f(x))=2\text{ ó }3\) aleshores \(f(x)\) és irreductible si i nomé si \(f(x)\) no té cap arrel.
+			\item Si \(\grau(f(x))=2\text{ ó }3\) aleshores \(f(x)\) és irreductible si i només si \(f(x)\) no té cap arrel.
 		\end{enumerate}
 		\begin{proof}
 			%TODO
@@ -2291,7 +2291,7 @@
 	\begin{theorem}[Criteri modular]
 		\labelname{Teorema del criteri modular}\label{thm:Criteri modular}
 		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\), \(f(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n}\) un polinomi primitiu de \(D[x]\) i \(p\) un element irreductible de \(D\) amb \(p\ndivides a_{n}\) tals que
-		\[\overline{f(x)}=\overline{a_{0}}+\overline{a_{1}}\cdot\overline{x}+\dots+\overline{a_{n}}\cdot\overline{x}^{n}\]
+		\[\overline{f(x)}=\overline{a_{0}}+\overline{a_{1}}\cdot x+\dots+\overline{a_{n}}\cdot x^{n}\]
 		sigui un polinomi irreductible de \(D/(p)[x]\). Aleshores \(f(x)\) és un polinomi irreductible de \(D[x]\).
 		\begin{proof}
 			%TODO
@@ -2480,7 +2480,7 @@
 	\begin{proposition}[Morfisme de Frobenius]
 		Sigui \(\mathbb{F}_{p^{n}}\) un cos finit. Aleshores l'aplicació
 		\begin{align*}
-		\Phi\colon\mathbb{K}&\longrightarrow\mathbb{K}\\
+		\Phi\colon\mathbb{F}_{p^{n}}&\longrightarrow\mathbb{F}_{p^{n}}\\
 		a&\longmapsto a^{p}
 		\end{align*}
 		és un automorfisme.
