@@ -96,7 +96,7 @@
 		\end{proof}
 	\end{lemma}
 	\begin{notation}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\). Aleshores denotarem per \(\mathcal{C}_{b}(X,T)\) l'espai mètric de amb la distància entre funcions \(d\).
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\). Aleshores denotarem per \(\mathcal{C}_{b}(X,T)\) l'espai mètric de amb la distància entre funcions \(\distancia\).
 		
 		Observem que això té sentit pel lema \myref{thm:l'espai de funcions contínues i acotades és un espai mètric}.
 	\end{notation}
@@ -217,7 +217,65 @@
 	\end{corollary}
 	\section{Teoremes d'existència i unicitat}
 	\subsection{Problema de Cauchy}
-	Definicions d'equació diferencial, problema de Cauchy, exemples...
+	\begin{definition}[Equació diferencial ordinària]
+		\labelname{equació diferencial ordinària}\label{def:equació diferencial ordinària}
+		Siguin \(\Omega\subseteq\mathbb{R}\times\mathbb{R}^{n}\) un conjunt i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció. Aleshores direm que l'expressió
+		\[\frac{\partial u(t)}{\partial t}=f(t,u(t))\]
+		és una equació diferencial ordinària sobre \(\Omega\).
+	\end{definition}
+	\begin{definition}[Solució d'una equació diferencial ordinària]
+		\labelname{solució d'un equació diferencial ordinària}\label{def:solució d'una equació diferencial ordinària}
+		Siguin
+		\[\frac{\partial u(t)}{\partial t}=f(t,u(t))\]
+		una equació diferencial ordinària sobre \(\Omega\), \(I\subseteq\mathbb{R}\) un interval i \(u\colon I\longrightarrow\mathbb{R}^{n}\) una funció tal que per a tot \(t\in I\) es satisfà que \((t,u(t))\in\Omega\) i que \(u\) és derivable en \(I\) amb \(u'(t)=f(t,u(t))\). Aleshores direm que \(u\) és una solució de l'equació diferencial ordinària
+		\[\frac{\partial u(t)}{\partial t}=f(t,u(t)).\]
+	\end{definition}
+	\begin{example}	
+		\label{ex:exemple d'una equació diferencial 1}
+		\label{ex:exemple edos de la exponencial}
+		Volem trobar una solució a l'equació diferencial ordinària
+		\[\frac{\partial u(t)}{\partial t}=u(t).\]
+		\begin{solution}
+			\(e^{t}K\).
+		\end{solution}
+	\end{example}
+	\begin{definition}[Problema de Cauchy]
+		\labelname{problema de Cauchy}\label{def:problema de Cauchy}
+		\labelname{solució d'un problema de Cauchy}\label{def:solució d'un problema de Cauchy}
+		Sigui
+		\[\frac{\partial u(t)}{\partial t}=f(t,u(t))\]
+		una equació diferencial ordinària sobre \(\Omega\) i \((t_{0},x_{0})\in\Omega\) un punt. Aleshores direm que el sistema
+		\[\begin{cases*}
+			\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+			\displaystyle u(t_{0})=x_{0}
+		\end{cases*}\]
+		és un problema de Cauchy sobre \(\Omega\). Direm que una solució d'aquest problema de Cauchy és una funció \(u\) tal que \(u\) és solució de l'equació diferencial
+		\[\frac{\partial u(t)}{\partial t}=f(t,u(t))\]
+		i es satisfà \(u(t_{0})=x_{0}\).
+		
+		Això té sentit per la definició de \myref{def:solució d'una equació diferencial ordinària}.
+	\end{definition}
+	\begin{observation}
+		\label{obs:solució general d'un problema de Cauchy}
+		Sigui
+		\[\begin{cases*}
+			\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+			\displaystyle u(t_{0})=x_{0}
+		\end{cases*}\]
+		un problema de Cauchy sobre \(\Omega\). Aleshores una funció \(u\) és una solució d'aquest sistema si i només si
+		\[u(t)=x_{0}+\int_{t_{0}}^{t}f(s,u(s))\diff s.\]
+%		\begin{proof}
+%			Comencem veient que la condició és necessària (\(\implica\)). Suposem doncs que \(u\) és una solució del problema de Cauchy
+%			\[\begin{cases*}
+%				\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+%				\displaystyle u(t_{0})=x_{0}.
+%			\end{cases*}\]
+%			Per la definició de \myref{def:solució d'un problema de Cauchy} trobem que\(u\) és solució de l'equació diferencial
+%			\[\frac{\partial u(t)}{\partial t}=f(t,u(t)),\]
+%			i per la definició de \myref{def:solució d'una equació diferencial ordinària} trobem que existeix un interval \(I\) tal que es satisfà \(u'(t)=f(t,u(t))\) per a tot \(t\in I\). Pel \myref{thm:Teorema Fonamental del Càlcul} trobem que
+%			\[u(t)=\int_{\inf(I)}^{t}f(s,u(s))\diff s\]
+%		\end{proof}
+	\end{observation}
 	\subsection{El Teorema de Picard}
 	\begin{definition}[Funció Lipschitz respecte la segona variable]
 		\labelname{funció Lipschitz respecte la segona variable}\label{def:funció Lipschitz respecte la segona variable}
@@ -234,14 +292,14 @@
 	\end{example}
 	\begin{theorem}[Teorema de Picard]
 		\labelname{Teorema de Picard}\label{thm:Teorema de Picard}
-		Siguin \(a\), \(b\) i \(t_{0}\) tres reals, \(x_{0}\) un punt de \(\mathbb{R}^{n}\), \(\Omega=[t_{0}-a,t_{0}+a]\times\overline{\bola}(x_{0},b)\) un conjunt, \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i Lipschitz respecte la segona variable i
-		\[M=\max_{(t,x)\in\Omega}\norm{f(t,x)}.\]
-		Aleshores el problema de Cauchy
+		Siguin \(a\), \(b\) dos reals,
 		\[\begin{cases}
 			\displaystyle\frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases}\]
-		té una única solució sobre l'interval
+		un problema de Cauchy sobre \(\Omega=[t_{0}-a,t_{0}+a]\times\overline{\bola}(x_{0},b)\) i
+		\[M=\max_{(t,x)\in\Omega}\norm{f(t,x)}.\]
+		Aleshores aquest problema de Cauchy té una única solució sobre l'interval
 		\[\left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].\]
 		\begin{proof}
 			Denotem \(X=\mathcal{C}_{b}((t_{0}-a,t_{0}+a),\overline{\bola}(x_{0},b))\) i definim una aplicació
@@ -249,7 +307,7 @@
 				T\colon X&\longrightarrow X \\
 				u(t)&\longmapsto x_{0}+\int_{t_{0}}^{t}f(s,u(s))\diff s.
 			\end{align*}
-			Observem que una funció \(u(t)\) és solució del problema de Cauchy de l'enunciat si i només si %REVISAR
+			Per l'observació \myref{obs:solució general d'un problema de Cauchy} trobem que una funció \(u(t)\) és solució del problema de Cauchy de l'enunciat si i només si %REVISAR
 			\[T(u(t))=u(t).\]
 			
 			Tenim que si \(u\) és un element de \(X\), aleshores \(T(u)\) també pertany a \(X\), ja que si prenem un \(t\) de \((t_{0}-a,t_{0}+a)\) trobem que
@@ -308,12 +366,12 @@
 	\end{theorem}
 	\begin{corollary}
 		\label{cor:Teorema de Picard}
-		Siguin \(I\) un interval tancat de \(\mathbb{R}\), \(\Omega=I\times\mathbb{R}^{n}\) un conjunt, \((t_{0},x_{0})\) un element de \(\Omega\) i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i Lipschitz respecte la segona variable. Aleshores el problema de Cauchy
+		Siguin \(I\subseteq\mathbb{R}\) un interval tancat i
 		\[\begin{cases}
 			\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}.
 		\end{cases}\]
-		té una única solució definida en l'interval \(I\).
+		un problema de Cauchy sobre \(\Omega=I\times\mathbb{R}^{n}\) tal que \(f\) és una funció contínua i Lipschitz respecte la segona variable. Aleshores aquest problema de Cauchy té una única solució definida en l'interval \(I\).
 		\begin{proof}
 			Quan \(b\) tendeix a infinit tenim que \(\overline{\bola}(x_{0},b)=\mathbb{R}^{n}\).
 		\end{proof}
@@ -400,17 +458,18 @@
 	\end{lemma}
 	\begin{theorem}[Teorema Peano]
 		\labelname{Teorema de Peano}\label{thm:Teorema de Peano}
-		Siguin \(a\), \(b\) i \(t_{0}\) dos reals, \(x_{0}\) un punt de \(\mathbb{R}^{n}\), \(\Omega=[t_{0}-a,t_{0}+a]\times\overline{\bola}(x_{0},b)\) un conjunt, \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i \(M\) un real tal que \(\norm{f(t,x)}<M\) per a tot \((t,x)\) de \(\Omega\). Aleshores el problema de Cauchy
+		Siguin \(a\) i \(b\) dos reals i
 		\[\begin{cases}
 			\displaystyle\frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases}\]
-		té una solució sobre l'interval
+		un problema de Cauchy sobre \(\Omega=[t_{0}-a,t_{0}+a]\times\overline{\bola}(x_{0},b)\), tal que \(f\) és una funció contínua i \(M\) un real tal que \(\norm{f(t,x)}<M\) per a tot \((t,x)\) de \(\Omega\).
+		Aleshores aquest problema de Cauchy té una solució sobre l'interval
 		\[\left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].\]
 		\begin{proof} % https://arxiv.org/pdf/1202.1152.pdf (no)
 			Per a tot \((t,x)\in\Omega\) denotem
 			\[f(t,x)=(f_{1}(t,x),\dots,f_{n}(t,x)).\]
-			Aleshores pel \myref{thm:Teorema d'aproximació polinòmica d'Stone-Weierstrass} trobem que existeixen \(n\) successions de polinomis \(\{(p_{m}^{i})_{m\in\mathbb{N}}\}_{i=1}^{n}\) tals que \((p_{m}^{i})\) convergeix puntualment a \(f_{i}\) per a tot \(i\in\{1,\dots,n\}\). Per la definició de \myref{def:convergència uniforme} trobem que per a tot \((t,x)\in\Omega\) tenim
+			Aleshores pel \myref{thm:Teorema d'aproximació polinòmica de Weierstrass} trobem que existeixen \(n\) successions de polinomis \(\{(p_{m}^{i})_{m\in\mathbb{N}}\}_{i=1}^{n}\) tals que \((p_{m}^{i})\) convergeix puntualment a \(f_{i}\) per a tot \(i\in\{1,\dots,n\}\). Per la definició de \myref{def:convergència uniforme} trobem que per a tot \((t,x)\in\Omega\) tenim
 			\[\lim_{m\to\infty}p_{m}^{i}(t,x)=f_{i}(t,x),\]
 			i denotant \(p_{m}(t,x)=(p_{m}^{1}(t,x),\dots,p_{m}^{n}(t,x))\) trobem que
 			\[\lim_{m\to\infty}p_{m}(t,x)=f(t,x).\]
@@ -421,9 +480,9 @@
 			Considerem el problema de Cauchy
 			\[\begin{cases}
 				\displaystyle\frac{\partial u(t)}{\partial t}=p_{m}(t,u(t)) \\
-				\displaystyle u(t_{0})=x_{0}.
-			\end{cases}\]
-			Com que \(p_{m}\) és un polinomi, per l'exemple \myref{ex:els polinomis són funcions Lipschitz respecte la segona variable} trobem que \(p_{m}\) és Lipschitz respecte la segona variable, i pel \myref{thm:Teorema de Picard} trobem que, per a tot \(m>n_{0}\) aquest problema de Cauchy té una única solució, \(\varphi_{m}\), definida sobre l'interval
+				\displaystyle u(t_{0})=x_{0}
+			\end{cases}\] % Sobre \Omega?
+			sobre \(\Omega\). Com que \(p_{m}\) és un polinomi, per l'exemple \myref{ex:els polinomis són funcions Lipschitz respecte la segona variable} trobem que \(p_{m}\) és Lipschitz respecte la segona variable, i pel \myref{thm:Teorema de Picard} trobem que, per a tot \(m>n_{0}\) aquest problema de Cauchy té una única solució, \(\varphi_{m}\), definida sobre l'interval
 			\[I=\left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].\]
 			
 			Observem que, per a tot \(m>n_{0}\) i per a tot \(t\in I\), tenim que \(\varphi_{m}(t)\in\overline{\bola}(x_{0},b)\), i per la definició de \ref{def:bola} trobem que
@@ -437,12 +496,13 @@
 		\end{proof}
 	\end{theorem}
 	\begin{corollary}
-		Siguin \(\Omega\subset\mathbb{R}\times\mathbb{R}^{n}\) un obert, \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua i \(K\) un compacte de \(\Omega\). Aleshores existeix un real \(\alpha>0\) tal que per a tot punt \((t_{0},x_{0})\) de \(K\) el problema
+		\label{cor:Teorema de Peano}
+		Siguin
 		\[\begin{cases}
 			\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
 			\displaystyle x(t_{0})=x_{0}
 		\end{cases}\]
-		té solució sobre l'interval
+		un problema de Cauchy sobre \(\Omega\) tal que \(f\) sigui contínua i \(\Omega\) sigui obert, i \(K\subseteq\Omega\) un compacte. Aleshores existeix un real \(\alpha>0\) tal que per a tot punt \((t_{0},x_{0})\) de \(K\) aquest problema de Cauchy té una solució sobre l'interval
 		\[\left[t_{0}-\alpha,t_{0}+\alpha\right].\]
 		\begin{proof}
 			%TODO
@@ -513,15 +573,12 @@
 %	\end{proposition}
 	\begin{proposition}
 		\label{prop:la solució improrrogable és única}
-		Siguin \(\Omega\subseteq\mathbb{R}\times\mathbb{R}^{n}\) un obert i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció tal que per a tot \((t_{0},x_{0})\) de \(\Omega\) el problema de Cauchy
-		\begin{equation}
-			\label{prop:la solució improrrogable és única:eq1}
-			\begin{cases}
-				\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
-				\displaystyle u(t_{0})=x_{0}
-			\end{cases}
-		\end{equation}
-		té una única solució. Aleshores per a cada \((t_{0},x_{0})\) de \(\Omega\) el problema de Cauchy \eqref{prop:la solució improrrogable és única:eq1} té una única solució improrrogable.
+		Sigui
+		\[\begin{cases}
+			\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+			\displaystyle u(t_{0})=x_{0}
+		\end{cases}\]
+		un problema de Cauchy sobre \(\Omega\) tal aquest tingui una única solució per a tot \((t_{0},x_{0})\in\Omega\). Aleshores per a cada \((t_{0},x_{0})\in\Omega\) aquest problema de Cauchy té una única solució improrrogable.
 		\begin{proof}
 			Prenem un element \((t_{0},x_{0})\) de \(\Omega\) i siguin \((I,u)\) i \((J,v)\) dues solucions de \(A(t_{0},x_{0})\)
 		\end{proof}
