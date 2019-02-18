@@ -1,2 +1,3 @@
 Corregits alguns errors i typos a estructures.
 Començada la demostració del Teorema de Peano a EDOS I.
+Retocades definicions a EDOS I amb intenció de que tot quedi més clar i corregit els enunciats segons els canvis.
