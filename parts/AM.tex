@@ -946,23 +946,23 @@
 		\end{proof}
 	\end{lemma}
 	\begin{lemma}
-		\label{lemma:Teorema de la reordenació de sèries de Riemann}
+		\label{lema:Teorema de la reordenació de sèries de Riemann}
 		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent. Aleshores les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són divergents.
 		\begin{proof}
 			Per l'observació \myref{obs:sumes de la part positiva i negativa d'un nombre} tenim que
 			\begin{equation}
-				\label{lemma:Teorema de la reordenació de sèries de Riemann:eq1}
+				\label{lema:Teorema de la reordenació de sèries de Riemann:eq1}
 				\sum_{n=0}^{\infty}a_{n}=\sum_{n=0}^{\infty}\left(a^{+}_{n}-a^{-}_{n}\right),
 			\end{equation}
 			i per tant
 			\begin{equation}
-				\label{lemma:Teorema de la reordenació de sèries de Riemann:eq2}
+				\label{lema:Teorema de la reordenació de sèries de Riemann:eq2}
 				\sum_{n=0}^{\infty}a^{-}_{n}=\sum_{n=0}^{\infty}a^{+}_{n}-\sum_{n=0}^{\infty}a_{n}.
 			\end{equation}
 			
-			Suposem que \(\sum_{n=0}^{\infty}a^{+}_{n}\) és convergent. Aleshores per \eqref{lemma:Teorema de la reordenació de sèries de Riemann:eq2} tenim que la sèrie \(\sum_{n=0}^{\infty}a^{-}_{n}\) és convergent.
+			Suposem que \(\sum_{n=0}^{\infty}a^{+}_{n}\) és convergent. Aleshores per \eqref{lema:Teorema de la reordenació de sèries de Riemann:eq2} tenim que la sèrie \(\sum_{n=0}^{\infty}a^{-}_{n}\) és convergent.
 			
-			Ara bé, per la definició de \myref{def:convergència absoluta d'una sèrie} tenim que les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són absolutament convergents, i per \eqref{lemma:Teorema de la reordenació de sèries de Riemann:eq1} tenim que \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent, però això contradiu l'hipòtesi que \(\sum_{n=0}^{\infty}a_{n}\) no és absolutament convergent. Per tant ha de ser que la sèrie \(\sum_{n=0}^{\infty}a^{+}_{n}\) és divergent. El cas en que suposem que \(\sum_{n=0}^{\infty}a^{+}_{n}\) és convergent és anàleg.
+			Ara bé, per la definició de \myref{def:convergència absoluta d'una sèrie} tenim que les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són absolutament convergents, i per \eqref{lema:Teorema de la reordenació de sèries de Riemann:eq1} tenim que \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent, però això contradiu l'hipòtesi que \(\sum_{n=0}^{\infty}a_{n}\) no és absolutament convergent. Per tant ha de ser que la sèrie \(\sum_{n=0}^{\infty}a^{+}_{n}\) és divergent. El cas en que suposem que \(\sum_{n=0}^{\infty}a^{+}_{n}\) és convergent és anàleg.
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Teorema de la reordenació de sèries de Riemann]
@@ -970,7 +970,7 @@
 		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent i \(L\) un nombre real. Aleshores existeix una permutació \(\sigma\) de \(\mathbb{N}\) tal que
 		\[\sum_{n=0}^{\infty}a_{\sigma(n)}=L.\]
 		\begin{proof}
-			Prenem un \(\alpha\) real. Tenim per hipòtesi que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent, i pel lema \myref{lemma:Teorema de la reordenació de sèries de Riemann} trobem que les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són divergents.
+			Prenem un \(\alpha\) real. Tenim per hipòtesi que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent, i pel lema \myref{lema:Teorema de la reordenació de sèries de Riemann} trobem que les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són divergents.
 			
 			Definim
 			\[S_{N}=\sum_{n=0}^{N}a^{+}_{n}\quad\text{i}\quad T_{N}=\sum_{n=0}^{N}a^{-}_{n}.\]
@@ -1144,6 +1144,13 @@
 			i per l'observació \myref{obs:convergència uniforme amb límits} trobem que la successió de funcions \((f_{n})\) convergeix uniformement a \(f(x)\) en l'interval \([1,2]\). 
 		\end{proof}
 	\end{example}
+	\begin{proposition}
+		\label{prop:una successió de funcions convergeix uniformement a una funció a la que convergeixi puntualment}
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions que convergeixen uniformement a una funció \(f\). Aleshores la successió \((f_{n})_{n\in\mathbb{N}}\) convergeix puntualment a \(f\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
 	\begin{theorem}[Condició de Cauchy]
 		\labelname{condició de Cauchy per successions de funcions}\label{thm:condició de Cauchy per successions de funcions}
 		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\). Aleshores la successió \((f_{n})_{n\in\mathbb{N}}\) convergeix uniformement a una funció \(f\) de \(I\) si i només si per a tot \(\varepsilon>0\) real existeix un \(n_{0}\) natural tal que per a tots enters \(n\) i \(m\) amb \(n_{0}<m<n\) es satisfà
@@ -2028,7 +2035,7 @@
 				\sup_{x\in[0,1]}\abs{(f\convolucio\phi_{\varepsilon})(x)-f(x)}&=\sup_{x\in[0,1]}\abs{\int_{0}^{1}f(t)\phi_{\varepsilon}(x-t)\diff t-f(x)} \tag{\ref{def:convolució de dues extensions periòdiques}} \\
 				&=\sup_{x\in[0,1]}\abs{\int_{0}^{1}f(t)\phi_{\varepsilon}(x-t)\diff t-\int_{0}^{1}f(x)\phi_{\varepsilon}(x-t)\diff t} \\
 				&=\sup_{x\in[0,1]}\abs{\int_{0}^{1}(f(t)-f(x))\phi_{\varepsilon}(x-t)\diff t} \\
-				&\leq\sup_{x\in[0,1]}\int_{0}^{1}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t \tag{\ref{thm:la norma d'una integral és menos que l'integral de la norma}} \\
+				&\leq\sup_{x\in[0,1]}\int_{0}^{1}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t \tag{\ref{thm:la norma d'una integral és menys que l'integral de la norma}} \\
 				&=\sup_{x\in[0,1]}\int_{x-\frac{1}{2}}^{x+\frac{1}{2}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t. \tag{\ref{prop:podem desplaçar la integral d'una funció T periòdica}}
 			\end{align*}
 			 Tenim per hipòtesi que \(f\) és contínua, i per la definició de \myref{def:funcio continua} trobem que per a tot \(\eta>0\) existeix un \(\delta>0\) tal que per a tot \(t\) satisfent \(\abs{x-t}>\delta\) tenim

@@ -292,7 +292,7 @@
 	\end{example}
 	\begin{theorem}[Teorema de Picard]
 		\labelname{Teorema de Picard}\label{thm:Teorema de Picard}
-		Siguin \(a\) i \(b\) dos reals,
+		Siguin \(a\) i \(b\) dos reals positius,
 		\[\begin{cases}
 			\displaystyle\frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}
@@ -314,7 +314,7 @@
 			\begin{align*}
 				\norm{T(u(t))-x_{0}}&=\norm{x_{0}-x_{0}+\int_{t_{0}}^{t}f(s,u(s))\diff s}\\
 				&=\norm{\int_{t_{0}}^{t}f(s,u(s))\diff s}\\
-				&\leq\abs{\int_{t_{0}}^{t}\norm{f(s,u(s))}\diff s}\tag{\myref{thm:la norma d'una integral és menos que l'integral de la norma}}\\
+				&\leq\abs{\int_{t_{0}}^{t}\norm{f(s,u(s))}\diff s}\tag{\myref{thm:la norma d'una integral és menys que l'integral de la norma}}\\
 				&\leq M\abs{t-t_{0}}\leq b.
 			\end{align*}
 			i per tant tenim que
@@ -332,7 +332,7 @@
 			\begin{align*}
 				\norm{T(u(t))-T(v(t))}&=\norm{\int_{t_{0}}^{t}{f(s,u(s))}\diff s-\int_{t_{0}}^{t}{f(s,v(s))}\diff s}\\
 				&=\norm{\int_{t_{0}}^{t}\left({f(s,u(s))}-{f(s,v(s))}\right)\diff s}\tag{\ref{prop:propietats basiques multiple integrals Riemann definides}}\\
-				&\leq\abs{\int_{t_{0}}^{t}\norm{f(s,u(s))-f(s,v(s))}\diff s}\tag{\myref{thm:la norma d'una integral és menos que l'integral de la norma}}\\
+				&\leq\abs{\int_{t_{0}}^{t}\norm{f(s,u(s))-f(s,v(s))}\diff s}\tag{\myref{thm:la norma d'una integral és menys que l'integral de la norma}}\\
 				&\leq\abs{\int_{t_{0}}^{t}K\norm{u(s)-v(s)}\diff s}\tag{\ref{thm:Teorema de Picard:eq1}}\\
 				&=K\abs{\int_{t_{0}}^{t}\norm{u(s)-v(s)}\diff s}\tag{\ref{prop:propietats basiques multiple integrals Riemann definides}}\\
 				&\leq K\abs{t-t_{0}}\distancia(u,v).
@@ -342,7 +342,7 @@
 				\label{thm:Teorema de Picard:eq2}
 				\norm{T^{m-1}(u(t))(t)-T^{m-1}(v)(t)}\leq\frac{K^{m-1}}{(m-1)!}\abs{t-t_{0}}^{m-1}\distancia(u,v)
 			\end{equation}
-			i veiem que també és cert per \(m\). Tenim pel Teorema \myref{thm:la norma d'una integral és menos que l'integral de la norma} que
+			i veiem que també és cert per \(m\). Tenim pel Teorema \myref{thm:la norma d'una integral és menys que l'integral de la norma} que
 			\begin{align*}
 				\norm{T^{m}(u(t))-T^{m}(v(t))}&=\norm{\int_{t_{0}}^{t}\left(f(s,T^{m-1}(u(s)))-f(s,T^{m-1}(v(s)))\right)\diff s}\\
 				&\leq\abs{\int_{t_{0}}^{t}\norm{f(s,T^{m-1}(u(s)))-f(s,T^{m-1}(v(s)))}\diff s}\\
@@ -395,9 +395,13 @@
 		\[\norm{f(x)-f(y)}<\varepsilon.\]
 		Aleshores direm que \(H\) és uniformement equicontínua en \(X\).
 	\end{definition}
+	\begin{observation}
+		\label{obs:equicontinuitat uniforme implica equicontinuitat}
+		Sigui \(H\) una família de funcions uniformement equicontínua. Aleshores \(H\) és una família de funcions equicontínua.
+	\end{observation}
 	\begin{lemma}[Teorema d'Arzelà-Ascoli]
 		\labelname{Teorema d'Arzelà-Ascoli}\label{thm:Teorema d'Arzelà-Ascoli}
-		Siguin \(X\) un compacte i \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions de \(\mathcal{C}_{b}(X,T)\) equicontínua i puntualment acotada. Aleshores la successió \((f_{n})_{n\in\mathbb{N}}\) té una parcial acotada.
+		Siguin \(X\) un compacte i \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions de \(\mathcal{C}_{b}(X,T)\) equicontínua i puntualment acotada. Aleshores la successió \((f_{n})_{n\in\mathbb{N}}\) té una parcial uniformement convergent.
 		\begin{proof}
 			Prenem un real \(\varepsilon>0\). Per la definició de \myref{def:família de funcions equicontínua} tenim que per a tot punt \(x\) de \(X\) existeix un entorn \(N_{x}\) de \(x\) tal que per a tot \(y\) de \(N_{x}\) tenim, per a tot \(n\) natural, que
 			\[\norm{f_{n}(y)-f_{n}(x)}<\frac{\varepsilon}{3}.\]
@@ -453,26 +457,32 @@
 			
 			Tenim doncs que per a tot \(i\) natural la successió \((f^{i+1}_{n_{i+1}+n})_{n\in\mathbb{N}}\) és una parcial de la successió \((f^{i+1}_{n_{i+1}+n})_{n\in\mathbb{N}}\) i per a tot \(n\) i \(m\) naturals tenim
 			\[\norm{f^{i+1}_{n_{i+1}+n}(x)-f^{i+1}_{n_{i+1}+m}(x)}<\frac{1}{i},\]
-			i per tant, per la definició de \myref{def:successió de Cauchy amb normes} trobem que la successió \((f^{i+1}_{n_{i+1}+n})_{n\in\mathbb{N}}\) és de Cauchy per a tot \(i\) natural, i com que pel Teorema \myref{thm:l'espai de funcions contínues i acotades és complet} tenim que \(\mathcal{C}_{b}(X,T)\) és un espai complet, per la definició d'\myref{def:espai mètric complet} trobem que la parcial \((f^{i+1}_{n_{i+1}+n})_{n\in\mathbb{N}}\) de \((f_{n})_{n\in\mathbb{N}}\) és convergent, com volíem veure.
+			i per tant, per la definició de \myref{def:successió de Cauchy amb normes} trobem que la successió \((f^{i+1}_{n_{i+1}+n})_{n\in\mathbb{N}}\) és de Cauchy per a tot \(i\) natural, i com que pel Teorema \myref{thm:l'espai de funcions contínues i acotades és complet} tenim que \(\mathcal{C}_{b}(X,T)\) és un espai complet, i per la \myref{thm:condició de Cauchy per successions de funcions} trobem que la parcial \((f^{i+1}_{n_{i+1}+n})_{n\in\mathbb{N}}\) és uniformement convergent.
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Teorema Peano]
 		\labelname{Teorema de Peano}\label{thm:Teorema de Peano}
-		Siguin \(a\) i \(b\) dos reals i
-		\[\begin{cases}
-			\displaystyle\frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
-			\displaystyle u(t_{0})=x_{0}
-		\end{cases}\]
+		Siguin \(a\) i \(b\) dos reals positius i
+		\begin{equation}
+			\label{thm:Teorema de Peano:eq3}
+			\begin{cases}
+				\displaystyle\frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+				\displaystyle u(t_{0})=x_{0}
+			\end{cases}
+		\end{equation}
 		un problema de Cauchy sobre \(\Omega=[t_{0}-a,t_{0}+a]\times\overline{\bola}(x_{0},b)\), tal que \(f\) és una funció contínua i \(M\) un real tal que \(\norm{f(t,x)}<M\) per a tot \((t,x)\) de \(\Omega\).
 		Aleshores aquest problema de Cauchy té una solució sobre l'interval
 		\[\left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].\]
 		\begin{proof} % https://arxiv.org/pdf/1202.1152.pdf (no)
 			Per a tot \((t,x)\in\Omega\) denotem
 			\[f(t,x)=(f_{1}(t,x),\dots,f_{n}(t,x)).\]
-			Aleshores pel \myref{thm:Teorema d'aproximació polinòmica de Weierstrass} trobem que existeixen \(n\) successions de polinomis \(\{(p_{m}^{i})_{m\in\mathbb{N}}\}_{i=1}^{n}\) tals que \((p_{m}^{i})\) convergeix puntualment a \(f_{i}\) per a tot \(i\in\{1,\dots,n\}\). Per la definició de \myref{def:convergència uniforme} trobem que per a tot \((t,x)\in\Omega\) tenim
+			Aleshores pel \myref{thm:Teorema d'aproximació polinòmica de Weierstrass} trobem que existeixen \(n\) successions de polinomis \(\{(p_{m}^{i})_{m\in\mathbb{N}}\}_{i=1}^{n}\) tals que \((p_{m}^{i})\) convergeix uniformement a \(f_{i}\) per a tot \(i\in\{1,\dots,n\}\). Per la proposició \ref{prop:una successió de funcions convergeix uniformement a una funció a la que convergeixi puntualment} trobem que \((p_{m}^{i})\) convergeix puntualment a \(f_{i}\) per a tot \(i\in\{1,\dots,n\}\), i per la definició de \myref{def:convergència puntual} trobem que per a tot \((t,x)\in\Omega\) tenim
 			\[\lim_{m\to\infty}p_{m}^{i}(t,x)=f_{i}(t,x),\]
 			i denotant \(p_{m}(t,x)=(p_{m}^{1}(t,x),\dots,p_{m}^{n}(t,x))\) trobem que
-			\[\lim_{m\to\infty}p_{m}(t,x)=f(t,x).\]
+			\begin{equation}
+				\label{thm:Teorema de Peano:eq2}
+				\lim_{m\to\infty}p_{m}(t,x)=f(t,x).
+			\end{equation}
 			Per la definició de \myref{def:límit} trobem que per a tot \(\varepsilon>0\) existeix un \(n_{0}\) tal que per a tot \(m>n_{0}\) es satisfà
 			\[\norm{f(t,x)-p_{m}(t,x)}<\varepsilon,\]
 			per a tot \((t,x)\) de \(\Omega\). Com que, per hipòtesi, tenim que \(\norm{f(t,x)}<M\), trobem que ha de ser \(\norm{p_{m}(t,x)}<M\) per a tot \((t,x)\in\Omega\) i per a tot \(m>n_{0}\).
@@ -489,10 +499,34 @@
 			\[\norm{\varphi_{m}(t)}\leq\norm{x_{0}}+b.\]
 			Aleshores per la definició de \myref{def:família de funcions puntualment acotada} trobem que la successió de funcions \((\varphi_{m+n_{0}})_{m\in\mathbb{N}}\) és una família de funcions puntualment acotada.
 			
-			Fixem un \(\varepsilon>0\) i prenem dos \(t\) i \(t'\) de \(I\) tals que \(\abs{t,t'}<\frac{\varepsilon}{M}\). Aleshores per a tot \(m>n_{0}\) tenim que
-			\[\norm{\varphi_{m}(t)-\varphi_{m}(t')}=\norm{\int_{t'}^{t}}\]
+			Fixem un \(\varepsilon>0\) i prenem dos \(t\) i \(t'\) de \(I\) amb \(t'<t\) tals que \(\abs{t,t'}<\frac{\varepsilon}{M}\). Aleshores, per l'observació \myref{obs:solució general d'un problema de Cauchy}, tenim que per a tot \(m>n_{0}\)
+			\begin{align*}
+				\norm{\varphi_{m}(t)-\varphi_{m}(t')}&=\norm{x_{0}+\int_{t_{0}}^{t}p_{m}(s,\varphi_{m}(s))\diff s-\Bigg(x_{0}+\int_{t_{0}}^{t'}p_{m}(s,\varphi_{m}(s))\diff s\Bigg)} \\
+				&=\norm{\int_{t_{0}}^{t}p_{m}(s,\varphi_{m}(s))\diff s-\int_{t_{0}}^{t'}p_{m}(s,\varphi_{m}(s))\diff s} \\
+%				&=\norm{\smash{\int_{t_{0}}^{t'}}p_{m}(s,\varphi_{m}(s))\diff s+\int_{t'}^{t}p_{m}(s,\varphi_{m}(s))\diff s-\int_{t_{0}}^{t'}p_{m}(s,\varphi_{m}(s))\diff s} \tag{\ref{thm:podem partir les integrals Riemann}} \\
+				&=\norm{\int_{t'}^{t}p_{m}(s,\varphi_{m}(s))\diff s} \tag{\ref{thm:podem partir les integrals Riemann}} \\
+				&\leq M\abs{t'-t}<\varepsilon, \tag{\ref{thm:la norma d'una integral és menys que l'integral de la norma}}
+			\end{align*}
+			i per la definició de \myref{def:família de funcions uniformement equicontínua} trobem que la família de funcions \(\{\varphi_{m+n_{0}}\}_{m\in\mathbb{N}}\) és uniformement equicontínua, i per l'observació \myref{obs:equicontinuitat uniforme implica equicontinuitat} trobem que \(\{\varphi_{m+n_{0}}\}_{m\in\mathbb{N}}\) és equicontínua.
 			
-			\myref{def:família de funcions uniformement equicontínua}.
+			Aleshores pel \myref{thm:Teorema d'Arzelà-Ascoli} trobem que existeix una parcial uniformement convergent, \((\varphi_{k})_{k\in\mathbb{N}}\), de \((\varphi_{n_{0}+m})_{m\in\mathbb{N}}\), i per la definició de \myref{def:convergència uniforme} existeix una funció \(\varphi\) tal que \(\varphi_{k}\convergeixuniformement\varphi\), i per la proposició \myref{prop:una successió de funcions convergeix uniformement a una funció a la que convergeixi puntualment} trobem que la successió \((\varphi_{k})_{k\in\mathbb{N}}\) convergeix puntualment a \(\varphi\), i per la definició de \myref{def:convergència puntual} trobem que per a tot \(t\in I\) tenim
+			\begin{equation}
+				\label{thm:Teorema de Peano:eq1}
+				\varphi(t)=\lim_{k\to\infty}\varphi_{k}(t).
+			\end{equation}
+			
+			Ara bé, tenim que per a tot \(t\in I\)
+			\begin{align*}
+				\varphi(t)&=\lim_{k\to\infty}\varphi_{k}(t) \tag{\ref{thm:Teorema de Peano:eq1}} \\
+				&=\lim_{k\to\infty}\left(x_{0}+\int_{t_{0}}^{t}p_{k}(s,\varphi_{k}(s))\diff s\right) \tag{\ref{obs:solució general d'un problema de Cauchy}} \\
+				&=x_{0}+\lim_{k\to\infty}\int_{t_{0}}^{t}p_{k}(s,\varphi_{k}(s))\diff s \tag{\ref{obs:solució general d'un problema de Cauchy}} \\
+				&=x_{0}+\lim_{k\to\infty}\int_{t_{0}}^{t}p_{k}(s,\varphi_{k}(s))\diff s \\ % Propietats límits
+				&=x_{0}+\int_{t_{0}}^{t}\lim_{k\to\infty}p_{k}(s,\varphi_{k}(s))\diff s \tag{\ref{thm:si una successió de funcions convergeix uniformement aleshores el límit de la integral dels elements de la succesió és la integral del límit dels elements de la successió}}\\
+%				&=x_{0}+\int_{t_{0}}^{t}\lim_{k\to\infty}p_{k}(s,\lim_{k\to\infty}\varphi_{k}(s))\diff s, \\
+%				&=x_{0}+\int_{t_{0}}^{t}\lim_{k\to\infty}p_{k}(s,\varphi(s))\diff s, \\
+				&=x_{0}+\int_{t_{0}}^{t}f(s,\varphi(s))\diff s, \tag{\ref{thm:Teorema de Peano:eq2}} % Veure que el límit pot entrar (desdoblar-se) perquè els polinomis són contínus? Són les dues línies comentades.
+			\end{align*}
+			i per l'observació \myref{obs:solució general d'un problema de Cauchy} tenim que \(\varphi\) és una solució del problema de Cauchy \eqref{thm:Teorema de Peano:eq3}, i hem acabat.
 		\end{proof}
 	\end{theorem}
 	\begin{corollary}
@@ -519,10 +553,17 @@
 				\displaystyle u(t_{0})=x_{0}
 			\end{cases}
 		\end{equation}
-		un problema de Cauchy. Aleshores definirem
+		un problema de Cauchy sobre \(\Omega\) amb \(f\) contínua. Aleshores definirem
 		\[A(t_{0},x_{0})=\{(I,u)\mid u\text{ és solució del problema de Cauchy en l'interval }I\}\]
 		con el conjunt de solucions del problema de Cauchy \eqref{def:conjunt de solucions d'un problema de Cauchy:eq1}.
 	\end{definition}
+	\begin{observation}
+		\label{obs:el conjunt de solucions d'un problema de Cauchy amb f contínua és no buit}
+		\(A(t_{0},x_{0})\neq\emptyset\).
+		\begin{proof}
+			Per la definició de \myref{def:conjunt de solucions d'un problema de Cauchy} tenim que \(f\) és contínua i pel \myref{thm:Teorema de Peano} hem acabat.
+		\end{proof}
+	\end{observation}
 	\begin{proposition}
 		\label{prop:la prolongació és una relació d'ordre}
 		Siguin \(A(t_{0},x_{0})\) el conjunt de solucions d'un problema de Cauchy i \(\leq\) una relació tal que per a dos elements \((I,u)\) i \((J,v)\) de \(A(t_{0},x_{0})\) tenim
@@ -564,13 +605,15 @@
 			Ara bé, tenim que \((I_{i},u_{i})\leq(I,u)\) per a tot \(i\) de \(J\), i per la definició de \myref{def:cota superior d'una cadena} tenim que \((I_{i},u_{i})\leq(I,u)\) és un element maximal de la cadena \((I_{i},u_{i})_{i\in J}\), i pel \myref{lema de Zorn} tenim que existeix un element maximal de la cadena, i per la definició de \myref{def:solució improrrogable} hem acabat.
 		\end{proof}
 	\end{proposition}
-%	\begin{proposition}
-%		\label{prop:les solucions improrrogables estàn definides sobre intervals oberts}
-%		Sigui \(A(t_{0},x_{0})\) el conjunt de solucions d'un problema de Cauchy i \((I,u)\) una solució improrrogable. Aleshores \(I\) és un interval obert.
-%		\begin{proof}
-%			Sigui \((I,u)\) una solució maximal del problema de Cauchy. Suposem que \(a\) és un extrem de l'interval \(I\). Aleshores podem considerar el mateix problema de Cauchy amb la condició inicial 
-%		\end{proof}
-%	\end{proposition}
+	\begin{proposition}
+		\label{prop:les solucions improrrogables estàn definides sobre intervals oberts}
+		Sigui \(A(t_{0},x_{0})\) el conjunt de solucions d'un problema de Cauchy i \((I,u)\) una solució improrrogable. Aleshores \(I\) és un interval obert.
+		\begin{proof}
+%			Sigui \((I,u)\) una solució maximal del problema de Cauchy. Suposem que \(a\) és un extrem de l'interval \(I\). Considerem \(A(a,u(a))\). Per la definició d'\myref{def:equació diferencial ordinària} trobem que \((a,u(a))\in\Omega\), i per l'observació \myref{obs:el conjunt de solucions d'un problema de Cauchy amb f contínua és no buit} trobem que existeix un \((J,v)\in A(a,u(a))\).
+%
+%			Ara bé, tenim que \(u(a)=v(a)\), 
+		\end{proof}
+	\end{proposition}
 	\begin{proposition}
 		\label{prop:la solució improrrogable és única}
 		Sigui
@@ -578,7 +621,7 @@
 			\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases}\]
-		un problema de Cauchy sobre \(\Omega\) tal aquest tingui una única solució per a tot \((t_{0},x_{0})\in\Omega\). Aleshores per a cada \((t_{0},x_{0})\in\Omega\) aquest problema de Cauchy té una única solució improrrogable.
+		un problema de Cauchy sobre \(\Omega\) amb \(f\) contínua tal aquest tingui una única solució per a tot \((t_{0},x_{0})\in\Omega\). Aleshores per a cada \((t_{0},x_{0})\in\Omega\) aquest problema de Cauchy té una única solució improrrogable.
 		\begin{proof}
 			Prenem un element \((t_{0},x_{0})\) de \(\Omega\) i siguin \((I,u)\) i \((J,v)\) dues solucions de \(A(t_{0},x_{0})\)
 		\end{proof}
@@ -599,7 +642,7 @@
 		\label{lema:continuitat respecte les condicions inicials}
 		Sigui \((\varphi_{n})_{n\in\mathbb{N}}\) una successió uniformement equicontínua i uniformement acota de funcions contínues reals sobre un espai mètric compacte \(F\) tal que tota parcial uniformement convergent de la successió té per límit una funció \(\varphi\). Aleshores la successió \((\varphi_{n})\) convergeix uniformement a \(\varphi\).
 		\begin{proof}
-			Suposem que la successió \((\varphi_{n})_{n\in\mathbb{N}}\) no convergeix uniformement a \(\varphi\). Per la definició d'\myref{def:límit} tenim que existeix un \(\varepsilon>0\) tal que per a tot \(N\) natural existeix un \(n_{N}>N\) tal que
+			Suposem que la successió \((\varphi_{n})_{n\in\mathbb{N}}\) no convergeix uniformement a \(\varphi\). Per la definició de \myref{def:límit} tenim que existeix un \(\varepsilon>0\) tal que per a tot \(N\) natural existeix un \(n_{N}>N\) tal que
 			\[\norm{\varphi_{n_{N}}-\varphi}\geq\varepsilon.\]
 			Per tant podem construir una successió \((\varphi_{n_{N}})_{N\in\mathbb{N}}\) tal que
 			\begin{equation}

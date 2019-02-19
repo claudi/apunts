@@ -222,7 +222,11 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:els subgrups generats per un conjunt existeixen}
-		Siguin \(G\) un grup, \(S\neq\emptyset\) un subconjunt de \(G\), \(\{H_{i}\}_{i\in I}\) una família de subgrups de \(G\) tals que \(S\subseteq H_{i}\) per a tot \(i\in I\) i \(H=\bigcap_{i\in I}H_{i}\). Aleshores \(H\) i és un subgrup de \(G\).
+		Siguin \(G\) un grup, \(S\neq\emptyset\) un subconjunt de \(G\),
+		\[\{H_{i}\}_{i\in I}=\{H\subseteq G\mid S\leq H\}\]
+		una família de subgrups de \(G\) i
+		\[H=\bigcap_{i\in I}H_{i}.\]
+		Aleshores \(H\) i és un subgrup de \(G\).
 		\begin{proof}
 			Sigui \(e\) l'element neutre de \(G\). Comprovem que \(H\neq\emptyset\). En tenim prou amb veure que \(e\in H\). Per veure que \(H\) és un subgrup de \(G\) ho podem fer per la proposició \myref{prop:intersecció de subgrups es subgrup}.
 		\end{proof}
@@ -230,7 +234,9 @@
 	\begin{definition}[Mínim subgrup generat per un conjunt] %vspace
 		\labelname{mínim subgrup generat per un conjunt}
 		\label{def:mínim subgrup generat per un subconjunt}
-		Siguin \(G\) un grup, \(S\) un subconjunt de \(G\), \(\{H_{i}\}_{i\in I}\) una família de subgrups de \(G\) tals que \(S\subseteq H_{i}\) per a tot \(i\in I\) i tal que
+		Siguin \(G\) un grup, \(S\) un subconjunt de \(G\),
+		\[\{H_{i}\}_{i\in I}=\{H\subseteq G\mid S\subseteq H\}\]
+		una família de subgrups de \(G\) tal que
 		\[H=\bigcap_{i\in I}H_{i}.\]
 		Aleshores direm que el subgrup \(H\leq G\) és el mínim subgrup generat per \(S\) i ho denotarem amb \(\langle S\rangle\).
 		
@@ -2420,7 +2426,7 @@
 		\end{proof}
 	\end{proposition}
 	\begin{corollary}
-		Siguin \(\mathbb{K}\) un cos i \(f(x)\) un polinomi de \(\mathbb{K}[x]\) amb \(\grau(f(x))\geq1\). Aleshores \(\mcd(f(x),f'(x))=1\) si i només si \(f(x)\) no té arrels múltiples.
+		Siguin \(\mathbb{K}\) un cos i \(f(x)\) un polinomi de \(\mathbb{K}[x]\) satisfent \(\grau(f(x))\geq1\). Aleshores \(\mcd(f(x),f'(x))=1\) si i només si \(f(x)\) no té arrels múltiples.
 		\begin{proof}
 			%TODO
 		\end{proof}
