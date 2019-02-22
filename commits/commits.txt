@@ -1,4 +1,4 @@
 Corregits alguns errors i typos a estructures.
 Començada la demostració del Teorema de Peano a EDOS I.
 Retocades definicions a EDOS I amb intenció de que tot quedi més clar i corregit els enunciats segons els canvis.
-Afegida teoria i exempels a la secció de corbes a la part de geometria diferencial.
+Afegida teoria i exemples a la secció de corbes a la part de geometria diferencial.
