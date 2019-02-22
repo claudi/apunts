@@ -161,8 +161,8 @@
 
 \setcounter{MaxMatrixCols}{20}
 
-\newcommand{\corollari}{coro{\lgem}ari}
-\newcommand{\Corollari}{Coro{\lgem}ari}
+\newcommand{\corollari}{coro{\lgem}ari }
+\newcommand{\Corollari}{Coro{\lgem}ari }
 
 \newcommand{\anglelogos}{337.5}
 
@@ -285,6 +285,21 @@
 	\vspace*{0.1\textheight}
 	\endgroup}
 
+\newcommand{\portada}{
+	{\hypersetup{urlcolor=black,linkcolor=black}
+		\begin{titlingpage*}
+			\calccentering{\unitlength}
+			\begin{adjustwidth*}{\unitlength}{-\unitlength}
+				\titleTMB
+			\end{adjustwidth*}
+		\end{titlingpage*}}
+}
+
+\newcommand{\tauladecontinguts}{
+	{\hypersetup{urlcolor=black,linkcolor=black}
+	\tableofcontents}
+}
+
 \makeatletter
 \def\thickhrulefill{\leavevmode \leaders \hrule height 1.2ex \hfill \kern \z@}
 \def\@makechapterhead#1{
@@ -369,36 +384,19 @@
 \makeatother
 
 \begin{document}
-	{\hypersetup{urlcolor=black,linkcolor=black}
-		\begin{titlingpage*}
-			\calccentering{\unitlength}
-			\begin{adjustwidth*}{\unitlength}{-\unitlength}
-				\titleTMB
-			\end{adjustwidth*}
-		\end{titlingpage*}
-	\tableofcontents}
-	\part{Fonaments de les matemàtiques}
-		\subfile{parts/FNM.tex}
-	\part{Àlgebra Lineal}
-		\subfile{parts/AlgebraLineal.tex}
-	\part{Coses per fer}
-		\subfile{parts/Intro.tex}
-	\part{Càlcul en diverses variables i optimització}
-		\subfile{parts/CDVO.tex}
-	\part{Anàlisi matemàtica}
-		\subfile{parts/AM.tex}
-	\part{Estructures algebraiques}
-		\subfile{parts/EA.tex}
-	\part{Mètodes numèrics}
-		\subfile{parts/MN.tex}
-	\part{Topologia}
-		\subfile{parts/Topologia.tex}
-	\part{Equacions diferencials ordinàries I}
-		\subfile{parts/EDOS1.tex}
-	\part{Geometria diferencial}
-		\subfile{parts/GeoDiferencial.tex}
-	\part{Equacions diferencials ordinàries II}
-		\subfile{parts/EDOS2.tex}
+	\portada
+	\tauladecontinguts
+	\subfile{parts/FNM.tex}
+	\subfile{parts/AlgebraLineal.tex}
+	\subfile{parts/Intro.tex}
+	\subfile{parts/CDVO.tex}
+	\subfile{parts/AM.tex}
+	\subfile{parts/EA.tex}
+	\subfile{parts/MN.tex}
+	\subfile{parts/Topologia.tex}
+	\subfile{parts/EDOS1.tex}
+	\subfile{parts/GeoDiferencial.tex}
+	\subfile{parts/EDOS2.tex}
 \end{document} %WEB TO' MOLONA: http://www-history.mcs.st-and.ac.uk/BiogIndex.html
 
 % Definir commanda per [x] i canviar-les totes. Potser amb paràmetres (per barra, claudators i superíndexos) Potser dues commandes per overline i claudators

@@ -1,6 +1,7 @@
 \documentclass[../Apunts.tex]{subfiles}
 
 \begin{document}
+\part{Geometria diferencial}
 \chapter{Corbes}
 	\section{Difeomorfismes de classe \ensuremath{\mathcal{C}^{\infty}}}
 	\subsection{Funcions analítiques}
@@ -39,8 +40,117 @@
 	\end{example}
 	\begin{definition}[Difeomorfisme de classe \ensuremath{\mathcal{C}^{\infty}}]
 		\labelname{difeomorfisme de classe \ensuremath{\mathcal{C}^{\infty}}}\label{def:difeomorfisme de classe C infinit}\label{def:difeomorfisme de classe de diferenciabilitat infinita}
-		Siguin \(\obert{U}\) i \(\obert{V}\) dos oberts de \(\mathbb{R}^{d}\) i \(\Phi\colon\obert{U}\longrightarrow\obert{V}\) un difeomorfisme tal que les funcions \(\Phi\) i \(\Phi^{-1}\) siguin de classe \(\mathcal{C}^{\infty}\). Aleshores direm que \(\Phi\) és un difeomorfisme de classe de diferenciabilitat infinita o que \(\Phi\) és un difeomorfisme de classe \(\mathcal{C}^{\infty}\).
+		Siguin \(\obert{U}\) i \(\obert{V}\) dos oberts de \(\mathbb{R}^{d}\) i \(\Phi\colon\obert{U}\longleftrightarrow\obert{V}\) un difeomorfisme tal que les funcions \(\Phi\) i \(\Phi^{-1}\) siguin de classe \(\mathcal{C}^{\infty}\). Aleshores direm que \(\Phi\) és un difeomorfisme de classe de diferenciabilitat infinita o que \(\Phi\) és un difeomorfisme de classe \(\mathcal{C}^{\infty}\).
 		
 		Aquesta definició té sentit per la definició de \myref{def:difeomorfisme}.
 	\end{definition}
+	\subsection{Reparametrització d'una corba}
+	\begin{definition}[Corba]
+		\labelname{corba}\label{def:corba}
+		Siguin \(I\subseteq\mathbb{R}\) un interval i \(\alpha\colon I\longrightarrow\mathbb{R}^{n}\) una funció. Aleshores direm que \(\alpha\) és una corba sobre \(I\).
+	\end{definition}
+	\begin{example}
+		\label{ex:corba que uniex dos punts}
+		Volem veure que donats dos punts \(a\) i \(b\) de \(\mathbb{R}^{n}\) existeix una corba contínua que els uneix.
+		\begin{solution}
+			Observem que la funció contínua % Veure que és contínua per ser un polinomi
+			\begin{align*}
+				\alpha\colon[0,1]&\longrightarrow\mathbb{R}^{n} \\
+				t&\longmapsto a+t(b-a)
+			\end{align*}
+			satisfà que \(\alpha(0)=a\) i \(\alpha(1)=b\), i per la definició de \myref{def:corba} trobem que és una corba contínua sobre \([0,1]\).
+		\end{solution}
+	\end{example}
+	\begin{definition}[Corba regular]
+		\labelname{corba regular}\label{def:corba regular}
+		Sigui \(\alpha\) una corba sobre \(I\) tal que per a tot \(t\in I\) es satisfà \(\alpha'(t)\neq\vec{0}\). Aleshores direm que \(\alpha\) és regular.
+	\end{definition}
+	\begin{definition}[Reparametrització]
+		\labelname{reparametrització d'una corba}\label{def:reparametrització d'una corba}
+		\labelname{canvi de paràmetre}\label{def:canvi de paràmetre}
+		Siguin \(\alpha\) una corba sobre \(I\) i \(h\colon J\longrightarrow I\) un difeomorfisme. Aleshores direm que la funció
+		\[\beta(t)=(\alpha\circ h)(t)\]
+		és una reparametrització en \(J\) de \(\alpha\) i que \(h\) és el canvi de paràmetre.
+	\end{definition}
+	\begin{proposition}
+		Sigui \(\beta\) una reparametrització en \(J\) d'una corba regular \(\alpha\) sobre \(I\). Aleshores \(\beta\) és una corba regular.
+		\begin{proof}
+			Per la definició de \myref{def:reparametrització d'una corba} trobem que existeix un canvi de paràmetre \(h:J\longrightarrow I\) tal que \(\beta=(\alpha\circ h)(t)\). Aleshores tenim que
+			\begin{align*}
+				\beta\colon J&\longrightarrow\mathbb{R}^{n} \\
+				t&\longmapsto\alpha(h(t)),
+			\end{align*}
+			i per la definició de \myref{def:corba} trobem que \(\beta\) és una corba.
+			
+			Per la definició de \myref{def:canvi de paràmetre} trobem que \(h\) és un difeomorfisme, i per la definició de \myref{def:difeomorfisme} trobem que \(h\) és derivable, i per la \myref{thm:regla de la cadena} trobem que
+			\[\beta'(t)=h'(t)\alpha'(h(t)).\]
+			
+			Com que per hipòtesi \(\alpha\) és regular, per la definició de \myref{def:corba regular} trobem que \(\alpha'(h(t))\neq\vec{0}\) per a tot \(t\in J\). Ara bé, pel \corollari \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} trobem que \(h'(t)\neq\vec{0}\) per a tot \(t\in J\), i per tant tenim que \(\beta'(t)\neq\vec{0}\) per a tot \(t\in J\), i per la definició de \myref{def:corba regular} trobem que \(\beta\) és una corba regular.
+		\end{proof}
+	\end{proposition}
+	\section{La longitud d'una corba i el paràmetre arc}
+	\begin{definition}[Longitud d'una corba]
+		\labelname{longitud d'una corba}\label{def:longitud d'una corba}
+		Siguin \(\alpha\) una corba sobre \(I\) i \(a\), \(b\) dos punts de \(I\). Aleshores definim
+		\[\Long_{a}^{b}(\alpha)=\int_{a}^{b}\norm{\alpha'(t)}\diff t\]
+		com la longitud de \(\alpha\) entre \(a\) i \(b\).
+	\end{definition}
+	\begin{example}
+		\label{ex:longitud d'una corba}
+		Volem calcular la longitud de la corba
+		\[\alpha(t)=(\cos(t),\sin(t),t)\]
+		entre \(0\) i \(x\) per a tot \(x\) positiu.
+		\begin{solution}
+			Per la definició de \myref{def:longitud d'una corba} trobem que això és
+			\begin{align*}
+				\Long_{0}^{x}(\alpha)&=\int_{0}^{x}\norm{\alpha'(t)}\diff t \\
+				&=\int_{0}^{x}\norm{(-\sin(t),\cos(t),1)}\diff t \\
+				&=\int_{0}^{x}\sqrt{\sin^{2}(t)+\cos^{2}(t)+1}\diff t \\
+				&=\int_{0}^{x}\sqrt{2}\diff t \\
+				&=[\sqrt{2}t]_{0}^{x}=\sqrt{x}.
+			\end{align*}
+		\end{solution}
+	\end{example}
+	\begin{proposition}
+		Sigui \(\beta\) una reparametrització d'una corba \(\alpha\) en \(I\) amb canvi de paràmetre \(h\). Aleshores per a tot \(a\) i \(b\) de \(I\), amb \(c=h^{-1}(a)\) i \(d=h^{-1}(d)\) tenim
+		\[\Long_{a}^{b}(\alpha)=\Long_{c}^{d}(\beta).\]
+		\begin{proof}
+			Això té sentit per la definició de \myref{def:canvi de paràmetre} i la definició de \myref{def:difeomorfisme}.
+			
+			Per la definició de \myref{def:longitud d'una corba} trobem que
+			\begin{align*}
+				\Long_{c}^{d}(\beta)&=\int_{c}^{d}\norm{\beta'(s)}\diff s \\
+				&=\int_{c}^{d}\norm{(\alpha\circ h)'(s)}\diff s, \tag{\ref{def:canvi de paràmetre}}
+			\end{align*}
+			i com que, per la definició de \myref{def:canvi de paràmetre} tenim que \(h\) és un difeomorfisme, per la definició de \myref{def:difeomorfisme} trobem que \(h\) és diferenciable i per la \myref{thm:regla de la cadena} trobem que
+			\[\int_{c}^{d}\norm{(\alpha\circ h)'(s)}\diff s=\int_{c}^{d}\norm{h'(s)\alpha'(h(s))}\diff s,\]
+			i per la definició de norma tenim que% REF
+			\[\int_{c}^{d}\norm{h'(s)\alpha'(h(s))}\diff s=\int_{c}^{d}\abs{h'(s)}\norm{\alpha'(h(s))}\diff s.\]
+			
+			Ara bé, com que \(h\) és un difeomorfisme tenim per la definició de \myref{def:difeomorfisme} que \(h'\) és contínua, i pel \corollari \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} trobem que \(h'(t)\neq0\) per a tot \(t\in[c,d]\). Aleshores tenim que ha de ser o bé \(h'(t)>0\) per a tot \(t\in[c,d]\) o bé \(h'(t)<0\) per a tot \(t\in[c,d]\).
+			
+			Comencem suposant que \(h'(t)>0\) per a tot \(t\in[c,d]\). Aleshores tenim que
+			\[\int_{c}^{d}\abs{h'(s)}\norm{\alpha'(h(s))}\diff s=\int_{c}^{d}h'(s)\norm{\alpha'(h(s))}\diff s,\]
+			i pel Teorema del canvi de variable tenim que %REF
+			\begin{align*}
+				\int_{c}^{d}h'(s)\norm{\alpha'(h(s))}\diff s&=\int_{h(c)}^{h(d)}\norm{\alpha(t)}\diff t \\
+				&=\int_{a}^{b}\norm{\alpha(t)}\diff t=\Long_{a}^{b}(\alpha),
+			\end{align*}
+			i per tant
+			\[\Long_{c}^{d}(\beta)=\Long_{a}^{b}(\alpha).\]
+			
+			Suposem ara que \(h'(t)>0\) per a tot \(t\in[c,d]\). Aleshores tenim que
+			\begin{align*}
+				\int_{c}^{d}\abs{h'(s)}\norm{\alpha'(h(s))}\diff s&=\int_{c}^{d}-h'(s)\norm{\alpha'(h(s))}\diff s \\
+				&=\int_{d}^{c}h'(s)\norm{\alpha'(h(s))}\diff s
+			\end{align*}
+			i pel Teorema del canvi de variable tenim que %REF
+			\begin{align*}
+				\int_{d}^{c}h'(s)\norm{\alpha'(h(s))}\diff s&=\int_{h(c)}^{h(d)}\norm{\alpha(t)}\diff t \\
+				&=\int_{a}^{b}\norm{\alpha(t)}\diff t=\Long_{a}^{b}(\alpha),
+			\end{align*}
+			i per tant
+			\[\Long_{c}^{d}(\beta)=\Long_{a}^{b}(\alpha).\qedhere\]
+		\end{proof}
+	\end{proposition}
 \end{document}

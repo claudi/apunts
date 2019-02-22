@@ -1,7 +1,8 @@
 \documentclass[../Apunts.tex]{subfiles}
 
 \begin{document}
-	\chapter{Teoria de grups}
+\part{Estructures algebraiques}
+\chapter{Teoria de grups}
 	\section{Grups}
 	\subsection{Propietats bàsiques dels grups}
 	\begin{definition}[Grup]
@@ -235,8 +236,8 @@
 		\labelname{mínim subgrup generat per un conjunt}
 		\label{def:mínim subgrup generat per un subconjunt}
 		Siguin \(G\) un grup, \(S\) un subconjunt de \(G\),
-		\[\{H_{i}\}_{i\in I}=\{H\subseteq G\mid S\subseteq H\}\]
-		una família de subgrups de \(G\) tal que
+		\[\{H_{i}\}_{i\in I}=\{H\subseteq G\mid S\leq H\}\]
+		una família de subgrups de \(G\) i
 		\[H=\bigcap_{i\in I}H_{i}.\]
 		Aleshores direm que el subgrup \(H\leq G\) és el mínim subgrup generat per \(S\) i ho denotarem amb \(\langle S\rangle\).
 		
@@ -1126,7 +1127,7 @@
 	\begin{corollary}
 		Si \(G\) té ordre \(p^{n}q^{m}\) on \(p,q\) són primers amb \(p<q\) aleshores \(n_{q}=1\), i pel corol·lari \myref{corollary:Segon Teorema de Sylow}, el \(p\)-subgrup de Sylow de \(G\) és un subgrup normal.
 	\end{corollary}
-	\chapter{Teoria d'anells}
+\chapter{Teoria d'anells}
 	\section{Anells}
 	\subsection{Propietats bàsiques dels anells i subanells}
 	\begin{definition}[Anell]
@@ -2316,7 +2317,7 @@
 			%TODO
 		\end{proof}
 	\end{corollary}
-	\chapter{Teoria de cossos finits}
+\chapter{Teoria de cossos finits}
 	\section{Cossos finits}
 	\subsection{Propietats bàsiques dels cossos finits}
 	\begin{proposition}

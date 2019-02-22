@@ -1,6 +1,7 @@
 \documentclass[../Apunts.tex]{subfiles}
 
 \begin{document}
+\part{Equacions diferencials ordinàries I}
 \chapter{Equacions diferencials de primer ordre en una variable}
 	\section{Espai de funcions contínues i acotades}
 	\subsection{L'espai de funcions contínues i acotades és complet}
@@ -12,7 +13,7 @@
 	%TODO %VEURE QUE ÉS UNA NORMA (p(Ku)=|K|p(u), p(u+v)<=p(u)+p(v), 0<=p(v), p(v)=0 sii v=0)
 	\begin{definition}[Norma d'una funció]
 		\labelname{norma d'una funció}\label{def:norma d'una funció}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(T\) un compacte de \(\mathbb{R}^{n}\) i \(f(x)\) una funció de \(\mathcal{C}_{b}(X,T)\). Aleshores definim
+		Siguin \(X\) un espai vectorial amb una topologia, \(T\) un compacte de \(\mathbb{R}^{n}\) i \(f(x)\) una funció de \(\mathcal{C}_{b}(X,T)\). Aleshores definim
 		\[\norm{f}=\sup_{x\in X}\norm{f(x)}\]
 		com la norma de \(f\).
 	\end{definition}
@@ -32,7 +33,7 @@
 %	\end{proposition}
 	\begin{definition}[Successió de Cauchy]
 		\labelname{successió de Cauchy}\label{def:successió de Cauchy amb normes}
-		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió tal que per a tots naturals \(n\) i \(m\) existeix un real \(\varepsilon>0\) tal que
+		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió sobre un espai normat \(X\) tal que per a tots naturals \(n\) i \(m\) existeix un real \(\varepsilon>0\) tal que
 		\[\norm{a_{n}-a_{m}}<\varepsilon.\]
 		Aleshores direm que \((a_{n})_{n\in\mathbb{N}}\) és de Cauchy.
 	\end{definition}

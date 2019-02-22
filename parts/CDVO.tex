@@ -1,7 +1,8 @@
 \documentclass[../Apunts.tex]{subfiles}
 
 \begin{document}
-	\chapter{Càlcul diferencial}
+\part{Càlcul en diverses variables i optimització}
+\chapter{Càlcul diferencial}
 	\section{Arcs i conjunts connexos}
 	\subsection{Arcs en múltiples variables}
 	\begin{definition}[Arcs a l'espai]
@@ -617,7 +618,8 @@
 			Amb això també veiem que \(T_{p}(M)\) té dimensió \(m\).
 		\end{proof}
 	\end{proposition}
-	\begin{proposition}Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(v_{1},\dots,v_{k}\in\mathcal{C}^{1}\) \(k<d\) funcions escalars definides en \(U\) funcionalment independents en cada punt de \(U\) de forma que els conjunts de nivell arc-connexos
+	\begin{proposition}
+		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert, \(v_{1},\dots,v_{k}\in\mathcal{C}^{1}\) \(k<d\) funcions escalars definides en \(U\) funcionalment independents en cada punt de \(U\) de forma que els conjunts de nivell arc-connexos
 		\[M=\{x\in U\mid v_{1}(x)=c_{1},\dots,v_{k}(x)=c_{k}\}\]
 		siguin varietats regulars de dimensió \(m=d-k\). Aleshores, donada una funció \(f\colon U\to\mathbb{R}^{m}\) diferenciable depèn funcionalment de \(v_{1},\dots,v_{k}\) si i només si \(\nabla f(x)\) és combinació lineal de \(\nabla v_{1}(x),\dots,\nabla v_{k}(x)\) per a tot \(x\in U\).
 		\begin{proof}
@@ -719,6 +721,7 @@
 		\end{proof}
 	\end{theorem}
 	\begin{corollary} %revisar \mathbb{R}^{d}. El Bruna diu que va a \mathbb{R}
+		\label{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul}
 		Una aplicació \(f\colon U\to \mathbb{R}^{d}\) de classe \(\mathcal{C}^{1}\) és un difeomorfisme si i només si \(f\) és injectiva i \(\det(df(a))\neq0\) per a tot \(x\in U\).
 	\end{corollary}
 	\begin{proposition}
@@ -978,7 +981,7 @@
 		\end{proof}
 	\end{proposition}
 	%	\subsection{Extrems condicionats}\label{sec:Classificar extrems condicionats}		Aquesta secció ens servirà per classificar els punts crítics que trobem en la frontera d'una restricció d'una funció, tal com vam explicar a l'apartat \myref{sec:Classificar extrems lliures}.
-	\chapter{Càlcul integral}
+\chapter{Càlcul integral}
 	\section{La integral Riemann}
 	\subsection{Funcions integrables Riemann}
 	\begin{definition}[Rectangle]
@@ -1303,7 +1306,7 @@
 	\begin{note}
 		Tota la teoria de l'integració Riemann que hem vist ha estat sobre rectangles. Ara tractem de generalitzar-la desfent-nos d'aquesta limitació.
 	\end{note}
-	\chapter{Càlcul vectorial}
+\chapter{Càlcul vectorial}
 	\emph{sona divertit}
 	\printbibliography
 	Els apunts que he seguit per escriure la majoria d'aquesta part són els escrits pel professor de l'assignatura; \cite{ApuntsBrunaEspai, ApuntsBrunaDiff, ApuntsBrunaInt, ApuntsBrunaVect}. De moment no han estat publicats però en té pensat fer-ne un llibre. Es poden trobar al campus virtual.
