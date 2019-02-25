@@ -153,4 +153,68 @@
 			\[\Long_{c}^{d}(\beta)=\Long_{a}^{b}(\alpha).\qedhere\]
 		\end{proof}
 	\end{proposition}
+	\begin{definition}[Funció longitud d'arc]
+		\labelname{funció longitud d'arc}\label{def:funció longitud d'arc}
+		Siguin \(\alpha\) una corba sobre \(I\) i \(a\in I\) un punt. Aleshores direm que la funció
+		\[\funciolongituddarc_{\alpha}(a)(t)=\int_{a}^{t}\norm{\alpha'(s)}\diff s\]
+		és la funció longitud d'arc de \(\alpha\) amb origen en \(a\).
+%		\ref{def:diferencial}
+	\end{definition}
+	\begin{observation}
+		\label{obs:la funció longitud d'arc és creixent}
+		Sigui \(\alpha\) una corba sobre \(I\) i \(a\in I\) un punt. Aleshores per a tot \(t\in I\)
+		\[\frac{\partial\funciolongituddarc_{\alpha}(a)}{\partial t}(t)\geq0.\]
+		\begin{proof}
+			Per la definició de \myref{def:funció longitud d'arc} trobem que
+			\[\funciolongituddarc_{\alpha}(a)(t)=\int_{a}^{t}\norm{\alpha'(s)}\diff s,\]
+			i pel \myref{thm:Teorema Fonamental del Càlcul} tenim que
+			\[\frac{\partial\funciolongituddarc_{\alpha}(a)}{\partial t}(t)=\norm{\alpha'(t)}\geq0.\qedhere\] % REFS
+		\end{proof}
+	\end{observation}
+	\begin{proposition}
+		\label{prop:la funció longitud arc d'una corba regular és un difeomorfisme}
+		Siguin \(\alpha\) una corba regular sobre \(I\) i \(a\in I\) un punt. Aleshores la funció \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme. % SOBRE J
+		\begin{proof}
+			Per la definició de \myref{def:corba regular} trobem que \(\alpha'(t)\neq0\) per a tot \(t\in I\), i pel \myref{thm:Teorema Fonamental del Càlcul} tenim que
+			\[\frac{\partial\funciolongituddarc_{\alpha}(a)}{\partial t}(t)=\norm{\alpha'(t)}.\]
+			Per tant trobem que % REFS
+			\[\frac{\partial\funciolongituddarc_{\alpha}(a)}{\partial t}(t)\neq0,\]
+			i per l'observació \myref{obs:diferencial en d=1 és com derivar} i el \corollari 		\myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} tenim que \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme, com volíem veure. % SOBRE J
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:podem trobar una reparametrització amb velocitat unitaria de qualsevol corba regular}
+		Sigui \(\alpha\) una corba regular sobre \(I\). Aleshores existeix una reparametrització \(\beta\) de \(\alpha\) tal que per a tot \(t\in I\)
+		\[\norm{\beta'(t)}=1.\]
+		\begin{proof}
+			Per la proposició \ref{prop:la funció longitud arc d'una corba regular és un difeomorfisme} tenim que per a tot \(a\in I\) la funció \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme, i per la definició de \myref{def:difeomorfisme} trobem que la funció \(\funciolongituddarc_{\alpha}(a)\) és bijectiva, i pel Teorema \myref{thm:bijectiva iff invertible} trobem que \(\funciolongituddarc_{\alpha}(a)\) és invertible i per la definició de \myref{def:aplicació invertible} tenim que existeix una funció \(t_{a}\) tal que \(t_{a}\) sigui la inversa de \(\funciolongituddarc_{\alpha}(a)\). Considerem
+			\[\beta(s)=\alpha(t(s)).\]
+			Aleshores tenim que
+			\begin{align*} % És positiva pel corol·lari del teorema de la funció inversa?
+				\norm{\beta'(s)}&=\norm{\frac{\partial t}{\partial s}\alpha'(s)} \\
+				&=\abs{\frac{\partial t}{\partial s}}\norm{\alpha'(s)} \\
+				&=\frac{\partial t}{\partial s}(s(t))\frac{\partial s}{\partial t}(t(s))\\
+				&=\frac{1}{\frac{\partial s}{\partial t}(t(s))}\frac{\partial s}{\partial t}(t(s))=1. \qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Corba parametritzada per l'arc]
+		\labelname{corba parametritzada per l'arc}\label{def:corba parametritzada per l'arc}
+		Sigui \(\alpha\) una corba regular sobre \(I\) tal que per a tot \(t\in I\) es satisfà
+		\[\norm{\alpha'(t)}=1.\]
+		Aleshores direm que \(\alpha\) està parametritzada per l'arc.
+	\end{definition}
+	\begin{observation}
+		Sigui \(\alpha\) una corba en \(I\) parametritzada per l'arc i \(a\in I\) un punt. Aleshores per a tot \(t\in I\) tenim
+		\[\funciolongituddarc_{\alpha}(a)(t)=t-a.\]
+		\begin{proof}
+			Per la definició de \myref{def:funció longitud d'arc} trobem que
+			\[\funciolongituddarc_{\alpha}(a)(t)=\int_{a}^{t}\norm{\alpha'(s)}\diff s,\]
+			i per la definició de \myref{def:corba parametritzada per l'arc} tenim que  per a tot \(t\in I\) es satisfà \(\norm{\alpha'(t)}=1\), i per tant
+			\begin{align*}
+				\funciolongituddarc_{\alpha}(a)(t)&=\int_{a}^{t}\norm{\alpha'(s)}\diff s \\
+				&=\int_{a}^{t}\diff s=t-a.\qedhere
+			\end{align*}
+		\end{proof}
+	\end{observation}
 \end{document}

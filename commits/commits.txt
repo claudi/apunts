@@ -1,0 +1,1 @@
+Afegida teoria a la secció del paràmetre arc a geometria diferencial.
