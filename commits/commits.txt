@@ -1,1 +1,2 @@
 Afegida teoria a la secció del paràmetre arc a geometria diferencial.
+Arreglats petits errors, la majoria typos, per tot el pdf.

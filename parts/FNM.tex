@@ -1084,7 +1084,7 @@
 		Siguin \(a\) i \(b\) enters. Aleshores \(\mcd(a,b)=\mcd(b,a)\).
 		\begin{proof}
 			Per la definició de \myref{def:màxim comú divisor} tenim que
-			\[\mcd(a,b)=\max_{c\in\mathbb{Z}}\{c\divides a\text{ i }c\divides b\}\quad\text{i}\quad\mcd(b,a)=\max_{c\in\mathbb{N}}\{c\divides b\text{ i }c\divides a\},\]
+			\[\mcd(a,b)=\max_{c\in\mathbb{Z}}\{c\divides a\text{ i }c\divides b\}\quad\text{i}\quad\mcd(b,a)=\max_{c\in\mathbb{Z}}\{c\divides b\text{ i }c\divides a\},\]
 			i per tant, per la Tautologia \myref{taut:condició equivalent a conjunció} trobem que \(\mcd(a,b)=\mcd(b,a)\).
 		\end{proof}
 	\end{proposition}
@@ -1498,7 +1498,7 @@
 			\quad\ \vdots\\
 			x_{0}\equiv a_{n}\pmod{m_{n}}
 		\end{cases}\]
-		Aleshores, si \(x=x_{0}+\lambda M\) amb \(M=\mcm(m_{1},\dots,m_{n}\) i per a tot \(\lambda\) enter es satisfà
+		Aleshores, si \(x=x_{0}+\lambda M\) amb \(M=\mcm(m_{1},\dots,m_{n})\) i per a tot \(\lambda\) enter es satisfà
 		\[\begin{cases}
 		x\equiv a_{1}\pmod{m_{1}}\\
 		\quad\ \vdots\\
@@ -1529,7 +1529,7 @@
 		\begin{proof}
 			Prenem \(M=\mcm(m_{1},\dots,m_{n})\). Per la definició de \myref{def:mínim comú múltiple} i la definició de \myref{def:coprimers} tenim que \[M=\mcm(m_{1},\dots,m_{n})=\abs{\prod_{i=1}^{n}m_{i}}.\]
 			Per a tot \(i\in\{1,\dots,n\}\) definim
-			\[M_{1}=m_{1}\cdots m_{i-1}m_{i+1}\cdots m_{n}\]
+			\[M_{i}=m_{1}\cdots m_{i-1}m_{i+1}\cdots m_{n}\]
 			i tenim, per la definició de \myref{def:coprimers}, que \(M_{i}\) i \(m_{i}\) són coprimers.
 			
 			Per tant la congruència
@@ -1615,8 +1615,10 @@
 		\label{lema:permutacions disjuntes commuten}
 		Siguin \(X\) un conjunt no buit i \(\tau\) una permutació de \(\GrupSimetric_{X}\). Aleshores
 		\[x\in\Mou(\sigma)\sii\sigma(x)\in\Mou(\sigma).\]
-		\begin{proof}
-			Per la definició de \myref{def:permutació} tenim que \(\sigma\) és bijectiva, i per tant \(\sigma(x)=x\) si i només si \(\sigma(\sigma(x))=\sigma(x)\). Prenent la negació d'això trobem que \(\sigma(x)\neq x\) si i només si \(\sigma(\sigma(x))\neq\sigma(x)\), que per la definició de \myref{def:conjunt d'elements moguts per una permutació} és equivalent a \(x\in\Mou(\sigma)\sii\sigma(x)\in\Mou(\sigma)\).
+		\begin{proof} % REVISAR
+			Per la definició de \myref{def:permutació} tenim que \(\sigma\) és bijectiva, i per la definició de \myref{def:conjunt d'elements moguts per una permutació} trobem que \(\sigma(x)=x\) si i només si \(\sigma(\sigma(x))=\sigma(x)\).
+			
+			Prenent la negació d'això trobem que \(\sigma(x)\neq x\) si i només si \(\sigma(\sigma(x))\neq\sigma(x)\), que per la definició de \myref{def:conjunt d'elements moguts per una permutació} és equivalent a \(x\in\Mou(\sigma)\sii\sigma(x)\in\Mou(\sigma)\).
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}
