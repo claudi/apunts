@@ -182,7 +182,7 @@
 			i per l'observació \myref{obs:diferencial en d=1 és com derivar} i el \corollari 		\myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} tenim que \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme, com volíem veure. % SOBRE J
 		\end{proof}
 	\end{proposition}
-	\begin{proposition}
+	\begin{proposition} % Veure després de definir corba parametritzada per l'arc
 		\label{prop:podem trobar una reparametrització amb velocitat unitaria de qualsevol corba regular}
 		Sigui \(\alpha\) una corba regular sobre \(I\). Aleshores existeix una reparametrització \(\beta\) de \(\alpha\) tal que per a tot \(t\in I\)
 		\[\norm{\beta'(t)}=1.\]
@@ -217,4 +217,31 @@
 			\end{align*}
 		\end{proof}
 	\end{observation}
+	\begin{definition}[Contacte]
+		\labelname{contacte}\label{def:contacte entre dues corbes parametritzades per l'arc}
+		Siguin \(\alpha\) i \(\beta\) dues corbes en \(I\) parametritzades per l'arc i \(t_{0}\in I\) un punt tals que existeix un \(r\) satisfent
+		\[\lim_{t\to t_{0}}\frac{\alpha(t)-\beta(t)}{(t-t_{0})^{p}}=0\quad\text{i}\quad\lim_{t\to t_{0}}\frac{\alpha(t)-\beta(t)}{(t-t_{0})^{r+1}}\neq0\]
+		per a tot \(p\leq r\). Aleshores direm que \(\alpha\) i \(\beta\) tenen contacte d'ordre \(r\) en \(t_{0}\).
+	\end{definition}
+	\begin{proposition}
+		Siguin \(\alpha\) i \(\beta\) dues corbes en \(I\) parametritzades per l'arc i \(t_{0}\in I\) un punt. Aleshores \(\alpha\) i \(\beta\) tenen contacte d'ordre \(r\) en \(t_{0}\) si i només si
+		\[\alpha^{(p)}(t_{0})=\beta^{(p)}(t_{0})\quad\text{i}\quad\alpha^{(r+1)}(t_{0})\neq\beta^{(r+1)}(t_{0})\]
+		per a tot \(p\leq r\).
+		\begin{proof}
+			Suposem que
+			\[\alpha^{(p)}(t_{0})=\beta^{(p)}(t_{0})\quad\text{i}\quad\alpha^{(r+1)}(t_{0})\neq\beta^{(r+1)}(t_{0})\]
+			per a tot \(p\leq r\). Tenim que, per a tot \(p\leq r\) es satisfà
+			\[\alpha^{(p)}(t_{0})=\beta^{(p)}(t_{0}),\]
+			o equivalentment
+			\[\alpha^{(p)}(t_{0})-\beta^{(p)}(t_{0})=0.\]
+			Prenem \(n\leq r\), i per la definició de \myref{def:derivada} trobem que
+			\begin{align*}
+			\alpha^{(n)}(t_{0})-\beta^{(n)}(t_{0})&=\lim_{t\to t_{0}}\left(\frac{\alpha^{(n-1)}(t_{0})-\alpha^{(n-1)}(t)}{t-t_{0}}-\frac{\beta^{(n-1)}(t_{0})-\beta^{(n-1)}(t)}{t-t_{0}}\right) \\
+			&=\lim_{t\to t_{0}}\left(\frac{\alpha^{(n-1)}(t_{0})-\alpha^{(n-1)}(t)-\beta^{(n-1)}(t_{0})+\beta^{(n-1)}(t)}{t-t_{0}}\right) \\
+			&=\lim_{t\to t_{0}}\left(\frac{\alpha^{(n-1)}(t_{0})-\beta^{(n-1)}(t_{0})}{t-t_{0}}-\frac{\alpha^{(n-1)}(t)-\beta^{(n-1)}(t)}{t-t_{0}}\right)
+			\intertext{Ara bé, tenim que \(\alpha^{(n-1)}(t_{0})-\beta^{(n-1)}(t_{0})=0\), i per tant}
+			&=\lim_{t\to t_{0}}\frac{\beta^{(n-1)}(t)-\alpha^{(n-1)}(t)}{t-t_{0}}=0.
+			\end{align*}
+		\end{proof}
+	\end{proposition}
 \end{document}
