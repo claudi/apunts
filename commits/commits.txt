@@ -1,2 +1,2 @@
-Afegida teoria a geometria diferencial fins abans de les fórmules de Frenet.
+Afegida teoria a geometria diferencial fins les fórmules de Frenet.
 Arreglats petits errors, la majoria typos, per tot el pdf.
