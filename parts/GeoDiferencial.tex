@@ -16,12 +16,12 @@
 	\end{definition}
 	\begin{definition}[Funció analítica]
 		\labelname{funció analítica}\label{def:funció analítica}
-		Sigui \(\obert{U}\subseteq\mathbb{R}^{d}\) un obert i
+		Sigui \(\obert{U}\subseteq\mathbb{R}^{d}\) un obert,
 		\begin{align*}
 			f\colon\obert{U}&\longrightarrow\mathbb{R}^{m} \\
 			x&\longmapsto(f_{1}(x),\dots,f_{m}(x))
 		\end{align*}
-		una funció de classe \(\mathcal{C}^{\infty}\) tal que per a tot \(x_{0}\) de \(\obert{U}\) existeix una sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) tal que existeix un entorn \(N_{x_{0}}\) satisfent que per a tot \(x\in N_{x_{0}}\) la sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) convergeix puntualment a \(f(x)\). Aleshores direm que \(f\) és una funció analítica. També direm que \(f\) és de classe \(\mathcal{C}^{\omega}\).
+		una funció de classe \(\mathcal{C}^{\infty}\) i \(x_{0}\in\obert{U}\) un punt tal que existeix una sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) tal que existeix un entorn \(N_{x_{0}}\subseteq\obert{U}\) satisfent que per a tot \(x\in N_{x_{0}}\) la sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) convergeix puntualment a \(f(x)\). Aleshores direm que \(f\) és una funció analítica. També direm que \(f\) és de classe \(\mathcal{C}^{\omega}\).
 	\end{definition}
 	\begin{example}
 		\label{ex:els polinomis són funcions analítiques}
@@ -35,7 +35,7 @@
 			\[p^{(k)}(x)=0.\]
 			Aleshores per la definició de \myref{def:classe de diferenciabilitat infinita} tenim que \(p(x)\) és de classe \(\mathcal{C}^{\infty}\). Observem que
 			\[p(x)=\sum_{i=0}^{n}a_{i}x^{i}\]
-			i per la definició de \myref{def:sèrie de potències} tenim que \(p(x)\) és una sèrie de potències, i per la definició de \myref{def:convergència puntual} trobem que \(p(x)\) convergeix puntualment a \(\sum_{i=0}^{n}a_{i}x^{i}\) per a tot \(x\in\mathbb{R}\), i per la definició de \myref{def:funció analítica} tenim que \(p(x)\) és una funció analítica.
+			i per la definició de \myref{def:sèrie de potències} tenim que \(p(x)\) és una sèrie de potències, i per la definició de \myref{def:convergència puntual} trobem que \(p(x)\) convergeix puntualment a \(\sum_{i=0}^{n}a_{i}x^{i}\) per a tot \(x\in\mathbb{R}\), i per la definició de \myref{def:funció analítica} tenim que \(p(x)\) és una funció analítica per a tot \(x\in\mathbb{R}\).
 		\end{solution}
 	\end{example}
 	\begin{definition}[Difeomorfisme de classe \ensuremath{\mathcal{C}^{\infty}}]
@@ -163,12 +163,12 @@
 	\begin{observation}
 		\label{obs:la funció longitud d'arc és creixent}
 		Sigui \(\alpha\) una corba sobre \(I\) i \(a\in I\) un punt. Aleshores per a tot \(t\in I\)
-		\[\frac{\partial\funciolongituddarc_{\alpha}(a)}{\partial t}(t)\geq0.\]
+		\[\frac{\diff\funciolongituddarc_{\alpha}(a)}{\diff t}(t)\geq0.\]
 		\begin{proof}
 			Per la definició de \myref{def:funció longitud d'arc} trobem que
 			\[\funciolongituddarc_{\alpha}(a)(t)=\int_{a}^{t}\norm{\alpha'(s)}\diff s,\]
 			i pel \myref{thm:Teorema Fonamental del Càlcul} tenim que
-			\[\frac{\partial\funciolongituddarc_{\alpha}(a)}{\partial t}(t)=\norm{\alpha'(t)}\geq0.\qedhere\] % REFS
+			\[\frac{\diff\funciolongituddarc_{\alpha}(a)}{\diff t}(t)=\norm{\alpha'(t)}\geq0.\qedhere\] % REFS
 		\end{proof}
 	\end{observation}
 	\begin{proposition}
@@ -176,9 +176,9 @@
 		Siguin \(\alpha\) una corba regular sobre \(I\) i \(a\in I\) un punt. Aleshores la funció \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme. % SOBRE J
 		\begin{proof}
 			Per la definició de \myref{def:corba regular} trobem que \(\alpha'(t)\neq0\) per a tot \(t\in I\), i pel \myref{thm:Teorema Fonamental del Càlcul} tenim que
-			\[\frac{\partial\funciolongituddarc_{\alpha}(a)}{\partial t}(t)=\norm{\alpha'(t)}.\]
+			\[\frac{\diff\funciolongituddarc_{\alpha}(a)}{\diff t}(t)=\norm{\alpha'(t)}.\]
 			Per tant trobem que % REFS
-			\[\frac{\partial\funciolongituddarc_{\alpha}(a)}{\partial t}(t)\neq0,\]
+			\[\frac{\diff\funciolongituddarc_{\alpha}(a)}{\diff t}(t)\neq0,\]
 			i per l'observació \myref{obs:diferencial en d=1 és com derivar} i el \corollari 		\myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} tenim que \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme, com volíem veure. % SOBRE J
 		\end{proof}
 	\end{proposition}
@@ -191,10 +191,10 @@
 			\[\beta(s)=\alpha(t(s)).\]
 			Aleshores tenim que
 			\begin{align*} % És positiva pel corol·lari del teorema de la funció inversa?
-				\norm{\beta'(s)}&=\norm{\frac{\partial t}{\partial s}\alpha'(s)} \\
-				&=\abs{\frac{\partial t}{\partial s}}\norm{\alpha'(s)} \\
-				&=\frac{\partial t}{\partial s}(s(t))\frac{\partial s}{\partial t}(t(s))\\
-				&=\frac{1}{\frac{\partial s}{\partial t}(t(s))}\frac{\partial s}{\partial t}(t(s))=1. \qedhere
+				\norm{\beta'(s)}&=\norm{\frac{\diff t}{\diff s}\alpha'(s)} \\
+				&=\abs{\frac{\diff t}{\diff s}}\norm{\alpha'(s)} \\
+				&=\frac{\diff t}{\diff s}(s(t))\frac{\diff s}{\diff t}(t(s))\\
+				&=\frac{1}{\frac{\diff s}{\diff t}(t(s))}\frac{\diff s}{\diff t}(t(s))=1. \qedhere
 			\end{align*}
 		\end{proof}
 	\end{proposition}
@@ -265,6 +265,85 @@
 		\end{proof}
 	\end{proposition}
 	\subsection{Fórmules de Frenet} % de corbes parametritzades per l'arc
-	\begin{definition}[]
+	\begin{proposition}
+		\label{prop:unicitat del producte vectorial entre dos vectors}
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\). Aleshores existeix un únic vector \(\vec{w}\) de \(\mathbb{R}^{3}\) tal que per a tot vector \(\vec{x}\) de \(\mathbb{R}^{3}\)
+		\[\prodesc{\vec{w}}{\vec{x}}=\det(\vec{u},\vec{v},\vec{x}).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Producte vectorial]
+		\labelname{producte vectorial}\label{def:producte vectorial}
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\) i \(\vec{w}\) el vector de \(\mathbb{R}^{3}\) tal que
+		\[\prodesc{\vec{w}}{\vec{x}}=\det(\vec{u},\vec{v},\vec{x}).\]
+		Aleshores definim el producte vectorial de \(\vec{u}\) i \(\vec{v}\) com
+		\[\vec{u}\prodvec\vec{v}=\vec{w}.\]
+		Aquesta definició té sentit per la proposició \myref{prop:unicitat del producte vectorial entre dos vectors}.
 	\end{definition}
+	\begin{observation}
+		\label{obs:fórmula del determinant segons el producte vectorial i el producte escalar}
+		\(\prodesc{\vec{u}\prodvec\vec{v}}{\vec{x}}=\det(\vec{u},\vec{v},\vec{x})\).
+	\end{observation}
+	\begin{proposition}
+	\label{prop:el producte vectorial canvia de signe en permutar els vectors}
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\). Aleshores
+		\[\vec{u}\prodvec\vec{v}=-\vec{v}\prodvec\vec{u}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:el producte vectorial és zero si i només si els vectors no són linealment independents}
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors. Aleshores \(\vec{u}\prodvec\vec{v}\neq0\) si i només si \(\vec{u}\) i \(\vec{v}\) són linealment independents.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:dos vectors linealment independents són perpendiculars al seu producte vectorial}
+		\label{prop:el producte vectorial és perpendicular als vectors}
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors linealment independents de \(\mathbb{R}^{3}\). Aleshores \(\vec{u}\prodvec\vec{v}\) és perpendicular a \(\vec{u}\) i \(\vec{v}\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:el determinant de dos vectors linealment independents i el seu producte vectorial és diferent de zero}
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors linealment independents de \(\mathbb{R}^{3}\). Aleshores \(\det(\vec{u},\vec{v},\vec{u}\prodvec\vec{u})\neq0\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Orientació d'una base]
+		\labelname{orientació d'una base}\label{orientació d'una base}
+		\labelname{base positiva}\label{def:base positiva}
+		Sigui \((\vec{u},\vec{v},\vec{w})\) una base tal que \(\det(\vec{u},\vec{v},\vec{w})>0\). Aleshores direm que \((\vec{u},\vec{v},\vec{w})\) és una base positiva.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:dos vectors linealment independents i el seu producte vectorial formen una base positiva}
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors linealment independents. Aleshores la base \((\vec{u},\vec{v},\vec{u}\prodvec\vec{v})\) és una base positiva.
+		\begin{proof}
+			%TODO % Sentit per la proposició \ref{prop:el producte vectorial és perpendicular als vectors}.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:fórmula per la derivada del producte vectorial de dues corbes}
+		Siguin \(\alpha\) i \(\beta\) dues corbes sobre \(I\) en \(\mathbb{R}^{3}\) diferenciables en \(I\). Aleshores
+		\[\frac{\diff(\alpha(t)\prodvec\beta(t))}{\diff t}=\frac{\diff\alpha(t)}{\diff t}\prodvec\beta(t)+\alpha(t)\prodvec\frac{\diff\beta(t)}{\diff t}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+%	\begin{proposition}
+%		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\). Aleshores per a tots \(\vec{x}\) i \(\vec{y}\) de \(\mathbb{R}^{3}\) es satisfà
+%		\[\prodesc{\vec{u}\prodvec\vec{v}}{\vec{x}\prodvec\vec{y}}=\det\left|\begin{matrix}
+%			\prodesc{\vec{u}}{\vec{x}} & \prodesc{\vec{v}}{\vec{x}} \\
+%			\prodesc{\vec{u}}{\vec{y}} & \prodesc{\vec{v}}{\vec{y}}
+%		\end{matrix}\right|.\]
+%		\begin{proof}
+%			%TODO
+%		\end{proof}
+%	\end{proposition}
+	
 \end{document}

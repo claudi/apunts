@@ -1,2 +1,1 @@
-Afegida teoria a geometria diferencial fins les fórmules de Frenet.
-Arreglats petits errors, la majoria typos, per tot el pdf.
+Afegida teoria a la secció de les fórmules de Frenet, fins abans de definir l'orientació d'un espai vectorial.
