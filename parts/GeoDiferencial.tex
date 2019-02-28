@@ -139,8 +139,7 @@
 			i per tant
 			\[\Long_{c}^{d}(\beta)=\Long_{a}^{b}(\alpha).\]
 			
-			Suposem ara que \(h'(t)>0\) per a tot \(t\in[c,d]\). Aleshores tenim que
-			\begin{align*}
+			Suposem ara que \(h'(t)<0\) per a tot \(t\in[c,d]\). Aleshores tenim que			\begin{align*}
 				\int_{c}^{d}\abs{h'(s)}\norm{\alpha'(h(s))}\diff s&=\int_{c}^{d}-h'(s)\norm{\alpha'(h(s))}\diff s \\
 				&=\int_{d}^{c}h'(s)\norm{\alpha'(h(s))}\diff s
 			\end{align*}
@@ -156,7 +155,10 @@
 	\begin{definition}[Funció longitud d'arc]
 		\labelname{funció longitud d'arc}\label{def:funció longitud d'arc}
 		Siguin \(\alpha\) una corba sobre \(I\) i \(a\in I\) un punt. Aleshores direm que la funció
-		\[\funciolongituddarc_{\alpha}(a)(t)=\int_{a}^{t}\norm{\alpha'(s)}\diff s\]
+		\begin{align*}
+			\funciolongituddarc_{\alpha}(a)(t)\colon I&\longrightarrow\mathbb{R}\\
+			t&\longmapsto\int_{a}^{t}\norm{\alpha'(s)}\diff s
+		\end{align*}
 		és la funció longitud d'arc de \(\alpha\) amb origen en \(a\).
 %		\ref{def:diferencial}
 	\end{definition}
@@ -310,7 +312,7 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:el determinant de dos vectors linealment independents i el seu producte vectorial és diferent de zero}
-		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors linealment independents de \(\mathbb{R}^{3}\). Aleshores \(\det(\vec{u},\vec{v},\vec{u}\prodvec\vec{u})\neq0\).
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors linealment independents de \(\mathbb{R}^{3}\). Aleshores \(\det(\vec{u},\vec{v},\vec{u}\prodvec\vec{v})\neq0\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -335,15 +337,15 @@
 			%TODO
 		\end{proof}
 	\end{proposition}
-%	\begin{proposition}
-%		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\). Aleshores per a tots \(\vec{x}\) i \(\vec{y}\) de \(\mathbb{R}^{3}\) es satisfà
-%		\[\prodesc{\vec{u}\prodvec\vec{v}}{\vec{x}\prodvec\vec{y}}=\det\left|\begin{matrix}
-%			\prodesc{\vec{u}}{\vec{x}} & \prodesc{\vec{v}}{\vec{x}} \\
-%			\prodesc{\vec{u}}{\vec{y}} & \prodesc{\vec{v}}{\vec{y}}
-%		\end{matrix}\right|.\]
-%		\begin{proof}
-%			%TODO
-%		\end{proof}
-%	\end{proposition}
+	\begin{proposition} % Està al lloc correcte?
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\). Aleshores per a tots \(\vec{x}\) i \(\vec{y}\) de \(\mathbb{R}^{3}\) es satisfà
+		\[\prodesc{\vec{u}\prodvec\vec{v}}{\vec{x}\prodvec\vec{y}}=\det\left[\begin{matrix}
+			\prodesc{\vec{u}}{\vec{x}} & \prodesc{\vec{v}}{\vec{x}} \\
+			\prodesc{\vec{u}}{\vec{y}} & \prodesc{\vec{v}}{\vec{y}}
+		\end{matrix}\right].\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
 	
 \end{document}
