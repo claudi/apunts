@@ -206,6 +206,41 @@
 		\[\norm{\alpha'(t)}=1.\]
 		Aleshores direm que \(\alpha\) està parametritzada per l'arc.
 	\end{definition}
+	\begin{example} % Veure cas general amb Teorema de la funció implícita
+		\label{ex:reparametrització per l'arc del cercle de radi R}
+		Volem donar una reparametrització de la corba
+		\[\alpha(t)=(R\cos(t),R\sin(t))\]
+		tal que estigui parametritzada per l'arc.
+		\begin{solution}
+			Tenim que
+			\[\alpha'(t)=(-R\sin(t),R\cos(t)),\]
+			i per tant
+			\begin{align*}
+				\norm{\alpha'(t)}&=\norm{(-R\sin(t),R\cos(t))} \\
+				&=\sqrt{{(-R\sin(t))}^{2}+{(R\cos(t))}^{2}} \\
+				&=\sqrt{R^{2}(\sin^{2}(t)+\cos^{2}(t))}=R.
+			\end{align*}
+			Per la definició de \myref{def:funció longitud d'arc} trobem que
+			\begin{align*}
+				s(t)&=\int_{0}^{t}\norm{\alpha'(x)}\diff x \\
+				&=\int_{0}^{t}R\diff x=Rt.
+			\end{align*}
+			Prenem ara el canvi de paràmetre
+			\[h(s)=\frac{s}{R}.\]
+			Tenim que
+			\[\beta(s)=(\alpha\circ h)(s)=\left(-R\sin\left(\frac{s}{R}\right),R\cos\left(\frac{s}{R}\right)\right).\]
+			
+			Tenim que \(\beta\) és una reparametrització de \(\alpha\). Veiem ara que \(\beta\) està parametritzada per l'arc. Tenim que
+			\begin{align*}
+				\norm{\beta'(s)}&=\norm{\alpha(h(s))'} \\
+				&=\norm{h'(s)\alpha'(h(s))} \tag{\ref{thm:regla de la cadena}}\\
+				&=\norm{\frac{1}{R}\left(-R\sin\left(\frac{s}{R}\right),R\cos\left(\frac{s}{R}\right)\right)} \\
+				&=\norm{\left(-\sin\left(\frac{s}{R}\right),\cos\left(\frac{s}{R}\right)\right)} \\
+				&=\sqrt{\sin^{2}\left(\frac{s}{R}\right)+\cos^{2}\left(\frac{s}{R}\right)}=1,
+			\end{align*}
+			i per la definició de \myref{def:corba parametritzada per l'arc} hem acabat.
+		\end{solution}
+	\end{example}
 	\begin{observation}
 		Sigui \(\alpha\) una corba en \(I\) parametritzada per l'arc i \(a\in I\) un punt. Aleshores per a tot \(t\in I\) tenim
 		\[\funciolongituddarc_{\alpha}(a)(t)=t-a.\]
@@ -292,14 +327,33 @@
 		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\). Aleshores
 		\[\vec{u}\prodvec\vec{v}=-\vec{v}\prodvec\vec{u}.\]
 		\begin{proof}
-			%TODO
+			Sigui \(\vec{x}\) un vector de \(\mathbb{R}^{3}\). Considerem
+			\[\det(\vec{u},\vec{v},\vec{x}).\]
+			Per la definició de \myref{def:determinant d'una matriu} trobem que % REF, no és la def del det
+			\begin{equation}
+				\label{prop:el producte vectorial canvia de signe en permutar els vectors:eq1}
+				\det(\vec{u},\vec{v},\vec{x})=-\det(\vec{v},\vec{u},\vec{x}),
+			\end{equation}
+			i per l'observació \myref{obs:fórmula del determinant segons el producte vectorial i el producte escalar} tenim que
+			\begin{align*}
+				\prodesc{\vec{u}\prodvec\vec{v}}{\vec{x}}&=\det(\vec{u},\vec{v},\vec{x}) \\
+				&=-\det(\vec{v},\vec{u},\vec{x}) \tag{\ref{prop:el producte vectorial canvia de signe en permutar els vectors:eq1}}\\
+				&=-\prodesc{\vec{v}\prodvec\vec{u}}{\vec{x}},
+			\end{align*}
+			i per tant \(\vec{u}\prodvec\vec{v}=-\vec{v}\prodvec\vec{u}\), com volíem veure. % REF
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:el producte vectorial és zero si i només si els vectors no són linealment independents}
-		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors. Aleshores \(\vec{u}\prodvec\vec{v}\neq0\) si i només si \(\vec{u}\) i \(\vec{v}\) són linealment independents.
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors. Aleshores \(\vec{u}\prodvec\vec{v}\neq\vec{0}\) si i només si \(\vec{u}\) i \(\vec{v}\) són linealment independents.
 		\begin{proof}
-			%TODO
+			Suposem que \(\vec{u}\prodvec\vec{v}=\vec{0}\). Aleshores tenim, per a tot vector \(\vec{x}\) de \(\mathbb{R}^{3}\), que
+			\[\prodesc{\vec{u}\prodvec\vec{v}}{\vec{x}}=\prodesc{\vec{0}}{\vec{x}},\]
+			i per la definició de \myref{def:producte escalar} trobem que
+			\[\prodesc{\vec{u}\prodvec\vec{v}}{\vec{x}}=0.\]
+			Ara bé, per l'observació \myref{obs:fórmula del determinant segons el producte vectorial i el producte escalar} trobem que per a tot vector \(\vec{x}\) de \(\mathbb{R}^{3}\) tenim
+			\[\det(\vec{u},\vec{v},\vec{x})=0,\]
+			i per tant tenim que \(\vec{u}\) i \(\vec{v}\) no són linealment independents. %REF
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
@@ -314,7 +368,14 @@
 		\label{prop:el determinant de dos vectors linealment independents i el seu producte vectorial és diferent de zero}
 		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors linealment independents de \(\mathbb{R}^{3}\). Aleshores \(\det(\vec{u},\vec{v},\vec{u}\prodvec\vec{v})\neq0\).
 		\begin{proof}
-			%TODO
+			Per l'observació \myref{obs:fórmula del determinant segons el producte vectorial i el producte escalar} tenim que
+			\[\prodesc{\vec{u}\prodvec\vec{v}}{\vec{u}\prodvec\vec{v}}=\det(\vec{u},\vec{v},\vec{u}\prodvec\vec{v}).\]
+			Ara bé, com que per hipòtesi els vectors \(\vec{v}\) i \(\vec{u}\) són linealment independents, per la proposició \myref{prop:el producte vectorial és zero si i només si els vectors no són linealment independents} trobem que
+			\[\vec{u}\prodvec\vec{v}\neq\vec{0},\]
+			i per la definició de \myref{def:producte escalar} trobem que
+			\[\prodesc{\vec{u}\prodvec\vec{v}}{\vec{u}\prodvec\vec{v}}\neq0.\]
+			Per tant tenim que
+			\[\det(\vec{u},\vec{v},\vec{u}\prodvec\vec{v})\neq0.\qedhere\]
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Orientació d'una base]
@@ -326,23 +387,32 @@
 		\label{prop:dos vectors linealment independents i el seu producte vectorial formen una base positiva}
 		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors linealment independents. Aleshores la base \((\vec{u},\vec{v},\vec{u}\prodvec\vec{v})\) és una base positiva.
 		\begin{proof}
-			%TODO % Sentit per la proposició \ref{prop:el producte vectorial és perpendicular als vectors}.
+			Aquest enunciat té sentit per la proposició \ref{prop:el determinant de dos vectors linealment independents i el seu producte vectorial és diferent de zero}.
+			
+			Per l'observació \myref{obs:fórmula del determinant segons el producte vectorial i el producte escalar} trobem que
+			\[\prodesc{\vec{u}\prodvec\vec{v}}{\vec{u}\prodvec\vec{v}}=\det(\vec{u},\vec{v},\vec{u}\prodvec\vec{v}),\]
+			i per la definició de \myref{def:producte escalar} trobem que
+			\[\prodesc{\vec{u}\prodvec\vec{v}}{\vec{u}\prodvec\vec{v}}>0.\]
+			Per tant tenim que
+			\[\det(\vec{u},\vec{v},\vec{u}\prodvec\vec{v})>0,\]
+			i per la definició de \myref{def:base positiva} hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}[Fórmula de Lagrange]
+		\labelname{fórmula de Lagrange}\label{prop:fórmula de Lagrange}
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\). Aleshores per a tots \(\vec{x}\) i \(\vec{y}\) de \(\mathbb{R}^{3}\) es satisfà
+		\[\prodesc{\vec{u}\prodvec\vec{v}}{\vec{x}\prodvec\vec{y}}=\det\left[\begin{matrix}
+			\prodesc{\vec{u}}{\vec{x}} & \prodesc{\vec{v}}{\vec{x}} \\
+			\prodesc{\vec{u}}{\vec{y}} & \prodesc{\vec{v}}{\vec{y}}
+		\end{matrix}\right].\]
+		\begin{proof}
+			%TODO
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:fórmula per la derivada del producte vectorial de dues corbes}
 		Siguin \(\alpha\) i \(\beta\) dues corbes sobre \(I\) en \(\mathbb{R}^{3}\) diferenciables en \(I\). Aleshores
 		\[\frac{\diff(\alpha(t)\prodvec\beta(t))}{\diff t}=\frac{\diff\alpha(t)}{\diff t}\prodvec\beta(t)+\alpha(t)\prodvec\frac{\diff\beta(t)}{\diff t}.\]
-		\begin{proof}
-			%TODO
-		\end{proof}
-	\end{proposition}
-	\begin{proposition} % Està al lloc correcte?
-		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\). Aleshores per a tots \(\vec{x}\) i \(\vec{y}\) de \(\mathbb{R}^{3}\) es satisfà
-		\[\prodesc{\vec{u}\prodvec\vec{v}}{\vec{x}\prodvec\vec{y}}=\det\left[\begin{matrix}
-			\prodesc{\vec{u}}{\vec{x}} & \prodesc{\vec{v}}{\vec{x}} \\
-			\prodesc{\vec{u}}{\vec{y}} & \prodesc{\vec{v}}{\vec{y}}
-		\end{matrix}\right].\]
 		\begin{proof}
 			%TODO
 		\end{proof}
