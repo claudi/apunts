@@ -20,10 +20,12 @@
 
 \addbibresource{referencies.bib}
 \DeclareQuoteAlias{spanish}{catalan}
+\renewcommand{\bookname}{Llibre}
 
 \setsecnumdepth{subsection}
 \settocdepth{subsection}
 
+\renewcommand\booknumberlinebox[2]{#2\hspace{1em}}
 \renewcommand\partnumberlinebox[2]{#2\hspace{1em}}
 \renewcommand\chapternumberlinebox[2]{#2\hspace{1em}}
 %\renewcommand\sectionnumberlinebox[2]{#2\hspace{1em}}
@@ -311,31 +313,44 @@
 	\clearpage
 }
 
+%\makepagestyle{index}
+%	\makeevenhead{index}{}{}{}
+%	\makeoddhead{index}{}{}{}
+%	\makeevenfoot{index}{\thepage}{}{}
+%	\makeoddfoot{index}{}{}{\thepage}
+%%\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{index}}} 
+%\newcommand{\tauladecontinguts}{
+%	{\pagestyle{index}
+%	\hypersetup{urlcolor=black,linkcolor=black}
+%	\tableofcontents
+%	\clearpage}
+%}
+
 \newcommand{\tauladecontinguts}{
 	{\hypersetup{urlcolor=black,linkcolor=black}
 	\tableofcontents}
 }
 
-\makeatletter
-\def\thickhrulefill{\leavevmode \leaders \hrule height 1.2ex \hfill \kern \z@}
-\def\@makechapterhead#1{
-%	\vspace*{10\p@}%
-	{\parindent \z@ \centering \reset@font
-		\thickhrulefill\quad
-		\scshape\bfseries\text{\@chapapp{} \hfill \thechapter}
-		\quad\thickhrulefill
-		\par\nobreak
-		\vspace*{10\p@}%
-		\interlinepenalty\@M
-		\hrule
-		\vspace*{10\p@}%
-		\Huge \bfseries #1 \par\nobreak
-		\par
-		\vspace*{10\p@}%
-		\hrule
-		\vspace*{15\p@}%
-	}}
-\makeatother
+%\makeatletter
+%\def\thickhrulefill{\leavevmode \leaders \hrule height 1.2ex \hfill \kern \z@}
+%\def\@makechapterhead#1{
+%%	\vspace*{10\p@}%
+%	{\parindent \z@ \centering \reset@font
+%		\thickhrulefill\quad
+%		\scshape\bfseries\text{\@chapapp{} \hfill \thechapter}
+%		\quad\thickhrulefill
+%		\par\nobreak
+%		\vspace*{10\p@}%
+%		\interlinepenalty\@M
+%		\hrule
+%		\vspace*{10\p@}%
+%		\Huge \bfseries #1 \par\nobreak
+%		\par
+%		\vspace*{10\p@}%
+%		\hrule
+%		\vspace*{15\p@}%
+%	}}
+%\makeatother
 
 \makeatletter
 	\let\oldr@@t\r@@t
@@ -351,34 +366,38 @@
 \let\originalpart=\part
 \def\part{\cleartoevenpage[\thispagestyle{empty}]\originalpart}
 
-%\makeatletter
-%\newlength{\numberheight}
-%\newlength{\barlength}
-%\makechapterstyle{cveelo}{%
-%  \setlength{\afterchapskip}{40pt}
-%  \renewcommand*{\chapterheadstart}{\vspace*{40pt}}
-%  \renewcommand*{\afterchapternum}{\par\nobreak\vskip 25pt}
-%  \renewcommand*{\chapnamefont}{\LARGE\flushright}
-%  \renewcommand*{\chapnumfont}{\HUGE}
-%  \renewcommand*{\chaptitlefont}{\bfseries\Huge\flushright}
-%  \renewcommand*{\printchaptername}{%
-%    \chapnamefont\scshape{\@chapapp}}
-%  \renewcommand*{\chapternamenum}{}
-%  \setlength{\beforechapskip}{4em}
-%  \setlength{\midchapskip}{\paperwidth}
-%  \addtolength{\midchapskip}{-\textwidth}
-%  \addtolength{\midchapskip}{-\spinemargin}
-%  \renewcommand*{\printchapternum}{%
-%    \makebox[0pt][l]{\hspace{.8em}%
-%      \resizebox{!}{\beforechapskip}{\chapnumfont \thechapter}%
-%      \hspace{.8em}%
-%      \rule{\midchapskip}{\beforechapskip}%
-%    }}%
-%}
-%\makeatother
-%
+\let\originalbook=\book
+\def\book{\cleartoevenpage[\thispagestyle{empty}]\originalbook}
+\renewcommand*{\afterbookskip}{\vfill}
+
+\makeatletter
+\newlength{\numberheight}
+\newlength{\barlength}
+\makechapterstyle{cveelo}{%
+  \setlength{\afterchapskip}{40pt}
+  \renewcommand*{\chapterheadstart}{\vspace*{40pt}}
+  \renewcommand*{\afterchapternum}{\par\nobreak\vskip 25pt}
+  \renewcommand*{\chapnamefont}{\LARGE\flushright}
+  \renewcommand*{\chapnumfont}{\HUGE}
+  \renewcommand*{\chaptitlefont}{\bfseries\Huge\flushright}
+  \renewcommand*{\printchaptername}{%
+    \chapnamefont\scshape{\@chapapp}}
+  \renewcommand*{\chapternamenum}{}
+  \setlength{\beforechapskip}{4em}
+  \setlength{\midchapskip}{\paperwidth}
+  \addtolength{\midchapskip}{-\textwidth}
+  \addtolength{\midchapskip}{-\spinemargin}
+  \renewcommand*{\printchapternum}{%
+    \makebox[0pt][l]{\hspace{.8em}%
+      \resizebox{!}{\beforechapskip}{\chapnumfont \thechapter}%
+      \hspace{.8em}%
+      \rule{\midchapskip}{\beforechapskip}%
+    }}%
+}
+\makeatother
+
 %\chapterstyle{cveelo}
-%%\hangsecnum
+%\hangsecnum
 
 \let\originalbibliography=\printbibliography
 \def\printbibliography{\openany\originalbibliography\openright}
@@ -414,13 +433,16 @@
 	\portada
 %	\gracies
 	\tauladecontinguts
+%	\book{Primer curs}
 	\subfile{parts/FNM.tex}
 	\subfile{parts/AlgebraLineal.tex}
 	\subfile{parts/Intro.tex}
+%	\book{Segon curs}
 	\subfile{parts/CDVO.tex}
 	\subfile{parts/AM.tex}
 	\subfile{parts/EA.tex}
 	\subfile{parts/MN.tex}
+%	\book{Tercer curs}
 	\subfile{parts/Topologia.tex}
 	\subfile{parts/EDOS1.tex}
 	\subfile{parts/GeoDiferencial.tex}
