@@ -1,2 +1,1 @@
-Demostració de la suposada fórmula de Leibniz a geometria diferencial.
-Afegides primeres definicions i observacions a la secció de les fórmules de Frenet.
+Afegides coses de la circumferència osculadora.

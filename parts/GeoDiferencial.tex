@@ -208,6 +208,7 @@
 	\end{definition}
 	\begin{example} % Veure cas general amb Teorema de la funció implícita
 		\label{ex:reparametrització per l'arc del cercle de radi R}
+		\label{ex:circumferència de radi R parametritzat per l'arc}
 		Volem donar una reparametrització de la corba
 		\[\alpha(t)=(R\cos(t),R\sin(t))\]
 		tal que estigui parametritzada per l'arc.
@@ -497,34 +498,82 @@
 		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable. Aleshores direm que l'aplicació
 		\begin{align*}
 			\curvatura\colon I&\longrightarrow\mathbb{R} \\
-			s&\longmapsto\norm{\alpha''(s)}
+			s&\longmapsto\norm{\alpha''(t)}
 		\end{align*}
 		és la curvatura de \(\alpha\).
 	\end{definition}
+	\begin{example}
+		\label{ex:curvatura de la circumferència}
+		Volem calcular la curvatura d'una circumferència de radi \(R\).
+		\begin{solution}
+			Per l'exercici \myref{ex:circumferència de radi R parametritzat per l'arc} tenim que podem parametritzar una circumferència de radi \(R\) per l'arc com
+			\[\alpha(t)=\left(-R\sin\left(\frac{t}{R}\right),R\cos\left(\frac{t}{R}\right)\right).\]
+			
+			Aleshores tenim que
+			\[\alpha''(t)=\frac{\diff}{\diff t}\left(-\cos\left(\frac{t}{R}\right),-\sin\left(\frac{t}{R}\right)\right)=\left(\frac{1}{R}\sin\left(\frac{t}{R}\right),\frac{-1}{R}\cos\left(\frac{t}{R}\right)\right),\]
+			i trobem que
+			\[\norm{\alpha''(t)}=\sqrt{\frac{1}{R^{2}}\sin^{2}\left(\frac{t}{R}\right)+\frac{1}{R^{2}}\cos^{2}\left(\frac{t}{R}\right)}=\frac{1}{R},\]
+			i per la definició de \myref{def:curvatura} trobem que \(\curvatura(s)=\frac{1}{R}\).
+		\end{solution}
+	\end{example}
+	\begin{proposition}
+		\label{prop:una corba té curvatura zero si i només si és una recta}
+		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable. Aleshores \(\alpha\) és una recta si i només si \(\kappa(t)=0\) per a tot \(s\in I\).
+		\begin{proof}
+			Comencem veient que la condició és necessària (\(\implica\)). Suposem doncs que \(\alpha\) és una recta sobre \(\mathbb{R}^{n}\). Tenim que existeixen \(K_{1}\) i \(K_{2}\) de \(\mathbb{R}^{n}\) tals que
+			\[\alpha(t)=K_{1}s+K_{2}.\]
+			Aleshores tenim que \(\alpha''(t)=\vec{0}\), i per la definició de \myref{def:curvatura} trobem que \(\kappa(t)=0\).
+			
+			Veiem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que \(\kappa(t)=0\) per a tot \(s\in I\). Tenim doncs que \(\alpha''(t)=\vec{0}\), i per tant existeixen \(K_{1}\) i \(K_{2}\) de \(\mathbb{R}^{n}\) tals que \(\alpha'(t)=K_{1}\) i \(\alpha''(t)=K_{1}s+K_{2}\) i trobem que \(\alpha\) és una recta.
+		\end{proof}
+	\end{proposition}
 	\begin{definition}[Vector normal]
 		\labelname{normal}\label{def:normal}
-		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable i tal que \(\curvatura(s)\neq0\) per a tot \(s\in I\). Aleshores direm que l'aplicació
+		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable i tal que \(\curvatura(t)\neq0\) per a tot \(s\in I\). Aleshores direm que l'aplicació
 		\begin{align*}
 			\normal\colon I&\longrightarrow\mathbb{R} \\
-			s&\longmapsto\frac{\alpha''(s)}{\norm{\alpha''(s)}}
+			s&\longmapsto\frac{\alpha''(t)}{\norm{\alpha''(t)}}
 		\end{align*}
 		és la tangent de \(\alpha\).
 	\end{definition}
 	\begin{observation}
 		\label{obs:la normal a una corba és unitària}
-		Tenim que \(\norm{\normal(s)}=1\).
+		Tenim que \(\norm{\normal(t)}=1\).
 	\end{observation}
 	\begin{definition}[Vector tangent]
 		\labelname{tangent}\label{def:tangent}
 		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc. Aleshores direm que l'aplicació
 		\begin{align*}
 			\tangent\colon I&\longrightarrow\mathbb{R} \\
-			s&\longmapsto\alpha'(s)
+			s&\longmapsto\alpha'(t)
 		\end{align*}
 		és la tangent de \(\alpha\).
 	\end{definition}
 	\begin{observation}
 		\label{obs:la derivada de la tangent és la curvatura per la normal}
-		Tenim que \(\tangent'(s)=\curvatura(s)\normal(s)\).
+		Tenim que \(\tangent'(t)=\curvatura(t)\normal(t)\).
 	\end{observation}
+	\begin{proposition}
+		\label{prop:circumferència osculadora}
+		Siguin \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i \(t_{0}\in I\) un punt tal que \(\alpha''(t_{0})\neq\vec{0}\). Aleshores existeix una única circumferència \(\beta\) de \(\mathbb{R}^{3}\) tal que \(\alpha\) i \(\beta\) tenen contacte d'ordre \(2\) en \(\alpha(t_{0})\), que té radi \(\radicircosculadora(s_{0})=\frac{1}{\curvatura(t_{0})}\) i és de la forma
+		\[\beta(t)=Q+\radicircosculadora(t_{0})\left(-N(t_{0})\cos\left(\frac{t}{\radicircosculadora(t_{0})}\right)+T(t_{0})\sin\left(\frac{t}{\radicircosculadora(t_{0})}\right)\right).\]
+		\begin{proof}
+			%TODO
+%			Sigui \((\vec{u}_{1},\vec{u}_{2})\) una base ortonormal de \(\mathbb{R}^{2}\). Aleshores les circumferències de \(\mathbb{R}^{3}\) de radi \(R\) i centre \(Q\) parametritzades per l'arc són de la forma
+%			\[\beta(t)=Q+R\left(\cos\left(\frac{t}{R}\right),\sin\left(\frac{t}{R}\right)\right).\]
+%			
+%			Per la proposició \myref{prop:contacte r és equivalent a tenir les r primeres derivades iguals} tenim que
+%			\[\alpha(t_{0})=\beta(t_{0}),\quad\alpha'(t_{0})=\beta'(t_{0})\quad\text{i}\quad\alpha''(t_{0})=\beta''(t_{0}).\]
+%			Tenim que
+%			\[\beta'(t)=\]
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Circumferència osculadora]
+		\labelname{circumferència osculadora}\label{def:circumferència osculadora}
+		Sigui \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i \(t_{0}\in I\) un punt tal que \(\alpha''(t_{0})\neq\vec{0}\) i \(\radicircosculadora(t_{0})=\frac{1}{\curvatura(t_{0})}\). Aleshores direm que la circumferència
+		\[\beta(t)=Q+\radicircosculadora(t_{0})\left(-N(t_{0})\cos\left(\frac{t}{\radicircosculadora(t_{0})}\right)+T(t_{0})\sin\left(\frac{t}{\radicircosculadora(t_{0})}\right)\right).\]
+		és la circumferència osculadora de \(\alpha\) en \(t_{0}\). Denotarem per \(\radicircosculadora(t_{0})=\frac{1}{\curvatura(t_{0})}\) el radi de la circumferència osculadora.
+		
+		Aquesta definició té sentit per la proposició \myref{prop:circumferència osculadora}.
+	\end{definition}
 \end{document}
