@@ -301,7 +301,7 @@
 			 i per la definició de \myref{def:contacte entre dues corbes parametritzades per l'arc} tenim que \(\alpha\) i \(\beta\) tenen contacte \(r\).
 		\end{proof}
 	\end{proposition}
-	\subsection{Fórmules de Frenet} % de corbes parametritzades per l'arc
+	\subsection{Producte escalar i producte vectorial} % de corbes parametritzades per l'arc
 	\begin{proposition}
 		\label{prop:unicitat del producte vectorial entre dos vectors}
 		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\). Aleshores existeix un únic vector \(\vec{w}\) de \(\mathbb{R}^{3}\) tal que per a tot vector \(\vec{x}\) de \(\mathbb{R}^{3}\)
@@ -475,5 +475,56 @@
 			\[\frac{\diff(\alpha(t)\prodvec\beta(t))}{\diff t}=\frac{\diff\alpha(t)}{\diff t}\prodvec\beta(t)+\alpha(t)\prodvec\frac{\diff\beta(t)}{\diff t}.\qedhere\]
 		\end{proof}
 	\end{proposition}
-	
+	\subsection{Fórmules de Frenet}
+	\begin{proposition}
+		\label{prop:la primera derivada i la segona derivada d'una corba són perpendiculars}
+		Sigui \(\alpha\) una corba sobre \(I\) tal que \(\alpha\) és dues vegades diferenciable en un punt \(t_{0}\). Aleshores tenim que \(\alpha'(t_{0})\) i \(\alpha''(t_{0})\) són perpendiculars.
+		\begin{proof}
+			Per la definició de \myref{def:derivada} trobem que
+			\[\alpha''(t_{0})=\lim_{h\to0}\frac{\alpha'(t_{0}+h)+\alpha'(t_{0})}{h},\]
+			i per tant tenim que
+			\[\prodesc{\alpha'(t_{0})}{\alpha''(t_{0})}=\prodesc{\alpha'(t_{0})}{\lim_{h\to0}\frac{\alpha'(t_{0}+h)+\alpha'(t_{0})}{h}},\]
+			i per la definició de \myref{def:producte escalar} trobem que
+			\begin{align*}
+				\prodesc{\alpha'(t_{0})}{\alpha''(t_{0})}	&=\prodesc{\alpha'(t_{0})}{\lim_{h\to0}\frac{\alpha'(t_{0})}{h}}+\prodesc{\alpha'(t_{0})}{\lim_{h\to0}\frac{\alpha'(t_{0}+h)}{h}} \\
+				&=\prodesc{\alpha'(t_{0})}{0}+\prodesc{\alpha'(t_{0})}{0}=0,
+			\end{align*}
+			i per la definició de \myref{def:vectors perpendiculars} hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Curvatura]
+		\labelname{curvatura}\label{def:curvatura}
+		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable. Aleshores direm que l'aplicació
+		\begin{align*}
+			\curvatura\colon I&\longrightarrow\mathbb{R} \\
+			s&\longmapsto\norm{\alpha''(s)}
+		\end{align*}
+		és la curvatura de \(\alpha\).
+	\end{definition}
+	\begin{definition}[Vector normal]
+		\labelname{normal}\label{def:normal}
+		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable i tal que \(\curvatura(s)\neq0\) per a tot \(s\in I\). Aleshores direm que l'aplicació
+		\begin{align*}
+			\normal\colon I&\longrightarrow\mathbb{R} \\
+			s&\longmapsto\frac{\alpha''(s)}{\norm{\alpha''(s)}}
+		\end{align*}
+		és la tangent de \(\alpha\).
+	\end{definition}
+	\begin{observation}
+		\label{obs:la normal a una corba és unitària}
+		Tenim que \(\norm{\normal(s)}=1\).
+	\end{observation}
+	\begin{definition}[Vector tangent]
+		\labelname{tangent}\label{def:tangent}
+		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc. Aleshores direm que l'aplicació
+		\begin{align*}
+			\tangent\colon I&\longrightarrow\mathbb{R} \\
+			s&\longmapsto\alpha'(s)
+		\end{align*}
+		és la tangent de \(\alpha\).
+	\end{definition}
+	\begin{observation}
+		\label{obs:la derivada de la tangent és la curvatura per la normal}
+		Tenim que \(\tangent'(s)=\curvatura(s)\normal(s)\).
+	\end{observation}
 \end{document}
