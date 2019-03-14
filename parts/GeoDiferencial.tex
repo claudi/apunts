@@ -409,12 +409,70 @@
 			%TODO
 		\end{proof}
 	\end{proposition}
-	\begin{proposition}
+	\begin{proposition}[Fórmula de Leibniz]
+		\labelname{}
+		\label{prop:fórmula de Leibniz}
 		\label{prop:fórmula per la derivada del producte vectorial de dues corbes}
 		Siguin \(\alpha\) i \(\beta\) dues corbes sobre \(I\) en \(\mathbb{R}^{3}\) diferenciables en \(I\). Aleshores
 		\[\frac{\diff(\alpha(t)\prodvec\beta(t))}{\diff t}=\frac{\diff\alpha(t)}{\diff t}\prodvec\beta(t)+\alpha(t)\prodvec\frac{\diff\beta(t)}{\diff t}.\]
 		\begin{proof}
-			%TODO
+			Per la definició de \myref{def:derivada} tenim que
+			\begin{equation}
+				\label{prop:fórmula de Leibniz:eq2}
+				\frac{\diff(\alpha(t)\prodvec\beta(t))}{\diff t}=\lim_{h\to0}\frac{\alpha(t+h)\prodvec\beta(t+h)-\alpha(t)\prodvec\beta(t)}{h}.
+			\end{equation}
+			Per la definició de \myref{def:producte vectorial} tenim que per a tot vector \(\vec{x}\) de \(\mathbb{R}^{3}\) es satisfà
+			\[\prodesc{\alpha(t+h)\prodvec\beta(t+h)}{\vec{x}}=\det(\alpha(t+h),\beta(t+h),\vec{x}).\]
+			De nou per la definició de \myref{def:derivada} trobem que quan \(h\to0\) es satisfà
+			\begin{equation}
+				\label{prop:fórmula de Leibniz:eq1}
+				\alpha(t+h)=\alpha(t)+h\alpha'(t)\quad\text{i}\quad\beta(t+h)=\beta(t)+h\beta'(t),
+			\end{equation}
+			i per tant tenim que per a tot vector \(\vec{x}\) de \(\mathbb{R}^{3}\) es satisfà
+			\begin{align*}
+				\prodesc{\alpha(t+h)\prodvec\beta(t+h)}{\vec{x}}&=\det(\alpha(t+h),\beta(t+h),\vec{x}) \\
+				&=\det(\alpha(t)+h\alpha'(t),\beta(t)+h\beta'(t),\vec{x}) \tag{\ref{prop:fórmula de Leibniz:eq1}}
+			\end{align*}
+			i per la definició de \myref{def:determinant d'una matriu} tenim que
+			\begin{multline*}
+				\det(\alpha(t)+h\alpha'(t),\beta(t)+h\beta'(t),\vec{x})=\\
+				=\det(h\alpha'(t),\beta(t)+h\beta'(t),\vec{x})+\det(\alpha(t),\beta(t)+h\beta'(t),\vec{x})
+			\end{multline*}
+			i de nou per la definició de \myref{def:determinant d'una matriu} trobem que
+			\begin{multline*}
+				\det(\alpha(t),\beta(t)+h\beta'(t),\vec{x})+\det(h\alpha'(t),\beta(t)+h\beta'(t),\vec{x})=\\
+				=\det(\alpha(t),\beta(t),\vec{x})+\det(\alpha(t),h\beta'(t),\vec{x})+\\
+				+\det(h\alpha'(t),\beta(t),\vec{x})+\det(h\alpha'(t),h\beta'(t),\vec{x}),
+			\end{multline*}
+			i per la definició de \myref{def:producte vectorial} això és
+			\begin{multline*}
+				\prodesc{\alpha(t+h)\prodvec\beta(t+h)}{\vec{x}}=\\
+				=\prodesc{\alpha(t)\prodvec\beta(t)}{\vec{x}}+\prodesc{\alpha(t)\prodvec h\beta'(t)}{\vec{x}}+\prodesc{h\alpha'(t)\prodvec\beta(t)}{\vec{x}}+\prodesc{h\alpha'(t)\prodvec h\beta'(t)}{\vec{x}},
+			\end{multline*}
+			i de nou per la definició de \myref{def:producte vectorial} trobem que
+			\begin{multline*}
+				\prodesc{\alpha(t+h)\prodvec\beta(t+h)}{\vec{x}}=\\
+				=\prodesc{\alpha(t)\prodvec\beta(t)+h\alpha(t)\prodvec\beta'(t)+h\alpha'(t)\prodvec\beta(t)+h^{2}\alpha'(t)\prodvec \beta'(t)}{\vec{x}}.
+			\end{multline*}
+			
+			Ara bé, ens queda que per a tot vector \(\vec{x}\) de \(\mathbb{R}^{3}\) es satisfà
+			\[\prodesc{\alpha(t+h)\prodvec\beta(t+h)}{\vec{x}}=\det(\alpha(t+h),\beta(t+h),\vec{x})\]
+			i
+			\begin{multline*}
+				\prodesc{\alpha(t)\prodvec\beta(t)+h\alpha(t)\prodvec\beta'(t)+h\alpha'(t)\prodvec\beta(t)+h^{2}\alpha'(t)\prodvec \beta'(t)}{\vec{x}}=\\=\det(\alpha(t+h),\beta(t+h),\vec{x}),
+			\end{multline*}
+			i per la proposició \ref{prop:unicitat del producte vectorial entre dos vectors} trobem que
+			\[\alpha(t+h)\prodvec\beta(t+h)=\alpha(t)\prodvec\beta(t)+h\alpha(t)\prodvec\beta'(t)+h\alpha'(t)\prodvec\beta(t)+h^{2}\alpha'(t)\prodvec \beta'(t).\]
+			Per tant per \eqref{prop:fórmula de Leibniz:eq2} tenim que
+			\begin{multline*}
+				\frac{\diff(\alpha(t)\prodvec\beta(t))}{\diff t}=\lim_{h\to0}\frac{\alpha(t+h)\prodvec\beta(t+h)-\alpha(t)\prodvec\beta(t)}{h}\\
+				=\lim_{h\to0}\frac{\alpha(t)\prodvec\beta(t)+h\alpha(t)\prodvec\beta'(t)+h\alpha'(t)\prodvec\beta(t)+h^{2}\alpha'(t)\prodvec \beta'(t)-\alpha(t)\prodvec\beta(t)}{h} \\
+				=\lim_{h\to0}\frac{h\alpha(t)\prodvec\beta'(t)+h\alpha'(t)\prodvec\beta(t)+h^{2}\alpha'(t)\prodvec \beta'(t)}{h}\\
+				=\alpha(t)\prodvec\beta'(t)+\alpha'(t)\prodvec\beta(t)+\lim_{h\to0}\frac{h^{2}\alpha'(t)\prodvec \beta'(t)}{h}\\
+				=\alpha(t)\prodvec\beta'(t)+\alpha'(t)\prodvec\beta(t),
+			\end{multline*}
+			i trobem
+			\[\frac{\diff(\alpha(t)\prodvec\beta(t))}{\diff t}=\frac{\diff\alpha(t)}{\diff t}\prodvec\beta(t)+\alpha(t)\prodvec\frac{\diff\beta(t)}{\diff t}.\qedhere\]
 		\end{proof}
 	\end{proposition}
 	
