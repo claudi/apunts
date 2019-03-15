@@ -951,20 +951,16 @@
 		\label{lema:Primer Teorema de Sylow}
 		Siguin \(p\) un primer i \(m\) un enter positiu tal que \(p\) no divideixi \(m\). Aleshores per a tot \(n\) natural tenim que
 		\begin{equation}
-		\left(\begin{matrix}
-		\label{eq:lema:Primer Teorema de Sylow 0}
-		p^{n}m\\p^{n}
-		\end{matrix}\right)
+			\label{eq:lema:Primer Teorema de Sylow 0}
+			\binom{p^{n}m}{p^{n}}
 		\end{equation}
 		no és divisible per \(p\).
 		\begin{proof}
 			Tenim que
 			\begin{equation}
-		\label{eq:lema:Primer Teorema de Sylow 1}
-			\left(\begin{matrix}
-			p^{n}m\\p^{n}
-			\end{matrix}\right)
-			=\frac{p^{n}m(p^{n}m-1)\cdots(p^{n}m-p^{n}+1)}{p^{n}(p^{n}-1)\cdots(p^{n}-p^{n}+1)}=\prod_{i=0}^{p^{n}-1}\frac{p^{n}m-i}{p^{n}-i}.
+				\label{eq:lema:Primer Teorema de Sylow 1}
+				\binom{p^{n}m}{p^{n}}
+				=\frac{p^{n}m(p^{n}m-1)\cdots(p^{n}m-p^{n}+1)}{p^{n}(p^{n}-1)\cdots(p^{n}-p^{n}+1)}=\prod_{i=0}^{p^{n}-1}\frac{p^{n}m-i}{p^{n}-i}.
 			\end{equation}
 			Com que, per hipòtesi, \(p\) és primer aquesta expressió només serà divisible per \(p\) si ho són els elements del numerador. Fixem doncs \(i\in\{0,\dots,p^{n}+1\}\) i estudiem l'\(i\)-èsim terme del producte de \eqref{eq:lema:Primer Teorema de Sylow 1}. Notem primer que si \(i=0\) aquest terme no és divisible per \(p\). Imposem ara també que \(i\neq0\). Si el denominador, \(p^{n}m-i\), és divisible per \(p\) tindrem que \(p^{n}m-i=p^{k}m'\), on \(m'\) no és divisible per \(p\), i per tant \(k\) serà l'exponent més gran que satisfaci la igualtat. Si aïllem \(i\) obtindrem \(i=p^{k}(p^{n-k}m-m')\). Ara bé, tenim doncs que \(p^{n}-i=p^{n}-p^{k}(p^{n-k}m-m')\), i això és \(p^{n}-p^{k}(p^{n-k}m-m')=p^{k}(p^{n-k}(1-m)-m')\), i per tant tindrem que l'\(i\)-èsim terme del producte de \eqref{eq:lema:Primer Teorema de Sylow 1} serà de la forma
 			\[\frac{p^{n}m-i}{p^{n}-i}=\frac{p^{k}m'}{p^{k}(p^{n-k}(1-m)-m')}=\frac{m'}{p^{n-k}(1-m)-m'},\]
@@ -978,14 +974,15 @@
 		\begin{proof} % Demostració de Wielandt
 			Sigui \(\mathcal{P}_{p^{n}}(G)=\{H\subseteq G\mid\lvert H\rvert=p^{n}\}=\{H_{1},\dots,H_{k}\}\) el conjunt de subconjunts d'ordre \(p^{n}\) de \(G\). Aleshores tenim que
 			\begin{displaymath}
-			k=\abs{\mathcal{P}_{p^{n}}(G)}=\left(\begin{matrix}p^{n}m\\p^{n}\end{matrix}\right),
+			k=\abs{\mathcal{P}_{p^{n}}(G)}=\binom{p^{n}m}{p^{n}},
 			\end{displaymath}
 			i pel lema \myref{lema:Primer Teorema de Sylow} tenim que \(p\) no divideix \(k\). %Fer això a fonaments, definint \mathcal{P}_{n}(G)
 			
 			Siguin \(\ast\) l'operació de \(G\) i \(e\) l'element neutre de \(G\). Definim
-			\begin{align}\label{eq:thm:Primer Teorema de Sylow 1}
-			\cdot\colon G\times\mathcal{P}_{p^{n}}(G)&\longrightarrow \mathcal{P}_{p^{n}}(G)\\
-			(g,X)&\longmapsto\{g\}X.\nonumber
+			\begin{align}
+				\label{eq:thm:Primer Teorema de Sylow 1}
+				\cdot\colon G\times\mathcal{P}_{p^{n}}(G)&\longrightarrow \mathcal{P}_{p^{n}}(G)\\
+				(g,X)&\longmapsto\{g\}X.\nonumber
 			\end{align}
 			Veurem que \(\cdot\) és una acció de \(G\) sobre \(\mathcal{P}_{p^{n}}(G)\). Primer hem de veure que, efectivament, \(\cdot\) està ben definida. Prenem \(g_{1},g_{2}\in G\) i \(X_{1},X_{2}\in \mathcal{P}_{p^{n}}(G)\) tals que \(g_{1}=g_{2}\) i \(X_{1}=X_{2}\). Per tant tenim \(g_{1}\cdot X_{1}=g_{2}\cdot X_{2}\) ja que \(\{g_{1}\}X_{1}=\{g_{2}\}X_{2}\). Per veure que \(g_{1}\cdot X_{1}\in\mathcal{P}_{p^{n}}(G)\) en tenim prou amb veure que, per a tot \(X\in\mathcal{P}_{p^{n}}(G)\), si fixem \(g\in G\) l'aplicació \(g\cdot X\) té inversa, que per la definició de \myref{def:l'invers d'un element d'un grup} és \(x^{-1}\cdot X\), i per tant \(X\in\mathcal{P}_{p^{n}}(G)\).
 			

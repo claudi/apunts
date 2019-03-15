@@ -134,6 +134,8 @@
 \DeclareMathOperator{\tangent}{T}
 \DeclareMathOperator{\normal}{N}
 \DeclareMathOperator{\radicircosculadora}{\rho}
+\DeclareMathOperator{\binormal}{B}
+\DeclareMathOperator{\torsio}{\tau}
 
 \DeclareMathOperator*{\suport}{Supp}
 
@@ -164,8 +166,15 @@
 \newcommand{\e}{\mathrm{e}}
 \newcommand{\iu}{\mathrm{i}}
 \newcommand{\uppi}{\pi} % REVISIT
-\newcommand{\prodesc}[2]{
-	\left\langle#1,#2\right\rangle}
+
+\makeatletter
+	\def\prodesc{\@ifnextchar[{\@prodescwith}{\@prodescwithout}}
+	\def\@prodescwith[#1]#2#3{\left\langle#2,#3\right\rangle}
+	\def\@prodescwithout#1#2{\langle#1,#2\rangle}
+\makeatother
+
+%\newcommand{\prodesc}[2]{
+%	\langle#1,#2\rangle}
 
 %\setcounter{chapter}{-1}
 
