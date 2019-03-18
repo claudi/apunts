@@ -25,7 +25,7 @@
 	\end{definition}
 	\begin{definition}[Obert]
 		\labelname{obert}\label{def:obert espai mètric}
-		Sigui \(X\) amb la distància \(\distancia\) un espai mètric i \(\obert{U}\) un subconjunt de \(X\) tals que per a tot element \(x\) de \(\obert{U}\) existeix un \(\varepsilon>0\) real tal que \(\bola(x,\varepsilon)\subset\obert{U}\). Aleshores direm que \(\obert{U}\) és un obert.
+		Sigui \(X\) amb la distància \(\distancia\) un espai mètric i \(\obert{U}\) un subconjunt de \(X\) tals que per a tot element \(x\) de \(\obert{U}\) existeix un \(\varepsilon>0\) real tal que \(\bola(x,\varepsilon)\subseteq\obert{U}\). Aleshores direm que \(\obert{U}\) és un obert.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:les boles són oberts}
@@ -36,7 +36,7 @@
 			\label{prop:les boles són oberts:eq1}
 				\varepsilon=\frac{r-\distancia(a,b)}{2}.
 			\end{equation}
-			Aleshores considerem la bola \(\bola(b,\varepsilon)\) i tenim que \(\bola(b,\varepsilon)\subset\bola(a,r)\), ja que si prenem un element \(x\) de \(\bola(b,\varepsilon)\), per la definició de \myref{def:distància} trobem que
+			Aleshores considerem la bola \(\bola(b,\varepsilon)\) i tenim que \(\bola(b,\varepsilon)\subseteq\bola(a,r)\), ja que si prenem un element \(x\) de \(\bola(b,\varepsilon)\), per la definició de \myref{def:distància} trobem que
 			\begin{align*}
 				\distancia(x,a)&\leq\distancia(x,b)+\distancia(b,a)\\
 				&<\varepsilon+\distancia(b,a)\tag{\myref{def:bola}}\\
@@ -94,7 +94,7 @@
 			\[\obert{U}=\bigcap_{i=1}^{n}\obert{U}_{i}.\]
 			
 			Sigui \(x\) un element de \(\obert{U}\). Per la definició d'\myref{def:obert} tenim que per a tot \(i\in\{1,\dots,n\}\) existeix un \(\varepsilon_{i}>0\) real tal que
-			\[\bola(x,\varepsilon_{i})\subset\obert{U}_{i}.\]
+			\[\bola(x,\varepsilon_{i})\subseteq\obert{U}_{i}.\]
 			Per tant, si definim \(\varepsilon=\min_{i\in\{1,\dots,n\}}\varepsilon_{i}\). Aleshores per la definició de \myref{def:bola} tenim que
 			\[\bola(x,\varepsilon)\subseteq\bola(x,\varepsilon_{i})\quad\text{per a tot }i\in\{1,\dots,n\}.\]
 			i per tant \(\bola(x,\varepsilon)\subset\obert{U}\) i per la definició d'\myref{def:obert} tenim que \(\obert{U}\) és un obert.

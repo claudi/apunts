@@ -535,7 +535,7 @@
 	\end{proposition}
 	\begin{definition}[Curvatura]
 		\labelname{curvatura}\label{def:curvatura}
-		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable. Aleshores direm que l'aplicació
+		Sigui \(\alpha\) una corba sobre \(I\) i dues vegades diferenciable. Aleshores direm que l'aplicació
 		\begin{align*}
 			\curvatura_{\alpha}\colon I&\longrightarrow\mathbb{R} \\
 			t&\longmapsto\norm{\alpha''(t)}
@@ -546,7 +546,7 @@
 	\end{definition}
 	\begin{example}
 		\label{ex:curvatura de la circumferència}
-		Volem calcular la curvatura d'una circumferència de radi \(R\).
+		Volem calcular la curvatura d'una circumferència.% de radi \(R\).
 		\begin{solution}
 			Per l'exercici \myref{ex:circumferència de radi R parametritzat per l'arc} tenim que podem parametritzar una circumferència de radi \(R\) per l'arc com
 			\[\alpha(t)=\left(-R\sin\left(\frac{t}{R}\right),R\cos\left(\frac{t}{R}\right)\right).\]
@@ -645,7 +645,13 @@
 		\begin{proof}
 			Per la proposició \myref{prop:la tangent i la normal d'una corba amb curvatura no nula són perpendiculars} trobem que \(\tangent_{\alpha}(t)\) i \(\normal_{\alpha}(t)\) són perpendiculars. Aleshores per la definició de \myref{def:binormal} trobem que \(\binormal_{\alpha}(t)=\tangent_{\alpha}(t)\prodvec\normal_{\alpha}(t)\) i per la proposició \myref{prop:dos vectors linealment independents i el seu producte vectorial formen una base positiva} tenim que la base \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és positiva.
 			
-			Per l'observació \myref{obs:la normal a una corba és unitària} i la definició de \myref{def:corba parametritzada per l'arc} tenim que \(\norm{\tangent_{\alpha}(t)}=\norm{\normal_{\alpha}(t)}=1\), i em queda veure que \(\norm{\binormal_{\alpha}(t)}=1\). % FER
+			Per la definició de \myref{def:producte vectorial} tenim que per a tot \(\vec{x}\) de \(\mathbb{R}^{3}\) es satisfà
+			\[\prodesc{\binormal_{\alpha}(t)}{\vec{x}}=\det(\tangent_{\alpha}(t),\normal_{\alpha}(t),\vec{x}).\]
+			Si prenem \(\vec{x}\) tal que \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\vec{x})\) sigui una base ortonormal de \(\mathbb{R}^{3}\) trobem que
+			\[\det(\tangent_{\alpha}(t),\normal_{\alpha}(t),\vec{x})=1,\]
+			i per tant
+			\[\prodesc{\binormal_{\alpha}(t)}{\vec{x}}=1,\]
+			i tenim que \(\norm{\binormal_{\alpha}(t)}=1\). Aleshores per l'observació \myref{obs:la normal a una corba és unitària} i la definició de \myref{def:corba parametritzada per l'arc} tenim que \(\norm{\tangent_{\alpha}(t)}=1\) i que \(\norm{\normal_{\alpha}(t)}=1\), i per tant \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és una base ortonormal i positiva de \(\mathbb{R}^{3}\). % REF
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Triedre de Frenet]
@@ -659,22 +665,96 @@
 		Sigui \(\alpha\) una corba amb curvatura no nu{\lgem}a. Aleshores existeix un \(\torsio_{\alpha}(t)\in\mathbb{R}\) tal que
 		\[\binormal'_{\alpha}(t)=\torsio_{\alpha}(t)\normal(t).\]
 		\begin{proof}
-			Tenim per la proposició \myref{prop:triedre de Frenet} que \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és una base ortonormal i positiva de \(\mathbb{R}^{3}\), i per tant tenim que %REF
+			Tenim per la proposició \myref{prop:triedre de Frenet} que \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és una base ortonormal de \(\mathbb{R}^{3}\), i per tant tenim que %REF
 			\[\binormal'_{\alpha}(t)=\prodesc{\binormal'_{\alpha}(t)}{\tangent_{\alpha}(t)}\tangent_{\alpha}(t)+\prodesc{\binormal'_{\alpha}(t)}{\normal_{\alpha}(t)}\normal_{\alpha}(t)+\prodesc{\binormal'_{\alpha}(t)}{\binormal_{\alpha}(t)}\binormal_{\alpha}(t).\]
 			
-			Ara bé, per la definició de \myref{def:binormal} trobem que
-			\[\binormal'_{\alpha}(t)=\frac{\diff(\tangent_{\alpha}(t)\prodvec\normal_{\alpha}(t))}{\diff t},\]
-			i per la proposició \myref{prop:fórmula de Leibniz} tenim que
-			\[\binormal'_{\alpha}(t)=\tangent'_{\alpha}(t)\prodvec\normal_{\alpha}(t)+\tangent_{\alpha}(t)\prodvec\normal'_{\alpha}(t).\]
-			Aleshores per la proposició
-			\[hmm\qedhere\]
+			Tenim que \(\prodesc{\binormal_{\alpha}(t)}{\binormal_{\alpha}(t)}=1\), per tant trobem que
+			\[\frac{\diff\prodesc{\binormal_{\alpha}(t)}{\binormal_{\alpha}(t)}}{\diff t}=0,\]
+			i per la proposició \myref{prop:fórmula de Leibniz} trobem que
+			\[\prodesc{\binormal'_{\alpha}}{\binormal_{\alpha}}+\prodesc{\binormal_{\alpha}}{\binormal'_{\alpha}}=0,\]
+			i per la definició de \myref{def:producte escalar} tenim que
+			\[2\prodesc{\binormal'_{\alpha}(t)}{\binormal_{\alpha}(t)}=0,\]
+			i per tant
+			\[\prodesc{\binormal'_{\alpha}(t)}{\binormal_{\alpha}(t)}=0.\]
+			
+			Per la proposició \ref{prop:triedre de Frenet} trobem que
+			\[\prodesc{\binormal_{\alpha}(t)}{\tangent_{\alpha}(t)}=0,\]
+			i per tant
+			\[\frac{\diff\prodesc{\binormal_{\alpha}(t)}{\tangent_{\alpha}(t)}}{\diff t}=0,\]
+			i de nou per la proposició \myref{prop:fórmula de Leibniz} tenim que
+			\[\frac{\diff\prodesc{\binormal_{\alpha}(t)}{\tangent_{\alpha}(t)}}{\diff t}=\prodesc{\binormal'_{\alpha}(t)}{\tangent_{\alpha}(t)}+\prodesc{\binormal_{\alpha}(t)}{\tangent'_{\alpha}(t)}.\]
+			Ara bé, tenim que
+			\begin{align*}
+				\prodesc{\binormal_{\alpha}(t)}{\tangent'_{\alpha}(t)}&=\prodesc{\binormal_{\alpha}(t)}{\curvatura_{\alpha}(t)\normal_{\alpha}(t)} \tag{\ref{obs:la derivada de la tangent és la curvatura per la normal}} \\
+				&=0, \tag{\ref{prop:triedre de Frenet}}
+			\end{align*}
+			i per tant
+			\[\prodesc{\binormal'_{\alpha}(t)}{\tangent_{\alpha}(t)}=0,\]
+			i per tant, denotant \(\torsio_{\alpha}(t)=\prodesc{\binormal'_{\alpha}(t)}{\normal_{\alpha}(t)}\) trobem que
+			\[\binormal'_{\alpha}(t)=\torsio_{\alpha}(t)\normal_{\alpha}(t).\qedhere\]
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Torsió]
+		\labelname{torsió}\label{def:torsió}
 		Sigui \(\alpha\) una corba amb curvatura no nu{\lgem}a i \(\torsio_{\alpha}(t)\) un real tal que
 		\[\binormal'_{\alpha}(t)=\torsio_{\alpha}(t)\normal(t).\]
 		Aleshores direm que \(\torsio_{\alpha}(t)\) és la torsió de \(\alpha\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:torsió}.
 	\end{definition}
+	% FER Exemple calcular torsió?
+	\begin{proposition}[Fórmules de Frenet]
+		\labelname{fórmules de Frenet}\label{prop:fórmules de Frenet}
+		Sigui \(\alpha\) una corba parametritzada per l'arc amb curvatura no nu{\lgem}a. Aleshores
+		\[\begin{bmatrix}
+			\tangent'_{\alpha}(t) \\
+			\normal'_{\alpha}(t) \\
+			\binormal'_{\alpha}(t)
+		\end{bmatrix}=
+		\begin{bmatrix}
+			0 & \curvatura_{\alpha}(t) & 0 \\
+			-\curvatura_{\alpha}(t) & 0 & -\torsio_{\alpha}(t) \\
+			0 & \torsio_{\alpha}(t) & 0
+		\end{bmatrix}
+		\begin{bmatrix}
+			\tangent_{\alpha}(t) \\
+			\normal_{\alpha}(t) \\
+			\binormal_{\alpha}(t)
+		\end{bmatrix}.\]
+		\begin{proof}
+			
+			Per l'observació \myref{obs:la derivada de la tangent és la curvatura per la normal} trobem que
+			\begin{equation}
+				\label{prop:fórmules de Frenet:eq1}
+				\tangent_{\alpha}'(t)=\curvatura_{\alpha}(t)\normal_{\alpha}(t),
+			\end{equation}
+			i per la definició de \myref{def:torsió} trobem que
+			\begin{equation}
+				\label{prop:fórmules de Frenet:eq2}
+				\binormal'_{\alpha}(t)=\torsio_{\alpha}(t)\normal(t).
+			\end{equation}
+			
+			Per la definició de \myref{def:binormal} trobem que
+			\[\binormal_{\alpha}(t)=\tangent_{\alpha}(t)\prodvec\normal_{\alpha}(t),\]
+			i per tant % REF
+			\[\normal_{\alpha}(t)=\binormal_{\alpha}(t)\prodvec\tangent_{\alpha}(t).\]
+			Aleshores per la proposició \myref{prop:fórmula de Leibniz} tenim que
+			\[\normal'_{\alpha}(t)=\binormal'_{\alpha}(t)\prodvec\tangent_{\alpha}(t)+\binormal_{\alpha}(t)\prodvec\tangent'_{\alpha}(t).\]
+			Ara bé, per \eqref{prop:fórmules de Frenet:eq1} i \eqref{prop:fórmules de Frenet:eq2} trobem que
+			\begin{align*}
+				\normal'_{\alpha}(t)&=\torsio_{\alpha}(t)\normal_{\alpha}(t)\prodvec\tangent_{\alpha}(t)+\binormal_{\alpha}(t)\prodvec\curvatura_{\alpha}(t)\normal_{\alpha}(t) \\
+				&=\torsio_{\alpha}(t)\big(\normal_{\alpha}(t)\prodvec\tangent_{\alpha}(t)\big)+\curvatura_{\alpha}(t)\big(\binormal_{\alpha}(t)\prodvec\normal_{\alpha}(t)\big) \\ % REF
+				&=\torsio_{\alpha}(t)\binormal_{\alpha}(t)+\curvatura_{\alpha}(t)\big(\binormal_{\alpha}(t)\prodvec\normal_{\alpha}(t)\big) \tag{\ref{def:binormal}} \\
+				&=-\torsio_{\alpha}(t)\binormal_{\alpha}(t)-\curvatura_{\alpha}\tangent_{\alpha}(t). \tag{\ref{def:binormal}}
+			\end{align*}
+			
+			Per tant ens queda
+			\begin{align*}
+				\tangent_{\alpha}'(t)&=\curvatura_{\alpha}(t)\normal_{\alpha}(t) \\
+				\normal'_{\alpha}(t)&=-\torsio_{\alpha}(t)\binormal_{\alpha}(t)-\curvatura_{\alpha}\tangent_{\alpha}(t) \\
+				\binormal'_{\alpha}(t)&=\torsio_{\alpha}(t)\normal(t)
+			\end{align*}
+			i per la definició de \myref{def:producte de matrius} hem acabat.
+		\end{proof}
+	\end{proposition}
 \end{document}

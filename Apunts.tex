@@ -18,7 +18,7 @@
 \usepackage[sorting=none, backend=biber, refsection=part]{biblatex}
 \usepackage[hidelinks]{hyperref}
 
-\addbibresource{referencies.bib}
+\addbibresource{parts/referencies.bib}
 \DeclareQuoteAlias{spanish}{catalan}
 \renewcommand{\bookname}{Llibre}
 
@@ -90,11 +90,11 @@
 \graphicspath{{imatges/}{../imatges/}}
 
 \newenvironment{solution}{%
-		\renewcommand\qedsymbol{\ensuremath{\lozenge}}%
-		\begin{proof}[Solució]%
-	}{%
-		\end{proof}%
-	}
+	\renewcommand\qedsymbol{\ensuremath{\lozenge}}%
+	\begin{proof}[Solució]%
+}{%
+	\end{proof}%
+}
 
 \DeclareMathOperator{\Long}{L}
 \DeclareMathOperator{\Dist}{d}
@@ -386,26 +386,26 @@
 \makeatletter
 \newlength{\numberheight}
 \newlength{\barlength}
-\makechapterstyle{cveelo}{%
-  \setlength{\afterchapskip}{40pt}
-  \renewcommand*{\chapterheadstart}{\vspace*{40pt}}
-  \renewcommand*{\afterchapternum}{\par\nobreak\vskip 25pt}
-  \renewcommand*{\chapnamefont}{\LARGE\flushright}
-  \renewcommand*{\chapnumfont}{\HUGE}
-  \renewcommand*{\chaptitlefont}{\bfseries\Huge\flushright}
-  \renewcommand*{\printchaptername}{%
-    \chapnamefont\scshape{\@chapapp}}
-  \renewcommand*{\chapternamenum}{}
-  \setlength{\beforechapskip}{4em}
-  \setlength{\midchapskip}{\paperwidth}
-  \addtolength{\midchapskip}{-\textwidth}
-  \addtolength{\midchapskip}{-\spinemargin}
-  \renewcommand*{\printchapternum}{%
-    \makebox[0pt][l]{\hspace{.8em}%
-      \resizebox{!}{\beforechapskip}{\chapnumfont \thechapter}%
-      \hspace{.8em}%
-      \rule{\midchapskip}{\beforechapskip}%
-    }}%
+	\makechapterstyle{cveelo}{%
+	\setlength{\afterchapskip}{40pt}
+	\renewcommand*{\chapterheadstart}{\vspace*{40pt}}
+	\renewcommand*{\afterchapternum}{\par\nobreak\vskip 25pt}
+	\renewcommand*{\chapnamefont}{\Huge\flushright}
+	\renewcommand*{\chapnumfont}{\Large}
+	\renewcommand*{\chaptitlefont}{\bfseries\Huge\flushright}
+	\renewcommand*{\printchaptername}{%
+		\chapnamefont\scshape{\@chapapp}}
+	\renewcommand*{\chapternamenum}{}
+	\setlength{\beforechapskip}{4em}
+	\setlength{\midchapskip}{\paperwidth}
+	\addtolength{\midchapskip}{-\textwidth}
+	\addtolength{\midchapskip}{-\spinemargin}
+	\renewcommand*{\printchapternum}{%
+		\makebox[0pt][l]{\hspace{.8em}%
+			\resizebox{!}{\beforechapskip}{\chapnumfont \thechapter}%
+			\hspace{.8em}%
+			\rule{\midchapskip}{\beforechapskip}%
+		}}%
 }
 \makeatother
 

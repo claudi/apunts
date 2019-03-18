@@ -1,1 +1,1 @@
-Afegida teoria fins just abans de les fórmules de Frenet.
+Demostrades les fórmules de Frenet.
