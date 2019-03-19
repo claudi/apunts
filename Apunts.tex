@@ -182,9 +182,14 @@
 
 \setcounter{MaxMatrixCols}{20}
 
-\newcommand{\corollari}{coro{\lgem}ari }
-\newcommand{\Corollari}{Coro{\lgem}ari }
-\newcommand{\nulla}{nu{\lgem}a }
+\makeatletter
+	\newcommand{\@corollari}{coro{\lgem}ari}
+		\newcommand{\corollari}{\@corollari{}}
+	\newcommand{\@Corollari}{Coro{\lgem}ari}
+		\newcommand{\Corollari}{\@Corollari{}}
+	\newcommand{\@nulla}{nu{\lgem}a}
+		\newcommand{\nulla}{\@nulla{}}
+\makeatother
 
 \makeatletter
 \newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}

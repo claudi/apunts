@@ -85,7 +85,7 @@
 			Per la definició de \myref{def:canvi de paràmetre} trobem que \(h\) és un difeomorfisme, i per la definició de \myref{def:difeomorfisme} trobem que \(h\) és derivable, i per la \myref{thm:regla de la cadena} trobem que
 			\[\beta'(t)=h'(t)\alpha'(h(t)).\]
 			
-			Com que per hipòtesi \(\alpha\) és regular, per la definició de \myref{def:corba regular} trobem que \(\alpha'(h(t))\neq\vec{0}\) per a tot \(t\in J\). Ara bé, pel \corollari \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} trobem que \(h'(t)\neq\vec{0}\) per a tot \(t\in J\), i per tant tenim que \(\beta'(t)\neq\vec{0}\) per a tot \(t\in J\), i per la definició de \myref{def:corba regular} trobem que \(\beta\) és una corba regular.
+			Com que per hipòtesi \(\alpha\) és regular, per la definició de \myref{def:corba regular} trobem que \(\alpha'(h(t))\neq\vec{0}\) per a tot \(t\in J\). Ara bé, pel \corollari{} \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} trobem que \(h'(t)\neq\vec{0}\) per a tot \(t\in J\), i per tant tenim que \(\beta'(t)\neq\vec{0}\) per a tot \(t\in J\), i per la definició de \myref{def:corba regular} trobem que \(\beta\) és una corba regular.
 		\end{proof}
 	\end{proposition}
 	\subsection{La longitud d'una corba i el paràmetre arc}
@@ -127,7 +127,7 @@
 			i per la definició de norma tenim que% REF
 			\[\int_{c}^{d}\norm{h'(s)\alpha'(h(s))}\diff s=\int_{c}^{d}\abs{h'(s)}\norm{\alpha'(h(s))}\diff s.\]
 			
-			Ara bé, com que \(h\) és un difeomorfisme tenim per la definició de \myref{def:difeomorfisme} que \(h'\) és contínua, i pel \corollari \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} trobem que \(h'(t)\neq0\) per a tot \(t\in[c,d]\). Aleshores tenim que ha de ser o bé \(h'(t)>0\) per a tot \(t\in[c,d]\) o bé \(h'(t)<0\) per a tot \(t\in[c,d]\).
+			Ara bé, com que \(h\) és un difeomorfisme tenim per la definició de \myref{def:difeomorfisme} que \(h'\) és contínua, i pel \corollari{} \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} trobem que \(h'(t)\neq0\) per a tot \(t\in[c,d]\). Aleshores tenim que ha de ser o bé \(h'(t)>0\) per a tot \(t\in[c,d]\) o bé \(h'(t)<0\) per a tot \(t\in[c,d]\).
 			
 			Comencem suposant que \(h'(t)>0\) per a tot \(t\in[c,d]\). Aleshores tenim que
 			\[\int_{c}^{d}\abs{h'(s)}\norm{\alpha'(h(s))}\diff s=\int_{c}^{d}h'(s)\norm{\alpha'(h(s))}\diff s,\]
@@ -181,7 +181,7 @@
 			\[\frac{\diff\funciolongituddarc_{\alpha}(a)}{\diff t}(t)=\norm{\alpha'(t)}.\]
 			Per tant trobem que % REFS
 			\[\frac{\diff\funciolongituddarc_{\alpha}(a)}{\diff t}(t)\neq0,\]
-			i per l'observació \myref{obs:diferencial en d=1 és com derivar} i el \corollari 		\myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} tenim que \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme, com volíem veure. % SOBRE J
+			i per l'observació \myref{obs:diferencial en d=1 és com derivar} i el \corollari{} \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} tenim que \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme, com volíem veure. % SOBRE J
 		\end{proof}
 	\end{proposition}
 	\begin{proposition} % Veure després de definir corba parametritzada per l'arc
@@ -542,7 +542,7 @@
 		\end{align*}
 		és la curvatura de \(\alpha\).
 		
-		Si \(\curvatura_{\alpha}(t)\neq0\) direm que \(\alpha\) té curvatura no \nulla en \(t\).
+		Si \(\curvatura_{\alpha}(t)\neq0\) direm que \(\alpha\) té curvatura no \nulla{} en \(t\).
 	\end{definition}
 	\begin{example}
 		\label{ex:curvatura de la circumferència}
@@ -569,7 +569,7 @@
 			Veiem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que \(\kappa(t)=0\) per a tot \(s\in I\). Tenim doncs que \(\alpha''(t)=\vec{0}\), i per tant existeixen \(K_{1}\) i \(K_{2}\) de \(\mathbb{R}^{n}\) tals que \(\alpha'(t)=K_{1}\) i \(\alpha''(t)=K_{1}s+K_{2}\) i trobem que \(\alpha\) és una recta.
 		\end{proof}
 	\end{proposition}
-	\begin{definition}[Vector normal]
+	\begin{definition}[Normal]
 		\labelname{normal}\label{def:normal}
 		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable i tal que \(\curvatura_{\alpha}(t)\neq0\) per a tot \(s\in I\). Aleshores direm que l'aplicació
 		\begin{align*}
@@ -582,7 +582,7 @@
 		\label{obs:la normal a una corba és unitària}
 		Tenim que \(\norm{\normal_{\alpha}(t)}=1\).
 	\end{observation}
-	\begin{definition}[Vector tangent]
+	\begin{definition}[Tangent]
 		\labelname{tangent}\label{def:tangent}
 		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc. Aleshores direm que l'aplicació
 		\begin{align*}
@@ -597,7 +597,7 @@
 	\end{observation}
 	\begin{proposition}
 		\label{prop:la tangent i la normal d'una corba amb curvatura no nula són perpendiculars}
-		Sigui \(\alpha\) una corba sobre \(I\) amb curvatura no \nulla i \(t\in I\) un real. Aleshores els vectors \(\tangent_{\alpha}(t)\) i \(\normal_{\alpha}(t)\) són perpendiculars.
+		Sigui \(\alpha\) una corba sobre \(I\) amb curvatura no \nulla{} i \(t\in I\) un real. Aleshores els vectors \(\tangent_{\alpha}(t)\) i \(\normal_{\alpha}(t)\) són perpendiculars.
 		\begin{proof}
 			Considerem
 			\[\prodesc{\tangent_{\alpha}(t)}{\normal_{\alpha}(t)}.\]
@@ -635,13 +635,13 @@
 	\end{definition}
 	\begin{definition}[Binormal]
 		\labelname{binormal}\label{def:binormal}
-		Sigui \(\alpha\) una corba amb curvatura no \nulla. Aleshores definim
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{}. Aleshores definim
 		\[\binormal_{\alpha}(t)=\tangent_{\alpha}(t)\prodvec\normal_{\alpha}(t)\]
 		com la binormal de \(\alpha\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:triedre de Frenet}
-		Sigui \(\alpha\) una corba sobre \(I\) amb curvatura no \nulla. Aleshores \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és una base ortonormal i positiva de \(\mathbb{R}^{3}\).
+		Sigui \(\alpha\) una corba sobre \(I\) amb curvatura no \nulla{}. Aleshores \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és una base ortonormal i positiva de \(\mathbb{R}^{3}\).
 		\begin{proof}
 			Per la proposició \myref{prop:la tangent i la normal d'una corba amb curvatura no nula són perpendiculars} trobem que \(\tangent_{\alpha}(t)\) i \(\normal_{\alpha}(t)\) són perpendiculars. Aleshores per la definició de \myref{def:binormal} trobem que \(\binormal_{\alpha}(t)=\tangent_{\alpha}(t)\prodvec\normal_{\alpha}(t)\) i per la proposició \myref{prop:dos vectors linealment independents i el seu producte vectorial formen una base positiva} tenim que la base \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és positiva.
 			
@@ -656,13 +656,13 @@
 	\end{proposition}
 	\begin{definition}[Triedre de Frenet]
 		\labelname{triedre de Frenet}\label{def:triedre de Frenet}
-		Sigui\(\alpha\) una corba amb curvatura no \nulla. Aleshores direm que la base \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és el triedre de Frenet.
+		Sigui\(\alpha\) una corba amb curvatura no \nulla{}. Aleshores direm que la base \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és el triedre de Frenet.
 		
 		Aquesta definició té sentit per la proposició \myref{prop:triedre de Frenet}.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:torsió}
-		Sigui \(\alpha\) una corba parametritzada per l'arc amb curvatura no \nulla. Aleshores existeix un \(\torsio_{\alpha}(t)\in\mathbb{R}\) tal que
+		Sigui \(\alpha\) una corba parametritzada per l'arc amb curvatura no \nulla{}. Aleshores existeix un \(\torsio_{\alpha}(t)\in\mathbb{R}\) tal que
 		\[\binormal'_{\alpha}(t)=\torsio_{\alpha}(t)\normal(t).\]
 		\begin{proof}
 			Tenim per la proposició \myref{prop:triedre de Frenet} que \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és una base ortonormal de \(\mathbb{R}^{3}\), i per tant tenim que %REF
@@ -696,7 +696,7 @@
 	\end{proposition}
 	\begin{definition}[Torsió]
 		\labelname{torsió}\label{def:torsió}
-		Sigui \(\alpha\) una corba parametritzada per l'arc amb curvatura no \nulla i \(\torsio_{\alpha}(t)\) un real tal que
+		Sigui \(\alpha\) una corba parametritzada per l'arc amb curvatura no \nulla{} i \(\torsio_{\alpha}(t)\) un real tal que
 		\[\binormal'_{\alpha}(t)=\torsio_{\alpha}(t)\normal(t).\]
 		Aleshores direm que \(\torsio_{\alpha}(t)\) és la torsió de \(\alpha\).
 		
@@ -705,7 +705,7 @@
 	% FER Exemple calcular torsió?
 	\begin{proposition}[Fórmules de Frenet]
 		\labelname{fórmules de Frenet}\label{prop:fórmules de Frenet per corbes parametritzades per l'arc}
-		Sigui \(\alpha\) una corba parametritzada per l'arc amb curvatura no \nulla. Aleshores
+		Sigui \(\alpha\) una corba parametritzada per l'arc amb curvatura no \nulla{}. Aleshores
 		\[\begin{bmatrix}
 			\tangent'_{\alpha}(t) \\
 			\normal'_{\alpha}(t) \\
@@ -759,7 +759,7 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:condició equivalent per que la reparametrització per l'arc d'una corba tingui curvatura no nula}
-		Sigui \(\alpha\) una corba amb curvatura no \nulla i \(h\) un canvi de paràmetre de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc. Aleshores \(\tilde{\alpha}\) té curvatura no \nulla si i només si \(\alpha'\prodvec\alpha''\neq\vec{0}\).
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i \(h\) un canvi de paràmetre de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc. Aleshores \(\tilde{\alpha}\) té curvatura no \nulla{} si i només si \(\alpha'\prodvec\alpha''\neq\vec{0}\).
 		\begin{proof}
 			Tenim que \(\tilde{\alpha}=\alpha\circ h\), i per la proposició \myref{prop:fórmula de Leibniz} i la \myref{thm:regla de la cadena} tenim que
 			\[\alpha'=h'(\tilde{\alpha}'\circ h)\]
@@ -782,7 +782,7 @@
 	\end{proposition}
 	\begin{definition}[Curvatura per una reparametrització]
 		\labelname{curvatura}\label{def:curvatura  per una reparametrització}
-		Sigui \(\alpha\) una corba amb curvatura no \nulla i \(\alpha'\prodvec\alpha''=\vec{0}\) i \(h\) un canvi de paràmetre de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc. Aleshores direm que
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i \(\alpha'\prodvec\alpha''=\vec{0}\) i \(h\) un canvi de paràmetre de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc. Aleshores direm que
 		\[\curvatura_{\alpha}=\curvatura_{\tilde{\alpha}}\circ h^{-1}\]
 		és la curvatura de \(\alpha\).
 		
@@ -790,7 +790,7 @@
 	\end{definition}
 	\begin{definition}[Torsió per una reparametrització]
 		\labelname{torsió}\label{def:torsió  per una reparametrització}
-		Sigui \(\alpha\) una corba amb curvatura no \nulla i \(h\) un canvi de paràmetre de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc. Aleshores direm que
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i \(h\) un canvi de paràmetre de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc. Aleshores direm que
 		\[\torsio_{\alpha}=\torsio_{\tilde{\alpha}}\circ h^{-1}\]
 		és la curvatura de \(\alpha\).
 		
@@ -804,15 +804,15 @@
 	\end{definition}
 	\begin{proposition}[Fórmules de Frenet]
 		\labelname{fórmules de Frenet}\label{prop:fórmules de Frenet}
-		Sigui \(\alpha\) una corba amb curvatura no \nulla i tal que \(\alpha'\prodvec\alpha''=\vec{0}\). Aleshores
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i tal que \(\alpha'\prodvec\alpha''=\vec{0}\). Aleshores
 		\[\begin{bmatrix}
 			\tangent_{\alpha}'(t) \\
 			\normal_{\alpha}'(t) \\
 			\binormal_{\alpha}'(t)
 		\end{bmatrix}
-		=\begin{bmatrix}
-			0 & \rapidesa_{\alpha}(t)\curvatura_{\alpha}(t) & 0 \\
-			-\rapidesa_{\alpha}(t)\curvatura_{\alpha}(t) & 0 & -\rapidesa_{\alpha}(t)\curvatura_{\alpha}(t) \\
+		=\rapidesa_{\alpha}(t)\begin{bmatrix}
+			0 & \curvatura_{\alpha}(t) & 0 \\
+			-\curvatura_{\alpha}(t) & 0 & -\curvatura_{\alpha}(t) \\
 			0 & \rapidesa_{\alpha}\curvatura_{\alpha}(t) & 0
 		\end{bmatrix}
 		\begin{bmatrix}
@@ -821,7 +821,11 @@
 			\binormal_{\alpha}(t)
 		\end{bmatrix}.\]
 		\begin{proof}
-			%TODO
+			Sigui \(h\) una reparametrització de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc.
+			
+			Ai haig de tornar a definir les coses aquestes per corbes no parametritzades per l'arc. Quina mandra. Imagineu una demostració patrocinada per \myref{thm:regla de la cadena} i les \myref{prop:fórmules de Frenet per corbes parametritzades per l'arc}. Us prometo que tot quadra, com volíem veure.
 		\end{proof}
 	\end{proposition}
+	\subsection{Teorema Fonamental de la teoria local de corbes}
+	
 \end{document}

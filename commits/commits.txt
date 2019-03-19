@@ -1,1 +1,1 @@
-Demostrades les fórmules de Frenet.
+Afegida teoria a geometria diferencial fins a començar la secció del teorema fonamental de la teoria local de corbes.
