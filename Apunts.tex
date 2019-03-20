@@ -168,6 +168,10 @@
 \newcommand{\e}{\mathrm{e}}
 \newcommand{\iu}{\mathrm{i}}
 \newcommand{\uppi}{\pi} % REVISIT
+\newcommand{\GrupOrtogonal}{\mathrm{O}}
+\newcommand{\GrupEspecialOrtogonal}{\mathrm{SO}}
+\newcommand{\matrius}{M}
+\newcommand{\basecanonica}{\base{C}}
 
 \makeatletter
 	\def\prodesc{\@ifnextchar[{\@prodescwith}{\@prodescwithout}}
@@ -182,14 +186,10 @@
 
 \setcounter{MaxMatrixCols}{20}
 
-\makeatletter
-	\newcommand{\@corollari}{coro{\lgem}ari}
-		\newcommand{\corollari}{\@corollari{}}
-	\newcommand{\@Corollari}{Coro{\lgem}ari}
-		\newcommand{\Corollari}{\@Corollari{}}
-	\newcommand{\@nulla}{nu{\lgem}a}
-		\newcommand{\nulla}{\@nulla{}}
-\makeatother
+% REVISAR SI NO ES MENJA ELS ESPAIAS ABANS DE PUNTS I TAL
+\newcommand{\corollari}{coro{\lgem}ari}
+\newcommand{\Corollari}{Coro{\lgem}ari}
+\newcommand{\nulla}{nu{\lgem}a}
 
 \makeatletter
 \newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}

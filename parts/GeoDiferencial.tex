@@ -3,7 +3,7 @@
 \begin{document}
 \part{Geometria diferencial}
 \chapter{Corbes}
-	\section{Difeomorfismes de classe \ensuremath{\mathcal{C}^{\infty}}}
+\section{Difeomorfismes de classe \ensuremath{\mathcal{C}^{\infty}}}
 	\subsection{Funcions analítiques}
 	\begin{definition}[Classe de diferenciabilitat infinita]
 		\labelname{classe de diferenciabilitat infinita}\label{def:classe de diferenciabilitat infinita}
@@ -745,13 +745,13 @@
 				\normal'_{\alpha}(t)&=\torsio_{\alpha}(t)\normal_{\alpha}(t)\prodvec\tangent_{\alpha}(t)+\binormal_{\alpha}(t)\prodvec\curvatura_{\alpha}(t)\normal_{\alpha}(t) \\
 				&=\torsio_{\alpha}(t)\big(\normal_{\alpha}(t)\prodvec\tangent_{\alpha}(t)\big)+\curvatura_{\alpha}(t)\big(\binormal_{\alpha}(t)\prodvec\normal_{\alpha}(t)\big) \\ % REF
 				&=\torsio_{\alpha}(t)\binormal_{\alpha}(t)+\curvatura_{\alpha}(t)\big(\binormal_{\alpha}(t)\prodvec\normal_{\alpha}(t)\big) \tag{\ref{def:binormal}} \\
-				&=-\torsio_{\alpha}(t)\binormal_{\alpha}(t)-\curvatura_{\alpha}\tangent_{\alpha}(t). \tag{\ref{def:binormal}}
+				&=-\torsio_{\alpha}(t)\binormal_{\alpha}(t)-\curvatura_{\alpha}(t)\tangent_{\alpha}(t). \tag{\ref{def:binormal}}
 			\end{align*}
 			
 			Per tant ens queda
 			\begin{align*}
 				\tangent_{\alpha}'(t)&=\curvatura_{\alpha}(t)\normal_{\alpha}(t) \\
-				\normal'_{\alpha}(t)&=-\torsio_{\alpha}(t)\binormal_{\alpha}(t)-\curvatura_{\alpha}\tangent_{\alpha}(t) \\
+				\normal'_{\alpha}(t)&=-\torsio_{\alpha}(t)\binormal_{\alpha}(t)-\curvatura_{\alpha}(t)\tangent_{\alpha}(t) \\
 				\binormal'_{\alpha}(t)&=\torsio_{\alpha}(t)\normal(t)
 			\end{align*}
 			i per la definició de \myref{def:producte de matrius} hem acabat.
@@ -813,7 +813,7 @@
 		=\rapidesa_{\alpha}(t)\begin{bmatrix}
 			0 & \curvatura_{\alpha}(t) & 0 \\
 			-\curvatura_{\alpha}(t) & 0 & -\curvatura_{\alpha}(t) \\
-			0 & \rapidesa_{\alpha}\curvatura_{\alpha}(t) & 0
+			0 & \curvatura_{\alpha}(t) & 0
 		\end{bmatrix}
 		\begin{bmatrix}
 			\tangent_{\alpha}(t) \\
@@ -827,5 +827,116 @@
 		\end{proof}
 	\end{proposition}
 	\subsection{Teorema Fonamental de la teoria local de corbes}
-	
+	\begin{note} %TODO
+		Es venen moltes coses que moure a geometria lineal.
+	\end{note}
+	\begin{example}[Grup ortogonal]
+		\labelname{}\label{ex:grup ortogonal}
+		Volem veure que el conjunt
+		\[\GrupOrtogonal(n)=\{A\in\matrius_{n\times n}(\mathbb{R})\mid\text{per a tot }\vec{u},\vec{v}\in\matrius_{n\times1}(\mathbb{R})\text{ tenim }\prodesc{A\vec{u}}{A\vec{v}}=\prodesc{\vec{u}}{\vec{v}}\}\]
+		amb el producte de matrius és un grup.
+		\begin{solution}
+			%TODO
+			% Moure a estructures
+		\end{solution}
+	\end{example}
+	\begin{example}[Grup especial ortogonal]
+		\labelname{}\label{ex:grup especial ortogonal}
+		Volem veure que
+		\[\GrupEspecialOrtogonal(n)=\{A\in\GrupOrtogonal\mid\det(A)=1\}\]
+		és un subgrup de \(\GrupOrtogonal(n)\).
+		\begin{solution}
+			%TODO
+			% Moure a estructures
+		\end{solution}
+	\end{example}
+	\begin{proposition}
+		\label{prop:els valors propis d'una matriu ortogonal són -1 o 1}
+		Sigui \(A\in\GrupOrtogonal(n)\) una matriu. Aleshores els valors propis reals de \(A\) són \(-1\) ó \(1\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:caracterització de les matrius ortogonals 2x2}
+		Es satisfà
+		\[\GrupEspecialOrtogonal(2)=\left\{\begin{bmatrix}
+			\cos(t) & -\sin(t) \\
+			\sin(t) & \cos(t)
+		\end{bmatrix}\mid t\in\mathbb{R}\right\}\]
+		i
+		\[\GrupOrtogonal(2)\setminus\GrupEspecialOrtogonal(2)=\left\{\begin{bmatrix}
+			\cos(t) & \sin(t) \\
+			\sin(t) & -\cos(t)
+		\end{bmatrix}\mid t\in\mathbb{R}\right\}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		Sigui \(A\in\GrupEspecialOrtogonal(3)\) una matriu. Aleshores existeixen una base ortonormal \(\base{B}\) de \(\mathbb{R}^{3}\) i un \(t\in\mathbb{R}\) tals que
+		\[M(\base{B},\basecanonica)AM(\basecanonica,\base{B})=\begin{bmatrix}
+			\pm1 & 0 & 0 \\
+			0 & \cos(t) & \sin(t) \\
+			0 & \sin(t) & -\cos(t)
+		\end{bmatrix}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:forma matricial de les aplicacions que conserven distàncies}
+		Sigui \(f\colon\mathbb{R}^{n}\longrightarrow\mathbb{R}^{n}\) una aplicació conserva distàncies. Aleshores existeixen una matriu \(A\in\GrupOrtogonal(n)\) i un \(\vec{C}\in\mathbb{R}^{n}\) tals que
+		\[f(\vec{v})=A\vec{v}+\vec{C}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:derivada del producte d'una matriu per una corba}
+		Siguin \(\alpha\) una corba regular i \(A\in\matrius_{n}\) una matriu. Aleshores
+		\[\frac{\diff(A\alpha(t))}{\diff t}=A\alpha'(t).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:les matrius especials ortogonals conserven el producte vectorial}
+		Siguin \(A\in\GrupEspecialOrtogonal(n)\) una matriu i \(\vec{u}\), \(\vec{v}\) dos vectors de \(\mathbb{R}^{n}\). Aleshores
+		\[A(\vec{u}\prodvec\vec{v})=(A\vec{u})\prodvec(A\vec{v}).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{corollary}
+		\label{cor:una corba parametritzada per l'arc i la seva imatge per una aplicació que conserva les distàncies són equivalents}
+		Siguin \(\alpha\) una corba parametritzada per l'arc, \(A\in\GrupEspecialOrtogonal(3)\) una matriu, \(\vec{C}\) un vector de \(\mathbb{R}^{3}\) i \(\beta\) una corba tal que
+		\[\beta(t)=A\alpha(t)+\vec{C}.\]
+		Aleshores \(\beta(t)\) està parametritzada per l'arc i es satisfà
+		\[\tangent_{\beta}=A\tangent_{\alpha},\quad\normal_{\beta}=A\normal_{\alpha},\quad\binormal_{\beta}=A\binormal_{\alpha},\quad\curvatura_{\beta}=A\curvatura_{\alpha}\quad\text{i}\quad\torsio_{\beta}=A\torsio_{\alpha}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{corollary}
+	\begin{lemma}
+		\label{lemma:Teorema Fonamental de la teoria local de corbes}
+		Siguin \(\alpha\) i \(\beta\) dues corbes. Aleshores la relació
+		\[\alpha\sim\beta \Sii \text{Existeixen }A\in\GrupEspecialOrtogonal(3)\text{ i }\vec{C}\in\mathbb{R}^{3}\text{ tals que }\alpha=A\beta+\vec{C}\]
+		és una relació d'equivalència.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{lemma}
+	\begin{theorem}[Teorema Fonamental de la teoria local de corbes]
+		\labelname{Teorema Fonamental de la teoria local de corbes}\label{thm:Teorema Fonamental de la teoria local del corbes}
+		Siguin \(\curvatura(t)\) i \(\torsio(t)\) dues funcions diferenciables sobre \(I\), amb \(\curvatura(t)>0\) per a tot \(t\in I\). Aleshores existeix una única corba \(\alpha\) sobre \(I\) parametritzada per l'arc satisfent \(\curvatura_{\alpha}(t)=\curvatura(t)\) i \(\torsio_{\alpha}(t)=\torsio(t)\), llevat d'equivalència. % Reescriure la part de llevat d'equivalència
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+\section{Superfícies}
+	\subsection{Immersions i submersions}
+	\begin{definition}
+		%TODO
+	\end{definition}
 \end{document}

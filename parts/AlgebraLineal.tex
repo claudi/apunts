@@ -3,7 +3,7 @@
 \begin{document}
 \part{Àlgebra lineal}
 \chapter{Matrius}
-	\section{Matrius i operacions}
+\section{Matrius i operacions}
 	\subsection{Cossos}
 	\begin{definition}[Cos]
 		\labelname{cos}\label{def:cos}
@@ -32,12 +32,12 @@
 		\label{notation:conjunt de matrius}
 		Siguin \(m\) i \(n\) dos enters, \(\mathbb{K}\) un cos i
 		\[X=\{A\mid A\text{ és una matriu de mida }m\times n\text{ sobre }\mathbb{K}\}\]
-		un conjunt. Aleshores denotarem \(X=M_{m\times n}(\mathbb{K})\).
+		un conjunt. Aleshores denotarem \(X=\matrius_{m\times n}(\mathbb{K})\).
 		
-		Si \(n=m\) denotarem \(X=M_{n}(\mathbb{K})\).
+		Si \(n=m\) denotarem \(X=\matrius_{n}(\mathbb{K})\).
 	\end{notation}
 	%Veure que estàn ben definides %TODO %FER
-	%Quan veiem que el producte té sentit veure que pertany a \(M_{m\times n}(\mathbb{K})\).
+	%Quan veiem que el producte té sentit veure que pertany a \(\matrius_{m\times n}(\mathbb{K})\).
 	\begin{definition}[Suma de matrius]
 		\labelname{suma de matrius}\label{def:suma de matrius}
 		Siguin \(A\) i \(B\) dues matrius de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores definim la seva suma com una operació \(+\) que satisfà
@@ -87,7 +87,7 @@
 		\vdots & & \vdots \\
 		0 & \cdots & 0
 		\end{matrix}\right]
-		\in M_{m\times n}(\mathbb{K})\]
+		\in\matrius_{m\times n}(\mathbb{K})\]
 		com \(0_{m\times n}\), ó \(0\) si és clar pel context. També escriurem \(0_{n\times n}=0_{n}\).
 	\end{notation}
 	\begin{proposition}
@@ -221,7 +221,7 @@
 		\vdots & \ddots & \ddots & 0\\
 		0 & \cdots & 0 & 1
 		\end{matrix}\right]
-		\in M_{n}(\mathbb{K})\]
+		\in\matrius_{n}(\mathbb{K})\]
 		com \(I_{n}\) i direm que \(I_{n}\) és la matriu identitat d'ordre \(n\).
 	\end{notation}
 	\begin{proposition}
@@ -376,7 +376,7 @@
 	\end{definition}
 	\begin{observation}
 		\label{obs:on pertanyen les files i les columnes d'una matriu}
-		Si \(A\in M_{m\times n}(\mathbb{K})\) tenim \(F_{i}\in M_{1\times n}(\mathbb{K})\) i \(C_{i}\in M_{m\times 1}(\mathbb{K})\).
+		Si \(A\in\matrius_{m\times n}(\mathbb{K})\) tenim \(F_{i}\in\matrius_{1\times n}(\mathbb{K})\) i \(C_{i}\in\matrius_{m\times 1}(\mathbb{K})\).
 	\end{observation}
 	\begin{notation}
 		Si \(A\) és una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(F_{1},\dots,F_{m}\) les files de \(A\) i \(C_{1},\dots,C_{n}\) les columnes de \(A\). Aleshores denotem
@@ -448,7 +448,7 @@
 		\end{proof}
 	\end{proposition}
 	%https://math.hecker.org/2011/04/07/multiplying-block-matrices/
-	\section{Rang d'una matriu}
+\section{Rang d'una matriu}
 	\subsection{Transformacions elementals}
 	\begin{definition}[Transformacions elementals] %REFER per columnes i files
 		\labelname{transformacions elementals}\label{def:transformacions elementals}
@@ -483,7 +483,7 @@
 		\vdots & & \vdots \\
 		a_{m,1} & & a_{m,n}
 		\end{matrix}\right]\]
-		com les transformacions elementals per files de \(M_{n}(\mathbb{K})\).
+		com les transformacions elementals per files de \(\matrius_{n}(\mathbb{K})\).
 	\end{definition}
 %	\begin{observation}
 %		\label{obs:transformacions elementals}
@@ -861,7 +861,7 @@
 		%FER \begin{proof}\end{proof}
 	\end{observation}
 %	\subsection{Càlcul de la inversa d'una matriu invertible}
-%	\section{Sistemes d'equacions lineals}
+%\section{Sistemes d'equacions lineals}
 %	\subsection{Mètode de Gauss}
 %	\begin{definition}[Sistema d'equacions lineals]
 %		\labelname{sistema d'equacions lineals}\label{def:sistema d'equacions lineals}
@@ -911,7 +911,7 @@
 %		\[Ax=b.\]
 %	\end{notation}
 %	\begin{theorem}[Mètode de Gauss]
-%		Sigui \(\mathbb{K}\) un cos, \(\left[A\vert b\right]\in M_{m\times(n+1)}(\mathbb{K})\) la matriu ampliada d'un sistema d'equacions i \(P\) una matriu invertible d'ordre \(n\) sobre \(\mathbb{K}\). Aleshores els sistemes d'equacions
+%		Sigui \(\mathbb{K}\) un cos, \(\left[A\vert b\right]\in\matrius_{m\times(n+1)}(\mathbb{K})\) la matriu ampliada d'un sistema d'equacions i \(P\) una matriu invertible d'ordre \(n\) sobre \(\mathbb{K}\). Aleshores els sistemes d'equacions
 %		\[Ax=b\quad\text{i}\quad PAx'=Pb\]
 %		són equivalents.
 %		\begin{proof} %Potser coses de cossos? Lo veo patatero
@@ -926,20 +926,20 @@
 %	\end{theorem}
 %	\subsection{Teorema de Rouché-Frobenius}
 %	\begin{theorem}[Teorema de Rouché-Frobenius]
-%		Sigui \(Ax=b\) un sistema d'equacions lineals sobre un cos \(\mathbb{K}\) amb \(A\in M_{m\times n}(\mathbb{K})\) i \(r=\rang(A)\). Aleshores el sistema és compatible si i només si
+%		Sigui \(Ax=b\) un sistema d'equacions lineals sobre un cos \(\mathbb{K}\) amb \(A\in\matrius_{m\times n}(\mathbb{K})\) i \(r=\rang(A)\). Aleshores el sistema és compatible si i només si
 %		\[\rang(A\vert b)=\rang(A).\]
 %		A demés, Si \(\rang(A)=n\) el sistema és compatible determinat i si \(\rang(A)<n\) el sistema és compatible indeterminat.
 %		\begin{proof}
 %			
 %		\end{proof}
 %	\end{theorem}
-	\section{Determinant d'una matriu}
+\section{Determinant d'una matriu}
 	\subsection{Propietats dels determinants}
 	\begin{definition}[Determinant]
 		\labelname{determinant d'una matriu}\label{def:determinant d'una matriu}
-		Siguin \(\mathbb{K}\) un cos i \(\det\colon M_{n}(\mathbb{K})\longrightarrow\mathbb{K}\) una aplicació que satisfà per a tot \(i\in\{1,\dots,n\}\) i \(j\in\{i+1,\dots,n\}\) i per a tot \(C_{i}\in M_{n\times1}(\mathbb{K})\)
+		Siguin \(\mathbb{K}\) un cos i \(\det\colon\matrius_{n}(\mathbb{K})\longrightarrow\mathbb{K}\) una aplicació que satisfà per a tot \(i\in\{1,\dots,n\}\) i \(j\in\{i+1,\dots,n\}\) i per a tot \(C_{i}\in\matrius_{n\times1}(\mathbb{K})\)
 		\begin{enumerate}
-			\item Per a tot \(C'_{j}\in M_{n\times1}(\mathbb{K})\) es satisfà
+			\item Per a tot \(C'_{j}\in\matrius_{n\times1}(\mathbb{K})\) es satisfà
 			\begin{multline*}
 			\det(C_{1},\dots,C_{i-1},C_{i}+C'_{i},C_{i+1},\dots,C_{n})=\\
 			=\det(C_{1},\dots,C_{n})+\det(C_{1},\dots,C_{i-1},C'_{i},C_{i+1},\dots,C_{n}).
@@ -957,15 +957,15 @@
 	\end{proposition}
 	% https://es.wikipedia.org/wiki/F%C3%B3rmula_de_Leibniz_para_el_c%C3%A1lculo_de_determinantes
 %\chapter{Espais vectorials i aplicacions lineals}
-%	\section{Espais vectorials}
+%\section{Espais vectorials}
 %	
-%	\section{Aplicacions lineals}
+%\section{Aplicacions lineals}
 %	
 %\chapter{Classificació d'endomorfismes}
-%	\section{Endomorfismes similars}
-%	\section{Diagonalització}
-%	\section{Forma canònica de Jordan}
-%	\section{Forma canònica racional}
+%\section{Endomorfismes similars}
+%\section{Diagonalització}
+%\section{Forma canònica de Jordan}
+%\section{Forma canònica racional}
 %
 %\chapter{Espais vectorials euclidians}
 

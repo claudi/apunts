@@ -1,1 +1,1 @@
-Afegida teoria a geometria diferencial fins a començar la secció del teorema fonamental de la teoria local de corbes.
+Afegits enunciats a geometria diferencial fins començar el tema de superfícies.

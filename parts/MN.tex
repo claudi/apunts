@@ -6,7 +6,7 @@
 	% LINK https://en.wikibooks.org/wiki/Introduction_to_Numerical_Methods/Interpolation
 	Sovint podem mesurar un procés físic com un número de punts (per exemple, la temperatura d'una habitació en diferents instants de temps), però no tenim una expressió analítica per aquest procés que ens permeti calcular el seu valor en un punt arbitrari. L'interpolació ens proporciona un mètode simple per estimar aquesta expressió analítica en el rang dels punts mesurats\footnote{Si el punt que avaluem es troba fora del rang aquest problema s'anomena extrapolació i sol ser menys precís que la interpolació.}.
 	% Source: http://web.cs.iastate.edu/~cs577/handouts/interpolate.pdf
-	\section{El problema d'interpolació}
+\section{El problema d'interpolació}
 	\subsection{Problemes d'interpolació}
 	\begin{definition}[Problema d'interpolació]
 		\labelname{problema d'interpolació}\label{def:problema d'interpolació}
@@ -35,7 +35,7 @@
 		\[\Phi(x;a_{0},\dots,a_{n},\lambda_{0},\dots,\lambda_{n})=a_{0}e^{\lambda_{0}x}+\dots+a_{n}e^{\lambda_{n}x}.\]
 		La interpolació trigonomètrica es fa servir en l'anàlisi numèric de les sèries de Fourier, la interpolació exponencial és útil en l'anàlisi de desintegració radioactiva.
 	\end{example}
-	\section{Polinomis interpoladors de Lagrange}
+\section{Polinomis interpoladors de Lagrange}
 	\subsection{Interpolació de Lagrange}
 	\begin{definition}[Problema d'interpolació de Lagrange]
 		\labelname{problema d'interpolació de Lagrange}\label{def:problema d'interpolació de Lagrange}
@@ -323,7 +323,7 @@
 		\end{proof}
 	\end{theorem}%FER error xat Alex Miranda
 	%FER un exemple, va. Pàgina 47 (49) apunts Alsedà
-	\section{Polinomis interpoladors per splines}
+\section{Polinomis interpoladors per splines}
 	\subsection{Interpolació per splines}
 	\begin{definition}
 		Siguin \(\Delta=\{x_{i}\}_{i=0}^{n}\) una partició d'un interval \([a,b]\subset\mathbb{R}\) i \(s\colon[a,b]\longrightarrow\mathbb{R}\) una funció a trossos de classe \(\mathcal{C}^{p-1}\) de la forma
