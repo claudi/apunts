@@ -812,8 +812,8 @@
 		\end{bmatrix}
 		=\rapidesa_{\alpha}(t)\begin{bmatrix}
 			0 & \curvatura_{\alpha}(t) & 0 \\
-			-\curvatura_{\alpha}(t) & 0 & -\curvatura_{\alpha}(t) \\
-			0 & \curvatura_{\alpha}(t) & 0
+			-\curvatura_{\alpha}(t) & 0 & -\torsio_{\alpha}(t) \\
+			0 & \torsio_{\alpha}(t) & 0
 		\end{bmatrix}
 		\begin{bmatrix}
 			\tangent_{\alpha}(t) \\
@@ -961,6 +961,15 @@
 			Aleshores per la definició de \myref{def:rang d'una matriu} trobem que aquesta té rang \(p\), i per l'observació \myref{obs:immersió si i només si té rang maximal} tenim que \(i\) és una immersió.
 		\end{solution}
 	\end{example}
+	\begin{proposition}
+		\label{prop:la composició d'immersions és una immersió}
+		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) i \(\obert{V}\subseteq\mathbb{R}^{n}\) dos oberts i \(g\colon\obert{U}\longrightarrow\obert{V}\) i \(f\colon\obert{V}\longrightarrow\mathbb{R}^{n}\) dues immersions. Aleshores \(g\circ f\) és una immersió.
+		\begin{proof}
+			Per la \myref{thm:regla de la cadena} tenim que
+			\[d(f\circ g)=dgdf(g),\] % REFS
+			i per tant trobem que \(\rang(d(f\circ g))\leq\min\{\rang(dg),\rang(df(g))\}\), i per l'observació \myref{obs:immersió si i només si té rang maximal} hem acabat.
+		\end{proof}
+	\end{proposition}
 	\begin{definition}[Submersió]
 		\labelname{submersió}\label{def:submersió}
 		Sigui \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert, \(x_{0}\in\obert{U}\) un punt i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{n}\) una funció diferenciable tal que \(df(a)\) sigui exhaustiva. Aleshores direm que \(f\) és una submersió en \(x_{0}\).
@@ -984,6 +993,15 @@
 			Aleshores per la definició de \myref{def:rang d'una matriu} trobem que aquesta té rang \(p\) i per l'observació \myref{obs:submersió si i només si té rang més petit o igual} tenim que \(\pi\) és una submersió.
 		\end{solution}
 	\end{example}
+	\begin{proposition}
+		\label{prop:la composició de submersions és submersió}
+		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) i \(\obert{V}\subseteq\mathbb{R}^{m}\) dos oberts, \(g\colon\obert{U}\longrightarrow\obert{V}\) i \(f\colon\obert{V}\longrightarrow\mathbb{R}^{d}\) dues submersions. Aleshores la funció \(f\circ g\) és una submersió.
+		\begin{proof}
+			Per la \myref{thm:regla de la cadena} tenim que
+			\[d(f\circ g)=dgdf(g),\]
+			i per tant trobem que \(\rang(d(f\circ g))\leq\min\{\rang(dg),\rang(df(g))\}\), i per l'observació \myref{obs:submersió si i només si té rang més petit o igual} hem acabat.
+		\end{proof}
+	\end{proposition}
 	\begin{theorem}[Teorema d'estructura local de les immersions]
 		\labelname{Teorema d'estructura local de les immersions}\label{thm:Teorema d'estructura local de les immersions}
 		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una immersió en un punt \(x_{0}\in\obert{U}\). Aleshores existeixen dos oberts \(\obert{U}'\subseteq\mathbb{R}^{n}\) i \(\obert{V}\subseteq\mathbb{R}^{m}\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{V}\longleftrightarrow\Ima_{\obert{U}'}(g)\subseteq\mathbb{R}^{n}\) i satisfent \(i(x_{0})\in\obert{V}\) tals que el diagrama
@@ -1006,6 +1024,29 @@
 		és un diagrama commutatiu.
 		\begin{proof}
 			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{definition}[Superfície]
+		\labelname{superfície}\label{def:superfície}
+		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt tal que per a tot \(p\in S\) existeix un obert \(\obert{U}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que \(g(\obert{U}\cap S)=g(\obert{U})\cap\mathbb{R}^{2}\times\{0\}\). Aleshores direm que \(S\) és una superfície regular.
+	\end{definition}
+	\begin{theorem}
+		\label{thm:condicions equivalents a la definició de superfície}
+		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt. Aleshores \(S\) és una superfície si i només si per a tot punt \(p\in S\) existeixen un obert \(\obert{U}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que \(S\cap\obert{U}=\Antiima_{\{0\}}(F)\).
+		\begin{proof}
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(S\) és una superfície. Per la definició de \myref{def:superfície} trobem que que per a tot \(p\in S\) existeix un obert \(\obert{U}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que \(g(\obert{U}\cap S)=g(\obert{U})\cap\mathbb{R}^{2}\times\{0\}\). Considerem la funció
+			\begin{align*}
+				F\colon\obert{U}&\longrightarrow\mathbb{R} \\
+				x&\longmapsto(\pi_{2}\circ g)(x).
+			\end{align*}
+			Aleshores tenim que
+			\begin{align*}
+				\Antiima_{\{0\}}(F)&=\Antiima_{\Antiima_{\{0\}}(\pi_{2})} \\
+				&=\Antiima_{\mathbb{R}^{2}\times\{0\}}(g)=\obert{U}\cap S,
+			\end{align*}
+			i hem acabat.
+			
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que existeix una submersió 
 		\end{proof}
 	\end{theorem}
 \end{document}
