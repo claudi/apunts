@@ -519,19 +519,35 @@
 	\subsection{Fórmules de Frenet}
 	\begin{proposition}
 		\label{prop:la primera derivada i la segona derivada d'una corba són perpendiculars}
-		Sigui \(\alpha\) una corba sobre \(I\) tal que \(\alpha\) és dues vegades diferenciable en un punt \(t_{0}\). Aleshores tenim que \(\alpha'(t_{0})\) i \(\alpha''(t_{0})\) són perpendiculars.
+		Sigui \(\alpha\) una corba parametritzada per l'arc sobre \(I\) tal que \(\alpha\) és dues vegades diferenciable en un punt \(t_{0}\). Aleshores tenim que \(\alpha'(t_{0})\) i \(\alpha''(t_{0})\) són perpendiculars.
 		\begin{proof}
-			Per la definició de \myref{def:derivada} trobem que
-			\[\alpha''(t_{0})=\lim_{h\to0}\frac{\alpha'(t_{0}+h)+\alpha'(t_{0})}{h},\]
-			i per tant tenim que
-			\[\prodesc{\alpha'(t_{0})}{\alpha''(t_{0})}=\prodesc[\Big]{\alpha'(t_{0})}{\lim_{h\to0}\frac{\alpha'(t_{0}+h)+\alpha'(t_{0})}{h}},\]
-			i per la definició de \myref{def:producte escalar} trobem que
+			Per la definició de \myref{def:corba parametritzada per l'arc} trobem que
+			\[\norm{\alpha'(t)}=1.\]
+			Aleshores tenim que
 			\begin{align*}
-				\prodesc{\alpha'(t_{0})}{\alpha''(t_{0})}	&=\prodesc[\big]{\alpha'(t_{0})}{\lim_{h\to0}\frac{\alpha'(t_{0})}{h}}+\prodesc[\big]{\alpha'(t_{0})}{\lim_{h\to0}\frac{\alpha'(t_{0}+h)}{h}} \\
-				&=\prodesc{\alpha'(t_{0})}{0}+\prodesc{\alpha'(t_{0})}{0}=0,
+				0&=\frac{\diff}{\diff t}1 \\
+				&=\frac{\diff}{\diff t}\norm{\alpha'(t)} \\
+				&=\frac{\diff}{\diff t}\norm{\alpha'(t)}^{2} \\
+				&=\frac{\diff}{\diff t}\prodesc{\alpha'(t)}{\alpha'(t)} \tag{\ref{def:norma d'un vector}} \\
+				&=\prodesc{\alpha''(t)}{\alpha'(t)}+\prodesc{\alpha'(t)}{\alpha''(t)} \tag{\ref{prop:derivada del producte escalar de dues corbes}} \\
+				&=2\prodesc{\alpha'(t)}{\alpha''(t)}.
 			\end{align*}
-			i per la definició de \myref{def:vectors perpendiculars} hem acabat.
+			Per tant trobem que
+			\[\prodesc{\alpha'(t)}{\alpha''(t)}=0,\]
+			i per la definició de \myref{def:vectors perpendiculars} tenim que \(\alpha'\) i \(\alpha''\) són perpendiculars, com volíem veure.
 		\end{proof}
+%		\begin{proof}
+%			Per la definició de \myref{def:derivada} trobem que
+%			\[\alpha''(t_{0})=\lim_{h\to0}\frac{\alpha'(t_{0}+h)-\alpha'(t_{0})}{h},\]
+%			i per tant tenim que
+%			\[\prodesc{\alpha'(t_{0})}{\alpha''(t_{0})}=\prodesc[\Big]{\alpha'(t_{0})}{\lim_{h\to0}\frac{\alpha'(t_{0}+h)-\alpha'(t_{0})}{h}},\]
+%			i per la definició de \myref{def:producte escalar} trobem que
+%			\begin{align*}
+%				\prodesc{\alpha'(t_{0})}{\alpha''(t_{0})}	&=\prodesc[\big]{\alpha'(t_{0})}{\lim_{h\to0}\frac{\alpha'(t_{0})}{h}}-\prodesc[\big]{\alpha'(t_{0})}{\lim_{h\to0}\frac{\alpha'(t_{0}+h)}{h}} \\
+%				&=\prodesc{\alpha'(t_{0})}{\vec{0}}-\prodesc{\alpha'(t_{0})}{\vec{0}}=0,
+%			\end{align*}
+%			i per la definició de \myref{def:vectors perpendiculars} hem acabat.
+%		\end{proof}
 	\end{proposition}
 	\begin{definition}[Curvatura]
 		\labelname{curvatura}\label{def:curvatura}
@@ -827,9 +843,7 @@
 		\end{proof}
 	\end{proposition}
 	\subsection{Teorema Fonamental de la teoria local de corbes}
-	\begin{note} %TODO
-		Es venen moltes coses que moure a geometria lineal.
-	\end{note}
+	%TODO Es venen moltes coses que moure a altres assignatures en el futur.
 	\begin{example}[Grup ortogonal]
 		\labelname{}\label{ex:grup ortogonal}
 		Volem veure que el conjunt
