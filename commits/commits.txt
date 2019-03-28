@@ -1,3 +1,3 @@
 Afegida una mica de teoria al tema de superfícies.
 Arreglada una demostració incorrecte al tema de corbes.
-Demostrat el Teorema d'estructura local de les immersions.
+Demostrat el Teorema d'estructura local de les immersions i les submersions.

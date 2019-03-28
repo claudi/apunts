@@ -952,7 +952,7 @@
 	\subsection{Immersions i submersions}
 	\begin{definition}[Immersió]
 		\labelname{immersió}\label{def:immersió}
-		Sigui \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert, \(x_{0}\in\obert{U}\) un punt i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{n}\) una funció diferenciable tal que \(df(a)\) sigui injectiva. Aleshores direm que \(f\) és una immersió en \(x_{0}\).
+		Siguin \(n\leq m\) dos naturals, \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert, \(x_{0}\in\obert{U}\) un punt i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una funció diferenciable tal que \(df(a)\) sigui injectiva. Aleshores direm que \(f\) és una immersió en \(x_{0}\).
 	\end{definition}
 	\begin{observation} % REF álgebra lineal
 		\label{obs:immersió si i només si té rang maximal}
@@ -975,24 +975,16 @@
 			Aleshores per la definició de \myref{def:rang d'una matriu} trobem que aquesta té rang \(p\), i per l'observació \myref{obs:immersió si i només si té rang maximal} tenim que \(i\) és una immersió.
 		\end{solution}
 	\end{example}
-	\begin{proposition}
-		\label{prop:la composició d'immersions és una immersió}
-		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) i \(\obert{V}\subseteq\mathbb{R}^{n}\) dos oberts i \(g\colon\obert{U}\longrightarrow\obert{V}\) i \(f\colon\obert{V}\longrightarrow\mathbb{R}^{n}\) dues immersions. Aleshores \(g\circ f\) és una immersió.
-		\begin{proof}
-			Per la \myref{thm:regla de la cadena} tenim que
-			\[d(f\circ g)=dgdf(g),\] % REFS
-			i per tant trobem que \(\rang(d(f\circ g))\leq\min\{\rang(dg),\rang(df(g))\}\), i per l'observació \myref{obs:immersió si i només si té rang maximal} hem acabat.
-		\end{proof}
-	\end{proposition}
 	\begin{definition}[Submersió]
 		\labelname{submersió}\label{def:submersió}
-		Sigui \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert, \(x_{0}\in\obert{U}\) un punt i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{n}\) una funció diferenciable tal que \(df(a)\) sigui exhaustiva. Aleshores direm que \(f\) és una submersió en \(x_{0}\).
+		Siguin \(n\geq m\) dos naturals, \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert, \(x_{0}\in\obert{U}\) un punt i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una funció diferenciable tal que \(df(a)\) sigui exhaustiva. Aleshores direm que \(f\) és una submersió en \(x_{0}\).
 	\end{definition}
 	\begin{observation}
 		\label{obs:submersió si i només si té rang més petit o igual}
-		\(f\) és una submersió en \(x_{0}\) si i només si \(\rang(df(a))\leq n\).
+		\(f\) és una submersió en \(x_{0}\) si i només si \(\rang(df(a))=m\).
 	\end{observation}
 	\begin{example}
+		\label{ex:la projecció canònica és una submersió}
 		Volem veure que la projecció canònica és una submersió.
 		\begin{solution}
 			La projecció canònica ve definida com
@@ -1040,14 +1032,15 @@
 				\label{thm:Teorema d'estructura local de les immersions:eq:1}
 				\det(dF(x_{0}))\neq0.
 			\end{equation}
-			També tenim que \(g(x,0)=F(x)\), i per l'exemple \myref{ex:la inclusió canònica és una immersió} trobem que
-			\[(g\circ i)(x)=g(x,0)=F(x).\]
 			
 			Considerem la funció
 			\begin{align*}
 				g\colon\mathbb{R}^{n}\times\mathbb{R}^{m-n}&\longrightarrow\mathbb{R}^{m} \\
 				(x,y)&\longmapsto F(x)+(0,y).
 			\end{align*}
+			Tenim que \(g(x,0)=F(x)\), i per l'exemple \myref{ex:la inclusió canònica és una immersió} trobem que
+			\[(g\circ i)(x)=g(x,0)=F(x).\]
+			
 			Per la definició de \myref{def:Jacobiana} i la proposició \myref{prop:justificació Jacobiana} tenim que
 			\[dg(x_{0})=\left[\begin{array}{c|ccc}
 				\begin{matrix}
@@ -1065,7 +1058,7 @@
 			\[\det(dg(x_{0}))=\det(dF(x_{0})),\]
 			i per \eqref{thm:Teorema d'estructura local de les immersions:eq:1} trobem que
 			\[\det(dg(x_{0})\neq0,\]
-			i pel \myref{thm:Funció implícita} hem acabat.
+			i pel \myref{thm:Funció inversa} hem acabat.
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}[Teorema d'estructura local de les submersions]
@@ -1077,7 +1070,49 @@
 		\end{tikzcd}\]
 		és un diagrama commutatiu.
 		\begin{proof}
-			%TODO
+			Denotem
+			\[f(x)=(f_{1}(x),\dots,f_{m}(x)).\]
+			Per la definició de \myref{def:submersió} trobem que \(n\geq m\) i per l'observació \myref{obs:submersió si i només si té rang més petit o igual} trobem que
+			\[\rang\left(\frac{\partial f_{i}}{\partial x_{j}}(x_{0})\right){}_{1\leq j\leq m}^{1\leq i\leq n}=m.\]
+			Aleshores tenim que existeix una permutació \(\sigma\in\GrupSimetric_{m}\) tal que
+			\[\rang\left(\frac{\partial f_{i}}{\partial x_{\sigma(j)}}(x_{0})\right){}_{1\leq j\leq m}^{1\leq i\leq m}=m,\]
+			i per la proposició \myref{prop:determinant diferent de zero linealment independents} trobem que
+			\[\det\left(\frac{\partial f_{i}}{\partial x_{\sigma(j)}}(x_{0})\right){}_{1\leq j\leq m}^{1\leq i\leq m}\neq0.\]
+			Denotem doncs
+			\[F(x)=(f_{\sigma(1)}(x),\dots,f_{\sigma(m)}(x))\]
+			i tenim que
+			\begin{equation}
+				\label{thm:Teorema d'estructura local de les submersions:eq:1}
+				\det(dF(x_{0}))\neq0.
+			\end{equation}
+			
+			Considerem la funció
+			\begin{align*}
+				g\colon\mathbb{R}^{n}&\longrightarrow\mathbb{R}^{n} \\
+				x&\longmapsto(F(x),0)+(0,\pi_{2}(x)).
+			\end{align*}
+			Per l'exemple \myref{ex:la projecció canònica és una submersió} trobem que
+			\[(\pi_{1}\circ g)(x)=\pi_{1}(F(x),\pi_{2}(x))=F(x).\]
+			
+			Per la definició de \myref{def:Jacobiana} i la proposició \myref{prop:justificació Jacobiana} tenim que
+			\[dg(x_{0})=\left[\begin{array}{c|c}
+				\begin{matrix}
+					\frac{\partial F_{1}}{\partial x_{1}} & \cdots & \frac{\partial F_{1}}{\partial x_{n}} \\
+					\vdots & & \vdots \\
+					\frac{\partial F_{m}}{\partial x_{n+1}} & \cdots & \frac{\partial F_{m}}{\partial x_{n}}
+				\end{matrix} & \begin{matrix}
+					\frac{\partial F_{1}}{\partial x_{1}} & \cdots & \frac{\partial F_{1}}{\partial x_{n}} \\
+					\vdots & & \vdots \\
+					\frac{\partial F_{m}}{\partial x_{n+1}} & \cdots & \frac{\partial F_{m}}{\partial x_{m}}
+				\end{matrix} \\ \hline \\
+				0_{(n-m)\times n} & I_{(n-m)\times(n-m)} \\
+				&
+			\end{array}\right].\]
+			Aleshores tenim que
+			\[\det(dg(x_{0}))=\det(dF(x_{0})),\]
+			i per \eqref{thm:Teorema d'estructura local de les submersions:eq:1} trobem que
+			\[\det(dg(x_{0})\neq0,\]
+			i pel \myref{thm:Funció inversa} hem acabat.
 		\end{proof}
 	\end{theorem}
 	\begin{definition}[Superfície]
