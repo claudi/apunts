@@ -1121,21 +1121,33 @@
 	\end{definition}
 	\begin{theorem}
 		\label{thm:condicions equivalents a la definició de superfície}
-		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt. Aleshores \(S\) és una superfície si i només si per a tot punt \(p\in S\) existeixen un obert \(\obert{U}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que \(S\cap\obert{U}=\Antiima_{\{0\}}(F)\).
+		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt. Aleshores \(S\) és una superfície si i només si per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que \(S\cap\obert{U}=F^{-1}(\{0\})\).
 		\begin{proof}
-			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(S\) és una superfície. Per la definició de \myref{def:superfície} trobem que que per a tot \(p\in S\) existeix un obert \(\obert{U}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que \(g(\obert{U}\cap S)=g(\obert{U})\cap\mathbb{R}^{2}\times\{0\}\). Considerem la funció
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(S\) és una superfície. Per la definició de \myref{def:superfície} trobem que que per a tot \(p\in S\) existeix un entorn obert \(\obert{U}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que \(g(\obert{U}\cap S)=g(\obert{U})\cap\mathbb{R}^{2}\times\{0\}\). Considerem la funció
 			\begin{align*}
 				F\colon\obert{U}&\longrightarrow\mathbb{R} \\
-				x&\longmapsto(\pi_{2}\circ g)(x).
+				x&\longmapsto(\pi_{3}\circ g)(x).
 			\end{align*}
 			Aleshores tenim que
 			\begin{align*}
-				\Antiima_{\{0\}}(F)&=\Antiima_{\Antiima_{\{0\}}(\pi_{2})} \\
-				&=\Antiima_{\mathbb{R}^{2}\times\{0\}}(g)=\obert{U}\cap S,
+				F^{-1}(\{0\})&=(\pi_{3}\circ g)^{-1}(\{0\}) \\
+				&=g^{-1}(\mathbb{R}^{2}\times\{0\})=\obert{U}\cap S, %TODO % Y THO
 			\end{align*}
 			i hem acabat.
 			
-			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que existeix una submersió 
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que \(S\cap\obert{U}=F^{-1}(\{0\})\). Pel \myref{thm:Teorema d'estructura local de les submersions} tenim que per a tot \(p\in S\) existeix un obert \(\obert{U}'\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{U}'\longleftrightarrow\Ima_{\obert{U}'}(g)\subseteq\mathbb{R}^{n}\) tals que
+			\[F(x)=(\pi_{3}\circ g)(x).\]
+			
+			Aleshores tenim que
+			\begin{align*}
+				S\cap\obert{U}'&\subseteq S\cap\obert{U}\\
+				&=F^{-1}(\{0\}) \\
+				&=(\pi_{3}\circ g)^{-1}(\{0\}) \\
+				&=g^{-1}(\mathbb{R}^{2}\times\{0\}),
+			\end{align*}
+			i per tant tenim
+			\[g(S\cap\obert{U}')\subseteq g(g^{-1}(\mathbb{R}^{2}\times\{0\}))=\mathbb{R}^{2}\times\{0\}\qedhere\]
+			%TODO continuar. Potser revisar que no l'hagi cagat
 		\end{proof}
 	\end{theorem}
 \end{document}

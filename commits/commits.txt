@@ -1,3 +1,2 @@
-Afegida una mica de teoria al tema de superfícies.
-Arreglada una demostració incorrecte al tema de corbes.
-Demostrat el Teorema d'estructura local de les immersions i les submersions.
+Afegits detalls a la demostració d'una condició equivalent per la definició de superfície.
+He començat a utilitzar la notació de f(A) i f^{-1}(A) per imatges i antiimatges.
