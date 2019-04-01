@@ -3,6 +3,8 @@
 \begin{document}
 \part{Geometria diferencial}
 \chapter{Corbes}
+\section{Parametritzacions i longitud}
+\begin{comment}
 \section{Difeomorfismes de classe \ensuremath{\mathcal{C}^{\infty}}}
 	\subsection{Funcions analítiques}
 	\begin{definition}[Classe de diferenciabilitat infinita]
@@ -44,6 +46,7 @@
 		
 		Aquesta definició té sentit per la definició de \myref{def:difeomorfisme}.
 	\end{definition}
+\end{comment}
 	\subsection{Reparametrització d'una corba}
 	\begin{definition}[Corba]
 		\labelname{corba}\label{def:corba}
@@ -302,6 +305,7 @@
 			 i per la definició de \myref{def:contacte entre dues corbes parametritzades per l'arc} tenim que \(\alpha\) i \(\beta\) tenen contacte \(r\).
 		\end{proof}
 	\end{proposition}
+\section{Curvatura i torsió}
 	\subsection{Producte escalar i producte vectorial}
 	\begin{proposition}
 		\label{prop:derivada del producte escalar de dues corbes}
@@ -948,7 +952,8 @@
 			%TODO
 		\end{proof}
 	\end{theorem}
-\section{Superfícies}
+\chapter{Superfícies}
+\section{Superfícies regulars}
 	\subsection{Immersions i submersions}
 	\begin{definition}[Immersió]
 		\labelname{immersió}\label{def:immersió}
@@ -1147,7 +1152,32 @@
 			\end{align*}
 			i per tant tenim
 			\[g(S\cap\obert{U}')\subseteq g(g^{-1}(\mathbb{R}^{2}\times\{0\}))=\mathbb{R}^{2}\times\{0\}\qedhere\]
-			%TODO continuar. Potser revisar que no l'hagi cagat
+			%TODO continuar. Revisar que no l'hagi cagat
 		\end{proof}
 	\end{theorem}
+	\begin{example}
+		Exemple d'alguna superfície amb el teorema aquest.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{definition}[Carta local]
+		\labelname{carta local}\label{def:carta local}
+		Sigui \(S\subseteq\mathbb{R}^{3}\) un conjunt i \(p\in S\)un punt tals que existeix un entorn obert \(\obert{U}\) de \(p\) i una aplicació \(\varphi\colon\Omega\longrightarrow S\cap\obert{U}\) que és una immersió i un homeomorfisme. Aleshores direm que \(\Omega\) amb \(\varphi\) és una carta local de \(p\) en \(S\).
+	\end{definition}
+	\begin{theorem}
+		\label{thm:ser superfície és equivalent a tenir cartes locals}
+		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt. Aleshores \(S\) és una superfície si i només si per a tot \(p\in S\) existeix una carta local de \(p\) en \(S\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		Volem veure que si tenim \(S\subseteq\mathbb{R}^{3}\) una superfície i \(\varphi\colon\Omega\longrightarrow\varphi(\Omega)\subseteq S\) una immersió injectiva, aleshores \(\Omega\) amb \(\varphi\) és una carta local si i només si \(\varphi\colon\Omega\longrightarrow\varphi(\Omega)\) és un homeomorfisme.
+		% Potser és només en una direcció (cap a la dreta).
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\subsection{Funcions diferenciables i l'espai tangent}
 \end{document}
