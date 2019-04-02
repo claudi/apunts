@@ -1,3 +1,1 @@
-Afegits detalls a la demostració d'una condició equivalent per la definició de superfície.
-He començat a utilitzar la notació de f(A) i f^{-1}(A) per imatges i antiimatges.
-Afegits alguns enunciats a geometria diferencial.
+Afegits enunciats fins començar la secció de la primera forma fonamental.

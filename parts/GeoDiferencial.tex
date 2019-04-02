@@ -1122,13 +1122,18 @@
 	\end{theorem}
 	\begin{definition}[Superfície]
 		\labelname{superfície}\label{def:superfície}
-		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt tal que per a tot \(p\in S\) existeix un obert \(\obert{U}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que \(g(\obert{U}\cap S)=g(\obert{U})\cap\mathbb{R}^{2}\times\{0\}\). Aleshores direm que \(S\) és una superfície regular.
+		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt tal que per a tot \(p\in S\) existeix un entorn obert \(\obert{U}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que
+		\[g(\obert{U}\cap S)=g(\obert{U})\cap(\mathbb{R}^{2}\times\{0\}).\]
+		Aleshores direm que \(S\) és una superfície regular.
 	\end{definition}
 	\begin{theorem}
 		\label{thm:condicions equivalents a la definició de superfície}
-		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt. Aleshores \(S\) és una superfície si i només si per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que \(S\cap\obert{U}=F^{-1}(\{0\})\).
+		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt. Aleshores \(S\) és una superfície si i només si per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que
+		\[S\cap\obert{U}=F^{-1}(\{0\}).\]
 		\begin{proof}
-			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(S\) és una superfície. Per la definició de \myref{def:superfície} trobem que que per a tot \(p\in S\) existeix un entorn obert \(\obert{U}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que \(g(\obert{U}\cap S)=g(\obert{U})\cap\mathbb{R}^{2}\times\{0\}\). Considerem la funció
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(S\) és una superfície. Per la definició de \myref{def:superfície} trobem que que per a tot \(p\in S\) existeix un entorn obert \(\obert{U}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que
+			\[g(\obert{U}\cap S)=g(\obert{U})\cap(\mathbb{R}^{2}\times\{0\}).\]
+			Considerem la funció
 			\begin{align*}
 				F\colon\obert{U}&\longrightarrow\mathbb{R} \\
 				x&\longmapsto(\pi_{3}\circ g)(x).
@@ -1140,7 +1145,7 @@
 			\end{align*}
 			i hem acabat.
 			
-			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que \(S\cap\obert{U}=F^{-1}(\{0\})\). Pel \myref{thm:Teorema d'estructura local de les submersions} tenim que per a tot \(p\in S\) existeix un obert \(\obert{U}'\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{U}'\longleftrightarrow\Ima_{\obert{U}'}(g)\subseteq\mathbb{R}^{n}\) tals que
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que \(S\cap\obert{U}=F^{-1}(\{0\})\). Pel \myref{thm:Teorema d'estructura local de les submersions} tenim que per a tot \(p\in S\) existeix un obert \(\obert{U}'\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{U}'\longleftrightarrow g(\obert{U}')\subseteq\mathbb{R}^{n}\) tals que
 			\[F(x)=(\pi_{3}\circ g)(x).\]
 			
 			Aleshores tenim que
@@ -1151,7 +1156,8 @@
 				&=g^{-1}(\mathbb{R}^{2}\times\{0\}),
 			\end{align*}
 			i per tant tenim
-			\[g(S\cap\obert{U}')\subseteq g(g^{-1}(\mathbb{R}^{2}\times\{0\}))=\mathbb{R}^{2}\times\{0\}\qedhere\]
+			\[g(S\cap\obert{U}')\subseteq g(g^{-1}(\mathbb{R}^{2}\times\{0\}))=\mathbb{R}^{2}\times\{0\}\]
+			continuar
 			%TODO continuar. Revisar que no l'hagi cagat
 		\end{proof}
 	\end{theorem}
@@ -1163,7 +1169,7 @@
 	\end{example}
 	\begin{definition}[Carta local]
 		\labelname{carta local}\label{def:carta local}
-		Sigui \(S\subseteq\mathbb{R}^{3}\) un conjunt i \(p\in S\)un punt tals que existeix un entorn obert \(\obert{U}\) de \(p\) i una aplicació \(\varphi\colon\Omega\longrightarrow S\cap\obert{U}\) que és una immersió i un homeomorfisme. Aleshores direm que \(\Omega\) amb \(\varphi\) és una carta local de \(p\) en \(S\).
+		Sigui \(S\subseteq\mathbb{R}^{3}\) un conjunt i \(p\in S\) un punt tals que existeix un entorn obert \(\obert{U}\) de \(p\), un conjunt \(\Omega\subseteq\mathbb{R}^{3}\) i una aplicació \(\Psi\colon\Omega\longrightarrow S\cap\obert{U}\) que és una immersió i un homeomorfisme. Aleshores direm que \(\Omega\) amb \(\Psi\) és una carta local de \(p\) en \(S\).
 	\end{definition}
 	\begin{theorem}
 		\label{thm:ser superfície és equivalent a tenir cartes locals}
@@ -1173,11 +1179,77 @@
 		\end{proof}
 	\end{theorem}
 	\begin{example}
-		Volem veure que si tenim \(S\subseteq\mathbb{R}^{3}\) una superfície i \(\varphi\colon\Omega\longrightarrow\varphi(\Omega)\subseteq S\) una immersió injectiva, aleshores \(\Omega\) amb \(\varphi\) és una carta local si i només si \(\varphi\colon\Omega\longrightarrow\varphi(\Omega)\) és un homeomorfisme.
+		Volem veure que si tenim \(S\subseteq\mathbb{R}^{3}\) una superfície i \(\Psi\colon\Omega\longrightarrow\Psi(\Omega)\subseteq S\) una immersió injectiva, aleshores \(\Omega\) amb \(\Psi\) és una carta local si i només si \(\Psi\colon\Omega\longrightarrow\Psi(\Omega)\) és un homeomorfisme.
 		% Potser és només en una direcció (cap a la dreta).
 		\begin{solution}
 			%TODO
 		\end{solution}
 	\end{example}
 	\subsection{Funcions diferenciables i l'espai tangent}
+	% Veure com ho fa el Reventós (pàg. 96, en particular llegir les primeres línies de la 97). M'agrada més.
+	\begin{definition}[Funció diferenciable]
+		\labelname{funció diferenciable}\label{def:funció diferenciable}
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície i \(f\colon S\longrightarrow\mathbb{R}^{k}\) una funció tal que per a tot \(p\in S\) existeix una carta local \(\Omega\) amb \(\Psi\) satisfent \(p\in\Psi(\Omega)\) tals que
+		\[f\circ\Psi\colon\Omega\longrightarrow\mathbb{R}^{k}\]
+		és un difeomorfisme. Aleshores direm que \(f\) és diferenciable.
+	\end{definition}
+	\begin{theorem}
+		\label{thm:la composició de parametritzacions locals és una funció diferenciable}
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície i \(\Omega_{1}\) amb \(\Psi_{1}\) i \(\Omega_{2}\) amb \(\Psi_{2}\) dues parametritzacions locals de \(S\) amb
+		\[\Psi_{1}(\Omega_{1})\cap\Psi_{2}(\Omega_{2})\neq\emptyset.\]
+		Aleshores la funció
+		\[\Psi_{2}^{-1}\circ\Psi_{1}\colon\Omega_{1}\cap\Omega_{2}\longrightarrow\Omega_{1}\cap\Omega_{2}\]
+		és diferenciable.
+		\begin{proof}
+%			Prenem un element \(z\in\Psi_{1}(\Omega_{1})\cap\Psi_{2}(\Omega_{2})\). Aleshores tenim que existeixen dos punts \(x_{1}\in\Omega_{1}\) i \(x_{2}\in\Omega_{2}\) tals que \(\Psi_{1}(x_{1})=z\) i \(\Psi_{2}(x_{2})=z\).
+%			
+%			Com que, per hipòtesi, \(S\) és una superfície, per la definició de \myref{def:superfície} trobem que existeixen un entorn obert \(\obert{U}\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tals que
+%			\[g(\obert{U}\cap S)=g(\obert{U})\cap(\mathbb{R}^{2}\times\{0\}).\]
+%			%Ara això ha de ser un difeomorfisme d'alguna manera
+%			\[\pi_{1}\circ g\circ\Psi_{1}\]
+		\end{proof}
+	\end{theorem}
+	\begin{proposition}
+		\label{prop:per a tot punt i funció diferenciable d'una superfície podem trobar una segona funció diferenciable igual en un entorn del punt}
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(f\colon S\longrightarrow\mathbb{R}^{k}\) una funció diferenciable i \(p\in S\) un punt. Aleshores  existeix un entorn obert \(\obert{U}\subseteq\mathbb{R}^{3}\) de \(p\) i una funció diferenciable \(\tilde{f}\colon\obert{U}\longrightarrow\mathbb{R}^{k}\) tals que per a tot \(x\in S\cap\obert{U}\) tenim
+		\[f(x)=\tilde{f}(x).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Funció diferenciable entre superfícies]
+		\labelname{funció diferenciable entre superfícies}\label{def:funció diferenciable entre superfícies}
+		Siguin \(S_{1}\subseteq\mathbb{R}^{3}\) i \(S_{2}\subseteq\mathbb{R}^{3}\) dues superfícies i \(f\colon S_{1}\longrightarrow\mathbb{R}^{3}\) una funció diferenciable. Aleshores diem que la funció \(f\colon S_{1}\longleftarrow S_{2}\) és diferenciable.
+	\end{definition}
+	\begin{proposition}
+		Siguin \(S_{1}\subseteq\mathbb{R}^{3}\) i \(S_{2}\subseteq\mathbb{R}^{3}\) dues superfícies i \(f\colon S_{1}\longrightarrow S_{2}\) una funció. Aleshores \(f\) és diferenciable si i només si existeixen dues cartes locals \(\Omega_{1}\) amb \(\Psi_{1}\) i \(\Omega_{2}\) amb \(\Psi_{2}\) de \(S_{1}\) i \(S_{2}\), respectivament, satisfent que existeix un \(p\in\Psi_{1}(\Omega_{1})\) i \(f(p)\in\Psi_{2}(\Omega_{2})\) i tals que l'aplicació
+		\[\Psi_{2}^{-1}\circ f\circ \Psi_{1}\colon\Omega_{1}\cap\Omega_{2}\longrightarrow\Omega_{1}\cap\Omega_{2}\]
+		és un difeomorfisme.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\section{Primera forma fonamental}
+	\section{Espai tangent a una superfície}
+	\begin{definition}[Vectors tangents]
+		\labelname{vectors tangents}\label{def:vectors tangents a una superfície}
+		\labelname{espai tangent}\label{def:espai tangent a una superfície}
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície i \(p\in S\) un punt. Aleshores direm que el conjunt
+		\[\EspaiTangent_{p}(S)=\{\alpha'(0)\in\mathbb{R}^{3}\mid\alpha\text{ és una corba regular en }S\text{ amb }\alpha(0)=p\}\]
+		és l'espai tangent a \(S\) en \(p\), i els elements de \(\EspaiTangent_{p}(S)\) són els vectors tangents a \(S\) en \(p\).
+	\end{definition}
+	\begin{definition}[Primera forma fonamental]
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície i \(p\in S\) un punt. Aleshores direm que l'aplicació
+		\begin{align*}
+			\PrimeraFormaFonamental_{p}\colon\EspaiTangent_{p}(S)\times\EspaiTangent_{p}(S)\colon&\longrightarrow\mathbb{R} \\
+			(\vec{u},\vec{w})&\longmapsto\prodesc{\vec{v}}{\vec{w}}
+		\end{align*}
+		és la primera forma fonamental de \(S\) en \(p\).
+	\end{definition}
+	\begin{proposition}
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(p\in S\) un punt i \(\Psi\) amb \(\Omega\) una carta local de \(S\) en \(p\). Aleshores
+		\[\PrimeraFormaFonamental_{p}(\vec{v},\vec{w})=\vec{v}^{t}\begin{bmatrix}
+			E & F \\ F & G
+		\end{bmatrix}\vec{w}.\]
+	\end{proposition}
 \end{document}
