@@ -851,7 +851,7 @@
 	\begin{example}[Grup ortogonal]
 		\labelname{}\label{ex:grup ortogonal}
 		Volem veure que el conjunt
-		\[\GrupOrtogonal(n)=\{A\in\matrius_{n\times n}(\mathbb{R})\mid\text{per a tot }\vec{u},\vec{v}\in\matrius_{n\times1}(\mathbb{R})\text{ tenim }\prodesc{A\vec{u}}{A\vec{v}}=\prodesc{\vec{u}}{\vec{v}}\}\]
+		\[\GrupOrtogonal(n)=\{A\in\matrius_{n}(\mathbb{R})\mid\text{per a tot }\vec{u},\vec{v}\in\matrius_{n\times1}(\mathbb{R})\text{ tenim }\prodesc{A\vec{u}}{A\vec{v}}=\prodesc{\vec{u}}{\vec{v}}\}\]
 		amb el producte de matrius és un grup.
 		\begin{solution}
 			%TODO
@@ -1062,7 +1062,7 @@
 			Aleshores tenim que
 			\[\det(dg(x_{0}))=\det(dF(x_{0})),\]
 			i per \eqref{thm:Teorema d'estructura local de les immersions:eq:1} trobem que
-			\[\det(dg(x_{0})\neq0,\]
+			\[\det(dg(x_{0}))\neq0,\]
 			i pel \myref{thm:Funció inversa} hem acabat.
 		\end{proof}
 	\end{theorem}
@@ -1169,7 +1169,7 @@
 	\end{example}
 	\begin{definition}[Carta local]
 		\labelname{carta local}\label{def:carta local}
-		Sigui \(S\subseteq\mathbb{R}^{3}\) un conjunt i \(p\in S\) un punt tals que existeix un entorn obert \(\obert{U}\) de \(p\), un conjunt \(\Omega\subseteq\mathbb{R}^{3}\) i una aplicació \(\Psi\colon\Omega\longrightarrow S\cap\obert{U}\) que és una immersió i un homeomorfisme. Aleshores direm que \(\Omega\) amb \(\Psi\) és una carta local de \(p\) en \(S\).
+		Sigui \(S\subseteq\mathbb{R}^{3}\) un conjunt i \(p\in S\) un punt tals que existeix un entorn obert \(\obert{U}\) de \(p\), un conjunt \(\Omega\subseteq\mathbb{R}^{2}\) i una aplicació \(\Psi\colon\Omega\longrightarrow S\cap\obert{U}\) que és una immersió i un homeomorfisme. Aleshores direm que \(\Omega\) amb \(\Psi\) és una carta local de \(p\) en \(S\).
 	\end{definition}
 	\begin{theorem}
 		\label{thm:ser superfície és equivalent a tenir cartes locals}
@@ -1238,6 +1238,12 @@
 		\[\EspaiTangent_{p}(S)=\{\alpha'(0)\in\mathbb{R}^{3}\mid\alpha\text{ és una corba regular en }S\text{ amb }\alpha(0)=p\}\]
 		és l'espai tangent a \(S\) en \(p\), i els elements de \(\EspaiTangent_{p}(S)\) són els vectors tangents a \(S\) en \(p\).
 	\end{definition}
+%	\begin{proposition}
+%		\label{prop:les derivades d'una parametrització en una carta local són base del pla}
+%		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(p\in S\) un punt i \(\Psi(u,v)\) amb \(\Omega\) una carta local de \(S\) en \(p\). Aleshores
+%		\[\left(\frac{\partial \Psi}{\partial u},\frac{\partial \Psi}{\partial v}\right)\]
+%		és una base de \(\mathbb{R}^{2}\).
+%	\end{proposition}
 	\begin{definition}[Primera forma fonamental]
 		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície i \(p\in S\) un punt. Aleshores direm que l'aplicació
 		\begin{align*}
@@ -1246,10 +1252,28 @@
 		\end{align*}
 		és la primera forma fonamental de \(S\) en \(p\).
 	\end{definition}
-	\begin{proposition}
-		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(p\in S\) un punt i \(\Psi\) amb \(\Omega\) una carta local de \(S\) en \(p\). Aleshores
-		\[\PrimeraFormaFonamental_{p}(\vec{v},\vec{w})=\vec{v}^{t}\begin{bmatrix}
+	\begin{note}
+		Després justificaré això però tenim
+		\[\PrimeraFormaFonamental_{p}(\vec{v},\vec{w})=\vec{v}^{\transposta}\begin{bmatrix}
 			E & F \\ F & G
-		\end{bmatrix}\vec{w}.\]
+		\end{bmatrix}\vec{w}\]
+		i si \(\Psi=\Psi(u,v)\), denotant
+		\[\Psi_{u}=\frac{\partial\Psi}{\partial u}\quad\text{i}\quad\Psi_{v}=\frac{\partial\Psi}{\partial v}\]
+		tenim
+		\[\begin{bmatrix}
+			E & F \\ F & G
+		\end{bmatrix}=
+		\begin{bmatrix}
+			\prodesc{\Psi_{u}}{\Psi_{u}} & \prodesc{\Psi_{u}}{\Psi_{v}} \\ \prodesc{\Psi_{u}}{\Psi_{v}} & \prodesc{\Psi_{v}}{\Psi_{v}}
+		\end{bmatrix}.\]
+	\end{note}
+	\subsection{Longitud d'una corba}
+	\begin{proposition}
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(\Psi\) amb \(\Omega\) una carta local de \(S\) i \(\alpha\) una corba en \(\Psi(\Omega)\). Aleshores
+		\[\funciolongituddarc_{\alpha}(t_{0})(t)=\int_{t_{0}}^{t}\sqrt{Eu'(\tau)^{2}+2Fu'(\tau)v'(\tau)+Gv'(\tau)^{2}}\diff \tau.\]
 	\end{proposition}
+	
+%	\begin{proposition}
+%		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(p\in S\) un punt i \(\Psi\) amb \(\Omega\) una carta local de \(S\) en \(p\). Aleshores
+%	\end{proposition}
 \end{document}

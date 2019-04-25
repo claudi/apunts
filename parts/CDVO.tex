@@ -1282,7 +1282,7 @@
 		Siguin \(\{A_{i}\}_{i\in I}\) un conjunt finit de conjunts amb \(c(A_{i})=0\) per a tot \(i\in I\) i \(A=\bigcup_{i\in I}A_{i}\). Aleshores \(c\left(A\right)=0\).
 	\end{observation}
 	\begin{theorem}
-		Siguin \(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada. Aleshores \(f\) és integrable Riemann en \(\mathfrak{R}\) si i només si el contingut exterior de Jordan del conjunt de desigualtats majors que \(\tau>0\) de \(f\) en \(\mathfrak{R}\) és cero, és a dir, \(c(D_{\tau})=0\) per a tot \(\tau>0\).
+		Siguin \(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle i \(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada. Aleshores \(f\) és integrable Riemann en \(\mathfrak{R}\) si i només si el contingut exterior de Jordan del conjunt de desigualtats majors que \(\tau>0\) de \(f\) en \(\mathfrak{R}\) és zero, és a dir, \(c(D_{\tau})=0\) per a tot \(\tau>0\).
 		\begin{proof}
 			Comencem amb la implicació cap a l'esquerra (\(\implicatper\)). Suposem doncs que \(D_{\tau}=0\) per a tot \(\tau>0\). Per la definició de \myref{def:contingut exterior de Jordan} això és
 			\[\sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}1_{D_{\tau}}(x)\abs{\mathfrak{R}_{i}}=0\]
@@ -1294,10 +1294,10 @@
 			\[\sup_{x\in \mathfrak{R}_{j}}f(x)-\inf_{x\in \mathfrak{R}_{j}}f(x)\geq\tau\]
 			per a tot \(j\in J\), i per tant, amb \(\mathfrak{R}'=\bigcup_{j\in J}\mathfrak{R}_{j}\), per la definició de \myref{def:contingut exterior de Jordan}
 			\begin{align*}
-			\sum_{j\in J}\left(\sup_{x\in \mathfrak{R}_{j}}f(x)-\inf_{x\in \mathfrak{R}_{j}}f(x)\right)\abs{\mathfrak{R}_{j}}&\geq\sum_{j\in J}\tau\abs{\mathfrak{R}_{j}}\\
-			&=\tau\sum_{j\in J}\abs{\mathfrak{R}_{j}}\\
-			&\geq\tau\sum_{j\in I}\inf_{x\in \mathfrak{R}_{j}}1_{\mathfrak{R}'}(x)\abs{\mathfrak{R}_{j}}\\
-			&=\tau c(D_{\tau})
+				\sum_{j\in J}\left(\sup_{x\in \mathfrak{R}_{j}}f(x)-\inf_{x\in \mathfrak{R}_{j}}f(x)\right)\abs{\mathfrak{R}_{j}}&\geq\sum_{j\in J}\tau\abs{\mathfrak{R}_{j}}\\
+				&=\tau\sum_{j\in J}\abs{\mathfrak{R}_{j}}\\
+				&\geq\tau\sum_{j\in I}\inf_{x\in \mathfrak{R}_{j}}1_{\mathfrak{R}'}(x)\abs{\mathfrak{R}_{j}}\\
+				&=\tau c(D_{\tau})
 			\end{align*}
 			Ara bé, com que \(f\) és integrable, pel \myref{thm:Criteri d'integrabilitat Riemann} tenim que
 			\[\sum_{j\in J}\left(\sup_{x\in \mathfrak{R}_{j}}f(x)-\inf_{x\in \mathfrak{R}_{j}}f(x)\right)\abs{\mathfrak{R}_{j}}<\varepsilon\]
