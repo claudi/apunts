@@ -221,21 +221,24 @@
 	\begin{definition}[Equació diferencial ordinària]
 		\labelname{equació diferencial ordinària}\label{def:equació diferencial ordinària}
 		Siguin \(\Omega\subseteq\mathbb{R}\times\mathbb{R}^{n}\) un conjunt i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció. Aleshores direm que l'expressió
-		\[\frac{\partial u(t)}{\partial t}=f(t,u(t))\]
+		\[\frac{\diff u(t)}{\diff t}=f(t,u(t))\]
 		és una equació diferencial ordinària sobre \(\Omega\).
+		
+		Denotarem
+		\[\dot{u}(t)=f(t,u(t)).\]
 	\end{definition}
 	\begin{definition}[Solució d'una equació diferencial ordinària]
 		\labelname{solució d'un equació diferencial ordinària}\label{def:solució d'una equació diferencial ordinària}
 		Siguin
-		\[\frac{\partial u(t)}{\partial t}=f(t,u(t))\]
+		\[\dot{u}(t)=f(t,u(t))\]
 		una equació diferencial ordinària sobre \(\Omega\), \(I\subseteq\mathbb{R}\) un interval i \(u\colon I\longrightarrow\mathbb{R}^{n}\) una funció tal que per a tot \(t\in I\) es satisfà que \((t,u(t))\in\Omega\) i que \(u\) és derivable en \(I\) amb \(u'(t)=f(t,u(t))\). Aleshores direm que \(u\) és una solució de l'equació diferencial ordinària
-		\[\frac{\partial u(t)}{\partial t}=f(t,u(t)).\]
+		\[\dot{u}(t)=f(t,u(t)).\]
 	\end{definition}
 	\begin{example}	
 		\label{ex:exemple d'una equació diferencial 1}
 		\label{ex:exemple edos de la exponencial}
 		Volem trobar una solució a l'equació diferencial ordinària
-		\[\frac{\partial u(t)}{\partial t}=u(t).\]
+		\[\dot{u}(t)=u(t).\]
 		\begin{solution}
 			\(e^{t}K\).
 		\end{solution}
@@ -244,14 +247,14 @@
 		\labelname{problema de Cauchy}\label{def:problema de Cauchy}
 		\labelname{solució d'un problema de Cauchy}\label{def:solució d'un problema de Cauchy}
 		Sigui
-		\[\frac{\partial u(t)}{\partial t}=f(t,u(t))\]
+		\[\dot{u}(t)=f(t,u(t))\]
 		una equació diferencial ordinària sobre \(\Omega\) i \((t_{0},x_{0})\in\Omega\) un punt. Aleshores direm que el sistema
 		\[\begin{cases*}
-			\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+			\displaystyle \dot{u}(t)=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases*}\]
 		és un problema de Cauchy sobre \(\Omega\). Direm que una solució d'aquest problema de Cauchy és una funció \(u\) tal que \(u\) és solució de l'equació diferencial
-		\[\frac{\partial u(t)}{\partial t}=f(t,u(t))\]
+		\[\dot{u}(t)=f(t,u(t))\]
 		i es satisfà \(u(t_{0})=x_{0}\).
 		
 		Això té sentit per la definició de \myref{def:solució d'una equació diferencial ordinària}.
@@ -260,7 +263,7 @@
 		\label{obs:solució general d'un problema de Cauchy}
 		Sigui
 		\[\begin{cases*}
-			\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+			\displaystyle \dot{u}(t)=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases*}\]
 		un problema de Cauchy sobre \(\Omega\). Aleshores una funció \(u\) és una solució d'aquest sistema si i només si
@@ -268,11 +271,11 @@
 %		\begin{proof}
 %			Comencem veient que la condició és necessària (\(\implica\)). Suposem doncs que \(u\) és una solució del problema de Cauchy
 %			\[\begin{cases*}
-%				\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+%				\displaystyle \dot{u}(t)=f(t,u(t)) \\
 %				\displaystyle u(t_{0})=x_{0}.
 %			\end{cases*}\]
 %			Per la definició de \myref{def:solució d'un problema de Cauchy} trobem que\(u\) és solució de l'equació diferencial
-%			\[\frac{\partial u(t)}{\partial t}=f(t,u(t)),\]
+%			\[\dot{u}(t)=f(t,u(t)),\]
 %			i per la definició de \myref{def:solució d'una equació diferencial ordinària} trobem que existeix un interval \(I\) tal que es satisfà \(u'(t)=f(t,u(t))\) per a tot \(t\in I\). Pel \myref{thm:Teorema Fonamental del Càlcul} trobem que
 %			\[u(t)=\int_{\inf(I)}^{t}f(s,u(s))\diff s\]
 %		\end{proof}
@@ -295,7 +298,7 @@
 		\labelname{Teorema de Picard}\label{thm:Teorema de Picard}
 		Siguin \(a\) i \(b\) dos reals positius,
 		\[\begin{cases}
-			\displaystyle\frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+			\displaystyle\dot{u}(t)=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases}\]
 		un problema de Cauchy sobre \(\Omega=[t_{0}-a,t_{0}+a]\times\overline{\bola}(x_{0},b)\) i
@@ -369,7 +372,7 @@
 		\label{cor:Teorema de Picard}
 		Siguin \(I\subseteq\mathbb{R}\) un interval tancat i
 		\[\begin{cases}
-			\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+			\displaystyle \dot{u}(t)=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}.
 		\end{cases}\]
 		un problema de Cauchy sobre \(\Omega=I\times\mathbb{R}^{n}\) tal que \(f\) és una funció contínua i Lipschitz respecte la segona variable. Aleshores aquest problema de Cauchy té una única solució definida en l'interval \(I\).
@@ -467,7 +470,7 @@
 		\begin{equation}
 			\label{thm:Teorema de Peano:eq3}
 			\begin{cases}
-				\displaystyle\frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+				\displaystyle\dot{u}(t)=f(t,u(t)) \\
 				\displaystyle u(t_{0})=x_{0}
 			\end{cases}
 		\end{equation}
@@ -490,7 +493,7 @@
 			
 			Considerem el problema de Cauchy
 			\[\begin{cases}
-				\displaystyle\frac{\partial u(t)}{\partial t}=p_{m}(t,u(t)) \\
+				\displaystyle\dot{u}(t)=p_{m}(t,u(t)) \\
 				\displaystyle u(t_{0})=x_{0}
 			\end{cases}\] % Sobre \Omega?
 			sobre \(\Omega\). Com que \(p_{m}\) és un polinomi, per l'exemple \myref{ex:els polinomis són funcions Lipschitz respecte la segona variable} trobem que \(p_{m}\) és Lipschitz respecte la segona variable, i pel \myref{thm:Teorema de Picard} trobem que, per a tot \(m>n_{0}\) aquest problema de Cauchy té una única solució, \(\varphi_{m}\), definida sobre l'interval
@@ -534,7 +537,7 @@
 		\label{cor:Teorema de Peano}
 		Siguin
 		\[\begin{cases}
-			\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+			\displaystyle \dot{u}(t)=f(t,u(t)) \\
 			\displaystyle x(t_{0})=x_{0}
 		\end{cases}\]
 		un problema de Cauchy sobre \(\Omega\) tal que \(f\) sigui contínua i \(\Omega\) sigui obert, i \(K\subseteq\Omega\) un compacte. Aleshores existeix un real \(\alpha>0\) tal que per a tot punt \((t_{0},x_{0})\) de \(K\) aquest problema de Cauchy té una solució sobre l'interval
@@ -550,7 +553,7 @@
 		\begin{equation}
 			\label{def:conjunt de solucions d'un problema de Cauchy:eq1}
 			\begin{cases}
-				\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(x)) \\
+				\displaystyle \dot{u}(t)=f(t,u(x)) \\
 				\displaystyle u(t_{0})=x_{0}
 			\end{cases}
 		\end{equation}
@@ -589,11 +592,12 @@
 	\begin{definition}[Prolongació]
 		\labelname{prolongació}\label{def:prolongació}
 		\labelname{solució improrrogable}\label{def:solució improrrogable}
+		\labelname{solució maximal}\label{def:solució maximal}
 		Siguin \(A(t_{0},x_{0})\) el conjunt de solucions d'un problema de Cauchy i \((I,u)\) i \((J,v)\) dos elements de \(A(t_{0},x_{0})\) tals que
 		\[J\subseteq I\quad\text{i}\quad u(x)=v(x)\text{ per a tot }x\in J.\]
 		Aleshores direm que \((I,u)\) és una prolongació de \((J,v)\).
 		
-		Si \((I,u)\) és un element maximal direm que \((I,u)\) és una solució improrrogable.
+		Si \((I,u)\) és un element maximal direm que \((I,u)\) és una solució improrrogable i que \(u\) és una solució maximal.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:existeixen solucions improrrogables}
@@ -619,7 +623,7 @@
 		\label{prop:la solució improrrogable és única}
 		Sigui
 		\[\begin{cases}
-			\displaystyle \frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+			\displaystyle \dot{u}(t)=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases}\]
 		un problema de Cauchy sobre \(\Omega\) amb \(f\) contínua tal aquest tingui una única solució per a tot \((t_{0},x_{0})\in\Omega\). Aleshores per a cada \((t_{0},x_{0})\in\Omega\) aquest problema de Cauchy té una única solució improrrogable.
@@ -630,7 +634,7 @@
 	\begin{theorem}[Lema de Wintner]
 		\labelname{lema de Wintner}\label{thm:Lema de Wintner}
 		Siguin \(\Omega\subseteq\mathbb{R}\times\mathbb{R}^{n}\) un obert i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua, \((\varphi,I)\) una solució de l'equació diferencial
-		\[\frac{\partial u(t)}{\partial t}=f(t,u(t))\]
+		\[\dot{u}(t)=f(t,u(t))\]
 		i \((b,y)\) un punt d'acumulació de la gràfica de \(\varphi\) en \(\Omega\). Aleshores
 		\[\lim_{t\to b}\varphi(t)=y\]
 		i existeix una solució \((J,v)\) de l'equació diferencial tal que \(I\subseteq J\) i \(b\in J\).
@@ -662,7 +666,7 @@
 		\labelname{continuïtat respecte les condicions inicials}\label{thm:continuitat respecte les condicions inicials}
 		Siguin \(\Omega\) un obert de \(\mathbb{R}\times\mathbb{R}^{n}\), \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua tal que per a cada punt \((t_{0},x_{0})\) de \(\Omega\) el problema de Cauchy
 		\[\begin{cases}
-			\frac{\partial u(t)}{\partial t}=f(t,u(t)) \\
+			\dot{u}(t)=f(t,u(t)) \\
 			u(t_{0})=x_{0}
 		\end{cases}\]
 		té una única solució maximal \(\varphi_{t_{0},x_{0}}\) definida en un interval \(I_{t_{0},x_{0}}\) i
@@ -688,7 +692,7 @@
 		\labelname{equació diferencial ordinària d'odre \ensuremath{n}}\label{def:equació diferencial ordinària d'ordre n}
 		\labelname{solució de l'equació diferencial ordinària}\label{def:solució de l'equació diferencial ordinària}
 		Siguin \(\Omega=\mathbb{R}\times\mathbb{R}^{n}\) un conjunt i \(F\colon\Omega\longrightarrow\mathbb{R}^{m}\), \(u\colon\mathbb{R}\longrightarrow\mathbb{R}^{m}\) dues funcions tals que
-		\[\frac{\partial^{n}u(t)}{\partial x^{n}}=F\left(t,u(t),\frac{\partial u(t)}{\partial t},\dots,\frac{\partial^{n-1}u(t)}{\partial x^{n-1}}\right).\]
+		\[\frac{\diff^{n}u(t)}{\diff x^{n}}=F\left(t,u(t),\dot{u}(t),\dots,\frac{\diff^{n-1}u(t)}{\diff x^{n-1}}\right).\]
 		Aleshores direm que
 		és una equació diferencial ordinària. També direm que \(t\) és la variable temporal, \(u(t)\) la variable espacial.
 	\end{definition}
@@ -697,7 +701,7 @@
 		Siguin \(I\) un interval tancat i acotat de \(\mathbb{R}\) i \(f\colon I\longrightarrow\mathbb{R}^{m}\) una funció contínua. Aleshores l'equació diferencial ordinària d'ordre \(1\)
 		\begin{equation}
 			\label{edos1:prop1:eq1}
-			\frac{\partial u(t)}{\partial t}=f(u(t)).
+			\dot{u}(t)=f(u(t)).
 		\end{equation}
 		té una única solució de la forma
 		\[u(t)=\int_{x_{0}}^{x}f(u(t))\diff t.\]
@@ -718,7 +722,7 @@
 		\begin{equation}
 			\label{prop:problema de Cauchy:eq1}
 			\begin{cases}
-				\displaystyle \frac{\partial u(t)}{\partial t}=f(x) \\
+				\displaystyle \dot{u}(t)=f(x) \\
 				\displaystyle u(t_{0})=x_{0}
 			\end{cases}
 		\end{equation}
@@ -728,7 +732,7 @@
 		\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{f(t)}.\]
 		\begin{proof}
 			Observem que, per la definició de \myref{def:equació diferencial ordinària d'ordre n} l'equació
-			\[\frac{\partial u(t)}{\partial t}=f(x)\]
+			\[\dot{u}(t)=f(x)\]
 			és una equació ordinària d'orde \(1\).
 			
 			Com que, per hipòtesi, tenim \(f(x)\neq0\) per a tot \(x\) de \((a,b)\) trobem que la funció \(\frac{1}{f(x)}\) és derivable %REF
@@ -737,23 +741,23 @@
 			Pel \myref{thm:Teorema Fonamental del Càlcul} tenim que
 			\begin{equation}
 				\label{prop:problema de Cauchy:eq2}
-				\frac{\partial F(x)}{\partial x}=\frac{1}{f(x)},
+				\frac{\diff F(x)}{\diff x}=\frac{1}{f(x)},
 			\end{equation}                
 			i com que \(\frac{1}{f(x)}\neq0\) per a tot \(x\) de \((a,b)\) tenim que \(F(x)\) és invertible en \((a,b)\). Denotem amb \(F^{-1}\) la seva inversa.
 			
 			Ara bé, tenim que
 			\begin{equation}
 				\label{prop:problema de Cauchy:eq3}
-				\frac{\partial F(u(t))}{\partial x}=1,
+				\frac{\diff F(u(t))}{\diff x}=1,
 			\end{equation}
 			ja que
 			\begin{align*}
-				\frac{\partial F(u(t))}{\partial x}&=\frac{\partial F(u(t))}{\partial u(t)}\frac{\partial u(t)}{\partial t}\tag{\myref{thm:regla de la cadena}}\\
-				&=\frac{1}{f(u(t))}\frac{\partial u(t)}{\partial t}\tag{\ref{prop:problema de Cauchy:eq2}}\\
+				\frac{\diff F(u(t))}{\diff x}&=\frac{\diff F(u(t))}{\diff u(t)}\dot{u}(t)\tag{\myref{thm:regla de la cadena}}\\
+				&=\frac{1}{f(u(t))}\dot{u}(t)\tag{\ref{prop:problema de Cauchy:eq2}}\\
 				&=\frac{1}{f(u(t))}f(u(t))=1.\tag{\ref{prop:problema de Cauchy:eq1}}\\
 			\end{align*}
 			I per tant, pel \myref{thm:Teorema Fonamental del Càlcul} trobem que
-			\[\int_{t_{0}}^{t}\frac{\partial F(u(t))}{\partial x}\diff x=F(u(t))-F(u(t_{0})),\]
+			\[\int_{t_{0}}^{t}\frac{\diff F(u(t))}{\diff x}\diff x=F(u(t))-F(u(t_{0})),\]
 			i per \eqref{prop:problema de Cauchy:eq2} trobem \(F(u(t))-F(u(t_{0}))=t-t_{0}\)
 			
 			Ara bé, per hipòtesi, tenim que \(u(t_{0})=x_{0}\), i trobem
@@ -773,12 +777,12 @@
 		\begin{equation}
 			\label{ex:edos problema de Cauchy 1:eq1}
 			\begin{cases}
-				\frac{\partial u(t)}{\partial t}=\alpha x^{2} \\
+				\dot{u}(t)=\alpha x^{2} \\
 				u(1)=1.
 			\end{cases}
 		\end{equation}
 		\begin{solution}
-			Observem que, per la definició de \myref{def:equació diferencial ordinària d'ordre n} que l'equació \(\frac{\partial u(t)}{\partial t}=\alpha x^{2}\) és una equació diferencial ordinària d'odre \(1\). Per la proposició \myref{prop:problema de Cauchy} trobem que les solucions de \eqref{ex:edos problema de Cauchy 1:eq1} són de la forma
+			Observem que, per la definició de \myref{def:equació diferencial ordinària d'ordre n} que l'equació \(\dot{u}(t)=\alpha x^{2}\) és una equació diferencial ordinària d'odre \(1\). Per la proposició \myref{prop:problema de Cauchy} trobem que les solucions de \eqref{ex:edos problema de Cauchy 1:eq1} són de la forma
 			\[u(t)=F^{-1}(x-1)\]
 			on
 			\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{\alpha t^{2}}.\]
@@ -794,7 +798,7 @@
 		Siguin \((a,b)\) i \((t_{1},t_{2})\) dos intervals oberts de \(\mathbb{R}\), \(f\colon(a,b)\longrightarrow\mathbb{R}\) i \(g\colon(t_{1},t_{2})\longrightarrow\mathbb{R}\) dues funcions contínues amb \(f(x)\neq0\) per a tot \(x\) de \((a,b)\), \(x_{0}\) un element de \((a,b)\) i \(t_{0}\) un element de \((t_{1},t_{2})\). Aleshores el problema de Cauchy
 		\begin{equation}
 			\begin{cases}
-				\displaystyle \frac{\partial u(t)}{\partial t}=g(x)f(u(t)) \\
+				\displaystyle \dot{u}(t)=g(x)f(u(t)) \\
 				\displaystyle u(t_{0})=x_{0}.
 			\end{cases}
 		\end{equation}
@@ -804,9 +808,9 @@
 		\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{f(t)}.\]
 		\begin{proof}
 			Com que, per hipòtesi, \(f(x)\neq0\) per a tot \(x\) de \((a,b)\) definim \(h=\frac{1}{f(u(t))}\) i observem que
-			\[h(u(t))\frac{\partial u(t)}{\partial t}=g(x)\]
+			\[h(u(t))\dot{u}(t)=g(x)\]
 			i per tant
-			\[\int h(u(t))\frac{\partial u(t)}{\partial t}\diff {x}=\int g(x)\diff x.\]
+			\[\int h(u(t))\dot{u}(t)\diff {x}=\int g(x)\diff x.\]
 			
 			Ara bé, per la \myref{thm:regla de la cadena} i el \myref{thm:Teorema Fonamental del Càlcul} tenim que això és
 			\[H(x)=G(x)+C\]
@@ -826,7 +830,7 @@
 		\begin{equation}
 			\label{ex:equacions de variables separades:eq1}
 			\begin{cases}
-				\displaystyle \frac{\partial u(t)}{\partial t}=\frac{u(t)^{3}x}{\sqrt{1+x^{2}}} \\
+				\displaystyle \dot{u}(t)=\frac{u(t)^{3}x}{\sqrt{1+x^{2}}} \\
 				u(0)=1.
 			\end{cases}
 		\end{equation}
@@ -834,7 +838,7 @@
 			Definim
 			\[f(u(t))=u(t)^{-3}\quad\text{i}\quad g(x)=\frac{x}{\sqrt{1+x^{2}}}.\]
 			Per tant tenim que
-			\[f(u(t))\frac{\partial u(t)}{\partial t}=g(x)\]
+			\[f(u(t))\dot{u}(t)=g(x)\]
 			
 			Observem que
 			\[u(t)=\int_{x_{0}}^{x}\frac{yu(t)}{\sqrt{1+y^{2}}}\diff x\]
@@ -852,7 +856,7 @@
 		\begin{equation}
 			\label{prop:equacions diferencials lineals:eq1}
 			\begin{cases}
-				\displaystyle \frac{\partial u(t)}{\partial t}=a(t)u(t)+b(t)\\
+				\displaystyle \dot{u}(t)=a(t)u(t)+b(t)\\
 				\displaystyle u(t_{0})=x_{0}.
 			\end{cases}
 		\end{equation}
@@ -865,16 +869,16 @@
 				u(t)=c(x)e^{\int_{t_{0}}^{x}a(s)\diff s}.
 			\end{equation}
 			Aleshores pel \myref{thm:Teorema Fonamental del Càlcul} tenim %I ref de la derivada del producte
-			\[\frac{\partial u(t)}{\partial t}=\frac{\partial c(x)}{\partial x}e^{\int_{t_{0}}^{x}a(s)\diff s}+c(x)a(x)e^{\int_{t_{0}}^{x}a(s)\diff s}\]
+			\[\dot{u}(t)=\frac{\diff c(x)}{\diff x}e^{\int_{t_{0}}^{x}a(s)\diff s}+c(x)a(x)e^{\int_{t_{0}}^{x}a(s)\diff s}\]
 			i per \eqref{prop:equacions diferencials lineals:eq1} i \eqref{prop:equacions diferencials lineals:eq2} tenim
-			\[a(t)u(t)+b(t)=\frac{\partial c(x)}{\partial x}e^{\int_{t_{0}}^{x}a(s)\diff s}+a(x)u(t).\]
+			\[a(t)u(t)+b(t)=\frac{\diff c(x)}{\diff x}e^{\int_{t_{0}}^{x}a(s)\diff s}+a(x)u(t).\]
 			Per tant trobem
-			\[\frac{\partial c(x)}{\partial x}=b(x)e^{\int_{t_{0}}^{x}a(s)\diff s}\]
+			\[\frac{\diff c(x)}{\diff x}=b(x)e^{\int_{t_{0}}^{x}a(s)\diff s}\]
 			i tenim
 			\begin{equation}
 				\label{prop:equacions diferencials lineals:eq3}
 				\begin{cases}
-					\displaystyle \frac{\partial c(x)}{\partial x}=b(x)e^{\int_{t_{0}}^{x}a(s)\diff s}\\
+					\displaystyle \frac{\diff c(x)}{\diff x}=b(x)e^{\int_{t_{0}}^{x}a(s)\diff s}\\
 					\displaystyle c(t_{0})=x_{0}.
 				\end{cases}
 			\end{equation}
