@@ -233,4 +233,45 @@
 %		In a right triangle, the square of the hypotenuse is equal to the sum of the squares of the catheti.
 %		\[a^2+b^2=c^2\]
 %	\end{history}
+	\section{Equacions diferencials ordinàries \rom{1}}
+	\subsection{Teoria qualitativa}
+	\begin{observation}
+		\label{obs:podem entendre les equacions diferencials autònomes com camps vectorials}
+		Sigui
+		\[\dot{u}(t)=X(u(t))\]
+		una equació diferencial autònoma sobre un obert \(\obert{U}\subseteq\mathbb{R}^{n}\) amb \(X\in\mathcal{C}^{1}\). Aleshores la funció \(X\) és un camp vectorial.
+	\end{observation}
+	\begin{definition}[Òrbites]
+		\labelname{òrbita d'una equació diferencial}\label{def:òrbita d'una equació diferencial}
+		Sigui \(\varphi\) una solució d'una equació diferencial autònoma
+		\[\dot{u}(t)=X(u(t))\]
+		on \(X\in\mathcal{C}^{1}\). Aleshores direm que \(\varphi\) és una òrbita de l'equació diferencial \(\dot{u}(t)=X(u(t))\).
+%		
+%		Siguin
+%		
+%		\[\dot{u}(t)=X(u(t))\]
+%		una equació diferencial autònoma sobre un obert \(\obert{U}\subseteq\mathbb{R}^{n}\) i \(\varphi\) una solució de l'equació diferencial. Aleshores direm que \(\varphi\) és una òrbita de l'equació diferencial.
+	\end{definition}
+	\begin{proposition}
+		Siguin
+		\[\dot{u}(t)=X(u(t))\]
+		una equació diferencial autònoma sobre un obert \(\obert{U}\subseteq\mathbb{R}^{n}\) amb \(X\in\mathcal{C}^{1}\) i \(x\in\obert{U}\) un punt. Aleshores existeix una solució maximal \(\varphi_{x}\) tal que \(\varphi_{x}(0)=x\).
+		\begin{proof}
+			Considerem el problema de Cauchy
+			\[\begin{cases*}
+				\displaystyle \dot{u}(t)=X(u(t)) \\
+				\displaystyle u(0)=x.
+			\end{cases*}\]
+			
+			Aleshores per la proposició \myref{prop:existeixen solucions improrrogables} tenim que existeix una solució maximal \(\varphi_{x}\) d'aquest problema de Cauchy, i per la definició de \myref{def:problema de Cauchy} trobem que \(\varphi_{x}(0)=x\) i hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Flux]
+		\labelname{flux}\label{def:flux}
+		Siguin
+		\[\dot{u}(t)=X(u(t))\]
+		una equació diferencial autònoma sobre un obert \(\obert{U}\subseteq\mathbb{R}^{n}\) amb \(X\in\mathcal{C}^{1}\), \(x\in\obert{U}\) un punt i \(\varphi_{x}\) la solució maximal tal que \(\varphi_{x}(0)=x\). Aleshores direm que \(\varphi_{x}\) és el flux de \(x\).
+	\end{definition}
+	
+	
 \end{document}

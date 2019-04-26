@@ -2,49 +2,10 @@
 
 \begin{document}
 \part{Equacions diferencials ordinàries \rom{2}}
-\chapter{Sistemes autònoms al pla}
-%	\emph{\hypersetup{urlcolor=black}\href{https://www.urbandictionary.com/define.php?term=wtf}{wtf} is this assignatura}
-\section{Trajectòries d'una equació diferencial}
-	\subsection{Sistemes autònoms a \ensuremath{\mathbb{R}^{n}}}
-	\begin{observation}
-		\label{obs:podem entendre les equacions diferencials autònomes com camps vectorials}
-		Sigui
-		\[\dot{u}(t)=X(u(t))\]
-		una equació diferencial autònoma sobre un obert \(\obert{U}\subseteq\mathbb{R}^{n}\) amb \(X\in\mathcal{C}^{1}\). Aleshores la funció \(X\) és un camp vectorial.
-	\end{observation}
-	\begin{definition}[Trajectòries]
-		\labelname{trajectòries}\label{def:trajectòries d'una equació diferencial}
-		Sigui \(\varphi\) una solució d'una equació diferencial autònoma
-		\[\dot{u}(t)=X(u(t))\]
-		on \(X\in\mathcal{C}^{1}\). Aleshores direm que \(\varphi\) és una trajectòria de l'equació diferencial \(\dot{u}(t)=X(u(t))\).
-%		
-%		Siguin
-%		
-%		\[\dot{u}(t)=X(u(t))\]
-%		una equació diferencial autònoma sobre un obert \(\obert{U}\subseteq\mathbb{R}^{n}\) i \(\varphi\) una solució de l'equació diferencial. Aleshores direm que \(\varphi\) és una trajectòria de l'equació diferencial.
-	\end{definition}
-	\begin{proposition}
-		Siguin
-		\[\dot{u}(t)=X(u(t))\]
-		una equació diferencial autònoma sobre un obert \(\obert{U}\subseteq\mathbb{R}^{n}\) amb \(X\in\mathcal{C}^{1}\) i \(x\in\obert{U}\) un punt. Aleshores existeix una solució maximal \(\varphi_{x}\) tal que \(\varphi_{x}(0)=x\).
-		\begin{proof}
-			Considerem el problema de Cauchy
-			\[\begin{cases*}
-				\displaystyle \dot{u}(t)=X(u(t)) \\
-				\displaystyle u(0)=x.
-			\end{cases*}\]
-			
-			Aleshores per la proposició \myref{prop:existeixen solucions improrrogables} tenim que existeix una solució maximal \(\varphi_{x}\) d'aquest problema de Cauchy, i per la definició de \myref{def:problema de Cauchy} trobem que \(\varphi_{x}(0)=x\) i hem acabat.
-		\end{proof}
-	\end{proposition}
-	\begin{definition}[Flux]
-		\labelname{flux}\label{def:flux}
-		Siguin
-		\[\dot{u}(t)=X(u(t))\]
-		una equació diferencial autònoma sobre un obert \(\obert{U}\subseteq\mathbb{R}^{n}\) amb \(X\in\mathcal{C}^{1}\), \(x\in\obert{U}\) un punt i \(\varphi_{x}\) la solució maximal tal que \(\varphi_{x}(0)=x\). Aleshores direm que \(\varphi_{x}\) és el flux de \(x\).
-	\end{definition}
-	
 \begin{comment}
+%	\emph{\hypersetup{urlcolor=black}\href{https://www.urbandictionary.com/define.php?term=wtf}{wtf} is this assignatura}
+\section{Òrbites d'una equació diferencial}
+	\subsection{Sistemes autònoms a \ensuremath{\mathbb{R}^{n}}}
 \section{Sistemes autònoms a \ensuremath{\mathbb{R}^{n}}}
 %	\subsection{Interpretació geomètrica} % Justificació dels retrats de fase? Això a EDOS I
 	\subsection{Estructura de les òrbites}
@@ -59,7 +20,7 @@
 	\subsection{Teorema del flux tubular}
 	\subsection{Anàlisi qualitativa dels punts d'equilibri}
 	\subsection{Comportament límit de les òrbites}
-	\subsection{Teorema de Bendixson-Poincaré}
+	\subsection{Teorema de Poincaré-Bendixson}
 	\subsection{Funcions de Liapunov}
 	\subsection{Cicles límit}
 	\subsection{Criteri de Bendixson-Dulac}
@@ -78,4 +39,93 @@
 	\subsection{Separació de variables i sèries de Fourier}
 	\subsection{L'equació de Laplace}
 \end{comment}
+%	\subsection{Teorema del flux tubular}
+%	\begin{theorem}[Teorema del flux tubular]
+%		\labelname{Teorema del flux tubular}\label{thm:Teorema del flux tubular}
+%		\begin{proof}
+%			%TODO
+%		\end{proof}
+%	\end{theorem}
+%	\subsection{Teoremes massa difícils pels nostres cervells (i crèdits)}
+%	\begin{theorem}[Teorema de Hartman]
+%		\labelname{Teorema de Hartman}\label{thm:Teorema de Hartman}
+%	\end{theorem}
+%	\begin{theorem}[Teorema de Perron-Hadamard]
+%		\labelname{Teorema de Perron-Hadamard}\label{thm:Teorema de Perron-Hadamard}
+%	\end{theorem}
+
+\chapter{Sistemes autònoms al pla}
+%\section{Òrbites}
+%	\subsection{Sistemes autònoms a \ensuremath{\mathbb{R}^{n}}}
+%	\subsection{Interpretació geomètrica}
+%	\subsection{Estructura de les òrbites}
+%	\subsection{Superfícies invariants}
+%\section{Sistemes integrables}
+%	\subsection{Integral primera}
+%%	\subsection{Propietats dels sistemes integrables}
+%	\subsection{Sistemes potencials}
+%	\subsection{Sistemes Hamiltonians}
+%	\subsection{Model de Lotka-Voltera}
+\section{Sistemes no integrables}
+%	\subsection{Teorema del flux tubular}
+%	\subsection{Anàlisi qualitativa dels punts d'equilibri}
+	\subsection{Comportament límit de les òrbites} % 4.1 Equações Diferenciais Ordinárias
+	\begin{definition}[Conjunts \(\omega\)-límit i \(\alpha\)-límit]
+		\labelname{conjunt \ensuremath{\omega}-límit}\label{def:conjunt omega-límit}
+		\labelname{conjunt \ensuremath{\alpha}-límit}\label{def:conjunt alpha-límit}
+		Sigui \(\varphi_{x}\colon\mathbb{R}\longrightarrow\mathbb{R}^{n}\) l'òrbita d'un punt \(x\in\mathbb{R}^{n}\). Aleshores definim
+		\[\omega(x)=\{y\in\mathbb{R}^{n}\mid\text{existeix }(t_{n})_{n\in\mathbb{N}}\text{ amb }t_{n}\overset{n\to\infty}{\longrightarrow}+\infty\text{ tal que }\varphi_{x}(t_{n})\overset{n\to\infty}{\longrightarrow}y\}\]
+		com el conjunt \(\omega\)-límit de \(x\) i
+		\[\alpha(x)=\{y\in\mathbb{R}^{n}\mid\text{existeix }(t_{n})_{n\in\mathbb{N}}\text{ amb }t_{n}\overset{n\to\infty}{\longrightarrow}-\infty\text{ tal que }\varphi_{x}(t_{n})\overset{n\to\infty}{\longrightarrow}y\}\]
+		com el conjunt \(\alpha\)-límit de \(x\).
+	\end{definition}
+	\begin{observation}
+		Siguin \(x\in\mathbb{R}^{n}\) un punt i
+		\[\dot{x}=f(x)\quad\text{i}\quad\dot{x}=-f(x)\]
+		dues equacions diferencials. Aleshores el conjunt \(\omega\)-límit de \(x\) en la primera equació diferencial és el conjunt \(\alpha\)-límit de \(x\) en la segona equació diferencial i, anàlogament, el conjunt \(\alpha\)-límit de \(x\) en la primera equació diferencial és el conjunt \(\omega\)-límit de \(x\) en la segona equació diferencial.
+	\end{observation}
+	\begin{definition}[Conjunts invariants]
+		\labelname{conjunt positivament invariant}\label{def:conjunt positivament invariant}
+		\labelname{conjunt negativament invariant}\label{def:conjunt negativament invariant}
+		\labelname{conjunt invariant}\label{def:conjunt invariant}
+		Sigui \(\varphi_{x}\) l'òrbita d'un punt \(x\in\mathbb{R}^{n}\). Aleshores definim
+		\[\gamma^{+}(x)=\{\varphi_{x}(t)\mid t\geq0\},\quad\gamma^{-}(x)=\{\varphi_{x}(t)\mid t\leq0\}\quad\text{i}\quad\gamma(x)=\gamma^{+}(x)\cup\gamma^{-}(x),\]
+		i direm que un conjunt \(C\subseteq\mathbb{R}^{n}\) és positivament invariant si per a tot \(y\in C\) tenim que \(\gamma^{+}(y)\subseteq C\), que és negativament invariant si per a tot \(y\in C\) tenim que \(\gamma^{-}(y)\subseteq C\) i que és invariant si per a tot \(y\in C\) tenim que \(\gamma(y)\subseteq C\).
+	\end{definition}
+	\begin{theorem}
+		\label{thm:propietats topològiques dels omega-límits}
+		Siguin
+		\[\dot{x}=f(x)\]
+		una equació diferencial sobre \(\mathbb{R}^{n}\), \(\tancat{K}\) un compacte de \(\mathbb{R}^{n}\) i \(p\in\mathbb{R}^{n}\) un punt tals que \(\gamma^{+}(x)\subset\tancat{K}\). Aleshores
+		\begin{enumerate}
+			\item\label{enum1:thm:propietats topològiques dels omega-límits} \(\omega(x)\neq\emptyset\).
+			\item\label{enum2:thm:propietats topològiques dels omega-límits} \(\omega(x)\) és un tancat.
+			\item\label{enum3:thm:propietats topològiques dels omega-límits} \(\omega(x)=\omega(\varphi_{x}(t))\) per a tot \(t\in\mathbb{R}\).
+			\item\label{enum4:thm:propietats topològiques dels omega-límits} \(\omega(x)\) és connex.
+		\end{enumerate}
+		\begin{proof}
+			Comencem veient el punt \eqref{enum1:thm:propietats topològiques dels omega-límits}. Per hipòtesi tenim que \(\gamma^{+}(x)\subset\tancat{K}\). Ara bé, tenim que \(\varphi_{x}(0)=x\in\gamma^{+}(x)\), i per tant \(x\in\tancat{K}\) i tenim que \(\tancat{K}\neq\emptyset\). %TODO (pàg. 132 Equações Diferenciais Ordinárias)
+		\end{proof}
+	\end{theorem}
+	\subsection{Teorema de Poincaré-Bendixson}
+	\begin{definition}[Gràfic]
+		\labelname{gràfic}\label{def:gràfic}
+	\end{definition}
+	\begin{theorem}[Teorema de Poincaré-Bendixson]
+		\labelname{Teorema de Poincaré-Bendixson}\label{thm:Teorema de Poincaré-Bendixson}
+		Siguin \(\dot{x}=f(x)\) una equació diferencial en \(\Omega\subseteq\mathbb{R}^{2}\) amb un nombre finit de punts crítics i \(\tancat{K}\subseteq\Omega\) un compacte tal que \(\gamma^{+}(x)\subseteq\tancat{K}\). Aleshores
+		\begin{enumerate}
+			\item\label{enum1:thm:Teorema de Poincaré-Bendixson} si \(\omega(x)\) només conté punts crítics tenim que \(\omega(x)=\{p\}\).
+			\item\label{enum2:thm:Teorema de Poincaré-Bendixson} si \(\omega(x)\) conté punts crítics i punts regulars tenim que \(\omega(x)\) és un gràfic.
+			\item\label{enum3:thm:Teorema de Poincaré-Bendixson} si \(\omega(x)\) no conté punts crítics tenim que \(\omega(x)\) és una òrbita periòdica.
+		\end{enumerate}
+		\begin{proof}
+			Aquest enunciat té sentit pel Teorema \myref{thm:propietats topològiques dels omega-límits}. %TODO
+		\end{proof}
+	\end{theorem}
+	% 4.2 Equações Diferenciais Ordinárias
+%	\subsection{Funcions de Liapunov}
+	% 5 Lições de Equações Diferenciais Ordinárias
+%	\subsection{Cicles límit}
+	
 \end{document} 
