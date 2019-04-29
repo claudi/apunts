@@ -254,7 +254,7 @@
 			\[X=\{x\mid(x\in A)\land(x\notin A)\},\]
 			i per la tautologia \myref{taut:condició equivalent a conjunció} tenim que la relació \((x\in A)\land(x\notin A)\) és falsa. Per tant el conjunt \(X\) no té elements.
 			
-			La unicitat la tenim per l'axioma \myref{axiom:axioma d'extensionalitat}.
+			La unicitat la tenim per l'\myref{axiom:axioma d'extensionalitat}.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Conjunt buit]
@@ -398,7 +398,7 @@
 		\label{thm:composició d'exhaustives exhaustiva}
 		Siguin \(f\colon A\rightarrow B\) i \(g\colon B\rightarrow C\) dues aplicacions exhaustives. Aleshores l'aplicació \(g\circ f\) és exhaustiva.
 		\begin{proof}
-			Prenem un element \(c\in C\). Aleshores per la definició de \myref{def:aplicació exhaustiva} tenim que existeixen \(a\in A\) i \(b\in B\) tals que \(b=f(a)\) i \(c=g(b)\). Per tant per la definició de \myref{def:aplicació exhaustiva} tenim que \(g\circ f\) és una aplicació exhaustiva, ja que per a tot \(c\in C\) existeix \(a\in A\) tal que \((g\circ f)(a)=c\).
+			Prenem un element \(c\in C\). Aleshores per la definició d'\myref{def:aplicació exhaustiva} tenim que existeixen \(a\in A\) i \(b\in B\) tals que \(b=f(a)\) i \(c=g(b)\). Per tant per la definició d'\myref{def:aplicació exhaustiva} tenim que \(g\circ f\) és una aplicació exhaustiva, ja que per a tot \(c\in C\) existeix \(a\in A\) tal que \((g\circ f)(a)=c\).
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
@@ -421,7 +421,7 @@
 		\label{thm:unicitat de les inverses de les aplicacions bijectives}
 		Siguin \(f\colon A\rightarrow B\) una aplicació invertible i \(g_{1}\colon B\rightarrow A\) i \(g_{2}\colon B\rightarrow A\) dues inverses de \(f\). Aleshores \(g_{1}=g_{2}\).
 		\begin{proof}
-			Per la definició de \myref{def:aplicació invertible} tenim que per a tot \(a\in A\), \(b\in B\)
+			Per la definició d'\myref{def:aplicació invertible} tenim que per a tot \(a\in A\), \(b\in B\)
 			\[(g_{1}\circ f)(a)=a\quad\text{i}\quad(f\circ g_{2})(b)=b.\]
 			Ara bé, tenim
 			\[((g_{1}\circ f)\circ g_{2})(b)=g_{2}(b)\quad\text{i}\quad(g_{1}\circ(f\circ g_{2}))(b)=g_{1}(b)\]
@@ -445,9 +445,9 @@
 			
 			Per tant definim l'aplicació \(g\colon B\rightarrow A\) tal que \(g(b)=a\). Ara bé, tenim que per a tot \(a\in A\) i \(b\in B\)
 			\[(g\circ f)(a)=a\quad\text{i}\quad(f\circ g)(b)=b,\]
-			i per la definició de \myref{def:aplicació invertible} tenim que \(f\) és invertible, com volíem veure.
+			i per la definició d'\myref{def:aplicació invertible} tenim que \(f\) és invertible, com volíem veure.
 			
-			Comprovem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que \(f\) té inversa. Prenem dos elements \(a\) i \(a'\) de \(A\) tals que \(f(a)=f(a')\). Ara bé, per la definició de \myref{def:aplicació invertible} tenim que \((f^{-1}\circ f)(a)=a\) i \((f^{-1}\circ f)(a')=a'\) amb \((f^{-1}\circ f)(a)=(f^{-1}\circ f)(a')\), i per tant \(a=a'\) i per la definició d'\myref{def:aplicació injectiva} tenim que \(f\) és injectiva.
+			Comprovem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que \(f\) té inversa. Prenem dos elements \(a\) i \(a'\) de \(A\) tals que \(f(a)=f(a')\). Ara bé, per la definició d'\myref{def:aplicació invertible} tenim que \((f^{-1}\circ f)(a)=a\) i \((f^{-1}\circ f)(a')=a'\) amb \((f^{-1}\circ f)(a)=(f^{-1}\circ f)(a')\), i per tant \(a=a'\) i per la definició d'\myref{def:aplicació injectiva} tenim que \(f\) és injectiva.
 			
 			Sigui \(b\) un element de \(B\) i prenem \(a\) de \(A\) tal que \(f^{-1}(b)=a\). Aleshores trobem
 			\[b=Id_{B}(b)=f\circ f^{-1}(b)=f(a),\]
@@ -1931,7 +1931,7 @@
 			\[ac\cdot1=bd\cdot0.\]
 			Per tant
 			\[ac=0,\]
-			i pel Teorema \myref{thm:Z és un DI} tenim que ha de ser \(a=0\) ó \(b=0\).
+			i pel Teorema \myref{thm:Z és un DI} tenim que ha de ser \(a=0\) ó \(c=0\).
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}

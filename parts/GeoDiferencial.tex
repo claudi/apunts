@@ -192,7 +192,7 @@
 		Sigui \(\alpha\) una corba regular sobre \(I\). Aleshores existeix una reparametrització \(\beta\) de \(\alpha\) tal que per a tot \(t\in I\)
 		\[\norm{\beta'(t)}=1.\]
 		\begin{proof}
-			Per la proposició \ref{prop:la funció longitud arc d'una corba regular és un difeomorfisme} tenim que per a tot \(a\in I\) la funció \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme, i per la definició de \myref{def:difeomorfisme} trobem que la funció \(\funciolongituddarc_{\alpha}(a)\) és bijectiva, i pel Teorema \myref{thm:bijectiva iff invertible} trobem que \(\funciolongituddarc_{\alpha}(a)\) és invertible i per la definició de \myref{def:aplicació invertible} tenim que existeix una funció \(t_{a}\) tal que \(t_{a}\) sigui la inversa de \(\funciolongituddarc_{\alpha}(a)\). Considerem
+			Per la proposició \ref{prop:la funció longitud arc d'una corba regular és un difeomorfisme} tenim que per a tot \(a\in I\) la funció \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme, i per la definició de \myref{def:difeomorfisme} trobem que la funció \(\funciolongituddarc_{\alpha}(a)\) és bijectiva, i pel Teorema \myref{thm:bijectiva iff invertible} trobem que \(\funciolongituddarc_{\alpha}(a)\) és invertible i per la definició d'\myref{def:aplicació invertible} tenim que existeix una funció \(t_{a}\) tal que \(t_{a}\) sigui la inversa de \(\funciolongituddarc_{\alpha}(a)\). Considerem
 			\[\beta(s)=\alpha(t(s)).\]
 			Aleshores tenim que
 			\begin{align*} % És positiva pel corol·lari del teorema de la funció inversa?
@@ -633,7 +633,7 @@
 	\begin{proposition}
 		\label{prop:circumferència osculadora}
 		Siguin \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i \(t_{0}\in I\) un punt tal que \(\alpha''(t_{0})\neq\vec{0}\). Aleshores existeix una única circumferència \(\beta\) de \(\mathbb{R}^{3}\) tal que \(\alpha\) i \(\beta\) tenen contacte d'ordre \(2\) en \(\alpha(t_{0})\), que té radi \(\radicircosculadora_{\alpha}(s_{0})=\frac{1}{\curvatura_{\alpha}(t_{0})}\) i és de la forma
-		\[\beta(t)=Q+\radicircosculadora_{\alpha}(t_{0})\left(-N(t_{0})\cos\left(\frac{t}{\radicircosculadora_{\alpha}(t_{0})}\right)+T(t_{0})\sin\left(\frac{t}{\radicircosculadora_{\alpha}(t_{0})}\right)\right).\]
+		\[\beta(t)=Q+\radicircosculadora_{\alpha}(t_{0})\left(-\normal_{\alpha}(t_{0})\cos\left(\frac{t}{\radicircosculadora_{\alpha}(t_{0})}\right)+\tangent_{\alpha}(t_{0})\sin\left(\frac{t}{\radicircosculadora_{\alpha}(t_{0})}\right)\right).\]
 		\begin{proof}
 			%TODO
 %			Sigui \((\vec{u}_{1},\vec{u}_{2})\) una base ortonormal de \(\mathbb{R}^{2}\). Aleshores les circumferències de \(\mathbb{R}^{3}\) de radi \(R\) i centre \(Q\) parametritzades per l'arc són de la forma
@@ -648,7 +648,7 @@
 	\begin{definition}[Circumferència osculadora]
 		\labelname{circumferència osculadora}\label{def:circumferència osculadora}
 		Sigui \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i \(t_{0}\in I\) un punt tal que \(\alpha''(t_{0})\neq\vec{0}\) i \(\radicircosculadora_{\alpha}(t_{0})=\frac{1}{\curvatura_{\alpha}(t_{0})}\). Aleshores direm que la circumferència
-		\[\beta(t)=Q+\radicircosculadora_{\alpha}(t_{0})\left(-N(t_{0})\cos\left(\frac{t}{\radicircosculadora_{\alpha}(t_{0})}\right)+T(t_{0})\sin\left(\frac{t}{\radicircosculadora_{\alpha}(t_{0})}\right)\right).\]
+		\[\beta(t)=Q+\radicircosculadora_{\alpha}(t_{0})\left(-\normal_{\alpha}(t_{0})\cos\left(\frac{t}{\radicircosculadora_{\alpha}(t_{0})}\right)+\tangent_{\alpha}(t_{0})\sin\left(\frac{t}{\radicircosculadora_{\alpha}(t_{0})}\right)\right).\]
 		és la circumferència osculadora de \(\alpha\) en \(t_{0}\). Denotarem per \(\radicircosculadora_{\alpha}(t_{0})=\frac{1}{\curvatura_{\alpha}(t_{0})}\) el radi de la circumferència osculadora.
 		
 		Aquesta definició té sentit per la proposició \myref{prop:circumferència osculadora}.
