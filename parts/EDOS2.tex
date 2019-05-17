@@ -95,7 +95,7 @@
 	\begin{theorem}
 		\label{thm:propietats topològiques dels omega-límits}
 		Siguin
-		\[\dot{x}=f(x)\]
+		\(\dot{x}=f(x)\)
 		una equació diferencial sobre \(\mathbb{R}^{n}\), \(\tancat{K}\) un compacte de \(\mathbb{R}^{n}\) i \(p\in\mathbb{R}^{n}\) un punt tals que \(\gamma^{+}(x)\subset\tancat{K}\). Aleshores
 		\begin{enumerate}
 			\item\label{enum1:thm:propietats topològiques dels omega-límits} \(\omega(x)\neq\emptyset\).
@@ -108,8 +108,25 @@
 		\end{proof}
 	\end{theorem}
 	\subsection{Teorema de Poincaré-Bendixson}
+	\begin{definition}[Secció transversal]
+		\labelname{secció transversal}\label{def:secció transversal}
+		Siguin \(\dot{x}=f(x)\) una equació diferencial sobre un obert \(\obert{U}\subseteq\mathbb{R}^{2}\) i \(\Sigma\subseteq\obert{U}\) una corba tal que per a tot \(x,y\in\Sigma\) es satisfà \(f(x)=f(y)\). Aleshores direm que \(\Sigma\) és una secció transversal de l'equació diferencial. % \Sigma no és una corba, és la seva imatge
+	\end{definition}
+%	\begin{lemma}
+%		\label{lemma:Teorema de Poincaré-Bendixson 1}
+%		Siguin \(\dot{x}=f(x)\) una equació diferencial sobre un obert \(\obert{U}\subseteq\mathbb{R}^{2}\), \(\Sigma\subseteq\obert{U}\) una secció transversal i \(p\in\obert{U}\) i \(q\in\Sigma\cap\omega(p)\) dos punts. Aleshores existeix una successió de punts \((\varphi_{p}(t_{n}))_{n\in\mathbb{N}}\) tals que
+%		\[\lim_{n\to\infty}\varphi_{p}(t_{n})=q.\]
+%		\begin{proof}
+%			%TODO
+%		\end{proof}
+%	\end{lemma}
+	\begin{definition}[Aplicació de retorn]
+		\labelname{aplicació de retorn}\label{def:aplicació de retorn}
+		Siguin \(\dot{x}=f(x)\) una equació diferencial sobre un obert \(\obert{U}\subseteq\mathbb{R}^{2}\) i \(A\subseteq\obert{U}\) un conjunt tals que per a tot \(p\in A\) punt regular i tota secció transversal \(\Sigma\subseteq A\) existeix un entorn \(\obert{V}\subseteq\obert{U}\) de \(p\) tal que per a tot \(x\in\Sigma\cap\obert{V}\) existeix un \(t\neq0\) tal que \(\varphi_{x}(t)\in\Sigma\cap\obert{V}\). Aleshores direm que \(A\) admet una aplicació de retorn.
+	\end{definition}
 	\begin{definition}[Gràfic]
 		\labelname{gràfic}\label{def:gràfic}
+		Siguin \(\dot{x}=f(x)\) una equació diferencial sobre un obert \(\obert{U}\subseteq\mathbb{R}^{2}\) i \(A\subseteq\obert{U}\) un conjunt invariant que conté punts regulars i punts crítics tal que per a tot punt \(x\in A\) tenim \(\alpha(x)=\{p\}\) i \(\omega(x)=\{q\}\) per a certs punts crítics \(p,q\in A\), i tals que \(A\) admet una aplicació de retorn. Aleshores direm que \(A\) és un gràfic.
 	\end{definition}
 	\begin{theorem}[Teorema de Poincaré-Bendixson]
 		\labelname{Teorema de Poincaré-Bendixson}\label{thm:Teorema de Poincaré-Bendixson}
@@ -120,7 +137,24 @@
 			\item\label{enum3:thm:Teorema de Poincaré-Bendixson} si \(\omega(x)\) no conté punts crítics tenim que \(\omega(x)\) és una òrbita periòdica.
 		\end{enumerate}
 		\begin{proof}
-			Aquest enunciat té sentit pel Teorema \myref{thm:propietats topològiques dels omega-límits}. %TODO
+%			Aquest enunciat té sentit pel Teorema \myref{thm:propietats topològiques dels omega-límits}. %TODO
+		\end{proof}
+	\end{theorem}
+%	\begin{definition}[Corona circular]
+%		\labelname{corona circular}\label{def:corona circular}
+%	\end{definition}
+	\begin{theorem}
+		\label{thm:dins d'una òrbita periòdica hi ha un punt crític}
+		Sigui \(\varphi\colon\mathbb{R}\longrightarrow\mathbb{R}^{2}\) una òrbita periòdica d'una equació diferencial \(\dot{x}=f(x)\). Aleshores existeix un \(p\in\interior(\varphi(\mathbb{R}))\) tal que \(p\) és un punt crític.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\subsection{Criteri de Bendixson-Dulac}
+	\begin{theorem}[Criteri de Bendixson-Dulac]
+		\labelname{criteri de Bendixson-Dulac}\label{thm:Criteri de Bendixson-Dulac}
+		\begin{proof}
+			%TODO
 		\end{proof}
 	\end{theorem}
 	% 4.2 Equações Diferenciais Ordinárias

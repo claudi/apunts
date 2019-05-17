@@ -23,8 +23,8 @@
 \DeclareQuoteAlias{spanish}{catalan}
 \renewcommand{\bookname}{Llibre}
 
-\setsecnumdepth{subsection}
-\settocdepth{subsection}
+%\setsecnumdepth{subsection}
+%\settocdepth{subsection}
 
 \renewcommand\booknumberlinebox[2]{#2\hspace{1em}}
 \renewcommand\partnumberlinebox[2]{#2\hspace{1em}}
@@ -138,8 +138,8 @@
 \DeclareMathOperator{\binormal}{B}
 \DeclareMathOperator{\torsio}{\tau}
 \DeclareMathOperator{\EspaiTangent}{T}
-\DeclareMathOperator{\PrimeraFormaFonamental}{\rom{1}}
-\DeclareMathOperator{\SegonaFormaFonamental}{\rom{2}}
+\DeclareMathOperator{\I}{\rom{1}}
+\DeclareMathOperator{\II}{\rom{2}}
 
 \DeclareMathOperator*{\suport}{Supp}
 
@@ -353,8 +353,23 @@
 %}
 
 \newcommand{\tauladecontinguts}{
-	{\hypersetup{urlcolor=black,linkcolor=black}
-	\tableofcontents}
+	\begingroup
+		\setsecnumdepth{subsection}
+%		\setcounter{tocdepth}{3}
+		\settocdepth{subsection}
+		\hypersetup{urlcolor=black,linkcolor=black}
+		\tableofcontents
+	\endgroup
+}
+
+\newcommand{\tauladetauladecontinguts}{
+	\begingroup
+%		\setsecnumdepth{book}
+		\setcounter{tocdepth}{-2}
+		\settocdepth{part}
+		\hypersetup{urlcolor=black,linkcolor=black}
+		\tableofcontents
+	\endgroup
 }
 
 %\makeatletter
@@ -458,6 +473,7 @@
 \begin{document}
 	\portada
 %	\gracies
+%	\tauladetauladecontinguts
 	\tauladecontinguts
 %	\book{Primer curs}
 	\subfile{parts/FNM.tex}
