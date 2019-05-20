@@ -54,14 +54,14 @@
 	\end{definition}
 	\begin{example}
 		\label{ex:corba que uniex dos punts}
-		Volem veure que donats dos punts \(a\) i \(b\) de \(\mathbb{R}^{n}\) existeix una corba contínua que els uneix.
+		Volem veure que donats dos punts \(a\) i \(b\) de \(\mathbb{R}^{n}\) existeix una corba que els uneix.
 		\begin{solution}
 			Observem que la funció contínua % Veure que és contínua per ser un polinomi
 			\begin{align*}
 				\alpha\colon[0,1]&\longrightarrow\mathbb{R}^{n} \\
 				t&\longmapsto a+t(b-a)
 			\end{align*}
-			satisfà que \(\alpha(0)=a\) i \(\alpha(1)=b\), i per la definició de \myref{def:corba} trobem que és una corba contínua sobre \([0,1]\).
+			satisfà que \(\alpha(0)=a\) i \(\alpha(1)=b\), i per la definició de \myref{def:corba} trobem que és una corba sobre \([0,1]\).
 		\end{solution}
 	\end{example}
 	\begin{definition}[Corba regular]
@@ -72,7 +72,10 @@
 		\labelname{reparametrització d'una corba}\label{def:reparametrització d'una corba}
 		\labelname{canvi de paràmetre}\label{def:canvi de paràmetre}
 		Siguin \(\alpha\) una corba sobre \(I\) i \(h\colon J\longrightarrow I\) un difeomorfisme. Aleshores direm que la funció
-		\[\beta(t)=(\alpha\circ h)(t)\]
+		\begin{align*}
+			\beta\colon J&\longrightarrow\mathbb{R}^{n} \\
+			t&\longmapsto(\alpha\circ h)(t)
+		\end{align*}
 		és una reparametrització en \(J\) de \(\alpha\) i que \(h\) és el canvi de paràmetre.
 	\end{definition}
 	\begin{proposition}
@@ -81,14 +84,14 @@
 			Per la definició de \myref{def:reparametrització d'una corba} trobem que existeix un canvi de paràmetre \(h:J\longrightarrow I\) tal que \(\beta=(\alpha\circ h)(t)\). Aleshores tenim que
 			\begin{align*}
 				\beta\colon J&\longrightarrow\mathbb{R}^{n} \\
-				t&\longmapsto\alpha(h(t)),
+				t&\longmapsto(\alpha\circ h)(t),
 			\end{align*}
 			i per la definició de \myref{def:corba} trobem que \(\beta\) és una corba.
 			
 			Per la definició de \myref{def:canvi de paràmetre} trobem que \(h\) és un difeomorfisme, i per la definició de \myref{def:difeomorfisme} trobem que \(h\) és derivable, i per la \myref{thm:regla de la cadena} trobem que
-			\[\beta'(t)=h'(t)\alpha'(h(t)).\]
+			\[\beta'(t)=h'(t)(\alpha'\circ h)(t).\]
 			
-			Com que per hipòtesi \(\alpha\) és regular, per la definició de \myref{def:corba regular} trobem que \(\alpha'(h(t))\neq\vec{0}\) per a tot \(t\in J\). Ara bé, pel \corollari{} \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} trobem que \(h'(t)\neq\vec{0}\) per a tot \(t\in J\), i per tant tenim que \(\beta'(t)\neq\vec{0}\) per a tot \(t\in J\), i per la definició de \myref{def:corba regular} trobem que \(\beta\) és una corba regular.
+			Com que per hipòtesi \(\alpha\) és regular, per la definició de \myref{def:corba regular} trobem que \((\alpha'\circ h)(t)\neq\vec{0}\) per a tot \(t\in J\). Ara bé, pel \corollari{} \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} trobem que \(h'(t)\neq\vec{0}\) per a tot \(t\in J\), i per tant tenim que \(\beta'(t)\neq\vec{0}\) per a tot \(t\in J\), i per la definició de \myref{def:corba regular} trobem que \(\beta\) és una corba regular.
 		\end{proof}
 	\end{proposition}
 	\subsection{La longitud d'una corba i el paràmetre arc}
@@ -205,8 +208,8 @@
 	\end{proposition}
 	\begin{definition}[Corba parametritzada per l'arc]
 		\labelname{corba parametritzada per l'arc}\label{def:corba parametritzada per l'arc}
-		Sigui \(\alpha\) una corba regular sobre \(I\) tal que per a tot \(t\in I\) es satisfà
-		\[\norm{\alpha'(t)}=1.\]
+		Sigui \(\alpha\) una corba regular sobre \(I\) tal que per a tot \(s\in I\) es satisfà
+		\[\norm{\alpha'(s)}=1.\]
 		Aleshores direm que \(\alpha\) està parametritzada per l'arc.
 	\end{definition}
 	\begin{example} % Veure cas general amb Teorema de la funció implícita
@@ -246,62 +249,62 @@
 		\end{solution}
 	\end{example}
 	\begin{observation}
-		Sigui \(\alpha\) una corba en \(I\) parametritzada per l'arc i \(a\in I\) un punt. Aleshores per a tot \(t\in I\) tenim
-		\[\funciolongituddarc_{\alpha}(a)(t)=t-a.\]
+		Sigui \(\alpha\) una corba en \(I\) parametritzada per l'arc i \(a\in I\) un punt. Aleshores per a tot \(s\in I\) tenim
+		\[\funciolongituddarc_{\alpha}(a)(s)=s-a.\]
 		\begin{proof}
 			Per la definició de \myref{def:funció longitud d'arc} trobem que
-			\[\funciolongituddarc_{\alpha}(a)(t)=\int_{a}^{t}\norm{\alpha'(s)}\diff s,\]
-			i per la definició de \myref{def:corba parametritzada per l'arc} tenim que  per a tot \(t\in I\) es satisfà \(\norm{\alpha'(t)}=1\), i per tant
+			\[\funciolongituddarc_{\alpha}(a)(s)=\int_{a}^{s}\norm{\alpha'(\tau)}\diff\tau,\]
+			i per la definició de \myref{def:corba parametritzada per l'arc} tenim que  per a tot \(s\in I\) es satisfà \(\norm{\alpha'(s)}=1\), i per tant
 			\begin{align*}
-				\funciolongituddarc_{\alpha}(a)(t)&=\int_{a}^{t}\norm{\alpha'(s)}\diff s \\
-				&=\int_{a}^{t}\diff s=t-a.\qedhere
+				\funciolongituddarc_{\alpha}(a)(s)&=\int_{a}^{s}\norm{\alpha'(\tau)}\diff\tau \\
+				&=\int_{a}^{s}1\diff\tau=s-a.\qedhere
 			\end{align*}
 		\end{proof}
 	\end{observation}
 	\begin{definition}[Contacte]
 		\labelname{contacte}\label{def:contacte entre dues corbes parametritzades per l'arc}
-		Siguin \(\alpha\) i \(\beta\) dues corbes en \(I\) parametritzades per l'arc i \(t_{0}\in I\) un punt tals que existeix un \(r\) satisfent
-		\[\lim_{t\to t_{0}}\frac{\alpha(t)-\beta(t)}{(t-t_{0})^{p}}=0\quad\text{i}\quad\lim_{t\to t_{0}}\frac{\alpha(t)-\beta(t)}{(t-t_{0})^{r+1}}\neq0\]
-		per a tot \(p\leq r\). Aleshores direm que \(\alpha\) i \(\beta\) tenen contacte d'ordre \(r\) en \(t_{0}\).
+		Siguin \(\alpha\) i \(\beta\) dues corbes en \(I\) parametritzades per l'arc i \(s_{0}\in I\) un punt tals que existeix un \(r\in\mathbb{N}\) satisfent
+		\[\lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{p}}=0\quad\text{i}\quad\lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{r+1}}\neq0\]
+		per a tot \(p\leq r\). Aleshores direm que \(\alpha\) i \(\beta\) tenen contacte d'ordre \(r\) en \(s_{0}\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:contacte r és equivalent a tenir les r primeres derivades iguals}
-		Siguin \(\alpha\) i \(\beta\) dues corbes en \(I\) parametritzades per l'arc i \(t_{0}\in I\) un punt. Aleshores \(\alpha\) i \(\beta\) tenen contacte d'ordre \(r\) en \(t_{0}\) si i només si
-		\[\alpha^{(p)}(t_{0})=\beta^{(p)}(t_{0})\quad\text{i}\quad\alpha^{(r+1)}(t_{0})\neq\beta^{(r+1)}(t_{0})\]
+		Siguin \(\alpha\) i \(\beta\) dues corbes en \(I\) parametritzades per l'arc i \(s_{0}\in I\) un punt. Aleshores \(\alpha\) i \(\beta\) tenen contacte d'ordre \(r\) en \(s_{0}\) si i només si
+		\[\alpha^{(p)}(s_{0})=\beta^{(p)}(s_{0})\quad\text{i}\quad\alpha^{(r+1)}(s_{0})\neq\beta^{(r+1)}(s_{0})\]
 		per a tot \(p\leq r\).
 		\begin{proof}
 			Suposem que
-			\[\alpha^{(p)}(t_{0})=\beta^{(p)}(t_{0})\quad\text{i}\quad\alpha^{(r+1)}(t_{0})\neq\beta^{(r+1)}(t_{0})\]
+			\[\alpha^{(p)}(s_{0})=\beta^{(p)}(s_{0})\quad\text{i}\quad\alpha^{(r+1)}(s_{0})\neq\beta^{(r+1)}(s_{0})\]
 			per a tot \(p\leq r\). Tenim que, per a tot \(p\leq r\) es satisfà
-			\[\alpha^{(p)}(t_{0})=\beta^{(p)}(t_{0}),\]
+			\[\alpha^{(p)}(s_{0})=\beta^{(p)}(s_{0}),\]
 			o equivalentment
 			\begin{equation}
 				\label{prop:contacte r és equivalent a tenir les r primeres derivades iguals:eq1}
-				\alpha^{(p)}(t_{0})-\beta^{(p)}(t_{0})=0.
+				\alpha^{(p)}(s_{0})-\beta^{(p)}(s_{0})=0.
 			\end{equation}
 			Prenem \(n\leq r\), i per la definició de \myref{def:derivada} trobem que
 			\begin{align*}
-			\alpha^{(n)}(t_{0})-\beta^{(n)}(t_{0})&=\lim_{t\to t_{0}}\left(\frac{\alpha^{(n-1)}(t_{0})-\alpha^{(n-1)}(t)}{t-t_{0}}-\frac{\beta^{(n-1)}(t_{0})-\beta^{(n-1)}(t)}{t-t_{0}}\right) \\
-			&=\lim_{t\to t_{0}}\left(\frac{\alpha^{(n-1)}(t_{0})-\alpha^{(n-1)}(t)-\beta^{(n-1)}(t_{0})+\beta^{(n-1)}(t)}{t-t_{0}}\right) \\
-			&=\lim_{t\to t_{0}}\left(\frac{\alpha^{(n-1)}(t_{0})-\beta^{(n-1)}(t_{0})}{t-t_{0}}-\frac{\alpha^{(n-1)}(t)-\beta^{(n-1)}(t)}{t-t_{0}}\right)
-			\intertext{Ara bé, tenim que \(\alpha^{(n-1)}(t_{0})-\beta^{(n-1)}(t_{0})=0\), i per tant}
-			&=\lim_{t\to t_{0}}\frac{\beta^{(n-1)}(t)-\alpha^{(n-1)}(t)}{t-t_{0}}=0,
+			\alpha^{(n)}(s_{0})-\beta^{(n)}(s_{0})&=\lim_{s\to s_{0}}\left(\frac{\alpha^{(n-1)}(s_{0})-\alpha^{(n-1)}(s)}{s-s_{0}}-\frac{\beta^{(n-1)}(s_{0})-\beta^{(n-1)}(s)}{s-s_{0}}\right) \\
+			&=\lim_{s\to s_{0}}\left(\frac{\alpha^{(n-1)}(s_{0})-\alpha^{(n-1)}(s)-\beta^{(n-1)}(s_{0})+\beta^{(n-1)}(s)}{s-s_{0}}\right) \\
+			&=\lim_{s\to s_{0}}\left(\frac{\alpha^{(n-1)}(s_{0})-\beta^{(n-1)}(s_{0})}{s-s_{0}}-\frac{\alpha^{(n-1)}(s)-\beta^{(n-1)}(s)}{s-s_{0}}\right)
+			\intertext{Ara bé, tenim que \(\alpha^{(n-1)}(s_{0})-\beta^{(n-1)}(s_{0})=0\), i per tant}
+			&=\lim_{s\to s_{0}}\frac{\beta^{(n-1)}(s)-\alpha^{(n-1)}(s)}{s-s_{0}}=0,
 			\end{align*}
 			 i tenim que
-			 \[\lim_{t\to t_{0}}\frac{\alpha(t)-\beta(t)}{(t-t_{0})^{p}}=0.\]
+			 \[\lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{p}}=0.\]
 			 
 			 Considerem ara
-			 \[\alpha^{(r+1)}(t_{0})\neq\beta^{(r+1)}(t_{0}).\]
+			 \[\alpha^{(r+1)}(s_{0})\neq\beta^{(r+1)}(s_{0}).\]
 			 Tenim que
-			 \[\alpha^{(r+1)}(t_{0})-\beta^{(r+1)}(t_{0})\neq0.\]
+			 \[\alpha^{(r+1)}(s_{0})-\beta^{(r+1)}(s_{0})\neq0.\]
 			 Ara bé, per la definició de \myref{def:derivada} trobem que
 			 \begin{align*}
-				 \alpha^{(r+1)}(t_{0})-\beta^{(r+1)}(t_{0})&=\lim_{t\to t_{0}}\left(\frac{\alpha^{(r)}(t_{0})-\alpha^{(r)}(t)}{t-t_{0}}-\frac{\beta^{(r)}(t_{0})-\beta^{(r)}(t)}{t-t_{0}}\right) \\
-				 &=\lim_{t\to t_{0}}\frac{\alpha^{(r)}(t_{0})-\alpha^{(r)}(t)-\beta^{(r)}(t_{0})+\beta^{(r)}(t)}{t-t_{0}} \\
-				 &=\lim_{t\to t_{0}}\frac{\beta^{(r)}(t)-\alpha^{(r)}(t)}{t-t_{0}}\neq0 \tag{\ref{prop:contacte r és equivalent a tenir les r primeres derivades iguals:eq1}}
+				 \alpha^{(r+1)}(s_{0})-\beta^{(r+1)}(s_{0})&=\lim_{s\to s_{0}}\left(\frac{\alpha^{(r)}(s_{0})-\alpha^{(r)}(s)}{s-s_{0}}-\frac{\beta^{(r)}(s_{0})-\beta^{(r)}(s)}{s-s_{0}}\right) \\
+				 &=\lim_{s\to s_{0}}\frac{\alpha^{(r)}(s_{0})-\alpha^{(r)}(s)-\beta^{(r)}(s_{0})+\beta^{(r)}(s)}{s-s_{0}} \\
+				 &=\lim_{s\to s_{0}}\frac{\beta^{(r)}(s)-\alpha^{(r)}(s)}{s-s_{0}}\neq0 \tag{\ref{prop:contacte r és equivalent a tenir les r primeres derivades iguals:eq1}}
 			 \end{align*}
 			 i per tant
-			 \[\lim_{t\to t_{0}}\frac{\alpha(t)-\beta(t)}{(t-t_{0})^{r+1}}\neq0\]
+			 \[\lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{r+1}}\neq0\]
 			 i per la definició de \myref{def:contacte entre dues corbes parametritzades per l'arc} tenim que \(\alpha\) i \(\beta\) tenen contacte \(r\).
 		\end{proof}
 	\end{proposition}
@@ -523,22 +526,22 @@
 	\subsection{Fórmules de Frenet}
 	\begin{proposition}
 		\label{prop:la primera derivada i la segona derivada d'una corba són perpendiculars}
-		Sigui \(\alpha\) una corba parametritzada per l'arc sobre \(I\) tal que \(\alpha\) és dues vegades diferenciable en un punt \(t_{0}\). Aleshores tenim que \(\alpha'(t_{0})\) i \(\alpha''(t_{0})\) són perpendiculars.
+		Sigui \(\alpha\) una corba parametritzada per l'arc sobre \(I\) tal que \(\alpha\) és dues vegades diferenciable en un punt \(s_{0}\). Aleshores tenim que \(\alpha'(s_{0})\) i \(\alpha''(s_{0})\) són perpendiculars.
 		\begin{proof}
-			Per la definició de \myref{def:corba parametritzada per l'arc} trobem que
-			\[\norm{\alpha'(t)}=1.\]
+			Per la definició de \myref{def:corba parametritzada per l'arc} trobem que per a tot \(s\in I\) es satisfà
+			\[\norm{\alpha'(s)}=1.\]
 			Aleshores tenim que
 			\begin{align*}
-				0&=\frac{\diff}{\diff t}1 \\
-				&=\frac{\diff}{\diff t}\norm{\alpha'(t)} \\
-				&=\frac{\diff}{\diff t}\norm{\alpha'(t)}^{2} \\
-				&=\frac{\diff}{\diff t}\prodesc{\alpha'(t)}{\alpha'(t)} \tag{\ref{def:norma d'un vector}} \\
-				&=\prodesc{\alpha''(t)}{\alpha'(t)}+\prodesc{\alpha'(t)}{\alpha''(t)} \tag{\ref{prop:derivada del producte escalar de dues corbes}} \\
-				&=2\prodesc{\alpha'(t)}{\alpha''(t)}.
+				0&=\frac{\diff}{\diff s}1 \\
+				&=\frac{\diff}{\diff s}\norm{\alpha'(s_{0})} \\
+				&=\frac{\diff}{\diff s}\norm{\alpha'(s_{0})}^{2} \\
+				&=\frac{\diff}{\diff s}\prodesc{\alpha'(s_{0})}{\alpha'(s_{0})} \tag{\ref{def:norma d'un vector}} \\
+				&=\prodesc{\alpha''(s_{0})}{\alpha'(s_{0})}+\prodesc{\alpha'(s_{0})}{\alpha''(s_{0})} \tag{\ref{prop:derivada del producte escalar de dues corbes}} \\
+				&=2\prodesc{\alpha'(s_{0})}{\alpha''(s_{0})}.
 			\end{align*}
 			Per tant trobem que
-			\[\prodesc{\alpha'(t)}{\alpha''(t)}=0,\]
-			i per la definició de \myref{def:vectors perpendiculars} tenim que \(\alpha'\) i \(\alpha''\) són perpendiculars, com volíem veure.
+			\[\prodesc{\alpha'(s_{0})}{\alpha''(s_{0})}=0,\]
+			i per la definició de \myref{def:vectors perpendiculars} tenim que \(\alpha'(s_{0})\) i \(\alpha''(s_{0})\) són perpendiculars, com volíem veure.
 		\end{proof}
 %		\begin{proof}
 %			Per la definició de \myref{def:derivada} trobem que
@@ -558,82 +561,82 @@
 		Sigui \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i dues vegades diferenciable. Aleshores direm que l'aplicació
 		\begin{align*}
 			\curvatura_{\alpha}\colon I&\longrightarrow\mathbb{R} \\
-			t&\longmapsto\norm{\alpha''(t)}
+			s&\longmapsto\norm{\alpha''(s)}
 		\end{align*}
 		és la curvatura de \(\alpha\).
 		
-		Si \(\curvatura_{\alpha}(t)\neq0\) direm que \(\alpha\) té curvatura no \nulla{} en \(t\).
+		Si \(\curvatura_{\alpha}(s)\neq0\) direm que \(\alpha\) té curvatura no \nulla{} en \(s\).
 	\end{definition}
 	\begin{example}
 		\label{ex:curvatura de la circumferència}
 		Volem calcular la curvatura d'una circumferència.% de radi \(R\).
 		\begin{solution}
 			Per l'exercici \myref{ex:circumferència de radi R parametritzat per l'arc} tenim que podem parametritzar una circumferència de radi \(R\) per l'arc com
-			\[\alpha(t)=\left(-R\sin\left(\frac{t}{R}\right),R\cos\left(\frac{t}{R}\right)\right).\]
+			\[\alpha(s)=\left(-R\sin\left(\frac{s}{R}\right),R\cos\left(\frac{s}{R}\right)\right).\]
 			
 			Aleshores tenim que
-			\[\alpha''(t)=\frac{\diff}{\diff t}\left(-\cos\left(\frac{t}{R}\right),-\sin\left(\frac{t}{R}\right)\right)=\left(\frac{1}{R}\sin\left(\frac{t}{R}\right),\frac{-1}{R}\cos\left(\frac{t}{R}\right)\right),\]
+			\[\alpha''(s)=\frac{\diff}{\diff s}\left(-\cos\left(\frac{s}{R}\right),-\sin\left(\frac{s}{R}\right)\right)=\left(\frac{1}{R}\sin\left(\frac{s}{R}\right),\frac{-1}{R}\cos\left(\frac{s}{R}\right)\right),\]
 			i trobem que
-			\[\norm{\alpha''(t)}=\sqrt{\frac{1}{R^{2}}\sin^{2}\left(\frac{t}{R}\right)+\frac{1}{R^{2}}\cos^{2}\left(\frac{t}{R}\right)}=\frac{1}{R},\]
+			\[\norm{\alpha''(s)}=\sqrt{\frac{1}{R^{2}}\sin^{2}\left(\frac{s}{R}\right)+\frac{1}{R^{2}}\cos^{2}\left(\frac{s}{R}\right)}=\frac{1}{R},\]
 			i per la definició de \myref{def:curvatura} trobem que \(\curvatura_{\alpha}(s)=\frac{1}{R}\).
 		\end{solution}
 	\end{example}
 	\begin{proposition}
 		\label{prop:una corba té curvatura zero si i només si és una recta}
-		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable. Aleshores \(\alpha\) és una recta si i només si \(\kappa(t)=0\) per a tot \(s\in I\).
+		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable. Aleshores \(\alpha\) és una recta si i només si \(\curvatura_{\alpha}(s)=0\) per a tot \(s\in I\).
 		\begin{proof}
 			Comencem veient que la condició és necessària (\(\implica\)). Suposem doncs que \(\alpha\) és una recta sobre \(\mathbb{R}^{n}\). Tenim que existeixen \(K_{1}\) i \(K_{2}\) de \(\mathbb{R}^{n}\) tals que
-			\[\alpha(t)=K_{1}s+K_{2}.\]
-			Aleshores tenim que \(\alpha''(t)=\vec{0}\), i per la definició de \myref{def:curvatura} trobem que \(\kappa(t)=0\).
+			\[\alpha(s)=K_{1}s+K_{2}.\]
+			Aleshores tenim que \(\alpha''(s)=\vec{0}\), i per la definició de \myref{def:curvatura} trobem que \(\curvatura_{\alpha}(s)=0\).
 			
-			Veiem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que \(\kappa(t)=0\) per a tot \(s\in I\). Tenim doncs que \(\alpha''(t)=\vec{0}\), i per tant existeixen \(K_{1}\) i \(K_{2}\) de \(\mathbb{R}^{n}\) tals que \(\alpha'(t)=K_{1}\) i \(\alpha''(t)=K_{1}s+K_{2}\) i trobem que \(\alpha\) és una recta.
+			Veiem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que \(\curvatura_{\alpha}(s)=0\) per a tot \(s\in I\). Tenim doncs que \(\alpha''(s)=\vec{0}\), i per tant existeixen \(K_{1}\) i \(K_{2}\) de \(\mathbb{R}^{n}\) tals que \(\alpha'(s)=K_{1}\) i \(\alpha''(s)=K_{1}s+K_{2}\) i trobem que \(\alpha\) és una recta.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Normal]
 		\labelname{normal}\label{def:normal}
-		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable i tal que \(\curvatura_{\alpha}(t)\neq0\) per a tot \(s\in I\). Aleshores direm que l'aplicació
+		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable amb curvatura no \nulla{}. Aleshores direm que l'aplicació
 		\begin{align*}
 			\normal_{\alpha}\colon I&\longrightarrow\mathbb{R} \\
-			t&\longmapsto\frac{\alpha''(t)}{\norm{\alpha''(t)}}
+			s&\longmapsto\frac{\alpha''(s)}{\norm{\alpha''(s)}}
 		\end{align*}
 		és la normal de \(\alpha\).
 	\end{definition}
 	\begin{observation}
 		\label{obs:la normal a una corba és unitària}
-		Tenim que \(\norm{\normal_{\alpha}(t)}=1\).
+		Tenim que \(\norm{\normal_{\alpha}(s)}=1\).
 	\end{observation}
 	\begin{definition}[Tangent]
 		\labelname{tangent}\label{def:tangent}
 		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc. Aleshores direm que l'aplicació
 		\begin{align*}
 			\tangent_{\alpha}\colon I&\longrightarrow\mathbb{R} \\
-			t&\longmapsto\alpha'(t)
+			s&\longmapsto\alpha'(s)
 		\end{align*}
 		és la tangent de \(\alpha\).
 	\end{definition}
 	\begin{observation}
 		\label{obs:la derivada de la tangent és la curvatura per la normal}
-		Tenim que \(\tangent_{\alpha}'(t)=\curvatura_{\alpha}(t)\normal_{\alpha}(t)\).
+		Tenim que \(\tangent_{\alpha}'(s)=\curvatura_{\alpha}(s)\normal_{\alpha}(s)\).
 	\end{observation}
 	\begin{proposition}
 		\label{prop:la tangent i la normal d'una corba amb curvatura no nula són perpendiculars}
-		Sigui \(\alpha\) una corba sobre \(I\) amb curvatura no \nulla{} i \(t\in I\) un real. Aleshores els vectors \(\tangent_{\alpha}(t)\) i \(\normal_{\alpha}(t)\) són perpendiculars.
+		Sigui \(\alpha\) una corba sobre \(I\) amb curvatura no \nulla{} i \(s\in I\) un real. Aleshores els vectors \(\tangent_{\alpha}(s)\) i \(\normal_{\alpha}(s)\) són perpendiculars.
 		\begin{proof}
 			Considerem
-			\[\prodesc{\tangent_{\alpha}(t)}{\normal_{\alpha}(t)}.\]
+			\[\prodesc{\tangent_{\alpha}(s)}{\normal_{\alpha}(s)}.\]
 			Per la definició de \myref{def:tangent} i \myref{def:normal} trobem que
 			\begin{align*}
-				\prodesc{\tangent_{\alpha}(t)}{\normal_{\alpha}(t)}&=\prodesc[\big]{\alpha'(t)}{\frac{\alpha''(t)}{\norm{\alpha''(t)}}} \\
-				&=\frac{1}{\norm{\alpha''(t)}}\prodesc{\alpha'(t)}{\alpha''(t)} \tag{\ref{def:producte escalar}} \\
+				\prodesc{\tangent_{\alpha}(s)}{\normal_{\alpha}(s)}&=\prodesc[\big]{\alpha'(s)}{\frac{\alpha''(s)}{\norm{\alpha''(s)}}} \\
+				&=\frac{1}{\norm{\alpha''(s)}}\prodesc{\alpha'(s)}{\alpha''(s)} \tag{\ref{def:producte escalar}} \\
 				&=0. \tag{\ref{prop:la primera derivada i la segona derivada d'una corba són perpendiculars}}
 			\end{align*}
-			Aleshores per la definició de \myref{def:vectors perpendiculars} trobem que \(\tangent_{\alpha}(t)\) i \(\normal_{\alpha}(t)\) són perpendiculars.
+			Aleshores per la definició de \myref{def:vectors perpendiculars} trobem que \(\tangent_{\alpha}(s)\) i \(\normal_{\alpha}(s)\) són perpendiculars.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:circumferència osculadora}
-		Siguin \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i \(t_{0}\in I\) un punt tal que \(\alpha''(t_{0})\neq\vec{0}\). Aleshores existeix una única circumferència \(\beta\) de \(\mathbb{R}^{3}\) tal que \(\alpha\) i \(\beta\) tenen contacte d'ordre \(2\) en \(\alpha(t_{0})\), que té radi \(\radicircosculadora_{\alpha}(s_{0})=\frac{1}{\curvatura_{\alpha}(t_{0})}\) i és de la forma
-		\[\beta(t)=Q+\radicircosculadora_{\alpha}(t_{0})\left(-\normal_{\alpha}(t_{0})\cos\left(\frac{t}{\radicircosculadora_{\alpha}(t_{0})}\right)+\tangent_{\alpha}(t_{0})\sin\left(\frac{t}{\radicircosculadora_{\alpha}(t_{0})}\right)\right).\]
+		Siguin \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i \(s_{0}\in I\) un punt tal que \(\alpha''(s_{0})\neq\vec{0}\). Aleshores existeix una única circumferència \(\beta\) en \(\mathbb{R}^{3}\) tal que \(\alpha\) i \(\beta\) tenen contacte d'ordre \(2\) en \(\alpha(s_{0})\), que té radi \(\radicircosculadora_{\alpha}(s_{0})=\frac{1}{\curvatura_{\alpha}(s_{0})}\) i és de la forma
+		\[\beta(s)=Q+\radicircosculadora_{\alpha}(s_{0})\left(-\normal_{\alpha}(s_{0})\cos\left(\frac{s}{\radicircosculadora_{\alpha}(s_{0})}\right)+\tangent_{\alpha}(s_{0})\sin\left(\frac{s}{\radicircosculadora_{\alpha}(s_{0})}\right)\right).\]
 		\begin{proof}
 			%TODO
 %			Sigui \((\vec{u}_{1},\vec{u}_{2})\) una base ortonormal de \(\mathbb{R}^{2}\). Aleshores les circumferències de \(\mathbb{R}^{3}\) de radi \(R\) i centre \(Q\) parametritzades per l'arc són de la forma
@@ -647,136 +650,134 @@
 	\end{proposition}
 	\begin{definition}[Circumferència osculadora]
 		\labelname{circumferència osculadora}\label{def:circumferència osculadora}
-		Sigui \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i \(t_{0}\in I\) un punt tal que \(\alpha''(t_{0})\neq\vec{0}\) i \(\radicircosculadora_{\alpha}(t_{0})=\frac{1}{\curvatura_{\alpha}(t_{0})}\). Aleshores direm que la circumferència
-		\[\beta(t)=Q+\radicircosculadora_{\alpha}(t_{0})\left(-\normal_{\alpha}(t_{0})\cos\left(\frac{t}{\radicircosculadora_{\alpha}(t_{0})}\right)+\tangent_{\alpha}(t_{0})\sin\left(\frac{t}{\radicircosculadora_{\alpha}(t_{0})}\right)\right).\]
-		és la circumferència osculadora de \(\alpha\) en \(t_{0}\). Denotarem per \(\radicircosculadora_{\alpha}(t_{0})=\frac{1}{\curvatura_{\alpha}(t_{0})}\) el radi de la circumferència osculadora.
+		Sigui \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i \(s_{0}\in I\) un punt tal que \(\alpha''(s_{0})\neq\vec{0}\) i \(\radicircosculadora_{\alpha}(s_{0})=\frac{1}{\curvatura_{\alpha}(s_{0})}\). Aleshores direm que la circumferència
+		\[\beta(s)=Q+\radicircosculadora_{\alpha}(s_{0})\left(-\normal_{\alpha}(s_{0})\cos\left(\frac{s}{\radicircosculadora_{\alpha}(s_{0})}\right)+\tangent_{\alpha}(s_{0})\sin\left(\frac{s}{\radicircosculadora_{\alpha}(s_{0})}\right)\right).\]
+		és la circumferència osculadora de \(\alpha\) en \(s_{0}\). Denotarem per \(\radicircosculadora_{\alpha}(s_{0})=\frac{1}{\curvatura_{\alpha}(s_{0})}\) el radi de la circumferència osculadora.
 		
 		Aquesta definició té sentit per la proposició \myref{prop:circumferència osculadora}.
 	\end{definition}
 	\begin{definition}[Binormal]
 		\labelname{binormal}\label{def:binormal}
 		Sigui \(\alpha\) una corba amb curvatura no \nulla{}. Aleshores definim
-		\[\binormal_{\alpha}(t)=\tangent_{\alpha}(t)\prodvec\normal_{\alpha}(t)\]
+		\[\binormal_{\alpha}(s)=\tangent_{\alpha}(s)\prodvec\normal_{\alpha}(s)\]
 		com la binormal de \(\alpha\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:triedre de Frenet}
-		Sigui \(\alpha\) una corba sobre \(I\) amb curvatura no \nulla{}. Aleshores \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és una base ortonormal i positiva de \(\mathbb{R}^{3}\).
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{}. Aleshores \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és una base ortonormal i positiva de \(\mathbb{R}^{3}\).
 		\begin{proof}
-			Per la proposició \myref{prop:la tangent i la normal d'una corba amb curvatura no nula són perpendiculars} trobem que \(\tangent_{\alpha}(t)\) i \(\normal_{\alpha}(t)\) són perpendiculars. Aleshores per la definició de \myref{def:binormal} trobem que \(\binormal_{\alpha}(t)=\tangent_{\alpha}(t)\prodvec\normal_{\alpha}(t)\) i per la proposició \myref{prop:dos vectors linealment independents i el seu producte vectorial formen una base positiva} tenim que la base \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és positiva.
+			Per la proposició \myref{prop:la tangent i la normal d'una corba amb curvatura no nula són perpendiculars} trobem que \(\tangent_{\alpha}(s)\) i \(\normal_{\alpha}(s)\) són perpendiculars. Aleshores per la definició de \myref{def:binormal} trobem que \(\binormal_{\alpha}(s)=\tangent_{\alpha}(s)\prodvec\normal_{\alpha}(s)\) i per la proposició \myref{prop:dos vectors linealment independents i el seu producte vectorial formen una base positiva} tenim que la base \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és positiva.
 			
 			Per la definició de \myref{def:producte vectorial} tenim que per a tot \(\vec{x}\) de \(\mathbb{R}^{3}\) es satisfà
-			\[\prodesc{\binormal_{\alpha}(t)}{\vec{x}}=\det(\tangent_{\alpha}(t),\normal_{\alpha}(t),\vec{x}).\]
-			Si prenem \(\vec{x}\) tal que \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\vec{x})\) sigui una base ortonormal de \(\mathbb{R}^{3}\) trobem que
-			\[\det(\tangent_{\alpha}(t),\normal_{\alpha}(t),\vec{x})=1,\]
+			\[\prodesc{\binormal_{\alpha}(s)}{\vec{x}}=\det(\tangent_{\alpha}(s),\normal_{\alpha}(s),\vec{x}).\]
+			Si prenem \(\vec{x}\) tal que \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\vec{x})\) sigui una base ortonormal de \(\mathbb{R}^{3}\) trobem que
+			\[\det(\tangent_{\alpha}(s),\normal_{\alpha}(s),\vec{x})=1,\]
 			i per tant
-			\[\prodesc{\binormal_{\alpha}(t)}{\vec{x}}=1,\]
-			i tenim que \(\norm{\binormal_{\alpha}(t)}=1\). Aleshores per l'observació \myref{obs:la normal a una corba és unitària} i la definició de \myref{def:corba parametritzada per l'arc} tenim que \(\norm{\tangent_{\alpha}(t)}=1\) i que \(\norm{\normal_{\alpha}(t)}=1\), i per tant \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és una base ortonormal i positiva de \(\mathbb{R}^{3}\). % REF
+			\[\prodesc{\binormal_{\alpha}(s)}{\vec{x}}=1,\]
+			i tenim que \(\norm{\binormal_{\alpha}(s)}=1\). Aleshores per l'observació \myref{obs:la normal a una corba és unitària} i la definició de \myref{def:corba parametritzada per l'arc} tenim que \(\norm{\tangent_{\alpha}(s)}=1\) i que \(\norm{\normal_{\alpha}(s)}=1\), i per tant \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és una base ortonormal i positiva de \(\mathbb{R}^{3}\). % REF
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Triedre de Frenet]
 		\labelname{triedre de Frenet}\label{def:triedre de Frenet}
-		Sigui\(\alpha\) una corba amb curvatura no \nulla{}. Aleshores direm que la base \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és el triedre de Frenet.
+		Sigui\(\alpha\) una corba amb curvatura no \nulla{}. Aleshores direm que la base \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és el triedre de Frenet de \(\alpha\) en \(s\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:triedre de Frenet}.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:torsió}
-		Sigui \(\alpha\) una corba parametritzada per l'arc amb curvatura no \nulla{}. Aleshores existeix un \(\torsio_{\alpha}(t)\in\mathbb{R}\) tal que
-		\[\binormal'_{\alpha}(t)=\torsio_{\alpha}(t)\normal(t).\]
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{}. Aleshores existeix una \(\torsio_{\alpha}(s)\in\mathbb{R}\) tal que
+		\[\binormal'_{\alpha}(s)=\torsio_{\alpha}(s)\normal(s).\]
 		\begin{proof}
-			Tenim per la proposició \myref{prop:triedre de Frenet} que \((\tangent_{\alpha}(t),\normal_{\alpha}(t),\binormal_{\alpha}(t))\) és una base ortonormal de \(\mathbb{R}^{3}\), i per tant tenim que %REF
-			\[\binormal'_{\alpha}(t)=\prodesc{\binormal'_{\alpha}(t)}{\tangent_{\alpha}(t)}\tangent_{\alpha}(t)+\prodesc{\binormal'_{\alpha}(t)}{\normal_{\alpha}(t)}\normal_{\alpha}(t)+\prodesc{\binormal'_{\alpha}(t)}{\binormal_{\alpha}(t)}\binormal_{\alpha}(t).\]
-			
-			Tenim que \(\prodesc{\binormal_{\alpha}(t)}{\binormal_{\alpha}(t)}=1\), per tant trobem que
-			\[\frac{\diff\prodesc{\binormal_{\alpha}(t)}{\binormal_{\alpha}(t)}}{\diff t}=0,\]
+			Tenim per la proposició \myref{prop:triedre de Frenet} que \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és una base ortonormal de \(\mathbb{R}^{3}\), i per tant tenim que %REF
+			\[\binormal'_{\alpha}(s)=\prodesc{\binormal'_{\alpha}(s)}{\tangent_{\alpha}(s)}\tangent_{\alpha}(s)+\prodesc{\binormal'_{\alpha}(s)}{\normal_{\alpha}(s)}\normal_{\alpha}(s)+\prodesc{\binormal'_{\alpha}(s)}{\binormal_{\alpha}(s)}\binormal_{\alpha}(s).\]
+			Tenim que \(\prodesc{\binormal_{\alpha}(s)}{\binormal_{\alpha}(s)}=1\), per tant trobem que
+			\[\frac{\diff\prodesc{\binormal_{\alpha}(s)}{\binormal_{\alpha}(s)}}{\diff s}=0,\]
 			i per la proposició \myref{prop:fórmula de Leibniz} trobem que
 			\[\prodesc{\binormal'_{\alpha}}{\binormal_{\alpha}}+\prodesc{\binormal_{\alpha}}{\binormal'_{\alpha}}=0,\]
 			i per la definició de \myref{def:producte escalar} tenim que
-			\[2\prodesc{\binormal'_{\alpha}(t)}{\binormal_{\alpha}(t)}=0,\]
+			\[2\prodesc{\binormal'_{\alpha}(s)}{\binormal_{\alpha}(s)}=0,\]
 			i per tant
-			\[\prodesc{\binormal'_{\alpha}(t)}{\binormal_{\alpha}(t)}=0.\]
+			\[\prodesc{\binormal'_{\alpha}(s)}{\binormal_{\alpha}(s)}=0.\]
 			
 			Per la proposició \ref{prop:triedre de Frenet} trobem que
-			\[\prodesc{\binormal_{\alpha}(t)}{\tangent_{\alpha}(t)}=0,\]
+			\[\prodesc{\binormal_{\alpha}(s)}{\tangent_{\alpha}(s)}=0,\]
 			i per tant
-			\[\frac{\diff\prodesc{\binormal_{\alpha}(t)}{\tangent_{\alpha}(t)}}{\diff t}=0,\]
+			\[\frac{\diff\prodesc{\binormal_{\alpha}(s)}{\tangent_{\alpha}(s)}}{\diff s}=0,\]
 			i de nou per la proposició \myref{prop:fórmula de Leibniz} tenim que
-			\[\frac{\diff\prodesc{\binormal_{\alpha}(t)}{\tangent_{\alpha}(t)}}{\diff t}=\prodesc{\binormal'_{\alpha}(t)}{\tangent_{\alpha}(t)}+\prodesc{\binormal_{\alpha}(t)}{\tangent'_{\alpha}(t)}.\]
+			\[\frac{\diff\prodesc{\binormal_{\alpha}(s)}{\tangent_{\alpha}(s)}}{\diff s}=\prodesc{\binormal'_{\alpha}(s)}{\tangent_{\alpha}(s)}+\prodesc{\binormal_{\alpha}(s)}{\tangent'_{\alpha}(s)}.\]
 			Ara bé, tenim que
 			\begin{align*}
-				\prodesc{\binormal_{\alpha}(t)}{\tangent'_{\alpha}(t)}&=\prodesc{\binormal_{\alpha}(t)}{\curvatura_{\alpha}(t)\normal_{\alpha}(t)} \tag{\ref{obs:la derivada de la tangent és la curvatura per la normal}} \\
+				\prodesc{\binormal_{\alpha}(s)}{\tangent'_{\alpha}(s)}&=\prodesc{\binormal_{\alpha}(s)}{\curvatura_{\alpha}(s)\normal_{\alpha}(s)} \tag{\ref{obs:la derivada de la tangent és la curvatura per la normal}} \\
 				&=0, \tag{\ref{prop:triedre de Frenet}}
 			\end{align*}
 			i per tant
-			\[\prodesc{\binormal'_{\alpha}(t)}{\tangent_{\alpha}(t)}=0,\]
-			i per tant, denotant \(\torsio_{\alpha}(t)=\prodesc{\binormal'_{\alpha}(t)}{\normal_{\alpha}(t)}\) trobem que
-			\[\binormal'_{\alpha}(t)=\torsio_{\alpha}(t)\normal_{\alpha}(t).\qedhere\]
+			\[\prodesc{\binormal'_{\alpha}(s)}{\tangent_{\alpha}(s)}=0,\]
+			i per tant, denotant \(\torsio_{\alpha}(s)=\prodesc{\binormal'_{\alpha}(s)}{\normal_{\alpha}(s)}\) trobem que
+			\[\binormal'_{\alpha}(s)=\torsio_{\alpha}(s)\normal_{\alpha}(s).\qedhere\]
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Torsió]
 		\labelname{torsió}\label{def:torsió}
-		Sigui \(\alpha\) una corba parametritzada per l'arc amb curvatura no \nulla{} i \(\torsio_{\alpha}(t)\) un real tal que
-		\[\binormal'_{\alpha}(t)=\torsio_{\alpha}(t)\normal(t).\]
-		Aleshores direm que \(\torsio_{\alpha}(t)\) és la torsió de \(\alpha\).
+		Sigui \(\alpha\) una corba parametritzada per l'arc amb curvatura no \nulla{} i \(\torsio_{\alpha}(s)\) el real tal que
+		\[\binormal'_{\alpha}(s)=\torsio_{\alpha}(s)\normal(s).\]
+		Aleshores direm que \(\torsio_{\alpha}(s)\) és la torsió de \(\alpha\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:torsió}.
 	\end{definition}
 	% FER Exemple calcular torsió?
-	\begin{proposition}[Fórmules de Frenet]
-		\labelname{fórmules de Frenet}\label{prop:fórmules de Frenet per corbes parametritzades per l'arc}
+	\begin{theorem}[Fórmules de Frenet]
+		\labelname{fórmules de Frenet}\label{thm:fórmules de Frenet per corbes parametritzades per l'arc}
 		Sigui \(\alpha\) una corba parametritzada per l'arc amb curvatura no \nulla{}. Aleshores
 		\[\begin{bmatrix}
-			\tangent'_{\alpha}(t) \\
-			\normal'_{\alpha}(t) \\
-			\binormal'_{\alpha}(t)
+			\tangent'_{\alpha}(s) \\
+			\normal'_{\alpha}(s) \\
+			\binormal'_{\alpha}(s)
 		\end{bmatrix}=
 		\begin{bmatrix}
-			0 & \curvatura_{\alpha}(t) & 0 \\
-			-\curvatura_{\alpha}(t) & 0 & -\torsio_{\alpha}(t) \\
-			0 & \torsio_{\alpha}(t) & 0
+			0 & \curvatura_{\alpha}(s) & 0 \\
+			-\curvatura_{\alpha}(s) & 0 & -\torsio_{\alpha}(s) \\
+			0 & \torsio_{\alpha}(s) & 0
 		\end{bmatrix}
 		\begin{bmatrix}
-			\tangent_{\alpha}(t) \\
-			\normal_{\alpha}(t) \\
-			\binormal_{\alpha}(t)
+			\tangent_{\alpha}(s) \\
+			\normal_{\alpha}(s) \\
+			\binormal_{\alpha}(s)
 		\end{bmatrix}.\]
 		\begin{proof}
-			
 			Per l'observació \myref{obs:la derivada de la tangent és la curvatura per la normal} trobem que
 			\begin{equation}
-				\label{prop:fórmules de Frenet:eq1}
-				\tangent_{\alpha}'(t)=\curvatura_{\alpha}(t)\normal_{\alpha}(t),
+				\label{thm:fórmules de Frenet:eq1}
+				\tangent_{\alpha}'(s)=\curvatura_{\alpha}(s)\normal_{\alpha}(s),
 			\end{equation}
 			i per la definició de \myref{def:torsió} trobem que
 			\begin{equation}
-				\label{prop:fórmules de Frenet:eq2}
-				\binormal'_{\alpha}(t)=\torsio_{\alpha}(t)\normal(t).
+				\label{thm:fórmules de Frenet:eq2}
+				\binormal'_{\alpha}(s)=\torsio_{\alpha}(s)\normal(s).
 			\end{equation}
 			
 			Per la definició de \myref{def:binormal} trobem que
-			\[\binormal_{\alpha}(t)=\tangent_{\alpha}(t)\prodvec\normal_{\alpha}(t),\]
+			\[\binormal_{\alpha}(s)=\tangent_{\alpha}(s)\prodvec\normal_{\alpha}(s),\]
 			i per tant % REF
-			\[\normal_{\alpha}(t)=\binormal_{\alpha}(t)\prodvec\tangent_{\alpha}(t).\]
+			\[\normal_{\alpha}(s)=\binormal_{\alpha}(s)\prodvec\tangent_{\alpha}(s).\]
 			Aleshores per la proposició \myref{prop:fórmula de Leibniz} tenim que
-			\[\normal'_{\alpha}(t)=\binormal'_{\alpha}(t)\prodvec\tangent_{\alpha}(t)+\binormal_{\alpha}(t)\prodvec\tangent'_{\alpha}(t).\]
-			Ara bé, per \eqref{prop:fórmules de Frenet:eq1} i \eqref{prop:fórmules de Frenet:eq2} trobem que
+			\[\normal'_{\alpha}(t)=\binormal'_{\alpha}(s)\prodvec\tangent_{\alpha}(s)+\binormal_{\alpha}(s)\prodvec\tangent'_{\alpha}(s).\]
+			Ara bé, per \eqref{thm:fórmules de Frenet:eq1} i \eqref{thm:fórmules de Frenet:eq2} trobem que
 			\begin{align*}
-				\normal'_{\alpha}(t)&=\torsio_{\alpha}(t)\normal_{\alpha}(t)\prodvec\tangent_{\alpha}(t)+\binormal_{\alpha}(t)\prodvec\curvatura_{\alpha}(t)\normal_{\alpha}(t) \\
-				&=\torsio_{\alpha}(t)\big(\normal_{\alpha}(t)\prodvec\tangent_{\alpha}(t)\big)+\curvatura_{\alpha}(t)\big(\binormal_{\alpha}(t)\prodvec\normal_{\alpha}(t)\big) \\ % REF
-				&=\torsio_{\alpha}(t)\binormal_{\alpha}(t)+\curvatura_{\alpha}(t)\big(\binormal_{\alpha}(t)\prodvec\normal_{\alpha}(t)\big) \tag{\ref{def:binormal}} \\
-				&=-\torsio_{\alpha}(t)\binormal_{\alpha}(t)-\curvatura_{\alpha}(t)\tangent_{\alpha}(t). \tag{\ref{def:binormal}}
+				\normal'_{\alpha}(s)&=\torsio_{\alpha}(s)\normal_{\alpha}(s)\prodvec\tangent_{\alpha}(s)+\binormal_{\alpha}(s)\prodvec\curvatura_{\alpha}(s)\normal_{\alpha}(s) \\
+				&=\torsio_{\alpha}(s)\big(\normal_{\alpha}(s)\prodvec\tangent_{\alpha}(s)\big)+\curvatura_{\alpha}(s)\big(\binormal_{\alpha}(s)\prodvec\normal_{\alpha}(s)\big) \\ % REF
+				&=\torsio_{\alpha}(s)\binormal_{\alpha}(s)+\curvatura_{\alpha}(s)\big(\binormal_{\alpha}(s)\prodvec\normal_{\alpha}(s)\big) \tag{\ref{def:binormal}} \\
+				&=-\torsio_{\alpha}(s)\binormal_{\alpha}(s)-\curvatura_{\alpha}(s)\tangent_{\alpha}(s). \tag{\ref{def:binormal}}
 			\end{align*}
 			
 			Per tant ens queda
 			\begin{align*}
-				\tangent_{\alpha}'(t)&=\curvatura_{\alpha}(t)\normal_{\alpha}(t) \\
-				\normal'_{\alpha}(t)&=-\torsio_{\alpha}(t)\binormal_{\alpha}(t)-\curvatura_{\alpha}(t)\tangent_{\alpha}(t) \\
-				\binormal'_{\alpha}(t)&=\torsio_{\alpha}(t)\normal(t)
+				\tangent_{\alpha}'(s)&=\curvatura_{\alpha}(s)\normal_{\alpha}(s) \\
+				\normal'_{\alpha}(s)&=-\torsio_{\alpha}(s)\binormal_{\alpha}(s)-\curvatura_{\alpha}(s)\tangent_{\alpha}(s) \\
+				\binormal'_{\alpha}(s)&=\torsio_{\alpha}(s)\normal(s)
 			\end{align*}
 			i per la definició de \myref{def:producte de matrius} hem acabat.
 		\end{proof}
-	\end{proposition}
+	\end{theorem}
 	\begin{proposition}
 		\label{prop:condició equivalent per que la reparametrització per l'arc d'una corba tingui curvatura no nula}
 		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i \(h\) un canvi de paràmetre de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc. Aleshores \(\tilde{\alpha}\) té curvatura no \nulla{} si i només si \(\alpha'\prodvec\alpha''\neq\vec{0}\).
@@ -822,9 +823,9 @@
 		\[\rapidesa_{\alpha}(t)=\norm{\alpha'(t)}\]
 		és la rapidesa de \(\alpha\).
 	\end{definition}
-	\begin{proposition}[Fórmules de Frenet]
-		\labelname{fórmules de Frenet}\label{prop:fórmules de Frenet}
-		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i tal que \(\alpha'\prodvec\alpha''=\vec{0}\). Aleshores
+	\begin{theorem}[Fórmules de Frenet]
+		\labelname{fórmules de Frenet}\label{thm:fórmules de Frenet}
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i tal que \(\alpha'\prodvec\alpha''\neq\vec{0}\). Aleshores
 		\[\begin{bmatrix}
 			\tangent_{\alpha}'(t) \\
 			\normal_{\alpha}'(t) \\
@@ -843,7 +844,28 @@
 		\begin{proof}
 			Sigui \(h\) una reparametrització de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc.
 			
-			Ai haig de tornar a definir les coses aquestes per corbes no parametritzades per l'arc. Quina mandra. Imagineu una demostració patrocinada per \myref{thm:regla de la cadena} i les \myref{prop:fórmules de Frenet per corbes parametritzades per l'arc}. Us prometo que tot quadra, com volíem veure.
+			Ai haig de tornar a definir les coses aquestes per corbes no parametritzades per l'arc. Quina mandra. Imagineu una demostració patrocinada per \myref{thm:regla de la cadena} i les \myref{thm:fórmules de Frenet per corbes parametritzades per l'arc}. Us prometo que tot quadra, com volíem veure.
+		\end{proof}
+	\end{theorem}
+	\begin{proposition}
+		\label{prop:triedre de frenet d'una corba regular}
+		\label{prop:tangent d'una corba regular}
+		\label{prop:normal d'una corba regular}
+		\label{prop:binormal d'una corba regular}
+		Sigui \(\alpha\) una corba regular amb \(\alpha'\prodvec\alpha''\neq\vec{0}\). Aleshores
+		\[\tangent_{\alpha}=\frac{\alpha'}{\norm{\alpha'}},\qquad\normal_{\alpha}=\binormal_{\alpha}\prodvec\binormal_{\beta}\qquad\text{i}\qquad\tangent_{\alpha}=\frac{\alpha'\prodvec\alpha''}{\norm{\alpha'\prodvec\alpha''}}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:curvatura i torsió d'una corba regular}
+		\label{prop:curvatura d'una corba regular}
+		\label{prop:torsió d'una corba regular}
+		Sigui \(\alpha\) una corba regular amb \(\alpha'\prodvec\alpha''\neq0\). Aleshores
+		\[\curvatura_{\alpha}=\frac{\norm{\alpha'\prodvec\alpha''}}{\norm{\alpha'}^{3}}\qquad\text{i}\qquad\torsio_{\alpha}=\frac{\prodesc{\alpha'\prodvec\alpha''}{\alpha'''}}{\norm{\alpha'\prodvec\alpha''}^{2}}.\]
+		\begin{proof}
+			%TODO
 		\end{proof}
 	\end{proposition}
 	\subsection{Teorema Fonamental de la teoria local de corbes}
@@ -912,7 +934,7 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:derivada del producte d'una matriu per una corba}
-		Siguin \(\alpha\) una corba regular i \(A\in\matrius_{n}\) una matriu. Aleshores
+		Siguin \(\alpha\) una corba regular i \(A\in\matrius_{n}(\mathbb{R})\) una matriu. Aleshores
 		\[\frac{\diff(A\alpha(t))}{\diff t}=A\alpha'(t).\]
 		\begin{proof}
 			%TODO
@@ -947,7 +969,7 @@
 	\end{lemma}
 	\begin{theorem}[Teorema Fonamental de la teoria local de corbes]
 		\labelname{Teorema Fonamental de la teoria local de corbes}\label{thm:Teorema Fonamental de la teoria local del corbes}
-		Siguin \(\curvatura(t)\) i \(\torsio(t)\) dues funcions diferenciables sobre \(I\), amb \(\curvatura(t)>0\) per a tot \(t\in I\). Aleshores existeix una única corba \(\alpha\) sobre \(I\) parametritzada per l'arc satisfent \(\curvatura_{\alpha}(t)=\curvatura(t)\) i \(\torsio_{\alpha}(t)=\torsio(t)\), llevat d'equivalència. % Reescriure la part de llevat d'equivalència
+		Siguin \(\curvatura(s)\) i \(\torsio(s)\) dues funcions diferenciables sobre \(I\), amb \(\curvatura(s)>0\) per a tot \(s\in I\). Aleshores existeix una única corba \(\alpha\) sobre \(I\) parametritzada per l'arc satisfent \(\curvatura_{\alpha}(s)=\curvatura(s)\) i \(\torsio_{\alpha}(s)=\torsio(s)\), llevat d'equivalència. % Reescriure la part de llevat d'equivalència
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1120,6 +1142,7 @@
 			i pel \myref{thm:Funció inversa} hem acabat.
 		\end{proof}
 	\end{theorem}
+	\subsection{Superfícies}
 	\begin{definition}[Superfície]
 		\labelname{superfície}\label{def:superfície}
 		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt tal que per a tot \(p\in S\) existeix un entorn obert \(\obert{U}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que
