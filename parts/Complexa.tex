@@ -1,0 +1,115 @@
+\documentclass[../Apunts.tex]{subfiles}
+
+\begin{document}
+\part{Anàlisi complexa i de Fourier}
+\chapter{Els nombres complexos}
+\section{Estructura de \ensuremath{\mathbb{C}}}
+	\subsection{Cos dels nombres complexos}
+	\begin{notation}[Conjunt dels nombres complexos]
+		\label{notation:cos dels nombres complexos}
+		Denotarem
+		\[\mathbb{C}=\{a+b\iu\mid a,b\in\mathbb{R}\}.\]
+%		\[\mathbb{C}=\{\alpha+\beta\iu\mid\alpha,\beta\in\mathbb{R}\}.\]
+	\end{notation}
+	\begin{definition}[Suma de nombres complexos]
+		\labelname{suma de nombres complexos}\label{def:suma de nombres complexos}
+		Siguin \(a+b\iu\) i \(c+d\iu\) dos nombres complexos. Aleshores definim la seva suma com
+		\[(a+b\iu)+(c+d\iu)=(x+s)+(y+t)\iu.\]
+	\end{definition}
+	\begin{observation}
+		\label{obs:els nombres complexos estan tancats per la suma}
+		Siguin \(a+b\iu\) i \(c+d\iu\) dos nombres complexos. Aleshores
+		\[(a+b\iu+c+d\iu)\in\mathbb{C}\]
+	\end{observation}
+	\begin{proposition}
+		\label{prop:els nombres complexos commuten per la suma}
+		Siguin \(a+b\iu\) i \(c+d\iu\) dos nombres complexos. Aleshores
+		\[a+b\iu+c+d\iu=c+d\iu+a+b\iu.\]
+		\begin{proof}
+			Per la definició de \myref{def:suma de nombres complexos} tenim
+			\begin{align*}
+				a+b\iu+c+d\iu&=(a+c)+(b+d)\iu \\
+				&=(c+a)+(d+b)\iu \\
+				&=c+d\iu+a+b\iu.\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:els nombres complexos són associatius per la suma}
+		Siguin \(a+b\iu\), \(c+d\iu\) i \(u+v\iu\) tres nombres complexos. Aleshores
+		\[(a+b\iu)+\big((c+d\iu)+(u+v\iu))\big)=\big((a+b\iu)+(c+d\iu)\big)+(u+v\iu).\]
+		\begin{proof}
+			Per la definició de \myref{def:suma de nombres complexos} tenim
+			\begin{align*}
+				(a+b\iu)+\big((c+d\iu)+(u+v\iu))\big)&=(a+b\iu)+\big((c+u)+(d+v)\iu\big) \\
+				&=\big(a+(c+u)\big)+\big(b+(d+v)\big)\iu \\
+				&=\big((a+c)+u\big)+\big((b+d)+v\big)\iu \\
+				&=\big((a+c)+(b+d)\iu\big)+(u+v\iu) \\
+				&=\big((a+b\iu)+(c+d\iu)\big)+(u+v\iu).\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Producte de nombres complexos]
+		\labelname{producte de nombres complexos}\label{def:producte de nombres complexos}
+		Siguin \(a+b\iu\) i \(c+d\iu\) dos nombres complexos. Aleshores definim el seu producte com
+		\[(a+b\iu)\cdot(c+d\iu)=(ac-bd)+(ad+bc)\iu.\]
+	\end{definition}
+	\begin{observation}
+		\label{obs:els nombres complexos estan tancats pel producte}
+		Siguin \(a+b\iu\) i \(c+d\iu\) dos nombres complexos. Aleshores
+		\[(a+b\iu)(c+d\iu)\in\mathbb{C}.\]
+	\end{observation}
+	\begin{proposition}
+		\label{prop:els nombres complexos commuten pel producte}
+		Siguin \(a+b\iu\) i \(c+d\iu\) dos nombres complexos. Aleshores
+		\[(a+b\iu)(c+d\iu)=(c+d\iu)(a+b\iu).\]
+		\begin{proof}
+			Per la definició de \myref{def:producte de nombres complexos} tenim
+			\begin{align*}
+				(a+b\iu)(c+d\iu)&=(ac-bd)+(ad+bc)\iu \\
+				&=(ca-bd)+(da+cb)\iu \\
+				&=(c+d\iu)(a+b\iu).\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:els nombres complexos són associatius pel producte}
+		Siguin \(a+b\iu\), \(c+d\iu\) i \(u+v\iu\) tres nombres complexos. Aleshores
+		\[(a+b\iu)\big((c+d\iu)(u+v\iu))\big)=\big((a+b\iu)(c+d\iu)\big)(u+v\iu).\]
+		\begin{proof}
+			Prenem \(\alpha=a+b\iu\), \(\beta=c+d\iu\) i \(\gamma=u+v\iu\). Per la definició de \myref{def:producte de nombres complexos} tenim
+			\begin{align*}
+				\alpha\big(\beta\gamma\big)&=(a+b\iu)\big((c+d\iu)(u+v\iu)\big) \\
+				&=(a+b\iu)\big((cu-dv)+(cv+du)\iu\big) \\
+				&=\big(a(cu-dv)-b(cv+du)\big)+\big(a(cv+du)+b(cu-dv)\big)\iu \\
+				&= \\
+				&=\big((a+b\iu)(c+d\iu)\big)(u+v\iu).\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	
+	
+	
+	\subsection{Propietats dels nombres complexos}
+	\begin{definition}[Norma d'un nombre complex]
+		\labelname{norma d'un nombre complex}\label{def:norma d'un nombre complex}
+		Sigui \(z=a+b\iu\) un nombre complex. Aleshores definim la seva norma com
+		\[\abs{z}=\sqrt{a^{2}+b^{2}}.\]
+	\end{definition}
+	\begin{definition}[Conjugat d'un nombre complex]
+		\labelname{conjugat d'un nombre complex}\label{def:nombre d'un nombre complex}
+		Sigui \(z=a+b\iu\) un nombre complex. Aleshores definim
+		\[\conjugat{z}=a-b\iu\]
+		com el conjugat de \(z\).
+	\end{definition}
+	\begin{proposition}
+		\label{prop:la nomra d'un nombre complex és l'arrel del nombre pel seu conjugat}
+		Sigui \(z\) un nombre complex. Aleshores es satisfà
+		\[\abs{z}=\sqrt{z\conjugat{z}}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	
+	\subsection{Topologia dels nombres complexos}
+\end{document} 

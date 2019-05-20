@@ -1,2 +1,1 @@
-Arreglats alguns errors menors a geometria diferencial i escrit les corbes parametritzades per l'arc amb paràmetre s.
-Afegides algunes demostracions al tema de superfícies.
+Començada l'assignatura d'anàlisi complexa i de Fourier.
