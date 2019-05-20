@@ -1037,7 +1037,7 @@
 	\end{proposition}
 	\begin{theorem}[Teorema d'estructura local de les immersions]
 		\labelname{Teorema d'estructura local de les immersions}\label{thm:Teorema d'estructura local de les immersions}
-		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una immersió en un punt \(x_{0}\in\obert{U}\). Aleshores existeixen dos oberts \(\obert{U}'\subseteq\mathbb{R}^{n}\) i \(\obert{V}\subseteq\mathbb{R}^{m}\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{V}\longleftrightarrow\Ima_{\obert{U}'}(g)\subseteq\mathbb{R}^{n}\) i satisfent \(i(x_{0})\in\obert{V}\) tals que el diagrama
+		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una immersió en un punt \(x_{0}\in\obert{U}\). Aleshores existeixen dos oberts \(\obert{U}'\subseteq\mathbb{R}^{n}\) i \(\obert{V}\subseteq\mathbb{R}^{m}\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{V}\longleftrightarrow g(\obert{U}')\subseteq\mathbb{R}^{n}\) i satisfent \(i(x_{0})\in\obert{V}\) tals que el diagrama
 		\[\begin{tikzcd}
 			\obert{U}' \arrow{r}{i} \arrow[swap]{dr}{f} & \obert{V} \arrow{d}{g} \\
 			& \mathbb{R}^{m}
@@ -1090,9 +1090,9 @@
 	\end{theorem}
 	\begin{theorem}[Teorema d'estructura local de les submersions]
 		\labelname{Teorema d'estructura local de les submersions}\label{thm:Teorema d'estructura local de les submersions}
-		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una submersions en un punt \(x_{0}\in\obert{U}\). Aleshores existeix un obert \(\obert{U}'\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{U}'\longleftrightarrow\Ima_{\obert{U}'}(g)\subseteq\mathbb{R}^{n}\) tals que el diagrama
+		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una submersió en un punt \(x_{0}\in\obert{U}\). Aleshores existeix un obert \(\obert{U}'\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{U}'\longleftrightarrow g(\obert{U}')\subseteq\mathbb{R}^{n}\) tals que el diagrama
 		\[\begin{tikzcd}
-			\obert{U}' \arrow{r}{g} \arrow[swap]{dr}{f} & \Ima_{\obert{U}'}(g) \arrow{d}{\pi} \\
+			\obert{U}' \arrow{r}{g} \arrow[swap]{dr}{f} & g(\obert{U}') \arrow{d}{\pi} \\
 			& \mathbb{R}^{m}
 		\end{tikzcd}\]
 		és un diagrama commutatiu.
@@ -1155,32 +1155,54 @@
 		\[S\cap\obert{U}=F^{-1}(\{0\}).\]
 		\begin{proof}
 			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(S\) és una superfície. Per la definició de \myref{def:superfície} trobem que que per a tot \(p\in S\) existeix un entorn obert \(\obert{U}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que
-			\[g(\obert{U}\cap S)=g(\obert{U})\cap(\mathbb{R}^{2}\times\{0\}).\]
+			\begin{equation}
+				\label{eq:thm:condicions equivalents a la definició de superfície 1}
+				g(\obert{U}\cap S)=g(\obert{U})\cap(\mathbb{R}^{2}\times\{0\}).
+			\end{equation}
 			Considerem la funció
 			\begin{align*}
 				F\colon\obert{U}&\longrightarrow\mathbb{R} \\
-				x&\longmapsto(\pi_{3}\circ g)(x).
+				x&\longmapsto\pi_{3}(g(x)).
 			\end{align*}
 			Aleshores tenim que
 			\begin{align*}
-				F^{-1}(\{0\})&=(\pi_{3}\circ g)^{-1}(\{0\}) \\
-				&=g^{-1}(\mathbb{R}^{2}\times\{0\})=\obert{U}\cap S, %TODO % Y THO
+				F^{-1}(\{0\})&=g^{-1}(\pi_{3}^{-1}(\{0\})) \\
+				&=g^{-1}(\mathbb{R}^{2}\times\{0\}) \\
+				&=g^{-1}\big(g(\obert{U})\big)\cap g^{-1}(\mathbb{R}^{2}\times\{0\})\\
+				&=g^{-1}\big(g(\obert{U})\cap(\mathbb{R}^{2}\times\{0\})\big)=\obert{U}\cap S, \tag{\ref{eq:thm:condicions equivalents a la definició de superfície 1}} %TODO % Y THO
 			\end{align*}
 			i hem acabat.
 			
-			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que \(S\cap\obert{U}=F^{-1}(\{0\})\). Pel \myref{thm:Teorema d'estructura local de les submersions} tenim que per a tot \(p\in S\) existeix un obert \(\obert{U}'\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{U}'\longleftrightarrow g(\obert{U}')\subseteq\mathbb{R}^{n}\) tals que
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que \(S\cap\obert{U}=F^{-1}(\{0\})\). Pel \myref{thm:Teorema d'estructura local de les submersions} tenim que per a tot \(p\in S\) existeix un obert \(\obert{U}'\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{U}'\longleftrightarrow g(\obert{U}')\subseteq\mathbb{R}^{n}\) tals que per a tot \(x\in\obert{U}'\) tenim
 			\[F(x)=(\pi_{3}\circ g)(x).\]
+			Per tant, si considerem l'aplicació
+			\begin{align*}
+				G\colon&\obert{U}'\longrightarrow\mathbb{R} \\
+				x&\longmapsto F(x)
+			\end{align*}
+			la restricció de \(F\) en \(\obert{U}'\) trobem que per a tot \(x\in\obert{U}'\) tenim
+			\[G(x)=(\pi_{3}\circ g)(x),\]
+			i es satisfà
+			\begin{equation}
+				\label{eq:thm:condicions equivalents a la definició de superfície 2}
+				G^{-1}(\{0\})=S\cap\obert{U}'.
+			\end{equation}
 			
 			Aleshores tenim que
 			\begin{align*}
-				S\cap\obert{U}'&\subseteq S\cap\obert{U}\\
-				&=F^{-1}(\{0\}) \\
-				&=(\pi_{3}\circ g)^{-1}(\{0\}) \\
+				S\cap\obert{U}'&=G^{-1}(\{0\}) \tag{\ref{eq:thm:condicions equivalents a la definició de superfície 2}}\\
+				&=g^{-1}\big(\pi_{3}^{-1}(\{0\})\big) \\
 				&=g^{-1}(\mathbb{R}^{2}\times\{0\}),
 			\end{align*}
 			i per tant tenim
-			\[g(S\cap\obert{U}')\subseteq g(g^{-1}(\mathbb{R}^{2}\times\{0\}))=\mathbb{R}^{2}\times\{0\}\]
-			continuar
+			\begin{align*}
+				g(S\cap\obert{U}')&=g(\obert{U}')\cap g(S\cap\obert{U}') \\
+				&=g(\obert{U}')\cap g(g^{-1}(\mathbb{R}^{2}\times\{0\})) \\
+				&=g(\obert{U}')\cap(\mathbb{R}^{2}\times\{0\}),
+			\end{align*}
+			i per la definició de \myref{def:superfície} hem acabat.
+%			\[g(S\cap\obert{U}')=g(g^{-1}(\mathbb{R}^{2}\times\{0\}))=g(\obert{U}')\mathbb{R}^{2}\times\{0\}\]
+%			continuar
 			%TODO continuar. Revisar que no l'hagi cagat
 		\end{proof}
 	\end{theorem}

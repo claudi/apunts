@@ -1,1 +1,2 @@
-Afegits enunciats a EDOS II.
+Arreglats alguns errors menors a geometria diferencial i escrit les corbes parametritzades per l'arc amb paràmetre s.
+Afegides algunes demostracions al tema de superfícies.
