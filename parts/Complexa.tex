@@ -4,9 +4,9 @@
 \part{Anàlisi complexa i de Fourier}
 \chapter{Els nombres complexos}
 \section{Estructura de \ensuremath{\mathbb{C}}}
-	\subsection{Cos dels nombres complexos}
-	\begin{notation}[Conjunt dels nombres complexos]
-		\label{notation:cos dels nombres complexos}
+	\subsection{Cos de nombres complexos}
+	\begin{notation}[Conjunt de nombres complexos]
+		\label{notation:cos de nombres complexos}
 		Denotarem
 		\[\mathbb{C}=\{a+b\iu\mid a,b\in\mathbb{R}\}.\]
 %		\[\mathbb{C}=\{\alpha+\beta\iu\mid\alpha,\beta\in\mathbb{R}\}.\]
@@ -14,7 +14,7 @@
 	\begin{definition}[Suma de nombres complexos]
 		\labelname{suma de nombres complexos}\label{def:suma de nombres complexos}
 		Siguin \(a+b\iu\) i \(c+d\iu\) dos nombres complexos. Aleshores definim la seva suma com
-		\[(a+b\iu)+(c+d\iu)=(x+s)+(y+t)\iu.\]
+		\[(a+b\iu)+(c+d\iu)=(a+c)+(b+d)\iu.\]
 	\end{definition}
 	\begin{observation}
 		\label{obs:els nombres complexos estan tancats per la suma}
@@ -24,13 +24,12 @@
 	\begin{proposition}
 		\label{prop:els nombres complexos commuten per la suma}
 		Siguin \(a+b\iu\) i \(c+d\iu\) dos nombres complexos. Aleshores
-		\[a+b\iu+c+d\iu=c+d\iu+a+b\iu.\]
+		\[(a+b\iu)+(c+d\iu)=(c+d\iu)+(a+b\iu).\]
 		\begin{proof}
 			Per la definició de \myref{def:suma de nombres complexos} tenim
 			\begin{align*}
 				a+b\iu+c+d\iu&=(a+c)+(b+d)\iu \\
-				&=(c+a)+(d+b)\iu \\
-				&=c+d\iu+a+b\iu.\qedhere
+				&=(c+a)+(d+b)\iu=c+d\iu+a+b\iu.\qedhere
 			\end{align*}
 		\end{proof}
 	\end{proposition}
@@ -47,6 +46,24 @@
 				&=\big((a+c)+(b+d)\iu\big)+(u+v\iu) \\
 				&=\big((a+b\iu)+(c+d\iu)\big)+(u+v\iu).\qedhere
 			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:element neutre per la suma dels complexos}
+		Sigui \(a+b\iu\) un nombre complex. Aleshores
+		\[(a+b\iu)+0=a+b\iu.\]
+		\begin{proof}
+			Per la definició de \myref{def:suma de nombres complexos} tenim
+			\[(a+b\iu)+0=(a+0)+(b+0)\iu=a+b\iu.\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:element invers per la suma dels complexos}
+		Sigui \(a+b\iu\) un nombre complex. Aleshores
+		\[(a+b\iu)+(-a-b\iu)=0.\]
+		\begin{proof}
+			Per la definició de \myref{def:suma de nombres complexos} tenim
+			\[(a+b\iu)+(-a-b\iu)=(a-a)+(b-b)\iu=0.\qedhere\]
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Producte de nombres complexos]
@@ -67,8 +84,7 @@
 			Per la definició de \myref{def:producte de nombres complexos} tenim
 			\begin{align*}
 				(a+b\iu)(c+d\iu)&=(ac-bd)+(ad+bc)\iu \\
-				&=(ca-bd)+(da+cb)\iu \\
-				&=(c+d\iu)(a+b\iu).\qedhere
+				&=(ca-bd)+(da+cb)\iu=(c+d\iu)(a+b\iu).\qedhere
 			\end{align*}
 		\end{proof}
 	\end{proposition}
@@ -82,15 +98,58 @@
 				\alpha\big(\beta\gamma\big)&=(a+b\iu)\big((c+d\iu)(u+v\iu)\big) \\
 				&=(a+b\iu)\big((cu-dv)+(cv+du)\iu\big) \\
 				&=\big(a(cu-dv)-b(cv+du)\big)+\big(a(cv+du)+b(cu-dv)\big)\iu \\
-				&= \\
-				&=\big((a+b\iu)(c+d\iu)\big)(u+v\iu).\qedhere
+				&=(acu-adv-bcv-bdu)+(acv+adu+bcu-bdv)\iu \\
+				&=(acu-bdu-adv-bcv)+(acv-bdv+adu+bcu)\iu \\
+				&=\big((ac-bd)u-(ad+bc)v\big)+\big((ac-bd)v+(ad+bc)u\big)\iu \\
+				&=\big((ac-bd)+(ad+bc)\iu\big)(u+v\iu) \\
+				&=\big((a+b\iu)(c+d\iu)\big)(u+v\iu)=(\alpha\beta)\gamma.\qedhere
 			\end{align*}
 		\end{proof}
 	\end{proposition}
+	\begin{proposition}
+		\label{prop:element neutre pel producte dels complexos}
+		Sigui \(a+b\iu\) un nombre complex. Aleshores
+		\[(a+b\iu)\cdot1=a+b\iu.\]
+		\begin{proof}
+			Per la definició de \myref{def:producte de nombres complexos} tenim
+			\[(a+b\iu)\cdot1=(a\cdot1)+(b\cdot1)\iu=a+b\iu.\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:element invers pel producte de nombres complexos}
+		Sigui \(a+b\iu\) un nombre complex. Aleshores
+		\[(a+b\iu)\Big(\frac{a}{a^{2}+b^{2}}+\frac{-b}{a^{2}+b^{2}}\iu\Big)=1.\]
+		\begin{proof}
+			Per la definició de \myref{def:producte de nombres complexos} tenim
+			\begin{align*}
+				(a+b\iu)\Big(\frac{a}{a^{2}+b^{2}}+\frac{-b}{a^{2}+b^{2}}\iu\Big)&=\Big(\frac{a^{2}}{a^{2}+b^{2}}-\frac{-b^{2}}{a^{2}+b^{2}}\Big)+\Big(\frac{ab}{a^{2}+b^{2}}+\frac{-ba}{a^{2}+b^{2}}\Big)\iu \\
+				&=\Big(\frac{a^{2}+b^{2}}{a^{2}+b^{2}}\Big)+\Big(\frac{ab-ab}{a^{2}+b^{2}}\Big)\iu=1.\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:distribuitva del producte respecte la suma de nombres complexos}
+		Siguin \(a+b\iu\), \(c+d\iu\) i \(u+v\iu\) tres nombres complexos. Aleshores
+		\[(a+b\iu)\big((c+d\iu)+(u+v\iu)\big)=(a+b\iu)(c+d\iu)+(a+b\iu)(u+v\iu).\]
+		\begin{proof}
+			Per la definició de \myref{def:suma de nombres complexos} i \myref{def:producte de nombres complexos} tenim
+			\begin{align*}
+				(a+b\iu)\big((c+d\iu)+(u+v\iu)\big)&=(a+b\iu)\big((c+u)+(d+v)\iu\big) \\
+				&=\big(a(c+u)-b(d+v)\big)+\big(a(d+v)+b(c+u)\big)\iu \\
+				&=(ac+au-bd-bv)+(ad+av+bc+bu)\iu \\
+				&=(ac-bd+au-bv)+(ad+bc+av+bu)\iu\\
+				&=(ac-bd)+(ad+bc)\iu+(au-bv)+(av+bu)\iu \\
+				&=(a+b\iu)(c+d\iu)+(a+b\iu)(u+v\iu).\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{corollary}
+		\label{cor:els complexos formen un cos}
+		El conjunt \(\mathbb{C}\) amb la suma \(+\) i el producte \(\cdot\) és un cos.
+	\end{corollary}
 	
 	
-	
-	\subsection{Propietats dels nombres complexos}
+	\subsection{Propietats de nombres complexos}
 	\begin{definition}[Norma d'un nombre complex]
 		\labelname{norma d'un nombre complex}\label{def:norma d'un nombre complex}
 		Sigui \(z=a+b\iu\) un nombre complex. Aleshores definim la seva norma com
@@ -111,5 +170,5 @@
 		\end{proof}
 	\end{proposition}
 	
-	\subsection{Topologia dels nombres complexos}
+	\subsection{Topologia de nombres complexos}
 \end{document} 

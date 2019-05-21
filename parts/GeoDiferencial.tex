@@ -1145,16 +1145,16 @@
 	\subsection{Superfícies}
 	\begin{definition}[Superfície]
 		\labelname{superfície}\label{def:superfície}
-		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt tal que per a tot \(p\in S\) existeix un entorn obert \(\obert{U}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que
+		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt tal que per a tot \(p\in S\) existeix un entorn obert \(\obert{U}\subseteq\mathbb{R}^{3}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que
 		\[g(\obert{U}\cap S)=g(\obert{U})\cap(\mathbb{R}^{2}\times\{0\}).\]
 		Aleshores direm que \(S\) és una superfície regular.
 	\end{definition}
 	\begin{theorem}
 		\label{thm:condicions equivalents a la definició de superfície}
-		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt. Aleshores \(S\) és una superfície si i només si per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que
+		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt. Aleshores \(S\) és una superfície si i només si per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\subseteq\mathbb{R}^{3}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que
 		\[S\cap\obert{U}=F^{-1}(\{0\}).\]
 		\begin{proof}
-			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(S\) és una superfície. Per la definició de \myref{def:superfície} trobem que que per a tot \(p\in S\) existeix un entorn obert \(\obert{U}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que
+			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(S\) és una superfície. Per la definició de \myref{def:superfície} trobem que que per a tot \(p\in S\) existeix un entorn obert \(\obert{U}\subseteq\mathbb{R}^{3}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que
 			\begin{equation}
 				\label{eq:thm:condicions equivalents a la definició de superfície 1}
 				g(\obert{U}\cap S)=g(\obert{U})\cap(\mathbb{R}^{2}\times\{0\}).
@@ -1173,7 +1173,7 @@
 			\end{align*}
 			i hem acabat.
 			
-			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que \(S\cap\obert{U}=F^{-1}(\{0\})\). Pel \myref{thm:Teorema d'estructura local de les submersions} tenim que per a tot \(p\in S\) existeix un obert \(\obert{U}'\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{U}'\longleftrightarrow g(\obert{U}')\subseteq\mathbb{R}^{n}\) tals que per a tot \(x\in\obert{U}'\) tenim
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\subseteq\mathbb{R}^{3}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que \(S\cap\obert{U}=F^{-1}(\{0\})\). Pel \myref{thm:Teorema d'estructura local de les submersions} tenim que per a tot \(p\in S\) existeix un obert \(\obert{U}'\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{U}'\longleftrightarrow g(\obert{U}')\subseteq\mathbb{R}^{3}\) tals que per a tot \(x\in\obert{U}'\) tenim
 			\[F(x)=(\pi_{3}\circ g)(x).\]
 			Per tant, si considerem l'aplicació
 			\begin{align*}

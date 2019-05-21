@@ -1,1 +1,1 @@
-Començada l'assignatura d'anàlisi complexa i de Fourier.
+Demostrat que els complexos formen un cos.
