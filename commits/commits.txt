@@ -1,1 +1,1 @@
-Demostrat que els complexos formen un cos.
+Afegida teoria a la part dels nombres complexos fins abans de la secció de la seva topologia.

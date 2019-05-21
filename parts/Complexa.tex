@@ -150,25 +150,134 @@
 	
 	
 	\subsection{Propietats de nombres complexos}
-	\begin{definition}[Norma d'un nombre complex]
-		\labelname{norma d'un nombre complex}\label{def:norma d'un nombre complex}
-		Sigui \(z=a+b\iu\) un nombre complex. Aleshores definim la seva norma com
-		\[\abs{z}=\sqrt{a^{2}+b^{2}}.\]
-	\end{definition}
 	\begin{definition}[Conjugat d'un nombre complex]
-		\labelname{conjugat d'un nombre complex}\label{def:nombre d'un nombre complex}
+		\labelname{conjugat d'un nombre complex}\label{def:conjugat d'un nombre complex}
 		Sigui \(z=a+b\iu\) un nombre complex. Aleshores definim
 		\[\conjugat{z}=a-b\iu\]
 		com el conjugat de \(z\).
 	\end{definition}
 	\begin{proposition}
+		\label{prop:el conjugat del conjugat d'un nombre complex és ell mateix}
+		Sigui \(z\) un nombre complex. Aleshores
+		\[\conjugat{\conjugat{z}}=z.\]
+		\begin{proof}
+			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\mathbb{R}\) tals que \(z=a+b\iu\). Aleshores per la definició de \myref{def:conjugat d'un nombre complex} tenim que
+			\begin{align*}
+				\conjugat{\conjugat{z}}&=\conjugat{\conjugat{a+b\iu}} \\
+				&=\conjugat{a-b\iu} \\
+				&=a+b\iu=z.\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:el conjugat de la suma és la suma de conjugats}
+		Siguin \(z\) i \(w\) dos nombres complexos. Aleshores
+		\[\conjugat{z+w}=\conjugat{z}+\conjugat{w}.\]
+		\begin{proof}
+			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\), \(c\), \(d\in\mathbb{R}\) tals que
+			\[z=a+b\iu\qquad\text{i}\qquad w=c+d\iu.\]
+			Aleshores per la definició de \myref{def:suma de nombres complexos} i la definició de \myref{def:conjugat d'un nombre complex} trobem que
+			\begin{align*}
+				\conjugat{z+w}&=\conjugat{(a+b\iu)+(c+d\iu)} \\
+				&=\conjugat{(a+c)+(b+d)\iu} \\
+				&=(a+c)-(b+d)\iu \\
+				&=(a-b\iu)+(c-d\iu) \\
+				&=\conjugat{a+b\iu}+\conjugat{c+d\iu}=\conjugat{z}+\conjugat{w}.\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:el conjugat del producte és el producte de conjugats}
+		Siguin \(z\) i \(w\) dos nombres complexos. Aleshores
+		\[\conjugat{zw}=\conjugat{z}\,\conjugat{w}.\]
+		\begin{proof}
+			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\), \(c\), \(d\in\mathbb{R}\) tals que
+			\[z=a+b\iu\qquad\text{i}\qquad w=c+d\iu.\]
+			Aleshores per la definició de \myref{def:producte de nombres complexos} i la definició de \myref{def:conjugat d'un nombre complex} trobem que
+			\begin{align*}
+				\conjugat{zw}&=\conjugat{(a+b\iu)(c+d\iu)} \\
+				&=\conjugat{(ac-bd)+(ad+bc)\iu} \\
+				&=(ac-bd)-(ad+bc)\iu \\
+				&=(ac-bd)+(-ad-bc)\iu \\
+				&=(a-b\iu)(c-d\iu) \\
+				&=\conjugat{a+b\iu}\,\conjugat{c+d\iu}=\conjugat{z}\,\conjugat{w}\qedhere.
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:el producte d'un nombre complex pel seu conjugat és la suma dels quadrats de la seva part real i imaginaria}
+		Sigui \(z=a+b\iu\) un nombre complex. Aleshores
+		\[z\conjugat{z}=a^{2}+b^{2}.\]
+		\begin{proof}
+			Per la definició de \myref{def:producte de nombres complexos} i la definició de \myref{def:conjugat d'un nombre complex} trobem que
+			\begin{align*}
+				z\conjugat{z}&=(a+b\iu)\conjugat{a+b\iu} \\
+				&=(a+b\iu)(a-b\iu)=a^{2}+b^{2}.\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:un nombre complex és igual al seu conjugat si i només si és un real}
+		Sigui \(z\) un nombre complex. Aleshores \(z=\conjugat{z}\) si i només si \(z\in\mathbb{R}\).
+		\begin{proof}
+			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\mathbb{R}\) tals que \(z=a+b\iu\). Aleshores si tenim \(z=\conjugat{z}\), per la definició de \myref{def:conjugat d'un nombre complex} trobem que
+			\[a+b\iu=a-b\iu,\]
+			que és equivalent a \(b=-b\), i per tant ha de ser \(b=0\) i trobem que \(z=a\in\mathbb{R}\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:inversa d'un nombre complex en funció del seu conjugat}
+		Sigui \(z\neq0\) un nombre complex. Aleshores
+		\[z^{-1}=\frac{\conjugat{z}}{z\conjugat{z}}.\]
+		\begin{proof}
+			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\mathbb{R}\) tals que \(z=a+b\iu\). Aleshores tenim que
+			\begin{align*}
+				z\frac{\conjugat{z}}{z\conjugat{z}}&=\frac{z\conjugat{z}}{z\conjugat{z}} \\
+				&=\frac{a^{2}+b^{2}}{a^{2}+b^{2}}=1 \tag{\ref{prop:el producte d'un nombre complex pel seu conjugat és la suma dels quadrats de la seva part real i imaginaria}}
+			\end{align*}
+			i per la definició de \myref{def:l'invers d'un element d'un anell} hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Part real i part imaginària d'un nombre complex]
+		\labelname{part real i part imaginària d'un nombre complex}\label{def:part real i part imaginària d'un nombre complex}
+		\labelname{part real d'un nombre complex}\label{def:part real d'un nombre complex}
+		\labelname{part imaginària d'un nombre complex}\label{def:part imaginària d'un nombre complex}
+		Sigui \(z=a+b\iu\) un nombre complex. Aleshores definim
+		\[\Re(z)=a\]
+		com la part real de \(z\) i
+		\[\Im(z)=b\]
+		com la part imaginària de \(z\).
+	\end{definition}
+	\begin{proposition}
+		\label{prop:fórmules per la part real i part imaginària d'un nombre complex}
+		\label{prop:fórmula per la part real d'un nombre complex}
+		\label{prop:fórmula per la part imaginària d'un nombre complex}
+		Sigui \(z\) un nombre complex. Aleshores
+		\[\Re(z)=\frac{z+\conjugat{z}}{2}\qquad\text{i}\qquad\Im(z)=\frac{z-\conjugat{z}}{2\iu}.\]
+		\begin{proof}
+			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\mathbb{R}\) tals que \(z=a+b\iu\). Aleshores tenim que
+			\[\frac{z+\conjugat{z}}{2}=\frac{a+b\iu+a-b\iu}{2}=\frac{2a}{2}=a=\Re(z),\]
+			i
+			\[\frac{z-\conjugat{z}}{2\iu}=\frac{a+b\iu-a+b\iu}{2\iu}=\frac{2b\iu}{2\iu}=b=\Im(z),\]
+			i per la definició de \myref{def:part real i part imaginària d'un nombre complex} hem acabat.
+		\end{proof}
+	\end{proposition}
+	\subsection{Topologia de nombres complexos}
+	\begin{definition}[Norma d'un nombre complex]
+		\labelname{norma d'un nombre complex}\label{def:norma d'un nombre complex}
+		Sigui \(z=a+b\iu\) un nombre complex. Aleshores definim la seva norma com
+		\[\norm{z}=\sqrt{a^{2}+b^{2}}.\]
+	\end{definition}
+	\begin{proposition}[Desigualtat triangular]
+		\href{http://chistemat.es/wp-content/uploads/2013/11/contra-la-desigualdad.png}{Prova visual}.
+	\end{proposition}
+	\begin{proposition}
 		\label{prop:la nomra d'un nombre complex és l'arrel del nombre pel seu conjugat}
 		Sigui \(z\) un nombre complex. Aleshores es satisfà
-		\[\abs{z}=\sqrt{z\conjugat{z}}.\]
+		\[\norm{z}=\sqrt{z\conjugat{z}}.\]
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{proposition}
 	
-	\subsection{Topologia de nombres complexos}
 \end{document} 
