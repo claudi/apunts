@@ -686,7 +686,7 @@
 	\begin{proposition}
 		\label{prop:torsió}
 		Sigui \(\alpha\) una corba amb curvatura no \nulla{}. Aleshores existeix una \(\torsio_{\alpha}(s)\in\mathbb{R}\) tal que
-		\[\binormal'_{\alpha}(s)=\torsio_{\alpha}(s)\normal(s).\]
+		\[\binormal'_{\alpha}(s)=\torsio_{\alpha}(s)\normal_{\alpha}(s).\]
 		\begin{proof}
 			Tenim per la proposició \myref{prop:triedre de Frenet} que \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és una base ortonormal de \(\mathbb{R}^{3}\), i per tant tenim que %REF
 			\[\binormal'_{\alpha}(s)=\prodesc{\binormal'_{\alpha}(s)}{\tangent_{\alpha}(s)}\tangent_{\alpha}(s)+\prodesc{\binormal'_{\alpha}(s)}{\normal_{\alpha}(s)}\normal_{\alpha}(s)+\prodesc{\binormal'_{\alpha}(s)}{\binormal_{\alpha}(s)}\binormal_{\alpha}(s).\]
@@ -719,7 +719,7 @@
 	\begin{definition}[Torsió]
 		\labelname{torsió}\label{def:torsió}
 		Sigui \(\alpha\) una corba parametritzada per l'arc amb curvatura no \nulla{} i \(\torsio_{\alpha}(s)\) el real tal que
-		\[\binormal'_{\alpha}(s)=\torsio_{\alpha}(s)\normal(s).\]
+		\[\binormal'_{\alpha}(s)=\torsio_{\alpha}(s)\normal_{\alpha}(s).\]
 		Aleshores direm que \(\torsio_{\alpha}(s)\) és la torsió de \(\alpha\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:torsió}.
@@ -752,7 +752,7 @@
 			i per la definició de \myref{def:torsió} trobem que
 			\begin{equation}
 				\label{thm:fórmules de Frenet:eq2}
-				\binormal'_{\alpha}(s)=\torsio_{\alpha}(s)\normal(s).
+				\binormal'_{\alpha}(s)=\torsio_{\alpha}(s)\normal_{\alpha}(s).
 			\end{equation}
 			
 			Per la definició de \myref{def:binormal} trobem que
@@ -765,7 +765,7 @@
 			\begin{align*}
 				\normal'_{\alpha}(s)&=\torsio_{\alpha}(s)\normal_{\alpha}(s)\prodvec\tangent_{\alpha}(s)+\binormal_{\alpha}(s)\prodvec\curvatura_{\alpha}(s)\normal_{\alpha}(s) \\
 				&=\torsio_{\alpha}(s)\big(\normal_{\alpha}(s)\prodvec\tangent_{\alpha}(s)\big)+\curvatura_{\alpha}(s)\big(\binormal_{\alpha}(s)\prodvec\normal_{\alpha}(s)\big) \\ % REF
-				&=\torsio_{\alpha}(s)\binormal_{\alpha}(s)+\curvatura_{\alpha}(s)\big(\binormal_{\alpha}(s)\prodvec\normal_{\alpha}(s)\big) \tag{\ref{def:binormal}} \\
+				&=-\torsio_{\alpha}(s)\binormal_{\alpha}(s)+\curvatura_{\alpha}(s)\big(\binormal_{\alpha}(s)\prodvec\normal_{\alpha}(s)\big) \tag{\ref{def:binormal}} \\
 				&=-\torsio_{\alpha}(s)\binormal_{\alpha}(s)-\curvatura_{\alpha}(s)\tangent_{\alpha}(s). \tag{\ref{def:binormal}}
 			\end{align*}
 			
@@ -773,7 +773,7 @@
 			\begin{align*}
 				\tangent_{\alpha}'(s)&=\curvatura_{\alpha}(s)\normal_{\alpha}(s) \\
 				\normal'_{\alpha}(s)&=-\torsio_{\alpha}(s)\binormal_{\alpha}(s)-\curvatura_{\alpha}(s)\tangent_{\alpha}(s) \\
-				\binormal'_{\alpha}(s)&=\torsio_{\alpha}(s)\normal(s)
+				\binormal'_{\alpha}(s)&=\torsio_{\alpha}(s)\normal_{\alpha}(s)
 			\end{align*}
 			i per la definició de \myref{def:producte de matrius} hem acabat.
 		\end{proof}
@@ -1389,20 +1389,64 @@
 		\end{proof}
 	\end{proposition}
 	\begin{notation}[Primera forma fonamental]
+		\label{notation:primera forma fonamental}
 		Denotarem
 		\[\I_{p}=\begin{bmatrix}
 			E & F \\
 			F & G
 		\end{bmatrix}=
 		\begin{bmatrix}
-			\prodesc{\varphi_{u}(p)}{\varphi_{u}(p)} & \prodesc{\varphi_{u}(p)}{\varphi_{v}(p)} \\
-			\prodesc{\varphi_{v}(p)}{\varphi_{u}(p)} & \prodesc{\varphi_{v}(p)}{\varphi_{v}(p)}
+			\prodesc{\varphi_{u}}{\varphi_{u}} & \prodesc{\varphi_{u}}{\varphi_{v}} \\
+			\prodesc{\varphi_{v}}{\varphi_{u}} & \prodesc{\varphi_{v}}{\varphi_{v}}
 		\end{bmatrix}.\]
 	\end{notation}
+	\begin{example}
+		\label{ex:primera forma fonamental d'una esfera de radi 1}
+		Volem calcular la primera forma fonamental d'una esfera parametritzada per
+		\[\Psi(\theta,\varphi)=(\sin(\theta)\cos(\varphi),\sin(\theta)\sin(\varphi),\cos(\theta)).\]
+		\begin{solution}
+			Calculem
+			\[\Psi_{\theta}(\theta,\varphi)=(\cos(\theta)\cos(\varphi),\cos(\theta)\sin(\varphi),-\sin(\theta))\]
+			i
+			\[\Psi_{\varphi}(\theta,\varphi)=(-\sin(\theta)\sin(\varphi),\sin(\theta)\cos(\varphi),0).\]
+			
+			Aleshores tenim
+			\[E=\prodesc{\Psi_{\theta}}{\Psi_{\theta}}=1,\quad F=\prodesc{\Psi_{\theta}}{\Psi_{\varphi}}=0\quad\text{i}\quad G=\prodesc{\Psi_{\varphi}}{\Psi_{\varphi}}=\sin^{2}(\theta),\]
+			i per tant
+			\[\I_{p}=\begin{bmatrix}
+				1 & 0 \\
+				0 & \sin^{2}(\theta)
+			\end{bmatrix}.\qedhere\]
+		\end{solution}
+	\end{example}
 	\subsection{Longitud d'una corba}
 	\begin{proposition}
-		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(\Psi\) amb \(\Omega\) una carta local de \(S\) i \(\alpha\) una corba en \(\Psi(\Omega)\). Aleshores
+		\label{prop:longitud d'una corba en una superfície}
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(\Psi(u,v)\) amb \(\Omega\) una carta local de \(S\) i \(\alpha\) una corba en \(\Psi(\Omega)\). Aleshores
 		\[\funciolongituddarc_{\alpha}(t_{0})(t)=\int_{t_{0}}^{t}\sqrt{Eu'(\tau)^{2}+2Fu'(\tau)v'(\tau)+Gv'(\tau)^{2}}\diff \tau.\]
+		\begin{proof}
+			Com que \(\alpha\) està continguda en \(\Psi(\Omega)\) tenim que existeixen dues funcions \(u(t)\), \(v(t)\) tals que
+			\[\alpha(t)=\Psi(u(t),v(t)).\]
+			
+			Calculem
+			\[\alpha'(t)=u'(t)\varphi_{u}(u,v)+v'(t)\varphi_{v}(u,v),\]
+			i tenim que
+			\begin{align*}
+				\norm{\alpha'(t)}&=\sqrt{\prodesc{\alpha'(t)}{\alpha'(t)}} \\
+				&=\sqrt{\alpha'(t)^{\transposta}\I_{p}\alpha'(t)} \\
+				&=\sqrt{\begin{bmatrix}
+					u'(t) & v'(t)
+				\end{bmatrix}
+				\begin{bmatrix}
+					E & F \\
+					F & G
+				\end{bmatrix}
+				\begin{bmatrix}
+					u'(t) \\
+					v'(t)
+				\end{bmatrix}}
+			\end{align*}
+		\end{proof}
 	\end{proposition}
 	
 %	\begin{proposition}

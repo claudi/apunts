@@ -1,1 +1,2 @@
 Demostrada la forma de la primera forma fonamental.
+Afegida teoria a geometria diferencial fins a la part de la longitud d'una corba en una superfície.
