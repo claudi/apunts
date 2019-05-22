@@ -1,1 +1,1 @@
-Afegida teoria a la part dels nombres complexos fins abans de la secció de la seva topologia.
+Demostrada la forma de la primera forma fonamental.

@@ -1177,7 +1177,7 @@
 			\[F(x)=(\pi_{3}\circ g)(x).\]
 			Per tant, si considerem l'aplicació
 			\begin{align*}
-				G\colon&\obert{U}'\longrightarrow\mathbb{R} \\
+				G\colon\obert{U}'&\longrightarrow\mathbb{R} \\
 				x&\longmapsto F(x)
 			\end{align*}
 			la restricció de \(F\) en \(\obert{U}'\) trobem que per a tot \(x\in\obert{U}'\) tenim
@@ -1207,14 +1207,34 @@
 		\end{proof}
 	\end{theorem}
 	\begin{example}
-		Exemple d'alguna superfície amb el teorema aquest.
+		\label{ex:un tor és una superfície}
+		Volem veure que un tor és una superfície
 		\begin{solution}
+			Un tor de radi exterior \(R\) i radi interior \(r\) ve parametritzat per
+			\[\begin{cases*}
+				x=(r\cos(\theta)+R)\cos(\varphi) \\
+				y=(r\cos(\theta)+R)\sin(\varphi) \\
+				z=r\sin(\theta),
+			\end{cases*}\]
+			amb \(\theta\in(0,2\pi)\) i \(\varphi\in(0,2\pi)\).
 			%TODO
+%			Si definim
+%			\[F(\theta,\varphi)=((r\cos(\theta)+R)\cos(\varphi),(r\cos(\theta)+R)\sin(\varphi),r\in(\theta))\]
+%			trobem que
+%			\[DJ=\begin{bmatrix}
+%				-r\sin(\theta)\cos(\varphi) & -(r\cos(\theta)+R)\sin(\varphi) \\
+%				-r\sin(\theta)\sin(\varphi) & (r\cos(\theta)+R)\cos(\varphi) \\
+%				r\cos(\theta) & 0
+%			\end{bmatrix},\]
 		\end{solution}
 	\end{example}
 	\begin{definition}[Carta local]
 		\labelname{carta local}\label{def:carta local}
+		\labelname{parametrització local d'una superfície}\label{def:parametrització local d'una superfície}
+		\labelname{parametrització d'una superfície}\label{def:parametrització d'una superfície}
 		Sigui \(S\subseteq\mathbb{R}^{3}\) un conjunt i \(p\in S\) un punt tals que existeix un entorn obert \(\obert{U}\) de \(p\), un conjunt \(\Omega\subseteq\mathbb{R}^{2}\) i una aplicació \(\Psi\colon\Omega\longrightarrow S\cap\obert{U}\) que és una immersió i un homeomorfisme. Aleshores direm que \(\Omega\) amb \(\Psi\) és una carta local de \(p\) en \(S\).
+		
+		També direm que \(\Psi\) és una parametrització o parametrització local de \(S\).
 	\end{definition}
 	\begin{theorem}
 		\label{thm:ser superfície és equivalent a tenir cartes locals}
@@ -1283,35 +1303,102 @@
 		\[\EspaiTangent_{p}(S)=\{\alpha'(0)\in\mathbb{R}^{3}\mid\alpha\text{ és una corba regular en }S\text{ amb }\alpha(0)=p\}\]
 		és l'espai tangent a \(S\) en \(p\), i els elements de \(\EspaiTangent_{p}(S)\) són els vectors tangents a \(S\) en \(p\).
 	\end{definition}
-%	\begin{proposition}
-%		\label{prop:les derivades d'una parametrització en una carta local són base del pla}
-%		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(p\in S\) un punt i \(\Psi(u,v)\) amb \(\Omega\) una carta local de \(S\) en \(p\). Aleshores
-%		\[\left(\frac{\partial \Psi}{\partial u},\frac{\partial \Psi}{\partial v}\right)\]
-%		és una base de \(\mathbb{R}^{2}\).
-%	\end{proposition}
+	% Veure que T_{p}(S) és un espai vectorial (afí?)
+	\begin{proposition}
+		\label{prop:les derivades d'una parametrització en una carta local són base del pla tangent}
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(p\in S\) un punt i \(\varphi(u,v)\) amb \(\Omega\) una carta local de \(S\) en \(p\). Aleshores
+		\[(\varphi_{u}(p),\varphi_{v}(p))\]
+		és una base de \(\EspaiTangent_{p}(S)\).
+		\begin{proof}
+			Per la definició de \myref{def:carta local} tenim que \(\varphi\) és una immersió, i per l'observació \myref{obs:immersió si i només si té rang maximal} tenim que \(\rang(d\varphi(p))=2\), i per la definició de \myref{def:Jacobiana} tenim que
+			\[d\varphi(p)=(\varphi_{u}(p),\varphi_{v}(p)).\]
+			Per la definició d'\myref{def:espai tangent a una superfície} tenim que \(\varphi_{u}(p)\) i \(\varphi_{v}(p)\) pertanyen a \(\EspaiTangent_{p}(S)\), i per tant tenim que \((\varphi_{u}(p),\varphi_{v}(p))\) és una base de \(\EspaiTangent_{p}(S)\). %REF
+		\end{proof}
+	\end{proposition}
 	\begin{definition}[Primera forma fonamental]
 		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície i \(p\in S\) un punt. Aleshores direm que l'aplicació
 		\begin{align*}
-			\I_{p}\colon\EspaiTangent_{p}(S)\times\EspaiTangent_{p}(S)\colon&\longrightarrow\mathbb{R} \\
-			(\vec{u},\vec{w})&\longmapsto\prodesc{\vec{v}}{\vec{w}}
+			\I_{p}\colon\EspaiTangent_{p}(S)\times\EspaiTangent_{p}(S)&\longrightarrow\mathbb{R} \\
+			(\vec{u},\vec{v})&\longmapsto\prodesc{\vec{u}}{\vec{v}}
 		\end{align*}
 		és la primera forma fonamental de \(S\) en \(p\).
 	\end{definition}
-	\begin{note}
-		Després justificaré això però tenim
-		\[\I_{p}(\vec{v},\vec{w})=\vec{v}^{\transposta}\begin{bmatrix}
-			E & F \\ F & G
-		\end{bmatrix}\vec{w}\]
-		i si \(\Psi=\Psi(u,v)\), denotant
-		\[\Psi_{u}=\frac{\partial\Psi}{\partial u}\quad\text{i}\quad\Psi_{v}=\frac{\partial\Psi}{\partial v}\]
-		tenim
-		\[\begin{bmatrix}
-			E & F \\ F & G
+	\begin{proposition}
+		\label{prop:la primera forma fonamental és una forma bilineal}
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície i \(p\in S\) un punt. Aleshores la primera forma fonamental \(\I_{p}\) és una forma bilineal.
+		\begin{proof}
+			Siguin \(\vec{u}\), \(\vec{v}\) i \(\vec{w}\) tres vectors de \(\EspaiTangent_{p}(S)\). Aleshores
+			\begin{align*}
+				\I_{p}(\vec{u}+\vec{v},\vec{w})&=\prodesc{\vec{u}+\vec{v}}{\vec{w}} \\
+				&=\prodesc{\vec{u}}{\vec{w}}+\prodesc{\vec{v}}{\vec{w}} \tag{\ref{def:producte escalar}}\\
+				&=\I_{p}(\vec{u},\vec{w})+\I_{p}(\vec{v},\vec{w}),
+			\end{align*}
+			i
+			\begin{align*}
+				\I_{p}(\vec{u},\vec{v}+\vec{w})&=\prodesc{\vec{u}}{\vec{v}+\vec{w}} \\
+				&=\prodesc{\vec{u}}{\vec{w}}+\prodesc{\vec{v}}{\vec{w}} \tag{\ref{def:producte escalar}}\\
+				&=\I_{p}(\vec{u},\vec{w})+\I_{p}(\vec{v},\vec{w}).
+			\end{align*}
+			
+			Si prenem un escalar \(\lambda\in\mathbb{R}\) trobem que
+			\begin{align*}
+				\I_{p}(\lambda\vec{u},\vec{v})&=\prodesc{\lambda\vec{u}}{\vec{v}} \\
+				&=\lambda\prodesc{\vec{u}}{\vec{v}} \tag{\ref{def:producte escalar}}\\
+				&=\lambda\I_{p}(\vec{u},\vec{v}).
+			\end{align*}
+			i
+			\begin{align*}
+				\I_{p}(\vec{u},\lambda\vec{v})&=\prodesc{\vec{u}}{\lambda\vec{v}} \\
+				&=\lambda\prodesc{\vec{u}}{\vec{v}} \tag{\ref{def:producte escalar}}\\
+				&=\lambda\I_{p}(\vec{u},\vec{v}).
+			\end{align*}
+			i per la definició de \myref{def:forma bilineal} hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:coeficients de la primera forma fonamental}
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície parametritzada per \(\varphi(u,v)\), \(p\in S\) un punt i \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\EspaiTangent_{p}(S)\). Aleshores
+		\[\I_{p}(\vec{u},\vec{v})=\vec{u}^{\transposta}\begin{bmatrix}
+			\prodesc{\varphi_{u}(p)}{\varphi_{u}(p)} & \prodesc{\varphi_{u}(p)}{\varphi_{v}(p)} \\
+			\prodesc{\varphi_{v}(p)}{\varphi_{u}(p)} & \prodesc{\varphi_{v}(p)}{\varphi_{v}(p)}
+		\end{bmatrix}\vec{v}.\]
+		\begin{proof}
+			Aquest enunciat té sentit per la proposició \myref{prop:la primera forma fonamental és una forma bilineal}. Tenim que existeixen quatre reals \(A\), \(B\), \(C\), \(D\in\mathbb{R}\) tals que
+			\[\I_{p}(\vec{u},\vec{v})=\vec{u}^{\transposta}\begin{bmatrix}
+				A & B \\
+				C & D
+			\end{bmatrix}\vec{v}.\]
+			
+			Per la proposició \myref{prop:les derivades d'una parametrització en una carta local són base del pla tangent} tenim que \((\varphi_{u},\varphi_{v})\) és una base de \(\EspaiTangent_{p}(S)\), i per tant
+			\[\vec{u}=u_{1}\varphi_{u}(p)+u_{2}\varphi_{v}(p),\qquad\text{i}\qquad\vec{v}=v_{1}\varphi_{u}(p)+v_{2}\varphi_{v}(p),\]
+			i per tant en la base \((\varphi_{u},\varphi_{v})\) tenim
+			\[\vec{u}=(u_{1},u_{2})\qquad\text{i}\qquad\vec{v}=(v_{1},v_{2}).\]
+			Aleshores obtenim que
+			\begin{align*}
+				\I_{p}(\vec{u},\vec{v})&=\prodesc{\vec{u}(p)}{\vec{v}(p)} \\
+				&=u_{1}v_{1}\prodesc{\varphi_{u}(p)}{\varphi_{u}(p)}+u_{1}v_{2}\prodesc{\varphi_{u}(p)}{\varphi_{v}(p)}+\\
+				&\phantom{=}+u_{2}v_{1}\prodesc{\varphi_{u}(p)}{\varphi_{v}(p)}+u_{2}v_{2}\prodesc{\varphi_{v}(p)}{\varphi_{v}(p)},
+			\end{align*}
+			i tenim que
+			\[\vec{u}^{\transposta}\begin{bmatrix}
+				A & B \\
+				C & D
+			\end{bmatrix}\vec{v}=u_{1}v_{1}A+u_{1}v_{2}B+u_{2}v_{1}C+u_{2}v_{2}D,\]
+			i per tant trobem que
+			\[A=\prodesc{\varphi_{u}(p)}{\varphi_{u}(p)},\qquad B=C=\prodesc{\varphi_{u}(p)}{\varphi_{v}(p)}\quad\text{i}\quad D=\prodesc{\varphi_{v}(p)}{\varphi_{v}(p)}.\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\begin{notation}[Primera forma fonamental]
+		Denotarem
+		\[\I_{p}=\begin{bmatrix}
+			E & F \\
+			F & G
 		\end{bmatrix}=
 		\begin{bmatrix}
-			\prodesc{\Psi_{u}}{\Psi_{u}} & \prodesc{\Psi_{u}}{\Psi_{v}} \\ \prodesc{\Psi_{u}}{\Psi_{v}} & \prodesc{\Psi_{v}}{\Psi_{v}}
+			\prodesc{\varphi_{u}(p)}{\varphi_{u}(p)} & \prodesc{\varphi_{u}(p)}{\varphi_{v}(p)} \\
+			\prodesc{\varphi_{v}(p)}{\varphi_{u}(p)} & \prodesc{\varphi_{v}(p)}{\varphi_{v}(p)}
 		\end{bmatrix}.\]
-	\end{note}
+	\end{notation}
 	\subsection{Longitud d'una corba}
 	\begin{proposition}
 		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(\Psi\) amb \(\Omega\) una carta local de \(S\) i \(\alpha\) una corba en \(\Psi(\Omega)\). Aleshores
