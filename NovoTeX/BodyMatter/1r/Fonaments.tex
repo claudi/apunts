@@ -1,4 +1,4 @@
-\documentclass[../Apunts.tex]{subfiles}
+\documentclass[../../Main.tex]{subfiles}
 
 \begin{document}
 \part{Fonaments de les matemàtiques}
@@ -180,7 +180,7 @@
 		\label{taut:condicions per disjunció}
 		Siguin \(R\) i \(S\) dues relacions tals que \(R\) sigui falsa i \(R\lor S\) sigui vertadera. Aleshores la relació \(S\) és vertadera.
 		\begin{proof}
-			Per la tautologia \myref{taut:R és equivalent a no no R} tenim que la relació \(R\implica(\lnot(\lnot R))\) és vertadera, i per l'axioma \myref{axiom:relacions 4} això és que la relació
+			Per la tautologia \ref{taut:R és equivalent a no no R} tenim que la relació \(R\implica(\lnot(\lnot R))\) és vertadera, i per l'axioma \myref{axiom:relacions 4} això és que la relació
 			\[(R\lor S)\sii(\lnot(\lnot R)\lor S)\]
 			és vertadera. Ara bé, per la definició d'\myref{def:implicació} tenim que això és equivalent a la relació
 			\[(R\lor S)\sii((\lnot R)\implica S).\]
@@ -946,7 +946,7 @@
 			&=\overline{\left(a(ce+df)+b(cf+de),a(cf+de)+b(cf+de)\right)}\\
 			\shortintertext{Per la proposició \myref{prop:distributiva pel producte naturals per Peano}}
 			&=\overline{(ace+adf+bcf+bde,acf+ade+bcf+bde)}\\
-			\shortintertext{i per la proposició \myref{prop:commutativitat producte naturals per Peano}}
+			\shortintertext{i per la proposició \ref{prop:commutativitat producte naturals per Peano}}
 			&=\overline{(ace+bde+adf+bcf,acf+bdf+ade+bce)}\\
 			\shortintertext{i de nou per la proposició \myref{prop:distributiva pel producte naturals per Peano}}
 			&=\overline{\left((ac+bd)e+(ad+bc)f,(ac+bd)f+(ad+bc)e\right)}\\
@@ -969,9 +969,9 @@
 			\overline{(a,b)}\cdot\left(\overline{(c,d)}+\overline{(e,f)}\right)&=\overline{(a,b)}\cdot\overline{(c+e,d+f)}\\
 			\shortintertext{per la definició de \myref{def:producte de nombres enters}}
 			&=\overline{(a(c+e)+b(d+f),a(d+f)+b(c+e))}\\
-			\shortintertext{per la proposició \myref{prop:distributiva pel producte naturals per Peano}}
+			\shortintertext{per la proposició \ref{prop:distributiva pel producte naturals per Peano}}
 			&=\overline{(ac+ae+bd+bf,ad+af+bc+be)}\\
-			\shortintertext{per la proposició \myref{prop:commutativitat naturals per Peano}}
+			\shortintertext{per la proposició \ref{prop:commutativitat naturals per Peano}}
 			&=\overline{(ac+bd+ae+bd,ad+bc+af+be)}\\
 			\shortintertext{per la definició de \myref{def:suma de nombres naturals}}
 			&=\overline{(ac+bd,ad+bc)}+\overline{(ae+bd,af+be)}\\
@@ -1049,7 +1049,7 @@
 		\label{prop:un divisor divideix la suma o la resta dels seus dividents}
 		Siguin \(a\), \(b\) i \(c\) enters tals que \(c\divides a\) i \(c\divides b\). Aleshores \(c\divides a+b\) i \(c\divides a-b\).
 		\begin{proof}
-			Per la definició de \myref{def:divisor Z} tenim que existeixen enters \(k\) i \(k'\) tals que \(a=kc\) i \(c=k'b\). Per tant per la proposició \myref{prop:distributiva suma pel producte enters} trobem
+			Per la definició de \myref{def:divisor Z} tenim que existeixen enters \(k\) i \(k'\) tals que \(a=kc\) i \(c=k'b\). Per tant per la proposició \ref{prop:distributiva suma pel producte enters} trobem
 			\[a+b=(k+k')c\quad\text{i}\quad a-b=(k-k')c.\qedhere\]
 		\end{proof}
 	\end{proposition}
@@ -1310,7 +1310,7 @@
 		\begin{proof}
 			Comprovem les propietats de la definició de relació d'equivalència:
 			\begin{enumerate}
-				\item Reflexiva: Sigui \(x\) un nombre enter. Aleshores per l'observació \myref{obs:elements que es tatxen son iguals} tenim que \(x-x=0\) i per la definició de \myref{def:nombres enters} trobem que \(0=m\cdot 0\), i per tant \(x\sim x\).
+				\item Reflexiva: Sigui \(x\) un nombre enter. Aleshores per l'observació \ref{obs:elements que es tatxen son iguals} tenim que \(x-x=0\) i per la definició de \myref{def:nombres enters} trobem que \(0=m\cdot 0\), i per tant \(x\sim x\).
 				\item Simètrica: Siguin \(x\) i \(y\) dos enters tals que \(x\sim y\). Per hipòtesi tenim que \(x-y=km\) per a cert \(k\) enter, i per tant \(y-x=-km\) i tenim \(y\sim x\).
 				\item Transitiva: Siguin \(x\), \(y\) i \(z\) nombres enters tals que \(x\sim y\) i \(y\sim z\). Per hipòtesi això és que \(x-y=mk\) i \(y-z=mk'\) per a cert \(k,k'\) enters. Per tant trobem
 				\begin{align*}
@@ -1512,7 +1512,7 @@
 			x\equiv x_{0}\pmod{m_{n}}
 			\end{cases}\]
 			
-			Ara bé, per la definició de \myref{def:nombres modulars congruents} i la definició de \myref{def:màxim comú divisor} tenim que ha de ser
+			Ara bé, per la definició de \myref{def:nombres modulars congruents} i la definició de \ref{def:màxim comú divisor} tenim que ha de ser
 			\[x-x_{0}=\lambda M\]
 			per a cert \(\lambda\) enter.
 		\end{proof}
@@ -1798,7 +1798,7 @@
 			\[(a,b)\sim(1,1),\]
 			si i només si, per la definició de \myref{def:nombres enters}, tenim
 			\[a\cdot1=b\cdot1.\]
-			I per tant, per la proposició \myref{prop:Z és un anell} trobem que ha de ser \(a=b\).
+			I per tant, per la proposició \ref{prop:Z és un anell} trobem que ha de ser \(a=b\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}

@@ -1,4 +1,4 @@
-\documentclass[../Apunts.tex]{subfiles}
+\documentclass[../../Main.tex]{subfiles}
 
 \begin{document}
 \part{Estructures algebraiques}
@@ -1360,7 +1360,7 @@
 			\begin{enumerate}
 				\item Reflexiva: Prenem \(x\in R\). Per l'observació \myref{obs:l'element neutre per la suma pertany a l'ideal} tenim que \(0\in I\), i per tant \(x-x=0\in I\) i veiem que \(x\sim x\).
 				\item Simètrica: Siguin \(x_{1},x_{2}\in I\) tals que \(x_{1}\sim x_{2}\). Això és que \(x_{1}-x_{2}\in I\). Per la definició d'\myref{def:ideal d'un anell} tenim que \((-1)\cdot(x_{1}-x_{2})\in I\), i per la proposició \myref{prop:propietats bàsiques anells} tenim que \(x_{2}-x_{1}\in I\), és a dir, \(x_{2}\sim x_{1}\).
-				\item Transitiva: Siguin \(x_{1},x_{2},x_{3}\in R\) tals que \(x_{1}\sim x_{2}\) i \(x_{2}\sim x_{3}\). Per la definició d'\myref{def:ideal d'un anell} tenim que \(x_{3}-x_{2}\in I\), i per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que \(x_{1}-x_{2}-(x_{3}-x_{2})\in I\). Ara bé, per la proposició \myref{prop:propietats bàsiques anells} tenim que això és \(x_{1}-x_{3}\in I\), i per tant \(x_{1}\sim x_{3}\).
+				\item Transitiva: Siguin \(x_{1},x_{2},x_{3}\in R\) tals que \(x_{1}\sim x_{2}\) i \(x_{2}\sim x_{3}\). Per la definició d'\myref{def:ideal d'un anell} tenim que \(x_{3}-x_{2}\in I\), i per la proposició \ref{prop:condició equivalent a ideal d'un anell} tenim que \(x_{1}-x_{2}-(x_{3}-x_{2})\in I\). Ara bé, per la proposició \myref{prop:propietats bàsiques anells} tenim que això és \(x_{1}-x_{3}\in I\), i per tant \(x_{1}\sim x_{3}\).
 			\end{enumerate}
 			Per tant \(\sim\) és una relació d'equivalència.
 		\end{proof}
@@ -1528,7 +1528,7 @@
 		Siguin \(R\) i \(S\) dos anells commutatius amb \(1_{R}\neq0_{R}\) i \(1_{S}\neq0_{S}\) i \(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
 		\[\ker(f)\text{ és un ideal de }R\quad\text{i}\quad\Ima(f)\text{ és un subanell de }S.\]
 		\begin{proof}
-			Siguin \(+_{R}\) la suma de \(R\), \(\ast_{R}\) el producte de \(R\), \(+_{S}\) la suma de \(S\) i \(\ast_{S}\) el producte de \(S\). Comencem veient que \(\ker(f)\) és un ideal de \(R\). Per l'observació \myref{obs:morfisme entre anells és morfisme entre grups} tenim que \(\ker(f)\) és un morfisme entre grups, i per la proposició \myref{prop:el nucli d'un morfisme és un subgrup normal del grup de sortda} tenim que \(\ker(f)\) és un subgrup del grup \(R\) amb la suma \(+_{R}\).
+			Siguin \(+_{R}\) la suma de \(R\), \(\ast_{R}\) el producte de \(R\), \(+_{S}\) la suma de \(S\) i \(\ast_{S}\) el producte de \(S\). Comencem veient que \(\ker(f)\) és un ideal de \(R\). Per l'observació \myref{obs:morfisme entre anells és morfisme entre grups} tenim que \(\ker(f)\) és un morfisme entre grups, i per la proposició \ref{prop:el nucli d'un morfisme és un subgrup normal del grup de sortda} tenim que \(\ker(f)\) és un subgrup del grup \(R\) amb la suma \(+_{R}\).
 			
 			Prenem \(x\in\ker(f)\) i \(r\in R\). Volem veure que \(r\ast_{R}r\in\ker(f)\). Tenim
 			\begin{align*}
@@ -1538,7 +1538,7 @@
 			\end{align*}
 			i per la definició de \myref{def:nucli d'un morfisme entre anells} tenim que \(r\ast_{R}x\in\ker(f)\), i per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que \(\ker(f)\) és un ideal de \(R\).
 			
-			Veiem ara que \(\Ima(f)\) és un subanell de \(S\). Per l'observació \myref{obs:morfisme entre anells és morfisme entre grups} tenim que \(\Ima(f)\) és un morfisme entre grups, i per la proposició \myref{prop:la imatge d'un morfisme és un subgrup del grup d'arribada} tenim que \(\Ima(f)\) és un subgrup del grup \(S\) amb la suma \(+_{S}\).
+			Veiem ara que \(\Ima(f)\) és un subanell de \(S\). Per l'observació \myref{obs:morfisme entre anells és morfisme entre grups} tenim que \(\Ima(f)\) és un morfisme entre grups, i per la proposició \ref{prop:la imatge d'un morfisme és un subgrup del grup d'arribada} tenim que \(\Ima(f)\) és un subgrup del grup \(S\) amb la suma \(+_{S}\).
 			
 			Prenem \(x,y\in\Ima(f)\). Volem veure que \(x\ast_{S}y\in\Ima(f)\). Per la definició d'\myref{def:imatge d'un morfisme entre anells} tenim que existeixen \(x',y'\in R\) tals que \(f(x')=x\) i \(f(y')=y\). Ara bé, per la definició d'\myref{def:anell} tenim que \(x'\ast_{R}y'\in R\), i per tant
 			\begin{align*}
@@ -1667,7 +1667,7 @@
 		\begin{proof} % Dreta i esquerra en comptes de suficient i necessàri
 			Siguin \(+\) la suma de \(R\) i \(\cdot\) el producte de \(R\). Comencem demostrant que la condició és suficient (\(\implica\)). Suposem doncs que \(R/I\) és un domini d'integritat i prenem \([a],[b]\in R/I\) tals que \([a]\cdot[b]=[0]\). Aleshores per la definició de \myref{def:anell quocient} tenim que \(a\cdot b\in I\). Ara bé, com que per hipòtesi \(R/I\) és un domini d'integritat tenim que ha de ser \([a]=[0]\) ó \([b]=[0]\), i per tant trobem que ha de ser \(a\in I\) o \(b\in I\), i per la definició d'\myref{def:ideal primer} trobem que \(I\) és un ideal primer de \(R\).
 			
-			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que \(I\) és un ideal primer de \(R\). Per la proposició \myref{prop:anell quocient} tenim que \(R/I\) és un anell commutatiu amb \(1\neq0\). Prenem doncs \(a\in R\), \(a\notin I\) i suposem que existeix \(b\in R\) tal que \([a]\cdot[b]=[0]\). Això és que \(a\cdot b\in I\), i com que per hipòtesi \(I\) és un ideal primer, per la definició d'\myref{def:ideal primer} trobem que ha de ser \(b\in I\), i per tant \([b]=[0]\) i per la definició de \myref{def:domini d'integritat} tenim que \(R/I\) és un domini d'integritat.
+			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que \(I\) és un ideal primer de \(R\). Per la proposició \ref{prop:anell quocient} tenim que \(R/I\) és un anell commutatiu amb \(1\neq0\). Prenem doncs \(a\in R\), \(a\notin I\) i suposem que existeix \(b\in R\) tal que \([a]\cdot[b]=[0]\). Això és que \(a\cdot b\in I\), i com que per hipòtesi \(I\) és un ideal primer, per la definició d'\myref{def:ideal primer} trobem que ha de ser \(b\in I\), i per tant \([b]=[0]\) i per la definició de \myref{def:domini d'integritat} tenim que \(R/I\) és un domini d'integritat.
 		\end{proof}
 	\end{proposition}
 	\begin{corollary}

@@ -1,4 +1,4 @@
-\documentclass[../Apunts.tex]{subfiles}
+\documentclass[../../Main.tex]{subfiles}
 
 \begin{document}
 \part{Anàlisi matemàtica}
@@ -778,7 +778,7 @@
 			és convergent, com volíem veure.
 		\end{proof}
 	\end{theorem}
-	\begin{example}%Buscar un altre exemple. Conflicte amb \myref{ex:sèrie absolutament convergent} %Crec que al final no, però comprovar amb calma (Claudi del futur)
+	\begin{example}%Buscar un altre exemple. Conflicte amb \ref{ex:sèrie absolutament convergent} %Crec que al final no, però comprovar amb calma (Claudi del futur)
 		\label{ex:Teorema de Dirichlet per sèries numèriques}
 		Volem estudiar la convergència de la sèrie
 		\[\sum_{n=1}^{\infty}\frac{\sin(n)}{n}.\]
@@ -890,7 +890,7 @@
 		\begin{proof}
 			Fixem un natural \(N\) i considerem
 			\[M=\max\{\sigma(1),\dots,\sigma(N)\}\]
-			i com que, per la definició de \myref{def:sèrie de termes positius}, tenim que \(a_{n}\geq0\) per a tot \(n\) natural trobem que
+			i com que, per la definició de \ref{def:sèrie de termes positius}, tenim que \(a_{n}\geq0\) per a tot \(n\) natural trobem que
 			\[\sum_{n=0}^{N}a_{\sigma(n)}\leq\sum_{n=0}^{M}a_{n},\]
 			i per la definició de \myref{def:sèrie convergent} trobem que
 			\[\sum_{n=0}^{\infty}a_{\sigma(n)}\leq\sum_{n=0}^{\infty}a_{n}.\qedhere\]
@@ -936,7 +936,7 @@
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:la reordenada d'una sèrie absolutament convergent és absolutament convergent}.
 			
-			Per la definició de \myref{def:convergència absoluta d'una sèrie} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent si i només si les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són convergents. Per tant trobem que
+			Per la definició de \ref{def:convergència absoluta d'una sèrie} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent si i només si les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són convergents. Per tant trobem que
 			\begin{align*}
 				\sum_{n=0}^{\infty}a_{n}&=\sum_{n=0}^{\infty}\left(a^{+}_{n}-a^{-}_{n}\right) \tag{\ref{obs:sumes de la part positiva i negativa d'un nombre}}\\
 				&=\sum_{n=0}^{\infty}a^{+}_{n}-\sum_{n=0}^{\infty}a^{-}_{n} \\

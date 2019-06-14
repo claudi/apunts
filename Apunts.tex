@@ -140,6 +140,7 @@
 \DeclareMathOperator{\EspaiTangent}{T}
 \DeclareMathOperator{\I}{\rom{1}}
 \DeclareMathOperator{\II}{\rom{2}}
+\DeclareMathOperator{\divergencia}{div}
 
 \DeclareMathOperator*{\suport}{Supp}
 
@@ -170,6 +171,8 @@
 \newcommand{\obert}[1]{\mathcal{#1}}
 \newcommand{\tancat}[1]{\obert{#1}}
 \newcommand{\base}[1]{\mathcal{#1}}
+\newcommand{\CampsVectorials}[1]{\mathfrak{#1}}
+
 \newcommand{\diff}{\mathrm{d}}
 \newcommand{\e}{\mathrm{e}}
 \newcommand{\iu}{\mathrm{i}}
@@ -178,10 +181,11 @@
 \newcommand{\GrupEspecialOrtogonal}{\mathrm{SO}}
 \newcommand{\matrius}{M}
 \newcommand{\basecanonica}{\base{C}}
+\newcommand{\Lie}{\mathcal{L}}
 
 \makeatletter
 	\def\prodesc{\@ifnextchar[{\@prodescwith}{\@prodescwithout}}
-	\def\@prodescwith[#1]#2#3{\left\langle#2,#3\right\rangle}
+	\def\@prodescwith[#1]#2#3{#1\langle#2,#3#1\rangle}
 	\def\@prodescwithout#1#2{\langle#1,#2\rangle}
 \makeatother
 
@@ -453,8 +457,18 @@
 \renewcommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
 %\newcommand{\myref}[1]{\hyperref[#1]{\nameref{#1} \eqref{#1}}}
 
+%\makeatletter
+%\DeclareRobustCommand{\myref}[1]{%
+%	\@ifundefined{nameref{#1}}{%
+%		\ref{#1}%
+%	}{%
+%		\nameref{#1}~\eqref{#1}%
+%	}%
+%}
+%\makeatother
+
 \makeatletter
-\def\mynameref#1#2{%
+\DeclareRobustCommand\mynameref[2]{%
 	\begingroup
 		\edef\@mytxt{#2}%
 		\edef\@mytst{\expandafter\@thirdoffive\@mytxt}%

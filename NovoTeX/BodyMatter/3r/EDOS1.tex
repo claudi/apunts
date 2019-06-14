@@ -1,4 +1,4 @@
-\documentclass[../Apunts.tex]{subfiles}
+\documentclass[../../Main.tex]{subfiles}
 
 \begin{document}
 \part{Equacions diferencials ordinàries \rom{1}}
@@ -480,7 +480,9 @@
 		\begin{proof} % https://arxiv.org/pdf/1202.1152.pdf (no)
 			Per a tot \((t,x)\in\Omega\) denotem
 			\[f(t,x)=(f_{1}(t,x),\dots,f_{n}(t,x)).\]
-			Aleshores pel \myref{thm:Teorema d'aproximació polinòmica de Weierstrass} trobem que existeixen \(n\) successions de polinomis \(\{(p_{m}^{i})_{m\in\mathbb{N}}\}_{i=1}^{n}\) tals que \((p_{m}^{i})\) convergeix uniformement a \(f_{i}\) per a tot \(i\in\{1,\dots,n\}\). Per la proposició \myref{prop:una successió de funcions convergeix uniformement a una funció a la que convergeixi puntualment} trobem que \((p_{m}^{i})\) convergeix puntualment a \(f_{i}\) per a tot \(i\in\{1,\dots,n\}\), i per la definició de \myref{def:convergència puntual} trobem que per a tot \((t,x)\in\Omega\) tenim
+			Aleshores pel \myref{thm:Teorema d'aproximació polinòmica de Weierstrass} trobem que existeixen \(n\) successions de polinomis
+			\[\{(p_{m}^{i})_{m\in\mathbb{N}}\}_{i=1}^{n}\]
+			tals que \((p_{m}^{i})\) convergeix uniformement a \(f_{i}\) per a tot \(i\in\{1,\dots,n\}\). Per la proposició \ref{prop:una successió de funcions convergeix uniformement a una funció a la que convergeixi puntualment} trobem que \((p_{m}^{i})\) convergeix puntualment a \(f_{i}\) per a tot \(i\in\{1,\dots,n\}\), i per la definició de \myref{def:convergència puntual} trobem que per a tot \((t,x)\in\Omega\) tenim
 			\[\lim_{m\to\infty}p_{m}^{i}(t,x)=f_{i}(t,x),\]
 			i denotant \(p_{m}(t,x)=(p_{m}^{1}(t,x),\dots,p_{m}^{n}(t,x))\) trobem que
 			\begin{equation}
@@ -499,7 +501,7 @@
 			sobre \(\Omega\). Com que \(p_{m}\) és un polinomi, per l'exemple \myref{ex:els polinomis són funcions Lipschitz respecte la segona variable} trobem que \(p_{m}\) és Lipschitz respecte la segona variable, i pel \myref{thm:Teorema de Picard} trobem que, per a tot \(m>n_{0}\) aquest problema de Cauchy té una única solució, \(\varphi_{m}\), definida sobre l'interval
 			\[I=\left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].\]
 			
-			Observem que, per a tot \(m>n_{0}\) i per a tot \(t\in I\), tenim que \(\varphi_{m}(t)\in\overline{\bola}(x_{0},b)\), i per la definició de \myref{def:bola} trobem que
+			Observem que, per a tot \(m>n_{0}\) i per a tot \(t\in I\), tenim que \(\varphi_{m}(t)\in\overline{\bola}(x_{0},b)\), i per la definició de \ref{def:bola} trobem que
 			\[\norm{\varphi_{m}(t)}\leq\norm{x_{0}}+b.\]
 			Aleshores per la definició de \myref{def:família de funcions puntualment acotada} trobem que la successió de funcions \((\varphi_{m+n_{0}})_{m\in\mathbb{N}}\) és una família de funcions puntualment acotada.
 			

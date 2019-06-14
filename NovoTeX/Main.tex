@@ -1,0 +1,469 @@
+%\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[10pt, a4paper, openright]{memoir}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel}
+\usepackage{csquotes}
+\usepackage{subfiles}
+\usepackage{mathtools,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[mathcal]{euscript}	% Font caligràfica a mathmode
+\usepackage{tikz-cd}
+%\usepackage[framemethod=TikZ]{mdframed}
+\usepackage[sorting=none, backend=biber, refsection=part]{biblatex} % Bibliografies
+\usepackage{hyperref}
+
+%				========== ENTORNS ==========
+ %%%%% THEOREM STYLES %%%%%
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{proposition}[theorem]{Proposició}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{corollary}[theorem]{\Corollari}
+\newtheorem{note}[theorem]{Nota} %Amb la meva veu?
+\newtheorem{observation}[theorem]{Observació} %Per reinterpretacions?
+\newtheorem{example}[theorem]{Exemple}
+\newtheorem{tautology}[theorem]{Tautologia}
+\newtheorem{axiom}[theorem]{Axioma}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definició}
+\newtheorem{notation}[theorem]{Notació}
+
+
+ %%%%% HISTÒRIA %%%%%
+%\newenvironment{history}[1][]{%
+%	\mdfsetup{%
+%		frametitle={%
+%			\tikz[baseline=(current bounding box.east),outer sep=0pt]
+%			\node[anchor=east,rectangle,fill=blue!20]
+%			{\strut Coneix els teus herois:~#1};}%
+%	}%
+%% Both conditions
+%\mdfsetup{%
+%	innertopmargin=10pt,linecolor=blue!20,%
+%	linewidth=2pt,topline=true,%
+%	frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+%}
+%	% Code for box design goes here.
+%	
+%	\begin{mdframed}[]\relax}{%
+%	\end{mdframed}}
+
+
+ %%%%% SOLUCIÓ A UN EXERCICI %%%%%
+\newenvironment{solution}{%
+	\renewcommand\qedsymbol{\ensuremath{\lozenge}}%
+	\begin{proof}[Solució]%
+}{%
+	\end{proof}%
+}
+
+%				========= MATEMÀTIQUES ==========
+ %%%%% OPERADORS %%%%%
+\newcommand{\B}{\bola}
+\DeclareMathOperator{\bola}{B}
+\DeclareMathOperator{\R}{R}
+\DeclareMathOperator{\omicron}{o}
+\DeclareMathOperator{\Omicron}{O}
+\DeclareMathOperator{\rang}{rang}
+\DeclareMathOperator{\Ssup}{S}
+\DeclareMathOperator{\sinf}{s}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\St}{St}
+\DeclareMathOperator{\mcd}{mcd}
+\DeclareMathOperator{\mcm}{mcm}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\cont}{cont}
+\DeclareMathOperator{\grau}{grau}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\GrupSimetric}{S}
+\DeclareMathOperator{\Mou}{M}
+\DeclareMathOperator{\ordre}{\omicron}
+\DeclareMathOperator{\ncicles}{c}
+\DeclareMathOperator{\sig}{sig}
+\DeclareMathOperator{\interior}{Int}
+\DeclareMathOperator{\clausura}{Cl}
+\DeclareMathOperator{\distancia}{d}
+\DeclareMathOperator{\esfera}{S}
+\DeclareMathOperator{\sfourier}{S}
+\let\ker\relax
+	\DeclareMathOperator{\ker}{ker}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\Antiima}{\Ima^{-1}}
+\DeclareMathOperator{\cosdefraccions}{Q}
+\DeclareMathOperator{\funciolongituddarc}{S}
+\DeclareMathOperator{\curvatura}{\kappa}
+\DeclareMathOperator{\tangent}{T}
+\DeclareMathOperator{\normal}{N}
+\DeclareMathOperator{\radicircosculadora}{\rho}
+\DeclareMathOperator{\binormal}{B}
+\DeclareMathOperator{\torsio}{\tau}
+\DeclareMathOperator{\EspaiTangent}{T}
+\DeclareMathOperator{\I}{\rom{1}}
+\DeclareMathOperator{\II}{\rom{2}}
+\DeclareMathOperator{\divergencia}{div}
+\DeclareMathOperator{\GrupOrtogonal}{O}
+\DeclareMathOperator{\GrupEspecialOrtogonal}{SO}
+\DeclareMathOperator{\diff}{d}
+\DeclareMathOperator{\componentconnex}{C}
+\DeclareMathOperator{\rapidesa}{v}
+
+\DeclareMathOperator*{\suport}{Supp}
+\DeclareMathOperator*{\Long}{L}
+\DeclareMathOperator*{\Dist}{d}
+
+ %%%%% DECLARACIONS %%%%%
+\newcommand{\divides}{\mathrel{|}}
+\newcommand{\ndivides}{\mathrel{\nmid}}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norma}[1]{\left\lvert#1\right\rvert} % Norma complexa (una barra vertical)
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}  % Norma general (dues barres verticals)
+\newcommand{\lxor}{\mathbin{\veebar}}
+\newcommand{\convergeixuniformement}{\mathrel{\rightrightarrows}}
+\newcommand{\convolucio}{\mathbin{\ast}}
+\newcommand{\conjugat}[1]{\overline{#1}}
+\newcommand{\uniodisjunta}{\mathbin{\sqcup}}
+\newcommand{\biguniodisjunts}{\mathbin{\bigsqcup}}
+\newcommand{\prodvec}{\mathbin{\wedge}}
+\newcommand{\transposta}{\top}
+ % LÒGICS
+\newcommand{\sii}{\iff}
+\newcommand{\Sii}{\Longleftrightarrow}
+\newcommand{\implica}{\implies}
+\newcommand{\implicatper}{\impliedby}
+ % TIPOGRÀFICS
+\newcommand{\obert}[1]{\mathcal{#1}}
+\newcommand{\tancat}[1]{\obert{#1}}
+\newcommand{\base}[1]{\mathcal{#1}}
+\newcommand{\CampsVectorials}[1]{\mathfrak{#1}}
+\newcommand{\Lie}{\mathcal{L}}
+
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\iu}{\mathrm{i}}
+\newcommand{\uppi}{\pi} % REVISIT
+\newcommand{\matrius}{M}
+\newcommand{\basecanonica}{\base{C}}
+
+
+ %%%%% PRODUCTE ESCALAR %%%%%
+\makeatletter
+	\def\prodesc{\@ifnextchar[{\@prodescwith}{\@prodescwithout}}
+	\def\@prodescwith[#1]#2#3{#1\langle#2,#3#1\rangle}
+	\def\@prodescwithout#1#2{\langle#1,#2\rangle}
+\makeatother
+
+%				========== MISCEL·LÀNIA =========
+ %%%% CANVI A L'ESTIL DE LES ARRELS %%%%%
+\makeatletter
+	\let\oldr@@t\r@@t
+	\def\r@@t#1#2{%
+	\setbox0=\hbox{$\oldr@@t#1{#2\,}$}\dimen0=\ht0
+	\advance\dimen0-0.2\ht0
+	\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+	{\box0\lower0.4pt\box2}}
+	\LetLtxMacro{\oldsqrt}{\sqrt}
+	\renewcommand*{\sqrt}[2][\ ]{\oldsqrt[#1]{#2}}
+\makeatother
+
+
+ %%%%% FER \nsim UN OPERADOR BINARI %%%%%
+\let\originalnsim=\nsim
+\def\nsim{\mathbin{\originalnsim}}
+
+
+ %%%%% CANVIS TÈCNICS DE LaTeX %%%%%
+\setcounter{MaxMatrixCols}{20} % Augmentar mida màxima de les matrius
+
+
+ %%%%% FER QUE ELS PARÈNTESIS AUTOMÀTICS ES PORTIN BÉ %%%%%
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+
+
+ %%%%% REFERÈNCIES %%%%%
+%\newcommand{\myref}[1]{\ref{#1}}
+\providecommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
+%\renewcommand{\myref}[1]{\hyperref[#1]{\nameref{#1} \eqref{#1}}}
+
+\makeatletter
+\def\mynameref#1#2{%
+	\begingroup
+		\edef\@mytxt{#2}%
+		\edef\@mytst{\expandafter\@thirdoffive\@mytxt}%
+		\ifx\@mytst\empty
+			\ref{#1}%
+		\else
+			\nameref{#1}\space\eqref{#1}\fi%
+	\endgroup
+}
+\makeatother
+
+\makeatletter
+\newcommand{\labelname}[1]{
+	\def\@currentlabelname{#1}}
+\makeatother
+
+
+ %%%%% INICIALITZACIÓ DE L'ÍNDEX %%%%%
+\makeindex
+%\makeindex[not]
+
+
+ %%%%% BIBLIOGRAFIA %%%%%
+\addbibresource{BackMatter/referencies.bib}
+\DeclareQuoteAlias{spanish}{catalan}
+
+
+ %%%%% REDEFINICIÓ DE PARAULES DE LaTeX %%%%%
+\renewcommand{\bookname}{Curs}
+
+
+%				========== EDICIÓ TIPOGRÀFICA DEL LLIBRE =========
+ %%%%% DADES I CONFIGURACIÓ %%%%%
+\title{\href{https://claudilleyda.github.io}{Apunts de matemàtiques}}
+\author{Claudi Lleyda Moltó}
+\date{}
+\newcommand{\cita}{Les matemàtiques són un joc de definicions}
+\newcommand{\subtitol}{Notes de classe}
+\newcommand{\promocio}{Promoció 2016-17}
+\newcommand{\link}{https://claudilleyda.github.io}
+\hypersetup{
+	colorlinks=true,
+%	hidelinks=false, % TRUE
+%	hidelinks=false,
+	linkcolor=[rgb]{0,0,0.5},
+	urlcolor=red,
+	pdftitle={Apunts de matemàtiques UAB},
+	pdfauthor={\theauthor},
+}
+
+ %%%%% ESTIL DE PÀGINA %%%%%
+\pagestyle{ruled} % Estil de pàgina
+\setlength{\headheight}{12.1638pt} %TODO Investigar. Crec que només és per la taula de continguts
+
+
+ %%%%% TAULA DE CONTINGUTS %%%%%
+\renewcommand\booknumberlinebox[2]{#2\hspace{1em}}
+\renewcommand\partnumberlinebox[2]{#2\hspace{1em}}
+\renewcommand\chapternumberlinebox[2]{#2\hspace{1em}}
+%\renewcommand\sectionnumberlinebox[2]{#2\hspace{1em}}
+
+%\renewcommand*{\cftdotsep}{1} %separació punts horitzontals a l'índex
+\setpnumwidth{3em} %TODO Investigar quan pugui compilar
+\setrmarg{4em}     %TODO Investigar quan pugui compilar
+
+
+ %%%%% LLENGUATGE %%%%%
+\makeatletter
+	\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@} % Nombres romànics
+\makeatother
+\newcommand{\corollari}{coro{\lgem}ari} % corol·lari
+\newcommand{\Corollari}{Coro{\lgem}ari} % Corol·lari
+\newcommand{\nulla}{nu{\lgem}a} 		% nul·la
+
+
+ %%%%% PORTADA %%%%%
+\newcommand*{\titleDB}{ % AW, Design of Books
+%	\FSfont{5pl} % FontSite URW Palladio (Palatino)
+	\centering
+	\vspace*{2cm}
+%	{\Large THE}\\[\baselineskip]
+	{\Huge APUNTS}\\[\baselineskip]
+	{\Huge DE}\\[\baselineskip]
+	{\Huge MATEMÀTIQUES}\\[1.5\baselineskip]
+	{\LARGE per}\\[\baselineskip]
+	{\LARGE\theauthor}\par
+	\vfill
+	{PREFACI PER L'AURELIO LOSQUIÑO}\\[8\baselineskip]
+	\vfill
+	{\small\sffamily Universitat Autònoma de Barcelona}\par
+}
+
+\newcommand{\titleTMB}{
+	\begingroup % Three Men in a Boat
+		\vspace*{0.1\textheight}
+		\centering
+		\settowidth{\unitlength}{\itshape\cita}
+		\vspace*{\baselineskip}
+		{\large\scshape \theauthor}\\[\baselineskip]
+		\rule{\unitlength}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+		\rule{\unitlength}{0.4pt}\\[\baselineskip]
+		{\huge\thetitle}\\[\baselineskip] %{Apunts del grau}?
+		{\itshape\cita}\\[0.2\baselineskip]
+		\rule{\unitlength}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+		\rule{\unitlength}{1.6pt}%\\[\baselineskip]
+		\vfill
+		{\centering\includegraphics{FrontMatter/Portada/portada.pdf}}
+		\vfill
+		{\large\scshape\subtitol}\\[\baselineskip]
+		{\small\scshape\promocio}\par
+		\vspace*{0.1\textheight}
+	\endgroup
+}
+
+
+ %%%%% COMPORTAMENT PER PÀGINES %%%%%
+\let\originalbibliography=\printbibliography
+\def\printbibliography{\openany\originalbibliography\openright}
+
+\let\originalpart=\part
+\def\part{\cleartoevenpage[\thispagestyle{empty}]\originalpart}
+
+\let\originalbook=\book
+\def\book{\cleartoevenpage[\thispagestyle{empty}]\originalbook}
+\renewcommand*{\afterbookskip}{\vfill}
+
+
+ %%%%% ESTIL DELS CAPÍTOLS %%%%%
+\makeatletter
+\newlength{\numberheight}
+\newlength{\barlength}
+	\makechapterstyle{cveelo}{%
+	\setlength{\afterchapskip}{40pt}
+	\renewcommand*{\chapterheadstart}{\vspace*{40pt}}
+	\renewcommand*{\afterchapternum}{\par\nobreak\vskip 25pt}
+	\renewcommand*{\chapnamefont}{\Huge\flushright}
+	\renewcommand*{\chapnumfont}{\Large}
+	\renewcommand*{\chaptitlefont}{\bfseries\Huge\flushright}
+	\renewcommand*{\printchaptername}{%
+		\chapnamefont\scshape{\@chapapp}}
+	\renewcommand*{\chapternamenum}{}
+	\setlength{\beforechapskip}{4em}
+	\setlength{\midchapskip}{\paperwidth}
+	\addtolength{\midchapskip}{-\textwidth}
+	\addtolength{\midchapskip}{-\spinemargin}
+	\renewcommand*{\printchapternum}{%
+		\makebox[0pt][l]{\hspace{.8em}%
+			\resizebox{!}{\beforechapskip}{\chapnumfont \thechapter}%
+			\hspace{.8em}%
+			\rule{\midchapskip}{\beforechapskip}%
+		}}%
+}
+\makeatother
+
+\chapterstyle{cveelo}
+%\hangsecnum
+
+
+ %%%%% FRONT MATTER %%%%%
+\newcommand{\portadilla}{
+	\begin{titlingpage*}
+		\calccentering{\unitlength}
+		\begin{adjustwidth*}{\unitlength}{-\unitlength}
+			\titleDB
+		\end{adjustwidth*}
+	\end{titlingpage*}
+}
+\newcommand{\portada}{
+	\cleartooddpage%[\thispagestyle{empty}]
+	{\hypersetup{
+		urlcolor=black,
+		linkcolor=black
+	}
+	\begin{titlingpage*}
+		\calccentering{\unitlength}
+		\begin{adjustwidth*}{\unitlength}{-\unitlength}
+			\titleTMB
+		\end{adjustwidth*}
+	\end{titlingpage*}}
+}
+\newcommand{\colofo}{} % Edition notice or Copyright page
+\newcommand{\dedicacio}{} % No
+\newcommand{\epigraf}{} % No % A phrase, quotation, or poem
+\newcommand{\tauladecontinguts}{ % May include a list of figures and a list of tables
+	\setsecnumdepth{subsection}
+	\settocdepth{subsection}
+	{\hypersetup{
+		urlcolor=black,
+		linkcolor=black
+	}
+	\tableofcontents}
+}
+\newcommand{\foreword}{} % Aure % Buscar com es diu en català. Potser dir-li prefaci i ja
+\newcommand{\prefaci}{}
+\newcommand{\agraiments}{
+	\cleartoevenpage[\thispagestyle{empty}]
+	\chapter*{Agraïments}
+	M'agradaria donar les gràcies a l'Arnau José, el meu fillol, pels seus apunts d'anàlisi matemàtica; i a l'Àlex Miranda pels seus apunts de geometria diferencial i equacions diferencials ordinàries \rom{2}, a més d'haver-me avisat d'un munt d'errors per tot arreu.
+	
+	Sobretot agrair a l'Aure Losquiño per seguir de ben a prop el progrés i l'evolució de l'escrit amb una visió molt crítica des del començament, trobant-me també mil errors i discutint maneres d'afrontar els múltiples problemes que he trobat escrivint tot això.
+	\clearpage
+}
+\newcommand{\introduccio}{} % States the purpose and goals of the following writing
+
+
+ %%%%% BODY MATTER %%%%%
+\newcommand{\primer}{
+	\book{Primer curs}
+	\subfile{BodyMatter/1r/Fonaments.tex}
+	\subfile{BodyMatter/1r/AlgebraLineal.tex}
+	\subfile{BodyMatter/1r/Intro.tex}
+}
+\newcommand{\segon}{
+	\book{Segon curs}
+	\subfile{BodyMatter/2n/CDVO.tex}
+	\subfile{BodyMatter/2n/AnalisiMatematic.tex}
+	\subfile{BodyMatter/2n/EstructuresAlgebraiques.tex}
+	\subfile{BodyMatter/2n/MetodesNumerics.tex}
+}
+\newcommand{\tercer}{
+	\book{Tercer curs}
+	\subfile{BodyMatter/3r/Topologia.tex}
+	\subfile{BodyMatter/3r/EDOS1.tex}
+	\subfile{BodyMatter/3r/Complexa.tex}
+	\subfile{BodyMatter/3r/GeoDiferencial.tex}
+	\subfile{BodyMatter/3r/EDOS2.tex}
+}
+
+
+ %%%%% BACK MATTER %%%%%
+\newcommand{\apendix}{} % No
+\newcommand{\glossari}{}
+\newcommand{\indexos}{{
+	\hypersetup{
+		linkcolor=[rgb]{0,0,0.5} % Veure que no calgui
+	}
+	\cleartoevenpage[\thispagestyle{empty}]
+	\renewcommand{\indexname}{Índex alfabètic}
+	\printindex
+%	\cleartoevenpage
+%	\renewcommand{\indexname}{Índex de notació} % Gloassari de notació? Pàgs. al grossari
+%	\printindex[not]
+}}
+
+
+ %%%%% DIVISIONS DEL LLIBRE %%%%%
+\newcommand{\FrontMatter}{ % Buscar on posar llista amb lletres gregues i graf amb les assignatures
+	\frontmatter*
+	\portadilla
+	\portada
+	\colofo
+	\dedicacio
+	\epigraf
+	\tauladecontinguts
+	\foreword
+	\prefaci
+	\agraiments
+	\introduccio
+}
+\newcommand{\BodyMatter}{
+	\mainmatter*
+	\primer
+	\segon
+	\tercer
+}
+\newcommand{\BackMatter}{
+	\backmatter
+	\apendix
+	\glossari
+	\indexos
+}
+
+\begin{document}
+	\FrontMatter
+	\BodyMatter
+	\BackMatter
+\end{document}

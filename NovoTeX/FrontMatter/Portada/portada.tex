@@ -1,0 +1,118 @@
+\documentclass[10pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel}
+\usepackage{tikz-cd}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usetikzlibrary{decorations.text}
+\usepackage{anyfontsize}
+\usepackage[scaled=0.92]{helvet}
+\usepackage{graphicx}
+\usepackage{microtype}
+%\usepackage[urlcolor=black,linkcolor=black,hidelinks]{hyperref}
+
+\newcommand{\anglelogos}{337.5}
+
+\begin{document}
+\begin{tikzpicture}
+	\tkzDefPoint(0,0){O}
+	\tkzDefPoint(3,0){A}
+	\tkzDefPoint(3.1,0){Alluny}
+	\tkzDefPoint(-3,0){A2}
+	\tkzDefPoint(0,3){D}
+	\tkzDefPoint(0,-3){D2}
+	
+	\tkzDefMidPoint(O,D)   \tkzGetPoint{E}
+	\tkzDefMidPoint(O,E)   \tkzGetPoint{F}
+	
+	\tkzDrawBisector[color=white](A,F,O)   \tkzGetPoint{M1}
+	\tkzDrawBisector[color=white](M1,F,O)   \tkzGetPoint{G}
+	
+	\tkzDefLine[orthogonal=through F](G,F) \tkzGetPoint{c}
+	\tkzInterLL(F,c)(O,A) \tkzGetPoint{I}
+	
+	\tkzDrawBisector[color=white](I,F,G)   \tkzGetPoint{H}
+	\tkzDefMidPoint(H,A)   \tkzGetPoint{M}
+	\tkzInterLC(O,D)(M,H) \tkzGetPoints{K}{J}
+	
+	\tkzInterLC(O,A)(O,G) \tkzGetPoints{G'}{G}
+	
+	\tkzInterLC(O,A)(G',J) \tkzGetPoints{L}{N}
+	\tkzDefLine[orthogonal=through L](O,A) \tkzGetPoint{P3}
+	\tkzInterLC(P3,L)(O,A) \tkzGetPoints{P_{14}}{P_{3}}
+	
+	\tkzInterCC(P_{3},A2)(O,A) \tkzGetPoints{P_{6}}{P}
+	\tkzInterCC(P_{6},P_{3})(O,A) \tkzGetPoints{P_{9}}{P}
+	\tkzInterCC(P_{9},P_{6})(O,A) \tkzGetPoints{P_{12}}{P}
+	\tkzInterCC(P_{12},P_{9})(O,A) \tkzGetPoints{P_{15}}{P}
+	\tkzInterCC(P_{15},P_{12})(O,A) \tkzGetPoints{P_{1}}{P}
+	\tkzInterCC(P_{1},P_{15})(O,A) \tkzGetPoints{P_{4}}{P}
+	\tkzInterCC(P_{4},P_{1})(O,A) \tkzGetPoints{P_{7}}{P}
+	\tkzInterCC(P_{7},P_{4})(O,A) \tkzGetPoints{P_{10}}{P}
+	\tkzInterCC(P_{10},P_{7})(O,A) \tkzGetPoints{P_{13}}{P}
+	\tkzInterCC(P_{13},P_{10})(O,A) \tkzGetPoints{P_{16}}{P}
+	\tkzInterCC(P_{16},P_{13})(O,A) \tkzGetPoints{P_{2}}{P}
+		
+	\tkzInterCC(P_{2},P_{16})(O,A) \tkzGetPoints{P_{5}}{P}
+	\tkzInterCC(P_{5},P_{2})(O,A) \tkzGetPoints{P_{8}}{P}
+	\tkzInterCC(P_{8},P_{5})(O,A) \tkzGetPoints{P_{11}}{P}
+	\tkzInterCC(P_{11},P_{8})(O,A) \tkzGetPoints{P_{14}}{P}
+	\tkzInterCC(P_{14},P_{11})(O,A) \tkzGetPoints{P_{0}}{P}
+	
+	\tkzInterLC(F,I)(O,A) \tkzGetPoints{P1}{P2}
+	\tkzInterLC(F,H)(O,A) \tkzGetPoints{P4}{P5}
+	\tkzInterLC(F,G)(O,A) \tkzGetPoints{P6}{P7}
+	\tkzInterLC(F,M1)(O,A) \tkzGetPoints{P8}{P9}
+	
+	\tkzFillCircle[color = black](O,Alluny)
+	\tkzFillCircle[color = white](O,A)
+			
+	\tkzDrawPoints[shape=cross,color=black](E,M)
+	
+	\tkzDrawSegment(P9,F)
+	\tkzDrawSegment(P7,F)
+	\tkzDrawSegment(P4,F)
+	\tkzDrawSegment(P1,F)
+	
+	\tkzDrawSegment(F,A)
+	\tkzDrawSegment(A2,A)
+	\tkzDrawSegment(D2,D)
+	
+	\tkzDrawSegment(P_{3},P_{14})
+	\tkzDrawSegment(P_{14},P_{3})
+	\tkzDrawSegment(P_{3},A2)
+	
+	\tkzDrawCircle(M,H)
+	\tkzDrawCircle(G',J)
+	
+	\tkzDrawSegment[dashed](P_{3},P_{0})
+	\tkzDrawSegment[dashed](P_{6},P_{3})
+	\tkzDrawSegment[dashed](P_{9},P_{6})
+	\tkzDrawSegment[dashed](P_{12},P_{9})
+	\tkzDrawSegment[dashed](P_{15},P_{12})
+	\tkzDrawSegment[dashed](P_{1},P_{15})
+	\tkzDrawSegment[dashed](P_{4},P_{1})
+	\tkzDrawSegment[dashed](P_{7},P_{4})
+	\tkzDrawSegment[dashed](P_{10},P_{7})
+	\tkzDrawSegment[dashed](P_{13},P_{10})
+	\tkzDrawSegment[dashed](P_{16},P_{13})
+	\tkzDrawSegment[dashed](P_{2},P_{16})
+	\tkzDrawSegment[dashed](P_{5},P_{2})
+	\tkzDrawSegment[dashed](P_{8},P_{5})
+	\tkzDrawSegment[dashed](P_{11},P_{8})
+	\tkzDrawSegment[dashed](P_{14},P_{11})
+	\tkzDrawSegment[dashed](P_{0},P_{14})
+	
+	\fontsize{23.5}{23.5}\selectfont
+	\path [postaction={decorate,decoration={text along path, 
+	reverse path,text align=center,
+	text={|\sffamily\color{black}|Universitat Aut{ò}noma de Barcelona}}}] (-30:3.1cm+0.3em) arc (-30:210:3.1cm+0.3em);
+	\node[black,rotate=180-\anglelogos-90] at (180-\anglelogos:3.1cm+0.6em)
+	{\includegraphics[width=1em]{UABLogo.pdf}};
+	\node[black,rotate=\anglelogos-90] at (\anglelogos:3.1cm+0.6em)%
+	{\includegraphics[width=1em]{UABLogo.pdf}};
+	\path [postaction={decorate,decoration={text along path, text align=center,
+	text={|\color{black}|Grau en Matem{à}tiques }}}] (210:3.1cm+2ex) arc (210:330:3.1cm+2ex);
+\end{tikzpicture}
+\end{document}
