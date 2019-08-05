@@ -263,20 +263,51 @@
 		\end{proof}
 	\end{proposition}
 	\subsection{Topologia de nombres complexos}
-	\begin{definition}[Norma d'un nombre complex]
-		\labelname{norma d'un nombre complex}\label{def:norma d'un nombre complex}
-		Sigui \(z=a+b\iu\) un nombre complex. Aleshores definim la seva norma com
-		\[\norma{z}=\sqrt{a^{2}+b^{2}}.\]
+	\begin{definition}[Mòdul d'un nombre complex]
+		\labelname{mòdul d'un nombre complex}\label{def:mòdul d'un nombre complex}
+		Sigui \(z=a+b\iu\) un nombre complex. Aleshores definim el seu mòdul com
+		\[\modul{z}=\sqrt{a^{2}+b^{2}}.\]
 	\end{definition}
-	\begin{proposition}[Desigualtat triangular]
-		\href{http://chistemat.es/wp-content/uploads/2013/11/contra-la-desigualdad.png}{Prova visual}.
-	\end{proposition}
+	\begin{observation}
+		\label{obs:les parts real i imaginàries d'un complex són menors que el seu mòdul}
+		\label{obs:la part real d'un complex és menor que el seu mòdul}
+		\label{obs:la part imaginària d'un complex és menor que el seu mòdul}
+		\(\Re(z)\leq\modul{z}\), \(\Im(z)\leq\modul{z}\).
+	\end{observation}
 	\begin{proposition}
-		\label{prop:la nomra d'un nombre complex és l'arrel del nombre pel seu conjugat}
+		\label{prop:el mòdul d'un nombre complex és l'arrel del nombre pel seu conjugat}
 		Sigui \(z\) un nombre complex. Aleshores es satisfà
-		\[\norma{z}=\sqrt{z\conjugat{z}}.\]
+		\[\modul{z}=\sqrt{z\conjugat{z}}.\]
 		\begin{proof}
-			%TODO
+			Per la definició de \myref{def:nombre complex} tenim que \(z=a+b\iu\), i per la proposició \myref{prop:el producte d'un nombre complex pel seu conjugat és la suma dels quadrats de la seva part real i imaginaria} trobem que
+			\begin{align*}
+				z\conjugat{z}&=a^{2}+b^{2} \\
+				&=\big(\sqrt{a^{2}+b^{2}}\big)^{2}=\modul{z}^{2}, \tag{\ref{def:mòdul d'un nombre complex}}
+			\end{align*}
+			i per tant 
+			\[\modul{z}=\sqrt{z\conjugat{z}}.\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}[Desigualtat triangular]
+		\labelname{desigualtat triangular}\label{prop:desigualta triangular nombres complexos}
+		Siguin \(z\) i \(w\) dos nombres complexos. Aleshores
+		\[\modul{z+w}\leq\modul{z}+\modul{w}.\]
+		\begin{proof}
+			Per la definició de \myref{def:mòdul d'un nombre complex} tenim que
+			\begin{align*}
+				\modul{z+w}^{2}&=(z+w)\conjugat{(z+w)} \\
+				&=(z+w)(\conjugat{z}+\conjugat{w}) \tag{\ref{prop:el conjugat de la suma és la suma de conjugats}} \\
+				&=z\conjugat{z}+z\conjugat{w}+\conjugat{z}w+w\conjugat{w} \\
+				&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{z}w+z\conjugat{w} \tag{\ref{prop:el mòdul d'un nombre complex és l'arrel del nombre pel seu conjugat}} \\
+				&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{\conjugat{\conjugat{z}w}}+z\conjugat{w} \tag{\ref{prop:el conjugat del conjugat d'un nombre complex és ell mateix}} \\
+				&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{\conjugat{\conjugat{z}}\,\conjugat{w}}+z\conjugat{w} \tag{\ref{prop:el conjugat del producte és el producte de conjugats}} \\
+				&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{z\conjugat{w}}+z\conjugat{w}\tag{\ref{prop:el conjugat del conjugat d'un nombre complex és ell mateix}} \\
+				&=\modul{z}^{2}+\modul{w}^{2}+2\Re(zw), \tag{\ref{prop:fórmula per la part real d'un nombre complex}} \\
+				&\leq\modul{z}^{2}+\modul{w}^{2}+2\modul{zw} \tag{\ref{obs:la part real d'un complex és menor que el seu mòdul}} \\
+				&\leq\modul{z}^{2}+\modul{w}^{2}+2\modul{z}\modul{w} \\
+				&=(\modul{z}+\modul{w})^{2}
+				%TODO
+			\end{align*}
 		\end{proof}
 	\end{proposition}
 	
