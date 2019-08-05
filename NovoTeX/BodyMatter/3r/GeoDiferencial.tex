@@ -1,7 +1,7 @@
 \documentclass[../../Main.tex]{subfiles}
 
 \begin{document}
-\part{Geometria diferencial}
+\assignatura{Geometria diferencial}
 \chapter{Corbes}
 \section{Parametritzacions i longitud}
 \begin{comment}
@@ -50,11 +50,11 @@
 	\subsection{Reparametrització d'una corba}
 	\begin{definition}[Corba]
 		\labelname{corba}\label{def:corba}
-		Siguin \(I\subseteq\mathbb{R}\) un interval i \(\alpha\colon I\longrightarrow\mathbb{R}^{n}\) una funció contínua. Aleshores direm que \(\alpha\) és una corba sobre \(I\).
+		Siguin \(I\subseteq\mathbb{R}\) un interval i \(\alpha\colon I\longrightarrow\mathbb{R}^{n}\) una funció contínua. Aleshores direm que \(\alpha\) és una corba\index{corba} sobre \(I\).
 	\end{definition}
 	\begin{example}
 		\label{ex:corba que uniex dos punts}
-		Volem veure que donats dos punts \(a\) i \(b\) de \(\mathbb{R}^{n}\) existeix una corba que els uneix.
+		Volem veure que donats dos punts \(a\) i \(b\) de \(\mathbb{R}^{n}\) existeix una corba que els uneix.\index{corba!que uneix dos punts}
 		\begin{solution}
 			Observem que la funció contínua % Veure que és contínua per ser un polinomi
 			\begin{align*}
@@ -66,7 +66,7 @@
 	\end{example}
 	\begin{definition}[Corba regular]
 		\labelname{corba regular}\label{def:corba regular}
-		Sigui \(\alpha\) una corba diferenciable sobre \(I\) tal que per a tot \(t\in I\) es satisfà \(\alpha'(t)\neq\vec{0}\). Aleshores direm que \(\alpha\) és regular.
+		Sigui \(\alpha\) una corba diferenciable sobre \(I\) tal que per a tot \(t\in I\) es satisfà \(\alpha'(t)\neq\vec{0}\). Aleshores direm que \(\alpha\) és una corba regular\index{corba!regular}.
 	\end{definition}
 	\begin{definition}[Reparametrització]
 		\labelname{reparametrització d'una corba}\label{def:reparametrització d'una corba}
@@ -76,9 +76,10 @@
 			\beta\colon J&\longrightarrow\mathbb{R}^{n} \\
 			t&\longmapsto(\alpha\circ h)(t)
 		\end{align*}
-		és una reparametrització en \(J\) de \(\alpha\) i que \(h\) és el canvi de paràmetre.
+		és una reparametrització\index{reparametrització d'una corba}\index{corba!reparametrització} en \(J\) de \(\alpha\) i que \(h\) és el canvi de paràmetre\index{canvi de paràmetre}.
 	\end{definition}
 	\begin{proposition}
+		\label{prop:els canvis de paràmetre conserven regularitat}
 		Sigui \(\beta\) una reparametrització en \(J\) d'una corba regular \(\alpha\) sobre \(I\). Aleshores \(\beta\) és una corba regular.
 		\begin{proof}
 			Per la definició de \myref{def:reparametrització d'una corba} trobem que existeix un canvi de paràmetre \(h:J\longrightarrow I\) tal que \(\beta=(\alpha\circ h)(t)\). Aleshores tenim que
@@ -99,10 +100,10 @@
 		\labelname{longitud d'una corba}\label{def:longitud d'una corba}
 		Siguin \(\alpha\) una corba sobre \(I\) i \(a\), \(b\) dos punts de \(I\). Aleshores definim
 		\[\Long_{a}^{b}(\alpha)=\int_{a}^{b}\norm{\alpha'(t)}\diff t\]
-		com la longitud de \(\alpha\) entre \(a\) i \(b\).
+		com la longitud\index{longitud!d'una corba} de \(\alpha\) entre \(a\) i \(b\).
 	\end{definition}
 	\begin{example}
-		\label{ex:longitud d'una corba}
+		\label{ex:longitud d'una corba}\index{contacte!d'ordre \ensuremath{r}}
 		Volem calcular la longitud de la corba
 		\[\alpha(t)=(\cos(t),\sin(t),t)\]
 		entre \(0\) i \(x\) per a tot \(x\) positiu.
@@ -165,7 +166,7 @@
 			\funciolongituddarc_{\alpha}(a)(t)\colon I&\longrightarrow\mathbb{R}\\
 			t&\longmapsto\int_{a}^{t}\norm{\alpha'(s)}\diff s
 		\end{align*}
-		és la funció longitud d'arc de \(\alpha\) amb origen en \(a\).
+		és la funció longitud d'arc\index{longitud!d'arc}\index{funció!longitud d'arc} de \(\alpha\) amb origen en \(a\).
 %		\ref{def:diferencial}
 	\end{definition}
 	\begin{observation}
@@ -210,7 +211,7 @@
 		\labelname{corba parametritzada per l'arc}\label{def:corba parametritzada per l'arc}
 		Sigui \(\alpha\) una corba regular sobre \(I\) tal que per a tot \(s\in I\) es satisfà
 		\[\norm{\alpha'(s)}=1.\]
-		Aleshores direm que \(\alpha\) està parametritzada per l'arc.
+		Aleshores direm que \(\alpha\) està parametritzada per l'arc\index{corba!parametritzada per l'arc}.
 	\end{definition}
 	\begin{example} % Veure cas general amb Teorema de la funció implícita
 		\label{ex:reparametrització per l'arc del cercle de radi R}
@@ -265,7 +266,7 @@
 		\labelname{contacte}\label{def:contacte entre dues corbes parametritzades per l'arc}
 		Siguin \(\alpha\) i \(\beta\) dues corbes en \(I\) parametritzades per l'arc i \(s_{0}\in I\) un punt tals que existeix un \(r\in\mathbb{N}\) satisfent
 		\[\lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{p}}=0\quad\text{i}\quad\lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{r+1}}\neq0\]
-		per a tot \(p\leq r\). Aleshores direm que \(\alpha\) i \(\beta\) tenen contacte d'ordre \(r\) en \(s_{0}\).
+		per a tot \(p\leq r\). Aleshores direm que \(\alpha\) i \(\beta\) tenen contacte\index{contacte!entre dues corbes} d'ordre \(r\) en \(s_{0}\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:contacte r és equivalent a tenir les r primeres derivades iguals}

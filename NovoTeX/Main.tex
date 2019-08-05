@@ -13,6 +13,8 @@
 \usepackage[sorting=none, backend=biber, refsection=part]{biblatex} % Bibliografies
 \usepackage{hyperref}
 
+\def\echo#1{\immediate\write18{echo "#1" >&2}}
+
 %				========== ENTORNS ==========
  %%%%% THEOREM STYLES %%%%%
 \theoremstyle{plain}
@@ -63,7 +65,6 @@
  %%%%% OPERADORS %%%%%
 \newcommand{\B}{\bola}
 \DeclareMathOperator{\bola}{B}
-\DeclareMathOperator{\R}{R}
 \DeclareMathOperator{\omicron}{o}
 \DeclareMathOperator{\Omicron}{O}
 \DeclareMathOperator{\rang}{rang}
@@ -190,18 +191,18 @@
 
 \makeatletter
 \def\mynameref#1#2{%
-	\begingroup
+	\begingroup%
 		\edef\@mytxt{#2}%
 		\edef\@mytst{\expandafter\@thirdoffive\@mytxt}%
-		\ifx\@mytst\empty
+		\ifx\@mytst\empty%
 			\ref{#1}%
-		\else
+		\else%
 			\nameref{#1}\space\eqref{#1}\fi%
-	\endgroup
+	\endgroup%
 }
 \makeatother
 
-\makeatletter
+\makeatletter % redefine as \label[]{}
 \newcommand{\labelname}[1]{
 	\def\@currentlabelname{#1}}
 \makeatother
@@ -316,6 +317,7 @@
 \def\book{\cleartoevenpage[\thispagestyle{empty}]\originalbook}
 \renewcommand*{\afterbookskip}{\vfill}
 
+\def\assignatura#1{\echo{#1}\part{#1}}
 
  %%%%% ESTIL DELS CAPÍTOLS %%%%%
 \makeatletter
@@ -373,24 +375,25 @@
 \newcommand{\colofo}{} % Edition notice or Copyright page
 \newcommand{\dedicacio}{} % No
 \newcommand{\epigraf}{} % No % A phrase, quotation, or poem
+\setsecnumdepth{subsection}
+\settocdepth{subsection}
 \newcommand{\tauladecontinguts}{ % May include a list of figures and a list of tables
-	\setsecnumdepth{subsection}
-	\settocdepth{subsection}
 	{\hypersetup{
 		urlcolor=black,
 		linkcolor=black
 	}
-	\tableofcontents}
+	\tableofcontents
+%	\listoffigures
+%	\listoftables
+	}
 }
 \newcommand{\foreword}{} % Aure % Buscar com es diu en català. Potser dir-li prefaci i ja
 \newcommand{\prefaci}{}
 \newcommand{\agraiments}{
-	\cleartoevenpage[\thispagestyle{empty}]
-	\chapter*{Agraïments}
-	M'agradaria donar les gràcies a l'Arnau José, el meu fillol, pels seus apunts d'anàlisi matemàtica; i a l'Àlex Miranda pels seus apunts de geometria diferencial i equacions diferencials ordinàries \rom{2}, a més d'haver-me avisat d'un munt d'errors per tot arreu.
-	
-	Sobretot agrair a l'Aure Losquiño per seguir de ben a prop el progrés i l'evolució de l'escrit amb una visió molt crítica des del començament, trobant-me també mil errors i discutint maneres d'afrontar els múltiples problemes que he trobat escrivint tot això.
-	\clearpage
+	\subfile{FrontMatter/Agraiments.tex}
+}
+\newcommand{\lletresgregues}{
+	\subfile{FrontMatter/LletresGregues.tex}
 }
 \newcommand{\introduccio}{} % States the purpose and goals of the following writing
 
@@ -401,6 +404,7 @@
 	\subfile{BodyMatter/1r/Fonaments.tex}
 	\subfile{BodyMatter/1r/AlgebraLineal.tex}
 	\subfile{BodyMatter/1r/Intro.tex}
+%	\subfile{BodyMatter/1r/Apendix1r.tex}
 }
 \newcommand{\segon}{
 	\book{Segon curs}
@@ -408,6 +412,7 @@
 	\subfile{BodyMatter/2n/AnalisiMatematic.tex}
 	\subfile{BodyMatter/2n/EstructuresAlgebraiques.tex}
 	\subfile{BodyMatter/2n/MetodesNumerics.tex}
+%	\subfile{BodyMatter/2n/Apendix2n.tex}
 }
 \newcommand{\tercer}{
 	\book{Tercer curs}
@@ -416,6 +421,7 @@
 	\subfile{BodyMatter/3r/Complexa.tex}
 	\subfile{BodyMatter/3r/GeoDiferencial.tex}
 	\subfile{BodyMatter/3r/EDOS2.tex}
+%	\subfile{BodyMatter/3r/Apendix3x.tex}
 }
 
 
@@ -447,19 +453,20 @@
 	\foreword
 	\prefaci
 	\agraiments
+	\lletresgregues
 	\introduccio
 }
 \newcommand{\BodyMatter}{
-	\mainmatter*
+	\mainmatter* % Adds blank pages. Should look into removing that
 	\primer
 	\segon
 	\tercer
 }
 \newcommand{\BackMatter}{
 	\backmatter
-	\apendix
+	\apendix % Per curs? (Geometria projectiva, Teoria de la mesura, 1 més)
 	\glossari
-	\indexos
+%	\indexos
 }
 
 \begin{document}

@@ -1466,7 +1466,8 @@
 \section{Formes diferencials i integració}
 	\subsection{Camps vectorials diferenciables}
 	\begin{definition}[Espai tangent a \ensuremath{\mathbb{R}^{n}}]
-		\labelname{espai tangent a \ensuremath{\mathbb{R}^{n}}}\label{def:espai tangent a Rn}
+		\labelname{espai tangent}
+		\label{def:espai tangent a Rn}
 		Sigui \(p\in\mathbb{R}^{n}\) un punt. Aleshores definim el conjunt
 		\begin{equation*}
 			\tangent_{p}(\mathbb{R}^{n})=\{(p,\vec{v})\mid\vec{v}\in\mathbb{R}^{n}\}
@@ -1497,18 +1498,18 @@
 		\end{proof}
 	\end{observation}
 	\begin{definition}[Camp vectorial diferenciable]
-		\label{def:camp vectorial diferenciable}\labelname{camp vectorial diferenciable}
-		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(p\in\obert{U}\) un punt. Aleshores direm que una aplicació de la forma
+		\labelname{camp vectorial diferenciable}\label{def:camp vectorial diferenciable}
+		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(p\in\obert{U}\) un punt. Aleshores direm que una \(\nu\) aplicació de la forma
 		\begin{align*}
-			X\colon\obert{U}&\longrightarrow\tangent_{p}(\mathbb{R}^{n}) \\
-			p&\longmapsto X(p)
+			\nu\colon\obert{U}&\longrightarrow\tangent_{p}(\mathbb{R}^{n}) \\
+			p&\longmapsto\nu(p)
 		\end{align*}
-		amb \(X\in\mathcal{C}^{\infty}(\obert{U})\) és un camp vectorial diferenciable sobre \(\obert{U}\) o que \(X\) és un camp vectorial sobre \(\obert{U}\).
+		amb \(\nu\in\mathcal{C}^{\infty}(\obert{U})\) és un camp vectorial diferenciable sobre \(\obert{U}\) o que \(\nu\) és un camp vectorial sobre \(\obert{U}\).
 	\end{definition}
 	\begin{example}%[Camp vectorial canònic]
 		\label{ex:camp vectorial canònic}
-		Sigui \((e_{1},\dots,e_{n})\) la base canònica d'un \(\mathbb{R}\)-espai vectorial de dimensió \(n\). Volem veure que l'aplicació
-		\[E_{i}(p)=(p,e_{i})\]
+		Sigui \((\vec{e}_{1},\dots,\vec{e}_{n})\) la base canònica d'un \(\mathbb{R}\)-espai vectorial de dimensió \(n\). Volem veure que l'aplicació
+		\[E_{i}(p)=(p,\vec{e}_{i})\]
 		és un camp vectorial.
 		\begin{solution}
 			%TODO
@@ -1525,7 +1526,7 @@
 	\begin{definition}[Espai de camps vectorials]
 		\label{def:conjunt de camps vectorials}\labelname{conjunt de camps vectorials}
 		Sigui \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert. Aleshores direm que el conjunt
-		\[\CampsVectorials{X}(\obert{U})=\{X\in\mathcal{C}^{\infty}(\obert{U})\mid X\text{ és un camp vectorial sobre }\obert{U}\}\]
+		\[\CampsVectorials{X}(\obert{U})=\{\nu\in\mathcal{C}^{\infty}(\obert{U})\mid\nu\text{ és un camp vectorial sobre }\obert{U}\}\]
 		és l'espai de camps vectorials sobre \(\obert{U}\).
 	\end{definition}
 	\begin{example}
@@ -1544,70 +1545,68 @@
 	\end{proposition}
 	\begin{definition}[Producte d'una funció i un camp vectorial]
 		\label{def:producte d'una funció i un camp vectorial}\labelname{producte d'una funció i un camp vectorial}
-		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(X\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Aleshores definim el producte de \(h\) i \(X\) com l'operació \(\cdot\) que satisfà
-		\[(h\cdot X)(p)=h(p)X(p).\]
+		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Aleshores definim el producte de \(h\) i \(\nu\) com l'operació \(\cdot\) que satisfà
+		\[(h\cdot\nu)(p)=h(p)\nu(p).\]
 	\end{definition}
 	\begin{observation}
 		\label{obs:el producte d'una funció i un camp vectorial és C-infinit}
-		Es satisfà que \(h\cdot X\in\mathcal{C}^{\infty}(\obert{U})\).
+		Es satisfà que \(h\cdot\nu\in\mathcal{C}^{\infty}(\obert{U})\).
 	\end{observation}
 	\begin{proposition}
 		\label{prop:el producte d'una funcio i un camp vectorial és distributiu per la suma de camps vectorials}
-		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(X\), \(Y\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials. Aleshores
-		\[\big(h\cdot(X+Y)\big)(p)=(h\cdot X)(p)+(h\cdot Y)(p).\]
+		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu_{1}\), \(\nu_{2}\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials. Aleshores
+		\[\big(h\cdot(\nu_{1}+\nu_{2})\big)(p)=(h\cdot\nu_{1})(p)+(h\cdot\nu_{2})(p).\]
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:el producte d'una funcio i un camp vectorial és distributiu per la suma de funcions}
-		Siguin \(h\), \(g\in\mathcal{C}^{\infty}(\obert{U})\) dues funcions i \(X\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Aleshores
-		\[\big((h+g)\cdot X\big)(p)=(h\cdot X)(p)+(g\cdot X)(p).\]
+		Siguin \(h\), \(g\in\mathcal{C}^{\infty}(\obert{U})\) dues funcions i \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Aleshores
+		\[\big((h+g)\cdot\nu\big)(p)=(h\cdot\nu)(p)+(g\cdot\nu)(p).\]
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:el producte d'una funció i un camp vectorial és associatiu pel producte de camps vectorials}
-		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(X\), \(Y\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials. Aleshores
-		\[\big(h(XY)\big)(p)=\big((hX)Y\big)(p).\]
+		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu_{1}\), \(\nu_{2}\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials. Aleshores
+		\[\big(h(\nu_{1}\nu_{2})\big)(p)=\big((h\nu_{1})\nu_{2}\big)(p).\]
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{proposition}
-%	\begin{proposition}
-%		\label{prop:el producte d'una funció i un camp vectorial és una derivació}
-%		Siguin \(h\), \(g\in\mathcal{C}^{\infty}(\obert{U})\) dues funcions i \(X\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Aleshores
-%		\[X(h_{1}h_{2})(p)=(Xh_{1})h_{2}+(Xh_{2})h_{1}.\]
-%		\begin{proof}
-%			%TODO
-%		\end{proof}
-%	\end{proposition}
 	
 	\subsection{Producte escalar de camps vectorials}
 	\begin{definition}[Producte escalar de camps vectorials]
 		\label{def:producte escalar de camps vectorials}\labelname{producte escalar de camps vectorials}
-		Siguin \(X\), \(Y\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials. Aleshores definim el producte escalar de \(X\) i \(Y\) com l'aplicació que satisfà
-		\[\prodesc{X}{Y}(p)=\prodesc{X(p)}{Y(p)}.\]
+		Siguin \(\nu_{1}\), \(\nu_{2}\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials. Aleshores definim el producte escalar de \(\nu_{1}\) i \(\nu_{2}\) com l'aplicació que satisfà
+		\[\prodesc{\nu_{1}}{\nu_{2}}(p)=\prodesc{\nu_{1}(p)}{\nu_{2}(p)}.\]
 	\end{definition}
 	\subsection{Derivada de Lie}
 	\begin{definition}[Derivada de Lie]
 		\label{def:derivada de Lie}\labelname{derivada de Lie}
-		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(X\in\CampsVectorials{X}(\obert{U})\) un camp vectorial amb. Aleshores direm que
-		\[\Lie_{X}(f)=\prodesc{X}{\nabla h}\]
-		 és la derivada de Lie de \(f\) sobre \(X\) en \(p\).
+		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Aleshores direm que
+		\[\Lie_{\nu}(f)=\prodesc{\nu}{\nabla h}\]
+		 és la derivada de Lie de \(f\) sobre \(\nu\) en \(p\).
 		 
 		 Aquesta definició té sentit per l'exercici \myref{ex:els gradients de les funcions C infinit són camps vectorials}.
 	\end{definition}
+	\begin{definition}[Part vectorial d'un camp]
+		\label{def:part vectorial d'un camp vectorial}\labelname{part vectorial d'un camp vectorial}
+		Sigui \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Per la definició \myref{def:camp vectorial diferenciable} i d'\myref{def:espai tangent a Rn} tenim que existeix una funció \(\vec{\nu}\) sobre \(\obert{U}\) tal que
+		\[\nu(p)=(p,\vec{\nu}(p)).\]
+		Aleshores direm que \(\vec{\nu}\) és la part vectorial de \(\nu\).
+	\end{definition}
 	\begin{lemma}
 		\label{lemma:la derivada de Lie és la derivada direccional}
-		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(X\in\CampsVectorials{X}(\obert{U})\) un camp vectorial
-		\[X(p)=\big(p,(X_{1}(p),\dots,X_{n}(p))\big).\]
+		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial.
 		Aleshores
-		\[\Lie_{X}(h)(p)=\frac{\partial h}{\partial X_{1}(p)}(p).\]
+		\[\Lie_{\nu}(h)(p)=\frac{\partial h}{\partial\vec{\nu}(p)}(p).\]
 		\begin{proof}
 			%TODO
 		\end{proof}
+		\[\iota\varsigma\upsilon\varUpsilon\varSigma\]
 	\end{lemma}
 	\subsection{Corbes integrals}
 \end{document}
