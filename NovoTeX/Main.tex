@@ -7,11 +7,15 @@
 \usepackage{subfiles}
 \usepackage{mathtools,amssymb,amsthm}
 \usepackage{microtype}
-\usepackage[mathcal]{euscript}	% Font caligràfica a mathmode
+%\usepackage[mathcal]{euscript}	% Font caligràfica a mathmode
 \usepackage{tikz-cd}
 %\usepackage[framemethod=TikZ]{mdframed}
 \usepackage[sorting=none, backend=biber, refsection=part]{biblatex} % Bibliografies
 \usepackage{hyperref}
+\usepackage{beton}
+\usepackage{eulervm}
+
+\renewcommand{\bfdefault}{sbc}
 
 \def\echo#1{\immediate\write18{echo "#1" >&2}}
 
@@ -404,7 +408,7 @@
 	\subfile{BodyMatter/1r/Fonaments.tex}
 	\subfile{BodyMatter/1r/AlgebraLineal.tex}
 	\subfile{BodyMatter/1r/Intro.tex}
-%	\subfile{BodyMatter/1r/Apendix1r.tex}
+%	\subfile{BodyMatter/1r/Apendix1r.tex} % Geometria projectiva
 }
 \newcommand{\segon}{
 	\book{Segon curs}
@@ -412,7 +416,7 @@
 	\subfile{BodyMatter/2n/AnalisiMatematic.tex}
 	\subfile{BodyMatter/2n/EstructuresAlgebraiques.tex}
 	\subfile{BodyMatter/2n/MetodesNumerics.tex}
-%	\subfile{BodyMatter/2n/Apendix2n.tex}
+%	\subfile{BodyMatter/2n/Apendix2n.tex} % Teoria de la mesura
 }
 \newcommand{\tercer}{
 	\book{Tercer curs}
@@ -421,7 +425,7 @@
 	\subfile{BodyMatter/3r/Complexa.tex}
 	\subfile{BodyMatter/3r/GeoDiferencial.tex}
 	\subfile{BodyMatter/3r/EDOS2.tex}
-%	\subfile{BodyMatter/3r/Apendix3x.tex}
+%	\subfile{BodyMatter/3r/Apendix3x.tex} % Formes diferencials (?)
 }
 
 
