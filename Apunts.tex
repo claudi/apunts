@@ -8,6 +8,7 @@
 \usepackage{mathtools,amssymb,amsthm}
 \usepackage{microtype}
 \usepackage[mathcal]{euscript}	% hmm
+%\usepackage{eulervm}
 %\usepackage[framemethod=TikZ]{mdframed}
 \usepackage{tikz-cd}
 \usepackage{tkz-euclide}
@@ -162,6 +163,7 @@
 \newcommand{\prodvec}{\mathbin{\wedge}}
 \newcommand{\rapidesa}{v}
 \newcommand{\transposta}{\top}
+\newcommand{\extensio}{/}
 
 \newcommand{\sii}{\iff}
 \newcommand{\Sii}{\Longleftrightarrow}
@@ -172,6 +174,8 @@
 \newcommand{\tancat}[1]{\obert{#1}}
 \newcommand{\base}[1]{\mathcal{#1}}
 \newcommand{\CampsVectorials}[1]{\mathfrak{#1}}
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\grauExtensio}[2]{[#1:#2]}
 
 \newcommand{\diff}{\mathrm{d}}
 \newcommand{\e}{\mathrm{e}}
@@ -500,6 +504,7 @@
 	\subfile{parts/EA.tex}
 	\subfile{parts/MN.tex}
 %	\book{Tercer curs}
+	\subfile{parts/Galois.tex}
 	\subfile{parts/Topologia.tex}
 	\subfile{parts/EDOS1.tex}
 	\subfile{parts/Complexa.tex}
