@@ -7,12 +7,55 @@
 \subsection{Elements algebraics i elements transcendents}
 	\begin{definition}[Extensió d'un cos]
 		\labelname{extensió d'un cos}\label{def:extensió d'un cos}
-		Siguin~\(\field{K}\) i~\(\field{F}\) dos cossos tals que~\(\field{F}\subseteq\field{K}\). Aleshores direm que~\(\field{K}\) és una extensió de~\(\field{F}\) i ho denotarem com~\(\field{K}\extensio\field{F}\). També direm que~\(\field{K}\extensio\field{F}\) és una extensió.
+		Siguin~\(\field{K}\) i~\(\field{F}\) dos cossos tals que~\(\field{K}\subseteq\field{F}\). Aleshores direm que~\(\field{F}\) és una extensió de~\(\field{K}\) i ho denotarem com~\(\field{F}\extensio\field{K}\). També direm que~\(\field{F}\extensio\field{K}\) és una extensió.
 	\end{definition}
+	\begin{example}
+		\label{ex:el cos de polinomis és una extensió}
+		Siguin~\(\field{K}\) un cos i~\(p(x)\in\field{K}[x]\) un polinomi irreductible. Denotem~\(\field{F}=\field{K}[x]/(p(x))\). Aleshores~\(\field{F}\extensio\field{K}\) és una extensió.
+		\begin{solution} % Veure que un cos és un DIP
+			Veiem que~\(\field{F}\) és un cos. Per hipòtesi tenim que~\(p(x)\) és irreductible, i per la proposició \myref{prop:irreductible sii ideal maximal} trobem que l'ideal~\((p(x))\) és maximal. Aleshores per la proposició \myref{prop:condició equivalent a ideal maximal per R/M cos} tenim que~\(\field{F}\) és un cos.
+			
+			Per acabar veiem que~\(\field{K}\subseteq\field{F}\) per l'observació \myref{obs:un anell està contingut en el seu anell de polinomis}, i per la definició d'\myref{def:extensió d'un cos} hem acabat.
+		\end{solution}
+	\end{example}
 	\begin{definition}[Grau d'una extensió]
 		\labelname{grau d'una extensió}\label{def:grau d'una extensió}
 		Sigui~\(\field{K}\extensio\field{F}\) una extensió. Aleshores direm que la dimensió del \(\field{K}\)-espai vectorial~\(\field{F}\) és el grau de l'extensió i el denotarem com~\(\grauExtensio{\field{K}}{\field{F}}\).
 		
 		Aquesta definició té sentit per la proposició~\myref{prop:un subcòs és un espai vectorial}.
+	\end{definition}
+	\begin{example}
+		Siguin~\(\field{K}\) un cos i~\(p(x)\in\field{K}[x]\) un polinomi irreductible. Denotem~\(\field{F}=\field{K}[x]/p(x)\). Aleshores
+		\[\grauExtensio{\field{K}}{\field{F}}=\grau(p(x)).\]
+		\begin{solution}
+			Aquest enunciat té sentit per l'exemple \myref{ex:el cos de polinomis és una extensió}. %FER
+		\end{solution}
+	\end{example}
+	\begin{theorem}[Fórmula de les Torres]
+		\labelname{fórmula de les torres}\label{thm:fórmula de les torres}
+		Siguin~\(\field{E}\extensio\field{F}\) i~\(\field{F}\extensio\field{K}\) dues extensions de cossos. Aleshores
+		\[\grauExtensio{\field{E}}{\field{K}}=\grauExtensio{\field{E}}{\field{F}}\grauExtensio{\field{F}}{\field{K}}.\]
+		\begin{proof}
+			Si~\(\grauExtensio{\field{E}}{\field{F}}=\infty\) ó~\(\grauExtensio{\field{F}}{\field{K}}=\infty\) tenim que~\(\grauExtensio{\field{E}}{\field{K}}=\infty\).
+			
+			Suposem doncs que~\(\grauExtensio{\field{E}}{\field{F}}=n\) i~\(\grauExtensio{\field{F}}{\field{K}}=m\). %TODO
+		\end{proof}
+	\end{theorem}
+	\begin{definition}[Torre]
+		\labelname{torre}\label{def:torre de cossos}
+		Siguin~\(\field{K}_{1}\subseteq\field{K}_{2}\subseteq\dots\subseteq\field{K}_{1}\) cossos. Aleshores direm que
+		\[\field{K}_{1}\subseteq\field{K}_{2}\subseteq\dots\subseteq\field{K}_{1}\]
+		és una torre.
+	\end{definition}
+	\begin{corollary}
+		Sigui~\(\field{K}_{1}\subseteq\field{K}_{2}\subseteq\dots\subseteq\field{K}_{1}\) una torre. Aleshores
+		\[\grauExtensio{\field{K}_{n}}{\field{K}_{1}}=\grauExtensio{\field{K}_{n}}{\field{K}_{n-1}}\cdots\grauExtensio{\field{K}_{2}}{\field{K}_{1}}\]
+		\begin{proof}
+			Conseqüència de la~\myref{thm:fórmula de les torres}.
+		\end{proof}
+	\end{corollary}
+	\subsection{Extensions algebraiques}
+	\begin{definition}
+		
 	\end{definition}
 \end{document}
