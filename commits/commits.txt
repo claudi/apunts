@@ -1,2 +1,0 @@
-Començat el capítol d'EDPs de primer ordre.
-Afegits enunciats a geometria diferencial al capítol de formes diferencials i integració.

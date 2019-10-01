@@ -1284,9 +1284,6 @@
 			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem que per a tot \(x,y\in I\), \(r\in R\) tenim \(x-y\in I\) i \(r\cdot x\in I\). Per la proposició \myref{prop:condició equivalent a subgrup} tenim que \(I\) és un subgrup del grup \(R\) amb la suma \(+\), i per la definició d'\myref{def:ideal d'un anell} tenim que \(I\) és un ideal de \(R\).
 		\end{proof}
 	\end{proposition}
-	\begin{notation}
-		Si \((a)\) és un ideal principal d'un anell \(R\) denotarem \((a)\trianglelefteq R\).
-	\end{notation}
 	\begin{proposition}
 		\label{prop:combinació d'ideals per obtenir ideals}
 		Siguin \(I,J\) dos ideals d'un anell \(R\) amb la suma \(+\) i el producte \(\cdot\). Aleshores els conjunts
@@ -1335,6 +1332,9 @@
 		\label{def:ideal principal}
 		Sigui \(I\) un ideal d'un anell \(R\) amb el producte \(\cdot\) tal que \(I=\{a\}R=R\{a\}=\{r\cdot a\mid r\in R\}\) per a cert \(a\in I\). Aleshores direm que \(I\) és un anell principal de \(R\). Ho denotarem amb \(I=(a)\).
 	\end{definition}
+	\begin{notation}
+		Si \((a)\) és un ideal principal d'un anell \(R\) denotarem \((a)\trianglelefteq R\).
+	\end{notation}
 	\subsection{Cossos i l'anell quocient}
 	\begin{definition}[Cos] % Refer amb la definició de cos nova
 		\labelname{cos}
@@ -1665,7 +1665,7 @@
 		Sigui \(I\) un ideal d'un anell \(R\) amb \(I\neq R\). Aleshores
 		\[R/I\text{ és un domini d'integritat}\sii I\text{ és un ideal primer de }R.\]
 		\begin{proof} % Dreta i esquerra en comptes de suficient i necessàri
-			Siguin \(+\) la suma de \(R\) i \(\cdot\) el producte de \(R\). Comencem demostrant que la condició és suficient (\(\implica\)). Suposem doncs que \(R/I\) és un domini d'integritat i prenem \([a],[b]\in R/I\) tals que \([a]\cdot[b]=[0]\). Aleshores per la definició de \myref{def:anell quocient} tenim que \(a\cdot b\in I\). Ara bé, com que per hipòtesi \(R/I\) és un domini d'integritat tenim que ha de ser \([a]=[0]\) ó \([b]=[0]\), i per tant trobem que ha de ser \(a\in I\) o \(b\in I\), i per la definició d'\myref{def:ideal primer} trobem que \(I\) és un ideal primer de \(R\).
+			Siguin \(+\) la suma de \(R\) i \(\cdot\) el producte de \(R\). Comencem demostrant que la condició és suficient (\(\implica\)). Suposem doncs que \(R/I\) és un domini d'integritat i prenem \([a],[b]\in R/I\) tals que \([a]\cdot[b]=[0]\). Aleshores per la definició d'\myref{def:anell quocient} tenim que \(a\cdot b\in I\). Ara bé, com que per hipòtesi \(R/I\) és un domini d'integritat tenim que ha de ser \([a]=[0]\) ó \([b]=[0]\), i per tant trobem que ha de ser \(a\in I\) o \(b\in I\), i per la definició d'\myref{def:ideal primer} trobem que \(I\) és un ideal primer de \(R\).
 			
 			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que \(I\) és un ideal primer de \(R\). Per la proposició \myref{prop:anell quocient} tenim que \(R/I\) és un anell commutatiu amb \(1\neq0\). Prenem doncs \(a\in R\), \(a\notin I\) i suposem que existeix \(b\in R\) tal que \([a]\cdot[b]=[0]\). Això és que \(a\cdot b\in I\), i com que per hipòtesi \(I\) és un ideal primer, per la definició d'\myref{def:ideal primer} trobem que ha de ser \(b\in I\), i per tant \([b]=[0]\) i per la definició de \myref{def:domini d'integritat} tenim que \(R/I\) és un domini d'integritat.
 		\end{proof}
@@ -1908,6 +1908,7 @@
 		Siguin \(D\) un domini d'integritat amb el producte \(\cdot\), \(a\neq0\) un element no invertible de \(D\) i \(b,c\) dos elements de \(D\) tals que \(a=b\cdot c\). Aleshores direm que \(a\) és irreductible si \(b\) ó \(c\) són invertibles.
 	\end{definition}
 	\begin{proposition}
+		\label{prop:en un DI un primer és un irreductible}
 		Siguin \(D\) un domini d'integritat i \(p\) un element primer de \(D\). Aleshores \(p\) és irreductible.
 		\begin{proof}
 			Sigui \(\cdot\) el producte de \(D\). Suposem que \(a\) i \(b\) són dos elements de \(D\) tals que \(p=a\cdot b\). Per la definició de \myref{def:primer en un anell} tenim que ha de ser \(p\divides a\) ó \(p\divides b\). Si \(p\divides a\) tenim que \(a=\alpha\cdot p\) per a cert \(\alpha\in D\).
@@ -2018,7 +2019,7 @@
 			
 			Suposem que \(b_{1}\in X\), la demostració de l'altre opció és anàloga. Aleshores tenim, per l'observació \myref{obs:divisors són ideals continguts}, que \((a)\subset(b)\). Ara bé, també tindríem que \(b_{1}=b_{2}\cdot c_{2}\) per a certs \(b_{2},c_{2}\) elements no invertibles de \(N\) amb \(b_{2}\in X\) o \(c_{2}\in X\), i podem iterar aquest argument per construir
 			\[(a_{1})\subset(b_{1})\subset(b_{2})\subset(b_{3})\subset\dots\]
-			però això entra en contradicció amb la definició de \myref{def:anell Noetherià}, i per tant \(X=\emptyset\), com volíem veure.
+			però això entra en contradicció amb la definició d'\myref{def:anell Noetherià}, i per tant \(X=\emptyset\), com volíem veure.
 		\end{proof}
 	\end{lemma}
 	\subsection{Dominis d'ideals principals}
@@ -2057,7 +2058,7 @@
 			
 			Ara bé, com que per hipòtesi \(D\) és un domini d'ideals principals tenim, per la definició de \myref{def:DIP} que existeix \(a\in D\) tal que \(\mathcal{I}=(a)\), i per tant existeix \(n\) tal que \(a\in I_{n}\), i trobem que
 			\[\mathcal{I}=(a)\subseteq I_{n}\subseteq I_{n+k}\subseteq\mathcal{I}\]
-			per a tot \(k\in\mathbb{N}\), i pel \myref{thm:doble inclusió} trobem que \(I_{n}=I_{n+k}\) per a tot \(k\in\mathbb{N}\), i per la definició de \myref{def:anell Noetherià} trobem que \(D\) és un anell Noetherià.
+			per a tot \(k\in\mathbb{N}\), i pel \myref{thm:doble inclusió} trobem que \(I_{n}=I_{n+k}\) per a tot \(k\in\mathbb{N}\), i per la definició d'\myref{def:anell Noetherià} trobem que \(D\) és un anell Noetherià.
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
