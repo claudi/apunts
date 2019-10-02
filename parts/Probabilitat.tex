@@ -1,0 +1,78 @@
+\documentclass[../Apunts.tex]{subfiles}
+
+\begin{document}
+\part{Probabilitat i modelització estocàstica}
+\chapter{Models probabilístics}
+\section{El model probabilístic}
+	\subsection{Experiments aleatoris i espai mostral}
+	\begin{definition}[Experiment aleatori]
+		\labelname{experiment aleatori}\label{def:experiment aleatori}
+		\labelname{espai mostral}\label{def:espai mostral}
+		Definirem de manera informal els fenòmens que estudiarem, els \emph{experiments aleatoris}. Aquests tenen les següents propietats:
+		\begin{enumerate}
+			\item Coneixem tots els possibles resultats de l'experiment, però no el que sortirà. El conjunt de possibles resultats~\(\Omega\) serà l'\emph{espai mostral}.
+			\item Tenim alguna manera d'assignar probabilitats als resultats, o a conjunts de resultats.
+		\end{enumerate}
+	\end{definition}
+	\begin{example}
+		Volem determinar l'espai mostral dels següents experiments:
+		\begin{enumerate}
+			\item Tirar un dau de sis cares.
+			\item Un partit de bàsquet.
+			\item Tirar una moneda.
+		\end{enumerate}
+		\begin{solution}
+			Els seus espais mostrals són, respectivament,
+			\begin{enumerate}
+				\item \(\Omega=\{1,2,3,4,5,6\}\).
+				\item \(\Omega=\NN\times\NN\).
+				\item \(\Omega=\{\heads,\tails\}\).\qedhere
+			\end{enumerate}
+		\end{solution}
+	\end{example}
+	\begin{definition}[Esdeveniment]
+		\labelname{esdeveniment}\label{def:esdeveniment}
+		\labelname{esdeveniment segur}\label{def:esdeveniment segur}
+		\labelname{esdeveniment contrari}\label{def:esdeveniment contrari}
+		\labelname{esdeveniment impossible}\label{def:esdeveniment impossible}
+		Sigui~\(A\subseteq\Omega\) un subconjunt d'un espai mostral~\(\Omega\). Aleshores direm que~\(A\) és un esdeveniment.
+		
+		Si el resultat~\(\omega\in A\subseteq\Omega\) s'ha realitzat direm que l'esdeveniment~\(A\) s'ha realitzat. També definim
+		\begin{enumerate}
+			\item Direm que~\(A=\Omega\) és l'esdeveniment segur i~\(A=\emptyset\) és l'esdeveniment impossible.
+			\item Direm que~\(B=\Omega\setminus A\) és l'esdeveniment contrari a l'esdeveniment~\(A\).
+%			\item Direm que~\(A=\emptyset\) és l'esdeveniment impossible.
+		\end{enumerate}
+	\end{definition}
+	\begin{example}
+		Volem determinar els conjunts d'esdeveniments següents:
+		\begin{enumerate}
+			\item Tirar un dau de sis cares i que surti un nombre parell.
+			\item Una partit de bàsquet on guanya el visitant.
+			\item Un món on acabo aquests apunts abans que la carrera.
+		\end{enumerate}
+		\begin{solution}
+			Els conjunts d'esdeveniments són, respectivament,
+			\begin{enumerate}
+				\item \(A=\{2,4,6\).
+				\item \(A=\{(m,n)\in\NN\times\NN\mid n>m\}\).
+				\item \(A=\emptyset\).\qedhere
+			\end{enumerate}
+		\end{solution}
+	\end{example}
+	\subsection{Àlgebres i \(\sigma\)-àlgebres}
+	\begin{definition}[Àlgebra]
+		\labelname{àlgebra}\label{def:àlgebra}
+		Sigui~\(\algebra{A}\) una co{\lgem}ecció de subconjunts~\(\Omega\) tal que
+		\begin{enumerate}
+			\item \(\Omega\in\algebra{A}\).
+			\item Si~\(A\in\algebra{A}\), aleshores~\(\Omega\setminus A\in\algebra{A}\).
+			\item Si~\(A\), \(B\in\algebra{A}\), aleshores~\(A\cup B\in\algebra{A}\).
+		\end{enumerate}
+		Aleshores direm que~\(\algebra{A}\) és un àlgebra de conjunts sobre~\(\Omega\).
+	\end{definition}
+	\begin{observation}
+		\label{obs:el conjunt buit pertany a qualsevol àlgebra}
+		Si~\(\algebra{A}\) és un àlgebra, aleshores~\(\emptyset\in\algebra{A}\).
+	\end{observation}
+\end{document}
