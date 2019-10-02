@@ -33,6 +33,8 @@
 		\end{solution}
 	\end{example}
 	\begin{lemma}
+		\label{lema:element algebraic}
+		\label{lema:element transcendent}
 		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores
 		\[\ker(\ev_{\alpha})=\begin{cases}
 			(0) \\
@@ -60,11 +62,21 @@
 	\begin{definition}[Element algebraic i element transcendent]
 		\labelname{element algebraic}\label{def:element algebraic}
 		\labelname{element transcendent}\label{def:element transcendent}
+%		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element tal que existeix un polinomi no nul~\(p(x)\in\KK[x]\) satisfent~\(p(\alpha)=0\). Aleshores direm que~\(\alpha\) és {algebraic} sobre~\(\KK\).
+		
+		Si~\(\alpha\) no és algebraic sobre~\(\KK\) direm que és {transcendent} sobre~\(\KK\).
+	\end{definition}
+	\begin{observation}
+		\label{obs:condició equivalent a element algebraic}
+		\label{obs:condició equivalent a element transcendent}
+		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores~\(\alpha\) és algebraic si i només si existeix un polinomi no nul~\(p(x)\in\KK[x]\) tal que~\(\ker(\ev_{\alpha})=(p(x))\).
+	\end{observation}
+	\begin{definition}[]
 		
 	\end{definition}
 	\begin{definition}[Grau d'una extensió]
 		\labelname{grau d'una extensió}\label{def:grau d'una extensió}
-		Sigui~\(\KK\extensio\FF\) una extensió. Aleshores direm que la dimensió del \(\KK\)-espai vectorial~\(\FF\) és el grau de l'extensió i el denotarem com~\(\grauExtensio{\KK}{\FF}\).
+		Sigui~\(\KK\extensio\FF\) una extensió. Aleshores direm que la dimensió del \(\KK\)-espai vectorial~\(\FF\) és el \emph{grau de l'extensió}\index{grau d'una extensió} i el denotarem com~\(\grauExtensio{\KK}{\FF}\).
 		
 		Aquesta definició té sentit per la proposició~\myref{prop:un subcòs és un espai vectorial}.
 	\end{definition}
