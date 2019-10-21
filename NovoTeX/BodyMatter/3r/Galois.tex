@@ -7,12 +7,193 @@
 \subsection{Elements algebraics i elements transcendents}
 	\begin{definition}[Extensió d'un cos]
 		\labelname{extensió d'un cos}\label{def:extensió d'un cos}
-		Siguin~\(\field{K}\) i~\(\field{F}\) dos cossos tals que~\(\field{F}\subseteq\field{K}\). Aleshores direm que~\(\field{K}\) és una extensió de~\(\field{F}\) i ho denotarem com~\(\field{K}\extensio\field{F}\). També direm que~\(\field{K}\extensio\field{F}\) és una extensió.
+		Siguin~\(\KK\) i~\(\FF\) dos cossos tals que~\(\KK\subseteq\FF\). Aleshores direm que~\(\FF\) és una extensió de~\(\KK\) i ho denotarem com~\(\FF\extensio\KK\). També direm que~\(\FF\extensio\KK\) és una extensió.
 	\end{definition}
-	\begin{definition}[Grau d'una extensió]
+	\begin{example}
+		\label{ex:el cos de polinomis és una extensió}
+		Siguin~\(\KK\) un cos i~\(p(x)\in\KK[x]\) un polinomi irreductible. Denotem~\(\FF=\KK[x]/(p(x))\). Aleshores~\(\FF\extensio\KK\) és una extensió.
+		\begin{solution} % Veure que un cos és un DIP
+			Veiem que~\(\FF\) és un cos. Per hipòtesi tenim que~\(p(x)\) és irreductible, i per la proposició \myref{prop:irreductible sii ideal maximal} trobem que l'ideal~\((p(x))\) és maximal. Aleshores per la proposició \myref{prop:condició equivalent a ideal maximal per R/M cos} tenim que~\(\FF\) és un cos.
+			
+			Per acabar veiem que~\(\KK\subseteq\FF\) per l'observació \myref{obs:un anell està contingut en el seu anell de polinomis}, i per la definició d'\myref{def:extensió d'un cos} hem acabat.
+		\end{solution}
+	\end{example}
+	\begin{example}[Morfisme avaluació]
+		\labelname{\empty}
+		\label{ex:morfisme d'avaluació}
+		\label{ex:morfisme avaluació}
+		\label{ex:el morfisme avaluació és un morfisme d'anells}
+		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Volem veure que l'aplicació
+%		\begin{align*}
+%			\ev_{\alpha}\colon\KK[x]&\longrightarrow\FF \\
+%			\KK[x]\setminus\KK\ni x&\longmapsto\alpha \\
+%			\KK\ni\lambda&\longmapsto\lambda
+%		\end{align*}
+		\begin{align*}
+			\ev_{\alpha}\colon\KK[x]&\longrightarrow\FF \\
+			p(x)&\longmapsto p(\alpha)
+		\end{align*}
+		és un morfisme d'anells.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{lemma}
+		\label{lema:element algebraic}
+		\label{lema:element transcendent}
+		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores
+		\[\ker(\ev_{\alpha})=\begin{cases}
+			(0) \\
+			(p(x)), & p(x)\text{ és un polinomi mònic irreductible a }\KK[x]
+		\end{cases}\]
+		\begin{proof} % REVISAR. Pot ser molt més fàcil?
+			Suposem que~\(\ker(\ev_{\alpha})\neq(0)\). Per la proposició \myref{prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell} i l'exemple \myref{ex:el morfisme avaluació és un morfisme d'anells} tenim que~\(\ker(\ev_{\alpha})\) és un ideal, i com que, per hipòtesi,~\(\KK\) és un cos, tenim que~\(\KK[x]\) és un domini d'ideals principals. %REF
+			Per tant, per la definició de \myref{def:domini d'ideals principals} tenim que~\(\ker(\ev_{\alpha})\) és un ideal principal, i per la definició d'\myref{def:ideal principal} trobem que existeix un~\(a\in\KK[x]\) tal que~\(\ker(\ev_{\alpha})=(a)\).
+			
+			Tenim que~\(a\) ha de ser un polinomi mònic. Suposem que~\(a\in\KK\). Trobem per la definició \myref{ex:el morfisme avaluació és un morfisme d'anells} que~\(\ev_{\alpha}(a)=a\), i com que hem suposat que~\(\ker(\ev_{\alpha})\neq(0)\), trobem que~\(a\neq0\), i per tant~\(\ev_{\alpha}(a)=a\neq0\), trobant que~\(a\notin\ker(\ev_{\alpha})\), arribant a contradicció. Per tant~\(a\in\KK[x]\setminus\KK\). Suposem que~\(a=\lambda p(x)\), amb~\(\lambda\in\KK\),~\(\lambda\neq0\) i~\(p\in\KK[x]\setminus\KK\). Per l'exemple \myref{ex:el morfisme avaluació és un morfisme d'anells} tenim que~\(\ev_{\alpha}\) és un morfisme d'anells, i per la definició de \myref{def:morfisme entre anells} trobem que
+			\begin{align*}
+				\ev_{\alpha}(\lambda p(x))&=\ev_{\alpha}(\lambda)\ev_{\alpha}(p(x))\\
+				&=\lambda\ev_{\alpha}(p(x)). \tag{\ref{ex:el morfisme avaluació és un morfisme d'anells}}
+			\end{align*}
+			Ara bé, com que hem suposat que~\(\ker(\ev_{\alpha})=(\lambda p(x))\) tenim~\(\ev_{\alpha}(\lambda p(x))=0\) i, com que hem suposat que~\(\lambda\neq0\), ha de ser~\(\ev_{\alpha}(p(x))=0\), i tenim que
+			\[\ker(\ev_{\alpha})=(p(x)).\]
+			
+			Veiem ara que~\(p(x)\) és irreductible. Pel \myref{thm:Primer Teorema de l'isomorfisme entre anells} trobem que
+			\[\KK[x]/(p(x))=\KK[x]/\ker(\ev_{\alpha})\cong\Ima(\ev_{\alpha}).\]
+			
+			Com que~\(\FF\) és un cos tenim que~\(\Ima(\ev_{\alpha})\) és un domini. %REF
+			Com que~\(\Ima(\ev_{\alpha})\cong\KK[x]/(p(x))\) és un domini, tenim per la proposició \myref{prop:R/I domini d'integritat sii I ideal primer} que~\((p(x))\) és un ideal primer, i per l'observació \myref{obs:ideals primer iff primer} trobem que~\(p(x)\) és primer, i per la proposició \myref{prop:en un DI un primer és un irreductible} tenim que~\(p(x)\) és irreductible.
+		\end{proof}
+	\end{lemma}
+	\begin{definition}[Element algebraic i element transcendent]
+		\labelname{element algebraic}\label{def:element algebraic}
+		\labelname{element transcendent}\label{def:element transcendent}
+%		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element tal que existeix un polinomi no nul~\(p(x)\in\KK[x]\) satisfent~\(p(\alpha)=0\). Aleshores direm que~\(\alpha\) és {algebraic} sobre~\(\KK\).
+		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un un element tal que no existeix cap polinomi mònic no nul~\(p(x)\in\KK[x]\) tal que~\(p(\alpha)=0\). Aleshores direm que~\(\alpha\) és {algebraic} sobre~\(\KK\). Denotarem \(\Irr(\alpha,\KK)=p(x)\).
+		
+		Si~\(\alpha\) no és algebraic sobre~\(\KK\) direm que és {transcendent} sobre~\(\KK\).
+	\end{definition}
+	\begin{observation}
+		\label{obs:polinomi mínim de descomposició}
+		\((\Irr(\alpha,\KK))=\ker(\ev_{\alpha})\)
+	\end{observation}
+	\begin{example}
+		\label{ex:elements algebraics}
+		Volem veure que els següents són algebraics.
+		\begin{enumerate}
+			\item \(\sqrt{2}\) i~\(\sqrt{3}\) en l'extensió~\(\RR\extensio\QQ\).
+			\item \(\sqrt{2}+\sqrt{3}\) en l'extensió~\(\RR\extensio\QQ\)
+		\end{enumerate}
+		\begin{solution}
+			Tenim que %TODO
+			\begin{enumerate}
+			\item \(x^{2}-2\), \(x^{2}-3\).
+			\item \(x^{4}-10x^{2}+1\).\qedhere
+			\end{enumerate}
+		\end{solution}
+	\end{example}
+	\begin{observation}
+		\label{obs:condició equivalent a element algebraic}
+		\label{obs:condició equivalent a element transcendent}
+		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores~\(\alpha\) és algebraic si i només si existeix un polinomi no nul~\(p(x)\in\KK[x]\) tal que~\(\ker(\ev_{\alpha})=(p(x))\).
+		\begin{proof}
+			Si~\(\alpha\) és algebraic aleshores, per la definició d'\myref{def:element algebraic}, existeix un polinomi no nul~\(p(x)\in\KK[x]\) tal que~\(p(\alpha)=0\), i per la definició de \myref{def:nucli d'un morfisme entre grups} tenim que~\(\ker(\ev_{\alpha})\neq(0)\). Aleshores pel lema~\myref{lema:element algebraic} hem acabat.
+		\end{proof}
+	\end{observation}
+	\subsection{Extensions algebraiques}
+	\begin{definition}[Extensió algebraica]
+		\labelname{extensió algebraica}\label{def:extensió algebraica}
+		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores direm que
+		\[\KK[\alpha]=\{p(\alpha)\in\FF\mid p(x)\in\KK[x]\}\]
+		és l'{extensió algebraica} de~\(\alpha\) en~\(\KK\).
+%		Siguin~\(D\) un domini d'integritat,~\(\FF\) un cos tal que~\(\cosdefraccions(D)\subseteq\FF\) i~\(\alpha\in\FF\) un element. Aleshores direm que
+%		\[D[\alpha]=\{p(\alpha)\mid p(x)\in D[x]\}\]
+%		és l'{extensió algebraica} de~\(\alpha\) en~\(D\).
+	\end{definition}
+	\begin{observation}
+		\label{obs:un cos està contingut en les seves extensions algebraiques}
+		\(\KK\subseteq\KK[\alpha]\).
+	\end{observation}
+%	\begin{proposition}
+%		Siguin~\(D\) un domini d'integritat i~\(\FF\) un cos tal que~\(\cosdefraccions(D)\subseteq\FF\). Aleshores l'extensió algebraica de~\(\alpha\) en~\(D\) és el mínim subanell de~\(\FF\) que conté~\(\alpha\).
+%		\begin{proof}
+%			
+%		\end{proof}
+%	\end{proposition}
+	\begin{proposition}
+		\label{prop:l'extensió algebraica és l'anell de polinomis quocient l'irreductible de l'element}
+		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores
+		\[\KK[\alpha]\cong\KK[x]/(\Irr(\alpha,\KK)).\]
+		\begin{proof}
+			Tenim que
+			\begin{align*}
+				\KK[x]/(\Irr(\alpha,\KK))&=\KK[x]/\ker(\ev_{\alpha}) \tag{\ref{obs:polinomi mínim de descomposició}}\\
+				&\cong\Ima(\ev_{\alpha}) \tag{\ref{thm:Primer Teorema de l'isomorfisme entre anells}}\\
+				&=\{p(\alpha)\in\FF\mid p(x)\in\KK[x]\} \tag{\ref{def:imatge d'un morfisme entre anells} i \ref{ex:morfisme avaluació}}\\
+				&= \KK[\alpha], \tag{\ref{def:extensió algebraica}}
+			\end{align*}
+			i per tant
+			\[\KK[\alpha]\cong\KK[x]/(\Irr(\alpha,\KK)).\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\begin{corollary}
+		\label{cor:l'extensió algebraica d'un transcendent és isomorfa a l'anell de polinomis}
+		Siguin~\(\FF\extensio\KK\) una extensió i~\(\gamma\in\FF\) un element transcendent sobre~\(\KK\). Aleshores
+		\[\KK[\gamma]\cong\KK[x].\]
+	\end{corollary}
+
+
+
+
+
+
+	\subsection{Extensions de cossos}
+	\begin{definition}[Grau d'una extensió de cossos]
 		\labelname{grau d'una extensió}\label{def:grau d'una extensió}
-		Sigui~\(\field{K}\extensio\field{F}\) una extensió. Aleshores direm que la dimensió del \(\field{K}\)-espai vectorial~\(\field{F}\) és el grau de l'extensió i el denotarem com~\(\grauExtensio{\field{K}}{\field{F}}\).
+		Sigui~\(\FF\extensio\KK\) una extensió. Aleshores direm que la dimensió del \(\KK\)-espai vectorial~\(\FF\) és el {grau de l'extensió} i el denotarem com~\(\grauExtensio{\KK}{\FF}\).
 		
 		Aquesta definició té sentit per la proposició~\myref{prop:un subcòs és un espai vectorial}.
 	\end{definition}
+	\begin{example}
+		Siguin~\(\KK\) un cos i~\(p(x)\in\KK[x]\) un polinomi irreductible. Denotem~\(\FF=\KK[x]/p(x)\). Aleshores
+		\[\grauExtensio{\KK}{\FF}=\grau(p(x)).\]
+		\begin{solution}
+			Aquest enunciat té sentit per l'exemple \myref{ex:el cos de polinomis és una extensió}. %FER
+		\end{solution}
+	\end{example}
+	\begin{corollary}
+		\label{cor:grau d'una extensió algebraica}
+		\(\grauExtensio{\KK[\alpha]}{\KK}=\grau(\Irr(\alpha,\KK))\).
+		\begin{proof}
+			Per la proposició \ref{prop:l'extensió algebraica és l'anell de polinomis quocient l'irreductible de l'element}.
+		\end{proof}
+	\end{corollary}
+	\begin{theorem}[Fórmula de les Torres]
+		\labelname{fórmula de les torres}\label{thm:fórmula de les torres}
+		Siguin~\(\EE\extensio\FF\) i~\(\FF\extensio\KK\) dues extensions de cossos. Aleshores
+		\[\grauExtensio{\EE}{\KK}=\grauExtensio{\EE}{\FF}\grauExtensio{\FF}{\KK}.\]
+		\begin{proof}
+			Si~\(\grauExtensio{\EE}{\FF}=\infty\) ó~\(\grauExtensio{\FF}{\KK}=\infty\) tenim que~\(\grauExtensio{\EE}{\KK}=\infty\).
+			
+			Suposem doncs que~\(\grauExtensio{\EE}{\FF}=n\) i~\(\grauExtensio{\FF}{\KK}=m\). %TODO
+		\end{proof}
+	\end{theorem}
+	\begin{definition}[Torre]
+		\labelname{torre}\label{def:torre de cossos}
+		Siguin~\(\KK_{1}\subseteq\KK_{2}\subseteq\dots\subseteq\KK_{1}\) cossos. Aleshores direm que
+		\[\KK_{1}\subseteq\KK_{2}\subseteq\dots\subseteq\KK_{1}\]
+		és una torre.
+	\end{definition}
+	\begin{corollary}
+		\label{cor:fórmula de les torres}
+		Sigui~\(\KK_{1}\subseteq\KK_{2}\subseteq\dots\subseteq\KK_{1}\) una torre. Aleshores
+		\[\grauExtensio{\KK_{n}}{\KK_{1}}=\grauExtensio{\KK_{n}}{\KK_{n-1}}\cdots\grauExtensio{\KK_{2}}{\KK_{1}}\]
+		\begin{proof}
+			Conseqüència de la~\myref{thm:fórmula de les torres}.
+		\end{proof}
+	\end{corollary}
+%	\subsection{Extensions algebraiques}
+%	\begin{definition}[Extensió algebraica]
+%		Sigui~\(\FF\extensio\KK\) una extensió de cossos tal que per a tot~\(\alpha\in\FF\), tenim que~\(\alpha\) és algebraic sobre~\(\KK\). Aleshores direm que l'extensió~\(\FF\extensio\KK\) és algebraica.
+%	\end{definition}
 \end{document}
