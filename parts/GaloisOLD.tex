@@ -5,8 +5,8 @@
 \chapter[Capítol primer]{Primer}
 \section{Extensions de cossos}
 \subsection{Elements algebraics i elements transcendents}
-	\begin{definition}[Extensió de cossos]
-		\labelname{extensió de cossos}\label{def:extensió de cossos}
+	\begin{definition}[Extensió d'un cos]
+		\labelname{extensió d'un cos}\label{def:extensió d'un cos}
 		Siguin~\(\KK\) i~\(\FF\) dos cossos tals que~\(\KK\subseteq\FF\). Aleshores direm que~\(\FF\) és una extensió de~\(\KK\) i ho denotarem com~\(\FF\extensio\KK\). També direm que~\(\FF\extensio\KK\) és una extensió.
 	\end{definition}
 	\begin{proposition} %FER Buscar-li un lloc millor. Potser a estructures.
@@ -20,7 +20,7 @@
 		\label{ex:el cos de polinomis és una extensió}
 		Siguin~\(\KK\) un cos i~\(p(x)\in\KK[x]\) un polinomi irreductible. Denotem~\(\FF=\KK[x]/(p(x))\). Aleshores~\(\FF\extensio\KK\) és una extensió.
 		\begin{solution}
-			Per la proposició~\myref{prop:un cos quocient un irreductible és un cos} tenim que~\(\FF\) és un cos. Veiem que~\(\KK\subseteq\FF\) per l'observació~\myref{obs:un anell està contingut en el seu anell de polinomis}, i per la definició d'\myref{def:extensió de cossos} hem acabat.
+			Per la proposició~\myref{prop:un cos quocient un irreductible és un cos} tenim que~\(\FF\) és un cos. Veiem que~\(\KK\subseteq\FF\) per l'observació~\myref{obs:un anell està contingut en el seu anell de polinomis}, i per la definició d'\myref{def:extensió d'un cos} hem acabat.
 		\end{solution}
 	\end{example}
 	\begin{example}[Morfisme avaluació]
@@ -105,11 +105,10 @@
 			Si~\(\alpha\) és algebraic aleshores, per la definició d'\myref{def:element algebraic}, existeix un polinomi no nul~\(p(x)\in\KK[x]\) tal que~\(p(\alpha)=0\), i per la definició de~\myref{def:nucli d'un morfisme entre grups} tenim que~\(\ker(\ev_{\alpha})\neq(0)\). Aleshores pel lema~\myref{lema:element algebraic} hem acabat.
 		\end{proof}
 	\end{observation}
-\subsection{Grau d'una extensió de cossos}
+	\subsection{Grau d'una extensió de cossos}
 	\begin{definition}[Grau d'una extensió de cossos]
 		\labelname{grau d'una extensió}\label{def:grau d'una extensió}
-		\labelname{extensió finita}\label{def:extensió finita}
-		Sigui~\(\FF\extensio\KK\) una extensió. Aleshores direm que la dimensió del~\(\KK\)-espai vectorial~\(\FF\) és el {grau de l'extensió} i el denotarem com~\(\grauExtensio{\FF}{\KK}\). Si~\(\grauExtensio{\FF}{\KK}<\infty\) direm que~\(\FF\extensio\KK\) és una extensió finita.
+		Sigui~\(\FF\extensio\KK\) una extensió. Aleshores direm que la dimensió del~\(\KK\)-espai vectorial~\(\FF\) és el {grau de l'extensió} i el denotarem com~\(\grauExtensio{\FF}{\KK}\).
 		
 		Aquesta definició té sentit per la proposició~\myref{prop:un subcòs és un espai vectorial}.
 	\end{definition}
@@ -145,19 +144,30 @@
 			Conseqüència de la~\myref{thm:fórmula de les torres}.
 		\end{proof}
 	\end{corollary}
-\subsection{TBD}
-	\begin{definition}[Mínim subanell engendrat]
-		\labelname{mínim subanell engendrat per un element d'una extensió}\label{def:mínim subanell engendrat per un element d'una extensió}
-		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores direm que
-		\[\KK[\alpha]=\{p(\alpha)\in\FF\mid p(x)\in\FF[x]\}\]
-		és el mínim subanell engendrat per~\(\alpha\) en~\(\FF\extensio\KK\).
+	\subsection{Extensions algebraiques}
+	\begin{definition}%[Extensió algebraica]
+%		\labelname{extensió algebraica}
+		\label{def:mínim anell que conté un element i un cos}
+		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores denotem
+		\[\KK[\alpha]=\{p(\alpha)\in\FF\mid p(x)\in\KK[x]\}.\]
+%		és l'{extensió algebraica} de~\(\alpha\) en~\(\KK\).
+%		Siguin~\(D\) un domini d'integritat,~\(\FF\) un cos tal que~\(\cosdefraccions(D)\subseteq\FF\) i~\(\alpha\in\FF\) un element. Aleshores direm que
+%		\[D[\alpha]=\{p(\alpha)\mid p(x)\in D[x]\}\]
+%		és l'{extensió algebraica} de~\(\alpha\) en~\(D\).
 	\end{definition}
 	\begin{observation}
-	\label{obs:l'anell engendrat per alpha està entre l'extensió}
+		\label{obs:un cos està contingut en les seves extensions algebraiques}
+		\label{obs:extensió algebraica}
 		\(\KK\subseteq\KK[\alpha]\subseteq\FF\).
 	\end{observation}
+%	\begin{proposition}
+%		Siguin~\(D\) un domini d'integritat i~\(\FF\) un cos tal que~\(\cosdefraccions(D)\subseteq\FF\). Aleshores l'extensió algebraica de~\(\alpha\) en~\(D\) és el mínim subanell de~\(\FF\) que conté~\(\alpha\).
+%		\begin{proof}
+%			
+%		\end{proof}
+%	\end{proposition}
 	\begin{proposition}
-		\label{prop:el mínim subanell engendrat per un element és l'anell de polinomis quocient l'irreductible de l'element}
+		\label{prop:l'extensió algebraica és l'anell de polinomis quocient l'irreductible de l'element}
 		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores
 		\[\KK[\alpha]\cong\KK[x]/(\Irr(\alpha,\KK)).\]
 		\begin{proof}
@@ -166,48 +176,51 @@
 				\KK[x]/(\Irr(\alpha,\KK))&=\KK[x]/\ker(\ev_{\alpha}) \tag{\ref{obs:polinomi mínim de descomposició}}\\
 				&\cong\Ima(\ev_{\alpha}) \tag{\ref{thm:Primer Teorema de l'isomorfisme entre anells}}\\
 				&=\{p(\alpha)\in\FF\mid p(x)\in\KK[x]\} \tag{\ref{def:imatge d'un morfisme entre anells} i \ref{ex:morfisme avaluació}}\\
-				&= \KK[\alpha], \tag{\ref{def:mínim subanell engendrat per un element d'una extensió}}
+				&= \KK[\alpha], \tag{\ref{def:mínim anell que conté un element i un cos}}
 			\end{align*}
 			i per tant
 			\[\KK[\alpha]\cong\KK[x]/(\Irr(\alpha,\KK)).\qedhere\]
 		\end{proof}
 	\end{proposition}
 	\begin{corollary}
-		\label{cor:grau d'un mínim subanell engendrat per un element d'una extensió}
+		\label{cor:grau d'una extensió algebraica}
 		\(\grauExtensio{\KK[\alpha]}{\KK}=\grau(\Irr(\alpha,\KK))\).
 		\begin{proof}
 			Per l'exemple~\myref{ex:el grau de l'extensió d'un cos i el quocient entre el seu anell de polinomis i un polinomi irreductible}.
 		\end{proof}
 	\end{corollary}
 	\begin{corollary}
-		\label{cor:el mínim subanell engendrat per un transcendent és isomorfa a l'anell de polinomis}
+		\label{cor:l'extensió algebraica d'un transcendent és isomorfa a l'anell de polinomis}
 		Siguin~\(\FF\extensio\KK\) una extensió i~\(\gamma\in\FF\) un element transcendent sobre~\(\KK\). Aleshores
 		\[\KK[\gamma]\cong\KK[x].\]
 	\end{corollary}
-	\begin{definition}[Mínim subcòs engendrat]
-		\labelname{mínim subcòs engendrat per un element d'una extensió}\label{def:mínim subcòs engendrat per un element d'una extensió}
-		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores direm que
-		\[\KK(\alpha)=\cosdefraccions(\KK[\alpha])\]
-		és el mínim subcòs engendrat per~\(\alpha\).
-		
-		Aquesta definició té sentit pel Teorema~\myref{thm:cos de fraccions}.
+	\begin{definition}[Extensió algebraica d'un conjunt]
+		Siguin~\(\FF\extensio\KK\) una extensió i~\(\Lambda\subseteq\FF\) un conjunt. Aleshores denotem
+		\[\KK[\Lambda]=\{p(\alpha)\in\FF\mid p(x)\in\KK[x],\alpha\in\Lambda\}.\]
+	\end{definition}
+	\begin{definition}[Cos de fraccions d'una extensió algebraica]
+		\labelname{cos de fraccions d'una extensió algebraica}\label{def:cos de fraccions d'una extensió algebraica}
+		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores denotarem
+		\[\KK(\alpha)=\cosdefraccions(\KK[\alpha]).\]
+		Si~\(\Lambda\subseteq\FF\) és un conjunt denotem
+		\[\KK(\Lambda)=\cosdefraccions(\KK[\Lambda]).\]
 	\end{definition}
 	\begin{observation}
-		\label{obs:inclusió del mínim subanell i subcòs engendrats per un element}
+		\label{obs:cos de fraccions d'una extensió algebraica}
 		\(\KK\subseteq\KK[\alpha]\subseteq\KK(\alpha)\subseteq\FF\).
 	\end{observation}
 	\begin{lemma}
-		\label{lema:un element és algebraic si i només si el mínim subanell engendrat per l'element és un cos}
+		\label{lema:un element és algebraic si i només si l'extensió algebraica és un cos}
 		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores~\(\alpha\) és algebraic sobre~\(\KK\) si i només si
 		\[\KK(\alpha)=\KK[\alpha].\]
 		\begin{proof} %FER %Revisar
 			Veiem que la condició és suficient~\((\implica)\). Suposem que~\(\alpha\in\FF\) és algebraic sobre~\(\KK\). Per la definició d'\myref{def:element algebraic} trobem que~\(\Irr(\alpha,KK)\) és un polinomi irreductible no nul, i per la proposició~\myref{prop:un cos quocient un irreductible és un cos} tenim que~\(\KK[\alpha]\) és un cos.
 			
-			Ara bé, pel Teorema~\myref{thm:cos de fraccions} tenim que~\(\KK(\alpha)\subseteq\KK[\alpha]\), però per l'observació~\myref{def:mínim subcòs engendrat per un element d'una extensió} tenim que~\(\KK[\alpha]\subseteq\KK(\alpha)\), i pel \myref{thm:doble inclusió} tenim que~\(\KK(\alpha)=\KK[\alpha]\).
+			Ara bé, pel Teorema~\myref{thm:cos de fraccions} tenim que~\(\KK(\alpha)\subseteq\KK[\alpha]\), però per l'observació~\myref{obs:cos de fraccions d'una extensió algebraica} tenim que~\(\KK[\alpha]\subseteq\KK(\alpha)\), i pel \myref{thm:doble inclusió} tenim que~\(\KK(\alpha)=\KK[\alpha]\).
 			
 			Acabem veient que la condició és necessària~\((\implicatper)\). Suposem doncs que
 			\[\KK(\alpha)=\KK[\alpha].\]
-			Per tant~\(\KK[\alpha]\) és un cos, i com que, per l'observació~\myref{obs:l'anell engendrat per alpha està entre l'extensió}, tenim que~\(\alpha\in\KK[\alpha]\), i per la definició de~\myref{def:cos per anells} tenim que~\(-1/\alpha\in\KK[\alpha]\). Aleshores, per la definició d'\myref{def:mínim subanell engendrat per un element d'una extensió} trobem que existeix un polinomi~\(a_{0}+a_{1}x+\dots+a_{k}x^{k}\in\KK[x]\), amb~\(a_{k}\neq0\), tal que
+			Per tant~\(\KK[\alpha]\) és un cos, i com que, per l'observació~\myref{obs:extensió algebraica}, tenim que~\(\alpha\in\KK[\alpha]\), i per la definició de~\myref{def:cos per anells} tenim que~\(-1/\alpha\in\KK[\alpha]\). Aleshores, per la definició d'\myref{def:mínim anell que conté un element i un cos} trobem que existeix un polinomi~\(a_{0}+a_{1}x+\dots+a_{k}x^{k}\in\KK[x]\), amb~\(a_{k}\neq0\), tal que
 			\[\frac{-1}{\alpha}=a_{0}+a_{1}\alpha+a_{2}\alpha^{2}+\dots+a_{k}\alpha^{k},\]
 			i per tant
 			\[0=1+a_{0}\alpha+a_{1}\alpha^{2}+\dots+a_{r}\alpha^{r+1},\]
@@ -216,144 +229,8 @@
 			i per tant~\(\ker(\ev_{\alpha})\neq(0)\) i pel lema~\myref{lema:element algebraic} trobem que~\(\alpha\) és algebraic.
 		\end{proof}
 	\end{lemma}
-\subsection{Extensions algebraiques}
-	\begin{definition}[Extensió algebraica]
-		\labelname{extensió algebraica}\label{def:extensió algebraica}
-		Sigui~\(\FF\extensio\KK\) una extensió tal que tot~\(\alpha\in\FF\) és algebraic sobre~\(\KK\). Aleshores direm que~\(\FF\extensio\KK\) és una extensió algebraica.
+	\subsection{Extensions simples}
+	\begin{definition}[Extensió simple]
+		
 	\end{definition}
-	\begin{proposition}
-		\label{prop:les extensions finites són algebraiques}
-		Sigui~\(\FF\extensio\KK\) una extensió finita. Aleshores~\(\FF\extensio\KK\) és una extensió algebraica.
-		\begin{proof}
-			%TODO
-			% Fer per 1,\alpha,\dots,\alpha^{\grau} són \KK-linealment dependents i per tant existeixen \lambda_{i}\in\KK tals que se'n va a la merda.
-		\end{proof}
-	\end{proposition}
-	\begin{lemma}
-		\label{lema:condicions equivalents a polinomi irreductible}
-		Siguin~\(\FF\extensio\KK\) una extensió,~\(\alpha\in\FF\) un element algebraic sobre~\(\KK\) i~\(p(x)\in\KK[x]\) un polinomi mònic tal que~\(p(\alpha)=0\). Aleshores són equivalents
-		\begin{enumerate}
-		\item \(p(x)=\Irr(\alpha,\KK)\).
-		\item \(p(x)\) és irreductible a~\(\KK[x]\).
-		\item Si~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\), aleshores~\(p(x)\divides q(x)\).
-		\item Si~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\), aleshores~\(\grau(p(x))\leq\grau(q(x))\).
-		\end{enumerate}
-		\begin{proof}
-			%TODO
-		\end{proof}
-	\end{lemma}
-	\begin{example}
-		Volem calcular~\(\Irr(\sqrt{5}+\sqrt{3},\QQ)\).
-		\begin{solution}
-			\(\Irr(\sqrt{5}+\sqrt{3},\QQ)=x^{4}+4x^{2}+64\).
-		\end{solution}
-	\end{example}
-\subsection{El grup~\(\Gal(\FF\extensio\KK)\)}
-	\begin{definition}[El grup de Galois]
-		\labelname{el grup de Galois}\label{def:el grup de Galois}
-		\label{def:grup de Galois}
-		Sigui~\(\FF\extensio\KK\) una extensió de cossos. Aleshores definim
-		\[\Gal(\FF\extensio\KK)=\{f\colon\FF\longrightarrow\FF\mid f\text{ és un isomorfisme d'anells i }\left.f\right|_{\KK}=\Id_{\FF}\}\]
-		com el grup de Galois de l'extensió~\(\FF\extensio\KK\).
-	\end{definition}
-	\begin{proposition}
-		\label{prop:el grup de Galois és un grup}
-		Sigui~\(\FF\extensio\KK\) una extensió. Aleshores~\(\Gal(\FF\extensio\KK)\) és un grup.
-		\begin{proof}
-			%TODO
-		\end{proof}
-	\end{proposition}
-	\begin{proposition}
-		\label{prop:els morfismes del grup de Galois conserven les arrels dels polinomis sobre K}
-		Siguin~\(\FF\extensio\KK\) una extensió,~\(p(x)\in\KK[x]\) un polinomi i~\(\alpha\in\FF\) una arrel de~\(p(x)\). Aleshores~\(f(\alpha)\) és una arrel de~\(p(x)\).
-		\begin{proof}
-			%TODO % Comprovar que sigui cert, però el Claudi d'avui n'està segur. La demostració del corol·lari hauria de valer igual.
-		\end{proof}
-	\end{proposition}
-	\begin{corollary}
-		\label{cor:els morfismes del grup de Galois conserven les arrels dels polinomis sobre K}
-		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element algebraic sobre~\(\KK\). Aleshores~\(f(\alpha)\) és una arrel de~\(\Irr(\alpha,\KK)\).
-	\end{corollary}
-	\begin{example}
-		\label{ex:càlcul d'un grup de Galois}
-		Calcular un grup de Galois.
-		\begin{solution}
-			%TODO
-		\end{solution}
-	\end{example}
-\subsection{Extensions de morfismes}
-	\begin{lemma}
-		\label{lema:primer lema de l'extensió de morfismes}
-		Siguin~\(\FF_{1}\extensio\KK\) i~\(\FF_{2}\extensio\KK\) dues extensions,~\(\alpha\in\FF_{1}\) un element algebraic sobre~\(\KK\) i~\(\beta\in\FF_{2}\) un element. Aleshores existeix un morfisme
-		\[f\colon\KK(\alpha)\longrightarrow\FF_{2}\]
-		tal que~\(\left.f\right|_{\KK}=\Id_{\KK}\) i~\(f(\alpha)=\beta\)
-		si i només si~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\).
-		\begin{proof}
-			%TODO
-		\end{proof}
-	\end{lemma}
-	\begin{definition}[Morfisme misteriós]
-		\labelname{morfisme misteriós}\label{def:morifsme misteriós}
-		Siguin~\(\FF\) i~\(\KK\) dos cossos i~\(f\colon\KK\longrightarrow\FF\) un morfisme entre anells. Aleshores definim
-		\begin{align*}
-			\morfismemisterios\colon\KK[x]&\longrightarrow\FF[x] \\
-			a_{0}+a_{1}x+\dots+a_{n}x^{n}&\longmapsto f(a_{0})x+f(a_{1})x+\dots+f(a_{n})x^{n}.
-		\end{align*}
-		com el morfisme misteriós.
-	\end{definition}
-	\begin{lemma}[Extensió de morfismes]
-		\labelname{\empty}\label{lema:extensió de morfismes}
-		Siguin~\(\FF_{1}\extensio\KK\) i~\(\FF_{2}\extensio\KK\) dues extensions,~\(\alpha\in\FF_{1}\) un element algebraic sobre~\(\KK\),~\(\beta\in\FF_{2}\) un element i~\(f\colon\KK\longrightarrow\FF_{2}\) un morfisme. Aleshores existeix un morfisme
-		\[g\colon\KK(\alpha)\longrightarrow\FF_{2}\]
-		tal que~\(\left.g\right|_{\KK}=f\) i~\(g(\alpha)=\beta\)
-		si i només si~\(\beta\) és una arrel de~\(\morfismemisterios(\Irr(\alpha,\KK))\).
-		\begin{proof}
-			%TODO
-		\end{proof}
-	\end{lemma}
-	\begin{example}
-		\label{ex:càlcul d'un altre grup de Galois}
-		Volem calcular alguna cosa com~\(\Gal(\QQ(\sqrt{2},\sqrt{3}),\QQ)\).
-		\begin{solution}
-			\(\Gal(\QQ(\sqrt{2},\sqrt{3}),\QQ)\cong\ZZ/(2)\times\ZZ/(2)\).
-		\end{solution}
-	\end{example}
-\subsection{El cos de descomposició}
-	\begin{lemma}
-		\label{lema:condicions equivalents a extensió finita}
-		Siguin~\(\FF\extensio\KK\) una extensió. Aleshores són equivalents
-		\begin{enumerate}
-		\item L'extensió~\(\FF\extensio\KK\) és finita.
-		\item Existeixen~\(\alpha_{1},\dots,\alpha_{n}\in\KK\) algebraics sobre~\(\KK\) tals que
-		\[\FF=\KK(\alpha_{1},\dots,\alpha_{n}).\]
-		\item Existeixen~\(\alpha_{1},\dots,\alpha_{n}\in\KK\) tals que~\(\alpha_{i}\) és algebraic sobre~\(\KK(\alpha_{1},\dots,\alpha_{i-1})\) i
-		\[\FF=\KK(\alpha_{1},\dots,\alpha_{n}).\]
-		\end{enumerate}
-		\begin{proof}
-			%TODO
-		\end{proof}
-	\end{lemma}
-	\begin{theorem}
-		\label{thm:teorema de les extensions algebraiques}
-		Siguin~\(\LL\extensio\FF\) i~\(\FF\extensio\KK\) dues extensions. Aleshores~\(\LL\extensio\KK\) és algebraica
-		si i només si~\(\LL\extensio\FF\) i~\(\FF\extensio\KK\) són algebraiques.
-		\begin{proof}
-			%TODO
-		\end{proof}
-	\end{theorem}
-	\begin{theorem}
-		\label{thm:els nombres algebraics són un cos}
-		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\),~\(\beta\in\FF\) dos elements algebraics sobre~\(\KK\). Aleshores
-		\begin{itemize}
-		\item \(\alpha+\beta\) és algebraic sobre~\(\KK\).
-		\item \(\alpha\beta\) és algebraic sobre~\(\KK\).
-		\item Si~\(\alpha\neq0\),~\(\alpha^{1}\) és algebraic sobre~\(\KK\).
-		\end{itemize}
-	\end{theorem}
-	\begin{corollary}
-		\label{cor:els nombres algebraics són un cos}
-		Sigui~\(\FF\extensio\KK\) una extensió. Aleshores
-		\[\EE=\{\alpha\in\FF\mid\alpha\text{ és algebraic sobre }\KK\}\subseteq\FF\]
-		és un cos.
-	\end{corollary}
 \end{document}
