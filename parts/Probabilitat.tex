@@ -4,7 +4,7 @@
 \part{Probabilitat i modelització estocàstica}
 \chapter{Models probabilístics}
 \section{El model probabilístic}
-	\subsection{Experiments aleatoris i espai mostral}
+\subsection{Experiments aleatoris i espai mostral}
 	\begin{definition}[Experiment aleatori]
 		\labelname{experiment aleatori}\label{def:experiment aleatori}
 		\labelname{espai mostral}\label{def:espai mostral}
@@ -60,7 +60,7 @@
 			\end{enumerate}
 		\end{solution}
 	\end{example}
-	\subsection{Àlgebres i \(\sigma\)-àlgebres}
+\subsection{Àlgebres i \(\sigma\)-àlgebres}
 	\begin{definition}[Àlgebra]
 		\labelname{àlgebra}\label{def:àlgebra}
 		Sigui~\(\algebra{A}\) una co{\lgem}ecció de subconjunts~\(\Omega\) tal que
@@ -75,4 +75,55 @@
 		\label{obs:el conjunt buit pertany a qualsevol àlgebra}
 		Si~\(\algebra{A}\) és un àlgebra, aleshores~\(\emptyset\in\algebra{A}\).
 	\end{observation}
+	\begin{example}
+		\label{ex:exemple d'àlgebra}
+		Sigui~\(\Omega=\{1,2,\dots,6\}\). Volem veure que
+		\[\algebra{A}=\{\emptyset,\Omega,\{1,2\},\{3,4\}\}\]
+		és un àlgebra.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{proposition}
+		\label{prop:les àlgebras són tancades per interseccions}
+		Siguin~\(A\),~\(B\) dos elements d'un àlgebra~\(\algebra{A}\). Aleshores
+		\[A\cap B\in\algebra{A}.\]
+		\begin{proof}
+			Per la definició~d'\myref{def:àlgebra} tenim que~\(A^{\complement}\),~\(B^{\complement}\in\algebra{A}\) i, de nou per la definició~d'\myref{def:àlgebra}, tenim que~\(A^{\complement}\cup B^{\complement}\in\algebra{A}\). Ara bé,%REF
+			tenim que~\(A^{\complement}\cup B^{\complement}=A\cap B\), i per tant~\(A\cap B\in\algebra{A}\).
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[\(\sigma\)-àlgebra]
+		\labelname{\ensuremath{\sigma}-àlgebra}\label{def:sigma àlgebra}
+		Sigui~\(\algebra{A}\) un àlgebra tal que per a tota família~\(\{A_{n}\}_{n\in\NN}\) d'elements~d'\(\algebra{A}\) tenim que
+		\[\bigcup_{n\in\NN}A_{n}\in\algebra{A}.\]
+		Aleshores direm que~\(\algebra{A}\) és una~\(\sigma\)-àlgebra.
+	\end{definition}
+	\begin{observation}
+		Sigui~\(\algebra{A}\) un àlgebra sobre un conjunt~\(\Omega\) finit. Aleshores~\(\algebra{A}\) és una~\(\sigma\)-àlgebra.
+	\end{observation}
+\subsection{La \ensuremath{\sigma}-àlgebra de Borel}
+	\begin{proposition}
+		\label{prop:existeix una sigma àlgebra mínima}
+		Sigui~\(\{\algebra{A}_{i}\}_{i\in I}\) una família de~\(\sigma\)-àlgebres sobre un conjunt~\(\Omega\). Aleshores
+		\[\algebra{A}=\bigcap_{i\in I}\algebra{A}_{i}\]
+		és una~\(\sigma\)-àlgebra sobre~\(\Omega\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[\ensuremath{\sigma}-àlgebra generada per un conjunt]
+		\labelname{\ensuremath{\sigma}-àlgebra generada per un conjunt}\label{def:sigma àlgebra generada per un conjunt}
+		Sigui~\(\algebra{C}\subseteq\parts(\Omega)\) una família de subconjunts d'un conjunt~\(\Omega\). Denotarem el mínim~\(\sigma\)-àlgebra generada per~\(\algebra{C}\) com~\(\sigma(\algebra{C})\) i direm que és la~\(\sigma\)-àlgebra generada per~\(\algebra{C}\).
+		
+		Aquesta definició té sentit per la proposició~\myref{prop:existeix una sigma àlgebra mínima}.
+	\end{definition}
+	\begin{example}[\ensuremath{\sigma}-àlgebra de singletons]
+		\labelname{\ensuremath{\sigma}-àlgebra de singletons}\label{ex:sigma àlgebra de singletons}
+		Denotem~\(\algebra{C}=\{\{x\}\subseteq\RR\mid x\in\RR\}\). Volem veure que
+		\[\sigma(\algebra{C})=\{A\subseteq\RR\mid A\text{ ó }A^{\complement}\text{ és finit o numerable}\}.\] % No dirli \algebra{C}. \algebra{C} o algo així
+		\begin{solution}
+			%TODO % Fer a topo i sorprendre als nens amb això. O al revès potser molaria més. Fer aquí i referenciar a topo com un boss. Per allà on axiomes de separació pot ser útil.
+		\end{solution}
+	\end{example}
 \end{document}
