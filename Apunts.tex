@@ -10,6 +10,7 @@
 \usepackage[mathcal]{euscript}	% hmm
 %\usepackage{eulervm}
 %\usepackage[framemethod=TikZ]{mdframed}
+%	\usetikzlibrary{euclide}
 \usepackage{tikz-cd}
 \usepackage{tkz-euclide}
 \usetkzobj{all}
@@ -118,6 +119,7 @@
 \DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\parts}{\mathcal{P}}
 \DeclareMathOperator{\GrupSimetric}{S}
+\DeclareMathOperator{\GrupAlternat}{Alt}
 \DeclareMathOperator{\Mou}{M}
 \DeclareMathOperator{\ordre}{\omicron}
 \DeclareMathOperator{\ncicles}{c}
@@ -153,9 +155,11 @@
 
 \newcommand{\divides}{\mathrel{|}}
 \newcommand{\ndivides}{\mathrel{\nmid}}
+\newcommand{\subgrup}{\mathrel{\leq}}
 \newcommand{\abs}[1]{\left\lvert#1\right\rvert}
-\newcommand{\modul}[1]{\left\lvert#1\right\rvert}
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\modul}{\abs}
+\newcommand{\norm}{\abs}
+\newcommand{\card}{\abs}
 \newcommand{\lxor}{\veebar}
 \newcommand{\convergeixuniformement}{\rightrightarrows}
 \newcommand{\convolucio}{\ast}
@@ -192,6 +196,7 @@
 \newcommand{\basecanonica}{\base{C}}
 \newcommand{\Lie}{\mathcal{L}}
 \newcommand{\ev}{\mathrm{ev}}
+\newcommand{\discriminant}{\Delta}
 
 \newcommand{\heads}{\mathrm{H}}
 \newcommand{\tails}{\mathrm{T}}

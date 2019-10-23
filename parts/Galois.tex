@@ -356,4 +356,96 @@
 		\[\EE=\{\alpha\in\FF\mid\alpha\text{ és algebraic sobre }\KK\}\subseteq\FF\]
 		és un cos.
 	\end{corollary}
+\subsection{El cos de descomposició d'una família de polinomis}
+	\begin{theorem}
+		\label{thm:existència del cos de descomposició d'una família de polinomis}
+		Sigui~\(\Lambda=\{p_{i}(x)\}_{i=1}^{n}\) una família de polinomis sobre l'anell de polinomis d'un cos~\(\KK\). Aleshores existeix un cos~\(\LL\) tal que~\(\LL\extensio\KK\) és una extensió finita i~\(p_{i}(x)\) descompon en~\(\LL\) per a tot~\(i\in\{1,\dots,n\}\).
+		\begin{proof}
+			\myref{thm:Teorema de Kronecker}
+			%TODO % Veure lo de l'extensió finita
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}
+		\label{thm:unicitat del cos de descomposició d'una família de polinomis}
+		Siguin~\(\LL_{1}\) i~\(\LL_{2}\) dos cossos de descomposició d'una família de polinomis~\(\Lambda=\{p_{i}(x)\}_{i=1}^{n}\) sobre un cos~\(\KK\). Aleshores existeix un isomorfisme d'anells~\(\varphi\colon\LL_{1}\longrightarrow\LL_{2}\) tal que~\(\left.\varphi\right|_{\KK}=\Id\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}[Extensió de morfismes a un cos de descomposició]
+		\labelname{extensió de morfismes a un cos de descomposició}\label{thm:extensió de morfismes a un cos de descomposició}
+		Siguin~\(\EE\extensio\FF\extensio\KK\) una extensió de cossos~\(p(x)\in\KK[x]\) un polinomi i~\(\LL\) el seu cos de descomposició tals que~\(p(x)\) descompon en~\(\EE[x]\) i tals que existeix un morfisme~\(f\colon\FF\longrightarrow\EE\) tal que~\(\left.f\right|_{\KK}=\Id\). Aleshores existeix una funció~\(\tilde{f}\colon\LL\longrightarrow\EE\) tal que~\(\left.\tilde{f}\right|_{\FF}=f\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{definition}[Subgrup transitiu]
+		\labelname{subgrup transitiu}\label{def:subgrup transitiu}
+		Siguin~\(\GrupSimetric_{n}\) el grup simètric~d'\(n\) elements i~\(G\subgrup\GrupSimetric_{n}\) un subgrup tal que per a tots~\(i\),~\(j\in\{1,\dots,n\}\) existeix una permutació~\(\sigma\in\GrupSimetric_{n}\) tal que~\(\sigma(i)=j\). Aleshores direm que~\(G\) és un subgrup transitiu de~\(\GrupSimetric_{n}\).
+	\end{definition}
+	\begin{proposition}
+		\label{prop:l'ordre d'un subgrup transitiu divideix n}
+		Sigui~\(G\) un subgrup transitiu de~\(\GrupSimetric_{n}\). Aleshores
+		\[n\divides\card{G}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Grup de Galois d'un polinomi]
+		\labelname{grup de Galois d'un polinomi}\label{def:grup de Galois d'un polinomi}
+		Sigui~\(p(x)\in\KK[x]\) un polinomi amb cos de descomposició~\(\LL\). Aleshores definirem
+		\[\Gal(p(x))=\Gal(\LL\extensio\KK)\]
+		com el grup de Galois de~\(p(x)\).
+	\end{definition}
+	\begin{corollary}
+		\label{cor:grup de Galois d'una extensió amb un cos de descomposició}
+		Siguin~\(p(x)\in\KK[x]\) un polinomi sobre un cos~\(\KK\) i~\(A=\{\alpha_{1},\dots,\alpha_{n}\}\) el conjunt de les arrels de~\(p(x)\). Aleshores~\(\Gal(p(x))\) és isomorf un subgrup transitiu de~\(\GrupSimetric_{A}\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{corollary}
+%\subsection{Discriminant}
+	\begin{definition}[Discriminant]
+		\labelname{discriminant}\label{def:discriminant}
+		Sigui~\(p(x)\in\KK[x]\) un polinomi sobre un cos~\(\KK\) amb cos de descomposició~\(\LL\) i arrels~\(\alpha_{1},\dots,\alpha_{n}\in\LL\). Aleshores definim
+		\[\discriminant(p(x))=\prod_{i<j}^{n}(\alpha_{i}-\alpha_{j})^{2}\]
+		com el discriminant de~\(p(x)\). També definim
+		\[\delta(p(x))=\prod_{i<j}^{n}(\alpha_{i}-\alpha_{j}).\]
+	\end{definition}
+	\begin{observation}
+		\label{obs:discriminant}
+		\(\discriminant(p(x))=\delta(p(x))^{2}\).
+	\end{observation}
+	\begin{example}
+		\label{ex:discriminant d'un polinomi quadràtic}
+		Volem calcular el discriminant d'un polinomi de grau~\(2\).	
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{proposition}
+		\label{prop:el discriminant pertany al cos del polinomi}
+		Sigui~\(p(x)\in\KK[x]\) un polinomi sobre un cos~\(\KK\). Aleshores~\(\discriminant(p(x))\in\KK\).
+	\end{proposition}
+	\begin{lemma}
+		\label{lema:discriminant}
+		Siguin~\(p(x)\in\KK[x]\) un polinomi sobre un cos~\(\KK\) amb~\(n\) arrels i~\(\sigma\in\GrupSimetric_{n}\) una permutació. Aleshores
+		\[\prod_{i<j}^{n}(\alpha_{\sigma(i)}-\alpha_{\sigma(j)})=\sig(\sigma)\delta(p(x))\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{lemma}
+	\begin{corollary}
+		\label{cor:l'arrel del discriminant d'un polinomi pertany al cos si i només si el grup de Galois del polinomi és un subgrup dels alternats de les arrels}
+		Siguin~\(p(x)\in\KK[x]\) un polinomi sense arrels múltiples sobre un cos~\(\KK\) amb~\(\ch(\KK)\neq2\), amb conjunt d'arrels~\(A=\{\alpha_{1},\dots,\alpha_{n}\}\) i sigui~\(\varphi\colon\Gal(p(x))\longrightarrow\GrupSimetric_{A}\) un epimorfisme de grups.
+		Aleshores
+		\[\varphi(\Gal(p(x))\subseteq\GrupAlternat(A)\Sii\delta(p(x))\in\KK.\]
+		\begin{proof}
+			Aquest enunciat té sentit pel \corollari~\myref{cor:grup de Galois d'una extensió amb un cos de descomposició}.
+			%TODO
+		\end{proof}
+	\end{corollary}
+	
+	% Exemple dels polinomis de grau 2 i 3.
+	
 \end{document}
