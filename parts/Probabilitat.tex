@@ -15,19 +15,21 @@
 		\end{enumerate}
 	\end{definition}
 	\begin{example}
+		\label{ex:espais mostrals}
 		Volem determinar l'espai mostral dels següents experiments:
 		\begin{enumerate}
-			\item Tirar un dau de sis cares.
-			\item Un partit de bàsquet.
-			\item Tirar una moneda.
+			\item\label{ex:espais mostrals:eq1} Llençar un dau de sis cares.
+			\item\label{ex:espais mostrals:eq2} Un partit de bàsquet.
+			\item\label{ex:espais mostrals:eq3} Llençar una moneda.
 		\end{enumerate}
 		\begin{solution}
-			Els seus espais mostrals són, respectivament,
+			Així, els seus espais mostrals són, respectivament,
 			\begin{enumerate}
 				\item \(\Omega=\{1,2,3,4,5,6\}\).
 				\item \(\Omega=\NN\times\NN\).
 				\item \(\Omega=\{\heads,\tails\}\).\qedhere
 			\end{enumerate}
+			%TODO (?)
 		\end{solution}
 	\end{example}
 	\begin{definition}[Esdeveniment]
@@ -54,13 +56,14 @@
 		\begin{solution}
 			Els conjunts d'esdeveniments són, respectivament,
 			\begin{enumerate}
-				\item \(A=\{2,4,6\).
+				\item \(A=\{2,4,6\}\).
 				\item \(A=\{(m,n)\in\NN\times\NN\mid n>m\}\).
 				\item \(A=\emptyset\).\qedhere
 			\end{enumerate}
+			%TODO (?)
 		\end{solution}
 	\end{example}
-\subsection{Àlgebres i \(\sigma\)-àlgebres}
+\subsection{Àlgebres i \ensuremath{\sigma}-àlgebres}
 	\begin{definition}[Àlgebra]
 		\labelname{àlgebra}\label{def:àlgebra}
 		Sigui~\(\algebra{A}\) una co{\lgem}ecció de subconjunts~\(\Omega\) tal que
@@ -78,10 +81,22 @@
 	\begin{example}
 		\label{ex:exemple d'àlgebra}
 		Sigui~\(\Omega=\{1,2,\dots,6\}\). Volem veure que
-		\[\algebra{A}=\{\emptyset,\Omega,\{1,2\},\{3,4\}\}\]
+		\[\algebra{A}=\{\emptyset,\Omega,\{1,2\},\{3,4,5,6\}\}\]
 		és un àlgebra.
 		\begin{solution}
-			%TODO
+			Comprovem la definició~d'\myref{def:àlgebra}. Tenim que~\(\Omega\in\algebra{A}\). Prenem un esdeveniment~\(A\in\algebra{A}\) i calculem~\(\Omega\setminus A\). Podem veure tots els casos fent
+			\[
+				\Omega\setminus\emptyset=\Omega,\qquad
+				\Omega\setminus\Omega=\emptyset,\qquad
+				\Omega\setminus\{1,2\}=\{3,4,5,6\},\quad\text{i}\quad
+				\Omega\setminus\{3,4,5,6\}=\{1,2\}.
+			\]
+			
+			Prenen ara~\(A\),~\(B\in\algebra{A}\). Si~\(A=B\) aleshores~\(A\cup B=A\), i per tant~\(A\cup B\in\algebra{A}\), i si tenim~\(A\cup B\in\algebra{A}\) aleshores~\(B\cup A=A\cup B\in\algebra{A}\) i hem acabat. També tenim que si~\(A\in\algebra{A}\), aleshores~\(\emptyset\cup A=A\in\algebra{A}\) i~\(\Omega\cup A=\Omega\in\algebra{A}\). Per tant només ens cal veure el cas
+			\[
+				\{1,2\}\cup\{3,4,5,6\}=\{1,2,3,4,5,6\}=\Omega\in\algebra{A},
+			\]
+			i per la definició~d'\myref{def:àlgebra} trobem que~\(\algebra{A}\) és un àlgebra sobre~\(\Omega\)
 		\end{solution}
 	\end{example}
 	\begin{proposition}
@@ -102,7 +117,7 @@
 	\begin{observation}
 		Sigui~\(\algebra{A}\) un àlgebra sobre un conjunt~\(\Omega\) finit. Aleshores~\(\algebra{A}\) és una~\(\sigma\)-àlgebra.
 	\end{observation}
-\subsection{La \ensuremath{\sigma}-àlgebra de Borel}
+\subsection{L'àlgebra de Borel}
 	\begin{proposition}
 		\label{prop:existeix una sigma àlgebra mínima}
 		Sigui~\(\{\algebra{A}_{i}\}_{i\in I}\) una família de~\(\sigma\)-àlgebres sobre un conjunt~\(\Omega\). Aleshores
