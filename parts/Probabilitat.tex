@@ -110,35 +110,62 @@
 	\end{proposition}
 	\begin{definition}[\(\sigma\)-àlgebra]
 		\labelname{\ensuremath{\sigma}-àlgebra}\label{def:sigma àlgebra}
-		Sigui~\(\algebra{A}\) un àlgebra tal que per a tota família~\(\{A_{n}\}_{n\in\NN}\) d'elements~d'\(\algebra{A}\) tenim que
-		\[\bigcup_{n\in\NN}A_{n}\in\algebra{A}.\]
-		Aleshores direm que~\(\algebra{A}\) és una~\(\sigma\)-àlgebra.
+		Sigui~\(\Algebra{A}\) un àlgebra tal que per a tota família~\(\{A_{n}\}_{n\in\NN}\) d'elements~d'\(\Algebra{A}\) tenim que
+		\[\bigcup_{n\in\NN}A_{n}\in\Algebra{A}.\]
+		Aleshores direm que~\(\Algebra{A}\) és una~\(\sigma\)-àlgebra.
 	\end{definition}
 	\begin{observation}
-		Sigui~\(\algebra{A}\) un àlgebra sobre un conjunt~\(\Omega\) finit. Aleshores~\(\algebra{A}\) és una~\(\sigma\)-àlgebra.
+		Sigui~\(\Algebra{A}\) un àlgebra sobre un conjunt~\(\Omega\) finit. Aleshores~\(\Algebra{A}\) és una~\(\sigma\)-àlgebra.
 	\end{observation}
+	\begin{proposition}
+		\label{prop:les sigma àlgebras conserven interseccions numerables}
+		Sigui~\(\{A_{n}\}_{n\in\NN}\) una família d'elements d'un~\(\sigma\)-àlgebra~\(\Algebra{A}\). Aleshores
+		\[A=\bigcap_{n\in\NN}A_{n}\]
+		és un element de~\(\Algebra{A}\).
+		\begin{proof}
+			Per la definició~d'\myref{def:àlgebra} tenim que~\(A_{n}^{\complement}\in\Algebra{A}\) per a tot~\(n\in\NN\). %TODO
+		\end{proof}
+	\end{proposition}
 \subsection{L'àlgebra de Borel}
 	\begin{proposition}
 		\label{prop:existeix una sigma àlgebra mínima}
-		Sigui~\(\{\algebra{A}_{i}\}_{i\in I}\) una família de~\(\sigma\)-àlgebres sobre un conjunt~\(\Omega\). Aleshores
-		\[\algebra{A}=\bigcap_{i\in I}\algebra{A}_{i}\]
+		Sigui~\(\{\Algebra{A}_{i}\}_{i\in I}\) una família de~\(\sigma\)-àlgebres sobre un conjunt~\(\Omega\). Aleshores
+		\[\Algebra{A}=\bigcap_{i\in I}\Algebra{A}_{i}\]
 		és una~\(\sigma\)-àlgebra sobre~\(\Omega\).
 		\begin{proof}
-			%TODO
+			Comprovem que~\(\Algebra{A}\) satisfà la definició~\myref{def:sigma àlgebra}. Veiem que~\(\Omega\in\Algebra{A}\). Tenim per la definició de~\myref{def:àlgebra} que~\(\Omega\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició d'\myref{def:intersecció de conjunts} trobem que~\(\Omega\in\Algebra{A}\).
+			
+			Prenem ara un~\(A\in\Algebra{A}\) i considerem~\(A^{\complement}\). Si~\(A\in\Algebra{A}\) tenim que per a tot~\(i\in I\) es satisfà~\(A\in\Algebra{A}_{i}\), i per la definició~d'\myref{def:àlgebra} trobem que~\(A^{\complement}\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició d'\myref{def:intersecció de conjunts} tenim que es satisfà~\(A^{\complement}\in\Algebra{A}\).
+			
+			Per acabar premen~\(A\),~\(B\in\Algebra{A}\). Tenim que~\(A\),~\(B\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:àlgebra} trobem que~\(A\cup B\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:intersecció de conjunts} trobem que~\(A\cup B\in\Algebra{A}\).
+			
+			Per tant per la definició~d'\myref{def:àlgebra} tenim que~\(\Algebra{A}\) és un àlgebra sobre~\(\Omega\).
+			
+			Prenem ara una família~\(\{A_{n}\}_{n\in\mathbb{N}}\) d'elements~d'\(\Algebra{A}\) i denotem
+			\[A=\bigcup_{n\in\NN}A_{n}.\]
+			Tenim de nou que~\(\{A_{n}\}_{n\in\mathbb{N}}\) també és una família d'elements~d'\(\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:sigma àlgebra} tenim que~\(A\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:intersecció de conjunts} trobem que~\(A\in\Algebra{A}\), i per la definició~d'\myref{def:sigma àlgebra} trobem que~\(\Algebra{A}\) és una~\(\sigma\)-àlgebra sobre~\(\Omega\).
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[\ensuremath{\sigma}-àlgebra generada per un conjunt]
 		\labelname{\ensuremath{\sigma}-àlgebra generada per un conjunt}\label{def:sigma àlgebra generada per un conjunt}
-		Sigui~\(\algebra{C}\subseteq\parts(\Omega)\) una família de subconjunts d'un conjunt~\(\Omega\). Denotarem el mínim~\(\sigma\)-àlgebra generada per~\(\algebra{C}\) com~\(\sigma(\algebra{C})\) i direm que és la~\(\sigma\)-àlgebra generada per~\(\algebra{C}\).
+		Sigui~\(\Algebra{C}\subseteq\parts(\Omega)\) una família de subconjunts d'un conjunt~\(\Omega\). Denotarem el mínim~\(\sigma\)-àlgebra generada per~\(\Algebra{C}\) com~\(\sigma(\Algebra{C})\) i direm que és la~\(\sigma\)-àlgebra generada per~\(\Algebra{C}\).
 		
 		Aquesta definició té sentit per la proposició~\myref{prop:existeix una sigma àlgebra mínima}.
 	\end{definition}
 	\begin{example}[\ensuremath{\sigma}-àlgebra de singletons]
 		\labelname{\ensuremath{\sigma}-àlgebra de singletons}\label{ex:sigma àlgebra de singletons}
-		Denotem~\(\algebra{C}=\{\{x\}\subseteq\RR\mid x\in\RR\}\). Volem veure que
-		\[\sigma(\algebra{C})=\{A\subseteq\RR\mid A\text{ ó }A^{\complement}\text{ és finit o numerable}\}.\] % No dirli \algebra{C}. \algebra{C} o algo així
+		Denotem~\(\Algebra{C}=\{\{x\}\subseteq\RR\mid x\in\RR\}\). Volem veure que
+		\[\sigma(\Algebra{C})=\{A\subseteq\RR\mid A\text{ ó }A^{\complement}\text{ és finit o numerable}\}.\]
 		\begin{solution}
 			%TODO % Fer a topo i sorprendre als nens amb això. O al revès potser molaria més. Fer aquí i referenciar a topo com un boss. Per allà on axiomes de separació pot ser útil.
 		\end{solution}
 	\end{example}
+	\begin{definition}[\(\sigma\)-àlgebra de Borel]
+		\labelname{\ensuremath{\sigma}-àlgebra}\label{def:sigma àlgebra de Borel}
+		Sigui
+		\[
+			\borel(\RR)=\{\obert{U}\subseteq\RR\mid\obert{U}\text{ és un obert de }\RR\}.
+		\]
+		Direm que~\(\borel(\RR)\) és la~\(\sigma\)-àlgebra de Borel.
+	\end{definition}
 \end{document}

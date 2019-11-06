@@ -19,7 +19,7 @@
 \usepackage[scaled=0.92]{helvet}
 \usepackage{graphicx}
 \usepackage[sorting=none, backend=biber, refsection=part]{biblatex}
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks, pdfencoding=auto]{hyperref}
 
 \addbibresource{parts/referencies.bib}
 \DeclareQuoteAlias{spanish}{catalan}
@@ -180,6 +180,9 @@
 
 \newcommand{\obert}[1]{\mathcal{#1}}
 \newcommand{\algebra}[1]{\mathcal{#1}}
+\newcommand{\Algebra}[1]{\mathfrak{#1}}
+%\newcommand{\Algebra}[1]{\algebra{#1}}
+\newcommand{\borel}{\mathcal{B}}
 \newcommand{\tancat}[1]{\obert{#1}}
 \newcommand{\base}[1]{\mathcal{#1}}
 \newcommand{\CampsVectorials}[1]{\mathfrak{#1}}
@@ -529,10 +532,10 @@
 	\subfile{parts/EA.tex}
 	\subfile{parts/MN.tex}
 %	\book{Tercer curs}
-	\subfile{parts/Probabilitat.tex}
-	\subfile{parts/Galois.tex}
 	\subfile{parts/Topologia.tex}
+	\subfile{parts/Probabilitat.tex}
 	\subfile{parts/EDOS1.tex}
+	\subfile{parts/Galois.tex}
 	\subfile{parts/Complexa.tex}
 	\subfile{parts/GeoDiferencial.tex}
 	\subfile{parts/EDOS2.tex}
