@@ -245,7 +245,9 @@
 		\begin{proof}
 			La implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq1}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\) és conseqüència de la definició~d'\myref{def:element algebraic}.
 			
-			Veiem ara la implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\). Suposem que~\(p(\alpha)=0\) i prenem~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\). Calculem~\(\mcd(p(x),q(x))\). Calculem~\(\mcd(p(x),q(x))\). Si~\(\mcd(p(x),q(x))=p(x)\) aleshores~\(p(x)\divides q(x)\) i tenim el que volíem. Si~\(\mcd(p(x),q(x))\neq p(x)\), com que per la proposició~\myref{prop:en DIP irreductible implica primer} tenim que~\(p(x)\) és primer tenim que~\(\mcd(p(x),q(x))=1\), i per la~\myref{thm:identitat de Bézout} trobem que existeixen~\(r(x)\) i~\(s(x)\) polinomis en~\(\KK[x]\) tals que
+			Veiem ara la implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\). Suposem que~\(p(\alpha)=0\) i prenem~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\). Calculem~\(\mcd(p(x),q(x))\). Calculem~\(\mcd(p(x),q(x))\). Si~\(\mcd(p(x),q(x))=p(x)\) aleshores~\(p(x)\divides q(x)\) i tenim el que volíem.
+			
+			Si~\(\mcd(p(x),q(x))\neq p(x)\), com que per la proposició~\myref{prop:en DIP irreductible implica primer} tenim que~\(p(x)\) és primer tenim que~\(\mcd(p(x),q(x))=1\), i per la~\myref{thm:identitat de Bézout} trobem que existeixen~\(r(x)\) i~\(s(x)\) polinomis en~\(\KK[x]\) tals que
 			\[p(x)r(x)+q(x)s(x)=1.\]
 			Ara bé, tindríem que
 			\[
@@ -257,7 +259,13 @@
 			\[q(x)=p(x)d(x),\]
 			i per tant trobem que~\(\grau(p(x))\leq\grau(q(x))\).
 			
-			Veiem que~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq4}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\). Suposem doncs que existeix un polinomi~\(q(x)\in\KK[x]\) satisfent~\(q(\alpha)=0\) i~\(\grau(p(x))\leq\grau(q(x))\).
+			Veiem que~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq4}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\). Suposem doncs que existeix un polinomi~\(q(x)\in\KK[x]\) satisfent~\(q(\alpha)=0\) i~\(\grau(p(x))\leq\grau(q(x))\). Aleshores tenim que existeixen dos polinomis~\(p_{1}(x)\),~\(p_{2}(x)\in\KK[x]\) tals que~\(p(x)=p_{1}(x)p_{2}(x)\), i com que~\(p(\alpha)=0\) trobem que~\(p_{1}(\alpha)=0\) ó~\(p_{2}(\alpha)=0\). Suposem que~\(p_{1}(\alpha)=0\). Per tant tenim que
+			\[\grau(p_{1}(x))\leq\grau(p(x)),\]
+			i per hipòtesi
+			\[\grau(p(x))\leq\grau(p_{1}(x)),\]
+			i per tant~\(p_{2}(x)\in\KK\).
+			
+			Veiem que~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq1}\). Suposem doncs que si existeix un polinomi~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\), aleshores~\(p(x)\divides q(x)\). Considerem~\(\ker(\ev_{\alpha})\). Com que, per hipòtesi, tenim que~\(p(\alpha)=0\), trobem que~\(\ker(\ev_{\alpha})\subseteq(p(x))\). Per altra banda, si~\(\ker(\ev_{\alpha})=(q(x))\) aleshores tenim que~\(q(\alpha)=0\), i per hipòtesi~\(p(x)\divides q(x)\), i per tant~\((p(x))\subseteq(q(x))\) i tenim que~\((p(x))=\ker(\ev_{\alpha})\), i per la definició~d'\myref{def:element algebraic} trobem que~\(p(x)=\Irr(\alpha,\KK)\).
 		\end{proof}
 	\end{lemma}
 	\begin{example}
@@ -272,26 +280,50 @@
 		\labelname{el grup de Galois}\label{def:el grup de Galois}
 		\label{def:grup de Galois}
 		Sigui~\(\FF\extensio\KK\) una extensió de cossos. Aleshores definim
-		\[\Gal(\FF\extensio\KK)=\{f\colon\FF\longrightarrow\FF\mid f\text{ és un isomorfisme d'anells i }\left.f\right|_{\KK}=\Id_{\FF}\}\]
+		\[\Gal(\FF\extensio\KK)=\{f\colon\FF\longrightarrow\FF\mid f\text{ és un isomorfisme d'anells i }\left.f\right|_{\KK}=\Id_{\KK}\}\]
 		com el grup de Galois de l'extensió~\(\FF\extensio\KK\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:el grup de Galois és un grup}
 		Sigui~\(\FF\extensio\KK\) una extensió. Aleshores~\(\Gal(\FF\extensio\KK)\) és un grup.
-		\begin{proof}
-			%TODO
+		\begin{proof} % Revisar. %REFS
+			Prenem un element~\(f\in\Gal(\FF\extensio\KK)\). Per la definició~d'\myref{def:el grup de Galois} tenim que~\(f\) és un isomorfisme d'anells, i per la definició~d'\myref{def:isomorfisme entre anells} trobem que~\(f\) és invertible, i per tant existeix un isomorfisme~\(g\colon\FF\longrightarrow\FF\) tal que~\(f\circ g=g\circ f=\Id_{\FF}\). Hem de veure que~\(\left.g\right|_{\KK}=\Id_{\KK}\). Tenim que
+			\begin{align*}
+				\Id_{\KK}&=\left.\Id_{\FF}\right|_{\KK} \\
+				&=\left.g\circ f\right|_{\KK} \\
+				&=g\circ\Id_{\KK}=\left.g\right|_{\KK}
+			\end{align*}
+			i per tant~\(g\in\Gal(\FF\extensio\KK)\).
+			
+			Prenem dos elements~\(f\),~\(g\in\Gal(\FF\extensio\KK)\) i considerem~\(g\circ f\). Tenim que~\(g\colon f\colon\FF\longrightarrow\FF\) és un isomorfisme d'anells, i ens queda veure que~\(\left.g\circ f\right|_{\KK}=\Id_{\KK}\). Tenim que
+			\[\left.g\circ f\right|_{\KK}
+			=\left.g\circ\Id_{\KK}\right|_{\KK}
+			=\left.g\right|_{\KK}
+			=\Id_{\KK},\]
+			i hem acabat, i per la definició~\myref{def:grup} tenim que~\(\Gal(\FF\extensio\KK)\) és un grup.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:els morfismes del grup de Galois conserven les arrels dels polinomis sobre K}
-		Siguin~\(\FF\extensio\KK\) una extensió,~\(p(x)\in\KK[x]\) un polinomi i~\(\alpha\in\FF\) una arrel de~\(p(x)\). Aleshores~\(f(\alpha)\) és una arrel de~\(p(x)\).
+		Siguin~\(\FF\extensio\KK\) una extensió,~\(p(x)\in\KK[x]\) un polinomi i~\(\alpha\in\FF\) una arrel de~\(p(x)\). Aleshores per a tot~\(f\in\Gal(\FF\extensio\KK)\) tenim que~\(f(\alpha)\) és una arrel de~\(p(x)\).
 		\begin{proof}
-			%TODO % Comprovar que sigui cert, però el Claudi d'avui n'està segur. La demostració del corol·lari hauria de valer igual.
+			Tenim que existeixen~\(a_{0},\dots,a_{n}\in\KK\) tals que
+			\[p(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n},\]
+			i tenim que
+			\[0=p(\alpha)=a_{0}+a_{1}\alpha+\dots+a_{n}\alpha^{n}.\]
+			Aleshores tenim, per la definició de \myref{def:morfisme entre anells}, que
+			\begin{align*}
+				f\Big(\sum_{i=0}^{n}a_{i}\alpha^{i}\Big)&=\sum_{i=0}^{n}f(a_{i}\alpha^{i}) \\
+				&=\sum_{i=0}^{n}f(a_{i})f(\alpha^{i}) \\
+				&=\sum_{i=0}^{n}f(a_{i})f(\alpha)^{i} \\
+				&=\sum_{i=0}^{n}a_{i}f(\alpha)^{i}=f(0)=0
+			\end{align*}
+			i per tant~\(f(\alpha)\) és una arrel de~\(p(x)\).
 		\end{proof}
 	\end{proposition}
 	\begin{corollary}
 		\label{cor:els morfismes del grup de Galois conserven les arrels dels polinomis sobre K}
-		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element algebraic sobre~\(\KK\). Aleshores~\(f(\alpha)\) és una arrel de~\(\Irr(\alpha,\KK)\).
+		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element algebraic sobre~\(\KK\). Aleshores per a tot~\(f\in\Gal(\FF\extensio\KK)\) tenim que~\(f(\alpha)\) és una arrel de~\(\Irr(\alpha,\KK)\).
 	\end{corollary}
 	\begin{example}
 		\label{ex:càlcul d'un grup de Galois}
