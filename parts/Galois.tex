@@ -2,7 +2,8 @@
 
 \begin{document}
 \part{Teoria de Galois}
-\chapter[Capítol primer]{Primer}
+%\chapter{Polinomis simètrics}
+\chapter{Teoria de Galois}
 \section{Extensions de cossos}
 \subsection{Elements algebraics i elements transcendents}
 	\begin{definition}[Extensió de cossos]
@@ -225,7 +226,10 @@
 		\label{prop:les extensions finites són algebraiques}
 		Sigui~\(\FF\extensio\KK\) una extensió finita. Aleshores~\(\FF\extensio\KK\) és una extensió algebraica.
 		\begin{proof}
-			%TODO
+			Prenem un element~\(\alpha\in\FF\) i suposem que~\(\grauExtensio{\FF}{\KK}=n\). Per la definició~d'\myref{def:extensió finita} tenim que~\(\dim_{\KK}(\FF)=n\), i per tant els~\(n+1\) elements~\(1,\alpha,\dots,\alpha^{n}\) són~\(\KK\)-linealment independents, %REF
+			i per la definició de~\myref{def:vectors linealment dependents} trobem que existeixen~\(\lambda_{0},\dots,\lambda_{n}\in\KK\) no nuls tals que
+			\[\lambda_{0}+\lambda_{1}\alpha+\dots+\lambda_{n}\alpha^{n}=0,\]
+			i per tant trobem que~\(\alpha\) és arrel del polinomi~\(p(x)=\lambda_{0}+\lambda x+\dots+\lambda_{n}x^{n}\in\KK[x]\). Aleshores per la definició~d'\myref{def:element algebraic} trobem que~\(\alpha\in\FF\) és algebraic sobre~\(\KK\) i per la definició~d'\myref{def:extensió algebraica} trobem que l'extensió~\(\FF\extensio\KK\) és algebraica.
 			% Fer per 1,\alpha,\dots,\alpha^{\grau} són \KK-linealment dependents i per tant existeixen \lambda_{i}\in\KK tals que se'n va a la merda.
 		\end{proof}
 	\end{proposition}
@@ -233,18 +237,33 @@
 		\label{lema:condicions equivalents a polinomi irreductible}
 		Siguin~\(\FF\extensio\KK\) una extensió,~\(\alpha\in\FF\) un element algebraic sobre~\(\KK\) i~\(p(x)\in\KK[x]\) un polinomi mònic tal que~\(p(\alpha)=0\). Aleshores són equivalents
 		\begin{enumerate}
-		\item \(p(x)=\Irr(\alpha,\KK)\).
-		\item \(p(x)\) és irreductible a~\(\KK[x]\).
-		\item Si~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\), aleshores~\(p(x)\divides q(x)\).
-		\item Si~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\), aleshores~\(\grau(p(x))\leq\grau(q(x))\).
+		\item\label{lema:condicions equivalents a polinomi irreductible:eq1} \(p(x)=\Irr(\alpha,\KK)\).
+		\item\label{lema:condicions equivalents a polinomi irreductible:eq2} \(p(x)\) és irreductible a~\(\KK[x]\).
+		\item\label{lema:condicions equivalents a polinomi irreductible:eq3} Si~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\), aleshores~\(p(x)\divides q(x)\).
+		\item\label{lema:condicions equivalents a polinomi irreductible:eq4} Si~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\), aleshores~\(\grau(p(x))\leq\grau(q(x))\).
 		\end{enumerate}
 		\begin{proof}
-			%TODO
+			La implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq1}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\) és conseqüència de la definició~d'\myref{def:element algebraic}.
+			
+			Veiem ara la implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\). Suposem que~\(p(\alpha)=0\) i prenem~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\). Calculem~\(\mcd(p(x),q(x))\). Calculem~\(\mcd(p(x),q(x))\). Si~\(\mcd(p(x),q(x))=p(x)\) aleshores~\(p(x)\divides q(x)\) i tenim el que volíem. Si~\(\mcd(p(x),q(x))\neq p(x)\), com que per la proposició~\myref{prop:en DIP irreductible implica primer} tenim que~\(p(x)\) és primer tenim que~\(\mcd(p(x),q(x))=1\), i per la~\myref{thm:identitat de Bézout} trobem que existeixen~\(r(x)\) i~\(s(x)\) polinomis en~\(\KK[x]\) tals que
+			\[p(x)r(x)+q(x)s(x)=1.\]
+			Ara bé, tindríem que
+			\[
+				1=p(\alpha)r(\alpha)+q(\alpha)s(\alpha)=0r(\alpha)+0s(\alpha)=0,
+			\]
+			i per tant arribem a contradicció i hem acabat.
+			
+			Veiem la implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq4}\). Suposem doncs que~\(q(x)\in\KK[x]\) és un polinomi tal que~\(q(\alpha)=0\) i tal que~\(p(x)\divides q(x)\). Tenim que existeix un polinomi~\(d(x)\in\KK[x]\) tal que
+			\[q(x)=p(x)d(x),\]
+			i per tant trobem que~\(\grau(p(x))\leq\grau(q(x))\).
+			
+			Veiem que~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq4}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\). Suposem doncs que existeix un polinomi~\(q(x)\in\KK[x]\) satisfent~\(q(\alpha)=0\) i~\(\grau(p(x))\leq\grau(q(x))\).
 		\end{proof}
 	\end{lemma}
 	\begin{example}
 		Volem calcular~\(\Irr(\sqrt{5}+\sqrt{3},\QQ)\).
 		\begin{solution}
+			%TODO
 			\(\Irr(\sqrt{5}+\sqrt{3},\QQ)=x^{4}+4x^{2}+64\).
 		\end{solution}
 	\end{example}
