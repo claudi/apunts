@@ -3,8 +3,8 @@
 \begin{document}
 \part{Probabilitat i modelització estocàstica}
 \chapter{Models probabilístics}
-\section{El model probabilístic}
-\subsection{Experiments aleatoris i espai mostral}
+\section{L'espai de probabilitat}
+\subsection{Espais mostrals}
 	\begin{definition}[Experiment aleatori]
 		\labelname{experiment aleatori}\label{def:experiment aleatori}
 		\labelname{espai mostral}\label{def:espai mostral}
@@ -118,12 +118,14 @@
 		Sigui~\(\Algebra{A}\) un àlgebra sobre un conjunt~\(\Omega\) finit. Aleshores~\(\Algebra{A}\) és una~\(\sigma\)-àlgebra.
 	\end{observation}
 	\begin{proposition}
-		\label{prop:les sigma àlgebras conserven interseccions numerables}
+		\label{prop:les sigma àlgebras són tancades per interseccions numerables}
 		Sigui~\(\{A_{n}\}_{n\in\NN}\) una família d'elements d'un~\(\sigma\)-àlgebra~\(\Algebra{A}\). Aleshores
 		\[A=\bigcap_{n\in\NN}A_{n}\]
 		és un element de~\(\Algebra{A}\).
 		\begin{proof}
-			Per la definició~d'\myref{def:àlgebra} tenim que~\(A_{n}^{\complement}\in\Algebra{A}\) per a tot~\(n\in\NN\). %TODO
+			Tenim que
+			\[A^{\complement}=\Big(\bigcap_{n\in\NN}A_{n}\Big)^{\complement}=\Big(\bigcup_{n\in\NN}A_{n}^{\complement}\Big).\]
+			Ara bé, per la definició~d'\myref{def:àlgebra} tenim que~\(A_{n}^{\complement}\in\Algebra{A}\) per a tot~\(n\in\NN\), i per la definició de~\myref{def:sigma àlgebra} trobem que~\(A^{\complement}\in\Algebra{A}\), i de nou per la definició~d'\myref{def:àlgebra} tenim que~\(A\in\Algebra{A}\).
 		\end{proof}
 	\end{proposition}
 \subsection{L'àlgebra de Borel}
@@ -163,9 +165,111 @@
 	\begin{definition}[\(\sigma\)-àlgebra de Borel]
 		\labelname{\ensuremath{\sigma}-àlgebra}\label{def:sigma àlgebra de Borel}
 		Sigui
-		\[
-			\borel(\RR)=\{\obert{U}\subseteq\RR\mid\obert{U}\text{ és un obert de }\RR\}.
-		\]
+		\[\borel(\RR)=\{\obert{U}\subseteq\RR\mid\obert{U}\text{ és un obert de }\RR\}.\]
 		Direm que~\(\borel(\RR)\) és la~\(\sigma\)-àlgebra de Borel.
 	\end{definition}
+	\subsection{Probabilitats}
+	\begin{definition}[Probabilitat]
+		\labelname{probabilitat}\label{def:probabilitat}
+		Siguin~\(\Algebra{A}\) una~\(\sigma\)-àlgebra sobre un conjunt~\(\Omega\) i~\(\Probabilitat\colon\Algebra{A}\longrightarrow[0,1]\) una aplicació tal que
+		\begin{enumerate}
+			\item \(\Probabilitat(\Omega)=1\).
+			\item Per a tota família~\(\{A_{n}\}_{n\in\NN}\subseteq\Algebra{A}\) d'esdeveniments disjunts dos a dos tenim que
+			\begin{equation}
+				\Probabilitat\Big(\bigcup_{n\in\NN}A_{n}\Big)=\sum_{n\in\NN}\Probabilitat(A_{n}).
+				\tag{\(\sigma\)-additivitat}
+			\end{equation}
+		\end{enumerate}
+		Aleshores direm que~\(\Probabilitat\) és una probabilitat.
+		
+		També direm que~\((\Omega,\Algebra{A},\Probabilitat)\) és un espai de probabilitat.
+	\end{definition}
+	\begin{notation}[Unió disjunta]
+		Sigui~\(\{A_{n}\}_{n\in\NN}\) una família de conjunts disjunts dos a dos. Aleshores denotarem
+		\[\bigcup_{n\in\NN}A_{n}=\biguplus_{n\in\NN}A_{n}\]
+		i direm que és la unió disjunta.
+	\end{notation}
+	\begin{proposition}
+		\label{prop:la probabilitat del buit és nulla}
+		Sigui~\(\Probabilitat\) una probabilitat. Aleshores~\(\Probabilitat(\emptyset)=0\).
+		\begin{proof}
+			Considerem la família~\(\{A_{n}\}_{n\in\NN}\) amb~\(A_{n}=\emptyset\) per a tot~\(n\in\NN\). Tenim que per a tot~\(i\),~\(j\in\NN\) es satisfà~\(A_{i}\cap A_{j}=\emptyset\) i
+			\[\emptyset=\biguplus_{n\in\NN}\emptyset.\]
+			Aleshores per la definició de~\myref{def:probabilitat} tenim que
+			\[\Probabilitat(\emptyset)=\sum_{n\in\NN}\Probabilitat(\emptyset),\]
+			i obtenim que~\(\Probabilitat(\emptyset)=0\).
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:les funcions probabilitat són creixents monòtonament}
+		Siguin~\(\Probabilitat\) una probabilitat sobre una~\(\sigma\)-àlgebra~\(\Algebra{A}\) i~\(A\),~\(B\in\Algebra{A}\) dos esdeveniments tals que~\(A\subseteq B\). Aleshores
+		\[\Probabilitat(A)\leq\Probabilitat(B).\]
+		\begin{proof}
+			Tenim que
+			\[B=A\uplus(B\setminus A).\]
+			Aleshores per la definició de~\myref{def:probabilitat} trobem que
+			\[\Probabilitat(B)=\Probabilitat(A\uplus(B\setminus A))=\Probabilitat(A)+\Probabilitat(B\setminus A),\]
+			i com que, per la definició de~\myref{def:probabilitat}, tenim que~\(\Probabilitat(B\setminus A)\geq0\), trobem que
+			\[\Probabilitat(A)\leq\Probabilitat(B).\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:probabilitat de la resta de esdeveniments}
+		Siguin~\(\Probabilitat\) una probabilitat sobre una~\(\sigma\)-àlgebra~\(\Algebra{A}\) i~\(A\),~\(B\in\Algebra{A}\) dos esdeveniments tals que~\(A\subseteq B\). Aleshores
+		\[\Probabilitat(B\setminus A)=\Probabilitat(B)-\Probabilitat(A).\]
+		\begin{proof}
+			Tenim que
+			\[B=A\uplus(B\setminus A).\]
+			Aleshores per la definició de~\myref{def:probabilitat} trobem que
+			\[\Probabilitat(B)=\Probabilitat(A\uplus(B\setminus A))=\Probabilitat(A)+\Probabilitat(B\setminus A),\]
+			i trobem que
+			\[\Probabilitat(B\setminus A)=\Probabilitat(B)-\Probabilitat(A).\]
+		\end{proof}
+	\end{proposition}
+	\begin{corollary}
+		\label{cor:probabilitat del complementari}
+		Siguin~\(\Probabilitat\) una probabilitat sobre una~\(\sigma\)-àlgebra~\(\Algebra{A}\) i~\(A\in\Algebra{A}\) un esdeveniment. Aleshores
+		\[\Probabilitat(A^{\complement})=1-\Probabilitat(A).\qedhere\]
+	\end{corollary}
+	\begin{proposition}
+		Siguin~\(\Probabilitat\) una probabilitat sobre una~\(\sigma\)-àlgebra~\(\Algebra{A}\) i~\(\{A_{i}\}_{i=1}^{n}\subseteq\Algebra{A}\) una família d'esdeveniments. Aleshores
+		\begin{multline*}
+			\Probabilitat\Big(\bigcup_{i=1}^{n}A_{i}\Big)=\sum_{i=1}^{n}\Probabilitat(A_{i})-\sum_{i=1}^{n}\sum_{j=i}^{n}\Probabilitat(A_{i}\cap A_{j})+\\
+			+\sum_{i=1}^{n}\sum_{j=i}^{n}\sum_{k=j}^{n}\Probabilitat(A_{i}\cap A_{j}\cap A_{k})+\dots+(-1)^{n+1}\Probabilitat\Big(\bigcap_{i=1}^{n}A_{i}\Big).
+		\end{multline*}
+		\begin{proof}
+			Ho veiem per inducció sobre~\(n\). Si~\(n=1\) tenim que
+			\[\Probabilitat(A)=\Probabilitat(A).\]
+			Suposem doncs que la hipòtesi és certa per a~\(m-1\) fixe i veiem-ho pel cas~\(m\). Tenim que
+			\begin{align*}
+				\Probabilitat\Big(\bigcup_{i=1}^{m}A_{i}\Big)&=\Probabilitat\Big(A_{m} \cup\bigcup_{i=1}^{m-1}A_{i}\Big) \\
+				&=\Probabilitat(A_{m})+\Probabilitat\Big(\bigcup_{i=1}^{m-1}A_{i}\Big)-\Probabilitat\Big(A_{m}\cap\bigcup_{i=1}^{m-1}A_{i}\Big) \\
+				&=\Probabilitat(A_{m})+\Probabilitat\Big(\bigcup_{i=1}^{m-1}A_{i}\Big)-\Probabilitat\Big(\bigcup_{i=1}^{m-1}(A_{i}\cap A_{m})\Big) \\
+				&=\sum_{i=1}^{m-1}\Probabilitat(A_{i})+\Probabilitat(A_{m})-\sum_{i=1}^{m-1}\sum_{j=1}^{m-1}\Probabilitat(A_{i}\cap A_{j})-\sum_{i=1}^{m-1}\Probabilitat(A_{i}\cap A_{m}) \\
+				&\phantom{=}+\sum_{i=1}^{m-1}\sum_{j=i}^{m-1}\sum_{k=j}^{m-1}\Probabilitat(A_{i}\cap A_{j}\cap A_{k})+\sum_{i=1}^{m-1}\sum_{j=i}^{m-1}\Probabilitat(A_{i}\cap A_{j}\cap A_{m})+ \\
+				&\phantom{=}+\dots+(-1)^{m}\Probabilitat(A_{1}\cap\dots\cap A_{m-1})+ \\
+				&\phantom{=}+(-1)^{m}\sum_{i=1}^{m-2}P(A_{1}\cap\dots\cap A_{i-1}\cap A_{i+1}\cap\dots\cap A_{m-2})+ \\
+				&\phantom{=}+(-1)^{m}\Probabilitat(A_{1}\cap\dots\cap A_{m}) \\
+				&=\sum_{i=1}^{m}\Probabilitat(A_{i})-\sum_{i=1}^{m}\sum_{j=i}^{m}\Probabilitat(A_{i}\cap A_{j})+\dots+(-1)^{m+1}\Probabilitat\Big(\bigcap_{i=1}^{m}A_{i}\Big),
+			\end{align*}
+			i pel \myref{thm:principi d'inducció} hem acabat.
+		\end{proof}
+	\end{proposition}
+	\begin{corollary}
+		\label{cor:subadditivitat finita}
+		Siguin~\(\Probabilitat\) una probabilitat sobre una~\(\sigma\)-àlgebra~\(\Algebra{A}\) i~\(\{A_{i}\}_{i=1}^{n}\subseteq\Algebra{A}\) una família d'esdeveniments. Aleshores
+		\[\Probabilitat\Big(\bigcup_{i=1}^{n}A_{i}\Big)\leq\sum_{i=1}^{n}\Probabilitat(A_{i}).\]
+	\end{corollary}
+	\begin{theorem}[Definició de Laplace]
+		\labelname{}\label{thm:definició de Laplace}
+		Sigui~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitats amb~\(\Omega=\{\omega_{1},\dots,\omega_{n}\}\) i~\(\Algebra{A}=\parts(\Omega)\) tals que per a tot~\(i\),~\(j\in\{1,\dots,n\}\) tenim que~\(\Probabilitat(\omega_{i})=\Probabilitat(\omega_{j})\). Aleshores per a tot esdeveniment~\(A\in\Algebra{A}\) tenim
+		\[\Probabilitat(A)=\frac{\abs{A}}{\abs{\Omega}}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+%\chapter{Variables i vectors aleatòris}
+%\chapter{Esperança matemàtica}
+%\chapter{Convergència de successions de variables aleatòries}
+%\chapter{Els teoremes límit de la Teoria de la Probabilitat}
 \end{document}
