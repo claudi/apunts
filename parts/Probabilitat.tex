@@ -111,7 +111,7 @@
 	\begin{definition}[\(\sigma\)-àlgebra]
 		\labelname{\ensuremath{\sigma}-àlgebra}\label{def:sigma àlgebra}
 		Sigui~\(\Algebra{A}\) un àlgebra tal que per a tota família~\(\{A_{n}\}_{n\in\NN}\) d'elements~d'\(\Algebra{A}\) tenim que
-		\[\bigcup_{n\in\NN}A_{n}\in\Algebra{A}.\]
+		\[\bigcup_{n=0}^{\infty}A_{n}\in\Algebra{A}.\]
 		Aleshores direm que~\(\Algebra{A}\) és una~\(\sigma\)-àlgebra.
 	\end{definition}
 	\begin{observation}
@@ -120,11 +120,11 @@
 	\begin{proposition}
 		\label{prop:les sigma àlgebras són tancades per interseccions numerables}
 		Sigui~\(\{A_{n}\}_{n\in\NN}\) una família d'elements d'un~\(\sigma\)-àlgebra~\(\Algebra{A}\). Aleshores
-		\[A=\bigcap_{n\in\NN}A_{n}\]
+		\[A=\bigcap_{n=0}^{\infty}A_{n}\]
 		és un element de~\(\Algebra{A}\).
 		\begin{proof}
 			Tenim que
-			\[A^{\complement}=\Big(\bigcap_{n\in\NN}A_{n}\Big)^{\complement}=\Big(\bigcup_{n\in\NN}A_{n}^{\complement}\Big).\]
+			\[A^{\complement}=\Big(\bigcap_{n=0}^{\infty}A_{n}\Big)^{\complement}=\Big(\bigcup_{n=0}^{\infty}A_{n}^{\complement}\Big).\]
 			Ara bé, per la definició~d'\myref{def:àlgebra} tenim que~\(A_{n}^{\complement}\in\Algebra{A}\) per a tot~\(n\in\NN\), i per la definició de~\myref{def:sigma àlgebra} trobem que~\(A^{\complement}\in\Algebra{A}\), i de nou per la definició~d'\myref{def:àlgebra} tenim que~\(A\in\Algebra{A}\).
 		\end{proof}
 	\end{proposition}
@@ -144,7 +144,7 @@
 			Per tant per la definició~d'\myref{def:àlgebra} tenim que~\(\Algebra{A}\) és un àlgebra sobre~\(\Omega\).
 			
 			Prenem ara una família~\(\{A_{n}\}_{n\in\mathbb{N}}\) d'elements~d'\(\Algebra{A}\) i denotem
-			\[A=\bigcup_{n\in\NN}A_{n}.\]
+			\[A=\bigcup_{n=0}^{\infty}A_{n}.\]
 			Tenim de nou que~\(\{A_{n}\}_{n\in\mathbb{N}}\) també és una família d'elements~d'\(\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:sigma àlgebra} tenim que~\(A\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:intersecció de conjunts} trobem que~\(A\in\Algebra{A}\), i per la definició~d'\myref{def:sigma àlgebra} trobem que~\(\Algebra{A}\) és una~\(\sigma\)-àlgebra sobre~\(\Omega\).
 		\end{proof}
 	\end{proposition}
@@ -176,7 +176,7 @@
 			\item \(\Probabilitat(\Omega)=1\).
 			\item Per a tota família~\(\{A_{n}\}_{n\in\NN}\subseteq\Algebra{A}\) d'esdeveniments disjunts dos a dos tenim que
 			\begin{equation}
-				\Probabilitat\Big(\bigcup_{n\in\NN}A_{n}\Big)=\sum_{n\in\NN}\Probabilitat(A_{n}).
+				\Probabilitat\Big(\bigcup_{n=0}^{\infty}A_{n}\Big)=\sum_{n=0}^{\infty}\Probabilitat(A_{n}).
 				\tag{\(\sigma\)-additivitat}
 			\end{equation}
 		\end{enumerate}
@@ -186,7 +186,7 @@
 	\end{definition}
 	\begin{notation}[Unió disjunta]
 		Sigui~\(\{A_{n}\}_{n\in\NN}\) una família de conjunts disjunts dos a dos. Aleshores denotarem
-		\[\bigcup_{n\in\NN}A_{n}=\biguplus_{n\in\NN}A_{n}\]
+		\[\bigcup_{n=0}^{\infty}A_{n}=\biguplus_{n=0}^{\infty}A_{n}\]
 		i direm que és la unió disjunta.
 	\end{notation}
 	\begin{proposition}
@@ -194,9 +194,9 @@
 		Sigui~\(\Probabilitat\) una probabilitat. Aleshores~\(\Probabilitat(\emptyset)=0\).
 		\begin{proof}
 			Considerem la família~\(\{A_{n}\}_{n\in\NN}\) amb~\(A_{n}=\emptyset\) per a tot~\(n\in\NN\). Tenim que per a tot~\(i\),~\(j\in\NN\) es satisfà~\(A_{i}\cap A_{j}=\emptyset\) i
-			\[\emptyset=\biguplus_{n\in\NN}\emptyset.\]
+			\[\emptyset=\biguplus_{n=0}^{\infty}\emptyset.\]
 			Aleshores per la definició de~\myref{def:probabilitat} tenim que
-			\[\Probabilitat(\emptyset)=\sum_{n\in\NN}\Probabilitat(\emptyset),\]
+			\[\Probabilitat(\emptyset)=\sum_{n=0}^{\infty}\Probabilitat(\emptyset),\]
 			i obtenim que~\(\Probabilitat(\emptyset)=0\).
 		\end{proof}
 	\end{proposition}
@@ -262,12 +262,83 @@
 	\end{corollary}
 	\begin{theorem}[Definició de Laplace]
 		\labelname{}\label{thm:definició de Laplace}
-		Sigui~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitats amb~\(\Omega=\{\omega_{1},\dots,\omega_{n}\}\) i~\(\Algebra{A}=\parts(\Omega)\) tals que per a tot~\(i\),~\(j\in\{1,\dots,n\}\) tenim que~\(\Probabilitat(\omega_{i})=\Probabilitat(\omega_{j})\). Aleshores per a tot esdeveniment~\(A\in\Algebra{A}\) tenim
+		Sigui~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitats amb~\(\Omega=\{\omega_{1},\dots,\omega_{n}\}\) i~\(\Algebra{A}=\parts(\Omega)\) tals que per a tot~\(i\),~\(j\in\{1,\dots,n\}\) tenim que~\(\Probabilitat(\{\omega_{i}\})=\Probabilitat(\{\omega_{j}\})\). Aleshores per a tot esdeveniment~\(A\in\Algebra{A}\) tenim
 		\[\Probabilitat(A)=\frac{\abs{A}}{\abs{\Omega}}.\]
 		\begin{proof}
-			%TODO
+			Observem que~\(\abs{\Omega}=1\), i que
+			\[\Omega=\biguplus_{i=1}^{n}\{\omega_{i}\}\]
+			Per tant tenim que
+			\[1=\Probabilitat(\Omega)=\Probabilitat\Big(\bigcup_{i=1}^{n}\{\omega_{i}\}\Big)=\sum_{i=1}^{n}\Probabilitat(\{\omega_{i}\}),\]
+			i com que, per hipòtesi, per a tot~\(i\),~\(j\in\{1,\dots,n\}\) tenim que~\(\Probabilitat(\{\omega_{i}\})=\Probabilitat(\{\omega_{j}\})\), trobem que per a tot~\(i\in\{1,\dots,n\}\) es satisfà
+			\[1=\sum_{i=1}^{n}\Probabilitat(\{\omega_{i}\})=n\Probabilitat(\{\omega_{i}\}),\]
+			i per tant, per a tot~\(i\in\{1,\dots,n\}\) tenim
+			\[\Probabilitat(\{\omega_{i}\})=\frac{1}{n}.\]
+			Aleshores, si~\(A=\{\omega_{i_{1}},\dots,\omega_{i_{r}}\}\) tenim que~\(\abs{A}=r\) i que
+			\[A=\biguplus_{j=1}^{r}\{\omega_{i_{j}}\},\]
+			i per tant
+			\begin{align*}
+				\Probabilitat(A)&=\Probabilitat\Big(\biguplus_{j=1}^{r}\{\omega_{i_{j}}\}\Big) \\
+				&=\sum_{j=1}^{r}\Probabilitat(\{\omega_{i_{j}}\}) \\
+				&=\frac{r}{n}=\frac{\abs{A}}{\abs{\Omega}}.\qedhere
+			\end{align*}
+%			\[\Probabilitat(A)=\Probabilitat\Big(\biguplus_{j=1}^{r}\{\omega_{i_{j}}\}\Big)=\sum_{j=1}^{r}\Probabilitat(\{\omega_{i_{j}}\})=\frac{r}{n}=\frac{\abs{A}}{\abs{\Omega}}.\qedhere\]
 		\end{proof}
 	\end{theorem}
+	\begin{proposition}[Continuïtat seqüencial per successions creixents]
+		\labelname{continuïtat seqüencial per successions creixents}\label{prop:continuitat sequencial per successions creixents}
+		Siguin~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat i~\(\{A_{n}\}_{n\in\NN}\subseteq\Algebra{A}\) una família d'esdeveniments tals que
+		\[A_{0}\subseteq A_{1}\subseteq\dots\subseteq A_{n}\subseteq\cdots\]
+		amb
+		\[A=\bigcup_{n=0}^{\infty}A_{n}.\]
+		Aleshores
+		\[\lim_{n\to\infty}\Probabilitat(A_{n})=\Probabilitat(A).\]
+		\begin{proof}
+			Considerem els conjunts
+			\begin{equation}
+				\label{prop:continuitat sequencial per successions creixents:eq1}
+				B_{n}=A_{n}\cap A_{n-1}^{\complement}=A_{n}\setminus A_{n-1},\qquad\text{amb}\qquad B_{0}=\emptyset.
+			\end{equation}
+			Aleshores tenim que % REVISAR
+			\[\bigcup_{n=0}^{\infty}A{n}=\biguplus_{n=0}^{\infty}B_{n}.\]
+			Així veiem que
+			\begin{align*}
+				\Probabilitat(A)&=\Probabilitat\Big(\bigcup_{n=0}^{\infty}A_{n}\Big) \\
+				&=\Probabilitat\Big(\biguplus_{n=0}^{\infty}B_{n}\Big) \\
+				&=\sum_{n=0}^{\infty}\Probabilitat(B_{n}) \\
+				&=\sum_{n=0}^{\infty}\Probabilitat(A_{n}\setminus A_{n-1}) \tag{\ref{prop:continuitat sequencial per successions creixents:eq1}}\\
+				&=\sum_{n=0}^{\infty}\big(\Probabilitat(A_{n})-\Probabilitat(A_{n-1})\big)\tag{\ref{prop:probabilitat de la resta de esdeveniments}} \\
+				&=\lim_{n\to\infty}\Probabilitat(A_{n})-\Probabilitat(A_{0}) \\
+				&=\lim_{n\to\infty}\Probabilitat(A_{n})-\Probabilitat(\emptyset)=\lim_{n\to\infty}\Probabilitat(A_{n}), \tag{\ref{prop:la probabilitat del buit és nulla}}
+			\end{align*}
+			com volíem veure.
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}[Continuïtat seqüencial per successions decreixents]
+		\label{prop:continuitat sequencial per successions decreixents}
+		Siguin~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat i~\(\{A_{n}\}_{n\in\NN}\subseteq\Algebra{A}\) una família d'esdeveniments tals que
+		\[A_{0}\supseteq A_{1}\supseteq\dots\supseteq A_{n}\supseteq\cdots\]
+		amb
+		\[A=\bigcap_{n=0}^{\infty}A_{n}.\]
+		Aleshores
+		\[\lim_{n\to\infty}\Probabilitat(A_{n})=\Probabilitat(A).\]
+		\begin{proof}
+			Considerem les conjunts
+			\[B_{n}=A_{n}^{\complement}.\]
+			Aleshores tenim que
+			\[B_{0}\subseteq B_{1}\subseteq\dots\subseteq B_{n}\subseteq\cdots,\]
+			i per la proposició de \myref{prop:continuitat sequencial per successions creixents} trobem que
+			\[\lim_{n\to\infty}\Probabilitat(B_{n})=\Probabilitat\Big(\bigcup_{n=0}^{\infty}B_{n}\Big).\]
+			Ara bé, tenim que
+			\begin{align*}
+				\Probabilitat(A)&=\Probabilitat\bigg(\bigcap_{n=0}^{\infty}A_{n}\bigg) \\
+				&=\Probabilitat\bigg(\bigcap_{n=0}^{\infty}B_{n}^{\complement}\bigg) \\
+				&=\Probabilitat\bigg(\Big(\bigcup_{n=0}^{\infty}B_{n}\Big)^{\complement}\bigg) \\
+				&=1-\Probabilitat\Big(\bigcup_{n=0}^{\infty}B_{n}\Big) \\
+				&=1-\lim_{n\to\infty}\Probabilitat(B_{n}) \\
+				&=1-1+\lim_{n\to\infty}\Probabilitat(A_{n})=\lim_{n\to\infty}\Probabilitat(A_{n}).\qedhere
+			\end{align*}
+		\end{proof}
+	\end{proposition}
 %\chapter{Variables i vectors aleatòris}
 %\chapter{Esperança matemàtica}
 %\chapter{Convergència de successions de variables aleatòries}
