@@ -202,7 +202,7 @@
 		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores~\(\alpha\) és algebraic sobre~\(\KK\) si i només si
 		\[\KK(\alpha)=\KK[\alpha].\]
 		\begin{proof} %FER %Revisar
-			Veiem que la condició és suficient~\((\implica)\). Suposem que~\(\alpha\in\FF\) és algebraic sobre~\(\KK\). Per la definició d'\myref{def:element algebraic} trobem que~\(\Irr(\alpha,KK)\) és un polinomi irreductible no nul, i per la proposició~\myref{prop:un cos quocient un irreductible és un cos} tenim que~\(\KK[\alpha]\) és un cos.
+			Veiem que la condició és suficient~\((\implica)\). Suposem que~\(\alpha\in\FF\) és algebraic sobre~\(\KK\). Per la definició d'\myref{def:element algebraic} trobem que~\(\Irr(\alpha,\KK)\) és un polinomi irreductible no nul, i per la proposició~\myref{prop:un cos quocient un irreductible és un cos} tenim que~\(\KK[\alpha]\) és un cos.
 			
 			Ara bé, pel Teorema~\myref{thm:cos de fraccions} tenim que~\(\KK(\alpha)\subseteq\KK[\alpha]\), però per l'observació~\myref{def:mínim subcòs engendrat per un element d'una extensió} tenim que~\(\KK[\alpha]\subseteq\KK(\alpha)\), i pel \myref{thm:doble inclusió} tenim que~\(\KK(\alpha)=\KK[\alpha]\).
 			
@@ -340,24 +340,57 @@
 		tal que~\(\left.f\right|_{\KK}=\Id_{\KK}\) i~\(f(\alpha)=\beta\)
 		si i només si~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\).
 		\begin{proof}
-			%TODO
+			Comencem veient que la condició és suficient~(\(\implica\)). Suposem que existeix un morfisme~\(f\colon\KK(\alpha)\longrightarrow\FF_{2}\) tal que~\(\left.f\right|_{\KK}=\Id_{\KK}\) i~\(f(\alpha)=\beta\). Volem veure que~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\). Posem
+			\[\Irr(\alpha,\KK)=a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}\]
+			amb~\(a_{0},\dots,a_{n}\in\KK\) i per la definició de~\myref{def:morfisme entre anells} calculem
+			\begin{align*}
+				a_{0}+a_{1}\beta+\dots+a_{n}\beta^{n}&=a_{0}+a_{1}f(\alpha)+\dots+a_{n}{f(\alpha)}^{n} \\
+				&=a_{0}+a_{1}f(\alpha)+\dots+a_{n}f(\alpha^{n}) \\
+				&=f(a_{0})+f(a_{1})f(\alpha)+\dots+f(a_{n})f(\alpha^{n}) \\
+				&=f(a_{0})+f(a_{1}\alpha)+\dots+f(a_{n}\alpha^{n}) \\
+				&=f(a_{0}+a_{1}\alpha+\dots+a_{n}\alpha^{n})\\
+				&=f(0)=0,
+			\end{align*}
+			i per tant tenim que~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\).
+			
+			Veiem ara que la condició és necessària~(\(\implicatper\)). Suposem que~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\). Considerem el morfisme d'avaluació~\(\ev_{\beta}\colon\KK[x]\longrightarrow\FF_{2}\). Com que, per hipòtesi, tenim que~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\) trobem que~\(\Irr(\alpha,\KK)\in\ker(\ev_{\beta})\). Ara bé, pe la definició d'\myref{def:element algebraic} trobem que~\(\Irr(\alpha,\KK)\) és irreductible, i per tant~\((\Irr(\alpha,\beta))=\ker(\ev_{\beta})\). %  Veure a estructures. Ideal principal.
+			Aleshores tenim que
+			\begin{align*}
+				\KK(\alpha)&\cong\KK[x]/(\Irr(\alpha,\KK)) \tag{\ref{prop:el mínim subanell engendrat per un element és l'anell de polinomis quocient l'irreductible de l'element}}\\
+				&=\KK[x]/\ker(\ev_{\beta}) \\
+				&\cong\Ima(\ev_{\beta})\subseteq\FF_{2}. \tag{\ref{thm:Primer Teorema de l'isomorfisme entre anells}}
+			\end{align*}
+			Considerem doncs els morfismes entre anells
+			\begin{align*}
+				f_{1}\colon\KK(\alpha)&\longrightarrow\KK[x]/(\Irr(\alpha,\KK)) \\
+				\KK\ni\lambda&\longmapsto\overline{\lambda} \\
+				\alpha&\longmapsto\overline{x}
+			\end{align*}
+			i
+			\begin{align*}
+				f_{2}\colon\KK[x]/\ker(\ev_{\beta})&\longrightarrow\Ima(\ev_{\beta})\subseteq\FF_{2} \\
+				\overline{\lambda}&\longmapsto\lambda \\
+				\overline{x}&\longmapsto\beta
+			\end{align*}
+			i~\(f=f_{2}\circ f_{1}\) és el morfisme que buscàvem.
 		\end{proof}
 	\end{lemma}
-	\begin{definition}[Morfisme misteriós]
-		\labelname{morfisme misteriós}\label{def:morifsme misteriós}
-		Siguin~\(\FF\) i~\(\KK\) dos cossos i~\(f\colon\KK\longrightarrow\FF\) un morfisme entre anells. Aleshores definim
+%	\begin{example}
+%		Exemple d'un grup de Galois on no cal aquest lema, a diferència de l'exemple que ve
+%	\end{example}
+	\begin{notation}
+		Siguin~\(\FF\) i~\(\KK\) dos cossos i~\(f\colon\KK\longrightarrow\FF\) un morfisme entre anells. Aleshores denotem
 		\begin{align*}
-			\morfismemisterios\colon\KK[x]&\longrightarrow\FF[x] \\
+			\hat{f}\colon\KK[x]&\longrightarrow\FF[x] \\
 			a_{0}+a_{1}x+\dots+a_{n}x^{n}&\longmapsto f(a_{0})x+f(a_{1})x+\dots+f(a_{n})x^{n}.
 		\end{align*}
-		com el morfisme misteriós.
-	\end{definition}
+	\end{notation}
 	\begin{lemma}[Extensió de morfismes]
 		\labelname{\empty}\label{lema:extensió de morfismes}
 		Siguin~\(\FF_{1}\extensio\KK\) i~\(\FF_{2}\extensio\KK\) dues extensions,~\(\alpha\in\FF_{1}\) un element algebraic sobre~\(\KK\),~\(\beta\in\FF_{2}\) un element i~\(f\colon\KK\longrightarrow\FF_{2}\) un morfisme. Aleshores existeix un morfisme
 		\[g\colon\KK(\alpha)\longrightarrow\FF_{2}\]
 		tal que~\(\left.g\right|_{\KK}=f\) i~\(g(\alpha)=\beta\)
-		si i només si~\(\beta\) és una arrel de~\(\morfismemisterios(\Irr(\alpha,\KK))\).
+		si i només si~\(\beta\) és una arrel de~\(\hat{f}(\Irr(\alpha,\KK))\).
 		\begin{proof}
 			%TODO
 		\end{proof}
