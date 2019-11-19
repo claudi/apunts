@@ -490,9 +490,14 @@
 \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 
-\newcommand{\myref}[1]{\ref{#1}}
-\renewcommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
-%\newcommand{\myref}[1]{\hyperref[#1]{\nameref{#1} \eqref{#1}}}
+\makeatletter
+\def\myref{\@ifnextchar[{\@myref@opt}{\@myref@}}
+	\def\@myref@opt[#1]#2{\hyperref[#2]{#1~(\ref*{#2})}}
+	\def\@myref@#1{\mynameref{#1}{\csname r@#1\endcsname}}
+\makeatother
+\def\myref#1{\ref{#1}}
+%\renewcommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
+%%\newcommand{\myref}[1]{\hyperref[#1]{\nameref{#1} \eqref{#1}}}
 
 %\makeatletter
 %\DeclareRobustCommand{\myref}[1]{%
@@ -511,8 +516,8 @@
 		\edef\@mytst{\expandafter\@thirdoffive\@mytxt}%
 		\ifx\@mytst\empty
 			\ref{#1}%
-		\else
-			\nameref{#1}\space\eqref{#1}\fi%
+		\else%
+			\nameref{#1}~\eqref{#1}\fi%
 	\endgroup
 }
 \makeatother

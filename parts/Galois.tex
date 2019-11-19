@@ -529,7 +529,56 @@
 			%TODO
 		\end{proof}
 	\end{corollary}
-	
 	% Exemple dels polinomis de grau 2 i 3.
 	
+	\section{Extensions normals i extensions separables}
+	\subsection{Extensions normals}
+	\begin{definition}[Extensió normal]
+		\labelname{extensió normal}\label{def:extensió normal}
+		Sigui~\(\FF\extensio\KK\) una extensió de cossos tal que
+		\begin{enumerate}
+			\item L'extensió~\(\FF\extensio\KK\) és algebraica.
+			\item Per a tot polinomi irreductible~\(p(x)\in\KK[x]\) tal que~\(p(x)\) té una arrel en~\(\FF\) tenim que~\(p(x)\) té totes les arrels a~\(\FF\).
+		\end{enumerate}
+		Aleshores direm que l'extensió~\(\FF\extensio\KK\) és una extensió normal.
+	\end{definition}
+	\begin{theorem}[Teorema de normalitat]
+		\labelname{Teorema de normalitat}\label{thm:Teorema de normalitat}
+		Sigui~\(\FF\extensio\KK\) una extensió finita. Aleshores~\(\FF\extensio\KK\) és una extensió normal si i només si existeix un polinomi~\(p(x)\in\KK[x]\setminus\KK\) tal que~\(\FF\) és el cos de descomposició de~\(p(x)\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\subsection{Elements separables}
+	\begin{definition}[Polinomi separable]
+		\labelname{polinomi separable}\label{def:polinomi separable}
+		Sigui~\(p(x)\) un polinomi irreductible sense arrels múltiples en el seu cos de descomposició. Aleshores direm que~\(p(x)\) és separable.
+	\end{definition}
+	\begin{definition}[Element separable]
+		\labelname{element separable}\label{def:element separable}
+		Siguin~\(\FF\extensio\KK\) una extensió de cossos i~\(\alpha\in\FF\) un element algebraic sobre~\(\KK\) tal que~\(\Irr(\alpha,\KK)\) és separable. Aleshores direm que~\(\alpha\) és separable sobre~\(\KK\).
+	\end{definition}
+	\begin{definition}[Extensió separable]
+		\labelname{extensió separable}\label{def:extensió separable}
+		Sigui~\(\FF\extensio\KK\) una extensió de cossos tal que per a tot~\(\alpha\in\FF\) tenim que~\(\alpha\) és separable sobre~\(\KK\). Aleshores direm que~\(\FF\extensio\KK\) és una extensió separable.
+	\end{definition}
+	\begin{observation}
+		\label{obs:les extensions separables són algebraiques}
+		Sigui~\(\FF\extensio\KK\) una extensió separable. Aleshores~\(\FF\extensio\KK\) és una extensió algebraica.
+%		Les extensions separables són extensions algebraiques.
+	\end{observation}
+	\begin{theorem}
+		\label{thm:teorema de les extensions separables}
+		Siguin~\(\LL\extensio\FF\) i~\(\FF\extensio\KK\) dues extensions de cossos tals que l'extensió~\(\LL\extensio\KK\) sigui separable. Aleshores les extensions~\(\LL\extensio\FF\) i~\(\FF\extensio\KK\) són separables.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{lemma}
+		\label{lema:un polinomi és separable si i només si ho és adaptant els coeficients}
+		Siguin~\(p(x)\in\KK[x]\) un polinomi i~\(f\colon\KK\longrightarrow\FF\) un morfisme d'anells. Aleshores~\(p(x)\) és separable si i només si~\(\hat{f}(p(x))\) és separable.	
+	\end{lemma}
+	\begin{lemma}
+		%TODO
+	\end{lemma}
 \end{document}
