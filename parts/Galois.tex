@@ -146,7 +146,7 @@
 			Conseqüència de la~\myref{thm:fórmula de les torres}.
 		\end{proof}
 	\end{corollary}
-\subsection{TBD}
+\subsection{Subanells engendrats per un element}
 	\begin{definition}[Mínim subanell engendrat]
 		\labelname{mínim subanell engendrat per un element d'una extensió}\label{def:mínim subanell engendrat per un element d'una extensió}
 		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores direm que
@@ -532,7 +532,7 @@
 	% Exemple dels polinomis de grau 2 i 3.
 	
 	\section{Extensions normals i extensions separables}
-	\subsection{Extensions normals}
+\subsection{Extensions normals}
 	\begin{definition}[Extensió normal]
 		\labelname{extensió normal}\label{def:extensió normal}
 		Sigui~\(\FF\extensio\KK\) una extensió de cossos tal que
@@ -549,7 +549,7 @@
 			%TODO
 		\end{proof}
 	\end{theorem}
-	\subsection{Elements separables}
+\subsection{Elements separables}
 	\begin{definition}[Polinomi separable]
 		\labelname{polinomi separable}\label{def:polinomi separable}
 		Sigui~\(p(x)\) un polinomi irreductible sense arrels múltiples en el seu cos de descomposició. Aleshores direm que~\(p(x)\) és separable.
@@ -576,9 +576,46 @@
 	\end{theorem}
 	\begin{lemma}
 		\label{lema:un polinomi és separable si i només si ho és adaptant els coeficients}
-		Siguin~\(p(x)\in\KK[x]\) un polinomi i~\(f\colon\KK\longrightarrow\FF\) un morfisme d'anells. Aleshores~\(p(x)\) és separable si i només si~\(\hat{f}(p(x))\) és separable.	
+		Siguin~\(p(x)\in\KK[x]\) un polinomi,~\(\FF\) un cos i~\(f\colon\KK\longrightarrow\FF\) un morfisme d'anells. Aleshores~\(p(x)\) és separable si i només si~\(\hat{f}(p(x))\) és separable.	
 	\end{lemma}
 	\begin{lemma}
-		%TODO
+		\label{lema:condicions pel nombre d'extensions de morfismes}
+		Siguin~\(\KK(\alpha)\extensio\KK\) una extensió,~\(\FF\) un cos i~\(f\colon\KK\longleftarrow\FF\) un morfisme d'anells tals que~\(\hat{f}(\Irr(\alpha,\KK))\) descompon en factors lineals. Aleshores són equivalents
+		\begin{enumerate}
+			\item\label{lema:condicions pel nombre d'extensions de morfismes:eq1} L'extensió~\(\KK(\alpha)\extensio\KK\) és separable.
+			\item\label{lema:condicions pel nombre d'extensions de morfismes:eq2} L'element~\(\alpha\) és separable.
+			\item\label{lema:condicions pel nombre d'extensions de morfismes:eq3} \(\grauExtensio{\KK(\alpha)}{\KK}=\card{\{g\colon\KK(\alpha)\longrightarrow\FF\mid\left.g\right|_{\KK}=f\text{ i }g\text{ és un morfisme d'anells}\}}\).
+		\end{enumerate}
+		\begin{proof}
+%			Tenim que~(\(\ref{lema:condicions pel nombre d'extensions de morfismes:eq1}\implica\ref{lema:condicions pel nombre d'extensions de morfismes:eq2}\)) per la definició de~\myref{def:extensió separable}.
+			%TODO
+		\end{proof}
 	\end{lemma}
+	\begin{theorem}[Teorema de separabilitat]
+		\labelname{Teorema de separabilitat}\label{thm:Teorema de separabilitat}
+		Sigui~\(\KK(\alpha_{1},\dots,\alpha_{n})\extensio\KK\) una extensió algebraica,~\(\FF\) un cos i~\(f\colon\FF\longrightarrow\FF\) un morfisme d'anells tal que per a tot~\(i\in\{1,\dots,n\}\) tenim que~\(\hat{f}(\Irr(\alpha_{i},\KK))\) descompon en factors lineals. Aleshores són equivalents
+		\begin{enumerate}
+			\item L'extensió~\(\KK(\alpha_{1},\dots,\alpha_{n})\) és separable.
+			\item Els elements~\(\alpha_{1},\dots,\alpha_{n}\) són separables sobre~\(\KK\).
+			\item L'element~\(\alpha_{1}\) és separable sobre~\(\KK\), i per a tot~\(i\in\{2,\dots,n\}\) l'element~\(\alpha_{i}\) és separable sobre~\(\KK(\alpha_{1},\dots,\alpha_{i-1})\).
+				\item Denotant~\(LL=\KK(\alpha_{1},\dots,\alpha_{n})\) tenim que
+				\[\grauExtensio{\LL}{\KK}=\card{\{g\colon\LL\longrightarrow\KK\mid\left.g\right|_{\KK}=f\text{ i }g\text{ és un morfisme d'anells}\}}.\]
+		\end{enumerate}
+	\end{theorem}
+\section{El Teorema Fonamental de la Teoria de Galois}
+\subsection{Extensions de Galois}
+	\begin{definition}[Extensió de Galois]
+		\labelname{extensió de Galois}\label{def:extensió de Galois}
+		Sigui~\(\FF\extensio\KK\) una extensió normal i separable. Aleshores direm que l'extensió~\(\FF\extensio\KK\) és de Galois.
+	\end{definition}
+	\begin{theorem}[Teorema de les extensions de Galois]
+		\labelname{Teorema de les extensions de Galois}\label{thm:Teorema de les extensions de Galois}
+		Sigui~\(\FF\extensio\KK\) una extensió finita. Aleshores~\(\FF\extensio\KK\) és de Galois si i només si
+		\[\card{\Gal(\FF\extensio\KK)}=\grauExtensio{\FF}{\KK}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\subsection{Reticles}
+	
 \end{document}

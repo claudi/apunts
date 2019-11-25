@@ -2031,7 +2031,7 @@
 			
 			Considerem
 			\[\sup_{x\in[0,1]}\abs{(f\convolucio\phi_{\varepsilon})(x)-f(x)}.\]
-			Tenim qe
+			Tenim que
 			\begin{align*}
 				\sup_{x\in[0,1]}\abs{(f\convolucio\phi_{\varepsilon})(x)-f(x)}&=\sup_{x\in[0,1]}\abs{\int_{0}^{1}f(t)\phi_{\varepsilon}(x-t)\diff t-f(x)} \tag{\ref{def:convolució de dues extensions periòdiques}} \\
 				&=\sup_{x\in[0,1]}\abs{\int_{0}^{1}f(t)\phi_{\varepsilon}(x-t)\diff t-\int_{0}^{1}f(x)\phi_{\varepsilon}(x-t)\diff t} \\
@@ -2041,7 +2041,7 @@
 			\end{align*}
 			 Tenim per hipòtesi que \(f\) és contínua, i per la definició de \myref{def:funcio continua} trobem que per a tot \(\eta>0\) existeix un \(\delta>0\) tal que per a tot \(t\) satisfent \(\abs{x-t}>\delta\) tenim
 			 \[\abs{f(x)-f(x)}\leq\frac{\eta}{2}.\]
-			 Per tant, amb \(I=[x-\frac{1}{2},x+\frac{1}{2}]\) i \(J=[0,1]\), % Treure la notació de la J i arreglar el hspace
+			 Per tant, amb \(I=[x-\frac{1}{2},x+\frac{1}{2}]\) i \(J=[0,1]\), % Treure la notació de la J i arreglar el hspace % opció [intlimits] a {amsmath}
 			 \begin{multline*}
 				 \sup_{x\in J}\int_{x-\frac{1}{2}}^{x+\frac{1}{2}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t = \\
 				 =\sup_{x\in J}\left(\int_{\substack{t\in I\\\abs{x-t}<\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t+\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t\right) \hfill\\
