@@ -168,7 +168,7 @@
 		\[\borel(\RR)=\{\obert{U}\subseteq\RR\mid\obert{U}\text{ és un obert de }\RR\}.\]
 		Direm que~\(\borel(\RR)\) és la~\(\sigma\)-àlgebra de Borel.
 	\end{definition}
-	\subsection{Probabilitats}
+\subsection{Probabilitats}
 	\begin{definition}[Probabilitat]
 		\labelname{probabilitat}\label{def:probabilitat}
 		Siguin~\(\Algebra{A}\) una~\(\sigma\)-àlgebra sobre un conjunt~\(\Omega\) i~\(\Probabilitat\colon\Algebra{A}\longrightarrow[0,1]\) una aplicació tal que
@@ -262,7 +262,7 @@
 	\end{corollary}
 	\begin{theorem}[Definició de Laplace]
 		\labelname{}\label{thm:definició de Laplace}
-		Sigui~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitats amb~\(\Omega=\{\omega_{1},\dots,\omega_{n}\}\) i~\(\Algebra{A}=\parts(\Omega)\) tals que per a tot~\(i\),~\(j\in\{1,\dots,n\}\) tenim que~\(\Probabilitat(\{\omega_{i}\})=\Probabilitat(\{\omega_{j}\})\). Aleshores per a tot esdeveniment~\(A\in\Algebra{A}\) tenim
+		Sigui~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat amb~\(\Omega=\{\omega_{1},\dots,\omega_{n}\}\) i~\(\Algebra{A}=\parts(\Omega)\) tals que per a tot~\(i\),~\(j\in\{1,\dots,n\}\) tenim que~\(\Probabilitat(\{\omega_{i}\})=\Probabilitat(\{\omega_{j}\})\). Aleshores per a tot esdeveniment~\(A\in\Algebra{A}\) tenim
 		\[\Probabilitat(A)=\frac{\abs{A}}{\abs{\Omega}}.\]
 		\begin{proof}
 			Observem que~\(\abs{\Omega}=1\), i que
@@ -339,7 +339,181 @@
 			\end{align*}
 		\end{proof}
 	\end{proposition}
-%\chapter{Variables i vectors aleatòris}
+	%TODO Exemples
+\section{Probabilitat condicionada i independència}
+\subsection{Probabilitat condicionada}
+	\begin{definition}[Probabilitat condicionada]
+		\labelname{probabilitat condicionada}\label{def:probabilitat condicionada}
+		Siguin~\(A\),~\(B\) dos esdeveniments amb~\(\Probabilitat(A)\neq0\). Aleshores definim
+		\[\Probabilitat(B\sota A)=\frac{\Probabilitat(A\cap B)}{\Probabilitat(A)}\]
+		com la probabilitat condicionada de~\(B\) sobre~\(A\), o la probabilitat de~\(B\) donat~\(A\).
+	\end{definition}
+	\begin{observation}[Regla de les probabilitats compostes]
+		\labelname{regla de les probabilitats compostes}\label{obs:regla de les probabilitats compostes}
+		\[\Probabilitat(A\cap B)=\Probabilitat(A)\Probabilitat(B\sota A).\]
+	\end{observation}
+	\begin{proposition}
+		\label{prop:la probabilitat condicionada és una probabilitat}
+		Siguin~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat i~\(A\in\Algebra{A}\) un esdeveniment amb~\(\Probabilitat(A)\neq0\). Aleshores l'aplicació
+		\begin{align*}
+			\Probabilitat(\cdot\sota A)\colon\algebra{A}&\longrightarrow[0,1] \\
+			B&\longmapsto\Probabilitat(B\sota A)
+		\end{align*}
+		és una probabilitat.
+		\begin{proposition}
+			%TODO
+		\end{proposition}
+	\end{proposition}
+	\begin{corollary}
+		\label{cor:probabilitat condicionada del complementari}
+		\label{cor:la probabilitat condicionada és una probabilitat}
+		Sigui~\(A\) un esdeveniment amb~\(\Probabilitat(A)\neq0\). Aleshores
+		\[\Probabilitat(C^{\complement}\sota A)=1-\Probabilitat(C\sota A).\]
+	\end{corollary}
+	\begin{example}
+		%TODO
+	\end{example}
+	\begin{theorem}[Fórmula de les probabilitats compostes]
+		\labelname{fórmula de les probabilitats compostes}\label{thm:fórmula de les probabilitats compostes}
+		Siguin~\(A_{1},\dots,A_{n}\) esdeveniments tals que~\(\Probabilitat(A_{1}\cap\dots\cap A_{n-1})\neq0\). Aleshores
+		\[\Probabilitat(A_{1}\cap\dots\cap A_{n})=\Probabilitat(A)\Probabilitat(A_{2}\sota A_{1})\Probabilitat(A_{3}\sota A_{2}\cap A_{1})\dots\Probabilitat(A_{n}\sota A_{n-1}\cap\dots\cap A_{1}).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{example}%[Problema de Chicago]
+		%TODO
+	\end{example}
+\subsection{La fórmula de les probabilitats totals i la fórmula de Bayes}
+	\begin{theorem}[Teorema de les probabilitats totals]
+		\labelname{Teorema de les probabilitats totals}\label{thm:Teorema de les probabilitats totals}
+		Siguin~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat,~\(\{A_{n}\}_{n\in I}\subseteq\Algebra{A}\) una família numerable d'esdeveniments tals que
+		\[\Omega=\biguplus_{n\in I}A_{n}\]
+		amb~\(\Probabilitat(A_{n})\neq0\) per a tot~\(n\in I\) i~\(A\in\Algebra{A}\) un esdeveniment. Aleshores
+		\[\Probabilitat(A)=\sum_{n\in I}\Probabilitat(A_{n})\Probabilitat(A\sota A_{n}).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{theorem}[Fórmula de Bayes]
+		\labelname{fórmula de Bayes}\label{thm:fórmula de Bayes}
+		Siguin~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat,~\(\{A_{n}\}_{n=1}^{N}\subseteq\Algebra{A}\) una família d'esdeveniments tals que
+		\[\Omega=\biguplus_{n\in I}A_{n}\]
+		amb~\(\Probabilitat(A_{n})\neq0\) per a tot~\(n\in\{1,\dots,N\}\) i~\(A\in\Algebra{A}\) un esdeveniment tal que~\(\Probabilitat(A)\neq0\). Aleshores per a tot~\(j\in\{1,\dots,N\}\) tenim
+		\[\Probabilitat(A_{j}\sota A)=\frac{\Probabilitat(A_{j})\Probabilitat(A\sota A_{j})}{\sum_{n=1}^{N}\Probabilitat(A_{n})\Probabilitat(A\sota A_{n})}.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{theorem}
+	\begin{example}
+		%TODO
+	\end{example}
+\subsection{Independència d'esdeveniments}
+	\begin{definition}[Esdeveniments independents]
+		\labelname{esdeveniments independents}\label{def:esdeveniments independents}
+		Siguin~\(A\) i~\(B\) dos esdeveniments tals que
+		\[\Probabilitat(A\cap B)=\Probabilitat(A)\Probabilitat(B).\]
+		Aleshores direm que els esdeveniments~\(A\) i~\(B\) són independents.
+	\end{definition}
+	\begin{observation}
+		\label{obs:condició equivalent a esdeveniments independents}
+		Siguin~\(A\) i~\(B\) dos esdeveniments. Aleshores~\(A\) i~\(B\) són independents si i només si~\(\Probabilitat(B\sota A)=\Probabilitat(B)\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{observation}
+	\begin{example}
+		%TODO
+	\end{example}
+	\begin{proposition}
+		\label{prop:el buit i el total són esdeveniments independents de la resta}
+		\label{prop:el buit és un esdeveniment independent de la resta}
+		\label{prop:el total és un esdeveniment independent de la resta}
+		Sigui~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat. Aleshores per a tot esdeveniment~\(A\in\Algebra{A}\) tenim que~\(\Omega\) i~\(A\) són esdeveniments independents i~\(\emptyset\) i~\(A\) són esdeveniments independents.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:el complementari d'un esdeveniment conserva la independència}
+		Siguin~\(A\) i~\(B\) dos esdeveniments. Aleshores són equivalents
+		\begin{enumerate}
+			\item \(A\) i~\(B\) són esdeveniments independents.
+			\item \(A^{\complement}\) i~\(B\) són esdeveniments independents.
+			\item \(A\) i~\(B^{\complement}\) són esdeveniments independents.
+			\item \(A^{\complement}\) i~\(B^{\complement}\) són esdeveniments independents.
+		\end{enumerate}
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Esdeveniments independents]
+		\labelname{esdeveniments independents}\label{def:esdeveniments independents cas general}
+		Sigui~\(\{A_{i}\}_{i\in I}\) una família d'esdeveniments tals que per a qualsevol~\(i_{1},\dots,i_{k}\in I\) diferents dos a dos tenim que
+		\[\Probabilitat(\bigcap_{j=1}^{k}A_{i_{j}})=\prod_{j=1}^{k}\Probabilitat(A_{i_{j}}).\]
+		aleshores direm que els esdeveniments~\(A_{1},\dots,A_{n}\) són independents.
+	\end{definition}
+\chapter{Variables i vectors aleatòries}
+\section{Variables aleatòries}
+\subsection{Variables aleatòries}
+	\begin{definition}[Variable aleatòria]
+		\labelname{variable aleatòria}\label{def:variable aleatòria}
+		Siguin~\(\Algebra{A}\) una~\(\sigma\)-àlgebra sobre un conjunt~\(\Omega\) i~\(X\colon\Omega\longrightarrow\RR\) una aplicació tal que per a tot conjunt~\(B\in\borel(\RR)\) tenim
+		\[X^{-1}(B)\in\Algebra{A}.\]
+		Aleshores direm que~\(X\) és una variable aleatòria sobre~\(\Algebra{A}\).
+	\end{definition}
+	\begin{example}
+		%TODO
+	\end{example}
+	\begin{notation}
+		\label{not:variables aleatòries}
+		Sigui~\(X\) una variable aleatòria sobre un~\(\sigma\)-àlgebra~\(\Algebra{A}\) sobre un conjunt~\(\Omega\). Aleshores denotem
+		\begin{enumerate}
+			\item \(\{X\in B\}=\{\omega\in\Omega\mid X(\omega)\in B\}\).
+			\item \(\{X=a\}=\{X\in\{a\}\}\).
+			\item \(\{a< X<b\}=\{X\in(a,b)\}\).
+			\item \(\{a\leq X<b\}=\{X\in[a,b)\}\).
+			\item \(\{a< X\leq b\}=\{X\in(a,b]\}\).
+			\item \(\{a\leq X\leq b\}=\{X\in[a,b]\}\).
+		\end{enumerate}
+	\end{notation}
+	\begin{proposition}
+		\label{prop:condició suficient per ser una variable aleatòria}
+		Siguin~\(\Algebra{A}\) una~\(\sigma\)-àlgebra sobre un conjunt~\(\Omega\) i~\(X\colon\Omega\longrightarrow\RR\) una aplicació tal que per a tot~\(x\in\RR\) tenim que
+		\[X^{-1}((-\infty,x])\in\Algebra{A}.\]
+		Aleshores~\(X\) és una variable aleatòria.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:les variables aleatòries formen un anell}
+		Siguin~\(X\) i~\(Y\) dues variables aleatòries i~\(\lambda\in\mathbb{R}\) un escalar. Aleshores~\(X+y\),~\(XY\) i~\(\lambda X\) són variables aleatòries.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:les variables aleatòries formen un cos}
+		Sigui~\(X\) una variable aleatòria sobre una~\(\sigma\)-àlgebra sobre un conjunt~\(\Omega\) tal que per a tot~\(\omega\in\Omega\) tenim que~\(X(\omega)\neq0\). Aleshores~\(1/X\) és una variable aleatòria.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:el cos de variables aleatòries és tancat}
+		Sigui~\((X_{n})_{n\in\NN}\) una successió de variables aleatòries sobre una~\(\sigma\)-àlgebra sobre un conjunt~\(\Omega\) tals que per a tot~\(\omega\in\Omega\) tenim que la successió~\((X_{n}(\omega))_{n\in\NN}\) és convergent. Aleshores la funció
+		\begin{align*}
+			X\colon\Omega&\longrightarrow\mathbb{R} \\
+			\omega&\longmapsto\lim_{n\to\infty}X_{n}(\omega)
+		\end{align*}
+		és una variable aleatòria.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+\subsection{Distribució o llei, i funció de distribució d'una variable aleatòria}
+	
 %\chapter{Esperança matemàtica}
 %\chapter{Convergència de successions de variables aleatòries}
 %\chapter{Els teoremes límit de la Teoria de la Probabilitat}
