@@ -166,7 +166,7 @@
 		\labelname{\ensuremath{\sigma}-àlgebra}\label{def:sigma àlgebra de Borel}
 		Sigui
 		\[\borel(\RR)=\{\obert{U}\subseteq\RR\mid\obert{U}\text{ és un obert de }\RR\}.\]
-		Direm que~\(\borel(\RR)\) és la~\(\sigma\)-àlgebra de Borel.
+		Direm que~\(\borel(\RR)\) és la~\(\sigma\)-àlgebra de Borel. Direm que els elements de~\(\borel(\RR)\) són conjunts borelians.
 	\end{definition}
 \subsection{Probabilitats}
 	\begin{definition}[Probabilitat]
@@ -603,17 +603,129 @@
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
+		\label{prop:funcions de distribució per calcular variables aleatòries en intervals tancats}
 		Sigui~\(F\) una funció de distribució d'una variable aleatòria~\(X\). Aleshores per a tot~\(s\),~\(t\in\RR\) tenim que
 		\[\Probabilitat\{s<X\leq t\}=F(t)-F(s).\]
 	\end{proposition}
 	\begin{proposition}
+		\label{prop:funcions de distribució per calcular variables aleatòries en semirectes}
 		Sigui~\(F\) una funció de distribució d'una variable aleatòria~\(X\). Aleshores per a tot~\(x\in\RR\) tenim que
 		\[\Probabilitat\{X<x\}=\lim_{\substack{t\to x\\t<x}}F(t).\]
 	\end{proposition}
 	\begin{proposition}
+		\label{prop:funcions de distribució per calcular variables aleatòries en punts}
 		Sigui~\(F\) una funció de distribució d'una variable aleatòria~\(X\). Aleshores
 		\[\Probabilitat\{X=x\}=F(x)-\lim_{\substack{t\to x\\t<x}}F(t).\]
 	\end{proposition}
+\section{Variables aleatòries discretes}
+\subsection{Variables aleatòries discretes}
+	\begin{definition}[Variable aleatòria discreta]
+		\labelname{variable aleatòria discreta}\label{def:variable aleatòria discreta}
+		\labelname{suport d'una variable aleatòria discreta}\label{def:suport d'una variable aleatòria discreta}
+		Sigui~\(X\) una variable aleatòria tal que existeix un conjunt finit o numerable~\(S\subseteq\RR\) tal que
+		\[\Probabilitat\{X\in S\}=1,\]
+		i tal que per a tot~\(x\in S\) tenim
+		\[P\{X=x\}\neq0.\]
+		Aleshores direm que~\(X\) és una variable aleatòria discreta. També direm que~\(S\) és el suport de~\(X\).
+	\end{definition}
+	\begin{example}
+		%TODO
+	\end{example}
+	\begin{observation}
+		\label{obs:els conjunts finits o numerables són borelians}
+		Sigui~\(S\subseteq\RR\) un conjunt finit o numerable. Aleshores~\(S\) és borelià.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{observation}
+\subsection{Funció de probabilitat d'una variable aleatòria}
+	\begin{definition}[Funció de probabilitat]
+		\labelname{funció de probabilitat d'una variable aleatòria discreta}\label{def:funció de probabilitat d'una variable aleatòria discreta}
+		\labelname{repartiment de massa d'una variable aleatòria discreta}\label{def:repartiment de massa d'una variable aleatòria discreta}
+		Siguin~\(X\) una variable aleatòria discreta amb suport~\(S\) i
+		\begin{align*}
+			p\colon S&\longrightarrow[0,1] \\
+			x&\longmapsto\Probabilitat\{X=x\}.
+		\end{align*}
+		una funció. Aleshores direm que~\(p\) és la funció de probabilitat de~\(X\). També direm que~\(p\) és el repartiment de massa de~\(X\).
+	\end{definition}
+	\begin{observation}
+		\label{prop:la funció de probabilitat d'una variable aleatòria discreta suma 1 en el suport}
+		Sigui~\(X\) una variable aleatòria discreta amb suport~\(S\) i funció de probabilitat~\(p\). Aleshores
+		\[\sum_{x\in S}p(s)=1.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{observation}
+	\begin{proposition}
+		\label{prop:probabilitat d'un conjunt en una variable aleatòria discreta}
+		Siguin~\(X\) una variable aleatòria discreta amb suport~\(S\) i funció de probabilitat~\(p\), i~\(B\in\borel(\RR)\) un borelià. Aleshores
+		\[\Probabilitat\{X=B\}=\sum_{\substack{x\in S\\x\in B}}p(x).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	%Potser caldrà reescriure aquestes coses per fer-les formals. I anar-les arrosegant per fer les solucions poc a poc? Però aleshores es pot fer molt llarg. Decidiré quan em posi a fer-les.
+	\begin{example}[Variable aleatòria degenerada]
+		\labelname{variable aleatòria degenerada}\label{ex:variable aleatòria degenerada}
+		Siguin~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat i~\(a\in\RR\) un real. Volem veure que la funció
+		\begin{align*}
+			X\colon\Omega&\longrightarrow\RR \\
+			x&\longmapsto a
+		\end{align*}
+		és una variable aleatòria. També volem calcular i dibuixar la seva funció de probabilitat i de distribució.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{example}[Llei de Bernoulli]
+		\labelname{llei de Bernoulli}\label{def:llei de Bernoulli}
+		Sigui~\(X\) una variable aleatòria discreta amb suport~\(S=\{0,1\}\). Volem calcular i dibuixar la seva funció de probabilitat i de distribució.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{example}[Llei uniforme sobre~\(n\) punts]
+		\labelname{llei uniforme sobre~\(n\) punts}\label{def:llei uniforme sobre n punts}
+		Sigui~\(X\) una variable aleatòria discreta amb suport~\(S=\{x_{1},\dots,x_{n}\}\) tal que per a tot~\(i\in\{1,\dots,n\}\) tenim que
+		\[P\{X=x_{i}\}=\frac{1}{n}.\]
+		Aleshores escriurem~\(X\sim\Unif(x_{1},\dots,x_{n})\). Volem calcular i dibuixar la seva funció de probabilitat i de distribució.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	% Fer la resta de distribucions/lleis
+	%TODO Binomial
+	%TODO Poisson
+	\begin{example}
+		%Aplicació d'alguna de les lleis
+	\end{example}
+\section{Variables aleatòries absolutament contínues i mixtes}
+\subsection{Variables aleatòries absolutament contínues}
+	\begin{definition}[Variable aleatòria absolutament contínua]
+		\labelname{variable aleatòria absolutament contínua}\label{def:variable aleatòria absolutament contínua}
+		\labelname{funció de densitat d'una variable aleatòria absolutament contínua}\label{def:funció de densitat d'una variable aleatòria abolsutament contínua}
+		\labelname{funció de distribució d'una variable aleatòria absolutament contínua}\label{def:funció de distribució d'una variable aleatòria absolutament contínua}
+		Sigui~\(X\) una variable aleatòria tal que existeix una funció~\(f\colon\RR\longleftarrow\RR\) satisfent
+		\begin{enumerate}
+			\item Per a tot~\(x\in\RR\) tenim que~\(f(x)\geq0\).
+			\item La funció~\(f\) és integrable sobre tot~\(RR\).
+			\item \(\int_{-\infty}^{\infty}f(x)dx=1\).
+			\item Per a tot~\(a\),~\(b\in\RR\cup\{\pm\infty\}\) tenim que
+			\[\Probabilitat\{a\leq X\leq b\}=\int_{a}^{b}f(x)dx.\]
+		\end{enumerate}
+		Aleshores direm que~\(X\) és una variable aleatòria absolutament contínua. També direm que~\(f\) és la funció distribució de~\(X\) i que la funció
+		\[F(x)=\Probabilitat\{X=x\}=\int_{-\infty}^{x}f(t)dt\]
+		és la funció de distribució de~\(X\).
+	\end{definition}
+	\begin{observation}
+		\label{obs:la funció distribució d'una variable aleatòria absolutament contínua és contínua}
+		Sigui~\(F\) la funció de distribució d'una variable aleatòria absolutament contínua~\(X\). Aleshores~\(F\) és contínua. % i absolutament contínua
+	\end{observation}
+	\begin{example}
+		%TODO
+	\end{example}
+	% Pàg. 45
 %\chapter{Esperança matemàtica}
 %\chapter{Convergència de successions de variables aleatòries}
 %\chapter{Els teoremes límit de la Teoria de la Probabilitat}
