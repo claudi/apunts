@@ -453,8 +453,8 @@
 		\[\Probabilitat(\bigcap_{j=1}^{k}A_{i_{j}})=\prod_{j=1}^{k}\Probabilitat(A_{i_{j}}).\]
 		aleshores direm que els esdeveniments~\(A_{1},\dots,A_{n}\) són independents.
 	\end{definition}
-\chapter{Variables i vectors aleatòries}
-\section{Variables aleatòries}
+\chapter{Variables i vectors aleatoris}
+\section{Distribució i funció de distribució d'una variable aleatòria}
 \subsection{Variables aleatòries}
 	\begin{definition}[Variable aleatòria]
 		\labelname{variable aleatòria}\label{def:variable aleatòria}
@@ -467,7 +467,7 @@
 	\end{example}
 	\begin{notation}
 		\label{not:variables aleatòries}
-		Sigui~\(X\) una variable aleatòria sobre un~\(\sigma\)-àlgebra~\(\Algebra{A}\) sobre un conjunt~\(\Omega\). Aleshores denotem
+		Sigui~\(X\colon\Omega\longrightarrow\RR\) una variable aleatòria sobre un~\(\sigma\)-àlgebra~\(\Algebra{A}\). Aleshores denotem
 		\begin{enumerate}
 			\item \(\{X\in B\}=\{\omega\in\Omega\mid X(\omega)\in B\}\).
 			\item \(\{X=a\}=\{X\in\{a\}\}\).
@@ -495,7 +495,7 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:les variables aleatòries formen un cos}
-		Sigui~\(X\) una variable aleatòria sobre una~\(\sigma\)-àlgebra sobre un conjunt~\(\Omega\) tal que per a tot~\(\omega\in\Omega\) tenim que~\(X(\omega)\neq0\). Aleshores~\(1/X\) és una variable aleatòria.
+		Sigui~\(X\colon\Omega\longrightarrow\RR\) una variable aleatòria sobre una~\(\sigma\)-àlgebra tal que per a tot~\(\omega\in\Omega\) tenim que~\(X(\omega)\neq0\). Aleshores~\(1/X\) és una variable aleatòria.
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -512,8 +512,108 @@
 			%TODO
 		\end{proof}
 	\end{proposition}
-\subsection{Distribució o llei, i funció de distribució d'una variable aleatòria}
-	
+\subsection{Distribució o llei d'una variable aleatòria}
+	\begin{proposition}
+		\label{prop:distribució d'una variable aleatòria}
+		Siguin~\(X\colon\Omega\longrightarrow\RR\) una variable aleatòria i
+		\begin{align*}
+			\Probabilitat_{X}\colon\borel(\RR)&\longrightarrow\RR \\
+			B&\longmapsto\Probabilitat(X^{-1}(B)).
+		\end{align*}
+		Aleshores~\((\RR,\borel(\RR),\Probabilitat_{X})\) és un espai de probabilitat.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Distribució d'una variable aleatòria]
+		\labelname{distribució d'una variable aleatòria}\label{def:distribució d'una variable aleatòria}
+		Sigui~\(X\colon\Omega\longrightarrow\RR\) una variable aleatòria. Aleshores direm que la funció
+		\begin{align*}
+			\Probabilitat_{X}\colon\borel(\RR)&\longrightarrow\RR \\
+			B&\longmapsto\Probabilitat(X^{-1}(B))
+		\end{align*}
+		és la distribució de~\(X\). També direm que és la llei de~\(X\).
+	\end{definition}
+	\begin{example}
+		%TODO
+	\end{example}
+\subsection{Igualtat i igualtat quasi segura de variables aleatòries}
+	\begin{definition}[Igualtat de variables aleatòries]
+		\labelname{variables aleatòries amb la mateixa distribució}\label{def:variables aleatòries amb la mateixa distribució}
+		\labelname{igualtat de variables aleatòries}\label{def:igualtat de variables aleatòries}
+		Siguin~\(X\) i~\(Y\) dues variables aleatòries tals que per a tot~\(B\in\borel(\RR)\) tenim que
+		\[\Probabilitat_{X}(B)=\Probabilitat_{Y}(B).\]
+		Aleshores direm que~\(X\) i~\(Y\) tenen la mateixa distribució, i ho denotarem com
+		\[X\igualsendistribucio Y.\]
+	\end{definition}
+	\begin{example}
+		%TODO
+	\end{example}
+	\begin{definition}[Igualtat quasi segura de variables aleatòries]
+		\labelname{igualtat quasi segura de variables aleatòries}\label{def:igualtat quasi segura de variables aleatòries}
+		Siguin~\(X\) i~\(Y\) dues variables aleatòries sobre una~\(\sigma\)-àlgebra~\(\Algebra{A}\) tals que~\(\Probabilitat\{X=Y\}=1\). Aleshores direm que~\(X\) i~\(Y\) són iguals quasi segurament i ho denotarem com
+		\[X\qs Y.\]
+	\end{definition}
+	\begin{observation}
+		\label{obs:dues variables iguals quasi segurament són iguals en distribució}
+		Siguin~\(X\) i~\(Y\) dues variables aleatòries tals que~\(X\qs Y\). Aleshores~\(X\igualsendistribucio Y\).
+	\end{observation}
+	\begin{example}
+		%TODO
+	\end{example}
+\subsection{Funció de distribució d'una variable aleatòria}
+	\begin{definition}[Funció de distribució]
+		\labelname{funció de distribució d'una variable aleatòria}\label{def:funció de distribució d'una variable aleatòria}
+		Siguin~\(X\) una variable aleatòria i
+		\begin{align*}
+			F\colon\RR&\longrightarrow[0,1] \\
+			x&\longmapsto\Probabilitat\{X\leq x	\}
+		\end{align*}
+		una funció. Aleshores direm que~\(F\) és la funció de distribució de~\(X\).
+	\end{definition}
+	\begin{proposition}
+		\label{prop:les funcions de distribució són creixents}
+		Sigui~\(F\) una funció de distribució. Aleshores~\(F\) és creixent.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition} %TODO REVISAR
+		\label{prop:les funcions de distribució són contínues per la dreta}
+		\label{prop:les funcions de distribució tenen límit per l'esquerra}
+		Sigui~\(F\) una funció de distribució. Aleshores per a tot~\(x\in\RR\) tenim que
+		\[\lim_{\substack{t\to x\\t<x}}F(t)=F(x)\qquad\text{i}\qquad\lim_{\substack{t\to x\\t>x}}F(t)=L\in\RR.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:límits laterals d'una funció de distribució}
+		Sigui~\(F\) una funció de distribució. Aleshores
+		\[\lim_{x\to-\infty}F(x)=0\qquad\text{i}\qquad\lim_{x\to\infty}F(x)=1.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:les funcions de distribució tienen com a màxim un nombre numerable de punts de discontinuitat}
+		Sigui~\(F\) una funció de distribució. Aleshores el conjunt de punts de discontinuïtat de~\(F\) és com a màxim numerable.
+		\begin{proof}
+			%TODO % Fer desprès de FVR
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		Sigui~\(F\) una funció de distribució d'una variable aleatòria~\(X\). Aleshores per a tot~\(s\),~\(t\in\RR\) tenim que
+		\[\Probabilitat\{s<X\leq t\}=F(t)-F(s).\]
+	\end{proposition}
+	\begin{proposition}
+		Sigui~\(F\) una funció de distribució d'una variable aleatòria~\(X\). Aleshores per a tot~\(x\in\RR\) tenim que
+		\[\Probabilitat\{X<x\}=\lim_{\substack{t\to x\\t<x}}F(t).\]
+	\end{proposition}
+	\begin{proposition}
+		Sigui~\(F\) una funció de distribució d'una variable aleatòria~\(X\). Aleshores
+		\[\Probabilitat\{X=x\}=F(x)-\lim_{\substack{t\to x\\t<x}}F(t).\]
+	\end{proposition}
 %\chapter{Esperança matemàtica}
 %\chapter{Convergència de successions de variables aleatòries}
 %\chapter{Els teoremes límit de la Teoria de la Probabilitat}

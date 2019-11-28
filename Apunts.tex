@@ -48,7 +48,7 @@
 \setrmarg{4em}
 
 \pagestyle{ruled}
-\setlength{\headheight}{12.1638pt}
+%\setlength{\headheight}{12.1638pt}
 
 %\newenvironment{history}[1][]{%
 %	\mdfsetup{%
@@ -207,6 +207,11 @@
 \newcommand{\ev}{\mathrm{ev}}
 \newcommand{\discriminant}{\Delta}
 \newcommand{\Probabilitat}{P}
+\newcommand{\igualsendistribucio}{\overset{\mathcal{L}}{=}}
+\newcommand{\igualsquasisegurament}{\qs}
+\newcommand{\quasisegurament}{\qs}
+\newcommand{\igualsqs}{\qs}
+\newcommand{\qs}{\overset{\mathrm{qs}}{=}}
 
 \newcommand{\heads}{\mathrm{H}}
 \newcommand{\tails}{\mathrm{T}}
@@ -525,8 +530,8 @@
 \makeatother
 
 \makeatletter
-\newcommand{\labelname}[1]{
-	\def\@currentlabelname{#1}}
+\newcommand{\labelname}[1]{%
+	\def\@currentlabelname{#1}}%
 \makeatother
 
 \begin{document}
