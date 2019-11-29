@@ -700,8 +700,8 @@
 	\begin{example}
 		%Aplicació d'alguna de les lleis
 	\end{example}
-\section{Variables aleatòries absolutament contínues i mixtes}
-\subsection{Variables aleatòries absolutament contínues}
+\section{Variables aleatòries absolutament contínues} % i mixtes
+\subsection{Funcions de densitat i de distribució}
 	\begin{definition}[Variable aleatòria absolutament contínua]
 		\labelname{variable aleatòria absolutament contínua}\label{def:variable aleatòria absolutament contínua}
 		\labelname{funció de densitat d'una variable aleatòria absolutament contínua}\label{def:funció de densitat d'una variable aleatòria abolsutament contínua}
@@ -714,7 +714,7 @@
 			\item Per a tot~\(a\),~\(b\in\RR\cup\{\pm\infty\}\) tenim que
 			\[\Probabilitat\{a\leq X\leq b\}=\int_{a}^{b}f(x)dx.\]
 		\end{enumerate}
-		Aleshores direm que~\(X\) és una variable aleatòria absolutament contínua. També direm que~\(f\) és la funció distribució de~\(X\) i que la funció
+		Aleshores direm que~\(X\) és una variable aleatòria absolutament contínua. També direm que~\(f\) és la funció densitat de~\(X\) i que la funció
 		\[F(x)=\Probabilitat\{X=x\}=\int_{-\infty}^{x}f(t)dt\]
 		és la funció de distribució de~\(X\).
 	\end{definition}
@@ -722,10 +722,85 @@
 		\label{obs:la funció distribució d'una variable aleatòria absolutament contínua és contínua}
 		Sigui~\(F\) la funció de distribució d'una variable aleatòria absolutament contínua~\(X\). Aleshores~\(F\) és contínua. % i absolutament contínua
 	\end{observation}
+%	\begin{example}
+%		%TODO % Veure si ho ha un exemple previ a les lleis i distribucions
+%	\end{example}
+	\begin{example}[Llei uniforme]	
+	\labelname{llei uniforme}\label{ex:llei uniforme}
+		Siguin~\(a\),~\(b\in\RR\) dos reals amb~\(a<b\) i~\(X\) una variable aleatòria tal que la seva funció de densitat sigui
+		\begin{align*}
+			f(x)=\frac{1}{b-a}\ind_{(a,b)}(x).
+		\end{align*}
+		Volem calcular la seva funció de distribució i dibuixar-les.
+		
+		Direm que~\(X\sim\Unif(a,b)\).
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{example}[Llei exponencial]
+		\labelname{llei exponencial}\label{ex:llei exponencial}
+		Siguin~\(\lambda\in\RR\) un real amb~\(\lambda>0\) i~\(X\) una variable aleatòria tal que la seva funció de densitat sigui
+		\begin{align*}
+			f(x)=\lambda\e^{-\lambda x}\ind_{(0,\infty)}(x).
+		\end{align*}
+		Volem calcular la seva funció de distribució i dibuixar-les.
+		
+		Direm que~\(X\sim\Exp(\lambda)\).
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	% Propietat de la falta de memòria
+	\begin{example}[Distribució gaussiana]
+		\labelname{distribució gaussiana}\label{ex:distribució gaussiana}
+		Siguin~\(\mu\),~\(\sigma\in\RR\) un real amb~\(\sigma>0\) i~\(Z\) una variable aleatòria tal que la seva funció de densitat sigui
+		\begin{align*}
+			f(x)=\frac{1}{\sigma\sqrt{2\pi}}\e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}.
+		\end{align*}
+		Volem comprovar que aquesta és una funció de densitat i dibuixar-la per~\(\mu=2\) i~\(\sigma=1\).
+		
+		Direm que~\(Z\sim\Gauss(\mu,\sigma^{2})\).
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{example}[Distribució Gamma]
+		\labelname{distribució Gamma}\label{ex:distribució Gamma}
+		Siguin~\(r\),~\(\alpha\in\RR\) dos reals amb~\(r>0\) i~\(\alpha>0\). Volem veure que existeix una variable aleatòria~\(X\) amb funció de distribució
+		\[f(x)=\frac{\alpha^{r}}{\Gamma(r)}x^{r-1}\e^{-\alpha x}\ind_{(0,\infty)}(x).\]
+		També volem dibuixar~\(f(x)\). % Determinar valors guays.
+		
+		Sigui una variable aleatòria~\(X\) amb funció de distribució~\(f(x)\). Aleshores direm que~\(X\sim\Gamm(r,\alpha)\).
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+%	\begin{example}[Distribució beta]
+%		\labelname{distribució beta}\label{ex:distribució beta}
+%	\end{example}
+\subsection{Criteri per calcular densitats de variables aleatòries}
+	\begin{proposition}
+		\label{prop:criteri per calcular densitats de variables aleatòries}
+		Sigui~\(X\) una variable aleatòria amb funció de distribució~\(F\colon\RR\longrightarrow\RR\) tal que
+		\begin{enumerate}
+			\item La funció~\(F\) és contínua~\(\RR\).
+			\item La funció~\(F\) és derivable en tot~\(\RR\) excepte en una quantitat finita numerable de punts.
+			\item La funció~\(F'\) és contínua en tot~\(\RR\) excepte en una quantitat finita de punts.
+		\end{enumerate}
+		Aleshores per a tot~\(x\in\RR\) tenim que
+		\[F(x)=\int_{-\infty}^{x}F'(t)\diff t.\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
 	\begin{example}
 		%TODO
 	\end{example}
-	% Pàg. 45
+%\subsection{Funcions de variables aleatòries amb densitat}
+	% Exercicis xungos del final (pàg. 59)
+\section{Vectors aleatoris}
+\subsection{Vectors de variables aleatòries}
 %\chapter{Esperança matemàtica}
 %\chapter{Convergència de successions de variables aleatòries}
 %\chapter{Els teoremes límit de la Teoria de la Probabilitat}
