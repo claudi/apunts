@@ -1699,8 +1699,8 @@
 	\subsection{La funció Gamma d'Euler}
 	\begin{definition}[Gamma d'Euler]
 		\labelname{Gamma d'Euler}\label{def:Gamma d'Euler}
-		Sigui \(x\) un real positiu. Aleshores definim
-		\[\Gamma(x)=\int_{0}^{\infty}t^{x-1}\e^{-t}\diff t\]
+		Sigui \(r\) un real positiu. Aleshores definim
+		\[\Gamma(r)=\int_{0}^{\infty}x^{r-1}\e^{-x}\diff x\]
 		com la funció Gamma d'Euler.
 	\end{definition}
 	\begin{theorem}
@@ -1712,8 +1712,8 @@
 	\end{theorem}
 	\begin{lemma} % Repassar, fa aquesta part una mica al revés?
 		\label{lema:la Gamma d'Euler es comporta com un factorial amb reals}
-		Sigui \(x>0\) un real. Aleshores
-		\[\Gamma(x+1)=x\Gamma(x).\]
+		Sigui \(r>0\) un real. Aleshores
+		\[\Gamma(r+1)=r\Gamma(r).\]
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1724,7 +1724,7 @@
 		\[\Gamma(1)=1.\]
 		\begin{proof} %REFS? % NOTACIÓ EVALUACIÓ
 			Per la definició de \myref{def:Gamma d'Euler} tenim que
-			\[\Gamma(1)=\int_{0}^{\infty}\e^{-t}\diff t=\left.\frac{\e^{-t}}{-1}\right\vert_{0}^{\infty}=1.\qedhere\]
+			\[\Gamma(1)=\int_{0}^{\infty}\e^{-x}\diff x=\left.\frac{\e^{-x}}{-1}\right\vert_{x=0}^{\infty}=1.\qedhere\]
 		\end{proof}
 	\end{observation}
 	\begin{lemma} % Repassar, fa aquesta part una mica al revés?
@@ -1738,7 +1738,7 @@
 	\begin{theorem}
 		\label{thm:fórmula d'Stirling}
 		Es satisfà
-		\[\lim_{x\to\infty}\frac{\Gamma(x+1)}{e^{-x}x^{x}\sqrt{2\uppi x}}=1.\]
+		\[\lim_{r\to\infty}\frac{\Gamma(r+1)}{e^{-r}r^{r}\sqrt{2\uppi r}}=1.\]
 		\begin{proof}
 			%TODO
 		\end{proof}
