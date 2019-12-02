@@ -567,6 +567,13 @@
 		Sigui~\(\FF\extensio\KK\) una extensió separable. Aleshores~\(\FF\extensio\KK\) és una extensió algebraica.
 %		Les extensions separables són extensions algebraiques.
 	\end{observation}
+	\begin{proposition}
+		Sigui~\(\FF\extensio\KK\) una extensió amb~\(\ch(\KK)\neq0\). Aleshores l'extensió~\(\FF\extensio\KK\) és separable si i només si és algebraica.
+		\begin{proof}
+			%TODO
+			%Faltaran refs per lo de la característica.
+		\end{proof}
+	\end{proposition}
 	\begin{theorem}
 		\label{thm:teorema de les extensions separables}
 		Siguin~\(\LL\extensio\FF\) i~\(\FF\extensio\KK\) dues extensions de cossos tals que l'extensió~\(\LL\extensio\KK\) sigui separable. Aleshores les extensions~\(\LL\extensio\FF\) i~\(\FF\extensio\KK\) són separables.
@@ -598,7 +605,7 @@
 			\item L'extensió~\(\KK(\alpha_{1},\dots,\alpha_{n})\) és separable.
 			\item Els elements~\(\alpha_{1},\dots,\alpha_{n}\) són separables sobre~\(\KK\).
 			\item L'element~\(\alpha_{1}\) és separable sobre~\(\KK\), i per a tot~\(i\in\{2,\dots,n\}\) l'element~\(\alpha_{i}\) és separable sobre~\(\KK(\alpha_{1},\dots,\alpha_{i-1})\).
-				\item Denotant~\(LL=\KK(\alpha_{1},\dots,\alpha_{n})\) tenim que
+				\item Denotant~\(\LL=\KK(\alpha_{1},\dots,\alpha_{n})\) tenim que
 				\[\grauExtensio{\LL}{\KK}=\card{\{g\colon\LL\longrightarrow\KK\mid\left.g\right|_{\KK}=f\text{ i }g\text{ és un morfisme d'anells}\}}.\]
 		\end{enumerate}
 	\end{theorem}
@@ -617,5 +624,41 @@
 		\end{proof}
 	\end{theorem}
 \subsection{Reticles}
-		
+	\begin{definition}[Reticle de subgrups]
+		\labelname{reticle de subgrups}\label{def:reticle de subgrups}
+		Sigui~\(G\) un grup. Aleshores definim
+		\[\ReticleGrup(G)=\{H\subseteq G\mid H\text{ és un subgrup de }G\}\]
+		com el reticle de subgrups de~\(G\).
+	\end{definition}
+	\begin{definition}[Reticle de subcossos]
+		\labelname{reticle de subcossos}\label{def:reticle de subcossos}
+		Sigui~\(\FF\extensio\KK\) una extensió de cossos. Aleshores definim
+		\[\ReticleCos(\FF\extensio\KK)=\{\EE\subseteq\FF\mid\EE\text{ és un cos i }\KK\subseteq\EE\}\]
+		com el reticle de subcossos de l'extensió~\(\FF\extensio\KK\).
+	\end{definition}
+	\begin{lemma}
+		\label{lema:cos fix}
+		Siguin~\(\FF\extensio\KK\) una extensió,~\(\EE\in\ReticleCos(\FF\extensio\KK)\) un subcòs i~\(H\in\ReticleGrup(\Gal(\FF\extensio\KK))\) un grup. Aleshores
+		\[\EE^{H}=\{a\in\EE\mid f(a)=a\text{ per a tot }f\in H\}\]
+		és un cos i satisfà~\(\KK\subseteq\EE^{H}\subseteq\FF\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{lemma}
+	\begin{definition}[Cos fix]
+		\labelname{cos fix}\label{def:cos fix}
+		Siguin~\(\FF\extensio\KK\) una extensió,~\(\EE\in\ReticleCos(\FF\extensio\KK)\) un subcòs i~\(H\in\ReticleGrup(\Gal(\FF\extensio\KK))\) un grup. Aleshores definim
+		\[\EE^{H}=\{a\in\EE\mid f(a)=a\text{ per a tot }f\in H\}\]
+		com el cos fix de~\(H\). % Té sentit pel lemma anterior
+	\end{definition}
+	\begin{proposition}
+		\label{prop:els grups de Galois inverteixen les inclusions}
+		Siguin~\(\FF\extensio\EE\) i~\(\EE\extensio\KK\) dues extensions de cossos. Aleshores~\(\Gal(\FF\extensio\EE)\) és un subgrup de~\(\Gal(\FF\extensio\KK)\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{lemma}
+		% Escriure el lemma aquest tant llarg
+	\end{lemma}
 \end{document}
