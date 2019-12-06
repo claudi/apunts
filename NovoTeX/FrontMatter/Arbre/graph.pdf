@@ -1,0 +1,803 @@
+%!PS-Adobe-3.0
+%%Creator: graphviz version 2.40.1 (20161225.0304)
+%%Title: G
+%%Pages: (atend)
+%%BoundingBox: (atend)
+%%EndComments
+save
+%%BeginProlog
+/DotDict 200 dict def
+DotDict begin
+
+/setupLatin1 {
+mark
+/EncodingVector 256 array def
+ EncodingVector 0
+
+ISOLatin1Encoding 0 255 getinterval putinterval
+EncodingVector 45 /hyphen put
+
+% Set up ISO Latin 1 character encoding
+/starnetISO {
+        dup dup findfont dup length dict begin
+        { 1 index /FID ne { def }{ pop pop } ifelse
+        } forall
+        /Encoding EncodingVector def
+        currentdict end definefont
+} def
+/Times-Roman starnetISO def
+/Times-Italic starnetISO def
+/Times-Bold starnetISO def
+/Times-BoldItalic starnetISO def
+/Helvetica starnetISO def
+/Helvetica-Oblique starnetISO def
+/Helvetica-Bold starnetISO def
+/Helvetica-BoldOblique starnetISO def
+/Courier starnetISO def
+/Courier-Oblique starnetISO def
+/Courier-Bold starnetISO def
+/Courier-BoldOblique starnetISO def
+cleartomark
+} bind def
+
+%%BeginResource: procset graphviz 0 0
+/coord-font-family /Times-Roman def
+/default-font-family /Times-Roman def
+/coordfont coord-font-family findfont 8 scalefont def
+
+/InvScaleFactor 1.0 def
+/set_scale {
+       dup 1 exch div /InvScaleFactor exch def
+       scale
+} bind def
+
+% styles
+/solid { [] 0 setdash } bind def
+/dashed { [9 InvScaleFactor mul dup ] 0 setdash } bind def
+/dotted { [1 InvScaleFactor mul 6 InvScaleFactor mul] 0 setdash } bind def
+/invis {/fill {newpath} def /stroke {newpath} def /show {pop newpath} def} bind def
+/bold { 2 setlinewidth } bind def
+/filled { } bind def
+/unfilled { } bind def
+/rounded { } bind def
+/diagonals { } bind def
+/tapered { } bind def
+
+% hooks for setting color 
+/nodecolor { sethsbcolor } bind def
+/edgecolor { sethsbcolor } bind def
+/graphcolor { sethsbcolor } bind def
+/nopcolor {pop pop pop} bind def
+
+/beginpage {	% i j npages
+	/npages exch def
+	/j exch def
+	/i exch def
+	/str 10 string def
+	npages 1 gt {
+		gsave
+			coordfont setfont
+			0 0 moveto
+			(\() show i str cvs show (,) show j str cvs show (\)) show
+		grestore
+	} if
+} bind def
+
+/set_font {
+	findfont exch
+	scalefont setfont
+} def
+
+% draw text fitted to its expected width
+/alignedtext {			% width text
+	/text exch def
+	/width exch def
+	gsave
+		width 0 gt {
+			[] 0 setdash
+			text stringwidth pop width exch sub text length div 0 text ashow
+		} if
+	grestore
+} def
+
+/boxprim {				% xcorner ycorner xsize ysize
+		4 2 roll
+		moveto
+		2 copy
+		exch 0 rlineto
+		0 exch rlineto
+		pop neg 0 rlineto
+		closepath
+} bind def
+
+/ellipse_path {
+	/ry exch def
+	/rx exch def
+	/y exch def
+	/x exch def
+	matrix currentmatrix
+	newpath
+	x y translate
+	rx ry scale
+	0 0 1 0 360 arc
+	setmatrix
+} bind def
+
+/endpage { showpage } bind def
+/showpage { } def
+
+/layercolorseq
+	[	% layer color sequence - darkest to lightest
+		[0 0 0]
+		[.2 .8 .8]
+		[.4 .8 .8]
+		[.6 .8 .8]
+		[.8 .8 .8]
+	]
+def
+
+/layerlen layercolorseq length def
+
+/setlayer {/maxlayer exch def /curlayer exch def
+	layercolorseq curlayer 1 sub layerlen mod get
+	aload pop sethsbcolor
+	/nodecolor {nopcolor} def
+	/edgecolor {nopcolor} def
+	/graphcolor {nopcolor} def
+} bind def
+
+/onlayer { curlayer ne {invis} if } def
+
+/onlayers {
+	/myupper exch def
+	/mylower exch def
+	curlayer mylower lt
+	curlayer myupper gt
+	or
+	{invis} if
+} def
+
+/curlayer 0 def
+
+%%EndResource
+%%EndProlog
+%%BeginSetup
+14 default-font-family set_font
+% /arrowlength 10 def
+% /arrowwidth 5 def
+
+% make sure pdfmark is harmless for PS-interpreters other than Distiller
+/pdfmark where {pop} {userdict /pdfmark /cleartomark load put} ifelse
+% make '<<' and '>>' safe on PS Level 1 devices
+/languagelevel where {pop languagelevel}{1} ifelse
+2 lt {
+    userdict (<<) cvn ([) cvn load put
+    userdict (>>) cvn ([) cvn load put
+} if
+
+%%EndSetup
+setupLatin1
+%%Page: 1 1
+%%PageBoundingBox: 36 36 966 368
+%%PageOrientation: Portrait
+0 0 1 beginpage
+gsave
+36 36 930 332 boxprim clip newpath
+1 1 set_scale 0 rotate 40 40 translate
+% Fonaments de les matemàtiques
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 333.5 324 moveto
+141.5 324 lineto
+141.5 288 lineto
+333.5 288 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+149.5 302.3 moveto 176 (Fonaments de les matem�tiques) alignedtext
+grestore
+% Matemàtica discreta
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 301.5 252 moveto
+173.5 252 lineto
+173.5 216 lineto
+301.5 216 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+181.5 230.3 moveto 112 (Matem�tica discreta) alignedtext
+grestore
+% Fonaments de les matemàtiques->Matemàtica discreta
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 237.5 287.8314 moveto
+237.5 280.131 237.5 270.9743 237.5 262.4166 curveto
+stroke
+0 0 0 edgecolor
+newpath 241.0001 262.4132 moveto
+237.5 252.4133 lineto
+234.0001 262.4133 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 241.0001 262.4132 moveto
+237.5 252.4133 lineto
+234.0001 262.4133 lineto
+closepath stroke
+grestore
+% Estructures algebraiques
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 169 180 moveto
+20 180 lineto
+20 144 lineto
+169 144 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+28 158.3 moveto 133 (Estructures algebraiques) alignedtext
+grestore
+% Fonaments de les matemàtiques->Estructures algebraiques
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 209.3965 287.9033 moveto
+195.2047 278.1165 178.1497 265.324 164.5 252 curveto
+144.5678 232.5434 125.3984 207.2841 112.1754 188.4796 curveto
+stroke
+0 0 0 edgecolor
+newpath 114.9303 186.3101 moveto
+106.361 180.0798 lineto
+109.1747 190.2941 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 114.9303 186.3101 moveto
+106.361 180.0798 lineto
+109.1747 190.2941 lineto
+closepath stroke
+grestore
+% Topologia
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 439.5 108 moveto
+367.5 108 lineto
+367.5 72 lineto
+439.5 72 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+375.5 86.3 moveto 56 (Topologia) alignedtext
+grestore
+% Fonaments de les matemàtiques->Topologia
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 267.4844 287.9532 moveto
+281.6532 278.4507 298.1294 265.8923 310.5 252 curveto
+347.5987 210.3377 376.8316 151.5194 392.0188 117.4125 curveto
+stroke
+0 0 0 edgecolor
+newpath 395.3021 118.6396 moveto
+396.0998 108.0748 lineto
+388.888 115.8363 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 395.3021 118.6396 moveto
+396.0998 108.0748 lineto
+388.888 115.8363 lineto
+closepath stroke
+grestore
+% Funcions de variable real
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 661.5 324 moveto
+507.5 324 lineto
+507.5 288 lineto
+661.5 288 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+515.5 302.3 moveto 138 (Funcions de variable real) alignedtext
+grestore
+% Anàlisi matemàtica
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 529 252 moveto
+406 252 lineto
+406 216 lineto
+529 216 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+414 230.3 moveto 107 (An�lisi matem�tica) alignedtext
+grestore
+% Funcions de variable real->Anàlisi matemàtica
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 554.976 287.8314 moveto
+540.0109 278.6221 521.6614 267.3301 505.6397 257.4706 curveto
+stroke
+0 0 0 edgecolor
+newpath 507.3655 254.423 moveto
+497.0146 252.1628 lineto
+503.6968 260.3847 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 507.3655 254.423 moveto
+497.0146 252.1628 lineto
+503.6968 260.3847 lineto
+closepath stroke
+grestore
+% Càlcul en diverses variables i optimització
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 795.5 252 moveto
+547.5 252 lineto
+547.5 216 lineto
+795.5 216 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+555.5 230.3 moveto 232 (C�lcul en diverses variables i optimitzaci�) alignedtext
+grestore
+% Funcions de variable real->Càlcul en diverses variables i optimització
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 606.4538 287.8314 moveto
+617.1695 278.9632 630.2189 268.1637 641.809 258.5718 curveto
+stroke
+0 0 0 edgecolor
+newpath 644.0808 261.2349 moveto
+649.5533 252.1628 lineto
+639.6178 255.8422 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 644.0808 261.2349 moveto
+649.5533 252.1628 lineto
+639.6178 255.8422 lineto
+closepath stroke
+grestore
+% Àlgebra lineal
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 804.5 324 moveto
+710.5 324 lineto
+710.5 288 lineto
+804.5 288 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+718.5 302.3 moveto 78 (�lgebra lineal) alignedtext
+grestore
+% Àlgebra lineal->Càlcul en diverses variables i optimització
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 735.7986 287.8314 moveto
+725.3079 279.0485 712.5545 268.3712 701.1806 258.8489 curveto
+stroke
+0 0 0 edgecolor
+newpath 703.1089 255.8986 moveto
+693.1945 252.1628 lineto
+698.6153 261.2659 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 703.1089 255.8986 moveto
+693.1945 252.1628 lineto
+698.6153 261.2659 lineto
+closepath stroke
+grestore
+% Geometria lineal
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 921.5 252 moveto
+813.5 252 lineto
+813.5 216 lineto
+921.5 216 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+821.5 230.3 moveto 92 (Geometria lineal) alignedtext
+grestore
+% Àlgebra lineal->Geometria lineal
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 785.2576 287.8314 moveto
+799.197 278.7074 816.2598 267.539 831.2231 257.7449 curveto
+stroke
+0 0 0 edgecolor
+newpath 833.301 260.5679 moveto
+839.7512 252.1628 lineto
+829.4674 254.711 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 833.301 260.5679 moveto
+839.7512 252.1628 lineto
+829.4674 254.711 lineto
+closepath stroke
+grestore
+% Equacions diferencials i modelització I
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 827.5 108 moveto
+597.5 108 lineto
+597.5 72 lineto
+827.5 72 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+605.5 86.3 moveto 214 (Equacions diferencials i modelitzaci� I) alignedtext
+grestore
+% Anàlisi matemàtica->Equacions diferencials i modelització I
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 498.5294 215.7623 moveto
+542.8949 189.6863 624.4496 141.752 673.0481 113.1881 curveto
+stroke
+0 0 0 edgecolor
+newpath 674.8749 116.1742 moveto
+681.7225 108.0896 lineto
+671.3279 110.1394 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 674.8749 116.1742 moveto
+681.7225 108.0896 lineto
+671.3279 110.1394 lineto
+closepath stroke
+grestore
+% Probabilitat i modelització estocàstica
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 349.5 108 moveto
+125.5 108 lineto
+125.5 72 lineto
+349.5 72 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+133.5 86.3 moveto 208 (Probabilitat i modelitzaci� estoc�stica) alignedtext
+grestore
+% Anàlisi matemàtica->Probabilitat i modelització estocàstica
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 438.3703 215.7623 moveto
+396.8939 189.7945 320.7943 142.1495 275.106 113.5446 curveto
+stroke
+0 0 0 edgecolor
+newpath 276.7263 110.4297 moveto
+266.3931 108.0896 lineto
+273.0117 116.3628 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 276.7263 110.4297 moveto
+266.3931 108.0896 lineto
+273.0117 116.3628 lineto
+closepath stroke
+grestore
+% Anàlisi complexa i de Fourier
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 483.5 36 moveto
+303.5 36 lineto
+303.5 0 lineto
+483.5 0 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+311.5 14.3 moveto 164 (An�lisi complexa i de Fourier) alignedtext
+grestore
+% Anàlisi matemàtica->Anàlisi complexa i de Fourier
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 469.1493 215.9008 moveto
+471.1927 184.7644 471.9275 119.8056 448.5 72 curveto
+443.1712 61.1262 434.7374 51.1925 426.0595 42.8929 curveto
+stroke
+0 0 0 edgecolor
+newpath 428.2169 40.1258 moveto
+418.4426 36.0375 lineto
+423.534 45.3288 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 428.2169 40.1258 moveto
+418.4426 36.0375 lineto
+423.534 45.3288 lineto
+closepath stroke
+grestore
+% Matemàtica discreta->Probabilitat i modelització estocàstica
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 237.5 215.7623 moveto
+237.5 191.201 237.5 147.2474 237.5 118.3541 curveto
+stroke
+0 0 0 edgecolor
+newpath 241.0001 118.0896 moveto
+237.5 108.0896 lineto
+234.0001 118.0897 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 241.0001 118.0896 moveto
+237.5 108.0896 lineto
+234.0001 118.0897 lineto
+closepath stroke
+grestore
+% Mètodes numèrics
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 817.5 180 moveto
+699.5 180 lineto
+699.5 144 lineto
+817.5 144 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+707.5 158.3 moveto 102 (M�todes num�rics) alignedtext
+grestore
+% Càlcul en diverses variables i optimització->Mètodes numèrics
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 693.4538 215.8314 moveto
+704.1695 206.9632 717.2189 196.1637 728.809 186.5718 curveto
+stroke
+0 0 0 edgecolor
+newpath 731.0808 189.2349 moveto
+736.5533 180.1628 lineto
+726.6178 183.8422 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 731.0808 189.2349 moveto
+736.5533 180.1628 lineto
+726.6178 183.8422 lineto
+closepath stroke
+grestore
+% Càlcul en diverses variables i optimització->Equacions diferencials i modelització I
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 674.3523 215.8294 moveto
+677.4614 197.4779 683.011 168.4289 690.5 144 curveto
+693.1871 135.2348 696.7262 125.9133 700.1783 117.526 curveto
+stroke
+0 0 0 edgecolor
+newpath 703.4518 118.7713 moveto
+704.1344 108.1984 lineto
+697.0075 116.038 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 703.4518 118.7713 moveto
+704.1344 108.1984 lineto
+697.0075 116.038 lineto
+closepath stroke
+grestore
+% Geometria diferencial
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 637.5 36 moveto
+501.5 36 lineto
+501.5 0 lineto
+637.5 0 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+509.5 14.3 moveto 120 (Geometria diferencial) alignedtext
+grestore
+% Càlcul en diverses variables i optimització->Geometria diferencial
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 656.1592 215.6353 moveto
+637.3526 192.1657 605.8487 149.5806 588.5 108 curveto
+580.2241 88.1647 575.3985 64.3103 572.6828 46.145 curveto
+stroke
+0 0 0 edgecolor
+newpath 576.1427 45.6126 moveto
+571.3175 36.1803 lineto
+569.2075 46.5629 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 576.1427 45.6126 moveto
+571.3175 36.1803 lineto
+569.2075 46.5629 lineto
+closepath stroke
+grestore
+% Teoria de Galois
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 107 108 moveto
+0 108 lineto
+0 72 lineto
+107 72 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+8 86.3 moveto 91 (Teoria de Galois) alignedtext
+grestore
+% Estructures algebraiques->Teoria de Galois
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 84.154 143.8314 moveto
+79.5763 135.7925 74.0948 126.1666 69.0412 117.2918 curveto
+stroke
+0 0 0 edgecolor
+newpath 71.9752 115.3712 moveto
+63.9853 108.4133 lineto
+65.8923 118.8351 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 71.9752 115.3712 moveto
+63.9853 108.4133 lineto
+65.8923 118.8351 lineto
+closepath stroke
+grestore
+% Topologia->Anàlisi complexa i de Fourier
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 400.9766 71.8314 moveto
+399.9071 64.131 398.6353 54.9743 397.4468 46.4166 curveto
+stroke
+0 0 0 edgecolor
+newpath 400.8999 45.8367 moveto
+396.0574 36.4133 lineto
+393.9664 46.7997 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 400.8999 45.8367 moveto
+396.0574 36.4133 lineto
+393.9664 46.7997 lineto
+closepath stroke
+grestore
+% Topologia->Geometria diferencial
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 439.5195 74.3771 moveto
+462.7043 64.321 493.1814 51.102 518.7964 39.9919 curveto
+stroke
+0 0 0 edgecolor
+newpath 520.2095 43.1941 moveto
+527.991 36.0039 lineto
+517.424 36.7722 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 520.2095 43.1941 moveto
+527.991 36.0039 lineto
+517.424 36.7722 lineto
+closepath stroke
+grestore
+% Equacions diferencials i modelització II
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 889.5 36 moveto
+655.5 36 lineto
+655.5 0 lineto
+889.5 0 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+663.5 14.3 moveto 218 (Equacions diferencials i modelitzaci� II) alignedtext
+grestore
+% Equacions diferencials i modelització I->Equacions diferencials i modelització II
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 727.6405 71.8314 moveto
+734.6217 63.454 743.0391 53.3531 750.6876 44.1749 curveto
+stroke
+0 0 0 edgecolor
+newpath 753.4425 46.3362 moveto
+757.1556 36.4133 lineto
+748.0649 41.8548 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 753.4425 46.3362 moveto
+757.1556 36.4133 lineto
+748.0649 41.8548 lineto
+closepath stroke
+grestore
+% Estadística
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 275 36 moveto
+200 36 lineto
+200 0 lineto
+275 0 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+208 14.3 moveto 59 (Estad�stica) alignedtext
+grestore
+% Probabilitat i modelització estocàstica->Estadística
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 237.5 71.8314 moveto
+237.5 64.131 237.5 54.9743 237.5 46.4166 curveto
+stroke
+0 0 0 edgecolor
+newpath 241.0001 46.4132 moveto
+237.5 36.4133 lineto
+234.0001 46.4133 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 241.0001 46.4132 moveto
+237.5 36.4133 lineto
+234.0001 46.4133 lineto
+closepath stroke
+grestore
+endpage
+showpage
+grestore
+%%PageTrailer
+%%EndPage: 1
+%%Trailer
+%%Pages: 1
+%%BoundingBox: 36 36 966 368
+end
+restore
+%%EOF
