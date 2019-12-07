@@ -20,7 +20,10 @@ myrefFix:
 	make pdf
 
 index:
-	makeindex -q ${filename} # Make it so it outputs to /BackMatter
+	makeindex -q -s BackMatter/indexstyle.ist ${filename}.idx
+
+glossary:
+	makeindex -q -s BackMatter/glossarystyle.gst -o ${filename}.gls ${filename}.glo
 
 bibliography:
 	biber ${filename}
@@ -29,7 +32,9 @@ main:
 	make myrefOff
 	make bibliography
 	make draft
+	make glossary
 	make index
+	make pdf
 	make pdf
 
 pdfPortada:

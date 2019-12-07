@@ -1,15 +1,15 @@
-\documentclass[../../Main.tex]{subfiles}
+\documentclass[../Apunts.tex]{subfiles}
 
 \begin{document}
-\assignatura{Anàlisi complexa i de Fourier}
+\part{Anàlisi complexa i de Fourier}
 \chapter{Els nombres complexos}
-\section{Estructura de \ensuremath{\mathbb{C}}}
+\section{Estructura dels nombres complexos}
 	\subsection{Cos de nombres complexos}
 	\begin{notation}[Conjunt de nombres complexos]
 		\label{notation:cos de nombres complexos}
 		Denotarem
-		\[\mathbb{C}=\{a+b\iu\mid a,b\in\mathbb{R}\}.\]
-%		\[\mathbb{C}=\{\alpha+\beta\iu\mid\alpha,\beta\in\mathbb{R}\}.\]
+		\[\field{C}=\{a+b\iu\mid a,b\in\field{R}\}.\]
+%		\[\field{C}=\{\alpha+\beta\iu\mid\alpha,\beta\in\field{R}\}.\]
 	\end{notation}
 	\begin{definition}[Suma de nombres complexos]
 		\labelname{suma de nombres complexos}\label{def:suma de nombres complexos}
@@ -19,7 +19,7 @@
 	\begin{observation}
 		\label{obs:els nombres complexos estan tancats per la suma}
 		Siguin \(a+b\iu\) i \(c+d\iu\) dos nombres complexos. Aleshores
-		\[(a+b\iu+c+d\iu)\in\mathbb{C}\]
+		\[(a+b\iu+c+d\iu)\in\field{C}\]
 	\end{observation}
 	\begin{proposition}
 		\label{prop:els nombres complexos commuten per la suma}
@@ -74,7 +74,7 @@
 	\begin{observation}
 		\label{obs:els nombres complexos estan tancats pel producte}
 		Siguin \(a+b\iu\) i \(c+d\iu\) dos nombres complexos. Aleshores
-		\[(a+b\iu)(c+d\iu)\in\mathbb{C}.\]
+		\[(a+b\iu)(c+d\iu)\in\field{C}.\]
 	\end{observation}
 	\begin{proposition}
 		\label{prop:els nombres complexos commuten pel producte}
@@ -145,10 +145,8 @@
 	\end{proposition}
 	\begin{corollary}
 		\label{cor:els complexos formen un cos}
-		El conjunt \(\mathbb{C}\) amb la suma \(+\) i el producte \(\cdot\) és un cos.
+		El conjunt \(\field{C}\) amb la suma \(+\) i el producte \(\cdot\) és un cos.
 	\end{corollary}
-	
-	
 	\subsection{Propietats de nombres complexos}
 	\begin{definition}[Conjugat d'un nombre complex]
 		\labelname{conjugat d'un nombre complex}\label{def:conjugat d'un nombre complex}
@@ -161,7 +159,7 @@
 		Sigui \(z\) un nombre complex. Aleshores
 		\[\conjugat{\conjugat{z}}=z.\]
 		\begin{proof}
-			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\mathbb{R}\) tals que \(z=a+b\iu\). Aleshores per la definició de \myref{def:conjugat d'un nombre complex} tenim que
+			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\field{R}\) tals que \(z=a+b\iu\). Aleshores per la definició de \myref{def:conjugat d'un nombre complex} tenim que
 			\begin{align*}
 				\conjugat{\conjugat{z}}&=\conjugat{\conjugat{a+b\iu}} \\
 				&=\conjugat{a-b\iu} \\
@@ -174,7 +172,7 @@
 		Siguin \(z\) i \(w\) dos nombres complexos. Aleshores
 		\[\conjugat{z+w}=\conjugat{z}+\conjugat{w}.\]
 		\begin{proof}
-			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\), \(c\), \(d\in\mathbb{R}\) tals que
+			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\), \(c\), \(d\in\field{R}\) tals que
 			\[z=a+b\iu\qquad\text{i}\qquad w=c+d\iu.\]
 			Aleshores per la definició de \myref{def:suma de nombres complexos} i la definició de \myref{def:conjugat d'un nombre complex} trobem que
 			\begin{align*}
@@ -191,7 +189,7 @@
 		Siguin \(z\) i \(w\) dos nombres complexos. Aleshores
 		\[\conjugat{zw}=\conjugat{z}\,\conjugat{w}.\]
 		\begin{proof}
-			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\), \(c\), \(d\in\mathbb{R}\) tals que
+			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\), \(c\), \(d\in\field{R}\) tals que
 			\[z=a+b\iu\qquad\text{i}\qquad w=c+d\iu.\]
 			Aleshores per la definició de \myref{def:producte de nombres complexos} i la definició de \myref{def:conjugat d'un nombre complex} trobem que
 			\begin{align*}
@@ -218,11 +216,11 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:un nombre complex és igual al seu conjugat si i només si és un real}
-		Sigui \(z\) un nombre complex. Aleshores \(z=\conjugat{z}\) si i només si \(z\in\mathbb{R}\).
+		Sigui \(z\) un nombre complex. Aleshores \(z=\conjugat{z}\) si i només si \(z\in\field{R}\).
 		\begin{proof}
-			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\mathbb{R}\) tals que \(z=a+b\iu\). Aleshores si tenim \(z=\conjugat{z}\), per la definició de \myref{def:conjugat d'un nombre complex} trobem que
+			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\field{R}\) tals que \(z=a+b\iu\). Aleshores si tenim \(z=\conjugat{z}\), per la definició de \myref{def:conjugat d'un nombre complex} trobem que
 			\[a+b\iu=a-b\iu,\]
-			que és equivalent a \(b=-b\), i per tant ha de ser \(b=0\) i trobem que \(z=a\in\mathbb{R}\).
+			que és equivalent a \(b=-b\), i per tant ha de ser \(b=0\) i trobem que \(z=a\in\field{R}\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
@@ -230,7 +228,7 @@
 		Sigui \(z\neq0\) un nombre complex. Aleshores
 		\[z^{-1}=\frac{\conjugat{z}}{z\conjugat{z}}.\]
 		\begin{proof}
-			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\mathbb{R}\) tals que \(z=a+b\iu\). Aleshores tenim que
+			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\field{R}\) tals que \(z=a+b\iu\). Aleshores tenim que
 			\begin{align*}
 				z\frac{\conjugat{z}}{z\conjugat{z}}&=\frac{z\conjugat{z}}{z\conjugat{z}} \\
 				&=\frac{a^{2}+b^{2}}{a^{2}+b^{2}}=1 \tag{\ref{prop:el producte d'un nombre complex pel seu conjugat és la suma dels quadrats de la seva part real i imaginaria}}
@@ -255,7 +253,7 @@
 		Sigui \(z\) un nombre complex. Aleshores
 		\[\Re(z)=\frac{z+\conjugat{z}}{2}\qquad\text{i}\qquad\Im(z)=\frac{z-\conjugat{z}}{2\iu}.\]
 		\begin{proof}
-			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\mathbb{R}\) tals que \(z=a+b\iu\). Aleshores tenim que
+			Per la definició de \myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\field{R}\) tals que \(z=a+b\iu\). Aleshores tenim que
 			\[\frac{z+\conjugat{z}}{2}=\frac{a+b\iu+a-b\iu}{2}=\frac{2a}{2}=a=\Re(z),\]
 			i
 			\[\frac{z-\conjugat{z}}{2\iu}=\frac{a+b\iu-a+b\iu}{2\iu}=\frac{2b\iu}{2\iu}=b=\Im(z),\]
@@ -263,20 +261,51 @@
 		\end{proof}
 	\end{proposition}
 	\subsection{Topologia de nombres complexos}
-	\begin{definition}[Norma d'un nombre complex]
-		\labelname{norma d'un nombre complex}\label{def:norma d'un nombre complex}
-		Sigui \(z=a+b\iu\) un nombre complex. Aleshores definim la seva norma com
-		\[\norma{z}=\sqrt{a^{2}+b^{2}}.\]
+	\begin{definition}[Mòdul d'un nombre complex]
+		\labelname{mòdul d'un nombre complex}\label{def:mòdul d'un nombre complex}
+		Sigui \(z=a+b\iu\) un nombre complex. Aleshores definim el seu mòdul com
+		\[\modul{z}=\sqrt{a^{2}+b^{2}}.\]
 	\end{definition}
-	\begin{proposition}[Desigualtat triangular]
-		\href{http://chistemat.es/wp-content/uploads/2013/11/contra-la-desigualdad.png}{Prova visual}.
-	\end{proposition}
+	\begin{observation}
+		\label{obs:les parts real i imaginàries d'un complex són menors que el seu mòdul}
+		\label{obs:la part real d'un complex és menor que el seu mòdul}
+		\label{obs:la part imaginària d'un complex és menor que el seu mòdul}
+		\(\Re(z)\leq\modul{z}\), \(\Im(z)\leq\modul{z}\).
+	\end{observation}
 	\begin{proposition}
-		\label{prop:la nomra d'un nombre complex és l'arrel del nombre pel seu conjugat}
+		\label{prop:el mòdul d'un nombre complex és l'arrel del nombre pel seu conjugat}
 		Sigui \(z\) un nombre complex. Aleshores es satisfà
-		\[\norma{z}=\sqrt{z\conjugat{z}}.\]
+		\[\modul{z}=\sqrt{z\conjugat{z}}.\]
 		\begin{proof}
-			%TODO
+			Per la definició de \myref{def:nombre complex} tenim que \(z=a+b\iu\), i per la proposició \myref{prop:el producte d'un nombre complex pel seu conjugat és la suma dels quadrats de la seva part real i imaginaria} trobem que
+			\begin{align*}
+				z\conjugat{z}&=a^{2}+b^{2} \\
+				&=\big(\sqrt{a^{2}+b^{2}}\big)^{2}=\modul{z}^{2}, \tag{\ref{def:mòdul d'un nombre complex}}
+			\end{align*}
+			i per tant 
+			\[\modul{z}=\sqrt{z\conjugat{z}}.\qedhere\]
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}[Desigualtat triangular]
+		\labelname{desigualtat triangular}\label{prop:desigualta triangular nombres complexos}
+		Siguin \(z\) i \(w\) dos nombres complexos. Aleshores
+		\[\modul{z+w}\leq\modul{z}+\modul{w}.\]
+		\begin{proof}
+			Per la definició de \myref{def:mòdul d'un nombre complex} tenim que
+			\begin{align*}
+				\modul{z+w}^{2}&=(z+w)\conjugat{(z+w)} \\
+				&=(z+w)(\conjugat{z}+\conjugat{w}) \tag{\ref{prop:el conjugat de la suma és la suma de conjugats}} \\
+				&=z\conjugat{z}+z\conjugat{w}+\conjugat{z}w+w\conjugat{w} \\
+				&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{z}w+z\conjugat{w} \tag{\ref{prop:el mòdul d'un nombre complex és l'arrel del nombre pel seu conjugat}} \\
+				&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{\conjugat{\conjugat{z}w}}+z\conjugat{w} \tag{\ref{prop:el conjugat del conjugat d'un nombre complex és ell mateix}} \\
+				&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{\conjugat{\conjugat{z}}\,\conjugat{w}}+z\conjugat{w} \tag{\ref{prop:el conjugat del producte és el producte de conjugats}} \\
+				&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{z\conjugat{w}}+z\conjugat{w}\tag{\ref{prop:el conjugat del conjugat d'un nombre complex és ell mateix}} \\
+				&=\modul{z}^{2}+\modul{w}^{2}+2\Re(zw), \tag{\ref{prop:fórmula per la part real d'un nombre complex}} \\
+				&\leq\modul{z}^{2}+\modul{w}^{2}+2\modul{zw} \tag{\ref{obs:la part real d'un complex és menor que el seu mòdul}} \\
+				&\leq\modul{z}^{2}+\modul{w}^{2}+2\modul{z}\modul{w} \\
+				&=(\modul{z}+\modul{w})^{2}
+				%TODO
+			\end{align*}
 		\end{proof}
 	\end{proposition}
 	

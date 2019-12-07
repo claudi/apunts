@@ -1,7 +1,7 @@
-\documentclass[../../Main.tex]{subfiles}
+\documentclass[../Apunts.tex]{subfiles}
 
 \begin{document}
-\assignatura{Geometria diferencial}
+\part{Geometria diferencial}
 \chapter{Corbes}
 \section{Parametritzacions i longitud}
 \begin{comment}
@@ -50,11 +50,11 @@
 	\subsection{Reparametrització d'una corba}
 	\begin{definition}[Corba]
 		\labelname{corba}\label{def:corba}
-		Siguin \(I\subseteq\mathbb{R}\) un interval i \(\alpha\colon I\longrightarrow\mathbb{R}^{n}\) una funció contínua. Aleshores direm que \(\alpha\) és una corba\index{corba} sobre \(I\).
+		Siguin \(I\subseteq\mathbb{R}\) un interval i \(\alpha\colon I\longrightarrow\mathbb{R}^{n}\) una funció contínua. Aleshores direm que \(\alpha\) és una corba sobre \(I\).
 	\end{definition}
 	\begin{example}
 		\label{ex:corba que uniex dos punts}
-		Volem veure que donats dos punts \(a\) i \(b\) de \(\mathbb{R}^{n}\) existeix una corba que els uneix.\index{corba!que uneix dos punts}
+		Volem veure que donats dos punts \(a\) i \(b\) de \(\mathbb{R}^{n}\) existeix una corba que els uneix.
 		\begin{solution}
 			Observem que la funció contínua % Veure que és contínua per ser un polinomi
 			\begin{align*}
@@ -66,7 +66,7 @@
 	\end{example}
 	\begin{definition}[Corba regular]
 		\labelname{corba regular}\label{def:corba regular}
-		Sigui \(\alpha\) una corba diferenciable sobre \(I\) tal que per a tot \(t\in I\) es satisfà \(\alpha'(t)\neq\vec{0}\). Aleshores direm que \(\alpha\) és una corba regular\index{corba!regular}.
+		Sigui \(\alpha\) una corba diferenciable sobre \(I\) tal que per a tot \(t\in I\) es satisfà \(\alpha'(t)\neq\vec{0}\). Aleshores direm que \(\alpha\) és regular.
 	\end{definition}
 	\begin{definition}[Reparametrització]
 		\labelname{reparametrització d'una corba}\label{def:reparametrització d'una corba}
@@ -76,10 +76,9 @@
 			\beta\colon J&\longrightarrow\mathbb{R}^{n} \\
 			t&\longmapsto(\alpha\circ h)(t)
 		\end{align*}
-		és una reparametrització\index{reparametrització d'una corba}\index{corba!reparametrització} en \(J\) de \(\alpha\) i que \(h\) és el canvi de paràmetre\index{canvi de paràmetre}.
+		és una reparametrització en \(J\) de \(\alpha\) i que \(h\) és el canvi de paràmetre.
 	\end{definition}
 	\begin{proposition}
-		\label{prop:els canvis de paràmetre conserven regularitat}
 		Sigui \(\beta\) una reparametrització en \(J\) d'una corba regular \(\alpha\) sobre \(I\). Aleshores \(\beta\) és una corba regular.
 		\begin{proof}
 			Per la definició de \myref{def:reparametrització d'una corba} trobem que existeix un canvi de paràmetre \(h:J\longrightarrow I\) tal que \(\beta=(\alpha\circ h)(t)\). Aleshores tenim que
@@ -100,10 +99,10 @@
 		\labelname{longitud d'una corba}\label{def:longitud d'una corba}
 		Siguin \(\alpha\) una corba sobre \(I\) i \(a\), \(b\) dos punts de \(I\). Aleshores definim
 		\[\Long_{a}^{b}(\alpha)=\int_{a}^{b}\norm{\alpha'(t)}\diff t\]
-		com la longitud\index{longitud!d'una corba} de \(\alpha\) entre \(a\) i \(b\).
+		com la longitud de \(\alpha\) entre \(a\) i \(b\).
 	\end{definition}
 	\begin{example}
-		\label{ex:longitud d'una corba}\index{contacte!d'ordre \ensuremath{r}}
+		\label{ex:longitud d'una corba}
 		Volem calcular la longitud de la corba
 		\[\alpha(t)=(\cos(t),\sin(t),t)\]
 		entre \(0\) i \(x\) per a tot \(x\) positiu.
@@ -166,7 +165,7 @@
 			\funciolongituddarc_{\alpha}(a)(t)\colon I&\longrightarrow\mathbb{R}\\
 			t&\longmapsto\int_{a}^{t}\norm{\alpha'(s)}\diff s
 		\end{align*}
-		és la funció longitud d'arc\index{longitud!d'arc}\index{funció!longitud d'arc} de \(\alpha\) amb origen en \(a\).
+		és la funció longitud d'arc de \(\alpha\) amb origen en \(a\).
 %		\ref{def:diferencial}
 	\end{definition}
 	\begin{observation}
@@ -196,7 +195,7 @@
 		Sigui \(\alpha\) una corba regular sobre \(I\). Aleshores existeix una reparametrització \(\beta\) de \(\alpha\) tal que per a tot \(t\in I\)
 		\[\norm{\beta'(t)}=1.\]
 		\begin{proof}
-			Per la proposició \ref{prop:la funció longitud arc d'una corba regular és un difeomorfisme} tenim que per a tot \(a\in I\) la funció \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme, i per la definició de \myref{def:difeomorfisme} trobem que la funció \(\funciolongituddarc_{\alpha}(a)\) és bijectiva, i pel Teorema \myref{thm:bijectiva iff invertible} trobem que \(\funciolongituddarc_{\alpha}(a)\) és invertible i per la definició d'\myref{def:aplicació invertible} tenim que existeix una funció \(t_{a}\) tal que \(t_{a}\) sigui la inversa de \(\funciolongituddarc_{\alpha}(a)\). Considerem
+			Per la proposició \myref{prop:la funció longitud arc d'una corba regular és un difeomorfisme} tenim que per a tot \(a\in I\) la funció \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme, i per la definició de \myref{def:difeomorfisme} trobem que la funció \(\funciolongituddarc_{\alpha}(a)\) és bijectiva, i pel Teorema \myref{thm:bijectiva iff invertible} trobem que \(\funciolongituddarc_{\alpha}(a)\) és invertible i per la definició d'\myref{def:aplicació invertible} tenim que existeix una funció \(t_{a}\) tal que \(t_{a}\) sigui la inversa de \(\funciolongituddarc_{\alpha}(a)\). Considerem
 			\[\beta(s)=\alpha(t(s)).\]
 			Aleshores tenim que
 			\begin{align*} % És positiva pel corol·lari del teorema de la funció inversa?
@@ -211,7 +210,7 @@
 		\labelname{corba parametritzada per l'arc}\label{def:corba parametritzada per l'arc}
 		Sigui \(\alpha\) una corba regular sobre \(I\) tal que per a tot \(s\in I\) es satisfà
 		\[\norm{\alpha'(s)}=1.\]
-		Aleshores direm que \(\alpha\) està parametritzada per l'arc\index{corba!parametritzada per l'arc}.
+		Aleshores direm que \(\alpha\) està parametritzada per l'arc.
 	\end{definition}
 	\begin{example} % Veure cas general amb Teorema de la funció implícita
 		\label{ex:reparametrització per l'arc del cercle de radi R}
@@ -266,7 +265,7 @@
 		\labelname{contacte}\label{def:contacte entre dues corbes parametritzades per l'arc}
 		Siguin \(\alpha\) i \(\beta\) dues corbes en \(I\) parametritzades per l'arc i \(s_{0}\in I\) un punt tals que existeix un \(r\in\mathbb{N}\) satisfent
 		\[\lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{p}}=0\quad\text{i}\quad\lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{r+1}}\neq0\]
-		per a tot \(p\leq r\). Aleshores direm que \(\alpha\) i \(\beta\) tenen contacte\index{contacte!entre dues corbes} d'ordre \(r\) en \(s_{0}\).
+		per a tot \(p\leq r\). Aleshores direm que \(\alpha\) i \(\beta\) tenen contacte d'ordre \(r\) en \(s_{0}\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:contacte r és equivalent a tenir les r primeres derivades iguals}
@@ -285,28 +284,28 @@
 			\end{equation}
 			Prenem \(n\leq r\), i per la definició de \myref{def:derivada} trobem que
 			\begin{align*}
-			\alpha^{(n)}(s_{0})-\beta^{(n)}(s_{0})&=\lim_{s\to s_{0}}\left(\frac{\alpha^{(n-1)}(s_{0})-\alpha^{(n-1)}(s)}{s-s_{0}}-\frac{\beta^{(n-1)}(s_{0})-\beta^{(n-1)}(s)}{s-s_{0}}\right) \\
-			&=\lim_{s\to s_{0}}\left(\frac{\alpha^{(n-1)}(s_{0})-\alpha^{(n-1)}(s)-\beta^{(n-1)}(s_{0})+\beta^{(n-1)}(s)}{s-s_{0}}\right) \\
-			&=\lim_{s\to s_{0}}\left(\frac{\alpha^{(n-1)}(s_{0})-\beta^{(n-1)}(s_{0})}{s-s_{0}}-\frac{\alpha^{(n-1)}(s)-\beta^{(n-1)}(s)}{s-s_{0}}\right)
+			\alpha^{(n)}(s_{0})-\beta^{(n)}(s_{0})&=\lim_{s\to s_{0}}\bigg(\frac{\alpha^{(n-1)}(s_{0})-\alpha^{(n-1)}(s)}{s-s_{0}}-\frac{\beta^{(n-1)}(s_{0})-\beta^{(n-1)}(s)}{s-s_{0}}\bigg) \\
+			&=\lim_{s\to s_{0}}\bigg(\frac{\alpha^{(n-1)}(s_{0})-\alpha^{(n-1)}(s)-\beta^{(n-1)}(s_{0})+\beta^{(n-1)}(s)}{s-s_{0}}\bigg) \\
+			&=\lim_{s\to s_{0}}\bigg(\frac{\alpha^{(n-1)}(s_{0})-\beta^{(n-1)}(s_{0})}{s-s_{0}}-\frac{\alpha^{(n-1)}(s)-\beta^{(n-1)}(s)}{s-s_{0}}\bigg)
 			\intertext{Ara bé, tenim que \(\alpha^{(n-1)}(s_{0})-\beta^{(n-1)}(s_{0})=0\), i per tant}
 			&=\lim_{s\to s_{0}}\frac{\beta^{(n-1)}(s)-\alpha^{(n-1)}(s)}{s-s_{0}}=0,
 			\end{align*}
-			 i tenim que
-			 \[\lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{p}}=0.\]
-			 
-			 Considerem ara
-			 \[\alpha^{(r+1)}(s_{0})\neq\beta^{(r+1)}(s_{0}).\]
-			 Tenim que
-			 \[\alpha^{(r+1)}(s_{0})-\beta^{(r+1)}(s_{0})\neq0.\]
-			 Ara bé, per la definició de \myref{def:derivada} trobem que
-			 \begin{align*}
-				 \alpha^{(r+1)}(s_{0})-\beta^{(r+1)}(s_{0})&=\lim_{s\to s_{0}}\left(\frac{\alpha^{(r)}(s_{0})-\alpha^{(r)}(s)}{s-s_{0}}-\frac{\beta^{(r)}(s_{0})-\beta^{(r)}(s)}{s-s_{0}}\right) \\
+			i tenim que
+			\[\lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{p}}=0.\]
+			
+			Considerem ara
+			\[\alpha^{(r+1)}(s_{0})\neq\beta^{(r+1)}(s_{0}).\]
+			Tenim que
+			\[\alpha^{(r+1)}(s_{0})-\beta^{(r+1)}(s_{0})\neq0.\]
+			Ara bé, per la definició de \myref{def:derivada} trobem que
+			\begin{align*}
+				\alpha^{(r+1)}(s_{0})-\beta^{(r+1)}(s_{0})&=\lim_{s\to s_{0}}\left(\frac{\alpha^{(r)}(s_{0})-\alpha^{(r)}(s)}{s-s_{0}}-\frac{\beta^{(r)}(s_{0})-\beta^{(r)}(s)}{s-s_{0}}\right) \\
 				 &=\lim_{s\to s_{0}}\frac{\alpha^{(r)}(s_{0})-\alpha^{(r)}(s)-\beta^{(r)}(s_{0})+\beta^{(r)}(s)}{s-s_{0}} \\
 				 &=\lim_{s\to s_{0}}\frac{\beta^{(r)}(s)-\alpha^{(r)}(s)}{s-s_{0}}\neq0 \tag{\ref{prop:contacte r és equivalent a tenir les r primeres derivades iguals:eq1}}
-			 \end{align*}
-			 i per tant
-			 \[\lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{r+1}}\neq0\]
-			 i per la definició de \myref{def:contacte entre dues corbes parametritzades per l'arc} tenim que \(\alpha\) i \(\beta\) tenen contacte \(r\).
+			\end{align*}
+			i per tant
+			\[\lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{r+1}}\neq0\]
+			i per la definició de \myref{def:contacte entre dues corbes parametritzades per l'arc} tenim que \(\alpha\) i \(\beta\) tenen contacte \(r\).
 		\end{proof}
 	\end{proposition}
 \section{Curvatura i torsió}
@@ -437,7 +436,7 @@
 		\label{prop:dos vectors linealment independents i el seu producte vectorial formen una base positiva}
 		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors linealment independents. Aleshores la base \((\vec{u},\vec{v},\vec{u}\prodvec\vec{v})\) és una base positiva.
 		\begin{proof}
-			Aquest enunciat té sentit per la proposició \ref{prop:el determinant de dos vectors linealment independents i el seu producte vectorial és diferent de zero}.
+			Aquest enunciat té sentit per la proposició \myref{prop:el determinant de dos vectors linealment independents i el seu producte vectorial és diferent de zero}.
 			
 			Per l'observació \myref{obs:fórmula del determinant segons el producte vectorial i el producte escalar} trobem que
 			\[\prodesc{\vec{u}\prodvec\vec{v}}{\vec{u}\prodvec\vec{v}}=\det(\vec{u},\vec{v},\vec{u}\prodvec\vec{v}),\]
@@ -511,7 +510,7 @@
 			\begin{multline*}
 				\prodesc{\alpha(t)\prodvec\beta(t)+h\alpha(t)\prodvec\beta'(t)+h\alpha'(t)\prodvec\beta(t)+h^{2}\alpha'(t)\prodvec \beta'(t)}{\vec{x}}=\\=\det(\alpha(t+h),\beta(t+h),\vec{x}),
 			\end{multline*}
-			i per la proposició \ref{prop:unicitat del producte vectorial entre dos vectors} trobem que
+			i per la proposició \myref{prop:unicitat del producte vectorial entre dos vectors} trobem que
 			\[\alpha(t+h)\prodvec\beta(t+h)=\alpha(t)\prodvec\beta(t)+h\alpha(t)\prodvec\beta'(t)+h\alpha'(t)\prodvec\beta(t)+h^{2}\alpha'(t)\prodvec \beta'(t).\]
 			Per tant per \eqref{prop:fórmula de Leibniz:eq2} tenim que
 			\begin{multline*}
@@ -627,7 +626,7 @@
 			\[\prodesc{\tangent_{\alpha}(s)}{\normal_{\alpha}(s)}.\]
 			Per la definició de \myref{def:tangent} i \myref{def:normal} trobem que
 			\begin{align*}
-				\prodesc{\tangent_{\alpha}(s)}{\normal_{\alpha}(s)}&=\prodesc[\big]{\alpha'(s)}{\frac{\alpha''(s)}{\norm{\alpha''(s)}}} \\
+				\prodesc{\tangent_{\alpha}(s)}{\normal_{\alpha}(s)}&=\prodesc[\bigg]{\alpha'(s)}{\frac{\alpha''(s)}{\norm{\alpha''(s)}}} \\
 				&=\frac{1}{\norm{\alpha''(s)}}\prodesc{\alpha'(s)}{\alpha''(s)} \tag{\ref{def:producte escalar}} \\
 				&=0. \tag{\ref{prop:la primera derivada i la segona derivada d'una corba són perpendiculars}}
 			\end{align*}
@@ -700,7 +699,7 @@
 			i per tant
 			\[\prodesc{\binormal'_{\alpha}(s)}{\binormal_{\alpha}(s)}=0.\]
 			
-			Per la proposició \ref{prop:triedre de Frenet} trobem que
+			Per la proposició \myref{prop:triedre de Frenet} trobem que
 			\[\prodesc{\binormal_{\alpha}(s)}{\tangent_{\alpha}(s)}=0,\]
 			i per tant
 			\[\frac{\diff\prodesc{\binormal_{\alpha}(s)}{\tangent_{\alpha}(s)}}{\diff s}=0,\]
@@ -1139,7 +1138,7 @@
 			Aleshores tenim que
 			\[\det(dg(x_{0}))=\det(dF(x_{0})),\]
 			i per \eqref{thm:Teorema d'estructura local de les submersions:eq:1} trobem que
-			\[\det(dg(x_{0})\neq0,\]
+			\[\det(dg(x_{0}))\neq0,\]
 			i pel \myref{thm:Funció inversa} hem acabat.
 		\end{proof}
 	\end{theorem}
@@ -1392,9 +1391,9 @@
 	\begin{notation}[Primera forma fonamental]
 		\label{notation:primera forma fonamental}
 		Denotarem
-		\[\I_{p}=\begin{bmatrix}
-			E & F \\
-			F & G
+		\[\I_{\varphi(u,v)}=\begin{bmatrix}
+			E(u,v) & F(u,v) \\
+			F(u,v) & G(u,v)
 		\end{bmatrix}=
 		\begin{bmatrix}
 			\prodesc{\varphi_{u}}{\varphi_{u}} & \prodesc{\varphi_{u}}{\varphi_{v}} \\
@@ -1414,7 +1413,7 @@
 			Aleshores tenim
 			\[E=\prodesc{\Psi_{\theta}}{\Psi_{\theta}}=1,\quad F=\prodesc{\Psi_{\theta}}{\Psi_{\varphi}}=0\quad\text{i}\quad G=\prodesc{\Psi_{\varphi}}{\Psi_{\varphi}}=\sin^{2}(\theta),\]
 			i per tant
-			\[\I_{p}=\begin{bmatrix}
+			\[\I=\begin{bmatrix}
 				1 & 0 \\
 				0 & \sin^{2}(\theta)
 			\end{bmatrix}.\qedhere\]
@@ -1453,4 +1452,161 @@
 %	\begin{proposition}
 %		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(p\in S\) un punt i \(\Psi\) amb \(\Omega\) una carta local de \(S\) en \(p\). Aleshores
 %	\end{proposition}
+
+\begin{comment}
+	Calcular curvatura de Gauss i curvatura mitjana d'un helicoide. (6.7)
+	\[\varphi(u,v)=(u\cos(v),u\sin(v),av).\]
+	Línies de curvatura (7.3)
+	Fer-ho tot per helicoides lol
+\end{comment}
+
+ %TODO Desfer-se dels _{p} en la primera forma fonamental...
+
+\chapter{Càlcul vectorial}
+\section{Formes diferencials i integració}
+	\subsection{Camps vectorials diferenciables}
+	\begin{definition}[Espai tangent a \ensuremath{\mathbb{R}^{n}}]
+		\labelname{espai tangent}
+		\label{def:espai tangent a Rn}
+		Sigui \(p\in\mathbb{R}^{n}\) un punt. Aleshores definim el conjunt
+		\begin{equation*}
+			\tangent_{p}(\mathbb{R}^{n})=\{(p,\vec{v})\mid\vec{v}\in\mathbb{R}^{n}\}
+		\end{equation*}
+		com l'espai tangent a \(\mathbb{R}^{n}\) en \(p\).
+	\end{definition}
+	\begin{proposition}
+		\label{prop:l'espai tangent a Rn és un espai vectorial}
+		Siguin, per a tots \(\vec{u}\), \(\vec{v}\in\mathbb{R}^{n}\) i \(\lambda\in\mathbb{R}\),
+		\begin{equation*}
+			(p,\vec{u})+(p,\vec{v})=(p,\vec{u}+\vec{v})
+			\qquad\text{i}\qquad
+			\lambda(p,\vec{v})=(p,\lambda\vec{v})
+		\end{equation*}
+		dues operacions sobre \(\tangent_{p}(\mathbb{R}^{n})\). Aleshores \(\tangent_{p}(\mathbb{R}^{n})\) és un espai vectorial.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{observation}
+		\label{prop:l'espai tangent a Rn és isomorf a un R-espai vectorial de dimensió n}
+		Sigui \(E\) un \(\mathbb{R}\)-espai vectorial de dimensió \(n\). Aleshores
+		\begin{equation*}
+			E\cong\tangent_{p}(\mathbb{R}^{n}).
+		\end{equation*}
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{observation}
+	\begin{definition}[Camp vectorial diferenciable]
+		\labelname{camp vectorial diferenciable}\label{def:camp vectorial diferenciable}
+		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(p\in\obert{U}\) un punt. Aleshores direm que una \(\nu\) aplicació de la forma
+		\begin{align*}
+			\nu\colon\obert{U}&\longrightarrow\tangent_{p}(\mathbb{R}^{n}) \\
+			p&\longmapsto\nu(p)
+		\end{align*}
+		amb \(\nu\in\mathcal{C}^{\infty}(\obert{U})\) és un camp vectorial diferenciable sobre \(\obert{U}\) o que \(\nu\) és un camp vectorial sobre \(\obert{U}\).
+	\end{definition}
+	\begin{example}%[Camp vectorial canònic]
+		\label{ex:camp vectorial canònic}
+		Sigui \((\vec{e}_{1},\dots,\vec{e}_{n})\) la base canònica d'un \(\mathbb{R}\)-espai vectorial de dimensió \(n\). Volem veure que l'aplicació
+		\[E_{i}(p)=(p,\vec{e}_{i})\]
+		és un camp vectorial.
+		\begin{solution}
+			%TODO
+		\end{solution}
+	\end{example}
+	\begin{proposition}
+		\label{prop:els camps vectorials canònics són una base de l'espai tangent}
+		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(p\in\obert{U}\) un punt. Aleshores els vectors \((E_{1}(p),\dots,E_{n}(p))\) són una base de \(\EspaiTangent_{p}(\mathbb{R}^{n})\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\subsection{L'espai de camps vectorials}
+	\begin{definition}[Espai de camps vectorials]
+		\label{def:conjunt de camps vectorials}\labelname{conjunt de camps vectorials}
+		Sigui \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert. Aleshores direm que el conjunt
+		\[\CampsVectorials{X}(\obert{U})=\{\nu\in\mathcal{C}^{\infty}(\obert{U})\mid\nu\text{ és un camp vectorial sobre }\obert{U}\}\]
+		és l'espai de camps vectorials sobre \(\obert{U}\).
+	\end{definition}
+	\begin{example}
+		\label{ex:els gradients de les funcions C infinit són camps vectorials}
+		Sigui \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció. Aleshores \(\nabla h\in\CampsVectorials{X}(\obert{U})\).
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{example}
+	\begin{proposition}
+		\label{prop:l'espai de camps vectorials és un espai vectorial}
+		El conjunt \(\CampsVectorials{X}(\obert{U})\) és un espai vectorial.
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{definition}[Producte d'una funció i un camp vectorial]
+		\label{def:producte d'una funció i un camp vectorial}\labelname{producte d'una funció i un camp vectorial}
+		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Aleshores definim el producte de \(h\) i \(\nu\) com l'operació \(\cdot\) que satisfà
+		\[(h\cdot\nu)(p)=h(p)\nu(p).\]
+	\end{definition}
+	\begin{observation}
+		\label{obs:el producte d'una funció i un camp vectorial és C-infinit}
+		Es satisfà que \(h\cdot\nu\in\mathcal{C}^{\infty}(\obert{U})\).
+	\end{observation}
+	\begin{proposition}
+		\label{prop:el producte d'una funcio i un camp vectorial és distributiu per la suma de camps vectorials}
+		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu_{1}\), \(\nu_{2}\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials. Aleshores
+		\[\big(h\cdot(\nu_{1}+\nu_{2})\big)(p)=(h\cdot\nu_{1})(p)+(h\cdot\nu_{2})(p).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:el producte d'una funcio i un camp vectorial és distributiu per la suma de funcions}
+		Siguin \(h\), \(g\in\mathcal{C}^{\infty}(\obert{U})\) dues funcions i \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Aleshores
+		\[\big((h+g)\cdot\nu\big)(p)=(h\cdot\nu)(p)+(g\cdot\nu)(p).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	\begin{proposition}
+		\label{prop:el producte d'una funció i un camp vectorial és associatiu pel producte de camps vectorials}
+		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu_{1}\), \(\nu_{2}\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials. Aleshores
+		\[\big(h(\nu_{1}\nu_{2})\big)(p)=\big((h\nu_{1})\nu_{2}\big)(p).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+	\end{proposition}
+	
+	\subsection{Producte escalar de camps vectorials}
+	\begin{definition}[Producte escalar de camps vectorials]
+		\label{def:producte escalar de camps vectorials}\labelname{producte escalar de camps vectorials}
+		Siguin \(\nu_{1}\), \(\nu_{2}\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials. Aleshores definim el producte escalar de \(\nu_{1}\) i \(\nu_{2}\) com l'aplicació que satisfà
+		\[\prodesc{\nu_{1}}{\nu_{2}}(p)=\prodesc{\nu_{1}(p)}{\nu_{2}(p)}.\]
+	\end{definition}
+	\subsection{Derivada de Lie}
+	\begin{definition}[Derivada de Lie]
+		\label{def:derivada de Lie}\labelname{derivada de Lie}
+		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Aleshores direm que
+		\[\Lie_{\nu}(f)=\prodesc{\nu}{\nabla h}\]
+		 és la derivada de Lie de \(f\) sobre \(\nu\) en \(p\).
+		 
+		 Aquesta definició té sentit per l'exercici \myref{ex:els gradients de les funcions C infinit són camps vectorials}.
+	\end{definition}
+	\begin{definition}[Part vectorial d'un camp]
+		\label{def:part vectorial d'un camp vectorial}\labelname{part vectorial d'un camp vectorial}
+		Sigui \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Per la definició \myref{def:camp vectorial diferenciable} i d'\myref{def:espai tangent a Rn} tenim que existeix una funció \(\vec{\nu}\) sobre \(\obert{U}\) tal que
+		\[\nu(p)=(p,\vec{\nu}(p)).\]
+		Aleshores direm que \(\vec{\nu}\) és la part vectorial de \(\nu\).
+	\end{definition}
+	\begin{lemma}
+		\label{lemma:la derivada de Lie és la derivada direccional}
+		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial.
+		Aleshores
+		\[\Lie_{\nu}(h)(p)=\frac{\partial h}{\partial\vec{\nu}(p)}(p).\]
+		\begin{proof}
+			%TODO
+		\end{proof}
+		\[\iota\varsigma\upsilon\varUpsilon\varSigma\]
+	\end{lemma}
+	\subsection{Corbes integrals}
 \end{document}

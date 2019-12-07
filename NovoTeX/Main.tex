@@ -6,6 +6,7 @@
 \usepackage{csquotes}
 \usepackage{subfiles}
 \usepackage{mathtools,amssymb,amsthm}
+\usepackage{lmodern}
 \usepackage{microtype}
 %\usepackage[mathcal]{euscript}	% Font caligràfica a mathmode
 \usepackage{tikz-cd}
@@ -82,7 +83,10 @@
 \DeclareMathOperator{\cont}{cont}
 \DeclareMathOperator{\grau}{grau}
 \DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\parts}{\mathcal{P}}
+\DeclareMathOperator{\ind}{1}
 \DeclareMathOperator{\GrupSimetric}{S}
+\DeclareMathOperator{\GrupAlternat}{Alt}
 \DeclareMathOperator{\Mou}{M}
 \DeclareMathOperator{\ordre}{\omicron}
 \DeclareMathOperator{\ncicles}{c}
@@ -113,17 +117,23 @@
 \DeclareMathOperator{\diff}{d}
 \DeclareMathOperator{\componentconnex}{C}
 \DeclareMathOperator{\rapidesa}{v}
+\DeclareMathOperator{\Irr}{Irr}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\ReticleGrup}{\mathcal{L}}
+\DeclareMathOperator{\ReticleCos}{\mathcal{L}}
 
 \DeclareMathOperator*{\suport}{Supp}
 \DeclareMathOperator*{\Long}{L}
 \DeclareMathOperator*{\Dist}{d}
 
- %%%%% DECLARACIONS %%%%%
+ %%%%% DECLARACIONS %%%%% (Relacions?)
 \newcommand{\divides}{\mathrel{|}}
 \newcommand{\ndivides}{\mathrel{\nmid}}
+\newcommand{\subgrup}{\mathrel{\leq}}
 \newcommand{\abs}[1]{\left\lvert#1\right\rvert}
-\newcommand{\norma}[1]{\left\lvert#1\right\rvert} % Norma complexa (una barra vertical)
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}  % Norma general (dues barres verticals)
+\newcommand{\modul}{\abs}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\card}{\abs}
 \newcommand{\lxor}{\mathbin{\veebar}}
 \newcommand{\convergeixuniformement}{\mathrel{\rightrightarrows}}
 \newcommand{\convolucio}{\mathbin{\ast}}
@@ -132,6 +142,9 @@
 \newcommand{\biguniodisjunts}{\mathbin{\bigsqcup}}
 \newcommand{\prodvec}{\mathbin{\wedge}}
 \newcommand{\transposta}{\top}
+\newcommand{\extensio}{/}%{\hookrightarrow}
+\newcommand{\sota}{\mid}
+\newcommand{\grauExtensio}[2]{[#1:#2]}
  % LÒGICS
 \newcommand{\sii}{\iff}
 \newcommand{\Sii}{\Longleftrightarrow}
@@ -140,15 +153,52 @@
  % TIPOGRÀFICS
 \newcommand{\obert}[1]{\mathcal{#1}}
 \newcommand{\tancat}[1]{\obert{#1}}
+\newcommand{\algebra}[1]{\mathcal{#1}}
+\newcommand{\Algebra}[1]{\algebra{#1}}
+\newcommand{\borel}{\mathcal{B}}
 \newcommand{\base}[1]{\mathcal{#1}}
 \newcommand{\CampsVectorials}[1]{\mathfrak{#1}}
 \newcommand{\Lie}{\mathcal{L}}
+\newcommand{\field}[1]{\mathbb{#1}}
 
 \newcommand{\e}{\mathrm{e}}
 \newcommand{\iu}{\mathrm{i}}
 \newcommand{\uppi}{\pi} % REVISIT
 \newcommand{\matrius}{M}
 \newcommand{\basecanonica}{\base{C}}
+\newcommand{\ev}{\mathrm{ev}}
+\newcommand{\discriminant}{\Delta}
+\newcommand{\Probabilitat}{\mathrm{P}}
+\newcommand{\igualsendistribucio}{\overset{\mathcal{L}}{=}}
+\newcommand{\igualsquasisegurament}{\qs}
+\newcommand{\quasisegurament}{\qs}
+\newcommand{\igualsqs}{\qs}
+\newcommand{\qs}{\overset{\mathrm{qs}}{=}}
+
+% DISTRIBUCIONS
+\newcommand{\heads}{\mathrm{H}}
+\newcommand{\tails}{\mathrm{T}}
+\newcommand{\Unif}{\mathrm{Unif}}
+\newcommand{\Binomial}{\mathrm{Bin}}
+\newcommand{\Poiss}{\mathrm{Poiss}}
+\newcommand{\Geom}{\mathrm{Geom}}
+\newcommand{\HGeom}{\mathrm{HGeom}}%{\mathrm{HyperGeom}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Gauss}{\mathcal{N}}
+\newcommand{\Gamm}{\mathrm{Gamma}}
+\newcommand{\Beta}{\mathrm{Beta}}
+
+% COSSOS
+\newcommand{\RR}{\field{R}}
+\newcommand{\QQ}{\field{Q}}
+\newcommand{\CC}{\field{C}}
+\newcommand{\NN}{\field{N}}
+\newcommand{\ZZ}{\field{Z}}
+\newcommand{\HH}{\field{H}}
+\newcommand{\KK}{\field{K}}
+\newcommand{\FF}{\field{F}}
+\newcommand{\EE}{\field{E}}
+\newcommand{\LL}{\field{L}}
 
 
  %%%%% PRODUCTE ESCALAR %%%%%
@@ -214,8 +264,9 @@
 
  %%%%% INICIALITZACIÓ DE L'ÍNDEX %%%%%
 \makeindex
-%\makeindex[not]
 
+ %%%%% INICIALITZACIÓ DEL GLOSSARI %%%%%
+\makeglossary
 
  %%%%% BIBLIOGRAFIA %%%%%
 \addbibresource{BackMatter/referencies.bib}
@@ -421,9 +472,10 @@
 }
 \newcommand{\tercer}{
 	\book{Tercer curs}
-%	\subfile{BodyMatter/3r/Galois.tex}
 	\subfile{BodyMatter/3r/Topologia.tex}
-	\subfile{BodyMatter/3r/EDOS1.tex}
+	\subfile{BodyMatter/3r/Probabilitat.tex}
+		\subfile{BodyMatter/3r/EDOS1.tex}
+	\subfile{BodyMatter/3r/Galois.tex}
 	\subfile{BodyMatter/3r/Complexa.tex}
 	\subfile{BodyMatter/3r/GeoDiferencial.tex}
 	\subfile{BodyMatter/3r/EDOS2.tex}
@@ -433,17 +485,21 @@
 
  %%%%% BACK MATTER %%%%%
 \newcommand{\apendix}{} % No
-\newcommand{\glossari}{}
+\newcommand{\glossari}{{
+	\hypersetup{
+		linkcolor=[rgb]{0,0,0.5} % Veure que no calgui
+	}
+%	\cleartoevenpage[\thispagestyle{empty}]
+	\renewcommand{\glossaryname}{Glossari de notació}
+	\printglossary
+}}
 \newcommand{\indexos}{{
 	\hypersetup{
 		linkcolor=[rgb]{0,0,0.5} % Veure que no calgui
 	}
-	\cleartoevenpage[\thispagestyle{empty}]
+%	\cleartoevenpage[\thispagestyle{empty}]
 	\renewcommand{\indexname}{Índex alfabètic}
 	\printindex
-%	\cleartoevenpage
-%	\renewcommand{\indexname}{Índex de notació} % Gloassari de notació? Pàgs. al grossari
-%	\printindex[not]
 }}
 
 
@@ -473,7 +529,7 @@
 	\backmatter
 	\apendix % Per curs? (Geometria projectiva, Teoria de la mesura, 1 més)
 	\glossari
-%	\indexos
+	\indexos
 }
 
 \begin{document}

@@ -1,7 +1,7 @@
-\documentclass[../../Main.tex]{subfiles}
+\documentclass[../Apunts.tex]{subfiles}
 
 \begin{document}
-\assignatura{Àlgebra lineal}
+\part{Àlgebra lineal}
 \chapter{Matrius}
 \section{Matrius i operacions}
 	\subsection{Cossos}
@@ -275,7 +275,7 @@
 		\label{prop:el producte de matrius invertibles és invertible}
 		Siguin \(A\) i \(B\) dues matrius invertibles d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores la matriu \(AB\) és invertible.
 		\begin{proof}
-			Per la proposició \ref{prop:associativitat producte de matrius} i la definició de \myref{def:matriu invertible} tenim que
+			Per la proposició \myref{prop:associativitat producte de matrius} i la definició de \myref{def:matriu invertible} tenim que
 			\[(AB)(B^{-1}A^{-1})=\Id\quad\text{i}\quad(B^{-1}A^{-1})(AB)=\Id,\]
 			i de nou per la definició tenim que \(AB\) és invertible.
 		\end{proof}
@@ -628,7 +628,7 @@
 		\label{corollary:es pot esglaonar qualsevol matriu per columnes}
 		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores \(A\) es pot esglaonar per columnes.
 	\end{corollary}
-	\subsection{Teorema de la \texorpdfstring{\(PAQ\)}{}-reducció}
+	\subsection{Reducció d'una matriu}
 	\begin{theorem}[Teorema de la \(PAQ\)-reducció]
 		\labelname{Teorema de la \ensuremath{PAQ}-reducció}\label{thm:Teorema de la PAQ-reducció}
 		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores existeixen un únic nombre natural \(r\) satisfent \(r\leq\min(m,n)\), una matriu elemental \(P\) d'ordre \(m\) sobre \(\mathbb{K}\) i una matriu elemental \(Q\) d'ordre \(n\) sobre \(\mathbb{K}\) tals que
@@ -968,5 +968,7 @@
 %\section{Forma canònica racional}
 %
 %\chapter{Espais vectorials euclidians}
+
+ % Àlgebra multilineal?
 
 \end{document}
