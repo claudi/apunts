@@ -706,16 +706,16 @@
 		\labelname{variable aleatòria absolutament contínua}\label{def:variable aleatòria absolutament contínua}
 		\labelname{funció de densitat d'una variable aleatòria absolutament contínua}\label{def:funció de densitat d'una variable aleatòria abolsutament contínua}
 		\labelname{funció de distribució d'una variable aleatòria absolutament contínua}\label{def:funció de distribució d'una variable aleatòria absolutament contínua}
-		Sigui~\(X\) una variable aleatòria tal que existeix una funció~\(f\colon\RR\longleftarrow\RR\) satisfent
+		Sigui~\(X\) una variable aleatòria tal que existeix una funció~\(f\colon\RR\longrightarrow\RR\) satisfent
 		\begin{enumerate}
 			\item Per a tot~\(x\in\RR\) tenim que~\(f(x)\geq0\).
 			\item La funció~\(f\) és integrable sobre tot~\(\RR\).
-			\item \(\int_{-\infty}^{\infty}f(x)dx=1\).
+			\item \(\int_{-\infty}^{\infty}f(x)\diff x=1\).
 			\item Per a tot~\(a\),~\(b\in\RR\cup\{\pm\infty\}\) tenim que
-			\[\Probabilitat\{a\leq X\leq b\}=\int_{a}^{b}f(x)dx.\]
+			\[\Probabilitat\{a\leq X\leq b\}=\int_{a}^{b}f(x)\diff x.\]
 		\end{enumerate}
 		Aleshores direm que~\(X\) és una variable aleatòria absolutament contínua. També direm que~\(f\) és la funció densitat de~\(X\) i que la funció
-		\[F(x)=\Probabilitat\{X=x\}=\int_{-\infty}^{x}f(t)dt\]
+		\[F(x)=\Probabilitat\{X\leq x\}=\int_{-\infty}^{x}f(t)\diff t\]
 		és la funció de distribució de~\(X\).
 	\end{definition}
 	\begin{observation}

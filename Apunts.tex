@@ -8,6 +8,8 @@
 \usepackage{mathtools,amssymb,amsthm}
 \usepackage{microtype}
 \usepackage{lmodern}
+\usepackage{fixcmex} % Pensar-hi
+%https://tex.stackexchange.com/questions/375823/ugly-alignment-size-of-square-root-symbol-with-latin-modern-at-12pt?noredirect=1&lq=1
 %\usepackage[adobe-utopia]{mathdesign}
 \usepackage[mathcal]{euscript}	% hmm
 %\usepackage{mathpazo}
@@ -196,7 +198,7 @@
 \newcommand{\base}[1]{\mathcal{#1}}
 \newcommand{\CampsVectorials}[1]{\mathfrak{#1}}
 \newcommand{\field}[1]{\mathbb{#1}}
-\newcommand{\grauExtensio}[2]{[#1:#2]}
+\newcommand{\grauExtensio}[2]{[#1\colon #2]} % Dunno why I had :
 
 \newcommand{\diff}{\mathrm{d}}
 \newcommand{\e}{\mathrm{e}}
