@@ -208,7 +208,7 @@
 			
 			Acabem veient que la condició és necessària~\((\implicatper)\). Suposem doncs que
 			\[\KK(\alpha)=\KK[\alpha].\]
-			Per tant~\(\KK[\alpha]\) és un cos, i com que, per l'observació~\myref{obs:l'anell engendrat per alpha està entre l'extensió}, tenim que~\(\alpha\in\KK[\alpha]\), i per la definició de~\myref{def:cos per anells} tenim que~\(-1/\alpha\in\KK[\alpha]\). Aleshores, per la definició d'\myref{def:mínim subanell engendrat per un element d'una extensió} trobem que existeix un polinomi~\(a_{0}+a_{1}x+\dots+a_{k}x^{k}\in\KK[x]\), amb~\(a_{k}\neq0\), tal que
+			Per tant~\(\KK[\alpha]\) és un cos, i com que, per l'observació~\myref{obs:l'anell engendrat per alpha està entre l'extensió}, tenim que~\(\alpha\in\KK[\alpha]\), i per la definició de~\myref{def:cos per anells} tenim que~\(-1/\alpha\in\KK[\alpha]\). Aleshores, per la definició de~\myref{def:mínim subanell engendrat per un element d'una extensió} trobem que existeix un polinomi~\(a_{0}+a_{1}x+\dots+a_{k}x^{k}\in\KK[x]\), amb~\(a_{k}\neq0\), tal que
 			\[\frac{-1}{\alpha}=a_{0}+a_{1}\alpha+a_{2}\alpha^{2}+\dots+a_{k}\alpha^{k},\]
 			i per tant
 			\[0=1+a_{0}\alpha+a_{1}\alpha^{2}+\dots+a_{r}\alpha^{r+1},\]
@@ -247,7 +247,7 @@
 			
 			Veiem ara la implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\). Suposem que~\(p(\alpha)=0\) i prenem~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\). Calculem~\(\mcd(p(x),q(x))\). Calculem~\(\mcd(p(x),q(x))\). Si~\(\mcd(p(x),q(x))=p(x)\) aleshores~\(p(x)\divides q(x)\) i tenim el que volíem.
 			
-			Si~\(\mcd(p(x),q(x))\neq p(x)\), com que per la proposició~\myref{prop:en DIP irreductible implica primer} tenim que~\(p(x)\) és primer tenim que~\(\mcd(p(x),q(x))=1\), i per la~\myref{thm:identitat de Bézout} trobem que existeixen~\(r(x)\) i~\(s(x)\) polinomis en~\(\KK[x]\) tals que
+			Si~\(\mcd(p(x),q(x))\neq p(x)\), com que per la proposició~\myref{prop:en DIP irreductible implica primer} tenim que~\(p(x)\) és primer tenim que~\(\mcd(p(x),q(x))=1\), i per~\myref{thm:identitat de Bézout} trobem que existeixen~\(r(x)\) i~\(s(x)\) polinomis en~\(\KK[x]\) tals que
 			\[p(x)r(x)+q(x)s(x)=1.\]
 			Ara bé, tindríem que
 			\[
@@ -277,8 +277,7 @@
 	\end{example}
 \subsection{El grup de Galois}
 	\begin{definition}[El grup de Galois]
-		\labelname{el grup de Galois}\label{def:el grup de Galois}
-		\label{def:grup de Galois}
+		\labelname{grup de Galois}\label{def:grup de Galois}
 		Sigui~\(\FF\extensio\KK\) una extensió de cossos. Aleshores definim
 		\[\Gal(\FF\extensio\KK)=\{f\colon\FF\longrightarrow\FF\mid f\text{ és un isomorfisme d'anells i }\left.f\right|_{\KK}=\Id_{\KK}\}\]
 		com el grup de Galois de l'extensió~\(\FF\extensio\KK\).
@@ -287,7 +286,7 @@
 		\label{prop:el grup de Galois és un grup}
 		Sigui~\(\FF\extensio\KK\) una extensió. Aleshores~\(\Gal(\FF\extensio\KK)\) és un grup.
 		\begin{proof} % Revisar. %REFS
-			Prenem un element~\(f\in\Gal(\FF\extensio\KK)\). Per la definició~d'\myref{def:el grup de Galois} tenim que~\(f\) és un isomorfisme d'anells, i per la definició~d'\myref{def:isomorfisme entre anells} trobem que~\(f\) és invertible, i per tant existeix un isomorfisme~\(g\colon\FF\longrightarrow\FF\) tal que~\(f\circ g=g\circ f=\Id_{\FF}\). Hem de veure que~\(\left.g\right|_{\KK}=\Id_{\KK}\). Tenim que
+			Prenem un element~\(f\in\Gal(\FF\extensio\KK)\). Per la definició de~\myref{def:grup de Galois} tenim que~\(f\) és un isomorfisme d'anells, i per la definició~d'\myref{def:isomorfisme entre anells} trobem que~\(f\) és invertible, i per tant existeix un isomorfisme~\(g\colon\FF\longrightarrow\FF\) tal que~\(f\circ g=g\circ f=\Id_{\FF}\). Hem de veure que~\(\left.g\right|_{\KK}=\Id_{\KK}\). Tenim que
 			\begin{align*}
 				\Id_{\KK}&=\left.\Id_{\FF}\right|_{\KK} \\
 				&=\left.g\circ f\right|_{\KK} \\
@@ -431,7 +430,7 @@
 		\begin{itemize}
 		\item \(\alpha+\beta\) és algebraic sobre~\(\KK\).
 		\item \(\alpha\beta\) és algebraic sobre~\(\KK\).
-		\item Si~\(\alpha\neq0\),~\(\alpha^{1}\) és algebraic sobre~\(\KK\).
+		\item Si~\(\alpha\neq0\),~\(\alpha^{-1}\) és algebraic sobre~\(\KK\).
 		\end{itemize}
 	\end{theorem}
 	\begin{corollary}
