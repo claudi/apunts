@@ -386,5 +386,149 @@
 			%TODO
 		\end{proof}
 	\end{proposition}
-	\section{Argument d'un nombre complex}
-\end{document} 
+%	\subsection{Representació de nombres complexos}
+%	\begin{proposition}
+%		\label{prop:nombre complex com a sinus i cosinus}
+%		Sigui~\(z\) un nombre complex no nul. Aleshores existeix un~\(\theta\in\RR\) tal que
+%		\[z=\modul{z}\bigl(\cos(\theta)+\iu\sin(\theta)\bigr).\]
+%		\begin{proof}
+%			
+%		\end{proof}
+%	\end{proposition}
+%	\begin{proposition}
+%		\label{prop:nombre complex com a exponencial}
+%		Sigui~\(z\) un nombre complex no nul. Aleshores existeix un~\(\theta\in\RR\) tal que
+%		\[z=\modul{z}\e^{\iu\theta}.\]
+%		\begin{proof}
+%			
+%		\end{proof}
+%	\end{proposition}
+
+%	\subsection{Argument d'un nombre complex}
+%	\begin{definition}[Argument]
+%		\labelname{argument}\label{def:argument}
+%		Sigui~\(z\) un nombre complex no nul. Definim l'argument de~\(z\) com
+%		\[\arg(z)=\{\theta\in\RR\mid z=\modul{z}\bigl(\cos(\theta)+\iu\sin(\theta)\bigr)\}.\]
+%	\end{definition}
+%	\begin{observation}
+%		Siguin~\(z\) un nombre complex no nul i~\(\theta\) un real tal que~\(\theta\in\arg(z)\). Aleshores
+%		\[\arg(z)=\{\theta+2\uppi k\in\RR\mid k\in\ZZ\}.\]
+%	\end{observation}
+%	\begin{definition}[Argument principal]
+%		\labelname{argument principal}\label{def:argument principal}
+%		Sigui~\(z\) un nombre complex no nul. Definim l'argument principal de~\(z\) com
+%		\[\Arg(z)=\theta\in(-\uppi,\uppi]\qquad\text{tal que}\qquad z=\modul{z}\bigl(\cos(\theta)+\iu\sin(\theta)\bigr).\]
+%	\end{definition}
+%	\begin{observation}
+%		\label{obs:continuitat de l'argument principal}
+%		La funció~\(\Arg\) és contínua en~\(\CC\setminus(-\infty,0]\).
+%	\end{observation}
+\section{Funcions de variable complexa}
+	\subsection{Continuïtat i \ensuremath{\CC}-derivabilitat}
+	\begin{observation}
+		Siguin~\(\Omega\subseteq\CC\) un subconjunt i~\(f\colon\Omega\longrightarrow\CC\) una funció. Aleshores existeixen dues funcions~\(u,v\colon\Omega\longrightarrow\RR\) tals que~\(f(z)=u(z)+\iu(z)\) per a tot~\(z\in\Omega\).
+	\end{observation}
+	\begin{definition}[Continuïtat]
+		\labelname{funció contínua}\label{def:funció complexa contínua}
+		Siguin~\(\Omega\subseteq\CC\) un obert,~\(z_{0}\in\Omega\) un punt i~\(f\colon\Omega\longrightarrow\CC\) una funció tal que
+		\[\lim_{z\to z_{0}}f(z)=f(z_{0}).\]
+		Aleshores direm que~\(f\) és contínua en~\(z_{0}\).
+		
+		Si~\(f\) és contínua per a tot~\(z\in\Omega\) direm que~\(f\) és contínua en~\(\Omega\).
+	\end{definition}
+	\begin{observation}
+		\label{obs:una funció complexa és contínua si i només si ho són les seves components}
+		Siguin~\(\Omega\subseteq\CC\) un obert i
+		\begin{align*}
+			f\colon\Omega&\longrightarrow\CC \\
+			z&\longmapsto u(z)+\iu v(z)
+		\end{align*}
+		una funció. Aleshores~\(f\) és contínua si i només si~\(u\) i~\(v\) són contínues.
+	\end{observation}
+	\begin{definition}[\ensuremath{\CC}-derivable]
+		\labelname{funció~\ensuremath{\CC}-derivable}\label{def:C-derivable}\label{def:funció C-derivable}
+		Siguin~\(\Omega\subseteq\CC\) un obert,~\(z_{0}\in\Omega\) un punt i~\(f\colon\Omega\longrightarrow\CC\) una funció tal que
+		\[\lim_{\substack{h\to0\\ h\in\CC}}\frac{f(z_{0}+h)-f(z_{0})}{h}=f'(z_{0}).\]
+		Aleshores direm que~\(f\) és~\(\CC\)-derivable en~\(z_{0}\).
+	\end{definition}
+	\begin{observation}
+		\label{obs:C-derivable implica contínua}
+		Sigui~\(f\) una funció~\(\CC\)-derivable en un punt~\(z_{0}\). Aleshores~\(f\) és contínua en~\(z_{0}\).
+	\end{observation}
+	\begin{example}
+		Volem veure que la funció~\(f(z)=z\) és contínua i~\(\CC\)-derivable, i calcular~\(f'\).
+		\begin{solution}
+			Observem que
+			\begin{align*}
+				f\colon\CC&\longrightarrow\CC \\
+				a+\iu b&\longmapsto \Re(a)+\iu\Im(b),
+			\end{align*}
+			i per la proposició~\myref{prop:fórmules per la part real i part imaginària d'un nombre complex} trobem que~\(\Re\) i~\(\Im\) són funcions contínues ne~\(\CC\). Per tant per l'observació~\myref{obs:una funció complexa és contínua si i només si ho són les seves components} tenim que~\(f\) és contínua en~\(\CC\).
+			
+			Calculem ara
+			\begin{align*}
+				f'(z_{0})&=\lim_{h\to0}\frac{f(z_{0}+h)-f(z_{0})}{h} \\
+				&=\lim_{h\to0}\frac{z_{0}+h-z_{0}}{h} \\
+				&=\lim_{h\to0}\frac{h}{h}=1,
+			\end{align*}
+			i per tant la funció~\(f\) és~\(\CC\)-derivable en~\(\CC\) i~\(f'(z)=1\).
+		\end{solution}
+	\end{example}
+	\begin{example}
+		Volem veure que l'aplicació~\(f(z)=\conjugat{z}\) no és~\(\CC\)-derivable. Calculem
+		\begin{align*}
+			\lim_{h\to0}\frac{f(z_{0}+h)-f(z_{0})}{h}&=\lim_{h\to0}\frac{\conjugat{z_{0}+h}-\conjugat{z_{0}}}{h} \\
+			&=\lim_{h\to0}\frac{\conjugat{z_{0}}+\conjugat{h}-\conjugat{z_{0}}}{h}=\lim_{h\to0}\frac{\conjugat{h}}{h}. \tag{\ref{prop:el conjugat de la suma és la suma de conjugats}}
+		\end{align*}
+		Ara bé, si~\(h=1\) trobem que~\(\conjugat{h}/h=1\), però si~\(h=\iu\) trobem que~\(\conjugat{h}/h=-\iu/\iu=-1\), i per tant~\(f\) no és~\(\CC\)-derivable en cap punt de~\(\CC\).
+	\end{example}
+	\subsection{Funcions holomorfes i funcions enteres}
+	\begin{definition}[Funció holomorfa]
+		\labelname{funció holomorfa}\label{def:funció holomorfa}
+		\labelname{funció entera}%\label{def:funció entera}
+		Siguin~\(\Omega\subseteq\CC\) un obert i~\(f\colon\Omega\longrightarrow\CC\) una funció~\(\CC\)-derivable per a tot punt~\(z\in\Omega\). Aleshores direm que~\(f\) és holomorfa en~\(\Omega\).
+		
+		Si~\(f\) és holomorfa en tot~\(\CC\) direm que~\(f\) és entera.
+	\end{definition}
+	\begin{notation}[Funcions holomorfes]
+		Sigui~\(\Omega\subseteq\CC\) un obert. Denotarem
+		\[\Hol(\Omega)=\{f\colon\Omega\longrightarrow\CC\mid f\text{ és holomorfa en }\Omega\}.\]
+	\end{notation}
+	\begin{note}
+		Es generalitza tota la teoria sobre sèries de potències a \ref{subsec:sèries de potències} de~\(\RR\) a~\(\CC\). Els direm sèries de potències complexes.
+	\end{note}
+	\begin{example}
+		Sigui~\(f(z)=\sum_{n=0}^{\infty}a_{n}z^{n}\) una sèrie de potències complexa amb radi de convergència~\(R\). Aleshores~\(f(z)\) és holomorfa sobre~\(\Disc(0,R)\).
+	\end{example}
+	\begin{theorem}[Teorema d'Abel]
+		\labelname{Teorema d'Abel}\label{thm:Teorema d'Abel per sèries de potències complexes}
+		Sigui~\(f(z)=\sum_{n=0}^{\infty}a_{n}z^{n}\) amb radi de convergència~\(R=1\) tal que~\(f(1)=\sum_{n=0}^{\infty}a_{n}\) sigui convergent. Aleshores existeix un~\(S\in\CC\) tal que
+		\[\lim_{\substack{z\to1\\z\in A}}f(z)=S\]
+		on
+		\begin{equation}
+			\label{eq:1:thm:Teorema d'Abel per sèries de potències complexes}
+			A=\{z\in\CC\mid\abs{1-z}<k(1-\abs{z})\text{ per a cert }k\in\RR\}.
+		\end{equation}
+		\begin{proof}
+			Podem suposar, sense pèrdua de generalitat, que~\(S=0\) redefinint~\(a_{0}\) com~\(a_{0}-S\).
+			
+			Definim
+			\[S_{N}=\sum_{n=0}^{N}a_{n}.\]
+			Aleshores~\(\lim_{N\to\infty}S_{N}=0\). Per tant, per la definició de~\myref{def:límit} tenim que per a tot~\(\varepsilon>0\) existeix un~\(n_{0}\in\NN\) tal que per a tot~\(N>n_{0}\) tenim que~\(\abs{S_{N}}<\varepsilon\). Per tant si prenem un~\(\varepsilon>0\) tenim que existeix un~\(n_{0}\) tal que per a tot~\(N>n_{0}\) trobem
+			\begin{align*}
+				\modul{S_{N}z^{N}}&=\modul{S_{N}}\modul{z^{N}} \tag{\ref{def:mòdul d'un nombre complex}} \\
+				&<\varepsilon\modul{z^{N}} \tag{\ref{def:límit}} \\
+				&=\varepsilon\modul{z}^{N} \tag{\ref{prop:el producte de mòduls és el mòdul del producte}} \\
+				&\leq\varepsilon. \tag{\ref{eq:1:thm:Teorema d'Abel per sèries de potències complexes}}
+			\end{align*}
+			i per tant~\(\modul{S_{N}z^{N}}<\varepsilon\). També tenim que
+			\begin{align*}
+				\modul{1-z}\sum_{n=0}^{N}\modul{S_{N}z^{N}}\leq\modul{1-z}M(N) \tag{1}
+			\end{align*}
+		\end{proof}
+	\end{theorem}
+	\begin{definition}[Funció entera]
+		\labelname{funció entera}\label{def:funció entera}
+		Sigui~\(f\) una funció holomorfa en tot~\(\CC\). Aleshores direm que~\(f\) és entera.
+	\end{definition}
+\end{document}

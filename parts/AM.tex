@@ -1328,6 +1328,7 @@
 		\end{solution}
 	\end{example}
 	\subsection{Sèries de potències}
+	\label{subsec:sèries de potències}
 	\begin{definition}[Sèries de potències]
 		\labelname{sèrie de potències}\label{def:sèrie de potències}
 		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió de reals i \(x_{0}\) un nombre real. Aleshores direm que la sèrie
@@ -1396,14 +1397,17 @@
 			%TODO
 		\end{proof}
 	\end{proposition}
-	\begin{definition}
-		Sigui \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) una sèrie de potències tal que existeix un real \(R\) satisfent
+	\begin{definition}[Radi de convergència]
+		\labelname{radi de convergència d'una sèrie de potències}\label{def:radi de convergència d'una sèrie de potències}
+		Siguin \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) una sèrie de potències i \(R\) un real satisfent
 		\begin{enumerate}
 			\item la sèrie \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) és absolutament convergent per a tot \(x\) satisfent \(\abs{x-x_{0}}<R\).
 			\item per a tot real \(r<R\) la sèrie de funcions \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) convergeix uniformement per a tot \(x\) satisfent \(\abs{x-x_{0}}\leq r\).
 			\item La sèrie \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) és divergent per a tot \(x\) satisfent \(\abs{x-x_{0}}>R\).
 		\end{enumerate}
 		Aleshores direm que \(R\) és el radi de convergència de la sèrie de potències.
+		
+		Aquesta definició té sentit pel Teorema~\myref{thm:radi de convergència d'una sèrie de potències}.
 	\end{definition}
 	\begin{theorem}[Teorema d'Abel]
 		\labelname{Teorema d'Abel}\label{thm:Teorema d'Abel}
