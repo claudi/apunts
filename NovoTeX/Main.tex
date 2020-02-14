@@ -6,15 +6,15 @@
 \usepackage{csquotes}
 \usepackage{subfiles}
 \usepackage{mathtools,amssymb,amsthm}
-\usepackage{lmodern}
+%\usepackage{lmodern}
+\usepackage{newtxtext}
+\usepackage[uprightGreek]{newtxmath}
 \usepackage{microtype}
 %\usepackage[mathcal]{euscript}	% Font caligràfica a mathmode
 \usepackage{tikz-cd}
 %\usepackage[framemethod=TikZ]{mdframed}
 \usepackage[sorting=none, backend=biber, refsection=part]{biblatex} % Bibliografies
 \usepackage{hyperref}
-%\usepackage{beton}
-%\usepackage{eulervm}
 
 %\renewcommand{\bfdefault}{sbc}
 
@@ -163,7 +163,7 @@
 
 \newcommand{\e}{\mathrm{e}}
 \newcommand{\iu}{\mathrm{i}}
-\newcommand{\uppi}{\pi} % REVISIT
+%\newcommand{\uppi}{\pi} % REVISIT
 \newcommand{\matrius}{M}
 \newcommand{\basecanonica}{\base{C}}
 \newcommand{\ev}{\mathrm{ev}}
@@ -374,6 +374,19 @@
 
 \def\assignatura#1{\echo{#1}\part{#1}}
 
+ %%%%% APÈNDIXOS %%%%%
+\makeatletter
+\newcounter{apendix} \setcounter{apendix}{0}
+\def\apendix#1{%
+	\refstepcounter{apendix}
+	\renewcommand*{\thepart}{\@Alph\c@apendix}
+	\renewcommand{\partname}{Apèndix}
+	\addtocounter{part}{-1}
+	\part{#1}
+}
+\makeatother
+
+
  %%%%% ESTIL DELS CAPÍTOLS %%%%%
 \makeatletter
 \newlength{\numberheight}
@@ -436,13 +449,13 @@
 	{\hypersetup{
 		urlcolor=black,
 		linkcolor=black
-	}
+	}%
 	\tableofcontents
 %	\listoffigures
 %	\listoftables
 	}
 }
-\newcommand{\coprefaci}{def}
+\newcommand{\coprefaci}{} % Fake foreword
 %\newcommand{\foreword}{} % Aure % Buscar com es diu en català. Potser dir-li prefaci i ja
 \newcommand{\prefaci}{}
 \newcommand{\agraiments}{
@@ -457,34 +470,41 @@
  %%%%% BODY MATTER %%%%%
 \newcommand{\primer}{
 	\book{Primer curs}
+	\subfile{BodyMatter/TempIntro.tex}
 	\subfile{BodyMatter/1r/Fonaments.tex}
 	\subfile{BodyMatter/1r/AlgebraLineal.tex}
-	\subfile{BodyMatter/1r/Intro.tex}
+	\subfile{BodyMatter/1r/FVR.tex}
+	\subfile{BodyMatter/1r/GeometriaProjectiva.tex}
 %	\subfile{BodyMatter/1r/Apendix1r.tex} % Geometria projectiva
 }
 \newcommand{\segon}{
 	\book{Segon curs}
 	\subfile{BodyMatter/2n/CDVO.tex}
 	\subfile{BodyMatter/2n/AnalisiMatematic.tex}
+	\subfile{BodyMatter/2n/GeometriaLineal.tex}
+	\subfile{BodyMatter/2n/MatematicaDiscreta.tex}
 	\subfile{BodyMatter/2n/EstructuresAlgebraiques.tex}
 	\subfile{BodyMatter/2n/MetodesNumerics.tex}
+	\subfile{BodyMatter/2n/TeoriaDeLaMesura.tex}
 %	\subfile{BodyMatter/2n/Apendix2n.tex} % Teoria de la mesura (Lebesge o per probabilitat?)
 }
 \newcommand{\tercer}{
 	\book{Tercer curs}
 	\subfile{BodyMatter/3r/Topologia.tex}
 	\subfile{BodyMatter/3r/Probabilitat.tex}
-		\subfile{BodyMatter/3r/EDOS1.tex}
+	\subfile{BodyMatter/3r/EDOS1.tex}
 	\subfile{BodyMatter/3r/Galois.tex}
 	\subfile{BodyMatter/3r/Complexa.tex}
+	\subfile{BodyMatter/3r/Estadistica.tex}
 	\subfile{BodyMatter/3r/GeoDiferencial.tex}
 	\subfile{BodyMatter/3r/EDOS2.tex}
+	\subfile{BodyMatter/3r/CalculTensorial.tex}
 %	\subfile{BodyMatter/3r/Apendix3r.tex} % Formes diferencials (?) 
 }										  % Tensor calculus (YouTube)
 										  % Àlgebra homològica (Aquesta queda molt lluny, no crec)
 
  %%%%% BACK MATTER %%%%%
-\newcommand{\apendix}{} % No
+%\newcommand{\apendix}{} % No
 \newcommand{\glossari}{{
 	\hypersetup{
 		linkcolor=[rgb]{0,0,0.5} % Veure que no calgui
@@ -527,7 +547,7 @@
 }
 \newcommand{\BackMatter}{
 	\backmatter
-	\apendix % Per curs? (Geometria projectiva, Teoria de la mesura, 1 més)
+%	\apendix % Per curs? (Geometria projectiva, Teoria de la mesura, 1 més)
 	\glossari
 	\indexos
 }
