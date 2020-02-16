@@ -26,47 +26,47 @@
 		\label{prop:el producte de nombres complexos és commutatiu}
 		Siguin \(a+\iu b\) i \(c+\iu d\) dos nombres complexos. Aleshores
 		\[(a+\iu b)+(c+\iu d)=(c+\iu d)+(a+\iu b).\]
-		\begin{proof}
-			Per la definició de~\myref{def:suma de nombres complexos} tenim
-			\begin{align*}
-				a+\iu b+c+\iu d&=(a+c)+\iu(b+d) \\
-				&=(c+a)+(d+b)\iu=c+\iu d+a+\iu b.\qedhere
-			\end{align*}
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:suma de nombres complexos} tenim
+		\begin{align*}
+			a+\iu b+c+\iu d&=(a+c)+\iu(b+d) \\
+			&=(c+a)+(d+b)\iu=c+\iu d+a+\iu b.\qedhere
+		\end{align*}
+	\end{proof}
 	\begin{proposition}
 		\label{prop:els nombres complexos són associatius per la suma}
 		Siguin \(a+\iu b\), \(c+\iu d\) i \(u+\iu v\) tres nombres complexos. Aleshores
 		\[(a+\iu b)+\big((c+\iu d)+(u+\iu v)\big)=\big((a+\iu b)+(c+\iu d)\big)+(u+\iu v).\]
-		\begin{proof}
-			Per la definició de~\myref{def:suma de nombres complexos} tenim
-			\begin{align*}
-				(a+\iu b)+\big((c+\iu d)+(u+\iu v)\big)&=(a+\iu b)+\big((c+u)+\iu(d+v)\big) \\
-				&=\big(a+(c+u)\big)+\iu\big(b+(d+v)\big) \\
-				&=\big((a+c)+u\big)+\iu\big((b+d)+v\big) \\
-				&=\big((a+c)+\iu(b+d)\big)+(u+\iu v) \\
-				&=\big((a+\iu b)+(c+\iu d)\big)+(u+\iu v).\qedhere
-			\end{align*}
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:suma de nombres complexos} tenim
+		\begin{align*}
+			(a+\iu b)+\big((c+\iu d)+(u+\iu v)\big)&=(a+\iu b)+\big((c+u)+\iu(d+v)\big) \\
+			&=\big(a+(c+u)\big)+\iu\big(b+(d+v)\big) \\
+			&=\big((a+c)+u\big)+\iu\big((b+d)+v\big) \\
+			&=\big((a+c)+\iu(b+d)\big)+(u+\iu v) \\
+			&=\big((a+\iu b)+(c+\iu d)\big)+(u+\iu v).\qedhere
+		\end{align*}
+	\end{proof}
 	\begin{proposition}
 		\label{prop:element neutre per la suma dels complexos}
 		Sigui \(a+\iu b\) un nombre complex. Aleshores
 		\[(a+\iu b)+0=a+\iu b.\]
-		\begin{proof}
-			Per la definició de~\myref{def:suma de nombres complexos} tenim
-			\[(a+\iu b)+0=(a+0)+\iu(b+0)=a+\iu b.\qedhere\]
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:suma de nombres complexos} tenim
+		\[(a+\iu b)+0=(a+0)+\iu(b+0)=a+\iu b.\qedhere\]
+	\end{proof}
 	\begin{proposition}
 		\label{prop:element invers per la suma dels complexos}
 		Sigui \(a+\iu b\) un nombre complex. Aleshores
 		\[(a+\iu b)+(-a-\iu b)=0.\]
-		\begin{proof}
-			Per la definició de~\myref{def:suma de nombres complexos} tenim
-			\[(a+\iu b)+(-a-\iu b)=(a-a)+\iu(b-b)=0.\qedhere\]
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:suma de nombres complexos} tenim
+		\[(a+\iu b)+(-a-\iu b)=(a-a)+\iu(b-b)=0.\qedhere\]
+	\end{proof}
 	\begin{definition}[Producte de nombres complexos]
 		\labelname{producte de nombres complexos}\label{def:producte de nombres complexos}
 		Siguin \(a+\iu b\) i \(c+\iu d\) dos nombres complexos. Aleshores definim el seu producte com
@@ -81,69 +81,69 @@
 		\label{prop:els nombres complexos commuten pel producte}
 		Siguin \(a+\iu b\) i \(c+\iu d\) dos nombres complexos. Aleshores
 		\[(a+\iu b)(c+\iu d)=(c+\iu d)(a+\iu b).\]
-		\begin{proof}
-			Per la definició de~\myref{def:producte de nombres complexos} tenim
-			\begin{align*}
-				(a+\iu b)(c+\iu d)&=(ac-bd)+\iu(ad+bc) \\
-				&=(ca-bd)+\iu(da+cb)=(c+\iu d)(a+\iu b).\qedhere
-			\end{align*}
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:producte de nombres complexos} tenim
+		\begin{align*}
+			(a+\iu b)(c+\iu d)&=(ac-bd)+\iu(ad+bc) \\
+			&=(ca-bd)+\iu(da+cb)=(c+\iu d)(a+\iu b).\qedhere
+		\end{align*}
+	\end{proof}
 	\begin{proposition}
 		\label{prop:els nombres complexos són associatius pel producte}
 		Siguin \(a+\iu b\), \(c+\iu d\) i \(u+\iu v\) tres nombres complexos. Aleshores
 		\[(a+\iu b)\big((c+\iu d)(u+\iu v))\big)=\big((a+\iu b)(c+\iu d)\big)(u+\iu v).\]
-		\begin{proof}
-			Prenem \(\alpha=a+\iu b\), \(\beta=c+\iu d\) i \(\gamma=u+\iu v\). Per la definició de~\myref{def:producte de nombres complexos} tenim
-			\begin{align*}
-				\alpha\big(\beta\gamma\big)&=(a+\iu b)\big((c+\iu d)(u+\iu v)\big) \\
-				&=(a+\iu b)\big((cu-dv)+\iu(cv+du)\big) \\
-				&=\big(a(cu-dv)-b(cv+du)\big)+\iu\big(a(cv+du)+b(cu-dv)\big) \\
-				&=(acu-adv-bcv-bdu)+\iu(acv+adu+bcu-bdv) \\
-				&=(acu-bdu-adv-bcv)+\iu(acv-bdv+adu+bcu) \\
-				&=\big((ac-bd)u-(ad+bc)v\big)+\iu\big((ac-bd)v+(ad+bc)u\big) \\
-				&=\big((ac-bd)+\iu(ad+bc)\big)(u+\iu v) \\
-				&=\big((a+\iu b)(c+\iu d)\big)(u+\iu v)=(\alpha\beta)\gamma.\qedhere
-			\end{align*}
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Prenem \(\alpha=a+\iu b\), \(\beta=c+\iu d\) i \(\gamma=u+\iu v\). Per la definició de~\myref{def:producte de nombres complexos} tenim
+		\begin{align*}
+			\alpha\big(\beta\gamma\big)&=(a+\iu b)\big((c+\iu d)(u+\iu v)\big) \\
+			&=(a+\iu b)\big((cu-dv)+\iu(cv+du)\big) \\
+			&=\big(a(cu-dv)-b(cv+du)\big)+\iu\big(a(cv+du)+b(cu-dv)\big) \\
+			&=(acu-adv-bcv-bdu)+\iu(acv+adu+bcu-bdv) \\
+			&=(acu-bdu-adv-bcv)+\iu(acv-bdv+adu+bcu) \\
+			&=\big((ac-bd)u-(ad+bc)v\big)+\iu\big((ac-bd)v+(ad+bc)u\big) \\
+			&=\big((ac-bd)+\iu(ad+bc)\big)(u+\iu v) \\
+			&=\big((a+\iu b)(c+\iu d)\big)(u+\iu v)=(\alpha\beta)\gamma.\qedhere
+		\end{align*}
+	\end{proof}
 	\begin{proposition}
 		\label{prop:element neutre pel producte dels complexos}
 		Sigui \(a+\iu b\) un nombre complex. Aleshores
 		\[(a+\iu b)\cdot1=a+\iu b.\]
-		\begin{proof}
-			Per la definició de~\myref{def:producte de nombres complexos} tenim
-			\[(a+\iu b)\cdot1=(a\cdot1)+\iu(b\cdot1)=a+\iu b.\qedhere\]
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:producte de nombres complexos} tenim
+		\[(a+\iu b)\cdot1=(a\cdot1)+\iu(b\cdot1)=a+\iu b.\qedhere\]
+	\end{proof}
 	\begin{proposition}
 		\label{prop:element invers pel producte de nombres complexos}
 		Sigui \(a+\iu b\) un nombre complex. Aleshores
 		\[(a+\iu b)\Big(\frac{a}{a^{2}+b^{2}}+\iu\frac{-b}{a^{2}+b^{2}}\Big)=1.\]
-		\begin{proof}
-			Per la definició de~\myref{def:producte de nombres complexos} tenim
-			\begin{align*}
-				(a+\iu b)\Big(\frac{a}{a^{2}+b^{2}}+\iu\frac{-b}{a^{2}+b^{2}}\Big)&=\Big(\frac{a^{2}}{a^{2}+b^{2}}-\frac{-b^{2}}{a^{2}+b^{2}}\Big)+\iu\Big(\frac{ab}{a^{2}+b^{2}}+\frac{-ba}{a^{2}+b^{2}}\Big) \\
-				&=\Big(\frac{a^{2}+b^{2}}{a^{2}+b^{2}}\Big)+\iu\Big(\frac{ab-ab}{a^{2}+b^{2}}\Big)=1.\qedhere
-			\end{align*}
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:producte de nombres complexos} tenim
+		\begin{align*}
+			(a+\iu b)\Big(\frac{a}{a^{2}+b^{2}}+\iu\frac{-b}{a^{2}+b^{2}}\Big)&=\Big(\frac{a^{2}}{a^{2}+b^{2}}-\frac{-b^{2}}{a^{2}+b^{2}}\Big)+\iu\Big(\frac{ab}{a^{2}+b^{2}}+\frac{-ba}{a^{2}+b^{2}}\Big) \\
+			&=\Big(\frac{a^{2}+b^{2}}{a^{2}+b^{2}}\Big)+\iu\Big(\frac{ab-ab}{a^{2}+b^{2}}\Big)=1.\qedhere
+		\end{align*}
+	\end{proof}
 	\begin{proposition}
 		\label{prop:distribuitva del producte respecte la suma de nombres complexos}
 		Siguin \(a+\iu b\), \(c+\iu d\) i \(u+\iu v\) tres nombres complexos. Aleshores
 		\[(a+\iu b)\big((c+\iu d)+(u+\iu v)\big)=(a+\iu b)(c+\iu d)+(a+\iu b)(u+\iu v).\]
-		\begin{proof}
-			Per la definició de~\myref{def:suma de nombres complexos} i~\myref{def:producte de nombres complexos} tenim
-			\begin{align*}
-				(a+\iu b)\big((c+\iu d)+(u+\iu v)\big)&=(a+\iu b)\big((c+u)+\iu(d+v)\big) \\
-				&=\big(a(c+u)-b(d+v)\big)+\iu\big(a(d+v)+b(c+u)\big) \\
-				&=(ac+au-bd-bv)+\iu(ad+av+bc+bu) \\
-				&=(ac-bd+au-bv)+\iu(ad+bc+av+bu)\\
-				&=(ac-bd)+\iu(ad+bc)+(au-bv)+\iu(av+bu) \\
-				&=(a+\iu b)(c+\iu d)+(a+\iu b)(u+\iu v).\qedhere
-			\end{align*}
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:suma de nombres complexos} i~\myref{def:producte de nombres complexos} tenim
+		\begin{align*}
+			(a+\iu b)\big((c+\iu d)+(u+\iu v)\big)&=(a+\iu b)\big((c+u)+\iu(d+v)\big) \\
+			&=\big(a(c+u)-b(d+v)\big)+\iu\big(a(d+v)+b(c+u)\big) \\
+			&=(ac+au-bd-bv)+\iu(ad+av+bc+bu) \\
+			&=(ac-bd+au-bv)+\iu(ad+bc+av+bu)\\
+			&=(ac-bd)+\iu(ad+bc)+(au-bv)+\iu(av+bu) \\
+			&=(a+\iu b)(c+\iu d)+(a+\iu b)(u+\iu v).\qedhere
+		\end{align*}
+	\end{proof}
 	\begin{corollary}
 		\label{cor:els complexos formen un cos}
 		El conjunt \(\field{C}\) amb la suma \(+\) i el producte \(\cdot\) és un cos.
@@ -159,84 +159,84 @@
 		\label{prop:el conjugat del conjugat d'un nombre complex és ell mateix}
 		Sigui \(z\) un nombre complex. Aleshores
 		\[\conjugat{\conjugat{z}}=z.\]
-		\begin{proof}
-			Per la definició de~\myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\field{R}\) tals que \(z=a+\iu b\). Aleshores per la definició de~\myref{def:conjugat d'un nombre complex} tenim que
-			\begin{align*}
-				\conjugat{\conjugat{z}}&=\conjugat{\conjugat{a+\iu b}} \\
-				&=\conjugat{a-\iu b} \\
-				&=a+\iu b=z.\qedhere
-			\end{align*}
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\field{R}\) tals que \(z=a+\iu b\). Aleshores per la definició de~\myref{def:conjugat d'un nombre complex} tenim que
+		\begin{align*}
+			\conjugat{\conjugat{z}}&=\conjugat{\conjugat{a+\iu b}} \\
+			&=\conjugat{a-\iu b} \\
+			&=a+\iu b=z.\qedhere
+		\end{align*}
+	\end{proof}
 	\begin{proposition}
 		\label{prop:el conjugat de la suma és la suma de conjugats}
 		Siguin \(z\) i \(w\) dos nombres complexos. Aleshores
 		\[\conjugat{z+w}=\conjugat{z}+\conjugat{w}.\]
-		\begin{proof}
-			Per la definició de~\myref{def:nombre complex} tenim que existeixen \(a\), \(b\), \(c\), \(d\in\field{R}\) tals que
-			\[z=a+\iu b\qquad\text{i}\qquad w=c+\iu d.\]
-			Aleshores per la definició de~\myref{def:suma de nombres complexos} i la definició de~\myref{def:conjugat d'un nombre complex} trobem que
-			\begin{align*}
-				\conjugat{z+w}&=\conjugat{(a+\iu b)+(c+\iu d)} \\
-				&=\conjugat{(a+c)+\iu(b+d)} \\
-				&=(a+c)-\iu(b+d) \\
-				&=(a-\iu b)+(c-d\iu) \\
-				&=\conjugat{a+\iu b}+\conjugat{c+\iu d}=\conjugat{z}+\conjugat{w}.\qedhere
-			\end{align*}
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:nombre complex} tenim que existeixen \(a\), \(b\), \(c\), \(d\in\field{R}\) tals que
+		\[z=a+\iu b\qquad\text{i}\qquad w=c+\iu d.\]
+		Aleshores per la definició de~\myref{def:suma de nombres complexos} i la definició de~\myref{def:conjugat d'un nombre complex} trobem que
+		\begin{align*}
+			\conjugat{z+w}&=\conjugat{(a+\iu b)+(c+\iu d)} \\
+			&=\conjugat{(a+c)+\iu(b+d)} \\
+			&=(a+c)-\iu(b+d) \\
+			&=(a-\iu b)+(c-d\iu) \\
+			&=\conjugat{a+\iu b}+\conjugat{c+\iu d}=\conjugat{z}+\conjugat{w}.\qedhere
+		\end{align*}
+	\end{proof}
 	\begin{proposition}
 		\label{prop:el conjugat del producte és el producte de conjugats}
 		Siguin \(z\) i \(w\) dos nombres complexos. Aleshores
 		\[\conjugat{zw}=\conjugat{z}\,\conjugat{w}.\]
-		\begin{proof}
-			Per la definició de~\myref{def:nombre complex} tenim que existeixen \(a\), \(b\), \(c\), \(d\in\field{R}\) tals que
-			\[z=a+\iu b\qquad\text{i}\qquad w=c+\iu d.\]
-			Aleshores per la definició de~\myref{def:producte de nombres complexos} i la definició de~\myref{def:conjugat d'un nombre complex} trobem que
-			\begin{align*}
-				\conjugat{zw}&=\conjugat{(a+\iu b)(c+\iu d)} \\
-				&=\conjugat{(ac-bd)+\iu(ad+bc)} \\
-				&=(ac-bd)-\iu(ad+bc) \\
-				&=(ac-bd)+\iu(-ad-bc) \\
-				&=(a-\iu b)(c-\iu d) \\
-				&=\conjugat{a+\iu b}\,\conjugat{c+\iu d}=\conjugat{z}\,\conjugat{w}\qedhere.
-			\end{align*}
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:nombre complex} tenim que existeixen \(a\), \(b\), \(c\), \(d\in\field{R}\) tals que
+		\[z=a+\iu b\qquad\text{i}\qquad w=c+\iu d.\]
+		Aleshores per la definició de~\myref{def:producte de nombres complexos} i la definició de~\myref{def:conjugat d'un nombre complex} trobem que
+		\begin{align*}
+			\conjugat{zw}&=\conjugat{(a+\iu b)(c+\iu d)} \\
+			&=\conjugat{(ac-bd)+\iu(ad+bc)} \\
+			&=(ac-bd)-\iu(ad+bc) \\
+			&=(ac-bd)+\iu(-ad-bc) \\
+			&=(a-\iu b)(c-\iu d) \\
+			&=\conjugat{a+\iu b}\,\conjugat{c+\iu d}=\conjugat{z}\,\conjugat{w}\qedhere.
+		\end{align*}
+	\end{proof}
 	\begin{proposition}
 		\label{prop:el producte d'un nombre complex pel seu conjugat és la suma dels quadrats de la seva part real i imaginaria}
 		Sigui \(z=a+\iu b\) un nombre complex. Aleshores
 		\[z\conjugat{z}=a^{2}+b^{2}.\]
-		\begin{proof}
-			Per la definició de~\myref{def:producte de nombres complexos} i la definició de~\myref{def:conjugat d'un nombre complex} trobem que
-			\begin{align*}
-				z\conjugat{z}&=(a+\iu b)\conjugat{a+\iu b} \\
-				&=(a+\iu b)(a-\iu b)=a^{2}+b^{2}.\qedhere
-			\end{align*}
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:producte de nombres complexos} i la definició de~\myref{def:conjugat d'un nombre complex} trobem que
+		\begin{align*}
+			z\conjugat{z}&=(a+\iu b)\conjugat{a+\iu b} \\
+			&=(a+\iu b)(a-\iu b)=a^{2}+b^{2}.\qedhere
+		\end{align*}
+	\end{proof}
 	\begin{proposition}
 		\label{prop:un nombre complex és igual al seu conjugat si i només si és un real}
 		Sigui \(z\) un nombre complex. Aleshores \(z=\conjugat{z}\) si i només si \(z\in\field{R}\).
-		\begin{proof}
-			Per la definició de~\myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\field{R}\) tals que \(z=a+\iu b\). Aleshores si tenim \(z=\conjugat{z}\), per la definició de~\myref{def:conjugat d'un nombre complex} trobem que
-			\[a+\iu b=a-\iu b,\]
-			que és equivalent a \(b=-b\), i per tant ha de ser \(b=0\) i trobem que \(z=a\in\field{R}\).
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\field{R}\) tals que \(z=a+\iu b\). Aleshores si tenim \(z=\conjugat{z}\), per la definició de~\myref{def:conjugat d'un nombre complex} trobem que
+		\[a+\iu b=a-\iu b,\]
+		que és equivalent a \(b=-b\), i per tant ha de ser \(b=0\) i trobem que \(z=a\in\field{R}\).
+	\end{proof}
 	\begin{proposition}
 		\label{prop:inversa d'un nombre complex en funció del seu conjugat}
 		Sigui \(z\neq0\) un nombre complex. Aleshores
 		\[z^{-1}=\frac{\conjugat{z}}{z\conjugat{z}}.\]
-		\begin{proof}
-			Per la definició de~\myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\field{R}\) tals que \(z=a+\iu b\). Aleshores tenim que
-			\begin{align*}
-				z\frac{\conjugat{z}}{z\conjugat{z}}&=\frac{z\conjugat{z}}{z\conjugat{z}} \\
-				&=\frac{a^{2}+b^{2}}{a^{2}+b^{2}}=1 \tag{\ref{prop:el producte d'un nombre complex pel seu conjugat és la suma dels quadrats de la seva part real i imaginaria}}
-			\end{align*}
-			i per la definició de~\myref{def:l'invers d'un element d'un anell} hem acabat.
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\field{R}\) tals que \(z=a+\iu b\). Aleshores tenim que
+		\begin{align*}
+			z\frac{\conjugat{z}}{z\conjugat{z}}&=\frac{z\conjugat{z}}{z\conjugat{z}} \\
+			&=\frac{a^{2}+b^{2}}{a^{2}+b^{2}}=1 \tag{\ref{prop:el producte d'un nombre complex pel seu conjugat és la suma dels quadrats de la seva part real i imaginaria}}
+		\end{align*}
+		i per la definició de~\myref{def:l'invers d'un element d'un anell} hem acabat.
+	\end{proof}
 	\begin{definition}[Part real i part imaginària d'un nombre complex]
 		\labelname{part real i part imaginària d'un nombre complex}\label{def:part real i part imaginària d'un nombre complex}
 		\labelname{part real d'un nombre complex}\label{def:part real d'un nombre complex}
@@ -253,14 +253,14 @@
 		\label{prop:fórmula per la part imaginària d'un nombre complex}
 		Sigui \(z\) un nombre complex. Aleshores
 		\[\Re(z)=\frac{z+\conjugat{z}}{2}\qquad\text{i}\qquad\Im(z)=\frac{z-\conjugat{z}}{2\iu}.\]
-		\begin{proof}
-			Per la definició de~\myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\field{R}\) tals que \(z=a+\iu b\). Aleshores tenim que
-			\[\frac{z+\conjugat{z}}{2}=\frac{a+\iu b+a-\iu b}{2}=\frac{2a}{2}=a=\Re(z),\]
-			i
-			\[\frac{z-\conjugat{z}}{2\iu}=\frac{a+\iu b-a+\iu b}{2\iu}=\frac{2\iu b}{2\iu}=b=\Im(z),\]
-			i per la definició de~\myref{def:part real i part imaginària d'un nombre complex} hem acabat.
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:nombre complex} tenim que existeixen \(a\), \(b\in\field{R}\) tals que \(z=a+\iu b\). Aleshores tenim que
+		\[\frac{z+\conjugat{z}}{2}=\frac{a+\iu b+a-\iu b}{2}=\frac{2a}{2}=a=\Re(z),\]
+		i
+		\[\frac{z-\conjugat{z}}{2\iu}=\frac{a+\iu b-a+\iu b}{2\iu}=\frac{2\iu b}{2\iu}=b=\Im(z),\]
+		i per la definició de~\myref{def:part real i part imaginària d'un nombre complex} hem acabat.
+	\end{proof}
 	\subsection{Topologia de nombres complexos}
 	\begin{definition}[Mòdul d'un nombre complex]
 		\labelname{mòdul d'un nombre complex}\label{def:mòdul d'un nombre complex}
@@ -281,75 +281,75 @@
 		\label{prop:el mòdul d'un nombre complex és zero si i només si aquest és zero}
 		Sigui~\(z\) un nombre complex. Aleshores
 		\[\modul{z}=0\sii z=0.\]
-		\begin{proof}
-			Per la definició de~\myref{def:nombre complex} tenim que \(z=a+\iu b\). Suposem que~\(\modul{z}=0\). Per la definició de~\myref{def:mòdul d'un nombre complex} tenim que~\(\sqrt{a^{2}+b^{2}}=0\), i per tant ha de ser~\(a^{2}+b^{2}=0\), d'on trobem que~\(a=b=0\) i per tant~\(z=0\).
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:nombre complex} tenim que \(z=a+\iu b\). Suposem que~\(\modul{z}=0\). Per la definició de~\myref{def:mòdul d'un nombre complex} tenim que~\(\sqrt{a^{2}+b^{2}}=0\), i per tant ha de ser~\(a^{2}+b^{2}=0\), d'on trobem que~\(a=b=0\) i per tant~\(z=0\).
+	\end{proof}
 	\begin{proposition}
 		\label{prop:el mòdul d'un nombre complex és l'arrel del nombre pel seu conjugat}
 		Sigui \(z\) un nombre complex. Aleshores es satisfà
 		\[\modul{z}=\sqrt{z\conjugat{z}}.\]
-		\begin{proof}
-			Per la definició de~\myref{def:nombre complex} tenim que \(z=a+\iu b\), i per la proposició~\myref{prop:el producte d'un nombre complex pel seu conjugat és la suma dels quadrats de la seva part real i imaginaria} trobem que
-			\begin{align*}
-				z\conjugat{z}&=a^{2}+b^{2} \\
-				&=\big(\sqrt{a^{2}+b^{2}}\big)^{2}=\modul{z}^{2}, \tag{\ref{def:mòdul d'un nombre complex}}
-			\end{align*}
-			i per tant 
-			\[\modul{z}=\sqrt{z\conjugat{z}}.\qedhere\]
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:nombre complex} tenim que \(z=a+\iu b\), i per la proposició~\myref{prop:el producte d'un nombre complex pel seu conjugat és la suma dels quadrats de la seva part real i imaginaria} trobem que
+		\begin{align*}
+			z\conjugat{z}&=a^{2}+b^{2} \\
+			&=\big(\sqrt{a^{2}+b^{2}}\big)^{2}=\modul{z}^{2}, \tag{\ref{def:mòdul d'un nombre complex}}
+		\end{align*}
+		i per tant 
+		\[\modul{z}=\sqrt{z\conjugat{z}}.\qedhere\]
+	\end{proof}
 	\begin{proposition}[Desigualtat triangular]
 		\labelname{desigualtat triangular}\label{prop:desigualta triangular nombres complexos}
 		Siguin \(z\) i \(w\) dos nombres complexos. Aleshores
 		\[\modul{z+w}\leq\modul{z}+\modul{w}.\]
-		\begin{proof}
-			Per la definició de~\myref{def:mòdul d'un nombre complex} tenim que
-			\begin{align*}
-				\modul{z+w}^{2}&=(z+w)\conjugat{(z+w)} \\
-				&=(z+w)(\conjugat{z}+\conjugat{w}) \tag{\ref{prop:el conjugat de la suma és la suma de conjugats}} \\
-				&=z\conjugat{z}+z\conjugat{w}+\conjugat{z}w+w\conjugat{w} \\
-				&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{z}w+z\conjugat{w} \tag{\ref{prop:el mòdul d'un nombre complex és l'arrel del nombre pel seu conjugat}} \\
-				&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{\conjugat{\conjugat{z}w}}+z\conjugat{w} \tag{\ref{prop:el conjugat del conjugat d'un nombre complex és ell mateix}} \\
-				&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{\conjugat{\conjugat{z}}\,\conjugat{w}}+z\conjugat{w} \tag{\ref{prop:el conjugat del producte és el producte de conjugats}} \\
-				&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{z\conjugat{w}}+z\conjugat{w}\tag{\ref{prop:el conjugat del conjugat d'un nombre complex és ell mateix}} \\
-				&=\modul{z}^{2}+\modul{w}^{2}+2\Re(zw), \tag{\ref{prop:fórmula per la part real d'un nombre complex}} \\
-				&\leq\modul{z}^{2}+\modul{w}^{2}+2\modul{zw} \tag{\ref{obs:la part real d'un complex és menor que el seu mòdul}} \\
-				&\leq\modul{z}^{2}+\modul{w}^{2}+2\modul{z}\modul{w} \\
-				&=(\modul{z}+\modul{w})^{2},
-			\end{align*}
-			i per tant~\(\modul{z+w}\leq\modul{z}+\modul{w}\).
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:mòdul d'un nombre complex} tenim que
+		\begin{align*}
+			\modul{z+w}^{2}&=(z+w)\conjugat{(z+w)} \\
+			&=(z+w)(\conjugat{z}+\conjugat{w}) \tag{\ref{prop:el conjugat de la suma és la suma de conjugats}} \\
+			&=z\conjugat{z}+z\conjugat{w}+\conjugat{z}w+w\conjugat{w} \\
+			&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{z}w+z\conjugat{w} \tag{\ref{prop:el mòdul d'un nombre complex és l'arrel del nombre pel seu conjugat}} \\
+			&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{\conjugat{\conjugat{z}w}}+z\conjugat{w} \tag{\ref{prop:el conjugat del conjugat d'un nombre complex és ell mateix}} \\
+			&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{\conjugat{\conjugat{z}}\,\conjugat{w}}+z\conjugat{w} \tag{\ref{prop:el conjugat del producte és el producte de conjugats}} \\
+			&=\modul{z}^{2}+\modul{w}^{2}+\conjugat{z\conjugat{w}}+z\conjugat{w}\tag{\ref{prop:el conjugat del conjugat d'un nombre complex és ell mateix}} \\
+			&=\modul{z}^{2}+\modul{w}^{2}+2\Re(zw), \tag{\ref{prop:fórmula per la part real d'un nombre complex}} \\
+			&\leq\modul{z}^{2}+\modul{w}^{2}+2\modul{zw} \tag{\ref{obs:la part real d'un complex és menor que el seu mòdul}} \\
+			&\leq\modul{z}^{2}+\modul{w}^{2}+2\modul{z}\modul{w} \\
+			&=(\modul{z}+\modul{w})^{2},
+		\end{align*}
+		i per tant~\(\modul{z+w}\leq\modul{z}+\modul{w}\).
+	\end{proof}
 	\begin{proposition}
 		\label{prop:el producte de mòduls és el mòdul del producte}
 		Siguin~\(z\) i~\(w\) dos nombres complexos. Aleshores
 		\[\modul{zw}=\modul{z}\modul{w}.\]
-		\begin{proof}
-			Per la definició de~\myref{def:mòdul d'un nombre complex} tenim que
-			\begin{align*}
-				\modul{zw}^{2}&=\sqrt{zwz\conjugat{zw}}^{2} \\
-				&=zw\conjugat{zw} \\
-				&=zw\conjugat{z}\,\conjugat{w} \tag{\ref{prop:el conjugat del producte és el producte de conjugats}} \\
-				&=z\conjugat{z}w\conjugat{w} \tag{\ref{prop:el producte de nombres complexos és commutatiu}} \\
-				&=\sqrt{z\conjugat{z}}^{2}\sqrt{w\conjugat{w}}^{2}=\modul{z}^{2}\modul{w}^{2}
-			\end{align*}
-			i per tant~\(\modul{zw}=\modul{z}\modul{w}\).
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Per la definició de~\myref{def:mòdul d'un nombre complex} tenim que
+		\begin{align*}
+			\modul{zw}^{2}&=\sqrt{zwz\conjugat{zw}}^{2} \\
+			&=zw\conjugat{zw} \\
+			&=zw\conjugat{z}\,\conjugat{w} \tag{\ref{prop:el conjugat del producte és el producte de conjugats}} \\
+			&=z\conjugat{z}w\conjugat{w} \tag{\ref{prop:el producte de nombres complexos és commutatiu}} \\
+			&=\sqrt{z\conjugat{z}}^{2}\sqrt{w\conjugat{w}}^{2}=\modul{z}^{2}\modul{w}^{2}
+		\end{align*}
+		i per tant~\(\modul{zw}=\modul{z}\modul{w}\).
+	\end{proof}
 	\begin{proposition}
 		\label{prop:el valor absolut de la resta de mòduls és més petit o igual que el mòdul de la suma}
 		Siguin~\(z\) i~\(w\) dos nombres complexos. Aleshores
 		\[\abs{\modul{z}-\modul{w}}\leq\modul{z+w}.\]
-		\begin{proof}
-			Tenim que
-			\begin{align*}
-				\modul{z}&=\modul{z+w-w} \\
-				&\leq\modul{z+w}+\modul{w} \tag{\ref{prop:desigualta triangular nombres complexos}}
-			\end{align*}
-			i tenim que~\(\abs{\modul{z}-\modul{w}}\leq\modul{z+w}\).
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Tenim que
+		\begin{align*}
+			\modul{z}&=\modul{z+w-w} \\
+			&\leq\modul{z+w}+\modul{w} \tag{\ref{prop:desigualta triangular nombres complexos}}
+		\end{align*}
+		i tenim que~\(\abs{\modul{z}-\modul{w}}\leq\modul{z+w}\).
+	\end{proof}
 	\begin{proposition}
 		\label{prop:els complexos són un espai mètric}
 		El conjunt~\(\CC\) amb
@@ -358,51 +358,51 @@
 			(z,w)&\longmapsto\modul{z-w}
 		\end{align*}
 		és un espai mètric.
-		\begin{proof}
-			Veiem que satisfà les condicions de la definició de~\myref{def:espai mètric}.
-			\begin{enumerate}
-				\item Siguin~\(z\) i~\(w\) dos nombres complexos tals que~\(\distancia(z,w)=0\). Aleshores tenim que~\(\modul{z-w}=0\), i per la proposició~\myref{prop:el mòdul d'un nombre complex és zero si i només si aquest és zero} tenim que ha de ser~\(z-w=0\), i per tant~\(z=w\).
-				\item Siguin~\(z\) i~\(w\) dos nombres complexos. Aleshores
-				\[\distancia(z,w)=\modul{z-w}=\modul{-(z-w)}=\modul{w-z}=\distancia(w,z).\]
-				\item Siguin~\(z\),~\(w\) i~\(t\) tres nombres complexos. Aleshores
-				\begin{align*}
-					\distancia(z,w)&=\modul{z-w} \\
-					&\leq\modul{z}-\modul{w} \tag{\ref{prop:el valor absolut de la resta de mòduls és més petit o igual que el mòdul de la suma}}\\
-					&=\modul{z}-\modul{t}+\modul{t}-\modul{w} \\
-					&\leq\modul{z-t}+\modul{w-t} \tag{\ref{prop:el valor absolut de la resta de mòduls és més petit o igual que el mòdul de la suma}}\\
-					&=\modul{z-t}+\modul{t-w} \\
-					&=\distancia(z,t)+\distancia(t,w)
-				\end{align*}
-				\item Siguin~\(z\) i~\(w\) dos nombres complexos. Aleshores per l'observació~\myref{prop:el mòdul d'un nombre complex és no negatiu} tenim que
-				\[\distancia(z,w)=\modul{z-w}\geq0.\]
-			\end{enumerate}
-			i per la definició de~\myref{def:espai mètric} tenim que~\(\distancia\) és una distància i que~\(\CC\) amb la distància~\(\distancia\) és un espai mètric.
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Veiem que satisfà les condicions de la definició de~\myref{def:espai mètric}.
+		\begin{enumerate}
+			\item Siguin~\(z\) i~\(w\) dos nombres complexos tals que~\(\distancia(z,w)=0\). Aleshores tenim que~\(\modul{z-w}=0\), i per la proposició~\myref{prop:el mòdul d'un nombre complex és zero si i només si aquest és zero} tenim que ha de ser~\(z-w=0\), i per tant~\(z=w\).
+			\item Siguin~\(z\) i~\(w\) dos nombres complexos. Aleshores
+			\[\distancia(z,w)=\modul{z-w}=\modul{-(z-w)}=\modul{w-z}=\distancia(w,z).\]
+			\item Siguin~\(z\),~\(w\) i~\(t\) tres nombres complexos. Aleshores
+			\begin{align*}
+				\distancia(z,w)&=\modul{z-w} \\
+				&\leq\modul{z}-\modul{w} \tag{\ref{prop:el valor absolut de la resta de mòduls és més petit o igual que el mòdul de la suma}}\\
+				&=\modul{z}-\modul{t}+\modul{t}-\modul{w} \\
+				&\leq\modul{z-t}+\modul{w-t} \tag{\ref{prop:el valor absolut de la resta de mòduls és més petit o igual que el mòdul de la suma}}\\
+				&=\modul{z-t}+\modul{t-w} \\
+				&=\distancia(z,t)+\distancia(t,w)
+			\end{align*}
+			\item Siguin~\(z\) i~\(w\) dos nombres complexos. Aleshores per l'observació~\myref{prop:el mòdul d'un nombre complex és no negatiu} tenim que
+			\[\distancia(z,w)=\modul{z-w}\geq0.\]
+		\end{enumerate}
+		i per la definició de~\myref{def:espai mètric} tenim que~\(\distancia\) és una distància i que~\(\CC\) amb la distància~\(\distancia\) és un espai mètric.
+	\end{proof}
 	\begin{proposition}
 		\label{prop:el pla complex és homeomorf al pla real}
 		Tenim que~\(\CC\) és homeomorf a~\(\RR^{2}\).
-		\begin{proof}
-			%TODO
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		%TODO
+	\end{proof}
 %	\subsection{Representació de nombres complexos}
 %	\begin{proposition}
 %		\label{prop:nombre complex com a sinus i cosinus}
 %		Sigui~\(z\) un nombre complex no nul. Aleshores existeix un~\(\theta\in\RR\) tal que
 %		\[z=\modul{z}\bigl(\cos(\theta)+\iu\sin(\theta)\bigr).\]
-%		\begin{proof}
-%			
-%		\end{proof}
 %	\end{proposition}
+%	\begin{proof}
+%		
+%	\end{proof}
 %	\begin{proposition}
 %		\label{prop:nombre complex com a exponencial}
 %		Sigui~\(z\) un nombre complex no nul. Aleshores existeix un~\(\theta\in\RR\) tal que
 %		\[z=\modul{z}\e^{\iu\theta}.\]
-%		\begin{proof}
-%			
-%		\end{proof}
 %	\end{proposition}
+%	\begin{proof}
+%		
+%	\end{proof}
 
 %	\subsection{Argument d'un nombre complex}
 %	\begin{definition}[Argument]
@@ -456,24 +456,24 @@
 		Sigui~\(f\) una funció~\(\CC\)-derivable en un punt~\(z_{0}\). Aleshores~\(f\) és contínua en~\(z_{0}\).
 	\end{observation}
 	\begin{example}
-		Volem veure que la funció~\(f(z)=z\) és contínua i~\(\CC\)-derivable, i calcular~\(f'\).
-		\begin{solution}
-			Observem que
-			\begin{align*}
-				f\colon\CC&\longrightarrow\CC \\
-				a+\iu b&\longmapsto \Re(a)+\iu\Im(b),
-			\end{align*}
-			i per la proposició~\myref{prop:fórmules per la part real i part imaginària d'un nombre complex} trobem que~\(\Re\) i~\(\Im\) són funcions contínues ne~\(\CC\). Per tant per l'observació~\myref{obs:una funció complexa és contínua si i només si ho són les seves components} tenim que~\(f\) és contínua en~\(\CC\).
-			
-			Calculem ara
-			\begin{align*}
-				f'(z_{0})&=\lim_{h\to0}\frac{f(z_{0}+h)-f(z_{0})}{h} \\
-				&=\lim_{h\to0}\frac{z_{0}+h-z_{0}}{h} \\
-				&=\lim_{h\to0}\frac{h}{h}=1,
-			\end{align*}
-			i per tant la funció~\(f\) és~\(\CC\)-derivable en~\(\CC\) i~\(f'(z)=1\).
-		\end{solution}
+	Volem veure que la funció~\(f(z)=z\) és contínua i~\(\CC\)-derivable, i calcular~\(f'\).
 	\end{example}
+	\begin{solution}
+		Observem que
+		\begin{align*}
+			f\colon\CC&\longrightarrow\CC \\
+			a+\iu b&\longmapsto \Re(a)+\iu\Im(b),
+		\end{align*}
+		i per la proposició~\myref{prop:fórmules per la part real i part imaginària d'un nombre complex} trobem que~\(\Re\) i~\(\Im\) són funcions contínues ne~\(\CC\). Per tant per l'observació~\myref{obs:una funció complexa és contínua si i només si ho són les seves components} tenim que~\(f\) és contínua en~\(\CC\).
+		
+		Calculem ara
+		\begin{align*}
+			f'(z_{0})&=\lim_{h\to0}\frac{f(z_{0}+h)-f(z_{0})}{h} \\
+			&=\lim_{h\to0}\frac{z_{0}+h-z_{0}}{h} \\
+			&=\lim_{h\to0}\frac{h}{h}=1,
+		\end{align*}
+		i per tant la funció~\(f\) és~\(\CC\)-derivable en~\(\CC\) i~\(f'(z)=1\).
+	\end{solution}
 	\begin{example}
 		Volem veure que l'aplicació~\(f(z)=\conjugat{z}\) no és~\(\CC\)-derivable. Calculem
 		\begin{align*}
@@ -509,26 +509,59 @@
 			\label{eq:1:thm:Teorema d'Abel per sèries de potències complexes}
 			A=\{z\in\CC\mid\abs{1-z}<k(1-\abs{z})\text{ per a cert }k\in\RR\}.
 		\end{equation}
-		\begin{proof}
-			Podem suposar, sense pèrdua de generalitat, que~\(S=0\) redefinint~\(a_{0}\) com~\(a_{0}-S\).
-			
-			Definim
-			\[S_{N}=\sum_{n=0}^{N}a_{n}.\]
-			Aleshores~\(\lim_{N\to\infty}S_{N}=0\). Per tant, per la definició de~\myref{def:límit} tenim que per a tot~\(\varepsilon>0\) existeix un~\(n_{0}\in\NN\) tal que per a tot~\(N>n_{0}\) tenim que~\(\abs{S_{N}}<\varepsilon\). Per tant si prenem un~\(\varepsilon>0\) tenim que existeix un~\(n_{0}\) tal que per a tot~\(N>n_{0}\) trobem
-			\begin{align*}
-				\modul{S_{N}z^{N}}&=\modul{S_{N}}\modul{z^{N}} \tag{\ref{def:mòdul d'un nombre complex}} \\
-				&<\varepsilon\modul{z^{N}} \tag{\ref{def:límit}} \\
-				&=\varepsilon\modul{z}^{N} \tag{\ref{prop:el producte de mòduls és el mòdul del producte}} \\
-				&\leq\varepsilon. \tag{\ref{eq:1:thm:Teorema d'Abel per sèries de potències complexes}}
-			\end{align*}
-			i per tant~\(\modul{S_{N}z^{N}}<\varepsilon\). També tenim que
-			\begin{align*}
-				\modul{1-z}\sum_{n=0}^{N}\modul{S_{N}z^{N}}\leq\modul{1-z}M(N) \tag{1}
-			\end{align*}
-		\end{proof}
 	\end{theorem}
+	\begin{proof}
+		%TODO
+%		Podem suposar, sense pèrdua de generalitat, que~\(S=0\) redefinint~\(a_{0}\) com~\(a_{0}-S\).
+%		
+%		Definim
+%		\[S_{N}=\sum_{n=0}^{N}a_{n}.\]
+%		Aleshores~\(\lim_{N\to\infty}S_{N}=0\). Per tant, per la definició de~\myref{def:límit} tenim que per a tot~\(\varepsilon>0\) existeix un~\(n_{0}\in\NN\) tal que per a tot~\(N>n_{0}\) tenim que~\(\abs{S_{N}}<\varepsilon\). Per tant si prenem un~\(\varepsilon>0\) tenim que existeix un~\(n_{0}\) tal que per a tot~\(N>n_{0}\) trobem
+%		\begin{align*}
+%			\modul{S_{N}z^{N}}&=\modul{S_{N}}\modul{z^{N}} \tag{\ref{def:mòdul d'un nombre complex}} \\
+%			&<\varepsilon\modul{z^{N}} \tag{\ref{def:límit}} \\
+%			&=\varepsilon\modul{z}^{N} \tag{\ref{prop:el producte de mòduls és el mòdul del producte}} \\
+%			&\leq\varepsilon. \tag{\ref{eq:1:thm:Teorema d'Abel per sèries de potències complexes}}
+%		\end{align*}
+%		i per tant~\(\modul{S_{N}z^{N}}<\varepsilon\). També tenim pel~\myref{thm:criteri M de Weierstrass} que la sèrie~\(\sum_{n=0}^{N}\) és convergent quan~\(z\) tendeix a~\(1\), i per tant~\(\modul{1-z}\)
+	\end{proof}
 	\begin{definition}[Funció entera]
 		\labelname{funció entera}\label{def:funció entera}
 		Sigui~\(f\) una funció holomorfa en tot~\(\CC\). Aleshores direm que~\(f\) és entera.
 	\end{definition}
+	\begin{example}
+		Els polinomis són funcions enteres.
+	\end{example}
+	\begin{example}
+		La funció~\(\e^{z}\) és entera.
+	\end{example}
+	\begin{notation}
+		Denotarem
+		\begin{gather*}
+			\begin{split}
+				\cos(z)&=\frac{\e^{\iu z}+\e^{-\iu z}}{2} \\
+				\cosh(z)&=\frac{\e^{z}+e^{-z}}{2}
+			\end{split}\qquad
+			\begin{split}
+				\sin(z)&=\frac{\e^{\iu z}-\e^{-\iu z}}{2\iu} \\
+				\sinh(z)&=\frac{\e^{z}-e^{-z}}{2}
+			\end{split} \\
+		\end{gather*}
+		per a tot~\(z\in\CC\).
+	\end{notation}
+	\begin{observation}
+		Les funcions~\(\cos(z)\),~\(\sin(z)\),~\(\cosh(z)\) i~\(\sinh(z)\) són enteres.
+	\end{observation}
+%	\begin{observation}
+%		Sigui~\(z\) un nombre complex. Aleshores
+%		\[\cos(z+2\uppi k)=\cos(z)\qquad\text{i}\qquad\sin(z+2\uppi k)=\sin(z)\]
+%		per a tot~\(k\) enter.
+%	\end{observation}
+	\begin{observation}
+		Sigui~\(z\) un nombre complex. Aleshores
+		\begin{equation*}
+			\cosh(z)=\cos(\iu z)\qquad\text{i}\qquad\sinh(z)=-\iu\sin(\iu z).
+		\end{equation*}
+	\end{observation}
+	\subsection{Equacions de Cauchy-Riemann}
 \end{document}

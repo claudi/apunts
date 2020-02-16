@@ -53,10 +53,10 @@
 		a_{i,1}&\cdots&a_{i,i}\\
 		\end{matrix}}>0\]
 		per a tot \(i\in\{1,\dots,n\}\).
-		\begin{proof}
-			Per inducció sobre \(n\).
-		\end{proof}
 	\end{theorem}
+	\begin{proof}
+		Per inducció sobre \(n\).
+	\end{proof}
 \section{Funcions de variable real}
 	\subsection{Definicions}
 	\begin{definition}[Imatge]
@@ -234,16 +234,16 @@
 		Siguin
 		\[\dot{u}(t)=X(u(t))\]
 		una equació diferencial autònoma sobre un obert \(\obert{U}\subseteq\mathbb{R}^{n}\) amb \(X\in\mathcal{C}^{1}\) i \(x\in\obert{U}\) un punt. Aleshores existeix una solució maximal \(\varphi_{x}\) tal que \(\varphi_{x}(0)=x\).
-		\begin{proof}
-			Considerem el problema de Cauchy
-			\[\begin{cases*}
-				\displaystyle \dot{u}(t)=X(u(t)) \\
-				\displaystyle u(0)=x.
-			\end{cases*}\]
-			
-			Aleshores per la proposició \myref{prop:existeixen solucions improrrogables} tenim que existeix una solució maximal \(\varphi_{x}\) d'aquest problema de Cauchy, i per la definició de \myref{def:problema de Cauchy} trobem que \(\varphi_{x}(0)=x\) i hem acabat.
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Considerem el problema de Cauchy
+		\[\begin{cases*}
+			\displaystyle \dot{u}(t)=X(u(t)) \\
+			\displaystyle u(0)=x.
+		\end{cases*}\]
+		
+		Aleshores per la proposició \myref{prop:existeixen solucions improrrogables} tenim que existeix una solució maximal \(\varphi_{x}\) d'aquest problema de Cauchy, i per la definició de \myref{def:problema de Cauchy} trobem que \(\varphi_{x}(0)=x\) i hem acabat.
+	\end{proof}
 	\begin{definition}[Flux]
 		\labelname{flux}\label{def:flux}
 		Siguin

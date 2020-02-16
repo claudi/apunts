@@ -13,17 +13,17 @@
 	\begin{proposition} %FER Buscar-li un lloc millor. Potser a estructures.
 		\label{prop:un cos quocient un irreductible és un cos}
 		Siguin~\(\KK\) un cos i~\(p(x)\in\KK[x]\) un polinomi irreductible. Aleshores~\(\KK[x]/(p(x))\) és un cos.
-		\begin{proof} % Veure que un cos és un DIP. A estructures lol.
-			Per hipòtesi tenim que~\(p(x)\) és irreductible, i per la proposició~\myref{prop:irreductible sii ideal maximal} trobem que l'ideal~\((p(x))\) és maximal. Aleshores per la proposició~\myref{prop:condició equivalent a ideal maximal per R/M cos} tenim que~\(\FF\) és un cos.
-		\end{proof}
 	\end{proposition}
+	\begin{proof} % Veure que un cos és un DIP. A estructures lol.
+		Per hipòtesi tenim que~\(p(x)\) és irreductible, i per la proposició~\myref{prop:irreductible sii ideal maximal} trobem que l'ideal~\((p(x))\) és maximal. Aleshores per la proposició~\myref{prop:condició equivalent a ideal maximal per R/M cos} tenim que~\(\FF\) és un cos.
+	\end{proof}
 	\begin{example}
 		\label{ex:el cos de polinomis és una extensió}
 		Siguin~\(\KK\) un cos i~\(p(x)\in\KK[x]\) un polinomi irreductible. Denotem~\(\FF=\KK[x]/(p(x))\). Aleshores~\(\FF\extensio\KK\) és una extensió.
-		\begin{solution}
-			Per la proposició~\myref{prop:un cos quocient un irreductible és un cos} tenim que~\(\FF\) és un cos. Veiem que~\(\KK\subseteq\FF\) per l'observació~\myref{obs:un anell està contingut en el seu anell de polinomis}, i per la definició d'\myref{def:extensió de cossos} hem acabat.
-		\end{solution}
 	\end{example}
+	\begin{solution}
+		Per la proposició~\myref{prop:un cos quocient un irreductible és un cos} tenim que~\(\FF\) és un cos. Veiem que~\(\KK\subseteq\FF\) per l'observació~\myref{obs:un anell està contingut en el seu anell de polinomis}, i per la definició d'\myref{def:extensió de cossos} hem acabat.
+	\end{solution}
 	\begin{example}[Morfisme avaluació]
 		\labelname{\empty}
 		\label{ex:morfisme d'avaluació}
@@ -52,25 +52,25 @@
 			(0) \\
 			(p(x)), & p(x)\text{ és un polinomi mònic irreductible a }\KK[x]
 		\end{cases}\]
-		\begin{proof} % REVISAR. Pot ser molt més fàcil?
-			Suposem que~\(\ker(\ev_{\alpha})\neq(0)\). Per la proposició~\myref{prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell} i l'exemple~\myref{ex:el morfisme avaluació és un morfisme d'anells} tenim que~\(\ker(\ev_{\alpha})\) és un ideal, i com que, per hipòtesi,~\(\KK\) és un cos, tenim que~\(\KK[x]\) és un domini d'ideals principals. %REF
-			Per tant, per la definició de~\myref{def:domini d'ideals principals} tenim que~\(\ker(\ev_{\alpha})\) és un ideal principal, i per la definició d'\myref{def:ideal principal} trobem que existeix un~\(a\in\KK[x]\) tal que~\(\ker(\ev_{\alpha})=(a)\).
-			
-			Tenim que~\(a\) ha de ser un polinomi mònic. Suposem que~\(a\in\KK\). Trobem per la definició~\myref{ex:el morfisme avaluació és un morfisme d'anells} que~\(\ev_{\alpha}(a)=a\), i com que hem suposat que~\(\ker(\ev_{\alpha})\neq(0)\), trobem que~\(a\neq0\), i per tant~\(\ev_{\alpha}(a)=a\neq0\), trobant que~\(a\notin\ker(\ev_{\alpha})\), arribant a contradicció. Per tant~\(a\in\KK[x]\setminus\KK\). Suposem que~\(a=\lambda p(x)\), amb~\(\lambda\in\KK\),~\(\lambda\neq0\) i~\(p\in\KK[x]\setminus\KK\). Per l'exemple~\myref{ex:el morfisme avaluació és un morfisme d'anells} tenim que~\(\ev_{\alpha}\) és un morfisme d'anells, i per la definició de~\myref{def:morfisme entre anells} trobem que
-			\begin{align*}
-				\ev_{\alpha}(\lambda p(x))&=\ev_{\alpha}(\lambda)\ev_{\alpha}(p(x))\\
-				&=\lambda\ev_{\alpha}(p(x)). \tag{\ref{ex:el morfisme avaluació és un morfisme d'anells}}
-			\end{align*}
-			Ara bé, com que hem suposat que~\(\ker(\ev_{\alpha})=(\lambda p(x))\) tenim~\(\ev_{\alpha}(\lambda p(x))=0\) i, com que hem suposat que~\(\lambda\neq0\), ha de ser~\(\ev_{\alpha}(p(x))=0\), i tenim que
-			\[\ker(\ev_{\alpha})=(p(x)).\]
-			
-			Veiem ara que~\(p(x)\) és irreductible. Pel~\myref{thm:Primer Teorema de l'isomorfisme entre anells} trobem que
-			\[\KK[x]/(p(x))=\KK[x]/\ker(\ev_{\alpha})\cong\Ima(\ev_{\alpha}).\]
-			
-			Com que~\(\FF\) és un cos tenim que~\(\Ima(\ev_{\alpha})\) és un domini. %REF
-			Com que~\(\Ima(\ev_{\alpha})\cong\KK[x]/(p(x))\) és un domini, tenim per la proposició~\myref{prop:R/I domini d'integritat sii I ideal primer} que~\((p(x))\) és un ideal primer, i per l'observació~\myref{obs:ideals primer iff primer} trobem que~\(p(x)\) és primer, i per la proposició~\myref{prop:en un DI un primer és un irreductible} tenim que~\(p(x)\) és irreductible.
-		\end{proof}
 	\end{lemma}
+	\begin{proof} % REVISAR. Pot ser molt més fàcil?
+		Suposem que~\(\ker(\ev_{\alpha})\neq(0)\). Per la proposició~\myref{prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell} i l'exemple~\myref{ex:el morfisme avaluació és un morfisme d'anells} tenim que~\(\ker(\ev_{\alpha})\) és un ideal, i com que, per hipòtesi,~\(\KK\) és un cos, tenim que~\(\KK[x]\) és un domini d'ideals principals. %REF
+		Per tant, per la definició de~\myref{def:domini d'ideals principals} tenim que~\(\ker(\ev_{\alpha})\) és un ideal principal, i per la definició d'\myref{def:ideal principal} trobem que existeix un~\(a\in\KK[x]\) tal que~\(\ker(\ev_{\alpha})=(a)\).
+		
+		Tenim que~\(a\) ha de ser un polinomi mònic. Suposem que~\(a\in\KK\). Trobem per la definició~\myref{ex:el morfisme avaluació és un morfisme d'anells} que~\(\ev_{\alpha}(a)=a\), i com que hem suposat que~\(\ker(\ev_{\alpha})\neq(0)\), trobem que~\(a\neq0\), i per tant~\(\ev_{\alpha}(a)=a\neq0\), trobant que~\(a\notin\ker(\ev_{\alpha})\), arribant a contradicció. Per tant~\(a\in\KK[x]\setminus\KK\). Suposem que~\(a=\lambda p(x)\), amb~\(\lambda\in\KK\),~\(\lambda\neq0\) i~\(p\in\KK[x]\setminus\KK\). Per l'exemple~\myref{ex:el morfisme avaluació és un morfisme d'anells} tenim que~\(\ev_{\alpha}\) és un morfisme d'anells, i per la definició de~\myref{def:morfisme entre anells} trobem que
+		\begin{align*}
+			\ev_{\alpha}(\lambda p(x))&=\ev_{\alpha}(\lambda)\ev_{\alpha}(p(x))\\
+			&=\lambda\ev_{\alpha}(p(x)). \tag{\ref{ex:el morfisme avaluació és un morfisme d'anells}}
+		\end{align*}
+		Ara bé, com que hem suposat que~\(\ker(\ev_{\alpha})=(\lambda p(x))\) tenim~\(\ev_{\alpha}(\lambda p(x))=0\) i, com que hem suposat que~\(\lambda\neq0\), ha de ser~\(\ev_{\alpha}(p(x))=0\), i tenim que
+		\[\ker(\ev_{\alpha})=(p(x)).\]
+		
+		Veiem ara que~\(p(x)\) és irreductible. Pel~\myref{thm:Primer Teorema de l'isomorfisme entre anells} trobem que
+		\[\KK[x]/(p(x))=\KK[x]/\ker(\ev_{\alpha})\cong\Ima(\ev_{\alpha}).\]
+		
+		Com que~\(\FF\) és un cos tenim que~\(\Ima(\ev_{\alpha})\) és un domini. %REF
+		Com que~\(\Ima(\ev_{\alpha})\cong\KK[x]/(p(x))\) és un domini, tenim per la proposició~\myref{prop:R/I domini d'integritat sii I ideal primer} que~\((p(x))\) és un ideal primer, i per l'observació~\myref{obs:ideals primer iff primer} trobem que~\(p(x)\) és primer, i per la proposició~\myref{prop:en un DI un primer és un irreductible} tenim que~\(p(x)\) és irreductible.
+	\end{proof}
 	\begin{definition}[Element algebraic i element transcendent]
 		\labelname{element algebraic}\label{def:element algebraic}
 		\labelname{element transcendent}\label{def:element transcendent}
@@ -90,22 +90,22 @@
 			\item~\(\sqrt{2}\) i~\(\sqrt{3}\) en l'extensió~\(\RR\extensio\QQ\).
 			\item~\(\sqrt{2}+\sqrt{3}\) en l'extensió~\(\RR\extensio\QQ\)
 		\end{enumerate}
-		\begin{solution}
-			Tenim que %TODO
-			\begin{enumerate}
-			\item~\(x^{2}-2\),~\(x^{2}-3\).
-			\item~\(x^{4}-10x^{2}+1\).\qedhere
-			\end{enumerate}
-		\end{solution}
 	\end{example}
+	\begin{solution}
+		Tenim que %TODO
+		\begin{enumerate}
+		\item~\(x^{2}-2\),~\(x^{2}-3\).
+		\item~\(x^{4}-10x^{2}+1\).\qedhere
+		\end{enumerate}
+	\end{solution}
 	\begin{observation}
 		\label{obs:condició equivalent a element algebraic}
 		\label{obs:condició equivalent a element transcendent}
 		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores~\(\alpha\) és algebraic si i només si existeix un polinomi no nul~\(p(x)\in\KK[x]\) tal que~\(\ker(\ev_{\alpha})=(p(x))\).
-		\begin{proof}
-			Si~\(\alpha\) és algebraic aleshores, per la definició d'\myref{def:element algebraic}, existeix un polinomi no nul~\(p(x)\in\KK[x]\) tal que~\(p(\alpha)=0\), i per la definició de~\myref{def:nucli d'un morfisme entre grups} tenim que~\(\ker(\ev_{\alpha})\neq(0)\). Aleshores pel lema~\myref{lema:element algebraic} hem acabat.
-		\end{proof}
 	\end{observation}
+	\begin{proof}
+		Si~\(\alpha\) és algebraic aleshores, per la definició d'\myref{def:element algebraic}, existeix un polinomi no nul~\(p(x)\in\KK[x]\) tal que~\(p(\alpha)=0\), i per la definició de~\myref{def:nucli d'un morfisme entre grups} tenim que~\(\ker(\ev_{\alpha})\neq(0)\). Aleshores pel lema~\myref{lema:element algebraic} hem acabat.
+	\end{proof}
 \subsection{Grau d'una extensió de cossos}
 	\begin{definition}[Grau d'una extensió de cossos]
 		\labelname{grau d'una extensió}\label{def:grau d'una extensió}
@@ -126,12 +126,12 @@
 		\labelname{fórmula de les torres}\label{thm:fórmula de les torres}
 		Siguin~\(\EE\extensio\FF\) i~\(\FF\extensio\KK\) dues extensions de cossos. Aleshores
 		\[\grauExtensio{\EE}{\KK}=\grauExtensio{\EE}{\FF}\grauExtensio{\FF}{\KK}.\]
-		\begin{proof}
-			Si~\(\grauExtensio{\EE}{\FF}=\infty\) ó~\(\grauExtensio{\FF}{\KK}=\infty\) tenim que~\(\grauExtensio{\EE}{\KK}=\infty\).
-			
-			Suposem doncs que~\(\grauExtensio{\EE}{\FF}=n\) i~\(\grauExtensio{\FF}{\KK}=m\). %TODO %FER
-		\end{proof}
 	\end{theorem}
+	\begin{proof}
+		Si~\(\grauExtensio{\EE}{\FF}=\infty\) ó~\(\grauExtensio{\FF}{\KK}=\infty\) tenim que~\(\grauExtensio{\EE}{\KK}=\infty\).
+		
+		Suposem doncs que~\(\grauExtensio{\EE}{\FF}=n\) i~\(\grauExtensio{\FF}{\KK}=m\). %TODO %FER
+	\end{proof}
 	\begin{definition}[Torre]
 		\labelname{torre}\label{def:torre de cossos}
 		Siguin~\(\KK_{1}\subseteq\KK_{2}\subseteq\dots\subseteq\KK_{1}\) cossos. Aleshores direm que
@@ -142,10 +142,10 @@
 		\label{cor:fórmula de les torres}
 		Sigui~\(\KK_{1}\subseteq\KK_{2}\subseteq\dots\subseteq\KK_{1}\) una torre. Aleshores
 		\[\grauExtensio{\KK_{n}}{\KK_{1}}=\grauExtensio{\KK_{n}}{\KK_{n-1}}\cdots\grauExtensio{\KK_{2}}{\KK_{1}}\]
-		\begin{proof}
-			Conseqüència de la~\myref{thm:fórmula de les torres}.
-		\end{proof}
 	\end{corollary}
+	\begin{proof}
+		Conseqüència de la~\myref{thm:fórmula de les torres}.
+	\end{proof}
 \subsection{Subanells engendrats per un element}
 	\begin{definition}[Mínim subanell engendrat]
 		\labelname{mínim subanell engendrat per un element d'una extensió}\label{def:mínim subanell engendrat per un element d'una extensió}
@@ -161,25 +161,25 @@
 		\label{prop:el mínim subanell engendrat per un element és l'anell de polinomis quocient l'irreductible de l'element}
 		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores
 		\[\KK[\alpha]\cong\KK[x]/(\Irr(\alpha,\KK)).\]
-		\begin{proof}
-			Tenim que
-			\begin{align*}
-				\KK[x]/(\Irr(\alpha,\KK))&=\KK[x]/\ker(\ev_{\alpha}) \tag{\ref{obs:polinomi mínim de descomposició}}\\
-				&\cong\Ima(\ev_{\alpha}) \tag{\ref{thm:Primer Teorema de l'isomorfisme entre anells}}\\
-				&=\{p(\alpha)\in\FF\mid p(x)\in\KK[x]\} \tag{\ref{def:imatge d'un morfisme entre anells} i \ref{ex:morfisme avaluació}}\\
-				&= \KK[\alpha], \tag{\ref{def:mínim subanell engendrat per un element d'una extensió}}
-			\end{align*}
-			i per tant
-			\[\KK[\alpha]\cong\KK[x]/(\Irr(\alpha,\KK)).\qedhere\]
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Tenim que
+		\begin{align*}
+			\KK[x]/(\Irr(\alpha,\KK))&=\KK[x]/\ker(\ev_{\alpha}) \tag{\ref{obs:polinomi mínim de descomposició}}\\
+			&\cong\Ima(\ev_{\alpha}) \tag{\ref{thm:Primer Teorema de l'isomorfisme entre anells}}\\
+			&=\{p(\alpha)\in\FF\mid p(x)\in\KK[x]\} \tag{\ref{def:imatge d'un morfisme entre anells} i \ref{ex:morfisme avaluació}}\\
+			&= \KK[\alpha], \tag{\ref{def:mínim subanell engendrat per un element d'una extensió}}
+		\end{align*}
+		i per tant
+		\[\KK[\alpha]\cong\KK[x]/(\Irr(\alpha,\KK)).\qedhere\]
+	\end{proof}
 	\begin{corollary}
 		\label{cor:grau d'un mínim subanell engendrat per un element d'una extensió}
 		\(\grauExtensio{\KK[\alpha]}{\KK}=\grau(\Irr(\alpha,\KK))\).
-		\begin{proof}
-			Per l'exemple~\myref{ex:el grau de l'extensió d'un cos i el quocient entre el seu anell de polinomis i un polinomi irreductible}.
-		\end{proof}
 	\end{corollary}
+	\begin{proof}
+		Per l'exemple~\myref{ex:el grau de l'extensió d'un cos i el quocient entre el seu anell de polinomis i un polinomi irreductible}.
+	\end{proof}
 	\begin{corollary}
 		\label{cor:el mínim subanell engendrat per un transcendent és isomorfa a l'anell de polinomis}
 		Siguin~\(\FF\extensio\KK\) una extensió i~\(\gamma\in\FF\) un element transcendent sobre~\(\KK\). Aleshores
@@ -201,22 +201,22 @@
 		\label{lema:un element és algebraic si i només si el mínim subanell engendrat per l'element és un cos}
 		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element. Aleshores~\(\alpha\) és algebraic sobre~\(\KK\) si i només si
 		\[\KK(\alpha)=\KK[\alpha].\]
-		\begin{proof} %FER %Revisar
-			Veiem que la condició és suficient~\((\implica)\). Suposem que~\(\alpha\in\FF\) és algebraic sobre~\(\KK\). Per la definició d'\myref{def:element algebraic} trobem que~\(\Irr(\alpha,\KK)\) és un polinomi irreductible no nul, i per la proposició~\myref{prop:un cos quocient un irreductible és un cos} tenim que~\(\KK[\alpha]\) és un cos.
-			
-			Ara bé, pel Teorema~\myref{thm:cos de fraccions} tenim que~\(\KK(\alpha)\subseteq\KK[\alpha]\), però per l'observació~\myref{def:mínim subcòs engendrat per un element d'una extensió} tenim que~\(\KK[\alpha]\subseteq\KK(\alpha)\), i pel \myref{thm:doble inclusió} tenim que~\(\KK(\alpha)=\KK[\alpha]\).
-			
-			Acabem veient que la condició és necessària~\((\implicatper)\). Suposem doncs que
-			\[\KK(\alpha)=\KK[\alpha].\]
-			Per tant~\(\KK[\alpha]\) és un cos, i com que, per l'observació~\myref{obs:l'anell engendrat per alpha està entre l'extensió}, tenim que~\(\alpha\in\KK[\alpha]\), i per la definició de~\myref{def:cos per anells} tenim que~\(-1/\alpha\in\KK[\alpha]\). Aleshores, per la definició de~\myref{def:mínim subanell engendrat per un element d'una extensió} trobem que existeix un polinomi~\(a_{0}+a_{1}x+\dots+a_{k}x^{k}\in\KK[x]\), amb~\(a_{k}\neq0\), tal que
-			\[\frac{-1}{\alpha}=a_{0}+a_{1}\alpha+a_{2}\alpha^{2}+\dots+a_{k}\alpha^{k},\]
-			i per tant
-			\[0=1+a_{0}\alpha+a_{1}\alpha^{2}+\dots+a_{r}\alpha^{r+1},\]
-			i trobem que~\(\alpha\) és una arrel del polinomi~\(p(x)=1+a_{0}x+a_{1}x^{2}+\dots+a_{r}x^{r+1}\). Aleshores per la definició de~\myref{ex:morfisme d'avaluació} tenim que
-			\[p(x)\in\ker(\ev_{\alpha})\]
-			i per tant~\(\ker(\ev_{\alpha})\neq(0)\) i pel lema~\myref{lema:element algebraic} trobem que~\(\alpha\) és algebraic.
-		\end{proof}
 	\end{lemma}
+	\begin{proof} %FER %Revisar
+		Veiem que la condició és suficient~\((\implica)\). Suposem que~\(\alpha\in\FF\) és algebraic sobre~\(\KK\). Per la definició d'\myref{def:element algebraic} trobem que~\(\Irr(\alpha,\KK)\) és un polinomi irreductible no nul, i per la proposició~\myref{prop:un cos quocient un irreductible és un cos} tenim que~\(\KK[\alpha]\) és un cos.
+		
+		Ara bé, pel Teorema~\myref{thm:cos de fraccions} tenim que~\(\KK(\alpha)\subseteq\KK[\alpha]\), però per l'observació~\myref{def:mínim subcòs engendrat per un element d'una extensió} tenim que~\(\KK[\alpha]\subseteq\KK(\alpha)\), i pel \myref{thm:doble inclusió} tenim que~\(\KK(\alpha)=\KK[\alpha]\).
+		
+		Acabem veient que la condició és necessària~\((\implicatper)\). Suposem doncs que
+		\[\KK(\alpha)=\KK[\alpha].\]
+		Per tant~\(\KK[\alpha]\) és un cos, i com que, per l'observació~\myref{obs:l'anell engendrat per alpha està entre l'extensió}, tenim que~\(\alpha\in\KK[\alpha]\), i per la definició de~\myref{def:cos per anells} tenim que~\(-1/\alpha\in\KK[\alpha]\). Aleshores, per la definició de~\myref{def:mínim subanell engendrat per un element d'una extensió} trobem que existeix un polinomi~\(a_{0}+a_{1}x+\dots+a_{k}x^{k}\in\KK[x]\), amb~\(a_{k}\neq0\), tal que
+		\[\frac{-1}{\alpha}=a_{0}+a_{1}\alpha+a_{2}\alpha^{2}+\dots+a_{k}\alpha^{k},\]
+		i per tant
+		\[0=1+a_{0}\alpha+a_{1}\alpha^{2}+\dots+a_{r}\alpha^{r+1},\]
+		i trobem que~\(\alpha\) és una arrel del polinomi~\(p(x)=1+a_{0}x+a_{1}x^{2}+\dots+a_{r}x^{r+1}\). Aleshores per la definició de~\myref{ex:morfisme d'avaluació} tenim que
+		\[p(x)\in\ker(\ev_{\alpha})\]
+		i per tant~\(\ker(\ev_{\alpha})\neq(0)\) i pel lema~\myref{lema:element algebraic} trobem que~\(\alpha\) és algebraic.
+	\end{proof}
 \subsection{Extensions algebraiques}
 	\begin{definition}[Extensió algebraica]
 		\labelname{extensió algebraica}\label{def:extensió algebraica}
@@ -225,14 +225,14 @@
 	\begin{proposition}
 		\label{prop:les extensions finites són algebraiques}
 		Sigui~\(\FF\extensio\KK\) una extensió finita. Aleshores~\(\FF\extensio\KK\) és una extensió algebraica.
-		\begin{proof}
-			Prenem un element~\(\alpha\in\FF\) i suposem que~\(\grauExtensio{\FF}{\KK}=n\). Per la definició~d'\myref{def:extensió finita} tenim que~\(\dim_{\KK}(\FF)=n\), i per tant els~\(n+1\) elements~\(1,\alpha,\dots,\alpha^{n}\) són~\(\KK\)-linealment independents, %REF
-			i per la definició de~\myref{def:vectors linealment dependents} trobem que existeixen~\(\lambda_{0},\dots,\lambda_{n}\in\KK\) no nuls tals que
-			\[\lambda_{0}+\lambda_{1}\alpha+\dots+\lambda_{n}\alpha^{n}=0,\]
-			i per tant trobem que~\(\alpha\) és arrel del polinomi~\(p(x)=\lambda_{0}+\lambda x+\dots+\lambda_{n}x^{n}\in\KK[x]\). Aleshores per la definició~d'\myref{def:element algebraic} trobem que~\(\alpha\in\FF\) és algebraic sobre~\(\KK\) i per la definició~d'\myref{def:extensió algebraica} trobem que l'extensió~\(\FF\extensio\KK\) és algebraica.
-			% Fer per 1,\alpha,\dots,\alpha^{\grau} són \KK-linealment dependents i per tant existeixen \lambda_{i}\in\KK tals que se'n va a la merda.
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Prenem un element~\(\alpha\in\FF\) i suposem que~\(\grauExtensio{\FF}{\KK}=n\). Per la definició~d'\myref{def:extensió finita} tenim que~\(\dim_{\KK}(\FF)=n\), i per tant els~\(n+1\) elements~\(1,\alpha,\dots,\alpha^{n}\) són~\(\KK\)-linealment independents, %REF
+		i per la definició de~\myref{def:vectors linealment dependents} trobem que existeixen~\(\lambda_{0},\dots,\lambda_{n}\in\KK\) no nuls tals que
+		\[\lambda_{0}+\lambda_{1}\alpha+\dots+\lambda_{n}\alpha^{n}=0,\]
+		i per tant trobem que~\(\alpha\) és arrel del polinomi~\(p(x)=\lambda_{0}+\lambda x+\dots+\lambda_{n}x^{n}\in\KK[x]\). Aleshores per la definició~d'\myref{def:element algebraic} trobem que~\(\alpha\in\FF\) és algebraic sobre~\(\KK\) i per la definició~d'\myref{def:extensió algebraica} trobem que l'extensió~\(\FF\extensio\KK\) és algebraica.
+		% Fer per 1,\alpha,\dots,\alpha^{\grau} són \KK-linealment dependents i per tant existeixen \lambda_{i}\in\KK tals que se'n va a la merda.
+	\end{proof}
 	\begin{lemma}
 		\label{lema:condicions equivalents a polinomi irreductible}
 		Siguin~\(\FF\extensio\KK\) una extensió,~\(\alpha\in\FF\) un element algebraic sobre~\(\KK\) i~\(p(x)\in\KK[x]\) un polinomi mònic tal que~\(p(\alpha)=0\). Aleshores són equivalents
@@ -242,39 +242,39 @@
 		\item\label{lema:condicions equivalents a polinomi irreductible:eq3} Si~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\), aleshores~\(p(x)\divides q(x)\).
 		\item\label{lema:condicions equivalents a polinomi irreductible:eq4} Si~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\), aleshores~\(\grau(p(x))\leq\grau(q(x))\).
 		\end{enumerate}
-		\begin{proof}
-			La implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq1}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\) és conseqüència de la definició~d'\myref{def:element algebraic}.
-			
-			Veiem ara la implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\). Suposem que~\(p(\alpha)=0\) i prenem~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\). Calculem~\(\mcd(p(x),q(x))\). Calculem~\(\mcd(p(x),q(x))\). Si~\(\mcd(p(x),q(x))=p(x)\) aleshores~\(p(x)\divides q(x)\) i tenim el que volíem.
-			
-			Si~\(\mcd(p(x),q(x))\neq p(x)\), com que per la proposició~\myref{prop:en DIP irreductible implica primer} tenim que~\(p(x)\) és primer tenim que~\(\mcd(p(x),q(x))=1\), i per~\myref{thm:identitat de Bézout} trobem que existeixen~\(r(x)\) i~\(s(x)\) polinomis en~\(\KK[x]\) tals que
-			\[p(x)r(x)+q(x)s(x)=1.\]
-			Ara bé, tindríem que
-			\[
-				1=p(\alpha)r(\alpha)+q(\alpha)s(\alpha)=0r(\alpha)+0s(\alpha)=0,
-			\]
-			i per tant arribem a contradicció i hem acabat.
-			
-			Veiem la implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq4}\). Suposem doncs que~\(q(x)\in\KK[x]\) és un polinomi tal que~\(q(\alpha)=0\) i tal que~\(p(x)\divides q(x)\). Tenim que existeix un polinomi~\(d(x)\in\KK[x]\) tal que
-			\[q(x)=p(x)d(x),\]
-			i per tant trobem que~\(\grau(p(x))\leq\grau(q(x))\).
-			
-			Veiem que~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq4}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\). Suposem doncs que existeix un polinomi~\(q(x)\in\KK[x]\) satisfent~\(q(\alpha)=0\) i~\(\grau(p(x))\leq\grau(q(x))\). Aleshores tenim que existeixen dos polinomis~\(p_{1}(x)\),~\(p_{2}(x)\in\KK[x]\) tals que~\(p(x)=p_{1}(x)p_{2}(x)\), i com que~\(p(\alpha)=0\) trobem que~\(p_{1}(\alpha)=0\) ó~\(p_{2}(\alpha)=0\). Suposem que~\(p_{1}(\alpha)=0\). Per tant tenim que
-			\[\grau(p_{1}(x))\leq\grau(p(x)),\]
-			i per hipòtesi
-			\[\grau(p(x))\leq\grau(p_{1}(x)),\]
-			i per tant~\(p_{2}(x)\in\KK\).
-			
-			Veiem que~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq1}\). Suposem doncs que si existeix un polinomi~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\), aleshores~\(p(x)\divides q(x)\). Considerem~\(\ker(\ev_{\alpha})\). Com que, per hipòtesi, tenim que~\(p(\alpha)=0\), trobem que~\(\ker(\ev_{\alpha})\subseteq(p(x))\). Per altra banda, si~\(\ker(\ev_{\alpha})=(q(x))\) aleshores tenim que~\(q(\alpha)=0\), i per hipòtesi~\(p(x)\divides q(x)\), i per tant~\((p(x))\subseteq(q(x))\) i tenim que~\((p(x))=\ker(\ev_{\alpha})\), i per la definició~d'\myref{def:element algebraic} trobem que~\(p(x)=\Irr(\alpha,\KK)\).
-		\end{proof}
 	\end{lemma}
+	\begin{proof}
+		La implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq1}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\) és conseqüència de la definició~d'\myref{def:element algebraic}.
+		
+		Veiem ara la implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\). Suposem que~\(p(\alpha)=0\) i prenem~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\). Calculem~\(\mcd(p(x),q(x))\). Calculem~\(\mcd(p(x),q(x))\). Si~\(\mcd(p(x),q(x))=p(x)\) aleshores~\(p(x)\divides q(x)\) i tenim el que volíem.
+		
+		Si~\(\mcd(p(x),q(x))\neq p(x)\), com que per la proposició~\myref{prop:en DIP irreductible implica primer} tenim que~\(p(x)\) és primer tenim que~\(\mcd(p(x),q(x))=1\), i per~\myref{thm:identitat de Bézout} trobem que existeixen~\(r(x)\) i~\(s(x)\) polinomis en~\(\KK[x]\) tals que
+		\[p(x)r(x)+q(x)s(x)=1.\]
+		Ara bé, tindríem que
+		\[
+			1=p(\alpha)r(\alpha)+q(\alpha)s(\alpha)=0r(\alpha)+0s(\alpha)=0,
+		\]
+		i per tant arribem a contradicció i hem acabat.
+		
+		Veiem la implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq4}\). Suposem doncs que~\(q(x)\in\KK[x]\) és un polinomi tal que~\(q(\alpha)=0\) i tal que~\(p(x)\divides q(x)\). Tenim que existeix un polinomi~\(d(x)\in\KK[x]\) tal que
+		\[q(x)=p(x)d(x),\]
+		i per tant trobem que~\(\grau(p(x))\leq\grau(q(x))\).
+		
+		Veiem que~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq4}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\). Suposem doncs que existeix un polinomi~\(q(x)\in\KK[x]\) satisfent~\(q(\alpha)=0\) i~\(\grau(p(x))\leq\grau(q(x))\). Aleshores tenim que existeixen dos polinomis~\(p_{1}(x)\),~\(p_{2}(x)\in\KK[x]\) tals que~\(p(x)=p_{1}(x)p_{2}(x)\), i com que~\(p(\alpha)=0\) trobem que~\(p_{1}(\alpha)=0\) ó~\(p_{2}(\alpha)=0\). Suposem que~\(p_{1}(\alpha)=0\). Per tant tenim que
+		\[\grau(p_{1}(x))\leq\grau(p(x)),\]
+		i per hipòtesi
+		\[\grau(p(x))\leq\grau(p_{1}(x)),\]
+		i per tant~\(p_{2}(x)\in\KK\).
+		
+		Veiem que~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq1}\). Suposem doncs que si existeix un polinomi~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\), aleshores~\(p(x)\divides q(x)\). Considerem~\(\ker(\ev_{\alpha})\). Com que, per hipòtesi, tenim que~\(p(\alpha)=0\), trobem que~\(\ker(\ev_{\alpha})\subseteq(p(x))\). Per altra banda, si~\(\ker(\ev_{\alpha})=(q(x))\) aleshores tenim que~\(q(\alpha)=0\), i per hipòtesi~\(p(x)\divides q(x)\), i per tant~\((p(x))\subseteq(q(x))\) i tenim que~\((p(x))=\ker(\ev_{\alpha})\), i per la definició~d'\myref{def:element algebraic} trobem que~\(p(x)=\Irr(\alpha,\KK)\).
+	\end{proof}
 	\begin{example}
 		Volem calcular~\(\Irr(\sqrt{5}+\sqrt{3},\QQ)\).
-		\begin{solution}
-			%TODO
-			\(\Irr(\sqrt{5}+\sqrt{3},\QQ)=x^{4}+4x^{2}+64\).
-		\end{solution}
 	\end{example}
+	\begin{solution}
+		%TODO
+		\(\Irr(\sqrt{5}+\sqrt{3},\QQ)=x^{4}+4x^{2}+64\).
+	\end{solution}
 \subsection{El grup de Galois}
 	\begin{definition}[El grup de Galois]
 		\labelname{grup de Galois}\label{def:grup de Galois}
@@ -285,41 +285,41 @@
 	\begin{proposition}
 		\label{prop:el grup de Galois és un grup}
 		Sigui~\(\FF\extensio\KK\) una extensió. Aleshores~\(\Gal(\FF\extensio\KK)\) és un grup.
-		\begin{proof} % Revisar. %REFS
-			Prenem un element~\(f\in\Gal(\FF\extensio\KK)\). Per la definició de~\myref{def:grup de Galois} tenim que~\(f\) és un isomorfisme d'anells, i per la definició~d'\myref{def:isomorfisme entre anells} trobem que~\(f\) és invertible, i per tant existeix un isomorfisme~\(g\colon\FF\longrightarrow\FF\) tal que~\(f\circ g=g\circ f=\Id_{\FF}\). Hem de veure que~\(\left.g\right|_{\KK}=\Id_{\KK}\). Tenim que
-			\begin{align*}
-				\Id_{\KK}&=\left.\Id_{\FF}\right|_{\KK} \\
-				&=\left.g\circ f\right|_{\KK} \\
-				&=g\circ\Id_{\KK}=\left.g\right|_{\KK}
-			\end{align*}
-			i per tant~\(g\in\Gal(\FF\extensio\KK)\).
-			
-			Prenem dos elements~\(f\),~\(g\in\Gal(\FF\extensio\KK)\) i considerem~\(g\circ f\). Tenim que~\(g\colon f\colon\FF\longrightarrow\FF\) és un isomorfisme d'anells, i ens queda veure que~\(\left.g\circ f\right|_{\KK}=\Id_{\KK}\). Tenim que
-			\[\left.g\circ f\right|_{\KK}
-			=\left.g\circ\Id_{\KK}\right|_{\KK}
-			=\left.g\right|_{\KK}
-			=\Id_{\KK},\]
-			i hem acabat, i per la definició~\myref{def:grup} tenim que~\(\Gal(\FF\extensio\KK)\) és un grup.
-		\end{proof}
 	\end{proposition}
+	\begin{proof} % Revisar. %REFS
+		Prenem un element~\(f\in\Gal(\FF\extensio\KK)\). Per la definició de~\myref{def:grup de Galois} tenim que~\(f\) és un isomorfisme d'anells, i per la definició~d'\myref{def:isomorfisme entre anells} trobem que~\(f\) és invertible, i per tant existeix un isomorfisme~\(g\colon\FF\longrightarrow\FF\) tal que~\(f\circ g=g\circ f=\Id_{\FF}\). Hem de veure que~\(\left.g\right|_{\KK}=\Id_{\KK}\). Tenim que
+		\begin{align*}
+			\Id_{\KK}&=\left.\Id_{\FF}\right|_{\KK} \\
+			&=\left.g\circ f\right|_{\KK} \\
+			&=g\circ\Id_{\KK}=\left.g\right|_{\KK}
+		\end{align*}
+		i per tant~\(g\in\Gal(\FF\extensio\KK)\).
+		
+		Prenem dos elements~\(f\),~\(g\in\Gal(\FF\extensio\KK)\) i considerem~\(g\circ f\). Tenim que~\(g\colon f\colon\FF\longrightarrow\FF\) és un isomorfisme d'anells, i ens queda veure que~\(\left.g\circ f\right|_{\KK}=\Id_{\KK}\). Tenim que
+		\[\left.g\circ f\right|_{\KK}
+		=\left.g\circ\Id_{\KK}\right|_{\KK}
+		=\left.g\right|_{\KK}
+		=\Id_{\KK},\]
+		i hem acabat, i per la definició~\myref{def:grup} tenim que~\(\Gal(\FF\extensio\KK)\) és un grup.
+	\end{proof}
 	\begin{proposition}
 		\label{prop:els morfismes del grup de Galois conserven les arrels dels polinomis sobre K}
 		Siguin~\(\FF\extensio\KK\) una extensió,~\(p(x)\in\KK[x]\) un polinomi i~\(\alpha\in\FF\) una arrel de~\(p(x)\). Aleshores per a tot~\(f\in\Gal(\FF\extensio\KK)\) tenim que~\(f(\alpha)\) és una arrel de~\(p(x)\).
-		\begin{proof}
-			Tenim que existeixen~\(a_{0},\dots,a_{n}\in\KK\) tals que
-			\[p(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n},\]
-			i tenim que
-			\[0=p(\alpha)=a_{0}+a_{1}\alpha+\dots+a_{n}\alpha^{n}.\]
-			Aleshores tenim, per la definició de \myref{def:morfisme entre anells}, que
-			\begin{align*}
-				f\Big(\sum_{i=0}^{n}a_{i}\alpha^{i}\Big)&=\sum_{i=0}^{n}f(a_{i}\alpha^{i}) \\
-				&=\sum_{i=0}^{n}f(a_{i})f(\alpha^{i}) \\
-				&=\sum_{i=0}^{n}f(a_{i})f(\alpha)^{i} \\
-				&=\sum_{i=0}^{n}a_{i}f(\alpha)^{i}=f(0)=0
-			\end{align*}
-			i per tant~\(f(\alpha)\) és una arrel de~\(p(x)\).
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		Tenim que existeixen~\(a_{0},\dots,a_{n}\in\KK\) tals que
+		\[p(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n},\]
+		i tenim que
+		\[0=p(\alpha)=a_{0}+a_{1}\alpha+\dots+a_{n}\alpha^{n}.\]
+		Aleshores tenim, per la definició de \myref{def:morfisme entre anells}, que
+		\begin{align*}
+			f\Big(\sum_{i=0}^{n}a_{i}\alpha^{i}\Big)&=\sum_{i=0}^{n}f(a_{i}\alpha^{i}) \\
+			&=\sum_{i=0}^{n}f(a_{i})f(\alpha^{i}) \\
+			&=\sum_{i=0}^{n}f(a_{i})f(\alpha)^{i} \\
+			&=\sum_{i=0}^{n}a_{i}f(\alpha)^{i}=f(0)=0
+		\end{align*}
+		i per tant~\(f(\alpha)\) és una arrel de~\(p(x)\).
+	\end{proof}
 	\begin{corollary}
 		\label{cor:els morfismes del grup de Galois conserven les arrels dels polinomis sobre K}
 		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un element algebraic sobre~\(\KK\). Aleshores per a tot~\(f\in\Gal(\FF\extensio\KK)\) tenim que~\(f(\alpha)\) és una arrel de~\(\Irr(\alpha,\KK)\).
@@ -338,42 +338,42 @@
 		\[f\colon\KK(\alpha)\longrightarrow\FF_{2}\]
 		tal que~\(\left.f\right|_{\KK}=\Id_{\KK}\) i~\(f(\alpha)=\beta\)
 		si i només si~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\).
-		\begin{proof}
-			Comencem veient que la condició és suficient~(\(\implica\)). Suposem que existeix un morfisme~\(f\colon\KK(\alpha)\longrightarrow\FF_{2}\) tal que~\(\left.f\right|_{\KK}=\Id_{\KK}\) i~\(f(\alpha)=\beta\). Volem veure que~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\). Posem
-			\[\Irr(\alpha,\KK)=a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}\]
-			amb~\(a_{0},\dots,a_{n}\in\KK\) i per la definició de~\myref{def:morfisme entre anells} calculem
-			\begin{align*}
-				a_{0}+a_{1}\beta+\dots+a_{n}\beta^{n}&=a_{0}+a_{1}f(\alpha)+\dots+a_{n}{f(\alpha)}^{n} \\
-				&=a_{0}+a_{1}f(\alpha)+\dots+a_{n}f(\alpha^{n}) \\
-				&=f(a_{0})+f(a_{1})f(\alpha)+\dots+f(a_{n})f(\alpha^{n}) \\
-				&=f(a_{0})+f(a_{1}\alpha)+\dots+f(a_{n}\alpha^{n}) \\
-				&=f(a_{0}+a_{1}\alpha+\dots+a_{n}\alpha^{n})\\
-				&=f(0)=0,
-			\end{align*}
-			i per tant tenim que~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\).
-			
-			Veiem ara que la condició és necessària~(\(\implicatper\)). Suposem que~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\). Considerem el morfisme d'avaluació~\(\ev_{\beta}\colon\KK[x]\longrightarrow\FF_{2}\). Com que, per hipòtesi, tenim que~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\) trobem que~\(\Irr(\alpha,\KK)\in\ker(\ev_{\beta})\). Ara bé, pe la definició d'\myref{def:element algebraic} trobem que~\(\Irr(\alpha,\KK)\) és irreductible, i per tant~\((\Irr(\alpha,\beta))=\ker(\ev_{\beta})\). %  Veure a estructures. Ideal principal.
-			Aleshores tenim que
-			\begin{align*}
-				\KK(\alpha)&\cong\KK[x]/(\Irr(\alpha,\KK)) \tag{\ref{prop:el mínim subanell engendrat per un element és l'anell de polinomis quocient l'irreductible de l'element}}\\
-				&=\KK[x]/\ker(\ev_{\beta}) \\
-				&\cong\Ima(\ev_{\beta})\subseteq\FF_{2}. \tag{\ref{thm:Primer Teorema de l'isomorfisme entre anells}}
-			\end{align*}
-			Considerem doncs els morfismes entre anells
-			\begin{align*}
-				f_{1}\colon\KK(\alpha)&\longrightarrow\KK[x]/(\Irr(\alpha,\KK)) \\
-				\KK\ni\lambda&\longmapsto\overline{\lambda} \\
-				\alpha&\longmapsto\overline{x}
-			\end{align*}
-			i
-			\begin{align*}
-				f_{2}\colon\KK[x]/\ker(\ev_{\beta})&\longrightarrow\Ima(\ev_{\beta})\subseteq\FF_{2} \\
-				\overline{\lambda}&\longmapsto\lambda \\
-				\overline{x}&\longmapsto\beta
-			\end{align*}
-			i~\(f=f_{2}\circ f_{1}\) és el morfisme que buscàvem.
-		\end{proof}
 	\end{lemma}
+	\begin{proof}
+		Comencem veient que la condició és suficient~(\(\implica\)). Suposem que existeix un morfisme~\(f\colon\KK(\alpha)\longrightarrow\FF_{2}\) tal que~\(\left.f\right|_{\KK}=\Id_{\KK}\) i~\(f(\alpha)=\beta\). Volem veure que~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\). Posem
+		\[\Irr(\alpha,\KK)=a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}\]
+		amb~\(a_{0},\dots,a_{n}\in\KK\) i per la definició de~\myref{def:morfisme entre anells} calculem
+		\begin{align*}
+			a_{0}+a_{1}\beta+\dots+a_{n}\beta^{n}&=a_{0}+a_{1}f(\alpha)+\dots+a_{n}{f(\alpha)}^{n} \\
+			&=a_{0}+a_{1}f(\alpha)+\dots+a_{n}f(\alpha^{n}) \\
+			&=f(a_{0})+f(a_{1})f(\alpha)+\dots+f(a_{n})f(\alpha^{n}) \\
+			&=f(a_{0})+f(a_{1}\alpha)+\dots+f(a_{n}\alpha^{n}) \\
+			&=f(a_{0}+a_{1}\alpha+\dots+a_{n}\alpha^{n})\\
+			&=f(0)=0,
+		\end{align*}
+		i per tant tenim que~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\).
+		
+		Veiem ara que la condició és necessària~(\(\implicatper\)). Suposem que~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\). Considerem el morfisme d'avaluació~\(\ev_{\beta}\colon\KK[x]\longrightarrow\FF_{2}\). Com que, per hipòtesi, tenim que~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\) trobem que~\(\Irr(\alpha,\KK)\in\ker(\ev_{\beta})\). Ara bé, pe la definició d'\myref{def:element algebraic} trobem que~\(\Irr(\alpha,\KK)\) és irreductible, i per tant~\((\Irr(\alpha,\beta))=\ker(\ev_{\beta})\). %  Veure a estructures. Ideal principal.
+		Aleshores tenim que
+		\begin{align*}
+			\KK(\alpha)&\cong\KK[x]/(\Irr(\alpha,\KK)) \tag{\ref{prop:el mínim subanell engendrat per un element és l'anell de polinomis quocient l'irreductible de l'element}}\\
+			&=\KK[x]/\ker(\ev_{\beta}) \\
+			&\cong\Ima(\ev_{\beta})\subseteq\FF_{2}. \tag{\ref{thm:Primer Teorema de l'isomorfisme entre anells}}
+		\end{align*}
+		Considerem doncs els morfismes entre anells
+		\begin{align*}
+			f_{1}\colon\KK(\alpha)&\longrightarrow\KK[x]/(\Irr(\alpha,\KK)) \\
+			\KK\ni\lambda&\longmapsto\overline{\lambda} \\
+			\alpha&\longmapsto\overline{x}
+		\end{align*}
+		i
+		\begin{align*}
+			f_{2}\colon\KK[x]/\ker(\ev_{\beta})&\longrightarrow\Ima(\ev_{\beta})\subseteq\FF_{2} \\
+			\overline{\lambda}&\longmapsto\lambda \\
+			\overline{x}&\longmapsto\beta
+		\end{align*}
+		i~\(f=f_{2}\circ f_{1}\) és el morfisme que buscàvem.
+	\end{proof}
 %	\begin{example}
 %		Exemple d'un grup de Galois on no cal aquest lema, a diferència de l'exemple que ve
 %	\end{example}
@@ -390,17 +390,17 @@
 		\[g\colon\KK(\alpha)\longrightarrow\FF_{2}\]
 		tal que~\(\left.g\right|_{\KK}=f\) i~\(g(\alpha)=\beta\)
 		si i només si~\(\beta\) és una arrel de~\(\hat{f}(\Irr(\alpha,\KK))\).
-		\begin{proof}
-			%TODO
-		\end{proof}
 	\end{lemma}
+	\begin{proof}
+		%TODO
+	\end{proof}
 	\begin{example}
 		\label{ex:càlcul d'un altre grup de Galois}
 		Volem calcular alguna cosa com~\(\Gal(\QQ(\sqrt{2},\sqrt{3}),\QQ)\).
-		\begin{solution}
-			\(\Gal(\QQ(\sqrt{2},\sqrt{3}),\QQ)\cong\ZZ/(2)\times\ZZ/(2)\).
-		\end{solution}
 	\end{example}
+	\begin{solution}
+		\(\Gal(\QQ(\sqrt{2},\sqrt{3}),\QQ)\cong\ZZ/(2)\times\ZZ/(2)\).
+	\end{solution}
 \subsection{El cos de descomposició}
 	\begin{lemma}
 		\label{lema:condicions equivalents a extensió finita}
@@ -412,18 +412,18 @@
 		\item Existeixen~\(\alpha_{1},\dots,\alpha_{n}\in\KK\) tals que~\(\alpha_{i}\) és algebraic sobre~\(\KK(\alpha_{1},\dots,\alpha_{i-1})\) i
 		\[\FF=\KK(\alpha_{1},\dots,\alpha_{n}).\]
 		\end{enumerate}
-		\begin{proof}
-			%TODO
-		\end{proof}
 	\end{lemma}
+	\begin{proof}
+		%TODO
+	\end{proof}
 	\begin{theorem}
 		\label{thm:teorema de les extensions algebraiques}
 		Siguin~\(\LL\extensio\FF\) i~\(\FF\extensio\KK\) dues extensions. Aleshores~\(\LL\extensio\KK\) és algebraica
 		si i només si~\(\LL\extensio\FF\) i~\(\FF\extensio\KK\) són algebraiques.
-		\begin{proof}
-			%TODO
-		\end{proof}
 	\end{theorem}
+	\begin{proof}
+		%TODO
+	\end{proof}
 	\begin{theorem}
 		\label{thm:els nombres algebraics són un cos}
 		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\),~\(\beta\in\FF\) dos elements algebraics sobre~\(\KK\). Aleshores
@@ -443,25 +443,25 @@
 	\begin{theorem}
 		\label{thm:existència del cos de descomposició d'una família de polinomis}
 		Sigui~\(\Lambda=\{p_{i}(x)\}_{i=1}^{n}\) una família de polinomis sobre l'anell de polinomis d'un cos~\(\KK\). Aleshores existeix un cos~\(\LL\) tal que~\(\LL\extensio\KK\) és una extensió finita i~\(p_{i}(x)\) descompon en~\(\LL\) per a tot~\(i\in\{1,\dots,n\}\).
-		\begin{proof}
-			\myref{thm:Teorema de Kronecker}
-			%TODO % Veure lo de l'extensió finita
-		\end{proof}
 	\end{theorem}
+	\begin{proof}
+		\myref{thm:Teorema de Kronecker}
+		%TODO % Veure lo de l'extensió finita
+	\end{proof}
 	\begin{theorem}
 		\label{thm:unicitat del cos de descomposició d'una família de polinomis}
 		Siguin~\(\LL_{1}\) i~\(\LL_{2}\) dos cossos de descomposició d'una família de polinomis~\(\Lambda=\{p_{i}(x)\}_{i=1}^{n}\) sobre un cos~\(\KK\). Aleshores existeix un isomorfisme d'anells~\(\varphi\colon\LL_{1}\longrightarrow\LL_{2}\) tal que~\(\left.\varphi\right|_{\KK}=\Id\).
-		\begin{proof}
-			%TODO
-		\end{proof}
 	\end{theorem}
+	\begin{proof}
+		%TODO
+	\end{proof}
 	\begin{theorem}[Extensió de morfismes a un cos de descomposició]
 		\labelname{extensió de morfismes a un cos de descomposició}\label{thm:extensió de morfismes a un cos de descomposició}
 		Siguin~\(\EE\extensio\FF\extensio\KK\) una extensió de cossos~\(p(x)\in\KK[x]\) un polinomi i~\(\LL\) el seu cos de descomposició tals que~\(p(x)\) descompon en~\(\EE[x]\) i tals que existeix un morfisme~\(f\colon\FF\longrightarrow\EE\) tal que~\(\left.f\right|_{\KK}=\Id\). Aleshores existeix una funció~\(\tilde{f}\colon\LL\longrightarrow\EE\) tal que~\(\left.\tilde{f}\right|_{\FF}=f\).
-		\begin{proof}
-			%TODO
-		\end{proof}
 	\end{theorem}
+	\begin{proof}
+		%TODO
+	\end{proof}
 	\begin{definition}[Subgrup transitiu]
 		\labelname{subgrup transitiu}\label{def:subgrup transitiu}
 		Siguin~\(\GrupSimetric_{n}\) el grup simètric~d'\(n\) elements i~\(G\subgrup\GrupSimetric_{n}\) un subgrup tal que per a tots~\(i\),~\(j\in\{1,\dots,n\}\) existeix una permutació~\(\sigma\in\GrupSimetric_{n}\) tal que~\(\sigma(i)=j\). Aleshores direm que~\(G\) és un subgrup transitiu de~\(\GrupSimetric_{n}\).
@@ -470,10 +470,10 @@
 		\label{prop:l'ordre d'un subgrup transitiu divideix n}
 		Sigui~\(G\) un subgrup transitiu de~\(\GrupSimetric_{n}\). Aleshores
 		\[n\divides\card{G}.\]
-		\begin{proof}
-			%TODO
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		%TODO
+	\end{proof}
 	\begin{definition}[Grup de Galois d'un polinomi]
 		\labelname{grup de Galois d'un polinomi}\label{def:grup de Galois d'un polinomi}
 		Sigui~\(p(x)\in\KK[x]\) un polinomi amb cos de descomposició~\(\LL\). Aleshores definirem
@@ -483,10 +483,10 @@
 	\begin{corollary}
 		\label{cor:grup de Galois d'una extensió amb un cos de descomposició}
 		Siguin~\(p(x)\in\KK[x]\) un polinomi sobre un cos~\(\KK\) i~\(A=\{\alpha_{1},\dots,\alpha_{n}\}\) el conjunt de les arrels de~\(p(x)\). Aleshores~\(\Gal(p(x))\) és isomorf un subgrup transitiu de~\(\GrupSimetric_{A}\).
-		\begin{proof}
-			%TODO
-		\end{proof}
 	\end{corollary}
+	\begin{proof}
+		%TODO
+	\end{proof}
 %\subsection{Discriminant}
 	\begin{definition}[Discriminant]
 		\labelname{discriminant}\label{def:discriminant}
@@ -501,11 +501,11 @@
 	\end{observation}
 	\begin{example}
 		\label{ex:discriminant d'un polinomi quadràtic}
-		Volem calcular el discriminant d'un polinomi de grau~\(2\).	
-		\begin{solution}
-			%TODO
-		\end{solution}
+		Volem calcular el discriminant d'un polinomi de grau~\(2\).
 	\end{example}
+	\begin{solution}
+		%TODO
+	\end{solution}
 	\begin{proposition}
 		\label{prop:el discriminant pertany al cos del polinomi}
 		Sigui~\(p(x)\in\KK[x]\) un polinomi sobre un cos~\(\KK\). Aleshores~\(\discriminant(p(x))\in\KK\).
@@ -513,25 +513,24 @@
 	\begin{lemma}
 		\label{lema:discriminant}
 		Siguin~\(p(x)\in\KK[x]\) un polinomi sobre un cos~\(\KK\) amb~\(n\) arrels i~\(\sigma\in\GrupSimetric_{n}\) una permutació. Aleshores
-		\[\prod_{i<j}^{n}(\alpha_{\sigma(i)}-\alpha_{\sigma(j)})=\sig(\sigma)\delta(p(x))\]
-		\begin{proof}
-			%TODO
-		\end{proof}
+		\[\prod_{i<j}^{n}(\alpha_{\sigma(i)}-\alpha_{\sigma(j)})=\sig(\sigma)\delta(p(x)).\]
 	\end{lemma}
+	\begin{proof}
+		%TODO
+	\end{proof}
 	\begin{corollary}
 		\label{cor:l'arrel del discriminant d'un polinomi pertany al cos si i només si el grup de Galois del polinomi és un subgrup dels alternats de les arrels}
 		Siguin~\(p(x)\in\KK[x]\) un polinomi sense arrels múltiples sobre un cos~\(\KK\) amb~\(\ch(\KK)\neq2\), amb conjunt d'arrels~\(A=\{\alpha_{1},\dots,\alpha_{n}\}\) i sigui~\(\varphi\colon\Gal(p(x))\longrightarrow\GrupSimetric_{A}\) un epimorfisme de grups.
 		Aleshores
 		\[\varphi(\Gal(p(x))\subseteq\GrupAlternat(A)\Sii\delta(p(x))\in\KK.\]
-		\begin{proof}
-			Aquest enunciat té sentit pel \corollari~\myref{cor:grup de Galois d'una extensió amb un cos de descomposició}.
-			%TODO
-		\end{proof}
 	\end{corollary}
+	\begin{proof}
+		Aquest enunciat té sentit pel \corollari~\myref{cor:grup de Galois d'una extensió amb un cos de descomposició}.
+		%TODO
+	\end{proof}
 	% Exemple dels polinomis de grau 2 i 3.
-	
-	\section{Extensions normals i extensions separables}
-\subsection{Extensions normals}
+\section{Extensions normals i extensions separables}
+	\subsection{Extensions normals}
 	\begin{definition}[Extensió normal]
 		\labelname{extensió normal}\label{def:extensió normal}
 		Sigui~\(\FF\extensio\KK\) una extensió de cossos tal que
@@ -544,10 +543,10 @@
 	\begin{theorem}[Teorema de normalitat]
 		\labelname{Teorema de normalitat}\label{thm:Teorema de normalitat}
 		Sigui~\(\FF\extensio\KK\) una extensió finita. Aleshores~\(\FF\extensio\KK\) és una extensió normal si i només si existeix un polinomi~\(p(x)\in\KK[x]\setminus\KK\) tal que~\(\FF\) és el cos de descomposició de~\(p(x)\).
-		\begin{proof}
-			%TODO
-		\end{proof}
 	\end{theorem}
+	\begin{proof}
+		%TODO
+	\end{proof}
 \subsection{Elements separables}
 	\begin{definition}[Polinomi separable]
 		\labelname{polinomi separable}\label{def:polinomi separable}
@@ -568,18 +567,18 @@
 	\end{observation}
 	\begin{proposition}
 		Sigui~\(\FF\extensio\KK\) una extensió amb~\(\ch(\KK)\neq0\). Aleshores l'extensió~\(\FF\extensio\KK\) és separable si i només si és algebraica.
-		\begin{proof}
-			%TODO
-			%Faltaran refs per lo de la característica.
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		%TODO
+		%Faltaran refs per lo de la característica.
+	\end{proof}
 	\begin{theorem}
 		\label{thm:teorema de les extensions separables}
 		Siguin~\(\LL\extensio\FF\) i~\(\FF\extensio\KK\) dues extensions de cossos tals que l'extensió~\(\LL\extensio\KK\) sigui separable. Aleshores les extensions~\(\LL\extensio\FF\) i~\(\FF\extensio\KK\) són separables.
-		\begin{proof}
-			%TODO
-		\end{proof}
 	\end{theorem}
+	\begin{proof}
+		%TODO
+	\end{proof}
 	\begin{lemma}
 		\label{lema:un polinomi és separable si i només si ho és adaptant els coeficients}
 		Siguin~\(p(x)\in\KK[x]\) un polinomi,~\(\FF\) un cos i~\(f\colon\KK\longrightarrow\FF\) un morfisme d'anells. Aleshores~\(p(x)\) és separable si i només si~\(\hat{f}(p(x))\) és separable.	
@@ -592,11 +591,11 @@
 			\item\label{lema:condicions pel nombre d'extensions de morfismes:eq2} L'element~\(\alpha\) és separable.
 			\item\label{lema:condicions pel nombre d'extensions de morfismes:eq3} \(\grauExtensio{\KK(\alpha)}{\KK}=\card{\{g\colon\KK(\alpha)\longrightarrow\FF\mid\left.g\right|_{\KK}=f\text{ i }g\text{ és un morfisme d'anells}\}}\).
 		\end{enumerate}
-		\begin{proof}
-%			Tenim que~(\(\ref{lema:condicions pel nombre d'extensions de morfismes:eq1}\implica\ref{lema:condicions pel nombre d'extensions de morfismes:eq2}\)) per la definició de~\myref{def:extensió separable}.
-			%TODO
-		\end{proof}
 	\end{lemma}
+	\begin{proof}
+%		Tenim que~(\(\ref{lema:condicions pel nombre d'extensions de morfismes:eq1}\implica\ref{lema:condicions pel nombre d'extensions de morfismes:eq2}\)) per la definició de~\myref{def:extensió separable}.
+		%TODO
+	\end{proof}
 	\begin{theorem}[Teorema de separabilitat]
 		\labelname{Teorema de separabilitat}\label{thm:Teorema de separabilitat}
 		Sigui~\(\KK(\alpha_{1},\dots,\alpha_{n})\extensio\KK\) una extensió algebraica,~\(\FF\) un cos i~\(f\colon\FF\longrightarrow\FF\) un morfisme d'anells tal que per a tot~\(i\in\{1,\dots,n\}\) tenim que~\(\hat{f}(\Irr(\alpha_{i},\KK))\) descompon en factors lineals. Aleshores són equivalents
@@ -608,6 +607,9 @@
 				\[\grauExtensio{\LL}{\KK}=\card{\{g\colon\LL\longrightarrow\KK\mid\left.g\right|_{\KK}=f\text{ i }g\text{ és un morfisme d'anells}\}}.\]
 		\end{enumerate}
 	\end{theorem}
+	\begin{proof}
+		%TODO
+	\end{proof}
 \section{El Teorema Fonamental de la Teoria de Galois}
 \subsection{Extensions de Galois}
 	\begin{definition}[Extensió de Galois]
@@ -618,10 +620,10 @@
 		\labelname{Teorema de les extensions de Galois}\label{thm:Teorema de les extensions de Galois}
 		Sigui~\(\FF\extensio\KK\) una extensió finita. Aleshores~\(\FF\extensio\KK\) és de Galois si i només si
 		\[\card{\Gal(\FF\extensio\KK)}=\grauExtensio{\FF}{\KK}.\]
-		\begin{proof}
-			%TODO
-		\end{proof}
 	\end{theorem}
+	\begin{proof}
+		%TODO
+	\end{proof}
 \subsection{Reticles}
 	\begin{definition}[Reticle de subgrups]
 		\labelname{reticle de subgrups}\label{def:reticle de subgrups}
@@ -640,10 +642,10 @@
 		Siguin~\(\FF\extensio\KK\) una extensió,~\(\EE\in\ReticleCos(\FF\extensio\KK)\) un subcòs i~\(H\in\ReticleGrup(\Gal(\FF\extensio\KK))\) un grup. Aleshores
 		\[\EE^{H}=\{a\in\EE\mid f(a)=a\text{ per a tot }f\in H\}\]
 		és un cos i satisfà~\(\KK\subseteq\EE^{H}\subseteq\FF\).
-		\begin{proof}
-			%TODO
-		\end{proof}
 	\end{lemma}
+	\begin{proof}
+		%TODO
+	\end{proof}
 	\begin{definition}[Cos fix]
 		\labelname{cos fix}\label{def:cos fix}
 		Siguin~\(\FF\extensio\KK\) una extensió,~\(\EE\in\ReticleCos(\FF\extensio\KK)\) un subcòs i~\(H\in\ReticleGrup(\Gal(\FF\extensio\KK))\) un grup. Aleshores definim
@@ -653,10 +655,10 @@
 	\begin{proposition}
 		\label{prop:els grups de Galois inverteixen les inclusions}
 		Siguin~\(\FF\extensio\EE\) i~\(\EE\extensio\KK\) dues extensions de cossos. Aleshores~\(\Gal(\FF\extensio\EE)\) és un subgrup de~\(\Gal(\FF\extensio\KK)\).
-		\begin{proof}
-			%TODO
-		\end{proof}
 	\end{proposition}
+	\begin{proof}
+		%TODO
+	\end{proof}
 	\begin{lemma}
 		% Escriure el lemma aquest tant llarg
 	\end{lemma}
