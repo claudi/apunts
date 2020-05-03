@@ -446,7 +446,7 @@
 		una funció. Aleshores~\(f\) és contínua si i només si~\(u\) i~\(v\) són contínues.
 	\end{observation}
 	\begin{definition}[\ensuremath{\CC}-derivable]
-		\labelname{funció~\ensuremath{\CC}-derivable}\label{def:C-derivable}\label{def:funció C-derivable}
+		\labelname{funció derivable complexa}\label{def:C-derivable}\label{def:funció C-derivable}
 		Siguin~\(\Omega\subseteq\CC\) un obert,~\(z_{0}\in\Omega\) un punt i~\(f\colon\Omega\longrightarrow\CC\) una funció tal que
 		\[\lim_{\substack{h\to0\\ h\in\CC}}\frac{f(z_{0}+h)-f(z_{0})}{h}=f'(z_{0}).\]
 		Aleshores direm que~\(f\) és~\(\CC\)-derivable en~\(z_{0}\).
@@ -641,7 +641,7 @@
 		\begin{equation*}
 			\label{eq:3:lema:equacions de Cauchy-Riemann}
 			\frac{\partial f}{\partial z}=\frac{1}{2}\biggl(\frac{\partial f}{\partial x}-\iu\frac{\partial f}{\partial y}\biggr)\qquad\text{i}\qquad\frac{\partial f}{\partial\conjugat{z}}=\frac{1}{2}\biggl(\frac{\partial f}{\partial x}+\iu\frac{\partial f}{\partial y}\biggr)
-		\end{equation*}
+k	\end{equation*}
 	\end{lemma}
 	\begin{proof}
 		Per la proposició~\myref{prop:fórmules per la part real i part imaginària d'un nombre complex} tenim que
@@ -676,4 +676,33 @@
 		Sigui~\(f(z,\conjugat{z})\) una funció complexa. Aleshores
 		\[\frac{\partial f}{\partial z}=\frac{\partial f}{\partial x}\qquad\text{i}\qquad\frac{\partial f}{\partial\conjugat{z}}=0.\]
 	\end{observation}
+	\begin{example}
+		Exemple de les equacions de Cauchy-Riemann.
+	\end{example}
+	\begin{solution}
+		%TODO
+	\end{solution}
+	\begin{definition}[\ensuremath{\CC}-diferenciable]
+		\labelname{diferenciable complexa}\label{def:C-diferenciable}
+		Sigui~\(f(x,y)=y(x,y)+\iu v(x,y)\) una funció sobre un obert~\(\Omega\subseteq\CC\) tal que l'aplicació~\((u,v)\colon\RR^{2}\longrightarrow\RR^{2}\) és diferencable. Aleshores direm que~\(f\) és~\(\CC\)-diferenciable.
+	\end{definition}
+	\begin{proposition}
+		\label{prop:les funcions holomorfes són funcions diferenciables}
+		Sigui~\(f\colon\Omega\longrightarrow\CC\) una funció holomorfa. Aleshores~\(f\) és diferenciable en~\(\Omega\).
+	\end{proposition}
+	\begin{proof}
+		Prenem~\(z\in\Omega\). Per la definició de~\myref{def:funció holomorfa} tenim que~\(f\) és~\(\CC\)-derivable, i per la definició de~\myref{def:C-derivable} el límit
+		\begin{equation*}
+			\lim_{h\to0}\frac{f(z+h)-f(z)}{h} = f'(z).
+		\end{equation*}
+		existeix. Aleshores existeixen~\(\alpha_{1}+\iu\alpha_{2}\in\CC\) tals que~\(f'(z)=\alpha_{1}+\iu\alpha_{2}\). Per tant, si~\(f(z)=u(z)+\iu v(z)\) i~\(h=h_{1}+\iu h_{2}\) tenim que
+		\begin{equation*}
+			\lim_{h\to0}\frac{\Bigl(\bigl(u(z+h)-u(z)\bigr)+\iu\bigl(v(z+h)-v(z)\bigr)\Bigr)(\alpha_{1}+\iu\alpha_{2})(h_{1}+\iu h_{2})}{h} = 0,
+		\end{equation*}
+		que és equivalent a
+		\begin{equation*}
+		\lim_{h\to0}\frac{1}{h}\biggl(\Bigl(\begin{matrix} u(z+h)-u(z) \\ v(z+h)-v(z) \end{matrix}\Bigr) + \Bigl(\begin{matrix} \alpha_{1} & -\alpha_{2} \\ \alpha_{2} & \alpha_{1}\end{matrix}\Bigr)\Bigl(\begin{matrix} h_{1} \\ h_{2} \end{matrix}\Bigr)\biggr) = \Bigl(\begin{matrix} 0 \\ 0 \end{matrix}\Bigr).
+		\end{equation*}
+		i per tant, per la definició de~\myref{def:C-diferenciable} tenim que~\(f\) és~\(\CC\)-diferenciable.
+	\end{proof}
 \end{document}

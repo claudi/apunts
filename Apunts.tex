@@ -8,7 +8,7 @@
 \usepackage{mathtools,amssymb,amsthm}
 \usepackage{microtype}
 %\usepackage{lmodern}
-\usepackage{fixcmex} % Pensar-hi
+%\usepackage{fixcmex} % Pensar-hi
 %https://tex.stackexchange.com/questions/375823/ugly-alignment-size-of-square-root-symbol-with-latin-modern-at-12pt?noredirect=1&lq=1
 %\usepackage[adobe-utopia]{mathdesign}
 \usepackage[mathcal]{euscript}	% hmm
@@ -550,7 +550,7 @@
 
 \makeatletter
 \newcommand{\labelname}[1]{%
-	\def\@currentlabelname{#1}}%
+	\protected@edef\@currentlabelname{#1}}%
 \makeatother
 
 \begin{document}

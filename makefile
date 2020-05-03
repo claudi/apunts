@@ -1,5 +1,5 @@
 #!/bin/bash
-filename = Main
+filename = Apunts
 
 all:
 	make pdf
@@ -55,6 +55,7 @@ cleanFull:
 	make cleanportada
 
 read:
+	sudo cp ~/Apunts/Apunts/Apunts.pdf /var/www/html/Apunts.pdf
 # 	zathura Main.pdf
 #	okular Main.pdf
 
