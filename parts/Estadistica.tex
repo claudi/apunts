@@ -2,5 +2,76 @@
 
 \begin{document}
 \part{Estadística}
+\chapter{Estadística}
+\section{Inferència estadística}
+\subsection{Mostres aleatòries}
+\begin{definition}[Mostra aleatòria]
+	\labelname{mostra}\label{def:mostra}
+	Siguin~\(X\) una variable aleatòria amb distribució~\(F\) i~\(n\in\NN\) un natural.
+	Direm que una mostra de~\(n\) elements és un conjunt de~\(n\) variables aleatòries~\(x=\{x_{i}\}_{i=1}^{n}\) independents idènticament distribuïdes amb distribució~\(F\).
 
+	També direm que~\(x\) és una mostra de l'experiment~\(X\).
+\end{definition}
+\begin{definition}[Mitjana]
+	\labelname{mitjana}\label{def:mitjana}
+	Sigui~\(x=\{x_{i}\}_{i=1}^{n}\) una mostra.
+	Definim
+	\begin{equation*}
+		\mitjana{x}=\frac{1}{n}\sum_{i=1}^{n}x_{i}.
+	\end{equation*}
+	com la mitjana de la mostra.
+\end{definition}
+\begin{proposition}
+	\label{prop:propietat mitjana}
+	Sigui~\(x=\{x_{i}\}_{i=1}^{n}\) una mostra.
+	Aleshores
+	\begin{equation*}
+		\frac{1}{n}\sum_{i=1}^{n}(x_{i}-\mitjana{x})=0.
+	\end{equation*}
+\end{proposition}
+\begin{proof}
+	Per la definicio de~\myref{def:mitjana} tenim que
+	\begin{align*}
+		\frac{1}{n}\sum_{i=1}^{n}(x_{i}-\mitjana{x}) &= \frac{1}{n}\sum_{i=1}^{n}x_{i}-\frac{1}{n}\sum_{i=1}^{n}\mitjana{x} \\
+		&=\frac{1}{n}\sum_{i=1}^{n}x_{i}-\frac{n}{n}\mitjana{x} \\
+		&=\mitjana{x}-\mitjana{x} = 0.\qedhere
+	\end{align*}
+\end{proof}
+\begin{proposition}
+	Siguin~\(x=\{x_{i}\}_{i=1}^{n}\) i~\(y=\{y_{i}\}_{i=1}^{n}\) dues mostres.
+	Aleshores
+	\begin{equation*}
+		\frac{1}{n}\sum_{i=1}^{n}(x_{i}-\mitjana{x})(y_{i}-\mitjana{y})=\frac{1}{n}\sum_{i=1}^{n}x_{i}y_{i}-\mitjana{x}\mitjana{y}.
+	\end{equation*}
+\end{proposition}
+\begin{proof}
+	Tenim que
+	\begin{align*}
+		\frac{1}{n}\sum_{i=1}^{n}(x_{i}-\mitjana{x})(y_{i}-\mitjana{y}) &= \frac{1}{n}\sum_{i=1}^{n}(x_{i}y_{i}-x_{i}\mitjana{y}-\mitjana{x}y_{i}+\mitjana{x}\mitjana{y}) \\
+		&= \frac{1}{n}\sum_{i=1}^{n}x_{i}y_{i}-\frac{\mitjana{y}}{n}x_{i}-\frac{\mitjana{x}}{n}\sum_{i=1}^{n}y_{i}+\mitjana{x}\mitjana{y} \\
+		&= \frac{1}{n}\sum_{i=1}^{n}x_{i}y_{i}-\mitjana{y}\mitjana{x}-\mitjana{x}\mitjana{y}+\mitjana{x}\mitjana{y} \tag{\eqref{def:mitjana}} \\
+		&= \frac{1}{n}\sum_{i=1}^{n}x_{i}y_{i}-\mitjana{x}\mitjana{y}. \qedhere
+	\end{align*}
+\end{proof}
+\begin{corollary}
+	\label{cor:MSE de la mitjana}
+	Sigui~\(x=\{x_{i}\}_{i=1}^{n}\) una mostra. Aleshores
+	\begin{equation*}
+		\frac{1}{n}\sum_{i=1}^{n}(x_{i}-\mitjana{x})^{2}=\frac{1}{n}\sum_{i=1}^{n}x_{i}^{2}-x^{2}.
+	\end{equation*}
+\end{corollary}
+\begin{proposition}
+	\label{prop:esperança d'una mostra}
+	\label{prop:variança d'una mostra}
+	Sigui~\(x=\{x_{i}\}_{i=1}^{n}\) una mostra d'un experiment~\(X\) amb esperança~\(\E{X}=\mu\) i variança~\(\Var{X}=\sigma^{2}\).
+	Aleshores
+	\begin{equation*}
+		\E{\mitjana{x}}=\mu
+		\qquad\text{i}\qquad
+		\Var{\mitjana{x}}=\frac{\sigma^{2}}{n}.
+	\end{equation*}
+\end{proposition}
+\begin{proof}
+	%TODO
+\end{proof}
 \end{document}

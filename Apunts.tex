@@ -163,6 +163,8 @@
 \DeclareMathOperator{\Arg}{Arg}
 \DeclareMathOperator{\Disc}{D}
 \DeclareMathOperator{\Hol}{Hol}
+\DeclareMathOperator{\Esperanca}{E}
+\DeclareMathOperator{\Varianca}{Var}
 
 \DeclareMathOperator*{\suport}{Supp}
 
@@ -204,6 +206,8 @@
 \newcommand{\CampsVectorials}[1]{\mathfrak{#1}}
 \newcommand{\field}[1]{\mathbb{#1}}
 \newcommand{\grauExtensio}[2]{[#1\colon #2]} % Dunno why I had :
+
+\newcommand{\mitjana}[1]{\bar{#1}}
 
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \newcommand{\e}{\mathrm{e}}
@@ -250,6 +254,14 @@
 	\def\prodesc{\@ifnextchar[{\@prodescwith}{\@prodescwithout}}
 	\def\@prodescwith[#1]#2#3{#1\langle#2,#3#1\rangle}
 	\def\@prodescwithout#1#2{\langle#1,#2\rangle}
+
+	\def\E{\@ifnextchar[{\@Ewith}{\@Ewithout}}
+	\def\@Ewith[#1]#2{\Esperanca\csname #1l\endcsname[#2 \csname #1r\endcsname]}
+	\def\@Ewithout#1{\Esperanca[#1]}
+
+	\def\Var{\@ifnextchar[{\@Varwith}{\@Varwithout}}
+	\def\@Varwith[#1]#2{\Varianca \csname #1l\endcsname(#2\csname #1r\endcsname)}
+	\def\@Varwithout#1{\Varianca(#1)}
 \makeatother
 
 %\newcommand{\prodesc}[2]{
@@ -521,7 +533,7 @@
 	\def\@myref@opt[#1]#2{\hyperref[#2]{#1~(\ref*{#2})}}
 	\def\@myref@#1{\mynameref{#1}{\csname r@#1\endcsname}}
 \makeatother
-%\def\myref#1{\ref{#1}}
+\def\myref#1{\ref{#1}}
 %\renewcommand{\myref}[1]{\mynameref{#1}{\csname r@#1\endcsname}}
 %%\newcommand{\myref}[1]{\hyperref[#1]{\nameref{#1} \eqref{#1}}}
 
