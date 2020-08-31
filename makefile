@@ -55,8 +55,7 @@ cleanFull:
 	make cleanportada
 
 read:
-	sudo cp ~/Apunts/Apunts/Apunts.pdf /var/www/html/Apunts.pdf
-# 	zathura Main.pdf
+	zathura ${filename}.pdf
 #	okular Main.pdf
 
 full:
