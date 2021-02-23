@@ -1,5 +1,5 @@
 #!/bin/bash
-filename = Main
+filename = main
 
 all:
 	make pdf
@@ -55,8 +55,8 @@ cleanFull:
 	make cleanportada
 
 read:
-# 	zathura Main.pdf
-#	okular Main.pdf
+# 	zathura main.pdf
+#	okular main.pdf
 
 full:
 	make cleanportada
