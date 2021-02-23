@@ -38,7 +38,7 @@ main:
 	make pdf
 
 pdfPortada:
-	( cd front-matter/Portada/ && pdflatex -synctex=1 -interaction=nonstopmode portada.tex )
+	( cd front-matter/portada/ && pdflatex -synctex=1 -interaction=nonstopmode portada.tex )
 
 portada:
 	make pdfPortada
@@ -48,7 +48,7 @@ clean:
 	find ./ -name "${filename}.*" -not -name "${filename}.tex" -exec rm {} \;
 
 cleanportada:
-	find ./front-matter/Portada/ -name "portada.*" -not -name "portada.tex" -exec rm {} \;
+	find ./front-matter/portada/ -name "portada.*" -not -name "portada.tex" -exec rm {} \;
 
 cleanFull:
 	make clean
