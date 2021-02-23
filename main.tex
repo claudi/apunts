@@ -269,7 +269,7 @@
 \makeglossary
 
  %%%%% BIBLIOGRAFIA %%%%%
-\addbibresource{BackMatter/referencies.bib}
+\addbibresource{end-matter/referencies.bib}
 \DeclareQuoteAlias{spanish}{catalan}
 
 
@@ -352,7 +352,7 @@
 		\rule{\unitlength}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
 		\rule{\unitlength}{1.6pt}%\\[\baselineskip]
 		\vfill
-		{\centering\includegraphics{FrontMatter/Portada/portada.pdf}}
+		{\centering\includegraphics{front-matter/portada/portada.pdf}}
 		\vfill
 		{\large\scshape\subtitol}\\[\baselineskip]
 		{\small\scshape\promocio}\par
@@ -459,10 +459,10 @@
 %\newcommand{\foreword}{} % Aure % Buscar com es diu en català. Potser dir-li prefaci i ja
 \newcommand{\prefaci}{}
 \newcommand{\agraiments}{
-	\subfile{FrontMatter/Agraiments.tex}
+	\subfile{front-matter/agraiments.tex}
 }
 \newcommand{\lletresgregues}{
-	\subfile{FrontMatter/LletresGregues.tex}
+	\subfile{front-matter/lletres-gregues.tex}
 }
 \newcommand{\introduccio}{} % States the purpose and goals of the following writing
 
@@ -470,36 +470,36 @@
  %%%%% BODY MATTER %%%%%
 \newcommand{\primer}{
 	\book{Primer curs}
-	\subfile{BodyMatter/TempIntro.tex}
-	\subfile{BodyMatter/1r/Fonaments.tex}
-	\subfile{BodyMatter/1r/AlgebraLineal.tex}
-	\subfile{BodyMatter/1r/FVR.tex}
-	%\subfile{BodyMatter/1r/GeometriaProjectiva.tex}
-%	\subfile{BodyMatter/1r/Apendix1r.tex} % Geometria projectiva
+	\subfile{body-matter/temp-intro.tex}
+	\subfile{body-matter/1r/fonaments-de-les-matematiques.tex}
+	\subfile{body-matter/1r/algebra-lineal.tex}
+	\subfile{body-matter/1r/funcions-de-variable-real.tex}
+    %\subfile{body-matter/1r/geometria-projectiva.tex}
+%	\subfile{body-matter/1r/Apendix1r.tex} % Geometria projectiva
 }
 \newcommand{\segon}{
 	\book{Segon curs}
-	\subfile{BodyMatter/2n/CDVO.tex}
-	\subfile{BodyMatter/2n/AnalisiMatematic.tex}
-	\subfile{BodyMatter/2n/GeometriaLineal.tex}
-	\subfile{BodyMatter/2n/MatematicaDiscreta.tex}
-	\subfile{BodyMatter/2n/EstructuresAlgebraiques.tex}
-	\subfile{BodyMatter/2n/MetodesNumerics.tex}
-	%\subfile{BodyMatter/2n/TeoriaDeLaMesura.tex}
-%	\subfile{BodyMatter/2n/Apendix2n.tex} % Teoria de la mesura (Lebesge o per probabilitat?)
+	\subfile{body-matter/2n/calcul-en-diverses-variables.tex}
+	\subfile{body-matter/2n/analisi-matematica.tex}
+	\subfile{body-matter/2n/geometria-lineal.tex}
+	\subfile{body-matter/2n/matematica-discreta.tex}
+	\subfile{body-matter/2n/estructures-algebraiques.tex}
+	\subfile{body-matter/2n/metodes-numerics.tex}
+	%\subfile{body-matter/2n/teoria-de-la-mesura.tex}
+%	\subfile{body-matter/2n/Apendix2n.tex} % Teoria de la mesura (Lebesge o per probabilitat?)
 }
 \newcommand{\tercer}{
 	\book{Tercer curs}
-	\subfile{BodyMatter/3r/Topologia.tex}
-	\subfile{BodyMatter/3r/Probabilitat.tex}
-	\subfile{BodyMatter/3r/EDOS1.tex}
-	\subfile{BodyMatter/3r/Galois.tex}
-	\subfile{BodyMatter/3r/Complexa.tex}
-	\subfile{BodyMatter/3r/Estadistica.tex}
-	\subfile{BodyMatter/3r/GeoDiferencial.tex}
-	\subfile{BodyMatter/3r/EDOS2.tex}
-	%\subfile{BodyMatter/3r/CalculTensorial.tex}
-%	\subfile{BodyMatter/3r/Apendix3r.tex} % Formes diferencials (?) 
+	\subfile{body-matter/3r/topologia.tex}
+	\subfile{body-matter/3r/probabilitat.tex}
+	\subfile{body-matter/3r/equacions-diferencials-I.tex}
+	\subfile{body-matter/3r/teoria-de-Galois.tex}
+	\subfile{body-matter/3r/analisi-complexa.tex}
+	\subfile{body-matter/3r/estadistica.tex}
+	\subfile{body-matter/3r/geometria-diferencial.tex}
+	\subfile{body-matter/3r/equacions-diferencials-II.tex}
+	%\subfile{body-matter/3r/calcul-tensorial.tex}
+%	\subfile{body-matter/3r/Apendix3r.tex} % Formes diferencials (?) 
 }										  % Tensor calculus (YouTube)
 										  % Àlgebra homològica (Aquesta queda molt lluny, no crec)
 

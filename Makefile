@@ -1,5 +1,5 @@
 #!/bin/bash
-filename = Apunts
+filename = main
 
 all:
 	make pdf
@@ -20,10 +20,10 @@ myrefFix:
 	make pdf
 
 index:
-	makeindex -q -s BackMatter/indexstyle.ist ${filename}.idx
+	makeindex -q -s end-matter/indexstyle.ist ${filename}.idx
 
 glossary:
-	makeindex -q -s BackMatter/glossarystyle.gst -o ${filename}.gls ${filename}.glo
+	makeindex -q -s end-matter/glossarystyle.gst -o ${filename}.gls ${filename}.glo
 
 bibliography:
 	biber ${filename}
@@ -38,7 +38,7 @@ main:
 	make pdf
 
 pdfPortada:
-	( cd FrontMatter/Portada/ && pdflatex -synctex=1 -interaction=nonstopmode portada.tex )
+	( cd front-matter/portada/ && pdflatex -synctex=1 -interaction=nonstopmode portada.tex )
 
 portada:
 	make pdfPortada
@@ -48,15 +48,15 @@ clean:
 	find ./ -name "${filename}.*" -not -name "${filename}.tex" -exec rm {} \;
 
 cleanportada:
-	find ./FrontMatter/Portada/ -name "portada.*" -not -name "portada.tex" -exec rm {} \;
+	find ./front-matter/portada/ -name "portada.*" -not -name "portada.tex" -exec rm {} \;
 
 cleanFull:
 	make clean
 	make cleanportada
 
 read:
-	zathura ${filename}.pdf
-#	okular Main.pdf
+# 	zathura main.pdf
+#	okular main.pdf
 
 full:
 	make cleanportada
