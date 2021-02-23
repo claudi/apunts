@@ -1,5 +1,5 @@
 #!/bin/bash
-filename = Apunts
+filename = Main
 
 all:
 	make pdf
@@ -55,7 +55,7 @@ cleanFull:
 	make cleanportada
 
 read:
-	zathura ${filename}.pdf
+# 	zathura Main.pdf
 #	okular Main.pdf
 
 full:
