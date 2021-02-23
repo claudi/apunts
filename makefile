@@ -20,10 +20,10 @@ myrefFix:
 	make pdf
 
 index:
-	makeindex -q -s BackMatter/indexstyle.ist ${filename}.idx
+	makeindex -q -s end-matter/indexstyle.ist ${filename}.idx
 
 glossary:
-	makeindex -q -s BackMatter/glossarystyle.gst -o ${filename}.gls ${filename}.glo
+	makeindex -q -s end-matter/glossarystyle.gst -o ${filename}.gls ${filename}.glo
 
 bibliography:
 	biber ${filename}
