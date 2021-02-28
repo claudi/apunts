@@ -1,66 +1,54 @@
-#!/bin/bash
-filename = main
+front = front-matter/
+body  = body-matter/
+end   = end-matter/
 
-all:
-	make pdf
-	make read
+portada.dir = $(front)portada/
 
-pdf:
-	pdflatex -src -interaction=nonstopmode -halt-on-error -shell-escape ${filename}.tex
+classes  = $(wildcard $(body)*/*.tex)  $(wildcard $(body)*.tex)
+assets   = $(wildcard $(front)*.tex) $(portada.dir)portada.pdf
 
-draft:
-	pdflatex -src -interaction=nonstopmode -halt-on-error -draftmode ${filename}.tex
+flags = -interaction=nonstopmode -halt-on-error
+draft = -draftmode
 
-myrefOff:
-	pdflatex -src -interaction=nonstopmode -halt-on-error -draftmode "\newcommand{\myref}[1]{\ref{#1}}\input{${filename}.tex}"
+main.pdf: main.tex $(classes) $(assets) main.bbl main.ind main.gls
+	pdflatex $(flags) $<
 
-myrefFix:
-	make clean
-	make myrefOff
-	make pdf
+.PHONY: draft
+draft: main.tex $(classes)
+	pdflatex $(flags) $(draft) "\newcommand{\myref}[1]{\ref{#1}}\input{$<}"
 
-index:
-	makeindex -q -s end-matter/indexstyle.ist ${filename}.idx
-
-glossary:
-	makeindex -q -s end-matter/glossarystyle.gst -o ${filename}.gls ${filename}.glo
-
-bibliography:
-	biber ${filename}
-
-main:
-	make myrefOff
-	make bibliography
-	make draft
-	make glossary
-	make index
-	make pdf
-	make pdf
-
-pdfPortada:
-	( cd front-matter/portada/ && pdflatex -synctex=1 -interaction=nonstopmode portada.tex )
-
-portada:
-	make pdfPortada
-	make pdfPortada
-
+.PHONY: clean
 clean:
-	find ./ -name "${filename}.*" -not -name "${filename}.tex" -exec rm {} \;
+	find ./ -name "main.*" -not -name "main.tex" -exec rm {} \;
+	find ./$(portada.dir) -name "portada.*" -not -name "portada.tex" -exec rm {} \;
 
-cleanportada:
-	find ./front-matter/portada/ -name "portada.*" -not -name "portada.tex" -exec rm {} \;
+$(portada.dir)portada.pdf: $(portada.dir)portada.tex $(portada.dir)UABLogo.pdf
+	pdflatex -output-directory $(portada.dir) $(flags) $<
 
-cleanFull:
-	make clean
-	make cleanportada
+$(portada.dir)UABLogo.pdf: | $(portada.dir)UABLogo.eps
+	epstopdf $<
 
-read:
-# 	zathura main.pdf
-#	okular main.pdf
+$(portada.dir)UABLogo.eps:
+	cp ../UABLogo.eps $@
+	echo "Building UABLogo.eps!!!!!!"
 
-full:
-	make cleanportada
-	make portada
-	make clean
-	make main
-# 	make read
+main.bbl: | main.bcf
+	biber main #&& rm main.blg
+
+main.ind: $(end)indexstyle.ist | main.idx
+	makeindex -q -s $< -o $@ $|
+
+main.gls: $(end)glossarystyle.gst | main.glo
+	makeindex -q -s $< -o $@ $|
+
+main.bcf main.idx main.glo: bibindexgloss
+
+SHELL := /bin/bash
+
+.PHONY: bibindexgloss
+bibindexgloss:
+	if ([ ! -f main.bcf ] || [ ! -f main.idx ] || [ ! -f main.glo ]) \
+	then \
+		pdflatex $(flags) $(draft) "\newcommand{\myref}[1]{\ref{#1}}\input{main.tex}"; \
+	fi
+
