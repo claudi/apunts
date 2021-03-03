@@ -11,11 +11,17 @@
 		Siguin \(G\neq\emptyset\) un conjunt i \(\ast\colon G\times G\to G\) una operació que satisfà
 		\begin{enumerate}
 			\item Per a tot \(x,y,z\in G\)
-			\[x\ast(y\ast z)=(x\ast y)\ast z.\]
+			\[
+			    x\ast(y\ast z)=(x\ast y)\ast z.
+			\]
 			\item Existeix un \(e\in G\) tal que per a tot \(x\in G\)
-			\[x\ast e=e\ast x=x.\]
+			\[
+			    x\ast e=e\ast x=x.
+			\]
 			\item Per a cada \(x\in G\) existeix \(x'\) tal que
-			\[x\ast x'=x'\ast x=e.\]
+			\[
+			    x\ast x'=x'\ast x=e.
+			\]
 		\end{enumerate}
 		Aleshores \(G\) és un grup amb la l'operació \(\ast\). També direm \(\ast\) dota al conjunt \(G\) d'estructura de grup.
 	\end{definition}
@@ -24,9 +30,13 @@
 		Siguin \(G\) un grup amb l'operació \(\ast\) i \(e\in G\) tal que \(x\ast e=e\ast x=x\) per a tot \(x\in G\). Aleshores \(e\) és únic.
 		\begin{proof}
 			Suposem que existeix un altre element de \(G\) amb aquesta propietat, diguem-ne \(\hat{e}\in G\). Aleshores hauria de ser
-			\[e\ast\hat{e}=e,\]
+			\[
+			    e\ast\hat{e}=e,
+			\]
 			però per hipòtesi
-			\[e\ast\hat{e}=\hat{e}.\]
+			\[
+			    e\ast\hat{e}=\hat{e}.
+			\]
 			Per tant, ha de ser \(e=\hat{e}\).
 		\end{proof}
 	\end{proposition}
@@ -40,17 +50,25 @@
 	\begin{notation}
 		\label{notation:potencies per l'operació repetida en un grup}
 		Donat un grup \(G\) amb l'operació \(\ast\) escriurem
-		\[(x_{1}\ast x_{2})\ast x_{3}=x_{1}\ast x_{2}\ast x_{3}.\]
+		\[
+		    (x_{1}\ast x_{2})\ast x_{3}=x_{1}\ast x_{2}\ast x_{3}.
+		\]
 		
 		També denotarem
-		\[x^{n}=x\ast\overset{n)}{\dots}\ast x.\]
+		\[
+		    x^{n}=x\ast\overset{n)}{\dots}\ast x.
+		\]
 		
 		Si denotem la conjugació del grup per \(+\) usarem la notació additiva i escriurem
-		\[x_{1}+\dots+x_{n}\]
+		\[
+		    x_{1}+\dots+x_{n}
+		\]
 		per referir-nos a la conjugació de \(+\) amb si mateix \(n\) vegades.
 		
 		També denotarem
-		\[nx=x+\overset{n)}{\cdots}+ x.\]
+		\[
+		    nx=x+\overset{n)}{\cdots}+ x.
+		\]
 	\end{notation}
 	\begin{proposition}
 		\label{prop:podem tatxar pels costats en grups}
@@ -63,23 +81,33 @@
 			Farem només la demostració del punt \eqref{enum:podem tatxar pels costats en grups 1} ja que l'altre és anàloga.
 			
 			Com que per hipòtesi \(G\) és un grup, per la definició de \myref{def:grup} tenim que existeix \(c'\) tal que \(c\ast c'=e\), on \(e\) és l'element neutre \(G\), i tenim
-			\[a\ast c\ast c'=b\ast c\ast c',\]
+			\[
+			    a\ast c\ast c'=b\ast c\ast c',
+			\]
 			el que significa que
-			\[a\ast e=b\ast e,\]
+			\[
+			    a\ast e=b\ast e,
+			\]
 			i ens queda \(a=b\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:unicitat inversa en grups}
 		Siguin \(G\) un grup amb l'operació \(\ast\) i element neutre \(e\) i \(a\) un element de \(G\). Aleshores existeix un únic \(a'\in G\) tal que
-		\[a\ast a'=a'\ast a=e.\]
+		\[
+		    a\ast a'=a'\ast a=e.
+		\]
 		\begin{proof}
 			Notem que existeix un \(a'\in G\) que satisfà l'equació per la definició de \myref{def:grup}, i per tant la proposició té sentit.
 			
 			Suposem doncs que existeix \(a''\in G\) tal que
-			\[a\ast a''=a''\ast a=e.\]
+			\[
+			    a\ast a''=a''\ast a=e.
+			\]
 			Però aleshores tenim
-			\[a\ast a''=e=a\ast a',\]
+			\[
+			    a\ast a''=e=a\ast a',
+			\]
 			i per la proposició \myref{prop:podem tatxar pels costats en grups} ha de ser \(a'=a''\), com volíem demostrar.
 		\end{proof} 
 	\end{proposition}
@@ -87,7 +115,9 @@
 		\labelname{l'invers d'un element d'un grup}
 		\label{def:l'invers d'un element d'un grup}
 		Siguin \(G\) un grup amb l'operació \(\ast\) i element neutre \(e\) i \(a\) un element de \(G\). Per la definició de grup tenim que existeix un \(a'\in G\) tal que
-		\[a\ast a'=a'\ast a=e.\]
+		\[
+		    a\ast a'=a'\ast a=e.
+		\]
 		Aleshores direm que \(a'\) és l'invers de \(a\) en \(G\), i el denotarem per \(a^{-1}\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:unicitat inversa en grups} i la notació introduïda en \myref{notation:potencies per l'operació repetida en un grup}.
@@ -95,32 +125,48 @@
 	\begin{proposition}
 		\label{prop:l'invers de l'element neutre d'un grup és ell mateix}
 		Sigui \(G\) un grup amb l'operació \(\ast\) i element neutre \(e\). Aleshores
-		\[e^{-1}=e.\]
+		\[
+		    e^{-1}=e.
+		\]
 		\begin{proof}
 			Per la definició de \myref{def:grup} tenim que
-			\[e\ast e^{-1}=e^{-1}\ast e=e,\]
+			\[
+			    e\ast e^{-1}=e^{-1}\ast e=e,
+			\]
 			i per ha de ser \(e^{-1}=e\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:grups:l'invers de l'invers d'un element es l'element}
 		Siguin \(G\) un grup amb l'operació \(\ast\) i \(a\) un element de \(G\). Aleshores
-		\[\left(a^{-1}\right)^{-1}=a.\]
+		\[
+		    \left(a^{-1}\right)^{-1}=a.
+		\]
 		\begin{proof}
 			Sigui \(e\) l'element neutre de \(G\). Com que \(\left(a^{-1}\right)^{-1}\) és l'invers de \(a^{-1}\) tenim
-			\[\left(a^{-1}\right)^{-1}\ast a^{-1}=e\]
+			\[
+			    \left(a^{-1}\right)^{-1}\ast a^{-1}=e
+			\]
 			però també tenim que
-			\[a\ast a^{-1}=e.\]
+			\[
+			    a\ast a^{-1}=e.
+			\]
 			Per tant és
-			\[a\ast a^{-1}=(a^{-1})^{-1}\ast a^{-1},\]
+			\[
+			    a\ast a^{-1}=(a^{-1})^{-1}\ast a^{-1},
+			\]
 			i per la proposició \myref{prop:podem tatxar pels costats en grups} ha de ser
-			\[a=\left(a^{-1}\right)^{-1}.\qedhere\]
+			\[
+			    a=\left(a^{-1}\right)^{-1}.\qedhere
+			\]
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:invers de a b = b invers a invers}
 		Siguin \(G\) un grup amb l'operació \(\ast\) i \(a,b\) dos elements de \(G\). Aleshores
-		\[(a\ast b)^{-1}=b^{-1}\ast a^{-1}.\]
+		\[
+		    (a\ast b)^{-1}=b^{-1}\ast a^{-1}.
+		\]
 		\begin{proof}
 			Sigui \(e\) l'element neutre de \(G\). Considerem
 			\begin{align*}
@@ -129,22 +175,34 @@
 			&=b^{-1}\ast b=e.
 			\end{align*}
 			i de manera anàloga trobem
-			\[(a\ast b)\ast(b^{-1}\ast a^{-1})=e.\]
+			\[
+			    (a\ast b)\ast(b^{-1}\ast a^{-1})=e.
+			\]
 			Així doncs, per la proposició \myref{prop:unicitat inversa en grups} tenim que \(a\ast b\) és la inversa de \(b^{-1}\ast a^{-1}\), és a dir
-			\[(a\ast b)^{-1}=b^{-1}\ast a^{-1}.\qedhere\]
+			\[
+			    (a\ast b)^{-1}=b^{-1}\ast a^{-1}.\qedhere
+			\]
 		\end{proof}
 	\end{proposition}
 	\begin{lemma}
 		\label{lema:solucions úniques en grups a equacions}
 		Siguin \(G\) un grup amb l'operació \(\ast\) i \(a,b\) dos elements de \(G\). Aleshores existeixen \(x,y\in G\) únics tals que
-		\[b\ast x=a\quad\text{i}\quad y\ast b=a.\]
+		\[
+		    b\ast x=a\quad\text{i}\quad y\ast b=a.
+		\]
 		\begin{proof}
 			Fem només una de les demostracions, ja que l'altre és anàloga. Com que per hipòtesi \(G\) és un grup, per la definició de \myref{def:grup} tenim que existeix \(b^{-1}\in G\) tal que \(b^{-1}\ast b=e\), on \(e\) és l'element neutre de \(G\). Per tant considerem
-			\[b^{-1}\ast(b\ast x)=b^{-1}\ast a\]
+			\[
+			    b^{-1}\ast(b\ast x)=b^{-1}\ast a
+			\]
 			i per la definició de \myref{def:grup} tenim que això és equivalent a
-			\[(b^{-1}\ast b)\ast x=b^{-1}\ast a,\]
+			\[
+			    (b^{-1}\ast b)\ast x=b^{-1}\ast a,
+			\]
 			i de nou per la definició de grup, i per la definició de \myref{def:l'element neutre del grup},
-			\[e\ast x=x=b^{-1}\ast a ;\]
+			\[
+			    e\ast x=x=b^{-1}\ast a ;
+			\]
 			i la unicitat ve donada per la proposició \myref{prop:unicitat neutre del grup}.
 		\end{proof}
 	\end{lemma}
@@ -155,20 +213,30 @@
 		\begin{enumerate}
 			\item\label{enum:definicions alternatives de grup 1} \(G\) és un grup amb l'operació \(\ast\).
 			\item\label{enum:definicions alternatives de grup 2} \(G\neq\emptyset\) i per a tot \(a,b\in G\) existeix uns únics \(x,y\in G\) tals que
-			\[b\ast x=a\quad\text{i}\quad y\ast b=a.\]
+			\[
+			    b\ast x=a\quad\text{i}\quad y\ast b=a.
+			\]
 			\item\label{enum:definicions alternatives de grup 3} Existeix \(e\in G\) tal que per a tot \(x\in G\) tenim \(x\ast e=x\) i existeix un \(x^{-1}\in G\) tal que \(x\ast x^{-1}=e\).
 		\end{enumerate}
 		\begin{proof}
 			Comencem demostrant \eqref{enum:definicions alternatives de grup 1}\(\implica\)\eqref{enum:definicions alternatives de grup 2}. Suposem que \(G\) és un grup amb l'operació. Veiem que \(G\) no és buit per la definició de \myref{def:grup}, i la segona part és el lema \myref{lema:solucions úniques en grups a equacions}.
 			
 			Demostrem ara \eqref{enum:definicions alternatives de grup 2}\(\implica\)\eqref{enum:definicions alternatives de grup 3}. La primera part es pot veure fixant \(x\in G\). Pel punt \eqref{enum:definicions alternatives de grup 2} tenim que per a cada \(a\in G\) existeix un únic \(b\in G\) tal que
-			\[a\ast b=x,\]
+			\[
+			    a\ast b=x,
+			\]
 			i podem fer
-			\[a\ast b\ast e=x\ast e\]
+			\[
+			    a\ast b\ast e=x\ast e
+			\]
 			i substituint ens queda
-			\[x\ast e=x.\]
+			\[
+			    x\ast e=x.
+			\]
 			Per veure la segona part notem que pel punt \eqref{enum:definicions alternatives de grup 2} tenim que per a tot \(x\in G\) existeix un \(a\in G\) tal que
-			\[x\ast a=e,\]
+			\[
+			    x\ast a=e,
+			\]
 			i aleshores \(a=x^{-1}\).
 			
 			Ara només ens queda veure \eqref{enum:definicions alternatives de grup 3}\(\implica\)\eqref{enum:definicions alternatives de grup 1}. Tenim que per a tot \(x\in G\) existeix un \(x^{-1}\) tal que \(x\ast x^{-1}=e\), i de la mateixa manera, existeix un \(y\in G\) tal que \(x^{-1}\ast y=e\). Per tant
@@ -202,13 +270,19 @@
 			Sigui \(e\) l'element neutre de \(G\). Demostrem primer que la condició és necessària (\(\implica\)). Això ho podem veure per la definició de \myref{def:grup}, ja que tenim que \(y^{-1}\) existeix i pertany a \(H\), i per tant \(x\ast y^{-1}\) també pertany a \(H\).
 			
 			Demostrem ara que la condició és suficient (\(\implicatper\)). Tenim que per a tot \(x\in H\) es compleix
-			\[x\ast x^{-1}=e,\]
+			\[
+			    x\ast x^{-1}=e,
+			\]
 			i per tant \(e\in H\). També tenim que per a tot \(x\in H\) es compleix
-			\[e\ast x^{-1}=x^{-1},\]
+			\[
+			    e\ast x^{-1}=x^{-1},
+			\]
 			i per tant \(x^{-1}\in H\).
 			
 			Ara només ens queda veure que \(\ast\) és tancat en \(H\); és a dir, que per a tot \(x,y\in H\) tenim \(x\ast y\in H\). Com que ja hem vist que \(y^{-1}\) existeix i pertany a \(H\), per la proposició \myref{prop:grups:l'invers de l'invers d'un element es l'element} tenim
-			\[x\ast y^{-1}=x\ast y\]
+			\[
+			    x\ast y^{-1}=x\ast y
+			\]
 			i per hipòtesi \(x\ast y\in H\).
 			
 			Per tant, per la definició de \myref{def:grup} tenim que \(H\) és un grup amb l'operació \(\ast\), i com que per hipòtesi \(H\subseteq G\) per la definició de \myref{def:subgrup} tenim que \(H\) és un subgrup de \(G\).
@@ -224,9 +298,13 @@
 	\begin{proposition}
 		\label{prop:els subgrups generats per un conjunt existeixen}
 		Siguin \(G\) un grup, \(S\neq\emptyset\) un subconjunt de \(G\),
-		\[\{H_{i}\}_{i\in I}=\{H\subseteq G\mid S\leq H\}\]
+		\[
+		    \{H_{i}\}_{i\in I}=\{H\subseteq G\mid S\leq H\}
+		\]
 		una família de subgrups de \(G\) i
-		\[H=\bigcap_{i\in I}H_{i}.\]
+		\[
+		    H=\bigcap_{i\in I}H_{i}.
+		\]
 		Aleshores \(H\) i és un subgrup de \(G\).
 		\begin{proof}
 			Sigui \(e\) l'element neutre de \(G\). Comprovem que \(H\neq\emptyset\). En tenim prou amb veure que \(e\in H\). Per veure que \(H\) és un subgrup de \(G\) ho podem fer per la proposició \myref{prop:intersecció de subgrups es subgrup}.
@@ -236,9 +314,13 @@
 		\labelname{mínim subgrup generat per un conjunt}
 		\label{def:mínim subgrup generat per un subconjunt}
 		Siguin \(G\) un grup, \(S\) un subconjunt de \(G\),
-		\[\{H_{i}\}_{i\in I}=\{H\subseteq G\mid S\leq H\}\]
+		\[
+		    \{H_{i}\}_{i\in I}=\{H\subseteq G\mid S\leq H\}
+		\]
 		una família de subgrups de \(G\) i
-		\[H=\bigcap_{i\in I}H_{i}.\]
+		\[
+		    H=\bigcap_{i\in I}H_{i}.
+		\]
 		Aleshores direm que el subgrup \(H\leq G\) és el mínim subgrup generat per \(S\) i ho denotarem amb \(\langle S\rangle\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:els subgrups generats per un conjunt existeixen}.
@@ -246,18 +328,26 @@
 	\begin{proposition}
 		\label{prop:forma grups cíclics}
 		Siguin \(G\) un grup i \(g\) un element de \(G\). Aleshores
-		\[\langle\{g\}\rangle=\{g^{i}\}_{i\in\mathbb{Z}}.\]
+		\[
+		    \langle\{g\}\rangle=\{g^{i}\}_{i\in\mathbb{Z}}.
+		\]
 		\begin{proof}
 			Sigui \(\ast\) l'operació de \(G\). Ho demostrem per doble inclusió.
 			
 			Comencem veient que
-			\[\{g^{i}\}_{i\in\mathbb{Z}}\subseteq\langle\{g\}\rangle.\]
+			\[
+			    \{g^{i}\}_{i\in\mathbb{Z}}\subseteq\langle\{g\}\rangle.
+			\]
 			Per la definició de \myref{def:mínim subgrup generat per un subconjunt} tenim que existeix una família de subconjunts de \(G\) que denotarem per \(\{H_{i}\}_{i\in I}\), amb
-			\[\{g\}\subseteq H=\bigcap_{i\in I}H_{i}.\]
+			\[
+			    \{g\}\subseteq H=\bigcap_{i\in I}H_{i}.
+			\]
 			Com que \(\{H_{i}\}_{i\in I}\) són subgrups de \(G\) tenim que, donat que \(g\in H_{i}\), \(g^{n}\in H_{i}\) per a tot \(i\in I\) i tot \(n\in\mathbb{Z}\) per la definició de \myref{def:grup}, i per tant \(g^{n}\in H\), el que és equivalent a dir que \(g^{n}\in \langle g\rangle\) per a tot \(n\in\mathbb{Z}\)
 			
 			Ara veiem que
-			\[\langle\{g\}\rangle\subseteq\{g^{i}\}_{i\in\mathbb{Z}}.\]
+			\[
+			    \langle\{g\}\rangle\subseteq\{g^{i}\}_{i\in\mathbb{Z}}.
+			\]
 			Denotarem \(H_{g}=\{g^{i}\}_{i\in\mathbb{Z}}\). Hem de veure que \(H_{g}\) és un grup amb l'operació \(\ast\).
 			
 			Observem que per a tot \(g^{i},g^{j}\in H_{g}\) es satisfà \(g^{i}\ast g^{-j}=g^{i-j}\in H_{g}\), i per tant \(H_{g}\leq G\). Ara bé, com que \(\{g\}\subseteq H_{g}\), tenim que \(H_{g}\in\{H_{i}\}_{i\in I}\), és a dir, que \(H_{g}\) pertany a la família de subconjunts de \(G\) que contenen \(\{g\}\); el que significa que \(\langle\{g\}\rangle\leq H_{g}\), i per tant \[\langle\{g\}\rangle\subseteq\{g^{i}\}_{i\in\mathbb{Z}}.\qedhere\]
@@ -272,7 +362,9 @@
 	\begin{proposition}
 		\label{prop:potencia element neutre en un grup}
 		Siguin \(G\) un grup amb element neutre \(e\) i \(g\) un element de \(G\). Aleshores
-		\[\abs{\langle\{g\}\rangle}=n\sii n=\min\{k\in\mathbb{N}\mid g^{k}=e\}.\]
+		\[
+		    \abs{\langle\{g\}\rangle}=n\sii n=\min\{k\in\mathbb{N}\mid g^{k}=e\}.
+		\]
 		\begin{proof}
 			Sigui \(\ast\) l'operació de \(G\). Comencem amb la implicació cap a l'esquerra (\(\implicatper\)). Suposem doncs que \(n=\min\{k\in\mathbb{N}\mid g^{k}=e\}\). Pel \myref{thm:divisió euclidiana} tenim que per a tot \(t\in\mathbb{Z}\) existeixen uns únics \(Q\in\mathbb{Z}\), \(r\in\mathbb{N}\), amb \(r<n\) tals que \(t=Qn+r\). Per tant
 			\begin{align*}
@@ -300,13 +392,17 @@
 		\labelname{conjugació entre conjunts sobre grups}
 		\label{def:conjugació entre conjunts sobre grups}
 		Siguin \(G\) un grup amb l'operació \(\ast\) i \(H\) un subconjunt de \(G\). Aleshores definim
-		\[GH=\{g\ast h\mid g\in G,h\in H\}\quad\text{i}\quad HG=\{h\ast g\mid g\in G,h\in H\}.\]
+		\[
+		    GH=\{g\ast h\mid g\in G,h\in H\}\quad\text{i}\quad HG=\{h\ast g\mid g\in G,h\in H\}.
+		\]
 	\end{definition}
 	\begin{definition}[Subgrup normal]
 		\labelname{subgrup normal}
 		\label{def:subgrup normal}
 		Siguin \(G\) un grup i \(H\) un subgrup de \(G\). Aleshores direm que \(H\) és un subgrup normal de \(G\) si per a tot \(x\in G\) tenim
-		\[\{x\}H=H\{x\}.\]
+		\[
+		    \{x\}H=H\{x\}.
+		\]
 		Ho denotarem com \(H\trianglelefteq G\).
 	\end{definition}
 	\begin{proposition}
@@ -337,13 +433,17 @@
 		\labelname{grup abelià}
 		\label{def:grup abelià}
 		Sigui \(G\) un grup amb l'operació \(+\) tal que per a tot \(x,y\in G\) satisfà
-		\[x+y=y+x.\]
+		\[
+		    x+y=y+x.
+		\]
 		Aleshores direm que \(G\) és un grup abelià.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:condició equivalent a grup abelià}
 		Sigui \(G\) un grup amb l'operació \(+\). Aleshores \(G\) és un grup abelià si i només si per a tot \(a,b\in G\) es compleix
-		\[-(a+b)=-a-b.\]
+		\[
+		    -(a+b)=-a-b.
+		\]
 		\begin{proof}
 			Que la condició és necessària (\(\implica\)) ho podem veure amb la definició de \myref{def:grup abelià} i la proposició \myref{prop:invers de a b = b invers a invers}.
 			
@@ -353,7 +453,9 @@
 			(a+b)-(a+b)=e,
 			\end{equation}
 			que és equivalent a
-			\[(a+b)-(a+b)-\left(-(a+b)\right)=-\left(-(a+b)\right),\]
+			\[
+			    (a+b)-(a+b)-\left(-(a+b)\right)=-\left(-(a+b)\right),
+			\]
 			i aleshores
 			\begin{align*}
 			a+b&=-\left(-(a+b)\right)\\
@@ -386,7 +488,9 @@
 			Siguin \(\ast\) l'operació de \(G\) i \(e\) l'element neutre de \(G\). Per l'observació \myref{obs:l'element neutre d'un grup pertany als subgrups} tenim que \(e\in H\). Si \(H=\{e\}\) no hi ha res a demostrar. Suposem que \(H\neq\{e\}\), aleshores existeix un \(g\in G\) tal que \(g^{n}\in H\) per a cert \(n\in\mathbb{N}\). Sigui doncs \(m\) l'enter més petit tal que \(g^{m}\in H\); volem demostrar que \(H=\langle\{g^{m}\}\rangle\).
 			
 			Sigui \(a\) un element de \(H\). Aleshores com que \(a\in H\subseteq G\), \(a=g^{t}\) per a cert \(t\in\mathbb{N}\), i pel \myref{thm:divisió euclidiana} existeixen \(Q,r\in\mathbb{N}\), amb \(r<m\) tals que \(t=Qm+r\), i per tant \(g^{t}=g^{Qm+r}\). Aleshores tenim
-			\[g^{r}=\left(g^{m}\right)^{-Q}\ast g^{t},\]
+			\[
+			    g^{r}=\left(g^{m}\right)^{-Q}\ast g^{t},
+			\]
 			i ha de ser \(g^{r}\in H\), ja que \(g^{m}\in H\), i per la definició de \myref{def:grup} tenim que \(\left(g^{m}\right)^{-1}\in H\). Per tant \(g^{r}\in H\). Però ara bé, \(m\) era el mínim enter tal que \(g^{m}\in H\), i \(r<m\), per tant ha de ser \(g^{r}=e\), és a dir, \(r=0\) i per tant \(t=Qm\); el que significa que \(H=\{\left(g^{m}\right)^{Q}\mid Q\in\mathbb{N}\}\) i per la proposició \myref{prop:forma grups cíclics} \(H=\langle\{g^{m}\}\rangle\) i hem acabat.
 		\end{proof}
 	\end{proposition}
@@ -402,17 +506,23 @@
 		\label{prop:relacio entre grups és d'equivalència}
 		\label{TODO:grup quocient}
 		Siguin \(G\) un grup amb l'operació \(\ast\) i \(H\) un subgrup de \(G\). Aleshores la relació
-		\[x\sim y\sii x\ast y^{-1}\in H\text{ per a tot }x,y\in G\]
+		\[
+		    x\sim y\sii x\ast y^{-1}\in H\text{ per a tot }x,y\in G
+		\]
 		és una relació d'equivalència.
 		\begin{proof}
 			Sigui \(e\) l'element neutre del grup \(G\). Comprovem les propietats de la definició de relació d'equivalència:
 			\begin{enumerate}
 				\item Reflexiva: Sigui \(x\in G\). Aleshores \(x\ast x^{-1}=e\), i tenim l'observació \myref{obs:l'element neutre d'un grup pertany als subgrups}.
 				\item Simètrica: Siguin \(x,y\in G\) i suposem que \(x\sim y\), això significa que \(x\ast y^{-1}\in H\), i per la definició de \myref{def:grup} tenim que \((x\ast y^{-1})^{-1}\in H\), ja que per hipòtesi \(H\) és un grup, i per les proposicions \myref{prop:invers de a b = b invers a invers} i \myref{prop:grups:l'invers de l'invers d'un element es l'element} tenim que
-				\[(x\ast y^{-1})^{-1}=y\ast x^{-1},\]
+				\[
+				    (x\ast y^{-1})^{-1}=y\ast x^{-1},
+				\]
 				i això és \(y\sim x\).
 				\item Transitiva: Siguin \(x,y,z\in G\) i suposem que \(x\sim y\) i \(y\sim z\). Per tant \(x\ast y^{-1}\in H\), i \(y\ast z^{-1}\in H\). Com que per hipòtesi \(H\) és un grup, tenim que
-				\[(x\ast y^{-1})\ast(y\ast z^{-1})\in H,\]
+				\[
+				    (x\ast y^{-1})\ast(y\ast z^{-1})\in H,
+				\]
 				que és equivalent a \(x\ast z^{-1}\in H\), i per tant \(x\sim z\).
 			\end{enumerate}
 			I per la definició de \myref{def:relació d'equivalència} hem acabat.
@@ -420,7 +530,9 @@
 	\end{proposition}
 	\begin{proposition}\label{prop:grup quocient}
 		Siguin \(G\) un grup amb l'operació \(\ast\) i \(H\) un subgrup de \(G\) i \(\sim\) una relació d'equivalència tal que
-		\[x\sim y\sii x\ast y^{-1}\in H\text{ per a tot }x,y\in G.\]
+		\[
+		    x\sim y\sii x\ast y^{-1}\in H\text{ per a tot }x,y\in G.
+		\]
 		Aleshores el conjunt quocient \(G/H\) amb l'operació
 		\begin{align*}
 		\ast\colon G/H\times G/H&\longrightarrow G/H\\
@@ -474,7 +586,9 @@
 			\end{align*}
 			
 			Pel lema \myref{lema:operar en grups és bijectiu} trobem \(\abs{H}=\abs{\{x\}H}\). Tenim que \(\abs{G}\) és el resultat de multiplicar el número de classes d'equivalència pel nombre d'elements d'una de les classes, és a dir %REFERENCIES fonaments
-			\[\abs{G}=\abs{G/H}\abs{H}\]
+			\[
+			    \abs{G}=\abs{G/H}\abs{H}
+			\]
 			i per tant \(\abs{H}\) divideix \(\abs{G}\).
 		\end{proof}
 	\end{theorem}
@@ -488,7 +602,9 @@
 		\labelname{l'índex d'un subgrup en un grup}
 		\label{def:l'índex d'un subgrup en un grup}
 		Siguin \(G\) un grup i \(H\) un subgrup de \(G\). Aleshores definim
-		\[[G:H]=\frac{\abs{G}}{\abs{H}}\]
+		\[
+		    [G:H]=\frac{\abs{G}}{\abs{H}}
+		\]
 		com l'índex de \(H\) a \(G\).
 	\end{definition}
 \section{Tres Teoremes d'isomorfisme entre grups}
@@ -507,7 +623,9 @@
 		\labelname{automorfisme entre grups}
 		\label{def:automorfisme entre grups}
 		Siguin \(G_{1}\) un grup amb l'operació \(\ast\), \(G_{2}\) un grup amb l'operació \(\circ\) i \(f\colon G_{1}\to G_{2}\) una aplicació que, per a tot \(x,y\in G_{1}\) satisfà
-		\[f(x\ast y)=f(x)\circ f(y).\]
+		\[
+		    f(x\ast y)=f(x)\circ f(y).
+		\]
 		Aleshores diem que \(f\) és un morfisme entre grups. Definim també
 		\begin{enumerate}
 			\item Si \(f\) és injectiva direm que \(f\) és un monomorfisme entre grups.
@@ -547,14 +665,18 @@
 		Siguin \(G\), \(H\) i \(K\) tres grups i \(f\colon G\longrightarrow H\) i \(g\colon H\longrightarrow K\) dos morfismes entre grups. Aleshores \(g(f)\colon G\longrightarrow K\) és un morfisme entre grups.
 		\begin{proof}
 			Siguin \(\ast\), \(\circ\) i \(+\) les operacions de \(G\), \(H\) i \(K\), respectivament. Per la definició de \myref{def:morfisme entre grups} tenim que per a tot \(g_{1},g_{2}\in H\) i \(h_{1},h_{2}\in H\) tenim \(f(g_{1}\ast g_{2})=f(g_{1})\circ f(g_{2})\) i \(g(h_{1}\circ h_{2})=g(h_{1})+g(h_{2})\). Per tant
-			\[g(f(g_{1}\ast g_{2}))=g(f(g_{1})\circ f(g_{2}))=g(f(g_{1}))+g(f(g_{2})),\]
+			\[
+			    g(f(g_{1}\ast g_{2}))=g(f(g_{1})\circ f(g_{2}))=g(f(g_{1}))+g(f(g_{2})),
+			\]
 			i per la definició de \myref{def:morfisme entre grups} hem acabat.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:condicions equivalents abelià i cíclic per isomorfismes}
 		Siguin \(G_{1}\) i \(G_{2}\) dos grups tals que
-		\[G_{1}\cong G_{2}.\]
+		\[
+		    G_{1}\cong G_{2}.
+		\]
 		Aleshores
 		\begin{enumerate}
 			\item\label{enum:condicions equivalents abelià i cíclic per isomorfismes 1} \(G_{1}\) és un grup abelià si i només si \(G_{2}\) és un grup abelià.
@@ -564,9 +686,13 @@
 			Siguin \(\ast\) l'operació de \(G_{1}\) i \(\circ\) l'operació de \(G_{2}\). Per la definició de \myref{def:isomorfisme entre grups} tenim que existeix un \(f\colon G_{1}\to G_{2}\) un isomorfisme entre grups.
 			
 			Comencem demostrant el punt \eqref{enum:condicions equivalents abelià i cíclic per isomorfismes 1}. Suposem doncs que \(G_{1}\) és un grup abelià. Per la definició de \myref{def:grup abelià} tenim que per a tot \(a,b\in G_{1}\) es compleix \(a\ast b=b\ast a\). Aleshores tenim
-			\[f(a\ast b)=f(b\ast a)\]
+			\[
+			    f(a\ast b)=f(b\ast a)
+			\]
 			i per la definició de \myref{def:morfisme entre grups} tenim que
-			\[f(a)\circ f(b)=f(b)\circ f(a),\]
+			\[
+			    f(a)\circ f(b)=f(b)\circ f(a),
+			\]
 			i per tant, com que per la definició de \myref{def:isomorfisme entre grups} \(f\) és un bijectiu, \(G_{2}\) satisfà la definició de \myref{def:grup abelià}.
 			
 			Demostrem ara el punt \eqref{enum:condicions equivalents abelià i cíclic per isomorfismes 2}. Suposem doncs que \(G_{1}\) és un grup cíclic. Per la definició de \myref{def:grup cíclic} tenim que \(G_{1}=\{g^{i}\}_{i\in\mathbb{Z}}\) per a un cert \(g\in G_{1}\). Per tant, com que \(f\) és bijectiva per la definició de \myref{def:isomorfisme entre grups} tenim que per a tot \(x\in G_{2}\) es compleix \(x=f(g^{i})\) per a un cert \(i\in\mathbb{Z}\), i per la definició de \myref{def:morfisme entre grups} tenim que\footnote{el primer és amb l'operació \(\ast\) i el segon amb l'operació \(\circ\).} \(f(g^{i})=f(g)^{i}\), i per la definició de \myref{def:grup cíclic} \(G_{2}\) és un grup cíclic.
@@ -578,9 +704,13 @@
 		\labelname{imatge d'un morfisme entre grups}
 		\label{def:imatge d'un morfisme entre grups}
 		Siguin \(G_{1}\) un grup amb element neutre \(e\), \(G_{2}\) un grup amb  element neutre \(e'\) i \(f\colon G_{1}\to G_{2}\) un morfisme entre grups. Aleshores definim el nucli de \(f\) com
-		\[\ker(f)=\{x\in G_{1}\mid f(x)=e'\},\]
+		\[
+		    \ker(f)=\{x\in G_{1}\mid f(x)=e'\},
+		\]
 		i la imatge de \(f\) com
-		\[\Ima(f)=\{f(x)\in G_{2}\mid x\in G_{1}\}.\]
+		\[
+		    \Ima(f)=\{f(x)\in G_{2}\mid x\in G_{1}\}.
+		\]
 	\end{definition}
 	\begin{observation}
 		\label{obs:nucli d'un morfisme entre grups es subconjunt del grup d'entrada, imatge n'és del de sortida}
@@ -672,13 +802,19 @@
 			&=\sigma_{g}\circ\sigma_{g'}(x),
 			\end{align*}
 			i per la definició de \myref{def:morfisme entre grups} tenim que \(\varphi\) és un morfisme entre grups. Veiem ara que \(\varphi\) és un monomorfisme. Per la definició de \myref{def:nucli d'un morfisme entre grups} tenim que
-			\[\ker(\varphi)=\{x\in G\mid f(x)=\text{Id}_{G}\}.\]
+			\[
+			    \ker(\varphi)=\{x\in G\mid f(x)=\text{Id}_{G}\}.
+			\]
 			Ara bé, \(\sigma_{g}=\text{Id}\) és, per la definició \eqref{eq:thm:Cayley Teorema de representació 2}, equivalent a dir que \(g\ast x=x\) per a tota \(x\in G\), i per la definició de \myref{def:l'element neutre del grup} això és si i només si \(g=e\), i per tant
-			\[\ker(\varphi)=\{e\},\]
+			\[
+			    \ker(\varphi)=\{e\},
+			\]
 			i per la proposició \myref{prop:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge} tenim que \(\varphi\) és un monomorfisme, com volíem veure.
 			
 			Per tant, per la proposició \myref{prop:les imatges dels subgrups son subgrups + el mateix amb subgrups normals} tenim que
-			\[G\cong \Ima(\varphi)\leq\GrupSimetric_{G}.\qedhere\]
+			\[
+			    G\cong \Ima(\varphi)\leq\GrupSimetric_{G}.\qedhere
+			\]
 		\end{proof}
 	\end{theorem}
 %	\begin{corollary} %TODO %FER %FALS
@@ -762,7 +898,9 @@
 			Per veure el punt \eqref{enum:Primer Teorema de l'isomorfisme entre grups 2} comencem demostrant que \(\varphi_{1}\) està ben definida. Siguin \(H_{1}=H_{2}\in\{H\mid\ker(f)\leq H\leq G\}\). Aleshores, per la hipòtesi \eqref{eq:primer teorema de l'isomorfisme eq2} tenim \(\varphi_{1}(H_{1})=\{f(h)\in G_{2}\mid h\in H_{1}\}\) i \(\varphi_{1}(H_{2})=\{f(h)\in G_{2}\mid h\in H_{2}\}\), i com que \(f\) és una aplicació, i per tant ben definida, \(\varphi_{1}(H_{1})=\varphi_{1}(H_{2})\).
 			
 			Continuem comprovant que \(\varphi_{1}\) és bijectiva. Per veure que és injectiva prenem \(H_{1},H_{2}\in\{H\mid\ker(f)\leq H\leq G\}\) tals que \(\varphi_{1}(H_{1})=\varphi_{1}(H_{2})\). Això, per la hipòtesi \eqref{eq:primer teorema de l'isomorfisme eq2} és
-			\[\{f(h)\in G_{2}\mid h\in H_{1}\}=\{f(h)\in G_{2}\mid h\in H_{2}\}.\]
+			\[
+			    \{f(h)\in G_{2}\mid h\in H_{1}\}=\{f(h)\in G_{2}\mid h\in H_{2}\}.
+			\]
 			Per tant siguin \(h_{1}\in H_{1}\), \(h_{2}\in H_{2}\) tals que \(f(h_{1})=f(h_{2})\). Equivalentment, per la proposició \myref{prop:unicitat inversa en grups} i la definició de \myref{def:l'invers d'un element d'un grup} i la proposició \myref{prop:l'invers de l'element neutre d'un grup és ell mateix} tenim les igualtats \(f(h_{2}^{-1}\ast h_{1})=f(h_{1}^{-1}\ast h_{2})=e'\), i per la definició de \myref{def:nucli d'un morfisme entre grups} tenim \(h_{2}^{-1}\ast h_{1},h_{1}^{-1}\ast h_{2}\in\ker(f)\), i per la hipòtesi \eqref{eq:primer teorema de l'isomorfisme eq2} això és \(h_{2}^{-1}\ast h_{1}\in\ker(f)\subseteq H_{2}\) i \(h_{1}^{-1}\ast h_{2}\in\ker(f)\subseteq H_{1}\). Observem que això és que \(h_{1}\in\{h_{2}\}\ker(f))\subseteq H_{2}\) i \(h_{2}\in\{h_{1}\}\ker(f))\subseteq H_{1}\). Això vol dir que \(H_{1}\subseteq H_{2}\) i \(H_{2}\subseteq H_{1}\), i per doble inclusió això és \(H_{1}=H_{2}\), com volíem veure. %FER Referència doble inclusió
 			
 			Per veure que \(\varphi_{1}\) és exhaustiva tenim que per la proposició \myref{prop:les imatges dels subgrups son subgrups + el mateix amb subgrups normals} i per la hipòtesi \eqref{eq:primer teorema de l'isomorfisme eq2} tenim que donat un conjunt \(K\) tal que \(K\leq G_{2}\) aleshores el conjunt \(H=\{k\in G_{1}\mid f(h)\in K\}\) satisfà \(H\leq G_{1}\), i per la definició de \myref{def:nucli d'un morfisme entre grups} tenim que es compleix \(\ker(f)\leq H\leq G_{1}\), i per tant \(\varphi_{1}(H)=K\), i per tant \(\varphi\) és exhaustiva i per tant bijectiva. %FER referències fonaments.
@@ -801,7 +939,9 @@
 		\labelname{Segon Teorema de l'isomorfisme entre grups}
 		\label{thm:Segon Teorema de l'isomorfisme entre grups}
 		Siguin \(G\) un grup, \(H\) un subgrup de \(G\) i \(K\) un subgrup normal de \(G\). Aleshores
-		\[(HK)/K\cong H/(H\cap K).\]
+		\[
+		    (HK)/K\cong H/(H\cap K).
+		\]
 		\begin{proof}
 			Aquest enunciat té sentit pel lema \myref{lema:Segon Teorema de l'isomorfisme entre grups}.
 			
@@ -824,16 +964,22 @@
 			Continuem veient que \(f\) és exhaustiva. Prenem \([h]\in H/(H\cap K)\). Per la definició \eqref{hipotesi:definició f per segon teorea de l'isomorfisme} tenim que \(f(h\ast k)=[h]\) per a qualsevol \(k\in K\), i per tant \(f\) és exhaustiva.
 			
 			Per tant \(f\) és un epimorfisme, i per tant, pel \myref{thm:Primer Teorema de l'isomorfisme entre grups} tenim
-			\[HK/\ker(f)\cong H/(H\cap K).\]
+			\[
+			    HK/\ker(f)\cong H/(H\cap K).
+			\]
 			Ara bé, per la definició de \myref{def:nucli d'un morfisme entre grups} tenim que \(\ker(f)=\{h_{1}\ast k_{2}\in HK\mid f(h_{1}\ast k_{1})=[e]\}\), i per tant \(\ker(f)=K\) i trobem
-			\[HK/K\cong H/(H\cap K).\qedhere\]
+			\[
+			    HK/K\cong H/(H\cap K).\qedhere
+			\]
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}[Tercer Teorema de l'isomorfisme]
 		\labelname{Tercer Teorema de l'isomorfisme entre grups}
 		\label{thm:Tercer Teorema de l'isomorfisme entre grups}
 		Siguin \(G\) un grup i \(H\), \(K\) dos subgrups normals de \(G\) amb \(K\subseteq H\). Aleshores
-		\[G/H\cong (G/K)/(H/K).\]
+		\[
+		    G/H\cong (G/K)/(H/K).
+		\]
 		\begin{proof}
 			Definim les aplicacions
 			\begin{align*}
@@ -845,7 +991,9 @@
 			
 			Per la proposició \myref{prop:conjugació de morfismes entre grups és morfisme entre grups} tenim que \(\varphi_{2}(\varphi_{1})\colon G\longrightarrow(G/K)/(H/K)\) és un epimorfisme entre grups, %fer referencies fonaments.
 			i pel \myref{thm:Primer Teorema de l'isomorfisme entre grups} trobem
-			\[G/\ker(\varphi_{2}(\varphi_{1}))\cong(G/K)/(H/K).\]
+			\[
+			    G/\ker(\varphi_{2}(\varphi_{1}))\cong(G/K)/(H/K).
+			\]
 			
 			Veiem ara que \(\ker(\varphi_{2}(\varphi_{1}))=H\). Per la definició de \myref{def:relació d'equivalència entre grups} tenim que \(G/K=\{gK\mid g\in G\}\) i \(H/K=\{hK\mid h\in H\}\), i per tant
 			\begin{equation}
@@ -858,9 +1006,13 @@
 			(G/K)/(H/K)=\{ghK\mid g\in G,h\in H\}.
 			\end{equation}
 			Ara bé, com que per hipòtesi \(K\subseteq H\) podem reescriure \eqref{eq:Tercer Teorema de l'isomorfisme eq2} com
-			\[(G/K)/(H/K)=\{gH\mid g\in G\},\]
+			\[
+			    (G/K)/(H/K)=\{gH\mid g\in G\},
+			\]
 			i trobem, per la definició de \myref{def:nucli d'un morfisme entre grups}, que \(\ker(\varphi_{2}(\varphi_{1}))=H\), i per tant
-			\[G/H\cong (G/K)/(H/K).\qedhere\]
+			\[
+			    G/H\cong (G/K)/(H/K).\qedhere
+			\]
 		\end{proof}
 	\end{theorem}
 \section{Tres Teoremes de Sylow}
@@ -903,7 +1055,9 @@
 		\labelname{l'estabilitzador d'un element per una acció}
 		\label{def:l'estabilitzador d'un element per una acció}
 		Siguin \(X\) un \(G\)-conjunt amb l'acció \(\cdot\) i \(x\) un element de \(X\). Aleshores direm que el conjunt
-		\[\St(x)=\{g\in G\mid g\cdot x=x\}\]
+		\[
+		    \St(x)=\{g\in G\mid g\cdot x=x\}
+		\]
 		és l'estabilitzador de \(x\) per l'acció \(\cdot\).
 	\end{definition}
 	\begin{proposition}
@@ -925,7 +1079,9 @@
 	\begin{proposition}
 		\label{prop:cardinal del grup dividit per cardinal de l'estabilitzador és el cardinal de l'òrbita}
 		Siguin \(G\) un grup d'ordre finit, \(X\) un \(G\)-conjunt finit amb una acció \(\cdot\) i \(\St(x)\) l'estabilitzador d'un element \(x\) de \(X\) per l'acció \(\cdot\). Aleshores
-		\[\abs{G/\St(x)}=\abs{\mathcal{O}(x)}=[G:\St(x)].\]
+		\[
+		    \abs{G/\St(x)}=\abs{\mathcal{O}(x)}=[G:\St(x)].
+		\]
 		\begin{proof}
 			Sigui \(\ast\) l'operació de \(G\). Considerem
 			\begin{align*}
@@ -963,7 +1119,9 @@
 				=\frac{p^{n}m(p^{n}m-1)\cdots(p^{n}m-p^{n}+1)}{p^{n}(p^{n}-1)\cdots(p^{n}-p^{n}+1)}=\prod_{i=0}^{p^{n}-1}\frac{p^{n}m-i}{p^{n}-i}.
 			\end{equation}
 			Com que, per hipòtesi, \(p\) és primer aquesta expressió només serà divisible per \(p\) si ho són els elements del numerador. Fixem doncs \(i\in\{0,\dots,p^{n}+1\}\) i estudiem l'\(i\)-èsim terme del producte de \eqref{eq:lema:Primer Teorema de Sylow 1}. Notem primer que si \(i=0\) aquest terme no és divisible per \(p\). Imposem ara també que \(i\neq0\). Si el denominador, \(p^{n}m-i\), és divisible per \(p\) tindrem que \(p^{n}m-i=p^{k}m'\), on \(m'\) no és divisible per \(p\), i per tant \(k\) serà l'exponent més gran que satisfaci la igualtat. Si aïllem \(i\) obtindrem \(i=p^{k}(p^{n-k}m-m')\). Ara bé, tenim doncs que \(p^{n}-i=p^{n}-p^{k}(p^{n-k}m-m')\), i això és \(p^{n}-p^{k}(p^{n-k}m-m')=p^{k}(p^{n-k}(1-m)-m')\), i per tant tindrem que l'\(i\)-èsim terme del producte de \eqref{eq:lema:Primer Teorema de Sylow 1} serà de la forma
-			\[\frac{p^{n}m-i}{p^{n}-i}=\frac{p^{k}m'}{p^{k}(p^{n-k}(1-m)-m')}=\frac{m'}{p^{n-k}(1-m)-m'},\]
+			\[
+			    \frac{p^{n}m-i}{p^{n}-i}=\frac{p^{k}m'}{p^{k}(p^{n-k}(1-m)-m')}=\frac{m'}{p^{n-k}(1-m)-m'},
+			\]
 			i així veiem que aquest \(i\)-èsim terme del producte no serà divisible per \(p\); i com que això és cert per a qualsevol \(i\in\{0,\dots,p^{n}+1\}\) tenim que \eqref{eq:lema:Primer Teorema de Sylow 0} tampoc ho serà, com volíem veure.
 		\end{proof}
 	\end{lemma}
@@ -1006,34 +1164,48 @@
 		Siguin \(G\) un grup d'ordre finit i \(p\) un primer que divideix l'ordre de \(G\). Aleshores existeix un element \(g\in G\) tal que l'ordre de \(g\) sigui \(p\).
 		\begin{proof}
 			Sigui \(e\) l'element neutre de \(G\). Pel \myref{thm:Primer Teorema de Sylow} tenim que existeix un \(p\)-subgrup de Sylow \(P\) de \(G\), que per la definició de \myref{def:p-subgrup de Sylow} té ordre \(p^{n}\) per a cert \(n\in\mathbb{N}\). Ara bé, pel \myref{thm:Teorema de Lagrange} tenim que per a tot \(x\in P\) diferent del neutre el grup cíclic generar per \(x\) ha de tenir ordre \(p^{t}\) amb \(t\in\{2,\dots,n\}\), i per tant l'element \(x^{p^{t-1}}\) té ordre \(p\), ja que 
-			\[\left(x^{p^{t-1}}\right)^{p}=x^{p^{t}}=e.\qedhere\]
+			\[
+			    \left(x^{p^{t-1}}\right)^{p}=x^{p^{t}}=e.\qedhere
+			\]
 		\end{proof}
 	\end{corollary}
 	\begin{lemma}
 		\label{lema:Segon Teorema de Sylow}
 		Siguin \(G\) un grup d'ordre \(p^{n}\) on \(p\) és un primer, \(X\) un \(G\)-conjunt finit amb una acció \(\cdot\) i
-		\[X_{G}=\{x\in X\mid g\cdot x=x\text{ per a tot }g\in G\}\]
+		\[
+		    X_{G}=\{x\in X\mid g\cdot x=x\text{ per a tot }g\in G\}
+		\]
 		un conjunt. Aleshores
-		\[\abs{X_{G}}\equiv\abs{X}\pmod{p}.\]
+		\[
+		    \abs{X_{G}}\equiv\abs{X}\pmod{p}.
+		\]
 		\begin{proof}
 			Siguin \(\mathcal{O}(x_{1}),\dots,\mathcal{O}(x_{r})\) les òrbites dels elements de \(X\). Aleshores, com que per la definició de \myref{def:òrbita d'un element d'un G-conjunt} aquestes són classes d'equivalència, tenim que %REFERENCIES fonaments
-			\[X=\bigcup_{i=1}^{r}\mathcal{O}(x_{i}),\]
+			\[
+			    X=\bigcup_{i=1}^{r}\mathcal{O}(x_{i}),
+			\]
 			i com que aquestes òrbites són disjuntes per ser classes d'equivalència
 			\begin{equation}
 		\label{eq:lema:Segon Teorema de Sylow 1}
 			\abs{X}=\sum_{i=0}^{r}\abs{\mathcal{O}(x_{i})}.
 			\end{equation}
 			Ara bé, per les proposicions \myref{prop:cardinal del grup dividit per cardinal de l'estabilitzador és el cardinal de l'òrbita} i \myref{prop:l'estabilitzador és un subgrup} i el \myref{thm:Teorema de Lagrange} tenim que l'ordre \(\mathcal{O}(x_{i})\) divideix l'ordre de \(X\), i per tant els únics elements amb òrbites que tinguin un ordre que no sigui divisible per \(p\) són els elements del conjunt \(X_{G}\); i com que les òrbites d'aquests elements tenen un únic element tenim que
-			\[\abs{X_{G}}=\sum_{x\in X_{G}}\abs{\mathcal{O}(x)},\]
+			\[
+			    \abs{X_{G}}=\sum_{x\in X_{G}}\abs{\mathcal{O}(x)},
+			\]
 			i per tant, recordant que totes les altres òrbites tenen ordre divisible per \(p\), trobem, amb \eqref{eq:lema:Segon Teorema de Sylow 1}, que
-			\[\abs{X_{G}}\equiv\abs{X}\pmod{p}.\qedhere\]
+			\[
+			    \abs{X_{G}}\equiv\abs{X}\pmod{p}.\qedhere
+			\]
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Segon Teorema de Sylow]
 		\labelname{Segon Teorema de Sylow}
 		\label{thm:Segon Teorema de Sylow}
 		Siguin \(G\) un grup d'ordre finit, \(p\) un primer que divideixi l'ordre de \(G\) i \(P_{1}\), \(P_{2}\) dos \(p\)-subgrups de Sylow de \(G\). Aleshores existeix \(g\in G\) tal que
-		\[\{g\}P_{1}\{g^{-1}\}=P_{2}.\]
+		\[
+		    \{g\}P_{1}\{g^{-1}\}=P_{2}.
+		\]
 		\begin{proof}
 			Observem que aquest enunciat té sentit pel \myref{thm:Primer Teorema de Sylow}.
 			
@@ -1083,7 +1255,9 @@
 		\(n_{p}\equiv1\pmod{p}\) i \(n_{p}\) divideix l'ordre de \(G\).
 		\begin{proof}
 			Definim el conjunt
-			\[X=\{T\subseteq G\mid T\text{ és un }p\text{-subgrup de Sylow de }G\}.\]
+			\[
+			    X=\{T\subseteq G\mid T\text{ és un }p\text{-subgrup de Sylow de }G\}.
+			\]
 			Pel \myref{thm:Primer Teorema de Sylow} tenim que \(X\) és no buit\footnote{Tindrem que \(\abs{X}=n_{p}\).} i fixem \(P\in X\).
 			
 			Definim
@@ -1108,16 +1282,26 @@
 			i per tant, per la definició d'\myref{def:acció d'un grup sobre un conjunt} \(X\) és un \(P\)-conjunt amb l'acció \(\cdot\).
 			
 			Definim el conjunt
-			\[X_{P}=\{T\in X\mid g\cdot T=T\text{ per a tot }g\in P\},\]
+			\[
+			    X_{P}=\{T\in X\mid g\cdot T=T\text{ per a tot }g\in P\},
+			\]
 			i per la definició \eqref{eq:thm:Tercer Teorema de Sylow 1} tenim que si \(T\in X_{P}\) aleshores per a tot \(g\in G\) es compleix \(\{g\}T\{g^{-1}\}=T\). Ara bé, això és que \(T=P\) per a tot \(T\in X_{P}\), i per tant \(\abs{X_{P}}=1\). Aleshores pel lema \myref{lema:Segon Teorema de Sylow} tenim que
-			\[\abs{X}\equiv\abs{X_{P}}\pmod{p},\]
+			\[
+			    \abs{X}\equiv\abs{X_{P}}\pmod{p},
+			\]
 			o equivalentment
-			\[\abs{X}\equiv1\pmod{p}.\]
+			\[
+			    \abs{X}\equiv1\pmod{p}.
+			\]
 			
 			Per veure que \(\abs{X}\) divideix l'ordre de \(G\) prenem \(P\in X\) i tenim, pel \myref{thm:Segon Teorema de Sylow} i la definició de \myref{def:òrbita d'un element d'un G-conjunt}, que
-			\[\mathcal{O}(P)=X,\]
+			\[
+			    \mathcal{O}(P)=X,
+			\]
 			on \(\mathcal{O}(P)\) és l'òrbita de \(P\), i per tant
-			\[\abs{\mathcal{O}(P)}=\abs{X},\]
+			\[
+			    \abs{\mathcal{O}(P)}=\abs{X},
+			\]
 			i per les proposicions \myref{prop:l'estabilitzador és un subgrup} i \myref{prop:cardinal del grup dividit per cardinal de l'estabilitzador és el cardinal de l'òrbita} i el \myref{thm:Teorema de Lagrange} tenim que \(\abs{X}\) divideix l'ordre de \(G\).
 		\end{proof}
 	\end{theorem}
@@ -1135,15 +1319,21 @@
 		\labelname{anell i element neutre pel producte}
 		\label{def:anell i element neutre pel producte}
 		Sigui \(R\) un conjunt no buit i
-		\[+\colon R\times R\longrightarrow R\qquad\qquad\quad\cdot\colon R\times R\longrightarrow R\]
+		\[
+		    +\colon R\times R\longrightarrow R\qquad\qquad\quad\cdot\colon R\times R\longrightarrow R
+		\]
 		dues operacions que satisfan
 		\begin{enumerate}
 			\item \(R\) amb l'operació \(+\) és un grup abelià.
 			\item Existeix un element \(e\) de \(R\) tal que \(x\cdot e=e\cdot x=x\) per a tot \(x\in R\).
 			\item Per a tot \(x,y,z\in R\) tenim
-			\[x\cdot(y\cdot z)=(x\cdot y)\cdot z.\]
+			\[
+			    x\cdot(y\cdot z)=(x\cdot y)\cdot z.
+			\]
 			\item Per a tot \(x,y,z\in R\) tenim
-			\[x\cdot(y+z)=x\cdot y+x\cdot z\quad\text{i}\quad(x+y)\cdot z=x\cdot z+y\cdot z.\]
+			\[
+			    x\cdot(y+z)=x\cdot y+x\cdot z\quad\text{i}\quad(x+y)\cdot z=x\cdot z+y\cdot z.
+			\]
 		\end{enumerate}
 		Aleshores direm que \(R\) és un anell amb la suma \(+\) i el producte \(\cdot\). També direm que \(R\) és un anell amb element neutre pel producte \(e\).
 		
@@ -1154,9 +1344,13 @@
 		Sigui \(R\) un anell amb element neutre pel producte \(e\). Aleshores l'element neutre pel producte de \(R\) és únic.
 		\begin{proof}
 			Sigui \(\cdot\) el producte de \(R\). Suposem que existeix un altre \(e'\) tal que \(x\cdot e'=e'\cdot x=x\) per a tot \(x\in R\). Aleshores tindríem
-			\[e\cdot e'=e'\cdot e=e\]
+			\[
+			    e\cdot e'=e'\cdot e=e
+			\]
 			a la vegada que
-			\[e\cdot e'=e'\cdot e=e'\]
+			\[
+			    e\cdot e'=e'\cdot e=e'
+			\]
 			i per tant ha de ser \(e=e'\) i tenim que aquest és únic.
 		\end{proof}
 	\end{proposition}
@@ -1171,7 +1365,9 @@
 	\end{definition}
 	\begin{notation}
 		Donat un anell \(R\) un anell amb el producte \(\cdot\). Aleshores escriurem
-		\[(x_{1}\cdot x_{2})\cdot x_{3}=x_{1}\cdot x_{2}\cdot x_{3}.\]
+		\[
+		    (x_{1}\cdot x_{2})\cdot x_{3}=x_{1}\cdot x_{2}\cdot x_{3}.
+		\]
 		
 		Això té sentit per la definició d'\myref{def:anell}. També, si el context ho permet (quan treballem amb un únic anell \(R\)), denotarem \(1_{R}=1\) i \(0_{R}=0\).
 	\end{notation}
@@ -1192,61 +1388,95 @@
 			&=0\cdot a+0\cdot a
 			\end{align*}
 			i per tant, per la definició de \myref{def:grup}
-			\[0\cdot a-(0\cdot a)=0\cdot a+0\cdot a-(0\cdot a)\]
+			\[
+			    0\cdot a-(0\cdot a)=0\cdot a+0\cdot a-(0\cdot a)
+			\]
 			d'on veiem
-			\[0\cdot a=0,\]
+			\[
+			    0\cdot a=0,
+			\]
 			com volíem veure.
 			
 			Veiem ara el punt \eqref{enum:prop:propietats bàsiques anells 2}. Per la definició d'\myref{def:anell} tenim
-			\[1\cdot a+(-1)\cdot a=(1-1)\cdot a\quad\text{i}\quad(-1)\cdot a+1\cdot a=(-1+1)\cdot a\]
+			\[
+			    1\cdot a+(-1)\cdot a=(1-1)\cdot a\quad\text{i}\quad(-1)\cdot a+1\cdot a=(-1+1)\cdot a
+			\]
 			i per tant, com que \(1-1=-1+1=0\) per la definició de \myref{def:l'element neutre d'un anell per la suma}, tenim que \(a+(-1)\cdot a=(-1)\cdot a+a=0\), però per la proposició \myref{prop:unicitat inversa en grups} tenim que \((-1)\cdot a=-a\). L'altre igualtat és anàloga.
 			
 			Continuem veient el punt \eqref{enum:prop:propietats bàsiques anells 3}. Pel punt \eqref{enum:prop:propietats bàsiques anells 2} tenim que
-			\[(-a)\cdot(-b)=a\cdot (-1)\cdot(-1)\cdot b.\]
+			\[
+			    (-a)\cdot(-b)=a\cdot (-1)\cdot(-1)\cdot b.
+			\]
 			Ara bé, pel punt \eqref{enum:prop:propietats bàsiques anells 2} de nou tenim que \((-1)\cdot(-1)=-(-1)\), i per la proposició \myref{prop:grups:l'invers de l'invers d'un element es l'element} tenim que \(-(-1)=1\) i per tant
-			\[(-a)\cdot(-b)=a\cdot b.\]
+			\[
+			    (-a)\cdot(-b)=a\cdot b.
+			\]
 			
 			Per veure el punt \eqref{enum:prop:propietats bàsiques anells 4} només veurem que \((-a)\cdot b=-(a\cdot b)\) ja que l'altre demostració és anàloga. Pel punt \eqref{enum:prop:propietats bàsiques anells 2} tenim que
-			\[-(a\cdot b)=(-1)\cdot(a\cdot b)\quad{\text{i}}\quad(-a)\cdot b=(-1)\cdot a\cdot b.\]
+			\[
+			    -(a\cdot b)=(-1)\cdot(a\cdot b)\quad{\text{i}}\quad(-a)\cdot b=(-1)\cdot a\cdot b.
+			\]
 			Ara bé, per la definició d'\myref{def:anell}
-			\[(-1)\cdot a\cdot b-(-1)\cdot(a\cdot b)=(-1-(-1))\cdot(a\cdot b),\]
+			\[
+			    (-1)\cdot a\cdot b-(-1)\cdot(a\cdot b)=(-1-(-1))\cdot(a\cdot b),
+			\]
 			i per la proposició \myref{prop:grups:l'invers de l'invers d'un element es l'element} tenim que \(-(-1)=1\) i per tant, per la definició de \myref{def:grup} tenim \(-1+1=0\) i trobem
-			\[(-1)\cdot a\cdot b-(-1)\cdot(a\cdot b)=0\cdot(a\cdot b)=0,\]
+			\[
+			    (-1)\cdot a\cdot b-(-1)\cdot(a\cdot b)=0\cdot(a\cdot b)=0,
+			\]
 			i podem veure també que
-			\[(-1)\cdot(a\cdot b)-(-1)\cdot a\cdot b=0\]
+			\[
+			    (-1)\cdot(a\cdot b)-(-1)\cdot a\cdot b=0
+			\]
 			de manera anàloga. Aleshores, per la proposició \myref{prop:unicitat inversa en grups} tenim que
-			\[(-a)\cdot b=-(a\cdot b),\]
+			\[
+			    (-a)\cdot b=-(a\cdot b),
+			\]
 			com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:unicitat invers en anells}
 		Siguin \(R\) un anell amb el producte \(\cdot\) i \(a\) un element de \(R\) tal que existeixi \(b\in R\) que satisfaci
-		\[a\cdot b=b\cdot a=1.\]
+		\[
+		    a\cdot b=b\cdot a=1.
+		\]
 		Aleshores \(b\) és únic.
 		\begin{proof}
 			Suposem que existeix un altre element \(b'\in R\) tal que
-			\[a\cdot b'=b'\cdot a=1.\]
+			\[
+			    a\cdot b'=b'\cdot a=1.
+			\]
 			Aleshores tenim
-			\[a\cdot b=a\cdot b'\]
+			\[
+			    a\cdot b=a\cdot b'
+			\]
 			i per tant
-			\[b\cdot a\cdot b=b\cdot a\cdot b'\]
+			\[
+			    b\cdot a\cdot b=b\cdot a\cdot b'
+			\]
 			i com que per hipòtesi \(b\cdot a=1\) per la definició de \myref{def:l'element neutre d'un anell pel producte} trobem
-			\[b=b'.\qedhere\]
+			\[
+			    b=b'.\qedhere
+			\]
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Element invertible]
 		\labelname{element invertible}
 		\label{def:element invertible pel producte d'un anell}
 		Siguin \(R\) un anell amb el producte \(\cdot\) i \(x\) un element de \(R\) tal que existeixi \(x'\in R\) tals que
-		\[x\cdot x'=x'\cdot x=1.\] 
+		\[
+		    x\cdot x'=x'\cdot x=1.
+		\] 
 		Aleshores direm que \(x\) és invertible o que \(x\) és un element invertible de \(R\).
 	\end{definition}
 	\begin{definition}[L'invers d'un element]
 		\labelname{l'invers d'un element invertible}
 		\label{def:l'invers d'un element d'un anell}
 		Siguin \(R\) un anell amb el producte \(\cdot\) i \(x\) un element invertible de \(R\). Aleshores denotarem per \(x^{-1}\) l'element de \(R\) tal que
-		\[x\cdot x^{-1}=x^{-1}\cdot x=1.\]
+		\[
+		    x\cdot x^{-1}=x^{-1}\cdot x=1.
+		\]
 		Direm que \(x^{-1}\) és l'invers de \(x\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:unicitat invers en anells}.
@@ -1353,7 +1583,9 @@
 	\begin{proposition}
 		\label{prop:relació d'equivalència en anells per ideals}
 		Sigui \(I\) un ideal d'un anell \(R\) amb la suma \(+\). Aleshores la relació
-		\[x\sim y\sii x-y\in I\quad\text{per a tot }x,y\in R\]
+		\[
+		    x\sim y\sii x-y\in I\quad\text{per a tot }x,y\in R
+		\]
 		és una relació d'equivalència.
 		\begin{proof}
 			Sigui \(\cdot\) el producte de \(R\). Comprovem que \(\sim\) satisfà la definició de \myref{def:relació d'equivalència}:
@@ -1450,9 +1682,13 @@
 		\labelname{imatge d'un morfisme entre anells}
 		\label{def:imatge d'un morfisme entre anells}
 		Siguin \(R\) i \(S\) dos anells commutatius amb \(1_{R}\neq0_{R}\) i \(1_{S}\neq0_{S}\) i \(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores definim
-		\[\ker(f)=\{x\in R\mid f(x)=0_{S}\}\]
+		\[
+		    \ker(f)=\{x\in R\mid f(x)=0_{S}\}
+		\]
 		com el nucli de \(f\), i
-		\[\Ima(f)=\{y\in S\mid f(x)=y\text{ per a cert }x\in R\}\]
+		\[
+		    \Ima(f)=\{y\in S\mid f(x)=y\text{ per a cert }x\in R\}
+		\]
 		com la imatge de \(f\).
 	\end{definition}
 	\begin{observation}
@@ -1473,7 +1709,9 @@
 			i per tant \(r\ast_{R}a\in\ker(f)\) per a tot \(r\in R\), \(a\in\ker(f)\). Ara bé per la definició d'\myref{def:ideal d'un anell} tenim que \(\ker(f)\) és un ideal de \(R\).
 			
 			Veiem ara el punt \eqref{enum:prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell 2}. Veiem que per a tot \(x,y\in\Ima(f)\) tenim \(x\ast_{S}y\in\Ima(f)\). Per la definició d'\myref{def:imatge d'un morfisme entre anells} tenim que existeixen \(a,b\in R\) tals que \(f(a)=x\) i \(f(b)=y\). Ara bé, per la definició d'\myref{def:anell} tenim que \(a\ast_{R}b=c\in R\), i per tant per la definició d'\myref{def:imatge d'un morfisme entre anells} tenim que \(f(c)=x\ast_{S}y\in\Ima(f)\). Veiem ara que \(\Ima(f)\) és un anell amb la suma \(+_{S}\) i el producte \(\ast_{S}\). Com que, per l'observació \myref{obs:morfisme entre anells és morfisme entre grups} tenim que \(f\) és un morfisme entre grups per la proposició \myref{prop:la imatge d'un morfisme és un subgrup del grup d'arribada} tenim que \(\Ima(f)\) és un subgrup del grup \(S\) amb la suma \(+_{S}\); i per la definició d'\myref{def:anell} tenim que per a tot \(x,y,z\in R\) es satisfà
-			\[x\ast_{R}(y\ast_{R}z)=(x\ast_{R}y)\ast_{R}z\quad\text{i}\quad x\ast_{R}(y+_{R}z)=x\ast_{R}y+_{R}x\ast_{R}z,\]
+			\[
+			    x\ast_{R}(y\ast_{R}z)=(x\ast_{R}y)\ast_{R}z\quad\text{i}\quad x\ast_{R}(y+_{R}z)=x\ast_{R}y+_{R}x\ast_{R}z,
+			\]
 			i per la definició de \myref{def:subanell} tenim que \(\Ima(f)\) és un subanell de \(S\).
 		\end{proof}
 	\end{proposition}
@@ -1514,7 +1752,9 @@
 			&=g(f(x))\ast_{D}g(f(x)).
 			\end{align*}
 			També tenim
-			\[g(f(1_{R}))=g(1_{S})=1_{D}\]
+			\[
+			    g(f(1_{R}))=g(1_{S})=1_{D}
+			\]
 			i per la definició de \myref{def:morfisme entre anells} tenim que \(g\circ f\) és un morfisme entre anells, com volíem veure.
 		\end{proof}
 	\end{proposition}
@@ -1526,7 +1766,9 @@
 		\label{lema:ker(f) és ideal de l'anell d'entrada}
 		\label{lema:Ima(f) és subanell de l'anell de sortida}
 		Siguin \(R\) i \(S\) dos anells commutatius amb \(1_{R}\neq0_{R}\) i \(1_{S}\neq0_{S}\) i \(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
-		\[\ker(f)\text{ és un ideal de }R\quad\text{i}\quad\Ima(f)\text{ és un subanell de }S.\]
+		\[
+		    \ker(f)\text{ és un ideal de }R\quad\text{i}\quad\Ima(f)\text{ és un subanell de }S.
+		\]
 		\begin{proof}
 			Siguin \(+_{R}\) la suma de \(R\), \(\ast_{R}\) el producte de \(R\), \(+_{S}\) la suma de \(S\) i \(\ast_{S}\) el producte de \(S\). Comencem veient que \(\ker(f)\) és un ideal de \(R\). Per l'observació \myref{obs:morfisme entre anells és morfisme entre grups} tenim que \(\ker(f)\) és un morfisme entre grups, i per la proposició \myref{prop:el nucli d'un morfisme és un subgrup normal del grup de sortda} tenim que \(\ker(f)\) és un subgrup del grup \(R\) amb la suma \(+_{R}\).
 			
@@ -1554,7 +1796,9 @@
 	\begin{theorem}[Primer Teorema de l'isomorfisme]
 		\labelname{Primer Teorema de l'isomorfisme entre anells}\label{thm:Primer Teorema de l'isomorfisme entre anells}
 		Siguin \(R\) i \(S\) dos anells i \(\varphi\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
-		\[R/\ker(\varphi)\cong\Ima(\varphi).\]
+		\[
+		    R/\ker(\varphi)\cong\Ima(\varphi).
+		\]
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell}. %TODO
 		\end{proof}
@@ -1562,7 +1806,9 @@
 	\begin{theorem}[Segon Teorema de l'isomorfisme]
 		\labelname{Segon Teorema de l'isomorfisme entre anells}\label{thm:Segon Teorema de l'isomorfisme entre anells}
 		Siguin \(R\) un anell commutatiu amb \(1\neq0\) i \(I\) i \(J\) dos ideals de \(R\). Aleshores
-		\[(I+J)/I\cong J/(I\cap J).\]
+		\[
+		    (I+J)/I\cong J/(I\cap J).
+		\]
 		\begin{proof}
 			%TODO 
 		\end{proof}
@@ -1577,7 +1823,9 @@
 	\begin{theorem}[Tercer Teorema de l'isomorfisme]
 		\labelname{Tercer Teorema de l'isomorfisme entre anells}\label{thm:Tercer Teorema de l'isomorfisme entre anells}
 		Siguin \(R\) un anell commutatiu amb \(1\neq0\) i \(I\) i \(J\) dos ideals de \(R\) tals que \(I\subseteq J\). Aleshores
-		\[(R/I)/(J/I)\cong R/J.\]
+		\[
+		    (R/I)/(J/I)\cong R/J.
+		\]
 		\begin{proof}
 			Aquest enunciat té sentit pel lema \myref{lema:Tercer Teorema de l'isomorfisme entre anells}. %TODO
 		\end{proof}
@@ -1609,7 +1857,9 @@
 			i per la definició de \myref{def:morfisme entre grups} tenim que \(f\) és un morfisme entre grups. Veiem ara que \(f(1)=1\). Tenim que \(f(1)=1\cdot1=1\) i per tant per la definició de \myref{def:morfisme entre anells} tenim que \(f\) és un morfisme entre anells.
 			
 			Veiem ara que \(\ker(f)=(\ch(n))\). Per la definició de \myref{def:nucli d'un morfisme entre anells} tenim que \(\ker(f)=\{x\in\mathbb{N}\mid f(n)=0\}\).	Per tant
-			\[\ker(f)=\{n\in\mathbb{N}\mid n\cdot1=0\}\]
+			\[
+			    \ker(f)=\{n\in\mathbb{N}\mid n\cdot1=0\}
+			\]
 			i per la definició de \myref{def:característica d'un anell} tenim que \(n=\ch(R)\), i per tant \(\ker(f)=\{k\cdot n\mid k\in\mathbb{N}\}\). Ara bé, per la definició d'\myref{def:ideal d'un anell} tenim que \(\ker(f)=(n)\), com volíem veure.
 		\end{proof}
 	\end{proposition}
@@ -1645,12 +1895,18 @@
 	\begin{proposition}
 		\label{prop:podem tatxar pels costats en DI}
 		Siguin \(D\) un domini d'integritat amb el producte \(\cdot\) i \(a\neq0\) un element de \(D\). Aleshores
-		\[a\cdot x=a\cdot y\Longrightarrow x=y.\]
+		\[
+		    a\cdot x=a\cdot y\Longrightarrow x=y.
+		\]
 		\begin{proof}
 			Sigui \(+\) la suma de \(D\). Tenim
-			\[a\cdot x-a\cdot y=0\]
+			\[
+			    a\cdot x-a\cdot y=0
+			\]
 			i per la proposició \myref{prop:propietats bàsiques anells} tenim que
-			\[(x-y)\cdot a=0.\]
+			\[
+			    (x-y)\cdot a=0.
+			\]
 			
 			Ara bé, com que, per hipòtesi, \(D\) és un domini d'integritat i \(a\neq0\) tenim que ha de ser \(x-y=0\), i per tant trobem \(x=y\).
 		\end{proof}
@@ -1663,7 +1919,9 @@
 	\begin{proposition}
 		\label{prop:R/I domini d'integritat sii I ideal primer}
 		Sigui \(I\) un ideal d'un anell \(R\) amb \(I\neq R\). Aleshores
-		\[R/I\text{ és un domini d'integritat}\sii I\text{ és un ideal primer de }R.\]
+		\[
+		    R/I\text{ és un domini d'integritat}\sii I\text{ és un ideal primer de }R.
+		\]
 		\begin{proof} % Dreta i esquerra en comptes de suficient i necessàri
 			Siguin \(+\) la suma de \(R\) i \(\cdot\) el producte de \(R\). Comencem demostrant que la condició és suficient (\(\implica\)). Suposem doncs que \(R/I\) és un domini d'integritat i prenem \([a],[b]\in R/I\) tals que \([a]\cdot[b]=[0]\). Aleshores per la definició d'\myref{def:anell quocient} tenim que \(a\cdot b\in I\). Ara bé, com que per hipòtesi \(R/I\) és un domini d'integritat tenim que ha de ser \([a]=[0]\) ó \([b]=[0]\), i per tant trobem que ha de ser \(a\in I\) o \(b\in I\), i per la definició d'\myref{def:ideal primer} trobem que \(I\) és un ideal primer de \(R\).
 			
@@ -1682,7 +1940,9 @@
 	\begin{proposition}
 		\label{prop:condició equivalent a ideal maximal per R/M cos}
 		Sigui \(M\) un ideal d'un anell \(R\) amb \(1\neq 0\). Aleshores %TODO revisar enunciat
-		\[R/M\text{ és un cos}\sii M\text{ és un ideal maximal de }R.\]
+		\[
+		    R/M\text{ és un cos}\sii M\text{ és un ideal maximal de }R.
+		\]
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:anell quocient}.
 			
@@ -1759,9 +2019,13 @@
 		Sigui \(R\) un anell commutatiu amb \(1\neq0\). Aleshores existeix \(M\subseteq R\) tal que \(M\) sigui un ideal maximal de \(R\).
 		\begin{proof}
 			Siguin \(+\) la suma de \(R\) i \(\cdot\) el producte de \(R\). Definim el conjunt
-			\[A=\{I\triangleleft R\mid I\neq R\}.\]
+			\[
+			    A=\{I\triangleleft R\mid I\neq R\}.
+			\]
 			i amb un subconjunt \(\mathcal{C}\subseteq A\) considerem, per la proposició \myref{prop:subconjunts d'un conjunt amb inclusió són una cadena}, la cadena \(\mathcal{C}\) amb \(\subseteq\). Considerem ara el conjunt
-			\[J=\bigcup_{I\in\mathcal{C}}I\]
+			\[
+			    J=\bigcup_{I\in\mathcal{C}}I
+			\]
 			i veiem que \(J\) és un ideal de \(R\), ja que si \(x,y\in J\) tenim \(x\in J_{1}\) i \(y\in J_{2}\) per a certs \(J_{1},J_{2}\in\mathcal{C}\). Ara bé, si \(J_{2}\subseteq J_{1}\) tenim que \(x-y\in J_{1}\), i per tant \(x-y\in J\), i si \(J_{1}\subseteq J_{2}\) tenim que \(x-y\in J_{2}\), i per tant \(x-y\in J\). Si prenem \(x\in J\) i \(r\in R\) aleshores \(r\cdot x\in J\), ja que tenim \(x\in J_{1}\) per a cert \(J_{1}\in\mathcal{C}\), i per tant \(r\cdot x\in J_{1}\), i en particular \(r\cdot x\in J\). Per tant per la definició d'\myref{def:ideal d'un anell} tenim que \(J\) és un ideal de \(R\). Per veure que \(J\in A\) hem de comprovar que \(J\neq R\). Ho fem per contradicció. Suposem que \(J=R\). Aleshores \(1\in J\), i per tant \(1\in I\) per a cert \(I\in A\), però això no pot ser ja que si \(I\in A\) s'ha de complir \(I\neq A\), i per tant \(1\notin I\). Per tant \(J\neq R\) i tenim que \(J\in A\).
 			
 			Ara bé, pel \myref{lema de Zorn} tenim que existeix \(M\in\mathcal{C}\) tal que per a tot \(I\in\mathcal{C}\) tenim \(I\subseteq M\) i per la definició d'\myref{def:ideal maximal} tenim que \(M\) és un ideal maximal de \(R\).
@@ -1787,7 +2051,9 @@
 	\begin{proposition}
 		\label{prop:associats és relació d'equivalència}
 		Sigui \(R\) un anell commutatiu amb el producte \(\cdot\) amb \(1\neq0\) i \(\sim\) una relació binària tal que per a tot \(x,y\in R\) tenim
-		\[x\sim y\Longrightarrow x=u\cdot y\text{ per a algun }u\in R\text{ invertible}.\]
+		\[
+		    x\sim y\Longrightarrow x=u\cdot y\text{ per a algun }u\in R\text{ invertible}.
+		\]
 		Aleshores \(\sim\) és una relació d'equivalència.
 		\begin{proof}
 			Comprovem les condicions de la definició de \myref{def:relació d'equivalència}:
@@ -1813,7 +2079,9 @@
 			Sigui \(\cdot\) el producte de \(D\). Comencem amb la implicació cap a la dreta (\(\implica\)). Suposem que \(d'\in X\). Hem de veure que \(d\sim d'\). Tenim \(d\divides d'\) i \(d'\divides d\) i per la definició de \myref{def:divisor per anells} trobem que \(d\sim d'\).
 			
 			Fem ara la implicació cap a l'esquerra (\(\implicatper\)). Suposem que \(d'\sim d\). Hem de veure que \(d'\in X\). Per hipòtesi tenim que \(d\divides a\) i \(d\divides b\). Per tant existeixen \(\alpha,\beta\in D\) tals que \(a=\alpha d\) i \(b=\beta d\), i per la proposició \myref{prop:podem passar els múltiples de costat a costat} tenim que si \(d'=d\cdot u\) amb \(u\in D\) invertible aleshores \(d=d'\cdot u^{-1}\). Per tant
-			\[a=\alpha\cdot d'\cdot u^{-1}\quad\text{i}\quad b=\beta\cdot d'\cdot u^{-1}\]
+			\[
+			    a=\alpha\cdot d'\cdot u^{-1}\quad\text{i}\quad b=\beta\cdot d'\cdot u^{-1}
+			\]
 			i per tant \(d'\divides a\) i \(d'\divides b\). Ara bé, com que per hipòtesi \(d\sim d'\), per la definició d'\myref{def:elements associats} tenim que \(d'\in X\).
 		\end{proof}
 	\end{proposition}
@@ -1833,7 +2101,9 @@
 			Sigui \(\cdot\) el producte de \(D\). Comencem amb la implicació cap a la dreta (\(\implica\)). Suposem que \(m'\in X\). Hem de veure que \(m\sim m'\). Tenim \(m'\divides m\) i \(m\divides m'\) i per la definició de \myref{def:múltiple per anells} trobem que \(m\sim m'\). %REVISAR. Em feia mandra pensar i he copiat la de dalt :S
 			
 			Fem ara la implicació cap a l'esquerra (\(\implicatper\)). Suposem que \(m'\sim m\). Hem de veure que \(m'\in X\). Per hipòtesi tenim que \(a\divides m\) i \(b\divides m\). Per tant existeixen \(\alpha,\beta\in D\) tals que \(m=\alpha\cdot a\) i \(m=\beta\cdot b\), i per la proposició \myref{prop:podem passar els múltiples de costat a costat} tenim que si \(m'=u\cdot m\) amb \(u\in D\) invertible aleshores \(m=m'\cdot u^{-1}\). Per tant
-			\[m'=\alpha\cdot a\cdot u^{-1}\quad\text{i}\quad m'=\beta\cdot b\cdot{u'}^{-1}\]
+			\[
+			    m'=\alpha\cdot a\cdot u^{-1}\quad\text{i}\quad m'=\beta\cdot b\cdot{u'}^{-1}
+			\]
 			i per tant \(m'\divides a\) i \(m'\divides b\). Ara bé, com que per hipòtesi \(m\sim m'\), per la definició d'\myref{def:elements associats} tenim que \(m'\in X\). %REVISAR. Em feia mandra pensar i he copiat la de dalt :S
 		\end{proof}
 	\end{proposition}
@@ -1856,28 +2126,42 @@
 		\end{enumerate}
 		\begin{proof}%pulir
 			Comencem veient el punt \eqref{enum:prop:combinació d'ideals principals per obtenir ideals principals 1}. Per la proposició \myref{prop:combinació d'ideals per obtenir ideals} tenim que \((a)+(b)=\{x+y\mid x\in(a),y\in(b)\}\), i per la definició d'\myref{def:ideal principal} això és
-			\[(a)+(b)=\{r_{1}\cdot a+r_{2}\cdot b\mid r_{1},r_{2}\in R\},\]
+			\[
+			    (a)+(b)=\{r_{1}\cdot a+r_{2}\cdot b\mid r_{1},r_{2}\in R\},
+			\]
 			que podem reescriure com
-			\[(a)+(b)=\{x\mid\text{existeixen }m,n\in R\text{ tals que }x=n\cdot m+b\cdot n\}\]
+			\[
+			    (a)+(b)=\{x\mid\text{existeixen }m,n\in R\text{ tals que }x=n\cdot m+b\cdot n\}
+			\]
 			i per tant \((a)+(b)=(\mcd(a,b))\) és un ideal principal de \(R\). %REFERENCIES
 			
 			Continuem veient el punt \eqref{enum:prop:combinació d'ideals principals per obtenir ideals principals 2}. Per la proposició \myref{prop:combinació d'ideals per obtenir ideals} tenim que
-			\[(a)\cap(b)=\{x\mid x\in(a),x\in(b)\},\]
+			\[
+			    (a)\cap(b)=\{x\mid x\in(a),x\in(b)\},
+			\]
 			que, per la definició d'\myref{def:ideal principal}, podem reescriure com
-			\[(a)\cap(b)=\{x\mid x\text{ divideix }a\text{ i }b\}\]
+			\[
+			    (a)\cap(b)=\{x\mid x\text{ divideix }a\text{ i }b\}
+			\]
 			i per tant \((a)\cap(b)=(\mcm(a,b))\) és un ideal principal de \(R\). %REFERENCIES
 			
 			Acabem veient el punt \eqref{enum:prop:combinació d'ideals principals per obtenir ideals principals 3}. Per la proposició \myref{prop:combinació d'ideals per obtenir ideals} tenim que
-			\[(a)(b)=\{x_{1}\cdot y_{1}+\dots+x_{n}\cdot y_{n}\mid x_{1},\dots,x_{n}\in(a),y_{1},\dots,y_{n}\in(b)\},\]
+			\[
+			    (a)(b)=\{x_{1}\cdot y_{1}+\dots+x_{n}\cdot y_{n}\mid x_{1},\dots,x_{n}\in(a),y_{1},\dots,y_{n}\in(b)\},
+			\]
 			que, per la definició d'\myref{def:ideal principal} i la proposició \myref{prop:propietats bàsiques anells}, podem reescriure com
 			\begin{align*}
 			(a)(b)&=\{(r_{1}\cdot a)(r'_{1}\cdot b)+\dots+(r_{n}\cdot a)(r'_{n}\cdot b)\mid r_{1},\dots,r_{n},r'_{1},\dots,r'_{n}\in R\}\\
 			&=\{(r_{1}\cdot r'_{1}+\dots+r_{n}\cdot r'_{n})\cdot(a\cdot b)\mid r_{1},\dots,r_{n},r'_{1},\dots,r'_{n}\in R\},
 			\end{align*}
 			i si fixem \(r_{2}=\dots r_{n}=0\) i \(r'_{1}=1\) tenim, amb \(r_{1}=r\) que
-			\[(a)(b)=\{r\cdot(a\cdot b)\mid r\in R\},\]
+			\[
+			    (a)(b)=\{r\cdot(a\cdot b)\mid r\in R\},
+			\]
 			i per la definició d'\myref{def:ideal principal} tenim que \((a)(b)\) és un ideal principal de \(R\) amb
-			\[(a)(b)=(a\cdot b).\qedhere\]
+			\[
+			    (a)(b)=(a\cdot b).\qedhere
+			\]
 		\end{proof}
 	\end{proposition}
 	%	\begin{proposition}
@@ -1926,11 +2210,17 @@
 		Sigui \(D\) un domini d'integritat amb el producte \(\cdot\) tal que per a tot element no invertible \(a\neq0\) de \(D\)
 		\begin{enumerate}
 			\item Existeixen \(p_{1},\dots,p_{n}\) elements irreductibles de \(D\) tals que
-			\[a=p_{1}\cdot\ldots\cdot p_{n}.\]
+			\[
+			    a=p_{1}\cdot\ldots\cdot p_{n}.
+			\]
 			\item Si existeixen \(p_{1},\dots,p_{r}\) i \(q_{1},\dots,q_{s}\) elements irreductibles de \(D\) tals que
-			\[a=p_{1}\cdot\ldots\cdot p_{r}=q_{1}\cdot\ldots\cdot q_{s}\]
+			\[
+			    a=p_{1}\cdot\ldots\cdot p_{r}=q_{1}\cdot\ldots\cdot q_{s}
+			\]
 			aleshores \(r=s\) i existeix \(\sigma\in S_{r}\) tal que
-			\[p_{1}\cdot\ldots\cdot p_{r}=q_{\sigma(1)}\cdot\ldots\cdot q_{\sigma(r)},\]
+			\[
+			    p_{1}\cdot\ldots\cdot p_{r}=q_{\sigma(1)}\cdot\ldots\cdot q_{\sigma(r)},
+			\]
 			amb \(p_{i}\sim q_{\sigma(i)}\) per a tot \(i\in\{1,\dots,r\}\).
 		\end{enumerate}
 		Aleshores direm que \(D\) és un domini de factorització única.
@@ -1940,58 +2230,88 @@
 		Sigui \(D\) un domini d'integritat amb i el producte \(\cdot\). Aleshores \(D\) és un domini de factorització única si i només si tenim
 		\begin{enumerate}
 			\item\label{enum:thm:condició equivalent per DI sii DFU 1} Per a tot \(a\neq0\) element no invertible de \(D\) existeixen \(p_{1},\dots,p_{r}\) elements irreductibles de \(D\) tals que
-			\[a=p_{1}\cdot\ldots\cdot p_{r}\]
+			\[
+			    a=p_{1}\cdot\ldots\cdot p_{r}
+			\]
 			\item\label{enum:thm:condició equivalent per DI sii DFU 2} Si \(a\) és in element irreductible de \(D\) aleshores \(a\) és primer.
 		\end{enumerate}
 		\begin{proof}
 			Comencem demostrant que la condició és suficient (\(\implica\)). Suposem doncs que \(D\) és un domini de factorització única. El punt \eqref{enum:thm:condició equivalent per DI sii DFU 1} és conseqüència de la definició de \myref{def:domini de factorització única}. Per tant només ens queda veure que tot element irreductible és primer.
 			
 			Siguin \(p\) un element irreductible de \(D\) i \(a,b\) dos elements no invertibles no nuls de \(D\) tals que \(p\divides a\cdot b\). Per la definició de \myref{def:DFU} tenim que existeixen \(p_{1},\dots,p_{r},q_{1},\dots,q_{s}\) elements irreductibles de \(D\) tals que
-			\[a=p_{1}\cdot\ldots\cdot p_{r}\quad\text{i}\quad b=q_{1}\cdot\ldots\cdot q_{s}\]
+			\[
+			    a=p_{1}\cdot\ldots\cdot p_{r}\quad\text{i}\quad b=q_{1}\cdot\ldots\cdot q_{s}
+			\]
 			i per tant
-			\[a\cdot b=p_{1}\cdot\ldots\cdot p_{r}\cdot q_{1}\cdot\ldots\cdot q_{s}\]
+			\[
+			    a\cdot b=p_{1}\cdot\ldots\cdot p_{r}\cdot q_{1}\cdot\ldots\cdot q_{s}
+			\]
 			i com que, per hipòtesi, \(p\divides a\cdot b\) i la definició de \myref{def:DFU} tenim que
-			\[a\cdot b=p\cdot\alpha_{1}\cdot\ldots\cdot\alpha_{t}\]
+			\[
+			    a\cdot b=p\cdot\alpha_{1}\cdot\ldots\cdot\alpha_{t}
+			\]
 			per a certs \(\alpha_{1},\cdots,\alpha_{t}\) elements irreductibles de \(D\). Per tant tenim
-			\[a\cdot b=p\cdot\alpha_{1}\cdot\ldots\cdot\alpha_{t}=p_{1}\cdot\ldots\cdot p_{r}\cdot q_{1}\cdot\ldots\cdot q_{s}\]
+			\[
+			    a\cdot b=p\cdot\alpha_{1}\cdot\ldots\cdot\alpha_{t}=p_{1}\cdot\ldots\cdot p_{r}\cdot q_{1}\cdot\ldots\cdot q_{s}
+			\]
 			i, de nou per la definició de \myref{def:DFU}, tenim que \(p\sim p_{i}\) ó \(p\sim q_{j}\) per a certs \(i\in\{1,\dots,r\}\), \(j\in\{1,\dots,s\}\), i per tant \(p\divides a\) ó \(p\divides b\), i per la definició de \myref{def:primer en un anell} tenim que \(p\) és primer.
 			
 			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que
 			\begin{enumerate}
 				\item Per a tot \(a\) element no invertible de \(D\) existeixen \(p_{1},\dots,p_{r}\) elements irreductibles de \(D\) tals que
-				\[a=p_{1}\cdot\ldots\cdot p_{r}\]
+				\[
+				    a=p_{1}\cdot\ldots\cdot p_{r}
+				\]
 				\item Si \(a\) és in element irreductible de \(D\) aleshores \(a\) és primer.
 			\end{enumerate}
 			Sigui \(a\) un element no invertible de \(D\). Pel punt \eqref{enum:thm:condició equivalent per DI sii DFU 1} tenim que existeixen \(p_{1},\dots,p_{r}\) elements irreductibles de \(D\) tals que
-			\[a=p_{1}\cdot\ldots\cdot p_{r}.\]
+			\[
+			    a=p_{1}\cdot\ldots\cdot p_{r}.
+			\]
 			
 			Suposem que existeixen també \(q_{1},\dots,q_{s}\) elements irreductibles de \(D\) tals que
-			\[a=q_{1},\dots,q_{s}.\]
+			\[
+			    a=q_{1},\dots,q_{s}.
+			\]
 			Aleshores volem veure que \(r=s\) i que existeix \(\sigma\in S_{r}\) tal que
-			\[p_{1}\cdot\ldots\cdot p_{r}=q_{\sigma(1)}\cdot\ldots\cdot q_{\sigma(r)},\]
+			\[
+			    p_{1}\cdot\ldots\cdot p_{r}=q_{\sigma(1)}\cdot\ldots\cdot q_{\sigma(r)},
+			\]
 			amb \(p_{i}\sim q_{\sigma(i)}\) per a tot \(i\in\{1,\dots,r\}\).
 			
 			Tenim que \(p_{1}\divides a\), i com que pel punt \eqref{enum:thm:condició equivalent per DI sii DFU 2} tenim que \(p_{1}\) és primer, per la definició de \myref{def:primer en un anell} tenim que \(p_{1}\divides q_{j}\) per a cert \(j\in\{1,\dots,s\}\), i per la definició de \myref{def:irreductible en un anell} i la definició d'\myref{def:elements associats} tenim que \(p_{1}\sim q_{j}\). Sigui doncs \(\sigma\in S_{s}\) tal que \(p_{1}\divides q_{\sigma(1)}\). Aleshores tenim
-			\[p_{1}\cdot p_{2}\cdot\ldots\cdot p_{r}=u_{1}\cdot q_{\sigma(1)}\cdot\ldots\cdot q_{s}\]
+			\[
+			    p_{1}\cdot p_{2}\cdot\ldots\cdot p_{r}=u_{1}\cdot q_{\sigma(1)}\cdot\ldots\cdot q_{s}
+			\]
 			per a cert \(u_{1}\) element invertible de \(D\). Podem iterar aquest argument per a \(p_{2},\dots,p_{t}\), on \(t=\min(r,s)\) per obtenir
-			\[p_{1}\cdot\ldots\cdot p_{t}\cdot p_{t+1}\cdot\ldots\cdot p_{r}=(u_{1}\cdot q_{1})\cdot\ldots\cdot(u_{t}\cdot q_{t})\cdot p_{t+1}\cdot\ldots \cdot p_{s}\]
+			\[
+			    p_{1}\cdot\ldots\cdot p_{t}\cdot p_{t+1}\cdot\ldots\cdot p_{r}=(u_{1}\cdot q_{1})\cdot\ldots\cdot(u_{t}\cdot q_{t})\cdot p_{t+1}\cdot\ldots \cdot p_{s}
+			\]
 			per a certs \(u_{1},\dots, u_{t}\) elements invertibles de \(D\). Ara bé, tenim que \(r=s\), ja que si \(r>s\) tindríem que \(p_{s+1},\dots,p_{r}\) són invertibles, i si \(s>r\) tindríem que \(q_{r+1},\dots,q_{s}\) són invertibles, però per la definició d'\myref{def:irreductible en un anell} i la definició d'\myref{def:element invertible pel producte d'un anell} tenim que això no pot ser, i per tant \(r=s\) i per la definició de \myref{def:DFU} tenim que \(D\) és un domini de factorització única, com volíem veure.
 		\end{proof}
 	\end{theorem}
 	\begin{proposition}
 		Siguin \(D\) un domini de factorització única amb i el producte \(\cdot\) i \(a,b\) dos elements no invertibles i no nuls de \(D\) tals que existeixen \(p_{1},\dots,p_{r}\) tals que
-		\[a=p_{1}^{\alpha_{1}}\cdot\ldots\cdot p_{r}^{\alpha_{r}}\quad\text{i}\quad b=p_{1}^{\beta_{1}}\cdot\ldots\cdot p_{r}^{\beta_{r}}\]
+		\[
+		    a=p_{1}^{\alpha_{1}}\cdot\ldots\cdot p_{r}^{\alpha_{r}}\quad\text{i}\quad b=p_{1}^{\beta_{1}}\cdot\ldots\cdot p_{r}^{\beta_{r}}
+		\]
 		per a certs \(\alpha_{1},\dots,\alpha_{r},\beta_{1},\dots,\beta_{r}\) enters no negatius. Aleshores
-		\[\prod_{i=1}^{r}p_{i}^{\min(\alpha_{i},\beta_{i})}\sim\mcd(a,b)\quad\text{i}\quad\prod_{i=1}^{r}p_{i}^{\max(\alpha_{i},\beta_{i})}\sim\mcm(a,b).\]
+		\[
+		    \prod_{i=1}^{r}p_{i}^{\min(\alpha_{i},\beta_{i})}\sim\mcd(a,b)\quad\text{i}\quad\prod_{i=1}^{r}p_{i}^{\max(\alpha_{i},\beta_{i})}\sim\mcm(a,b).
+		\]
 		\begin{proof}
 			Denotem \(d=\prod_{i=1}^{r}p_{i}^{\min(\alpha_{i},\beta_{i})}\) i \(m=\prod_{i=1}^{r}p_{i}^{\max(\alpha_{i},\beta_{i})}\).
 			
 			Prenem \(c\) un element de \(D\) tal que \(c\divides a\) i \(c\divides b\). Aleshores tenim que
-			\[c=p_{1}^{\gamma_{1}}\cdot\ldots\cdot p_{r}^{\gamma_{r}}\]
+			\[
+			    c=p_{1}^{\gamma_{1}}\cdot\ldots\cdot p_{r}^{\gamma_{r}}
+			\]
 			per a certs \(\gamma_{i}\leq\min(\alpha_{i},\beta_{i})\) per a tot \(i\in\{1,\dots,r\}\). Ara bé, com que \(\gamma_{i}\leq\min(\alpha_{i},\beta_{i})\) per a tot \(i\in\{1,\dots,r\}\), i per tant \(d\divides c\), i per la definició de \myref{def:màxim comú divisor anells} tenim que \(d\sim\mcd(a,b)\).
 			
 			Prenem ara \(c\) un element de \(D\) tal que \(a\divides c\) i \(b\divides c\). Aleshores tenim que
-			\[c=q\cdot p_{1}^{\gamma_{1}}\cdot\ldots\cdot p_{r}^{\gamma_{r}}\]
+			\[
+			    c=q\cdot p_{1}^{\gamma_{1}}\cdot\ldots\cdot p_{r}^{\gamma_{r}}
+			\]
 			per a cert \(q\in D\) i certs \(\gamma_{i}\geq\max(\alpha_{i},\beta_{i})\) per a tot \(i\in\{1,\dots,r\}\). Ara bé, com que \(\gamma_{i}\geq\max(\alpha_{i},\beta_{i})\) per a tot \(i\in\{1,\dots,r\}\), i per tant \(m\divides c\), i per la definició de \myref{def:mínim comú múltiple anells} tenim que \(m\sim\mcm(a,b)\).
 		\end{proof}
 	\end{proposition}
@@ -2000,7 +2320,9 @@
 		\labelname{anell Noetherià}
 		\label{def:anell Noetherià}
 		Sigui \(N\) un anell commutatiu amb \(1\neq0\) tal que si
-		\[I_{1}\subseteq I_{2}\subseteq I_{3}\subseteq\dots\]
+		\[
+		    I_{1}\subseteq I_{2}\subseteq I_{3}\subseteq\dots
+		\]
 		són ideals de \(N\) existeix \(n_{0}\) tal que per a tot \(i\geq n_{0}\) tenim \(I_{i}=I_{i+1}\). Aleshores diem que \(N\) és Noetherià.
 	\end{definition}
 	\begin{observation}
@@ -2009,16 +2331,24 @@
 	\begin{lemma}
 		\label{lema:DIP és DFU}
 		Siguin \(N\) un domini d'integritat Noetherià amb el producte \(\cdot\) i \(a\neq0\) un element no invertible de \(N\). Aleshores existeixen \(p_{1},\dots,p_{n}\) elements irreductibles de \(N\) tals que
-		\[a=p_{1}\cdot\ldots\cdot p_{n}.\]
+		\[
+		    a=p_{1}\cdot\ldots\cdot p_{n}.
+		\]
 		\begin{proof}
 			Ho farem per reducció a l'absurd. Definim el conjunt
-			\[X=\{a\in N\text{ invertible}\mid a\neq p_{1}\cdot\ldots\cdot p_{n}\text{ per a }p_{1},\dots,p_{n}\in N\text{ irreductibles}\}.\]
+			\[
+			    X=\{a\in N\text{ invertible}\mid a\neq p_{1}\cdot\ldots\cdot p_{n}\text{ per a }p_{1},\dots,p_{n}\in N\text{ irreductibles}\}.
+			\]
 			Volem veure que \(X=\emptyset\). Suposem doncs que \(X\neq\emptyset\) i prenem \(a_{1}\in X\). Per la definició d'\myref{def:irreductible en un anell} tenim que \(a_{1}\) no és irreductible, i per tant existeixen \(b_{1},c_{1}\in N\) no invertibles tals que
-			\[a_{1}=b_{1}\cdot c_{1}\]
+			\[
+			    a_{1}=b_{1}\cdot c_{1}
+			\]
 			i ha de ser \(b_{1}\in X\) o \(c_{1}\in X\).
 			
 			Suposem que \(b_{1}\in X\), la demostració de l'altre opció és anàloga. Aleshores tenim, per l'observació \myref{obs:divisors són ideals continguts}, que \((a)\subset(b)\). Ara bé, també tindríem que \(b_{1}=b_{2}\cdot c_{2}\) per a certs \(b_{2},c_{2}\) elements no invertibles de \(N\) amb \(b_{2}\in X\) o \(c_{2}\in X\), i podem iterar aquest argument per construir
-			\[(a_{1})\subset(b_{1})\subset(b_{2})\subset(b_{3})\subset\dots\]
+			\[
+			    (a_{1})\subset(b_{1})\subset(b_{2})\subset(b_{3})\subset\dots
+			\]
 			però això entra en contradicció amb la definició d'\myref{def:anell Noetherià}, i per tant \(X=\emptyset\), com volíem veure.
 		\end{proof}
 	\end{lemma}
@@ -2051,13 +2381,19 @@
 		Sigui \(D\) un domini d'ideals principals. Aleshores \(D\) és Noetherià.
 		\begin{proof}
 			Siguin \(I_{1},\dots,I_{i},\dots\) ideals de \(D\) tals que
-			\[I_{1}\subseteq I_{2}\subseteq I_{3}\subseteq\dots\]
+			\[
+			    I_{1}\subseteq I_{2}\subseteq I_{3}\subseteq\dots
+			\]
 			i
-			\[\mathcal{I}=\bigcup_{i=1}^{\infty}I_{i}.\]
+			\[
+			    \mathcal{I}=\bigcup_{i=1}^{\infty}I_{i}.
+			\]
 			Aleshores tenim que \(\mathcal{I}\) és un ideal. També veiem que si \(x\in\mathcal{I}\) existeix \(n\) tal que \(x\in I_{n}\), i per la definició d'\myref{def:ideal d'un anell} tenim que si \(y\in D\) aleshores \(x\cdot y\in I_{n}\).
 			
 			Ara bé, com que per hipòtesi \(D\) és un domini d'ideals principals tenim, per la definició de \myref{def:DIP} que existeix \(a\in D\) tal que \(\mathcal{I}=(a)\), i per tant existeix \(n\) tal que \(a\in I_{n}\), i trobem que
-			\[\mathcal{I}=(a)\subseteq I_{n}\subseteq I_{n+k}\subseteq\mathcal{I}\]
+			\[
+			    \mathcal{I}=(a)\subseteq I_{n}\subseteq I_{n+k}\subseteq\mathcal{I}
+			\]
 			per a tot \(k\in\mathbb{N}\), i pel \myref{thm:doble inclusió} trobem que \(I_{n}=I_{n+k}\) per a tot \(k\in\mathbb{N}\), i per la definició d'\myref{def:anell Noetherià} trobem que \(D\) és un anell Noetherià.
 		\end{proof}
 	\end{theorem}
@@ -2066,7 +2402,9 @@
 		Sigui \(D\) un domini d'ideals principals. Aleshores \(D\) és un domini de factorització única.
 		\begin{proof}
 			Sigui \(\cdot\) el producte de \(D\). Pel Teorema \myref{thm:DIP es Noetherià} tenim que \(D\) és un anell Noetherià, i pel lema \myref{lema:DIP és DFU} tenim que per a tot element no irreductible \(a\) de \(D\) existeixen \(p_{1},\dots,p_{n}\) elements irreductibles de \(N\) tals que
-			\[a=p_{1}\cdot\ldots\cdot p_{n}.\]
+			\[
+			    a=p_{1}\cdot\ldots\cdot p_{n}.
+			\]
 			
 			També tenim, per la proposició \myref{prop:en DIP irreductible implica primer} que si \(a\) és un element irreductible de \(D\) aleshores \(a\) és primer.
 			
@@ -2088,28 +2426,40 @@
 	\begin{proposition}
 		\label{prop:norma de 1 és la més petita en DE}
 		Sigui \(D\) un domini Euclidià amb la norma \(U\). Aleshores
-		\[U(1)\leq U(x)\quad\text{per a tot }x\in D\setminus\{0\}.\]
+		\[
+		    U(1)\leq U(x)\quad\text{per a tot }x\in D\setminus\{0\}.
+		\]
 		\begin{proof}
 			Sigui \(\cdot\) el producte de \(D\). Per la definició de \myref{def:DE} tenim que \(U(x)\leq U(x\cdot y)\) per a tot \(x,y\in D\setminus\{0\}\). Per tant
-			\[U(1)\leq U(1\cdot x)=U(x)\quad\text{per a tot }x\in D\setminus\{0\}.\qedhere\]
+			\[
+			    U(1)\leq U(1\cdot x)=U(x)\quad\text{per a tot }x\in D\setminus\{0\}.\qedhere
+			\]
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		Sigui \(D\) un domini Euclidià amb la norma \(U\). Aleshores
-		\[U(u)=U(1)\sii u\text{ és un element invertible de }D.\]
+		\[
+		    U(u)=U(1)\sii u\text{ és un element invertible de }D.
+		\]
 		\begin{proof}			
 			Siguin \(+\) la suma de \(D\) i \(\cdot\) el producte de \(D\). Comencem veient l'implicació cap a la dreta (\(\implica\)). Suposem doncs que \(u\) és un element invertible de \(D\).
 			
 			Per la proposició \myref{prop:norma de 1 és la més petita en DE} tenim que \(U(1)\leq U(u)\) i que \(U(u)\leq U(u\cdot u^{-1})\). Ara bé, per la definició de \myref{def:l'invers d'un element d'un anell} tenim que \(u\cdot u^{-1}=1\), i per tant
-			\[U(1)\leq U(u)\leq U(u\cdot u^{-1})=U(1),\]
+			\[
+			    U(1)\leq U(u)\leq U(u\cdot u^{-1})=U(1),
+			\]
 			i trobem \(U(u)=U(1)\).
 			
 			Veiem ara l'implicació cap a l'esquerra (\(\implicatper\)). Suposem que \(U(u)=U(1)\).
 			
 			Per la definició de \myref{def:DE} tenim que existeixen \(Q\) i \(r\) elements de \(D\) tals que
-			\[1=Q\cdot u+r\]
+			\[
+			    1=Q\cdot u+r
+			\]
 			amb \(r=0\) ó \(U(r)<U(u)\). Ara bé, per hipòtesi \(U(u)=U(1)\), i per la proposició \myref{prop:norma de 1 és la més petita en DE} trobem que ha de ser \(r=0\). Per tant tenim
-			\[1=Q\cdot u\]
+			\[
+			    1=Q\cdot u
+			\]
 			i per la definició d'\myref{def:element invertible pel producte d'un anell} trobem que \(u\) és invertible.
 		\end{proof}
 	\end{proposition}
@@ -2119,13 +2469,21 @@
 			Siguin \(+\) la suma de \(D\), \(\cdot\) el producte de \(D\), \(U\) una norma de \(D\) i \(I\) un ideal de \(D\). Si \(I=\{0\}\) aleshores \(I=(0)\). Suposem doncs que \(I\neq(0)\) i prenem \(b\in I\) tal que \(U(b)\leq U(x)\) per a tot \(x\in I\), \(x\neq0\).
 			
 			Prenem ara \(a\in I\). Per la definició de \myref{def:DE} tenim que existeixen \(Q,r\in D\) tals que
-			\[a=Q\cdot b+r\]
+			\[
+			    a=Q\cdot b+r
+			\]
 			amb \(r=0\) ó \(U(r)<U(b)\). I com que, per la definició d'\myref{def:anell} tenim que \(D\) és un grup amb l'operació \(+\) tenim
-			\[r=a-Q\cdot b,\]
+			\[
+			    r=a-Q\cdot b,
+			\]
 			i per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que
-			\[r=a-Q\cdot b\in I\]
+			\[
+			    r=a-Q\cdot b\in I
+			\]
 			i per tant, \(r\in I\) amb \(r=0\) ó \(U(r)<U(b)\). Ara bé, per hipòtesi tenim que \(U(r)\geq U(b)\), per tant ha de ser \(r=0\) i tenim que
-			\[a=Q\cdot b,\]
+			\[
+			    a=Q\cdot b,
+			\]
 			d'on trobem que \(I\) és un ideal principal, i per la definició de \myref{def:DIP} tenim que \(D\) és un domini d'ideals principals.
 		\end{proof}
 	\end{theorem}
@@ -2140,7 +2498,9 @@
 	\begin{proposition}
 		\label{prop:relació d'equivalència cos de fraccions}
 		Siguin \(D\) un domini d'integritat amb el producte \(\cdot\) i \(\sim\) definida a \(D\times D\setminus\{0\}\) una relació binària tal que per a tot \(a,c\in D\), \(b,d\in D\setminus\{0\}\) 
-		\[(a,b)\sim(c,d)\sii a\cdot d=b\cdot c.\]
+		\[
+		    (a,b)\sim(c,d)\sii a\cdot d=b\cdot c.
+		\]
 		Aleshores \(\sim\) és una relació d'equivalència.
 		\begin{proof}
 			%TODO
@@ -2152,7 +2512,9 @@
 	\begin{lemma}
 		\label{lema:cos de fraccions}
 		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\). Aleshores \(\cosdefraccions(D)\) és un anell commutatiu amb \(1\neq0\) amb les operacions
-		\[\frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+c\cdot b}{b\cdot d}\quad\text{i}\quad\frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}.\quad\text{per a tot }a,c\in D\text{, }b,d\in D\setminus\{0\}.\]
+		\[
+		    \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+c\cdot b}{b\cdot d}\quad\text{i}\quad\frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}.\quad\text{per a tot }a,c\in D\text{, }b,d\in D\setminus\{0\}.
+		\]
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2168,7 +2530,9 @@
 	\begin{theorem}[Unicitat de \ensuremath{\cosdefraccions(D)}]
 		\labelname{Teorema d'unicitat del cos de fraccions d'un domini}\label{thm:unicitat del cos de fraccions d'un domini}
 		Siguin \(D\) un domini d'integritat amb la suma \(+\) i el producte \(\cdot\) i \(\cosdefraccions_{1}(D)\) i \(\cosdefraccions_{2}(D)\) dos cossos  amb la suma \(+\) i el producte \(\cdot\). Aleshores
-		\[\cosdefraccions_{1}(D)\cong\cosdefraccions_{2}(D)\]
+		\[
+		    \cosdefraccions_{1}(D)\cong\cosdefraccions_{2}(D)
+		\]
 		\begin{proof}
 			%TODO %Té sentit per l'anterior?
 		\end{proof}
@@ -2182,7 +2546,9 @@
 	\begin{proposition}
 		\label{prop:l'anell de polinomis és un anell}
 		Siguin \(R\) un anell amb la suma \(+\) i el producte \(\cdot\) i
-		\[R[x]=\{a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}\mid n\in\mathbb{N}, a_{0},\dots,a_{n}\in R\}\]
+		\[
+		    R[x]=\{a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}\mid n\in\mathbb{N}, a_{0},\dots,a_{n}\in R\}
+		\]
 		un conjunt. Aleshores \(R[x]\) és un anell amb la suma \(+\) i el producte \(\cdot\).
 		\begin{proof}
 			%TODO
@@ -2200,7 +2566,9 @@
 		\labelname{anell de polinomis}
 		\label{def:anell de polinomis}
 		Siguin \(R\) un anell amb la suma \(+\) i el producte \(\cdot\) i
-		\[R[x]=\{a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}\mid n\in\mathbb{N},a_{0},\dots,a_{n}\in R\}.\]
+		\[
+		    R[x]=\{a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}\mid n\in\mathbb{N},a_{0},\dots,a_{n}\in R\}.
+		\]
 		Aleshores direm que l'anell \(R[x]\) és l'anell de polinomis de \(R\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:l'anell de polinomis és un anell}.
@@ -2219,14 +2587,18 @@
 		\labelname{contingut d'un polinomi}
 		\label{def:contingut d'un polinomi}
 		Siguin \(D\) un domini de factorització única i \(f(x)=a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}\) un element de \(D[x]\). Aleshores definim
-		\[\cont(f)\sim\mcd(a_{0},\dots,a_{n})\]
+		\[
+		    \cont(f)\sim\mcd(a_{0},\dots,a_{n})
+		\]
 		com el contingut de \(f\). %Veure que en DFU el mcd existeix (última pagina lila) i associativitat mcd (crec que ja ho tinc fet).
 		
 		Interpretarem \(\cont(f(x))\) com un element de \(D\).
 	\end{definition}
 	\begin{definition}[Polinomi primitiu]
 		Siguin \(D\) un domini de factorització única i \(f(x)\) un element de \(D[x]\) tal que
-		\[\cont(f(x))\sim1.\]
+		\[
+		    \cont(f(x))\sim1.
+		\]
 		Aleshores direm que \(f(x)\) és un polinomi primitiu.
 	\end{definition}
 	\begin{lemma}[Lema de Gauss]
@@ -2239,7 +2611,9 @@
 	\end{lemma}
 	\begin{corollary}
 		Siguin \(D\) un domini de factorització única i \(f(x)\) i \(g(x)\) dos elements de \(D[x]\). Aleshores
-		\[\cont(f(x)\cdot g(x))\sim\cont(f(x))\cdot\cont(g(x)).\]
+		\[
+		    \cont(f(x)\cdot g(x))\sim\cont(f(x))\cdot\cont(g(x)).
+		\]
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2297,7 +2671,9 @@
 	\begin{theorem}[Criteri modular]
 		\labelname{Teorema del criteri modular}\label{thm:Criteri modular}
 		Siguin \(D\) un domini de factorització única amb la suma \(+\) i el producte \(\cdot\), \(f(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n}\) un polinomi primitiu de \(D[x]\) i \(p\) un element irreductible de \(D\) amb \(p\ndivides a_{n}\) tals que
-		\[\overline{f(x)}=\overline{a_{0}}+\overline{a_{1}}\cdot x+\dots+\overline{a_{n}}\cdot x^{n}\]
+		\[
+		    \overline{f(x)}=\overline{a_{0}}+\overline{a_{1}}\cdot x+\dots+\overline{a_{n}}\cdot x^{n}
+		\]
 		sigui un polinomi irreductible de \(D/(p)[x]\). Aleshores \(f(x)\) és un polinomi irreductible de \(D[x]\).
 		\begin{proof}
 			%TODO
@@ -2335,7 +2711,9 @@
 	\end{observation}
 	\begin{theorem}
 		Sigui \(\mathbb{K}\) un cos finit. Aleshores
-		\[\ch(\mathbb{K})=p\sii\abs{\mathbb{K}}=p^{n}\text{ per a cert }n\in\mathbb{N}.\]
+		\[
+		    \ch(\mathbb{K})=p\sii\abs{\mathbb{K}}=p^{n}\text{ per a cert }n\in\mathbb{N}.
+		\]
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2361,7 +2739,9 @@
 	\end{definition}
 	\begin{theorem}
 		Sigui \(\mathbb{K}\) un cos finit amb \(\abs{\mathbb{K}}=p\). Aleshores existeix un polinomi irreductible \(f(x)\) en \(\mathbb{Z}/(p)[x]\) tal que
-		\[\mathbb{K}\cong\mathbb{Z}/(p)[x]/(f(x)).\]
+		\[
+		    \mathbb{K}\cong\mathbb{Z}/(p)[x]/(f(x)).
+		\]
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2387,7 +2767,9 @@
 	\begin{definition}[Derivada formal]
 		\labelname{derivada formal}\label{def:derivada formal}
 		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) i \(f(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n}\) un polinomi de \(\mathbb{K}\). Aleshores definim la derivada formal de \(f(x)\) com
-		\[f'(x)=a_{1}+2\cdot a_{2}x+3\cdot a_{3}x^{2}+\dots+n\cdot a_{n}x^{n-1}.\]
+		\[
+		    f'(x)=a_{1}+2\cdot a_{2}x+3\cdot a_{3}x^{2}+\dots+n\cdot a_{n}x^{n-1}.
+		\]
 	\end{definition}
 	\begin{proposition}
 		\label{prop:propietats de la derivada formal}
@@ -2410,7 +2792,9 @@
 	\end{proposition}
 	\begin{proposition}
 		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) amb \(\ch(\mathbb{K})=p\) no nul i \(f(x)=a_{0}+a_{1}x+\cdots+a_{n}x^{n}\) un polinomi de \(\mathbb{K}\) amb \(n\geq1\). Aleshores
-		\[f'(x)\neq0\sii p\divides i\text{ per a tot }i\geq1\text{ tal que }a_{i}\neq0.\]
+		\[
+		    f'(x)\neq0\sii p\divides i\text{ per a tot }i\geq1\text{ tal que }a_{i}\neq0.
+		\]
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2418,7 +2802,9 @@
 	\begin{definition}[Arrels múltiples]
 		\labelname{arrel múltiple}\label{def:arrel múltiple}
 		Siguin \(\mathbb{K}\) un cos amb la suma \(+\) i el producte \(\cdot\) i \(f(x)\) un polinomi de \(\mathbb{K}[x]\), \(\alpha\) una arrel de \(f(x)\) i \(g(x)\) un polinomi de \(\mathbb{K}(f(x))\) tal que 
-		\[f(x)=(x-\alpha)^{m}\cdot g(x)\]
+		\[
+		    f(x)=(x-\alpha)^{m}\cdot g(x)
+		\]
 		amb \(m\geq2\). Aleshores direm que \(\alpha\) és una arrel múltiple de \(f(x)\).
 	\end{definition}
 	\begin{proposition}
@@ -2455,7 +2841,9 @@
 	\end{lemma}
 	\begin{theorem}[Teorema d'unicitat dels cossos finits]
 		Siguin \(\mathbb{K}\) i \(\mathbb{F}\) dos cossos finits amb \(\abs{\mathbb{K}}=\abs{\mathbb{F}}=p^{n}\). Aleshores % puc treure =p^{n} ?
-		\[\mathbb{K}\cong\mathbb{F}.\]
+		\[
+		    \mathbb{K}\cong\mathbb{F}.
+		\]
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2478,9 +2866,13 @@
 	\subsection{El morfisme de Frobenius}	%Juntar arrels amb això?
 	\begin{theorem}
 		Siguin \(n\) un natural, \(p\) un primer i
-		\[\mathcal{F}=\{f(x)\in\mathbb{Z}/(p)[x]\mid f(x)\text{ és un polinomi mónic irreductible de grau }d\divides n\}.\]
+		\[
+		    \mathcal{F}=\{f(x)\in\mathbb{Z}/(p)[x]\mid f(x)\text{ és un polinomi mónic irreductible de grau }d\divides n\}.
+		\]
 		Aleshores
-		\[x^{p^{n}}-x=\prod_{f(x)\in\mathcal{F}}f(x).\]
+		\[
+		    x^{p^{n}}-x=\prod_{f(x)\in\mathcal{F}}f(x).
+		\]
 		\begin{proof}
 			%TODO
 		\end{proof}
