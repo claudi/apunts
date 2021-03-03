@@ -31,7 +31,9 @@
 	\begin{notation}[Conjunt de matrius]
 		\label{notation:conjunt de matrius}
 		Siguin \(m\) i \(n\) dos enters, \(\mathbb{K}\) un cos i
-		\[X=\{A\mid A\text{ és una matriu de mida }m\times n\text{ sobre }\mathbb{K}\}\]
+		\[
+		    X=\{A\mid A\text{ és una matriu de mida }m\times n\text{ sobre }\mathbb{K}\}
+		\]
 		un conjunt. Aleshores denotarem \(X=\matrius_{m\times n}(\mathbb{K})\).
 		
 		Si \(n=m\) denotarem \(X=\matrius_{n}(\mathbb{K})\).
@@ -41,12 +43,16 @@
 	\begin{definition}[Suma de matrius]
 		\labelname{suma de matrius}\label{def:suma de matrius}
 		Siguin \(A\) i \(B\) dues matrius de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores definim la seva suma com una operació \(+\) que satisfà
-		\[[A+B]_{i,j}=[A]_{i,j}+[B]_{i,j}.\]
+		\[
+		    [A+B]_{i,j}=[A]_{i,j}+[B]_{i,j}.
+		\]
 	\end{definition}
 	\begin{definition}[Producte de matrius]
 		\labelname{producte de matrius}\label{def:producte de matrius}
 		Siguin \(A\) una matriu de mida \(m\times l\) sobre un cos \(\mathbb{K}\) i \(B\) una matriu de mida \(l\times n\) sobre un cos \(\mathbb{K}\). Aleshores definim el seu producte com una operació \(\cdot\) que satisfà
-		\[[A\cdot B]_{i,j}=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.\]
+		\[
+		    [A\cdot B]_{i,j}=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.
+		\]
 		
 		Escriurem \(A\cdot B=AB\).
 	\end{definition}
@@ -54,7 +60,9 @@
 	\begin{proposition}
 		\label{prop:associativitat suma matrius}
 		Siguin \(A\), \(B\) i \(C\) tres matrius de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores
-		\[(A+B)+C=A+(B+C).\]
+		\[
+		    (A+B)+C=A+(B+C).
+		\]
 		\begin{proof}
 			Per la definició de \myref{def:suma de matrius} tenim que
 			\begin{align*}
@@ -69,7 +77,9 @@
 	\begin{proposition}
 		\label{prop:commutativitat suma matrius}
 		Siguin \(A\) i \(B\) dues matrius de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores
-		\[A+B=B+A.\]
+		\[
+		    A+B=B+A.
+		\]
 		\begin{proof}
 			Per la definició de \myref{def:suma de matrius} tenim que
 			\begin{align*}
@@ -93,7 +103,9 @@
 	\begin{proposition}
 		\label{prop:element neutre per la suma de matrius}
 		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores
-		\[A+0=A.\]
+		\[
+		    A+0=A.
+		\]
 		\begin{proof}
 			Per la definició de \myref{def:suma de matrius} tenim que
 			\begin{align*}
@@ -107,14 +119,18 @@
 	\begin{definition}[Producte d'una matriu per escalars]
 		\labelname{producte d'una matriu per escalars}\label{def:producte d'una matriu per escalars}
 		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) i \(\alpha\) un escalar de \(\mathbb{K}\). Aleshores definim
-		\[[\alpha A]_{i,j}=\alpha[A]_{i,j}.\]
+		\[
+		    [\alpha A]_{i,j}=\alpha[A]_{i,j}.
+		\]
 		
 		Denotarem \((-1)A\) com \(-A\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:inverses per la suma de matrius}
 		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores
-		\[A-A=0.\]
+		\[
+		    A-A=0.
+		\]
 		\begin{proof}
 			Per la definició de \myref{def:suma de matrius} tenim que
 			\begin{align*}
@@ -128,7 +144,9 @@
 	\begin{proposition}
 		\label{prop:associativitat mixta producte escalars per matrius}
 		Siguin \(A\) una matriu de mida \(m\times n\) i \(\alpha\) i \(\beta\) dos escalars de \(\mathbb{K}\). Aleshores
-		\[(\alpha\beta)A=\alpha(\beta A).\]
+		\[
+		    (\alpha\beta)A=\alpha(\beta A).
+		\]
 		\begin{proof}
 			Per la definició de \myref{def:producte d'una matriu per escalars} tenim que
 			\begin{align*}
@@ -141,7 +159,9 @@
 	\begin{proposition}
 		\label{prop:distributiva respecta la suma d'escalars del producte de matrius}
 		Siguin \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) i \(\alpha\) i \(\beta\) dos escalars de \(\mathbb{K}\). Aleshores
-		\[(\alpha+\beta)A=\alpha A+\beta A.\]
+		\[
+		    (\alpha+\beta)A=\alpha A+\beta A.
+		\]
 		\begin{proof}
 			Per la definició de \myref{def:producte d'una matriu per escalars} tenim que
 			\begin{align*}
@@ -154,19 +174,27 @@
 	\end{proposition}
 	\begin{proposition}
 		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores
-		\[1A=A.\]
+		\[
+		    1A=A.
+		\]
 		\begin{proof}
 			Per la definició de \myref{def:producte d'una matriu per escalars} tenim que
-			\[[1A]_{i,j}=1[A]_{i,j}\]
+			\[
+			    [1A]_{i,j}=1[A]_{i,j}
+			\]
 			i per la definició de \myref{def:cos} trobem que
-			\[1[A]_{i,j}=[A]_{i,j},\]
+			\[
+			    1[A]_{i,j}=[A]_{i,j},
+			\]
 			com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:associativitat producte de matrius}
 		Siguin \(\mathbb{K}\) un cos i \(A\) una matriu de mida \(m\times l\) sobre \(\mathbb{K}\), \(B\) una matriu de mida \(l\times s\) sobre \(\mathbb{K}\) i \(C\) una matriu de mida \(s\times m\) sobre \(\mathbb{K}\). Aleshores
-		\[(AB)C=A(BC).\]
+		\[
+		    (AB)C=A(BC).
+		\]
 		\begin{proof}
 			Per la definició de \myref{def:producte de matrius} tenim que
 			\begin{align*}
@@ -184,9 +212,13 @@
 	\begin{proposition}
 		\label{prop:distributiva del producte de matrius respecte la suma}
 		Siguin \(A\) i \(A'\) dues matrius de mida \(m\times l\) sobre un cos \(\mathbb{K}\) i \(B\), \(B'\) dues matrius de mida \(l\times n\) sobre un cos \(\mathbb{K}\). Aleshores
-		\[(A+A')B=AB+A'B\]
+		\[
+		    (A+A')B=AB+A'B
+		\]
 		i
-		\[A(B+B')=AB+AB'.\]
+		\[
+		    A(B+B')=AB+AB'.
+		\]
 		\begin{proof}
 			Per la definició de \myref{def:producte de matrius} tenim que
 			\begin{align*}
@@ -227,10 +259,14 @@
 	\begin{proposition}
 		\label{prop:producte per la matriu identitat}
 		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores
-		\[I_{m}A=A=AI_{n}.\]
+		\[
+		    I_{m}A=A=AI_{n}.
+		\]
 		\begin{proof}
 			Per la definició de \myref{def:producte de matrius} tenim que
-			\[[I_{m}A]_{i,j}=\sum_{k=1}^{m}[I_{m}]_{i,k}[A]_{k,j}.\]
+			\[
+			    [I_{m}A]_{i,j}=\sum_{k=1}^{m}[I_{m}]_{i,k}[A]_{k,j}.
+			\]
 			Ara bé, tenim que
 			\[[I_{m}]_{i,j}=
 			\begin{cases}
@@ -238,7 +274,9 @@
 			0 & i\neq j
 			\end{cases}\]
 			i per la definició de \myref{def:cos} tenim que
-			\[\sum_{k=1}^{m}[I_{m}]_{i,k}[A]_{k,j}=[A]_{i,j}\]
+			\[
+			    \sum_{k=1}^{m}[I_{m}]_{i,k}[A]_{k,j}=[A]_{i,j}
+			\]
 			i per tant \(I_{m}A=A\).
 			
 			La demostració de l'altre igualtat és anàloga.
@@ -247,11 +285,15 @@
 	\begin{proposition}
 		\label{prop:unicitat inverses de matrius pel producte}
 		Sigui \(A\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\) tal que existeixin dues matrius \(A_{1}\) i \(A_{2}\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que
-		\[AA_{1}=A_{1}A=I_{n}\quad\text{i}\quad AA_{2}=A_{2}A=I_{n}.\]
+		\[
+		    AA_{1}=A_{1}A=I_{n}\quad\text{i}\quad AA_{2}=A_{2}A=I_{n}.
+		\]
 		Aleshores \(A_{1}=A_{2}\).
 		\begin{proof}
 			Per la proposició \myref{prop:associativitat producte de matrius} tenim que
-			\[A_{1}(AA_{2})=(A_{1}A)A_{2}\]
+			\[
+			    A_{1}(AA_{2})=(A_{1}A)A_{2}
+			\]
 			i per hipòtesi trobem que \(A_{1}I_{n}=I_{n}A_{2}\), i per la proposició \myref{prop:producte per la matriu identitat} trobem que \(A_{1}=A_{2}\), com volíem veure.
 		\end{proof}
 	\end{proposition}
@@ -259,7 +301,9 @@
 		\labelname{matriu invertible}\label{def:matriu invertible}
 		\labelname{inversa d'una matriu}\label{def:inversa d'una matriu}
 		Sigui \(A\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\) tal que existeixi una matriu \(A'\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que
-		\[AA'=A'A=I_{n}.\]
+		\[
+		    AA'=A'A=I_{n}.
+		\]
 		Aleshores direm que \(A\) és una matriu invertible i que \(A'\) és la inversa de \(A\). També denotarem \(A'=A^{-1}\).
 		
 		Observem que aquesta definició té sentit per la proposició \myref{prop:unicitat inverses de matrius pel producte}.
@@ -268,7 +312,9 @@
 		\label{obs:matrius amb una fila nula no són invertibles}
 		\label{obs:matrius amb una columna nula no són invertibles}
 		Sigui \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) tal que existeix un \(i\in\{1,\dots,n\}\) satisfent
-		\[a_{i,j}=0\text{ ó }a_{j,i}=0\quad\text{per a tot }j\in\{1,\dots,n\}.\]
+		\[
+		    a_{i,j}=0\text{ ó }a_{j,i}=0\quad\text{per a tot }j\in\{1,\dots,n\}.
+		\]
 		Aleshores \(A\) no és invertible.
 	\end{observation}
 	\begin{proposition}
@@ -276,19 +322,25 @@
 		Siguin \(A\) i \(B\) dues matrius invertibles d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores la matriu \(AB\) és invertible.
 		\begin{proof}
 			Per la proposició \myref{prop:associativitat producte de matrius} i la definició de \myref{def:matriu invertible} tenim que
-			\[(AB)(B^{-1}A^{-1})=\Id\quad\text{i}\quad(B^{-1}A^{-1})(AB)=\Id,\]
+			\[
+			    (AB)(B^{-1}A^{-1})=\Id\quad\text{i}\quad(B^{-1}A^{-1})(AB)=\Id,
+			\]
 			i de nou per la definició tenim que \(AB\) és invertible.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:inversa del producte de matrius}
 		Siguin \(A\) i \(B\) dues matrius invertibles d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores
-		\[(AB)^{-1}=B^{-1}A^{-1}.\]
+		\[
+		    (AB)^{-1}=B^{-1}A^{-1}.
+		\]
 		
 		Aquest enunciat té sentit per la proposició \myref{prop:el producte de matrius invertibles és invertible}.
 		\begin{proof}
 			Per la definició de \myref{def:matriu invertible} tenim que
-			\[(AB)^{-1}AB=I_{n},\]
+			\[
+			    (AB)^{-1}AB=I_{n},
+			\]
 			i com que, per hipòtesi, les matrius \(A\) i \(B\) són invertibles trobem
 			\begin{align*}
 			B^{-1}A^{-1}&=(AB)^{-1}ABB^{-1}A^{-1}\\
@@ -299,25 +351,37 @@
 	\begin{proposition}
 		\label{prop:inversa de la inversa d'una matriu és la matriu}
 		Sigui \(A\) una matriu invertible d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores
-		\[(A^{-1})^{-1}=A.\]
+		\[
+		    (A^{-1})^{-1}=A.
+		\]
 		\begin{proof}
 			Per la proposició \myref{prop:inversa del producte de matrius} tenim que
-			\[A^{-1}(A^{-1})^{-1}=A^{-1}A\]
+			\[
+			    A^{-1}(A^{-1})^{-1}=A^{-1}A
+			\]
 			i com que, per hipòtesi, la matriu \(A\) és invertible trobem
-			\[AA^{-1}(A^{-1})^{-1}=AA^{-1}A\]
+			\[
+			    AA^{-1}(A^{-1})^{-1}=AA^{-1}A
+			\]
 			i tenim
-			\[(A^{-1})^{-1}=A.\qedhere\]
+			\[
+			    (A^{-1})^{-1}=A.\qedhere
+			\]
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Matriu transposada]
 		\labelname{matriu transposada}\label{def:matriu transposada}
 		\labelname{transposició d'una matriu}\label{def:transposició d'una matriu}
 		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Definim la transposada de \(A\) com una matriu \(A^{t}\) de mida \(n\times m\) sobre \(\mathbb{K}\) que satisfà
-		\[[A^{t}]_{i,j}=[A]_{j,i}.\]
+		\[
+		    [A^{t}]_{i,j}=[A]_{j,i}.
+		\]
 	\end{definition}
 	\begin{proposition}
 		Siguin \(A\) i \(B\) dues matrius de mida \(m\times n\) sobre un cos \(\mathbb{K}\). Aleshores
-		\[(A+B)^{t}=A^{t}+B^{t}.\]
+		\[
+		    (A+B)^{t}=A^{t}+B^{t}.
+		\]
 		\begin{proof}
 			Per la definició de \myref{def:matriu transposada} tenim que
 			\begin{align*}
@@ -332,7 +396,9 @@
 	\begin{proposition}
 		\label{prop:producte de matrius transposades}
 		Siguin \(A\) una matriu de mida \(m\times l\) sobre un cos \(\mathbb{K}\) i \(B\) una matriu de mida \(l\times n\) sobre \(\mathbb{K}\). Aleshores
-		\[(AB)^{t}=B^{t}A^{t}.\]
+		\[
+		    (AB)^{t}=B^{t}A^{t}.
+		\]
 		\begin{proof}
 			Per la definició de \myref{def:matriu transposada} tenim que
 			\begin{align*}
@@ -350,7 +416,9 @@
 		Sigui \(A\) una matriu invertible d'ordre \(n\) sobre un cos \(\mathbb{K}\). Aleshores la matriu \(A^{t}\) és invertible i \(\left(A^{t}\right)^{-1}=\left(A^{-1}\right)^{t}\).
 		\begin{proof}
 			Per la proposició \myref{prop:producte de matrius transposades} tenim que
-			\[A^{t}\left(A^{-1}\right)^{t}=\left(A^{-1}A\right)^{t}\quad\text{i}\quad \left(A^{-1}\right)^{t}A^{t}=\left(AA^{-1}\right)^{t},\]
+			\[
+			    A^{t}\left(A^{-1}\right)^{t}=\left(A^{-1}A\right)^{t}\quad\text{i}\quad \left(A^{-1}\right)^{t}A^{t}=\left(AA^{-1}\right)^{t},
+			\]
 			i per la definició de \myref{def:matriu invertible} tenim que \(A^{t}\) és invertible i que \(\left(A^{t}\right)^{-1}=\left(A^{-1}\right)^{t}\), com volíem veure.
 		\end{proof}
 	\end{proposition}
@@ -423,15 +491,23 @@
 		\end{matrix}\right].\]
 		\begin{proof}
 			Per la definició de \myref{def:producte de matrius} tenim que
-			\[[AB]_{i,j}=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.\]
+			\[
+			    [AB]_{i,j}=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.
+			\]
 			
 			També tenim que \(i=m_{1}+\dots+m_{k_{i}}+i'\) i \(j=n_{1}+\dots+n_{k_{j}}+j'\) per a certs \(k_{i}\in\{1,\dots,p-1\}\), \(k_{j}\in\{1,\dots,r-1\}\), \(i'\leq m_{k_{i}+1}-m_{k_{i}}\) i \(j'\leq n_{k_{j}+1}-n_{k_{j}}\). Per tant hem de veure que
-			\[\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}=\left[\sum_{k=1}^{q}A_{m_{k_{i}},k}B_{k,n_{k_{j}}}\right]_{i',j'}.\]
+			\[
+			    \sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}=\left[\sum_{k=1}^{q}A_{m_{k_{i}},k}B_{k,n_{k_{j}}}\right]_{i',j'}.
+			\]
 			
 			Per la definició de \myref{def:suma de matrius} tenim que
-			\[\left[\sum_{k=1}^{q}A_{m_{k_{i}},k}B_{k,n_{k_{j}}}\right]_{i',j'}=\sum_{k=1}^{q}[A_{m_{k_{i}},k}B_{k,n_{k_{j}}}]_{i',j'},\]
+			\[
+			    \left[\sum_{k=1}^{q}A_{m_{k_{i}},k}B_{k,n_{k_{j}}}\right]_{i',j'}=\sum_{k=1}^{q}[A_{m_{k_{i}},k}B_{k,n_{k_{j}}}]_{i',j'},
+			\]
 			i per la definició de \myref{def:producte de matrius} trobem
-			\[\sum_{k=1}^{q}[A_{m_{k_{i}},k}B_{k,n_{k_{j}}}]_{i',j'}=\sum_{k=1}^{q}\left(\sum_{h=1}^{l_{k}}[A_{m_{k_{i}},k}]_{i',h}[B_{k,n_{k_{j}}}]_{h,j'}\right).\]
+			\[
+			    \sum_{k=1}^{q}[A_{m_{k_{i}},k}B_{k,n_{k_{j}}}]_{i',j'}=\sum_{k=1}^{q}\left(\sum_{h=1}^{l_{k}}[A_{m_{k_{i}},k}]_{i',h}[B_{k,n_{k_{j}}}]_{h,j'}\right).
+			\]
 			
 			Ara bé, com que per hipòtesi tenim que
 			\[A=\left[\begin{matrix}
@@ -444,7 +520,9 @@
 			B_{q,1} & \cdots & B_{q,r}
 			\end{matrix}\right].\]
 			i que \(i=m_{1}+\dots+m_{k_{i}}+i'\) i \(j=n_{1}+\dots+n_{k_{j}}+j'\), trobem
-			\[\sum_{k=1}^{q}\left(\sum_{h=1}^{l_{k}}[A_{m_{k_{i}},k}]_{i',h}[B_{k,n_{k_{j}}}]_{h,j'}\right)=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.\qedhere\]
+			\[
+			    \sum_{k=1}^{q}\left(\sum_{h=1}^{l_{k}}[A_{m_{k_{i}},k}]_{i',h}[B_{k,n_{k_{j}}}]_{h,j'}\right)=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.\qedhere
+			\]
 		\end{proof}
 	\end{proposition}
 	%https://math.hecker.org/2011/04/07/multiplying-block-matrices/
@@ -640,7 +718,9 @@
 			Denotem \(A=(a_{i,j})\). Si \(a_{i,j}=0\) per a tot \(i\in\{1,\dots,m\}\) i \(j\in\{1,\dots,n\}\) aleshores tenim \(r=0\) i hem acabat. Suposem doncs que existeixen \(i\in\{1,\dots,m\}\) i \(j\in\{1,\dots,n\}\) tals que \(a_{i,j}\neq0\).
 			
 			Per la proposició \myref{prop:es pot esglaonar qualsevol matriu per files} tenim que existeix una matriu elemental \(P\) d'ordre \(m\) sobre \(\mathbb{K}\) tal que \(PA\) està esglaonada per files. Per la definició de \myref{def:matriu esglaonada} tenim que existeixen \(j_{i}\) per a tot \(i\in\{1,\dots,r\}\) amb \(j_{1}<\dots<j_{r}\) tals que per a tot \(j<j_{i}\) tenim \(a_{i,j}=0\) i \(a_{i,j_{i}}=1\). Fent les transformacions elementals
-			\[C_{1}\leftrightarrow C_{j_{1}},\quad C_{2}\leftrightarrow C_{j_{2}},\dots,C_{r}\leftrightarrow C_{j_{r}}\]
+			\[
+			    C_{1}\leftrightarrow C_{j_{1}},\quad C_{2}\leftrightarrow C_{j_{2}},\dots,C_{r}\leftrightarrow C_{j_{r}}
+			\]
 			a la matriu \(PA\) obtenim la matriu
 			\[A_{1}=\left[\begin{array}{cccc|ccc}
 			1 & b_{1,2} & \cdots & b_{1,r} & b_{1,r+1} & \cdots & b_{1,n} \\
@@ -857,7 +937,9 @@
 	\begin{observation}
 		\label{obs:rang d'una matriu és invariant pel producte amb invertibles}
 		Siguin \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(P\) una matriu invertible d'ordre \(m\) sobre \(\mathbb{K}\) i \(Q\) una matriu invertible d'ordre \(n\) sobre \(\mathbb{K}\). Aleshores
-		\[\rang(A)=\rang(PAQ).\]
+		\[
+		    \rang(A)=\rang(PAQ).
+		\]
 		%FER \begin{proof}\end{proof}
 	\end{observation}
 %	\subsection{Càlcul de la inversa d'una matriu invertible}
@@ -945,9 +1027,13 @@
 			=\det(C_{1},\dots,C_{n})+\det(C_{1},\dots,C_{i-1},C'_{i},C_{i+1},\dots,C_{n}).
 			\end{multline*}
 			\item Per a tot \(\alpha\in\mathbb{K}\) es satisfà 
-			\[\det(C_{1},\dots,C_{i-1},\alpha C_{i},C_{i+1},\dots,C_{n})=\alpha\det(C_{1},\dots,C_{n})\]
+			\[
+			    \det(C_{1},\dots,C_{i-1},\alpha C_{i},C_{i+1},\dots,C_{n})=\alpha\det(C_{1},\dots,C_{n})
+			\]
 			\item Si \(C_{i}=C_{j}\) es satisfà
-			\[\det(C_{1},\dots,C_{n})=0.\]
+			\[
+			    \det(C_{1},\dots,C_{n})=0.
+			\]
 			\item \(\det(I_{n})=1\).
 		\end{enumerate}
 		Aleshores direm que \(\det\) és un determinant.
