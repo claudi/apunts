@@ -47,7 +47,7 @@ SHELL := /bin/bash
 
 .PHONY: bibindexgloss
 bibindexgloss:
-	if ([ ! -f main.bcf ] || [ ! -f main.idx ] || [ ! -f main.glo ]) \
+	@if ([ ! -f main.bcf ] || [ ! -f main.idx ] || [ ! -f main.glo ]) \
 	then \
 		pdflatex $(flags) $(draft) "\newcommand{\myref}[1]{\ref{#1}}\input{main.tex}"; \
 	fi
