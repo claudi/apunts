@@ -7,7 +7,8 @@
 	\subsection{Convergència d'una sèrie numèrica}
 	\begin{definition}[Sèrie numèrica]
 		\labelname{sèrie numèrica}\label{def:sèrie numèrica}
-		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió de nombres reals. Aleshores direm que
+		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió de nombres reals.
+		Aleshores direm que
 		\[
 		    \sum_{n=1}^{\infty}a_{n}=a_{1}+a_{2}+a_{3}+\cdots
 		\]
@@ -24,13 +25,15 @@
 		\[
 		    \lim_{n\to\infty}S_{n}=L
 		\]
-		on \(L\) és un nombre real. Aleshores direm que la sèrie \(\sum_{n=1}^{\infty}a_{n}\) és una sèrie convergent amb valor \(L\).
+		on \(L\) és un nombre real.
+		Aleshores direm que la sèrie \(\sum_{n=1}^{\infty}a_{n}\) és una sèrie convergent amb valor \(L\).
 		
 		Si \(L\) no és un nombre real direm que la sèrie \(\sum_{n=1}^{\infty}a_{n}\) és una sèrie divergent.
 	\end{definition}
 	\begin{example}[Sèries geomètriques]
 		\labelname{}\label{ex:sèries geomètriques}
-		Sigui \(r\neq0\) un nombre real. Volem estudiar la convergència de la sèrie
+		Sigui \(r\neq0\) un nombre real.
+		Volem estudiar la convergència de la sèrie
 		\begin{equation}
 			\label{ex:sèries geomètriques:eq1}
 			\sum_{n=0}^{\infty}r^{n}.
@@ -46,7 +49,8 @@
 			\]
 			és divergent.
 			
-			Estudiem ara el cas \(r\neq1\). Tenim que \(\sum_{n=0}^{N}r^{n}=r^{0}+r^{1}+r^{2}+\cdots+r^{N}\), i per tant
+			Estudiem ara el cas \(r\neq1\).
+			Tenim que \(\sum_{n=0}^{N}r^{n}=r^{0}+r^{1}+r^{2}+\cdots+r^{N}\), i per tant
 			\begin{align*}
 				(1-r)\sum_{n=0}^{N}r^{n}&=(1-r)(r^{0}+r^{1}+r^{2}+\cdots+r^{N})\\
 				&=r^{0}+r^{1}+r^{2}+\dots+r^{N}-(r^{1}+r^{2}+r^{3}+\dots+r^{N+1})\\
@@ -71,12 +75,14 @@
 	\end{example}
 	\begin{theorem}[Condició de Cauchy]
 		\labelname{condició de Cauchy}\label{thm:Condició de Cauchy per sèries numèriques}
-		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie numèrica. Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si per a tot \(\varepsilon>0\) existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N\),\(M\geq n_{0}\) i \(N\leq M\) tenim
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie numèrica.
+		Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si per a tot \(\varepsilon>0\) existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N\),\(M\geq n_{0}\) i \(N\leq M\) tenim
 		\[
 		    \abs{\sum_{n=N}^{M}a_{n}}<\varepsilon.
 		\]
 		\begin{proof}
-			Suposem que \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Per la definició de \myref{def:sèrie convergent} això és que
+			Suposem que \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			Per la definició de \myref{def:sèrie convergent} això és que
 			\[
 			    \lim_{N\to\infty}\sum_{n=1}^{N}{a_{n}}=L
 			\]
@@ -106,7 +112,8 @@
 	\end{theorem}
 	\begin{corollary}
 		\label{cor:condició de Cauchy}\label{cor:terme general tendeix a zero en una sèrie convergent}
-		Sigui \(\sum_{n=1}^{\infty}a_{n}\) una sèrie convergent. Aleshores
+		Sigui \(\sum_{n=1}^{\infty}a_{n}\) una sèrie convergent.
+		Aleshores
 		\[
 		    \lim_{n\to\infty}a_{n}=0.
 		\]
@@ -120,7 +127,8 @@
 	\end{corollary}
 	\begin{example}[Sèrie harmònica]
 		\labelname{}\label{ex:sèrie harmònica}
-		Sigui \(\alpha\) un nombre real. Volem estudiar la convergència de la sèrie
+		Sigui \(\alpha\) un nombre real.
+		Volem estudiar la convergència de la sèrie
 		\begin{equation}
 			\label{ex:sèrie harmònica:eq1}
 			\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}.
@@ -132,7 +140,8 @@
 			\]
 			i pel \corollari{} \myref{cor:condició de Cauchy} tenim que la sèrie és divergent.
 			
-			Suposem que \(0<\alpha\leq1\). Definim la successió
+			Suposem que \(0<\alpha\leq1\).
+			Definim la successió
 			\[
 			    S_{N}=\sum_{n=1}^{N}\frac{1}{n^{\alpha}}
 			\]
@@ -148,7 +157,8 @@
 			\]
 			i tenim que \(\lim_{N\to\infty}S_{2^{N}}=\infty\) i per la definició de \myref{def:sèrie divergent} trobem que \(\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}\) és divergent.
 			
-			Veiem ara el cas \(\alpha>1\). Definim de nou la successió
+			Veiem ara el cas \(\alpha>1\).
+			Definim de nou la successió
 			\[
 			    S_{N}=\sum_{n=1}^{N}\frac{1}{n^{\alpha}}.
 			\]
@@ -164,7 +174,8 @@
 			\[
 			    \lim_{N\to\infty}\frac{1}{2^{N\alpha}}+\frac{1-2^{(1-\alpha)N}}{1-2^{1-\alpha}}=\frac{1}{1-2^{1-\alpha}}.
 			\]
-			Per tant tenim que la successió \((S_{N})\) està fitada, i degut a que \(S_{N+1}=S_{N}+\frac{1}{(N+1)^{\alpha}}\) tenim que és creixen i pel \myref{thm:Weierstrass màxims i mínims múltiples variables} tenim que és convergent. Per tant per la definició de \myref{def:sèrie convergent} tenim que la sèrie \eqref{ex:sèrie harmònica:eq1} és convergent.
+			Per tant tenim que la successió \((S_{N})\) està fitada, i degut a que \(S_{N+1}=S_{N}+\frac{1}{(N+1)^{\alpha}}\) tenim que és creixen i pel \myref{thm:Weierstrass màxims i mínims múltiples variables} tenim que és convergent.
+			Per tant per la definició de \myref{def:sèrie convergent} tenim que la sèrie \eqref{ex:sèrie harmònica:eq1} és convergent.
 			
 			Per tant tenim que la sèrie
 			\[
@@ -176,14 +187,17 @@
 	\subsection{Sèries de termes positius}
 	\begin{definition}[Sèrie de termes positius]
 		\labelname{sèrie de termes positius}\label{def:sèrie de termes positius}
-		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie numèrica tal que \(a_{n}>0\) per a tot \(n\) natural. Aleshores direm que \(\sum_{n=0}^{\infty}a_{n}\) és una sèrie de termes positius.
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie numèrica tal que \(a_{n}>0\) per a tot \(n\) natural.
+		Aleshores direm que \(\sum_{n=0}^{\infty}a_{n}\) és una sèrie de termes positius.
 	\end{definition}
 	\begin{notation}
-		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius. Aleshores escriurem \(\sum_{n=0}^{\infty}a_{n}<\infty\) si \(\sum_{n=0}^{\infty}a_{n}\) és convergent i \(\sum_{n=0}^{\infty}a_{n}=\infty\) si \(\sum_{n=0}^{\infty}a_{n}\) és divergent
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius.
+		Aleshores escriurem \(\sum_{n=0}^{\infty}a_{n}<\infty\) si \(\sum_{n=0}^{\infty}a_{n}\) és convergent i \(\sum_{n=0}^{\infty}a_{n}=\infty\) si \(\sum_{n=0}^{\infty}a_{n}\) és divergent
 	\end{notation}
 	\begin{lemma}
 		\label{lema:criteri de comparació de sèries de termes positius}
-		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius, \(\sum_{n=0}^{\infty}b_{n}\) una sèrie de termes positius convergent, \(K\) un nombre real i \(n_{0}\) un natural tal que per a tot \(n>n_{0}\) es satisfà \(a_{n}\leq Kb_{n}\). Aleshores tenim que \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius, \(\sum_{n=0}^{\infty}b_{n}\) una sèrie de termes positius convergent, \(K\) un nombre real i \(n_{0}\) un natural tal que per a tot \(n>n_{0}\) es satisfà \(a_{n}\leq Kb_{n}\).
+		Aleshores tenim que \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 		\begin{proof}
 			Tenim que
 			\begin{align*}
@@ -201,12 +215,19 @@
 		\]
 		tals que
 		\begin{enumerate}
-			\item\label{thm:criteri de comparació de sèries de termes positius:enum1} \(L\neq0\) i \(L\neq\infty\). Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
-			\item\label{thm:criteri de comparació de sèries de termes positius:enum2} \(L=0\) i \(\sum_{n=0}^{\infty}b_{n}\) és convergent. Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
-			\item\label{thm:criteri de comparació de sèries de termes positius:enum3} \(L=\infty\) i \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Aleshores \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
+			\item\label{thm:criteri de comparació de sèries de termes positius:enum1} \(L\neq0\) i \(L\neq\infty\).
+			Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
+			\item\label{thm:criteri de comparació de sèries de termes positius:enum2} \(L=0\) i \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
+			Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			\item\label{thm:criteri de comparació de sèries de termes positius:enum3} \(L=\infty\) i \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			Aleshores \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
 		\end{enumerate}
 		\begin{proof}
-			Comencem veient el punt \eqref{thm:criteri de comparació de sèries de termes positius:enum1}. Suposem que \(L\neq0\) ó \(L\neq\infty\). Observem que \(L>0\). Per tant prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>0\). Per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
+			Comencem veient el punt \eqref{thm:criteri de comparació de sèries de termes positius:enum1}.
+			Suposem que \(L\neq0\) ó \(L\neq\infty\).
+			Observem que \(L>0\).
+			Per tant prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>0\).
+			Per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
 			\[
 			    \abs{\frac{a_{n}}{b_{n}}-L}<\varepsilon.
 			\]
@@ -215,19 +236,23 @@
 			    l-\varepsilon<\frac{a_{n}}{b_{n}}<l+\varepsilon.
 			\]
 			
-			Suposem que \(\sum_{n=0}^{\infty}b_{n}\) és convergent. Aleshores tenim
+			Suposem que \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
+			Aleshores tenim
 			\[
 			    b_{n}(l-\varepsilon)<a_{n}<b_{n}(l+\varepsilon),
 			\]
 			i pel lema \myref{lema:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			
-			Suposem ara que \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Aleshores tenim
+			Suposem ara que \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			Aleshores tenim
 			\[
 			    \frac{a_{n}}{L-\varepsilon}<b_{n}<\frac{a_{n}}{L+\varepsilon},
 			\]
 			i pe lema \myref{lema:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
 			
-			Veiem ara el punt \eqref{thm:criteri de comparació de sèries de termes positius:enum2}. Suposem doncs que \(L=0\) i que \(\sum_{n=0}^{\infty}b_{n}\) és convergent. Per la definició de \myref{def:límit} tenim que per a tot \(\varepsilon>0\) existeix un natural \(n_{0}\) tal que
+			Veiem ara el punt \eqref{thm:criteri de comparació de sèries de termes positius:enum2}.
+			Suposem doncs que \(L=0\) i que \(\sum_{n=0}^{\infty}b_{n}\) és convergent.
+			Per la definició de \myref{def:límit} tenim que per a tot \(\varepsilon>0\) existeix un natural \(n_{0}\) tal que
 			\[
 			    \abs{\frac{a_{n}}{b_{n}}}<\varepsilon,
 			\]
@@ -237,7 +262,9 @@
 			\]
 			i pel lema \myref{lema:criteri de comparació de sèries de termes positius} trobem que la sèries \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			
-			Veiem ara el punt \eqref{thm:criteri de comparació de sèries de termes positius:enum3}. Suposem doncs que \(L=\infty\) i que \(\sum_{n=0}^{\infty}a_{n}\) és convergent. Tenim que
+			Veiem ara el punt \eqref{thm:criteri de comparació de sèries de termes positius:enum3}.
+			Suposem doncs que \(L=\infty\) i que \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			Tenim que
 			\[
 			    \lim_{n\to\infty}\frac{b_{n}}{a_{n}}=0,
 			\] %REF
@@ -275,11 +302,16 @@
 		\]
 		tal que
 		\begin{enumerate}
-			\item\label{prop:criteri de l'arrel:enum1} \(L<1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
-			\item\label{prop:criteri de l'arrel:enum2} \(L>1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
+			\item\label{prop:criteri de l'arrel:enum1} \(L<1\).
+			Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			\item\label{prop:criteri de l'arrel:enum2} \(L>1\).
+			Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
 		\end{enumerate}
 		\begin{proof}
-			Comencem veient el punt \eqref{prop:criteri de l'arrel:enum1}.  Suposem doncs que \(L<1\). Prenem un \(\varepsilon>0\) tal que \(L+\varepsilon<1\). Per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
+			Comencem veient el punt \eqref{prop:criteri de l'arrel:enum1}.
+			 Suposem doncs que \(L<1\).
+			Prenem un \(\varepsilon>0\) tal que \(L+\varepsilon<1\).
+			Per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
 			\[
 			    \abs{\sqrt[n]{a_{n}}-L}<\varepsilon,
 			\]
@@ -293,7 +325,10 @@
 			\]
 			Ara bé, tenim que \(L+\varepsilon<1\), per tant per l'exercici \myref{ex:sèries geomètriques} tenim que \(\sum_{n=0}^{\infty}(L+\varepsilon)^{n}\) és convergent, i per tant pel lema \myref{lema:criteri de comparació de sèries de termes positius} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			
-			Veiem ara el punt \eqref{prop:criteri de l'arrel:enum2}. Suposem doncs que \(L>1\). Prenem \(\varepsilon>0\) tal que \(L-\varepsilon>1\). Per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
+			Veiem ara el punt \eqref{prop:criteri de l'arrel:enum2}.
+			Suposem doncs que \(L>1\).
+			Prenem \(\varepsilon>0\) tal que \(L-\varepsilon>1\).
+			Per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
 			\[
 			    \abs{\sqrt[n]{a_{n}}-L}<\varepsilon,
 			\]
@@ -305,7 +340,8 @@
 		\end{proof}
 	\end{proposition}
 	\begin{example}
-		Siguin \(\alpha\geq0\) i \(\beta\geq0\) dos reals. Considerem la sèrie numèrica
+		Siguin \(\alpha\geq0\) i \(\beta\geq0\) dos reals.
+		Considerem la sèrie numèrica
 		\[
 		    \sum_{n=1}^{\infty}n^{\beta}\alpha^{n}.
 		\]
@@ -315,7 +351,9 @@
 			\[
 			    a_{n}=n^{\beta}\alpha^{n}.
 			\]
-			Observem primer que \(a_{n}>0\) per a tot \(n\) natural. Per tant per la definició de \myref{def:sèrie de termes positius} tenim que \(\sum_{n=1}^{\infty}a_{n}\) és una sèrie de termes positius. Veiem també que si \(\alpha=1\) tenim
+			Observem primer que \(a_{n}>0\) per a tot \(n\) natural.
+			Per tant per la definició de \myref{def:sèrie de termes positius} tenim que \(\sum_{n=1}^{\infty}a_{n}\) és una sèrie de termes positius.
+			Veiem també que si \(\alpha=1\) tenim
 			\[
 			    \sum_{n=1}^{\infty}n^{\beta},
 			\]
@@ -327,7 +365,8 @@
 			&=\lim_{n\to\infty}\sqrt[n]{n^{\beta}}\sqrt[n]{\alpha^{n}}\\
 			&=\lim_{n\to\infty}\sqrt[n]{n}^{\beta}\alpha=\alpha.
 			\end{align*}
-			Per tant, pel \myref{prop:criteri de l'arrel} tenim que la sèrie és convergent quan \(\alpha>1\) i divergent quan \(\alpha\leq1\). 
+			Per tant, pel \myref{prop:criteri de l'arrel} tenim que la sèrie és convergent quan \(\alpha>1\) i divergent quan \(\alpha\leq1\).
+			
 		\end{solution}
 	\end{example}
 	\begin{proposition}[Criteri del quocient]
@@ -338,11 +377,16 @@
 		\]
 		tal que
 		\begin{enumerate}
-			\item\label{prop:criteri del quocient:enum1} \(L<1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
-			\item\label{prop:criteri del quocient:enum2} \(L>1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
+			\item\label{prop:criteri del quocient:enum1} \(L<1\).
+			Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			\item\label{prop:criteri del quocient:enum2} \(L>1\).
+			Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
 		\end{enumerate}
 		\begin{proof}
-			Comencem veient el punt \eqref{prop:criteri del quocient:enum1}. Suposem doncs que \(L<1\). Prenem un \(\varepsilon>0\) tal que \(L+\varepsilon<1\). Aleshores per la definició de \myref{def:límit} tenim que existeix un \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
+			Comencem veient el punt \eqref{prop:criteri del quocient:enum1}.
+			Suposem doncs que \(L<1\).
+			Prenem un \(\varepsilon>0\) tal que \(L+\varepsilon<1\).
+			Aleshores per la definició de \myref{def:límit} tenim que existeix un \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
 			\[
 			    \abs{\frac{a_{n+1}}{a_{n}}-L}<\varepsilon,
 			\]
@@ -363,7 +407,10 @@
 			\end{align*}
 			Ara bé, com que \(L+\varepsilon<1\) tenim per l'exemple \myref{ex:sèries geomètriques} que la sèrie \(\sum_{n=0}^{\infty}(L+\varepsilon)^{n}\) és convergent, i pel lema \myref{lema:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			
-			Veiem ara el punt \eqref{prop:criteri del quocient:enum2}. Suposem doncs que \(L>1\). Prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>1\). Aleshores per la definició de \myref{def:límit} tenim que existeix un \(n_{0}\) natural tal que per a tot \(n>n_{0}\) es satisfà
+			Veiem ara el punt \eqref{prop:criteri del quocient:enum2}.
+			Suposem doncs que \(L>1\).
+			Prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>1\).
+			Aleshores per la definició de \myref{def:límit} tenim que existeix un \(n_{0}\) natural tal que per a tot \(n>n_{0}\) es satisfà
 			\[
 			    \abs{\frac{a_{n+1}}{a_{n}}-L}<\varepsilon,
 			\]
@@ -395,7 +442,8 @@
 	\end{proposition}
 	\begin{lemma}
 		\label{lema:criteri de Raabe}
-		Siguin \(x\) i \(\alpha\) dos nombres reals no negatius. Aleshores
+		Siguin \(x\) i \(\alpha\) dos nombres reals no negatius.
+		Aleshores
 		\[
 		    1-\frac{\alpha}{x}\leq\left(1-\frac{1}{x+1}\right)^{\alpha}.
 		\]
@@ -417,11 +465,16 @@
 		\]
 		tal que
 		\begin{enumerate}
-		\item\label{prop:criteri de Raabe:enum1} \(L>1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
-		\item\label{prop:criteri de Raabe:enum2} \(L<1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
+		\item\label{prop:criteri de Raabe:enum1} \(L>1\).
+		Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+		\item\label{prop:criteri de Raabe:enum2} \(L<1\).
+		Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
 		\end{enumerate}
 		\begin{proof}
-			Comencem veient el cas \eqref{prop:criteri de Raabe:enum1}. Suposem doncs que \(L>1\). Prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>1\). Aleshores per la definició de \myref{def:límit} tenim que existeix un \(n_{0}\) natural tal que per a tot \(n>n_{0}\) es satisfà
+			Comencem veient el cas \eqref{prop:criteri de Raabe:enum1}.
+			Suposem doncs que \(L>1\).
+			Prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>1\).
+			Aleshores per la definició de \myref{def:límit} tenim que existeix un \(n_{0}\) natural tal que per a tot \(n>n_{0}\) es satisfà
 			\[
 			    \abs{n\left(1-\frac{a_{n+1}}{a_{n}}\right)-L}<\varepsilon,
 			\]
@@ -460,12 +513,14 @@
 			\]
 			és convergent, i pel lema \myref{lema:criteri de comparació de sèries de termes positius} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			
-			Veiem ara el punt \eqref{prop:criteri de Raabe:enum2}. Suposem doncs que \(L<1\).
+			Veiem ara el punt \eqref{prop:criteri de Raabe:enum2}.
+			Suposem doncs que \(L<1\).
 		\end{proof}
 	\end{proposition}
 	\begin{example}
 		\label{ex:quocient + Raabe}
-		Sigui \(\alpha>0\) un nombre real. Considerem la sèrie numèrica
+		Sigui \(\alpha>0\) un nombre real.
+		Considerem la sèrie numèrica
 		\begin{equation}
 			\label{ex:quocient + Raabe:eq1}
 			\sum_{n=1}^{\infty}\frac{\alpha^{n}n!}{n^{n}}.
@@ -478,9 +533,11 @@
 				&=\lim_{n\to\infty}\frac{\alpha(n+1)!n^{n}}{(n+1)!(n+1)^{n}} \\
 				&=\alpha\lim_{n\to\infty}\left(\frac{n}{n+1}\right)^{n}=\frac{\alpha}{\e} %REF
 			\end{align*}
-			Per tant, si \(\alpha>\e\) tenim que \(\frac{\alpha}{\e}>1\), i pel \myref{prop:criteri del quocient} trobem que la sèrie és divergent. Si \(\alpha<\e\) aleshores \(\frac{\alpha}{\e}<1\) i pel \myref{prop:criteri del quocient} trobem que la sèrie és convergent.
+			Per tant, si \(\alpha>\e\) tenim que \(\frac{\alpha}{\e}>1\), i pel \myref{prop:criteri del quocient} trobem que la sèrie és divergent.
+			Si \(\alpha<\e\) aleshores \(\frac{\alpha}{\e}<1\) i pel \myref{prop:criteri del quocient} trobem que la sèrie és convergent.
 			
-			Estudiem el cas \(\alpha=\e\). Considerem el límit
+			Estudiem el cas \(\alpha=\e\).
+			Considerem el límit
 			\begin{align*}
 				\lim_{n\to\infty}n\left(1-\frac{\frac{\e^{n+1}(n+1)!}{(n+1)^{n+1}}}{\frac{\e^{n}n!}{n^{n}}}\right)&=\lim_{n\to\infty}n\left(1-\frac{\e^{n+1}(n+1)!n^{n}}{e^{n}n!(n+1)^{n+1}}\right) \\
 				&=\lim_{n\to\infty}n\left(1-\e\frac{(n+1)!n^{n}}{(n+1)!(n+1)^{n}}\right) \\
@@ -498,9 +555,11 @@
 	\end{example}
 	\begin{proposition}[Criteri de condensació]
 		\labelname{criteri de condensació}\label{prop:criteri de condensació}
-		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius amb \((a_{n})_{n\in\mathbb{N}}\) decreixent. Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si la sèrie \(\sum_{n=0}^{\infty}2^{n}a_{2^{n}}\) és convergent.
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius amb \((a_{n})_{n\in\mathbb{N}}\) decreixent.
+		Aleshores \(\sum_{n=0}^{\infty}a_{n}\) és convergent si i només si la sèrie \(\sum_{n=0}^{\infty}2^{n}a_{2^{n}}\) és convergent.
 		\begin{proof}
-			Comencem veient que la condició és suficient (\(\implica\)). Suposem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent i definim
+			Comencem veient que la condició és suficient (\(\implica\)).
+			Suposem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent i definim
 			\[
 			    S_{N}=\sum_{n=0}^{N}a_{n}\quad\text{i}\quad T_{N}=\sum_{n=0}^{N}2^{n}a_{2^{n}}.
 			\]
@@ -509,9 +568,11 @@
 				\label{prop:criteri de condensació:eq1}
 				S_{N}\leq\frac{C}{2}
 			\end{equation}
-			Aleshores tenim que la successió \(T_{N}\) és creixent, ja que \((2^{n})_{n\in\mathbb{N}}\) és una successió de termes positius creixent i \((a_{n})\) és, per hipòtesi, una successió de termes positius. %REF
+			Aleshores tenim que la successió \(T_{N}\) és creixent, ja que \((2^{n})_{n\in\mathbb{N}}\) és una successió de termes positius creixent i \((a_{n})\) és, per hipòtesi, una successió de termes positius.
+			%REF
 			
-			Veiem ara que \(T(N)\) està fitada. Tenim que
+			Veiem ara que \(T(N)\) està fitada.
+			Tenim que
 			\begin{align*}
 				T_{N}&=2a_{2}+4x_{4}+8x_{6}+\dots+2^{N}a_{2^{N}} \\
 				&=2(a_{2}+2a_{4}+4a_{6}+\dots+2^{N-1}a_{2^{N}}) \\
@@ -524,11 +585,13 @@
 			\]
 			és convergent.
 			
-			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que la sèrie
+			Veiem ara que la condició és necessària (\(\implicatper\)).
+			Suposem doncs que la sèrie
 			\[
 			    \sum_{n=0}^{\infty}2^{n}a_{2^{n}}
 			\]
-			és convergent. Definim
+			és convergent.
+			Definim
 			\[
 			    S_{N}=\sum_{n=0}^{N}a_{n}\quad\text{i}\quad T_{N}=\sum_{n=0}^{N}2^{n}a_{2^{n}},
 			\]
@@ -559,11 +622,16 @@
 		\]
 		tal que
 		\begin{enumerate}
-			\item\label{prop:criteri logarítmic:enum1} \(L>1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
-			\item\label{prop:criteri logarítmic:enum2} \(L<1\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
+			\item\label{prop:criteri logarítmic:enum1} \(L>1\).
+			Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+			\item\label{prop:criteri logarítmic:enum2} \(L<1\).
+			Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és divergent.
 		\end{enumerate}
 		\begin{proof}
-			Comencem veient el punt \eqref{prop:criteri logarítmic:enum2}. Suposem doncs que \(L>1\). Prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>1\). Aleshores per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
+			Comencem veient el punt \eqref{prop:criteri logarítmic:enum2}.
+			Suposem doncs que \(L>1\).
+			Prenem un \(\varepsilon>0\) tal que \(L-\varepsilon>1\).
+			Aleshores per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
 			\[
 			    \abs{\frac{\log\left(\frac{1}{a_{n}}\right)}{\log(n)}-L}<\varepsilon,
 			\]
@@ -593,7 +661,10 @@
 			\]
 			és convergent, i pel lemma \myref{lema:criteri de comparació de sèries de termes positius} trobem que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 			
-			Veiem ara el punt \eqref{prop:criteri logarítmic:enum1}. Suposem doncs que \(L<1\). Prenem un \(\varepsilon>0\) tal que \(L+\varepsilon<1\). Per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
+			Veiem ara el punt \eqref{prop:criteri logarítmic:enum1}.
+			Suposem doncs que \(L<1\).
+			Prenem un \(\varepsilon>0\) tal que \(L+\varepsilon<1\).
+			Per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
 			\[
 			    \abs{\frac{\log\left(\frac{1}{a_{n}}\right)}{\log(n)}-L}<\varepsilon,
 			\]
@@ -628,7 +699,8 @@
 	\end{proposition}
 	\begin{example}
 		\label{ex:sèrie de la inversa de alpha elevat a un logarítme}
-		Sigui \(\alpha\) un real. Volem estudiar per a quins valors de \(\alpha>0\) la sèrie
+		Sigui \(\alpha\) un real.
+		Volem estudiar per a quins valors de \(\alpha>0\) la sèrie
 		\begin{equation}
 			\label{ex:sèrie de la inversa de alpha elevat a un logarítme:eq1}
 			\sum_{n=1}^{\infty}\frac{1}{\alpha^{\log(n)}}
@@ -640,7 +712,9 @@
 				\lim_{n\to\infty}\frac{\log\left(\alpha^{\log(n)}\right)}{\log(n)}&=\lim_{n\to\infty}\frac{\log(n)\log(\alpha)}{\log(n)} \\
 				&=\log(\alpha)\lim_{n\to\infty}\frac{\log(n)}{\log(n)}=\log(\alpha).
 			\end{align*}
-			Per tant, pel \myref{prop:criteri logarítmic} trobem que si \(\alpha>\e\) la sèrie \eqref{ex:sèrie de la inversa de alpha elevat a un logarítme:eq1} és convergent, i si \(\alpha<\e\) la sèrie \eqref{ex:sèrie de la inversa de alpha elevat a un logarítme:eq1} és convergent. Estudiem el cas \(\alpha=\e\). Això és la sèrie
+			Per tant, pel \myref{prop:criteri logarítmic} trobem que si \(\alpha>\e\) la sèrie \eqref{ex:sèrie de la inversa de alpha elevat a un logarítme:eq1} és convergent, i si \(\alpha<\e\) la sèrie \eqref{ex:sèrie de la inversa de alpha elevat a un logarítme:eq1} és convergent.
+			Estudiem el cas \(\alpha=\e\).
+			Això és la sèrie
 			\[
 			    \sum_{n=1}^{\infty}\frac{1}{\e^{\log(n)}}=\sum_{n=1}^{\infty}\frac{1}{n},
 			\]
@@ -652,7 +726,8 @@
 	\begin{comment}
 		\begin{example} %TODO
 			\label{ex:sèrie harmònica amb logarítme del factorial}
-			Sigui \(\alpha\) un real. Volem estudiar per a quins valors de \(\alpha\) la sèrie
+			Sigui \(\alpha\) un real.
+			Volem estudiar per a quins valors de \(\alpha\) la sèrie
 			\begin{equation}
 				\label{ex:sèrie harmònica amb logarítme:eq1}
 				\sum_{n=1}^{\infty}\frac{\log(n!)}{n^{\alpha}}
@@ -682,13 +757,15 @@
 				Estudiem ara el límit
 				\begin{align*}
 					\lim_{n\to\infty}\frac{\log(n!)}{n^{\alpha}}\frac{n^{\alpha}}{n\log(n)}&=\lim_{n\to\infty}\frac{\log(n!)}{n\log(n)}\frac{n^{\alpha}}{n^{\alpha}} \\
-					&=\lim_{n\to\infty}\frac{\log(n!)}{n\log(n)}=1. \tag{\ref{ex:sèrie harmònica amb logarítme del factorial:eq1}}
+					&=\lim_{n\to\infty}\frac{\log(n!)}{n\log(n)}=1.
+					\tag{\ref{ex:sèrie harmònica amb logarítme del factorial:eq1}}
 				\end{align*}
 				i pel \myref{thm:criteri de comparació de sèries de termes positius} tenim que la sèrie \eqref{ex:sèrie harmònica amb logarítme:eq1} és convergent si i només si la sèrie
 				\[
 				    \sum_{n=1}^{\infty}\frac{n\log(n)}{n^{\alpha}}
 				\]
-				és convergent. Observem que
+				és convergent.
+				Observem que
 				\[
 				    \sum_{n=1}^{\infty}\frac{n\log(n)}{n^{\alpha}}=\sum_{n=1}^{\infty}\frac{\log(n)}{n^{\alpha-1}}
 				\]
@@ -702,9 +779,12 @@
 	\end{comment}
 	\begin{lemma}[Criteri de la integral]
 		\labelname{criteri de la integral}\label{lema:criteri de la integral}
-		Sigui \(f\colon[1,\infty)\longrightarrow(0,\infty)\) una funció decreixent. Aleshores la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent si i només si existeix un real \(C>0\) tal que per a tot \(N\) natural es satisfà \(\int_{1}^{N}f(x)\diff x\leq C\).
+		Sigui \(f\colon[1,\infty)\longrightarrow(0,\infty)\) una funció decreixent.
+		Aleshores la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent si i només si existeix un real \(C>0\) tal que per a tot \(N\) natural es satisfà \(\int_{1}^{N}f(x)\diff x\leq C\).
 		\begin{proof}
-			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent. Com que, per hipòtesi, la sèrie és de termes positius, per la definició de \myref{def:sèrie convergent} tenim que existeix un real \(C\) tal que per a tot \(N\) natural es satisfà
+			Comencem veient que la condició és suficient (\(\implica\)).
+			Suposem doncs que la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent.
+			Com que, per hipòtesi, la sèrie és de termes positius, per la definició de \myref{def:sèrie convergent} tenim que existeix un real \(C\) tal que per a tot \(N\) natural es satisfà
 			\[
 			    \sum_{n=1}^{N}f(n)\leq C.
 			\]
@@ -720,7 +800,8 @@
 			\end{align*}
 			i hem acabat.
 			
-			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que existeix un real \(C>0\) tal que per a tot \(N\) natural es satisfà
+			Veiem ara que la condició és necessària (\(\implicatper\)).
+			Suposem doncs que existeix un real \(C>0\) tal que per a tot \(N\) natural es satisfà
 			\[
 			    \int_{1}^{N}f(x)\diff x\leq C.
 			\]
@@ -738,7 +819,8 @@
 	\subsection{Sèries alternades}
 	\begin{definition}[Sèrie alternada]
 		\labelname{sèrie alternada}\label{def:sèrie alternada}
-		Sigui \((a_{n})_{n\in\mathbb{N}}\) una sèrie de termes positius. Aleshores direm que la sèrie
+		Sigui \((a_{n})_{n\in\mathbb{N}}\) una sèrie de termes positius.
+		Aleshores direm que la sèrie
 		\[
 		    \sum_{n=0}^{\infty}(-1)^{n}a_{n}
 		\]
@@ -770,7 +852,8 @@
 			\[
 			    S_{2(N+1)+1}\leq S_{2N+1},
 			\]
-			i per tant la successió \((S_{2N+1})_{N\in\mathbb{N}}\) és decreixent. També tenim que
+			i per tant la successió \((S_{2N+1})_{N\in\mathbb{N}}\) és decreixent.
+			També tenim que
 			\[
 			    S_{2(N+1)}=S_{2N}+a_{2N+1}-a_{2N+2},
 			\]
@@ -784,7 +867,8 @@
 			\[
 			    S_{2N+1}-S_{2N}=a_{2N+1}\geq0,
 			\]
-			i per tant \(S_{2N+1}<S_{2N}\). Així trobem que
+			i per tant \(S_{2N+1}<S_{2N}\).
+			Així trobem que
 			\begin{align*}
 				a_{1}-a_{2}&=S_{2} \tag{\ref{thm:criteri de Leibniz per sèries alternades:eq1}} \\
 				&\leq S_{2N} \\
@@ -804,12 +888,15 @@
 				\label{thm:criteri de Leibniz per sèries alternades:eq2}
 				\lim_{N\to\infty}S_{2N+1}=\lim_{N\to\infty}S_{2N}.
 			\end{equation}
-			Per tant tenim que \((S_{2N+1})\) és una successió superiorment acotada i creixent, i per tant convergent, i \((S_{2N})\) és una successió inferiorment acotada i decreixent, i per tant convergent. També tenim per \eqref{thm:criteri de Leibniz per sèries alternades:eq2} que tenen el mateix límit, i per tant la successió \((S_{N})\) és convergent, i per la definició de \myref{def:sèrie convergent} trobem que la sèrie \(\sum_{n=0}^{\infty}(-1)^{n}a_{n}\) és convergent, com volíem veure. %REF
+			Per tant tenim que \((S_{2N+1})\) és una successió superiorment acotada i creixent, i per tant convergent, i \((S_{2N})\) és una successió inferiorment acotada i decreixent, i per tant convergent.
+			També tenim per \eqref{thm:criteri de Leibniz per sèries alternades:eq2} que tenen el mateix límit, i per tant la successió \((S_{N})\) és convergent, i per la definició de \myref{def:sèrie convergent} trobem que la sèrie \(\sum_{n=0}^{\infty}(-1)^{n}a_{n}\) és convergent, com volíem veure.
+			%REF
 		\end{proof}
 	\end{theorem}
 	\begin{example}[Sèrie harmònica alternada]
 		\labelname{}\label{ex:sèrie harmònica alternada}
-		Sigui \(\alpha\) un real. Volem estudiar per a quins valors de \(\alpha\) la sèrie
+		Sigui \(\alpha\) un real.
+		Volem estudiar per a quins valors de \(\alpha\) la sèrie
 		\begin{equation}
 			\label{ex:sèrie harmònica alternada:eq1}
 			\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n^{\alpha}}
@@ -822,7 +909,8 @@
 			\]
 			és divergent, i pel \corollari{} \myref{cor:terme general tendeix a zero en una sèrie convergent} trobem que la sèrie és divergent.
 			
-			Estudiem ara el cas \(\alpha>0\). Si denotem
+			Estudiem ara el cas \(\alpha>0\).
+			Si denotem
 			\[
 			    a_{n}=\frac{1}{n^{\alpha}}
 			\]
@@ -839,11 +927,13 @@
 		\[
 		    \sum_{n=0}^{\infty}\abs{a_{n}}
 		\]
-		sigui convergent. Aleshores direm que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent.
+		sigui convergent.
+		Aleshores direm que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:una sèrie absolutament convergent és convergent}
-		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie absolutament convergent. Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie absolutament convergent.
+		Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent.
 		\begin{proof}
 			Com que, per hipòtesi, la sèrie \(\sum_{n=0}^{\infty}\abs{a_{n}}\) és convergent tenim per la \myref{thm:Condició de Cauchy per sèries numèriques} que per a tot \(\varepsilon>0\) real existeix un \(n_{0}\) natural tal que per a tot \(N\) i \(M\) naturals amb \(N,M\geq n_{0}\) i \(N\leq M\) tenim
 			\begin{equation}
@@ -874,9 +964,11 @@
 			\sum_{n=1}^{\infty}\frac{\sin(n)}{n^{3}}.
 		\end{equation}
 		\begin{solution}
-			Observem que no tots els termes de la sèrie \eqref{ex:sèrie absolutament convergent:eq1} són positius. Per tant no podem aplicar els criteris de convergència de sèries de termes positius.
+			Observem que no tots els termes de la sèrie \eqref{ex:sèrie absolutament convergent:eq1} són positius.
+			Per tant no podem aplicar els criteris de convergència de sèries de termes positius.
 			
-			Estudiem la convergència absoluta de la sèrie. Per la definició de \myref{def:convergència absoluta d'una sèrie} això és estudiar la convergència de la sèrie
+			Estudiem la convergència absoluta de la sèrie.
+			Per la definició de \myref{def:convergència absoluta d'una sèrie} això és estudiar la convergència de la sèrie
 			\begin{equation}
 				\label{ex:sèrie absolutament convergent:eq2}
 				\sum_{n=1}^{\infty}\abs{\frac{\sin(n)}{n^{3}}},
@@ -885,7 +977,8 @@
 			\[
 			    \sum_{n=1}^{\infty}\frac{\abs{\sin(n)}}{n^{3}.}
 			\]
-			Observem que \(\abs{\sin(n)}\leq1\). Per tant trobem que
+			Observem que \(\abs{\sin(n)}\leq1\).
+			Per tant trobem que
 			\[
 			    \sum_{n=1}^{\infty}\abs{\frac{\sin(n)}{n^{3}}}\leq\sum_{n=1}^{\infty}\frac{1}{n^{3}}.
 			\]
@@ -933,7 +1026,8 @@
 	\end{lemma}
 	\begin{theorem}[Teorema de Dirichlet]
 		\labelname{Teorema de Dirichlet per sèries numèriques}\label{thm:Teorema de Dirichlet per sèries numèriques}
-		Siguin \((a_{n})_{n\in\mathbb{N}}\) una successió numèrica tal que existeix un real \(C\) tal que \(\abs{\sum_{n=0}^{N}a_{n}}\leq C\) per a tot \(N\) natural i \((b_{n})_{n\in\mathbb{N}}\) una successió numèrica monòtona amb \(\lim_{n\to\infty}b_{n}=0\). Aleshores la sèrie
+		Siguin \((a_{n})_{n\in\mathbb{N}}\) una successió numèrica tal que existeix un real \(C\) tal que \(\abs{\sum_{n=0}^{N}a_{n}}\leq C\) per a tot \(N\) natural i \((b_{n})_{n\in\mathbb{N}}\) una successió numèrica monòtona amb \(\lim_{n\to\infty}b_{n}=0\).
+		Aleshores la sèrie
 		\[
 		    \sum_{n=0}^{\infty}a_{n}b_{n}
 		\]
@@ -1023,7 +1117,8 @@
 				&\leq\abs{\frac{1+\e^{\iu}}{\e^{\iu}-1}} \\
 				&\leq\frac{1+\abs{\e^{\iu}}}{\abs{\e^{\iu}-1}}<C \\
 			\end{align*}
-			per a cert \(C\) real. També tenim que la successió \((n^{-1})_{n\in\mathbb{N}}\) és monòtonament decreixent amb
+			per a cert \(C\) real.
+			També tenim que la successió \((n^{-1})_{n\in\mathbb{N}}\) és monòtonament decreixent amb
 			\[
 			    \lim_{n\to\infty}\frac{1}{n}=0,
 			\]
@@ -1036,7 +1131,8 @@
 	\end{example}
 	\begin{theorem}[Criteri d'Abel]
 		\labelname{criteri d'Abel per sèries numèriques}\label{thm:Criteri d'Abel per sèries numèriques}
-		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent i \((b_{n})_{n\in\mathbb{N}}\) una successió numèrica monòtona i convergent. Aleshores la sèrie
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent i \((b_{n})_{n\in\mathbb{N}}\) una successió numèrica monòtona i convergent.
+		Aleshores la sèrie
 		\[
 		    \sum_{n=0}^{N}a_{n}b_{n}
 		\]
@@ -1070,7 +1166,8 @@
 				\lim_{n\to\infty}b_{n}=b.
 			\end{equation}
 			
-			Estudiem la convergència absoluta de la sèrie \(\sum_{n=0}^{\infty}A_{n}(b_{n}-b_{n+1})\). Com que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent tenim que existeix un real \(C>0\) tal que per a tot \(N\) natural es satisfà
+			Estudiem la convergència absoluta de la sèrie \(\sum_{n=0}^{\infty}A_{n}(b_{n}-b_{n+1})\).
+			Com que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és convergent tenim que existeix un real \(C>0\) tal que per a tot \(N\) natural es satisfà
 			\begin{equation}
 				\label{thm:Criteri d'Abel per sèries numèriques:eq3}
 				\abs{A_{N}}\leq C.
@@ -1119,7 +1216,8 @@
 			\[
 			    \sum_{n=1}^{\infty}\frac{(-1)^{n}}{n}
 			\]
-			és convergent. Per tant pel \myref{thm:Criteri d'Abel per sèries numèriques} tenim que la sèrie \eqref{ex:criteri d'Abel per sèries numèriques:eq1} és convergent.
+			és convergent.
+			Per tant pel \myref{thm:Criteri d'Abel per sèries numèriques} tenim que la sèrie \eqref{ex:criteri d'Abel per sèries numèriques:eq1} és convergent.
 		\end{solution}
 	\end{example}	
 	\subsection{Reordenació de sèries}
@@ -1133,7 +1231,8 @@
 	\end{definition}
 	\begin{lemma}
 		\label{lema:la reordenada d'una sèrie de termes positius convergent és més petita que la sèrie}
-		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius convergent i \(\sigma\) una permutació de \(\mathbb{N}\). Aleshores tenim que
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius convergent i \(\sigma\) una permutació de \(\mathbb{N}\).
+		Aleshores tenim que
 		\[
 		    \sum_{n=0}^{\infty}a_{\sigma(n)}\leq\sum_{n=0}^{\infty}a_{n}.
 		\]
@@ -1154,14 +1253,16 @@
 	\end{lemma}
 	\begin{corollary}
 		\label{cor:la reordenada d'una sèrie de termes positius convergent conserva la sèrie}
-		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius convergent i \(\sigma\) una permutació de \(\mathbb{N}\). Aleshores tenim que
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie de termes positius convergent i \(\sigma\) una permutació de \(\mathbb{N}\).
+		Aleshores tenim que
 		\[
 		    \sum_{n=0}^{\infty}a_{\sigma(n)}=\sum_{n=0}^{\infty}a_{n}.
 		\]
 	\end{corollary}
 	\begin{proposition}
 		\label{prop:la reordenada d'una sèrie absolutament convergent és absolutament convergent}
-		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie absolutament convergent i \(\sigma\) una permutació de \(\mathbb{N}\). Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{\sigma(n)}\) és absolutament convergent.
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie absolutament convergent i \(\sigma\) una permutació de \(\mathbb{N}\).
+		Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{\sigma(n)}\) és absolutament convergent.
 		\begin{proof}
 			Per la definició de \myref{def:convergència absoluta d'una sèrie} tenim que la sèrie
 			\[
@@ -1195,14 +1296,16 @@
 		\]
 	\end{observation}
 	\begin{lemma}
-		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie absolutament convergent i \(\sigma\) una permutació de \(\mathbb{N}\). Aleshores tenim que
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie absolutament convergent i \(\sigma\) una permutació de \(\mathbb{N}\).
+		Aleshores tenim que
 		\[
 		    \sum_{n=0}^{\infty}a_{n}=\sum_{n=0}^{\infty}a_{\sigma(n)}.
 		\]
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:la reordenada d'una sèrie absolutament convergent és absolutament convergent}.
 			
-			Per la definició de \myref{def:convergència absoluta d'una sèrie} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent si i només si les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són convergents. Per tant trobem que
+			Per la definició de \myref{def:convergència absoluta d'una sèrie} tenim que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent si i només si les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són convergents.
+			Per tant trobem que
 			\begin{align*}
 				\sum_{n=0}^{\infty}a_{n}&=\sum_{n=0}^{\infty}\left(a^{+}_{n}-a^{-}_{n}\right) \tag{\ref{obs:sumes de la part positiva i negativa d'un nombre}}\\
 				&=\sum_{n=0}^{\infty}a^{+}_{n}-\sum_{n=0}^{\infty}a^{-}_{n} \\
@@ -1214,7 +1317,8 @@
 	\end{lemma}
 	\begin{lemma}
 		\label{lema:Teorema de la reordenació de sèries de Riemann}
-		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent. Aleshores les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són divergents.
+		Sigui \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent.
+		Aleshores les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són divergents.
 		\begin{proof}
 			Per l'observació \myref{obs:sumes de la part positiva i negativa d'un nombre} tenim que
 			\begin{equation}
@@ -1227,25 +1331,31 @@
 				\sum_{n=0}^{\infty}a^{-}_{n}=\sum_{n=0}^{\infty}a^{+}_{n}-\sum_{n=0}^{\infty}a_{n}.
 			\end{equation}
 			
-			Suposem que \(\sum_{n=0}^{\infty}a^{+}_{n}\) és convergent. Aleshores per \eqref{lema:Teorema de la reordenació de sèries de Riemann:eq2} tenim que la sèrie \(\sum_{n=0}^{\infty}a^{-}_{n}\) és convergent.
+			Suposem que \(\sum_{n=0}^{\infty}a^{+}_{n}\) és convergent.
+			Aleshores per \eqref{lema:Teorema de la reordenació de sèries de Riemann:eq2} tenim que la sèrie \(\sum_{n=0}^{\infty}a^{-}_{n}\) és convergent.
 			
-			Ara bé, per la definició de \myref{def:convergència absoluta d'una sèrie} tenim que les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són absolutament convergents, i per \eqref{lema:Teorema de la reordenació de sèries de Riemann:eq1} tenim que \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent, però això contradiu l'hipòtesi que \(\sum_{n=0}^{\infty}a_{n}\) no és absolutament convergent. Per tant ha de ser que la sèrie \(\sum_{n=0}^{\infty}a^{+}_{n}\) és divergent. El cas en que suposem que \(\sum_{n=0}^{\infty}a^{+}_{n}\) és convergent és anàleg.
+			Ara bé, per la definició de \myref{def:convergència absoluta d'una sèrie} tenim que les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són absolutament convergents, i per \eqref{lema:Teorema de la reordenació de sèries de Riemann:eq1} tenim que \(\sum_{n=0}^{\infty}a_{n}\) és absolutament convergent, però això contradiu l'hipòtesi que \(\sum_{n=0}^{\infty}a_{n}\) no és absolutament convergent.
+			Per tant ha de ser que la sèrie \(\sum_{n=0}^{\infty}a^{+}_{n}\) és divergent.
+			El cas en que suposem que \(\sum_{n=0}^{\infty}a^{+}_{n}\) és convergent és anàleg.
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Teorema de la reordenació de sèries de Riemann]
 		\labelname{Teorema de la reordenació de sèries de Riemann}\label{thm:Teorema de la reordenació de sèries de Riemann}
-		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent i \(L\) un nombre real. Aleshores existeix una permutació \(\sigma\) de \(\mathbb{N}\) tal que
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent i \(L\) un nombre real.
+		Aleshores existeix una permutació \(\sigma\) de \(\mathbb{N}\) tal que
 		\[
 		    \sum_{n=0}^{\infty}a_{\sigma(n)}=L.
 		\]
 		\begin{proof}
-			Prenem un \(\alpha\) real. Tenim per hipòtesi que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent, i pel lema \myref{lema:Teorema de la reordenació de sèries de Riemann} trobem que les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són divergents.
+			Prenem un \(\alpha\) real.
+			Tenim per hipòtesi que la sèrie \(\sum_{n=0}^{\infty}a_{n}\) una sèrie convergent però no absolutament convergent, i pel lema \myref{lema:Teorema de la reordenació de sèries de Riemann} trobem que les sèries \(\sum_{n=0}^{\infty}a^{+}_{n}\) i \(\sum_{n=0}^{\infty}a^{-}_{n}\) són divergents.
 			
 			Definim
 			\[
 			    S_{N}=\sum_{n=0}^{N}a^{+}_{n}\quad\text{i}\quad T_{N}=\sum_{n=0}^{N}a^{-}_{n}.
 			\]
-			Tenim que \(S_{N}\) no està fitada superiorment i \(T_{N}\) no està fitada inferiorment. Per tant tenim que existeix un mínim natural \(n_{1}\) tal que
+			Tenim que \(S_{N}\) no està fitada superiorment i \(T_{N}\) no està fitada inferiorment.
+			Per tant tenim que existeix un mínim natural \(n_{1}\) tal que
 			\[
 			    S_{n_{1}}\geq\alpha,
 			\]
@@ -1294,7 +1404,8 @@
 	\end{theorem}
 	\begin{theorem}[Teorema de Cauchy]
 		\label{Teorema de Cauchy}\label{thm:Teorema de Cauchy}
-		Siguin \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) dues sèries absolutament convergents i \((c_{n})_{n\in\mathbb{N}}\) una successió tal que per a tot \((i,j)\) de \(\mathbb{N}\times\mathbb{N}\) existeix un únic \(n\) tal que \(c_{n}=a_{i}b_{j}\) i tal que per a tot \(n\) de \(\mathbb{N}\) existeix un únic \((i,j)\) de \(\mathbb{N}\times\mathbb{N}\) tal que \(c_{n}=a_{i}b_{j}\). Aleshores tenim que
+		Siguin \(\sum_{n=0}^{\infty}a_{n}\) i \(\sum_{n=0}^{\infty}b_{n}\) dues sèries absolutament convergents i \((c_{n})_{n\in\mathbb{N}}\) una successió tal que per a tot \((i,j)\) de \(\mathbb{N}\times\mathbb{N}\) existeix un únic \(n\) tal que \(c_{n}=a_{i}b_{j}\) i tal que per a tot \(n\) de \(\mathbb{N}\) existeix un únic \((i,j)\) de \(\mathbb{N}\times\mathbb{N}\) tal que \(c_{n}=a_{i}b_{j}\).
+		Aleshores tenim que
 		\[
 		    \sum_{n=0}^{\infty}c_{n}=\left(\sum_{n=0}^{\infty}a_{n}\right)\left(\sum_{n=0}^{\infty}b_{n}\right).
 		\]
@@ -1389,7 +1500,8 @@
 	\subsection{Convergència d'una successió de funcions}
 	\begin{definition}[Successió de funcions]
 		\labelname{successió de funcions}\label{def:successió de funcions}
-		Siguin \(I\) un interval de \(\mathbb{R}\) i \(f_{i}\colon I\longrightarrow\mathbb{R}\) una funció real per a tot \(i\) natural. Aleshores direm que \((f_{n})_{n\in\mathbb{N}}\) és una successió de funcions definides en \(I\).
+		Siguin \(I\) un interval de \(\mathbb{R}\) i \(f_{i}\colon I\longrightarrow\mathbb{R}\) una funció real per a tot \(i\) natural.
+		Aleshores direm que \((f_{n})_{n\in\mathbb{N}}\) és una successió de funcions definides en \(I\).
 	\end{definition}
 	\begin{definition}[Convergència puntual]
 		\labelname{convergència puntual}\label{def:convergència puntual}
@@ -1397,7 +1509,8 @@
 		\[
 		    \lim_{n\to\infty}f_{n}(x)=f(x)
 		\]
-		per a tot \(x\) de \(I\). Aleshores direm que la successió \((f_{n})\) convergeix puntualment a la funció \(f\).
+		per a tot \(x\) de \(I\).
+		Aleshores direm que la successió \((f_{n})\) convergeix puntualment a la funció \(f\).
 	\end{definition}
 	\begin{example}
 		\label{ex:convergència puntual d'una successió de funcions}
@@ -1444,7 +1557,8 @@
 		\]
 		en l'interval \([1,2]\).
 		\begin{proof}
-			Per l'exercici \myref{ex:convergència puntual d'una successió de funcions} tenim que la successió de funcions \((f_{n})\) convergeix puntualment a la funció \(f(x)=x\) en l'interval \([1,2]\). Considerem el límit
+			Per l'exercici \myref{ex:convergència puntual d'una successió de funcions} tenim que la successió de funcions \((f_{n})\) convergeix puntualment a la funció \(f(x)=x\) en l'interval \([1,2]\).
+			Considerem el límit
 			\begin{align*}
 				\lim_{n\to\infty}\sup_{x\in[1,2]}\abs{f_{n}(x)-f(x)}&=\lim_{n\to\infty}\sup_{x\in[1,2]}\abs{\frac{nx^{2}+1}{nx+1}-x} \\
 				&=\lim_{n\to\infty}\sup_{x\in[1,2]}\abs{\frac{nx^{2}+1-nx^{2}-x}{nx+1}} \\
@@ -1452,19 +1566,22 @@
 				&\leq\lim_{n\to\infty}\sup_{x\in[1,2]}\frac{1+\abs{x}}{nx+1} \\
 				&\leq\lim_{n\to\infty}\frac{3}{n+1}=0,
 			\end{align*}
-			i per l'observació \myref{obs:convergència uniforme amb límits} trobem que la successió de funcions \((f_{n})\) convergeix uniformement a \(f(x)\) en l'interval \([1,2]\). 
+			i per l'observació \myref{obs:convergència uniforme amb límits} trobem que la successió de funcions \((f_{n})\) convergeix uniformement a \(f(x)\) en l'interval \([1,2]\).
+			
 		\end{proof}
 	\end{example}
 	\begin{proposition}
 		\label{prop:una successió de funcions convergeix uniformement a una funció a la que convergeixi puntualment}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions que convergeixen uniformement a una funció \(f\). Aleshores la successió \((f_{n})_{n\in\mathbb{N}}\) convergeix puntualment a \(f\).
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions que convergeixen uniformement a una funció \(f\).
+		Aleshores la successió \((f_{n})_{n\in\mathbb{N}}\) convergeix puntualment a \(f\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{proposition}
 	\begin{theorem}[Condició de Cauchy]
 		\labelname{condició de Cauchy per successions de funcions}\label{thm:condició de Cauchy per successions de funcions}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\). Aleshores la successió \((f_{n})_{n\in\mathbb{N}}\) convergeix uniformement a una funció \(f\) de \(I\) si i només si per a tot \(\varepsilon>0\) real existeix un \(n_{0}\) natural tal que per a tots enters \(n\) i \(m\) amb \(n_{0}<m<n\) es satisfà
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\).
+		Aleshores la successió \((f_{n})_{n\in\mathbb{N}}\) convergeix uniformement a una funció \(f\) de \(I\) si i només si per a tot \(\varepsilon>0\) real existeix un \(n_{0}\) natural tal que per a tots enters \(n\) i \(m\) amb \(n_{0}<m<n\) es satisfà
 		\[
 		    \sup_{x\in I}\abs{f_{n}(x)-f_{m}(x)}<\varepsilon.
 		\]
@@ -1476,21 +1593,24 @@
 	\subsection{Continuïtat, integrabilitat i derivabilitat}
 	\begin{theorem}
 		\label{thm:si una successió de funcions contínues convergeix uniformement, ho fa a una funció contínua}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions contínues sobre un interval \(I\) tal que \(f_{n}\convergeixuniformement f\). Aleshores \(f\) és contínua.
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions contínues sobre un interval \(I\) tal que \(f_{n}\convergeixuniformement f\).
+		Aleshores \(f\) és contínua.
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
 		\label{thm:si una successió de funcions integrables Riemann convergix unifoemement, ho fa a una funció integrable Riemann}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre un interval \(I\) tal que \(f_{n}\convergeixuniformement f\). Aleshores \(f\) és integrable Riemann.
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre un interval \(I\) tal que \(f_{n}\convergeixuniformement f\).
+		Aleshores \(f\) és integrable Riemann.
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
 		\label{thm:si una successió de funcions convergeix uniformement aleshores el límit de la integral dels elements de la succesió és la integral del límit dels elements de la successió}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre un interval \(I\) tal que \(f_{n}\convergeixuniformement f\). Aleshores
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre un interval \(I\) tal que \(f_{n}\convergeixuniformement f\).
+		Aleshores
 		\[
 		    \lim_{n\to\infty}\int_{I}f_{n}(x)\diff x=\int_{I}\lim_{n\to\infty}f_{n}(x)\diff x.
 		\]
@@ -1501,7 +1621,8 @@
 	\end{theorem}
 	\begin{theorem}
 		\label{thm:condició per la derivabilitat d'una successió de funcions}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions derivables sobre un interval \(I\) que convergeix uniformement a una funció \(f\) tal que la successió \((f'_{n})_{n\in\mathbb{N}}\) convergeix uniformement a una funció \(g\). Aleshores tenim que \(f\) és derivable i que \(f'(x)=g(x)\).
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions derivables sobre un interval \(I\) que convergeix uniformement a una funció \(f\) tal que la successió \((f'_{n})_{n\in\mathbb{N}}\) convergeix uniformement a una funció \(g\).
+		Aleshores tenim que \(f\) és derivable i que \(f'(x)=g(x)\).
 		\begin{proof} % I acotat?
 			%TODO
 		\end{proof}
@@ -1509,7 +1630,8 @@
 \section{Sèries de funcions}
 	\subsection{Convergència d'una sèrie de funcions}
 	\begin{definition}[Sèrie de funcions]
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\). Aleshores definim, per a tot \(x\) de \(I\),
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\).
+		Aleshores definim, per a tot \(x\) de \(I\),
 		\[
 		    F(x)=\sum_{n=0}^{\infty}f_{n}(x)
 		\]
@@ -1521,7 +1643,8 @@
 		\[
 		    F_{N}(x)=\sum_{n=0}^{N}f_{n}(x)
 		\]
-		tal que la successió de funcions \((F_{n})_{n\in\mathbb{N}}\) sigui puntualment convergent en \(I\). Aleshores direm que la sèrie de funcions de la successió \((f_{n})_{n\in\mathbb{N}}\) és convergent puntualment en \(I\).
+		tal que la successió de funcions \((F_{n})_{n\in\mathbb{N}}\) sigui puntualment convergent en \(I\).
+		Aleshores direm que la sèrie de funcions de la successió \((f_{n})_{n\in\mathbb{N}}\) és convergent puntualment en \(I\).
 	\end{definition}
 	\begin{example}
 		Exemple de convergència puntual d'una sèrie de funcions.
@@ -1535,7 +1658,8 @@
 		\[
 		    F_{N}(x)=\sum_{n=0}^{N}f_{n}(x)
 		\]
-		tal que la successió de funcions \((F_{n})_{n\in\mathbb{N}}\) sigui uniformement convergent en \(I\). Aleshores direm que la sèrie de funcions de la successió \((f_{n})_{n\in\mathbb{N}}\) és convergent uniformement en \(I\).
+		tal que la successió de funcions \((F_{n})_{n\in\mathbb{N}}\) sigui uniformement convergent en \(I\).
+		Aleshores direm que la sèrie de funcions de la successió \((f_{n})_{n\in\mathbb{N}}\) és convergent uniformement en \(I\).
 	\end{definition}
 	\begin{example}
 		Exemple de convergència uniforme d'una sèrie de funcions.
@@ -1545,7 +1669,8 @@
 	\end{example}
 	\begin{theorem}[Condició de Cauchy]
 		\labelname{condició de Cauchy per sèries de funcions}\label{def:condició de Cauchy per sèries de funcions}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\). Aleshores la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) és convergent si i només si per a tot \(\varepsilon>0\) real existeixen enters \(N\) i \(M\) amb \(N<M\) tals que
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\).
+		Aleshores la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) és convergent si i només si per a tot \(\varepsilon>0\) real existeixen enters \(N\) i \(M\) amb \(N<M\) tals que
 		\[
 		    \sup_{x\in I}\abs{\sum_{n=N}^{M}f_{n}(x)}<\varepsilon.
 		\]
@@ -1556,21 +1681,24 @@
 	\subsection{Continuïtat, integrabilitat i derivabilitat}
 	\begin{theorem}
 		\label{thm:si la sèrie de d'una successió de funcions contínues convergeix uniformement, el seu límit és una funció contínua}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions contínues sobre un interval \(I\) tals que la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) convergeixi uniformement a una funció \(F\) en \(I\). Aleshores \(F\) és contínua en \(I\).
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions contínues sobre un interval \(I\) tals que la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) convergeixi uniformement a una funció \(F\) en \(I\).
+		Aleshores \(F\) és contínua en \(I\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
 		\label{thm:si la sèrie de d'una successió de funcions integrables Riemann convergeix uniformement, el seu límit és una funció integrable Riemann}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre un interval \(I\) tals que la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) convergeixi uniformement a una funció \(F\) en \(I\). Aleshores \(F\) és integrable Riemann en \(I\).
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre un interval \(I\) tals que la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) convergeixi uniformement a una funció \(F\) en \(I\).
+		Aleshores \(F\) és integrable Riemann en \(I\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{theorem}
 		\label{thm:si la sèrie d'una successió de funcions convergeix uniformement aleshores el límit de la integral dels elements de la sèrie de la succesió és la integral del límit del la sèrie de la successió}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre un interval \(I\) tal que la sèrie de funcions de \((f_{n})_{n\in\mathbb{N}}\) sigui uniformement convergent en \(I\). Aleshores
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions integrables Riemann sobre un interval \(I\) tal que la sèrie de funcions de \((f_{n})_{n\in\mathbb{N}}\) sigui uniformement convergent en \(I\).
+		Aleshores
 		\[
 		    \sum_{n=0}^{\infty}\int_{I}f_{n}(x)\diff x=\int_{I}\sum_{n=0}^{\infty}f_{n}(x)\diff x.
 		\]
@@ -1580,7 +1708,8 @@
 	\end{theorem}
 	\begin{theorem}
 		\label{thm:condició per la derivabilitat d'una sèrie de funcions}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions derivables sobre un interval \(I\) acotat tal que la sèrie de funcions \(\sum_{n=0}^{\infty}f'_{n}(x)\) convergeix uniformement en \(I\) i existeix un \(x_{0}\in I\) tal que la sèrie de funcions \(\sum_{n=0}^{\infty}f_{n}(x_{0})\) sigui convergent. Aleshores tenim que la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) és derivable i
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions derivables sobre un interval \(I\) acotat tal que la sèrie de funcions \(\sum_{n=0}^{\infty}f'_{n}(x)\) convergeix uniformement en \(I\) i existeix un \(x_{0}\in I\) tal que la sèrie de funcions \(\sum_{n=0}^{\infty}f_{n}(x_{0})\) sigui convergent.
+		Aleshores tenim que la sèrie \(\sum_{n=0}^{\infty}f_{n}(x)\) és derivable i
 		\[
 		    \left(\sum_{n=0}^{\infty}f_{n}(x)\right)'=\sum_{n=0}^{\infty}f'_{n}(x).
 		\]
@@ -1591,7 +1720,8 @@
 	\subsection{Convergència d'una sèrie de funcions}
 	\begin{proposition}
 		\label{prop:si una sêrie de funcions convergeix uniformement aleshores la successió de funcions convergeix uniformement a 0}
-		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\) tal que la sèrie de funcions \(\sum_{n=0}^{\infty}f_{n}(x)\) convergeix uniformement en \(I\). Aleshores la successió de funcions \((f_{n})\) convergeix uniformement a \(0\).
+		Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions sobre un interval \(I\) tal que la sèrie de funcions \(\sum_{n=0}^{\infty}f_{n}(x)\) convergeix uniformement en \(I\).
+		Aleshores la successió de funcions \((f_{n})\) convergeix uniformement a \(0\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1602,7 +1732,8 @@
 		\[
 		    \sup_{x\in I}\abs{f_{n}(x)}\leq M_{n}
 		\]
-		i la sèrie \(\sum_{n=0}^{\infty}M_{n}\) és convergent. Aleshores la sèrie de funcions \(\sum_{n=0}^{\infty}f_{n}(x)\) és uniformement convergent en \(I\).
+		i la sèrie \(\sum_{n=0}^{\infty}M_{n}\) és convergent.
+		Aleshores la sèrie de funcions \(\sum_{n=0}^{\infty}f_{n}(x)\) és uniformement convergent en \(I\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1622,7 +1753,8 @@
 			\[
 			    \sum_{n=1}^{\infty}\frac{1}{n^{3}}
 			\]
-			és convergent. Per tant pel \myref{thm:criteri M de Weierstrass} tenim que la sèrie de funcions
+			és convergent.
+			Per tant pel \myref{thm:criteri M de Weierstrass} tenim que la sèrie de funcions
 			\[
 			    \sum_{n=1}^{\infty}\frac{\sin(nx)}{n^{3}}
 			\]
@@ -1656,7 +1788,8 @@
 		\[
 		    \sup_{x\in I}\abs{g_{n}(x)}\leq L
 		\]
-		i tal que la sèrie de funcions \(\sum_{n=0}^{\infty}f_{n}(x)\) sigui uniformement convergent en \(I\). Aleshores la sèrie de funcions
+		i tal que la sèrie de funcions \(\sum_{n=0}^{\infty}f_{n}(x)\) sigui uniformement convergent en \(I\).
+		Aleshores la sèrie de funcions
 		\[
 		    \sum_{n=0}^{\infty}f_{n}(x)g_{n}(x)
 		\]
@@ -1674,7 +1807,8 @@
 	\subsection{Sèries de potències}
 	\begin{definition}[Sèries de potències]
 		\labelname{sèrie de potències}\label{def:sèrie de potències}
-		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió de reals i \(x_{0}\) un nombre real. Aleshores direm que la sèrie
+		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió de reals i \(x_{0}\) un nombre real.
+		Aleshores direm que la sèrie
 		\[
 		    \sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}
 		\]
@@ -1690,7 +1824,8 @@
 		\[
 		    \sum_{n=0}^{\infty}a_{n}(x_{1}-x_{0})^{n}
 		\]
-		és convergent. Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) és convergent per a tot \(x\) tal que
+		és convergent.
+		Aleshores la sèrie \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) és convergent per a tot \(x\) tal que
 		\[
 		    \abs{x-x_{0}}<\abs{x_{1}-x_{0}}.
 		\]
@@ -1700,7 +1835,8 @@
 	\end{proposition}
 	\begin{lemma}
 		\label{lema:les successions creixents tenen límit i aquest és el suprem de la successió}
-		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió creixent de nombres reals. Aleshores el límit de \((a_{n})\) existeix i
+		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió creixent de nombres reals.
+		Aleshores el límit de \((a_{n})\) existeix i
 		\[
 		    \lim_{n\to\infty}a_{n}=\sup_{n\in\mathbb{N}}a_{n}.
 		\]
@@ -1710,7 +1846,8 @@
 	\end{lemma}
 	\begin{corollary}
 		\label{cor:les successions decreixent tenen límit i aquest és el ínfim de la successió}
-		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió decreixent de nombres reals. Aleshores el límit de \((a_{n})\) existeix i
+		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió decreixent de nombres reals.
+		Aleshores el límit de \((a_{n})\) existeix i
 		\[
 		    \lim_{n\to\infty}a_{n}=\inf_{n\in\mathbb{N}}a_{n}.
 		\]
@@ -1771,7 +1908,8 @@
 	\end{definition}
 	\begin{theorem}[Teorema d'Abel]
 		\labelname{Teorema d'Abel}\label{thm:Teorema d'Abel}
-		Sigui \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) una sèrie de potències i \(L\) un real tal que la sèrie \(\sum_{n=0}^{\infty}a_{n}L^{n}\) és convergent. Aleshores la sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) és uniformement convergent per a tot \(x\) en l'interval \([x_{0},x_{0}+L]\).
+		Sigui \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) una sèrie de potències i \(L\) un real tal que la sèrie \(\sum_{n=0}^{\infty}a_{n}L^{n}\) és convergent.
+		Aleshores la sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) és uniformement convergent per a tot \(x\) en l'interval \([x_{0},x_{0}+L]\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1811,7 +1949,8 @@
 	\subsection{Teorema d'aproximació polinòmica de Weierstrass}
 	\begin{definition}[Suport d'una funció]
 		\labelname{suport d'una funció}\label{def:suport d'una funció}
-		Sigui \(f\colon\mathbb{R}\longrightarrow\mathbb{R}\) una funció. Aleshores definim
+		Sigui \(f\colon\mathbb{R}\longrightarrow\mathbb{R}\) una funció.
+		Aleshores definim
 		\[
 		    \suport(f)=\{x\in\mathbb{R}\mid f(x)\neq0\}
 		\]
@@ -1819,11 +1958,13 @@
 	\end{definition}
 	\begin{definition}[Suport compacte]
 		\labelname{funció amb suport compacte}\label{def:funció amb suport compacte}
-		Sigui \(f\colon\mathbb{R}\longrightarrow\mathbb{R}\) una funció tal que \(\suport(f)\) sigui un compacte. Aleshores direm que \(f\) té suport compacte.
+		Sigui \(f\colon\mathbb{R}\longrightarrow\mathbb{R}\) una funció tal que \(\suport(f)\) sigui un compacte.
+		Aleshores direm que \(f\) té suport compacte.
 	\end{definition}
 	\begin{definition}[Convolució]
 		\labelname{convolució de dues funcions}\label{def:convolució de dues funcions}
-		Siguin \(f\colon\mathbb{R}\longrightarrow\mathbb{R}\) i \(g\colon\mathbb{R}\longrightarrow\mathbb{R}\) dues funcions amb suport compacte. Aleshores definim
+		Siguin \(f\colon\mathbb{R}\longrightarrow\mathbb{R}\) i \(g\colon\mathbb{R}\longrightarrow\mathbb{R}\) dues funcions amb suport compacte.
+		Aleshores definim
 		\[
 		    (f\convolucio g)(x)=\int_{\mathbb{R}}f(t)g(x-t)\diff t
 		\]
@@ -1841,14 +1982,16 @@
 	\end{definition}
 	\begin{lemma}
 		\label{lema:Teorema d'aproximació polinòmica de Weierstrass}
-		Sigui \(f\colon\mathbb{R}\longrightarrow\mathbb{R}\) una funció contínua amb suport compacte i \((\phi_{\varepsilon})_{\varepsilon\in\mathbb{R}}\) una aproximació de la unitat. Aleshores \(f\convolucio\phi_{\varepsilon}\) convergeix uniformement a \(f\) quan \(\varepsilon\) tendeix a \(0\).
+		Sigui \(f\colon\mathbb{R}\longrightarrow\mathbb{R}\) una funció contínua amb suport compacte i \((\phi_{\varepsilon})_{\varepsilon\in\mathbb{R}}\) una aproximació de la unitat.
+		Aleshores \(f\convolucio\phi_{\varepsilon}\) convergeix uniformement a \(f\) quan \(\varepsilon\) tendeix a \(0\).
 		\begin{proof}
 			%TODO %lol se ve to' tocha
 		\end{proof}
 	\end{lemma}
 	\begin{theorem}[Teorema d'aproximació polinòmica de Weierstrass]
 		\labelname{Teorema d'aproximació polinòmica de Weierstrass}\label{thm:Teorema d'aproximació polinòmica de Weierstrass}
-		Sigui \(f\colon[a,b]\longrightarrow\mathbb{R}\) una funció contínua. Aleshores existeix una successió de polinomis \((p_{n})_{n\in\mathbb{N}}\) que convergeix uniformement a \(f\) en l'interval \([a,b]\).
+		Sigui \(f\colon[a,b]\longrightarrow\mathbb{R}\) una funció contínua.
+		Aleshores existeix una successió de polinomis \((p_{n})_{n\in\mathbb{N}}\) que convergeix uniformement a \(f\) en l'interval \([a,b]\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1868,7 +2011,8 @@
 	\subsection{Funcions localment integrables}
 	\begin{definition}[Funció localment integrable]
 		\labelname{funció localment integrable}\label{def:funció localment integrable}
-		Sigui \(f\colon[a,b)\longrightarrow\mathbb{R}\) amb \(b\in\mathbb{R}\cup\infty\) una funció tal que \(f\) és integrable Riemann per en \([a,x]\) per a tot \(x<b\). Aleshores direm que \(f\) és localment integrable en un interval \([a,b)\).
+		Sigui \(f\colon[a,b)\longrightarrow\mathbb{R}\) amb \(b\in\mathbb{R}\cup\infty\) una funció tal que \(f\) és integrable Riemann per en \([a,x]\) per a tot \(x<b\).
+		Aleshores direm que \(f\) és localment integrable en un interval \([a,b)\).
 	\end{definition}
 	\begin{definition}[Integral impròpia]
 		\labelname{integral impròpia}\label{def:integral impròpia}
@@ -1919,7 +2063,8 @@
 		\[
 		    f(x)\leq Cg(x)
 		\]
-		i tals que la integral impròpia de \(g\) és convergent. Aleshores la integral impròpia de \(f\) és convergent.
+		i tals que la integral impròpia de \(g\) és convergent.
+		Aleshores la integral impròpia de \(f\) és convergent.
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1932,9 +2077,12 @@
 		\]
 		tals que
 		\begin{enumerate}
-			\item\label{def:criteri de comapració d'integrals impròpies:eq1} \(L\neq0\) i \(L\neq\infty\). Aleshores \(\int_{a}^{b}f(x)\diff x\) és convergent si i només si \(\int_{a}^{b}g(x)\diff x\) és convergent.
-			\item\label{def:criteri de comapració d'integrals impròpies:eq2} \(L=0\) i \(\int_{a}^{b}g(x)\diff x\) és convergent. Aleshores \(\int_{a}^{b}f(x)\diff x\) és convergent.
-			\item\label{def:criteri de comapració d'integrals impròpies:eq3} \(L=\infty\) i \(\int_{a}^{b}f(x)\diff x\) és convergent. Aleshores \(\int_{a}^{b}g(x)\diff x\) és convergent.
+			\item\label{def:criteri de comapració d'integrals impròpies:eq1} \(L\neq0\) i \(L\neq\infty\).
+			Aleshores \(\int_{a}^{b}f(x)\diff x\) és convergent si i només si \(\int_{a}^{b}g(x)\diff x\) és convergent.
+			\item\label{def:criteri de comapració d'integrals impròpies:eq2} \(L=0\) i \(\int_{a}^{b}g(x)\diff x\) és convergent.
+			Aleshores \(\int_{a}^{b}f(x)\diff x\) és convergent.
+			\item\label{def:criteri de comapració d'integrals impròpies:eq3} \(L=\infty\) i \(\int_{a}^{b}f(x)\diff x\) és convergent.
+			Aleshores \(\int_{a}^{b}g(x)\diff x\) és convergent.
 		\end{enumerate}
 		\begin{proof}
 			%TODO
@@ -1942,14 +2090,16 @@
 	\end{theorem}
 	\begin{example}
 		\label{ex:criteri de comapració d'integrals impròpies}
-		Exemple de criteri de comparació d'integrals impròpies. % Buscar als exàmens
+		Exemple de criteri de comparació d'integrals impròpies.
+		% Buscar als exàmens
 		\begin{solution}
 			%TODO
 		\end{solution}
 	\end{example}
 	\begin{theorem}[Criteri de la integral]
 		\labelname{criteri de la integral}\label{thm:criteri de la integral per integrals impròpies}
-		Sigui \(f\colon[1,\infty)\longrightarrow(0,\infty)\) una funció decreixent. Aleshores la integral impròpia \(\int_{1}^{\infty}f(x)\diff x\) és convergent si i només si la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent.
+		Sigui \(f\colon[1,\infty)\longrightarrow(0,\infty)\) una funció decreixent.
+		Aleshores la integral impròpia \(\int_{1}^{\infty}f(x)\diff x\) és convergent si i només si la sèrie \(\sum_{n=1}^{\infty}f(n)\) és convergent.
 		\begin{proof}
 			És conseqüència del lema \myref{lema:criteri de la integral} i la definició d'\myref{def:integral impròpia convergent}.
 		\end{proof}
@@ -1970,7 +2120,8 @@
 	\subsection{Convergència d'una integral impròpia}
 	\begin{theorem}[Condició de Cauchy]
 		\labelname{condició de Cauchy}\label{thm:Condició de Cauchy per integrals impròpies}
-		Sigui \(\int_{a}^{b}f(x)\diff x\) una funció localment integrable en \([a,b)\). Aleshores la integral \(\int_{a}^{b}f(x)\diff x\) és convergent si i només si per a tot \(\varepsilon>0\) existeix un \(x_{0}\) real tal que per a tot \(N\) i \(M\) reals amb \(N,M\geq x_{0}\) i \(N\leq M<b\) tenim
+		Sigui \(\int_{a}^{b}f(x)\diff x\) una funció localment integrable en \([a,b)\).
+		Aleshores la integral \(\int_{a}^{b}f(x)\diff x\) és convergent si i només si per a tot \(\varepsilon>0\) existeix un \(x_{0}\) real tal que per a tot \(N\) i \(M\) reals amb \(N,M\geq x_{0}\) i \(N\leq M<b\) tenim
 		\[
 		    \abs{\int_{N}^{M}f(x)\diff x}<\varepsilon.
 		\]
@@ -1984,10 +2135,12 @@
 		\[
 		    \int_{a}^{b}\abs{f(x)}\diff x
 		\]
-		és convergent. Aleshores direm que la integral \(\int_{a}^{b}f(x)\diff x\) és absolutament convergent.
+		és convergent.
+		Aleshores direm que la integral \(\int_{a}^{b}f(x)\diff x\) és absolutament convergent.
 	\end{definition}
 	\begin{proposition}
-		Sigui \(\int_{a}^{b}f(x)\diff x\) una integral absolutament convergent. Aleshores la integral \(\int_{a}^{b}f(x)\diff x\) és convergent.
+		Sigui \(\int_{a}^{b}f(x)\diff x\) una integral absolutament convergent.
+		Aleshores la integral \(\int_{a}^{b}f(x)\diff x\) és convergent.
 		\begin{proof}
 			%TODO % Desigualtats ràpides + Cauchy
 		\end{proof}
@@ -2019,7 +2172,8 @@
 		\end{proof}
 	\end{theorem}
 	\begin{example}
-		Sigui \(\alpha>0\) un real. Volem estudiar la convergència de la integral
+		Sigui \(\alpha>0\) un real.
+		Volem estudiar la convergència de la integral
 		\[
 		    \int_{0}^{\infty}\frac{\sin(x)}{x^{\alpha}}\diff x.
 		\]
@@ -2033,7 +2187,8 @@
 		\[
 		    \int_{a}^{b}g(x)\diff x
 		\]
-		és convergent. Aleshores la integral
+		és convergent.
+		Aleshores la integral
 		\[
 		    \int_{a}^{b}f(x)g(x)\diff x
 		\]
@@ -2058,7 +2213,8 @@
 	\subsection{Integrals dependents d'un paràmetre}
 	\begin{theorem}
 		\label{thm:criteri per la derivació sota el signe de la integral}
-		Sigui \(f\colon[a,b]\times[c,d]\longrightarrow\mathbb{R}\) una funció contínua tal que \(f\) és derivable respecte la segona variable i \(\frac{\partial f}{\partial y}(x,y)\) és contínua en \([a,b]\times[c,d]\). Aleshores la funció
+		Sigui \(f\colon[a,b]\times[c,d]\longrightarrow\mathbb{R}\) una funció contínua tal que \(f\) és derivable respecte la segona variable i \(\frac{\partial f}{\partial y}(x,y)\) és contínua en \([a,b]\times[c,d]\).
+		Aleshores la funció
 		\[
 		    F(y)=\int_{a}^{b}f(x,y)\diff x
 		\]
@@ -2087,7 +2243,8 @@
 		\[
 		    \int_{a}^{b}\sup_{y\in(y_{0}-\delta,y_{0}+\delta)}\abs{\frac{\partial f}{\partial y}(x,y)}\diff x
 		\]
-		és convergent. Aleshores la funció
+		és convergent.
+		Aleshores la funció
 		\[
 		    F(y)=\int_{a}^{b}f(x,y)\diff x
 		\]
@@ -2107,7 +2264,8 @@
 		\]
 		per \(t>0\).
 		\begin{solution}
-			\(\frac{\uppi}{2}-\arctan(t)\). %TODO
+			\(\frac{\uppi}{2}-\arctan(t)\).
+			%TODO
 		\end{solution}
 	\end{example}
 	\begin{example}
@@ -2117,13 +2275,15 @@
 		    \int_{0}^{1}\frac{x^{2}-1}{\log(x)}\diff x.
 		\]
 		\begin{solution}
-			\(\log(3)\). %TODO
+			\(\log(3)\).
+			%TODO
 		\end{solution}
 	\end{example}
 	\subsection{La funció Gamma d'Euler}
 	\begin{definition}[Gamma d'Euler]
 		\labelname{Gamma d'Euler}\label{def:Gamma d'Euler}
-		Sigui \(r\) un real positiu. Aleshores definim
+		Sigui \(r\) un real positiu.
+		Aleshores definim
 		\[
 		    \Gamma(r)=\int_{0}^{\infty}x^{r-1}\e^{-x}\diff x
 		\]
@@ -2138,7 +2298,8 @@
 	\end{theorem}
 	\begin{lemma} % Repassar, fa aquesta part una mica al revés?
 		\label{lema:la Gamma d'Euler es comporta com un factorial amb reals}
-		Sigui \(r>0\) un real. Aleshores
+		Sigui \(r>0\) un real.
+		Aleshores
 		\[
 		    \Gamma(r+1)=r\Gamma(r).
 		\]
@@ -2161,7 +2322,8 @@
 	\end{observation}
 	\begin{lemma} % Repassar, fa aquesta part una mica al revés?
 		\label{lema:la Gamma d'Euler es comporta com un factorial}
-		Sigui \(n\) un natural. Aleshores
+		Sigui \(n\) un natural.
+		Aleshores
 		\[
 		    \Gamma(n)=(n-1)!
 		\]
@@ -2192,7 +2354,8 @@
 		    \Gamma\left(\frac{1}{2}\right).
 		\]
 		\begin{solution}
-			\(\sqrt{\uppi}\). %TODO
+			\(\sqrt{\uppi}\).
+			%TODO
 		\end{solution}
 	\end{example}
 	%TODO Buscar un exemple sabroso a \url{http://www.math.uconn.edu/~kconrad/blurbs/analysis/diffunderint.pdf} per acabar tot aquest tema a lo grande.
@@ -2222,14 +2385,16 @@
 		\end{solution}
 	\end{example}
 	\begin{lemma}
-		Sigui \(f\) una funció \(T\) periòdica. Aleshores \(f(x+T')=f(x)\) per a tot \(x\) real si i només si existeix un enter \(K\) tal que \(T'=KT\).
+		Sigui \(f\) una funció \(T\) periòdica.
+		Aleshores \(f(x+T')=f(x)\) per a tot \(x\) real si i només si existeix un enter \(K\) tal que \(T'=KT\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{lemma}
 	\begin{proposition}
 		\label{prop:podem desplaçar la integral d'una funció T periòdica}
-		Sigui \(f\) una funció \(T\)-periòdica i integrable. Aleshores per a tot \(a\) real es satisfà
+		Sigui \(f\) una funció \(T\)-periòdica i integrable.
+		Aleshores per a tot \(a\) real es satisfà
 		\[
 		    \int_{0}^{T}f(x)\diff x=\int_{a}^{a+T}f(x)\diff x.
 		\]
@@ -2239,14 +2404,16 @@
 	\end{proposition}
 	\begin{lemma}
 		\label{lema:les funciones periòdiques i contínues estàn acotades}
-		Sigui \(f\) una funció \(T\)-periòdica i contínua. Aleshores \(\abs{f}\) està acotada.
+		Sigui \(f\) una funció \(T\)-periòdica i contínua.
+		Aleshores \(\abs{f}\) està acotada.
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{lemma}
 	\begin{lemma}
 		\label{lema:les funcions periòdiques no poden ser aproximades per una sèrie de potències}
-		Sigui \(f\) una funció \(T\)-periòdica. Aleshores no existeix cap sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) tal que \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) convergeixi uniformement a \(f\) en \(\mathbb{R}\).
+		Sigui \(f\) una funció \(T\)-periòdica.
+		Aleshores no existeix cap sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) tal que \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) convergeixi uniformement a \(f\) en \(\mathbb{R}\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2258,7 +2425,8 @@
 		\[
 		    \{x\in[0,1]\mid f\text{ té una discontinuïtat salt finit en }x\}
 		\]
-		és finit. Aleshores direm que \(f\) és contínua a trossos.
+		és finit.
+		Aleshores direm que \(f\) és contínua a trossos.
 		
 		Denotarem
 		\[
@@ -2279,11 +2447,13 @@
 		\[
 		    \mathcal{P}=\{f\colon\mathbb{R}\longrightarrow\mathbb{C}\mid g\in\mathcal{C}\text{ i }f(x)=g(x-k)\text{ per }x\in[k,k+1),k\in\mathbb{Z}\}
 		\]
-		com el conjunt d'extensions periòdiques. Direm que els elements de \(\mathcal{P}\) són extensions periòdiques.
+		com el conjunt d'extensions periòdiques.
+		Direm que els elements de \(\mathcal{P}\) són extensions periòdiques.
 	\end{definition}
 	\begin{lemma}
 		\label{lema:l'espai d'extensions periòdiques és un espai vectorial}
-		Siguin \(f\) i \(g\) dues extensions periòdiques i \(\lambda\) un nombre complex. Aleshores el conjunt \(\mathcal{P}\) amb les operacions
+		Siguin \(f\) i \(g\) dues extensions periòdiques i \(\lambda\) un nombre complex.
+		Aleshores el conjunt \(\mathcal{P}\) amb les operacions
 		\[
 		    (f+g)(x)=f(x)+g(x)\quad\text{i}\quad(\lambda f)(x)=\lambda f(x)
 		\]
@@ -2319,14 +2489,16 @@
 	\subsection{Coeficients de Fourier}
 	\begin{definition}[Coeficients de Fourier]
 		\labelname{coeficients de Fourier}\label{def:coeficients de Fourier}
-		Sigui \(f\) una extensió periòdica. Definim
+		Sigui \(f\) una extensió periòdica.
+		Definim
 		\[
 		    \widehat{f}(n)=\langle f(x),\e^{2\uppi\iu nx}\rangle=\int_{0}^{1}f(x)\e^{-2\uppi\iu nx}\diff x
 		\]
 		com l'\(n\)-èsim coeficient de Fourier de \(f\).
 	\end{definition}
 	\begin{proposition}
-		Siguin \(f\) i \(g\) dues extensions periòdiques i \(\lambda\) i \(\mu\) dos nombres complexos. Aleshores
+		Siguin \(f\) i \(g\) dues extensions periòdiques i \(\lambda\) i \(\mu\) dos nombres complexos.
+		Aleshores
 		\[
 		    \widehat{\lambda f+\mu g}(n)=\lambda\widehat{f}(n)+\mu\widehat{g}(n).
 		\]
@@ -2335,7 +2507,8 @@
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
-		Sigui \(f\) una extensió periòdica, \(\tau\) un nombre de \((0,1)\) i \(f_{\tau}\) una funció definida com \(f_{\tau}(x)=f(x-\tau)\). Aleshores
+		Sigui \(f\) una extensió periòdica, \(\tau\) un nombre de \((0,1)\) i \(f_{\tau}\) una funció definida com \(f_{\tau}(x)=f(x-\tau)\).
+		Aleshores
 		\[
 		    \widehat{f_{\tau}}(n)=\e^{-2\uppi\iu n\tau}\widehat{f}(n).
 		\]
@@ -2344,7 +2517,8 @@
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
-		Sigui \(f\) una extensió periòdica derivable. Aleshores
+		Sigui \(f\) una extensió periòdica derivable.
+		Aleshores
 		\[
 		    \widehat{f'}(n)=2\uppi\iu n\widehat{f}(n).
 		\]
@@ -2353,7 +2527,8 @@
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
-		Siguin \(f\) i \(g\) dues extensions periòdiques. Aleshores
+		Siguin \(f\) i \(g\) dues extensions periòdiques.
+		Aleshores
 		\[
 		    \widehat{f\convolucio g}(n)=\widehat{f}(n)\widehat{g}(n).
 		\]
@@ -2363,7 +2538,8 @@
 	\end{proposition}
 	\begin{definition}[Sèrie de Fourier]
 		\labelname{sèrie de Fourier}\label{def:sèrie de Fourier}
-		Sigui \(f\) una extensió periòdica. Aleshores definim
+		Sigui \(f\) una extensió periòdica.
+		Aleshores definim
 		\[
 		    \sfourier(f)(x)=\sum_{n\in\mathbb{Z}}\widehat{f}(n)\e^{2\uppi\iu nx}
 		\]
@@ -2382,7 +2558,8 @@
 	\end{example}
 	\begin{proposition}
 		\label{prop:les sèries de Fourier són lineals}
-		Siguin \(f\) i \(g\) dues extensions periòdiques i \(\lambda\) i \(\mu\) dos nombres complexos. Aleshores
+		Siguin \(f\) i \(g\) dues extensions periòdiques i \(\lambda\) i \(\mu\) dos nombres complexos.
+		Aleshores
 		\[
 		    \sfourier(\lambda f+\mu g)(n)=\lambda\sfourier(f)(n)+\mu\sfourier(g)(n).
 		\]
@@ -2396,8 +2573,10 @@
 		\labelname{funció senar}\label{def:funció senar}
 		Sigui \(f\colon\mathbb{R}\longrightarrow\mathbb{C}\) una funció tal que per a tot \(x\) real es satisfà
 		\begin{enumerate}
-			\item \(f(x)=f(-x)\). Aleshores direm que \(f\) és una funció parell.
-			\item \(f(x)=-f(-x)\). Aleshores direm que \(f\) és una funció senar.
+			\item \(f(x)=f(-x)\).
+			Aleshores direm que \(f\) és una funció parell.
+			\item \(f(x)=-f(-x)\).
+			Aleshores direm que \(f\) és una funció senar.
 		\end{enumerate}
 	\end{definition}
 	\begin{example}
@@ -2418,7 +2597,8 @@
 	\end{example}
 	\begin{proposition}
 		\label{prop:la paritat de funcions es comporta com el producte de signes}
-		Siguin \(f\) una funció parell i \(g\) una funció senar. Aleshores les funcions \(f^{2}\) i \(g^{2}\) són parells i la funció \(fg\) és senar.
+		Siguin \(f\) una funció parell i \(g\) una funció senar.
+		Aleshores les funcions \(f^{2}\) i \(g^{2}\) són parells i la funció \(fg\) és senar.
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -2426,7 +2606,8 @@
 	\begin{proposition}
 		\label{prop:la integral d'una funció parell en un interval simètric és el doble que en mig interval}
 		\label{prop:la integral d'una funció senar en un interval simètric és 0}
-		Siguin \(f\) una funció parell i \(g\) una funció senar tals que \(f\) i \(g\) són integrables en l'interval \([-a,a]\). Aleshores
+		Siguin \(f\) una funció parell i \(g\) una funció senar tals que \(f\) i \(g\) són integrables en l'interval \([-a,a]\).
+		Aleshores
 		\[
 		    \int_{-a}^{a}f(x)\diff x=2\int_{0}^{a}f(x)\diff x\quad\text{i}\quad\int_{-a}^{a}g(x)\diff x=0.
 		\]
@@ -2438,8 +2619,10 @@
 		\label{lema:la paritat d'una funció es conserva en els coeficients de fourier}
 		Sigui \(f\) una extensió periòdica tal que
 		\begin{enumerate}
-			\item \(f\) és parell. Aleshores \(\widehat{f}\) és parell.
-			\item \(f\) és senar. Aleshores \(\widehat{f}\) és senar.
+			\item \(f\) és parell.
+			Aleshores \(\widehat{f}\) és parell.
+			\item \(f\) és senar.
+			Aleshores \(\widehat{f}\) és senar.
 		\end{enumerate}
 		\begin{proof}
 			%TODO
@@ -2448,7 +2631,8 @@
 	\subsection{Sèries de Fourier en termes de sinus i cosinus}
 	\begin{proposition}
 		\label{prop:sèrie de Fourier d'una funció parell}
-		Sigui \(f\) una extensió periòdica parell. Aleshores
+		Sigui \(f\) una extensió periòdica parell.
+		Aleshores
 		\[
 		    \sfourier(f)(x)=A_{0}+2\sum_{n=1}^{\infty}A_{n}\cos(2\uppi nx),
 		\]
@@ -2462,7 +2646,8 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:sèrie de Fourier d'una funció senar}
-		Sigui \(f\) una extensió periòdica senar. Aleshores
+		Sigui \(f\) una extensió periòdica senar.
+		Aleshores
 		\[
 		    \sfourier(f)(x)=2\sum_{n=1}^{\infty}B_{n}\sin(2\uppi nx),
 		\]
@@ -2475,7 +2660,8 @@
 		\end{proof}
 	\end{proposition}
 	\begin{theorem}
-		Sigui \(f\) una extensió periòdica. Aleshores
+		Sigui \(f\) una extensió periòdica.
+		Aleshores
 		\[
 		    \sfourier(f)(x)=A_{0}+2\sum_{n=1}^{\infty}A_{n}\cos(2\uppi nx)+2\sum_{n=1}^{\infty}B_{n}\sin(2\uppi nx),
 		\]
@@ -2491,7 +2677,8 @@
 	\subsection{Convolució de funcions \ensuremath{1}-periòdiques}
 	\begin{definition}[Convolució de dues extensions periòdiques]
 		\labelname{convolució de dues extensions periòdiques}\label{def:convolució de dues extensions periòdiques}
-		Siguin \(f\) i \(g\) dues extensions periòdiques. Aleshores definim
+		Siguin \(f\) i \(g\) dues extensions periòdiques.
+		Aleshores definim
 		\[
 		    (f\convolucio g)(x)=\int_{0}^{1}f(t)g(x-t)\diff t
 		\]
@@ -2512,7 +2699,8 @@
 	\end{definition}
 	\begin{theorem}
 		\label{thm:la convolució per extensions periòdiques és invariant per aproximacions de la unitat en extensions periòdiques}
-		Sigui \(f\) una extensió periòdica contínua i \((\phi_{\varepsilon})_{\varepsilon>0}\) una aproximació de la unitat en extensions periòdiques. Aleshores \(f\convolucio\phi_{\varepsilon}\) convergeix uniformement a \(f\) en \(\mathbb{R}\) quan \(\varepsilon\) tendeix a \(0\).
+		Sigui \(f\) una extensió periòdica contínua i \((\phi_{\varepsilon})_{\varepsilon>0}\) una aproximació de la unitat en extensions periòdiques.
+		Aleshores \(f\convolucio\phi_{\varepsilon}\) convergeix uniformement a \(f\) en \(\mathbb{R}\) quan \(\varepsilon\) tendeix a \(0\).
 		\begin{proof}
 			Per la definició d'\myref{def:aproximació de la unitat en extensions periòdiques} trobem que
 			\[
@@ -2537,7 +2725,8 @@
 				&=\sup_{x\in[0,1]}\abs{\int_{0}^{1}f(t)\phi_{\varepsilon}(x-t)\diff t-\int_{0}^{1}f(x)\phi_{\varepsilon}(x-t)\diff t} \\
 				&=\sup_{x\in[0,1]}\abs{\int_{0}^{1}(f(t)-f(x))\phi_{\varepsilon}(x-t)\diff t} \\
 				&\leq\sup_{x\in[0,1]}\int_{0}^{1}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t \tag{\ref{thm:la norma d'una integral és menys que l'integral de la norma}} \\
-				&=\sup_{x\in[0,1]}\int_{x-\frac{1}{2}}^{x+\frac{1}{2}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t. \tag{\ref{prop:podem desplaçar la integral d'una funció T periòdica}}
+				&=\sup_{x\in[0,1]}\int_{x-\frac{1}{2}}^{x+\frac{1}{2}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t.
+				\tag{\ref{prop:podem desplaçar la integral d'una funció T periòdica}}
 			\end{align*}
 			 Tenim per hipòtesi que \(f\) és contínua, i per la definició de \myref{def:funcio continua} trobem que per a tot \(\eta>0\) existeix un \(\delta>0\) tal que per a tot \(t\) satisfent \(\abs{x-t}>\delta\) tenim
 			 \[
@@ -2561,7 +2750,9 @@
 		
 	\end{definition}
 	\printbibliography
-	Els apunts estan escrits seguint la teoria donada a classe i complementats amb \cite{ApuntsMorelo}. La secció de reordenació de sèries està fortament inspirada també en \cite{HickmanRiemannSeriesTheoremNotes}. He copiat un exemple de \cite{KeithDifferentiatingUnderIntegralSignNotes}.
+	Els apunts estan escrits seguint la teoria donada a classe i complementats amb \cite{ApuntsMorelo}.
+	La secció de reordenació de sèries està fortament inspirada també en \cite{HickmanRiemannSeriesTheoremNotes}.
+	He copiat un exemple de \cite{KeithDifferentiatingUnderIntegralSignNotes}.
 	
 	La bibliografia del curs inclou els textos \cite{GalindoGuiaPracticaCalculoInfinitesimal,OrtegaIntroduccioAnalisiMatematica,PerelloCalculInfinitesimal,RudinPrinciplesOfMathematicalAnalysis,TolstovFourier}.
 \end{document}
