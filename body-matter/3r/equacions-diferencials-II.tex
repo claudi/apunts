@@ -73,7 +73,8 @@
 	\begin{definition}[Conjunts \(\omega\)-límit i \(\alpha\)-límit]
 		\labelname{conjunt \ensuremath{\omega}-límit}\label{def:conjunt omega-límit}
 		\labelname{conjunt \ensuremath{\alpha}-límit}\label{def:conjunt alpha-límit}
-		Sigui \(\varphi_{x}\colon\mathbb{R}\longrightarrow\mathbb{R}^{n}\) l'òrbita d'un punt \(x\in\mathbb{R}^{n}\). Aleshores definim
+		Sigui \(\varphi_{x}\colon\mathbb{R}\longrightarrow\mathbb{R}^{n}\) l'òrbita d'un punt \(x\in\mathbb{R}^{n}\).
+		Aleshores definim
 		\[
 		    \omega(x)=\{y\in\mathbb{R}^{n}\mid\text{existeix }(t_{n})_{n\in\mathbb{N}}\text{ amb }t_{n}\overset{n\to\infty}{\longrightarrow}+\infty\text{ tal que }\varphi_{x}(t_{n})\overset{n\to\infty}{\longrightarrow}y\}
 		\]
@@ -88,13 +89,15 @@
 		\[
 		    \dot{x}=f(x)\quad\text{i}\quad\dot{x}=-f(x)
 		\]
-		dues equacions diferencials. Aleshores el conjunt \(\omega\)-límit de \(x\) en la primera equació diferencial és el conjunt \(\alpha\)-límit de \(x\) en la segona equació diferencial i, anàlogament, el conjunt \(\alpha\)-límit de \(x\) en la primera equació diferencial és el conjunt \(\omega\)-límit de \(x\) en la segona equació diferencial.
+		dues equacions diferencials.
+		Aleshores el conjunt \(\omega\)-límit de \(x\) en la primera equació diferencial és el conjunt \(\alpha\)-límit de \(x\) en la segona equació diferencial i, anàlogament, el conjunt \(\alpha\)-límit de \(x\) en la primera equació diferencial és el conjunt \(\omega\)-límit de \(x\) en la segona equació diferencial.
 	\end{observation}
 	\begin{definition}[Conjunts invariants]
 		\labelname{conjunt positivament invariant}\label{def:conjunt positivament invariant}
 		\labelname{conjunt negativament invariant}\label{def:conjunt negativament invariant}
 		\labelname{conjunt invariant}\label{def:conjunt invariant}
-		Sigui \(\varphi_{x}\) l'òrbita d'un punt \(x\in\mathbb{R}^{n}\). Aleshores definim
+		Sigui \(\varphi_{x}\) l'òrbita d'un punt \(x\in\mathbb{R}^{n}\).
+		Aleshores definim
 		\[
 		    \gamma^{+}(x)=\{\varphi_{x}(t)\mid t\geq0\},\quad\gamma^{-}(x)=\{\varphi_{x}(t)\mid t\leq0\}\quad\text{i}\quad\gamma(x)=\gamma^{+}(x)\cup\gamma^{-}(x),
 		\]
@@ -104,7 +107,8 @@
 		\label{thm:propietats topològiques dels omega-límits}
 		Siguin
 		\(\dot{x}=f(x)\)
-		una equació diferencial sobre \(\mathbb{R}^{n}\), \(\tancat{K}\) un compacte de \(\mathbb{R}^{n}\) i \(p\in\mathbb{R}^{n}\) un punt tals que \(\gamma^{+}(x)\subset\tancat{K}\). Aleshores
+		una equació diferencial sobre \(\mathbb{R}^{n}\), \(\tancat{K}\) un compacte de \(\mathbb{R}^{n}\) i \(p\in\mathbb{R}^{n}\) un punt tals que \(\gamma^{+}(x)\subset\tancat{K}\).
+		Aleshores
 		\begin{enumerate}
 			\item\label{enum1:thm:propietats topològiques dels omega-límits} \(\omega(x)\neq\emptyset\).
 			\item\label{enum2:thm:propietats topològiques dels omega-límits} \(\omega(x)\) és un tancat.
@@ -112,13 +116,18 @@
 			\item\label{enum4:thm:propietats topològiques dels omega-límits} \(\omega(x)\) és connex.
 		\end{enumerate}
 		\begin{proof}
-			Comencem veient el punt \eqref{enum1:thm:propietats topològiques dels omega-límits}. Per hipòtesi tenim que \(\gamma^{+}(x)\subset\tancat{K}\). Ara bé, tenim que \(\varphi_{x}(0)=x\in\gamma^{+}(x)\), i per tant \(x\in\tancat{K}\) i tenim que \(\tancat{K}\neq\emptyset\). %TODO (pàg. 132 Equações Diferenciais Ordinárias)
+			Comencem veient el punt \eqref{enum1:thm:propietats topològiques dels omega-límits}.
+			Per hipòtesi tenim que \(\gamma^{+}(x)\subset\tancat{K}\).
+			Ara bé, tenim que \(\varphi_{x}(0)=x\in\gamma^{+}(x)\), i per tant \(x\in\tancat{K}\) i tenim que \(\tancat{K}\neq\emptyset\).
+			%TODO (pàg. 132 Equações Diferenciais Ordinárias)
 		\end{proof}
 	\end{theorem}
 	\subsection{Teorema de Poincaré-Bendixson}
 	\begin{definition}[Secció transversal]
 		\labelname{secció transversal}\label{def:secció transversal}
-		Siguin \(\dot{x}=f(x)\) una equació diferencial sobre un obert \(\obert{U}\subseteq\mathbb{R}^{2}\) i \(\Sigma\subseteq\obert{U}\) una corba tal que per a tot \(x,y\in\Sigma\) es satisfà \(f(x)=f(y)\). Aleshores direm que \(\Sigma\) és una secció transversal de l'equació diferencial. % \Sigma no és una corba, és la seva imatge
+		Siguin \(\dot{x}=f(x)\) una equació diferencial sobre un obert \(\obert{U}\subseteq\mathbb{R}^{2}\) i \(\Sigma\subseteq\obert{U}\) una corba tal que per a tot \(x,y\in\Sigma\) es satisfà \(f(x)=f(y)\).
+		Aleshores direm que \(\Sigma\) és una secció transversal de l'equació diferencial.
+		% \Sigma no és una corba, és la seva imatge
 	\end{definition}
 %	\begin{lemma}
 %		\label{lemma:Teorema de Poincaré-Bendixson 1}
@@ -130,15 +139,18 @@
 %	\end{lemma}
 	\begin{definition}[Aplicació de retorn]
 		\labelname{aplicació de retorn}\label{def:aplicació de retorn}
-		Siguin \(\dot{x}=f(x)\) una equació diferencial sobre un obert \(\obert{U}\subseteq\mathbb{R}^{2}\) i \(A\subseteq\obert{U}\) un conjunt tals que per a tot \(p\in A\) punt regular i tota secció transversal \(\Sigma\subseteq A\) existeix un entorn \(\obert{V}\subseteq\obert{U}\) de \(p\) tal que per a tot \(x\in\Sigma\cap\obert{V}\) existeix un \(t\neq0\) tal que \(\varphi_{x}(t)\in\Sigma\cap\obert{V}\). Aleshores direm que \(A\) admet una aplicació de retorn.
+		Siguin \(\dot{x}=f(x)\) una equació diferencial sobre un obert \(\obert{U}\subseteq\mathbb{R}^{2}\) i \(A\subseteq\obert{U}\) un conjunt tals que per a tot \(p\in A\) punt regular i tota secció transversal \(\Sigma\subseteq A\) existeix un entorn \(\obert{V}\subseteq\obert{U}\) de \(p\) tal que per a tot \(x\in\Sigma\cap\obert{V}\) existeix un \(t\neq0\) tal que \(\varphi_{x}(t)\in\Sigma\cap\obert{V}\).
+		Aleshores direm que \(A\) admet una aplicació de retorn.
 	\end{definition}
 	\begin{definition}[Gràfic]
 		\labelname{gràfic}\label{def:gràfic}
-		Siguin \(\dot{x}=f(x)\) una equació diferencial sobre un obert \(\obert{U}\subseteq\mathbb{R}^{2}\) i \(A\subseteq\obert{U}\) un conjunt invariant que conté punts regulars i punts crítics tal que per a tot punt \(x\in A\) tenim \(\alpha(x)=\{p\}\) i \(\omega(x)=\{q\}\) per a certs punts crítics \(p,q\in A\), i tals que \(A\) admet una aplicació de retorn. Aleshores direm que \(A\) és un gràfic.
+		Siguin \(\dot{x}=f(x)\) una equació diferencial sobre un obert \(\obert{U}\subseteq\mathbb{R}^{2}\) i \(A\subseteq\obert{U}\) un conjunt invariant que conté punts regulars i punts crítics tal que per a tot punt \(x\in A\) tenim \(\alpha(x)=\{p\}\) i \(\omega(x)=\{q\}\) per a certs punts crítics \(p,q\in A\), i tals que \(A\) admet una aplicació de retorn.
+		Aleshores direm que \(A\) és un gràfic.
 	\end{definition}
 	\begin{theorem}[Teorema de Poincaré-Bendixson]
 		\labelname{Teorema de Poincaré-Bendixson}\label{thm:Teorema de Poincaré-Bendixson}
-		Siguin \(\dot{x}=f(x)\) una equació diferencial en \(\Omega\subseteq\mathbb{R}^{2}\) amb un nombre finit de punts crítics i \(\tancat{K}\subseteq\Omega\) un compacte tal que \(\gamma^{+}(x)\subseteq\tancat{K}\). Aleshores
+		Siguin \(\dot{x}=f(x)\) una equació diferencial en \(\Omega\subseteq\mathbb{R}^{2}\) amb un nombre finit de punts crítics i \(\tancat{K}\subseteq\Omega\) un compacte tal que \(\gamma^{+}(x)\subseteq\tancat{K}\).
+		Aleshores
 		\begin{enumerate}
 			\item\label{enum1:thm:Teorema de Poincaré-Bendixson} si \(\omega(x)\) només conté punts crítics tenim que \(\omega(x)=\{p\}\).
 			\item\label{enum2:thm:Teorema de Poincaré-Bendixson} si \(\omega(x)\) conté punts crítics i punts regulars tenim que \(\omega(x)\) és un gràfic.
@@ -153,7 +165,8 @@
 %	\end{definition}
 	\begin{theorem}
 		\label{thm:dins d'una òrbita periòdica hi ha un punt crític}
-		Sigui \(\varphi\colon\mathbb{R}\longrightarrow\mathbb{R}^{2}\) una òrbita periòdica d'una equació diferencial \(\dot{x}=f(x)\). Aleshores existeix un \(p\in\interior(\varphi(\mathbb{R}))\) tal que \(p\) és un punt crític.
+		Sigui \(\varphi\colon\mathbb{R}\longrightarrow\mathbb{R}^{2}\) una òrbita periòdica d'una equació diferencial \(\dot{x}=f(x)\).
+		Aleshores existeix un \(p\in\interior(\varphi(\mathbb{R}))\) tal que \(p\) és un punt crític.
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -175,7 +188,8 @@
 	\subsection{Equació general de primer ordre}
 	\begin{definition}[Equació en derivades parcials de primer ordre]
 		\labelname{equació en derivades parcials de primer ordre}\label{def:equació en derivades parcials de primer ordre}
-		Siguin \(\Omega\subseteq\mathbb{R}^{2n+1}\) un obert i \(F\colon\Omega\longrightarrow\mathbb{R}\) una funció. Aleshores, denotant
+		Siguin \(\Omega\subseteq\mathbb{R}^{2n+1}\) un obert i \(F\colon\Omega\longrightarrow\mathbb{R}\) una funció.
+		Aleshores, denotant
 		\[
 		    u_{i}(x)=\frac{\partial u(x)}{\partial x_{i}},
 		\]
@@ -195,12 +209,14 @@
 		\[
 		    F(x_{1},\dots,x_{n},\Phi(x),\Phi_{1}(x),\dots,\Phi_{n}(x))=0
 		\]
-		per a tot \(x\in\Omega\). Aleshores direm que \(\Phi\) és una solució de l'equació en derivades parcials.
+		per a tot \(x\in\Omega\).
+		Aleshores direm que \(\Phi\) és una solució de l'equació en derivades parcials.
 	\end{definition}
 	\subsection{Equacions quasi-lineals de primer ordre}
 	\begin{definition}[Equació quasi-lineal]
 		\labelname{equació diferencial quasi-lineal}\label{def:equació diferencial quasi lineal}
-		Siguin \(\Omega\subseteq\mathbb{R}^{n}\times\mathbb{R}\) un obert, \(\{P_{i}\}_{i=1}^{N}\) una família de funcions de \(\Omega\) a \(\mathbb{R}\) i \(R\colon\Omega\longrightarrow\mathbb{R}\) una funció. Aleshores direm que l'expressió
+		Siguin \(\Omega\subseteq\mathbb{R}^{n}\times\mathbb{R}\) un obert, \(\{P_{i}\}_{i=1}^{N}\) una família de funcions de \(\Omega\) a \(\mathbb{R}\) i \(R\colon\Omega\longrightarrow\mathbb{R}\) una funció.
+		Aleshores direm que l'expressió
 		\[
 		    \sum_{i=1}^{N}\left(P_{i}(x,u(x))\frac{\partial u(x)}{\partial x_{i}}\right)=R(x,u(x))
 		\]
