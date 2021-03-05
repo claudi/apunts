@@ -14,7 +14,9 @@
 			f\colon\obert{U}&\longrightarrow\mathbb{R}^{m} \\
 			x&\longmapsto(f_{1}(x),\dots,f_{m}(x))
 		\end{align*}
-		una funció tal que per a tot \(i\in\{1,\dots,m\}\) la funció \(f_{i}\) és de classe \(\mathcal{C}^{k}\) per a tot natural \(k\in\mathbb{N}\). Aleshores direm que \(f\) és de classe de diferenciabilitat infinita. També direm que \(f\) és de classe \(\mathcal{C}^{\infty}\).
+		una funció tal que per a tot \(i\in\{1,\dots,m\}\) la funció \(f_{i}\) és de classe \(\mathcal{C}^{k}\) per a tot natural \(k\in\mathbb{N}\).
+		Aleshores direm que \(f\) és de classe de diferenciabilitat infinita.
+		També direm que \(f\) és de classe \(\mathcal{C}^{\infty}\).
 	\end{definition}
 	\begin{definition}[Funció analítica]
 		\labelname{funció analítica}\label{def:funció analítica}
@@ -23,7 +25,9 @@
 			f\colon\obert{U}&\longrightarrow\mathbb{R}^{m} \\
 			x&\longmapsto(f_{1}(x),\dots,f_{m}(x))
 		\end{align*}
-		una funció de classe \(\mathcal{C}^{\infty}\) i \(x_{0}\in\obert{U}\) un punt tal que existeix una sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) tal que existeix un entorn \(N_{x_{0}}\subseteq\obert{U}\) satisfent que per a tot \(x\in N_{x_{0}}\) la sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) convergeix puntualment a \(f(x)\). Aleshores direm que \(f\) és una funció analítica. També direm que \(f\) és de classe \(\mathcal{C}^{\omega}\).
+		una funció de classe \(\mathcal{C}^{\infty}\) i \(x_{0}\in\obert{U}\) un punt tal que existeix una sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) tal que existeix un entorn \(N_{x_{0}}\subseteq\obert{U}\) satisfent que per a tot \(x\in N_{x_{0}}\) la sèrie de potències \(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) convergeix puntualment a \(f(x)\).
+		Aleshores direm que \(f\) és una funció analítica.
+		També direm que \(f\) és de classe \(\mathcal{C}^{\omega}\).
 	\end{definition}
 	\begin{example}
 		\label{ex:els polinomis són funcions analítiques}
@@ -33,7 +37,8 @@
 			\[
 			    p(x)=a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}
 			\]
-			i un natural \(k\in\mathbb{N}\). Si \(k\leq n\) tenim que % REFS
+			i un natural \(k\in\mathbb{N}\).
+			Si \(k\leq n\) tenim que % REFS
 			\[
 			    p^{(k)}(x)=k!a_{k}+(k+1)!a_{k+1}x+\dots+\frac{n!}{(n-k)!}a_{n}x^{n-k},
 			\]
@@ -41,7 +46,8 @@
 			\[
 			    p^{(k)}(x)=0.
 			\]
-			Aleshores per la definició de \myref{def:classe de diferenciabilitat infinita} tenim que \(p(x)\) és de classe \(\mathcal{C}^{\infty}\). Observem que
+			Aleshores per la definició de \myref{def:classe de diferenciabilitat infinita} tenim que \(p(x)\) és de classe \(\mathcal{C}^{\infty}\).
+			Observem que
 			\[
 			    p(x)=\sum_{i=0}^{n}a_{i}x^{i}
 			\]
@@ -50,7 +56,8 @@
 	\end{example}
 	\begin{definition}[Difeomorfisme de classe \ensuremath{\mathcal{C}^{\infty}}]
 		\labelname{difeomorfisme de classe \ensuremath{\mathcal{C}^{\infty}}}\label{def:difeomorfisme de classe C infinit}\label{def:difeomorfisme de classe de diferenciabilitat infinita}
-		Siguin \(\obert{U}\) i \(\obert{V}\) dos oberts de \(\mathbb{R}^{d}\) i \(\Phi\colon\obert{U}\longleftrightarrow\obert{V}\) un difeomorfisme tal que les funcions \(\Phi\) i \(\Phi^{-1}\) siguin de classe \(\mathcal{C}^{\infty}\). Aleshores direm que \(\Phi\) és un difeomorfisme de classe de diferenciabilitat infinita o que \(\Phi\) és un difeomorfisme de classe \(\mathcal{C}^{\infty}\).
+		Siguin \(\obert{U}\) i \(\obert{V}\) dos oberts de \(\mathbb{R}^{d}\) i \(\Phi\colon\obert{U}\longleftrightarrow\obert{V}\) un difeomorfisme tal que les funcions \(\Phi\) i \(\Phi^{-1}\) siguin de classe \(\mathcal{C}^{\infty}\).
+		Aleshores direm que \(\Phi\) és un difeomorfisme de classe de diferenciabilitat infinita o que \(\Phi\) és un difeomorfisme de classe \(\mathcal{C}^{\infty}\).
 		
 		Aquesta definició té sentit per la definició de \myref{def:difeomorfisme}.
 	\end{definition}
@@ -58,7 +65,8 @@
 	\subsection{Reparametrització d'una corba}
 	\begin{definition}[Corba]
 		\labelname{corba}\label{def:corba}
-		Siguin \(I\subseteq\mathbb{R}\) un interval i \(\alpha\colon I\longrightarrow\mathbb{R}^{n}\) una funció contínua. Aleshores direm que \(\alpha\) és una corba sobre \(I\).
+		Siguin \(I\subseteq\mathbb{R}\) un interval i \(\alpha\colon I\longrightarrow\mathbb{R}^{n}\) una funció contínua.
+		Aleshores direm que \(\alpha\) és una corba sobre \(I\).
 	\end{definition}
 	\begin{example}
 		\label{ex:corba que uniex dos punts}
@@ -74,12 +82,14 @@
 	\end{example}
 	\begin{definition}[Corba regular]
 		\labelname{corba regular}\label{def:corba regular}
-		Sigui \(\alpha\) una corba diferenciable sobre \(I\) tal que per a tot \(t\in I\) es satisfà \(\alpha'(t)\neq\vec{0}\). Aleshores direm que \(\alpha\) és regular.
+		Sigui \(\alpha\) una corba diferenciable sobre \(I\) tal que per a tot \(t\in I\) es satisfà \(\alpha'(t)\neq\vec{0}\).
+		Aleshores direm que \(\alpha\) és regular.
 	\end{definition}
 	\begin{definition}[Reparametrització]
 		\labelname{reparametrització d'una corba}\label{def:reparametrització d'una corba}
 		\labelname{canvi de paràmetre}\label{def:canvi de paràmetre}
-		Siguin \(\alpha\) una corba sobre \(I\) i \(h\colon J\longrightarrow I\) un difeomorfisme. Aleshores direm que la funció
+		Siguin \(\alpha\) una corba sobre \(I\) i \(h\colon J\longrightarrow I\) un difeomorfisme.
+		Aleshores direm que la funció
 		\begin{align*}
 			\beta\colon J&\longrightarrow\mathbb{R}^{n} \\
 			t&\longmapsto(\alpha\circ h)(t)
@@ -87,9 +97,11 @@
 		és una reparametrització en \(J\) de \(\alpha\) i que \(h\) és el canvi de paràmetre.
 	\end{definition}
 	\begin{proposition}
-		Sigui \(\beta\) una reparametrització en \(J\) d'una corba regular \(\alpha\) sobre \(I\). Aleshores \(\beta\) és una corba regular.
+		Sigui \(\beta\) una reparametrització en \(J\) d'una corba regular \(\alpha\) sobre \(I\).
+		Aleshores \(\beta\) és una corba regular.
 		\begin{proof}
-			Per la definició de \myref{def:reparametrització d'una corba} trobem que existeix un canvi de paràmetre \(h:J\longrightarrow I\) tal que \(\beta=(\alpha\circ h)(t)\). Aleshores tenim que
+			Per la definició de \myref{def:reparametrització d'una corba} trobem que existeix un canvi de paràmetre \(h:J\longrightarrow I\) tal que \(\beta=(\alpha\circ h)(t)\).
+			Aleshores tenim que
 			\begin{align*}
 				\beta\colon J&\longrightarrow\mathbb{R}^{n} \\
 				t&\longmapsto(\alpha\circ h)(t),
@@ -101,13 +113,15 @@
 			    \beta'(t)=h'(t)(\alpha'\circ h)(t).
 			\]
 			
-			Com que per hipòtesi \(\alpha\) és regular, per la definició de \myref{def:corba regular} trobem que \((\alpha'\circ h)(t)\neq\vec{0}\) per a tot \(t\in J\). Ara bé, pel \corollari{} \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} trobem que \(h'(t)\neq\vec{0}\) per a tot \(t\in J\), i per tant tenim que \(\beta'(t)\neq\vec{0}\) per a tot \(t\in J\), i per la definició de \myref{def:corba regular} trobem que \(\beta\) és una corba regular.
+			Com que per hipòtesi \(\alpha\) és regular, per la definició de \myref{def:corba regular} trobem que \((\alpha'\circ h)(t)\neq\vec{0}\) per a tot \(t\in J\).
+			Ara bé, pel \corollari{} \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} trobem que \(h'(t)\neq\vec{0}\) per a tot \(t\in J\), i per tant tenim que \(\beta'(t)\neq\vec{0}\) per a tot \(t\in J\), i per la definició de \myref{def:corba regular} trobem que \(\beta\) és una corba regular.
 		\end{proof}
 	\end{proposition}
 	\subsection{La longitud d'una corba i el paràmetre arc}
 	\begin{definition}[Longitud d'una corba]
 		\labelname{longitud d'una corba}\label{def:longitud d'una corba}
-		Siguin \(\alpha\) una corba sobre \(I\) i \(a\), \(b\) dos punts de \(I\). Aleshores definim
+		Siguin \(\alpha\) una corba sobre \(I\) i \(a\), \(b\) dos punts de \(I\).
+		Aleshores definim
 		\[
 		    \Long_{a}^{b}(\alpha)=\int_{a}^{b}\norm{\alpha'(t)}\diff t
 		\]
@@ -132,7 +146,8 @@
 		\end{solution}
 	\end{example}
 	\begin{proposition}
-		Sigui \(\beta\) una reparametrització d'una corba \(\alpha\) en \(I\) amb canvi de paràmetre \(h\). Aleshores per a tot \(a\) i \(b\) de \(I\), amb \(c=h^{-1}(a)\) i \(d=h^{-1}(d)\) tenim
+		Sigui \(\beta\) una reparametrització d'una corba \(\alpha\) en \(I\) amb canvi de paràmetre \(h\).
+		Aleshores per a tot \(a\) i \(b\) de \(I\), amb \(c=h^{-1}(a)\) i \(d=h^{-1}(d)\) tenim
 		\[
 		    \Long_{a}^{b}(\alpha)=\Long_{c}^{d}(\beta).
 		\]
@@ -153,9 +168,11 @@
 			    \int_{c}^{d}\norm{h'(s)\alpha'(h(s))}\diff s=\int_{c}^{d}\abs{h'(s)}\norm{\alpha'(h(s))}\diff s.
 			\]
 			
-			Ara bé, com que \(h\) és un difeomorfisme tenim per la definició de \myref{def:difeomorfisme} que \(h'\) és contínua, i pel \corollari{} \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} trobem que \(h'(t)\neq0\) per a tot \(t\in[c,d]\). Aleshores tenim que ha de ser o bé \(h'(t)>0\) per a tot \(t\in[c,d]\) o bé \(h'(t)<0\) per a tot \(t\in[c,d]\).
+			Ara bé, com que \(h\) és un difeomorfisme tenim per la definició de \myref{def:difeomorfisme} que \(h'\) és contínua, i pel \corollari{} \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} trobem que \(h'(t)\neq0\) per a tot \(t\in[c,d]\).
+			Aleshores tenim que ha de ser o bé \(h'(t)>0\) per a tot \(t\in[c,d]\) o bé \(h'(t)<0\) per a tot \(t\in[c,d]\).
 			
-			Comencem suposant que \(h'(t)>0\) per a tot \(t\in[c,d]\). Aleshores tenim que
+			Comencem suposant que \(h'(t)>0\) per a tot \(t\in[c,d]\).
+			Aleshores tenim que
 			\[
 			    \int_{c}^{d}\abs{h'(s)}\norm{\alpha'(h(s))}\diff s=\int_{c}^{d}h'(s)\norm{\alpha'(h(s))}\diff s,
 			\]
@@ -169,7 +186,8 @@
 			    \Long_{c}^{d}(\beta)=\Long_{a}^{b}(\alpha).
 			\]
 			
-			Suposem ara que \(h'(t)<0\) per a tot \(t\in[c,d]\). Aleshores tenim que			\begin{align*}
+			Suposem ara que \(h'(t)<0\) per a tot \(t\in[c,d]\).
+			Aleshores tenim que			\begin{align*}
 				\int_{c}^{d}\abs{h'(s)}\norm{\alpha'(h(s))}\diff s&=\int_{c}^{d}-h'(s)\norm{\alpha'(h(s))}\diff s \\
 				&=\int_{d}^{c}h'(s)\norm{\alpha'(h(s))}\diff s
 			\end{align*}
@@ -186,7 +204,8 @@
 	\end{proposition}
 	\begin{definition}[Funció longitud d'arc]
 		\labelname{funció longitud d'arc}\label{def:funció longitud d'arc}
-		Siguin \(\alpha\) una corba sobre \(I\) i \(a\in I\) un punt. Aleshores direm que la funció
+		Siguin \(\alpha\) una corba sobre \(I\) i \(a\in I\) un punt.
+		Aleshores direm que la funció
 		\begin{align*}
 			\funciolongituddarc_{\alpha}(a)(t)\colon I&\longrightarrow\mathbb{R}\\
 			t&\longmapsto\int_{a}^{t}\norm{\alpha'(s)}\diff s
@@ -196,7 +215,8 @@
 	\end{definition}
 	\begin{observation}
 		\label{obs:la funció longitud d'arc és creixent}
-		Sigui \(\alpha\) una corba sobre \(I\) i \(a\in I\) un punt. Aleshores per a tot \(t\in I\)
+		Sigui \(\alpha\) una corba sobre \(I\) i \(a\in I\) un punt.
+		Aleshores per a tot \(t\in I\)
 		\[
 		    \frac{\diff\funciolongituddarc_{\alpha}(a)}{\diff t}(t)\geq0.
 		\]
@@ -213,7 +233,9 @@
 	\end{observation}
 	\begin{proposition}
 		\label{prop:la funció longitud arc d'una corba regular és un difeomorfisme}
-		Siguin \(\alpha\) una corba regular sobre \(I\) i \(a\in I\) un punt. Aleshores la funció \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme. % SOBRE J
+		Siguin \(\alpha\) una corba regular sobre \(I\) i \(a\in I\) un punt.
+		Aleshores la funció \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme.
+		% SOBRE J
 		\begin{proof}
 			Per la definició de \myref{def:corba regular} trobem que \(\alpha'(t)\neq0\) per a tot \(t\in I\), i pel \myref{thm:Teorema Fonamental del Càlcul} tenim que
 			\[
@@ -223,17 +245,20 @@
 			\[
 			    \frac{\diff\funciolongituddarc_{\alpha}(a)}{\diff t}(t)\neq0,
 			\]
-			i per l'observació \myref{obs:diferencial en d=1 és com derivar} i el \corollari{} \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} tenim que \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme, com volíem veure. % SOBRE J
+			i per l'observació \myref{obs:diferencial en d=1 és com derivar} i el \corollari{} \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} tenim que \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme, com volíem veure.
+			% SOBRE J
 		\end{proof}
 	\end{proposition}
 	\begin{proposition} % Veure després de definir corba parametritzada per l'arc
 		\label{prop:podem trobar una reparametrització amb velocitat unitaria de qualsevol corba regular}
-		Sigui \(\alpha\) una corba regular sobre \(I\). Aleshores existeix una reparametrització \(\beta\) de \(\alpha\) tal que per a tot \(t\in I\)
+		Sigui \(\alpha\) una corba regular sobre \(I\).
+		Aleshores existeix una reparametrització \(\beta\) de \(\alpha\) tal que per a tot \(t\in I\)
 		\[
 		    \norm{\beta'(t)}=1.
 		\]
 		\begin{proof}
-			Per la proposició \myref{prop:la funció longitud arc d'una corba regular és un difeomorfisme} tenim que per a tot \(a\in I\) la funció \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme, i per la definició de \myref{def:difeomorfisme} trobem que la funció \(\funciolongituddarc_{\alpha}(a)\) és bijectiva, i pel Teorema \myref{thm:bijectiva iff invertible} trobem que \(\funciolongituddarc_{\alpha}(a)\) és invertible i per la definició d'\myref{def:aplicació invertible} tenim que existeix una funció \(t_{a}\) tal que \(t_{a}\) sigui la inversa de \(\funciolongituddarc_{\alpha}(a)\). Considerem
+			Per la proposició \myref{prop:la funció longitud arc d'una corba regular és un difeomorfisme} tenim que per a tot \(a\in I\) la funció \(\funciolongituddarc_{\alpha}(a)\) és un difeomorfisme, i per la definició de \myref{def:difeomorfisme} trobem que la funció \(\funciolongituddarc_{\alpha}(a)\) és bijectiva, i pel Teorema \myref{thm:bijectiva iff invertible} trobem que \(\funciolongituddarc_{\alpha}(a)\) és invertible i per la definició d'\myref{def:aplicació invertible} tenim que existeix una funció \(t_{a}\) tal que \(t_{a}\) sigui la inversa de \(\funciolongituddarc_{\alpha}(a)\).
+			Considerem
 			\[
 			    \beta(s)=\alpha(t(s)).
 			\]
@@ -242,7 +267,8 @@
 				\norm{\beta'(s)}&=\norm{\frac{\diff t}{\diff s}\alpha'(s)} \\
 				&=\abs{\frac{\diff t}{\diff s}}\norm{\alpha'(s)} \\
 				&=\frac{\diff t}{\diff s}(s(t))\frac{\diff s}{\diff t}(t(s))\\
-				&=\frac{1}{\frac{\diff s}{\diff t}(t(s))}\frac{\diff s}{\diff t}(t(s))=1. \qedhere
+				&=\frac{1}{\frac{\diff s}{\diff t}(t(s))}\frac{\diff s}{\diff t}(t(s))=1.
+				\qedhere
 			\end{align*}
 		\end{proof}
 	\end{proposition}
@@ -287,7 +313,9 @@
 			    \beta(s)=(\alpha\circ h)(s)=\left(-R\sin\left(\frac{s}{R}\right),R\cos\left(\frac{s}{R}\right)\right).
 			\]
 			
-			Tenim que \(\beta\) és una reparametrització de \(\alpha\). Veiem ara que \(\beta\) està parametritzada per l'arc. Tenim que
+			Tenim que \(\beta\) és una reparametrització de \(\alpha\).
+			Veiem ara que \(\beta\) està parametritzada per l'arc.
+			Tenim que
 			\begin{align*}
 				\norm{\beta'(s)}&=\norm{\alpha(h(s))'} \\
 				&=\norm{h'(s)\alpha'(h(s))} \tag{\ref{thm:regla de la cadena}}\\
@@ -299,7 +327,8 @@
 		\end{solution}
 	\end{example}
 	\begin{observation}
-		Sigui \(\alpha\) una corba en \(I\) parametritzada per l'arc i \(a\in I\) un punt. Aleshores per a tot \(s\in I\) tenim
+		Sigui \(\alpha\) una corba en \(I\) parametritzada per l'arc i \(a\in I\) un punt.
+		Aleshores per a tot \(s\in I\) tenim
 		\[
 		    \funciolongituddarc_{\alpha}(a)(s)=s-a.
 		\]
@@ -321,11 +350,13 @@
 		\[
 		    \lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{p}}=0\quad\text{i}\quad\lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{r+1}}\neq0
 		\]
-		per a tot \(p\leq r\). Aleshores direm que \(\alpha\) i \(\beta\) tenen contacte d'ordre \(r\) en \(s_{0}\).
+		per a tot \(p\leq r\).
+		Aleshores direm que \(\alpha\) i \(\beta\) tenen contacte d'ordre \(r\) en \(s_{0}\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:contacte r és equivalent a tenir les r primeres derivades iguals}
-		Siguin \(\alpha\) i \(\beta\) dues corbes en \(I\) parametritzades per l'arc i \(s_{0}\in I\) un punt. Aleshores \(\alpha\) i \(\beta\) tenen contacte d'ordre \(r\) en \(s_{0}\) si i només si
+		Siguin \(\alpha\) i \(\beta\) dues corbes en \(I\) parametritzades per l'arc i \(s_{0}\in I\) un punt.
+		Aleshores \(\alpha\) i \(\beta\) tenen contacte d'ordre \(r\) en \(s_{0}\) si i només si
 		\[
 		    \alpha^{(p)}(s_{0})=\beta^{(p)}(s_{0})\quad\text{i}\quad\alpha^{(r+1)}(s_{0})\neq\beta^{(r+1)}(s_{0})
 		\]
@@ -335,7 +366,8 @@
 			\[
 			    \alpha^{(p)}(s_{0})=\beta^{(p)}(s_{0})\quad\text{i}\quad\alpha^{(r+1)}(s_{0})\neq\beta^{(r+1)}(s_{0})
 			\]
-			per a tot \(p\leq r\). Tenim que, per a tot \(p\leq r\) es satisfà
+			per a tot \(p\leq r\).
+			Tenim que, per a tot \(p\leq r\) es satisfà
 			\[
 			    \alpha^{(p)}(s_{0})=\beta^{(p)}(s_{0}),
 			\]
@@ -382,7 +414,8 @@
 	\subsection{Producte escalar i producte vectorial}
 	\begin{proposition}
 		\label{prop:derivada del producte escalar de dues corbes}
-		Siguin \(\alpha\) i \(\beta\) dues corbes diferenciables sobre \(I\). Aleshores
+		Siguin \(\alpha\) i \(\beta\) dues corbes diferenciables sobre \(I\).
+		Aleshores
 		\[
 		    \frac{\diff\prodesc{\alpha(t)}{\beta(t)}}{\diff t}=\prodesc{\alpha'(t)}{\beta(t)}+\prodesc{\alpha(t)}{\beta'(t)}
 		\]
@@ -435,7 +468,8 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:unicitat del producte vectorial entre dos vectors}
-		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\). Aleshores existeix un únic vector \(\vec{w}\) de \(\mathbb{R}^{3}\) tal que per a tot vector \(\vec{x}\) de \(\mathbb{R}^{3}\)
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\).
+		Aleshores existeix un únic vector \(\vec{w}\) de \(\mathbb{R}^{3}\) tal que per a tot vector \(\vec{x}\) de \(\mathbb{R}^{3}\)
 		\[
 		    \prodesc{\vec{w}}{\vec{x}}=\det(\vec{u},\vec{v},\vec{x}).
 		\]
@@ -461,12 +495,14 @@
 	\end{observation}
 	\begin{proposition}
 	\label{prop:el producte vectorial canvia de signe en permutar els vectors}
-		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\). Aleshores
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\).
+		Aleshores
 		\[
 		    \vec{u}\prodvec\vec{v}=-\vec{v}\prodvec\vec{u}.
 		\]
 		\begin{proof}
-			Sigui \(\vec{x}\) un vector de \(\mathbb{R}^{3}\). Considerem
+			Sigui \(\vec{x}\) un vector de \(\mathbb{R}^{3}\).
+			Considerem
 			\[
 			    \det(\vec{u},\vec{v},\vec{x}).
 			\]
@@ -481,14 +517,17 @@
 				&=-\det(\vec{v},\vec{u},\vec{x}) \tag{\ref{prop:el producte vectorial canvia de signe en permutar els vectors:eq1}}\\
 				&=-\prodesc{\vec{v}\prodvec\vec{u}}{\vec{x}},
 			\end{align*}
-			i per tant \(\vec{u}\prodvec\vec{v}=-\vec{v}\prodvec\vec{u}\), com volíem veure. % REF
+			i per tant \(\vec{u}\prodvec\vec{v}=-\vec{v}\prodvec\vec{u}\), com volíem veure.
+			% REF
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:el producte vectorial és zero si i només si els vectors no són linealment independents}
-		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors. Aleshores \(\vec{u}\prodvec\vec{v}\neq\vec{0}\) si i només si \(\vec{u}\) i \(\vec{v}\) són linealment independents.
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors.
+		Aleshores \(\vec{u}\prodvec\vec{v}\neq\vec{0}\) si i només si \(\vec{u}\) i \(\vec{v}\) són linealment independents.
 		\begin{proof}
-			Suposem que \(\vec{u}\prodvec\vec{v}=\vec{0}\). Aleshores tenim, per a tot vector \(\vec{x}\) de \(\mathbb{R}^{3}\), que
+			Suposem que \(\vec{u}\prodvec\vec{v}=\vec{0}\).
+			Aleshores tenim, per a tot vector \(\vec{x}\) de \(\mathbb{R}^{3}\), que
 			\[
 			    \prodesc{\vec{u}\prodvec\vec{v}}{\vec{x}}=\prodesc{\vec{0}}{\vec{x}},
 			\]
@@ -500,20 +539,23 @@
 			\[
 			    \det(\vec{u},\vec{v},\vec{x})=0,
 			\]
-			i per tant tenim que \(\vec{u}\) i \(\vec{v}\) no són linealment independents. %REF
+			i per tant tenim que \(\vec{u}\) i \(\vec{v}\) no són linealment independents.
+			%REF
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:dos vectors linealment independents són perpendiculars al seu producte vectorial}
 		\label{prop:el producte vectorial és perpendicular als vectors}
-		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors linealment independents de \(\mathbb{R}^{3}\). Aleshores \(\vec{u}\prodvec\vec{v}\) és perpendicular a \(\vec{u}\) i \(\vec{v}\).
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors linealment independents de \(\mathbb{R}^{3}\).
+		Aleshores \(\vec{u}\prodvec\vec{v}\) és perpendicular a \(\vec{u}\) i \(\vec{v}\).
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:el determinant de dos vectors linealment independents i el seu producte vectorial és diferent de zero}
-		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors linealment independents de \(\mathbb{R}^{3}\). Aleshores \(\det(\vec{u},\vec{v},\vec{u}\prodvec\vec{v})\neq0\).
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors linealment independents de \(\mathbb{R}^{3}\).
+		Aleshores \(\det(\vec{u},\vec{v},\vec{u}\prodvec\vec{v})\neq0\).
 		\begin{proof}
 			Per l'observació \myref{obs:fórmula del determinant segons el producte vectorial i el producte escalar} tenim que
 			\[
@@ -536,11 +578,13 @@
 	\begin{definition}[Orientació d'una base]
 		\labelname{orientació d'una base}\label{orientació d'una base}
 		\labelname{base positiva}\label{def:base positiva}
-		Sigui \((\vec{u},\vec{v},\vec{w})\) una base tal que \(\det(\vec{u},\vec{v},\vec{w})>0\). Aleshores direm que \((\vec{u},\vec{v},\vec{w})\) és una base positiva.
+		Sigui \((\vec{u},\vec{v},\vec{w})\) una base tal que \(\det(\vec{u},\vec{v},\vec{w})>0\).
+		Aleshores direm que \((\vec{u},\vec{v},\vec{w})\) és una base positiva.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:dos vectors linealment independents i el seu producte vectorial formen una base positiva}
-		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors linealment independents. Aleshores la base \((\vec{u},\vec{v},\vec{u}\prodvec\vec{v})\) és una base positiva.
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors linealment independents.
+		Aleshores la base \((\vec{u},\vec{v},\vec{u}\prodvec\vec{v})\) és una base positiva.
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:el determinant de dos vectors linealment independents i el seu producte vectorial és diferent de zero}.
 			
@@ -561,7 +605,8 @@
 	\end{proposition}
 	\begin{proposition}[Fórmula de Lagrange]
 		\labelname{fórmula de Lagrange}\label{prop:fórmula de Lagrange}
-		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\). Aleshores per a tots \(\vec{x}\) i \(\vec{y}\) de \(\mathbb{R}^{3}\) es satisfà
+		Siguin \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\mathbb{R}^{3}\).
+		Aleshores per a tots \(\vec{x}\) i \(\vec{y}\) de \(\mathbb{R}^{3}\) es satisfà
 		\[\prodesc{\vec{u}\prodvec\vec{v}}{\vec{x}\prodvec\vec{y}}=\det\left[\begin{matrix}
 			\prodesc{\vec{u}}{\vec{x}} & \prodesc{\vec{v}}{\vec{x}} \\
 			\prodesc{\vec{u}}{\vec{y}} & \prodesc{\vec{v}}{\vec{y}}
@@ -574,7 +619,8 @@
 		\labelname{}
 		\label{prop:fórmula de Leibniz}
 		\label{prop:fórmula per la derivada del producte vectorial de dues corbes}
-		Siguin \(\alpha\) i \(\beta\) dues corbes sobre \(I\) en \(\mathbb{R}^{3}\) diferenciables en \(I\). Aleshores
+		Siguin \(\alpha\) i \(\beta\) dues corbes sobre \(I\) en \(\mathbb{R}^{3}\) diferenciables en \(I\).
+		Aleshores
 		\[
 		    \frac{\diff(\alpha(t)\prodvec\beta(t))}{\diff t}=\frac{\diff\alpha(t)}{\diff t}\prodvec\beta(t)+\alpha(t)\prodvec\frac{\diff\beta(t)}{\diff t}.
 		\]
@@ -648,7 +694,8 @@
 	\subsection{Fórmules de Frenet}
 	\begin{proposition}
 		\label{prop:la primera derivada i la segona derivada d'una corba són perpendiculars}
-		Sigui \(\alpha\) una corba parametritzada per l'arc sobre \(I\) tal que \(\alpha\) és dues vegades diferenciable en un punt \(s_{0}\). Aleshores tenim que \(\alpha'(s_{0})\) i \(\alpha''(s_{0})\) són perpendiculars.
+		Sigui \(\alpha\) una corba parametritzada per l'arc sobre \(I\) tal que \(\alpha\) és dues vegades diferenciable en un punt \(s_{0}\).
+		Aleshores tenim que \(\alpha'(s_{0})\) i \(\alpha''(s_{0})\) són perpendiculars.
 		\begin{proof}
 			Per la definició de \myref{def:corba parametritzada per l'arc} trobem que per a tot \(s\in I\) es satisfà
 			\[
@@ -684,7 +731,8 @@
 	\end{proposition}
 	\begin{definition}[Curvatura]
 		\labelname{curvatura}\label{def:curvatura}
-		Sigui \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i dues vegades diferenciable. Aleshores direm que l'aplicació
+		Sigui \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i dues vegades diferenciable.
+		Aleshores direm que l'aplicació
 		\begin{align*}
 			\curvatura_{\alpha}\colon I&\longrightarrow\mathbb{R} \\
 			s&\longmapsto\norm{\alpha''(s)}
@@ -715,20 +763,26 @@
 	\end{example}
 	\begin{proposition}
 		\label{prop:una corba té curvatura zero si i només si és una recta}
-		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable. Aleshores \(\alpha\) és una recta si i només si \(\curvatura_{\alpha}(s)=0\) per a tot \(s\in I\).
+		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable.
+		Aleshores \(\alpha\) és una recta si i només si \(\curvatura_{\alpha}(s)=0\) per a tot \(s\in I\).
 		\begin{proof}
-			Comencem veient que la condició és necessària (\(\implica\)). Suposem doncs que \(\alpha\) és una recta sobre \(\mathbb{R}^{n}\). Tenim que existeixen \(K_{1}\) i \(K_{2}\) de \(\mathbb{R}^{n}\) tals que
+			Comencem veient que la condició és necessària (\(\implica\)).
+			Suposem doncs que \(\alpha\) és una recta sobre \(\mathbb{R}^{n}\).
+			Tenim que existeixen \(K_{1}\) i \(K_{2}\) de \(\mathbb{R}^{n}\) tals que
 			\[
 			    \alpha(s)=K_{1}s+K_{2}.
 			\]
 			Aleshores tenim que \(\alpha''(s)=\vec{0}\), i per la definició de \myref{def:curvatura} trobem que \(\curvatura_{\alpha}(s)=0\).
 			
-			Veiem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que \(\curvatura_{\alpha}(s)=0\) per a tot \(s\in I\). Tenim doncs que \(\alpha''(s)=\vec{0}\), i per tant existeixen \(K_{1}\) i \(K_{2}\) de \(\mathbb{R}^{n}\) tals que \(\alpha'(s)=K_{1}\) i \(\alpha''(s)=K_{1}s+K_{2}\) i trobem que \(\alpha\) és una recta.
+			Veiem ara que la condició és suficient (\(\implicatper\)).
+			Suposem doncs que \(\curvatura_{\alpha}(s)=0\) per a tot \(s\in I\).
+			Tenim doncs que \(\alpha''(s)=\vec{0}\), i per tant existeixen \(K_{1}\) i \(K_{2}\) de \(\mathbb{R}^{n}\) tals que \(\alpha'(s)=K_{1}\) i \(\alpha''(s)=K_{1}s+K_{2}\) i trobem que \(\alpha\) és una recta.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Normal]
 		\labelname{normal}\label{def:normal}
-		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable amb curvatura no \nulla{}. Aleshores direm que l'aplicació
+		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc i dues vegades diferenciable amb curvatura no \nulla{}.
+		Aleshores direm que l'aplicació
 		\begin{align*}
 			\normal_{\alpha}\colon I&\longrightarrow\mathbb{R} \\
 			s&\longmapsto\frac{\alpha''(s)}{\norm{\alpha''(s)}}
@@ -741,7 +795,8 @@
 	\end{observation}
 	\begin{definition}[Tangent]
 		\labelname{tangent}\label{def:tangent}
-		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc. Aleshores direm que l'aplicació
+		Sigui \(\alpha\) una corba sobre \(I\) parametritzada per l'arc.
+		Aleshores direm que l'aplicació
 		\begin{align*}
 			\tangent_{\alpha}\colon I&\longrightarrow\mathbb{R} \\
 			s&\longmapsto\alpha'(s)
@@ -754,7 +809,8 @@
 	\end{observation}
 	\begin{proposition}
 		\label{prop:la tangent i la normal d'una corba amb curvatura no nula són perpendiculars}
-		Sigui \(\alpha\) una corba sobre \(I\) amb curvatura no \nulla{} i \(s\in I\) un real. Aleshores els vectors \(\tangent_{\alpha}(s)\) i \(\normal_{\alpha}(s)\) són perpendiculars.
+		Sigui \(\alpha\) una corba sobre \(I\) amb curvatura no \nulla{} i \(s\in I\) un real.
+		Aleshores els vectors \(\tangent_{\alpha}(s)\) i \(\normal_{\alpha}(s)\) són perpendiculars.
 		\begin{proof}
 			Considerem
 			\[
@@ -764,14 +820,16 @@
 			\begin{align*}
 				\prodesc{\tangent_{\alpha}(s)}{\normal_{\alpha}(s)}&=\prodesc[\bigg]{\alpha'(s)}{\frac{\alpha''(s)}{\norm{\alpha''(s)}}} \\
 				&=\frac{1}{\norm{\alpha''(s)}}\prodesc{\alpha'(s)}{\alpha''(s)} \tag{\ref{def:producte escalar}} \\
-				&=0. \tag{\ref{prop:la primera derivada i la segona derivada d'una corba són perpendiculars}}
+				&=0.
+				\tag{\ref{prop:la primera derivada i la segona derivada d'una corba són perpendiculars}}
 			\end{align*}
 			Aleshores per la definició de \myref{def:vectors perpendiculars} trobem que \(\tangent_{\alpha}(s)\) i \(\normal_{\alpha}(s)\) són perpendiculars.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:circumferència osculadora}
-		Siguin \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i \(s_{0}\in I\) un punt tal que \(\alpha''(s_{0})\neq\vec{0}\). Aleshores existeix una única circumferència \(\beta\) en \(\mathbb{R}^{3}\) tal que \(\alpha\) i \(\beta\) tenen contacte d'ordre \(2\) en \(\alpha(s_{0})\), que té radi \(\radicircosculadora_{\alpha}(s_{0})=\frac{1}{\curvatura_{\alpha}(s_{0})}\) i és de la forma
+		Siguin \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i \(s_{0}\in I\) un punt tal que \(\alpha''(s_{0})\neq\vec{0}\).
+		Aleshores existeix una única circumferència \(\beta\) en \(\mathbb{R}^{3}\) tal que \(\alpha\) i \(\beta\) tenen contacte d'ordre \(2\) en \(\alpha(s_{0})\), que té radi \(\radicircosculadora_{\alpha}(s_{0})=\frac{1}{\curvatura_{\alpha}(s_{0})}\) i és de la forma
 		\[
 		    \beta(s)=Q+\radicircosculadora_{\alpha}(s_{0})\left(-\normal_{\alpha}(s_{0})\cos\left(\frac{s}{\radicircosculadora_{\alpha}(s_{0})}\right)+\tangent_{\alpha}(s_{0})\sin\left(\frac{s}{\radicircosculadora_{\alpha}(s_{0})}\right)\right).
 		\]
@@ -788,17 +846,20 @@
 	\end{proposition}
 	\begin{definition}[Circumferència osculadora]
 		\labelname{circumferència osculadora}\label{def:circumferència osculadora}
-		Sigui \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i \(s_{0}\in I\) un punt tal que \(\alpha''(s_{0})\neq\vec{0}\) i \(\radicircosculadora_{\alpha}(s_{0})=\frac{1}{\curvatura_{\alpha}(s_{0})}\). Aleshores direm que la circumferència
+		Sigui \(\alpha\) una corba parametritzada per l'arc sobre \(I\) i \(s_{0}\in I\) un punt tal que \(\alpha''(s_{0})\neq\vec{0}\) i \(\radicircosculadora_{\alpha}(s_{0})=\frac{1}{\curvatura_{\alpha}(s_{0})}\).
+		Aleshores direm que la circumferència
 		\[
 		    \beta(s)=Q+\radicircosculadora_{\alpha}(s_{0})\left(-\normal_{\alpha}(s_{0})\cos\left(\frac{s}{\radicircosculadora_{\alpha}(s_{0})}\right)+\tangent_{\alpha}(s_{0})\sin\left(\frac{s}{\radicircosculadora_{\alpha}(s_{0})}\right)\right).
 		\]
-		és la circumferència osculadora de \(\alpha\) en \(s_{0}\). Denotarem per \(\radicircosculadora_{\alpha}(s_{0})=\frac{1}{\curvatura_{\alpha}(s_{0})}\) el radi de la circumferència osculadora.
+		és la circumferència osculadora de \(\alpha\) en \(s_{0}\).
+		Denotarem per \(\radicircosculadora_{\alpha}(s_{0})=\frac{1}{\curvatura_{\alpha}(s_{0})}\) el radi de la circumferència osculadora.
 		
 		Aquesta definició té sentit per la proposició \myref{prop:circumferència osculadora}.
 	\end{definition}
 	\begin{definition}[Binormal]
 		\labelname{binormal}\label{def:binormal}
-		Sigui \(\alpha\) una corba amb curvatura no \nulla{}. Aleshores definim
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{}.
+		Aleshores definim
 		\[
 		    \binormal_{\alpha}(s)=\tangent_{\alpha}(s)\prodvec\normal_{\alpha}(s)
 		\]
@@ -806,9 +867,11 @@
 	\end{definition}
 	\begin{proposition}
 		\label{prop:triedre de Frenet}
-		Sigui \(\alpha\) una corba amb curvatura no \nulla{}. Aleshores \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és una base ortonormal i positiva de \(\mathbb{R}^{3}\).
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{}.
+		Aleshores \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és una base ortonormal i positiva de \(\mathbb{R}^{3}\).
 		\begin{proof}
-			Per la proposició \myref{prop:la tangent i la normal d'una corba amb curvatura no nula són perpendiculars} trobem que \(\tangent_{\alpha}(s)\) i \(\normal_{\alpha}(s)\) són perpendiculars. Aleshores per la definició de \myref{def:binormal} trobem que \(\binormal_{\alpha}(s)=\tangent_{\alpha}(s)\prodvec\normal_{\alpha}(s)\) i per la proposició \myref{prop:dos vectors linealment independents i el seu producte vectorial formen una base positiva} tenim que la base \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és positiva.
+			Per la proposició \myref{prop:la tangent i la normal d'una corba amb curvatura no nula són perpendiculars} trobem que \(\tangent_{\alpha}(s)\) i \(\normal_{\alpha}(s)\) són perpendiculars.
+			Aleshores per la definició de \myref{def:binormal} trobem que \(\binormal_{\alpha}(s)=\tangent_{\alpha}(s)\prodvec\normal_{\alpha}(s)\) i per la proposició \myref{prop:dos vectors linealment independents i el seu producte vectorial formen una base positiva} tenim que la base \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és positiva.
 			
 			Per la definició de \myref{def:producte vectorial} tenim que per a tot \(\vec{x}\) de \(\mathbb{R}^{3}\) es satisfà
 			\[
@@ -822,18 +885,22 @@
 			\[
 			    \prodesc{\binormal_{\alpha}(s)}{\vec{x}}=1,
 			\]
-			i tenim que \(\norm{\binormal_{\alpha}(s)}=1\). Aleshores per l'observació \myref{obs:la normal a una corba és unitària} i la definició de \myref{def:corba parametritzada per l'arc} tenim que \(\norm{\tangent_{\alpha}(s)}=1\) i que \(\norm{\normal_{\alpha}(s)}=1\), i per tant \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és una base ortonormal i positiva de \(\mathbb{R}^{3}\). % REF
+			i tenim que \(\norm{\binormal_{\alpha}(s)}=1\).
+			Aleshores per l'observació \myref{obs:la normal a una corba és unitària} i la definició de \myref{def:corba parametritzada per l'arc} tenim que \(\norm{\tangent_{\alpha}(s)}=1\) i que \(\norm{\normal_{\alpha}(s)}=1\), i per tant \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és una base ortonormal i positiva de \(\mathbb{R}^{3}\).
+			% REF
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Triedre de Frenet]
 		\labelname{triedre de Frenet}\label{def:triedre de Frenet}
-		Sigui\(\alpha\) una corba amb curvatura no \nulla{}. Aleshores direm que la base \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és el triedre de Frenet de \(\alpha\) en \(s\).
+		Sigui\(\alpha\) una corba amb curvatura no \nulla{}.
+		Aleshores direm que la base \((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és el triedre de Frenet de \(\alpha\) en \(s\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:triedre de Frenet}.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:torsió}
-		Sigui \(\alpha\) una corba amb curvatura no \nulla{}. Aleshores existeix una \(\torsio_{\alpha}(s)\in\mathbb{R}\) tal que
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{}.
+		Aleshores existeix una \(\torsio_{\alpha}(s)\in\mathbb{R}\) tal que
 		\[
 		    \binormal'_{\alpha}(s)=\torsio_{\alpha}(s)\normal_{\alpha}(s).
 		\]
@@ -899,7 +966,8 @@
 	% FER Exemple calcular torsió?
 	\begin{theorem}[Fórmules de Frenet]
 		\labelname{fórmules de Frenet}\label{thm:fórmules de Frenet per corbes parametritzades per l'arc}
-		Sigui \(\alpha\) una corba parametritzada per l'arc amb curvatura no \nulla{}. Aleshores
+		Sigui \(\alpha\) una corba parametritzada per l'arc amb curvatura no \nulla{}.
+		Aleshores
 		\[\begin{bmatrix}
 			\tangent'_{\alpha}(s) \\
 			\normal'_{\alpha}(s) \\
@@ -944,7 +1012,8 @@
 				\normal'_{\alpha}(s)&=\torsio_{\alpha}(s)\normal_{\alpha}(s)\prodvec\tangent_{\alpha}(s)+\binormal_{\alpha}(s)\prodvec\curvatura_{\alpha}(s)\normal_{\alpha}(s) \\
 				&=\torsio_{\alpha}(s)\big(\normal_{\alpha}(s)\prodvec\tangent_{\alpha}(s)\big)+\curvatura_{\alpha}(s)\big(\binormal_{\alpha}(s)\prodvec\normal_{\alpha}(s)\big) \\ % REF
 				&=-\torsio_{\alpha}(s)\binormal_{\alpha}(s)+\curvatura_{\alpha}(s)\big(\binormal_{\alpha}(s)\prodvec\normal_{\alpha}(s)\big) \tag{\ref{def:binormal}} \\
-				&=-\torsio_{\alpha}(s)\binormal_{\alpha}(s)-\curvatura_{\alpha}(s)\tangent_{\alpha}(s). \tag{\ref{def:binormal}}
+				&=-\torsio_{\alpha}(s)\binormal_{\alpha}(s)-\curvatura_{\alpha}(s)\tangent_{\alpha}(s).
+				\tag{\ref{def:binormal}}
 			\end{align*}
 			
 			Per tant ens queda
@@ -958,7 +1027,8 @@
 	\end{theorem}
 	\begin{proposition}
 		\label{prop:condició equivalent per que la reparametrització per l'arc d'una corba tingui curvatura no nula}
-		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i \(h\) un canvi de paràmetre de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc. Aleshores \(\tilde{\alpha}\) té curvatura no \nulla{} si i només si \(\alpha'\prodvec\alpha''\neq\vec{0}\).
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i \(h\) un canvi de paràmetre de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc.
+		Aleshores \(\tilde{\alpha}\) té curvatura no \nulla{} si i només si \(\alpha'\prodvec\alpha''\neq\vec{0}\).
 		\begin{proof}
 			Tenim que \(\tilde{\alpha}=\alpha\circ h\), i per la proposició \myref{prop:fórmula de Leibniz} i la \myref{thm:regla de la cadena} tenim que
 			\[
@@ -977,7 +1047,8 @@
 				&=(h')^{2}(\tilde{\alpha}'\circ h)\prodvec(\tilde{\alpha}''\circ h).
 			\end{align*}
 			
-			Ara bé, per la definició de \myref{def:canvi de paràmetre} tenim que \(h\) és un difeomorfisme, i per la definició de \myref{def:difeomorfisme} trobem que \(h\neq0\). Tenim també que \(h''\neq0\), i per tant trobem que
+			Ara bé, per la definició de \myref{def:canvi de paràmetre} tenim que \(h\) és un difeomorfisme, i per la definició de \myref{def:difeomorfisme} trobem que \(h\neq0\).
+			Tenim també que \(h''\neq0\), i per tant trobem que
 			\[
 			    \alpha'\prodvec\alpha''=\vec{0}\Sii(\tilde{\alpha}'\circ h)\prodvec(\tilde{\alpha}''\circ h)=\vec{0},
 			\]
@@ -989,7 +1060,8 @@
 	\end{proposition}
 	\begin{definition}[Curvatura per una reparametrització]
 		\labelname{curvatura}\label{def:curvatura  per una reparametrització}
-		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i \(\alpha'\prodvec\alpha''=\vec{0}\) i \(h\) un canvi de paràmetre de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc. Aleshores direm que
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i \(\alpha'\prodvec\alpha''=\vec{0}\) i \(h\) un canvi de paràmetre de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc.
+		Aleshores direm que
 		\[
 		    \curvatura_{\alpha}=\curvatura_{\tilde{\alpha}}\circ h^{-1}
 		\]
@@ -999,7 +1071,8 @@
 	\end{definition}
 	\begin{definition}[Torsió per una reparametrització]
 		\labelname{torsió}\label{def:torsió  per una reparametrització}
-		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i \(h\) un canvi de paràmetre de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc. Aleshores direm que
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i \(h\) un canvi de paràmetre de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc.
+		Aleshores direm que
 		\[
 		    \torsio_{\alpha}=\torsio_{\tilde{\alpha}}\circ h^{-1}
 		\]
@@ -1009,7 +1082,8 @@
 	\end{definition}
 	\begin{definition}[Rapidesa]
 		\labelname{rapidesa}\label{def:rapidesa}
-		Sigui \(\alpha\) una corba regular. Aleshores direm que
+		Sigui \(\alpha\) una corba regular.
+		Aleshores direm que
 		\[
 		    \rapidesa_{\alpha}(t)=\norm{\alpha'(t)}
 		\]
@@ -1017,7 +1091,8 @@
 	\end{definition}
 	\begin{theorem}[Fórmules de Frenet]
 		\labelname{fórmules de Frenet}\label{thm:fórmules de Frenet}
-		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i tal que \(\alpha'\prodvec\alpha''\neq\vec{0}\). Aleshores
+		Sigui \(\alpha\) una corba amb curvatura no \nulla{} i tal que \(\alpha'\prodvec\alpha''\neq\vec{0}\).
+		Aleshores
 		\[\begin{bmatrix}
 			\tangent_{\alpha}'(t) \\
 			\normal_{\alpha}'(t) \\
@@ -1036,7 +1111,10 @@
 		\begin{proof}
 			Sigui \(h\) una reparametrització de \(\alpha\) tal que \(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc.
 			
-			Ai haig de tornar a definir les coses aquestes per corbes no parametritzades per l'arc. Quina mandra. Imagineu una demostració patrocinada per \myref{thm:regla de la cadena} i les \myref{thm:fórmules de Frenet per corbes parametritzades per l'arc}. Us prometo que tot quadra, com volíem veure.
+			Ai haig de tornar a definir les coses aquestes per corbes no parametritzades per l'arc.
+			Quina mandra.
+			Imagineu una demostració patrocinada per \myref{thm:regla de la cadena} i les \myref{thm:fórmules de Frenet per corbes parametritzades per l'arc}.
+			Us prometo que tot quadra, com volíem veure.
 		\end{proof}
 	\end{theorem}
 	\begin{proposition}
@@ -1044,7 +1122,8 @@
 		\label{prop:tangent d'una corba regular}
 		\label{prop:normal d'una corba regular}
 		\label{prop:binormal d'una corba regular}
-		Sigui \(\alpha\) una corba regular amb \(\alpha'\prodvec\alpha''\neq\vec{0}\). Aleshores
+		Sigui \(\alpha\) una corba regular amb \(\alpha'\prodvec\alpha''\neq\vec{0}\).
+		Aleshores
 		\[
 		    \tangent_{\alpha}=\frac{\alpha'}{\norm{\alpha'}},\qquad\normal_{\alpha}=\binormal_{\alpha}\prodvec\binormal_{\beta}\qquad\text{i}\qquad\tangent_{\alpha}=\frac{\alpha'\prodvec\alpha''}{\norm{\alpha'\prodvec\alpha''}}.
 		\]
@@ -1056,7 +1135,8 @@
 		\label{prop:curvatura i torsió d'una corba regular}
 		\label{prop:curvatura d'una corba regular}
 		\label{prop:torsió d'una corba regular}
-		Sigui \(\alpha\) una corba regular amb \(\alpha'\prodvec\alpha''\neq0\). Aleshores
+		Sigui \(\alpha\) una corba regular amb \(\alpha'\prodvec\alpha''\neq0\).
+		Aleshores
 		\[
 		    \curvatura_{\alpha}=\frac{\norm{\alpha'\prodvec\alpha''}}{\norm{\alpha'}^{3}}\qquad\text{i}\qquad\torsio_{\alpha}=\frac{\prodesc{\alpha'\prodvec\alpha''}{\alpha'''}}{\norm{\alpha'\prodvec\alpha''}^{2}}.
 		\]
@@ -1092,7 +1172,8 @@
 	\end{example}
 	\begin{proposition}
 		\label{prop:els valors propis d'una matriu ortogonal són -1 o 1}
-		Sigui \(A\in\GrupOrtogonal(n)\) una matriu. Aleshores els valors propis reals de \(A\) són \(-1\) ó \(1\).
+		Sigui \(A\in\GrupOrtogonal(n)\) una matriu.
+		Aleshores els valors propis reals de \(A\) són \(-1\) ó \(1\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1114,7 +1195,8 @@
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
-		Sigui \(A\in\GrupEspecialOrtogonal(3)\) una matriu. Aleshores existeixen una base ortonormal \(\base{B}\) de \(\mathbb{R}^{3}\) i un \(t\in\mathbb{R}\) tals que
+		Sigui \(A\in\GrupEspecialOrtogonal(3)\) una matriu.
+		Aleshores existeixen una base ortonormal \(\base{B}\) de \(\mathbb{R}^{3}\) i un \(t\in\mathbb{R}\) tals que
 		\[M(\base{B},\basecanonica)AM(\basecanonica,\base{B})=\begin{bmatrix}
 			\pm1 & 0 & 0 \\
 			0 & \cos(t) & \sin(t) \\
@@ -1126,7 +1208,8 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:forma matricial de les aplicacions que conserven distàncies}
-		Sigui \(f\colon\mathbb{R}^{n}\longrightarrow\mathbb{R}^{n}\) una aplicació conserva distàncies. Aleshores existeixen una matriu \(A\in\GrupOrtogonal(n)\) i un \(\vec{C}\in\mathbb{R}^{n}\) tals que
+		Sigui \(f\colon\mathbb{R}^{n}\longrightarrow\mathbb{R}^{n}\) una aplicació conserva distàncies.
+		Aleshores existeixen una matriu \(A\in\GrupOrtogonal(n)\) i un \(\vec{C}\in\mathbb{R}^{n}\) tals que
 		\[
 		    f(\vec{v})=A\vec{v}+\vec{C}.
 		\]
@@ -1136,7 +1219,8 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:derivada del producte d'una matriu per una corba}
-		Siguin \(\alpha\) una corba regular i \(A\in\matrius_{n}(\mathbb{R})\) una matriu. Aleshores
+		Siguin \(\alpha\) una corba regular i \(A\in\matrius_{n}(\mathbb{R})\) una matriu.
+		Aleshores
 		\[
 		    \frac{\diff(A\alpha(t))}{\diff t}=A\alpha'(t).
 		\]
@@ -1146,7 +1230,8 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:les matrius especials ortogonals conserven el producte vectorial}
-		Siguin \(A\in\GrupEspecialOrtogonal(n)\) una matriu i \(\vec{u}\), \(\vec{v}\) dos vectors de \(\mathbb{R}^{n}\). Aleshores
+		Siguin \(A\in\GrupEspecialOrtogonal(n)\) una matriu i \(\vec{u}\), \(\vec{v}\) dos vectors de \(\mathbb{R}^{n}\).
+		Aleshores
 		\[
 		    A(\vec{u}\prodvec\vec{v})=(A\vec{u})\prodvec(A\vec{v}).
 		\]
@@ -1170,7 +1255,8 @@
 	\end{corollary}
 	\begin{lemma}
 		\label{lemma:Teorema Fonamental de la teoria local de corbes}
-		Siguin \(\alpha\) i \(\beta\) dues corbes. Aleshores la relació
+		Siguin \(\alpha\) i \(\beta\) dues corbes.
+		Aleshores la relació
 		\[
 		    \alpha\sim\beta \Sii \text{Existeixen }A\in\GrupEspecialOrtogonal(3)\text{ i }\vec{C}\in\mathbb{R}^{3}\text{ tals que }\alpha=A\beta+\vec{C}
 		\]
@@ -1181,7 +1267,9 @@
 	\end{lemma}
 	\begin{theorem}[Teorema Fonamental de la teoria local de corbes]
 		\labelname{Teorema Fonamental de la teoria local de corbes}\label{thm:Teorema Fonamental de la teoria local del corbes}
-		Siguin \(\curvatura(s)\) i \(\torsio(s)\) dues funcions diferenciables sobre \(I\), amb \(\curvatura(s)>0\) per a tot \(s\in I\). Aleshores existeix una única corba \(\alpha\) sobre \(I\) parametritzada per l'arc satisfent \(\curvatura_{\alpha}(s)=\curvatura(s)\) i \(\torsio_{\alpha}(s)=\torsio(s)\), llevat d'equivalència. % Reescriure la part de llevat d'equivalència
+		Siguin \(\curvatura(s)\) i \(\torsio(s)\) dues funcions diferenciables sobre \(I\), amb \(\curvatura(s)>0\) per a tot \(s\in I\).
+		Aleshores existeix una única corba \(\alpha\) sobre \(I\) parametritzada per l'arc satisfent \(\curvatura_{\alpha}(s)=\curvatura(s)\) i \(\torsio_{\alpha}(s)=\torsio(s)\), llevat d'equivalència.
+		% Reescriure la part de llevat d'equivalència
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1191,7 +1279,8 @@
 	\subsection{Immersions i submersions}
 	\begin{definition}[Immersió]
 		\labelname{immersió}\label{def:immersió}
-		Siguin \(n\leq m\) dos naturals, \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert, \(x_{0}\in\obert{U}\) un punt i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una funció diferenciable tal que \(df(a)\) sigui injectiva. Aleshores direm que \(f\) és una immersió en \(x_{0}\).
+		Siguin \(n\leq m\) dos naturals, \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert, \(x_{0}\in\obert{U}\) un punt i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una funció diferenciable tal que \(df(a)\) sigui injectiva.
+		Aleshores direm que \(f\) és una immersió en \(x_{0}\).
 	\end{definition}
 	\begin{observation} % REF álgebra lineal
 		\label{obs:immersió si i només si té rang maximal}
@@ -1216,7 +1305,8 @@
 	\end{example}
 	\begin{definition}[Submersió]
 		\labelname{submersió}\label{def:submersió}
-		Siguin \(n\geq m\) dos naturals, \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert, \(x_{0}\in\obert{U}\) un punt i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una funció diferenciable tal que \(df(a)\) sigui exhaustiva. Aleshores direm que \(f\) és una submersió en \(x_{0}\).
+		Siguin \(n\geq m\) dos naturals, \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert, \(x_{0}\in\obert{U}\) un punt i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una funció diferenciable tal que \(df(a)\) sigui exhaustiva.
+		Aleshores direm que \(f\) és una submersió en \(x_{0}\).
 	\end{definition}
 	\begin{observation}
 		\label{obs:submersió si i només si té rang més petit o igual}
@@ -1240,7 +1330,8 @@
 	\end{example}
 	\begin{proposition}
 		\label{prop:la composició de submersions és submersió}
-		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) i \(\obert{V}\subseteq\mathbb{R}^{m}\) dos oberts, \(g\colon\obert{U}\longrightarrow\obert{V}\) i \(f\colon\obert{V}\longrightarrow\mathbb{R}^{d}\) dues submersions. Aleshores la funció \(f\circ g\) és una submersió.
+		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) i \(\obert{V}\subseteq\mathbb{R}^{m}\) dos oberts, \(g\colon\obert{U}\longrightarrow\obert{V}\) i \(f\colon\obert{V}\longrightarrow\mathbb{R}^{d}\) dues submersions.
+		Aleshores la funció \(f\circ g\) és una submersió.
 		\begin{proof}
 			Per la \myref{thm:regla de la cadena} tenim que
 			\[
@@ -1251,7 +1342,8 @@
 	\end{proposition}
 	\begin{theorem}[Teorema d'estructura local de les immersions]
 		\labelname{Teorema d'estructura local de les immersions}\label{thm:Teorema d'estructura local de les immersions}
-		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una immersió en un punt \(x_{0}\in\obert{U}\). Aleshores existeixen dos oberts \(\obert{U}'\subseteq\mathbb{R}^{n}\) i \(\obert{V}\subseteq\mathbb{R}^{m}\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{V}\longleftrightarrow g(\obert{U}')\subseteq\mathbb{R}^{n}\) i satisfent \(i(x_{0})\in\obert{V}\) tals que el diagrama
+		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una immersió en un punt \(x_{0}\in\obert{U}\).
+		Aleshores existeixen dos oberts \(\obert{U}'\subseteq\mathbb{R}^{n}\) i \(\obert{V}\subseteq\mathbb{R}^{m}\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{V}\longleftrightarrow g(\obert{U}')\subseteq\mathbb{R}^{n}\) i satisfent \(i(x_{0})\in\obert{V}\) tals que el diagrama
 		\[\begin{tikzcd}
 			\obert{U}' \arrow{r}{i} \arrow[swap]{dr}{f} & \obert{V} \arrow{d}{g} \\
 			& \mathbb{R}^{m}
@@ -1320,7 +1412,8 @@
 	\end{theorem}
 	\begin{theorem}[Teorema d'estructura local de les submersions]
 		\labelname{Teorema d'estructura local de les submersions}\label{thm:Teorema d'estructura local de les submersions}
-		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una submersió en un punt \(x_{0}\in\obert{U}\). Aleshores existeix un obert \(\obert{U}'\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{U}'\longleftrightarrow g(\obert{U}')\subseteq\mathbb{R}^{n}\) tals que el diagrama
+		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(f\colon\obert{U}\longrightarrow\mathbb{R}^{m}\) una submersió en un punt \(x_{0}\in\obert{U}\).
+		Aleshores existeix un obert \(\obert{U}'\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{U}'\longleftrightarrow g(\obert{U}')\subseteq\mathbb{R}^{n}\) tals que el diagrama
 		\[\begin{tikzcd}
 			\obert{U}' \arrow{r}{g} \arrow[swap]{dr}{f} & g(\obert{U}') \arrow{d}{\pi} \\
 			& \mathbb{R}^{m}
@@ -1399,12 +1492,15 @@
 	\end{definition}
 	\begin{theorem}
 		\label{thm:condicions equivalents a la definició de superfície}
-		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt. Aleshores \(S\) és una superfície si i només si per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\subseteq\mathbb{R}^{3}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que
+		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt.
+		Aleshores \(S\) és una superfície si i només si per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\subseteq\mathbb{R}^{3}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que
 		\[
 		    S\cap\obert{U}=F^{-1}(\{0\}).
 		\]
 		\begin{proof}
-			Comencem veient que la condició és suficient (\(\implica\)). Suposem doncs que \(S\) és una superfície. Per la definició de \myref{def:superfície} trobem que que per a tot \(p\in S\) existeix un entorn obert \(\obert{U}\subseteq\mathbb{R}^{3}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que
+			Comencem veient que la condició és suficient (\(\implica\)).
+			Suposem doncs que \(S\) és una superfície.
+			Per la definició de \myref{def:superfície} trobem que que per a tot \(p\in S\) existeix un entorn obert \(\obert{U}\subseteq\mathbb{R}^{3}\) de \(p\) i un difeomorfisme \(g\colon\obert{U}\longrightarrow g(\obert{U})\) tal que
 			\begin{equation}
 				\label{eq:thm:condicions equivalents a la definició de superfície 1}
 				g(\obert{U}\cap S)=g(\obert{U})\cap(\mathbb{R}^{2}\times\{0\}).
@@ -1423,7 +1519,9 @@
 			\end{align*}
 			i hem acabat.
 			
-			Veiem ara que la condició és necessària (\(\implicatper\)). Suposem doncs que per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\subseteq\mathbb{R}^{3}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que \(S\cap\obert{U}=F^{-1}(\{0\})\). Pel \myref{thm:Teorema d'estructura local de les submersions} tenim que per a tot \(p\in S\) existeix un obert \(\obert{U}'\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{U}'\longleftrightarrow g(\obert{U}')\subseteq\mathbb{R}^{3}\) tals que per a tot \(x\in\obert{U}'\) tenim
+			Veiem ara que la condició és necessària (\(\implicatper\)).
+			Suposem doncs que per a tot punt \(p\in S\) existeixen un entorn obert \(\obert{U}\subseteq\mathbb{R}^{3}\) de \(p\) i una submersió \(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que \(S\cap\obert{U}=F^{-1}(\{0\})\).
+			Pel \myref{thm:Teorema d'estructura local de les submersions} tenim que per a tot \(p\in S\) existeix un obert \(\obert{U}'\) satisfent \(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme \(g\colon\obert{U}'\longleftrightarrow g(\obert{U}')\subseteq\mathbb{R}^{3}\) tals que per a tot \(x\in\obert{U}'\) tenim
 			\[
 			    F(x)=(\pi_{3}\circ g)(x).
 			\]
@@ -1486,13 +1584,15 @@
 		\labelname{carta local}\label{def:carta local}
 		\labelname{parametrització local d'una superfície}\label{def:parametrització local d'una superfície}
 		\labelname{parametrització d'una superfície}\label{def:parametrització d'una superfície}
-		Sigui \(S\subseteq\mathbb{R}^{3}\) un conjunt i \(p\in S\) un punt tals que existeix un entorn obert \(\obert{U}\) de \(p\), un conjunt \(\Omega\subseteq\mathbb{R}^{2}\) i una aplicació \(\Psi\colon\Omega\longrightarrow S\cap\obert{U}\) que és una immersió i un homeomorfisme. Aleshores direm que \(\Omega\) amb \(\Psi\) és una carta local de \(p\) en \(S\).
+		Sigui \(S\subseteq\mathbb{R}^{3}\) un conjunt i \(p\in S\) un punt tals que existeix un entorn obert \(\obert{U}\) de \(p\), un conjunt \(\Omega\subseteq\mathbb{R}^{2}\) i una aplicació \(\Psi\colon\Omega\longrightarrow S\cap\obert{U}\) que és una immersió i un homeomorfisme.
+		Aleshores direm que \(\Omega\) amb \(\Psi\) és una carta local de \(p\) en \(S\).
 		
 		També direm que \(\Psi\) és una parametrització o parametrització local de \(S\).
 	\end{definition}
 	\begin{theorem}
 		\label{thm:ser superfície és equivalent a tenir cartes locals}
-		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt. Aleshores \(S\) és una superfície si i només si per a tot \(p\in S\) existeix una carta local de \(p\) en \(S\).
+		Sigui \(S\subseteq\mathbb{R}^{3}\) un subconjunt.
+		Aleshores \(S\) és una superfície si i només si per a tot \(p\in S\) existeix una carta local de \(p\) en \(S\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1512,7 +1612,8 @@
 		\[
 		    f\circ\Psi\colon\Omega\longrightarrow\mathbb{R}^{k}
 		\]
-		és un difeomorfisme. Aleshores direm que \(f\) és diferenciable.
+		és un difeomorfisme.
+		Aleshores direm que \(f\) és diferenciable.
 	\end{definition}
 	\begin{theorem}
 		\label{thm:la composició de parametritzacions locals és una funció diferenciable}
@@ -1536,7 +1637,8 @@
 	\end{theorem}
 	\begin{proposition}
 		\label{prop:per a tot punt i funció diferenciable d'una superfície podem trobar una segona funció diferenciable igual en un entorn del punt}
-		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(f\colon S\longrightarrow\mathbb{R}^{k}\) una funció diferenciable i \(p\in S\) un punt. Aleshores  existeix un entorn obert \(\obert{U}\subseteq\mathbb{R}^{3}\) de \(p\) i una funció diferenciable \(\tilde{f}\colon\obert{U}\longrightarrow\mathbb{R}^{k}\) tals que per a tot \(x\in S\cap\obert{U}\) tenim
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(f\colon S\longrightarrow\mathbb{R}^{k}\) una funció diferenciable i \(p\in S\) un punt.
+		Aleshores  existeix un entorn obert \(\obert{U}\subseteq\mathbb{R}^{3}\) de \(p\) i una funció diferenciable \(\tilde{f}\colon\obert{U}\longrightarrow\mathbb{R}^{k}\) tals que per a tot \(x\in S\cap\obert{U}\) tenim
 		\[
 		    f(x)=\tilde{f}(x).
 		\]
@@ -1546,10 +1648,12 @@
 	\end{proposition}
 	\begin{definition}[Funció diferenciable entre superfícies]
 		\labelname{funció diferenciable entre superfícies}\label{def:funció diferenciable entre superfícies}
-		Siguin \(S_{1}\subseteq\mathbb{R}^{3}\) i \(S_{2}\subseteq\mathbb{R}^{3}\) dues superfícies i \(f\colon S_{1}\longrightarrow\mathbb{R}^{3}\) una funció diferenciable. Aleshores diem que la funció \(f\colon S_{1}\longleftarrow S_{2}\) és diferenciable.
+		Siguin \(S_{1}\subseteq\mathbb{R}^{3}\) i \(S_{2}\subseteq\mathbb{R}^{3}\) dues superfícies i \(f\colon S_{1}\longrightarrow\mathbb{R}^{3}\) una funció diferenciable.
+		Aleshores diem que la funció \(f\colon S_{1}\longleftarrow S_{2}\) és diferenciable.
 	\end{definition}
 	\begin{proposition}
-		Siguin \(S_{1}\subseteq\mathbb{R}^{3}\) i \(S_{2}\subseteq\mathbb{R}^{3}\) dues superfícies i \(f\colon S_{1}\longrightarrow S_{2}\) una funció. Aleshores \(f\) és diferenciable si i només si existeixen dues cartes locals \(\Omega_{1}\) amb \(\Psi_{1}\) i \(\Omega_{2}\) amb \(\Psi_{2}\) de \(S_{1}\) i \(S_{2}\), respectivament, satisfent que existeix un \(p\in\Psi_{1}(\Omega_{1})\) i \(f(p)\in\Psi_{2}(\Omega_{2})\) i tals que l'aplicació
+		Siguin \(S_{1}\subseteq\mathbb{R}^{3}\) i \(S_{2}\subseteq\mathbb{R}^{3}\) dues superfícies i \(f\colon S_{1}\longrightarrow S_{2}\) una funció.
+		Aleshores \(f\) és diferenciable si i només si existeixen dues cartes locals \(\Omega_{1}\) amb \(\Psi_{1}\) i \(\Omega_{2}\) amb \(\Psi_{2}\) de \(S_{1}\) i \(S_{2}\), respectivament, satisfent que existeix un \(p\in\Psi_{1}(\Omega_{1})\) i \(f(p)\in\Psi_{2}(\Omega_{2})\) i tals que l'aplicació
 		\[
 		    \Psi_{2}^{-1}\circ f\circ \Psi_{1}\colon\Omega_{1}\cap\Omega_{2}\longrightarrow\Omega_{1}\cap\Omega_{2}
 		\]
@@ -1563,7 +1667,8 @@
 	\begin{definition}[Vectors tangents]
 		\labelname{vectors tangents}\label{def:vectors tangents a una superfície}
 		\labelname{espai tangent}\label{def:espai tangent a una superfície}
-		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície i \(p\in S\) un punt. Aleshores direm que el conjunt
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície i \(p\in S\) un punt.
+		Aleshores direm que el conjunt
 		\[
 		    \EspaiTangent_{p}(S)=\{\alpha'(0)\in\mathbb{R}^{3}\mid\alpha\text{ és una corba regular en }S\text{ amb }\alpha(0)=p\}
 		\]
@@ -1572,7 +1677,8 @@
 	% Veure que T_{p}(S) és un espai vectorial (afí?)
 	\begin{proposition}
 		\label{prop:les derivades d'una parametrització en una carta local són base del pla tangent}
-		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(p\in S\) un punt i \(\varphi(u,v)\) amb \(\Omega\) una carta local de \(S\) en \(p\). Aleshores
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(p\in S\) un punt i \(\varphi(u,v)\) amb \(\Omega\) una carta local de \(S\) en \(p\).
+		Aleshores
 		\[
 		    (\varphi_{u}(p),\varphi_{v}(p))
 		\]
@@ -1582,11 +1688,13 @@
 			\[
 			    d\varphi(p)=(\varphi_{u}(p),\varphi_{v}(p)).
 			\]
-			Per la definició d'\myref{def:espai tangent a una superfície} tenim que \(\varphi_{u}(p)\) i \(\varphi_{v}(p)\) pertanyen a \(\EspaiTangent_{p}(S)\), i per tant tenim que \((\varphi_{u}(p),\varphi_{v}(p))\) és una base de \(\EspaiTangent_{p}(S)\). %REF
+			Per la definició d'\myref{def:espai tangent a una superfície} tenim que \(\varphi_{u}(p)\) i \(\varphi_{v}(p)\) pertanyen a \(\EspaiTangent_{p}(S)\), i per tant tenim que \((\varphi_{u}(p),\varphi_{v}(p))\) és una base de \(\EspaiTangent_{p}(S)\).
+			%REF
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Primera forma fonamental]
-		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície i \(p\in S\) un punt. Aleshores direm que l'aplicació
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície i \(p\in S\) un punt.
+		Aleshores direm que l'aplicació
 		\begin{align*}
 			\I_{p}\colon\EspaiTangent_{p}(S)\times\EspaiTangent_{p}(S)&\longrightarrow\mathbb{R} \\
 			(\vec{u},\vec{v})&\longmapsto\prodesc{\vec{u}}{\vec{v}}
@@ -1595,9 +1703,11 @@
 	\end{definition}
 	\begin{proposition}
 		\label{prop:la primera forma fonamental és una forma bilineal}
-		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície i \(p\in S\) un punt. Aleshores la primera forma fonamental \(\I_{p}\) és una forma bilineal.
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície i \(p\in S\) un punt.
+		Aleshores la primera forma fonamental \(\I_{p}\) és una forma bilineal.
 		\begin{proof}
-			Siguin \(\vec{u}\), \(\vec{v}\) i \(\vec{w}\) tres vectors de \(\EspaiTangent_{p}(S)\). Aleshores
+			Siguin \(\vec{u}\), \(\vec{v}\) i \(\vec{w}\) tres vectors de \(\EspaiTangent_{p}(S)\).
+			Aleshores
 			\begin{align*}
 				\I_{p}(\vec{u}+\vec{v},\vec{w})&=\prodesc{\vec{u}+\vec{v}}{\vec{w}} \\
 				&=\prodesc{\vec{u}}{\vec{w}}+\prodesc{\vec{v}}{\vec{w}} \tag{\ref{def:producte escalar}}\\
@@ -1627,13 +1737,15 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:coeficients de la primera forma fonamental}
-		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície parametritzada per \(\varphi(u,v)\), \(p\in S\) un punt i \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\EspaiTangent_{p}(S)\). Aleshores
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície parametritzada per \(\varphi(u,v)\), \(p\in S\) un punt i \(\vec{u}\) i \(\vec{v}\) dos vectors de \(\EspaiTangent_{p}(S)\).
+		Aleshores
 		\[\I_{p}(\vec{u},\vec{v})=\vec{u}^{\transposta}\begin{bmatrix}
 			\prodesc{\varphi_{u}(p)}{\varphi_{u}(p)} & \prodesc{\varphi_{u}(p)}{\varphi_{v}(p)} \\
 			\prodesc{\varphi_{v}(p)}{\varphi_{u}(p)} & \prodesc{\varphi_{v}(p)}{\varphi_{v}(p)}
 		\end{bmatrix}\vec{v}.\]
 		\begin{proof}
-			Aquest enunciat té sentit per la proposició \myref{prop:la primera forma fonamental és una forma bilineal}. Tenim que existeixen quatre reals \(A\), \(B\), \(C\), \(D\in\mathbb{R}\) tals que
+			Aquest enunciat té sentit per la proposició \myref{prop:la primera forma fonamental és una forma bilineal}.
+			Tenim que existeixen quatre reals \(A\), \(B\), \(C\), \(D\in\mathbb{R}\) tals que
 			\[\I_{p}(\vec{u},\vec{v})=\vec{u}^{\transposta}\begin{bmatrix}
 				A & B \\
 				C & D
@@ -1706,7 +1818,8 @@
 	\subsection{Longitud d'una corba}
 	\begin{proposition}
 		\label{prop:longitud d'una corba en una superfície}
-		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(\Psi(u,v)\) amb \(\Omega\) una carta local de \(S\) i \(\alpha\) una corba en \(\Psi(\Omega)\). Aleshores
+		Siguin \(S\subseteq\mathbb{R}^{3}\) una superfície, \(\Psi(u,v)\) amb \(\Omega\) una carta local de \(S\) i \(\alpha\) una corba en \(\Psi(\Omega)\).
+		Aleshores
 		\[
 		    \funciolongituddarc_{\alpha}(t_{0})(t)=\int_{t_{0}}^{t}\sqrt{Eu'(\tau)^{2}+2Fu'(\tau)v'(\tau)+Gv'(\tau)^{2}}\diff \tau.
 		\]
@@ -1744,7 +1857,8 @@
 %	\end{proposition}
 
 \begin{comment}
-	Calcular curvatura de Gauss i curvatura mitjana d'un helicoide. (6.7)
+	Calcular curvatura de Gauss i curvatura mitjana d'un helicoide.
+	(6.7)
 	\[
 	    \varphi(u,v)=(u\cos(v),u\sin(v),av).
 	\]
@@ -1760,7 +1874,8 @@
 	\begin{definition}[Espai tangent a \ensuremath{\mathbb{R}^{n}}]
 		\labelname{espai tangent}
 		\label{def:espai tangent a Rn}
-		Sigui \(p\in\mathbb{R}^{n}\) un punt. Aleshores definim el conjunt
+		Sigui \(p\in\mathbb{R}^{n}\) un punt.
+		Aleshores definim el conjunt
 		\begin{equation*}
 			\tangent_{p}(\mathbb{R}^{n})=\{(p,\vec{v})\mid\vec{v}\in\mathbb{R}^{n}\}
 		\end{equation*}
@@ -1774,14 +1889,16 @@
 			\qquad\text{i}\qquad
 			\lambda(p,\vec{v})=(p,\lambda\vec{v})
 		\end{equation*}
-		dues operacions sobre \(\tangent_{p}(\mathbb{R}^{n})\). Aleshores \(\tangent_{p}(\mathbb{R}^{n})\) és un espai vectorial.
+		dues operacions sobre \(\tangent_{p}(\mathbb{R}^{n})\).
+		Aleshores \(\tangent_{p}(\mathbb{R}^{n})\) és un espai vectorial.
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{proposition}
 	\begin{observation}
 		\label{prop:l'espai tangent a Rn és isomorf a un R-espai vectorial de dimensió n}
-		Sigui \(E\) un \(\mathbb{R}\)-espai vectorial de dimensió \(n\). Aleshores
+		Sigui \(E\) un \(\mathbb{R}\)-espai vectorial de dimensió \(n\).
+		Aleshores
 		\begin{equation*}
 			E\cong\tangent_{p}(\mathbb{R}^{n}).
 		\end{equation*}
@@ -1791,7 +1908,8 @@
 	\end{observation}
 	\begin{definition}[Camp vectorial diferenciable]
 		\labelname{camp vectorial diferenciable}\label{def:camp vectorial diferenciable}
-		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(p\in\obert{U}\) un punt. Aleshores direm que una \(\nu\) aplicació de la forma
+		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(p\in\obert{U}\) un punt.
+		Aleshores direm que una \(\nu\) aplicació de la forma
 		\begin{align*}
 			\nu\colon\obert{U}&\longrightarrow\tangent_{p}(\mathbb{R}^{n}) \\
 			p&\longmapsto\nu(p)
@@ -1800,7 +1918,8 @@
 	\end{definition}
 	\begin{example}%[Camp vectorial canònic]
 		\label{ex:camp vectorial canònic}
-		Sigui \((\vec{e}_{1},\dots,\vec{e}_{n})\) la base canònica d'un \(\mathbb{R}\)-espai vectorial de dimensió \(n\). Volem veure que l'aplicació
+		Sigui \((\vec{e}_{1},\dots,\vec{e}_{n})\) la base canònica d'un \(\mathbb{R}\)-espai vectorial de dimensió \(n\).
+		Volem veure que l'aplicació
 		\[
 		    E_{i}(p)=(p,\vec{e}_{i})
 		\]
@@ -1811,7 +1930,8 @@
 	\end{example}
 	\begin{proposition}
 		\label{prop:els camps vectorials canònics són una base de l'espai tangent}
-		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(p\in\obert{U}\) un punt. Aleshores els vectors \((E_{1}(p),\dots,E_{n}(p))\) són una base de \(\EspaiTangent_{p}(\mathbb{R}^{n})\).
+		Siguin \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert i \(p\in\obert{U}\) un punt.
+		Aleshores els vectors \((E_{1}(p),\dots,E_{n}(p))\) són una base de \(\EspaiTangent_{p}(\mathbb{R}^{n})\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1819,7 +1939,8 @@
 	\subsection{L'espai de camps vectorials}
 	\begin{definition}[Espai de camps vectorials]
 		\label{def:conjunt de camps vectorials}\labelname{conjunt de camps vectorials}
-		Sigui \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert. Aleshores direm que el conjunt
+		Sigui \(\obert{U}\subseteq\mathbb{R}^{n}\) un obert.
+		Aleshores direm que el conjunt
 		\[
 		    \CampsVectorials{X}(\obert{U})=\{\nu\in\mathcal{C}^{\infty}(\obert{U})\mid\nu\text{ és un camp vectorial sobre }\obert{U}\}
 		\]
@@ -1827,7 +1948,8 @@
 	\end{definition}
 	\begin{example}
 		\label{ex:els gradients de les funcions C infinit són camps vectorials}
-		Sigui \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció. Aleshores \(\nabla h\in\CampsVectorials{X}(\obert{U})\).
+		Sigui \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció.
+		Aleshores \(\nabla h\in\CampsVectorials{X}(\obert{U})\).
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -1841,7 +1963,8 @@
 	\end{proposition}
 	\begin{definition}[Producte d'una funció i un camp vectorial]
 		\label{def:producte d'una funció i un camp vectorial}\labelname{producte d'una funció i un camp vectorial}
-		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Aleshores definim el producte de \(h\) i \(\nu\) com l'operació \(\cdot\) que satisfà
+		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial.
+		Aleshores definim el producte de \(h\) i \(\nu\) com l'operació \(\cdot\) que satisfà
 		\[
 		    (h\cdot\nu)(p)=h(p)\nu(p).
 		\]
@@ -1852,7 +1975,8 @@
 	\end{observation}
 	\begin{proposition}
 		\label{prop:el producte d'una funcio i un camp vectorial és distributiu per la suma de camps vectorials}
-		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu_{1}\), \(\nu_{2}\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials. Aleshores
+		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu_{1}\), \(\nu_{2}\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials.
+		Aleshores
 		\[
 		    \big(h\cdot(\nu_{1}+\nu_{2})\big)(p)=(h\cdot\nu_{1})(p)+(h\cdot\nu_{2})(p).
 		\]
@@ -1862,7 +1986,8 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:el producte d'una funcio i un camp vectorial és distributiu per la suma de funcions}
-		Siguin \(h\), \(g\in\mathcal{C}^{\infty}(\obert{U})\) dues funcions i \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Aleshores
+		Siguin \(h\), \(g\in\mathcal{C}^{\infty}(\obert{U})\) dues funcions i \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial.
+		Aleshores
 		\[
 		    \big((h+g)\cdot\nu\big)(p)=(h\cdot\nu)(p)+(g\cdot\nu)(p).
 		\]
@@ -1872,7 +1997,8 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:el producte d'una funció i un camp vectorial és associatiu pel producte de camps vectorials}
-		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu_{1}\), \(\nu_{2}\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials. Aleshores
+		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu_{1}\), \(\nu_{2}\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials.
+		Aleshores
 		\[
 		    \big(h(\nu_{1}\nu_{2})\big)(p)=\big((h\nu_{1})\nu_{2}\big)(p).
 		\]
@@ -1884,7 +2010,8 @@
 	\subsection{Producte escalar de camps vectorials}
 	\begin{definition}[Producte escalar de camps vectorials]
 		\label{def:producte escalar de camps vectorials}\labelname{producte escalar de camps vectorials}
-		Siguin \(\nu_{1}\), \(\nu_{2}\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials. Aleshores definim el producte escalar de \(\nu_{1}\) i \(\nu_{2}\) com l'aplicació que satisfà
+		Siguin \(\nu_{1}\), \(\nu_{2}\in\CampsVectorials{X}(\obert{U})\) dos camps vectorials.
+		Aleshores definim el producte escalar de \(\nu_{1}\) i \(\nu_{2}\) com l'aplicació que satisfà
 		\[
 		    \prodesc{\nu_{1}}{\nu_{2}}(p)=\prodesc{\nu_{1}(p)}{\nu_{2}(p)}.
 		\]
@@ -1892,7 +2019,8 @@
 	\subsection{Derivada de Lie}
 	\begin{definition}[Derivada de Lie]
 		\label{def:derivada de Lie}\labelname{derivada de Lie}
-		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Aleshores direm que
+		Siguin \(h\in\mathcal{C}^{\infty}(\obert{U})\) una funció i \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial.
+		Aleshores direm que
 		\[
 		    \Lie_{\nu}(f)=\prodesc{\nu}{\nabla h}
 		\]
@@ -1902,7 +2030,8 @@
 	\end{definition}
 	\begin{definition}[Part vectorial d'un camp]
 		\label{def:part vectorial d'un camp vectorial}\labelname{part vectorial d'un camp vectorial}
-		Sigui \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial. Per la definició \myref{def:camp vectorial diferenciable} i d'\myref{def:espai tangent a Rn} tenim que existeix una funció \(\vec{\nu}\) sobre \(\obert{U}\) tal que
+		Sigui \(\nu\in\CampsVectorials{X}(\obert{U})\) un camp vectorial.
+		Per la definició \myref{def:camp vectorial diferenciable} i d'\myref{def:espai tangent a Rn} tenim que existeix una funció \(\vec{\nu}\) sobre \(\obert{U}\) tal que
 		\[
 		    \nu(p)=(p,\vec{\nu}(p)).
 		\]
