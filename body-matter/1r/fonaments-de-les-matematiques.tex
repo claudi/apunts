@@ -7,11 +7,11 @@
 	\subsection{Processos fonamentals de les matemàtiques}
 	Definirem de manera informal els conceptes d'\emph{objecte matemàtic}, de \emph{relació} entre objectes i de \emph{demostració} d'una relació.
 	Aquests són els tres processos fonamentals de les matemàtiques.
-	
+
 	Els \emph{objectes matemàtics} són abstraccions de conceptes.
 	Anomenem a les possibles propietats d'aquests objectes \emph{relacions}.
 	Aquestes poden ser o bé vertaderes o bé falses.
-	
+
 	Anomenem a algunes d'aquestes relacions \emph{axiomes}, que són relacions que prenem com a vertaderes des d'un principi.
 	Per determinar la veracitat d'altres relacions empararem les \emph{demostracions}.
 	Direm que una relació és vertadera quan es pot deduir a partir dels axiomes amb una demostració, que és una successió d'arguments rigorosos per convèncer-nos que una relació és vertadera.
@@ -146,7 +146,7 @@
 		Aleshores les relacions~\(R\lor S\) i~\(S\lor R\) són vertaderes.
 		\begin{proof}
 			Per l'axioma \myref{axiom:relacions 2} tenim que~\(R\implica(R\lor S)\) és vertadera, i per l'axioma \myref{axiom:relacions 3} tenim que~\((R\lor S)\implica(S\lor R)\) és vertadera.
-			
+
 			Ara bé, per hipòtesi tenim que~\(R\) és vertadera, i per l'axioma \myref{axiom:relacions 5} veiem que les relacions~\(R\lor S\) i~\(S\lor R\) són vertaderes.
 		\end{proof}
 	\end{tautology}
@@ -161,7 +161,7 @@
 			\]
 			és vertadera.
 			Ara bé, si~\(R\) és vertadera trobem per la definició de \myref{def:negació} que~\(\lnot R\) és falsa, i aleshores per la tautologia del \myref{taut:R o no R és vertadera} les relacions~\(\lnot(\lnot R)\lor(\lnot R)\) i~\(R\lor(\lnot(\lnot(\lnot R))\) són vertaderes
-			
+
 			Si~\(R\) és falsa trobem per la definició de \myref{def:negació} que~\(\lnot R\) és vertadera, aleshores, de nou per la tautologia del \myref{taut:R o no R és vertadera}, les relacions~\(\lnot(\lnot R)\lor(\lnot R)\) i~\(R\lor(\lnot(\lnot(\lnot R))\) són vertaderes, com volíem veure.
 		\end{proof}
 	\end{tautology}
@@ -252,7 +252,7 @@
 			    R\implica(R\land S)
 			\]
 			és vertadera, i per tant per l'axioma \myref{axiom:relacions 5} trobem que~\(R\land S\) és vertadera, com volíem veure.
-			
+
 			Veiem ara l'implicació cap a l'esquerra (\(\implicatper\)).
 			Suposem doncs que la relació~\(R\land S\) és vertadera.
 			Per la tautologia de \myref{taut:llei de les contrarecíproques} tenim que la relació~\((R\land S)\implica S\) és vertadera si i només si la relació
@@ -311,7 +311,7 @@
 			és vertadera.
 			Com per hipòtesi la relació~\(R\) és vertadera, per la definició de \myref{def:negació} tenim que~\(\lnot R\) és falsa.
 			I per la tautologia \myref{taut:condició equivalent a conjunció} tenim que la relació~\((\lnot R)\land S\) és falsa, i per la tautologia \myref{taut:condicions per disjunció} tenim que la relació~\(R\land(\lnot S)\) és vertadera.
-			
+
 			Ara bé, de nou per la tautologia \myref{taut:condició equivalent a conjunció}, tenim que la relació~\(\lnot S\) ha de ser vertadera, i per la definició de \myref{def:negació} trobem que~\(S\) és falsa.
 		\end{proof}
 	\end{tautology}
@@ -319,7 +319,7 @@
 \section{Conjunts}
 	\subsection{Elements i subconjunts}
 	Igual que en la secció anterior, només farem una introducció informal a la teoria de conjunts.
-	
+
 	Definirem \emph{conjunt} com un objecte matemàtic, i entre conjunts la relació~\(\in\) de pertinència.
 	Interpretem la relació~\(x\in A\) com que~\(x\) és un \emph{element} de~\(A\) o que~\(x\) pertany a~\(A\).
 	Si la relació~\(x\in A\) és falsa aleshores ho denotarem com~\(x\notin A\) i direm que~\(x\) no pertany a~\(A\).
@@ -343,7 +343,7 @@
 			Per la definició de \myref{def:subconjunt} tenim que si~\(x\in A\) aleshores~\(x\in B\), ja que per hipòtesi~\(A\subset B\).
 			De mateixa manera tenim que si~\(x\in B\) aleshores~\(x\in A\), ja que per hipòtesi~\(B\subseteq A\).
 			Per tant, per l'\myref{axiom:axioma d'extensionalitat} tenim que~\(A=B\).
-			
+
 			Veiem ara que la condició és necessària (\(\implica\)).
 			Suposem doncs que~\(A=B\).
 			Tenim que si~\(x\in A\), aleshores~\(x\in B\), i per la definició de \myref{def:subconjunt} això és que~\(A\subseteq B\).
@@ -361,7 +361,7 @@
 		\[
 		    X=\{a,b,c\}.
 		\]
-		
+
 		Si tots els elements de~\(X\) satisfan una relació~\(R\) denotarem
 		\[
 		    X=\{x\mid x\text{ satisfà }R\}.
@@ -384,13 +384,13 @@
 			\]
 			i per la tautologia \myref{taut:condició equivalent a conjunció} tenim que la relació~\((x\in A)\land(x\notin A)\) és falsa.
 			Per tant el conjunt~\(X\) no té elements.
-			
+
 			La unicitat la tenim per l'\myref{axiom:axioma d'extensionalitat}.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Conjunt buit]
 		Direm que el conjunt que no té elements és el conjunt buit, i el denotarem com~\(\emptyset\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:conjunt buit}.
 	\end{definition}
 	\begin{axiom}[Axioma de Regularitat]
@@ -415,7 +415,7 @@
 		    A\cup B=\{x\mid(x\in A)\lor(x\in B)\}
 		\]
 		és la unió de~\(A\) i~\(B\).
-		
+
 		Aquesta definició té sentit per l'\myref{axiom:axioma de la unió}.
 	\end{definition}
 	\begin{definition}[Intersecció de conjunts]
@@ -426,7 +426,7 @@
 		    A\cap B=\{x\mid(x\in A)\land(x\in B)\}
 		\]
 		és la intersecció de~\(A\) i~\(B\).
-		
+
 		Aquesta definició té sentit per l'\myref{axiom:axioma de separació}.
 	\end{definition}
 	\begin{notation}
@@ -449,7 +449,7 @@
 		\labelname{parelles ordenades}\label{def:parelles ordenades}
 		Siguin~\(a\) i~\(b\) dos elements.
 		Aleshores direm que~\((a,b)=\{a,\{a,b\}\}\) és una parella ordenada.
-		
+
 		Aquesta definició té sentit per l'\myref{axiom:axioma del parell}.
 	\end{definition}
 	\begin{proposition}
@@ -516,10 +516,10 @@
 		\begin{proof}
 			Per la definició d'\myref{def:aplicació} hem de veure que~\(h\) està ben definida.
 			És a dir, que si prenem dos elements~\(a\) i~\(a'\) de~\(A\) tals que~\(a=a'\), aleshores~\(h(a)=h(a')\).
-			
+
 			Siguin doncs~\(a\) i~\(a'\) dos elements de~\(A\) tals que~\(a=a'\).
 			Com que, per hipòtesi,~\(f\) és una aplicació tenim per la definició d'\myref{def:aplicació} que~\(f(a)=f(a')=b\), per a cert~\(b\in B\), i per tant, com que per hipòtesi~\(g\) és una aplicació, trobem~\(g(f(a))=g(b)=c\) i~\(g(f(a'))=g(b)=c\) per a cert~\(c\in C\), i per tant~\(h(a)=h(a')\), com volíem veure.
-			
+
 			També tenim que~\(f\subseteq A\times C\), ja que si~\(c=h(a)\) tenim~\(c=g(f(a))\), i per la definició d'\myref{def:aplicació} tenim que~\(a\in A\) i~\(c\in C\).
 			Per tant, per la definició de \myref{def:subconjunt} tenim que~\(h\) és una aplicació.
 		\end{proof}
@@ -532,7 +532,7 @@
 		g\circ f\colon A&\longrightarrow C\\
 		a&\longmapsto g(f(a)).
 		\end{align*}
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:conjugació d'aplicacions}.
 	\end{definition}
 	\begin{proposition}
@@ -617,9 +617,9 @@
 		\[
 		    f^{-1}\circ f=\Id_{A}.
 		\]
-		
+
 		Aleshores tenim que~\(Id_{A}\colon A\rightarrow A\) és l'aplicació bijectiva i satisfà~\(Id_{A}(a)=a\) per a tot~\(a\in A\).
-		
+
 		També denotarem la conjugació d'una aplicació~\(g\colon A\rightarrow A\) amb sí mateixa~\(k\) de vegades com \[g^{k}=g\circ\overset{k)}{\cdots}\circ g.\]
 	\end{notation}
 	\begin{theorem}
@@ -631,19 +631,19 @@
 			Suposem doncs que~\(f\) és una aplicació bijectiva.
 			Per la definició d'\myref{def:aplicació bijectiva} tenim que~\(f\) és injectiva i exhaustiva.
 			Per tant per la definició d'\myref{def:aplicació injectiva} i la definició d'\myref{def:aplicació exhaustiva} tenim que per a tot~\(b\in B\) existeix un únic~\(a\in A\) tal que~\(b=f(a)\).
-			
+
 			Per tant definim l'aplicació~\(g\colon B\rightarrow A\) tal que~\(g(b)=a\).
 			Ara bé, tenim que per a tot~\(a\in A\) i~\(b\in B\)
 			\[
 			    (g\circ f)(a)=a\quad\text{i}\quad(f\circ g)(b)=b,
 			\]
 			i per la definició d'\myref{def:aplicació invertible} tenim que~\(f\) és invertible, com volíem veure.
-			
+
 			Comprovem ara que la condició és suficient (\(\implicatper\)).
 			Suposem doncs que~\(f\) té inversa.
 			Prenem dos elements~\(a\) i~\(a'\) de~\(A\) tals que~\(f(a)=f(a')\).
 			Ara bé, per la definició d'\myref{def:aplicació invertible} tenim que~\((f^{-1}\circ f)(a)=a\) i~\((f^{-1}\circ f)(a')=a'\) amb~\((f^{-1}\circ f)(a)=(f^{-1}\circ f)(a')\), i per tant~\(a=a'\) i per la definició d'\myref{def:aplicació injectiva} tenim que~\(f\) és injectiva.
-			
+
 			Sigui~\(b\) un element de~\(B\) i prenem~\(a\) de~\(A\) tal que~\(f^{-1}(b)=a\).
 			Aleshores trobem
 			\[
@@ -663,7 +663,7 @@
 		Siguin~\(X\) un conjunt no buit,~\(\sim\) un subconjunt de~\(X\times X\) i~\((x,y)\) un element del subconjunt~\(\sim\).
 		Aleshores direm que els elements~\(x\) i~\(y\) estan relacionats i escriurem~\(x\sim y\).
 		També direm que~\(\sim\) és una relació binària.
-		
+
 		Si~\((x',y')\) no és un element de~\(\sim\) escriurem~\(x'\nsim y'\).
 	\end{definition}
 	\begin{definition}[Relació d'equivalència]
@@ -685,7 +685,7 @@
 		\]
 		un subconjunt de~\(X\).
 		Aleshores direm que~\([x]\) és la classe d'equivalència de~\(x\).
-		
+
 		També denotarem~\([x]=\overline{x}\).
 	\end{definition}
 	\begin{proposition}
@@ -693,19 +693,19 @@
 		Aleshores o bé~\([x]=[y]\) o bé~\([x]\cap[y]=\emptyset\).
 		\begin{proof}
 			Denotarem la relació d'equivalència amb~\(\sim\).
-			
+
 			Suposem que~\(x\sim y\).
 			Tenim que~\([x]\subseteq[y]\), ja que si prenem~\(z\in X\) tal que~\(z\in[x]\).
 			Aleshores per la definició de \myref{def:classe d'equivalència} tenim que~\(x\sim z\).
 			Per hipòtesi tenim que~\(x\sim y\), i per tant, per la definició de \myref{def:relació d'equivalència} tenim que~\(y\sim z\), i per la definició de \myref{def:classe d'equivalència} trobem~\(z\in[y]\).
 			Per tant, per la definició de \myref{def:subconjunt} tenim que~\([x]\subseteq[y]\).
-			
+
 			Ara bé, també tenim que~\([y]\subseteq[x]\), ja que si prenem~\(z\in X\) tal que~\(z\in[y]\).
 			Aleshores per la definició de \myref{def:classe d'equivalència} tenim que~\(y\sim z\).
 			Per hipòtesi tenim que~\(x\sim y\), i per tant, per la definició de \myref{def:relació d'equivalència} tenim que~\(z\sim z\), i per la definició de \myref{def:classe d'equivalència} trobem~\(z\in[x]\).
 			Per tant, per la definició de \myref{def:subconjunt} tenim que~\([y]\subseteq[z]\).
 			Per tant, pel \myref{thm:doble inclusió} tenim que~\([x]=[y]\).
-			
+
 			Suposem ara que~\(x\nsim y\) i prenem un element~\(z\in[x]\cap[y]\).
 			Aleshores, per la definició de \myref{def:classe d'equivalència} tenim que~\(z\sim x\) i~\(y\sim z\), i per la definició de \myref{def:relació d'equivalència} tenim que~\(x\sim y\).
 			Ara bé, havíem suposat que~\(x\nsim y\).
@@ -747,7 +747,7 @@
 			\[
 			    \mathbb{N}\supseteq\{1,S(1),S(S(1)),S(S(S(1))),\dots\}.
 			\]
-			
+
 			Tenim també, per la definició de \myref{def:nombres naturals}, que si~\(\mathbb{M}\) és un conjunt tal que~\(1\in\mathbb{M}\) i tal que~\(S(m)\in\mathbb{M}\) per a tot~\(m\in\mathbb{M}\), aleshores~\(\mathbb{N}\subseteq\mathbb{M}\), i per tant
 			\[
 			    \mathbb{N}\subseteq\{1,S(1),S(S(1)),S(S(S(1))),\dots\},
@@ -787,7 +787,7 @@
 		\labelname{primer element}\label{def:primer element}
 		Sigui~\(A\) un subconjunt no buit de~\(\mathbb{N}\) i~\(a\) un element de~\(A\) tal que no existeix cap~\(b\in A\) satisfent~\(S(b)=a\).
 		Aleshores direm que~\(a\) és el primer element de~\(A\).
-		
+
 		Aquesta definició té sentit per la definició de \myref{def:nombres naturals} i el Teorema \myref{thm:primer element}.
 	\end{definition}
 	\begin{theorem}[Principi d'inducció]
@@ -841,7 +841,7 @@
 			    A=\{z\in\mathbb{N}\mid (x+y)+z=x+(y+z)\text{ per a tot }x,y\in\mathbb{N}\}.
 			\]
 			Per la definició de \myref{def:subconjunt} trobem que~\(A\subseteq\mathbb{N}\).
-			
+
 			Tenim que~\(1\in A\), ja que per a tot~\(x,y\in\mathbb{N}\) tenim
 			\begin{align*}
 			x+(y+1)&=x+S(y)\tag{\myref{def:suma de nombres naturals}}\\
@@ -873,7 +873,7 @@
 			    A=\{y\in\mathbb{N}\mid x+S(y)=S(x)+y\text{ per a tot }x\in\mathbb{N}\}.
 			\]
 			Per la definició de \myref{def:subconjunt} trobem que~\(A\subseteq\mathbb{N}\).
-			
+
 			Tenim que~\(1\in A\), ja que per a tot~\(x\in\mathbb{N}\)
 			\begin{align}
 			x+S(1)&=S(x+1)\tag{\myref{def:suma de nombres naturals}}\\
@@ -904,7 +904,7 @@
 			    B=\{y\in\mathbb{N}\mid 1+y=y+1\}.
 			\]
 			Per la definició de \myref{def:subconjunt} trobem que~\(B\subseteq\mathbb{N}\).
-			
+
 			Tenim que~\(1\in B\), ja que~\(1+1=1+1\).
 			També tenim que si~\(y\in B\), aleshores~\(S(y)\in B\).
 			Efectivament,
@@ -916,13 +916,13 @@
 			\end{align*}
 			Ara bé.
 			Per la definició de \myref{def:nombres naturals}, tenim que si~\(B\) és un conjunt tal que~\(1\in B\) i tal que~\(S(y)\in B\) per a tot~\(y\in B\), aleshores~\(\mathbb{N}\subseteq B\), i pel \myref{thm:doble inclusió} tenim que~\(\mathbb{N}=B\).
-			
+
 			Definim ara el conjunt
 			\[
 			    A=\{y\in\mathbb{N}\mid x+y=y+x\text{ per a tot }x\in\mathbb{N}\}.
 			\]
 			Per la definició de \myref{def:subconjunt} trobem que~\(B\subseteq A\subseteq\mathbb{N}\).
-			
+
 			Tenim que~\(1\in A\), ja que~\(1\in B\subseteq A\).
 			També tenim que si~\(y\in A\), aleshores~\(S(y)\in A\).
 			Efectivament, tenim que per a tot~\(x\in\mathbb{N}\)
@@ -949,7 +949,7 @@
 			    A=\{z\in\mathbb{N}\mid x\cdot(y+z)=x\cdot y+x\cdot z\text{ per a tot }x,y\in\mathbb{N}\}.
 			\]
 			Per la definició de \myref{def:subconjunt} trobem que~\(A\subseteq\mathbb{N}\).
-			
+
 			Tenim que~\(1\in A\), ja que per a tot~\(x,y\in\mathbb{N}\) tenim
 			\begin{align*}
 			x\cdot(y+1)&=x\cdot S(y)\tag{\myref{def:suma de nombres naturals}}\\
@@ -981,7 +981,7 @@
 			    A=\{z\in\mathbb{N}\mid (x\cdot y)\cdot z=x\cdot(y\cdot z)\text{ per a tot }x,y\in\mathbb{N}\}.
 			\]
 			Per la definició de \myref{def:subconjunt} trobem que~\(A\subseteq\mathbb{N}\).
-			
+
 			Tenim que~\(1\in A\), ja que per a tot~\(x,y\in\mathbb{N}\) tenim
 			\begin{align*}
 			x\cdot(y\cdot1)&=x+y\tag{\myref{def:producte de nombres naturals}}\\
@@ -1012,7 +1012,7 @@
 			    B=\{y\in\mathbb{N}\mid 1\cdot y=y\cdot 1\}.
 			\]
 			Per la definició de \myref{def:subconjunt} trobem que~\(B\subseteq\mathbb{N}\).
-			
+
 			Tenim que~\(1\in B\), ja que~\(1\cdot1=1\cdot1\).
 			També tenim que si~\(x\in B\), aleshores~\(S(x)\in B\).
 			Efectivament,
@@ -1025,13 +1025,13 @@
 			\end{align*}
 			Ara bé.
 			Per la definició de \myref{def:nombres naturals}, tenim que si~\(B\) és un conjunt tal que~\(1\in B\) i tal que~\(S(y)\in B\) per a tot~\(y\in B\), aleshores~\(\mathbb{N}\subseteq B\), i pel \myref{thm:doble inclusió} tenim que~\(\mathbb{N}=B\).
-			
+
 			Definim ara el conjunt
 			\[
 			    A=\{y\in\mathbb{N}\mid x+y=y+x\text{ per a tot }x\in\mathbb{N}\}.
 			\]
 			Per la definició de \myref{def:subconjunt} trobem que~\(B\subseteq A\subseteq\mathbb{N}\).
-			
+
 			Tenim que~\(1\in A\), ja que~\(1\in B\subseteq A\).
 			També tenim que si~\(y\in A\), aleshores~\(S(y)\in A\).
 			Efectivament, tenim que per a tot~\(x\in\mathbb{N}\)
@@ -1057,7 +1057,7 @@
 			    A=\{z\in\mathbb{N}\mid x+z=y+z\implica x=y\text{ per a tot }x,y\in\mathbb{N}\}.
 			\]
 			Per la definició de \myref{def:subconjunt} trobem que~\(A\subseteq\mathbb{N}\).
-			
+
 			Tenim que~\(1\in A\), ja que si~\(x+1=y+1\) per la definició de \myref{def:suma de nombres naturals} trobem que~\(S(x)=S(y)\), i per la definició de \myref{def:nombres naturals} trobem que~\(x=y\).
 			També tenim que si~\(z\in A\), aleshores~\(S(z)\in A\).
 			Efectivament, per a tot~\(x,y\in\mathbb{N}\) tals que~\(x+S(z)=y+S(z)\) tenim per la definició de \myref{def:suma de nombres naturals} que
@@ -1073,7 +1073,7 @@
 			    S(x)+z=S(y)+z,
 			\]
 			i per hipòtesi,~\(S(x)=S(y)\), i per la definició de \myref{def:nombres naturals} tenim que~\(x=z\).
-			
+
 			Ara bé.
 			Per la definició de \myref{def:nombres naturals}, tenim que si~\(A\) és un conjunt tal que~\(1\in A\) i tal que~\(S(z)\in A\) per a tot~\(z\in A\), aleshores~\(\mathbb{N}\subseteq A\), i pel \myref{thm:doble inclusió} tenim que~\(A=\mathbb{N}\).
 		\end{proof}
@@ -1088,16 +1088,16 @@
 			    A=\{z\in\mathbb{N}\mid xz=yz\implica x=y\text{ per a tot }x,y\in\mathbb{N}\}.
 			\]
 			Per la definició de \myref{def:subconjunt} trobem que~\(A\subseteq\mathbb{N}\).
-			
+
 			Tenim que~\(1\in A\), ja que si~\(x\cdot1=y\cdot1\) per la definició de \myref{def:producte de nombres naturals} trobem que~\(x=y\).
 			També tenim que si~\(z\in A\), aleshores~\(S(z)\in A\).
 			Efectivament, per a tot~\(x,y\in\mathbb{N}\) tals que~\(x\cdot S(z)=y\cdot S(z)\) tenim per la definició de \myref{def:producte de nombres naturals} que
 			\[
 			    x\cdot z+x\cdot1=y\cdot z+y\cdot1.
 			\]
-			
+
 			Ara bé, per hipòtesi tenim que~\(x\cdot z=y\cdot z\), i pel Teorema \myref{thm:podem tatxar per la suma nombres naturals} trobem~\(x=y\).
-			
+
 			Ara bé.
 			Per la definició de \myref{def:nombres naturals}, tenim que si~\(A\) és un conjunt tal que~\(1\in A\) i tal que~\(S(z)\in A\) per a tot~\(z\in A\), aleshores~\(\mathbb{N}\subseteq A\), i pel \myref{thm:doble inclusió} tenim que~\(A=\mathbb{N}\).
 		\end{proof}
@@ -1172,9 +1172,9 @@
 		Sigui~\(\overline{(a,b)}\) un nombre enter.
 		Aleshores
 		\begin{enumerate}
-			\item\label{enum:prop:elements neutres dels nombres enters 1} 
+			\item\label{enum:prop:elements neutres dels nombres enters 1}
 			\(\overline{(a,b)}+\overline{(0,0)}=\overline{(a,b)}\).
-			\item\label{enum:prop:elements neutres dels nombres enters 2} 
+			\item\label{enum:prop:elements neutres dels nombres enters 2}
 			\(\overline{(a,b)}\cdot\overline{(1,0)}=\overline{(a,b)}\).
 			\item\label{enum:prop:elements neutres dels nombres enters 3}
 			\(\overline{(a,b)}+\overline{(b,a)}=\overline{(0,0)}\).
@@ -1189,9 +1189,9 @@
 			\[
 			    \overline{(a,b)}+\overline{(0,0)}=\overline{(a,b)}.
 			\]
-			
+
 			Veiem ara el punt \eqref{enum:prop:elements neutres dels nombres enters 2}.
-			Per la definició de \myref{def:producte de nombres enters} tenim que 
+			Per la definició de \myref{def:producte de nombres enters} tenim que
 			\[
 			    \overline{(a,b)}\cdot\overline{(1,0)}=\overline{(a\cdot 1+b\cdot 0,a\cdot0+b\cdot1)},
 			\]
@@ -1199,7 +1199,7 @@
 			\[
 			    \overline{(a,b)}\cdot\overline{(1,0)}=\overline{(a,b)}.
 			\]
-			
+
 			Veiem el punt \eqref{enum:prop:elements neutres dels nombres enters 3}.
 			Per la definició de \myref{def:suma de nombres enters} tenim que
 			\[
@@ -1228,7 +1228,7 @@
 			\]
 			ja que~\(b+0=b\), i per tant, per la definició de \myref{def:resta de nombres naturals} tenim que~\(b-b=0\).
 			Per tant, per la definició de \myref{def:nombres enters} tenim~\((a,b)\sim(a-b,0)\), i per la definició de \myref{def:classe d'equivalència} trobem que~\(\overline{(a,b)}=\overline{(a-b,0)}\).
-			
+
 			La demostració del punt \eqref{enum:prop:notació nombres enters 2} és anàloga.
 		\end{proof}
 	\end{proposition}
@@ -1391,10 +1391,10 @@
 			\[
 			    ac+bd=ad+bc.
 			\]
-			
+
 			Suposem que~\(\overline{(c,d)}\neq\overline{(0,0)}\).
 			Pel Teorema \myref{thm:caracterització del 0 dels enters} trobem que~\(c\neq d\).
-			
+
 			Suposem també que~\(c>d\).
 			Això és que existeix un natural~\(k\) satisfent~\(c+k=d\).
 			Per tant %REF
@@ -1410,7 +1410,7 @@
 			    a=b
 			\]
 			i per la proposició \myref{thm:caracterització del 0 dels enters} trobem que~\(\overline{(a,b)}=\overline{(0,0)}\).
-			
+
 			Les demostracions dels altres casos són anàlogues.
 		\end{proof}
 	\end{theorem}
@@ -1452,7 +1452,7 @@
 		\begin{proof}
 			Comencem veient el punt \eqref{enum:prop:oposats tenen els mateixos divisors}.
 			Si~\(b\divides a\) per la definició de \myref{def:divisor Z} tenim que existeix un enter~\(c\) tal que~\(a=bc\), i per tant~\(-a=b(-c)\), i equivalentment~\(b\divides-a\).
-			
+
 			Veiem ara el punt \eqref{enum:prop:oposats tenen els mateixos múltiples}.
 			Si~\(b\divides a\) per la definició de \myref{def:divisor Z} tenim que existeix un enter~\(c\) tal que~\(a=bc\), i per tant~\(a=(-c)(-b)\), i equivalentment~\(-b\divides a\).
 		\end{proof}
@@ -1561,7 +1561,7 @@
 			\[
 			    r=D-dq.
 			\]
-			
+
 			Ara bé, tenim que~\(r<d\), ja que si~\(r\geq d\) tindríem
 			\begin{align*}
 			0&\geq r-d\\
@@ -1603,10 +1603,10 @@
 			\]
 			i com que, per hipòtesi,~\(d\neq0\), pel Teorema \myref{thm:Z és un DI} ha de ser~\(q_{1}-q_{2}=0\), i de nou per l'observació \myref{obs:elements que es tatxen son iguals} tenim~\(q_{1}=q_{2}\).
 			Per tant la unicitat queda demostrada.
-			
+
 			Veiem ara que existeixen.
 			Efectivament, si~\(D,d>0\) l'enunciat és cert pel lema \myref{lema:criteri de divisibilitat d'Euclides}.
-			
+
 			Si~\(D<0\) i~\(d>0\) definim~\(D'=-D\).
 			Aleshores~\(D'>0\), i pel lema \myref{lema:criteri de divisibilitat d'Euclides} tenim que existeixen~\(q'\) i~\(r'\) enters tals que
 			\[
@@ -1625,7 +1625,7 @@
 			    D=dq+r
 			\]
 			amb~\(0\leq d-r'<d\).
-			
+
 			Si~\(d<0\) prenem~\(d'=-d\), i aleshores~\(d'>0\) i pels casos anteriors hem acabat.
 		\end{proof}
 	\end{theorem}
@@ -1687,7 +1687,7 @@
 			Veiem que la condició és suficient (\(\implica\)).
 			Suposem doncs que~\(a\) i~\(b\) són coprimers.
 			Per \myref{thm:identitat de Bézout} hem acabat.
-			
+
 			Veiem ara que la condició és necessària (\(\implicatper\)).
 			Suposem doncs que existeixen dos enters~\(\alpha\) i~\(\beta\) tals que~\(\alpha a+\beta b=1\).
 			Tenim que si existeix un enter~\(c\) tal que~\(c\divides a\) i~\(c\divides b\), aleshores~\(c\divides 1\), i per la definició de \myref{def:màxim comú divisor} trobem que~\(\mcd(a,b)=1\).
@@ -1735,7 +1735,7 @@
 			Per la definició de \myref{def:màxim comú divisor} existeixen~\(a'\) i~\(b'\) tals que~\(a=da'\) i~\(b=db'\).
 			Per tant, per la proposició \myref{prop:divisors divideixen el divident escalat} trobem que~\(d\divides ab\), i per la definició de \myref{def:divisor Z} trobem que existeix un enter~\(l\) tal que~\(dl=\abs{ab}\).
 			Per tant~\(dl=da'b\) i~\(dl=adb'\), i pel corol·lari \myref{corollary:podem tatxar pels costats en Z pel producte} tenim que~\(l=a'b\) i~\(l=ab'\), i per la definició de \myref{def:divisor Z} tenim que~\(a\divides l\) i~\(b\divides l\).
-			
+
 			Sigui~\(m\) un enter tal que~\(a\divides m\) i~\(b\divides m\).
 			Per la definició de \myref{def:divisor Z} tenim que existeixen dos enters~\(k_{1}\) i~\(k_{2}\) tals que~\(m=ak_{1}\) i~\(m=bk_{2}\).
 			Ara bé, per \myref{thm:identitat de Bézout} tenim que existeixen dos enters~\(\alpha\) i~\(\beta\) tals que~\(\alpha a+\beta b=d\).
@@ -1779,10 +1779,10 @@
 		\]
 		\begin{proof}
 			Observem primer que si~\(a\) és primer tenim~\(a=a\) i aquest cas particular de l'enunciat és cert.
-			
+
 			Ho farem per inducció.
 			Si~\(a=2\) tenim que~\(a\) és primer i hem acabat.
-			
+
 			Suposem ara que~\(a>2\) i que l'enunciat és cert per a~\(a\) fix.
 			Volem veure que també és cert per a~\(a+1\).
 			Si~\(a+1\) és primer, per la definició d'\myref{def:enter primer} hem acabat.
@@ -1817,7 +1817,7 @@
 			\[
 			    p_{2}\cdots p_{n}=q_{1}\cdots q_{j_{1}-1}q_{j_{1}+1}\cdots q_{r}.
 			\]
-			
+
 			Podem iterar aquest procés~\(k=\min(n,r)\) vegades.
 			Ara bé, si~\(n>r\) tenim
 			\[
@@ -1863,9 +1863,9 @@
 			\[
 			    p-qp_{j}=1.
 			\]
-			
+
 			Per tant pel Teorema \myref{thm:condició equivalent a coprimers per Bézout} i la definició de \myref{def:coprimers} trobem que~\(p\) i~\(p_{j}\) són coprimers per a tot~\(j\in\{1,\dots,m\}\).
-			
+
 			Si~\(p\) és primer hem acabat, ja que~\(p\) és més gran que~\(p_{1},\dots,p_{n}\), i per tant diferent.
 			Ara bé, si~\(p\) no és primer pel lema \myref{lema:thm:Teorema Fonamental de l'Aritmètica 1} tenim que existeix un primer~\(p'\) tal que~\(p'\divides p\), però hem vist que~\(p_{1}\,dots,p_{m}\ndivides p\), per tant~\(p'\) és diferent de~\(p_{1},\dots,p_{m}\) i hem acabat.
 		\end{proof}
@@ -1910,7 +1910,7 @@
 		una relació d'equivalència.
 		Aleshores denotem el conjunt quocient~\(\mathbb{Z}/\sim\) com~\(\mathbb{Z}/(m)\), i si~\(x\sim y\) escriurem~\(x\equiv y\pmod{m}\).
 		Direm que~\(\mathbb{Z}/(m)\) són nombres modulars i si~\(x\sim y\) direm que~\(x\) i~\(y\) són congruents mòdul~\(m\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:relació d'equivalència Z/(m)}
 	\end{definition}
 	\subsection{Operacions sobre nombres modulars} %Veure que estan ben definides
@@ -2052,7 +2052,7 @@
 		\labelname{nombre modular invertible}\label{def:nombre modular invertible}
 		Sigui~\(\overline{a}\) un element de~\(\mathbb{Z}/(m)\) tal que existeix un element~\(\overline{a'}\) de~\(\mathbb{Z}/(m)\) satisfent~\(\overline{a}\overline{a'}=\overline{1}\).
 		Aleshores direm que~\(\overline{a}\) és invertible pel producte i que~\(\overline{a'}\) és la inversa de~\(\overline{a}\).
-		
+
 		Denotarem~\(\overline{a}^{-1}\) com la inversa de~\(\overline{a}\)
 	\end{definition}
 	\begin{proposition}
@@ -2060,7 +2060,7 @@
 		Sigui~\(\overline{a}\) un element de~\(\mathbb{Z}/(m)\) Aleshores~\(\overline{a}\) és invertible si i només si~\(a\) i~\(m\) són coprimers.
 		\begin{proof}
 			Per la definició de \myref{def:nombre modular invertible} tenim que~\(\overline{a}\) és invertible si existeix un element~\(a'\) tal que~\(aa'\equiv1\pmod{m}\), i per la definició de \myref{def:nombres modulars congruents} tenim que això és si existeix un enter~\(\lambda\) tal que~\(aa'-1=\lambda m\).
-			
+
 			Això és equivalent a que~\(aa'-\lambda m=1\), i per \myref{thm:identitat de Bézout} tenim que això és si i només si~\(\mcd(a,m)=1\), i per la definició de \myref{def:coprimers} tenim que~\(a\) i~\(m\) són coprimers.
 		\end{proof}
 	\end{proposition}
@@ -2081,14 +2081,14 @@
 		\begin{proof}
 			Observem que per la definició de \myref{def:divisor Z} i la definició de \myref{def:coprimers} tenim que~\(a\) i~\(p\) són coprimers.
 			Per tant per la proposició \myref{prop:condició equivalent a invertible en Z/(m)} tenim que~\(a\) és invertible.
-			
+
 			Considerem el conjunt
 			\[
 			    X=\{\overline{a},\overline{2a},\overline{3a},\dots,\overline{(p-1)a}\}.
 			\]
 			Veiem que tots els elements de~\(X\) són diferents.
 			Efectivament, si~\(na\equiv ma\pmod{p}\) per a certs enters~\(n\) i~\(m\) per la definició de \myref{def:nombre modular invertible} trobem que~\(n\equiv m\pmod{p}\).
-			
+
 			També tenim que % REVISAR % FER % WTF Com? %TODO
 			\[
 			    a\cdot2a\cdot3a\cdots(p-1)a\equiv 1\cdot2\cdot3\cdots(p-1)\pmod{p},
@@ -2126,7 +2126,7 @@
 			\quad\ \vdots\\
 			x\equiv x_{0}\pmod{m_{n}}
 			\end{cases}\]
-			
+
 			Ara bé, per la definició de \myref{def:nombres modulars congruents} i la definició de \myref{def:màxim comú divisor} tenim que ha de ser
 			\[
 			    x-x_{0}=\lambda M
@@ -2152,7 +2152,7 @@
 			    M_{i}=m_{1}\cdots m_{i-1}m_{i+1}\cdots m_{n}
 			\]
 			i tenim, per la definició de \myref{def:coprimers}, que~\(M_{i}\) i~\(m_{i}\) són coprimers.
-			
+
 			Per tant la congruència
 			\[
 			    M_{i}x\equiv a_{i}\pmod{m_{i}}
@@ -2162,12 +2162,12 @@
 			\[
 			    x_{0}=M_{1}b_{1}+\dots+M_{n}b_{n}.
 			\]
-			
+
 			Aleshores tenim per la definició de \myref{def:nombres modulars} tenim que
 			\[
 			    x_{0}\equiv M_{i}b_{i}\pmod{m_{i}}.
 			\]
-			
+
 			Per tant, pel lema \myref{lema:thm:Teorema xinès de les restes} tenim que
 			\[
 			    x=x_{0}+\lambda M
@@ -2190,7 +2190,7 @@
 		\]
 		un conjunt.
 		Aleshores direm que~\(\GrupSimetric_{X}\) és el grup simètric de~\(X\).
-		
+
 		Si~\(X=\{1,\dots,n\}\) aleshores denotarem el grup simètric de~\(X\) com~\(\GrupSimetric_{n}\).
 	\end{definition}
 	\begin{definition}[Elements moguts per una permutació]
@@ -2214,7 +2214,7 @@
 			Comencem veient l'implicació cap a la dreta (\(\implica\)).
 			Suposem doncs que~\(\Mou(\sigma)=\emptyset\).
 			Aleshores per la definició de \myref{def:conjunt d'elements moguts per una permutació} trobem que~\(\{x\in X\mid\sigma(x)\neq x\}=\emptyset\), i per tant ha de ser~\(\sigma(x)=x\) per a tot~\(x\in X\), i per tant~\(\sigma=\Id_{X}\).
-			
+
 			Veiem ara l'implicació cap a l'esquerra (\(\implicatper\)).
 			Prenem~\(\Id_{X}\).
 			Aleshores ha de ser~\(\Mou(\Id_{X})=\emptyset\), ja que per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que~\(\Mou(\Id_{X})=\{x\in X\mid\Id_{X}(x)\neq x\}\).
@@ -2231,14 +2231,14 @@
 			Prenem~\(a\in X\) tal que~\(a\in\Mou(\sigma\circ\tau)\).
 			Això és, per la definició de \myref{def:conjunt d'elements moguts per una permutació}, que~\(a\in\{x\in X\mid\sigma\circ\tau(x)\neq x\}\).
 			Volem veure que~\(a\in\Mou(\sigma)\cup\Mou(\tau)\), i per la definició d'\myref{def:unió de conjunts} hem de veure que~\(a\in\Mou(\sigma)\) ó~\(a\in\Mou(\tau)\).
-			
+
 			Si~\(a\notin\Mou(\tau)\) tenim que~\(\tau(a)=a\), i tenim~\(\sigma\circ\tau(a)=\sigma(a)\).
 			Ara bé, ha de ser~\(\sigma(a)\neq a\), ja que si no tindríem~\(a\notin\Mou(\sigma\circ\tau)\).
 			Per tant ha de ser~\(a\in\Mou(\sigma)\).
-			
+
 			Si~\(a\notin\Mou(\sigma)\) tenim que~\(\sigma(a)=a\), i per tant tenim que~\(\tau(a)\neq a\), ja que si~\(\tau(a)=a\) tindríem~\(\sigma\circ\tau(a)=\sigma(a)=a\), i seria~\(a\notin\Mou(\sigma\circ\tau)\).
 			Per tant ha de ser~\(a\in\Mou(\tau)\).
-			
+
 			Per tant tenim que si~\(a\in\Mou(\sigma\circ\tau)\) aleshores~\(a\in\Mou(\sigma)\cup\Mou(\tau)\), i per la definició de \myref{def:subconjunt} trobem que~\(\Mou(\sigma\circ\tau)\subseteq\Mou(\sigma)\cup\Mou(\tau)\), com volíem veure.
 		\end{proof}
 	\end{proposition}
@@ -2258,14 +2258,14 @@
 		\begin{proof}
 			Per la proposició \myref{prop:Mou de la conjugació és unió dels Mous} tenim que~\(\Mou(\sigma\circ\tau)\subseteq\Mou(\sigma)\cup\Mou(\tau)\).
 			Veiem doncs que~\(\Mou(\sigma\circ\tau)\supseteq\Mou(\sigma)\cup\Mou(\tau)\).
-			
+
 			Prenem un element~\(a\in\Mou(\sigma)\cup\Mou(\tau)\).
 			Com que, per hipòtesi,~\(\sigma\) i~\(\tau\) són dues permutacions disjuntes, per la definició de \myref{def:permutacions disjuntes} tenim que~\(\Mou(\sigma)\cap\Mou(\tau)=\emptyset\) i per la definició d'\myref{def:intersecció de conjunts} tenim que o bé~\(a\in\Mou(\sigma)\) o bé~\(a\in\Mou(\tau)\).
-			
+
 			Suposem que~\(a\in\Mou(\sigma)\).
 			Per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que~\(\sigma(a)\neq a\) i~\(\tau(a)=a\), ja que~\(a\notin\Mou(\tau)\).
 			Per tant~\(\sigma\circ\tau(a)=\sigma(a)\neq a\), i per tant~\(a\in\Mou(\sigma\circ\tau)\).
-			
+
 			Suposem ara que~\(a\in\Mou(\tau)\).
 			Per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que~\(\tau(a)\neq a\) i~\(\sigma(a)=a\), ja que~\(a\notin\Mou(\sigma)\).
 			Per tant~\(\sigma\circ\tau(a)=\sigma(b)\) per a cert~\(b\neq a\),~\(b=\tau(a)\).
@@ -2286,7 +2286,7 @@
 		\]
 		\begin{proof} % REVISAR
 			Per la definició de \myref{def:permutació} tenim que~\(\sigma\) és bijectiva, i per la definició de \myref{def:conjunt d'elements moguts per una permutació} trobem que~\(\sigma(x)=x\) si i només si~\(\sigma(\sigma(x))=\sigma(x)\).
-			
+
 			Prenent la negació d'això trobem que~\(\sigma(x)\neq x\) si i només si~\(\sigma(\sigma(x))\neq\sigma(x)\), que per la definició de \myref{def:conjunt d'elements moguts per una permutació} és equivalent a~\(x\in\Mou(\sigma)\sii\sigma(x)\in\Mou(\sigma)\).
 		\end{proof}
 	\end{lemma}
@@ -2301,16 +2301,16 @@
 			Per la definició de \myref{def:permutacions disjuntes} i la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que, per hipòtesi,~\(\Mou(\sigma)\cap\Mou(\tau)=\emptyset\).
 			Per tant, per a tot~\(x\in X\) tenim o bé~\(x\in\Mou(\sigma)\), o bé~\(x\in\Mou(\tau)\) o bé~\(x\notin\Mou(\sigma)\cup\Mou(\tau)\).
 			Estudiem els cassos.
-			
+
 			Suposem que~\(x\in\Mou(\sigma)\), i per tant~\(x\notin\Mou(\tau)\).
 			Per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que~\(\tau(x)=x\) i per tant~\(\sigma(\tau(x))=\sigma(x)\).
 			Ara bé, pel lema \myref{lema:permutacions disjuntes commuten} tenim que~\(\sigma(x)\in\Mou(\sigma)\), d'on trobem que~\(\sigma(x)\notin\Mou(\tau)\), ja que, per hipòtesi,~\(\Mou(\sigma)\cap\Mou(\tau)=\emptyset\), i per tant~\(\tau(\sigma(x))=\sigma(x)\).
-			
+
 			Suposem que~\(x\in\Mou(\tau)\), i per tant~\(x\notin\Mou(\sigma)\).
 			Per la definició de \myref{def:conjunt d'elements moguts per una permutació} tenim que~\(\sigma(x)=x\) i per tant~\(\tau(\sigma(x))=\tau(x)\).
 			Ara bé, pel lema \myref{lema:permutacions disjuntes commuten} tenim que~\(\tau(x)\in\Mou(\tau)\), d'on trobem que~\(\tau(x)\notin\Mou(\sigma)\), ja que, per hipòtesi,~\(\Mou(\tau)\cap\Mou(\sigma)=\emptyset\), i per tant~\(\sigma(\tau(x))=\tau(x)\).
 			%TODO: revisar copia y pega
-			
+
 			Suposem per acabar que~\(x\notin\Mou(\sigma)\cup\Mou(\tau)\).
 			Aleshores tenim que~\(\sigma(x)=x\) i~\(\tau(x)=x\), i per tant~\(\sigma\circ\tau=\tau\circ\sigma\), com volíem veure.
 		\end{proof} % PROPO verure que dues aplicacions són iguals si tenen imatges iguals per antiimatges iguals. I fer referencies.
@@ -2391,15 +2391,15 @@
 		\begin{proof}
 			Prenem~\(a_{1}\in\Mou(\sigma)\) i el conjunt~\(\{a_{1},\sigma(a_{1}),\sigma^{2}(a_{1}),\dots\}\).
 			Com que, per hipòtesi,~\(X\) és finit tenim que existeixen~\(i\) i~\(j\) tals que~\(\sigma^{i}(a_{1})=\sigma^{j}(a_{1})\), i per tant~\(\sigma^{i-j}(a_{1})=a_{1}\).
-			
+
 			Sigui doncs~\(k_{1}=\min\{k\in\mathbb{N}\mid\sigma^{k}(a)=a\}\).
-			Per la definició d'\myref{def:r-cicle} tenim que 
+			Per la definició d'\myref{def:r-cicle} tenim que
 			\begin{equation}
 			\label{eq:thm:descomposició de permutacions en cicles disjunts 2}
 			\alpha_{1}=(a_{1},\sigma(a_{1}),\dots,\sigma^{k_{1}-1}(a_{1}))
 			\end{equation}
 			és un~\(k_{1}\)-cicle.
-			
+
 			Si existeix un~\(a_{2}\in X\) que no pertanyi a~\(\{a_{1},\sigma(a_{1}),\dots,\sigma^{k_{1}-1}(a_{1})\}\).
 			Amb el mateix procés podem generar un nou~\(k_{2}\)-cicle~\(\alpha_{2}\) disjunt amb~\(\alpha_{1}\), i així obtenim~\(\alpha_{1},\dots,\alpha_{s}\) cicles disjunts dos a dos.
 			Aleshores trobem
@@ -2407,8 +2407,8 @@
 			    \sigma=\alpha_{1}\circ\dots\circ\alpha_{s},
 			\]
 			ja que~\(\sigma(x)=\alpha_{1}\circ\dots\circ\alpha_{s}(x)\) per a tot~\(x\in X\).
-			
-			
+
+
 			Tenim doncs que
 			\begin{equation}
 			\label{eq:thm:descomposició de permutacions en cicles disjunts 3}
@@ -2420,7 +2420,7 @@
 			\sigma=\alpha_{1}\circ\dots\circ\alpha_{s}=\beta_{1}\circ\dots\circ\beta_{r}.
 			\end{equation}
 			Per la proposició \myref{prop:mou de permutacions conjugades és unió dels mous de les permutacions} tenim que~\(a_{i}\in\Mou(\beta_{j_{i}})\) per a cert~\(j_{i}\in\{1,\dots,r\}\), i per la definició de \myref{def:permutacions disjuntes} i la definició d'\myref{def:intersecció de conjunts} tenim que aquest~\(j_{i}\) és únic.
-			
+
 			Ara bé, com que per hipòtesi~\(\beta_{j_{i}}\) és un cicle, per la proposició \myref{prop:escriure r-cicles amb un representant} tenim que
 			\[
 			    \beta_{j_{i}}=\left(a_{i},\beta_{j_{i}}(a_{i}),\dots,\beta^{k'_{j_{i}}-1}_{j_{i}}(a_{i})\right)
@@ -2462,7 +2462,7 @@
 			    \alpha=(a_{1},\dots,a_{r})=(a_{1},a_{2})\circ(a_{2},a_{3})\circ\dots\circ(a_{n-1},a_{r}),
 			\]
 			i per la definició de \myref{def:transposició} tenim que~\((a_{i},a_{i+1})\) és una transposició de~\(\GrupSimetric_{X}\) per a tot~\(i\in\{1,\dots,r-1\}\).
-			
+
 			Per tant, pel \myref{thm:descomposició d'una permutació en cicles disjunts} hem acabat.
 		\end{proof}
 	\end{proposition}
@@ -2489,7 +2489,7 @@
 		    \sig(\sigma)={(-1)}^{r}
 		\]
 		com el signe de~\(\sigma\).
-		
+
 		Aquesta definició té sentit pel Teorema \myref{thm:signe d'una permutació}.
 	\end{definition}
 \section{Els nombres racionals}
@@ -2531,7 +2531,7 @@
 		per a tot~\((a,b)\),~\((c,d)\) elements de~\(\mathbb{Z}\times\mathbb{Z}\setminus\{0\}\).
 		Aleshores direm que el conjunt quocient~\(\mathbb{Q}=\mathbb{Z}\times\mathbb{Z}\setminus\{0\}/\sim\) és el conjunt dels nombres racionals.
 		Direm que els elements de~\(\mathbb{Q}\) són nombres racionals.
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:nombres racionals}.
 	\end{definition}
 	\begin{notation}
@@ -2740,7 +2740,7 @@
 	La secció sobre els axiomes de Peano està fortament inspirada en \cite{notesKumar}.
 	La resta de la teoria és una combinació de \cite{AntoineRosaCampsMoncasiIntroduccioAlgebraAbstracta} i \cite{TemesFonaments}, uns apunts de l'assignatura que sospito que només són accessibles des del campus virtual.
 	La part axiomàtica de la secció de teoria de conjunts està inspirada en \cite{ACTEAguade}, i la resta segueix \cite{TemesFonaments}.
-	
+
 	La bibliografia del curs inclou els textos \cite{AntoineRosaCampsMoncasiIntroduccioAlgebraAbstracta, CastelletLlerenaAlgebraLinealIGeometria, GodementAlgebra, NutsAndBoltsOfProofs, BujalanceBujalanceCostaProblemasMatematicaDiscreta, IntroductionToMathematicalReasoning, ChapterZeroSchumacher}.
 \end{document}
 
