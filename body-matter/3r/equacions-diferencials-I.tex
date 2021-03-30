@@ -74,21 +74,21 @@
 			    \distancia(f,g)=\sup_{x\in X}\norm{f(x)-g(x)},
 			\]
 			i per tant ha de ser~\(\distancia(f,g)\geq0\).
-			
+
 			Veiem ara el punt \eqref{prop:distància entre funcions acotades:enum2}.
 			Si~\(f=g\) aleshores tenim que per a tot~\(x\) de~\(X\) es satisfà~\(f(x)=g(x)\), i per tant trobem
 			\[
 			    \sup_{x\in X}\norm{f(x)-g(x)}=0,
 			\]
 			i això és que~\(\distancia(f,g)=0\).
-			
+
 			Suposem ara que~\(\distancia(f,g)=0\).
 			Per la definició de \myref{def:norma d'una funció} ha de ser
 			\[
 			    \sup_{x\in X}\norm{f(x)-g(x)}=0,
 			\]
 			i per tant trobem que~\(f(x)=g(x)\) per a tot~\(x\) de~\(X\) i per tant tenim que ha de ser~\(f=g\).
-			
+
 			Veiem ara el punt \eqref{prop:distància entre funcions acotades:enum3}.
 			Tenim que
 			\begin{align*}
@@ -96,7 +96,7 @@
 				&=\sup_{x\in X}\norm{f(x)-h(x)+h(x)-g(x)} \\
 				&\leq\sup_{x\in X}\norm{f(x)-h(x)}+\sup_{x\in X}\norm{h(x)-g(x)}=\distancia(f,h)+\distancia(h,g).
 			\end{align*}
-			
+
 			Per acabar veiem el punt \eqref{prop:distància entre funcions acotades:enum4}.
 			Tenim que
 			\begin{align*}
@@ -113,7 +113,7 @@
 		    \distancia(f,g)=\norm{f-g}
 		\]
 		com la distància entre~\(f\) i~\(g\) en~\(\mathcal{C}_{b}(X,T)\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:distància entre funcions acotades}.
 	\end{definition}
 	\begin{lemma}
@@ -127,7 +127,7 @@
 	\begin{notation}
 		Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic i~\(T\) un compacte de~\(\mathbb{R}^{n}\).
 		Aleshores denotarem per~\(\mathcal{C}_{b}(X,T)\) l'espai mètric de amb la distància entre funcions~\(\distancia\).
-		
+
 		Observem que això té sentit pel lema \myref{thm:l'espai de funcions contínues i acotades és un espai mètric}.
 	\end{notation}
 	\begin{theorem}
@@ -154,7 +154,7 @@
 				\label{thm:l'espai de funcions contínues i acotades és complet:eq1}
 				\lim_{n\to\infty}f_{n}(x)=f(x).
 			\end{equation}
-			
+
 			Sigui~\(n_{0}\) un natural.
 			Per la definició de \myref{def:límit} tenim que existeix un real~\(\varepsilon>0\) tal que per a tot~\(n\) i~\(m\) enters amb~\(n,m\geq n_{0}\)
 			\[
@@ -200,7 +200,7 @@
 				\label{thm:les aplicacions contractives tenen un únic punt fix:eq1}
 				\distancia(T(x),T(y))\leq k\distancia(x,y).
 			\end{equation}
-			
+
 			Veiem que si existeix un punt fix aquest és únic.
 			Suposem que existeixen dos punts~\(a\) i~\(b\) de~\(X\) tals que~\(a\) i~\(b\) són punts fixos de~\(T\).
 			Aleshores tenim que
@@ -212,7 +212,7 @@
 			    \distancia(a,b)\leq k\distancia(a,b).
 			\]
 			Ara bé, com que~\(0<k<1\), ha de ser~\(\distancia(a,b)=0\), i per tant trobem que~\(a=b\).
-			
+
 			Veiem ara que existeix un punt fix.
 			Prenem un element~\(x\) de~\(X\) i considerem la successió~\((T^{n}(x))_{n\in\mathbb{N}}\).
 			Sigui~\(r\) un natural.
@@ -238,7 +238,7 @@
 				\label{thm:les aplicacions contractives tenen un únic punt fix:eq2}
 				p=\lim_{n\to\infty}T^{n}(x).
 			\end{equation}
-			
+
 			Considerem el límit
 			\[
 			    \lim_{n\to\infty}T(T^{n}(x)).
@@ -251,8 +251,8 @@
 			\[
 			    \lim_{n\to\infty}T(T^{n}(x))=T(p).
 			\]
-			
-			Ara bé, tenim que 
+
+			Ara bé, tenim que
 			\[
 			    \lim_{n\to\infty}T(T^{n}(x))=\lim_{n\to\infty}T^{n+1}(x)
 			\]
@@ -279,7 +279,7 @@
 			\]
 			Ara bé, pel Teorema \myref{thm:les aplicacions contractives tenen un únic punt fix} tenim que ha de ser~\(x=y\), i per tant aquest punt és únic.
 			% CONTINUAR
-			
+
 			Veiem ara que existeix un punt~\(x\) tal que~\(T(x)=x\).
 			Tenim, per hipòtesi, que existeix un~\(k\) natural tal que~\(T^{k}\) és contractiva, i pel Teorema \myref{thm:les aplicacions contractives tenen un únic punt fix} tenim que existeix un punt~\(x\) de~\(X\) tal que~\(T^{k}(x)=x\).
 			Tenim també que
@@ -308,7 +308,7 @@
 		    \frac{\diff u(t)}{\diff t}=f(t,u(t))
 		\]
 		és una equació diferencial ordinària sobre~\(\Omega\).
-		
+
 		Denotarem
 		\[
 		    \dot{u}(t)=f(t,u(t)).
@@ -326,7 +326,7 @@
 		    \dot{u}(t)=f(t,u(t)).
 		\]
 	\end{definition}
-	\begin{example}	
+	\begin{example}
 		\label{ex:exemple d'una equació diferencial 1}
 		\label{ex:exemple edos de la exponencial}
 		Volem trobar una solució a l'equació diferencial ordinària
@@ -356,7 +356,7 @@
 		    \dot{u}(t)=f(t,u(t))
 		\]
 		i es satisfà~\(u(t_{0})=x_{0}\).
-		
+
 		Això té sentit per la definició de \myref{def:solució d'una equació diferencial ordinària}.
 	\end{definition}
 	\begin{observation}
@@ -425,7 +425,7 @@
 			\[
 			    T(u(t))=u(t).
 			\]
-			
+
 			Tenim que si~\(u\) és un element de~\(X\), aleshores~\(T(u)\) també pertany a~\(X\), ja que si prenem un~\(t\) de~\((t_{0}-a,t_{0}+a)\) trobem que
 			\begin{align*}
 				\norm{T(u(t))-x_{0}}&=\norm{x_{0}-x_{0}+\int_{t_{0}}^{t}f(s,u(s))\diff s}\\
@@ -438,7 +438,7 @@
 			    \norm{T(u(t))-x_{0}}\leq b.
 			\]
 			Per la definició de \myref{def:bola} trobem que~\(T(u(t))\) és un element de~\(\overline{\bola}(x_{0},b)\), i per tant~\(T(u)\) és un element de~\(X\) per a tot~\(u\) de~\(X\).
-			
+
 			Per hipòtesi tenim que~\(f\) és Lipschitz respecte la segona variable, i per la definició de \myref{def:funció Lipschitz respecte la segona variable} trobem que existeix un real~\(K\geq0\) tal que
 			\begin{equation}
 				\label{thm:Teorema de Picard:eq1}
@@ -480,7 +480,7 @@
 			    \norm{T^{m}(u(t))-T^{m}(v(t))}\leq\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}\distancia(u,v),
 			\]
 			com volíem veure.
-			
+
 			Ara bé, tenim que
 			\[
 			    \lim_{m\to\infty}\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}=0,
@@ -489,7 +489,7 @@
 			\[
 			    0<{\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}}<1.
 			\]
-			
+
 			Per tant, per la definició d'\myref{def:aplicació contractiva} tenim que per a tot~\(n>n_{0}\) l'aplicació~\(T^{n}\) és una aplicació contractiva, i pel \corollari{} \myref{cor:si una funció té una potència contractiva aleshores aquesta té un únic punt fix} tenim que existeix una única funció~\(u\) de~\(X\) tal que
 			\[
 			    T(u(t))=u(t).\qedhere
@@ -529,7 +529,7 @@
 		\]
 		Aleshores direm que~\(H\) és equicontínua en~\(x\).
 		Si~\(H\) és equicontínua en~\(x\) per a tot~\(x\) de~\(X\) direm que~\(H\) és equicontínua en~\(X\).
-		
+
 		També, si~\(\mathcal{C}_{b}(X,T)\) té la distància~\(\distancia\) i, per a tot~\(\varepsilon>0\) existeix un~\(\delta>0\) tal que per a tot~\(y\in X\) tal que~\(\distancia(x,y)<\delta\), i per a tot~\(f\in H\) es satisfà
 		\[
 		    \norm{f(x)-f(y)}<\varepsilon.
@@ -562,7 +562,7 @@
 				\label{thm:Teorema d'Arzelà-Ascoli:eq1}
 				X=\bigcup_{i=1}^{k}\obert{V}_{x_{i}}.
 			\end{equation}
-			
+
 			Com que, per hipòtesi, la~\((f_{n})_{n\in\mathbb{N}}\) és una successió de funcions puntualment acotada, per la definició de \myref{def:família de funcions puntualment acotada} tenim que existeix un real~\(M\) tal que per a tot~\(n\) natural tenim
 			\[
 			    \norm{f_{n}(x_{i})}<M,
@@ -588,7 +588,7 @@
 				\label{thm:Teorema d'Arzelà-Ascoli:eq4}
 				\norm{f^{k}_{n}(x_{i})-f^{k}_{m}(x_{i})}\leq\frac{\varepsilon}{3}.
 			\end{equation}
-			
+
 			Prenem ara un element~\(x\) de~\(X\).
 			Per \eqref{thm:Teorema d'Arzelà-Ascoli:eq1} tenim que existeix un~\(j\) de~\(\{1,\dots,k\}\) tal que~\(x\) és un element de~\(V_{x_{j}}\), i tenim que
 			\begin{align*}
@@ -602,12 +602,12 @@
 			    \norm{g^{(\varepsilon)}_{n'_{\varepsilon}+n}-g^{(\varepsilon)}_{n'_{\varepsilon}+m}}\leq\varepsilon
 			\]
 			per a tot~\(n\) i~\(m\) enters.
-			
+
 			Definim, per simplificar la notació, la successió
 			\[
 			    \left(g^{(\varepsilon)}_{n'_{\varepsilon}+n}\right)_{n\in\mathbb{N}}=\left(f^{(\varepsilon^{-1})}_{n'_{\varepsilon^{-1}}+n}\right)_{n\in\mathbb{N}}.
 			\]
-			
+
 			Per tant tenim que per a~\(\varepsilon=1\) es satisfà
 			\[
 			    \norm{f^{(1)}_{n'_{1}+n}(x)-f^{(1)}_{n'_{1}+m}(x)}\leq1.
@@ -616,7 +616,7 @@
 			\[
 			    \norm{f^{(2)}_{n_{2}+n}(x)-f^{(2)}_{n_{2}+m}(x)}\leq\frac{1}{2}.
 			\]
-			
+
 			Tenim doncs que per a tot~\(i\) natural la successió~\((f^{i+1}_{n_{i+1}+n})_{n\in\mathbb{N}}\) és una parcial de la successió~\((f^{i+1}_{n_{i+1}+n})_{n\in\mathbb{N}}\) i per a tot~\(n\) i~\(m\) naturals tenim
 			\[
 			    \norm{f^{i+1}_{n_{i+1}+n}(x)-f^{i+1}_{n_{i+1}+m}(x)}<\frac{1}{i},
@@ -660,7 +660,7 @@
 			\]
 			per a tot~\((t,x)\) de~\(\Omega\).
 			Com que, per hipòtesi, tenim que~\(\norm{f(t,x)}<M\), trobem que ha de ser~\(\norm{p_{m}(t,x)}<M\) per a tot~\((t,x)\in\Omega\) i per a tot~\(m>n_{0}\).
-			
+
 			Considerem el problema de Cauchy
 			\[\begin{cases}
 				\displaystyle\dot{u}(t)=p_{m}(t,u(t)) \\
@@ -671,13 +671,13 @@
 			\[
 			    I=\left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].
 			\]
-			
+
 			Observem que, per a tot~\(m>n_{0}\) i per a tot~\(t\in I\), tenim que~\(\varphi_{m}(t)\in\overline{\bola}(x_{0},b)\), i per la definició de \myref{def:bola} trobem que
 			\[
 			    \norm{\varphi_{m}(t)}\leq\norm{x_{0}}+b.
 			\]
 			Aleshores per la definició de \myref{def:família de funcions puntualment acotada} trobem que la successió de funcions~\((\varphi_{m+n_{0}})_{m\in\mathbb{N}}\) és una família de funcions puntualment acotada.
-			
+
 			Fixem un~\(\varepsilon>0\) i prenem dos~\(t\) i~\(t'\) de~\(I\) amb~\(t'<t\) tals que~\(\abs{t,t'}<\frac{\varepsilon}{M}\).
 			Aleshores, per l'observació \myref{obs:solució general d'un problema de Cauchy}, tenim que per a tot~\(m>n_{0}\)
 			\begin{align*}
@@ -688,13 +688,13 @@
 				&\leq M\abs{t'-t}<\varepsilon, \tag{\ref{thm:la norma d'una integral és menys que l'integral de la norma}}
 			\end{align*}
 			i per la definició de \myref{def:família de funcions uniformement equicontínua} trobem que la família de funcions~\(\{\varphi_{m+n_{0}}\}_{m\in\mathbb{N}}\) és uniformement equicontínua, i per l'observació \myref{obs:equicontinuitat uniforme implica equicontinuitat} trobem que~\(\{\varphi_{m+n_{0}}\}_{m\in\mathbb{N}}\) és equicontínua.
-			
+
 			Aleshores pel \myref{thm:Teorema d'Arzelà-Ascoli} trobem que existeix una parcial uniformement convergent,~\((\varphi_{k})_{k\in\mathbb{N}}\), de~\((\varphi_{n_{0}+m})_{m\in\mathbb{N}}\), i per la definició de \myref{def:convergència uniforme} existeix una funció~\(\varphi\) tal que~\(\varphi_{k}\convergeixuniformement\varphi\), i per la proposició \myref{prop:una successió de funcions convergeix uniformement a una funció a la que convergeixi puntualment} trobem que la successió~\((\varphi_{k})_{k\in\mathbb{N}}\) convergeix puntualment a~\(\varphi\), i per la definició de \myref{def:convergència puntual} trobem que per a tot~\(t\in I\) tenim
 			\begin{equation}
 				\label{thm:Teorema de Peano:eq1}
 				\varphi(t)=\lim_{k\to\infty}\varphi_{k}(t).
 			\end{equation}
-			
+
 			Ara bé, tenim que per a tot~\(t\in I\)
 			\begin{align*}
 				\varphi(t)&=\lim_{k\to\infty}\varphi_{k}(t) \tag{\ref{thm:Teorema de Peano:eq1}} \\
@@ -766,14 +766,14 @@
 			\begin{enumerate}
 				\item Reflexiva: Pel \myref{thm:doble inclusió} tenim que~\(I\subseteq I\) i per la definició d'\myref{def:aplicació} tenim que~\(u(x)=u(x)\) per a tot~\(x\) de~\(I\).
 				Per tant trobem~\((I,u)\geq(I,u)\).
-				
+
 				\item Antisimètrica: Suposem que~\((I,u)\geq(J,v)\) i~\((J,v)\geq(I,u)\).
 				Aleshores tenim que~\(J\subseteq I\) i~\(I\subseteq J\), i pel \myref{thm:doble inclusió} trobem que~\(I=J\).
 				També tenim que~\(u(x)=v(x)\) per a tot~\(x\) de~\(I\), i per la definició d'\myref{def:aplicació} trobem que~\(u=v\), i per tant~\((I,u)=(J,v)\).
-				
+
 				\item Transitiva: Siguin~\((I_{1},u_{1})\),~\((I_{2},u_{2})\) i~\((I_{3},u_{3})\) tres elements de~\(A(t_{0},x_{0})\) tals que~\((I_{1},u_{1})\geq(I_{2},u_{2})\) i~\((I_{2},u_{2})\geq(I_{3},u_{3})\).
 				Aleshores tenim que~\(I_{3}\subseteq I_{2}\) i~\(I_{2}\subseteq I_{1}\), i per la definició de \myref{def:subconjunt} trobem que~\(I_{3}\subseteq I_{1}\).
-				
+
 				També tenim que~\(u_{1}(x)=u_{2}(x)\) per a tot~\(x\) de~\(I_{2}\), i~\(u_{2}(x)=u_{3}(x)\) per a tot~\(x\) de~\(I_{3}\).
 				Ara bé, com que~\(I_{3}\) és un subconjunt de~\(I_{1}\) tenim que~\(u_{1}(x)=u_{2}(x)\) per a tot~\(x\) de~\(I_{3}\), i per tant~\(u_{1}(x)=u_{3}(x)\) per a tot~\(x\) de~\(I_{3}\), i trobem que~\((I_{1},u_{1})\geq(I_{3},u_{3})\).
 			\end{enumerate}
@@ -789,7 +789,7 @@
 		    J\subseteq I\quad\text{i}\quad u(x)=v(x)\text{ per a tot }x\in J.
 		\]
 		Aleshores direm que~\((I,u)\) és una prolongació de~\((J,v)\).
-		
+
 		Si~\((I,u)\) és un element maximal direm que~\((I,u)\) és una solució improrrogable i que~\(u\) és una solució maximal.
 	\end{definition}
 	\begin{proposition}
@@ -799,7 +799,7 @@
 		\begin{proof}
 			Sigui~\(\{I_{i},u_{i}\}_{i\in J}\) una família de solucions del problema de Cauchy amb~\((I_{i},u_{i})\leq(I_{j},u_{j})\) si~\(i\leq j\).
 			Aleshores, per la definició de \myref{def:cadena}, trobem que la família~\(\{I_{i},u_{i}\}_{i\in J}\) és una cadena.
-			
+
 			Considerem~\(I=\bigcup_{i\in J}I_{i}\) i definim la funció~\(u\colon I\longrightarrow\mathbb{R}^{n}\) com~\(u(t)=u_{n}(t)\) si~\(t\) pertany a~\(I_{n}\).
 			Veiem que~\(u\) està ben definida.
 			Prenem~\(t_{0}\) de~\(I\).
@@ -808,7 +808,7 @@
 			Suposem que~\((I_{n},u_{n})\leq(I_{m},u_{m})\).
 			Aleshores per la definició de \myref{def:prolongació} tenim que per a tot~\(t\) de~\(I_{n}\) tenim que~\(u_{n}(t)=u_{m}(t)\), i per tant~\(u\) està ben definida.
 			El cas~\((I_{m},u_{m})\leq(I_{n},u_{n})\) és anàleg.
-			
+
 			Ara bé, tenim que~\((I_{i},u_{i})\leq(I,u)\) per a tot~\(i\) de~\(J\), i per la definició de \myref{def:cota superior d'una cadena} tenim que~\((I_{i},u_{i})\leq(I,u)\) és un element maximal de la cadena~\((I_{i},u_{i})_{i\in J}\), i pel \myref{lema de Zorn} tenim que existeix un element maximal de la cadena, i per la definició de \myref{def:solució improrrogable} hem acabat.
 		\end{proof}
 	\end{proposition}
@@ -819,7 +819,7 @@
 		\begin{proof}
 %			Sigui~\((I,u)\) una solució maximal del problema de Cauchy. Suposem que~\(a\) és un extrem de l'interval~\(I\). Considerem~\(A(a,u(a))\). Per la definició d'\myref{def:equació diferencial ordinària} trobem que~\((a,u(a))\in\Omega\), i per l'observació \myref{obs:el conjunt de solucions d'un problema de Cauchy amb f contínua és no buit} trobem que existeix un~\((J,v)\in A(a,u(a))\).
 %
-%			Ara bé, tenim que~\(u(a)=v(a)\), 
+%			Ara bé, tenim que~\(u(a)=v(a)\),
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
@@ -875,7 +875,7 @@
 	\begin{definition}[Convergència uniforme sobre compactes]
 		\labelname{convergència uniforme sobre compactes}\label{def:convergència uniforme sobre compactes}
 		Sigui~\(X\) un espai mètric i~\((f_{m})_{m\in\mathbb{N}}\) una successió de funcions contínues sobre~\(\mathbb{R}\) tal que per a tot compacte~\(K\) la successió de funcions~\((f_{m}^{K})_{m\in\mathbb{R}}\) definides com
-		
+
 	\end{definition}
 	\begin{theorem}[Continuïtat respecte les condicions inicials]
 		\labelname{continu\"itat respecte les condicions inicials}\label{thm:continuitat respecte les condicions inicials}
@@ -898,14 +898,14 @@
 			%TODO
 		\end{proof}
 	\end{theorem}
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 	\begin{comment}
 	\begin{definition}[Equació diferencial ordinària d'ordre~\(n\)]
 		\labelname{equació diferencial ordinària d'odre \ensuremath{n}}\label{def:equació diferencial ordinària d'ordre n}
@@ -936,7 +936,7 @@
 			    u(t)=\int_{x_{0}}^{x}f(u(t))\diff t
 			\]
 			és una solució de l'equació diferencial ordinària \eqref{edos1:prop1:eq1}.
-			
+
 			Aquesta demostració també ens serveix per veure la unicitat.
 		\end{proof}
 	\end{proposition}
@@ -969,7 +969,7 @@
 			    \dot{u}(t)=f(x)
 			\]
 			és una equació ordinària d'orde~\(1\).
-			
+
 			Com que, per hipòtesi, tenim~\(f(x)\neq0\) per a tot~\(x\) de~\((a,b)\) trobem que la funció~\(\frac{1}{f(x)}\) és derivable %REF
 			i per la proposició \myref{prop:Diferenciable implica contínua} trobem que~\(\frac{1}{f(x)}\) és contínua.
 			També tenim pel \myref{thm:Weierstrass màxims i mínims múltiples variables} que~\(\frac{1}{f(x)}\) està acotada en~\((a,b)\) i pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann} trobem que~\(\frac{1}{f(x)}\) és integrable en~\((a,b)\).
@@ -981,10 +981,10 @@
 			\begin{equation}
 				\label{prop:problema de Cauchy:eq2}
 				\frac{\diff F(x)}{\diff x}=\frac{1}{f(x)},
-			\end{equation}                
+			\end{equation}
 			i com que~\(\frac{1}{f(x)}\neq0\) per a tot~\(x\) de~\((a,b)\) tenim que~\(F(x)\) és invertible en~\((a,b)\).
 			Denotem amb~\(F^{-1}\) la seva inversa.
-			
+
 			Ara bé, tenim que
 			\begin{equation}
 				\label{prop:problema de Cauchy:eq3}
@@ -1001,7 +1001,7 @@
 			    \int_{t_{0}}^{t}\frac{\diff F(u(t))}{\diff x}\diff x=F(u(t))-F(u(t_{0})),
 			\]
 			i per \eqref{prop:problema de Cauchy:eq2} trobem~\(F(u(t))-F(u(t_{0}))=t-t_{0}\)
-			
+
 			Ara bé, per hipòtesi, tenim que~\(u(t_{0})=x_{0}\), i trobem
 			\[
 			    F(x_{0})=\int_{x_{0}}^{x_{0}}\frac{1}{f(t)}\diff t=0.
@@ -1015,7 +1015,7 @@
 			    u(t)=F^{-1}(t-t_{0})
 			\]
 			per a tot~\(t\) de~\((t_{0}+F(a), t_{0}+F(b))\).
-			
+
 			Amb aquesta demostració també podem veure que aquesta és la única solució de l'equació diferencial.
 		\end{proof}
 	\end{proposition}
@@ -1040,7 +1040,7 @@
 			\[
 			    F(x)=\int_{x_{0}}^{x}\frac{\diff t}{\alpha t^{2}}.
 			\]
-			
+
 			Per tant, tenim que
 			\[
 			    F(x)=\frac{x-1}{\alpha x}
@@ -1078,7 +1078,7 @@
 			\[
 			    \int h(u(t))\dot{u}(t)\diff {x}=\int g(x)\diff x.
 			\]
-			
+
 			Ara bé, per la \myref{thm:regla de la cadena} i el \myref{thm:Teorema Fonamental del Càlcul} tenim que això és
 			\[
 			    H(x)=G(x)+C
@@ -1116,7 +1116,7 @@
 			\[
 			    f(u(t))\dot{u}(t)=g(x)
 			\]
-			
+
 			Observem que
 			\[
 			    u(t)=\int_{x_{0}}^{x}\frac{yu(t)}{\sqrt{1+y^{2}}}\diff x
@@ -1131,7 +1131,7 @@
 			\]
 			Per tant tenim que
 			\[
-			    
+
 			\] %TODO ACABAR
 		\end{solution}
 	\end{example}
@@ -1176,7 +1176,7 @@
 					\displaystyle c(t_{0})=x_{0}.
 				\end{cases}
 			\end{equation}
-			
+
 			Aleshores per la proposició \myref{prop:problema de Cauchy} trobem que aquest problema té una única solució, i és de la forma
 			\[
 			    c(t)=x_{0}+\int_{t_{0}}^{t}b(s)e^{-\int_{t_{0}}^{s}a(\tau)\diff \tau}\diff s
