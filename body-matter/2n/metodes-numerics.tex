@@ -24,9 +24,9 @@
 		\[
 		    \Phi(x_{i};a_{0},\dots,a_{n})=y_{i}\quad\text{per a tot }i\in\{1,\dots,n\}.
 		\]
-		
+
 		També direm que~\(\{(x_{i},y_{i})\}_{i=0}^{n}\) són els punts de suport,~\(\{x_{i}\}_{i=0}^{n}\) són les abscisses de suport i~\(\{y_{i}\}_{i=0}^{n}\) les ordenades de suport.
-		
+
 		Direm que un problema d'interpolació de~\(\{(x_{i},y_{i})\}_{i=0}^{n}\) per~\(\Phi(x;a_{0},\dots,a_{n})\) és un problema d'interpolació lineal si existeixen~\(\Phi_{0},\dots,\Phi_{n}\colon\mathbb{R}\longrightarrow\mathbb{R}\) tals que
 		\[
 		    \Phi(x;a_{0},\dots,a_{n})=a_{0}\Phi_{0}(x)+\dots+a_{n}\Phi_{n}(x).
@@ -119,9 +119,9 @@
 			\[
 			    P_{i}(x)=y_{i}.
 			\]
-			
+
 			Veiem la segona part.
-			Definim 
+			Definim
 			\[
 			    G(x)=\frac{\left(x-x_{i_{0}}\right)P_{i_{1},\dots,i_{k}}(x)-\left(x-x_{i_{k}}\right)P_{i_{0},\dots,i_{k-1}}(x)}{x_{i_{k}}-x_{i_{0}}}
 			\]
@@ -179,7 +179,7 @@
 		    [x_{0},\dots,x_{k}]=a_{k}
 		\]
 		és 	la diferència dividida d'ordre~\(n\) del problema d'interpolació de Lagrange de~\(\{(x_{i},y_{i})\}_{i=0}^{k}\) per~\(P(x;a_{0},\dots,a_{k})\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:unicitat interpolació de Lagrange}.
 	\end{definition}
 	\begin{proposition}\label{prop:Mètode diferències dividides}
@@ -249,7 +249,7 @@
 		\end{equation}
 		\begin{proof}
 			Per veure \eqref{eq:prop:algoritme diferències dividides de Newton 1} tenim prou en veure que per a un problema d'interpolació de~\(\{(x,y)\}\) per~\(P(x)\) tenim que~\(P(x)\in\mathbb{R}_{0}[x]\), i per tant és una constant i per la definició de \myref{def:diferències dividides} trobem~\([x]=y\).
-			
+
 			Per veure \eqref{eq:prop:algoritme diferències dividides de Newton 2} tenim, per la proposició \myref{prop:Algorisme de Neville}
 			\[
 			    P_{0,\dots,n}(x)=\frac{\left(x-x_{0}\right)P_{1,\dots,n}(x)-\left(x-x_{n}\right)P_{0,\dots,n-1}(x)}{x_{n}-x_{0}},
@@ -276,7 +276,7 @@
 	%		\end{enumerate}
 	%		\begin{solution}
 	%			Denotem~\(t_{0}=0\),~\(t_{1}=15\),~\(t_{2}=22.5\),~\(t_{3}=30\). El conjunt~\(\{t_{i}\}_{i=0}^{3}\) és el conjunt d'abscisses del problema d'interpolació de~\(\{(t_{i},v(t_{i}))\}_{i=0}^{3}\) pel polinomi~\(P_{0,1,2,3}(t)\). Com que els elements del conjunt d'abscisses són tots diferents dos a dos tenim que aquest problema d'interpolació és un problema d'interpolació de Lagrange per la definició de \myref{def:problema d'interpolació de Lagrange}.
-	%			
+	%
 	%			Per començar volem avaluar el polinomi de Lagrange~\(P_{0,1,2,3}(t)\) en l'instant~\(t'_{1}=16\), és a dir, volem calcular~\(P_{0,1,2,3}(16)\). La taula de l'algoritme de Neville plantejada en l'observació \myref{obs:Algorisme de Neville} per aquest problema és
 	%			\[\begin{array}{c|ccccc}
 	%			& k=0 & k=1 & k=2 & k=3 \\\hline
@@ -286,8 +286,8 @@
 	%			& & P_{1,2}(2)=\frac{5}{2} &\\
 	%			x_{2}=3 & y_{2}=P_{2}(2)=2 & &
 	%			\end{array}\]
-	%			
-	%			
+	%
+	%
 	%			\[\begin{array}{c|ccccc}
 	%			& k=0 & k=1 & k=2 & k=3 \\\hline
 	%			t_{0} & P_{0}(16)=0\\
@@ -321,7 +321,7 @@
 			\end{equation}
 			Observem que~\(S(x)\) està ben definida pel Teorema Fonamental de l'Àlgebra.
 			%REF
-			
+
 			Observem també que
 			\[
 			    F(x_{i})=f(x_{i})-P(x_{i})-\omega(x_{i})S(x)=0
@@ -331,7 +331,7 @@
 			    F(x)=f(x)-P(x)-\omega(x)\frac{f(x)-P(x)}{\omega(x)}=0
 			\]
 			és a dir,~\(F(z)\) existeixen~\(\xi^{(0)}_{0},\dots,\xi^{(0)}_{n+1}\in[a,b]\) tals que~\(F(\xi^{(0)}_{i})=0\) per a tot~\(i\in\{0,\dots,n+1\}\) amb~\(\xi^{(0)}_{i+1}>\xi^{(0)}_{i}\) per a tot~\(i\in\{0,\dots,n\}\).
-			
+
 			Aplicant el \myref{thm:Teorema de Rolle} trobem que per a tot~\(i\in\{1,\dots,n+1\}\) existeixen~\(\{\xi^{(1)}_{i}\}_{i=1}^{n+1}\) tals que~\(F'(\xi^{(1)}_{i})=0\) amb~\(\xi^{(1)}_{i}\in(\xi^{(0)}_{i-1},\xi^{(0)}_{i})\).
 			Iterant aquest argument trobem que per a~\(k\in\{0,\dots,n+1\}\) tenim que per a tot~\(i\in\{k,\dots,n+1\}\) existeixen~\(\{\xi^{(k)}_{i}\}_{i=k}^{n+1}\) tals que~\(F^{k}(\xi^{(k)}_{i})=0\) amb~\(\xi^{(k)}_{i}\in(\xi^{(k-1)}_{i-1},\xi^{(k-1)}_{i})\); i per tant quan~\(k=n+1\) tenim que existeix~\(\xi^{(n+1)}_{n+1}\in(\xi^{(n)}_{n},\xi^{(n)}_{n+1})\) tal que~\(F^{(n+1)}(\xi^{(n+1)}_{n+1})=0\) i trobem%
 				\begin{comment}
@@ -406,7 +406,7 @@
 		\]
 		amb~\(h=\frac{x_{n}-x_{0}}{n}\) per a tot~\(i\in\{0,\dots,n\}\).
 		Aleshores direm que les abscisses de suport~\(\{x_{i}\}_{i=0}^{n}\) són equiespaiades o que un problema d'interpolació~\(\{(x_{i},y_{i})\}_{i=0}^{n}\) és un problema d'interpolació amb nodes equiespaiats.
-		
+
 		També denotarem
 		\[
 		    \Delta f(x)=f(x+h)-f(x)\quad\text{i}\quad\Delta^{n+1}f(x)=\Delta(\Delta^{n}f(x)).
@@ -431,7 +431,7 @@
 			\begin{equation}\label{eq:thm:diferències dividides en nodes equidistants 1}
 			[x_{0},x_{n}]=\frac{\Delta f(x_{0})}{h}.
 			\end{equation}
-			
+
 			Suposem ara que l'enunciat és cert per a~\(k\) fix i demostrem-ho pel cas~\(k+1\).
 			Tenim que
 			\begin{align*}
@@ -462,7 +462,7 @@
 		\end{cases}\]
 		amb~\(s_{i}\in\mathbb{R}_{p}[x]\) per a tot~\(i\in\{1,\dots,n\}\).
 		Aleshores direm que~\(s\) és un spline de grau~\(p\) associat a~\(\Delta\).
-		
+
 		Denotarem
 		\[
 		    S_{p}(\Delta)=\{s\mid s\text{ és un spline de grau }p\text{ associat a }\Delta\}.

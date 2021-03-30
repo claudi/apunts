@@ -66,7 +66,7 @@
 			Per la proposició~\myref{prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell} i l'exemple~\myref{ex:el morfisme avaluació és un morfisme d'anells} tenim que~\(\ker(\ev_{\alpha})\) és un ideal, i com que, per hipòtesi,~\(\KK\) és un cos, tenim que~\(\KK[x]\) és un domini d'ideals principals.
 			%REF
 			Per tant, per la definició de~\myref{def:domini d'ideals principals} tenim que~\(\ker(\ev_{\alpha})\) és un ideal principal, i per la definició d'\myref{def:ideal principal} trobem que existeix un~\(a\in\KK[x]\) tal que~\(\ker(\ev_{\alpha})=(a)\).
-			
+
 			Tenim que~\(a\) ha de ser un polinomi mònic.
 			Suposem que~\(a\in\KK\).
 			Trobem per la definició~\myref{ex:el morfisme avaluació és un morfisme d'anells} que~\(\ev_{\alpha}(a)=a\), i com que hem suposat que~\(\ker(\ev_{\alpha})\neq(0)\), trobem que~\(a\neq0\), i per tant~\(\ev_{\alpha}(a)=a\neq0\), trobant que~\(a\notin\ker(\ev_{\alpha})\), arribant a contradicció.
@@ -82,13 +82,13 @@
 			\[
 			    \ker(\ev_{\alpha})=(p(x)).
 			\]
-			
+
 			Veiem ara que~\(p(x)\) és irreductible.
 			Pel~\myref{thm:Primer Teorema de l'isomorfisme entre anells} trobem que
 			\[
 			    \KK[x]/(p(x))=\KK[x]/\ker(\ev_{\alpha})\cong\Ima(\ev_{\alpha}).
 			\]
-			
+
 			Com que~\(\FF\) és un cos tenim que~\(\Ima(\ev_{\alpha})\) és un domini.
 			%REF
 			Com que~\(\Ima(\ev_{\alpha})\cong\KK[x]/(p(x))\) és un domini, tenim per la proposició~\myref{prop:R/I domini d'integritat sii I ideal primer} que~\((p(x))\) és un ideal primer, i per l'observació~\myref{obs:ideals primer iff primer} trobem que~\(p(x)\) és primer, i per la proposició~\myref{prop:en un DI un primer és un irreductible} tenim que~\(p(x)\) és irreductible.
@@ -101,7 +101,7 @@
 		Siguin~\(\FF\extensio\KK\) una extensió i~\(\alpha\in\FF\) un un element tal que no existeix cap polinomi mònic no nul~\(p(x)\in\KK[x]\) tal que~\(p(\alpha)=0\).
 		Aleshores direm que~\(\alpha\) és {algebraic} sobre~\(\KK\).
 		Denotarem~\(\Irr(\alpha,\KK)=p(x)\).
-		
+
 		Si~\(\alpha\) no és algebraic sobre~\(\KK\) direm que és {transcendent} sobre~\(\KK\).
 	\end{definition}
 	\begin{observation}
@@ -140,7 +140,7 @@
 		Sigui~\(\FF\extensio\KK\) una extensió.
 		Aleshores direm que la dimensió del~\(\KK\)-espai vectorial~\(\FF\) és el {grau de l'extensió} i el denotarem com~\(\grauExtensio{\FF}{\KK}\).
 		Si~\(\grauExtensio{\FF}{\KK}<\infty\) direm que~\(\FF\extensio\KK\) és una extensió finita.
-		
+
 		Aquesta definició té sentit per la proposició~\myref{prop:un subcòs és un espai vectorial}.
 	\end{definition}
 	\begin{example}
@@ -165,7 +165,7 @@
 		\]
 		\begin{proof}
 			Si~\(\grauExtensio{\EE}{\FF}=\infty\) ó~\(\grauExtensio{\FF}{\KK}=\infty\) tenim que~\(\grauExtensio{\EE}{\KK}=\infty\).
-			
+
 			Suposem doncs que~\(\grauExtensio{\EE}{\FF}=n\) i~\(\grauExtensio{\FF}{\KK}=m\).
 			%TODO %FER
 		\end{proof}
@@ -248,7 +248,7 @@
 		    \KK(\alpha)=\cosdefraccions(\KK[\alpha])
 		\]
 		és el mínim subcòs engendrat per~\(\alpha\).
-		
+
 		Aquesta definició té sentit pel Teorema~\myref{thm:cos de fraccions}.
 	\end{definition}
 	\begin{observation}
@@ -266,9 +266,9 @@
 			Veiem que la condició és suficient~\((\implica)\).
 			Suposem que~\(\alpha\in\FF\) és algebraic sobre~\(\KK\).
 			Per la definició d'\myref{def:element algebraic} trobem que~\(\Irr(\alpha,\KK)\) és un polinomi irreductible no nul, i per la proposició~\myref{prop:un cos quocient un irreductible és un cos} tenim que~\(\KK[\alpha]\) és un cos.
-			
+
 			Ara bé, pel Teorema~\myref{thm:cos de fraccions} tenim que~\(\KK(\alpha)\subseteq\KK[\alpha]\), però per l'observació~\myref{def:mínim subcòs engendrat per un element d'una extensió} tenim que~\(\KK[\alpha]\subseteq\KK(\alpha)\), i pel \myref{thm:doble inclusió} tenim que~\(\KK(\alpha)=\KK[\alpha]\).
-			
+
 			Acabem veient que la condició és necessària~\((\implicatper)\).
 			Suposem doncs que
 			\[
@@ -325,13 +325,13 @@
 		\end{enumerate}
 		\begin{proof}
 			La implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq1}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\) és conseqüència de la definició~d'\myref{def:element algebraic}.
-			
+
 			Veiem ara la implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\).
 			Suposem que~\(p(\alpha)=0\) i prenem~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\).
 			Calculem~\(\mcd(p(x),q(x))\).
 			Calculem~\(\mcd(p(x),q(x))\).
 			Si~\(\mcd(p(x),q(x))=p(x)\) aleshores~\(p(x)\divides q(x)\) i tenim el que volíem.
-			
+
 			Si~\(\mcd(p(x),q(x))\neq p(x)\), com que per la proposició~\myref{prop:en DIP irreductible implica primer} tenim que~\(p(x)\) és primer tenim que~\(\mcd(p(x),q(x))=1\), i per la~\myref{thm:identitat de Bézout} trobem que existeixen~\(r(x)\) i~\(s(x)\) polinomis en~\(\KK[x]\) tals que
 			\[
 			    p(x)r(x)+q(x)s(x)=1.
@@ -341,7 +341,7 @@
 				1=p(\alpha)r(\alpha)+q(\alpha)s(\alpha)=0r(\alpha)+0s(\alpha)=0,
 			\]
 			i per tant arribem a contradicció i hem acabat.
-			
+
 			Veiem la implicació~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq4}\).
 			Suposem doncs que~\(q(x)\in\KK[x]\) és un polinomi tal que~\(q(\alpha)=0\) i tal que~\(p(x)\divides q(x)\).
 			Tenim que existeix un polinomi~\(d(x)\in\KK[x]\) tal que
@@ -349,7 +349,7 @@
 			    q(x)=p(x)d(x),
 			\]
 			i per tant trobem que~\(\grau(p(x))\leq\grau(q(x))\).
-			
+
 			Veiem que~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq4}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq2}\).
 			Suposem doncs que existeix un polinomi~\(q(x)\in\KK[x]\) satisfent~\(q(\alpha)=0\) i~\(\grau(p(x))\leq\grau(q(x))\).
 			Aleshores tenim que existeixen dos polinomis~\(p_{1}(x)\),~\(p_{2}(x)\in\KK[x]\) tals que~\(p(x)=p_{1}(x)p_{2}(x)\), i com que~\(p(\alpha)=0\) trobem que~\(p_{1}(\alpha)=0\) ó~\(p_{2}(\alpha)=0\).
@@ -363,7 +363,7 @@
 			    \grau(p(x))\leq\grau(p_{1}(x)),
 			\]
 			i per tant~\(p_{2}(x)\in\KK\).
-			
+
 			Veiem que~\(\eqref{lema:condicions equivalents a polinomi irreductible:eq3}\implica\eqref{lema:condicions equivalents a polinomi irreductible:eq1}\).
 			Suposem doncs que si existeix un polinomi~\(q(x)\in\KK[x]\) tal que~\(q(\alpha)=0\), aleshores~\(p(x)\divides q(x)\).
 			Considerem~\(\ker(\ev_{\alpha})\).
@@ -404,7 +404,7 @@
 				&=g\circ\Id_{\KK}=\left.g\right|_{\KK}
 			\end{align*}
 			i per tant~\(g\in\Gal(\FF\extensio\KK)\).
-			
+
 			Prenem dos elements~\(f\),~\(g\in\Gal(\FF\extensio\KK)\) i considerem~\(g\circ f\).
 			Tenim que~\(g\colon f\colon\FF\longrightarrow\FF\) és un isomorfisme d'anells, i ens queda veure que~\(\left.g\circ f\right|_{\KK}=\Id_{\KK}\).
 			Tenim que
@@ -478,7 +478,7 @@
 				&=f(0)=0,
 			\end{align*}
 			i per tant tenim que~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\).
-			
+
 			Veiem ara que la condició és necessària~(\(\implicatper\)).
 			Suposem que~\(\beta\) és una arrel de~\(\Irr(\alpha,\KK)\).
 			Considerem el morfisme d'avaluació~\(\ev_{\beta}\colon\KK[x]\longrightarrow\FF_{2}\).
@@ -665,7 +665,7 @@
 	\end{observation}
 	\begin{example}
 		\label{ex:discriminant d'un polinomi quadràtic}
-		Volem calcular el discriminant d'un polinomi de grau~\(2\).	
+		Volem calcular el discriminant d'un polinomi de grau~\(2\).
 		\begin{solution}
 			%TODO
 		\end{solution}
@@ -699,7 +699,7 @@
 		\end{proof}
 	\end{corollary}
 	% Exemple dels polinomis de grau 2 i 3.
-	
+
 	\section{Extensions normals i extensions separables}
 \subsection{Extensions normals}
 	\begin{definition}[Extensió normal]
@@ -760,7 +760,7 @@
 	\begin{lemma}
 		\label{lema:un polinomi és separable si i només si ho és adaptant els coeficients}
 		Siguin~\(p(x)\in\KK[x]\) un polinomi,~\(\FF\) un cos i~\(f\colon\KK\longrightarrow\FF\) un morfisme d'anells.
-		Aleshores~\(p(x)\) és separable si i només si~\(\hat{f}(p(x))\) és separable.	
+		Aleshores~\(p(x)\) és separable si i només si~\(\hat{f}(p(x))\) és separable.
 	\end{lemma}
 	\begin{lemma}
 		\label{lema:condicions pel nombre d'extensions de morfismes}

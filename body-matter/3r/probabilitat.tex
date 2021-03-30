@@ -41,7 +41,7 @@
 		\labelname{esdeveniment impossible}\label{def:esdeveniment impossible}
 		Sigui~\(A\subseteq\Omega\) un subconjunt d'un espai mostral~\(\Omega\).
 		Aleshores direm que~\(A\) és un esdeveniment.
-		
+
 		Si el resultat~\(\omega\in A\subseteq\Omega\) s'ha realitzat direm que l'esdeveniment~\(A\) s'ha realitzat.
 		També definim
 		\begin{enumerate}
@@ -101,7 +101,7 @@
 				\Omega\setminus\{1,2\}=\{3,4,5,6\},\quad\text{i}\quad
 				\Omega\setminus\{3,4,5,6\}=\{1,2\}.
 			\]
-			
+
 			Prenen ara~\(A\),~\(B\in\algebra{A}\).
 			Si~\(A=B\) aleshores~\(A\cup B=A\), i per tant~\(A\cup B\in\algebra{A}\), i si tenim~\(A\cup B\in\algebra{A}\) aleshores~\(B\cup A=A\cup B\in\algebra{A}\) i hem acabat.
 			També tenim que si~\(A\in\algebra{A}\), aleshores~\(\emptyset\cup A=A\in\algebra{A}\) i~\(\Omega\cup A=\Omega\in\algebra{A}\).
@@ -166,15 +166,15 @@
 			Comprovem que~\(\Algebra{A}\) satisfà la definició~\myref{def:sigma àlgebra}.
 			Veiem que~\(\Omega\in\Algebra{A}\).
 			Tenim per la definició de~\myref{def:àlgebra} que~\(\Omega\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició d'\myref{def:intersecció de conjunts} trobem que~\(\Omega\in\Algebra{A}\).
-			
+
 			Prenem ara un~\(A\in\Algebra{A}\) i considerem~\(A^{\complement}\).
 			Si~\(A\in\Algebra{A}\) tenim que per a tot~\(i\in I\) es satisfà~\(A\in\Algebra{A}_{i}\), i per la definició~d'\myref{def:àlgebra} trobem que~\(A^{\complement}\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició d'\myref{def:intersecció de conjunts} tenim que es satisfà~\(A^{\complement}\in\Algebra{A}\).
-			
+
 			Per acabar premen~\(A\),~\(B\in\Algebra{A}\).
 			Tenim que~\(A\),~\(B\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:àlgebra} trobem que~\(A\cup B\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:intersecció de conjunts} trobem que~\(A\cup B\in\Algebra{A}\).
-			
+
 			Per tant per la definició~d'\myref{def:àlgebra} tenim que~\(\Algebra{A}\) és un àlgebra sobre~\(\Omega\).
-			
+
 			Prenem ara una família~\(\{A_{n}\}_{n\in\mathbb{N}}\) d'elements~d'\(\Algebra{A}\) i denotem
 			\[
 			    A=\bigcup_{n=0}^{\infty}A_{n}.
@@ -186,7 +186,7 @@
 		\labelname{\ensuremath{\sigma}-àlgebra generada per un conjunt}\label{def:sigma àlgebra generada per un conjunt}
 		Sigui~\(\Algebra{C}\subseteq\parts(\Omega)\) una família de subconjunts d'un conjunt~\(\Omega\).
 		Denotarem el mínim~\(\sigma\)-àlgebra generada per~\(\Algebra{C}\) com~\(\sigma(\Algebra{C})\) i direm que és la~\(\sigma\)-àlgebra generada per~\(\Algebra{C}\).
-		
+
 		Aquesta definició té sentit per la proposició~\myref{prop:existeix una sigma àlgebra mínima}.
 	\end{definition}
 	\begin{example}[\ensuremath{\sigma}-àlgebra de singletons]
@@ -222,7 +222,7 @@
 			\end{equation}
 		\end{enumerate}
 		Aleshores direm que~\(\Probabilitat\) és una probabilitat.
-		
+
 		També direm que~\((\Omega,\Algebra{A},\Probabilitat)\) és un espai de probabilitat.
 	\end{definition}
 	\begin{notation}[Unió disjunta]
@@ -929,14 +929,14 @@
 %	\begin{example}
 %		%TODO % Veure si ho ha un exemple previ a les lleis i distribucions
 %	\end{example}
-	\begin{example}[Llei uniforme]	
+	\begin{example}[Llei uniforme]
 	\labelname{llei uniforme}\label{ex:llei uniforme}
 		Siguin~\(a\),~\(b\in\RR\) dos reals amb~\(a<b\) i~\(X\) una variable aleatòria tal que la seva funció de densitat sigui
 		\begin{align*}
 			f(x)=\frac{1}{b-a}\ind_{(a,b)}(x).
 		\end{align*}
 		Volem calcular la seva funció de distribució i dibuixar-les.
-		
+
 		Direm que~\(X\sim\Unif(a,b)\).
 		\begin{solution}
 			%TODO
@@ -949,7 +949,7 @@
 			f(x)=\lambda\e^{-\lambda x}\ind_{(0,\infty)}(x).
 		\end{align*}
 		Volem calcular la seva funció de distribució i dibuixar-les.
-		
+
 		Direm que~\(X\sim\Exp(\lambda)\).
 		\begin{solution}
 			%TODO
@@ -963,7 +963,7 @@
 			f(x)=\frac{1}{\sigma\sqrt{2\pi}}\e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}.
 		\end{align*}
 		Volem comprovar que aquesta és una funció de densitat i dibuixar-la per~\(\mu=2\) i~\(\sigma=1\).
-		
+
 		Direm que~\(Z\sim\Gauss(\mu,\sigma^{2})\).
 		\begin{solution}
 			%TODO
@@ -978,7 +978,7 @@
 		\]
 		També volem dibuixar~\(f(x)\).
 		% Determinar valors guays.
-		
+
 		Sigui una variable aleatòria~\(X\) amb funció de distribució~\(f(x)\).
 		Aleshores direm que~\(X\sim\Gamm(r,\alpha)\).
 		\begin{solution}

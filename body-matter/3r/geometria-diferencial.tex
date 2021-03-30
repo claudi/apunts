@@ -58,7 +58,7 @@
 		\labelname{difeomorfisme de classe \ensuremath{\mathcal{C}^{\infty}}}\label{def:difeomorfisme de classe C infinit}\label{def:difeomorfisme de classe de diferenciabilitat infinita}
 		Siguin~\(\obert{U}\) i~\(\obert{V}\) dos oberts de~\(\mathbb{R}^{d}\) i~\(\Phi\colon\obert{U}\longleftrightarrow\obert{V}\) un difeomorfisme tal que les funcions~\(\Phi\) i~\(\Phi^{-1}\) siguin de classe~\(\mathcal{C}^{\infty}\).
 		Aleshores direm que~\(\Phi\) és un difeomorfisme de classe de diferenciabilitat infinita o que~\(\Phi\) és un difeomorfisme de classe~\(\mathcal{C}^{\infty}\).
-		
+
 		Aquesta definició té sentit per la definició de \myref{def:difeomorfisme}.
 	\end{definition}
 \end{comment}
@@ -107,12 +107,12 @@
 				t&\longmapsto(\alpha\circ h)(t),
 			\end{align*}
 			i per la definició de \myref{def:corba} trobem que~\(\beta\) és una corba.
-			
+
 			Per la definició de \myref{def:canvi de paràmetre} trobem que~\(h\) és un difeomorfisme, i per la definició de \myref{def:difeomorfisme} trobem que~\(h\) és derivable, i per la \myref{thm:regla de la cadena} trobem que
 			\[
 			    \beta'(t)=h'(t)(\alpha'\circ h)(t).
 			\]
-			
+
 			Com que per hipòtesi~\(\alpha\) és regular, per la definició de \myref{def:corba regular} trobem que~\((\alpha'\circ h)(t)\neq\vec{0}\) per a tot~\(t\in J\).
 			Ara bé, pel \corollari{} \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} trobem que~\(h'(t)\neq\vec{0}\) per a tot~\(t\in J\), i per tant tenim que~\(\beta'(t)\neq\vec{0}\) per a tot~\(t\in J\), i per la definició de \myref{def:corba regular} trobem que~\(\beta\) és una corba regular.
 		\end{proof}
@@ -153,7 +153,7 @@
 		\]
 		\begin{proof}
 			Això té sentit per la definició de \myref{def:canvi de paràmetre} i la definició de \myref{def:difeomorfisme}.
-			
+
 			Per la definició de \myref{def:longitud d'una corba} trobem que
 			\begin{align*}
 				\Long_{c}^{d}(\beta)&=\int_{c}^{d}\norm{\beta'(s)}\diff s \\
@@ -167,10 +167,10 @@
 			\[
 			    \int_{c}^{d}\norm{h'(s)\alpha'(h(s))}\diff s=\int_{c}^{d}\abs{h'(s)}\norm{\alpha'(h(s))}\diff s.
 			\]
-			
+
 			Ara bé, com que~\(h\) és un difeomorfisme tenim per la definició de \myref{def:difeomorfisme} que~\(h'\) és contínua, i pel \corollari{} \myref{cor:difeomorfisme és equivalent a ser injectiva i tenir diferencial amb determinant no nul} trobem que~\(h'(t)\neq0\) per a tot~\(t\in[c,d]\).
 			Aleshores tenim que ha de ser o bé~\(h'(t)>0\) per a tot~\(t\in[c,d]\) o bé~\(h'(t)<0\) per a tot~\(t\in[c,d]\).
-			
+
 			Comencem suposant que~\(h'(t)>0\) per a tot~\(t\in[c,d]\).
 			Aleshores tenim que
 			\[
@@ -185,7 +185,7 @@
 			\[
 			    \Long_{c}^{d}(\beta)=\Long_{a}^{b}(\alpha).
 			\]
-			
+
 			Suposem ara que~\(h'(t)<0\) per a tot~\(t\in[c,d]\).
 			Aleshores tenim que			\begin{align*}
 				\int_{c}^{d}\abs{h'(s)}\norm{\alpha'(h(s))}\diff s&=\int_{c}^{d}-h'(s)\norm{\alpha'(h(s))}\diff s \\
@@ -312,7 +312,7 @@
 			\[
 			    \beta(s)=(\alpha\circ h)(s)=\left(-R\sin\left(\frac{s}{R}\right),R\cos\left(\frac{s}{R}\right)\right).
 			\]
-			
+
 			Tenim que~\(\beta\) és una reparametrització de~\(\alpha\).
 			Veiem ara que~\(\beta\) està parametritzada per l'arc.
 			Tenim que
@@ -388,7 +388,7 @@
 			\[
 			    \lim_{s\to s_{0}}\frac{\alpha(s)-\beta(s)}{(s-s_{0})^{p}}=0.
 			\]
-			
+
 			Considerem ara
 			\[
 			    \alpha^{(r+1)}(s_{0})\neq\beta^{(r+1)}(s_{0}).
@@ -587,7 +587,7 @@
 		Aleshores la base~\((\vec{u},\vec{v},\vec{u}\prodvec\vec{v})\) és una base positiva.
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:el determinant de dos vectors linealment independents i el seu producte vectorial és diferent de zero}.
-			
+
 			Per l'observació \myref{obs:fórmula del determinant segons el producte vectorial i el producte escalar} trobem que
 			\[
 			    \prodesc{\vec{u}\prodvec\vec{v}}{\vec{u}\prodvec\vec{v}}=\det(\vec{u},\vec{v},\vec{u}\prodvec\vec{v}),
@@ -665,7 +665,7 @@
 				\prodesc{\alpha(t+h)\prodvec\beta(t+h)}{\vec{x}}=\\
 				=\prodesc{\alpha(t)\prodvec\beta(t)+h\alpha(t)\prodvec\beta'(t)+h\alpha'(t)\prodvec\beta(t)+h^{2}\alpha'(t)\prodvec \beta'(t)}{\vec{x}}.
 			\end{multline*}
-			
+
 			Ara bé, ens queda que per a tot vector~\(\vec{x}\) de~\(\mathbb{R}^{3}\) es satisfà
 			\[
 			    \prodesc{\alpha(t+h)\prodvec\beta(t+h)}{\vec{x}}=\det(\alpha(t+h),\beta(t+h),\vec{x})
@@ -738,7 +738,7 @@
 			s&\longmapsto\norm{\alpha''(s)}
 		\end{align*}
 		és la curvatura de~\(\alpha\).
-		
+
 		Si~\(\curvatura_{\alpha}(s)\neq0\) direm que~\(\alpha\) té curvatura no \nulla{} en~\(s\).
 	\end{definition}
 	\begin{example}
@@ -749,7 +749,7 @@
 			\[
 			    \alpha(s)=\left(-R\sin\left(\frac{s}{R}\right),R\cos\left(\frac{s}{R}\right)\right).
 			\]
-			
+
 			Aleshores tenim que
 			\[
 			    \alpha''(s)=\frac{\diff}{\diff s}\left(-\cos\left(\frac{s}{R}\right),-\sin\left(\frac{s}{R}\right)\right)=\left(\frac{1}{R}\sin\left(\frac{s}{R}\right),\frac{-1}{R}\cos\left(\frac{s}{R}\right)\right),
@@ -773,7 +773,7 @@
 			    \alpha(s)=K_{1}s+K_{2}.
 			\]
 			Aleshores tenim que~\(\alpha''(s)=\vec{0}\), i per la definició de \myref{def:curvatura} trobem que~\(\curvatura_{\alpha}(s)=0\).
-			
+
 			Veiem ara que la condició és suficient (\(\implicatper\)).
 			Suposem doncs que~\(\curvatura_{\alpha}(s)=0\) per a tot~\(s\in I\).
 			Tenim doncs que~\(\alpha''(s)=\vec{0}\), i per tant existeixen~\(K_{1}\) i~\(K_{2}\) de~\(\mathbb{R}^{n}\) tals que~\(\alpha'(s)=K_{1}\) i~\(\alpha''(s)=K_{1}s+K_{2}\) i trobem que~\(\alpha\) és una recta.
@@ -837,7 +837,7 @@
 			%TODO
 %			Sigui~\((\vec{u}_{1},\vec{u}_{2})\) una base ortonormal de~\(\mathbb{R}^{2}\). Aleshores les circumferències de~\(\mathbb{R}^{3}\) de radi~\(R\) i centre~\(Q\) parametritzades per l'arc són de la forma
 %			\[\beta(t)=Q+R\left(\cos\left(\frac{t}{R}\right),\sin\left(\frac{t}{R}\right)\right).\]
-%			
+%
 %			Per la proposició \myref{prop:contacte r és equivalent a tenir les r primeres derivades iguals} tenim que
 %			\[\alpha(t_{0})=\beta(t_{0}),\quad\alpha'(t_{0})=\beta'(t_{0})\quad\text{i}\quad\alpha''(t_{0})=\beta''(t_{0}).\]
 %			Tenim que
@@ -853,7 +853,7 @@
 		\]
 		és la circumferència osculadora de~\(\alpha\) en~\(s_{0}\).
 		Denotarem per~\(\radicircosculadora_{\alpha}(s_{0})=\frac{1}{\curvatura_{\alpha}(s_{0})}\) el radi de la circumferència osculadora.
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:circumferència osculadora}.
 	\end{definition}
 	\begin{definition}[Binormal]
@@ -872,7 +872,7 @@
 		\begin{proof}
 			Per la proposició \myref{prop:la tangent i la normal d'una corba amb curvatura no nula són perpendiculars} trobem que~\(\tangent_{\alpha}(s)\) i~\(\normal_{\alpha}(s)\) són perpendiculars.
 			Aleshores per la definició de \myref{def:binormal} trobem que~\(\binormal_{\alpha}(s)=\tangent_{\alpha}(s)\prodvec\normal_{\alpha}(s)\) i per la proposició \myref{prop:dos vectors linealment independents i el seu producte vectorial formen una base positiva} tenim que la base~\((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és positiva.
-			
+
 			Per la definició de \myref{def:producte vectorial} tenim que per a tot~\(\vec{x}\) de~\(\mathbb{R}^{3}\) es satisfà
 			\[
 			    \prodesc{\binormal_{\alpha}(s)}{\vec{x}}=\det(\tangent_{\alpha}(s),\normal_{\alpha}(s),\vec{x}).
@@ -894,7 +894,7 @@
 		\labelname{triedre de Frenet}\label{def:triedre de Frenet}
 		Sigui\(\alpha\) una corba amb curvatura no \nulla{}.
 		Aleshores direm que la base~\((\tangent_{\alpha}(s),\normal_{\alpha}(s),\binormal_{\alpha}(s))\) és el triedre de Frenet de~\(\alpha\) en~\(s\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:triedre de Frenet}.
 	\end{definition}
 	\begin{proposition}
@@ -925,7 +925,7 @@
 			\[
 			    \prodesc{\binormal'_{\alpha}(s)}{\binormal_{\alpha}(s)}=0.
 			\]
-			
+
 			Per la proposició \myref{prop:triedre de Frenet} trobem que
 			\[
 			    \prodesc{\binormal_{\alpha}(s)}{\tangent_{\alpha}(s)}=0,
@@ -960,7 +960,7 @@
 		    \binormal'_{\alpha}(s)=\torsio_{\alpha}(s)\normal_{\alpha}(s).
 		\]
 		Aleshores direm que~\(\torsio_{\alpha}(s)\) és la torsió de~\(\alpha\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:torsió}.
 	\end{definition}
 	% FER Exemple calcular torsió?
@@ -994,7 +994,7 @@
 				\label{thm:fórmules de Frenet:eq2}
 				\binormal'_{\alpha}(s)=\torsio_{\alpha}(s)\normal_{\alpha}(s).
 			\end{equation}
-			
+
 			Per la definició de \myref{def:binormal} trobem que
 			\[
 			    \binormal_{\alpha}(s)=\tangent_{\alpha}(s)\prodvec\normal_{\alpha}(s),
@@ -1015,7 +1015,7 @@
 				&=-\torsio_{\alpha}(s)\binormal_{\alpha}(s)-\curvatura_{\alpha}(s)\tangent_{\alpha}(s).
 				\tag{\ref{def:binormal}}
 			\end{align*}
-			
+
 			Per tant ens queda
 			\begin{align*}
 				\tangent_{\alpha}'(s)&=\curvatura_{\alpha}(s)\normal_{\alpha}(s) \\
@@ -1046,7 +1046,7 @@
 				 &=h'h''(\tilde{\alpha}'\circ h)\prodvec(\tilde{\alpha}'\circ h)+(h')^{2}(h'(\tilde{\alpha}'\circ h))\prodvec(\tilde{\alpha}''\circ h) \\
 				&=(h')^{2}(\tilde{\alpha}'\circ h)\prodvec(\tilde{\alpha}''\circ h).
 			\end{align*}
-			
+
 			Ara bé, per la definició de \myref{def:canvi de paràmetre} tenim que~\(h\) és un difeomorfisme, i per la definició de \myref{def:difeomorfisme} trobem que~\(h\neq0\).
 			Tenim també que~\(h''\neq0\), i per tant trobem que
 			\[
@@ -1066,7 +1066,7 @@
 		    \curvatura_{\alpha}=\curvatura_{\tilde{\alpha}}\circ h^{-1}
 		\]
 		és la curvatura de~\(\alpha\).
-		
+
 		Això té sentit per la definició de \myref{def:curvatura} i la proposició \myref{prop:condició equivalent per que la reparametrització per l'arc d'una corba tingui curvatura no nula}.
 	\end{definition}
 	\begin{definition}[Torsió per una reparametrització]
@@ -1077,7 +1077,7 @@
 		    \torsio_{\alpha}=\torsio_{\tilde{\alpha}}\circ h^{-1}
 		\]
 		és la curvatura de~\(\alpha\).
-		
+
 		Aquesta definició té sentit per la definició de \myref{def:torsió}.
 	\end{definition}
 	\begin{definition}[Rapidesa]
@@ -1110,7 +1110,7 @@
 		\end{bmatrix}.\]
 		\begin{proof}
 			Sigui~\(h\) una reparametrització de~\(\alpha\) tal que~\(\tilde{\alpha}=\alpha\circ h\) estigui parametritzada per l'arc.
-			
+
 			Ai haig de tornar a definir les coses aquestes per corbes no parametritzades per l'arc.
 			Quina mandra.
 			Imagineu una demostració patrocinada per \myref{thm:regla de la cadena} i les \myref{thm:fórmules de Frenet per corbes parametritzades per l'arc}.
@@ -1375,7 +1375,7 @@
 				\label{thm:Teorema d'estructura local de les immersions:eq:1}
 				\det(dF(x_{0}))\neq0.
 			\end{equation}
-			
+
 			Considerem la funció
 			\begin{align*}
 				g\colon\mathbb{R}^{n}\times\mathbb{R}^{m-n}&\longrightarrow\mathbb{R}^{m} \\
@@ -1385,7 +1385,7 @@
 			\[
 			    (g\circ i)(x)=g(x,0)=F(x).
 			\]
-			
+
 			Per la definició de \myref{def:Jacobiana} i la proposició \myref{prop:justificació Jacobiana} tenim que
 			\[dg(x_{0})=\left[\begin{array}{c|ccc}
 				\begin{matrix}
@@ -1445,7 +1445,7 @@
 				\label{thm:Teorema d'estructura local de les submersions:eq:1}
 				\det(dF(x_{0}))\neq0.
 			\end{equation}
-			
+
 			Considerem la funció
 			\begin{align*}
 				g\colon\mathbb{R}^{n}&\longrightarrow\mathbb{R}^{n} \\
@@ -1455,7 +1455,7 @@
 			\[
 			    (\pi_{1}\circ g)(x)=\pi_{1}(F(x),\pi_{2}(x))=F(x).
 			\]
-			
+
 			Per la definició de \myref{def:Jacobiana} i la proposició \myref{prop:justificació Jacobiana} tenim que
 			\[dg(x_{0})=\left[\begin{array}{c|c}
 				\begin{matrix}
@@ -1518,7 +1518,7 @@
 				&=g^{-1}\big(g(\obert{U})\cap(\mathbb{R}^{2}\times\{0\})\big)=\obert{U}\cap S, \tag{\ref{eq:thm:condicions equivalents a la definició de superfície 1}} %TODO % Y THO
 			\end{align*}
 			i hem acabat.
-			
+
 			Veiem ara que la condició és necessària (\(\implicatper\)).
 			Suposem doncs que per a tot punt~\(p\in S\) existeixen un entorn obert~\(\obert{U}\subseteq\mathbb{R}^{3}\) de~\(p\) i una submersió~\(F\colon\obert{U}\longrightarrow\mathbb{R}\) tals que~\(S\cap\obert{U}=F^{-1}(\{0\})\).
 			Pel \myref{thm:Teorema d'estructura local de les submersions} tenim que per a tot~\(p\in S\) existeix un obert~\(\obert{U}'\) satisfent~\(x_{0}\subseteq\obert{U}'\subseteq\obert{U}\) i existeix un difeomorfisme~\(g\colon\obert{U}'\longleftrightarrow g(\obert{U}')\subseteq\mathbb{R}^{3}\) tals que per a tot~\(x\in\obert{U}'\) tenim
@@ -1539,7 +1539,7 @@
 				\label{eq:thm:condicions equivalents a la definició de superfície 2}
 				G^{-1}(\{0\})=S\cap\obert{U}'.
 			\end{equation}
-			
+
 			Aleshores tenim que
 			\begin{align*}
 				S\cap\obert{U}'&=G^{-1}(\{0\}) \tag{\ref{eq:thm:condicions equivalents a la definició de superfície 2}}\\
@@ -1586,7 +1586,7 @@
 		\labelname{parametrització d'una superfície}\label{def:parametrització d'una superfície}
 		Sigui~\(S\subseteq\mathbb{R}^{3}\) un conjunt i~\(p\in S\) un punt tals que existeix un entorn obert~\(\obert{U}\) de~\(p\), un conjunt~\(\Omega\subseteq\mathbb{R}^{2}\) i una aplicació~\(\Psi\colon\Omega\longrightarrow S\cap\obert{U}\) que és una immersió i un homeomorfisme.
 		Aleshores direm que~\(\Omega\) amb~\(\Psi\) és una carta local de~\(p\) en~\(S\).
-		
+
 		També direm que~\(\Psi\) és una parametrització o parametrització local de~\(S\).
 	\end{definition}
 	\begin{theorem}
@@ -1628,7 +1628,7 @@
 		és diferenciable.
 		\begin{proof}
 %			Prenem un element~\(z\in\Psi_{1}(\Omega_{1})\cap\Psi_{2}(\Omega_{2})\). Aleshores tenim que existeixen dos punts~\(x_{1}\in\Omega_{1}\) i~\(x_{2}\in\Omega_{2}\) tals que~\(\Psi_{1}(x_{1})=z\) i~\(\Psi_{2}(x_{2})=z\).
-%			
+%
 %			Com que, per hipòtesi,~\(S\) és una superfície, per la definició de \myref{def:superfície} trobem que existeixen un entorn obert~\(\obert{U}\) i un difeomorfisme~\(g\colon\obert{U}\longrightarrow g(\obert{U})\) tals que
 %			\[g(\obert{U}\cap S)=g(\obert{U})\cap(\mathbb{R}^{2}\times\{0\}).\]
 %			%Ara això ha de ser un difeomorfisme d'alguna manera
@@ -1719,7 +1719,7 @@
 				&=\prodesc{\vec{u}}{\vec{w}}+\prodesc{\vec{v}}{\vec{w}} \tag{\ref{def:producte escalar}}\\
 				&=\I_{p}(\vec{u},\vec{w})+\I_{p}(\vec{v},\vec{w}).
 			\end{align*}
-			
+
 			Si prenem un escalar~\(\lambda\in\mathbb{R}\) trobem que
 			\begin{align*}
 				\I_{p}(\lambda\vec{u},\vec{v})&=\prodesc{\lambda\vec{u}}{\vec{v}} \\
@@ -1750,7 +1750,7 @@
 				A & B \\
 				C & D
 			\end{bmatrix}\vec{v}.\]
-			
+
 			Per la proposició \myref{prop:les derivades d'una parametrització en una carta local són base del pla tangent} tenim que~\((\varphi_{u},\varphi_{v})\) és una base de~\(\EspaiTangent_{p}(S)\), i per tant
 			\[
 			    \vec{u}=u_{1}\varphi_{u}(p)+u_{2}\varphi_{v}(p),\qquad\text{i}\qquad\vec{v}=v_{1}\varphi_{u}(p)+v_{2}\varphi_{v}(p),
@@ -1803,7 +1803,7 @@
 			\[
 			    \Psi_{\varphi}(\theta,\varphi)=(-\sin(\theta)\sin(\varphi),\sin(\theta)\cos(\varphi),0).
 			\]
-			
+
 			Aleshores tenim
 			\[
 			    E=\prodesc{\Psi_{\theta}}{\Psi_{\theta}}=1,\quad F=\prodesc{\Psi_{\theta}}{\Psi_{\varphi}}=0\quad\text{i}\quad G=\prodesc{\Psi_{\varphi}}{\Psi_{\varphi}}=\sin^{2}(\theta),
@@ -1828,7 +1828,7 @@
 			\[
 			    \alpha(t)=\Psi(u(t),v(t)).
 			\]
-			
+
 			Calculem
 			\[
 			    \alpha'(t)=u'(t)\varphi_{u}(u,v)+v'(t)\varphi_{v}(u,v),
@@ -1851,7 +1851,7 @@
 			\end{align*}
 		\end{proof}
 	\end{proposition}
-	
+
 %	\begin{proposition}
 %		Siguin~\(S\subseteq\mathbb{R}^{3}\) una superfície,~\(p\in S\) un punt i~\(\Psi\) amb~\(\Omega\) una carta local de~\(S\) en~\(p\). Aleshores
 %	\end{proposition}
@@ -2006,7 +2006,7 @@
 			%TODO
 		\end{proof}
 	\end{proposition}
-	
+
 	\subsection{Producte escalar de camps vectorials}
 	\begin{definition}[Producte escalar de camps vectorials]
 		\label{def:producte escalar de camps vectorials}\labelname{producte escalar de camps vectorials}
@@ -2025,7 +2025,7 @@
 		    \Lie_{\nu}(f)=\prodesc{\nu}{\nabla h}
 		\]
 		 és la derivada de Lie de~\(f\) sobre~\(\nu\) en~\(p\).
-		 
+
 		 Aquesta definició té sentit per l'exercici \myref{ex:els gradients de les funcions C infinit són camps vectorials}.
 	\end{definition}
 	\begin{definition}[Part vectorial d'un camp]

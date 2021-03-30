@@ -48,7 +48,7 @@
 		\label{def:l'element neutre del grup}
 		Siguin~\(G\) un grup amb l'operació~\(\ast\) i~\(e\) un element de~\(G\) tal que~\(x\ast e=e\ast x=x\) per a tot~\(x\in G\).
 		Aleshores direm que~\(e\) és l'element neutre de~\(G\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:unicitat neutre del grup}.
 	\end{definition}
 	\begin{notation}
@@ -57,18 +57,18 @@
 		\[
 		    (x_{1}\ast x_{2})\ast x_{3}=x_{1}\ast x_{2}\ast x_{3}.
 		\]
-		
+
 		També denotarem
 		\[
 		    x^{n}=x\ast\overset{n)}{\dots}\ast x.
 		\]
-		
+
 		Si denotem la conjugació del grup per~\(+\) usarem la notació additiva i escriurem
 		\[
 		    x_{1}+\dots+x_{n}
 		\]
 		per referir-nos a la conjugació de~\(+\) amb si mateix~\(n\) vegades.
-		
+
 		També denotarem
 		\[
 		    nx=x+\overset{n)}{\cdots}+ x.
@@ -84,7 +84,7 @@
 		\end{enumerate}
 		\begin{proof}
 			Farem només la demostració del punt \eqref{enum:podem tatxar pels costats en grups 1} ja que l'altre és anàloga.
-			
+
 			Com que per hipòtesi~\(G\) és un grup, per la definició de \myref{def:grup} tenim que existeix~\(c'\) tal que~\(c\ast c'=e\), on~\(e\) és l'element neutre~\(G\), i tenim
 			\[
 			    a\ast c\ast c'=b\ast c\ast c',
@@ -105,7 +105,7 @@
 		\]
 		\begin{proof}
 			Notem que existeix un~\(a'\in G\) que satisfà l'equació per la definició de \myref{def:grup}, i per tant la proposició té sentit.
-			
+
 			Suposem doncs que existeix~\(a''\in G\) tal que
 			\[
 			    a\ast a''=a''\ast a=e.
@@ -115,7 +115,7 @@
 			    a\ast a''=e=a\ast a',
 			\]
 			i per la proposició \myref{prop:podem tatxar pels costats en grups} ha de ser~\(a'=a''\), com volíem demostrar.
-		\end{proof} 
+		\end{proof}
 	\end{proposition}
 	\begin{definition}[Invers d'un element]
 		\labelname{l'invers d'un element d'un grup}
@@ -126,7 +126,7 @@
 		    a\ast a'=a'\ast a=e.
 		\]
 		Aleshores direm que~\(a'\) és l'invers de~\(a\) en~\(G\), i el denotarem per~\(a^{-1}\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:unicitat inversa en grups} i la notació introduïda en \myref{notation:potencies per l'operació repetida en un grup}.
 	\end{definition}
 	\begin{proposition}
@@ -238,7 +238,7 @@
 			Comencem demostrant \eqref{enum:definicions alternatives de grup 1}\(\implica\)\eqref{enum:definicions alternatives de grup 2}.
 			Suposem que~\(G\) és un grup amb l'operació.
 			Veiem que~\(G\) no és buit per la definició de \myref{def:grup}, i la segona part és el lema \myref{lema:solucions úniques en grups a equacions}.
-			
+
 			Demostrem ara \eqref{enum:definicions alternatives de grup 2}\(\implica\)\eqref{enum:definicions alternatives de grup 3}.
 			La primera part es pot veure fixant~\(x\in G\).
 			Pel punt \eqref{enum:definicions alternatives de grup 2} tenim que per a cada~\(a\in G\) existeix un únic~\(b\in G\) tal que
@@ -258,7 +258,7 @@
 			    x\ast a=e,
 			\]
 			i aleshores~\(a=x^{-1}\).
-			
+
 			Ara només ens queda veure \eqref{enum:definicions alternatives de grup 3}\(\implica\)\eqref{enum:definicions alternatives de grup 1}.
 			Tenim que per a tot~\(x\in G\) existeix un~\(x^{-1}\) tal que~\(x\ast x^{-1}=e\), i de la mateixa manera, existeix un~\(y\in G\) tal que~\(x^{-1}\ast y=e\).
 			Per tant
@@ -269,7 +269,7 @@
 			&=x^{-1}\ast x\ast e=x^{-1}\ast x.
 			\end{align*}
 			Així tenim que per a tot~\(x\in G\) es compleix~\(x\ast x^{-1}=x^{-1}\ast x=e\), d'on podem veure que~\(e\ast x=x\ast e\), i com que, per hipòtesi, l'operació~\(\ast\) satisfà~\(x\ast(y\ast z)=(x\ast y)\ast z\) per a tot~\(x,y,z\in G\) es compleix la definició de \myref{def:grup} i tenim que~\(G\) és un grup amb l'operació~\(\ast\).
-			
+
 			Així tenim \eqref{enum:definicions alternatives de grup 1}\(\implica\)\eqref{enum:definicions alternatives de grup 2}\(\implica\)\eqref{enum:definicions alternatives de grup 3}\(\implica\)\eqref{enum:definicions alternatives de grup 1}, com volíem veure.
 		\end{proof}
 	\end{theorem}
@@ -279,7 +279,7 @@
 		\label{def:subgrup}
 		Siguin~\(G\) un grup amb l'operació~\(\ast\) i~\(H\subseteq G\) un subconjunt de~\(G\) tal que~\(H\) sigui un grup amb l'operació~\(\ast\).
 		Aleshores diem que~\(H\) és un subgrup de~\(G\).
-		
+
 		També ho denotarem com~\(H\leq G\).
 	\end{definition}
 	\begin{observation}
@@ -294,7 +294,7 @@
 			Sigui~\(e\) l'element neutre de~\(G\).
 			Demostrem primer que la condició és necessària (\(\implica\)).
 			Això ho podem veure per la definició de \myref{def:grup}, ja que tenim que~\(y^{-1}\) existeix i pertany a~\(H\), i per tant~\(x\ast y^{-1}\) també pertany a~\(H\).
-			
+
 			Demostrem ara que la condició és suficient (\(\implicatper\)).
 			Tenim que per a tot~\(x\in H\) es compleix
 			\[
@@ -306,14 +306,14 @@
 			    e\ast x^{-1}=x^{-1},
 			\]
 			i per tant~\(x^{-1}\in H\).
-			
+
 			Ara només ens queda veure que~\(\ast\) és tancat en~\(H\); és a dir, que per a tot~\(x,y\in H\) tenim~\(x\ast y\in H\).
 			Com que ja hem vist que~\(y^{-1}\) existeix i pertany a~\(H\), per la proposició \myref{prop:grups:l'invers de l'invers d'un element es l'element} tenim
 			\[
 			    x\ast y^{-1}=x\ast y
 			\]
 			i per hipòtesi~\(x\ast y\in H\).
-			
+
 			Per tant, per la definició de \myref{def:grup} tenim que~\(H\) és un grup amb l'operació~\(\ast\), i com que per hipòtesi~\(H\subseteq G\) per la definició de \myref{def:subgrup} tenim que~\(H\) és un subgrup de~\(G\).
 		\end{proof}
 	\end{proposition}
@@ -359,7 +359,7 @@
 		    H=\bigcap_{i\in I}H_{i}.
 		\]
 		Aleshores direm que el subgrup~\(H\leq G\) és el mínim subgrup generat per~\(S\) i ho denotarem amb~\(\langle S\rangle\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:els subgrups generats per un conjunt existeixen}.
 	\end{definition}
 	\begin{proposition}
@@ -372,7 +372,7 @@
 		\begin{proof}
 			Sigui~\(\ast\) l'operació de~\(G\).
 			Ho demostrem per doble inclusió.
-			
+
 			Comencem veient que
 			\[
 			    \{g^{i}\}_{i\in\mathbb{Z}}\subseteq\langle\{g\}\rangle.
@@ -382,14 +382,14 @@
 			    \{g\}\subseteq H=\bigcap_{i\in I}H_{i}.
 			\]
 			Com que~\(\{H_{i}\}_{i\in I}\) són subgrups de~\(G\) tenim que, donat que~\(g\in H_{i}\),~\(g^{n}\in H_{i}\) per a tot~\(i\in I\) i tot~\(n\in\mathbb{Z}\) per la definició de \myref{def:grup}, i per tant~\(g^{n}\in H\), el que és equivalent a dir que~\(g^{n}\in \langle g\rangle\) per a tot~\(n\in\mathbb{Z}\)
-			
+
 			Ara veiem que
 			\[
 			    \langle\{g\}\rangle\subseteq\{g^{i}\}_{i\in\mathbb{Z}}.
 			\]
 			Denotarem~\(H_{g}=\{g^{i}\}_{i\in\mathbb{Z}}\).
 			Hem de veure que~\(H_{g}\) és un grup amb l'operació~\(\ast\).
-			
+
 			Observem que per a tot~\(g^{i},g^{j}\in H_{g}\) es satisfà~\(g^{i}\ast g^{-j}=g^{i-j}\in H_{g}\), i per tant~\(H_{g}\leq G\).
 			Ara bé, com que~\(\{g\}\subseteq H_{g}\), tenim que~\(H_{g}\in\{H_{i}\}_{i\in I}\), és a dir, que~\(H_{g}\) pertany a la família de subconjunts de~\(G\) que contenen~\(\{g\}\); el que significa que~\(\langle\{g\}\rangle\leq H_{g}\), i per tant \[\langle\{g\}\rangle\subseteq\{g^{i}\}_{i\in\mathbb{Z}}.\qedhere\]
 		\end{proof}
@@ -421,11 +421,11 @@
 			&=e^{Q}\ast g^{r}=g^{r}.
 			\end{align*}
 			Per tant, com que~\(0\leq r<n\),~\(\abs{\langle\{g\}\rangle}=n\).
-			
+
 			Fem ara la implicació cap a la dreta (\(\implica\)).
 			Suposem doncs que~\(\abs{\langle\{g\}\rangle}=n\).
 			Com que el grup és finit per a cada~\(i\in\mathbb{Z}\) existeix~\(j\in\mathbb{Z}\) tal que~\(g^{i}=g^{j}\) i, com que~\(\langle\{g\}\rangle\) és un grup, per la definició de \myref{def:grup} existeix~\(g^{-j}\in\langle\{g\}\rangle\) tal que~\(g^{i-j}=e\).
-			
+
 			Sigui doncs~\(t\in\mathbb{N}\) tal que~\(g^{t}=e\).
 			Aleshores, pel \myref{thm:divisió euclidiana} existeixen uns únics~\(Q,r\in\mathbb{N}\), amb~\(r<n\) tals que~\(t=Qn+r\).
 			Per tant
@@ -477,18 +477,18 @@
 			&=\{h\ast x\ast x^{-1}\mid h\in H\}\\
 			&=\{h\mid h\in H\}=H.
 			\end{align*}
-			
+
 			Continuem demostrant \eqref{enum:condicions equivalents a subgrup normal 2}\(\implica\)\eqref{enum:condicions equivalents a subgrup normal 3}.
 			Suposem que~\(\{x\}H\{x^{-1}\}=H\).
 			Tenim que~\(\{x\}H\{x^{-1}\}=H\subseteq H\).
-			
+
 			Demostrem ara \eqref{enum:condicions equivalents a subgrup normal 3}\(\implica\)\eqref{enum:condicions equivalents a subgrup normal 1}.
 			Suposem doncs que~\(\{x^{-1}\}H\{x\}\subseteq H\) per a tot~\(x\in G\).
 			Això significa que per a tot~\(h\in H\) existeix un~\(h'\in H\) tal que~\(x\ast h\ast x^{-1}=h'\), i aleshores, per la definició de \myref{def:grup},~\(x\ast h=h'\ast x\in H\), i per tant~\(x\ast h\in H\{x\}\) per a tot~\(x\in G\).
 			Així hem vist que~\(\{x\}H\subseteq H\{x\}\).
 			Per veure l'altre inclusió es pot donar un argument anàleg, i per tant~\(\{x\}H= H\{x\}\).
 			%REFERENCIA I POTSER MENYS MANDRA
-			
+
 			I així hem vist que \eqref{enum:condicions equivalents a subgrup normal 1}\(\implica\)\eqref{enum:condicions equivalents a subgrup normal 2}\(\implica\)\eqref{enum:condicions equivalents a subgrup normal 3}\(\implica\)\eqref{enum:condicions equivalents a subgrup normal 1} i hem acabat.
 		\end{proof}
 	\end{proposition}
@@ -511,7 +511,7 @@
 		\]
 		\begin{proof}
 			Que la condició és necessària (\(\implica\)) ho podem veure amb la definició de \myref{def:grup abelià} i la proposició \myref{prop:invers de a b = b invers a invers}.
-			
+
 			Demostrem ara que la condició és suficient (\(\implicatper\)).
 			Diem que l'element neutre de~\(G\) és~\(e\).
 			Per la definició de \myref{def:grup} tenim que
@@ -563,7 +563,7 @@
 			Si~\(H=\{e\}\) no hi ha res a demostrar.
 			Suposem que~\(H\neq\{e\}\), aleshores existeix un~\(g\in G\) tal que~\(g^{n}\in H\) per a cert~\(n\in\mathbb{N}\).
 			Sigui doncs~\(m\) l'enter més petit tal que~\(g^{m}\in H\); volem demostrar que~\(H=\langle\{g^{m}\}\rangle\).
-			
+
 			Sigui~\(a\) un element de~\(H\).
 			Aleshores com que~\(a\in H\subseteq G\),~\(a=g^{t}\) per a cert~\(t\in\mathbb{N}\), i pel \myref{thm:divisió euclidiana} existeixen~\(Q,r\in\mathbb{N}\), amb~\(r<m\) tals que~\(t=Qm+r\), i per tant~\(g^{t}=g^{Qm+r}\).
 			Aleshores tenim
@@ -639,7 +639,7 @@
 		[x]\ast[y]&\longmapsto[x\ast y]
 		\end{align*}
 		és el grup quocient~\(G\) mòdul~\(N\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:grup quocient}.
 	\end{definition}
 	\begin{lemma}
@@ -677,7 +677,7 @@
 			f_{x}\colon H&\longrightarrow\{x\}H\\
 			h&\longmapsto x\ast h
 			\end{align*}
-			
+
 			Pel lema \myref{lema:operar en grups és bijectiu} trobem~\(\abs{H}=\abs{\{x\}H}\).
 			Tenim que~\(\abs{G}\) és el resultat de multiplicar el número de classes d'equivalència pel nombre d'elements d'una de les classes, és a dir %REFERENCIES fonaments
 			\[
@@ -753,7 +753,7 @@
 			&=f(x)\circ e'
 			\end{align*}
 			i per la proposició \myref{prop:podem tatxar pels costats en grups} tenim~\(f(e)=e'\).
-			
+
 			Per demostrar el punt \eqref{enum:morfismes conserven neutre i l'invers commuta amb el morfisme 2} en tenim prou en veure que per a tot~\(x\in G\)
 			\begin{align*}
 			f(x)\circ f(x^{-1})&=f(x\ast x^{-1})\tag{\myref{def:morfisme entre grups}}\\
@@ -791,7 +791,7 @@
 		\begin{proof}
 			Siguin~\(\ast\) l'operació de~\(G_{1}\) i~\(\circ\) l'operació de~\(G_{2}\).
 			Per la definició de \myref{def:isomorfisme entre grups} tenim que existeix un~\(f\colon G_{1}\to G_{2}\) un isomorfisme entre grups.
-			
+
 			Comencem demostrant el punt \eqref{enum:condicions equivalents abelià i cíclic per isomorfismes 1}.
 			Suposem doncs que~\(G_{1}\) és un grup abelià.
 			Per la definició de \myref{def:grup abelià} tenim que per a tot~\(a,b\in G_{1}\) es compleix~\(a\ast b=b\ast a\).
@@ -804,7 +804,7 @@
 			    f(a)\circ f(b)=f(b)\circ f(a),
 			\]
 			i per tant, com que per la definició de \myref{def:isomorfisme entre grups}~\(f\) és un bijectiu,~\(G_{2}\) satisfà la definició de \myref{def:grup abelià}.
-			
+
 			Demostrem ara el punt \eqref{enum:condicions equivalents abelià i cíclic per isomorfismes 2}.
 			Suposem doncs que~\(G_{1}\) és un grup cíclic.
 			Per la definició de \myref{def:grup cíclic} tenim que~\(G_{1}=\{g^{i}\}_{i\in\mathbb{Z}}\) per a un cert~\(g\in G_{1}\).
@@ -841,17 +841,17 @@
 		\end{enumerate}
 		\begin{proof}
 			Aquest enunciat té sentit per l'observació \myref{obs:nucli d'un morfisme entre grups es subconjunt del grup d'entrada, imatge n'és del de sortida}.
-			
+
 			Siguin~\(\ast\) l'operació de~\(G_{1}\) i~\(\circ\) l'operació de~\(G_{2}\) i~\(e\) l'element neutre de~\(G_{1}\) i~\(e'\) l'element neutre de~\(G_{2}\).
 			Primer comprovem el punt \eqref{enum:el nucli d'un morfisme és un subgrup normal del grup de sortda 1}.
 			Comencem veient que~\(\ker(f)\) és un subgrup de~\(G_{1}\).
 			Per la proposició \myref{prop:condició equivalent a subgrup} tenim que ens cal amb veure que si~\(a,b\in\ker(f)\), aleshores~\(a\ast b^{-1}\in\ker(f)\).
 			Això és cert ja que si~\(a,b\in\ker(f)\) aleshores~\(f(a)=e'\) i~\(f(b^{-1})=e'\), i per tant~\(a\ast b^{-1}=e\ast e^{-1}=e\), el que significa que~\(f(a\ast b^{-1})=e'\), i tenim~\(a\ast b^{-1}\in\ker(f)\).
-			
+
 			Comprovem ara que el subgrup és normal.
 			Per la proposició \myref{prop:condicions equivalents a subgrup normal} en tenim prou en veure que per a tot~\(x\in\ker(f)\) i~\(g\in G\),~\(x\ast g\ast x^{-1}\in\ker(f)\).
 			Això ho veiem notant que si~\(g\in\ker(f)\),~\(f(g)=e'\), i per tant~\(f(x\ast g\ast x^{-1})=f(x)\circ e'\circ f(x^{-1})\)i això és~\(f(x\ast x^{-1})=e'\), i per tant~\(x\ast g\ast x^{-1}\in\ker(f)\).
-			
+
 			Acabem veient el punt \eqref{enum:la imatge d'un morfisme és un subgrup del grup d'arribada 2}.
 			De nou per la proposició \myref{prop:condició equivalent a subgrup} tenim que si per a tot~\(f(a),f(b)\in\Ima(f)\) tenim~\(f(a)\circ f(b)^{-1}\in\Ima(f)\) aleshores~\(\Ima(f),\) és un subgrup de~\(G_{2}\).
 			Això és cert, ja que per la definició de \myref{def:morfisme entre grups} i la proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme} tenim~\(f(a)\circ f(b)^{-1}=f(a\ast b^{-1})\); i per la definició de grup~\(a\ast b^{-1}\in G_{1}\), i per la definició de \myref{def:morfisme entre grups} tenim que~\(f(a)\circ f(b)^{-1}\in\Ima(f)\), i per tant~\(\Ima(f)\) és un subgrup de~\(G_{2}\), com volíem veure.
@@ -872,7 +872,7 @@
 			Per la definició de \myref{def:nucli d'un morfisme entre grups} tenim que~\(\ker(f)=\{x\in G_{1}\mid f(x)=e'\}\).
 			Suposem~\(x\in G_{1}\), és a dir,~\(f(x)=e'\).
 			Ara bé, com que~\(f\) és injectiva per la proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme} ha de ser~\(\ker(f)=\{e\}\).%REF injectiva
-			
+
 			Demostrem ara la implicació cal a l'esquerra (\(\implicatper\)).
 			Suposem doncs que~\(\ker(f)=\{e\}\).
 			Siguin~\(x,y\in G_{1}\) dos elements que satisfacin~\(f(x)=f(y)\).
@@ -884,10 +884,10 @@
 			\end{align*}
 			i per tant~\(x\ast y^{-1}\in\ker(f)\), però per hipòtesi teníem~\(\ker(f)=\{e\}\), i per tant ha de ser~\(x\ast y^{-1}=e\), el que és equivalent a~\(x=y\), i per tant~\(f\) és injectiva.
 			%REF definició
-			
+
 			Demostrem ara el punt \eqref{enum:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge 2} començant per la implicació cap a la dreta (\(\implica\)).
 			Suposem doncs que~\(f\) és un epimorfisme, i per tant exhaustiva, i per tant per a cada~\(y\in G_{2}\) existeix un~\(x\in G_{1}\) tal que~\(f(x)=y\), i per la definició d'\myref{def:imatge d'un morfisme entre grups} tenim que~\(\Ima(f)=G_{2}\).
-			
+
 			Acabem demostrant la implicació cap a l'esquerra (\(\implicatper\)).
 			Suposem doncs que~\(\Ima(f)=G_{2}\) i prenem~\(y\in G_{2}\).
 			Aleshores per la definició d'\myref{def:imatge d'un morfisme entre grups} tenim que existeix un~\(x\in G_{1}\) tal que~\(f(x)=y\), i per tant~\(f\) és exhaustiva.
@@ -915,12 +915,12 @@
 			&=f(x\ast y^{-1}).\tag{\myref{def:morfisme entre grups}}
 			\end{align*}
 			Ara bé, com que~\(x,y\in H_{1}\) i~\(H_{1}\) és un subgrup de~\(G_{1}\), per la proposició \myref{prop:condició equivalent a subgrup} tenim que~\(x\ast y^{-1}\in H_{1}\), i per tant~\(f(x\ast y^{-1})\in H\), i per la definició de \myref{def:morfisme entre grups} i la proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme} tenim que~\(f(x)\circ f(y)^{-1}\in H\), i per tant~\(H\) és un subgrup de~\(G_{2}\), com volíem veure.
-			
+
 			Comprovem ara el punt \eqref{enum:les imatges dels subgrups son subgrups + el mateix amb subgrups normals 2}.
 			Suposem doncs que~\(H_{2}\) és un subgrup de~\(G_{2}\) i denotem~\(H=\{h\in G_{1}\mid f(h)\in H_{2}\}\).
 			Per la proposició \myref{prop:condició equivalent a subgrup} només ens cal veure que per a tot~\(x,y\in H\) es satisfà~\(x\ast y^{-1}\in H\).
 			Si~\(x,y\in H\) aleshores tenim que~\(f(x),f(y)\in H_{2}\), i com que~\(H_{2}\) és un grup, aleshores per la definició de \myref{def:grup} ha de ser~\(f(x)\circ f(y^{-1})\in H_{2}\) Aleshores, per la definició de \myref{def:morfisme entre grups} tenim~\(f(x)\circ f(y^{-1})=f(x\ast y^{-1})\), i per tant~\(x\ast y^{-1}\in H\) i així tenim que~\(H\) és un subgrup de~\(G_{1}\).
-			
+
 			Veiem el punt \eqref{enum:les imatges dels subgrups son subgrups + el mateix amb subgrups normals 3} per acabar.
 			Suposem doncs que~\(H_{2}\) és un subgrup normal de~\(G_{2}\) i definim~\(H=\{h\in G_{1}\mid f(h)\in H_{2}\}\).
 			Per demostrar-ho prenem~\(g\in G_{1}\),~\(h\in H_{1}\) tal que~\(f(h)\in H\) i fem
@@ -968,7 +968,7 @@
 			    \ker(\varphi)=\{e\},
 			\]
 			i per la proposició \myref{prop:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge} tenim que~\(\varphi\) és un monomorfisme, com volíem veure.
-			
+
 			Per tant, per la proposició \myref{prop:les imatges dels subgrups son subgrups + el mateix amb subgrups normals} tenim que
 			\[
 			    G\cong \Ima(\varphi)\leq\GrupSimetric_{G}.\qedhere
@@ -992,7 +992,7 @@
 			[x]&\longmapsto f(x)\nonumber
 			\end{align}
 			Comprovem primer que aquesta aplicació està ben definida:
-			
+
 			Suposem que~\([x]=[x']\).
 			Això és que~\(x'\in\{x\}\ker(f)\), i equivalentment~\(x'=x\ast h\) per a cert~\(h\in\ker(f)\).
 			Per tant
@@ -1015,7 +1015,7 @@
 			i per la definició de \myref{def:morfisme entre grups}~\(\varphi\) és un morfisme entre grups.
 			Continuem demostrant que~\(\varphi\) és injectiva.
 			Per la definició de \myref{def:nucli d'un morfisme entre grups} tenim que~\(\ker(\varphi)=\{[x]\in G/\ker(f)\mid\varphi([x])=e\}\), i per tant~\(\ker(\varphi)=\ker(f)\), ja que~\(f(x)=e\) si i només si~\(x\in\ker(f)\), i per tant~\(\ker(\varphi)=[e]\) i per la proposició \myref{prop:condicions equivalents a monomorfisme i epimorfisme per nucli i imatge}~\(\varphi\) és injectiva.
-			
+
 			Per veure que~\(\varphi\) és exhaustiva veiem que si~\([x]\in G_{1}/\ker(f)\), per la definició de \myref{def:relació d'equivalència entre grups} tenim que~\(x=x'\ast y\) per a uns certs~\(x'\in G_{2}\),~\(h\in\ker(f)\), i per tant
 			\begin{align*}
 			\varphi([x])&=\varphi([x'\ast h])\\
@@ -1027,7 +1027,7 @@
 			&=f(x)\circ f(h)^{-1}\tag{Proposició \myref{prop:morfismes conserven neutre i l'invers commuta amb el morfisme}}\\
 			&=f(x)\circ e^{-1}=f(x).\tag{Proposició \myref{prop:l'invers de l'element neutre d'un grup és ell mateix}}
 			\end{align*}
-			
+
 			Així veiem que~\(\Ima(\varphi)=\Ima(f)\).
 			Per tant~\(\varphi\) és un isomorfisme, i per la definició d'\myref{def:isomorfisme entre grups} tenim~\(G_{1}/\ker(f)\cong\Ima(f)\), com volíem veure.
 			%REFERENCIES BIECTIVITAT ALS ISO-
@@ -1058,13 +1058,13 @@
 		\end{enumerate}
 		\begin{proof}
 			Siguin~\(\ast\) l'operació de~\(G_{1}\),~\(e\) l'element neutre de~\(G_{1}\) i~\(e'\) l'element neutre de~\(G_{2}\).
-			
+
 			El punt \eqref{enum:Primer Teorema de l'isomorfisme entre grups 1} és conseqüència del Teorema \myref{thm:Teorema fonamental dels isomorfismes}, ja que si~\(f\) és exhaustiva,~\(\Ima(f)=G_{2}\), i per tant~\(G_{1}/\ker(f)\cong G_{2}\).
-			
+
 			Per veure el punt \eqref{enum:Primer Teorema de l'isomorfisme entre grups 2} comencem demostrant que~\(\varphi_{1}\) està ben definida.
 			Siguin~\(H_{1}=H_{2}\in\{H\mid\ker(f)\leq H\leq G\}\).
 			Aleshores, per la hipòtesi \eqref{eq:primer teorema de l'isomorfisme eq2} tenim~\(\varphi_{1}(H_{1})=\{f(h)\in G_{2}\mid h\in H_{1}\}\) i~\(\varphi_{1}(H_{2})=\{f(h)\in G_{2}\mid h\in H_{2}\}\), i com que~\(f\) és una aplicació, i per tant ben definida,~\(\varphi_{1}(H_{1})=\varphi_{1}(H_{2})\).
-			
+
 			Continuem comprovant que~\(\varphi_{1}\) és bijectiva.
 			Per veure que és injectiva prenem~\(H_{1},H_{2}\in\{H\mid\ker(f)\leq H\leq G\}\) tals que~\(\varphi_{1}(H_{1})=\varphi_{1}(H_{2})\).
 			Això, per la hipòtesi \eqref{eq:primer teorema de l'isomorfisme eq2} és
@@ -1076,10 +1076,10 @@
 			Observem que això és que~\(h_{1}\in\{h_{2}\}\ker(f))\subseteq H_{2}\) i~\(h_{2}\in\{h_{1}\}\ker(f))\subseteq H_{1}\).
 			Això vol dir que~\(H_{1}\subseteq H_{2}\) i~\(H_{2}\subseteq H_{1}\), i per doble inclusió això és~\(H_{1}=H_{2}\), com volíem veure.
 			%FER Referència doble inclusió
-			
+
 			Per veure que~\(\varphi_{1}\) és exhaustiva tenim que per la proposició \myref{prop:les imatges dels subgrups son subgrups + el mateix amb subgrups normals} i per la hipòtesi \eqref{eq:primer teorema de l'isomorfisme eq2} tenim que donat un conjunt~\(K\) tal que~\(K\leq G_{2}\) aleshores el conjunt~\(H=\{k\in G_{1}\mid f(h)\in K\}\) satisfà~\(H\leq G_{1}\), i per la definició de \myref{def:nucli d'un morfisme entre grups} tenim que es compleix~\(\ker(f)\leq H\leq G_{1}\), i per tant~\(\varphi_{1}(H)=K\), i per tant~\(\varphi\) és exhaustiva i per tant bijectiva.
 			%FER referències fonaments.
-			
+
 			Es pot demostrar el punt \eqref{enum:Primer Teorema de l'isomorfisme entre grups 3} amb el mateix argument que hem donat per demostrar el punt \eqref{enum:Primer Teorema de l'isomorfisme entre grups 2}.
 		\end{proof}
 	\end{theorem}
@@ -1104,7 +1104,7 @@
 			&=h_{1}\ast h_{2}^{-1}\ast k_{1}\ast k_{2}^{-1},\tag{\myref{def:subgrup normal}}
 			\end{align*}
 			i com que, per la definició de \myref{def:grup} tenim~\(h_{1}\ast h_{2}^{-1}\in H\) i~\(k_{1}\ast k_{2}^{-1}\in K\), veiem que~\(x\ast y^{-1}\in HK\), com volíem demostrar.
-			
+
 			La demostració del punt \eqref{enum:producte de subgrups amb un de normal es subgrup 2} és anàloga a la del punt \eqref{enum:producte de subgrups amb un de normal es subgrup 1}.
 		\end{proof}
 	\end{proposition}
@@ -1130,7 +1130,7 @@
 		\]
 		\begin{proof}
 			Aquest enunciat té sentit pel lema \myref{lema:Segon Teorema de l'isomorfisme entre grups}.
-			
+
 			Siguin~\(\ast\) l'operació de~\(G\) i~\(e\) l'element neutre de~\(G\).
 			Definim
 			\begin{align}\label{hipotesi:definició f per segon teorea de l'isomorfisme}
@@ -1141,7 +1141,7 @@
 			Prenem doncs~\(h_{1}\ast k_{1},h_{2}\ast k_{2}\in HK\) amb~\(h_{1},h_{2}\in H\) i~\(k_{1},k_{2}\in K\) tals que~\(h_{1}\ast k_{1}=h_{2}\ast k_{2}\), i per tant~\(h_{2}^{-1}\ast h_{1}=k_{2}\ast k_{1}^{-1}\).
 			Ara bé, com que per hipòtesi i per la definició de \myref{def:l'invers d'un element d'un grup} tenim que~\(h_{1},h_{2}^{-1}\in H\) i a la vegada~\(k_{2},k_{1}^{-1}\in K\), per la definició de \myref{def:grup} tenim~\(h_{2}^{-1}\ast h_{1}\in H\) i~\(k_{2}\ast k_{1}^{-1}\in K\) i com que~\(h_{2}^{-1}\ast h_{1}=k_{2}\ast k_{1}^{-1}\) tenim que~\([h_{2}^{-1}\ast h_{1}]=[k_{2}^{-1}\ast k_{1}]=[e]\), i per la definició de \myref{def:relació d'equivalència entre grups} %areglar referències o definir producte individualment
 			tenim que~\([h_{1}]=[h_{2}]\) i per tant~\(f\) està ben definida.
-			
+
 			Veiem ara que~\(f\) és un morfisme entre grups.
 			Prenem~\(h_{1},h_{2}\in H\) i~\(k_{1},k_{2}\in K\), i per tant~\(h_{1}\ast k_{1},h_{2}\ast k_{2}\in HK\), i fem
 			\begin{align*}
@@ -1150,11 +1150,11 @@
 			&=f(h_{1}\ast k_{1})\ast f(h_{2}\ast k_{2})\tag{Definició \eqref{hipotesi:definició f per segon teorea de l'isomorfisme}}
 			\end{align*}
 			i per tant~\(f\) satisfà la definició de \myref{def:morfisme entre grups}.
-			
+
 			Continuem veient que~\(f\) és exhaustiva.
 			Prenem~\([h]\in H/(H\cap K)\).
 			Per la definició \eqref{hipotesi:definició f per segon teorea de l'isomorfisme} tenim que~\(f(h\ast k)=[h]\) per a qualsevol~\(k\in K\), i per tant~\(f\) és exhaustiva.
-			
+
 			Per tant~\(f\) és un epimorfisme, i per tant, pel \myref{thm:Primer Teorema de l'isomorfisme entre grups} tenim
 			\[
 			    HK/\ker(f)\cong H/(H\cap K).
@@ -1179,15 +1179,15 @@
 			\varphi_{1}\colon G&\longrightarrow G/K&\text{i}&&\varphi_{2}\colon G/K&\longrightarrow(G/K)/(H/K)\\
 			g&\longmapsto[g]&&&[g]&\longmapsto\overline{[g]}.
 			\end{align*}
-			
+
 			Veiem que~\(\varphi_{1}\) i~\(\varphi_{2}\) són morfismes.
-			
+
 			Per la proposició \myref{prop:conjugació de morfismes entre grups és morfisme entre grups} tenim que~\(\varphi_{2}(\varphi_{1})\colon G\longrightarrow(G/K)/(H/K)\) és un epimorfisme entre grups, %fer referencies fonaments.
 			i pel \myref{thm:Primer Teorema de l'isomorfisme entre grups} trobem
 			\[
 			    G/\ker(\varphi_{2}(\varphi_{1}))\cong(G/K)/(H/K).
 			\]
-			
+
 			Veiem ara que~\(\ker(\varphi_{2}(\varphi_{1}))=H\).
 			Per la definició de \myref{def:relació d'equivalència entre grups} tenim que~\(G/K=\{gK\mid g\in G\}\) i~\(H/K=\{hK\mid h\in H\}\), i per tant
 			\begin{equation}
@@ -1195,7 +1195,7 @@
 			(G/K)/(H/K)=\{gKhK\mid g\in G, h\in H\},
 			\end{equation}
 			però com que, per hipòtesi,~\(H\) i~\(K\) són subgrups normals de~\(G\), per la definició de \myref{def:subgrup normal} podem reescriure \eqref{eq:Tercer Teorema de l'isomorfisme eq1} com
-			
+
 			\begin{equation}\label{eq:Tercer Teorema de l'isomorfisme eq2}
 			(G/K)/(H/K)=\{ghK\mid g\in G,h\in H\}.
 			\end{equation}
@@ -1250,7 +1250,7 @@
 		\labelname{l'òrbita d'un element d'un \ensuremath{G}-conjunt}\label{def:òrbita d'un element d'un G-conjunt}
 		Siguin~\(X\) un~\(G\)-conjunt amb l'acció~\(\cdot\) i~\(\sim\) una relació d'equivalència sobre~\(X\) tal que per a tot~\(x_{1},x_{2}\in X\) diem que~\(x_{1}\sim x_{2}\) si i només si existeix un~\(g\in G\) tal que~\(x_{1}=g\cdot x_{2}\).
 		Aleshores direm que~\(\mathcal{O}(x)=[x]\) és l'òrbita de~\(x\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:relacio d'òrbites és d'equivalència}.
 	\end{definition}
 	\begin{definition}[Estabilitzador d'un element per una acció]
@@ -1280,7 +1280,7 @@
 		\begin{proof}
 			Sigui~\(\ast\) l'operació de~\(G\).
 			Per la proposició \myref{prop:condició equivalent a subgrup} només ens cal veure que per a tot~\(g_{1},g_{2}\in\St(x)\) es compleix~\(g_{1}\ast g_{2}^{-1}\in\St(x)\).
-			
+
 			Prenem doncs~\(g_{1},g_{2}\in\St(x)\).
 			Per la proposició \myref{prop:l'invers d'un element pertany a l'estabilitzador per una acció} tenim que~\(g_{2}^{-1}\in\St(x)\), i per tant, per la definició de \myref{def:l'estabilitzador d'un element per una acció} tenim que~\((g_{1}\ast g_{2}^{-1})\cdot x=x\), i per tant~\(g_{1}\ast g_{2}^{-1}\in\St(x)\).
 		\end{proof}
@@ -1300,15 +1300,15 @@
 			[g]&\longmapsto g\cdot x
 			\end{align*}
 			Volem veure que~\(f\) és una aplicació bijectiva, per tant mirem si està ben definida:
-			
+
 			Siguin~\([g_{1}],[g_{2}]\in G/\St(x)\) tals que~\([g_{1}]=[g_{2}]\).
 			Per tant~\(g_{1}=g_{2}\ast g'\) per a cert~\(g'\in\St(x)\), i per la definició de \myref{def:l'estabilitzador d'un element per una acció} tenim~\(g_{1}\cdot x=x\),~\((g_{2}\ast g')\cdot x=x\), i per la definició d'\myref{def:acció d'un grup sobre un conjunt} això és~\(g_{2}\cdot(g'\cdot x)=x\), i per la proposició \myref{prop:l'invers d'un element pertany a l'estabilitzador per una acció}~\(g_{2}\cdot x=x\), i per tant~\(f\) està ben definida.
-			
+
 			Veiem ara que~\(f\) és injectiva.
 			Prenem~\(g\cdot x,g'\cdot x\in\mathcal{O}(x)\) tals que~\(g\cdot x=g'\cdot x\).
 			Això, per la definició d'\myref{def:acció d'un grup sobre un conjunt}, és equivalent a dir~\(x=(g^{-1}\ast g')\cdot x\), i per la definició de \myref{def:l'estabilitzador d'un element per una acció} tenim que~\(g^{-1}\ast g\in\St(x)\).
 			Per tant, per la definició de \myref{def:relació d'equivalència entre grups} tenim que~\([g]=[g']\), i per tant~\(f\) és injectiva.
-			
+
 			Per veure que~\(f\) és exhaustiva veiem que per a qualsevol~\(g\cdot x\in\mathcal{O}(x)\),~\(f([g])=g\cdot x\), i per tant~\(f\) és exhaustiva i tenim que~\(\abs{\St(x)}=\abs{\mathcal{O}(x)}\), ja que per la definició d'\myref{def:aplicació bijectiva} tenim que~\(f\) és una bijecció.
 			%REFerencies fonaments! Cardinalitat
 		\end{proof}
@@ -1362,7 +1362,7 @@
 			\end{displaymath}
 			i pel lema \myref{lema:Primer Teorema de Sylow} tenim que~\(p\) no divideix~\(k\).
 			%Fer això a fonaments, definint \mathcal{P}_{n}(G)
-			
+
 			Siguin~\(\ast\) l'operació de~\(G\) i~\(e\) l'element neutre de~\(G\).
 			Definim
 			\begin{align}
@@ -1375,22 +1375,22 @@
 			Prenem~\(g_{1},g_{2}\in G\) i~\(X_{1},X_{2}\in \mathcal{P}_{p^{n}}(G)\) tals que~\(g_{1}=g_{2}\) i~\(X_{1}=X_{2}\).
 			Per tant tenim~\(g_{1}\cdot X_{1}=g_{2}\cdot X_{2}\) ja que~\(\{g_{1}\}X_{1}=\{g_{2}\}X_{2}\).
 			Per veure que~\(g_{1}\cdot X_{1}\in\mathcal{P}_{p^{n}}(G)\) en tenim prou amb veure que, per a tot~\(X\in\mathcal{P}_{p^{n}}(G)\), si fixem~\(g\in G\) l'aplicació~\(g\cdot X\) té inversa, que per la definició de \myref{def:l'invers d'un element d'un grup} és~\(x^{-1}\cdot X\), i per tant~\(X\in\mathcal{P}_{p^{n}}(G)\).
-			
+
 			Comprovem que~\(\cdot\) satisfà la definició d'\myref{def:acció d'un grup sobre un conjunt}.
 			Tenim que~\(e\cdot X=X\) per a tot~\(X\in\mathcal{P}_{p^{n}}(G)\) ja que, per la definició de \myref{def:conjugació entre conjunts sobre grups},~\(eX=X\).
-			
+
 			De nou per la definició de \myref{def:conjugació entre conjunts sobre grups} veiem que per a tot~\(g_{1},g_{2}\in G\) i~\(X\in\mathcal{P}_{p^{n}}(G)\) tenim que \begin{align*}
 			(g_{1}\ast g_{2})\cdot X&=\{g_{1}\ast g_{2}\}X\\
 			&=\{g_{1}\}\{g_{2}\}X\\
 			&=\{g_{1}\}(\{g_{2}\}X)=g_{1}\cdot(g_{2}\cdot X).
 			\end{align*}
 			i per tant~\(\cdot\) satisfà la definició d'\myref{def:acció d'un grup sobre un conjunt}.
-			
+
 			Veiem ara que existeix almenys un element~\(X\in\mathcal{P}_{p^{n}}(G)\) tal que la seva òrbita,~\(\mathcal{O}(X)\), tingui ordre no divisible per~\(p\).
 			Per veure això observem que per la definició de \myref{def:òrbita d'un element d'un G-conjunt} veiem que~\(\mathcal{O}(X)\) és un classe d'equivalència, i per tant l'ordre del conjunt~\(\mathcal{P}_{p^{n}}\) és la suma dels ordres de les òrbites dels seus elements,~\(\mathcal{O}(X)\), i si~\(p\) dividís l'ordre de~\(\mathcal{O}(X)\) per a tot~\(X\in\mathcal{P}_{p^{n}}\) tindríem que~\(p\) també divideix~\(k\), però ja hem vist que això no pot ser.
 			Per tant existeix almenys un element~\(X\in\mathcal{P}_{p^{n}}\) tal que~\(\abs{\mathcal{O}(X)}\) no és divisible per~\(p\).
 			Fixem aquest conjunt~\(X\).
-			
+
 			Prenem l'estabilitzador de~\(X\),~\(\St(X)\).
 			Per la proposició \myref{prop:cardinal del grup dividit per cardinal de l'estabilitzador és el cardinal de l'òrbita} tenim que~\(\abs{\St(X)}\) divideix~\(p^{n}\).
 			Prenem també~\(x_{o}\in X\) i~\(g\in\St(X)\).
@@ -1409,7 +1409,7 @@
 		\begin{proof}
 			Sigui~\(e\) l'element neutre de~\(G\).
 			Pel \myref{thm:Primer Teorema de Sylow} tenim que existeix un~\(p\)-subgrup de Sylow~\(P\) de~\(G\), que per la definició de \myref{def:p-subgrup de Sylow} té ordre~\(p^{n}\) per a cert~\(n\in\mathbb{N}\).
-			Ara bé, pel \myref{thm:Teorema de Lagrange} tenim que per a tot~\(x\in P\) diferent del neutre el grup cíclic generar per~\(x\) ha de tenir ordre~\(p^{t}\) amb~\(t\in\{2,\dots,n\}\), i per tant l'element~\(x^{p^{t-1}}\) té ordre~\(p\), ja que 
+			Ara bé, pel \myref{thm:Teorema de Lagrange} tenim que per a tot~\(x\in P\) diferent del neutre el grup cíclic generar per~\(x\) ha de tenir ordre~\(p^{t}\) amb~\(t\in\{2,\dots,n\}\), i per tant l'element~\(x^{p^{t-1}}\) té ordre~\(p\), ja que
 			\[
 			    \left(x^{p^{t-1}}\right)^{p}=x^{p^{t}}=e.\qedhere
 			\]
@@ -1457,22 +1457,22 @@
 		\]
 		\begin{proof}
 			Observem que aquest enunciat té sentit pel \myref{thm:Primer Teorema de Sylow}.
-			
-			Definim el conjunt~\(X=\{\{x\}P_{1}\mid x\in G\}\) i 
+
+			Definim el conjunt~\(X=\{\{x\}P_{1}\mid x\in G\}\) i
 			\begin{align}\label{eq:thm:Segon Teorema de Sylow 1}
 			\cdot\colon P_{2}\times X&\longrightarrow X\\
 			(y,\{x\}P_{1})&\longmapsto \{y\}\{x\}P_{1}.\nonumber
 			\end{align}
-			
+
 			Primer veurem que~\(\cdot\) és una acció.
 			Per veure que~\(\cdot\) està ben definida prenem~\(\{x\}P_{1},\{x'\}P_{1}\in X\) tals que~\(\{x\}P_{1}=\{x'\}P_{1}\).
 			 Aleshores per a tot~\(y\in P_{2}\) tindrem~\(y\cdot\{x\}P_{1}=\{y\}\{x\}P_{1}\) i~\(y\cdot\{x'\}P_{1}=\{y\}\{x'\}P_{1}\), i com que per hipòtesi~\(\{x\}P_{1}=\{x'\}P_{1}\), ha de ser~\(\{y\}\{x\}P_{1}=\{y\}\{x'\}P_{1}\).
-			
+
 			Siguin~\(\ast\) l'operació de~\(G\) i~\(e\) l'element neutre de~\(G\).
 			Comprovem que~\(\cdot\) satisfà la definició d'\myref{def:acció d'un grup sobre un conjunt}.
 			Veiem que per a tot~\(y\in P_{2}\),~\(\{x\}P_{1}\in X\) es compleix que~\(y\cdot\{x\}P_{1}\in X\).
 			Per la definició \eqref{eq:thm:Segon Teorema de Sylow 1} tenim~\(y\cdot\{x\}P_{1}\in X=\{y\}\{x\}P_{1}=\{y\ast x\}P_{1}\), i com que per hipòtesi~\(G\) és un grup i~\(x,y\in G\), per la definició de \myref{def:grup} tenim que~\(y\ast x\in G\), i per tant~\(y\cdot\{x\}P_{1}\in X\).
-			
+
 			Tenim que
 			\begin{align*}
 			e\cdot \{x\}P_{1}&=\{e\}\{x\}P_{1}\\
@@ -1486,7 +1486,7 @@
 			&=\{y\}(\{y'\}P_{1})=y\cdot(y'\cdot P_{1}).\tag{Definició \eqref{eq:thm:Segon Teorema de Sylow 1}}
 			\end{align*}
 			i per la definició d'\myref{def:acció d'un grup sobre un conjunt} tenim que~\(X\) és un~\(G\)-conjunt.
-			
+
 			Definim el conjunt
 			\begin{equation}
 		\label{eq:thm:Segon Teorema de Sylow 2}
@@ -1516,7 +1516,7 @@
 			    X=\{T\subseteq G\mid T\text{ és un }p\text{-subgrup de Sylow de }G\}.
 			\]
 			Pel \myref{thm:Primer Teorema de Sylow} tenim que~\(X\) és no buit\footnote{Tindrem que~\(\abs{X}=n_{p}\).} i fixem~\(P\in X\).
-			
+
 			Definim
 			\begin{align}
 				\label{eq:thm:Tercer Teorema de Sylow 1}
@@ -1542,7 +1542,7 @@
 				&=g_{1}\cdot(g_{2}\cdot T)\tag{Definició \eqref{eq:thm:Tercer Teorema de Sylow 1}}
 			\end{align*}
 			i per tant, per la definició d'\myref{def:acció d'un grup sobre un conjunt}~\(X\) és un~\(P\)-conjunt amb l'acció~\(\cdot\).
-			
+
 			Definim el conjunt
 			\[
 			    X_{P}=\{T\in X\mid g\cdot T=T\text{ per a tot }g\in P\},
@@ -1557,7 +1557,7 @@
 			\[
 			    \abs{X}\equiv1\pmod{p}.
 			\]
-			
+
 			Per veure que~\(\abs{X}\) divideix l'ordre de~\(G\) prenem~\(P\in X\) i tenim, pel \myref{thm:Segon Teorema de Sylow} i la definició de \myref{def:òrbita d'un element d'un G-conjunt}, que
 			\[
 			    \mathcal{O}(P)=X,
@@ -1601,7 +1601,7 @@
 		\end{enumerate}
 		Aleshores direm que~\(R\) és un anell amb la suma~\(+\) i el producte~\(\cdot\).
 		També direm que~\(R\) és un anell amb element neutre pel producte~\(e\).
-		
+
 		Si per a tot~\(x,y\in R\) tenim~\(x\cdot y=y\cdot x\) direm que~\(R\) és un anell commutatiu.
 	\end{definition}
 	\begin{proposition}
@@ -1629,7 +1629,7 @@
 		\label{def:l'element neutre d'un anell pel producte}
 		Sigui~\(R\) un anell.
 		Aleshores direm que~\(0_{R}\) és l'element neutre de~\(R\) per la suma i~\(1_{R}\) és l'element neutre de~\(R\) pel producte i els denotarem per~\(0_{R}\) i~\(1_{R}\), respectivament.
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:unicitat neutre del grup} i la proposició \myref{prop:unicitat neutre del producte anell}.
 	\end{definition}
 	\begin{notation}
@@ -1638,7 +1638,7 @@
 		\[
 		    (x_{1}\cdot x_{2})\cdot x_{3}=x_{1}\cdot x_{2}\cdot x_{3}.
 		\]
-		
+
 		Això té sentit per la definició d'\myref{def:anell}.
 		També, si el context ho permet (quan treballem amb un únic anell~\(R\)), denotarem~\(1_{R}=1\) i~\(0_{R}=0\).
 	\end{notation}
@@ -1670,7 +1670,7 @@
 			    0\cdot a=0,
 			\]
 			com volíem veure.
-			
+
 			Veiem ara el punt \eqref{enum:prop:propietats bàsiques anells 2}.
 			Per la definició d'\myref{def:anell} tenim
 			\[
@@ -1678,7 +1678,7 @@
 			\]
 			i per tant, com que~\(1-1=-1+1=0\) per la definició de \myref{def:l'element neutre d'un anell per la suma}, tenim que~\(a+(-1)\cdot a=(-1)\cdot a+a=0\), però per la proposició \myref{prop:unicitat inversa en grups} tenim que~\((-1)\cdot a=-a\).
 			L'altre igualtat és anàloga.
-			
+
 			Continuem veient el punt \eqref{enum:prop:propietats bàsiques anells 3}.
 			Pel punt \eqref{enum:prop:propietats bàsiques anells 2} tenim que
 			\[
@@ -1688,7 +1688,7 @@
 			\[
 			    (-a)\cdot(-b)=a\cdot b.
 			\]
-			
+
 			Per veure el punt \eqref{enum:prop:propietats bàsiques anells 4} només veurem que~\((-a)\cdot b=-(a\cdot b)\) ja que l'altre demostració és anàloga.
 			Pel punt \eqref{enum:prop:propietats bàsiques anells 2} tenim que
 			\[
@@ -1746,7 +1746,7 @@
 		Siguin~\(R\) un anell amb el producte~\(\cdot\) i~\(x\) un element de~\(R\) tal que existeixi~\(x'\in R\) tals que
 		\[
 		    x\cdot x'=x'\cdot x=1.
-		\] 
+		\]
 		Aleshores direm que~\(x\) és invertible o que~\(x\) és un element invertible de~\(R\).
 	\end{definition}
 	\begin{definition}[L'invers d'un element]
@@ -1758,7 +1758,7 @@
 		    x\cdot x^{-1}=x^{-1}\cdot x=1.
 		\]
 		Direm que~\(x^{-1}\) és l'invers de~\(x\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:unicitat invers en anells}.
 	\end{definition}
 	\begin{definition}[Subanell]
@@ -1766,7 +1766,7 @@
 		\label{def:subanell}
 		Siguin~\(R\) un anell amb la suma~\(+\) i el producte~\(\cdot\) i~\(S\subseteq R\) un subconjunt amb~\(1\in S\) tal que per a tot~\(a,b\in S\) tenim~\(a\cdot b,a+b\in S\) i~\(S\) un anell amb la suma~\(+\) i el producte~\(\cdot\).
 		Aleshores direm que~\(S\) és un subanell de~\(R\)
-		
+
 		Ho denotarem amb~\(S\leq R\).
 	\end{definition}
 	\subsection{Ideals i ideals principals} % completar dividir lol
@@ -1797,7 +1797,7 @@
 			Hem de veure que per a tot~\(x,y\in I\),~\(r\in R\) tenim~\(x-y\in I\) i~\(r\cdot x\in I\).
 			Per la definició de \myref{def:grup} tenim que~\(x-y\in I\), ja que, per la definició d'\myref{def:ideal d'un anell} tenim que~\(I\) és un grup amb la suma~\(+\).
 			També trobem~\(r\cdot x\in I\) per la definició d'\myref{def:ideal d'un anell}.
-			
+
 			Veiem ara que la condició és necessària (\(\implicatper\)).
 			Suposem que per a tot~\(x,y\in I\),~\(r\in R\) tenim~\(x-y\in I\) i~\(r\cdot x\in I\).
 			Per la proposició \myref{prop:condició equivalent a subgrup} tenim que~\(I\) és un subgrup del grup~\(R\) amb la suma~\(+\), i per la definició d'\myref{def:ideal d'un anell} tenim que~\(I\) és un ideal de~\(R\).
@@ -1825,7 +1825,7 @@
 			&=(a_{1}-b_{1})+(a_{2}-b_{2})\tag{\myref{def:grup abelià}}
 			\end{align*}
 			i com que, per hipòtesi,~\(I,J\) són ideals de~\(R\) per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que~\(a_{1}-b_{1}\in I\) i~\(a_{2}-b_{2}\in J\), i per tant~\(a-b=(a_{1}-b_{1})+(a_{2}-b_{2})\in I+J\).
-			
+
 			Veiem ara que per a tot~\(r\in R\) es satisfà~\(r\cdot a\in I+J\).
 			Tenim
 			\begin{align*}
@@ -1834,13 +1834,13 @@
 			\end{align*}
 			i per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que~\(r\cdot a_{1}\in I\) i~\(r\cdot a_{2}\in J\), i per tant~\(r\cdot a=r\cdot a_{1}+r\cdot a_{2}\in I+J\).
 			Aleshores per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que~\(I+J\) és un ideal de l'anell~\(R\).
-			
+
 			Veiem ara el punt \eqref{enum:prop:combinació d'ideals per obtenir ideals 2}.
 			Per la proposició \myref{prop:condició equivalent a ideal d'un anell} només ens cal veure que per a tot~\(a,b\in I\cap J\),~\(r\in R\)  tenim~\(a-b\in I\cap J\) i~\(r\cdot a\in I\cap J\).
 			Prenem doncs~\(a,b\in I\cap J\), i per tant~\(a,b\in I\) i~\(a,b\in J\), i per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que~\(a-b\in I\) i~\(a-b\in J\), i tenim que~\(a-b\in I\cap J\).
-			
+
 			Per veure que~\(r\cdot a\in I\cap J\) per a tot~\(r\in R\) tenim per la definició d'\myref{def:ideal d'un anell} que~\(r\cdot a\in I\) i~\(r\cdot a\in J\), i per tant~\(r\cdot a\in I\cap J\) i per la proposició \myref{prop:condició equivalent a ideal d'un anell}~\(I\cap J\) és un ideal de~\(R\).
-			
+
 			Acabem veient el punt \eqref{enum:prop:combinació d'ideals per obtenir ideals 3}.
 			Per la proposició \myref{prop:condició equivalent a ideal d'un anell} només ens cal veure que per a tot~\(a,b\in IJ\),~\(r\in R\)  tenim~\(a-b\in IJ\) i~\(r\cdot a\in IJ\).
 			Prenem doncs~\(a,b\in IJ\), i tenim que~\(a=x_{1}\cdot y_{1}+\dots+x_{n}\cdot y_{n}\),~\(b=x'_{1}\cdot y'_{1}+\dots+x'_{m}\cdot y'_{m}\) per a certs~\(x_{1},\dots,x_{n},x'_{1},\dots,x'_{m}\in I\),~\(y_{1},\dots,y_{n},y'_{1},\dots,y'_{m}\in J\).
@@ -1850,7 +1850,7 @@
 			=x_{1}\cdot y_{1}+\dots+x_{n}\cdot y_{n}-x'_{1}\cdot y'_{1}-\dots-x'_{m}\cdot y'_{m}
 			\end{multline*}
 			i com que~\(I\) és, per hipòtesi, un anell, per les proposicions \myref{prop:propietats bàsiques anells} i \myref{prop:condició equivalent a ideal d'un anell} tenim que~\(-x'_{1},\dots,-x'_{m}\in I\) i~\(a-b=x_{1}\cdot y_{1}+\dots+x_{n}\cdot y_{n}-x'_{1}\cdot y'_{1}-\dots-x'_{m}\cdot y'_{m}\in IJ\).
-			
+
 			Veiem ara que per a tot~\(r\in R\) es satisfà~\(r\cdot a\in I\).
 			Això és
 			\begin{align*}
@@ -1886,7 +1886,7 @@
 			Comencem comprovant que la condició és suficient (\(\implica\)).
 			Suposem doncs que~\(\mathbb{K}\) és un cos amb la suma~\(+\) i el producte~\(\cdot\) i que~\(I\) és un ideal de~\(\mathbb{K}\) amb~\(I\neq(0)\), i per tant existeix~\(a\in\mathbb{K}\),~\(a\neq0\) tal que~\(a\in I\).
 			Com que, per hipòtesi,~\(\mathbb{K}\setminus\{0\}\) és un grup amb l'operació~\(\cdot\) i~\(a\ne0\) per la definició de \myref{def:l'invers d'un element d'un grup} existeix~\(a^{-1}\in\mathbb{K}\) tal que~\(a\cdot a^{-1}=1\), i per la definició d'\myref{def:ideal d'un anell} trobem que~\(1\in I\), i per tant per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que per a tot~\(x\in\mathbb{K}\) tenim~\(x\cdot1=x\in I\), i per tant~\(I=\mathbb{K}\).
-			
+
 			Veiem ara que la condició és necessària (\(\implicatper\)).
 			Suposem que els únics ideals de~\(\mathbb{K}\) són~\((0)\) i~\(\mathbb{K}\).
 			Prenem un element~\(a\in\mathbb{K}\),~\(a\neq0\) i considerem l'ideal principal~\((a)\), que per hipòtesi ha de ser~\((a)=(1)=\mathbb{K}\), i per la definició d'\myref{def:ideal principal} tenim que existeix~\(a'\in(1)\) tal que~\(a\cdot a'=1\), i per tant, per la definició de \myref{def:grup} tenim que~\(\mathbb{K}\setminus\{0\}\) és un grup amb el producte~\(\cdot\) i per la definició de \myref{def:cos per anells} tenim que~\(\mathbb{K}\) és un cos amb la suma~\(+\) i el producte~\(\cdot\).
@@ -1923,7 +1923,7 @@
 		Aleshores~\(R/I\) amb la suma~\([x]+[y]=[x+y]\) i el producte~\([x]\cdot[y]=[x\cdot y]\) és un anell.
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:relació d'equivalència en anells per ideals}.
-			
+
 			Per la proposició \myref{TODO:grup quocient} tenim que~\(R/I\) és un grup amb l'operació~\(+\), i com que
 			\begin{align*}
 				[x]+[y]&=[x+y]\\
@@ -1953,7 +1953,7 @@
 		\label{def:anell quocient}
 		Siguin~\(R\) un anell commutatiu amb~\(1\neq0\) i~\(I\) un ideal de~\(R\).
 		Aleshores direm que~\(R/I\) és un anell quocient.
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:anell quocient}.
 	\end{definition}
 \section{Tres Teoremes d'isomorfisme entre anells}
@@ -2033,7 +2033,7 @@
 		\end{enumerate}
 		\begin{proof}
 			Aquest enunciat té sentit per l'observació \myref{prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell}
-			
+
 			Siguin~\(+_{R}\) la suma de~\(R\),~\(\ast_{R}\) el producte de~\(R\),~\(+_{S}\) la suma de~\(S\) i~\(\ast_{S}\) el producte de~\(S\).
 			Comencem veient el punt \eqref{enum:prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell 1}.
 			Com que, per la proposició \myref{prop:propietats morfismes entre anells}, tenim que~\(f(0_{R})=0_{S}\) veiem, per la definició de \myref{def:nucli d'un morfisme entre anells}, que~\(\ker(f)\neq\emptyset\).
@@ -2041,7 +2041,7 @@
 			Observem que, per la definició de \myref{def:morfisme entre anells}, tenim que~\(f(r\ast_{R}a)=f(r)\ast_{S}f(a)\) per a tot~\(r\in R\), i per tant, com que per la definició de \myref{def:nucli d'un morfisme entre anells} es compleix~\(f(a)=0_{S}\) tenim que \[f(r\ast_{R}a)=f(r)\ast_{S}f(a)=f(r)\ast_{S}0_{S}=0_{S}\]
 			i per tant~\(r\ast_{R}a\in\ker(f)\) per a tot~\(r\in R\),~\(a\in\ker(f)\).
 			Ara bé per la definició d'\myref{def:ideal d'un anell} tenim que~\(\ker(f)\) és un ideal de~\(R\).
-			
+
 			Veiem ara el punt \eqref{enum:prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell 2}.
 			Veiem que per a tot~\(x,y\in\Ima(f)\) tenim~\(x\ast_{S}y\in\Ima(f)\).
 			Per la definició d'\myref{def:imatge d'un morfisme entre anells} tenim que existeixen~\(a,b\in R\) tals que~\(f(a)=x\) i~\(f(b)=y\).
@@ -2114,7 +2114,7 @@
 			Siguin~\(+_{R}\) la suma de~\(R\),~\(\ast_{R}\) el producte de~\(R\),~\(+_{S}\) la suma de~\(S\) i~\(\ast_{S}\) el producte de~\(S\).
 			Comencem veient que~\(\ker(f)\) és un ideal de~\(R\).
 			Per l'observació \myref{obs:morfisme entre anells és morfisme entre grups} tenim que~\(\ker(f)\) és un morfisme entre grups, i per la proposició \myref{prop:el nucli d'un morfisme és un subgrup normal del grup de sortda} tenim que~\(\ker(f)\) és un subgrup del grup~\(R\) amb la suma~\(+_{R}\).
-			
+
 			Prenem~\(x\in\ker(f)\) i~\(r\in R\).
 			Volem veure que~\(r\ast_{R}r\in\ker(f)\).
 			Tenim
@@ -2124,10 +2124,10 @@
 				&=0_{S}\tag{\myref{def:l'element neutre d'un anell pel producte}}
 			\end{align*}
 			i per la definició de \myref{def:nucli d'un morfisme entre anells} tenim que~\(r\ast_{R}x\in\ker(f)\), i per la proposició \myref{prop:condició equivalent a ideal d'un anell} tenim que~\(\ker(f)\) és un ideal de~\(R\).
-			
+
 			Veiem ara que~\(\Ima(f)\) és un subanell de~\(S\).
 			Per l'observació \myref{obs:morfisme entre anells és morfisme entre grups} tenim que~\(\Ima(f)\) és un morfisme entre grups, i per la proposició \myref{prop:la imatge d'un morfisme és un subgrup del grup d'arribada} tenim que~\(\Ima(f)\) és un subgrup del grup~\(S\) amb la suma~\(+_{S}\).
-			
+
 			Prenem~\(x,y\in\Ima(f)\).
 			Volem veure que~\(x\ast_{S}y\in\Ima(f)\).
 			Per la definició d'\myref{def:imatge d'un morfisme entre anells} tenim que existeixen~\(x',y'\in R\) tals que~\(f(x')=x\) i~\(f(y')=y\).
@@ -2137,7 +2137,7 @@
 			&=x\ast_{S}y
 			\end{align*}
 			i per la definició de \myref{def:imatge d'un morfisme entre grups} trobem que~\(x\ast_{S}y\in\Ima(f)\).
-			
+
 			També tenim, per la definició de \myref{def:morfisme entre anells}, que~\(1_{S}\in\Ima(f)\), ja que~\(f(1_{R})=1_{S}\), i per tant, per la definició de \myref{def:subanell}, tenim que~\(\Ima(f)\) és un subanell de~\(S\).
 		\end{proof}
 	\end{lemma}
@@ -2162,7 +2162,7 @@
 		    (I+J)/I\cong J/(I\cap J).
 		\]
 		\begin{proof}
-			%TODO 
+			%TODO
 		\end{proof}
 	\end{theorem}
 	\begin{lemma}
@@ -2207,7 +2207,7 @@
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:el nucli d'un morfisme entre anells és ideal, la imatge d'un morfisme entre anells és subanell}.
 			%Té sentit ja que~\(\mathbb{N}\) és un anell. %AFEGIR
-			
+
 			Sigui~\(\cdot\) el producte de~\(R\).
 			Comencem veient que~\(f\) és un morfisme entre anells.
 			Veiem que~\(f\) és un morfisme entre els grup.
@@ -2220,7 +2220,7 @@
 			i per la definició de \myref{def:morfisme entre grups} tenim que~\(f\) és un morfisme entre grups.
 			Veiem ara que~\(f(1)=1\).
 			Tenim que~\(f(1)=1\cdot1=1\) i per tant per la definició de \myref{def:morfisme entre anells} tenim que~\(f\) és un morfisme entre anells.
-			
+
 			Veiem ara que~\(\ker(f)=(\ch(n))\).
 			Per la definició de \myref{def:nucli d'un morfisme entre anells} tenim que~\(\ker(f)=\{x\in\mathbb{N}\mid f(n)=0\}\).	Per tant
 			\[
@@ -2244,9 +2244,9 @@
 	%			\item Si~\(\ch(\mathbb{K})=p\), el cos~\((\mathbb{K},+,\cdot)\) conté un subcòs isomorf a~\(\mathbb{Z}/(p)\).
 	%		\end{enumerate}
 	%		\begin{proof}
-	%			Comencem veient el punt 
+	%			Comencem veient el punt
 	%		\end{proof}
-	%	\end{corollary}	
+	%	\end{corollary}
 \section{Dominis}
 	\subsection{Dominis d'integritat, ideals primers i maximals}
 	\begin{definition}[Divisor de 0]
@@ -2279,7 +2279,7 @@
 			\[
 			    (x-y)\cdot a=0.
 			\]
-			
+
 			Ara bé, com que, per hipòtesi,~\(D\) és un domini d'integritat i~\(a\neq0\) tenim que ha de ser~\(x-y=0\), i per tant trobem~\(x=y\).
 		\end{proof}
 	\end{proposition}
@@ -2302,7 +2302,7 @@
 			Suposem doncs que~\(R/I\) és un domini d'integritat i prenem~\([a],[b]\in R/I\) tals que~\([a]\cdot[b]=[0]\).
 			Aleshores per la definició d'\myref{def:anell quocient} tenim que~\(a\cdot b\in I\).
 			Ara bé, com que per hipòtesi~\(R/I\) és un domini d'integritat tenim que ha de ser~\([a]=[0]\) ó~\([b]=[0]\), i per tant trobem que ha de ser~\(a\in I\) o~\(b\in I\), i per la definició d'\myref{def:ideal primer} trobem que~\(I\) és un ideal primer de~\(R\).
-			
+
 			Veiem ara que la condició és necessària (\(\implicatper\)).
 			Suposem doncs que~\(I\) és un ideal primer de~\(R\).
 			Per la proposició \myref{prop:anell quocient} tenim que~\(R/I\) és un anell commutatiu amb~\(1\neq0\).
@@ -2329,13 +2329,13 @@
 		\]
 		\begin{proof}
 			Aquest enunciat té sentit per la proposició \myref{prop:anell quocient}.
-			
+
 			Comencem veient la implicació cap a la dreta (\(\implica\)).
 			Suposem doncs que~\(R/M\) és un cos i prenem un ideal~\(I/M\) %REF lema teorema d'isomorfia anells per donar-li sentit
 			 de~\(R/M\).
 			 Aleshores ha de ser~\(M\subseteq I\subseteq R\).
 			 Per la proposició \myref{prop:condició equivalent a cos per anells} tenim que els únics ideals de~\(R/M\) són~\(([0])\) i~\(R/M\), i per tant ha de ser~\(I=M\) ó~\(I=R\), i per la definició d'\myref{def:ideal maximal} tenim que~\(M\) és un ideal maximal de~\(R\).
-			
+
 			Veiem ara la implicació cap a l'esquerra (\(\implicatper\)).
 			Suposem doncs que~\(M\) és un ideal maximal de l'anell~\(R\) i considerem, per la proposició \myref{prop:anell quocient}, l'anell~\(R/M\).
 			Per la proposició \myref{prop:condició equivalent a cos per anells} tenim que només hem de veure que els únics ideals de~\(R/M\) són~\((0)\) i~\(R\).
@@ -2366,7 +2366,7 @@
 			Sigui~\(b\in D\) tal que~\((a)\subseteq(b)\).
 			Aleshores tenim que~\(a\in(b)\), i per la definició d'\myref{def:ideal principal} tenim que~\(a=a'\cdot b\) per a cert~\(a'\in D\).
 			Aleshores, per la definició d'\myref{def:ideal primer}, tenim que~\(a'\in(a)\) ó~\(b\in(a)\).
-			
+
 			Suposem que~\(a'\in(a)\).
 			Aleshores tenim que~\(a'=a\cdot\beta\) per a cert~\(\beta\in D\), i per tant~\(a=a\cdot\beta\cdot b\), i per la proposició \myref{prop:podem tatxar pels costats en DI} tenim que~\(1=\beta\cdot b\), i per tant~\(1\in(b)\), d'on trobem~\((b)=R\).
 			Suposem ara que~\(b\in I\).
@@ -2414,7 +2414,7 @@
 		\label{def:element maximal d'una cadena}
 		Siguin~\(\mathcal{C}\) amb~\(\leq\) una cadena,~\(a\) un element de~\(\mathcal{C}\) i~\({B}\) un subconjunt de~\(\mathcal{C}\) tal que per a tot~\(b\in{B}\) es compleix~\(b\leq A\).
 		Aleshores direm que~\(a\) és una cota superior de~\({B}\).
-		
+
 		Si~\(a\leq b\) implica~\(b=a\) per a tot~\(b\in{B}\) direm que~\(a\) és maximal per~\({B}\).
 	\end{definition}
 	\begin{axiom}[Lema de Zorn]
@@ -2446,7 +2446,7 @@
 			Suposem que~\(J=R\).
 			Aleshores~\(1\in J\), i per tant~\(1\in I\) per a cert~\(I\in A\), però això no pot ser ja que si~\(I\in A\) s'ha de complir~\(I\neq A\), i per tant~\(1\notin I\).
 			Per tant~\(J\neq R\) i tenim que~\(J\in A\).
-			
+
 			Ara bé, pel \myref{lema de Zorn} tenim que existeix~\(M\in\mathcal{C}\) tal que per a tot~\(I\in\mathcal{C}\) tenim~\(I\subseteq M\) i per la definició d'\myref{def:ideal maximal} tenim que~\(M\) és un ideal maximal de~\(R\).
 		\end{proof}
 	\end{theorem}
@@ -2495,7 +2495,7 @@
 		\label{def:elements associats}
 		Siguin~\(R\) un anell commutatiu amb~\(1\neq0\) i~\(a,b\in R\) dos elements tals que existeix un element invertible~\(u\in R\) tal que~\(a=u\cdot b\).
 		Aleshores direm que~\(a\) i~\(b\) són associats i escriurem~\(a\sim b\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:associats és relació d'equivalència}.
 	\end{definition}
 	\begin{proposition}
@@ -2508,7 +2508,7 @@
 			Suposem que~\(d'\in X\).
 			Hem de veure que~\(d\sim d'\).
 			Tenim~\(d\divides d'\) i~\(d'\divides d\) i per la definició de \myref{def:divisor per anells} trobem que~\(d\sim d'\).
-			
+
 			Fem ara la implicació cap a l'esquerra (\(\implicatper\)).
 			Suposem que~\(d'\sim d\).
 			Hem de veure que~\(d'\in X\).
@@ -2530,7 +2530,7 @@
 		Aleshores direm que~\(d\) és el màxim comú divisor de~\(a\) i~\(b\).
 		Direm que~\(d\) és un màxim comú divisor de~\(a\) i~\(b\) o que~\(d\sim\mcd(a,b)\).
 		Entendrem que~\(\mcd(a,b)\) és un element de~\(D\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:màxim comú divisor anells}.
 	\end{definition}
 	\begin{proposition}
@@ -2544,7 +2544,7 @@
 			Hem de veure que~\(m\sim m'\).
 			Tenim~\(m'\divides m\) i~\(m\divides m'\) i per la definició de \myref{def:múltiple per anells} trobem que~\(m\sim m'\).
 			%REVISAR. Em feia mandra pensar i he copiat la de dalt :S
-			
+
 			Fem ara la implicació cap a l'esquerra (\(\implicatper\)).
 			Suposem que~\(m'\sim m\).
 			Hem de veure que~\(m'\in X\).
@@ -2567,7 +2567,7 @@
 		Aleshores direm que~\(m\) és el mínim comú múltiple de~\(a\) i~\(b\).
 		Direm que~\(m\) és un mínim comú múltiple de~\(a\) i~\(b\) o que~\(m\sim\mcm(a,b)\).
 		Entendrem que~\(\mcm(a,b)\) és un element de~\(D\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:mínim comú múltiple anells}.
 	\end{definition}
 	\begin{proposition}
@@ -2591,7 +2591,7 @@
 			\]
 			i per tant~\((a)+(b)=(\mcd(a,b))\) és un ideal principal de~\(R\).
 			%REFERENCIES
-			
+
 			Continuem veient el punt \eqref{enum:prop:combinació d'ideals principals per obtenir ideals principals 2}.
 			Per la proposició \myref{prop:combinació d'ideals per obtenir ideals} tenim que
 			\[
@@ -2603,7 +2603,7 @@
 			\]
 			i per tant~\((a)\cap(b)=(\mcm(a,b))\) és un ideal principal de~\(R\).
 			%REFERENCIES
-			
+
 			Acabem veient el punt \eqref{enum:prop:combinació d'ideals principals per obtenir ideals principals 3}.
 			Per la proposició \myref{prop:combinació d'ideals per obtenir ideals} tenim que
 			\[
@@ -2634,7 +2634,7 @@
 	%			\item Si~\(a\neq0\) i~\(b\neq0\), i existeix~\(c\in D\) tal que, si~\(m\sim\mcm(a,b)\), tenim~\(a\cdot b=m\cdot c\), aleshores~\(c\sim\mcd(a,b)\).
 	%		\end{enumerate}
 	%		\begin{proof}
-	%			Comencem veient el punt \eqref{enum:prop:propietats mcm mcd 1}. 
+	%			Comencem veient el punt \eqref{enum:prop:propietats mcm mcd 1}.
 	%		\end{proof}
 	%	\end{proposition}
 	\begin{definition}[Primer]
@@ -2662,10 +2662,10 @@
 			Suposem que~\(a\) i~\(b\) són dos elements de~\(D\) tals que~\(p=a\cdot b\).
 			Per la definició de \myref{def:primer en un anell} tenim que ha de ser~\(p\divides a\) ó~\(p\divides b\).
 			Si~\(p\divides a\) tenim que~\(a=\alpha\cdot p\) per a cert~\(\alpha\in D\).
-			
+
 			Ara bé, per hipòtesi, tenim que~\(p=a\cdot b\).
 			Per tant~\(a=\alpha\cdot a\cdot b\), i per la proposició \myref{prop:podem tatxar pels costats en DI} tenim que~\(1=\alpha\cdot b\), i per la definició d'\myref{def:element invertible pel producte d'un anell} tenim que~\(b\) és invertible i per la definició d'\myref{def:irreductible en un anell} tenim que~\(p\) és irreductible.
-			
+
 			El cas~\(p\divides b\) és anàleg.
 		\end{proof}
 	\end{proposition}
@@ -2708,7 +2708,7 @@
 			Suposem doncs que~\(D\) és un domini de factorització única.
 			El punt \eqref{enum:thm:condició equivalent per DI sii DFU 1} és conseqüència de la definició de \myref{def:domini de factorització única}.
 			Per tant només ens queda veure que tot element irreductible és primer.
-			
+
 			Siguin~\(p\) un element irreductible de~\(D\) i~\(a,b\) dos elements no invertibles no nuls de~\(D\) tals que~\(p\divides a\cdot b\).
 			Per la definició de \myref{def:DFU} tenim que existeixen~\(p_{1},\dots,p_{r},q_{1},\dots,q_{s}\) elements irreductibles de~\(D\) tals que
 			\[
@@ -2728,7 +2728,7 @@
 			    a\cdot b=p\cdot\alpha_{1}\cdot\ldots\cdot\alpha_{t}=p_{1}\cdot\ldots\cdot p_{r}\cdot q_{1}\cdot\ldots\cdot q_{s}
 			\]
 			i, de nou per la definició de \myref{def:DFU}, tenim que~\(p\sim p_{i}\) ó~\(p\sim q_{j}\) per a certs~\(i\in\{1,\dots,r\}\),~\(j\in\{1,\dots,s\}\), i per tant~\(p\divides a\) ó~\(p\divides b\), i per la definició de \myref{def:primer en un anell} tenim que~\(p\) és primer.
-			
+
 			Veiem ara que la condició és necessària (\(\implicatper\)).
 			Suposem doncs que
 			\begin{enumerate}
@@ -2743,7 +2743,7 @@
 			\[
 			    a=p_{1}\cdot\ldots\cdot p_{r}.
 			\]
-			
+
 			Suposem que existeixen també~\(q_{1},\dots,q_{s}\) elements irreductibles de~\(D\) tals que
 			\[
 			    a=q_{1},\dots,q_{s}.
@@ -2753,7 +2753,7 @@
 			    p_{1}\cdot\ldots\cdot p_{r}=q_{\sigma(1)}\cdot\ldots\cdot q_{\sigma(r)},
 			\]
 			amb~\(p_{i}\sim q_{\sigma(i)}\) per a tot~\(i\in\{1,\dots,r\}\).
-			
+
 			Tenim que~\(p_{1}\divides a\), i com que pel punt \eqref{enum:thm:condició equivalent per DI sii DFU 2} tenim que~\(p_{1}\) és primer, per la definició de \myref{def:primer en un anell} tenim que~\(p_{1}\divides q_{j}\) per a cert~\(j\in\{1,\dots,s\}\), i per la definició de \myref{def:irreductible en un anell} i la definició d'\myref{def:elements associats} tenim que~\(p_{1}\sim q_{j}\).
 			Sigui doncs~\(\sigma\in S_{s}\) tal que~\(p_{1}\divides q_{\sigma(1)}\).
 			Aleshores tenim
@@ -2781,7 +2781,7 @@
 		\]
 		\begin{proof}
 			Denotem~\(d=\prod_{i=1}^{r}p_{i}^{\min(\alpha_{i},\beta_{i})}\) i~\(m=\prod_{i=1}^{r}p_{i}^{\max(\alpha_{i},\beta_{i})}\).
-			
+
 			Prenem~\(c\) un element de~\(D\) tal que~\(c\divides a\) i~\(c\divides b\).
 			Aleshores tenim que
 			\[
@@ -2789,7 +2789,7 @@
 			\]
 			per a certs~\(\gamma_{i}\leq\min(\alpha_{i},\beta_{i})\) per a tot~\(i\in\{1,\dots,r\}\).
 			Ara bé, com que~\(\gamma_{i}\leq\min(\alpha_{i},\beta_{i})\) per a tot~\(i\in\{1,\dots,r\}\), i per tant~\(d\divides c\), i per la definició de \myref{def:màxim comú divisor anells} tenim que~\(d\sim\mcd(a,b)\).
-			
+
 			Prenem ara~\(c\) un element de~\(D\) tal que~\(a\divides c\) i~\(b\divides c\).
 			Aleshores tenim que
 			\[
@@ -2833,7 +2833,7 @@
 			    a_{1}=b_{1}\cdot c_{1}
 			\]
 			i ha de ser~\(b_{1}\in X\) o~\(c_{1}\in X\).
-			
+
 			Suposem que~\(b_{1}\in X\), la demostració de l'altre opció és anàloga.
 			Aleshores tenim, per l'observació \myref{obs:divisors són ideals continguts}, que~\((a)\subset(b)\).
 			Ara bé, també tindríem que~\(b_{1}=b_{2}\cdot c_{2}\) per a certs~\(b_{2},c_{2}\) elements no invertibles de~\(N\) amb~\(b_{2}\in X\) o~\(c_{2}\in X\), i podem iterar aquest argument per construir
@@ -2862,7 +2862,7 @@
 			Aleshores, per l'observació \myref{obs:divisors són ideals continguts} tenim que~\(b\divides a\), és a dir, existeix~\(r\in D\) tal que~\(a=b\cdot r\), i per la definició d'\myref{def:irreductible en un anell} tenim que~\(r\) ó~\(b\) són invertibles.
 			Ara bé, com que, per hipòtesi,~\((b)\neq D\) tenim que~\(b\) no és invertible, %REF
 			per tant ha de ser~\(r\) invertible per la definició d'\myref{def:element invertible pel producte d'un anell} tenim que~\(a\cdot r^{-1}=b\), per l'observació \myref{obs:divisors són ideals continguts} tenim que~\((a)=(b)\), i per la definició d'\myref{def:ideal maximal} tenim que~\((a)\) és un ideal maximal.
-			
+
 			Tenim que la condició és necessària (\(\implica\)) per la proposició \myref{prop:ideal primer en DI es maximal}.
 			%REVISAR
 		\end{proof}
@@ -2890,7 +2890,7 @@
 			\]
 			Aleshores tenim que~\(\mathcal{I}\) és un ideal.
 			També veiem que si~\(x\in\mathcal{I}\) existeix~\(n\) tal que~\(x\in I_{n}\), i per la definició d'\myref{def:ideal d'un anell} tenim que si~\(y\in D\) aleshores~\(x\cdot y\in I_{n}\).
-			
+
 			Ara bé, com que per hipòtesi~\(D\) és un domini d'ideals principals tenim, per la definició de \myref{def:DIP} que existeix~\(a\in D\) tal que~\(\mathcal{I}=(a)\), i per tant existeix~\(n\) tal que~\(a\in I_{n}\), i trobem que
 			\[
 			    \mathcal{I}=(a)\subseteq I_{n}\subseteq I_{n+k}\subseteq\mathcal{I}
@@ -2908,9 +2908,9 @@
 			\[
 			    a=p_{1}\cdot\ldots\cdot p_{n}.
 			\]
-			
+
 			També tenim, per la proposició \myref{prop:en DIP irreductible implica primer} que si~\(a\) és un element irreductible de~\(D\) aleshores~\(a\) és primer.
-			
+
 			Per acabar, pel Teorema \myref{thm:condició equivalent per DI sii DFU} tenim que~\(D\) és un domini de factorització única.
 		\end{proof}
 	\end{theorem}
@@ -2948,21 +2948,21 @@
 		\[
 		    U(u)=U(1)\sii u\text{ és un element invertible de }D.
 		\]
-		\begin{proof}			
+		\begin{proof}
 			Siguin~\(+\) la suma de~\(D\) i~\(\cdot\) el producte de~\(D\).
 			Comencem veient l'implicació cap a la dreta (\(\implica\)).
 			Suposem doncs que~\(u\) és un element invertible de~\(D\).
-			
+
 			Per la proposició \myref{prop:norma de 1 és la més petita en DE} tenim que~\(U(1)\leq U(u)\) i que~\(U(u)\leq U(u\cdot u^{-1})\).
 			Ara bé, per la definició de \myref{def:l'invers d'un element d'un anell} tenim que~\(u\cdot u^{-1}=1\), i per tant
 			\[
 			    U(1)\leq U(u)\leq U(u\cdot u^{-1})=U(1),
 			\]
 			i trobem~\(U(u)=U(1)\).
-			
+
 			Veiem ara l'implicació cap a l'esquerra (\(\implicatper\)).
 			Suposem que~\(U(u)=U(1)\).
-			
+
 			Per la definició de \myref{def:DE} tenim que existeixen~\(Q\) i~\(r\) elements de~\(D\) tals que
 			\[
 			    1=Q\cdot u+r
@@ -2983,7 +2983,7 @@
 			Siguin~\(+\) la suma de~\(D\),~\(\cdot\) el producte de~\(D\),~\(U\) una norma de~\(D\) i~\(I\) un ideal de~\(D\).
 			Si~\(I=\{0\}\) aleshores~\(I=(0)\).
 			Suposem doncs que~\(I\neq(0)\) i prenem~\(b\in I\) tal que~\(U(b)\leq U(x)\) per a tot~\(x\in I\),~\(x\neq0\).
-			
+
 			Prenem ara~\(a\in I\).
 			Per la definició de \myref{def:DE} tenim que existeixen~\(Q,r\in D\) tals que
 			\[
@@ -3017,7 +3017,7 @@
 	\subsection{Cos de fraccions d'un domini d'integritat}
 	\begin{proposition}
 		\label{prop:relació d'equivalència cos de fraccions}
-		Siguin~\(D\) un domini d'integritat amb el producte~\(\cdot\) i~\(\sim\) definida a~\(D\times D\setminus\{0\}\) una relació binària tal que per a tot~\(a,c\in D\),~\(b,d\in D\setminus\{0\}\) 
+		Siguin~\(D\) un domini d'integritat amb el producte~\(\cdot\) i~\(\sim\) definida a~\(D\times D\setminus\{0\}\) una relació binària tal que per a tot~\(a,c\in D\),~\(b,d\in D\setminus\{0\}\)
 		\[
 		    (a,b)\sim(c,d)\sii a\cdot d=b\cdot c.
 		\]
@@ -3095,7 +3095,7 @@
 		    R[x]=\{a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}\mid n\in\mathbb{N},a_{0},\dots,a_{n}\in R\}.
 		\]
 		Aleshores direm que l'anell~\(R[x]\) és l'anell de polinomis de~\(R\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:l'anell de polinomis és un anell}.
 	\end{definition}
 	\begin{observation}
@@ -3119,7 +3119,7 @@
 		\]
 		com el contingut de~\(f\).
 		%Veure que en DFU el mcd existeix (última pagina lila) i associativitat mcd (crec que ja ho tinc fet).
-		
+
 		Interpretarem~\(\cont(f(x))\) com un element de~\(D\).
 	\end{definition}
 	\begin{definition}[Polinomi primitiu]
@@ -3281,7 +3281,7 @@
 		\labelname{element primitiu d'un cos finit}\label{def:element primitiu d'un cos finit}
 		Sigui~\(\mathbb{K}\) un cos finit i~\(\beta\) un element de~\(\mathbb{K}\) tal que~\(\langle\{\beta\}\rangle=\mathbb{K}\setminus\{0\}\).
 		Aleshores direm que~\(\beta\) és un element primitiu de~\(\mathbb{K}\).
-		
+
 		Aquesta definició té sentit pel \myref{thm:teorema de l'element primitiu}.
 	\end{definition}
 	\begin{theorem}
@@ -3313,7 +3313,7 @@
 		Siguin~\(\mathbb{K}\) un cos amb la suma~\(+\) i el producte~\(\cdot\),~\(f(x)\) un polinomi de~\(\mathbb{K}\) i~\(\mathbb{L}\) el mínim cos on~\(f(x)\) descompon amb~\(f(x)=(x-\alpha_{1})\cdot\ldots\cdot(x-\alpha_{n})\), amb~\(\alpha_{1},\dots,\alpha_{n}\in\mathbb{L}\).
 		Aleshores direm que~\(\mathbb{L}\) és el cos descomposició de~\(f(x)\).
 		Denotarem~\(\mathbb{L}=\mathbb{K}(f(x))\).
-		
+
 		Aquesta definició té sentit pel \myref{thm:Teorema de Kronecker}.
 	\end{definition}
 	\begin{definition}[Derivada formal]
@@ -3357,7 +3357,7 @@
 	\end{proposition}
 	\begin{definition}[Arrels múltiples]
 		\labelname{arrel múltiple}\label{def:arrel múltiple}
-		Siguin~\(\mathbb{K}\) un cos amb la suma~\(+\) i el producte~\(\cdot\) i~\(f(x)\) un polinomi de~\(\mathbb{K}[x]\),~\(\alpha\) una arrel de~\(f(x)\) i~\(g(x)\) un polinomi de~\(\mathbb{K}(f(x))\) tal que 
+		Siguin~\(\mathbb{K}\) un cos amb la suma~\(+\) i el producte~\(\cdot\) i~\(f(x)\) un polinomi de~\(\mathbb{K}[x]\),~\(\alpha\) una arrel de~\(f(x)\) i~\(g(x)\) un polinomi de~\(\mathbb{K}(f(x))\) tal que
 		\[
 		    f(x)=(x-\alpha)^{m}\cdot g(x)
 		\]
@@ -3470,7 +3470,7 @@
 	\end{theorem}
 	\printbibliography
 	El capítol de teoria de grups està molt ben explicat en \cite{NumerosGruposyAnillos}, i la teoria de cossos finits està complementada amb \cite{AntoineRosaCampsMoncasiIntroduccioAlgebraAbstracta} sobre la teoria de classe.
-	
+
 	La bibliografia del curs inclou els textos \cite{NumerosGruposyAnillos, AntoineRosaCampsMoncasiIntroduccioAlgebraAbstracta, CedoAlgebraBasica, CohnBasicAlgebra, FelixConcepcionSebastianIntroduccionAlAlgebra, FraleighFirstCourseAbstractAlgebra, HungerfordAlgebra}.
 \end{document}
 

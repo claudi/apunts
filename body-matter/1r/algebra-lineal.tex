@@ -24,10 +24,10 @@
 		a_{m,1} & a_{m,2} & \cdots & a_{m,n}
 		\end{matrix}\right]\]
 		és una matriu de mida~\(m\times n\) sobre~\(\mathbb{K}\).
-		
+
 		Direm que~\(a_{i,j}\) és el component~\((i,j)\) de la matriu~\([a_{i,j}]\).
 		Si~\(A=[a_{i,j}]\) també denotarem~\([A]_{i,j}=a_{i,j}\).
-		
+
 		Si~\(n=m\) direm que~\((a_{i,j})\) és una matriu quadrada d'ordre~\(n\).
 	\end{definition}
 	\begin{notation}[Conjunt de matrius]
@@ -38,7 +38,7 @@
 		\]
 		un conjunt.
 		Aleshores denotarem~\(X=\matrius_{m\times n}(\mathbb{K})\).
-		
+
 		Si~\(n=m\) denotarem~\(X=\matrius_{n}(\mathbb{K})\).
 	\end{notation}
 	%Veure que estàn ben definides %TODO %FER
@@ -58,7 +58,7 @@
 		\[
 		    [A\cdot B]_{i,j}=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.
 		\]
-		
+
 		Escriurem~\(A\cdot B=AB\).
 	\end{definition}
 	\subsection{Propietats de les operacions amb matrius}
@@ -132,7 +132,7 @@
 		\[
 		    [\alpha A]_{i,j}=\alpha[A]_{i,j}.
 		\]
-		
+
 		Denotarem~\((-1)A\) com~\(-A\).
 	\end{definition}
 	\begin{proposition}
@@ -245,7 +245,7 @@
 			&=[AB]_{i,j}+[A'B]_{i,j}\\
 			&=[AB+AB']_{i,j}.\tag{\myref{def:suma de matrius}}
 			\end{align*}
-			
+
 			L'altre demostració és anàloga.
 %			i també tenim que
 %			\begin{align*}
@@ -295,7 +295,7 @@
 			    \sum_{k=1}^{m}[I_{m}]_{i,k}[A]_{k,j}=[A]_{i,j}
 			\]
 			i per tant~\(I_{m}A=A\).
-			
+
 			La demostració de l'altre igualtat és anàloga.
 		\end{proof}
 	\end{proposition}
@@ -323,7 +323,7 @@
 		\]
 		Aleshores direm que~\(A\) és una matriu invertible i que~\(A'\) és la inversa de~\(A\).
 		També denotarem~\(A'=A^{-1}\).
-		
+
 		Observem que aquesta definició té sentit per la proposició \myref{prop:unicitat inverses de matrius pel producte}.
 	\end{definition}
 	\begin{observation}
@@ -354,7 +354,7 @@
 		\[
 		    (AB)^{-1}=B^{-1}A^{-1}.
 		\]
-		
+
 		Aquest enunciat té sentit per la proposició \myref{prop:el producte de matrius invertibles és invertible}.
 		\begin{proof}
 			Per la definició de \myref{def:matriu invertible} tenim que
@@ -523,13 +523,13 @@
 			\[
 			    [AB]_{i,j}=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.
 			\]
-			
+
 			També tenim que~\(i=m_{1}+\dots+m_{k_{i}}+i'\) i~\(j=n_{1}+\dots+n_{k_{j}}+j'\) per a certs~\(k_{i}\in\{1,\dots,p-1\}\),~\(k_{j}\in\{1,\dots,r-1\}\),~\(i'\leq m_{k_{i}+1}-m_{k_{i}}\) i~\(j'\leq n_{k_{j}+1}-n_{k_{j}}\).
 			Per tant hem de veure que
 			\[
 			    \sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}=\left[\sum_{k=1}^{q}A_{m_{k_{i}},k}B_{k,n_{k_{j}}}\right]_{i',j'}.
 			\]
-			
+
 			Per la definició de \myref{def:suma de matrius} tenim que
 			\[
 			    \left[\sum_{k=1}^{q}A_{m_{k_{i}},k}B_{k,n_{k_{j}}}\right]_{i',j'}=\sum_{k=1}^{q}[A_{m_{k_{i}},k}B_{k,n_{k_{j}}}]_{i',j'},
@@ -538,7 +538,7 @@
 			\[
 			    \sum_{k=1}^{q}[A_{m_{k_{i}},k}B_{k,n_{k_{j}}}]_{i',j'}=\sum_{k=1}^{q}\left(\sum_{h=1}^{l_{k}}[A_{m_{k_{i}},k}]_{i',h}[B_{k,n_{k_{j}}}]_{h,j'}\right).
 			\]
-			
+
 			Ara bé, com que per hipòtesi tenim que
 			\[A=\left[\begin{matrix}
 			A_{1,1} & \cdots & A_{1,q} \\
@@ -635,7 +635,7 @@
 		Sigui~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
 		Aleshores per a tota successió de transformacions elementals per files~\(f\) existeix una matriu~\(P\) d'ordre~\(m\) sobre~\(\mathbb{K}\) tal que~\(f(A)=PA\) i per a tota successió de transformacions elementals per columnes~\(g\) existeix una matriu~\(Q\) d'ordre~\(n\) sobre~\(\mathbb{K}\) tal que~\(g(A)=AQ\).
 %		Siguin~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\),~\(f\) una transformació elemental per files i~\(g\) una transformació elemental per columnes.
-%		
+%
 %		Aleshores existeix una matriu~\(P\) d'ordre~\(m\) sobre~\(\mathbb{K}\) tal que~\(f(A)=PA\) i existeix una matriu~\(Q\) d'ordre~\(n\) sobre~\(\mathbb{K}\) tal que~\(g(A)=AQ\).
 		\begin{proof}
 			En tenim prou amb veure que~\(P_{i,j}(A)=P_{i,j}(I_{m})A\),~\(D_{i,\lambda}(A)=D_{i,\lambda}(I_{m})A\) i~\(E_{i,j,\lambda}(A)=E_{i,j,\lambda}(I_{m})A\) i que~\(P_{i,j}(A^{t})^{t}=AP_{i,j}(I_{n})\),~\(D_{i,\lambda}(A^{t})^{t}=AD_{i,\lambda}(I_{n})\) i~\(E_{i,j,\lambda}(A^{t})^{t}=AE_{i,j,\lambda}(I_{n})\), i això és conseqüència de la definició de \myref{def:producte de matrius}.
@@ -645,7 +645,7 @@
 		\labelname{matriu elemental}\label{def:matriu elemental}
 		Sigui~\(P\) una matriu d'ordre~\(n\) sobre un cos~\(\mathbb{K}\) tal que existeixi una sèrie de transformacions elementals tals que per a tota matriu~\(A\) de mida~\(m\times n\) sobre~\(\mathbb{K}\) tenim~\(f(A)=PA\).
 		Aleshores direm que~\(P\) és una matriu elemental.
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:transformacions elementals i matrius elementals}.
 	\end{definition}
 	\begin{observation}
@@ -655,9 +655,9 @@
 	\end{observation}
 	\begin{notation}
 		Denotarem les transformacions elementals per files~\(P_{i,j}\) com~\(F_{i}\leftrightarrow F_{j}\),~\(D_{i,\lambda}\) com~\(F_{i}\rightarrow\lambda F_{i}\) i~\(E_{i,j,\lambda}\) com~\(F_{i}\rightarrow F_{i}+\lambda F_{j}\).
-		
+
 		Aprofitant la proposició \myref{prop:transformacions elementals i matrius elementals} també denotarem una successió de transformacions elementals com una matriu quadrada.
-		
+
 		Si apliquem una transformació elemental per files a una matriu transposada i transposem el resultat denotarem~\(P_{i,j}\) com~\(C_{i}\leftrightarrow C_{j}\),~\(D_{i,\lambda}\) com~\(C_{i}\rightarrow\lambda C_{i}\) i~\(E_{i,j,\lambda}\) com~\(C_{i}\rightarrow C_{i}+\lambda C_{j}\) i direm que són transformacions elementals per columnes.
 	\end{notation}
 	\begin{proposition}
@@ -673,9 +673,9 @@
 	\begin{definition}[Matriu esglaonada]
 		\labelname{matriu esglaonada}\label{def:matriu esglaonada}
 		Sigui~\(A=(a_{i,j})\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\) tal que existeixen~\(j_{1}<\dots<j_{r}\) nombres naturals tals que per a tot~\(i\in\{1,\dots,r\}\) i per a tot~\(j<j_{i}\) tenim~\(a_{i,j}=0\) i~\(a_{i,j_{i}}=1\); i per a tot~\(i>j_{r}\) i~\(j\in\{1,\dots,n\}\) tenim~\(a_{i,j}=0\).
-		
+
 		Aleshores direm que~\(A\) està esglaonada per files i que~\(A^{t}\) està esglaonada per columnes.
-		
+
 		Direm que una matriu~\(A\) es pot esglaonar per files si existeix una successió~\(P\) de transformacions elementals per files tals que~\(PA\) està esglaonada per files.
 	\end{definition}
 	\begin{proposition}
@@ -685,7 +685,7 @@
 		\begin{proof} %REFER a partir de l'hipotesi d'inducció
 			Denotem~\(A=(a_{i,j})\).
 			Ho farem per inducció sobre~\(n\).
-			
+
 			Suposem que~\(n=1\).
 			Si~\(a_{i,1}=0\) per a tot~\(i\in\{1,\dots,m\}\) per la definició de \myref{def:matriu esglaonada} hem acabat.
 			Suposem doncs que existeix un~\(i\in\{1,\dots,m\}\) tal que~\(a_{i,1}\neq0\).
@@ -721,7 +721,7 @@
 			0
 			\end{matrix}\right]\]
 			i per la definició de \myref{def:matriu esglaonada} hem acabat.
-			
+
 			Suposem doncs que la hipòtesi és certa per a~\(n\).
 			Veiem que també ho és per~\(n+1\).
 			Sigui~\(A=(a_{i,j})\) una matriu de mida~\(m\times(n+1)\) sobre~\(\mathbb{K}\).
@@ -744,7 +744,7 @@
 			\[A=\left[\begin{array}{c|c}
 			a_{1,1} & \\
 			\vdots & A' \\
-			a_{1,m} & 
+			a_{1,m} &
 			\end{array}\right],\]
 			i pel \myref{thm:principi d'inducció} hem acabat.
 		\end{proof}
@@ -767,7 +767,7 @@
 			Denotem~\(A=(a_{i,j})\).
 			Si~\(a_{i,j}=0\) per a tot~\(i\in\{1,\dots,m\}\) i~\(j\in\{1,\dots,n\}\) aleshores tenim~\(r=0\) i hem acabat.
 			Suposem doncs que existeixen~\(i\in\{1,\dots,m\}\) i~\(j\in\{1,\dots,n\}\) tals que~\(a_{i,j}\neq0\).
-			
+
 			Per la proposició \myref{prop:es pot esglaonar qualsevol matriu per files} tenim que existeix una matriu elemental~\(P\) d'ordre~\(m\) sobre~\(\mathbb{K}\) tal que~\(PA\) està esglaonada per files.
 			Per la definició de \myref{def:matriu esglaonada} tenim que existeixen~\(j_{i}\) per a tot~\(i\in\{1,\dots,r\}\) amb~\(j_{1}<\dots<j_{r}\) tals que per a tot~\(j<j_{i}\) tenim~\(a_{i,j}=0\) i~\(a_{i,j_{i}}=1\).
 			Fent les transformacions elementals
@@ -798,7 +798,7 @@
 			\end{array}\right],\]
 			i per la definició de \myref{prop:transformacions elementals i matrius elementals} tenim que les matrius~\(P\) i~\(Q\) són matrius elementals.
 			%FER %TODO ?
-			
+
 			Veiem ara que~\(r\) és únic.
 			Suposem que existeixen un nombre natural~\(s\leq\min(m,n)\), una matriu elemental~\(P_{1}\) d'ordre~\(m\) sobre~\(\mathbb{K}\) i una matriu elemental~\(Q_{1}\) d'ordre~\(n\) sobre~\(\mathbb{K}\) tals que
 			\[P_{1}AQ_{1}=\left[\begin{array}{c|c}
@@ -807,7 +807,7 @@
 			\end{array}\right].\]
 			Hem de veure que~\(r=s\).
 			Suposem que~\(r\leq s\).
-			
+
 			Tenim que
 			\[PAQ=\left[\begin{array}{c|c}
 			I_{r} & 0\\\hline
@@ -835,7 +835,7 @@
 			I_{s} & 0\\\hline
 			0 & 0
 			\end{array}\right]Q_{1}^{-1}Q.\]
-			
+
 			Denotem~\(P_{2}=P_{1}P^{-1}\),~\(Q_{2}=Q_{1}^{-1}Q\),~\(P_{2}=(p_{i,j})\) i~\(Q_{2}=(q_{i,j})\) i tenim
 			\begin{multline*}
 			\left[\begin{array}{ccc|ccc}
@@ -900,20 +900,20 @@
 			\vdots & & \vdots & \vdots & & \vdots \\
 			q_{n,1} & \cdots & q_{n,r} & q_{n,r+1} & \cdots & q_{n,n}
 			\end{array}\right].\]
-			
+
 			Denotem per tant
 			\[Q_{2}=\left[\begin{array}{c|c}
 			Q'_{2} & 0_{s\times(n-r)} \\\hline
 			Q''_{2} & Q'''_{2}
 			\end{array}\right].\]
-			
+
 			Ara bé, pel que hem vist abans, existeixen un nombre natural~\(t\leq\min(r,s)\), una matriu invertible~\(P_{3}\) d'ordre~\(s\) sobre~\(\mathbb{K}\) i una matriu invertible~\(Q_{3}\) d'ordre~\(r\) sobre~\(\mathbb{K}\) tals que
 			\[P_{3}Q''_{2}Q_{3}=\left[\begin{array}{c|c}
 			I_{t} & 0 \\\hline
 			0 & 0
 			\end{array}\right],\]
 			i com que, per hipòtesi,~\(r\leq s\) tenim~\(t\leq r\leq s\).
-			
+
 			Per tant per la proposició \myref{prop:producte de matrius en blocs} tenim que
 			\begin{multline*}
 			\left[\begin{array}{c|c}
@@ -950,7 +950,7 @@
 		0 & 0
 		\end{array}\right].\]
 		Aleshores direm que~\(r\) és el rang de~\(A\) i denotarem~\(\rang(A)=r\).
-		
+
 		Observem que aquesta definició té sentit pel \myref{thm:Teorema de la PAQ-reducció}.
 	\end{definition}
 	\begin{proposition}
@@ -963,7 +963,7 @@
 			I_{r} & 0 \\\hline
 			0 & 0
 			\end{array}\right].\]
-			
+
 			Ara bé, per la proposició \myref{prop:producte de matrius transposades} tenim que
 			\[Q^{t}A^{t}P^{t}=\left[\begin{array}{c|c}
 			I_{r} & 0 \\\hline
@@ -982,7 +982,7 @@
 			I_{r} & 0\\\hline
 			0 & 0
 			\end{array}\right].\]
-			
+
 			Ara bé, per la proposició \myref{prop:el producte de matrius invertibles és invertible} tenim que la matriu
 			\[\left[\begin{array}{c|c}
 			I_{r} & 0\\\hline
@@ -1020,7 +1020,7 @@
 %		\end{cases}
 %		\end{equation}
 %		és un sistema d'equacions lineals sobre~\(\mathbb{K}\). Direm que~\(x_{1},\dots,x_{n}\) són les incògnites.
-%		
+%
 %		Si existeixen~\(a_{1},\dots,a_{n}\) elements de~\(\mathbb{K}\) tals que
 %		\[\begin{cases}
 %		a_{1,1}a_{1}+\dots+a_{1,n}a_{n}=b_{1} \\
@@ -1028,9 +1028,9 @@
 %		a_{m,1}a_{1}+\dots+a_{m,n}a_{n}=b_{m}
 %		\end{cases}\]
 %		aleshores direm que~\((a_{1},\dots,a_{n})\in\mathbb{K}^{n}\) és una solució del sistema \eqref{eq:def:sistema d'equacions lineals: 1}.
-%		
+%
 %		Direm que el sistema \eqref{eq:def:sistema d'equacions lineals: 1} és compatible si existeix alguna solució, i direm que o bé és compatible determinat si aquesta solució és única o bé compatible indeterminat si la solució no és única.
-%		
+%
 %		Direm que dos sistemes d'equacions lineals són equivalents si tenen les mateixes solucions.
 %	\end{definition}
 %	\begin{notation}
@@ -1062,7 +1062,7 @@
 %		\begin{proof} %Potser coses de cossos? Lo veo patatero
 %			Considerem el sistema d'equacions lineals
 %			\[PAx=Pb.\]
-%			
+%
 %			Com que, per hipòtesi, la matriu~\(P\) és invertible, per la definició de \myref{def:matriu invertible}, tenim que existeix una matriu~\(P^{-1}\) tal que~\(P^{-1}P=I_{n}\). Per tant tenim que
 %			\[P^{-1}PAx=P^{-1}Pb\]
 %			i trobem
@@ -1075,7 +1075,7 @@
 %		\[\rang(A\vert b)=\rang(A).\]
 %		A demés, Si~\(\rang(A)=n\) el sistema és compatible determinat i si~\(\rang(A)<n\) el sistema és compatible indeterminat.
 %		\begin{proof}
-%			
+%
 %		\end{proof}
 %	\end{theorem}
 \section{Determinant d'una matriu}
@@ -1089,7 +1089,7 @@
 			\det(C_{1},\dots,C_{i-1},C_{i}+C'_{i},C_{i+1},\dots,C_{n})=\\
 			=\det(C_{1},\dots,C_{n})+\det(C_{1},\dots,C_{i-1},C'_{i},C_{i+1},\dots,C_{n}).
 			\end{multline*}
-			\item Per a tot~\(\alpha\in\mathbb{K}\) es satisfà 
+			\item Per a tot~\(\alpha\in\mathbb{K}\) es satisfà
 			\[
 			    \det(C_{1},\dots,C_{i-1},\alpha C_{i},C_{i+1},\dots,C_{n})=\alpha\det(C_{1},\dots,C_{n})
 			\]
@@ -1102,14 +1102,14 @@
 		Aleshores direm que~\(\det\) és un determinant.
 	\end{definition}
 	\begin{proposition}
-		
+
 	\end{proposition}
 	% https://es.wikipedia.org/wiki/F%C3%B3rmula_de_Leibniz_para_el_c%C3%A1lculo_de_determinantes
 %\chapter{Espais vectorials i aplicacions lineals}
 %\section{Espais vectorials}
-%	
+%
 %\section{Aplicacions lineals}
-%	
+%
 %\chapter{Classificació d'endomorfismes}
 %\section{Endomorfismes similars}
 %\section{Diagonalització}
