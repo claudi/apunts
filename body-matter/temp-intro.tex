@@ -6,11 +6,11 @@
 	Podeu trobar la versió actualitzada d'aquest pdf seguint aquest \href{https://claudilleyda.github.io}{link}.
 	%	\subsection{Ignorar}
 	%	\begin{enumerate}
-	%		\item Definir \(\mathbb{R}^{+}\). (fot mandra)
+	%		\item Definir~\(\mathbb{R}^{+}\). (fot mandra)
 	%		\item Adjuntar documents: llegir i aplicar punt \textsl{1.8 Big Projects} de lshort.pdf.
 	%		\item Afegir més notes explicant la vida quan acabi. %sarcasm anyone?
-	%		\item Definir \(\omicron(\vec{h})\) (que tendeix a \(\vec{0}\)).
-	%		\item Definir imatge d'un conjunt per una funció (\(\Ima_{f}(U)\), \(f[U]\)...).
+	%		\item Definir~\(\omicron(\vec{h})\) (que tendeix a~\(\vec{0}\)).
+	%		\item Definir imatge d'un conjunt per una funció (\(\Ima_{f}(U)\),~\(f[U]\)...).
 	%		\item Definit obert, tancat, compacte...
 	%		\item Relacions d'equivalència.
 	%	\end{enumerate}
@@ -22,7 +22,7 @@
 	\end{definition}
 	\begin{definition}[Forma bilineal definida estrictament positiva o negativa]
 		\labelname{forma bilineal definida estrictament positiva o negativa}\label{def:bilineal definida estrictament positiva/negativa}
-		Sigui \(M\) una forma bilineal simètrica.
+		Sigui~\(M\) una forma bilineal simètrica.
 		Preguntar a en Cedò.
 	\end{definition}
 	\begin{definition}[Norma d'una aplicació lineal]
@@ -43,69 +43,69 @@
 	\subsection{Proposicions}
 	\begin{proposition}
 		\label{prop:determinant diferent de zero linealment independents}
-		Vectors linealment independents \(\sii\) determinant no nul.
+		Vectors linealment independents~\(\sii\) determinant no nul.
 	\end{proposition}
 	\subsection{Teoremes}
 	\begin{theorem}
-		Sigui \(A=(a_{i,j})\in M_{n}(\mathbb{R})\) una matriu simètrica.
-		Aleshores \(A\) és definida positiva si i només si
+		Sigui~\(A=(a_{i,j})\in M_{n}(\mathbb{R})\) una matriu simètrica.
+		Aleshores~\(A\) és definida positiva si i només si
 		\[\abs{\begin{matrix}
 		a_{1,1}&\cdots&a_{1,i}\\
 		\vdots&&\vdots\\
 		a_{i,1}&\cdots&a_{i,i}\\
 		\end{matrix}}>0\]
-		per a tot \(i\in\{1,\dots,n\}\).
+		per a tot~\(i\in\{1,\dots,n\}\).
 		\begin{proof}
-			Per inducció sobre \(n\).
+			Per inducció sobre~\(n\).
 		\end{proof}
 	\end{theorem}
 \section{Funcions de variable real}
 	\subsection{Definicions}
 	\begin{definition}[Imatge]
 		\labelname{imatge d'una aplicació}\label{def:imatge d'una aplicació}
-		Siguin \(X\) i \(Y\) dos conjunts, \(A\) un subconjunt de \(X\) i \(f\colon X\longrightarrow Y\) una aplicació.
+		Siguin~\(X\) i~\(Y\) dos conjunts,~\(A\) un subconjunt de~\(X\) i~\(f\colon X\longrightarrow Y\) una aplicació.
 		Aleshores definim
 		\[\Ima_{A}(f)=\{f(a)\in Y\mid a\in A\}\]
-		com la imatge de \(f\) per \(A\).
+		com la imatge de~\(f\) per~\(A\).
 	\end{definition}
 	\begin{definition}[Antiimatge]
 		\labelname{antiimatge d'una aplicació}\label{def:antiimatge d'una aplicació}
-		Siguin \(X\) i \(Y\) dos conjunts, \(B\) un subconjunt de \(Y\) i \(f\colon X\longrightarrow Y\) una aplicació.
+		Siguin~\(X\) i~\(Y\) dos conjunts,~\(B\) un subconjunt de~\(Y\) i~\(f\colon X\longrightarrow Y\) una aplicació.
 		Aleshores definim
 		\[\Antiima_{B}(f)=\{x\in X\mid f(x)=b\text{ per a cert }b\in B\}\]
-		com la antiimatge de \(f\) per \(B\).
+		com la antiimatge de~\(f\) per~\(B\).
 	\end{definition}
 	\begin{definition}[Límit]
 		\labelname{límit}\label{def:límit}\
 	\end{definition}
 	\begin{definition}[Funció contínua]
 		\labelname{funció contínua}\label{def:funcio continua}\label{def:funció contínua}
-		Sigui \(f\) una funció.
-		Direm que \(f\) és contínua en \(a\) si
+		Sigui~\(f\) una funció.
+		Direm que~\(f\) és contínua en~\(a\) si
 		\[\lim_{x\to a}f(x)=f(a).\]
 	\end{definition}
 	\begin{definition}[Partició, poligonal i longitud d'una poligonal]
 		\labelname{partició}\label{def:partició}
 		\labelname{poligonal}\label{def:poligonal}
 		\labelname{longitud d'una poligonal}\label{def:longitud de poligonal}
-		Sigui \((a,b)\) un interval de \(\mathbb{R}\).
-		Direm que una partició de \((a,b)\) és un conjunt de escalars \(t_{0},\dots,t_{n}\in[a,b]\) que compleixen \(a=t_{0}<\dots<t_{n}=b\).
-		Direm que \(t_{0},\dots,t_{n}\) són els nodes de la partició.
+		Sigui~\((a,b)\) un interval de~\(\mathbb{R}\).
+		Direm que una partició de~\((a,b)\) és un conjunt de escalars~\(t_{0},\dots,t_{n}\in[a,b]\) que compleixen~\(a=t_{0}<\dots<t_{n}=b\).
+		Direm que~\(t_{0},\dots,t_{n}\) són els nodes de la partició.
 		
-		Sigui \(f\colon(a,b)\to\mathbb{R}^{m}\) una funció.
-		Definirem la poligonal \(P_{n}\) d'una partició en una funció \(f\) com
+		Sigui~\(f\colon(a,b)\to\mathbb{R}^{m}\) una funció.
+		Definirem la poligonal~\(P_{n}\) d'una partició en una funció~\(f\) com
 		\[P_{n}=f(t_{0}),\dots,f(t_{n}).\]
-		Definim la longitud de la poligonal \(P_{n}\) com
+		Definim la longitud de la poligonal~\(P_{n}\) com
 		\[\Long(P_{n})=\sum_{i=0}^{n-1}\left\lVert f(t_{i+1})-f(t_{i})\right\rVert.\]
 	\end{definition}
 	\begin{definition}[Classe de diferenciabilitat d'una funció]
 		\labelname{classe de diferenciabilitat d'una funció}\label{def:Classe de diferenciabilitat}
-		Sigui \(f\) una funció \(n\)-vegades diferenciable amb \(f^{(n)}\) contínua.
-		Direm que \(f\) és de classe \(\mathcal{C}^{n}\) o que \(f\in\mathcal{C}^{n}\).
+		Sigui~\(f\) una funció~\(n\)-vegades diferenciable amb~\(f^{(n)}\) contínua.
+		Direm que~\(f\) és de classe~\(\mathcal{C}^{n}\) o que~\(f\in\mathcal{C}^{n}\).
 	\end{definition}
 %	\begin{definition}[Funció monòtona]
 %		\labelname{funció monòtona}\label{def:funció monòtona}
-%		Sigui \(f\colon[a,b]\to\mathbb{R}\) una funció. Direm que és \(f\) és monòtona si, per a qualsevol \(x,y\in[a,b]\), \(x>y\) implica \(f(x)\geq f(y)\).
+%		Sigui~\(f\colon[a,b]\to\mathbb{R}\) una funció. Direm que és~\(f\) és monòtona si, per a qualsevol~\(x,y\in[a,b]\),~\(x>y\) implica~\(f(x)\geq f(y)\).
 %	\end{definition}
 	\begin{definition}[Derivada]
 		\labelname{derivada}\label{def:derivada}
@@ -116,12 +116,12 @@
 	\end{definition}
 	\subsection{Proposicions}
 	\begin{proposition}\label{prop:Derivable implica contínua}
-		Siguin \(I\subseteq\mathbb{R}\) un interval i \(f\colon I\to\mathbb{R}\) una funció.
-		Aleshores, si \(f\) és derivable en un punt \(a\in I\), \(f\) és contínua en \(a\).
+		Siguin~\(I\subseteq\mathbb{R}\) un interval i~\(f\colon I\to\mathbb{R}\) una funció.
+		Aleshores, si~\(f\) és derivable en un punt~\(a\in I\),~\(f\) és contínua en~\(a\).
 	\end{proposition}
 	\begin{proposition}
-		Sigui \(f\colon[a,b]\to\mathbb{R}\) una funció acotada i monòtona.
-		Aleshores \(f\) és integrable Riemann.
+		Sigui~\(f\colon[a,b]\to\mathbb{R}\) una funció acotada i monòtona.
+		Aleshores~\(f\) és integrable Riemann.
 	\end{proposition}
 	\begin{proposition}
 		Sigui~\(f\colon[a,b]\longrightarrow\RR\) una funció monòtona.
@@ -130,7 +130,7 @@
 	\subsection{Teoremes}
 	\begin{theorem}[Equivalència entre normes]
 		\labelname{Teorema de l'equivalència entre normes}\label{thm:Equivalència de normes}
-		Si \(q(x)\) és una norma existeixen \(m,M\in\mathbb{R}^{+}\) tals que \(m\left\lVert x\right\rVert\leq q(x)\leq M\left\lVert x\right\rVert\) per a tot \(x\in\mathbb{R}^{m}\).
+		Si~\(q(x)\) és una norma existeixen~\(m,M\in\mathbb{R}^{+}\) tals que~\(m\left\lVert x\right\rVert\leq q(x)\leq M\left\lVert x\right\rVert\) per a tot~\(x\in\mathbb{R}^{m}\).
 	\end{theorem}
 	\begin{theorem}[Teorema del Valor Mig]
 		\label{Teorema del Valor Mig}\label{thm:TVM}
@@ -141,29 +141,29 @@
 	\end{theorem}
 	\begin{theorem}[Teorema de Taylor]%Teorema de l'error de Taylor?
 		\labelname{Teorema de Taylor}\label{thm:Teorema de Taylor} %caldrà adaptar-lo
-		Siguin \((a,b)\) un interval obert de \(\mathbb{R}\) i \(f\colon(a,b)\rightarrow\mathbb{R}\) una funció de classe \(\mathcal{C}^{n}\).
-		Aleshores, per a dos punts \(x,c\in(a,b)\), amb \(x<c\), existeix un punt \(x_{1}\in(x,c)\) tal que
+		Siguin~\((a,b)\) un interval obert de~\(\mathbb{R}\) i~\(f\colon(a,b)\rightarrow\mathbb{R}\) una funció de classe~\(\mathcal{C}^{n}\).
+		Aleshores, per a dos punts~\(x,c\in(a,b)\), amb~\(x<c\), existeix un punt~\(x_{1}\in(x,c)\) tal que
 		\[f(x)=f(c)+\sum_{k=1}^{n-1}\frac{f^{(k)}(c)}{k!}(x-c)^{k}+\frac{f^{(n)}(x_{1})}{n!}(x-c)^{n}.\]
 	\end{theorem}
 	\begin{theorem}[Teorema de Weierstrass]
 		\labelname{Teorema de Weierstrass}\label{thm:Weierstrass màxims i mínims múltiples variables}
-		Siguin \(U\subseteq\mathbb{R}^{d}\) un obert i \(f\colon U\to\mathbb{R}\) una funció.
-		Aleshores, donat un compacte \(S\subset U\), si \(f\) és contínua en \(S\), \(f\) té un màxim i un mínim absoluts en \(S\).
+		Siguin~\(U\subseteq\mathbb{R}^{d}\) un obert i~\(f\colon U\to\mathbb{R}\) una funció.
+		Aleshores, donat un compacte~\(S\subset U\), si~\(f\) és contínua en~\(S\),~\(f\) té un màxim i un mínim absoluts en~\(S\).
 	\end{theorem}
 	\begin{theorem}[Teorema del sandvitx]
 		\labelname{Teorema del sandvitx}\label{thm:sandvitx}
 	\end{theorem}
 	\begin{theorem}[Teorema de Rolle]
 		\labelname{Teorema de Rolle}\label{thm:Teorema de Rolle}
-		Sigui \(f\colon[a,b]\subset\mathbb{R}\longrightarrow\mathbb{R}\) una funció derivable en \((a,b)\) tal que \(f(a)=f(b)\).
-		Aleshores existeix un cert \(c\in(a,b)\) tal que \(f'(c)=0\).
+		Sigui~\(f\colon[a,b]\subset\mathbb{R}\longrightarrow\mathbb{R}\) una funció derivable en~\((a,b)\) tal que~\(f(a)=f(b)\).
+		Aleshores existeix un cert~\(c\in(a,b)\) tal que~\(f'(c)=0\).
 	\end{theorem}
 	\begin{theorem}[Teorema Fonamental del Càlcul]
 		\labelname{Teorema Fonamental del Càlcul}\label{thm:Teorema Fonamental del Càlcul}
-		Siguin \([a,b]\) un interval de \(\mathbb{R}\), \(f\colon[a,b]\longrightarrow\mathbb{R}\) una funció contínua en \([a,b]\) i
+		Siguin~\([a,b]\) un interval de~\(\mathbb{R}\),~\(f\colon[a,b]\longrightarrow\mathbb{R}\) una funció contínua en~\([a,b]\) i
 		\[F(x)=\int_{a}^{x}f(t)dt\]
 		una funció.
-		Aleshores \(F(x)\) és derivable en \([a,b]\) i \(F'(x)=f(x)\) per a tot \(x\) de \([a,b]\).
+		Aleshores~\(F(x)\) és derivable en~\([a,b]\) i~\(F'(x)=f(x)\) per a tot~\(x\) de~\([a,b]\).
 	\end{theorem}
 	\begin{theorem}[Teorema de Bolzano-Weierstrass]
 		\labelname{Teorema de Bolzano-Weierstrass}\label{thm:Teorema de Bolzano-Weierstrass}
@@ -176,21 +176,21 @@
 	\end{definition}
 	\begin{definition}[Continuïtat uniforme]
 		\labelname{continuïtat uniforme}\label{def:uniformement contínua}
-		Siguin \(U\subseteq\mathbb{R}^{d},V\subseteq\mathbb{R}^{m}\) dos oberts i \(f\colon U\to V\) una funció.
-		Aleshores direm que \(f\) és uniformement contínua en un conjunt \(S\subseteq U\) si per a tot \(\varepsilon>0\) existeix un \(\delta>0\) tals que
+		Siguin~\(U\subseteq\mathbb{R}^{d},V\subseteq\mathbb{R}^{m}\) dos oberts i~\(f\colon U\to V\) una funció.
+		Aleshores direm que~\(f\) és uniformement contínua en un conjunt~\(S\subseteq U\) si per a tot~\(\varepsilon>0\) existeix un~\(\delta>0\) tals que
 		\[d_{U}(x,y)<\varepsilon\text{ i }d_{V}(f(x)-f(y))<\delta\]
-		per a tot punt \(x,y\in U\).
+		per a tot punt~\(x,y\in U\).
 	\end{definition}
 	\begin{theorem}[Teorema de Heine]
 		\labelname{Teorema de Heine}\label{thm:Teorema de Heine}
-		Siguin \(U\subseteq\mathbb{R}^{d}\) dos oberts, \(S\subset U\) un compacte i \(f\colon U\to\mathbb{R}^{m}\) una funció contínua.
-		Aleshores \(f\) és uniformement contínua en \(S\).
+		Siguin~\(U\subseteq\mathbb{R}^{d}\) dos oberts,~\(S\subset U\) un compacte i~\(f\colon U\to\mathbb{R}^{m}\) una funció contínua.
+		Aleshores~\(f\) és uniformement contínua en~\(S\).
 		%pàg 91 de Mathematical Analysis d'en Apostol (55 del pdf)
 	\end{theorem}
 	\begin{definition}[Funció indicatriu]
 		\labelname{funció indicatriu}\label{def:funció indicatriu}
-		Siguin \(X\) un conjunt i \(A\subseteq X\) un subconjunt de \(X\).
-		Definim la funció indicatriu de \(A\) com una funció
+		Siguin~\(X\) un conjunt i~\(A\subseteq X\) un subconjunt de~\(X\).
+		Definim la funció indicatriu de~\(A\) com una funció
 		\[1_{A}\colon X\longrightarrow\{0,1\}\]
 		tal que
 		\begin{displaymath}
@@ -204,23 +204,23 @@
 	\begin{definition}[Nombre complex]
 		\labelname{nombre complex}\label{def:nombre complex}
 		\labelname{unitat imaginària}\label{def:unitat imaginària}
-		Siguin \(a\) i \(b\) dos nombres reals, \(\iu\) una constant que satisfà \(\iu^{2}=-1\) i
+		Siguin~\(a\) i~\(b\) dos nombres reals,~\(\iu\) una constant que satisfà~\(\iu^{2}=-1\) i
 		\[z=a+b\iu.\]
-		Aleshores direm que \(z\) és un nombre complex i que \(\iu\) és la unitat imaginària.
+		Aleshores direm que~\(z\) és un nombre complex i que~\(\iu\) és la unitat imaginària.
 	\end{definition}
 	\begin{definition}[Integral d'una funció complexa]
 		\labelname{integral d'una funció complexa}\label{def:integral d'una funció complexa}
-		Sigui \(f\) una funció complexa i \(a\) i \(b\) dos reals.
+		Sigui~\(f\) una funció complexa i~\(a\) i~\(b\) dos reals.
 		Aleshores definim
 		\[\int_{a}^{b}f(x)\diff x=\int_{a}^{b}\Re(f(x))\diff x+\iu\int_{a}^{b}\Im(f(x))\diff x\]
-		com la integral de \(f\).
+		com la integral de~\(f\).
 	\end{definition}
 	\begin{definition}[Unió disjunta]
 		\labelname{unió disjunta}\label{def:unió disjunta}
-		Siguin \(A\) i \(B\) dos conjunts.
+		Siguin~\(A\) i~\(B\) dos conjunts.
 		Aleshores definim
 		\[A\uniodisjunta B=(A\times\{0\})\cup(B\times\{1\})\]
-		com la unió disjunta entre \(A\) i \(B\).
+		com la unió disjunta entre~\(A\) i~\(B\).
 	\end{definition}
 	\begin{definition}[Vectors perpendiculars]
 		\labelname{vectors perpendiculars}\label{def:vectors perpendiculars}
@@ -239,42 +239,42 @@
 		\label{obs:podem entendre les equacions diferencials autònomes com camps vectorials}
 		Sigui
 		\[\dot{u}(t)=X(u(t))\]
-		una equació diferencial autònoma sobre un obert \(\obert{U}\subseteq\mathbb{R}^{n}\) amb \(X\in\mathcal{C}^{1}\).
-		Aleshores la funció \(X\) és un camp vectorial.
+		una equació diferencial autònoma sobre un obert~\(\obert{U}\subseteq\mathbb{R}^{n}\) amb~\(X\in\mathcal{C}^{1}\).
+		Aleshores la funció~\(X\) és un camp vectorial.
 	\end{observation}
 	\begin{definition}[Òrbites]
 		\labelname{òrbita d'una equació diferencial}\label{def:òrbita d'una equació diferencial}
-		Sigui \(\varphi\) una solució d'una equació diferencial autònoma
+		Sigui~\(\varphi\) una solució d'una equació diferencial autònoma
 		\[\dot{u}(t)=X(u(t))\]
-		on \(X\in\mathcal{C}^{1}\).
-		Aleshores direm que \(\varphi\) és una òrbita de l'equació diferencial \(\dot{u}(t)=X(u(t))\).
+		on~\(X\in\mathcal{C}^{1}\).
+		Aleshores direm que~\(\varphi\) és una òrbita de l'equació diferencial~\(\dot{u}(t)=X(u(t))\).
 %		
 %		Siguin
 %		
 %		\[\dot{u}(t)=X(u(t))\]
-%		una equació diferencial autònoma sobre un obert \(\obert{U}\subseteq\mathbb{R}^{n}\) i \(\varphi\) una solució de l'equació diferencial. Aleshores direm que \(\varphi\) és una òrbita de l'equació diferencial.
+%		una equació diferencial autònoma sobre un obert~\(\obert{U}\subseteq\mathbb{R}^{n}\) i~\(\varphi\) una solució de l'equació diferencial. Aleshores direm que~\(\varphi\) és una òrbita de l'equació diferencial.
 	\end{definition}
 	\begin{proposition}
 		Siguin
 		\[\dot{u}(t)=X(u(t))\]
-		una equació diferencial autònoma sobre un obert \(\obert{U}\subseteq\mathbb{R}^{n}\) amb \(X\in\mathcal{C}^{1}\) i \(x\in\obert{U}\) un punt.
-		Aleshores existeix una solució maximal \(\varphi_{x}\) tal que \(\varphi_{x}(0)=x\).
+		una equació diferencial autònoma sobre un obert~\(\obert{U}\subseteq\mathbb{R}^{n}\) amb~\(X\in\mathcal{C}^{1}\) i~\(x\in\obert{U}\) un punt.
+		Aleshores existeix una solució maximal~\(\varphi_{x}\) tal que~\(\varphi_{x}(0)=x\).
 		\begin{proof}
 			Considerem el problema de Cauchy
 			\[\begin{cases*}
 				\displaystyle \dot{u}(t)=X(u(t)) \\
 				\displaystyle u(0)=x.
 			\end{cases*}\]
-			
-			Aleshores per la proposició \myref{prop:existeixen solucions improrrogables} tenim que existeix una solució maximal \(\varphi_{x}\) d'aquest problema de Cauchy, i per la definició de \myref{def:problema de Cauchy} trobem que \(\varphi_{x}(0)=x\) i hem acabat.
+
+			Aleshores per la proposició \myref{prop:existeixen solucions improrrogables} tenim que existeix una solució maximal~\(\varphi_{x}\) d'aquest problema de Cauchy, i per la definició de \myref{def:problema de Cauchy} trobem que~\(\varphi_{x}(0)=x\) i hem acabat.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Flux]
 		\labelname{flux}\label{def:flux}
 		Siguin
 		\[\dot{u}(t)=X(u(t))\]
-		una equació diferencial autònoma sobre un obert \(\obert{U}\subseteq\mathbb{R}^{n}\) amb \(X\in\mathcal{C}^{1}\), \(x\in\obert{U}\) un punt i \(\varphi_{x}\) la solució maximal tal que \(\varphi_{x}(0)=x\).
-		Aleshores direm que \(\varphi_{x}\) és el flux de \(x\).
+		una equació diferencial autònoma sobre un obert~\(\obert{U}\subseteq\mathbb{R}^{n}\) amb~\(X\in\mathcal{C}^{1}\),~\(x\in\obert{U}\) un punt i~\(\varphi_{x}\) la solució maximal tal que~\(\varphi_{x}(0)=x\).
+		Aleshores direm que~\(\varphi_{x}\) és el flux de~\(x\).
 	\end{definition}
 	
 	

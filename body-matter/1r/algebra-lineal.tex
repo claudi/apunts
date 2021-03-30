@@ -14,7 +14,7 @@
 	\begin{definition}[Matriu]
 		\labelname{matriu}\label{def:matriu}
 		\labelname{matriu quadrada}\label{def:matriu quadrada}
-		Siguin \(m\) i \(n\) dos enters i \(\{a_{i,j}\}^{1\leq i\leq m}_{1\leq j\leq n}\) elements d'un cos \(\mathbb{K}\).
+		Siguin~\(m\) i~\(n\) dos enters i~\(\{a_{i,j}\}^{1\leq i\leq m}_{1\leq j\leq n}\) elements d'un cos~\(\mathbb{K}\).
 		Aleshores direm que
 		\[[a_{i,j}]=
 		\left[\begin{matrix}
@@ -23,48 +23,48 @@
 		\vdots & \vdots &  & \vdots \\
 		a_{m,1} & a_{m,2} & \cdots & a_{m,n}
 		\end{matrix}\right]\]
-		és una matriu de mida \(m\times n\) sobre \(\mathbb{K}\).
+		és una matriu de mida~\(m\times n\) sobre~\(\mathbb{K}\).
 		
-		Direm que \(a_{i,j}\) és el component \((i,j)\) de la matriu \([a_{i,j}]\).
-		Si \(A=[a_{i,j}]\) també denotarem \([A]_{i,j}=a_{i,j}\).
+		Direm que~\(a_{i,j}\) és el component~\((i,j)\) de la matriu~\([a_{i,j}]\).
+		Si~\(A=[a_{i,j}]\) també denotarem~\([A]_{i,j}=a_{i,j}\).
 		
-		Si \(n=m\) direm que \((a_{i,j})\) és una matriu quadrada d'ordre \(n\).
+		Si~\(n=m\) direm que~\((a_{i,j})\) és una matriu quadrada d'ordre~\(n\).
 	\end{definition}
 	\begin{notation}[Conjunt de matrius]
 		\label{notation:conjunt de matrius}
-		Siguin \(m\) i \(n\) dos enters, \(\mathbb{K}\) un cos i
+		Siguin~\(m\) i~\(n\) dos enters,~\(\mathbb{K}\) un cos i
 		\[
 		    X=\{A\mid A\text{ és una matriu de mida }m\times n\text{ sobre }\mathbb{K}\}
 		\]
 		un conjunt.
-		Aleshores denotarem \(X=\matrius_{m\times n}(\mathbb{K})\).
+		Aleshores denotarem~\(X=\matrius_{m\times n}(\mathbb{K})\).
 		
-		Si \(n=m\) denotarem \(X=\matrius_{n}(\mathbb{K})\).
+		Si~\(n=m\) denotarem~\(X=\matrius_{n}(\mathbb{K})\).
 	\end{notation}
 	%Veure que estàn ben definides %TODO %FER
-	%Quan veiem que el producte té sentit veure que pertany a \(\matrius_{m\times n}(\mathbb{K})\).
+	%Quan veiem que el producte té sentit veure que pertany a~\(\matrius_{m\times n}(\mathbb{K})\).
 	\begin{definition}[Suma de matrius]
 		\labelname{suma de matrius}\label{def:suma de matrius}
-		Siguin \(A\) i \(B\) dues matrius de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
-		Aleshores definim la seva suma com una operació \(+\) que satisfà
+		Siguin~\(A\) i~\(B\) dues matrius de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
+		Aleshores definim la seva suma com una operació~\(+\) que satisfà
 		\[
 		    [A+B]_{i,j}=[A]_{i,j}+[B]_{i,j}.
 		\]
 	\end{definition}
 	\begin{definition}[Producte de matrius]
 		\labelname{producte de matrius}\label{def:producte de matrius}
-		Siguin \(A\) una matriu de mida \(m\times l\) sobre un cos \(\mathbb{K}\) i \(B\) una matriu de mida \(l\times n\) sobre un cos \(\mathbb{K}\).
-		Aleshores definim el seu producte com una operació \(\cdot\) que satisfà
+		Siguin~\(A\) una matriu de mida~\(m\times l\) sobre un cos~\(\mathbb{K}\) i~\(B\) una matriu de mida~\(l\times n\) sobre un cos~\(\mathbb{K}\).
+		Aleshores definim el seu producte com una operació~\(\cdot\) que satisfà
 		\[
 		    [A\cdot B]_{i,j}=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.
 		\]
 		
-		Escriurem \(A\cdot B=AB\).
+		Escriurem~\(A\cdot B=AB\).
 	\end{definition}
 	\subsection{Propietats de les operacions amb matrius}
 	\begin{proposition}
 		\label{prop:associativitat suma matrius}
-		Siguin \(A\), \(B\) i \(C\) tres matrius de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
+		Siguin~\(A\),~\(B\) i~\(C\) tres matrius de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    (A+B)+C=A+(B+C).
@@ -82,7 +82,7 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:commutativitat suma matrius}
-		Siguin \(A\) i \(B\) dues matrius de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
+		Siguin~\(A\) i~\(B\) dues matrius de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    A+B=B+A.
@@ -98,19 +98,19 @@
 	\end{proposition}
 	\begin{notation}[Matriu nul·la]
 		\labelname{matriu nul·la}\label{notation:matriu nula}\label{notation:matriu zero}
-		Denotarem la matriu de mida \(m\times n\)
+		Denotarem la matriu de mida~\(m\times n\)
 		\[\left[\begin{matrix}
 		0 & \cdots & 0 \\
 		\vdots & & \vdots \\
 		0 & \cdots & 0
 		\end{matrix}\right]
 		\in\matrius_{m\times n}(\mathbb{K})\]
-		com \(0_{m\times n}\), ó \(0\) si és clar pel context.
-		També escriurem \(0_{n\times n}=0_{n}\).
+		com~\(0_{m\times n}\), ó~\(0\) si és clar pel context.
+		També escriurem~\(0_{n\times n}=0_{n}\).
 	\end{notation}
 	\begin{proposition}
 		\label{prop:element neutre per la suma de matrius}
-		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
+		Sigui~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    A+0=A.
@@ -127,17 +127,17 @@
 	\end{proposition}
 	\begin{definition}[Producte d'una matriu per escalars]
 		\labelname{producte d'una matriu per escalars}\label{def:producte d'una matriu per escalars}
-		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) i \(\alpha\) un escalar de \(\mathbb{K}\).
+		Sigui~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\) i~\(\alpha\) un escalar de~\(\mathbb{K}\).
 		Aleshores definim
 		\[
 		    [\alpha A]_{i,j}=\alpha[A]_{i,j}.
 		\]
 		
-		Denotarem \((-1)A\) com \(-A\).
+		Denotarem~\((-1)A\) com~\(-A\).
 	\end{definition}
 	\begin{proposition}
 		\label{prop:inverses per la suma de matrius}
-		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
+		Sigui~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    A-A=0.
@@ -149,12 +149,12 @@
 			&=[A]_{i,j}-[A]_{i,j}\tag{\myref{def:producte d'una matriu per escalars}}\\
 			&=0\tag{\myref{def:cos}} %REF?
 			\end{align*}
-			i trobem \(A-A=0\).
+			i trobem~\(A-A=0\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:associativitat mixta producte escalars per matrius}
-		Siguin \(A\) una matriu de mida \(m\times n\) i \(\alpha\) i \(\beta\) dos escalars de \(\mathbb{K}\).
+		Siguin~\(A\) una matriu de mida~\(m\times n\) i~\(\alpha\) i~\(\beta\) dos escalars de~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    (\alpha\beta)A=\alpha(\beta A).
@@ -170,7 +170,7 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:distributiva respecta la suma d'escalars del producte de matrius}
-		Siguin \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) i \(\alpha\) i \(\beta\) dos escalars de \(\mathbb{K}\).
+		Siguin~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\) i~\(\alpha\) i~\(\beta\) dos escalars de~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    (\alpha+\beta)A=\alpha A+\beta A.
@@ -186,7 +186,7 @@
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
-		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
+		Sigui~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    1A=A.
@@ -205,7 +205,7 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:associativitat producte de matrius}
-		Siguin \(\mathbb{K}\) un cos i \(A\) una matriu de mida \(m\times l\) sobre \(\mathbb{K}\), \(B\) una matriu de mida \(l\times s\) sobre \(\mathbb{K}\) i \(C\) una matriu de mida \(s\times m\) sobre \(\mathbb{K}\).
+		Siguin~\(\mathbb{K}\) un cos i~\(A\) una matriu de mida~\(m\times l\) sobre~\(\mathbb{K}\),~\(B\) una matriu de mida~\(l\times s\) sobre~\(\mathbb{K}\) i~\(C\) una matriu de mida~\(s\times m\) sobre~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    (AB)C=A(BC).
@@ -226,7 +226,7 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:distributiva del producte de matrius respecte la suma}
-		Siguin \(A\) i \(A'\) dues matrius de mida \(m\times l\) sobre un cos \(\mathbb{K}\) i \(B\), \(B'\) dues matrius de mida \(l\times n\) sobre un cos \(\mathbb{K}\).
+		Siguin~\(A\) i~\(A'\) dues matrius de mida~\(m\times l\) sobre un cos~\(\mathbb{K}\) i~\(B\),~\(B'\) dues matrius de mida~\(l\times n\) sobre un cos~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    (A+A')B=AB+A'B
@@ -262,7 +262,7 @@
 	\subsection{Matrius inverses i matrius transposades}
 	\begin{notation}[Matriu identitat]
 		\labelname{matriu nul·la}\label{notation:matriu identitat}
-		Denotarem la matriu d'ordre \(n\)
+		Denotarem la matriu d'ordre~\(n\)
 		\[\left[\begin{matrix}
 		1 & 0 & \cdots & 0 \\
 		0 & 1 & \ddots & \vdots \\
@@ -270,11 +270,11 @@
 		0 & \cdots & 0 & 1
 		\end{matrix}\right]
 		\in\matrius_{n}(\mathbb{K})\]
-		com \(I_{n}\) i direm que \(I_{n}\) és la matriu identitat d'ordre \(n\).
+		com~\(I_{n}\) i direm que~\(I_{n}\) és la matriu identitat d'ordre~\(n\).
 	\end{notation}
 	\begin{proposition}
 		\label{prop:producte per la matriu identitat}
-		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
+		Sigui~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    I_{m}A=A=AI_{n}.
@@ -294,62 +294,62 @@
 			\[
 			    \sum_{k=1}^{m}[I_{m}]_{i,k}[A]_{k,j}=[A]_{i,j}
 			\]
-			i per tant \(I_{m}A=A\).
+			i per tant~\(I_{m}A=A\).
 			
 			La demostració de l'altre igualtat és anàloga.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:unicitat inverses de matrius pel producte}
-		Sigui \(A\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\) tal que existeixin dues matrius \(A_{1}\) i \(A_{2}\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que
+		Sigui~\(A\) una matriu d'ordre~\(n\) sobre un cos~\(\mathbb{K}\) tal que existeixin dues matrius~\(A_{1}\) i~\(A_{2}\) d'ordre~\(n\) sobre~\(\mathbb{K}\) tal que
 		\[
 		    AA_{1}=A_{1}A=I_{n}\quad\text{i}\quad AA_{2}=A_{2}A=I_{n}.
 		\]
-		Aleshores \(A_{1}=A_{2}\).
+		Aleshores~\(A_{1}=A_{2}\).
 		\begin{proof}
 			Per la proposició \myref{prop:associativitat producte de matrius} tenim que
 			\[
 			    A_{1}(AA_{2})=(A_{1}A)A_{2}
 			\]
-			i per hipòtesi trobem que \(A_{1}I_{n}=I_{n}A_{2}\), i per la proposició \myref{prop:producte per la matriu identitat} trobem que \(A_{1}=A_{2}\), com volíem veure.
+			i per hipòtesi trobem que~\(A_{1}I_{n}=I_{n}A_{2}\), i per la proposició \myref{prop:producte per la matriu identitat} trobem que~\(A_{1}=A_{2}\), com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Matriu invertible]
 		\labelname{matriu invertible}\label{def:matriu invertible}
 		\labelname{inversa d'una matriu}\label{def:inversa d'una matriu}
-		Sigui \(A\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\) tal que existeixi una matriu \(A'\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que
+		Sigui~\(A\) una matriu d'ordre~\(n\) sobre un cos~\(\mathbb{K}\) tal que existeixi una matriu~\(A'\) d'ordre~\(n\) sobre~\(\mathbb{K}\) tal que
 		\[
 		    AA'=A'A=I_{n}.
 		\]
-		Aleshores direm que \(A\) és una matriu invertible i que \(A'\) és la inversa de \(A\).
-		També denotarem \(A'=A^{-1}\).
+		Aleshores direm que~\(A\) és una matriu invertible i que~\(A'\) és la inversa de~\(A\).
+		També denotarem~\(A'=A^{-1}\).
 		
 		Observem que aquesta definició té sentit per la proposició \myref{prop:unicitat inverses de matrius pel producte}.
 	\end{definition}
 	\begin{observation}
 		\label{obs:matrius amb una fila nula no són invertibles}
 		\label{obs:matrius amb una columna nula no són invertibles}
-		Sigui \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) tal que existeix un \(i\in\{1,\dots,n\}\) satisfent
+		Sigui~\(A=(a_{i,j})\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\) tal que existeix un~\(i\in\{1,\dots,n\}\) satisfent
 		\[
 		    a_{i,j}=0\text{ ó }a_{j,i}=0\quad\text{per a tot }j\in\{1,\dots,n\}.
 		\]
-		Aleshores \(A\) no és invertible.
+		Aleshores~\(A\) no és invertible.
 	\end{observation}
 	\begin{proposition}
 		\label{prop:el producte de matrius invertibles és invertible}
-		Siguin \(A\) i \(B\) dues matrius invertibles d'ordre \(n\) sobre un cos \(\mathbb{K}\).
-		Aleshores la matriu \(AB\) és invertible.
+		Siguin~\(A\) i~\(B\) dues matrius invertibles d'ordre~\(n\) sobre un cos~\(\mathbb{K}\).
+		Aleshores la matriu~\(AB\) és invertible.
 		\begin{proof}
 			Per la proposició \myref{prop:associativitat producte de matrius} i la definició de \myref{def:matriu invertible} tenim que
 			\[
 			    (AB)(B^{-1}A^{-1})=\Id\quad\text{i}\quad(B^{-1}A^{-1})(AB)=\Id,
 			\]
-			i de nou per la definició tenim que \(AB\) és invertible.
+			i de nou per la definició tenim que~\(AB\) és invertible.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:inversa del producte de matrius}
-		Siguin \(A\) i \(B\) dues matrius invertibles d'ordre \(n\) sobre un cos \(\mathbb{K}\).
+		Siguin~\(A\) i~\(B\) dues matrius invertibles d'ordre~\(n\) sobre un cos~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    (AB)^{-1}=B^{-1}A^{-1}.
@@ -361,7 +361,7 @@
 			\[
 			    (AB)^{-1}AB=I_{n},
 			\]
-			i com que, per hipòtesi, les matrius \(A\) i \(B\) són invertibles trobem
+			i com que, per hipòtesi, les matrius~\(A\) i~\(B\) són invertibles trobem
 			\begin{align*}
 			B^{-1}A^{-1}&=(AB)^{-1}ABB^{-1}A^{-1}\\
 			&=(AB)^{-1}AA^{-1}=(AB)^{-1}.\qedhere
@@ -370,7 +370,7 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:inversa de la inversa d'una matriu és la matriu}
-		Sigui \(A\) una matriu invertible d'ordre \(n\) sobre un cos \(\mathbb{K}\).
+		Sigui~\(A\) una matriu invertible d'ordre~\(n\) sobre un cos~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    (A^{-1})^{-1}=A.
@@ -380,7 +380,7 @@
 			\[
 			    A^{-1}(A^{-1})^{-1}=A^{-1}A
 			\]
-			i com que, per hipòtesi, la matriu \(A\) és invertible trobem
+			i com que, per hipòtesi, la matriu~\(A\) és invertible trobem
 			\[
 			    AA^{-1}(A^{-1})^{-1}=AA^{-1}A
 			\]
@@ -393,14 +393,14 @@
 	\begin{definition}[Matriu transposada]
 		\labelname{matriu transposada}\label{def:matriu transposada}
 		\labelname{transposició d'una matriu}\label{def:transposició d'una matriu}
-		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
-		Definim la transposada de \(A\) com una matriu \(A^{t}\) de mida \(n\times m\) sobre \(\mathbb{K}\) que satisfà
+		Sigui~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
+		Definim la transposada de~\(A\) com una matriu~\(A^{t}\) de mida~\(n\times m\) sobre~\(\mathbb{K}\) que satisfà
 		\[
 		    [A^{t}]_{i,j}=[A]_{j,i}.
 		\]
 	\end{definition}
 	\begin{proposition}
-		Siguin \(A\) i \(B\) dues matrius de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
+		Siguin~\(A\) i~\(B\) dues matrius de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    (A+B)^{t}=A^{t}+B^{t}.
@@ -418,7 +418,7 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:producte de matrius transposades}
-		Siguin \(A\) una matriu de mida \(m\times l\) sobre un cos \(\mathbb{K}\) i \(B\) una matriu de mida \(l\times n\) sobre \(\mathbb{K}\).
+		Siguin~\(A\) una matriu de mida~\(m\times l\) sobre un cos~\(\mathbb{K}\) i~\(B\) una matriu de mida~\(l\times n\) sobre~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    (AB)^{t}=B^{t}A^{t}.
@@ -437,44 +437,44 @@
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:transposada d'una invertible és invertible}
-		Sigui \(A\) una matriu invertible d'ordre \(n\) sobre un cos \(\mathbb{K}\).
-		Aleshores la matriu \(A^{t}\) és invertible i \(\left(A^{t}\right)^{-1}=\left(A^{-1}\right)^{t}\).
+		Sigui~\(A\) una matriu invertible d'ordre~\(n\) sobre un cos~\(\mathbb{K}\).
+		Aleshores la matriu~\(A^{t}\) és invertible i~\(\left(A^{t}\right)^{-1}=\left(A^{-1}\right)^{t}\).
 		\begin{proof}
 			Per la proposició \myref{prop:producte de matrius transposades} tenim que
 			\[
 			    A^{t}\left(A^{-1}\right)^{t}=\left(A^{-1}A\right)^{t}\quad\text{i}\quad \left(A^{-1}\right)^{t}A^{t}=\left(AA^{-1}\right)^{t},
 			\]
-			i per la definició de \myref{def:matriu invertible} tenim que \(A^{t}\) és invertible i que \(\left(A^{t}\right)^{-1}=\left(A^{-1}\right)^{t}\), com volíem veure.
+			i per la definició de \myref{def:matriu invertible} tenim que~\(A^{t}\) és invertible i que~\(\left(A^{t}\right)^{-1}=\left(A^{-1}\right)^{t}\), com volíem veure.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Matriu simètrica]
 		\labelname{matriu simètrica}\label{def:matriu simètrica}
-		Sigui \(A\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\) tal que \(A^{t}=A\).
-		Aleshores direm que \(A\) és una matriu simètrica.
+		Sigui~\(A\) una matriu d'ordre~\(n\) sobre un cos~\(\mathbb{K}\) tal que~\(A^{t}=A\).
+		Aleshores direm que~\(A\) és una matriu simètrica.
 	\end{definition}
 	\subsection{Producte de matrius en blocs}%FER producte de matrius en blocs
 	\begin{definition}[Files i columnes]
 		\labelname{fila d'una matriu}\label{def:fila d'una matriu}
 		\labelname{columna d'una matriu}\label{def:columna d'una matriu}
-		Sigui \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
+		Sigui~\(A=(a_{i,j})\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
 		Aleshores definim
 		\[F_{i}=\left[\begin{matrix}
 		a_{i,1} & \cdots & a_{i,n}
 		\end{matrix}\right]\]
-		com la \(i\)-èsima fila de \(A\) i
+		com la~\(i\)-èsima fila de~\(A\) i
 		\[C_{i}=\left[\begin{matrix}
 		a_{1,i} \\
 		\vdots \\
 		a_{m,i}
 		\end{matrix}\right]\]
-		com la \(i\)-èsima columna de \(A\).
+		com la~\(i\)-èsima columna de~\(A\).
 	\end{definition}
 	\begin{observation}
 		\label{obs:on pertanyen les files i les columnes d'una matriu}
-		Si \(A\in\matrius_{m\times n}(\mathbb{K})\) tenim \(F_{i}\in\matrius_{1\times n}(\mathbb{K})\) i \(C_{i}\in\matrius_{m\times 1}(\mathbb{K})\).
+		Si~\(A\in\matrius_{m\times n}(\mathbb{K})\) tenim~\(F_{i}\in\matrius_{1\times n}(\mathbb{K})\) i~\(C_{i}\in\matrius_{m\times 1}(\mathbb{K})\).
 	\end{observation}
 	\begin{notation}
-		Si \(A\) és una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(F_{1},\dots,F_{m}\) les files de \(A\) i \(C_{1},\dots,C_{n}\) les columnes de \(A\).
+		Si~\(A\) és una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\),~\(F_{1},\dots,F_{m}\) les files de~\(A\) i~\(C_{1},\dots,C_{n}\) les columnes de~\(A\).
 		Aleshores denotem
 		\[A=\left[\begin{matrix}
 		F_{1} \\
@@ -485,13 +485,13 @@
 		\end{matrix}\right].\]
 	\end{notation}
 	\begin{notation}
-		Siguin \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(m_{1},\dots,m_{p}\) i \(n_{1},\dots,n_{q}\) nombres naturals tals que \(m_{1}+\dots+m_{p}=m\) i \(n_{1}+\dots+n_{q}=n\), \(m_{0}=n_{0}=1\) i
+		Siguin~\(A=(a_{i,j})\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\),~\(m_{1},\dots,m_{p}\) i~\(n_{1},\dots,n_{q}\) nombres naturals tals que~\(m_{1}+\dots+m_{p}=m\) i~\(n_{1}+\dots+n_{q}=n\),~\(m_{0}=n_{0}=1\) i
 		\[A_{i,j}=\left[\begin{matrix}
 		a_{m_{i-1},n_{i-1}} & \cdots & a_{m_{i-1},n_{i}}\\
 		\vdots & & \vdots \\
 		a_{m_{i},n_{i-1}} & \cdots & a_{m_{i},n_{i}}
 		\end{matrix}\right]\]
-		matrius sobre un cos \(\mathbb{K}\).
+		matrius sobre un cos~\(\mathbb{K}\).
 		Aleshores denotem
 		\[A=\left[\begin{matrix}
 		A_{1,1} & \cdots & A_{1,q} \\
@@ -501,7 +501,7 @@
 	\end{notation}
 	\begin{proposition}
 		\label{prop:producte de matrius en blocs}
-		Siguin \(A\) una matriu de mida \(m\times l\) sobre un cos \(\mathbb{K}\), \(B\) una matriu de mida \(l\times n\) sobre \(\mathbb{K}\), \(m_{1},\dots,m_{p}\), \(l_{1},\dots,l_{q}\) i \(n_{1},\dots,n_{r}\) nombres naturals satisfent \(m_{1}+\dots+m_{p}=m\), \(l_{1}+\dots+l_{q}=l\) i \(n_{1}+\dots+n_{r}=n\), i per a tot \(i\in\{1,\dots,p\}\), \(k\in\{1,\dots,q\}\) i \(j\in\{1,\dots,r\}\) tals que \(A_{i,k}\) és una matriu de mida \(m_{i}\times l_{k}\) sobre \(\mathbb{K}\) i \(B_{k,j}\) és una matriu de mida \(l_{k}\times n_{j}\) sobre \(\mathbb{K}\) tals que
+		Siguin~\(A\) una matriu de mida~\(m\times l\) sobre un cos~\(\mathbb{K}\),~\(B\) una matriu de mida~\(l\times n\) sobre~\(\mathbb{K}\),~\(m_{1},\dots,m_{p}\),~\(l_{1},\dots,l_{q}\) i~\(n_{1},\dots,n_{r}\) nombres naturals satisfent~\(m_{1}+\dots+m_{p}=m\),~\(l_{1}+\dots+l_{q}=l\) i~\(n_{1}+\dots+n_{r}=n\), i per a tot~\(i\in\{1,\dots,p\}\),~\(k\in\{1,\dots,q\}\) i~\(j\in\{1,\dots,r\}\) tals que~\(A_{i,k}\) és una matriu de mida~\(m_{i}\times l_{k}\) sobre~\(\mathbb{K}\) i~\(B_{k,j}\) és una matriu de mida~\(l_{k}\times n_{j}\) sobre~\(\mathbb{K}\) tals que
 		\[A=\left[\begin{matrix}
 		A_{1,1} & \cdots & A_{1,q} \\
 		\vdots & & \vdots \\
@@ -524,7 +524,7 @@
 			    [AB]_{i,j}=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.
 			\]
 			
-			També tenim que \(i=m_{1}+\dots+m_{k_{i}}+i'\) i \(j=n_{1}+\dots+n_{k_{j}}+j'\) per a certs \(k_{i}\in\{1,\dots,p-1\}\), \(k_{j}\in\{1,\dots,r-1\}\), \(i'\leq m_{k_{i}+1}-m_{k_{i}}\) i \(j'\leq n_{k_{j}+1}-n_{k_{j}}\).
+			També tenim que~\(i=m_{1}+\dots+m_{k_{i}}+i'\) i~\(j=n_{1}+\dots+n_{k_{j}}+j'\) per a certs~\(k_{i}\in\{1,\dots,p-1\}\),~\(k_{j}\in\{1,\dots,r-1\}\),~\(i'\leq m_{k_{i}+1}-m_{k_{i}}\) i~\(j'\leq n_{k_{j}+1}-n_{k_{j}}\).
 			Per tant hem de veure que
 			\[
 			    \sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}=\left[\sum_{k=1}^{q}A_{m_{k_{i}},k}B_{k,n_{k_{j}}}\right]_{i',j'}.
@@ -549,7 +549,7 @@
 			\vdots & & \vdots \\
 			B_{q,1} & \cdots & B_{q,r}
 			\end{matrix}\right].\]
-			i que \(i=m_{1}+\dots+m_{k_{i}}+i'\) i \(j=n_{1}+\dots+n_{k_{j}}+j'\), trobem
+			i que~\(i=m_{1}+\dots+m_{k_{i}}+i'\) i~\(j=n_{1}+\dots+n_{k_{j}}+j'\), trobem
 			\[
 			    \sum_{k=1}^{q}\left(\sum_{h=1}^{l_{k}}[A_{m_{k_{i}},k}]_{i',h}[B_{k,n_{k_{j}}}]_{h,j'}\right)=\sum_{k=1}^{l}[A]_{i,k}[B]_{k,j}.\qedhere
 			\]
@@ -560,7 +560,7 @@
 	\subsection{Transformacions elementals}
 	\begin{definition}[Transformacions elementals] %REFER per columnes i files
 		\labelname{transformacions elementals}\label{def:transformacions elementals}
-		Siguin \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) i \(i\) i \(j\) dos naturals diferents amb \(i,j\leq m\) i \(\lambda\) un element no nul de \(\mathbb{K}\).
+		Siguin~\(A=(a_{i,j})\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\) i~\(i\) i~\(j\) dos naturals diferents amb~\(i,j\leq m\) i~\(\lambda\) un element no nul de~\(\mathbb{K}\).
 		Aleshores definim les funcions
 		\[P_{i,j}(A)=\left[\begin{matrix}
 		a_{1,1} & \cdots & a_{1,n} \\
@@ -592,7 +592,7 @@
 		\vdots & & \vdots \\
 		a_{m,1} & & a_{m,n}
 		\end{matrix}\right]\]
-		com les transformacions elementals per files de \(\matrius_{n}(\mathbb{K})\).
+		com les transformacions elementals per files de~\(\matrius_{n}(\mathbb{K})\).
 	\end{definition}
 %	\begin{observation}
 %		\label{obs:transformacions elementals}
@@ -632,63 +632,63 @@
 %	\end{observation}
 	\begin{proposition}
 		\label{prop:transformacions elementals i matrius elementals}
-		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
-		Aleshores per a tota successió de transformacions elementals per files \(f\) existeix una matriu \(P\) d'ordre \(m\) sobre \(\mathbb{K}\) tal que \(f(A)=PA\) i per a tota successió de transformacions elementals per columnes \(g\) existeix una matriu \(Q\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que \(g(A)=AQ\).
-%		Siguin \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(f\) una transformació elemental per files i \(g\) una transformació elemental per columnes.
+		Sigui~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
+		Aleshores per a tota successió de transformacions elementals per files~\(f\) existeix una matriu~\(P\) d'ordre~\(m\) sobre~\(\mathbb{K}\) tal que~\(f(A)=PA\) i per a tota successió de transformacions elementals per columnes~\(g\) existeix una matriu~\(Q\) d'ordre~\(n\) sobre~\(\mathbb{K}\) tal que~\(g(A)=AQ\).
+%		Siguin~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\),~\(f\) una transformació elemental per files i~\(g\) una transformació elemental per columnes.
 %		
-%		Aleshores existeix una matriu \(P\) d'ordre \(m\) sobre \(\mathbb{K}\) tal que \(f(A)=PA\) i existeix una matriu \(Q\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que \(g(A)=AQ\).
+%		Aleshores existeix una matriu~\(P\) d'ordre~\(m\) sobre~\(\mathbb{K}\) tal que~\(f(A)=PA\) i existeix una matriu~\(Q\) d'ordre~\(n\) sobre~\(\mathbb{K}\) tal que~\(g(A)=AQ\).
 		\begin{proof}
-			En tenim prou amb veure que \(P_{i,j}(A)=P_{i,j}(I_{m})A\), \(D_{i,\lambda}(A)=D_{i,\lambda}(I_{m})A\) i \(E_{i,j,\lambda}(A)=E_{i,j,\lambda}(I_{m})A\) i que \(P_{i,j}(A^{t})^{t}=AP_{i,j}(I_{n})\), \(D_{i,\lambda}(A^{t})^{t}=AD_{i,\lambda}(I_{n})\) i \(E_{i,j,\lambda}(A^{t})^{t}=AE_{i,j,\lambda}(I_{n})\), i això és conseqüència de la definició de \myref{def:producte de matrius}.
+			En tenim prou amb veure que~\(P_{i,j}(A)=P_{i,j}(I_{m})A\),~\(D_{i,\lambda}(A)=D_{i,\lambda}(I_{m})A\) i~\(E_{i,j,\lambda}(A)=E_{i,j,\lambda}(I_{m})A\) i que~\(P_{i,j}(A^{t})^{t}=AP_{i,j}(I_{n})\),~\(D_{i,\lambda}(A^{t})^{t}=AD_{i,\lambda}(I_{n})\) i~\(E_{i,j,\lambda}(A^{t})^{t}=AE_{i,j,\lambda}(I_{n})\), i això és conseqüència de la definició de \myref{def:producte de matrius}.
 		\end{proof}
 	\end{proposition}
 	\begin{definition}[Matriu elemental]
 		\labelname{matriu elemental}\label{def:matriu elemental}
-		Sigui \(P\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\) tal que existeixi una sèrie de transformacions elementals tals que per a tota matriu \(A\) de mida \(m\times n\) sobre \(\mathbb{K}\) tenim \(f(A)=PA\).
-		Aleshores direm que \(P\) és una matriu elemental.
+		Sigui~\(P\) una matriu d'ordre~\(n\) sobre un cos~\(\mathbb{K}\) tal que existeixi una sèrie de transformacions elementals tals que per a tota matriu~\(A\) de mida~\(m\times n\) sobre~\(\mathbb{K}\) tenim~\(f(A)=PA\).
+		Aleshores direm que~\(P\) és una matriu elemental.
 		
 		Aquesta definició té sentit per la proposició \myref{prop:transformacions elementals i matrius elementals}.
 	\end{definition}
 	\begin{observation}
 		\label{obs:producte de matrius elementals és matriu elemental}
-		Siguin \(P\) i \(Q\) dues matrius elementals d'ordre \(n\) sobre un cos \(\mathbb{K}\).
-		Aleshores \(PQ\) és una matriu elemental.
+		Siguin~\(P\) i~\(Q\) dues matrius elementals d'ordre~\(n\) sobre un cos~\(\mathbb{K}\).
+		Aleshores~\(PQ\) és una matriu elemental.
 	\end{observation}
 	\begin{notation}
-		Denotarem les transformacions elementals per files \(P_{i,j}\) com \(F_{i}\leftrightarrow F_{j}\), \(D_{i,\lambda}\) com \(F_{i}\rightarrow\lambda F_{i}\) i \(E_{i,j,\lambda}\) com \(F_{i}\rightarrow F_{i}+\lambda F_{j}\).
+		Denotarem les transformacions elementals per files~\(P_{i,j}\) com~\(F_{i}\leftrightarrow F_{j}\),~\(D_{i,\lambda}\) com~\(F_{i}\rightarrow\lambda F_{i}\) i~\(E_{i,j,\lambda}\) com~\(F_{i}\rightarrow F_{i}+\lambda F_{j}\).
 		
 		Aprofitant la proposició \myref{prop:transformacions elementals i matrius elementals} també denotarem una successió de transformacions elementals com una matriu quadrada.
 		
-		Si apliquem una transformació elemental per files a una matriu transposada i transposem el resultat denotarem \(P_{i,j}\) com \(C_{i}\leftrightarrow C_{j}\), \(D_{i,\lambda}\) com \(C_{i}\rightarrow\lambda C_{i}\) i \(E_{i,j,\lambda}\) com \(C_{i}\rightarrow C_{i}+\lambda C_{j}\) i direm que són transformacions elementals per columnes.
+		Si apliquem una transformació elemental per files a una matriu transposada i transposem el resultat denotarem~\(P_{i,j}\) com~\(C_{i}\leftrightarrow C_{j}\),~\(D_{i,\lambda}\) com~\(C_{i}\rightarrow\lambda C_{i}\) i~\(E_{i,j,\lambda}\) com~\(C_{i}\rightarrow C_{i}+\lambda C_{j}\) i direm que són transformacions elementals per columnes.
 	\end{notation}
 	\begin{proposition}
 		\label{prop:les matrius elementals són invertibles}
-		Sigui \(P\) una matriu elemental d'ordre \(n\) sobre un cos \(\mathbb{K}\).
-		Aleshores \(P\) és una matriu invertible.
+		Sigui~\(P\) una matriu elemental d'ordre~\(n\) sobre un cos~\(\mathbb{K}\).
+		Aleshores~\(P\) és una matriu invertible.
 		\begin{proof}
-			En tenim prou amb veure que \(P_{i,j}^{-1}=P_{i,j}\), \(D_{i,\lambda}^{-1}=D_{i,\lambda^{-1}}\) i \(E_{i,j,\lambda}^{-1}=E_{i,j,-\lambda}\).
-			Per tant, per la definició de \myref{def:matriu elemental} i la definició de \myref{def:matriu invertible} tenim que \(P\) és una matriu invertible.
+			En tenim prou amb veure que~\(P_{i,j}^{-1}=P_{i,j}\),~\(D_{i,\lambda}^{-1}=D_{i,\lambda^{-1}}\) i~\(E_{i,j,\lambda}^{-1}=E_{i,j,-\lambda}\).
+			Per tant, per la definició de \myref{def:matriu elemental} i la definició de \myref{def:matriu invertible} tenim que~\(P\) és una matriu invertible.
 		\end{proof}
 	\end{proposition}
 	\subsection{Matrius esglaonades i mètode de Gauss}
 	\begin{definition}[Matriu esglaonada]
 		\labelname{matriu esglaonada}\label{def:matriu esglaonada}
-		Sigui \(A=(a_{i,j})\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\) tal que existeixen \(j_{1}<\dots<j_{r}\) nombres naturals tals que per a tot \(i\in\{1,\dots,r\}\) i per a tot \(j<j_{i}\) tenim \(a_{i,j}=0\) i \(a_{i,j_{i}}=1\); i per a tot \(i>j_{r}\) i \(j\in\{1,\dots,n\}\) tenim \(a_{i,j}=0\).
+		Sigui~\(A=(a_{i,j})\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\) tal que existeixen~\(j_{1}<\dots<j_{r}\) nombres naturals tals que per a tot~\(i\in\{1,\dots,r\}\) i per a tot~\(j<j_{i}\) tenim~\(a_{i,j}=0\) i~\(a_{i,j_{i}}=1\); i per a tot~\(i>j_{r}\) i~\(j\in\{1,\dots,n\}\) tenim~\(a_{i,j}=0\).
 		
-		Aleshores direm que \(A\) està esglaonada per files i que \(A^{t}\) està esglaonada per columnes.
+		Aleshores direm que~\(A\) està esglaonada per files i que~\(A^{t}\) està esglaonada per columnes.
 		
-		Direm que una matriu \(A\) es pot esglaonar per files si existeix una successió \(P\) de transformacions elementals per files tals que \(PA\) està esglaonada per files.
+		Direm que una matriu~\(A\) es pot esglaonar per files si existeix una successió~\(P\) de transformacions elementals per files tals que~\(PA\) està esglaonada per files.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:es pot esglaonar qualsevol matriu per files}
-		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
-		Aleshores \(A\) es pot esglaonar per files.
+		Sigui~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
+		Aleshores~\(A\) es pot esglaonar per files.
 		\begin{proof} %REFER a partir de l'hipotesi d'inducció
-			Denotem \(A=(a_{i,j})\).
-			Ho farem per inducció sobre \(n\).
+			Denotem~\(A=(a_{i,j})\).
+			Ho farem per inducció sobre~\(n\).
 			
-			Suposem que \(n=1\).
-			Si \(a_{i,1}=0\) per a tot \(i\in\{1,\dots,m\}\) per la definició de \myref{def:matriu esglaonada} hem acabat.
-			Suposem doncs que existeix un \(i\in\{1,\dots,m\}\) tal que \(a_{i,1}\neq0\).
+			Suposem que~\(n=1\).
+			Si~\(a_{i,1}=0\) per a tot~\(i\in\{1,\dots,m\}\) per la definició de \myref{def:matriu esglaonada} hem acabat.
+			Suposem doncs que existeix un~\(i\in\{1,\dots,m\}\) tal que~\(a_{i,1}\neq0\).
 			Aleshores podem fer les transformacions elementals
 			\[A=
 			\left[\begin{matrix}
@@ -722,25 +722,25 @@
 			\end{matrix}\right]\]
 			i per la definició de \myref{def:matriu esglaonada} hem acabat.
 			
-			Suposem doncs que la hipòtesi és certa per a \(n\).
-			Veiem que també ho és per \(n+1\).
-			Sigui \(A=(a_{i,j})\) una matriu de mida \(m\times(n+1)\) sobre \(\mathbb{K}\).
+			Suposem doncs que la hipòtesi és certa per a~\(n\).
+			Veiem que també ho és per~\(n+1\).
+			Sigui~\(A=(a_{i,j})\) una matriu de mida~\(m\times(n+1)\) sobre~\(\mathbb{K}\).
 			Considerem la matriu
 			\[A'=\left[\begin{matrix}
 			a_{1,2} & \dots & a_{1,n+1} \\
 			\vdots & & \vdots \\
 			a_{m,2} & \dots & a_{m,n+1}
 			\end{matrix}\right].\]
-			Per la definició de \myref{def:matriu} tenim que \(A'\) és una matriu de mida \(m\times n\) sobre \(\mathbb{K}\), i per l'hipòtesi d'inducció tenim que podem esglaonar-la.
-			Sigui doncs \(B\) la matriu \(A'\) esglaonada.
+			Per la definició de \myref{def:matriu} tenim que~\(A'\) és una matriu de mida~\(m\times n\) sobre~\(\mathbb{K}\), i per l'hipòtesi d'inducció tenim que podem esglaonar-la.
+			Sigui doncs~\(B\) la matriu~\(A'\) esglaonada.
 			Considerem la matriu
 			\[\left[\begin{matrix}
 			a_{1,1}\\
 			\vdots\\
 			a_{1,m}\\
 			\end{matrix}\right],\]
-			que correspon a la primera columna de la matriu \(A\).
-			Hem vist que podem esglaonar-la, i per tant per la definició de \myref{def:matriu esglaonada} tenim que podem esglaonar la matriu \(A\), ja que
+			que correspon a la primera columna de la matriu~\(A\).
+			Hem vist que podem esglaonar-la, i per tant per la definició de \myref{def:matriu esglaonada} tenim que podem esglaonar la matriu~\(A\), ja que
 			\[A=\left[\begin{array}{c|c}
 			a_{1,1} & \\
 			\vdots & A' \\
@@ -751,30 +751,30 @@
 	\end{proposition}
 	\begin{corollary}
 		\label{corollary:es pot esglaonar qualsevol matriu per columnes}
-		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
-		Aleshores \(A\) es pot esglaonar per columnes.
+		Sigui~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
+		Aleshores~\(A\) es pot esglaonar per columnes.
 	\end{corollary}
 	\subsection{Reducció d'una matriu}
-	\begin{theorem}[Teorema de la \(PAQ\)-reducció]
+	\begin{theorem}[Teorema de la~\(PAQ\)-reducció]
 		\labelname{Teorema de la \ensuremath{PAQ}-reducció}\label{thm:Teorema de la PAQ-reducció}
-		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
-		Aleshores existeixen un únic nombre natural \(r\) satisfent \(r\leq\min(m,n)\), una matriu elemental \(P\) d'ordre \(m\) sobre \(\mathbb{K}\) i una matriu elemental \(Q\) d'ordre \(n\) sobre \(\mathbb{K}\) tals que
+		Sigui~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
+		Aleshores existeixen un únic nombre natural~\(r\) satisfent~\(r\leq\min(m,n)\), una matriu elemental~\(P\) d'ordre~\(m\) sobre~\(\mathbb{K}\) i una matriu elemental~\(Q\) d'ordre~\(n\) sobre~\(\mathbb{K}\) tals que
 		\[PAQ=\left[\begin{array}{c|c}
 		I_{r} & 0\\\hline
 		0 & 0
 		\end{array}\right].\]
 		\begin{proof}
-			Denotem \(A=(a_{i,j})\).
-			Si \(a_{i,j}=0\) per a tot \(i\in\{1,\dots,m\}\) i \(j\in\{1,\dots,n\}\) aleshores tenim \(r=0\) i hem acabat.
-			Suposem doncs que existeixen \(i\in\{1,\dots,m\}\) i \(j\in\{1,\dots,n\}\) tals que \(a_{i,j}\neq0\).
+			Denotem~\(A=(a_{i,j})\).
+			Si~\(a_{i,j}=0\) per a tot~\(i\in\{1,\dots,m\}\) i~\(j\in\{1,\dots,n\}\) aleshores tenim~\(r=0\) i hem acabat.
+			Suposem doncs que existeixen~\(i\in\{1,\dots,m\}\) i~\(j\in\{1,\dots,n\}\) tals que~\(a_{i,j}\neq0\).
 			
-			Per la proposició \myref{prop:es pot esglaonar qualsevol matriu per files} tenim que existeix una matriu elemental \(P\) d'ordre \(m\) sobre \(\mathbb{K}\) tal que \(PA\) està esglaonada per files.
-			Per la definició de \myref{def:matriu esglaonada} tenim que existeixen \(j_{i}\) per a tot \(i\in\{1,\dots,r\}\) amb \(j_{1}<\dots<j_{r}\) tals que per a tot \(j<j_{i}\) tenim \(a_{i,j}=0\) i \(a_{i,j_{i}}=1\).
+			Per la proposició \myref{prop:es pot esglaonar qualsevol matriu per files} tenim que existeix una matriu elemental~\(P\) d'ordre~\(m\) sobre~\(\mathbb{K}\) tal que~\(PA\) està esglaonada per files.
+			Per la definició de \myref{def:matriu esglaonada} tenim que existeixen~\(j_{i}\) per a tot~\(i\in\{1,\dots,r\}\) amb~\(j_{1}<\dots<j_{r}\) tals que per a tot~\(j<j_{i}\) tenim~\(a_{i,j}=0\) i~\(a_{i,j_{i}}=1\).
 			Fent les transformacions elementals
 			\[
 			    C_{1}\leftrightarrow C_{j_{1}},\quad C_{2}\leftrightarrow C_{j_{2}},\dots,C_{r}\leftrightarrow C_{j_{r}}
 			\]
-			a la matriu \(PA\) obtenim la matriu
+			a la matriu~\(PA\) obtenim la matriu
 			\[A_{1}=\left[\begin{array}{cccc|ccc}
 			1 & b_{1,2} & \cdots & b_{1,r} & b_{1,r+1} & \cdots & b_{1,n} \\
 			0 & 1 & \ddots & \vdots & \vdots & & \vdots\\
@@ -784,29 +784,29 @@
 			\vdots & & \vdots & \vdots & \vdots & & \vdots \\
 			0 & \cdots & 0 & 0 & 0 & \cdots & 0
 			\end{array}\right],\]
-			i fent a la matriu \(A_{1}\) les transformacions elementals
+			i fent a la matriu~\(A_{1}\) les transformacions elementals
 			\begin{align*}
 			C_{k_{1}}\rightarrow C_{k_{1}}-b_{1,k_{1}}C_{1},\quad&\text{per a }k_{1}\in\{2,\dots,n\} \\
 			C_{k_{2}}\rightarrow C_{k_{2}}-b_{2,k_{2}}C_{2},\quad&\text{per a }k_{2}\in\{3,\dots,n\} \\
 			\vdots & \\
 			C_{k_{r}}\rightarrow C_{k_{r}}-b_{r,k_{r}}C_{r},\quad&\text{per a }k_{r}\in\{r+1,\dots,n\},
 			\end{align*}
-			i per la proposició \myref{prop:transformacions elementals i matrius elementals} tenim que existeix una matriu \(P\) d'ordre \(n\) sobre \(\mathbb{K}\) tal que
+			i per la proposició \myref{prop:transformacions elementals i matrius elementals} tenim que existeix una matriu~\(P\) d'ordre~\(n\) sobre~\(\mathbb{K}\) tal que
 			\[PAQ=\left[\begin{array}{c|c}
 			I_{r} & 0\\\hline
 			0 & 0
 			\end{array}\right],\]
-			i per la definició de \myref{prop:transformacions elementals i matrius elementals} tenim que les matrius \(P\) i \(Q\) són matrius elementals.
+			i per la definició de \myref{prop:transformacions elementals i matrius elementals} tenim que les matrius~\(P\) i~\(Q\) són matrius elementals.
 			%FER %TODO ?
 			
-			Veiem ara que \(r\) és únic.
-			Suposem que existeixen un nombre natural \(s\leq\min(m,n)\), una matriu elemental \(P_{1}\) d'ordre \(m\) sobre \(\mathbb{K}\) i una matriu elemental \(Q_{1}\) d'ordre \(n\) sobre \(\mathbb{K}\) tals que
+			Veiem ara que~\(r\) és únic.
+			Suposem que existeixen un nombre natural~\(s\leq\min(m,n)\), una matriu elemental~\(P_{1}\) d'ordre~\(m\) sobre~\(\mathbb{K}\) i una matriu elemental~\(Q_{1}\) d'ordre~\(n\) sobre~\(\mathbb{K}\) tals que
 			\[P_{1}AQ_{1}=\left[\begin{array}{c|c}
 			I_{s} & 0\\\hline
 			0 & 0
 			\end{array}\right].\]
-			Hem de veure que \(r=s\).
-			Suposem que \(r\leq s\).
+			Hem de veure que~\(r=s\).
+			Suposem que~\(r\leq s\).
 			
 			Tenim que
 			\[PAQ=\left[\begin{array}{c|c}
@@ -818,7 +818,7 @@
 			I_{s} & 0\\\hline
 			0 & 0
 			\end{array}\right].\]
-			Com que, per la proposició \myref{prop:les matrius elementals són invertibles}, les matrius \(P\), \(Q\), \(P_{1}\) i \(Q_{1}\) són invertibles tenim que
+			Com que, per la proposició \myref{prop:les matrius elementals són invertibles}, les matrius~\(P\),~\(Q\),~\(P_{1}\) i~\(Q_{1}\) són invertibles tenim que
 			\[A=P^{-1}\left[\begin{array}{c|c}
 			I_{r} & 0\\\hline
 			0 & 0
@@ -836,7 +836,7 @@
 			0 & 0
 			\end{array}\right]Q_{1}^{-1}Q.\]
 			
-			Denotem \(P_{2}=P_{1}P^{-1}\), \(Q_{2}=Q_{1}^{-1}Q\), \(P_{2}=(p_{i,j})\) i \(Q_{2}=(q_{i,j})\) i tenim
+			Denotem~\(P_{2}=P_{1}P^{-1}\),~\(Q_{2}=Q_{1}^{-1}Q\),~\(P_{2}=(p_{i,j})\) i~\(Q_{2}=(q_{i,j})\) i tenim
 			\begin{multline*}
 			\left[\begin{array}{ccc|ccc}
 			p_{1,1} & \cdots & p_{1,r} & p_{1,r+1} & \cdots & p_{1,m} \\
@@ -907,12 +907,12 @@
 			Q''_{2} & Q'''_{2}
 			\end{array}\right].\]
 			
-			Ara bé, pel que hem vist abans, existeixen un nombre natural \(t\leq\min(r,s)\), una matriu invertible \(P_{3}\) d'ordre \(s\) sobre \(\mathbb{K}\) i una matriu invertible \(Q_{3}\) d'ordre \(r\) sobre \(\mathbb{K}\) tals que
+			Ara bé, pel que hem vist abans, existeixen un nombre natural~\(t\leq\min(r,s)\), una matriu invertible~\(P_{3}\) d'ordre~\(s\) sobre~\(\mathbb{K}\) i una matriu invertible~\(Q_{3}\) d'ordre~\(r\) sobre~\(\mathbb{K}\) tals que
 			\[P_{3}Q''_{2}Q_{3}=\left[\begin{array}{c|c}
 			I_{t} & 0 \\\hline
 			0 & 0
 			\end{array}\right],\]
-			i com que, per hipòtesi, \(r\leq s\) tenim \(t\leq r\leq s\).
+			i com que, per hipòtesi,~\(r\leq s\) tenim~\(t\leq r\leq s\).
 			
 			Per tant per la proposició \myref{prop:producte de matrius en blocs} tenim que
 			\begin{multline*}
@@ -937,28 +937,28 @@
 			Q''_{2}Q_{3} & Q'''_{2}
 			\end{array}\right]=B.
 			\end{multline*}
-			Per la proposició \myref{prop:el producte de matrius invertibles és invertible} trobem que la matriu \(B\) és invertible.
-			Ara bé, per l'observació \myref{obs:matrius amb una fila nula no són invertibles} trobem que ha de ser \(r-t=s-t=0\), i per tant \(r=s\), com volíem veure.
-			La demostració del cas \(s\leq r\) és anàloga.
+			Per la proposició \myref{prop:el producte de matrius invertibles és invertible} trobem que la matriu~\(B\) és invertible.
+			Ara bé, per l'observació \myref{obs:matrius amb una fila nula no són invertibles} trobem que ha de ser~\(r-t=s-t=0\), i per tant~\(r=s\), com volíem veure.
+			La demostració del cas~\(s\leq r\) és anàloga.
 		\end{proof}
 	\end{theorem}
 	\begin{definition}[Rang]
 		\labelname{rang d'una matriu}\label{def:rang d'una matriu}
-		Siguin \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(P\) una matriu invertible d'ordre \(n\) sobre \(\mathbb{K}\) i \(Q\) una matriu invertible d'ordre \(m\) sobre \(\mathbb{K}\) tals que
+		Siguin~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\),~\(P\) una matriu invertible d'ordre~\(n\) sobre~\(\mathbb{K}\) i~\(Q\) una matriu invertible d'ordre~\(m\) sobre~\(\mathbb{K}\) tals que
 		\[PAQ=\left[\begin{array}{c|c}
 		I_{r} & 0 \\\hline
 		0 & 0
 		\end{array}\right].\]
-		Aleshores direm que \(r\) és el rang de \(A\) i denotarem \(\rang(A)=r\).
+		Aleshores direm que~\(r\) és el rang de~\(A\) i denotarem~\(\rang(A)=r\).
 		
 		Observem que aquesta definició té sentit pel \myref{thm:Teorema de la PAQ-reducció}.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:rang de la matriu transposada és el rang de la matriu}
-		Sigui \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\).
-		Aleshores \(\rang(A)=\rang(A^{t})\).
+		Sigui~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\).
+		Aleshores~\(\rang(A)=\rang(A^{t})\).
 		\begin{proof}
-			Per la definició de \myref{def:rang d'una matriu} tenim que existeixen una matriu \(P\) invertible d'ordre \(n\) sobre \(\mathbb{K}\) i una matriu \(Q\) invertible d'ordre \(m\) sobre \(\mathbb{K}\) tals que
+			Per la definició de \myref{def:rang d'una matriu} tenim que existeixen una matriu~\(P\) invertible d'ordre~\(n\) sobre~\(\mathbb{K}\) i una matriu~\(Q\) invertible d'ordre~\(m\) sobre~\(\mathbb{K}\) tals que
 			\[PAQ=\left[\begin{array}{c|c}
 			I_{r} & 0 \\\hline
 			0 & 0
@@ -969,15 +969,15 @@
 			I_{r} & 0 \\\hline
 			0 & 0
 			\end{array}\right].\]
-			Per la proposició \myref{prop:transposada d'una invertible és invertible} tenim que les matrius \(Q^{t}\) i \(P^{t}\) són invertibles, i per tant, per la definició de \myref{def:rang d'una matriu} tenim que \(\rang{A^{t}}=r\).
+			Per la proposició \myref{prop:transposada d'una invertible és invertible} tenim que les matrius~\(Q^{t}\) i~\(P^{t}\) són invertibles, i per tant, per la definició de \myref{def:rang d'una matriu} tenim que~\(\rang{A^{t}}=r\).
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:una matriu invertible és producte de matrius elementals}
-		Sigui \(A\) una matriu invertible d'ordre \(n\) sobre un cos \(\mathbb{K}\).
-		Aleshores \(A\) és una matriu elemental.
+		Sigui~\(A\) una matriu invertible d'ordre~\(n\) sobre un cos~\(\mathbb{K}\).
+		Aleshores~\(A\) és una matriu elemental.
 		\begin{proof}
-			Pel \myref{thm:Teorema de la PAQ-reducció} tenim que existeixen dues matrius invertibles \(P\) i \(Q\) d'ordre \(n\) sobre \(\mathbb{K}\) tals que
+			Pel \myref{thm:Teorema de la PAQ-reducció} tenim que existeixen dues matrius invertibles~\(P\) i~\(Q\) d'ordre~\(n\) sobre~\(\mathbb{K}\) tals que
 			\[PAQ=\left[\begin{array}{c|c}
 			I_{r} & 0\\\hline
 			0 & 0
@@ -988,17 +988,17 @@
 			I_{r} & 0\\\hline
 			0 & 0
 			\end{array}\right]\]
-			ha de ser invertible, i per l'observació \myref{obs:matrius amb una fila nula no són invertibles} trobem que ha de ser \(r=n\).
-			Per tant tenim \(PAQ=I_{n}\) i tenim que \(A=P^{-1}Q^{-1}\), i per l'observació \myref{obs:producte de matrius elementals és matriu elemental} tenim que \(A\) és una matriu elemental.
+			ha de ser invertible, i per l'observació \myref{obs:matrius amb una fila nula no són invertibles} trobem que ha de ser~\(r=n\).
+			Per tant tenim~\(PAQ=I_{n}\) i tenim que~\(A=P^{-1}Q^{-1}\), i per l'observació \myref{obs:producte de matrius elementals és matriu elemental} tenim que~\(A\) és una matriu elemental.
 		\end{proof}
 	\end{proposition}
 	\begin{corollary}
-		Sigui \(A\) una matriu d'ordre \(n\) sobre un cos \(\mathbb{K}\).
-		Aleshores \(A\) és invertible si i només si \(\rang(A)=n\).
+		Sigui~\(A\) una matriu d'ordre~\(n\) sobre un cos~\(\mathbb{K}\).
+		Aleshores~\(A\) és invertible si i només si~\(\rang(A)=n\).
 	\end{corollary}
 	\begin{observation}
 		\label{obs:rang d'una matriu és invariant pel producte amb invertibles}
-		Siguin \(A\) una matriu de mida \(m\times n\) sobre un cos \(\mathbb{K}\), \(P\) una matriu invertible d'ordre \(m\) sobre \(\mathbb{K}\) i \(Q\) una matriu invertible d'ordre \(n\) sobre \(\mathbb{K}\).
+		Siguin~\(A\) una matriu de mida~\(m\times n\) sobre un cos~\(\mathbb{K}\),~\(P\) una matriu invertible d'ordre~\(m\) sobre~\(\mathbb{K}\) i~\(Q\) una matriu invertible d'ordre~\(n\) sobre~\(\mathbb{K}\).
 		Aleshores
 		\[
 		    \rang(A)=\rang(PAQ).
@@ -1010,7 +1010,7 @@
 %	\subsection{Mètode de Gauss}
 %	\begin{definition}[Sistema d'equacions lineals]
 %		\labelname{sistema d'equacions lineals}\label{def:sistema d'equacions lineals}
-%		Siguin \(\mathbb{K}\) un cos i \(\{a_{i,j}\}_{1\leq i\leq m}^{1\leq j\leq n}\), \(\{b_{i}\}_{1\leq i\leq m}\) i \(\{x_{i}\}_{1\leq i\leq n}\) elements de \(\mathbb{K}\). Aleshores direm que l'expressió
+%		Siguin~\(\mathbb{K}\) un cos i~\(\{a_{i,j}\}_{1\leq i\leq m}^{1\leq j\leq n}\),~\(\{b_{i}\}_{1\leq i\leq m}\) i~\(\{x_{i}\}_{1\leq i\leq n}\) elements de~\(\mathbb{K}\). Aleshores direm que l'expressió
 %		\begin{equation}
 %		\label{eq:def:sistema d'equacions lineals: 1}
 %		\begin{cases}
@@ -1019,15 +1019,15 @@
 %		a_{m,1}x_{1}+\dots+a_{m,n}x_{n}=b_{m}
 %		\end{cases}
 %		\end{equation}
-%		és un sistema d'equacions lineals sobre \(\mathbb{K}\). Direm que \(x_{1},\dots,x_{n}\) són les incògnites.
+%		és un sistema d'equacions lineals sobre~\(\mathbb{K}\). Direm que~\(x_{1},\dots,x_{n}\) són les incògnites.
 %		
-%		Si existeixen \(a_{1},\dots,a_{n}\) elements de \(\mathbb{K}\) tals que
+%		Si existeixen~\(a_{1},\dots,a_{n}\) elements de~\(\mathbb{K}\) tals que
 %		\[\begin{cases}
 %		a_{1,1}a_{1}+\dots+a_{1,n}a_{n}=b_{1} \\
 %		\hfill\vdots\hfill\hfill\\
 %		a_{m,1}a_{1}+\dots+a_{m,n}a_{n}=b_{m}
 %		\end{cases}\]
-%		aleshores direm que \((a_{1},\dots,a_{n})\in\mathbb{K}^{n}\) és una solució del sistema \eqref{eq:def:sistema d'equacions lineals: 1}.
+%		aleshores direm que~\((a_{1},\dots,a_{n})\in\mathbb{K}^{n}\) és una solució del sistema \eqref{eq:def:sistema d'equacions lineals: 1}.
 %		
 %		Direm que el sistema \eqref{eq:def:sistema d'equacions lineals: 1} és compatible si existeix alguna solució, i direm que o bé és compatible determinat si aquesta solució és única o bé compatible indeterminat si la solució no és única.
 %		
@@ -1042,7 +1042,7 @@
 %		a_{m,1}x_{1}+\dots+a_{m,n}x_{n}=b_{m}
 %		\end{cases}
 %		\end{equation}
-%		un sistema d'equacions lineals sobre un cos \(\mathbb{K}\). Aleshores posarem
+%		un sistema d'equacions lineals sobre un cos~\(\mathbb{K}\). Aleshores posarem
 %		\[x=\left[\begin{matrix}
 %		x_{1} \\
 %		\vdots \\
@@ -1052,18 +1052,18 @@
 %		\vdots \\
 %		b_{n}
 %		\end{matrix}\right]\]
-%		i \(A=(a_{i,j})\) i direm que \(A\) és la matriu associada al sistema, \(\left[A\vert b\right]\) és la matriu ampliada del sistema i escriurem el sistema en forma matricial fent
+%		i~\(A=(a_{i,j})\) i direm que~\(A\) és la matriu associada al sistema,~\(\left[A\vert b\right]\) és la matriu ampliada del sistema i escriurem el sistema en forma matricial fent
 %		\[Ax=b.\]
 %	\end{notation}
 %	\begin{theorem}[Mètode de Gauss]
-%		Sigui \(\mathbb{K}\) un cos, \(\left[A\vert b\right]\in\matrius_{m\times(n+1)}(\mathbb{K})\) la matriu ampliada d'un sistema d'equacions i \(P\) una matriu invertible d'ordre \(n\) sobre \(\mathbb{K}\). Aleshores els sistemes d'equacions
+%		Sigui~\(\mathbb{K}\) un cos,~\(\left[A\vert b\right]\in\matrius_{m\times(n+1)}(\mathbb{K})\) la matriu ampliada d'un sistema d'equacions i~\(P\) una matriu invertible d'ordre~\(n\) sobre~\(\mathbb{K}\). Aleshores els sistemes d'equacions
 %		\[Ax=b\quad\text{i}\quad PAx'=Pb\]
 %		són equivalents.
 %		\begin{proof} %Potser coses de cossos? Lo veo patatero
 %			Considerem el sistema d'equacions lineals
 %			\[PAx=Pb.\]
 %			
-%			Com que, per hipòtesi, la matriu \(P\) és invertible, per la definició de \myref{def:matriu invertible}, tenim que existeix una matriu \(P^{-1}\) tal que \(P^{-1}P=I_{n}\). Per tant tenim que
+%			Com que, per hipòtesi, la matriu~\(P\) és invertible, per la definició de \myref{def:matriu invertible}, tenim que existeix una matriu~\(P^{-1}\) tal que~\(P^{-1}P=I_{n}\). Per tant tenim que
 %			\[P^{-1}PAx=P^{-1}Pb\]
 %			i trobem
 %			\[Ax=b.\qedhere\]
@@ -1071,9 +1071,9 @@
 %	\end{theorem}
 %	\subsection{Teorema de Rouché-Frobenius}
 %	\begin{theorem}[Teorema de Rouché-Frobenius]
-%		Sigui \(Ax=b\) un sistema d'equacions lineals sobre un cos \(\mathbb{K}\) amb \(A\in\matrius_{m\times n}(\mathbb{K})\) i \(r=\rang(A)\). Aleshores el sistema és compatible si i només si
+%		Sigui~\(Ax=b\) un sistema d'equacions lineals sobre un cos~\(\mathbb{K}\) amb~\(A\in\matrius_{m\times n}(\mathbb{K})\) i~\(r=\rang(A)\). Aleshores el sistema és compatible si i només si
 %		\[\rang(A\vert b)=\rang(A).\]
-%		A demés, Si \(\rang(A)=n\) el sistema és compatible determinat i si \(\rang(A)<n\) el sistema és compatible indeterminat.
+%		A demés, Si~\(\rang(A)=n\) el sistema és compatible determinat i si~\(\rang(A)<n\) el sistema és compatible indeterminat.
 %		\begin{proof}
 %			
 %		\end{proof}
@@ -1082,24 +1082,24 @@
 	\subsection{Propietats dels determinants}
 	\begin{definition}[Determinant]
 		\labelname{determinant d'una matriu}\label{def:determinant d'una matriu}
-		Siguin \(\mathbb{K}\) un cos i \(\det\colon\matrius_{n}(\mathbb{K})\longrightarrow\mathbb{K}\) una aplicació que satisfà per a tot \(i\in\{1,\dots,n\}\) i \(j\in\{i+1,\dots,n\}\) i per a tot \(C_{i}\in\matrius_{n\times1}(\mathbb{K})\)
+		Siguin~\(\mathbb{K}\) un cos i~\(\det\colon\matrius_{n}(\mathbb{K})\longrightarrow\mathbb{K}\) una aplicació que satisfà per a tot~\(i\in\{1,\dots,n\}\) i~\(j\in\{i+1,\dots,n\}\) i per a tot~\(C_{i}\in\matrius_{n\times1}(\mathbb{K})\)
 		\begin{enumerate}
-			\item Per a tot \(C'_{j}\in\matrius_{n\times1}(\mathbb{K})\) es satisfà
+			\item Per a tot~\(C'_{j}\in\matrius_{n\times1}(\mathbb{K})\) es satisfà
 			\begin{multline*}
 			\det(C_{1},\dots,C_{i-1},C_{i}+C'_{i},C_{i+1},\dots,C_{n})=\\
 			=\det(C_{1},\dots,C_{n})+\det(C_{1},\dots,C_{i-1},C'_{i},C_{i+1},\dots,C_{n}).
 			\end{multline*}
-			\item Per a tot \(\alpha\in\mathbb{K}\) es satisfà 
+			\item Per a tot~\(\alpha\in\mathbb{K}\) es satisfà 
 			\[
 			    \det(C_{1},\dots,C_{i-1},\alpha C_{i},C_{i+1},\dots,C_{n})=\alpha\det(C_{1},\dots,C_{n})
 			\]
-			\item Si \(C_{i}=C_{j}\) es satisfà
+			\item Si~\(C_{i}=C_{j}\) es satisfà
 			\[
 			    \det(C_{1},\dots,C_{n})=0.
 			\]
-			\item \(\det(I_{n})=1\).
+			\item~\(\det(I_{n})=1\).
 		\end{enumerate}
-		Aleshores direm que \(\det\) és un determinant.
+		Aleshores direm que~\(\det\) és un determinant.
 	\end{definition}
 	\begin{proposition}
 		
