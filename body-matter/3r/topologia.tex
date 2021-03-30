@@ -61,7 +61,7 @@
 		\begin{proof}
 			Definim~\(r=\frac{\distancia(x,y)}{3}\) i considerem les boles~\(\bola(x,r)\) i~\(\bola(y,r)\).
 			Per la definició de \myref{def:distància} i la definició de \myref{def:bola} tenim que~\(x\) és un element de~\(\bola(x,r)\) i~\(y\) és un element de~\(\bola(y,r)\).
-			
+
 			També tenim que les boles~\(\bola(x,r)\) i~\(\bola(y,r)\) són disjuntes, ja que si prenem un element~\(a\) de~\(X\) tal que~\(a\) pertanyi a~\(\bola(x,r)\) i a~\(\bola(y,r)\) aleshores tenim, per la definició de \myref{def:bola}, que~\(\distancia(x,a)<r\) i~\(\distancia(a,y)<r\), i per la definició de \myref{def:distància} tenim que
 			\[
 			    \distancia(x,a)+\distancia(a,y)\geq \distancia(x,y).
@@ -74,7 +74,7 @@
 				&\leq \frac{2\distancia(x,y)}{3} < \distancia(x,y),
 			\end{align*}
 			i per tant aquest~\(a\) no existeix i trobem que~\(\bola(x,r)\) i~\(\bola(y,r)\) són disjunts.
-			
+
 			Per acabar, per la proposició \myref{prop:les boles són oberts} tenim que les boles~\(\bola(x,r)\) i~\(\bola(y,r)\) són oberts, i hem acabat.
 		\end{proof}
 	\end{proposition}
@@ -92,7 +92,7 @@
 		\item La unió d'una família d'elements de~\(\tau\) és un element de~\(\tau\).
 		\end{enumerate}
 		Aleshores direm que~\(\tau\) és una topologia de~\(X\) o que~\(X\) amb la topologia~\(\tau\) és un espai topològic.
-		
+
 		També direm que els elements de~\(\tau\) són oberts i que els elements de~\(X\) són punts.
 	\end{definition}
 	\begin{example}[Topologia induïda per una mètrica]
@@ -103,12 +103,12 @@
 			Per la definició d'\myref{def:obert espai mètric} trobem que~\(\emptyset\) és un obert, ja que per l'\myref{axiom:axioma de regularitat} tenim que~\(\emptyset\) és un subconjunt de~\(X\), i per a tot~\(x\) de~\(X\) existeix un~\(\varepsilon>0\) tal que~\(\bola(x,\varepsilon)\) pertany a~\(\emptyset\).
 			També tenim que~\(X\) és un obert, ja que pel \myref{thm:doble inclusió} tenim que~\(X\subseteq X\) i si prenem un element~\(x\) de~\(X\) tenim que per a tot~\(\varepsilon>0\) la bola~\(\bola(x,\varepsilon)\) és un subconjunt de~\(X\).
 			Per tant~\(\emptyset\) i~\(X\) són elements de~\(\tau\).
-			
+
 			Prenem~\(\{\obert{U}_{i}\}_{i=1}^{n}\) una família d'elements de~\(\tau\) i considerem
 			\[
 			    \obert{U}=\bigcap_{i=1}^{n}\obert{U}_{i}.
 			\]
-			
+
 			Sigui~\(x\) un element de~\(\obert{U}\).
 			Per la definició d'\myref{def:obert} tenim que per a tot~\(i\in\{1,\dots,n\}\) existeix un~\(\varepsilon_{i}>0\) real tal que
 			\[
@@ -120,12 +120,12 @@
 			    \bola(x,\varepsilon)\subseteq\bola(x,\varepsilon_{i})\quad\text{per a tot }i\in\{1,\dots,n\}.
 			\]
 			i per tant~\(\bola(x,\varepsilon)\subset\obert{U}\) i per la definició d'\myref{def:obert} tenim que~\(\obert{U}\) és un obert.
-			
+
 			Prenem~\(\{\obert{U}_{i}\}_{i\in I}\) una família d'oberts de~\(\tau\) i considerem
 			\[
 			    \obert{U}=\bigcup_{i\in I}\obert{U}_{i}.
 			\]
-			
+
 			Sigui~\(x\) un element de~\(\obert{U}\).
 			Per la definició d'\myref{def:unió de conjunts} tenim que existeix un~\(i\in I\) tal que~\(\obert{U}_{i}\) conté~\(x\).
 			Ara bé, per hipòtesi tenim que~\(\obert{U}_{i}\) és un obert, i per la definició d'\myref{def:obert espai mètric} trobem que existeix un~\(\varepsilon>0\) tal que~\(\bola(x,\varepsilon)\) és un subconjunt de~\(\obert{U}_{i}\), i com que~\(\obert{U}_{i}\) és un subconjunt de~\(\obert{U}\) tenim que~\(\bola(x,\varepsilon)\) també és un subconjunt de~\(\obert{U}\), i per la definició d'\myref{def:obert espai mètric} trobem que~\(\obert{U}\) és un obert, i per la definició d'\myref{def:espai topològic} hem acabat.
@@ -147,7 +147,7 @@
 		Aleshores~\(\tau\) és una topologia de~\(X\).
 		\begin{solution}
 			Tenim per l'\myref{axiom:conjunt potència} que~\(\emptyset\) i~\(X\) són subconjunts de~\(\tau\), ja que per l'\myref{axiom:axioma de regularitat} trobem que~\(\emptyset\subseteq X\), i pel \myref{thm:doble inclusió} trobem que~\(X\subseteq X\).
-			
+
 			Per la definició d'\myref{def:unió de conjunts} trobem que si~\(\{\obert{U}_{i}\}_{i\in I}\) és una família de subconjunts de~\(X\) aleshores
 			\[
 			    \bigcup_{i\in I}\obert{U}_{i}\subseteq X,
@@ -178,10 +178,10 @@
 			Comencem veient el punt \eqref{thm:equivalència obert tancat definició de topologia:enum 1}.
 			Tenim que~\(X\setminus\emptyset=X\).
 			Per la definició d'\myref{def:espai topològic} tenim que~\(X\) és un obert, i per la definició de \myref{def:tancat} trobem que~\(\emptyset\) és un tancat.
-			
+
 			També tenim que~\(X\setminus X=\emptyset\).
 			Per la definició d'\myref{def:espai topològic} tenim que~\(\emptyset\) és un obert, i per la definició de \myref{def:tancat} trobem que~\(X\) és un tancat.
-			
+
 			Veiem ara el punt \eqref{thm:equivalència obert tancat definició de topologia:enum 2}.
 			Prenem una família~\(\{\tancat{C}_{i}\}_{i=1}^{n}\) de tancats de~\(X\) i considerem
 			\[
@@ -199,7 +199,7 @@
 			    X\setminus\bigcup_{i=1}^{n}\tancat{C}_{i}=\bigcap_{i=1}^{n}\left(X\setminus\tancat{C}_{i}\right),
 			\]
 			i per tant, per la definició de \myref{def:tancat} trobem que~\(\bigcup_{i=1}^{n}\tancat{C}_{i}\) és un tancat.
-			
+
 			Veiem per acabat el punt \eqref{thm:equivalència obert tancat definició de topologia:enum 3}.
 			Prenem una família~\(\{\tancat{C}_{i}\}_{i\in I}\) de tancats de~\(X\) i considerem
 			\[
@@ -237,7 +237,7 @@
 			\[
 			    \tau=\{\obert{U}\subseteq X\mid\obert{U}\text{ es un obert}\}.
 			\]
-			
+
 			Prenem doncs un obert~\(\obert{U}\) de~\(\tau\) i un punt~\(x\) de~\(\obert{U}\).
 			Per la definició d'\myref{def:obert espai mètric} tenim que existeix un~\(\varepsilon>0\) real tal que~\(\bola(x,\varepsilon)\) és un subconjunt de~\(\obert{U}\), i per la definició de \myref{def:base d'una topologia} hem acabat.
 		\end{solution}
@@ -250,7 +250,7 @@
 %	\begin{proposition}
 %		Siguin~\(X\) un conjunt i~\(\tau\),~\(\tau'\) dues topologies de~\(X\) tals que~\(\tau'\) sigui més fina que~\(\tau\). Aleshores l'aplicació~\(\Id\colon X\longrightarrow X'\) és una aplicació contínua.
 %		\begin{proof}
-%			
+%
 %		\end{proof}
 %	\end{proposition}
 	\begin{proposition}
@@ -268,7 +268,7 @@
 				\tau=\left\{\obert{U}\subseteq X\mid\obert{U}=\cup_{i\in I}B_{i}\text{ amb }B_{i}\in\base{B}\right\}
 			\end{equation}
 			Observem que~\(X\) i~\(\emptyset\) pertanyen a~\(\tau\).
-			
+
 			Siguin~\(\obert{U}\) i~\(\obert{V}\) dos elements de~\(\base{B}\) i prenem un element~\(x\) de~\(\obert{U}\cap\obert{V}\).
 			Per hipòtesi tenim que existeix un element ~\(\obert{W}_{x}\) de~\(\base{B}\) tal que~\(x\in\obert{W}\subseteq\obert{U}\cap\obert{V}\).
 			Per tant
@@ -276,20 +276,20 @@
 			    \obert{U}\cap\obert{V}=\bigcup_{x\in\obert{U}\cap\obert{V}}\obert{W}_{x},
 			\]
 			i per la definició del conjunt~\(\tau\) tenim que~\(\obert{U}\cap\obert{V}\) és un element de~\(\tau\).
-			
+
 			Prenem dos elements~\(\obert{U}\) i~\(\obert{V}\) del conjunt~\(\tau\).
 			Per la definició \eqref{prop:condició equivalent a base d'una topologia:eq1} trobem que existeixen dues famílies~\(\{\obert{U}_{i}\}_{i\in I}\) i~\(\{\obert{V}_{j}\}_{j\in J}\) d'elements de~\(\base{B}\) tals que
 			\[
 			    \obert{U}=\bigcup_{i\in I}\obert{U}_{i}\quad\text{i}\quad\obert{V}=\bigcup_{j\in J}\obert{V}_{j}.
 			\]
-			
+
 			Per tant tenim que
 			\[
 			    \obert{U}\cap\obert{V}=\bigcup_{i\in I}\bigcup_{j\in J}(\obert{U}_{i}\cap\obert{V}_{j}),
 			\]
 			i per la definició \eqref{prop:condició equivalent a base d'una topologia:eq1} trobem que~\(\obert{U}\cap\obert{V}\) pertany a~\(\tau\).
 			Per tant per la definició de \myref{def:topologia} trobem que~\(\tau\) és una topologia de~\(X\).
-			
+
 			Veiem ara que~\(\base{B}\) és base de la topologia~\(\tau\).
 			Prenem un obert~\(\obert{U}\) de~\(\tau\) i~\(x\) un element de~\(\obert{U}\).
 			Per la definició \eqref{prop:condició equivalent a base d'una topologia:eq1} tenim que existeix una família~\(\{B_{i}\}_{i\in I}\) d'elements de~\(\base{B}\) tal que
@@ -297,11 +297,11 @@
 			    \obert{U}=\bigcup_{i\in I}B_{i}.
 			\]
 			Per tant existeix un element~\(B\) de~\(\base{B}\) tal que~\(x\in B\) i~\(B\subseteq\obert{U}\) i per la definició de \myref{def:base d'una topologia} trobem que~\(\base{B}\) és una base de la topologia~\(\tau\).
-			
+
 			Continuem veient que~\(\tau\) és la topologia menys fina que conté els elements de~\(\base{B}\).
 			Suposem que existeix una topologia~\(\tau'\) de~\(X\) tal que~\(\tau\) és més fina que~\(\tau'\) i tal que~\(\tau'\) conté els elements de~\(\base{B}\).
 			Per la definició de \myref{def:finor d'una topologia} això és que~\(\tau'\subset\tau\).
-			
+
 			Prenem un obert~\(\obert{U}\) de~\(\tau\).
 			Per la definició \eqref{prop:condició equivalent a base d'una topologia:eq1} trobem que existeix una família~\(\{B_{i}\}_{i\in I}\) d'elements de~\(\base{B}\) tals que
 			\[
@@ -309,10 +309,10 @@
 			\]
 			Ara bé, tenim per hipòtesi que~\(\base{B}\) és un subconjunt de la topologia~\(\tau'\), i per la definició de \myref{def:topologia} trobem que~\(\obert{U}\) pertany a~\(\tau'\).
 			Per tant ha de ser~\(\tau\subseteq\tau'\), i trobem que~\(\tau\) és la topologia menys fina que conté els elements de~\(\base{B}\).
-			
+
 			Veiem ara que aquesta topologia~\(\tau\) és única.
 			Suposem que existeix una altre topologia~\(\tau'\) tal que~\(\base{B}\) és una base de~\(\tau'\) i~\(\tau'\) és la topologia menys fina que conté els elements de~\(\base{B}\).
-			
+
 			Prenem un obert~\(\obert{U}\) de~\(\tau\).
 			Per la definició \eqref{prop:condició equivalent a base d'una topologia:eq1} trobem que existeix una família~\(\{B_{i}\}_{i\in I}\) d'elements de~\(\base{B}\) tals que
 			\[
@@ -329,7 +329,7 @@
 		\labelname{punt interior}\label{def:punt interior}
 		Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic,~\(x\) un punt i~\(N\) un conjunt tal que existeix un obert~\(\obert{U}\) satisfent que~\(x\) és un element de~\(\obert{U}\) i~\(\obert{U}\) és un subconjunt de~\(N\).
 		Aleshores direm que~\(N\) és un entorn de~\(x\).
-		
+
 		També direm que~\(x\) és un punt interior de~\(N\).
 	\end{definition}
 	\begin{observation}
@@ -362,7 +362,7 @@
 				&\subseteq\bigcup_{x\in\interior(A)}\obert{U}_{x} \\
 				&\subseteq\bigcup_{x\in\interior(A)}\interior(A)=\interior(A).
 			\end{align*}
-			
+
 			Per tant tenim que
 			\[
 			    \interior(A)\subseteq\bigcup_{x\in\interior(A)}\obert{U}_{x}\quad\text{i}\quad\bigcup_{x\in\interior(A)}\obert{U}_{x}\subseteq\interior(A),
@@ -447,7 +447,7 @@
 			 \end{equation}
 			 i per la definició d'\myref{def:entorn} tenim que existeix un obert~\(\obert{U}_{x}\) tal que~\(x\) és un element de~\(\obert{U}_{x}\) i que~\(\obert{U}_{x}\) és un subconjunt de~\(N\).
 			 Per tant, per \eqref{prop:la clausura d'un conjunt és un tancat:eq1} tenim que~\(A\cap\obert{U}_{x}=\emptyset\).
-			 
+
 			 Per tant trobem
 			 \begin{align*}
 				 X\setminus\clausura(A)&=\bigcup_{x\in X\setminus\clausura(A)}\{x\} \\
@@ -481,13 +481,13 @@
 				\label{prop:la clausura d'un conjunt és l'intersecció de tots els tancats que contenen el conjunt:eq1}
 				\clausura(A)\subseteq\bigcap_{\tancat{C}\in Y}\tancat{C}.
 			\end{equation}
-			
+
 			Per la proposició \myref{prop:la clausura d'un conjunt és un tancat} tenim que~\(\clausura(A)\) és un tancat, i per tant~\(\clausura(A)\) és un element de~\(Y\) i tenim que
 			\begin{equation}
 				\label{prop:la clausura d'un conjunt és l'intersecció de tots els tancats que contenen el conjunt:eq2}
 				\bigcap_{\tancat{C}\in Y}\tancat{C}\subseteq\clausura(A).
 			\end{equation}
-			
+
 			Ara bé, tenim \eqref{prop:la clausura d'un conjunt és l'intersecció de tots els tancats que contenen el conjunt:eq1} i \eqref{prop:la clausura d'un conjunt és l'intersecció de tots els tancats que contenen el conjunt:eq2}, i pel \myref{thm:doble inclusió} trobem que
 			\[
 			    \clausura(A)=\bigcap_{\tancat{C}\in Y}\tancat{C}.\qedhere
@@ -523,7 +523,7 @@
 				\label{prop:la clausura d'un conjunt és el complementari de l'interior del complementari del conjunt:eq1}
 				\clausura(X\setminus A)\subseteq X\setminus\interior(A)
 			\end{equation}
-			
+
 			Prenem ara un element~\(x\) de~\(X\setminus\interior(A)\).
 			Per la definició d'\myref{def:interior} tenim que no existeix cap obert~\(\obert{U}\) tal que~\(x\) sigui un element de~\(\obert{U}\) i~\(\obert{U}\) sigui un subconjunt de~\(A\), o equivalentment, que~\(\obert{U}\cap(X\setminus A)\neq\emptyset\) per a tot obert~\(\obert{U}\) tal que~\(x\) sigui un element de ~\(\obert{U}\) i que~\(\obert{U}\) sigui un subconjunt de~\(A\).
 			Ara bé, per la definició de \myref{def:clausura} tenim que~\(\obert{U}\) és un element de~\(\clausura(X\setminus A)\), i per tant trobem que
@@ -531,7 +531,7 @@
 				\label{prop:la clausura d'un conjunt és el complementari de l'interior del complementari del conjunt:eq2}
 				X\setminus\interior(A)\subseteq\clausura(X\setminus A).
 			\end{equation}
-			
+
 			Per tant, amb \eqref{prop:la clausura d'un conjunt és el complementari de l'interior del complementari del conjunt:eq1} i \eqref{prop:la clausura d'un conjunt és el complementari de l'interior del complementari del conjunt:eq2} i el \myref{thm:doble inclusió} trobem que~\(\clausura(X\setminus A)=X\setminus\interior(A)\), com volíem veure.
 		\end{proof}
 	\end{proposition}
@@ -589,7 +589,7 @@
 				\]
 				i per tant tenim que per a tot~\(y\) de~\(\mathbb{R}\setminus\tancat{K}\) existeix una bola~\(\bola(y,d)\) tal que~\(\bola(y,d)\cap\tancat{K}=\emptyset\), i per la definició d'\myref{def:obert espai mètric} trobem que~\(\mathbb{R}\setminus\tancat{K}\) és un obert de~\(\mathbb{R}\).
 				Aleshores per la definició de \myref{def:tancat} trobem que~\(\tancat{K}\) és un tancat, i per la definició d'\myref{def:aplicació tancada} trobem que~\(f\) és una aplicació tancada.
-				
+
 				Ara bé, tenim que~\(\{1\}\) és un tancat de~\(\mathbb{R}\)
 			\end{comment}
 			Veiem que~\(f\) és una aplicació contínua.
@@ -639,16 +639,16 @@
 				Per la definició d'\myref{def:homeomorfisme entre topologies} tenim que~\(\Id_{x}\) és un homeomorfisme, i per la definició d'\myref{def:espais topològics homeomorfs} tenim que~\(X\cong X\).
 				\item Simètrica: Siguin~\(X\) amb la topologia~\(\tau_{X}\) i~\(Y\) amb la topologia~\(\tau_{Y}\) dos espais topològics homeomorfs.
 				Per la definició d'\myref{def:espais topològics homeomorfs} tenim que existeix un homeomorfisme~\(f\colon X\longrightarrow Y\).
-				
+
 				Pel Teorema \myref{thm:bijectiva iff invertible} trobem que existeix l'aplicació inversa~\(f^{-1}\) de~\(Y\) a~\(X\), i pel \corollari{} \myref{cor:la inversa d'una aplicació invertible és invertible} tenim que l'aplicació~\(f^{-1}\) és bijectiva.
-				
+
 				També trobem que~\(f^{-1}\) és oberta, ja que per la definició d'\myref{def:homeomorfisme entre topologies} tenim que~\(f\) és contínua, i per la definició d'\myref{def:aplicació oberta} i la definició d'\myref{def:aplicació contínua} trobem que~\(f^{1}\) és oberta.
 				De mateixa manera trobem que~\(f^{-1}\) és contínua, ja que per la definició d'\myref{def:homeomorfisme entre topologies} tenim que~\(f\) és oberta, i per la definició d'\myref{def:aplicació contínua} i la definició d'\myref{def:aplicació oberta} trobem que~\(f^{-1}\) és contínua.
-				
+
 				Per tant, per la definició d'\myref{def:homeomorfisme entre topologies} trobem que~\(f^{-1}\) és un homeomorfisme entre topologies i per tant~\(Y\cong X\).
 				\item Transitiva: Siguin~\(X_{1}\) amb la topologia~\(\tau_{1}\),~\(X_{2}\) amb la topologia~\(\tau_{2}\) i~\(X_{3}\) amb la topologia~\(\tau_{3}\) tres espais topològics tals que~\(X_{1}\cong X_{2}\) i~\(X_{2}\cong X_{3}\).
 				Per la definició d'\myref{def:espais topològics homeomorfs} tenim que existeixen dos homeomorfismes~\(f\colon X_{1}\longrightarrow X_{2}\) i~\(g\colon X_{2}\longrightarrow X_{3}\).
-				
+
 				Considerem l'aplicació~\(h=g\circ f\).
 				Pel Teorema \myref{thm:conjugació de bijectives bijectiva} trobem que~\(h\) és bijectiva, i per l'observació \myref{obs:la composició d'aplicacions obertes és oberta} i l'observació \myref{obs:la composició d'aplicacions contínues és contínua} trobem que~\(h\) és oberta i contínua, i per la definició d'\myref{def:homeomorfisme entre topologies} trobem que~\(h\) és un homeomorfisme entre~\(X_{1}\) i~\(X_{3}\), i per la definició d'\myref{def:espais topològics homeomorfs} trobem que~\(X_{1}\cong X_{3}\).
 			\end{enumerate}
@@ -670,7 +670,7 @@
 		\begin{proof}
 			Observem que~\(A\) pertany a~\(\tau_{A}\), ja que per la definició de \myref{def:topologia} tenim que~\(X\) és un obert de~\(X\), i trobem~\(X\cap A=A\).
 			També tenim que~\(\emptyset\) pertany a~\(\tau_{A}\), ja que per la definició de \myref{def:topologia} tenim que~\(\emptyset\) és un obert de~\(X\), i trobem~\(\emptyset\cap A=\emptyset\).
-			
+
 			Sigui~\(\{\obert{U}_{i}\}_{i\in I}\) una família d'elements de~\(\tau_{A}\).
 			Per la definició \eqref{prop:topologia induida per un subconjunt:eq1} tenim que existeix una família~\(\{\obert{W}_{i}\}_{i\in I}\) d'oberts de~\(X\) tals que~\(\obert{U}_{i}=\obert{W}_{i}\cap A\), per a tot~\(i\) de~\(I\).
 			Considerem ara
@@ -686,7 +686,7 @@
 			    \obert{U}=A\cap\left(\bigcup_{i\in I}\obert{W}_{i}\right),
 			\]
 			i per la definició de \myref{def:topologia} tenim que~\(\bigcup_{i\in I}\obert{W}_{i}\) és un obert de~\(X\), i per la definició \eqref{prop:topologia induida per un subconjunt:eq1} trobem que~\(\obert{U}\) pertany a~\(\tau_{A}\).
-			
+
 			Sigui~\(\{\obert{U}\}_{i=1}^{n}\) una família d'elements de~\(\tau_{A}\).
 			Per la definició \eqref{prop:topologia induida per un subconjunt:eq1} tenim que existeix una família~\(\{\obert{W}_{i}\}_{i=1}^{n}\) d'oberts de~\(X\) tals que~\(\obert{U}_{i}=\obert{W}_{i}\cap A\), per a tot~\(i\) de~\(\{1,\dots,n\}\).
 			Considerem ara
@@ -713,7 +713,7 @@
 		    \tau_{A}=\{\obert{U}\subseteq A\mid\text{Existeix un obert }\obert{W}\text{ de }X\text{ tal que }\obert{U}=\obert{W}\cap A\}
 		\]
 		i direm que~\(\tau_{A}\) és la topologia induïda per~\(A\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:topologia induida per un subconjunt}.
 	\end{definition}
 	\begin{definition}[Subespai topològic]
@@ -739,7 +739,7 @@
 				&=A\cap\tancat{K}
 			\end{align*}
 			i hem acabat.
-			
+
 			Veiem ara que la condició és necessària (\(\implicatper\)).
 			Sigui~\(\tancat{K}\) un tancat de~\(X\).
 			Prenem~\(\tancat{C}=A\cap\tancat{K}\).
@@ -760,7 +760,7 @@
 			Suposem doncs que~\(\obert{U}\) és un obert de~\(A\).
 			Per la definició de \myref{def:topologia induida per un subconjunt} tenim que existeix un obert~\(\obert{W}\) de~\(X\) tal que~\(\obert{U}=A\cap\obert{W}\).
 			Ara bé, com que, per hipòtesi,~\(A\) i~\(\obert{W}\) són dos oberts de~\(X\) per la definició de \myref{def:topologia} trobem que~\(\obert{U}\) és un obert de~\(X\).
-			
+
 			Veiem ara que la condició és necessària (\(\implicatper\)).
 			Suposem doncs que~\(\obert{U}\) és un obert de~\(X\).
 			Com que, per la definició de \myref{def:topologia},~\(\obert{U}\) és un subconjunt de~\(A\), tenim que~\(\obert{U}=A\cap\obert{U}\), i per la definició de \myref{def:topologia induida per un subconjunt} trobem que~\(\obert{U}\) és un obert de~\(A\).
@@ -775,7 +775,7 @@
 			Suposem doncs que~\(\tancat{C}\) és un tancat de~\(A\).
 			Per la proposició \myref{prop:C és un tancat si i només si existeix un tancat K tal que l'intersecció de A i K és C} tenim que existeix un tancat~\(tancat{K}\) de~\(X\) tal que~\(\tancat{C}=A\cap\tancat{K}\).
 			Ara bé, com que~\(A\) i~\(\tancat{K}\) són dos tancats de~\(X\), pel Teorema \myref{thm:equivalència obert tancat definició de topologia} trobem que~\(\tancat{C}\) és un tancat de~\(X\).
-			
+
 			Veiem ara que la condició és necessària (\(\implicatper\)).
 			Suposem doncs que~\(\tancat{C}\) és un tancat de~\(X\).
 			Com que, per la definició de \myref{def:topologia},~\(\tancat{C}\) és un subconjunt de~\(A\), tenim que~\(\tancat{C}=A\cap\tancat{C}\), i per la definició de \myref{def:topologia induida per un subconjunt} trobem que~\(\tancat{C}\) és un tancat de~\(A\).
@@ -795,10 +795,10 @@
 		Aleshores~\(\tau\) és una topologia de~\(X\times Y\).
 		\begin{proof}
 			Per l'\myref{axiom:axioma de regularitat} trobem que~\(\emptyset\) és un subconjunt de~\(\base{B}\), i per la definició de~\(\tau\) trobem que~\(\emptyset\) és un element de~\(\tau\).
-			
+
 			Per la definició de \myref{def:topologia} trobem que~\(X\) és un obert de~\(X\) i~\(Y\) és un obert de~\(Y\).
 			Per tant~\(X\times Y\) és un element de~\(\base{B}\) i per la definició de~\(\tau\) trobem que~\(X\times Y\) és un element de~\(\tau\).
-			
+
 			Prenem una família~\(\{\obert{U}_{i}\}_{i\in I}\) d'elements de~\(\tau\) i considerem
 			\[
 			    \obert{U}=\bigcup_{i\in I}\obert{U}_{i}.
@@ -816,7 +816,7 @@
 			    \obert{U}=\bigcup_{i\in I}\bigcup_{j\in J_{i}}\left(\obert{V}_{j,X}\times\obert{V}_{j,Y}\right),
 			\]
 			i per la definició de~\(\tau\) trobem que~\(\obert{U}\) és un element de~\(\tau\).
-			
+
 			Siguin~\(\obert{U}\) i~\(\obert{V}\) dos elements de~\(\tau\) i considerem
 			\[
 			    \obert{W}=\obert{U}\cap\obert{V}.
@@ -833,7 +833,7 @@
 			\[
 			    \obert{V}_{j}=\obert{V}_{j,X}\times\obert{V}_{j,Y}.
 			\]
-			
+
 			Per tant tenim que
 			\[
 			    \obert{U}=\left(\bigcup_{i\in I}\left(\obert{U}_{i,X}\times\obert{U}_{i,Y}\right)\right)\cap\left(\bigcup_{j\in J}\left(\obert{V}_{j,X}\times\obert{V}_{j,Y}\right)\right)
@@ -864,7 +864,7 @@
 		    \tau=\{\obert{U}\subseteq X\times Y\mid\text{Existeix una família }\{\obert{U}_{i}\}_{i\in I}\subseteq\base{B}\text{ tal que }\obert{U}=\cup_{i\in I}\obert{U}_{i}\}
 		\]
 		és l'espai topològic producte de~\(X\) i~\(Y\) i que~\(\tau\) és la topologia producte de~\(X\) i~\(Y\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:la topologia producte}
 	\end{definition}
 	\begin{example}[Projeccions]
@@ -888,7 +888,7 @@
 			\]
 			i com que, per hipòtesi,~\(Y\) és un espai topològic, tenim que~\(Y\) és un obert de~\(Y\), i de nou per hipòtesi tenim que~\(\obert{U}\) és un obert de~\(X\).
 			Per tant trobem que~\(\obert{U}\times Y\) és un obert de~\(X\times Y\), i per la definició d'\myref{def:aplicació contínua} trobem que~\(\pi_{X}\) és contínua.
-			
+
 			Veiem ara que~\(\pi_{X}\) és oberta.
 			Prenem un obert~\(A\) de~\(X\times Y\) i un punt~\(x\) de~\(\{\pi_{X}(x,y)\in X\mid(x,y)\in A\}\).
 			Aleshores tenim que existeix un punt~\(a\) de~\(A\) tal que~\(\pi_{X}(a)=x\).
@@ -929,10 +929,10 @@
 			Comencem veient que la condició és suficient (\(\implica\)).
 			Suposem doncs que~\(f\) és contínua.
 			Aleshores per l'exemple \myref{ex:les projeccions en la topologia producte són contínues i obertes} trobem que les aplicacions~\(\pi_{X}\) i~\(\pi_{Y}\) són contínues i per l'observació \myref{obs:la composició d'aplicacions contínues és contínua} hem acabat.
-			
+
 			Veiem ara que la condició és necessària (\(\implicatper\)).
 			Suposem doncs que les aplicacions~\(\pi_{X}\circ f\) i~\(\pi_{Y}\circ f\) són contínues.
-			
+
 			Sigui~\(\obert{V}\times\obert{W}\) un obert de~\(X\times Y\).
 			Per la definició de \myref{def:topologia producte} tenim que~\(\obert{V}\) és un obert de~\(X\) i~\(\obert{W}\) és un obert de~\(Y\).
 			Ara bé, com que per hipòtesi les aplicacions~\(\pi_{X}\circ f\) i~\(\pi_{Y}\circ f\) són contínues, tenim per la definició d'\myref{def:aplicació contínua} que els conjunts
@@ -974,7 +974,7 @@
 				h^{-1}\colon X_{2}\times Y_{2}&\longrightarrow X_{1}\times Y_{1} \\
 				(x,y)&\longmapsto(f^{-1}(x),g^{-1}(y)).
 			\end{align*}
-			
+
 			Continuem veient que~\(h\) és una aplicació oberta.
 			Per la definició d'\myref{def:aplicació oberta} i la definició d'\myref{def:aplicació contínua} en tenim prou amb veure que~\(h^{-1}\) és una aplicació contínua.
 			Observem que per a tot~\((x,y)\) de~\(X_{2}\times Y_{2}\) tenim
@@ -982,14 +982,14 @@
 			    \pi_{X_{1}}\circ h^{-1}(x,y)=f^{-1}(x)\quad\text{i}\quad\pi_{Y_{1}}\circ h^{-1}(x,y)=g^{-1}(y),
 			\]
 			i com que, per hipòtesi, les aplicacions~\(f^{-1}\) i~\(g^{-1}\) són contínues tenim pel Teorema \myref{thm:una aplicació és contínua si i només si les seves components són contínues} que l'aplicació~\(h^{-1}\) és contínua, i per tant~\(h\) és una aplicació oberta.
-			
+
 			Per acabar veiem ara que~\(h\) és una aplicació contínua.
 			Observem que per a tot~\((x,y)\) de~\(X_{1}\times Y_{1}\) tenim
 			\[
 			    \pi_{X_{2}}\circ h(x,y)=f(x)\quad\text{i}\quad\pi_{Y_{2}}\circ h(x,y)=g(y),
 			\]
 			i com que, per hipòtesi, les aplicacions~\(f\) i~\(g\) són aplicacions contínues tenim pel Teorema \myref{thm:una aplicació és contínua si i només si les seves components són contínues} que l'aplicació~\(h\) és contínua.
-			
+
 			Per tant per la definició d'\myref{def:homeomorfisme entre topologies} trobem que~\(h\) és un homeomorfisme, i per la definició d'\myref{def:espais topològics homeomorfs} trobem que~\(X_{1}\times Y_{1}\cong X_{2}\times Y_{2}\), com volíem veure.
 		\end{proof}
 	\end{proposition}
@@ -1008,10 +1008,10 @@
 			Comprovem que~\(\tau_{Y}\) satisfà la definició de \myref{def:topologia}.
 			Tenim que~\(\emptyset\) pertany a~\(\tau_{Y}\).
 			Per la definició d'\myref{def:antiimatge d'una aplicació} trobem que~\(\Ima_{\emptyset}(p)=\emptyset\), i com que per la definició de \myref{def:topologia} tenim que~\(\emptyset\) pertany a~\(\tau_{X}\) trobem que~\(\emptyset\) és un element de~\(\tau_{Y}\).
-			
+
 			Veiem ara que~\(Y\) pertany a~\(\tau_{Y}\).
 			Per la definició d'\myref{def:antiimatge d'una aplicació} i com que, per hipòtesi,~\(p\) és exhaustiva, per la definició d'\myref{def:aplicació exhaustiva} tenim que~\(\Ima_{Y}^{-1}(p)=X\), i per la definició de \myref{def:topologia} tenim que~\(X\) és un obert, i per tant~\(Y\) pertany a~\(\tau_{Y}\).
-			
+
 			Sigui~\(\{\obert{U}_{i}\}_{i\in I}\) una família d'elements de~\(\tau_{Y}\).
 			Aleshores tenim que
 			\[
@@ -1023,7 +1023,7 @@
 			    \bigcup_{i\in I}\Antiima_{\obert{U}_{i}}(p)
 			\]
 			és un obert de~\(X\), i per tant tenim que~\(\bigcup_{i\in I}\obert{U}_{i}\) és un element de~\(\tau_{Y}\).
-			
+
 			Prenem ara una família~\(\{\obert{U}_{i}\}_{i=1}^{n}\) d'elements de~\(\tau_{Y}\).
 			Tenim que
 			\[
@@ -1045,7 +1045,7 @@
 		    \tau_{Y}=\{\obert{U}\subseteq Y\mid\Antiima_{\obert{U}}(p)\in\tau_{X}\}
 		\]
 		és un espai topològic quocient, o que~\(Y\) té la topologia quocient per~\(p\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:topologia quocient}.
 	\end{definition}
 	\begin{observation}
@@ -1075,14 +1075,14 @@
 		Aleshores~\(f\circ p\) és contínua si i només si~\(f\) és contínua.
 		\begin{proof}
 			Denotem per~\(X\) l'espai topològic sobre el que~\(p\) està definida.
-			
+
 			Comencem veient que la condició és suficient (\(\implica\)).
 			Suposem doncs que~\(f\circ p\) és contínua.
 			Sigui~\(\obert{U}\) un obert de~\(Z\).
 			Per la definició d'\myref{def:aplicació contínua} en tenim prou en veure que~\(\Antiima_{\obert{U}}(f)\) és un obert.
-			
+
 			Tenim per la definició d'\myref{def:aplicació contínua} que~\(\Antiima_{\obert{U}}(p\circ f)\) és un obert de~\(X\)., i per tant, per la definició de \myref{def:topologia quocient} tenim que~\(\Antiima_{\obert{U}}(f)\) és un obert de~\(Y\), com volíem.
-			
+
 			Veiem ara que la condició és necessària (\(\implicatper\)).
 			Suposem doncs que~\(f\) és contínua.
 			Aleshores per l'observació \myref{obs:la composició d'aplicacions contínues és contínua} hem acabat.
@@ -1102,7 +1102,7 @@
 			Calculem els oberts de~\(A\).
 			Tenim per la definició de \myref{def:topologia quocient} que aquests són les antiimatges dels oberts de~\(\mathbb{R}\) per~\(p\).
 			Prenem un obert~\(\obert{U}\) de~\(\mathbb{R}\).
-			
+
 			Observem primer que si~\(\obert{U}=\emptyset\) aleshores
 			\[
 			    \Antiima_{\obert{U}}(p)=\emptyset,
@@ -1112,25 +1112,25 @@
 			    \Antiima_{\obert{U}}(p)=\{a,b,c\}.
 			\]
 			Suposem doncs que~\(0\) no pertany a~\(\obert{U}\).
-			
+
 			Suposem que per a tot~\(x\) de~\(\obert{U}\) tenim que~\(x>0\).
 			Aleshores, per la definició d'\myref{def:antiimatge d'una aplicació} i \eqref{ex:topologia quocient caracteritzacio signe d'un real} tenim que
 			\[
 			    \Antiima_{\obert{U}}(p)=\{a\}.
 			\]
-			
+
 			Suposem ara que per a tot~\(x\) detext{ si }0~\(\obert{U}\) tenim que~\(x>0\).
 			Aleshores, de nou per la definició d'\myref{def:antiimatge d'una aplicació} i \eqref{ex:topologia quocient caracteritzacio signe d'un real} tenim que
 			\[
 			    \Antiima_{\obert{U}}(p)=\{b\}.
 			\]
-			
+
 			Suposem ara que existeixen un~\(x\) de~\(\obert{U}\) positiu i un~\(y\) de~\(\obert{U}\) negatiu.
 			Aleshores, com que tenim que~\(0\) no pertany a~\(\obert{U}\), trobem que
 			\[
 			    \Antiima_{\obert{U}}(p)=\{a,b\}.
 			\]
-			
+
 			Per tant trobem que els oberts de~\(A\) són
 			\[
 			    \tau=\{\emptyset,\{a\},\{b\},\{a,b\},\{a,b,c\}\}.\qedhere
@@ -1160,7 +1160,7 @@
 			x&\longmapsto\overline{x}.
 		\end{align*}
 		Aleshores denotem la topologia~\(Y\) induïda per~\(\pi\) com~\(X/\sim\).
-		
+
 		Aquesta definició té sentit per l'exemple \myref{ex:topologia projecció a un quocient}.
 	\end{definition}
 	\begin{example}
@@ -1206,7 +1206,7 @@
 		Volem veure que~\([0,1)\times[0,1)\) és un domini fonamental de~\(X\).
 		\begin{solution} %REFS (part entera?) % Veure que el grup actua i tal i qual
 			Observem que la inversa de~\(T\) és~\(T^{-1}=(x+1,y)\), i~\(T^{-1}\) per la definició de pertany a~\(G\).
-			
+
 			Prenem un punt~\((x,y)\) de~\(\mathbb{R}^{2}\).
 			Tenim que existeixen dos enters~\(x_{0}\) i~\(y_{0}\) tals que~\(x_{0}\leq x<x_{0}+1\) i~\(y_{0}\leq y<y_{0}+1\).
 			Per tant
@@ -1239,7 +1239,7 @@
 		    X/\sim=X/G
 		\]
 		la topologia quocient de~\(X\) per~\(G\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:quocient d'un espai per l'acció d'un grup relació}.
 	\end{definition}
 \chapter{Espais topològics}
@@ -1254,7 +1254,7 @@
 		    X=\bigcup_{i\in I}\obert{U}_{i}.
 		\]
 		Aleshores direm que~\(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment de~\(X\).
-		
+
 		Si~\(I\) és finit direm que~\(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment finit de~\(X\), i si~\(I\) és infinit direm que~\(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment infinit de~\(X\).
 	\end{definition}
 	\begin{definition}[Recobriment obert]
@@ -1280,7 +1280,7 @@
 		\labelname{subrecobriment infinit}\label{def:subrecobriment infinit}
 		Siguin~\(\{\obert{U}_{i}\}_{i\in I}\) un recobriment d'un espai topològic~\(X\) i~\(J\) un subconjunt de~\(I\) tal que la família~\(\{\obert{U}_{j}\}_{j\in J}\) és un recobriment de~\(X\).
 		Aleshores direm que~\(\{\obert{U}_{j}\}_{j\in J}\) és un subrecobriment de~\(\{\obert{U}_{i}\}_{i\in I}\).
-		
+
 		Si~\(J\) és finit direm que~\(\{\obert{U}_{j}\}_{j\in J}\) és un recobriment finit de~\(\{\obert{U}_{i}\}_{i\in I}\), i si~\(J\) és infinit direm que~\(\{\obert{U}_{j}\}_{j\in J}\) és un recobriment infinit de~\(\{\obert{U}_{i}\}_{i\in I}\).
 	\end{definition}
 	\subsection{Compacitat}
@@ -1294,7 +1294,7 @@
 		Volem veure que~\(\mathbb{R}\) no és compacte.
 		\begin{solution}
 			Per l'exemple \myref{ex:un recobriment obert de R} tenim que~\(\{(-i,i)\}_{i\in\mathbb{N}}\) és un recobriment obert de~\(\mathbb{R}\).
-			
+
 			Suposem que existeix un subrecobriment finit de~\(\{(-i,i)\}_{i\in\mathbb{N}}\).
 			Això és que existeix un subconjunt~\(I\) de~\(\mathbb{N}\) finit tal que~\(\{(-i,i)\}_{i\in I}\) és un recobriment de~\(\mathbb{R}\).
 			Com que~\(I\) és finit tenim que existeix un natural~\(m\) tal que~\(m=\max\{i\in I\}\), i tenim que~\(m+1\) no pertany a cap interval de la família~\(\{(-i,i)\}_{i\in I}\).
@@ -1302,7 +1302,7 @@
 			\[
 			    m+1\notin\bigcup_{i\in I}(-i,i).
 			\]
-			
+
 			Ara bé, per la definició de \myref{def:recobriment d'un espai} trobem que ha de ser
 			\[
 			    m+1\in\mathbb{R}=\bigcup_{i\in I}(-i,i),
@@ -1316,13 +1316,13 @@
 		Aleshores~\(X\) és compacte si i només si~\(Y\) és compacte.
 		\begin{proof}
 			Per la definició de \myref{def:relació d'equivalència} tenim que si~\(X\cong Y\) aleshores~\(Y\cong X\), i per tant només ens cal veure que si~\(X\) és compacte aleshores~\(Y\) és compacte.
-			
+
 			Suposem doncs que~\(X\) és compacte.
 			Per la definició d'\myref{def:espais topològics homeomorfs} tenim que existeix un homeomorfisme~\(f\colon X\longrightarrow Y\).
-			
+
 			Sigui~\(\{\obert{U}_{i}\}_{i\in I}\) un recobriment obert de~\(Y\).
 			Per la definició d'\myref{def:homeomorfisme entre topologies} i la definició de \myref{def:recobriment obert} tenim que la família~\(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in I}\) és un recobriment obert de~\(X\).
-			
+
 			Ara bé, per la definició d'\myref{def:espai topològic compacte} trobem que existeix un subrecobriment finit~\(\{\Antiima_{\obert{U}_{j}}(f)\}_{j\in J}\) de~\(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in I}\), i de nou per la definició d'\myref{def:homeomorfisme entre topologies} i la definició de \myref{def:recobriment obert} tenim que la família~\(\{\obert{U}_{j}\}_{j\in J}\) és un subrecobriment obert de~\(\{\obert{U}_{i}\}_{i\in I}\), i per la definició d'\myref{def:espai topològic compacte} trobem que~\(Y\) és compacte.
 		\end{proof}
 	\end{proposition}
@@ -1339,7 +1339,7 @@
 		Aleshores~\(X\) és compacte.
 		\begin{proof}
 			Sigui~\(\{\obert{U}_{i}\}_{i\in I}\) un recobriment obert de~\(X\), i per la definició de \myref{def:recobriment obert} tenim que~\(\{\obert{U}_{i}\}_{i\in I}\subseteq\tau\).
-			
+
 			Ara bé, tenim que~\(\tau\subseteq\mathcal{P}(X)\), i com que~\(X\) és finit,~\(\mathcal{P}(X)\) també ho és, i per tant~\(\{\obert{U}_{i}\}_{i\in I}\) és finit i per la definició de \myref{def:recobriment finit d'un espai} trobem que~\(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment finit de~\(X\), i per la definició d'\myref{def:espai topològic compacte} tenim que~\(X\) és compacte.
 		\end{proof}
 	\end{proposition}
@@ -1350,19 +1350,19 @@
 		\begin{proof}
 			Comencem veient que la condició és suficient (\(\implica\)).
 			Veurem que si~\(X\) és infinit aleshores~\(X\) no és compacte.
-			
+
 			Per l'exemple \myref{ex:topologia discreta} tenim que tot subconjunt de~\(X\) és un obert, i com que
 			\[
 			    X=\bigcup_{x\in X}\{x\}
 			\]
 			per la definició de \myref{def:recobriment obert} trobem que~\(\{\{x\}\}_{x\in X}\) és un recobriment obert de~\(X\).
-			
+
 			Ara bé, com que~\(X\) és infinit, si~\(\{\{x\}\}_{x\in I}\) és un subrecobriment finit de~\(\{\{x\}\}_{x\in X}\) tenim que existeix algun~\(x_{0}\) de~\(X\) tal que~\(x_{0}\notin I\), i per tant
 			\[
 			    x_{0}\notin\bigcup_{x\in I}\{x\}
 			\]
 			i trobem que el recobriment~\(\{\{x\}\}_{x\in X}\) no admet cap subrecobriment finit, i per la definició d'\myref{def:espai topològic compacte} trobem que~\(X\) no és compacte.
-			
+
 			Per veure que la condició és necessària (\(\implicatper\)) en tenim prou amb la proposició \myref{prop:un espai topològic finit és compacte}.
 		\end{proof}
 	\end{proposition}
@@ -1439,12 +1439,12 @@
 			    A\subseteq\bigcup_{i\in I}\Antiima_{\obert{U}_{i}}(f).
 			\]
 			Com que, per la definició de \myref{def:recobriment obert d'un subconjunt}, per a tot~\(i\) de~\(I\) el conjunt~\(\obert{U}_{i}\) és un obert de~\(Y\), per la definició de \myref{def:funció contínua} tenim que~\(\Antiima_{\obert{U}_{i}}(f)\) és un obert de~\(X\), i trobem per la definició de \myref{def:recobriment obert d'un subconjunt} que~\(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in I}\) és un recobriment obert de~\(A\).
-			
+
 			Ara bé, tenim per hipòtesi que~\(A\) és un subconjunt compacte de~\(X\), i per la definició de \myref{def:subconjunt compacte} tenim que existeix una subfamília finita~\(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in J}\) de~\(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in I}\) tal que
 			\[
 			    A\subseteq\bigcup_{i\in J}\Antiima_{\obert{U}_{i}}(f).
 			\]
-			
+
 			Tenim doncs que
 			\[
 			    \Ima_{A}(f)\subseteq\bigcup_{i\in J}\obert{U}_{i},
@@ -1476,7 +1476,7 @@
 			    X=\left(\bigcup_{i\in I}\obert{U}_{i}\right)\cup(X\setminus\tancat{C}),
 			\]
 			i per la definició de \myref{def:recobriment obert} tenim que~\(\{\obert{U}_{i}\}_{i\in I}\cup(X\setminus\tancat{C})\) és un recobriment obert de~\(X\).
-			
+
 			Ara bé, per hipòtesi tenim que~\(X\) és un compacte, i per la definició d'\myref{def:espai topològic compacte} tenim que existeix un subrecobriment finit de~\(\{\obert{U}_{i}\}_{i\in I}\cup(X\setminus\tancat{C})\), i per tant existeix un subconjunt finit~\(J\) de~\(I\) tal que
 			\[
 			    \tancat{C}\subseteq\bigcup_{i\in J}\obert{U}_{i},
@@ -1502,16 +1502,16 @@
 				(x,y)&\longmapsto y
 			\end{align*}
 			són aplicacions contínues, i per la proposició \myref{prop:la compacitat és una propietat topològica} trobem que~\(X\) i~\(Y\) són compactes.
-			
+
 			Veiem ara que la condició és necessària (\(\implicatper\)).
 			Suposem doncs que~\(X\) i~\(Y\) són compactes i sigui~\(\{\obert{W}_{i}\}_{i\in I}\) un recobriment obert de~\(X\times Y\).
-			
+
 			Prenem un punt~\(x_{0}\) de~\(X\).
 			Aleshores per la definició de \myref{def:recobriment d'un espai} tenim que per a tot~\(y\) de~\(Y\) existeix un~\(i_{x_{0},y}\) de~\(I\) tal que el punt~\((x_{0},y)\) pertany a~\(\obert{W}_{i_{x_{0},y}}\), i per la definició de \myref{def:topologia quocient} tenim que existeixen oberts~\(\obert{U}_{i_{x_{0},y}}\) i~\(\obert{V}_{i_{x_{0},y}}\) de~\(X\) i~\(Y\), respectivament, tals que
 			\[
 			    (x_{0},y)\in\obert{U}_{i_{x_{0},y}}\times\obert{V}_{i_{x_{0},y}}\subseteq\obert{W}_{i_{x_{0},y}}.
 			\]
-			
+
 			Trobem doncs que
 			\begin{align*}
 				Y&=\bigcup_{y\in Y}\{y\} \\
@@ -1522,7 +1522,7 @@
 			    \bigcup_{y\in Y}\obert{V}_{i_{x_{0},y}}=Y.
 			\]
 			Aleshores per la definició de \myref{def:recobriment obert} trobem que~\(\{\obert{V}_{i_{x_{0},y}}\}_{y\in Y}\) és un recobriment obert de~\(Y\), i com que, per hipòtesi,~\(Y\) és compacte, tenim per la definició d'\myref{def:espai topològic compacte} que existeix un subrecobriment finit~\(\{\obert{V}_{i_{x_{0},y}}\}_{y\in Y_{x_{0}}}\) de~\(\{\obert{V}_{i_{x_{0},y}}\}_{y\in Y}\).
-			
+
 			Definim ara
 			\begin{equation}
 				\label{thm:Teorema de Tychonoff:eq2}
@@ -1539,7 +1539,7 @@
 			    \bigcup_{x\in X}\obert{U}_{x}=X,
 			\]
 			i de nou per la definició de \myref{def:recobriment obert} trobem que~\(\{\obert{U}_{x}\}_{x\in X}\) és un recobriment obert de~\(X\), i per la definició d'\myref{def:espai topològic compacte} trobem que existeix un subrecobriment finit~\(\{\obert{U}_{x}\}_{x\in J'}\) de~\(\{\obert{U}_{x}\}_{x\in X}\).
-			
+
 			Definim el conjunt
 			\begin{equation}
 				\label{thm:Teorema de Tychonoff:eq1}
@@ -1552,7 +1552,7 @@
 			de~\(\{\obert{W}_{i}\}_{i\in I}\).
 			Sigui~\((x,y)\) un punt de~\(X\times Y\).
 			Aleshores, com que la família~\(\{\obert{U}_{x}\}_{x\in J'}\) és un recobriment de~\(X\) trobem per la definició de \myref{def:recobriment d'un espai} que existeix un~\(p\) de~\(J'\) tal que~\(x\) pertany a~\(\obert{U}_{p}\), i com que la família~\(\{\obert{V}_{i_{x_{0},y}}\}_{y\in Y_{p}}\) és un recobriment de~\(Y\) trobem que existeix un~\(q\) de~\(Y_{p}\) tal que~\(y\) pertany a~\(\obert{V}_{q}\).
-			
+
 			Ara bé, també tenim per \eqref{thm:Teorema de Tychonoff:eq2} i la definició d'\myref{def:intersecció de conjunts} que~\(x\) pertany a~\(\obert{U}_{i_{p,q}}\), i per tant
 			\[
 			    (x,y)\in\obert{U}_{i_{p,q}}\times\obert{V}_{i_{p,q}}\subseteq\obert{W}_{i_{p,q}},
@@ -1595,13 +1595,13 @@
 		Aleshores~\(X\) és Hausdorff si i només si~\(Y\) és Hausdorff.
 		\begin{proof}
 			Per la proposició \myref{prop:ser homeomorf és una relació d'equivalència} tenim que si~\(X\cong Y\) aleshores~\(Y\cong X\), i per tant només ens cal veure que si~\(X\) és Hausdorff aleshores~\(Y\) és Hausdorff.
-			
+
 			Suposem doncs que~\(X\) és Hausdorff.
 			Prenem dos punts diferents~\(x\) i~\(y\) de~\(Y\).
 			Per la definició d'\myref{def:espais topològics homeomorfs} tenim que existeix un homeomorfisme~\(f\colon X\longrightarrow Y\), i per la definició d'\myref{def:homeomorfisme entre topologies} trobem que~\(f\) és bijectiva.
 			Considerem doncs els punts~\(f^{-1}(x)\) i~\(f^{-1}(y)\).
 			Com que, per hipòtesi,~\(X\) és Hausdorff, tenim per la definició d'\myref{def:espai Hausdorff} que existeixen dos oberts disjunts~\(\obert{U}\) i~\(\obert{V}\) de~\(X\) tals que~\(f^{-1}(x)\) pertany a~\(\obert{U}\) i~\(f^{-1}(y)\) pertany a~\(\obert{V}\).
-			
+
 			Ara bé, per la definició d'\myref{def:homeomorfisme entre topologies} trobem que~\(f\) és una aplicació oberta, i per tant trobem que els conjunts~\(\Ima_{\obert{U}}(f)\) i~\(\Ima_{\obert{V}}(f)\) són oberts de~\(Y\), i tenim que~\(x\) pertany a~\(\Ima_{\obert{U}}(f)\) i~\(y\) pertany a~\(\Ima_{\obert{V}}(f)\), i per la definició d'\myref{def:imatge d'una aplicació} tenim que aquests són disjunts.
 		\end{proof}
 	\end{proposition}
@@ -1693,7 +1693,7 @@
 			\[
 			    \obert{V}=X\setminus\{x\}.
 			\]
-			
+
 			Per la definició de \myref{def:topologia} i \eqref{prop:en un espai de Fréchet els punts són tancats:eq1} trobem que~\(\obert{V}\) és un obert, i per la definició de \myref{def:tancat}  trobem que~\(\{x\}\) és un tancat.
 		\end{proof}
 	\end{proposition}
@@ -1723,7 +1723,7 @@
 		\begin{proof}
 			Siguin~\(\tancat{C}\) un tancat de~\(X\) i~\(x\) un punt de~\(X\setminus\tancat{C}\).
 			Com que per hipòtesi~\(X\) és un espai normal, per la definició d'\myref{def:espai normal} trobem que~\(X\) és un espai de Fréchet, i per la proposició \myref{prop:en un espai de Fréchet els punts són tancats} trobem que el conjunt~\(\{x\}\) és un tancat, i tenim que~\(\{x\}\) i~\(\tancat{C}\) són disjunts.
-			
+
 			Ara bé, per la definició d'\myref{def:espai normal} trobem que existeixen dos oberts disjunts~\(\obert{U}\) i~\(\obert{V}\) tals que~\(\{x\}\) és un subconjunt de~\(\obert{U}\) i~\(\tancat{C}\) és un subconjunt de~\(\obert{V}\).
 			Aleshores tenim que~\(x\) pertany a~\(\obert{U}\), i per la definició d'\myref{def:espai regular} trobem que~\(X\) és un espai regular.
 		\end{proof}
@@ -1735,7 +1735,7 @@
 		Aleshores~\(A\) és un tancat de~\(X\).
 		\begin{proof} % REVISAR i arreglar wording
 			Si~\(A=X\) ó~\(A=\emptyset\) aleshores pel Teorema \myref{thm:equivalència obert tancat definició de topologia} trobem que~\(A\) és tancat i hem acabat.
-			
+
 			Suposem doncs que~\(A\) no és~\(X\) ni~\(\emptyset\).
 			Tenim que existeix un punt~\(x\) de~\(X\setminus A\).
 			Per la definició d'\myref{def:espai Hausdorff} trobem que per a tot~\(a\) de~\(A\) existeixen dos oberts disjunts~\(\obert{U}_{a,x}\) i~\(\obert{V}_{a,x}\) tals que~\(x\) pertany a~\(\obert{U}_{a,x}\) i~\(a\) pertany a~\(\obert{V}_{a,x}\).
@@ -1753,7 +1753,7 @@
 				\label{prop:els compactes en un Hausdorff són tancats:eq1}
 				\bigcup_{a\in A'}\obert{V}_{a,x}\subseteq A.
 			\end{equation}
-			
+
 			Per la definició de topologia trobem que el conjunt
 			\[
 			    \obert{U}_{x}=\bigcap_{a\in A'}\obert{U}_{a,x}
@@ -1770,7 +1770,7 @@
 			\[
 			    \bigcup_{x\in X\setminus A}\obert{U}_{x}\subseteq X\setminus A.
 			\]
-			
+
 			Ara bé, tenim que
 			\begin{align*}
 				X\setminus A&=\bigcup_{x\in X\setminus A}\{x\} \\
@@ -1795,16 +1795,16 @@
 			Tenim pel \corollari{} \myref{cor:un espai topològic producte amb un element és homeomorf a l'espai topològic} que~\(X\times\{y\}\cong X\) i tenim que~\(X\times\{y\}\subseteq X\times Y\).
 			Per hipòtesi tenim que~\(X\times Y\) és Hausdorff.
 			Aleshores per la proposició \myref{prop:els subespais d'un Hausdorff són Hausdorff} trobem que~\(X\times\{y\}\) és Hausdorff i per la proposició \myref{prop:ser Hausdorff és una propietat topològica} trobem que~\(X\) és Hausdorff.
-			
+
 			La demostració per veure que~\(Y\) és Hausdorff és anàloga.
-			
+
 			Veiem ara que la condició és necessària.
 			Suposem doncs que~\(X\) i~\(Y\) són Hausdorff.
 			Prenem dos punts diferents~\((x_{1},y_{1})\) i~\((x_{2},y_{2})\) de~\(X\times Y\).
 			Si~\(y_{1}=y_{2}\) tenim per la proposició \myref{prop:parelles ordenades} que~\(x_{1}\neq x_{2}\).
 			Com que, per hipòtesi,~\(X\) és Hausdorff tenim per la definició d'\myref{def:espai Hausdorff} que existeixen dos oberts disjunts~\(\obert{U}\) i~\(\obert{V}\) tals que~\(x_{1}\) pertany a~\(\obert{U}\) i~\(x_{2}\) pertany a~\(\obert{V}\).
 			Aleshores per la definició de \myref{def:topologia producte} i la definició de \myref{def:topologia} trobem que els conjunts~\((\obert{U},Y)\) i~\((\obert{V},Y)\) són oberts disjunts de~\(X\times Y\) i per la definició d'\myref{def:espai Hausdorff} tenim que~\(X\times Y\) és Hausdorff.
-			
+
 			Si~\(x_{1}=x_{2}\) tenim de nou per la proposició \myref{prop:parelles ordenades} que~\(y_{1}\neq y_{2}\) i l'argument per veure que~\(X\times Y\) és Hausdorff és anàleg.
 		\end{proof}
 	\end{theorem}
@@ -1843,7 +1843,7 @@
 			    \obert{U}_{x}\cap\obert{V}_{x}=\emptyset
 			\]
 			i~\(x\) pertany a~\(\obert{U}_{x}\) i~\(y\) pertany a~\(\obert{V}_{x}\).
-			
+
 			Ara bé, tenim que
 			\begin{align*}
 				\tancat{C}&=\bigcup_{x\in\tancat{C}}\{x\} \\
@@ -1875,7 +1875,7 @@
 			\[
 			    \overline{y}=\{x\in X\mid\text{ existeix un }g\in G\text{ tal que }y=\theta_{g}(x)\}.
 			\]
-			
+
 			Com que per hipòtesi~\(G\) és finit, trobem que~\(\overline{y}\) és finit.
 			Tenim també que
 			\[
@@ -1892,10 +1892,10 @@
 		\begin{proof} % http://math.ucr.edu/~res/math205C-2011/freeactions.pdf % Revisar
 			Siguin~\(x\) i~\(y\) dos punts de~\(X\) tals que~\(\overline{x}\) és diferent de~\(\overline{y}\).
 			Pel lema \myref{lema:els elements del quocient d'un Hausdorff compacte per un grup finit són tancats en l'espai original} trobem que~\(\overline{y}\) és un tancat, i per la proposició \myref{prop:els punts en un Hausdorff són tancats} trobem que el conjunt~\(\{x\}\) és un tancat.
-			
+
 			Per hipòtesi tenim que~\(X\) és un espai Hausdorff compacte, i pel Teorema \myref{thm:els espais Hausdorff compactes són espais normals} trobem que~\(X\) és un espai normal.
 			Aleshores per la definició d'\myref{def:espai normal} trobem que existeixen dos oberts disjunts~\(\obert{U}'\) i~\(\obert{V}'\) tals que~\(\{x\}\) és un subconjunt de~\(\obert{U}'\) i~\(\overline{y}\) és un subconjunt de~\(\obert{V}'\).
-			
+
 			Sigui
 			\[
 			    \obert{V}=\bigcap_{g\in G}\Ima_{\obert{V}'}(\theta_{g}).
@@ -1911,7 +1911,7 @@
 			Per la definició de \myref{def:topologia quocient} trobem que~\(\Ima_{\obert{U}'}(\theta_{g})\) és un obert de~\(X/G\), i per la definició de \myref{def:topologia} trobem que~\(\obert{U}\) és un obert de~\(X/G\).
 			Per l'observació{obs:els accions de grup en un espai topològic són homeomorfismes} tenim que~\(\theta_{g}\) és un homeomorfisme, i per la definició d'\myref{def:homeomorfisme entre topologies} trobem que~\(\theta_{g}\) és bijectiva.
 			Aleshores, com que tenim que~\(\obert{U}'\) i~\(\obert{V}\) són disjunts tenim que~\(\obert{U}\) i~\(\obert{V}\) són disjunts.
-			
+
 			Sigui~\(\pi\) la projecció
 			\begin{align*}
 				\pi\colon X&\longrightarrow X/G \\
@@ -1919,7 +1919,7 @@
 			\end{align*}
 			Per la definició de \myref{def:topologia quocient} trobem que els conjunts~\(\Ima_{\obert{U}}(\pi)\) i~\(\Ima_{\obert{V}}(\pi)\) són oberts de~\(X/G\), i tenim que aquests són disjunts ja que si~\(\pi(z)\) pertany a la seva intersecció, per la definició de \myref{def:quocient d'un espai per l'acció d'un grup} trobem que~\(\overline{z}\) ha de ser un element de~\(\obert{U}\cap\obert{V}\), i tenim que aquests són disjunts.
 			Per tant per la definició d'\myref{def:espai Hausdorff} tenim que~\(X/G\) és Hausdorff.
-			
+
 			Per l'observació \myref{obs:l'aplicació que indueix la topologia en un espai quocient és contínua} tenim que~\(\pi\) és contínua, i pel Teorema \myref{thm:la imatge d'un compacte per una aplicació contínua és un compacte} trobem que~\(X/G\) és compacte i hem acabat.
 		\end{proof}
 	\end{theorem}
@@ -1941,7 +1941,7 @@
 			Per la definició de \myref{def:topologia} tenim que~\(X\) és un obert de~\(X\) i~\(Y\) és un obert de~\(Y\), i per \eqref{prop:topologia a la unió disjunta:eq1} tenim que~\(X\uniodisjunta Y\) pertany a~\(\tau\).
 			Tenim també per la definició de \myref{def:topologia} que~\(\emptyset\) és un obert de~\(X\) i~\(Y\), i tenim que~\(\emptyset\times\{0\}=\emptyset\) i~\(\emptyset\times\{1\}=\emptyset\).
 			Per tant de nou per \eqref{prop:topologia a la unió disjunta:eq1} tenim que~\(\emptyset\) pertany a~\(\tau\).
-			
+
 			Prenem ara una família~\(\{\obert{U}_{i}\uniodisjunta\obert{V}_{i}\}_{i\in I}\) d'elements de~\(\tau\) i considerem
 			\[
 			    \obert{U}=\bigcup_{i\in I}\obert{U}_{i}\uniodisjunta\obert{V}_{i}.
@@ -1958,7 +1958,7 @@
 			    \bigcup_{i\in I}\obert{U}_{i}\quad\text{i}\quad\bigcup_{i\in I}\obert{V}_{i}
 			\]
 			són oberts de~\(X\) i~\(Y\), respectivament; i per \eqref{prop:topologia a la unió disjunta:eq1} trobem que~\(\obert{U}\) pertany a~\(\tau\).
-			
+
 			Prenem ara una família finita~\(\{\obert{U}_{i}\uniodisjunta\obert{V}_{i}\}_{i=1}^{n}\) d'elements de~\(\tau\) i considerem
 			\[
 			    \obert{U}=\bigcap_{i=1}^{n}\obert{U}_{i}\uniodisjunta\obert{V}_{i}.
@@ -1975,7 +1975,7 @@
 			    \bigcap_{i=1}^{n}\obert{U}_{i}\quad\text{i}\quad\bigcap_{i=1}^{n}\obert{V}_{i}
 			\]
 			són oberts de~\(X\) i~\(Y\), respectivament; i per \eqref{prop:topologia a la unió disjunta:eq1} trobem que~\(\obert{U}\) pertany a~\(\tau\).
-			
+
 			Per tant per la definició de \myref{def:topologia} trobem que~\(\tau\) és una topologia de~\(X\uniodisjunta Y\), com volíem veure.
 		\end{proof}
 	\end{proposition}
@@ -1987,7 +1987,7 @@
 		    \tau=\{\obert{U}\uniodisjunta\obert{V}\mid\obert{U}\text{ és un obert de }X\text{ i }\obert{V}\text{ és un obert de }Y\}
 		\]
 		és la unió disconnexa de~\(X\) i~\(Y\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:topologia a la unió disjunta}.
 	\end{definition}
 	\begin{definition}[Espai connex]
@@ -2081,7 +2081,7 @@
 			Comencem veient que la condició és suficient (\(\implica\)).
 			Suposem doncs que~\(X\times Y\) és un espai connex.
 			Tenim per l'exemple \myref{ex:les projeccions en la topologia producte són contínues i obertes} que les projeccions~\(\pi_{X}\) i~\(\pi_{Y}\) són contínues, i per la proposició \myref{prop:la connexió és conserva per aplicacions contínues} tenim que~\(X\) i~\(Y\) són connexos.
-			
+
 			Veiem ara que la condició és necessària (\(\implicatper\)).
 			Suposem doncs que~\(X\) i~\(Y\) són espais connexos i fixem un~\(y\) de~\(Y\).
 			Aleshores tenim que
@@ -2109,7 +2109,7 @@
 		\labelname{final d'un camí}\label{def:final d'un camí}
 		Siguin~\(X\) un espai topològic i~\(\omega\colon[0,1]\longrightarrow X\) una aplicació contínua.
 		Aleshores direm que~\(\omega\) és un camí.
-		
+
 		També direm que~\(\omega(0)\) és l'origen del camí i~\(\omega(1)\) el final del camí.
 	\end{definition}
 	\begin{definition}[Connex per camins]
@@ -2145,9 +2145,9 @@
 		\labelname{components connexos}\label{def:compontents connexos}
 		Siguin~\(X\) un espai topològic i~\(\sim\) una relació sobre~\(X\) tal que~\(x\sim y\) si i només si existeix un subespai~\(C\) connex de~\(X\) tal que~\(x\) i~\(y\) pertanyen a~\(C\).
 		Aleshores direm que les classes d'equivalència de~\(\sim\) són components connexos de~\(X\).
-		
+
 		Denotarem~\(\overline{x}\) com~\(\componentconnex(x)\).
-		
+
 		Aquesta definició té sentit per la proposició \myref{prop:components connexos}.
 	\end{definition}
 	\begin{proposition}
@@ -2193,8 +2193,8 @@
 			%TODO
 		\end{proof}
 	\end{proposition}
-	
-	
+
+
 	\begin{comment}
 \section{Espai d'Alexandroff}
 	\subsection{Propietats bàsiques}
@@ -2214,7 +2214,7 @@
 		\begin{proof}
 			Com que~\(X\) és finit tenim que~\(\mathcal{P}(X)\) és finit, i com que~\(\tau\) és, per la definició de \myref{def:topologia}, un subconjunt de~\(\mathcal{P}(X)\) trobem que~\(\tau\) és finit.
 			%REF
-			
+
 			Sigui~\(\{\obert{U}_{i}\}_{i\in I}\) una família d'oberts de~\(X\) i definim
 			\[
 			    \obert{U}=\bigcap_{i\in I}\obert{U}_{i}.
@@ -2223,14 +2223,14 @@
 		\end{proof}
 	\end{proposition}
 	\end{comment}
-%	
+%
 %	\begin{definition}[Aplicació contínua i homeomorfisme]
 %		\labelname{aplicació contínua}\label{def:aplicació contínua}
 %		\labelname{homeomorfisme}\label{def:homeomorfisme topo}
 %		Siguin~\(X\) amb~\(\tau\) i~\(X'\) amb~\(\tau'\) dos espais topològics i~\(f\colon X\longrightarrow X'\) una aplicació tal que per a tot obert~\(\obert{U}\) de~\(X'\) tenim que el conjunt
 %		\[f^{-1}(\obert{U})=\{x\in X\mid f(x)\in\obert{U}\}\]
 %		és un obert de~\(X\). Aleshores direm que~\(f\) és una aplicació contínua.
-%		
+%
 %		Si~\(f\) és invertible i la seva inversa és una aplicació contínua direm que~\(f\) és un homeomorfisme.
 %	\end{definition}
 %	\begin{observation}
@@ -2245,7 +2245,7 @@
 %		\end{align*}
 %		és una aplicació contínua.
 %		\begin{proof}
-%			
+%
 %		\end{proof}
 %	\end{proposition}
 
@@ -2253,13 +2253,13 @@
 %		Siguin~\(X\) amb la distància~\(\distancia\) i~\(X'\) amb la distància~\(\distancia'\) dos espais mètrics i~\(f\colon X\longrightarrow X'\) una funció. Aleshores~\(f\) és contínua si i només si per a tot~\(\obert{U}\) obert de~\(X'\) tenim que~\(\Ima_{\obert{U}}(f^{-1})\) és obert.
 %		\begin{proof}
 %			Veiem primer que la condició és necessària (\(\implica\)). Suposem doncs que~\(f\) és contínua. Prenem un obert~\(\obert{U}\) de~\(X'\) i un element~\(y\) de~\(X'\) tal que~\(f^{-1}(y)\in\Ima_{\obert{U}}(f^{-1})\), i denotem~\(x=f^{-1}(y)\). Per la definició d'\myref{def:obert espai mètric} tenim que existeix un nombre real~\(\varepsilon>0\) tal que~\(\bola(y,\varepsilon)\subset\Ima_{\obert{U}}(f^{-1})\).
-%			
+%
 %			Prenem un element~\(x'\) de~\(\bola(y,\varepsilon)\). Per la definició de \myref{def:bola} tenim que~\(\distancia(x,x')<\varepsilon\), i per la definició de \myref{def:funció contínua} tenim que existeix un~\(\delta>0\) real tal que~\(\distancia'(f(x'),y)<\varepsilon\), i per la definició de \myref{def:bola} això és que~\(f(x')\in\bola(y,\varepsilon)\). Per tant tenim que~\(\Ima_{\bola(x,\delta)}(f)\subset\bola(y,\varepsilon)\) i trobem que~\(\bola(x,\delta)\subset\Ima_{\obert{U}}(f^{-1})\), i per la definició d'\myref{def:obert espai mètric} trobem que~\(\Ima_{\obert{U}}(f^{-1})\) és un obert, com volíem veure.
-%			
+%
 %			Veiem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que per a tot~\(\obert{U}\) obert de~\(X'\) tenim que~\(\Ima_{\obert{U}}(f^{-1})\) és obert.
-%			
+%
 %			Prenem un element~\(xy\) de~\(X\) i un real~\(\varepsilon>0\). Si denotem~\(y=f(x)\) tenim, per la proposició \myref{prop:les boles són oberts}, que la bola~\(\bola(y,\varepsilon)\) és un obert. Per hipòtesi tenim que~\(\Ima_{\bola(y,\varepsilon)}(f^{-1})\) és un obert, i per la definició d'\myref{def:obert espai mètric} tenim que existeix un nombre real~\(\delta>0\) tal que~\(\bola(x,\delta)\subset\Ima_{\bola(y,\varepsilon)}(f^{-1})\).
-%			
+%
 %			Ara bé, per la definició de \myref{def:bola} tenim que això és que per a tot~\(x_{0}\) de~\(x\) amb~\(\distancia'(y,f(x_{0}))<\varepsilon\) tenim que~\(\distancia(x,x_{0})<\delta\), i per tant, per la definició de \myref{def:funció contínua} tenim que~\(f\) és contínua.
 %		\end{proof}
 %	\end{theorem}
@@ -2277,11 +2277,11 @@
 
 %	\subsection{Varietats}
 %	\subsection{Teorema de classificació de les superfícies compactes}
-	
+
 	\printbibliography
 	La majoria del contingut està escrit seguint \cite{ACTEAguade}, que també s'utilitza per les classes de teoria de l'assignatura.
 	He extret la demostració d'un Teorema de \cite{SchultzFreeActionsOnFiniteGroupsOnHausdorffSpaces}.
-	
+
 	La bibliografia del curs inclou els textos \cite{AFirstCourseInAlgebraicTopologyKosniowski,ABasicCourseInAlgebraicTopologyKosniowski,TopologyKlaus,ACTEAguade}.
 \end{document}
 
