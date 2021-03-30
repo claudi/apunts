@@ -7,14 +7,20 @@
 	\subsection{L'espai de funcions contínues i acotades és complet}
 	\begin{notation}[Espai de funcions contínues i acotades]
 		\labelname{espai de funcions contínues i acotades}\label{notation:espai de funcions contínues i acotades}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\). Aleshores denotem
-		\[\mathcal{C}_{b}(X,T)=\{f(x)\mid f(x)\text{ és una funció contínua i acotada de }X\text{ a }T\}.\]
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\).
+		Aleshores denotem
+		\[
+		    \mathcal{C}_{b}(X,T)=\{f(x)\mid f(x)\text{ és una funció contínua i acotada de }X\text{ a }T\}.
+		\]
 	\end{notation}
 	%TODO %VEURE QUE ÉS UNA NORMA (p(Ku)=|K|p(u), p(u+v)<=p(u)+p(v), 0<=p(v), p(v)=0 sii v=0)
 	\begin{definition}[Norma d'una funció]
 		\labelname{norma d'una funció}\label{def:norma d'una funció}
-		Siguin \(X\) un espai vectorial amb una topologia, \(T\) un compacte de \(\mathbb{R}^{n}\) i \(f(x)\) una funció de \(\mathcal{C}_{b}(X,T)\). Aleshores definim
-		\[\norm{f}=\sup_{x\in X}\norm{f(x)}\]
+		Siguin \(X\) un espai vectorial amb una topologia, \(T\) un compacte de \(\mathbb{R}^{n}\) i \(f(x)\) una funció de \(\mathcal{C}_{b}(X,T)\).
+		Aleshores definim
+		\[
+		    \norm{f}=\sup_{x\in X}\norm{f(x)}
+		\]
 		com la norma de \(f\).
 	\end{definition}
 %	\begin{proposition}
@@ -34,19 +40,26 @@
 	\begin{definition}[Successió de Cauchy]
 		\labelname{successió de Cauchy}\label{def:successió de Cauchy amb normes}
 		Sigui \((a_{n})_{n\in\mathbb{N}}\) una successió sobre un espai normat \(X\) tal que per a tots naturals \(n\) i \(m\) existeix un real \(\varepsilon>0\) tal que
-		\[\norm{a_{n}-a_{m}}<\varepsilon.\]
+		\[
+		    \norm{a_{n}-a_{m}}<\varepsilon.
+		\]
 		Aleshores direm que \((a_{n})_{n\in\mathbb{N}}\) és de Cauchy.
 	\end{definition}
 	\begin{definition}[Espai mètric complet]
 		\labelname{espai mètric complet}\label{def:espai mètric complet}
 		Siguin \(X\) amb la distància \(\distancia\) un espai mètric tal que per a tota successió \((a_{n})_{n\in\mathbb{N}}\) de Cauchy tenim que
-		\[a=\lim_{n\to\infty}a_{n}\]
-		és un element de \(X\). Aleshores direm que \(X\) és complet.
+		\[
+		    a=\lim_{n\to\infty}a_{n}
+		\]
+		és un element de \(X\).
+		Aleshores direm que \(X\) és complet.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:distància entre funcions acotades}
 		Siguin \(f\) i \(g\) dues funcions de \(\mathcal{C}_{b}(X,T)\) i
-		\[\distancia(f,g)=\norm{f-g}.\]
+		\[
+		    \distancia(f,g)=\norm{f-g}.
+		\]
 		Aleshores per a tot \(f\), \(g\) i \(h\) de \(\mathcal{C}_{b}(X,T)\) es satisfà
 		\begin{enumerate}
 			\item\label{prop:distància entre funcions acotades:enum1} \(\distancia(f,g)\geq0\).
@@ -55,26 +68,37 @@
 			\item\label{prop:distància entre funcions acotades:enum4} \(\distancia(f,g)=\distancia(g,f)\).
 		\end{enumerate}
 		\begin{proof}
-			Comencem veient el punt \eqref{prop:distància entre funcions acotades:enum1}. Per la definició de \myref{def:norma d'una funció} tenim que
-			\[\distancia(f,g)=\sup_{x\in X}\norm{f(x)-g(x)},\]
+			Comencem veient el punt \eqref{prop:distància entre funcions acotades:enum1}.
+			Per la definició de \myref{def:norma d'una funció} tenim que
+			\[
+			    \distancia(f,g)=\sup_{x\in X}\norm{f(x)-g(x)},
+			\]
 			i per tant ha de ser \(\distancia(f,g)\geq0\).
 			
-			Veiem ara el punt \eqref{prop:distància entre funcions acotades:enum2}. Si \(f=g\) aleshores tenim que per a tot \(x\) de \(X\) es satisfà \(f(x)=g(x)\), i per tant trobem
-			\[\sup_{x\in X}\norm{f(x)-g(x)}=0,\]
+			Veiem ara el punt \eqref{prop:distància entre funcions acotades:enum2}.
+			Si \(f=g\) aleshores tenim que per a tot \(x\) de \(X\) es satisfà \(f(x)=g(x)\), i per tant trobem
+			\[
+			    \sup_{x\in X}\norm{f(x)-g(x)}=0,
+			\]
 			i això és que \(\distancia(f,g)=0\).
 			
-			Suposem ara que \(\distancia(f,g)=0\). Per la definició de \myref{def:norma d'una funció} ha de ser
-			\[\sup_{x\in X}\norm{f(x)-g(x)}=0,\]
+			Suposem ara que \(\distancia(f,g)=0\).
+			Per la definició de \myref{def:norma d'una funció} ha de ser
+			\[
+			    \sup_{x\in X}\norm{f(x)-g(x)}=0,
+			\]
 			i per tant trobem que \(f(x)=g(x)\) per a tot \(x\) de \(X\) i per tant tenim que ha de ser \(f=g\).
 			
-			Veiem ara el punt \eqref{prop:distància entre funcions acotades:enum3}. Tenim que
+			Veiem ara el punt \eqref{prop:distància entre funcions acotades:enum3}.
+			Tenim que
 			\begin{align*}
 				\distancia(f,g)&=\sup_{x\in X}\norm{f(x)-g(x)} \\
 				&=\sup_{x\in X}\norm{f(x)-h(x)+h(x)-g(x)} \\
 				&\leq\sup_{x\in X}\norm{f(x)-h(x)}+\sup_{x\in X}\norm{h(x)-g(x)}=\distancia(f,h)+\distancia(h,g).
 			\end{align*}
 			
-			Per acabar veiem el punt \eqref{prop:distància entre funcions acotades:enum4}. Tenim que
+			Per acabar veiem el punt \eqref{prop:distància entre funcions acotades:enum4}.
+			Tenim que
 			\begin{align*}
 				\distancia(f,g)&=\sup_{x\in X}\norm{f(x)-g(x)} \\
 				&=\sup_{x\in X}\norm{g(x)-f(x)}=\distancia(g,f).\qedhere
@@ -83,46 +107,67 @@
 	\end{proposition}
 	\begin{definition}[Distància entre funcions]
 		\labelname{distància entre funcions}\label{def:distància entre funcions acotades}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(T\) un compacte de \(\mathbb{R}^{n}\) i \(f\) i \(g\) dues funcions de \(\mathcal{C}_{b}(X,T)\). Aleshores definim
-		\[\distancia(f,g)=\norm{f-g}\]
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic, \(T\) un compacte de \(\mathbb{R}^{n}\) i \(f\) i \(g\) dues funcions de \(\mathcal{C}_{b}(X,T)\).
+		Aleshores definim
+		\[
+		    \distancia(f,g)=\norm{f-g}
+		\]
 		com la distància entre \(f\) i \(g\) en \(\mathcal{C}_{b}(X,T)\).
 		
 		Aquesta definició té sentit per la proposició \myref{prop:distància entre funcions acotades}.
 	\end{definition}
 	\begin{lemma}
 		\label{thm:l'espai de funcions contínues i acotades és un espai mètric}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\). Aleshores \(\mathcal{C}_{b}(X,T)\) amb la distància \(\distancia\) és espai mètric.
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\).
+		Aleshores \(\mathcal{C}_{b}(X,T)\) amb la distància \(\distancia\) és espai mètric.
 		\begin{proof}
 			%TODO
 		\end{proof}
 	\end{lemma}
 	\begin{notation}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\). Aleshores denotarem per \(\mathcal{C}_{b}(X,T)\) l'espai mètric de amb la distància entre funcions \(\distancia\).
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\).
+		Aleshores denotarem per \(\mathcal{C}_{b}(X,T)\) l'espai mètric de amb la distància entre funcions \(\distancia\).
 		
 		Observem que això té sentit pel lema \myref{thm:l'espai de funcions contínues i acotades és un espai mètric}.
 	\end{notation}
 	\begin{theorem}
 		\label{thm:l'espai de funcions contínues i acotades és complet}
-		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\). Aleshores \(\mathcal{C}_{b}(X,T)\) és espai mètric complet.
+		Siguin \(X\) amb la topologia \(\tau\) un espai topològic i \(T\) un compacte de \(\mathbb{R}^{n}\).
+		Aleshores \(\mathcal{C}_{b}(X,T)\) és espai mètric complet.
 		\begin{proof}
-			Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de Cauchy de \(\mathcal{C}_{b}(X,T)\). Per la definició de \myref{def:successió de Cauchy amb normes} tenim que per a tots naturals \(n\) i \(m\) existeix un real \(\varepsilon>0\) tal que
-			\[\norm{f_{n}-f_{m}}<\varepsilon.\]
+			Sigui \((f_{n})_{n\in\mathbb{N}}\) una successió de Cauchy de \(\mathcal{C}_{b}(X,T)\).
+			Per la definició de \myref{def:successió de Cauchy amb normes} tenim que per a tots naturals \(n\) i \(m\) existeix un real \(\varepsilon>0\) tal que
+			\[
+			    \norm{f_{n}-f_{m}}<\varepsilon.
+			\]
 			Per la definició de \myref{def:distància entre funcions acotades} trobem que
-			\[\sup_{x\in X}\norm{f_{n}(x)-f_{m}(x)}<\varepsilon\]
+			\[
+			    \sup_{x\in X}\norm{f_{n}(x)-f_{m}(x)}<\varepsilon
+			\]
 			i trobem que per a tot \(x\) de \(X\) es satisfà
-			\[\norm{f_{n}(x)-f_{m}(x)}<\varepsilon\]
-			i per la definició de \myref{def:successió de Cauchy amb normes} trobem que la successió \((f_{n}(x))_{n\in\mathbb{N}}\) és de Cauchy, i per la definició de \myref{def:límit} trobem que la successió \((f_{n}(x))_{n\in\mathbb{N}}\) és convergent. Denotem, per a tot \(x\) de \(X\),
+			\[
+			    \norm{f_{n}(x)-f_{m}(x)}<\varepsilon
+			\]
+			i per la definició de \myref{def:successió de Cauchy amb normes} trobem que la successió \((f_{n}(x))_{n\in\mathbb{N}}\) és de Cauchy, i per la definició de \myref{def:límit} trobem que la successió \((f_{n}(x))_{n\in\mathbb{N}}\) és convergent.
+			Denotem, per a tot \(x\) de \(X\),
 			\begin{equation}
 				\label{thm:l'espai de funcions contínues i acotades és complet:eq1}
 				\lim_{n\to\infty}f_{n}(x)=f(x).
 			\end{equation}
 			
-			Sigui \(n_{0}\) un natural. Per la definició de \myref{def:límit} tenim que existeix un real \(\varepsilon>0\) tal que per a tot \(n\) i \(m\) enters amb \(n,m\geq n_{0}\)
-			\[\norm{f_{n}(x)-f_{m}(x)}<\frac{\varepsilon}{2}.\]
+			Sigui \(n_{0}\) un natural.
+			Per la definició de \myref{def:límit} tenim que existeix un real \(\varepsilon>0\) tal que per a tot \(n\) i \(m\) enters amb \(n,m\geq n_{0}\)
+			\[
+			    \norm{f_{n}(x)-f_{m}(x)}<\frac{\varepsilon}{2}.
+			\]
 			Ara bé, per \eqref{thm:l'espai de funcions contínues i acotades és complet:eq1} tenim, per a tot \(x\) de \(X\), que
-			\[\lim_{m\to\infty}\norm{f_{n}(x)-f_{m}(x)}=\norm{f_{n}(x)-f(x)}.\]
+			\[
+			    \lim_{m\to\infty}\norm{f_{n}(x)-f_{m}(x)}=\norm{f_{n}(x)-f(x)}.
+			\]
 			Per tant tenim que per a tot \(x\) de \(X\) es satisfà
-			\[\norm{f_{n}(x)-f(x)}\leq\frac{\varepsilon}{2}<\varepsilon\]
+			\[
+			    \norm{f_{n}(x)-f(x)}\leq\frac{\varepsilon}{2}<\varepsilon
+			\]
 			i per la definició de \myref{def:convergència uniforme} tenim que \((f_{n})_{n\in\mathbb{N}}\) convergeix uniformement a \(f(x)\), i per la definició de \myref{def:espai mètric complet} tenim que \(\mathcal{C}_{b}(X,T)\) és complet.
 		\end{proof}
 	\end{theorem}
@@ -130,20 +175,25 @@
 	\begin{definition}[Aplicació contractiva]
 		\labelname{aplicació contractiva}\label{def:aplicació contractiva}
 		Siguin \(X\) amb la distància \(\distancia\) un espai mètric i \(T\colon X\longrightarrow X\) una aplicació tal que existeixi un real \(0<k<1\) satisfent, per a tots \(x\) i \(y\) de \(X\),
-		\[\distancia(T(x),T(y))\leq k\distancia(x,y).\]
+		\[
+		    \distancia(T(x),T(y))\leq k\distancia(x,y).
+		\]
 		Aleshores direm que \(T\) és una aplicació contractiva sobre X.
 	\end{definition}
 	\begin{observation}
 		\label{obs:les aplicacions contractives són uniformement contínues}
-		Siguin \(X\) amb la distància \(\distancia\) un espai mètric i \(T\) una aplicació contractiva sobre \(X\). Aleshores \(T\) és uniformement contínua.
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric i \(T\) una aplicació contractiva sobre \(X\).
+		Aleshores \(T\) és uniformement contínua.
 	\end{observation}
 	\begin{definition}[Punt fix]
 		\labelname{punt fix d'una aplicació contractiva}\label{def:punt fix d'un aplicació contractiva}
-		Siguin \(X\) amb la distància \(\distancia\) un espai mètric, \(T\) una aplicació contractiva sobre \(X\) i \(a\) un punt tal que \(\distancia(a,T(a))=0\). Aleshores direm que \(a\) és un punt fix de \(T\).
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric, \(T\) una aplicació contractiva sobre \(X\) i \(a\) un punt tal que \(\distancia(a,T(a))=0\).
+		Aleshores direm que \(a\) és un punt fix de \(T\).
 	\end{definition}
 	\begin{theorem}
 		\label{thm:les aplicacions contractives tenen un únic punt fix}
-		Siguin \(X\) amb la distància \(\distancia\) un espai mètric complet i \(T\) una aplicació contractiva sobre \(X\). Aleshores \(T\) té un únic punt fix.
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric complet i \(T\) una aplicació contractiva sobre \(X\).
+		Aleshores \(T\) té un únic punt fix.
 		\begin{proof}
 			Per la definició d'\myref{def:aplicació contractiva} tenim que existeix un real \(0<k<1\) tal que per a tots \(x\) i \(y\) de \(X\) es satisfà
 			\begin{equation}
@@ -151,13 +201,22 @@
 				\distancia(T(x),T(y))\leq k\distancia(x,y).
 			\end{equation}
 			
-			Veiem que si existeix un punt fix aquest és únic. Suposem que existeixen dos punts \(a\) i \(b\) de \(X\) tals que \(a\) i \(b\) són punts fixos de \(T\). Aleshores tenim que
-			\[\distancia(a,b)=\distancia(T(a),T(b)),\]
+			Veiem que si existeix un punt fix aquest és únic.
+			Suposem que existeixen dos punts \(a\) i \(b\) de \(X\) tals que \(a\) i \(b\) són punts fixos de \(T\).
+			Aleshores tenim que
+			\[
+			    \distancia(a,b)=\distancia(T(a),T(b)),
+			\]
 			i per \eqref{thm:les aplicacions contractives tenen un únic punt fix:eq1} tenim que
-			\[\distancia(a,b)\leq k\distancia(a,b).\]
+			\[
+			    \distancia(a,b)\leq k\distancia(a,b).
+			\]
 			Ara bé, com que \(0<k<1\), ha de ser \(\distancia(a,b)=0\), i per tant trobem que \(a=b\).
 			
-			Veiem ara que existeix un punt fix. Prenem un element \(x\) de \(X\) i considerem la successió \((T^{n}(x))_{n\in\mathbb{N}}\). Sigui \(r\) un natural. Aleshores tenim que per a tot \(n\) natural
+			Veiem ara que existeix un punt fix.
+			Prenem un element \(x\) de \(X\) i considerem la successió \((T^{n}(x))_{n\in\mathbb{N}}\).
+			Sigui \(r\) un natural.
+			Aleshores tenim que per a tot \(n\) natural
 			\begin{align*}
 				\distancia(T^{n+r}(x),T^{n}(x))&\leq k\distancia(T^{n+r-1}(x),T^{n-1}(x))\tag{\myref{thm:les aplicacions contractives tenen un únic punt fix:eq1}}\\
 				&\leq k^{2}\distancia(T^{n+r-2}(x),T^{n-2}(x))\tag{\myref{thm:les aplicacions contractives tenen un únic punt fix:eq1}}\\
@@ -171,7 +230,9 @@
 				&<\frac{k^{n}}{1-k}\distancia(T(x),x).\tag{\myref{ex:sèries geomètriques}}
 			\end{align*}
 			Ara bé, com que \(0<k<1\) tenim que existeix un real \(\varepsilon>0\) tal que
-			\[\distancia(T^{n+r}(x),T^{n}(x))<\varepsilon,\]
+			\[
+			    \distancia(T^{n+r}(x),T^{n}(x))<\varepsilon,
+			\]
 			i per la definició de \myref{def:successió de Cauchy amb normes} tenim que la successió \((T^{n}(x))\) és una successió de Cauchy, i com que, per hipòtesi, \(X\) és complet, tenim que existeix un element \(p\) de \(X\) tal que
 			\begin{equation}
 				\label{thm:les aplicacions contractives tenen un únic punt fix:eq2}
@@ -179,30 +240,49 @@
 			\end{equation}
 			
 			Considerem el límit
-			\[\lim_{n\to\infty}T(T^{n}(x)).\]
+			\[
+			    \lim_{n\to\infty}T(T^{n}(x)).
+			\]
 			Com que, per l'observació \myref{obs:les aplicacions contractives són uniformement contínues}, \(T\) és contínua, tenim que %REF
-			\[\lim_{n\to\infty}T(T^{n}(x))=T\left(\lim_{n\to\infty}T^{n}(x)\right)\]
+			\[
+			    \lim_{n\to\infty}T(T^{n}(x))=T\left(\lim_{n\to\infty}T^{n}(x)\right)
+			\]
 			i per \eqref{thm:les aplicacions contractives tenen un únic punt fix:eq2} trobem que
-			\[\lim_{n\to\infty}T(T^{n}(x))=T(p).\]
+			\[
+			    \lim_{n\to\infty}T(T^{n}(x))=T(p).
+			\]
 			
 			Ara bé, tenim que 
-			\[\lim_{n\to\infty}T(T^{n}(x))=\lim_{n\to\infty}T^{n+1}(x)\]
+			\[
+			    \lim_{n\to\infty}T(T^{n}(x))=\lim_{n\to\infty}T^{n+1}(x)
+			\]
 			i per tant trobem que
-			\[T(p)=p,\]
+			\[
+			    T(p)=p,
+			\]
 			i per la definició de \myref{def:punt fix d'un aplicació contractiva} hem acabat.
 		\end{proof}
 	\end{theorem}
 	\begin{corollary}
 		\label{cor:si una funció té una potència contractiva aleshores aquesta té un únic punt fix}
-		Siguin \(X\) amb la distància \(\distancia\) un espai mètric complet i \(T\) una aplicació de \(X\) en \(X\) tal que existeix un natural \(k\) satisfent que \(T^{k}\) sigui una aplicació contractiva sobre \(X\). Aleshores \(T\) té un únic punt fix.
+		Siguin \(X\) amb la distància \(\distancia\) un espai mètric complet i \(T\) una aplicació de \(X\) en \(X\) tal que existeix un natural \(k\) satisfent que \(T^{k}\) sigui una aplicació contractiva sobre \(X\).
+		Aleshores \(T\) té un únic punt fix.
 		\begin{proof}
-			Suposem que existeixen dos punts \(x\) i \(y\) de \(X\) tals que \(x\) i \(y\) són punts fixos de \(T\). Aleshores per la definició de \myref{def:punt fix d'un aplicació contractiva} tenim que
-			\[T^{k}(x)=x\]
+			Suposem que existeixen dos punts \(x\) i \(y\) de \(X\) tals que \(x\) i \(y\) són punts fixos de \(T\).
+			Aleshores per la definició de \myref{def:punt fix d'un aplicació contractiva} tenim que
+			\[
+			    T^{k}(x)=x
+			\]
 			i
-			\[T^{k}(y)=y.\]
-			Ara bé, pel Teorema \myref{thm:les aplicacions contractives tenen un únic punt fix} tenim que ha de ser \(x=y\), i per tant aquest punt és únic. % CONTINUAR
+			\[
+			    T^{k}(y)=y.
+			\]
+			Ara bé, pel Teorema \myref{thm:les aplicacions contractives tenen un únic punt fix} tenim que ha de ser \(x=y\), i per tant aquest punt és únic.
+			% CONTINUAR
 			
-			Veiem ara que existeix un punt \(x\) tal que \(T(x)=x\). Tenim, per hipòtesi, que existeix un \(k\) natural tal que \(T^{k}\) és contractiva, i pel Teorema \myref{thm:les aplicacions contractives tenen un únic punt fix} tenim que existeix un punt \(x\) de \(X\) tal que \(T^{k}(x)=x\). Tenim també que
+			Veiem ara que existeix un punt \(x\) tal que \(T(x)=x\).
+			Tenim, per hipòtesi, que existeix un \(k\) natural tal que \(T^{k}\) és contractiva, i pel Teorema \myref{thm:les aplicacions contractives tenen un únic punt fix} tenim que existeix un punt \(x\) de \(X\) tal que \(T^{k}(x)=x\).
+			Tenim també que
 			\begin{equation}
 				\label{cor:si una funció té una potència contractiva aleshores aquesta té un únic punt fix:eq1}
 				T^{k+1}(x)=T(T^{k}(x)),
@@ -213,32 +293,46 @@
 				T^{k+1}(x)=x
 			\end{equation}
 			i amb \eqref{cor:si una funció té una potència contractiva aleshores aquesta té un únic punt fix:eq1} i \eqref{cor:si una funció té una potència contractiva aleshores aquesta té un únic punt fix:eq2}, com que \(T^{k}(x)=x\), trobem que
-			\[T(x)=x.\qedhere\]
+			\[
+			    T(x)=x.\qedhere
+			\]
 		\end{proof}
 	\end{corollary}
 \section{Teoremes d'existència i unicitat}
 	\subsection{Problema de Cauchy}
 	\begin{definition}[Equació diferencial ordinària]
 		\labelname{equació diferencial ordinària}\label{def:equació diferencial ordinària}
-		Siguin \(\Omega\subseteq\mathbb{R}\times\mathbb{R}^{n}\) un conjunt i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció. Aleshores direm que l'expressió
-		\[\frac{\diff u(t)}{\diff t}=f(t,u(t))\]
+		Siguin \(\Omega\subseteq\mathbb{R}\times\mathbb{R}^{n}\) un conjunt i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció.
+		Aleshores direm que l'expressió
+		\[
+		    \frac{\diff u(t)}{\diff t}=f(t,u(t))
+		\]
 		és una equació diferencial ordinària sobre \(\Omega\).
 		
 		Denotarem
-		\[\dot{u}(t)=f(t,u(t)).\]
+		\[
+		    \dot{u}(t)=f(t,u(t)).
+		\]
 	\end{definition}
 	\begin{definition}[Solució d'una equació diferencial ordinària]
 		\labelname{solució d'un equació diferencial ordinària}\label{def:solució d'una equació diferencial ordinària}
 		Siguin
-		\[\dot{u}(t)=f(t,u(t))\]
-		una equació diferencial ordinària sobre \(\Omega\), \(I\subseteq\mathbb{R}\) un interval i \(u\colon I\longrightarrow\mathbb{R}^{n}\) una funció tal que per a tot \(t\in I\) es satisfà que \((t,u(t))\in\Omega\) i que \(u\) és derivable en \(I\) amb \(u'(t)=f(t,u(t))\). Aleshores direm que \(u\) és una solució de l'equació diferencial ordinària
-		\[\dot{u}(t)=f(t,u(t)).\]
+		\[
+		    \dot{u}(t)=f(t,u(t))
+		\]
+		una equació diferencial ordinària sobre \(\Omega\), \(I\subseteq\mathbb{R}\) un interval i \(u\colon I\longrightarrow\mathbb{R}^{n}\) una funció tal que per a tot \(t\in I\) es satisfà que \((t,u(t))\in\Omega\) i que \(u\) és derivable en \(I\) amb \(u'(t)=f(t,u(t))\).
+		Aleshores direm que \(u\) és una solució de l'equació diferencial ordinària
+		\[
+		    \dot{u}(t)=f(t,u(t)).
+		\]
 	\end{definition}
 	\begin{example}	
 		\label{ex:exemple d'una equació diferencial 1}
 		\label{ex:exemple edos de la exponencial}
 		Volem trobar una solució a l'equació diferencial ordinària
-		\[\dot{u}(t)=u(t).\]
+		\[
+		    \dot{u}(t)=u(t).
+		\]
 		\begin{solution}
 			\(e^{t}K\).
 		\end{solution}
@@ -247,14 +341,20 @@
 		\labelname{problema de Cauchy}\label{def:problema de Cauchy}
 		\labelname{solució d'un problema de Cauchy}\label{def:solució d'un problema de Cauchy}
 		Sigui
-		\[\dot{u}(t)=f(t,u(t))\]
-		una equació diferencial ordinària sobre \(\Omega\) i \((t_{0},x_{0})\in\Omega\) un punt. Aleshores direm que el sistema
+		\[
+		    \dot{u}(t)=f(t,u(t))
+		\]
+		una equació diferencial ordinària sobre \(\Omega\) i \((t_{0},x_{0})\in\Omega\) un punt.
+		Aleshores direm que el sistema
 		\[\begin{cases*}
 			\displaystyle \dot{u}(t)=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases*}\]
-		és un problema de Cauchy sobre \(\Omega\). Direm que una solució d'aquest problema de Cauchy és una funció \(u\) tal que \(u\) és solució de l'equació diferencial
-		\[\dot{u}(t)=f(t,u(t))\]
+		és un problema de Cauchy sobre \(\Omega\).
+		Direm que una solució d'aquest problema de Cauchy és una funció \(u\) tal que \(u\) és solució de l'equació diferencial
+		\[
+		    \dot{u}(t)=f(t,u(t))
+		\]
 		i es satisfà \(u(t_{0})=x_{0}\).
 		
 		Això té sentit per la definició de \myref{def:solució d'una equació diferencial ordinària}.
@@ -266,8 +366,11 @@
 			\displaystyle \dot{u}(t)=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases*}\]
-		un problema de Cauchy sobre \(\Omega\). Aleshores una funció \(u\) és una solució d'aquest sistema si i només si
-		\[u(t)=x_{0}+\int_{t_{0}}^{t}f(s,u(s))\diff s.\]
+		un problema de Cauchy sobre \(\Omega\).
+		Aleshores una funció \(u\) és una solució d'aquest sistema si i només si
+		\[
+		    u(t)=x_{0}+\int_{t_{0}}^{t}f(s,u(s))\diff s.
+		\]
 %		\begin{proof}
 %			Comencem veient que la condició és necessària (\(\implica\)). Suposem doncs que \(u\) és una solució del problema de Cauchy
 %			\[\begin{cases*}
@@ -284,8 +387,11 @@
 	\begin{definition}[Funció Lipschitz respecte la segona variable]
 		\labelname{funció Lipschitz respecte la segona variable}\label{def:funció Lipschitz respecte la segona variable}
 		Siguin \(\Omega=\mathbb{R}\times\mathbb{R}^{n}\) un conjunt, \(K\geq0\) un real i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció tal que
-		\[\norm{f(t,x)-f(t,y)}\leq K\norm{x-y}\]
-		per a tot \((t,x)\) i \((t,y)\) de \(\Omega\). Aleshores direm que \(f\) és Lipschitz respecte la segona variable.
+		\[
+		    \norm{f(t,x)-f(t,y)}\leq K\norm{x-y}
+		\]
+		per a tot \((t,x)\) i \((t,y)\) de \(\Omega\).
+		Aleshores direm que \(f\) és Lipschitz respecte la segona variable.
 	\end{definition}
 	\begin{example}
 		\label{ex:els polinomis són funcions Lipschitz respecte la segona variable}
@@ -302,9 +408,13 @@
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases}\]
 		un problema de Cauchy sobre \(\Omega=[t_{0}-a,t_{0}+a]\times\overline{\bola}(x_{0},b)\) i
-		\[M=\max_{(t,x)\in\Omega}\norm{f(t,x)}.\]
+		\[
+		    M=\max_{(t,x)\in\Omega}\norm{f(t,x)}.
+		\]
 		Aleshores aquest problema de Cauchy té una única solució sobre l'interval
-		\[\left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].\]
+		\[
+		    \left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].
+		\]
 		\begin{proof}
 			Denotem \(X=\mathcal{C}_{b}((t_{0}-a,t_{0}+a),\overline{\bola}(x_{0},b))\) i definim una aplicació
 			\begin{align*}
@@ -312,7 +422,9 @@
 				u(t)&\longmapsto x_{0}+\int_{t_{0}}^{t}f(s,u(s))\diff s.
 			\end{align*}
 			Per l'observació \myref{obs:solució general d'un problema de Cauchy} trobem que una funció \(u(t)\) és solució del problema de Cauchy de l'enunciat si i només si %REVISAR
-			\[T(u(t))=u(t).\]
+			\[
+			    T(u(t))=u(t).
+			\]
 			
 			Tenim que si \(u\) és un element de \(X\), aleshores \(T(u)\) també pertany a \(X\), ja que si prenem un \(t\) de \((t_{0}-a,t_{0}+a)\) trobem que
 			\begin{align*}
@@ -322,7 +434,9 @@
 				&\leq M\abs{t-t_{0}}\leq b.
 			\end{align*}
 			i per tant tenim que
-			\[\norm{T(u(t))-x_{0}}\leq b.\]
+			\[
+			    \norm{T(u(t))-x_{0}}\leq b.
+			\]
 			Per la definició de \myref{def:bola} trobem que \(T(u(t))\) és un element de \(\overline{\bola}(x_{0},b)\), i per tant \(T(u)\) és un element de \(X\) per a tot \(u\) de \(X\).
 			
 			Per hipòtesi tenim que \(f\) és Lipschitz respecte la segona variable, i per la definició de \myref{def:funció Lipschitz respecte la segona variable} trobem que existeix un real \(K\geq0\) tal que
@@ -331,8 +445,12 @@
 				\norm{f(t,x)-f(t,y)}\leq K\norm{x-y}.
 			\end{equation}
 			Volem veure que per a tot \(m\) natural, \(u\) i \(v\) funcions de \(X\) i \(t\) de \((t_{0}-a,t_{0}+a)\) tenim
-			\[\norm{T^{m}(u(t))-T^{m}(v(t))}\leq\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}\distancia(u,v).\]
-			Ho fem per inducció. Veiem el cas \(m=1\). Tenim
+			\[
+			    \norm{T^{m}(u(t))-T^{m}(v(t))}\leq\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}\distancia(u,v).
+			\]
+			Ho fem per inducció.
+			Veiem el cas \(m=1\).
+			Tenim
 			\begin{align*}
 				\norm{T(u(t))-T(v(t))}&=\norm{\int_{t_{0}}^{t}{f(s,u(s))}\diff s-\int_{t_{0}}^{t}{f(s,v(s))}\diff s}\\
 				&=\norm{\int_{t_{0}}^{t}\left({f(s,u(s))}-{f(s,v(s))}\right)\diff s}\tag{\ref{prop:propietats basiques multiple integrals Riemann definides}}\\
@@ -341,12 +459,14 @@
 				&=K\abs{\int_{t_{0}}^{t}\norm{u(s)-v(s)}\diff s}\tag{\ref{prop:propietats basiques multiple integrals Riemann definides}}\\
 				&\leq K\abs{t-t_{0}}\distancia(u,v).
 			\end{align*}
-			Suposem ara que l'hipòtesi és certa per a \(m-1\) fix. És a dir, suposem que
+			Suposem ara que l'hipòtesi és certa per a \(m-1\) fix.
+			És a dir, suposem que
 			\begin{equation}
 				\label{thm:Teorema de Picard:eq2}
 				\norm{T^{m-1}(u(t))(t)-T^{m-1}(v)(t)}\leq\frac{K^{m-1}}{(m-1)!}\abs{t-t_{0}}^{m-1}\distancia(u,v)
 			\end{equation}
-			i veiem que també és cert per \(m\). Tenim pel Teorema \myref{thm:la norma d'una integral és menys que l'integral de la norma} que
+			i veiem que també és cert per \(m\).
+			Tenim pel Teorema \myref{thm:la norma d'una integral és menys que l'integral de la norma} que
 			\begin{align*}
 				\norm{T^{m}(u(t))-T^{m}(v(t))}&=\norm{\int_{t_{0}}^{t}\left(f(s,T^{m-1}(u(s)))-f(s,T^{m-1}(v(s)))\right)\diff s}\\
 				&\leq\abs{\int_{t_{0}}^{t}\norm{f(s,T^{m-1}(u(s)))-f(s,T^{m-1}(v(s)))}\diff s}\\
@@ -356,16 +476,24 @@
 				&=\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}\distancia(u,v).%REF integrar polinomis
 			\end{align*}
 			Per tant, pel \myref{thm:principi d'inducció} tenim que per a tot \(m\) natural, \(u\) i \(v\) funcions de \(X\) i \(t\) de \((t_{0}-a,t_{0}+a)\) es satisfà
-			\[\norm{T^{m}(u(t))-T^{m}(v(t))}\leq\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}\distancia(u,v),\]
+			\[
+			    \norm{T^{m}(u(t))-T^{m}(v(t))}\leq\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}\distancia(u,v),
+			\]
 			com volíem veure.
 			
 			Ara bé, tenim que
-			\[\lim_{m\to\infty}\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}=0,\]%REF
+			\[
+			    \lim_{m\to\infty}\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}=0,
+			\]%REF
 			i per la definició de \myref{def:límit} tenim que existeix un natural \(n_{0}\) tal que per a tot \(n>n_{0}\) es satisfà
-			\[0<{\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}}<1.\]
+			\[
+			    0<{\frac{K^{m}}{m!}\abs{t-t_{0}}^{m}}<1.
+			\]
 			
 			Per tant, per la definició d'\myref{def:aplicació contractiva} tenim que per a tot \(n>n_{0}\) l'aplicació \(T^{n}\) és una aplicació contractiva, i pel \corollari{} \myref{cor:si una funció té una potència contractiva aleshores aquesta té un únic punt fix} tenim que existeix una única funció \(u\) de \(X\) tal que
-			\[T(u(t))=u(t).\qedhere\]
+			\[
+			    T(u(t))=u(t).\qedhere
+			\]
 		\end{proof}
 	\end{theorem}
 	\begin{corollary}
@@ -375,7 +503,8 @@
 			\displaystyle \dot{u}(t)=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}.
 		\end{cases}\]
-		un problema de Cauchy sobre \(\Omega=I\times\mathbb{R}^{n}\) tal que \(f\) és una funció contínua i Lipschitz respecte la segona variable. Aleshores aquest problema de Cauchy té una única solució definida en l'interval \(I\).
+		un problema de Cauchy sobre \(\Omega=I\times\mathbb{R}^{n}\) tal que \(f\) és una funció contínua i Lipschitz respecte la segona variable.
+		Aleshores aquest problema de Cauchy té una única solució definida en l'interval \(I\).
 		\begin{proof}
 			Quan \(b\) tendeix a infinit tenim que \(\overline{\bola}(x_{0},b)=\mathbb{R}^{n}\).
 		\end{proof}
@@ -384,32 +513,46 @@
 	\begin{definition}[Família de funcions puntualment acotada]
 		\labelname{família de funcions puntualment acotada}\label{def:família de funcions puntualment acotada}
 		Sigui \(H\) una família de funcions de \(\mathcal{C}_{b}(X,T)\) tal que per a tot \(x\) de \(X\) existeix un real \(M_{x}\) tal que
-		\[\norm{f(x)}<M_{x}\]
-		per a tot \(f\) de \(H\). Aleshores direm que \(H\) és puntualment acotada.
+		\[
+		    \norm{f(x)}<M_{x}
+		\]
+		per a tot \(f\) de \(H\).
+		Aleshores direm que \(H\) és puntualment acotada.
 	\end{definition}
 	\begin{definition}[Família de funcions equicontínua]
 		\labelname{família de funcions equicontínua en un punt}\label{def:família de funcions equicontínua en un punt}
 		\labelname{família de funcions equicontínua}\label{def:família de funcions equicontínua}
 		\labelname{família de funcions uniformement equicontínua}\label{def:família de funcions uniformement equicontínua}
 		Siguin \(H\) una família de funcions de \(\mathcal{C}_{b}(X,T)\) i \(x\) un punt de \(X\) tal que per a tot \(\varepsilon>0\) existeix un entorn \(N_{x}\) de \(x\) tal que per a tot \(y\) de \(N_{x}\) i \(f\) de \(H\) es satisfà
-		\[\norm{f(y)-f(x)}<\varepsilon.\]
-		Aleshores direm que \(H\) és equicontínua en \(x\). Si \(H\) és equicontínua en \(x\) per a tot \(x\) de \(X\) direm que \(H\) és equicontínua en \(X\).
+		\[
+		    \norm{f(y)-f(x)}<\varepsilon.
+		\]
+		Aleshores direm que \(H\) és equicontínua en \(x\).
+		Si \(H\) és equicontínua en \(x\) per a tot \(x\) de \(X\) direm que \(H\) és equicontínua en \(X\).
 		
 		També, si \(\mathcal{C}_{b}(X,T)\) té la distància \(\distancia\) i, per a tot \(\varepsilon>0\) existeix un \(\delta>0\) tal que per a tot \(y\in X\) tal que \(\distancia(x,y)<\delta\), i per a tot \(f\in H\) es satisfà
-		\[\norm{f(x)-f(y)}<\varepsilon.\]
+		\[
+		    \norm{f(x)-f(y)}<\varepsilon.
+		\]
 		Aleshores direm que \(H\) és uniformement equicontínua en \(X\).
 	\end{definition}
 	\begin{observation}
 		\label{obs:equicontinuitat uniforme implica equicontinuitat}
-		Sigui \(H\) una família de funcions uniformement equicontínua. Aleshores \(H\) és una família de funcions equicontínua.
+		Sigui \(H\) una família de funcions uniformement equicontínua.
+		Aleshores \(H\) és una família de funcions equicontínua.
 	\end{observation}
 	\begin{lemma}[Teorema d'Arzelà-Ascoli]
 		\labelname{Teorema d'Arzelà-Ascoli}\label{thm:Teorema d'Arzelà-Ascoli}
-		Siguin \(X\) un compacte i \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions de \(\mathcal{C}_{b}(X,T)\) equicontínua i puntualment acotada. Aleshores la successió \((f_{n})_{n\in\mathbb{N}}\) té una parcial uniformement convergent.
+		Siguin \(X\) un compacte i \((f_{n})_{n\in\mathbb{N}}\) una successió de funcions de \(\mathcal{C}_{b}(X,T)\) equicontínua i puntualment acotada.
+		Aleshores la successió \((f_{n})_{n\in\mathbb{N}}\) té una parcial uniformement convergent.
 		\begin{proof}
-			Prenem un real \(\varepsilon>0\). Per la definició de \myref{def:família de funcions equicontínua} tenim que per a tot punt \(x\) de \(X\) existeix un entorn \(N_{x}\) de \(x\) tal que per a tot \(y\) de \(N_{x}\) tenim, per a tot \(n\) natural, que
-			\[\norm{f_{n}(y)-f_{n}(x)}<\frac{\varepsilon}{3}.\]
-			Ara bé, per la definició d'\myref{def:entorn} tenim que existeix un obert \(\obert{V}_{x}\) de \(X\) tal que \(x\) és un element de \(\obert{V}_{x}\) i \(\obert{V}_{x}\) és un subconjunt de \(N_{x}\). Per tant tenim que per a tot \(y\) de \(\obert{V}_{x}\), per a tot \(n\) natural, es satisfà
+			Prenem un real \(\varepsilon>0\).
+			Per la definició de \myref{def:família de funcions equicontínua} tenim que per a tot punt \(x\) de \(X\) existeix un entorn \(N_{x}\) de \(x\) tal que per a tot \(y\) de \(N_{x}\) tenim, per a tot \(n\) natural, que
+			\[
+			    \norm{f_{n}(y)-f_{n}(x)}<\frac{\varepsilon}{3}.
+			\]
+			Ara bé, per la definició d'\myref{def:entorn} tenim que existeix un obert \(\obert{V}_{x}\) de \(X\) tal que \(x\) és un element de \(\obert{V}_{x}\) i \(\obert{V}_{x}\) és un subconjunt de \(N_{x}\).
+			Per tant tenim que per a tot \(y\) de \(\obert{V}_{x}\), per a tot \(n\) natural, es satisfà
 			\begin{equation}
 				\label{thm:Teorema d'Arzelà-Ascoli:eq2}
 				\norm{f_{n}(y)-f_{n}(x)}<\frac{\varepsilon}{3}.
@@ -421,10 +564,16 @@
 			\end{equation}
 			
 			Com que, per hipòtesi, la \((f_{n})_{n\in\mathbb{N}}\) és una successió de funcions puntualment acotada, per la definició de \myref{def:família de funcions puntualment acotada} tenim que existeix un real \(M\) tal que per a tot \(n\) natural tenim
-			\[\norm{f_{n}(x_{i})}<M,\]
-			i tenim pel \myref{thm:Teorema de Bolzano-Weierstrass} que existeix una parcial \((f_{n}^{1}(x_{1}))_{n\in\mathbb{N}}\) de \((f_{n}(x_{i}))_{n\in\mathbb{N}}\) convergent. Podem repetir l'argument per trobar una successió de la forma
-			\[(f^{k}_{n}(x_{i}))_{n\in\mathbb{N}}\quad\text{per a tot }i\text{ de }\{1,\dots,k\}.\]
-			Tenim que la successió \((f^{k}_{n}(x_{i}))_{n\in\mathbb{N}}\) és convergent. Per tant, per la definició de \myref{def:límit} trobem que existeix un element de \(X\), \(f^{k}(x_{i})\) tal que existeix un natural \(n'_{\varepsilon}\) satisfent que per a tot \(n>n'_{\varepsilon}\) es compleix
+			\[
+			    \norm{f_{n}(x_{i})}<M,
+			\]
+			i tenim pel \myref{thm:Teorema de Bolzano-Weierstrass} que existeix una parcial \((f_{n}^{1}(x_{1}))_{n\in\mathbb{N}}\) de \((f_{n}(x_{i}))_{n\in\mathbb{N}}\) convergent.
+			Podem repetir l'argument per trobar una successió de la forma
+			\[
+			    (f^{k}_{n}(x_{i}))_{n\in\mathbb{N}}\quad\text{per a tot }i\text{ de }\{1,\dots,k\}.
+			\]
+			Tenim que la successió \((f^{k}_{n}(x_{i}))_{n\in\mathbb{N}}\) és convergent.
+			Per tant, per la definició de \myref{def:límit} trobem que existeix un element de \(X\), \(f^{k}(x_{i})\) tal que existeix un natural \(n'_{\varepsilon}\) satisfent que per a tot \(n>n'_{\varepsilon}\) es compleix
 			\begin{equation}
 				\label{thm:Teorema d'Arzelà-Ascoli:eq3}
 				\norm{f^{k}_{n}(x_{i})-f^{k}(x_{i})}<\frac{\varepsilon}{6},
@@ -440,7 +589,8 @@
 				\norm{f^{k}_{n}(x_{i})-f^{k}_{m}(x_{i})}\leq\frac{\varepsilon}{3}.
 			\end{equation}
 			
-			Prenem ara un element \(x\) de \(X\). Per \eqref{thm:Teorema d'Arzelà-Ascoli:eq1} tenim que existeix un \(j\) de \(\{1,\dots,k\}\) tal que \(x\) és un element de \(V_{x_{j}}\), i tenim que
+			Prenem ara un element \(x\) de \(X\).
+			Per \eqref{thm:Teorema d'Arzelà-Ascoli:eq1} tenim que existeix un \(j\) de \(\{1,\dots,k\}\) tal que \(x\) és un element de \(V_{x_{j}}\), i tenim que
 			\begin{align*}
 				\norm{f^{k}_{n}(x)-f^{k}_{m}(x)}\leq&\norm{f^{k}_{n}(x)-f^{k}_{n}(x_{j})}+\norm{f^{k}_{n}(x_{j})-f^{k}_{m}(x)} \\
 				\leq&\norm{f^{k}_{n}(x)-f^{k}_{n}(x_{j})}+\norm{f^{k}_{n}(x_{j})-f^{k}_{m}(x_{j})}+\\&+\norm{f^{k}_{m}(x_{j})-f^{k}_{m}(x)} \\
@@ -448,19 +598,29 @@
 				\leq&\frac{\varepsilon}{3}+\frac{\varepsilon}{3}+\frac{\varepsilon}{3}=\varepsilon\tag{\ref{thm:Teorema d'Arzelà-Ascoli:eq4}}
 			\end{align*}
 			Tenim doncs que per a tot \(\varepsilon>0\) real existeix una parcial \((g^{(\varepsilon)}_{n'_{\varepsilon}+n})_{n\in\mathbb{N}}\) de \((f_{n})_{n\in\mathbb{N}}\) que satisfà
-			\[\norm{g^{(\varepsilon)}_{n'_{\varepsilon}+n}-g^{(\varepsilon)}_{n'_{\varepsilon}+m}}\leq\varepsilon\]
+			\[
+			    \norm{g^{(\varepsilon)}_{n'_{\varepsilon}+n}-g^{(\varepsilon)}_{n'_{\varepsilon}+m}}\leq\varepsilon
+			\]
 			per a tot \(n\) i \(m\) enters.
 			
 			Definim, per simplificar la notació, la successió
-			\[\left(g^{(\varepsilon)}_{n'_{\varepsilon}+n}\right)_{n\in\mathbb{N}}=\left(f^{(\varepsilon^{-1})}_{n'_{\varepsilon^{-1}}+n}\right)_{n\in\mathbb{N}}.\]
+			\[
+			    \left(g^{(\varepsilon)}_{n'_{\varepsilon}+n}\right)_{n\in\mathbb{N}}=\left(f^{(\varepsilon^{-1})}_{n'_{\varepsilon^{-1}}+n}\right)_{n\in\mathbb{N}}.
+			\]
 			
 			Per tant tenim que per a \(\varepsilon=1\) es satisfà
-			\[\norm{f^{(1)}_{n'_{1}+n}(x)-f^{(1)}_{n'_{1}+m}(x)}\leq1.\]
+			\[
+			    \norm{f^{(1)}_{n'_{1}+n}(x)-f^{(1)}_{n'_{1}+m}(x)}\leq1.
+			\]
 			Si prenem \(\varepsilon=\frac{1}{2}\) trobem una parcial \((f^{2}_{n_{2}+n})_{n\in\mathbb{N}}\) de \((f^{1}_{n_{1}+n})_{n\in\mathbb{N}}\) que satisfà
-			\[\norm{f^{(2)}_{n_{2}+n}(x)-f^{(2)}_{n_{2}+m}(x)}\leq\frac{1}{2}.\]
+			\[
+			    \norm{f^{(2)}_{n_{2}+n}(x)-f^{(2)}_{n_{2}+m}(x)}\leq\frac{1}{2}.
+			\]
 			
 			Tenim doncs que per a tot \(i\) natural la successió \((f^{i+1}_{n_{i+1}+n})_{n\in\mathbb{N}}\) és una parcial de la successió \((f^{i+1}_{n_{i+1}+n})_{n\in\mathbb{N}}\) i per a tot \(n\) i \(m\) naturals tenim
-			\[\norm{f^{i+1}_{n_{i+1}+n}(x)-f^{i+1}_{n_{i+1}+m}(x)}<\frac{1}{i},\]
+			\[
+			    \norm{f^{i+1}_{n_{i+1}+n}(x)-f^{i+1}_{n_{i+1}+m}(x)}<\frac{1}{i},
+			\]
 			i per tant, per la definició de \myref{def:successió de Cauchy amb normes} trobem que la successió \((f^{i+1}_{n_{i+1}+n})_{n\in\mathbb{N}}\) és de Cauchy per a tot \(i\) natural, i com que pel Teorema \myref{thm:l'espai de funcions contínues i acotades és complet} tenim que \(\mathcal{C}_{b}(X,T)\) és un espai complet, i per la \myref{thm:condició de Cauchy per successions de funcions} trobem que la parcial \((f^{i+1}_{n_{i+1}+n})_{n\in\mathbb{N}}\) és uniformement convergent.
 		\end{proof}
 	\end{lemma}
@@ -476,34 +636,50 @@
 		\end{equation}
 		un problema de Cauchy sobre \(\Omega=[t_{0}-a,t_{0}+a]\times\overline{\bola}(x_{0},b)\), tal que \(f\) és una funció contínua i \(M\) un real tal que \(\norm{f(t,x)}<M\) per a tot \((t,x)\) de \(\Omega\).
 		Aleshores aquest problema de Cauchy té una solució sobre l'interval
-		\[\left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].\]
+		\[
+		    \left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].
+		\]
 		\begin{proof} % https://arxiv.org/pdf/1202.1152.pdf (no)
 			Per a tot \((t,x)\in\Omega\) denotem
-			\[f(t,x)=(f_{1}(t,x),\dots,f_{n}(t,x)).\]
-			Aleshores pel \myref{thm:Teorema d'aproximació polinòmica de Weierstrass} trobem que existeixen \(n\) successions de polinomis \(\{(p_{m}^{i})_{m\in\mathbb{N}}\}_{i=1}^{n}\) tals que \((p_{m}^{i})\) convergeix uniformement a \(f_{i}\) per a tot \(i\in\{1,\dots,n\}\). Per la proposició \myref{prop:una successió de funcions convergeix uniformement a una funció a la que convergeixi puntualment} trobem que \((p_{m}^{i})\) convergeix puntualment a \(f_{i}\) per a tot \(i\in\{1,\dots,n\}\), i per la definició de \myref{def:convergència puntual} trobem que per a tot \((t,x)\in\Omega\) tenim
-			\[\lim_{m\to\infty}p_{m}^{i}(t,x)=f_{i}(t,x),\]
+			\[
+			    f(t,x)=(f_{1}(t,x),\dots,f_{n}(t,x)).
+			\]
+			Aleshores pel \myref{thm:Teorema d'aproximació polinòmica de Weierstrass} trobem que existeixen \(n\) successions de polinomis \(\{(p_{m}^{i})_{m\in\mathbb{N}}\}_{i=1}^{n}\) tals que \((p_{m}^{i})\) convergeix uniformement a \(f_{i}\) per a tot \(i\in\{1,\dots,n\}\).
+			Per la proposició \myref{prop:una successió de funcions convergeix uniformement a una funció a la que convergeixi puntualment} trobem que \((p_{m}^{i})\) convergeix puntualment a \(f_{i}\) per a tot \(i\in\{1,\dots,n\}\), i per la definició de \myref{def:convergència puntual} trobem que per a tot \((t,x)\in\Omega\) tenim
+			\[
+			    \lim_{m\to\infty}p_{m}^{i}(t,x)=f_{i}(t,x),
+			\]
 			i denotant \(p_{m}(t,x)=(p_{m}^{1}(t,x),\dots,p_{m}^{n}(t,x))\) trobem que
 			\begin{equation}
 				\label{thm:Teorema de Peano:eq2}
 				\lim_{m\to\infty}p_{m}(t,x)=f(t,x).
 			\end{equation}
 			Per la definició de \myref{def:límit} trobem que per a tot \(\varepsilon>0\) existeix un \(n_{0}\) tal que per a tot \(m>n_{0}\) es satisfà
-			\[\norm{f(t,x)-p_{m}(t,x)}<\varepsilon,\]
-			per a tot \((t,x)\) de \(\Omega\). Com que, per hipòtesi, tenim que \(\norm{f(t,x)}<M\), trobem que ha de ser \(\norm{p_{m}(t,x)}<M\) per a tot \((t,x)\in\Omega\) i per a tot \(m>n_{0}\).
+			\[
+			    \norm{f(t,x)-p_{m}(t,x)}<\varepsilon,
+			\]
+			per a tot \((t,x)\) de \(\Omega\).
+			Com que, per hipòtesi, tenim que \(\norm{f(t,x)}<M\), trobem que ha de ser \(\norm{p_{m}(t,x)}<M\) per a tot \((t,x)\in\Omega\) i per a tot \(m>n_{0}\).
 			
 			Considerem el problema de Cauchy
 			\[\begin{cases}
 				\displaystyle\dot{u}(t)=p_{m}(t,u(t)) \\
 				\displaystyle u(t_{0})=x_{0}
 			\end{cases}\] % Sobre \Omega?
-			sobre \(\Omega\). Com que \(p_{m}\) és un polinomi, per l'exemple \myref{ex:els polinomis són funcions Lipschitz respecte la segona variable} trobem que \(p_{m}\) és Lipschitz respecte la segona variable, i pel \myref{thm:Teorema de Picard} trobem que, per a tot \(m>n_{0}\) aquest problema de Cauchy té una única solució, \(\varphi_{m}\), definida sobre l'interval
-			\[I=\left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].\]
+			sobre \(\Omega\).
+			Com que \(p_{m}\) és un polinomi, per l'exemple \myref{ex:els polinomis són funcions Lipschitz respecte la segona variable} trobem que \(p_{m}\) és Lipschitz respecte la segona variable, i pel \myref{thm:Teorema de Picard} trobem que, per a tot \(m>n_{0}\) aquest problema de Cauchy té una única solució, \(\varphi_{m}\), definida sobre l'interval
+			\[
+			    I=\left[t_{0}-\min\left\{a,\frac{b}{M}\right\},t_{0}+\min\left\{a,\frac{b}{M}\right\}\right].
+			\]
 			
 			Observem que, per a tot \(m>n_{0}\) i per a tot \(t\in I\), tenim que \(\varphi_{m}(t)\in\overline{\bola}(x_{0},b)\), i per la definició de \myref{def:bola} trobem que
-			\[\norm{\varphi_{m}(t)}\leq\norm{x_{0}}+b.\]
+			\[
+			    \norm{\varphi_{m}(t)}\leq\norm{x_{0}}+b.
+			\]
 			Aleshores per la definició de \myref{def:família de funcions puntualment acotada} trobem que la successió de funcions \((\varphi_{m+n_{0}})_{m\in\mathbb{N}}\) és una família de funcions puntualment acotada.
 			
-			Fixem un \(\varepsilon>0\) i prenem dos \(t\) i \(t'\) de \(I\) amb \(t'<t\) tals que \(\abs{t,t'}<\frac{\varepsilon}{M}\). Aleshores, per l'observació \myref{obs:solució general d'un problema de Cauchy}, tenim que per a tot \(m>n_{0}\)
+			Fixem un \(\varepsilon>0\) i prenem dos \(t\) i \(t'\) de \(I\) amb \(t'<t\) tals que \(\abs{t,t'}<\frac{\varepsilon}{M}\).
+			Aleshores, per l'observació \myref{obs:solució general d'un problema de Cauchy}, tenim que per a tot \(m>n_{0}\)
 			\begin{align*}
 				\norm{\varphi_{m}(t)-\varphi_{m}(t')}&=\norm{x_{0}+\int_{t_{0}}^{t}p_{m}(s,\varphi_{m}(s))\diff s-\Bigg(x_{0}+\int_{t_{0}}^{t'}p_{m}(s,\varphi_{m}(s))\diff s\Bigg)} \\
 				&=\norm{\int_{t_{0}}^{t}p_{m}(s,\varphi_{m}(s))\diff s-\int_{t_{0}}^{t'}p_{m}(s,\varphi_{m}(s))\diff s} \\
@@ -540,8 +716,11 @@
 			\displaystyle \dot{u}(t)=f(t,u(t)) \\
 			\displaystyle x(t_{0})=x_{0}
 		\end{cases}\]
-		un problema de Cauchy sobre \(\Omega\) tal que \(f\) sigui contínua i \(\Omega\) sigui obert, i \(K\subseteq\Omega\) un compacte. Aleshores existeix un real \(\alpha>0\) tal que per a tot punt \((t_{0},x_{0})\) de \(K\) aquest problema de Cauchy té una solució sobre l'interval
-		\[\left[t_{0}-\alpha,t_{0}+\alpha\right].\]
+		un problema de Cauchy sobre \(\Omega\) tal que \(f\) sigui contínua i \(\Omega\) sigui obert, i \(K\subseteq\Omega\) un compacte.
+		Aleshores existeix un real \(\alpha>0\) tal que per a tot punt \((t_{0},x_{0})\) de \(K\) aquest problema de Cauchy té una solució sobre l'interval
+		\[
+		    \left[t_{0}-\alpha,t_{0}+\alpha\right].
+		\]
 		\begin{proof}
 			%TODO
 		\end{proof}
@@ -557,8 +736,11 @@
 				\displaystyle u(t_{0})=x_{0}
 			\end{cases}
 		\end{equation}
-		un problema de Cauchy sobre \(\Omega\) amb \(f\) contínua. Aleshores definirem
-		\[A(t_{0},x_{0})=\{(I,u)\mid u\text{ és solució del problema de Cauchy en l'interval }I\}\]
+		un problema de Cauchy sobre \(\Omega\) amb \(f\) contínua.
+		Aleshores definirem
+		\[
+		    A(t_{0},x_{0})=\{(I,u)\mid u\text{ és solució del problema de Cauchy en l'interval }I\}
+		\]
 		con el conjunt de solucions del problema de Cauchy \eqref{def:conjunt de solucions d'un problema de Cauchy:eq1}.
 	\end{definition}
 	\begin{observation}
@@ -571,20 +753,29 @@
 	\begin{proposition}
 		\label{prop:la prolongació és una relació d'ordre}
 		Siguin \(A(t_{0},x_{0})\) el conjunt de solucions d'un problema de Cauchy i \(\leq\) una relació tal que per a dos elements \((I,u)\) i \((J,v)\) de \(A(t_{0},x_{0})\) tenim
-		\[(I,u)\geq(J,v)\]
+		\[
+		    (I,u)\geq(J,v)
+		\]
 		si i només si
-		\[J\subseteq I\quad\text{i}\quad u(x)=v(x)\text{ per a tot }x\in J.\]
+		\[
+		    J\subseteq I\quad\text{i}\quad u(x)=v(x)\text{ per a tot }x\in J.
+		\]
 		Aleshores la relació \(\leq\) és una relació d'ordre.
 		\begin{proof}
 			Comprovem les propietats de la definició de relació d'ordre:
 			\begin{enumerate}
-				\item Reflexiva: Pel \myref{thm:doble inclusió} tenim que \(I\subseteq I\) i per la definició d'\myref{def:aplicació} tenim que \(u(x)=u(x)\) per a tot \(x\) de \(I\). Per tant trobem \((I,u)\geq(I,u)\).
+				\item Reflexiva: Pel \myref{thm:doble inclusió} tenim que \(I\subseteq I\) i per la definició d'\myref{def:aplicació} tenim que \(u(x)=u(x)\) per a tot \(x\) de \(I\).
+				Per tant trobem \((I,u)\geq(I,u)\).
 				
-				\item Antisimètrica: Suposem que \((I,u)\geq(J,v)\) i \((J,v)\geq(I,u)\). Aleshores tenim que \(J\subseteq I\) i \(I\subseteq J\), i pel \myref{thm:doble inclusió} trobem que \(I=J\). També tenim que \(u(x)=v(x)\) per a tot \(x\) de \(I\), i per la definició d'\myref{def:aplicació} trobem que \(u=v\), i per tant \((I,u)=(J,v)\).
+				\item Antisimètrica: Suposem que \((I,u)\geq(J,v)\) i \((J,v)\geq(I,u)\).
+				Aleshores tenim que \(J\subseteq I\) i \(I\subseteq J\), i pel \myref{thm:doble inclusió} trobem que \(I=J\).
+				També tenim que \(u(x)=v(x)\) per a tot \(x\) de \(I\), i per la definició d'\myref{def:aplicació} trobem que \(u=v\), i per tant \((I,u)=(J,v)\).
 				
-				\item Transitiva: Siguin \((I_{1},u_{1})\), \((I_{2},u_{2})\) i \((I_{3},u_{3})\) tres elements de \(A(t_{0},x_{0})\) tals que \((I_{1},u_{1})\geq(I_{2},u_{2})\) i \((I_{2},u_{2})\geq(I_{3},u_{3})\). Aleshores tenim que \(I_{3}\subseteq I_{2}\) i \(I_{2}\subseteq I_{1}\), i per la definició de \myref{def:subconjunt} trobem que \(I_{3}\subseteq I_{1}\).
+				\item Transitiva: Siguin \((I_{1},u_{1})\), \((I_{2},u_{2})\) i \((I_{3},u_{3})\) tres elements de \(A(t_{0},x_{0})\) tals que \((I_{1},u_{1})\geq(I_{2},u_{2})\) i \((I_{2},u_{2})\geq(I_{3},u_{3})\).
+				Aleshores tenim que \(I_{3}\subseteq I_{2}\) i \(I_{2}\subseteq I_{1}\), i per la definició de \myref{def:subconjunt} trobem que \(I_{3}\subseteq I_{1}\).
 				
-				També tenim que \(u_{1}(x)=u_{2}(x)\) per a tot \(x\) de \(I_{2}\), i \(u_{2}(x)=u_{3}(x)\) per a tot \(x\) de \(I_{3}\). Ara bé, com que \(I_{3}\) és un subconjunt de \(I_{1}\) tenim que \(u_{1}(x)=u_{2}(x)\) per a tot \(x\) de \(I_{3}\), i per tant \(u_{1}(x)=u_{3}(x)\) per a tot \(x\) de \(I_{3}\), i trobem que \((I_{1},u_{1})\geq(I_{3},u_{3})\).
+				També tenim que \(u_{1}(x)=u_{2}(x)\) per a tot \(x\) de \(I_{2}\), i \(u_{2}(x)=u_{3}(x)\) per a tot \(x\) de \(I_{3}\).
+				Ara bé, com que \(I_{3}\) és un subconjunt de \(I_{1}\) tenim que \(u_{1}(x)=u_{2}(x)\) per a tot \(x\) de \(I_{3}\), i per tant \(u_{1}(x)=u_{3}(x)\) per a tot \(x\) de \(I_{3}\), i trobem que \((I_{1},u_{1})\geq(I_{3},u_{3})\).
 			\end{enumerate}
 			I per la definició de \myref{def:relació d'ordre} hem acabat.
 		\end{proof}
@@ -594,25 +785,37 @@
 		\labelname{solució improrrogable}\label{def:solució improrrogable}
 		\labelname{solució maximal}\label{def:solució maximal}
 		Siguin \(A(t_{0},x_{0})\) el conjunt de solucions d'un problema de Cauchy i \((I,u)\) i \((J,v)\) dos elements de \(A(t_{0},x_{0})\) tals que
-		\[J\subseteq I\quad\text{i}\quad u(x)=v(x)\text{ per a tot }x\in J.\]
+		\[
+		    J\subseteq I\quad\text{i}\quad u(x)=v(x)\text{ per a tot }x\in J.
+		\]
 		Aleshores direm que \((I,u)\) és una prolongació de \((J,v)\).
 		
 		Si \((I,u)\) és un element maximal direm que \((I,u)\) és una solució improrrogable i que \(u\) és una solució maximal.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:existeixen solucions improrrogables}
-		Sigui \(A(t_{0},x_{0})\) el conjunt de solucions d'un problema de Cauchy. Aleshores existeix un element \((I,u)\) de \(A(t_{0},x_{0})\) tal que \((I,u)\) és una solució improrrogable.
+		Sigui \(A(t_{0},x_{0})\) el conjunt de solucions d'un problema de Cauchy.
+		Aleshores existeix un element \((I,u)\) de \(A(t_{0},x_{0})\) tal que \((I,u)\) és una solució improrrogable.
 		\begin{proof}
-			Sigui \(\{I_{i},u_{i}\}_{i\in J}\) una família de solucions del problema de Cauchy amb \((I_{i},u_{i})\leq(I_{j},u_{j})\) si \(i\leq j\). Aleshores, per la definició de \myref{def:cadena}, trobem que la família \(\{I_{i},u_{i}\}_{i\in J}\) és una cadena.
+			Sigui \(\{I_{i},u_{i}\}_{i\in J}\) una família de solucions del problema de Cauchy amb \((I_{i},u_{i})\leq(I_{j},u_{j})\) si \(i\leq j\).
+			Aleshores, per la definició de \myref{def:cadena}, trobem que la família \(\{I_{i},u_{i}\}_{i\in J}\) és una cadena.
 			
-			Considerem \(I=\bigcup_{i\in J}I_{i}\) i definim la funció \(u\colon I\longrightarrow\mathbb{R}^{n}\) com \(u(t)=u_{n}(t)\) si \(t\) pertany a \(I_{n}\). Veiem que \(u\) està ben definida. Prenem \(t_{0}\) de \(I\). Suposem que \(t_{0}\) pertany a \(I_{n}\) i \(I_{m}\) fixats. Aleshores, com que per hipòtesi, \((I_{n},u_{n})\leq(I_{m},u_{m})\) ó \((I_{m},u_{m})\leq(I_{n},u_{n})\). Suposem que \((I_{n},u_{n})\leq(I_{m},u_{m})\). Aleshores per la definició de \myref{def:prolongació} tenim que per a tot \(t\) de \(I_{n}\) tenim que \(u_{n}(t)=u_{m}(t)\), i per tant \(u\) està ben definida. El cas \((I_{m},u_{m})\leq(I_{n},u_{n})\) és anàleg.
+			Considerem \(I=\bigcup_{i\in J}I_{i}\) i definim la funció \(u\colon I\longrightarrow\mathbb{R}^{n}\) com \(u(t)=u_{n}(t)\) si \(t\) pertany a \(I_{n}\).
+			Veiem que \(u\) està ben definida.
+			Prenem \(t_{0}\) de \(I\).
+			Suposem que \(t_{0}\) pertany a \(I_{n}\) i \(I_{m}\) fixats.
+			Aleshores, com que per hipòtesi, \((I_{n},u_{n})\leq(I_{m},u_{m})\) ó \((I_{m},u_{m})\leq(I_{n},u_{n})\).
+			Suposem que \((I_{n},u_{n})\leq(I_{m},u_{m})\).
+			Aleshores per la definició de \myref{def:prolongació} tenim que per a tot \(t\) de \(I_{n}\) tenim que \(u_{n}(t)=u_{m}(t)\), i per tant \(u\) està ben definida.
+			El cas \((I_{m},u_{m})\leq(I_{n},u_{n})\) és anàleg.
 			
 			Ara bé, tenim que \((I_{i},u_{i})\leq(I,u)\) per a tot \(i\) de \(J\), i per la definició de \myref{def:cota superior d'una cadena} tenim que \((I_{i},u_{i})\leq(I,u)\) és un element maximal de la cadena \((I_{i},u_{i})_{i\in J}\), i pel \myref{lema de Zorn} tenim que existeix un element maximal de la cadena, i per la definició de \myref{def:solució improrrogable} hem acabat.
 		\end{proof}
 	\end{proposition}
 	\begin{proposition}
 		\label{prop:les solucions improrrogables estàn definides sobre intervals oberts}
-		Sigui \(A(t_{0},x_{0})\) el conjunt de solucions d'un problema de Cauchy i \((I,u)\) una solució improrrogable. Aleshores \(I\) és un interval obert.
+		Sigui \(A(t_{0},x_{0})\) el conjunt de solucions d'un problema de Cauchy i \((I,u)\) una solució improrrogable.
+		Aleshores \(I\) és un interval obert.
 		\begin{proof}
 %			Sigui \((I,u)\) una solució maximal del problema de Cauchy. Suposem que \(a\) és un extrem de l'interval \(I\). Considerem \(A(a,u(a))\). Per la definició d'\myref{def:equació diferencial ordinària} trobem que \((a,u(a))\in\Omega\), i per l'observació \myref{obs:el conjunt de solucions d'un problema de Cauchy amb f contínua és no buit} trobem que existeix un \((J,v)\in A(a,u(a))\).
 %
@@ -626,7 +829,8 @@
 			\displaystyle \dot{u}(t)=f(t,u(t)) \\
 			\displaystyle u(t_{0})=x_{0}
 		\end{cases}\]
-		un problema de Cauchy sobre \(\Omega\) amb \(f\) contínua tal aquest tingui una única solució per a tot \((t_{0},x_{0})\in\Omega\). Aleshores per a cada \((t_{0},x_{0})\in\Omega\) aquest problema de Cauchy té una única solució improrrogable.
+		un problema de Cauchy sobre \(\Omega\) amb \(f\) contínua tal aquest tingui una única solució per a tot \((t_{0},x_{0})\in\Omega\).
+		Aleshores per a cada \((t_{0},x_{0})\in\Omega\) aquest problema de Cauchy té una única solució improrrogable.
 		\begin{proof}
 			Prenem un element \((t_{0},x_{0})\) de \(\Omega\) i siguin \((I,u)\) i \((J,v)\) dues solucions de \(A(t_{0},x_{0})\)
 		\end{proof}
@@ -634,9 +838,14 @@
 	\begin{theorem}[Lema de Wintner]
 		\labelname{lema de Wintner}\label{thm:Lema de Wintner}
 		Siguin \(\Omega\subseteq\mathbb{R}\times\mathbb{R}^{n}\) un obert i \(f\colon\Omega\longrightarrow\mathbb{R}^{n}\) una funció contínua, \((\varphi,I)\) una solució de l'equació diferencial
-		\[\dot{u}(t)=f(t,u(t))\]
-		i \((b,y)\) un punt d'acumulació de la gràfica de \(\varphi\) en \(\Omega\). Aleshores
-		\[\lim_{t\to b}\varphi(t)=y\]
+		\[
+		    \dot{u}(t)=f(t,u(t))
+		\]
+		i \((b,y)\) un punt d'acumulació de la gràfica de \(\varphi\) en \(\Omega\).
+		Aleshores
+		\[
+		    \lim_{t\to b}\varphi(t)=y
+		\]
 		i existeix una solució \((J,v)\) de l'equació diferencial tal que \(I\subseteq J\) i \(b\in J\).
 		\begin{proof}
 			%TODO
@@ -645,16 +854,22 @@
 \section{Dependència de les solucions d'un problema de Cauchy}
 	\begin{lemma}
 		\label{lema:continuitat respecte les condicions inicials}
-		Sigui \((\varphi_{n})_{n\in\mathbb{N}}\) una successió uniformement equicontínua i uniformement acota de funcions contínues reals sobre un espai mètric compacte \(F\) tal que tota parcial uniformement convergent de la successió té per límit una funció \(\varphi\). Aleshores la successió \((\varphi_{n})\) convergeix uniformement a \(\varphi\).
+		Sigui \((\varphi_{n})_{n\in\mathbb{N}}\) una successió uniformement equicontínua i uniformement acota de funcions contínues reals sobre un espai mètric compacte \(F\) tal que tota parcial uniformement convergent de la successió té per límit una funció \(\varphi\).
+		Aleshores la successió \((\varphi_{n})\) convergeix uniformement a \(\varphi\).
 		\begin{proof}
-			Suposem que la successió \((\varphi_{n})_{n\in\mathbb{N}}\) no convergeix uniformement a \(\varphi\). Per la definició de \myref{def:límit} tenim que existeix un \(\varepsilon>0\) tal que per a tot \(N\) natural existeix un \(n_{N}>N\) tal que
-			\[\norm{\varphi_{n_{N}}-\varphi}\geq\varepsilon.\]
+			Suposem que la successió \((\varphi_{n})_{n\in\mathbb{N}}\) no convergeix uniformement a \(\varphi\).
+			Per la definició de \myref{def:límit} tenim que existeix un \(\varepsilon>0\) tal que per a tot \(N\) natural existeix un \(n_{N}>N\) tal que
+			\[
+			    \norm{\varphi_{n_{N}}-\varphi}\geq\varepsilon.
+			\]
 			Per tant podem construir una successió \((\varphi_{n_{N}})_{N\in\mathbb{N}}\) tal que
 			\begin{equation}
 				\label{lema:continuitat respecte les condicions inicials:eq1}
 				\norm{\varphi_{n_{N}}-\varphi}\geq\varepsilon
 			\end{equation}
-			per a tot \(N\) natural. Ara bé, pel \myref{thm:Teorema d'Arzelà-Ascoli} la successió \((\varphi_{n_{N}})_{N\in\mathbb{N}}\) té una parcial uniformement convergent, que contradiu \eqref{lema:continuitat respecte les condicions inicials:eq1}. Per tant tenim que la successió \((\varphi_{n})\) convergeix uniformement a \(\varphi\).
+			per a tot \(N\) natural.
+			Ara bé, pel \myref{thm:Teorema d'Arzelà-Ascoli} la successió \((\varphi_{n_{N}})_{N\in\mathbb{N}}\) té una parcial uniformement convergent, que contradiu \eqref{lema:continuitat respecte les condicions inicials:eq1}.
+			Per tant tenim que la successió \((\varphi_{n})\) convergeix uniformement a \(\varphi\).
 		\end{proof}
 	\end{lemma}
 	\begin{definition}[Convergència uniforme sobre compactes]
@@ -670,7 +885,9 @@
 			u(t_{0})=x_{0}
 		\end{cases}\]
 		té una única solució maximal \(\varphi_{t_{0},x_{0}}\) definida en un interval \(I_{t_{0},x_{0}}\) i
-		\[D=\{(t,t_{0},x_{0})\in\mathbb{R}\times\mathbb{R}\times\mathbb{R}^{n}\mid(t_{0},x_{0})\in\Omega,t\in I_{t_{0},x_{0}}\}.\]
+		\[
+		    D=\{(t,t_{0},x_{0})\in\mathbb{R}\times\mathbb{R}\times\mathbb{R}^{n}\mid(t_{0},x_{0})\in\Omega,t\in I_{t_{0},x_{0}}\}.
+		\]
 		Aleshores \(D\) és un obert i l'aplicació
 		\begin{align*}
 			\varphi\colon D&\longrightarrow\mathbb{R} \\
@@ -694,33 +911,43 @@
 		\labelname{equació diferencial ordinària d'odre \ensuremath{n}}\label{def:equació diferencial ordinària d'ordre n}
 		\labelname{solució de l'equació diferencial ordinària}\label{def:solució de l'equació diferencial ordinària}
 		Siguin \(\Omega=\mathbb{R}\times\mathbb{R}^{n}\) un conjunt i \(F\colon\Omega\longrightarrow\mathbb{R}^{m}\), \(u\colon\mathbb{R}\longrightarrow\mathbb{R}^{m}\) dues funcions tals que
-		\[\frac{\diff^{n}u(t)}{\diff x^{n}}=F\left(t,u(t),\dot{u}(t),\dots,\frac{\diff^{n-1}u(t)}{\diff x^{n-1}}\right).\]
+		\[
+		    \frac{\diff^{n}u(t)}{\diff x^{n}}=F\left(t,u(t),\dot{u}(t),\dots,\frac{\diff^{n-1}u(t)}{\diff x^{n-1}}\right).
+		\]
 		Aleshores direm que
-		és una equació diferencial ordinària. També direm que \(t\) és la variable temporal, \(u(t)\) la variable espacial.
+		és una equació diferencial ordinària.
+		També direm que \(t\) és la variable temporal, \(u(t)\) la variable espacial.
 	\end{definition}
 	\begin{proposition}
 		\label{prop:edos1:1}
-		Siguin \(I\) un interval tancat i acotat de \(\mathbb{R}\) i \(f\colon I\longrightarrow\mathbb{R}^{m}\) una funció contínua. Aleshores l'equació diferencial ordinària d'ordre \(1\)
+		Siguin \(I\) un interval tancat i acotat de \(\mathbb{R}\) i \(f\colon I\longrightarrow\mathbb{R}^{m}\) una funció contínua.
+		Aleshores l'equació diferencial ordinària d'ordre \(1\)
 		\begin{equation}
 			\label{edos1:prop1:eq1}
 			\dot{u}(t)=f(u(t)).
 		\end{equation}
 		té una única solució de la forma
-		\[u(t)=\int_{x_{0}}^{x}f(u(t))\diff t.\]
+		\[
+		    u(t)=\int_{x_{0}}^{x}f(u(t))\diff t.
+		\]
 		\begin{proof}
 			Observem primer que pel \myref{thm:Weierstrass màxims i mínims múltiples variables} la funció \(f(x)\) està acotada en \(I\), i pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann} tenim que la funció \(f(x)\) és integrable Riemann, i per tant, pel \myref{thm:Teorema Fonamental del Càlcul}, trobem que per a tot \(x_{0}\) de \(I\)
-			\[u(t)=\int_{x_{0}}^{x}f(u(t))\diff t\]
+			\[
+			    u(t)=\int_{x_{0}}^{x}f(u(t))\diff t
+			\]
 			és una solució de l'equació diferencial ordinària \eqref{edos1:prop1:eq1}.
 			
 			Aquesta demostració també ens serveix per veure la unicitat.
 		\end{proof}
 	\end{proposition}
 	\begin{observation} %REVISAR
-		Observem que, en la proposició \myref{prop:edos1:1}, si la funció \(f\) no és integrable en \(I\) aleshores l'equació diferencial \eqref{edos1:prop1:eq1} no té solució. %Integrable Riemann?
+		Observem que, en la proposició \myref{prop:edos1:1}, si la funció \(f\) no és integrable en \(I\) aleshores l'equació diferencial \eqref{edos1:prop1:eq1} no té solució.
+		%Integrable Riemann?
 	\end{observation}
 	\begin{proposition}[Problema de Cauchy]
 		\labelname{}\label{prop:problema de Cauchy}
-		Siguin \((a,b)\) un interval obert de \(\mathbb{R}\), \(f\colon(a,b)\longrightarrow\mathbb{R}\) una funció contínua tal que \(f(x)\neq0\) per a tot \(x\) de \((a,b)\), \(x_{0}\) un element de \((a,b)\) i \(t_{0}\) un real. Aleshores el sistema
+		Siguin \((a,b)\) un interval obert de \(\mathbb{R}\), \(f\colon(a,b)\longrightarrow\mathbb{R}\) una funció contínua tal que \(f(x)\neq0\) per a tot \(x\) de \((a,b)\), \(x_{0}\) un element de \((a,b)\) i \(t_{0}\) un real.
+		Aleshores el sistema
 		\begin{equation}
 			\label{prop:problema de Cauchy:eq1}
 			\begin{cases}
@@ -729,23 +956,34 @@
 			\end{cases}
 		\end{equation}
 		té una única solució de la forma
-		\[u(t)=F^{-1}(t-t_{0})\]
+		\[
+		    u(t)=F^{-1}(t-t_{0})
+		\]
 		on
-		\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{f(t)}.\]
+		\[
+		    F(x)=\int_{x_{0}}^{x}\frac{\diff t}{f(t)}.
+		\]
 		\begin{proof}
 			Observem que, per la definició de \myref{def:equació diferencial ordinària d'ordre n} l'equació
-			\[\dot{u}(t)=f(x)\]
+			\[
+			    \dot{u}(t)=f(x)
+			\]
 			és una equació ordinària d'orde \(1\).
 			
 			Com que, per hipòtesi, tenim \(f(x)\neq0\) per a tot \(x\) de \((a,b)\) trobem que la funció \(\frac{1}{f(x)}\) és derivable %REF
-			i per la proposició \myref{prop:Diferenciable implica contínua} trobem que \(\frac{1}{f(x)}\) és contínua. També tenim pel \myref{thm:Weierstrass màxims i mínims múltiples variables} que \(\frac{1}{f(x)}\) està acotada en \((a,b)\) i pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann} trobem que \(\frac{1}{f(x)}\) és integrable en \((a,b)\). Definim doncs %NO és en (a,b). És en (x_{0},x)
-			\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{f(t)}.\]
+			i per la proposició \myref{prop:Diferenciable implica contínua} trobem que \(\frac{1}{f(x)}\) és contínua.
+			També tenim pel \myref{thm:Weierstrass màxims i mínims múltiples variables} que \(\frac{1}{f(x)}\) està acotada en \((a,b)\) i pel Teorema \myref{thm:Contínua + acotada implica integrable Riemann} trobem que \(\frac{1}{f(x)}\) és integrable en \((a,b)\).
+			Definim doncs %NO és en (a,b). És en (x_{0},x)
+			\[
+			    F(x)=\int_{x_{0}}^{x}\frac{\diff t}{f(t)}.
+			\]
 			Pel \myref{thm:Teorema Fonamental del Càlcul} tenim que
 			\begin{equation}
 				\label{prop:problema de Cauchy:eq2}
 				\frac{\diff F(x)}{\diff x}=\frac{1}{f(x)},
 			\end{equation}                
-			i com que \(\frac{1}{f(x)}\neq0\) per a tot \(x\) de \((a,b)\) tenim que \(F(x)\) és invertible en \((a,b)\). Denotem amb \(F^{-1}\) la seva inversa.
+			i com que \(\frac{1}{f(x)}\neq0\) per a tot \(x\) de \((a,b)\) tenim que \(F(x)\) és invertible en \((a,b)\).
+			Denotem amb \(F^{-1}\) la seva inversa.
 			
 			Ara bé, tenim que
 			\begin{equation}
@@ -759,15 +997,23 @@
 				&=\frac{1}{f(u(t))}f(u(t))=1.\tag{\ref{prop:problema de Cauchy:eq1}}\\
 			\end{align*}
 			I per tant, pel \myref{thm:Teorema Fonamental del Càlcul} trobem que
-			\[\int_{t_{0}}^{t}\frac{\diff F(u(t))}{\diff x}\diff x=F(u(t))-F(u(t_{0})),\]
+			\[
+			    \int_{t_{0}}^{t}\frac{\diff F(u(t))}{\diff x}\diff x=F(u(t))-F(u(t_{0})),
+			\]
 			i per \eqref{prop:problema de Cauchy:eq2} trobem \(F(u(t))-F(u(t_{0}))=t-t_{0}\)
 			
 			Ara bé, per hipòtesi, tenim que \(u(t_{0})=x_{0}\), i trobem
-			\[F(x_{0})=\int_{x_{0}}^{x_{0}}\frac{1}{f(t)}\diff t=0.\]
+			\[
+			    F(x_{0})=\int_{x_{0}}^{x_{0}}\frac{1}{f(t)}\diff t=0.
+			\]
 			Per tant
-			\[F(u(t))=t-t_{0},\]
+			\[
+			    F(u(t))=t-t_{0},
+			\]
 			i com que, com ja hem vist, \(F(x)\) és invertible en \((F(a),F(b))\) trobem
-			\[u(t)=F^{-1}(t-t_{0})\]
+			\[
+			    u(t)=F^{-1}(t-t_{0})
+			\]
 			per a tot \(t\) de \((t_{0}+F(a), t_{0}+F(b))\).
 			
 			Amb aquesta demostració també podem veure que aquesta és la única solució de l'equació diferencial.
@@ -775,7 +1021,8 @@
 	\end{proposition}
 	\begin{example}
 		\label{ex:edos problema de Cauchy 1}
-		Sigui \(\alpha\) un real. Volem trobar una solució al sistema
+		Sigui \(\alpha\) un real.
+		Volem trobar una solució al sistema
 		\begin{equation}
 			\label{ex:edos problema de Cauchy 1:eq1}
 			\begin{cases}
@@ -784,20 +1031,30 @@
 			\end{cases}
 		\end{equation}
 		\begin{solution}
-			Observem que, per la definició de \myref{def:equació diferencial ordinària d'ordre n} que l'equació \(\dot{u}(t)=\alpha x^{2}\) és una equació diferencial ordinària d'odre \(1\). Per la proposició \myref{prop:problema de Cauchy} trobem que les solucions de \eqref{ex:edos problema de Cauchy 1:eq1} són de la forma
-			\[u(t)=F^{-1}(x-1)\]
+			Observem que, per la definició de \myref{def:equació diferencial ordinària d'ordre n} que l'equació \(\dot{u}(t)=\alpha x^{2}\) és una equació diferencial ordinària d'odre \(1\).
+			Per la proposició \myref{prop:problema de Cauchy} trobem que les solucions de \eqref{ex:edos problema de Cauchy 1:eq1} són de la forma
+			\[
+			    u(t)=F^{-1}(x-1)
+			\]
 			on
-			\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{\alpha t^{2}}.\]
+			\[
+			    F(x)=\int_{x_{0}}^{x}\frac{\diff t}{\alpha t^{2}}.
+			\]
 			
 			Per tant, tenim que
-			\[F(x)=\frac{x-1}{\alpha x}\]
+			\[
+			    F(x)=\frac{x-1}{\alpha x}
+			\]
 			i trobem
-			\[u(t)=\frac{1}{1-\alpha (x-1)}.\qedhere\]
+			\[
+			    u(t)=\frac{1}{1-\alpha (x-1)}.\qedhere
+			\]
 		\end{solution}
 	\end{example}
 	\begin{proposition}[Equacions de variables separades]
 		\labelname{}\label{prop:equacions de variables separades}
-		Siguin \((a,b)\) i \((t_{1},t_{2})\) dos intervals oberts de \(\mathbb{R}\), \(f\colon(a,b)\longrightarrow\mathbb{R}\) i \(g\colon(t_{1},t_{2})\longrightarrow\mathbb{R}\) dues funcions contínues amb \(f(x)\neq0\) per a tot \(x\) de \((a,b)\), \(x_{0}\) un element de \((a,b)\) i \(t_{0}\) un element de \((t_{1},t_{2})\). Aleshores el problema de Cauchy
+		Siguin \((a,b)\) i \((t_{1},t_{2})\) dos intervals oberts de \(\mathbb{R}\), \(f\colon(a,b)\longrightarrow\mathbb{R}\) i \(g\colon(t_{1},t_{2})\longrightarrow\mathbb{R}\) dues funcions contínues amb \(f(x)\neq0\) per a tot \(x\) de \((a,b)\), \(x_{0}\) un element de \((a,b)\) i \(t_{0}\) un element de \((t_{1},t_{2})\).
+		Aleshores el problema de Cauchy
 		\begin{equation}
 			\begin{cases}
 				\displaystyle \dot{u}(t)=g(x)f(u(t)) \\
@@ -805,21 +1062,35 @@
 			\end{cases}
 		\end{equation}
 		té una única solució de la forma
-		\[u(t)=F^{-1}\left(\int_{t_{0}}^{x}g(t)\diff t\right)\]
+		\[
+		    u(t)=F^{-1}\left(\int_{t_{0}}^{x}g(t)\diff t\right)
+		\]
 		on
-		\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{f(t)}.\]
+		\[
+		    F(x)=\int_{x_{0}}^{x}\frac{\diff t}{f(t)}.
+		\]
 		\begin{proof}
 			Com que, per hipòtesi, \(f(x)\neq0\) per a tot \(x\) de \((a,b)\) definim \(h=\frac{1}{f(u(t))}\) i observem que
-			\[h(u(t))\dot{u}(t)=g(x)\]
+			\[
+			    h(u(t))\dot{u}(t)=g(x)
+			\]
 			i per tant
-			\[\int h(u(t))\dot{u}(t)\diff {x}=\int g(x)\diff x.\]
+			\[
+			    \int h(u(t))\dot{u}(t)\diff {x}=\int g(x)\diff x.
+			\]
 			
 			Ara bé, per la \myref{thm:regla de la cadena} i el \myref{thm:Teorema Fonamental del Càlcul} tenim que això és
-			\[H(x)=G(x)+C\]
+			\[
+			    H(x)=G(x)+C
+			\]
 			on \(C\) és un real i
-			\[H(x)=\int_{t_{0}}^{x}h(t)\diff t\quad\text{i}\quad G(x)=\int_{t_{0}}^{x}g(t)\diff t\]
+			\[
+			    H(x)=\int_{t_{0}}^{x}h(t)\diff t\quad\text{i}\quad G(x)=\int_{t_{0}}^{x}g(t)\diff t
+			\]
 			i per tant
-			\[H(u(t))=G(x)+C\]
+			\[
+			    H(u(t))=G(x)+C
+			\]
 %			Podem seguir la solució de la proposició \myref{prop:problema de Cauchy} per trobar que les úniques solucions són
 %			\[u(t)=F^{-1}\left(\int_{t_{0}}^{x}g(t)\diff t\right)\]
 %			on
@@ -838,23 +1109,36 @@
 		\end{equation}
 		\begin{solution}
 			Definim
-			\[f(u(t))=u(t)^{-3}\quad\text{i}\quad g(x)=\frac{x}{\sqrt{1+x^{2}}}.\]
+			\[
+			    f(u(t))=u(t)^{-3}\quad\text{i}\quad g(x)=\frac{x}{\sqrt{1+x^{2}}}.
+			\]
 			Per tant tenim que
-			\[f(u(t))\dot{u}(t)=g(x)\]
+			\[
+			    f(u(t))\dot{u}(t)=g(x)
+			\]
 			
 			Observem que
-			\[u(t)=\int_{x_{0}}^{x}\frac{yu(t)}{\sqrt{1+y^{2}}}\diff x\]
+			\[
+			    u(t)=\int_{x_{0}}^{x}\frac{yu(t)}{\sqrt{1+y^{2}}}\diff x
+			\]
 			Per la proposició \myref{prop:equacions de variables separades} tenim que les solucions al sistema \eqref{ex:equacions de variables separades:eq1} són de la forma
-			\[u(t)=F^{-1}\left(\int_{t_{0}}^ {t}\frac{y}{\sqrt{1+y^{2}}}\diff y\right)\]
+			\[
+			    u(t)=F^{-1}\left(\int_{t_{0}}^ {t}\frac{y}{\sqrt{1+y^{2}}}\diff y\right)
+			\]
 			on
-			\[F(x)=\int_{x_{0}}^{x}\frac{\diff t}{u(t)^{3}}.\]
+			\[
+			    F(x)=\int_{x_{0}}^{x}\frac{\diff t}{u(t)^{3}}.
+			\]
 			Per tant tenim que
-			\[\] %TODO ACABAR
+			\[
+			    
+			\] %TODO ACABAR
 		\end{solution}
 	\end{example}
 	\begin{proposition}[Equacions diferencials lineals]
 		\labelname{}\label{prop:equacions diferencials lineals}
-		Siguin \((t_{1},t_{2})\) un interval obert de \(\mathbb{R}\) i \(a\colon(t_{1},t_{2})\longrightarrow\mathbb{R}\), \(b\colon(t_{1},t_{2})\longrightarrow\mathbb{R}\) dues funcions contínues. Aleshores el problema de Cauchy
+		Siguin \((t_{1},t_{2})\) un interval obert de \(\mathbb{R}\) i \(a\colon(t_{1},t_{2})\longrightarrow\mathbb{R}\), \(b\colon(t_{1},t_{2})\longrightarrow\mathbb{R}\) dues funcions contínues.
+		Aleshores el problema de Cauchy
 		\begin{equation}
 			\label{prop:equacions diferencials lineals:eq1}
 			\begin{cases}
@@ -863,7 +1147,9 @@
 			\end{cases}
 		\end{equation}
 		té una única solució de la forma
-		\[u(t)=\left(x_{0}+\int_{t_{0}}^{t}b(s)e^{-\int_{t_{0}}^{s}a(\tau)\diff \tau}\diff s\right)e^{\int_{t_{0}}^{x}a(s)\diff s}.\]
+		\[
+		    u(t)=\left(x_{0}+\int_{t_{0}}^{t}b(s)e^{-\int_{t_{0}}^{s}a(\tau)\diff \tau}\diff s\right)e^{\int_{t_{0}}^{x}a(s)\diff s}.
+		\]
 		\begin{proof}
 			Considerem el canvi de variable
 			\begin{equation}
@@ -871,11 +1157,17 @@
 				u(t)=c(x)e^{\int_{t_{0}}^{x}a(s)\diff s}.
 			\end{equation}
 			Aleshores pel \myref{thm:Teorema Fonamental del Càlcul} tenim %I ref de la derivada del producte
-			\[\dot{u}(t)=\frac{\diff c(x)}{\diff x}e^{\int_{t_{0}}^{x}a(s)\diff s}+c(x)a(x)e^{\int_{t_{0}}^{x}a(s)\diff s}\]
+			\[
+			    \dot{u}(t)=\frac{\diff c(x)}{\diff x}e^{\int_{t_{0}}^{x}a(s)\diff s}+c(x)a(x)e^{\int_{t_{0}}^{x}a(s)\diff s}
+			\]
 			i per \eqref{prop:equacions diferencials lineals:eq1} i \eqref{prop:equacions diferencials lineals:eq2} tenim
-			\[a(t)u(t)+b(t)=\frac{\diff c(x)}{\diff x}e^{\int_{t_{0}}^{x}a(s)\diff s}+a(x)u(t).\]
+			\[
+			    a(t)u(t)+b(t)=\frac{\diff c(x)}{\diff x}e^{\int_{t_{0}}^{x}a(s)\diff s}+a(x)u(t).
+			\]
 			Per tant trobem
-			\[\frac{\diff c(x)}{\diff x}=b(x)e^{\int_{t_{0}}^{x}a(s)\diff s}\]
+			\[
+			    \frac{\diff c(x)}{\diff x}=b(x)e^{\int_{t_{0}}^{x}a(s)\diff s}
+			\]
 			i tenim
 			\begin{equation}
 				\label{prop:equacions diferencials lineals:eq3}
@@ -886,9 +1178,13 @@
 			\end{equation}
 			
 			Aleshores per la proposició \myref{prop:problema de Cauchy} trobem que aquest problema té una única solució, i és de la forma
-			\[c(t)=x_{0}+\int_{t_{0}}^{t}b(s)e^{-\int_{t_{0}}^{s}a(\tau)\diff \tau}\diff s\]
+			\[
+			    c(t)=x_{0}+\int_{t_{0}}^{t}b(s)e^{-\int_{t_{0}}^{s}a(\tau)\diff \tau}\diff s
+			\]
 			i desfent el canvi de variables \eqref{prop:equacions diferencials lineals:eq2} trobem que les solucions són de la forma
-			\[u(t)=\left(x_{0}+\int_{t_{0}}^{t}b(s)e^{-\int_{t_{0}}^{s}a(\tau)\diff \tau}\diff s\right)e^{\int_{t_{0}}^{x}a(s)\diff s}.\qedhere\]
+			\[
+			    u(t)=\left(x_{0}+\int_{t_{0}}^{t}b(s)e^{-\int_{t_{0}}^{s}a(\tau)\diff \tau}\diff s\right)e^{\int_{t_{0}}^{x}a(s)\diff s}.\qedhere
+			\]
 		\end{proof}
 	\end{proposition}
 	\end{comment}
