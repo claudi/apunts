@@ -1,27 +1,27 @@
 digraph G {
     node [shape=box]
-    {rank = same; "Fonaments de les matemàtiques"; "Funcions de variable real"; "Àlgebra lineal";}
+    {rank = source; "Fonaments de les matemàtiques"; "Funcions de variable real"; "Àlgebra lineal";}
     {rank = same; "Anàlisi matemàtica"; "Matemàtica discreta"; "Càlcul en diverses variables i optimització"; "Geometria lineal";}
-//     {rank = sink; "Anàlisi matemàtica"; "Estructures algebraiques";}
+    //{rank = sink; "Anàlisi matemàtica"; "Estructures algebraiques";}
     {rank = same; "Mètodes numèrics"; "Estructures algebraiques";}
     {rank = same; "Topologia"; "Equacions diferencials i modelització I"; "Probabilitat i modelització estocàstica"; "Teoria de Galois";}
     {rank = sink; "Equacions diferencials i modelització II"; "Estadística"; "Anàlisi complexa i de Fourier"; "Geometria diferencial";}
     "Fonaments de les matemàtiques" -> "Topologia" -> "Geometria diferencial";
     "Fonaments de les matemàtiques" -> "Estructures algebraiques" -> "Teoria de Galois";
-    "Fonaments de les matemàtiques" -> "Matemàtica discreta"
+    "Fonaments de les matemàtiques" -> "Matemàtica discreta";
     "Funcions de variable real" -> "Càlcul en diverses variables i optimització" -> "Equacions diferencials i modelització I" -> "Equacions diferencials i modelització II";
     "Funcions de variable real" -> "Anàlisi matemàtica" -> "Equacions diferencials i modelització I";
-//     "Funcions de variable real" -> "Mètodes numèrics";
+    //"Funcions de variable real" -> "Mètodes numèrics";
     "Càlcul en diverses variables i optimització" -> "Geometria diferencial";
     "Àlgebra lineal" -> "Geometria lineal";
     "Càlcul en diverses variables i optimització" -> "Mètodes numèrics";
     "Àlgebra lineal" -> "Càlcul en diverses variables i optimització";
     "Matemàtica discreta" -> "Probabilitat i modelització estocàstica" -> "Estadística";
     "Anàlisi matemàtica" -> "Anàlisi complexa i de Fourier";
-//     "Equacions diferencials i modelització I" -> "Anàlisi complexa i de Fourier";
+    //"Equacions diferencials i modelització I" -> "Anàlisi complexa i de Fourier";
     "Anàlisi matemàtica" -> "Probabilitat i modelització estocàstica";
     "Topologia" -> "Anàlisi complexa i de Fourier";
-//     "Equacions diferencials i modelització I" -> "Geometria diferencial" [style=dashed];
-//     "Estructures algebraiques" -> "Topologia" [style=dashed];
-//     "Geometria diferencial" -> "Equacions diferencials i modelització II";
+    //"Equacions diferencials i modelització I" -> "Geometria diferencial" [style=dashed];
+    //"Estructures algebraiques" -> "Topologia" [style=dashed];
+    //"Geometria diferencial" -> "Equacions diferencials i modelització II";
 }
