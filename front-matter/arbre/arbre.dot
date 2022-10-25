@@ -1,6 +1,6 @@
 digraph G {
     node [shape=box]
-    {rank = same; "Fonaments de les matemàtiques"; "Funcions de variable real"; "Àlgebra lineal";}
+    {rank = source; "Fonaments de les matemàtiques"; "Funcions de variable real"; "Àlgebra lineal";}
     {rank = same; "Anàlisi matemàtica"; "Matemàtica discreta"; "Càlcul en diverses variables i optimització"; "Geometria lineal";}
     //{rank = sink; "Anàlisi matemàtica"; "Estructures algebraiques";}
     {rank = same; "Mètodes numèrics"; "Estructures algebraiques";}
