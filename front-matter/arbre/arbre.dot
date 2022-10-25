@@ -8,7 +8,7 @@ digraph G {
     {rank = sink; "Equacions diferencials i modelització II"; "Estadística"; "Anàlisi complexa i de Fourier"; "Geometria diferencial";}
     "Fonaments de les matemàtiques" -> "Topologia" -> "Geometria diferencial";
     "Fonaments de les matemàtiques" -> "Estructures algebraiques" -> "Teoria de Galois";
-    "Fonaments de les matemàtiques" -> "Matemàtica discreta"
+    "Fonaments de les matemàtiques" -> "Matemàtica discreta";
     "Funcions de variable real" -> "Càlcul en diverses variables i optimització" -> "Equacions diferencials i modelització I" -> "Equacions diferencials i modelització II";
     "Funcions de variable real" -> "Anàlisi matemàtica" -> "Equacions diferencials i modelització I";
     //"Funcions de variable real" -> "Mètodes numèrics";
