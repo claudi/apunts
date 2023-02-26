@@ -10,7 +10,7 @@
 \usepackage{newtxtext}
 \usepackage[uprightGreek]{newtxmath}
 \usepackage{microtype}
-%\usepackage[mathcal]{euscript}	% Font caligràfica a mathmode
+%\usepackage[mathcal]{euscript}    % Font caligràfica a mathmode
 \usepackage{tikz-cd}
 %\usepackage[framemethod=TikZ]{mdframed}
 \usepackage[sorting=none, backend=biber, refsection=part]{biblatex} % Bibliografies
@@ -20,7 +20,7 @@
 
 \def\echo#1{\immediate\write18{echo "#1" >&2}}
 
-%				========== ENTORNS ==========
+%                ========== ENTORNS ==========
  %%%%% THEOREM STYLES %%%%%
 \theoremstyle{plain}
 \newtheorem{theorem}{Teorema}[section]
@@ -40,33 +40,33 @@
 
  %%%%% HISTÒRIA %%%%%
 %\newenvironment{history}[1][]{%
-%	\mdfsetup{%
-%		frametitle={%
-%			\tikz[baseline=(current bounding box.east),outer sep=0pt]
-%			\node[anchor=east,rectangle,fill=blue!20]
-%			{\strut Coneix els teus herois:~#1};}%
-%	}%
+%    \mdfsetup{%
+%        frametitle={%
+%            \tikz[baseline=(current bounding box.east),outer sep=0pt]
+%            \node[anchor=east,rectangle,fill=blue!20]
+%            {\strut Coneix els teus herois:~#1};}%
+%    }%
 %% Both conditions
 %\mdfsetup{%
-%	innertopmargin=10pt,linecolor=blue!20,%
-%	linewidth=2pt,topline=true,%
-%	frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
+%    innertopmargin=10pt,linecolor=blue!20,%
+%    linewidth=2pt,topline=true,%
+%    frametitleaboveskip=\dimexpr-\ht\strutbox\relax%
 %}
-%	% Code for box design goes here.
-%	
-%	\begin{mdframed}[]\relax}{%
-%	\end{mdframed}}
+%    % Code for box design goes here.
+%    
+%    \begin{mdframed}[]\relax}{%
+%    \end{mdframed}}
 
 
  %%%%% SOLUCIÓ A UN EXERCICI %%%%%
 \newenvironment{solution}{%
-	\renewcommand\qedsymbol{\ensuremath{\lozenge}}%
-	\begin{proof}[Solució]%
+    \renewcommand\qedsymbol{\ensuremath{\lozenge}}%
+    \begin{proof}[Solució]%
 }{%
-	\end{proof}%
+    \end{proof}%
 }
 
-%				========= MATEMÀTIQUES ==========
+%                ========= MATEMÀTIQUES ==========
  %%%%% OPERADORS %%%%%
 \newcommand{\B}{\bola}
 \newcommand{\diff}{\mathop{}\!\mathrm{d}}
@@ -98,7 +98,7 @@
 \DeclareMathOperator{\esfera}{S}
 \DeclareMathOperator{\sfourier}{S}
 \let\ker\relax
-	\DeclareMathOperator{\ker}{ker}
+    \DeclareMathOperator{\ker}{ker}
 \DeclareMathOperator{\Ima}{Im}
 \DeclareMathOperator{\Antiima}{\Ima^{-1}}
 \DeclareMathOperator{\cosdefraccions}{Q}
@@ -203,22 +203,22 @@
 
  %%%%% PRODUCTE ESCALAR %%%%%
 \makeatletter
-	\def\prodesc{\@ifnextchar[{\@prodescwith}{\@prodescwithout}}
-	\def\@prodescwith[#1]#2#3{#1\langle#2,#3#1\rangle}
-	\def\@prodescwithout#1#2{\langle#1,#2\rangle}
+    \def\prodesc{\@ifnextchar[{\@prodescwith}{\@prodescwithout}}
+    \def\@prodescwith[#1]#2#3{#1\langle#2,#3#1\rangle}
+    \def\@prodescwithout#1#2{\langle#1,#2\rangle}
 \makeatother
 
-%				========== MISCEL·LÀNIA =========
+%                ========== MISCEL·LÀNIA =========
  %%%% CANVI A L'ESTIL DE LES ARRELS %%%%%
 \makeatletter
-	\let\oldr@@t\r@@t
-	\def\r@@t#1#2{%
-	\setbox0=\hbox{$\oldr@@t#1{#2\,}$}\dimen0=\ht0
-	\advance\dimen0-0.2\ht0
-	\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
-	{\box0\lower0.4pt\box2}}
-	\LetLtxMacro{\oldsqrt}{\sqrt}
-	\renewcommand*{\sqrt}[2][\ ]{\oldsqrt[#1]{#2}}
+    \let\oldr@@t\r@@t
+    \def\r@@t#1#2{%
+    \setbox0=\hbox{$\oldr@@t#1{#2\,}$}\dimen0=\ht0
+    \advance\dimen0-0.2\ht0
+    \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+    {\box0\lower0.4pt\box2}}
+    \LetLtxMacro{\oldsqrt}{\sqrt}
+    \renewcommand*{\sqrt}[2][\ ]{\oldsqrt[#1]{#2}}
 \makeatother
 
 
@@ -245,20 +245,20 @@
 
 \makeatletter
 \def\mynameref#1#2{%
-	\begingroup%
-		\edef\@mytxt{#2}%
-		\edef\@mytst{\expandafter\@thirdoffive\@mytxt}%
-		\ifx\@mytst\empty%
-			\ref{#1}%
-		\else%
-			\nameref{#1}\space\eqref{#1}\fi%
-	\endgroup%
+    \begingroup%
+        \edef\@mytxt{#2}%
+        \edef\@mytst{\expandafter\@thirdoffive\@mytxt}%
+        \ifx\@mytst\empty%
+            \ref{#1}%
+        \else%
+            \nameref{#1}\space\eqref{#1}\fi%
+    \endgroup%
 }
 \makeatother
 
 \makeatletter % redefine as \label[]{}
 \newcommand{\labelname}[1]{
-	\def\@currentlabelname{#1}}
+    \def\@currentlabelname{#1}}
 \makeatother
 
 
@@ -277,7 +277,7 @@
 \renewcommand{\bookname}{Curs}
 
 
-%				========== EDICIÓ TIPOGRÀFICA DEL LLIBRE =========
+%                ========== EDICIÓ TIPOGRÀFICA DEL LLIBRE =========
  %%%%% DADES I CONFIGURACIÓ %%%%%
 \newcommand{\link}{https://claudi.github.io}
 \title{\href{\link}{Apunts de matemàtiques}}
@@ -287,13 +287,13 @@
 \newcommand{\subtitol}{Notes de classe}
 \newcommand{\promocio}{Promoció 2016-17}
 \hypersetup{
-	colorlinks=true,
-%	hidelinks=false, % TRUE
-%	hidelinks=false,
-	linkcolor=[rgb]{0,0,0.5},
-	urlcolor=red,
-	pdftitle={Apunts de matemàtiques UAB},
-	pdfauthor={\theauthor},
+    colorlinks=true,
+%    hidelinks=false, % TRUE
+%    hidelinks=false,
+    linkcolor=[rgb]{0,0,0.5},
+    urlcolor=red,
+    pdftitle={Apunts de matemàtiques UAB},
+    pdfauthor={\theauthor},
 }
 
  %%%%% ESTIL DE PÀGINA %%%%%
@@ -314,50 +314,50 @@
 
  %%%%% LLENGUATGE %%%%%
 \makeatletter
-	\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@} % Nombres romànics
+    \newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@} % Nombres romànics
 \makeatother
 \newcommand{\corollari}{coro{\lgem}ari} % corol·lari
 \newcommand{\Corollari}{Coro{\lgem}ari} % Corol·lari
-\newcommand{\nulla}{nu{\lgem}a} 		% nul·la
+\newcommand{\nulla}{nu{\lgem}a}         % nul·la
 
 
  %%%%% PORTADA %%%%%
 \newcommand*{\titleDB}{ % AW, Design of Books
-%	\FSfont{5pl} % FontSite URW Palladio (Palatino)
-	\centering
-	\vspace*{2cm}
-%	{\Large THE}\\[\baselineskip]
-	{\Huge APUNTS}\\[\baselineskip]
-	{\Huge DE}\\[\baselineskip]
-	{\Huge MATEMÀTIQUES}\\[1.5\baselineskip]
-	{\LARGE per}\\[\baselineskip]
-	{\LARGE\theauthor}\par
-	\vfill
-	{PREFACI PER L'AURELIO LOSQUIÑO}\\[8\baselineskip]
-	\vfill
-	{\small\sffamily Universitat Autònoma de Barcelona}\par
+%    \FSfont{5pl} % FontSite URW Palladio (Palatino)
+    \centering
+    \vspace*{2cm}
+%    {\Large THE}\\[\baselineskip]
+    {\Huge APUNTS}\\[\baselineskip]
+    {\Huge DE}\\[\baselineskip]
+    {\Huge MATEMÀTIQUES}\\[1.5\baselineskip]
+    {\LARGE per}\\[\baselineskip]
+    {\LARGE\theauthor}\par
+    \vfill
+    {PREFACI PER L'AURELIO LOSQUIÑO}\\[8\baselineskip]
+    \vfill
+    {\small\sffamily Universitat Autònoma de Barcelona}\par
 }
 
 \newcommand{\titleTMB}{
-	\begingroup % Three Men in a Boat
-		\vspace*{0.1\textheight}
-		\centering
-		\settowidth{\unitlength}{\itshape\cita}
-		\vspace*{\baselineskip}
-		{\large\scshape \theauthor}\\[\baselineskip]
-		\rule{\unitlength}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
-		\rule{\unitlength}{0.4pt}\\[\baselineskip]
-		{\huge\thetitle}\\[\baselineskip] %{Apunts del grau}?
-		{\itshape\cita}\\[0.2\baselineskip]
-		\rule{\unitlength}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
-		\rule{\unitlength}{1.6pt}%\\[\baselineskip]
-		\vfill
-		{\centering\includegraphics{front-matter/portada/portada.pdf}}
-		\vfill
-		{\large\scshape\subtitol}\\[\baselineskip]
-		{\small\scshape\promocio}\par
-		\vspace*{0.1\textheight}
-	\endgroup
+    \begingroup % Three Men in a Boat
+        \vspace*{0.1\textheight}
+        \centering
+        \settowidth{\unitlength}{\itshape\cita}
+        \vspace*{\baselineskip}
+        {\large\scshape \theauthor}\\[\baselineskip]
+        \rule{\unitlength}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+        \rule{\unitlength}{0.4pt}\\[\baselineskip]
+        {\huge\thetitle}\\[\baselineskip] %{Apunts del grau}?
+        {\itshape\cita}\\[0.2\baselineskip]
+        \rule{\unitlength}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+        \rule{\unitlength}{1.6pt}%\\[\baselineskip]
+        \vfill
+        {\centering\includegraphics{front-matter/portada/portada.pdf}}
+        \vfill
+        {\large\scshape\subtitol}\\[\baselineskip]
+        {\small\scshape\promocio}\par
+        \vspace*{0.1\textheight}
+    \endgroup
 }
 
 
@@ -378,11 +378,11 @@
 \makeatletter
 \newcounter{apendix} \setcounter{apendix}{0}
 \def\apendix#1{%
-	\refstepcounter{apendix}
-	\renewcommand*{\thepart}{\@Alph\c@apendix}
-	\renewcommand{\partname}{Apèndix}
-	\addtocounter{part}{-1}
-	\part{#1}
+    \refstepcounter{apendix}
+    \renewcommand*{\thepart}{\@Alph\c@apendix}
+    \renewcommand{\partname}{Apèndix}
+    \addtocounter{part}{-1}
+    \part{#1}
 }
 \makeatother
 
@@ -391,26 +391,26 @@
 \makeatletter
 \newlength{\numberheight}
 \newlength{\barlength}
-	\makechapterstyle{cveelo}{%
-	\setlength{\afterchapskip}{40pt}
-	\renewcommand*{\chapterheadstart}{\vspace*{40pt}}
-	\renewcommand*{\afterchapternum}{\par\nobreak\vskip 25pt}
-	\renewcommand*{\chapnamefont}{\Huge\flushright}
-	\renewcommand*{\chapnumfont}{\Large}
-	\renewcommand*{\chaptitlefont}{\bfseries\Huge\flushright}
-	\renewcommand*{\printchaptername}{%
-		\chapnamefont\scshape{\@chapapp}}
-	\renewcommand*{\chapternamenum}{}
-	\setlength{\beforechapskip}{4em}
-	\setlength{\midchapskip}{\paperwidth}
-	\addtolength{\midchapskip}{-\textwidth}
-	\addtolength{\midchapskip}{-\spinemargin}
-	\renewcommand*{\printchapternum}{%
-		\makebox[0pt][l]{\hspace{.8em}%
-			\resizebox{!}{\beforechapskip}{\chapnumfont \thechapter}%
-			\hspace{.8em}%
-			\rule{\midchapskip}{\beforechapskip}%
-		}}%
+    \makechapterstyle{cveelo}{%
+    \setlength{\afterchapskip}{40pt}
+    \renewcommand*{\chapterheadstart}{\vspace*{40pt}}
+    \renewcommand*{\afterchapternum}{\par\nobreak\vskip 25pt}
+    \renewcommand*{\chapnamefont}{\Huge\flushright}
+    \renewcommand*{\chapnumfont}{\Large}
+    \renewcommand*{\chaptitlefont}{\bfseries\Huge\flushright}
+    \renewcommand*{\printchaptername}{%
+        \chapnamefont\scshape{\@chapapp}}
+    \renewcommand*{\chapternamenum}{}
+    \setlength{\beforechapskip}{4em}
+    \setlength{\midchapskip}{\paperwidth}
+    \addtolength{\midchapskip}{-\textwidth}
+    \addtolength{\midchapskip}{-\spinemargin}
+    \renewcommand*{\printchapternum}{%
+        \makebox[0pt][l]{\hspace{.8em}%
+            \resizebox{!}{\beforechapskip}{\chapnumfont \thechapter}%
+            \hspace{.8em}%
+            \rule{\midchapskip}{\beforechapskip}%
+        }}%
 }
 \makeatother
 
@@ -420,25 +420,25 @@
 
  %%%%% FRONT MATTER %%%%%
 \newcommand{\portadilla}{
-	\begin{titlingpage*}
-		\calccentering{\unitlength}
-		\begin{adjustwidth*}{\unitlength}{-\unitlength}
-			\titleDB
-		\end{adjustwidth*}
-	\end{titlingpage*}
+    \begin{titlingpage*}
+        \calccentering{\unitlength}
+        \begin{adjustwidth*}{\unitlength}{-\unitlength}
+            \titleDB
+        \end{adjustwidth*}
+    \end{titlingpage*}
 }
 \newcommand{\portada}{
-	\cleartooddpage%[\thispagestyle{empty}]
-	{\hypersetup{
-		urlcolor=black,
-		linkcolor=black
-	}
-	\begin{titlingpage*}
-		\calccentering{\unitlength}
-		\begin{adjustwidth*}{\unitlength}{-\unitlength}
-			\titleTMB
-		\end{adjustwidth*}
-	\end{titlingpage*}}
+    \cleartooddpage%[\thispagestyle{empty}]
+    {\hypersetup{
+        urlcolor=black,
+        linkcolor=black
+    }
+    \begin{titlingpage*}
+        \calccentering{\unitlength}
+        \begin{adjustwidth*}{\unitlength}{-\unitlength}
+            \titleTMB
+        \end{adjustwidth*}
+    \end{titlingpage*}}
 }
 \newcommand{\colofo}{} % Edition notice or Copyright page
 \newcommand{\dedicacio}{} % No
@@ -446,60 +446,60 @@
 \setsecnumdepth{subsection}
 \settocdepth{subsection}
 \newcommand{\tauladecontinguts}{ % May include a list of figures and a list of tables
-	{\hypersetup{
-		urlcolor=black,
-		linkcolor=black
-	}%
-	\tableofcontents
-%	\listoffigures
-%	\listoftables
-	}
+    {\hypersetup{
+        urlcolor=black,
+        linkcolor=black
+    }%
+    \tableofcontents
+%    \listoffigures
+%    \listoftables
+    }
 }
 \newcommand{\coprefaci}{} % Fake foreword
 %\newcommand{\foreword}{} % Aure % Buscar com es diu en català. Potser dir-li prefaci i ja
 \newcommand{\prefaci}{}
 \newcommand{\agraiments}{
-	\subfile{front-matter/agraiments.tex}
+    \subfile{front-matter/agraiments.tex}
 }
 \newcommand{\lletresgregues}{
-	\subfile{front-matter/lletres-gregues.tex}
+    \subfile{front-matter/lletres-gregues.tex}
 }
 \newcommand{\introduccio}{} % States the purpose and goals of the following writing
 
 
  %%%%% BODY MATTER %%%%%
 \newcommand{\primer}{
-	\book{Primer curs}
-	\subfile{body-matter/temp-intro.tex}
-	\subfile{body-matter/1r/fonaments-de-les-matematiques.tex}
-	\subfile{body-matter/1r/algebra-lineal.tex}
-	\subfile{body-matter/1r/funcions-de-variable-real.tex}
+    \book{Primer curs}
+    \subfile{body-matter/temp-intro.tex}
+    \subfile{body-matter/1r/fonaments-de-les-matematiques.tex}
+    \subfile{body-matter/1r/algebra-lineal.tex}
+    \subfile{body-matter/1r/funcions-de-variable-real.tex}
     %\subfile{body-matter/1r/geometria-projectiva.tex}
-%	\subfile{body-matter/1r/Apendix1r.tex} % Geometria projectiva
+%    \subfile{body-matter/1r/Apendix1r.tex} % Geometria projectiva
 }
 \newcommand{\segon}{
-	\book{Segon curs}
-	\subfile{body-matter/2n/calcul-en-diverses-variables.tex}
-	\subfile{body-matter/2n/analisi-matematica.tex}
-	\subfile{body-matter/2n/geometria-lineal.tex}
-	\subfile{body-matter/2n/matematica-discreta.tex}
-	\subfile{body-matter/2n/estructures-algebraiques.tex}
-	\subfile{body-matter/2n/metodes-numerics.tex}
-	%\subfile{body-matter/2n/teoria-de-la-mesura.tex}
-%	\subfile{body-matter/2n/Apendix2n.tex} % Teoria de la mesura (Lebesge o per probabilitat?)
+    \book{Segon curs}
+    \subfile{body-matter/2n/calcul-en-diverses-variables.tex}
+    \subfile{body-matter/2n/analisi-matematica.tex}
+    \subfile{body-matter/2n/geometria-lineal.tex}
+    \subfile{body-matter/2n/matematica-discreta.tex}
+    \subfile{body-matter/2n/estructures-algebraiques.tex}
+    \subfile{body-matter/2n/metodes-numerics.tex}
+    %\subfile{body-matter/2n/teoria-de-la-mesura.tex}
+%    \subfile{body-matter/2n/Apendix2n.tex} % Teoria de la mesura (Lebesge o per probabilitat?)
 }
 \newcommand{\tercer}{
-	\book{Tercer curs}
-	\subfile{body-matter/3r/topologia.tex}
-	\subfile{body-matter/3r/probabilitat.tex}
-	\subfile{body-matter/3r/equacions-diferencials-I.tex}
-	\subfile{body-matter/3r/teoria-de-Galois.tex}
-	\subfile{body-matter/3r/analisi-complexa.tex}
-	\subfile{body-matter/3r/estadistica.tex}
-	\subfile{body-matter/3r/geometria-diferencial.tex}
-	\subfile{body-matter/3r/equacions-diferencials-II.tex}
-	%\subfile{body-matter/3r/calcul-tensorial.tex}
-%	\subfile{body-matter/3r/Apendix3r.tex} % Formes diferencials (?) 
+    \book{Tercer curs}
+    \subfile{body-matter/3r/topologia.tex}
+    \subfile{body-matter/3r/probabilitat.tex}
+    \subfile{body-matter/3r/equacions-diferencials-I.tex}
+    \subfile{body-matter/3r/teoria-de-Galois.tex}
+    \subfile{body-matter/3r/analisi-complexa.tex}
+    \subfile{body-matter/3r/estadistica.tex}
+    \subfile{body-matter/3r/geometria-diferencial.tex}
+    \subfile{body-matter/3r/equacions-diferencials-II.tex}
+    %\subfile{body-matter/3r/calcul-tensorial.tex}
+%    \subfile{body-matter/3r/Apendix3r.tex} % Formes diferencials (?) 
 }                                          % Tensor calculus (YouTube)
                                            % Àlgebra homològica (Aquesta queda molt lluny, no crec)
                                            % Catalogue of Spacetimes
@@ -509,54 +509,54 @@
  %%%%% BACK MATTER %%%%%
 %\newcommand{\apendix}{} % No
 \newcommand{\glossari}{{
-	\hypersetup{
-		linkcolor=[rgb]{0,0,0.5} % Veure que no calgui
-	}
-%	\cleartoevenpage[\thispagestyle{empty}]
-	\renewcommand{\glossaryname}{Glossari de notació}
-	\printglossary
+    \hypersetup{
+        linkcolor=[rgb]{0,0,0.5} % Veure que no calgui
+    }
+%    \cleartoevenpage[\thispagestyle{empty}]
+    \renewcommand{\glossaryname}{Glossari de notació}
+    \printglossary
 }}
 \newcommand{\indexos}{{
-	\hypersetup{
-		linkcolor=[rgb]{0,0,0.5} % Veure que no calgui
-	}
-%	\cleartoevenpage[\thispagestyle{empty}]
-	\renewcommand{\indexname}{Índex alfabètic}
-	\printindex
+    \hypersetup{
+        linkcolor=[rgb]{0,0,0.5} % Veure que no calgui
+    }
+%    \cleartoevenpage[\thispagestyle{empty}]
+    \renewcommand{\indexname}{Índex alfabètic}
+    \printindex
 }}
 
 
  %%%%% DIVISIONS DEL LLIBRE %%%%%
 \newcommand{\FrontMatter}{ % Buscar on posar llista amb lletres gregues i graf amb les assignatures
-	\frontmatter*
-	\portadilla
-	\portada
-	\colofo
-	\dedicacio
-	\epigraf
-	\tauladecontinguts
-	\coprefaci
-%	\foreword
-	\prefaci
-	\agraiments
-	\lletresgregues
-	\introduccio
+    \frontmatter*
+    \portadilla
+    \portada
+    \colofo
+    \dedicacio
+    \epigraf
+    \tauladecontinguts
+    \coprefaci
+%    \foreword
+    \prefaci
+    \agraiments
+    \lletresgregues
+    \introduccio
 }
 \newcommand{\BodyMatter}{
-	\mainmatter* % Adds blank pages. Should look into removing that
-	\primer
-	\segon
-	\tercer
+    \mainmatter* % Adds blank pages. Should look into removing that
+    \primer
+    \segon
+    \tercer
 }
 \newcommand{\BackMatter}{
-	\backmatter
-%	\apendix % Per curs? (Geometria projectiva, Teoria de la mesura, 1 més)
-	\glossari
-	\indexos
+    \backmatter
+%    \apendix % Per curs? (Geometria projectiva, Teoria de la mesura, 1 més)
+    \glossari
+    \indexos
 }
 
 \begin{document}
-	\FrontMatter
-	\BodyMatter
-	\BackMatter
+    \FrontMatter
+    \BodyMatter
+    \BackMatter
 \end{document}
