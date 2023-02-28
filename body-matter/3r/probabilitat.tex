@@ -6,8 +6,8 @@
 \section{L'espai de probabilitat}
 \subsection{Espais mostrals}
     \begin{definition}[Experiment aleatori]
-        \labelname{experiment aleatori}\label{def:experiment aleatori}
-        \labelname{espai mostral}\label{def:espai mostral}
+        \labelname{experiment aleatori}\label{def:experiment-aleatori}
+        \labelname{espai mostral}\label{def:espai-mostral}
         Definirem de manera informal els fenòmens que estudiarem, els \emph{experiments aleatoris}.
         Aquests tenen les següents propietats:
         \begin{enumerate}
@@ -17,12 +17,12 @@
         \end{enumerate}
     \end{definition}
     \begin{example}
-        \label{ex:espais mostrals}
+        \label{ex:espais-mostrals}
         Volem determinar l'espai mostral dels següents experiments:
         \begin{enumerate}
-            \item\label{ex:espais mostrals:eq1} Llençar un dau de sis cares.
-            \item\label{ex:espais mostrals:eq2} Un partit de bàsquet.
-            \item\label{ex:espais mostrals:eq3} Llençar una moneda.
+            \item\label{ex:espais-mostrals:eq1} Llençar un dau de sis cares.
+            \item\label{ex:espais-mostrals:eq2} Un partit de bàsquet.
+            \item\label{ex:espais-mostrals:eq3} Llençar una moneda.
         \end{enumerate}
     \end{example}
     \begin{solution}
@@ -36,9 +36,9 @@
     \end{solution}
     \begin{definition}[Esdeveniment]
         \labelname{esdeveniment}\label{def:esdeveniment}
-        \labelname{esdeveniment segur}\label{def:esdeveniment segur}
-        \labelname{esdeveniment contrari}\label{def:esdeveniment contrari}
-        \labelname{esdeveniment impossible}\label{def:esdeveniment impossible}
+        \labelname{esdeveniment segur}\label{def:esdeveniment-segur}
+        \labelname{esdeveniment contrari}\label{def:esdeveniment-contrari}
+        \labelname{esdeveniment impossible}\label{def:esdeveniment-impossible}
         Sigui~\(A\subseteq\Omega\) un subconjunt d'un espai mostral~\(\Omega\).
         Aleshores direm que~\(A\) és un esdeveniment.
 
@@ -69,7 +69,7 @@
     \end{solution}
 \subsection{Àlgebres i \ensuremath{\sigma}-àlgebres}
     \begin{definition}[Àlgebra]
-        \labelname{àlgebra}\label{def:àlgebra}
+        \labelname{àlgebra}\label{def:algebra}
         Sigui~\(\algebra{A}\) una co{\lgem}ecció de subconjunts~\(\Omega\) tal que
         \begin{enumerate}
             \item~\(\Omega\in\algebra{A}\).
@@ -79,11 +79,11 @@
         Aleshores direm que~\(\algebra{A}\) és un àlgebra de conjunts sobre~\(\Omega\).
     \end{definition}
     \begin{observation}
-        \label{obs:el conjunt buit pertany a qualsevol àlgebra}
+        \label{obs:el-conjunt-buit-pertany-a-qualsevol-algebra}
         Si~\(\algebra{A}\) és un àlgebra, aleshores~\(\emptyset\in\algebra{A}\).
     \end{observation}
     \begin{example}
-        \label{ex:exemple d'àlgebra}
+        \label{ex:exemple-dalgebra}
         Sigui~\(\Omega=\{1,2,\dots,6\}\).
         Volem veure que
         \[
@@ -92,7 +92,7 @@
         és un àlgebra.
     \end{example}
     \begin{solution}
-        Comprovem la definició~d'\myref{def:àlgebra}.
+        Comprovem la definició~d'\myref{def:algebra}.
         Tenim que~\(\Omega\in\algebra{A}\).
         Prenem un esdeveniment~\(A\in\algebra{A}\) i calculem~\(\Omega\setminus A\).
         Podem veure tots els casos fent
@@ -110,10 +110,10 @@
         \[
             \{1,2\}\cup\{3,4,5,6\}=\{1,2,3,4,5,6\}=\Omega\in\algebra{A},
         \]
-        i per la definició~d'\myref{def:àlgebra} trobem que~\(\algebra{A}\) és un àlgebra sobre~\(\Omega\)
+        i per la definició~d'\myref{def:algebra} trobem que~\(\algebra{A}\) és un àlgebra sobre~\(\Omega\)
     \end{solution}
     \begin{proposition}
-        \label{prop:les àlgebras són tancades per interseccions}
+        \label{prop:les-algebras-son-tancades-per-interseccions}
         Siguin~\(A\),~\(B\) dos elements d'un àlgebra~\(\algebra{A}\).
         Aleshores
         \[
@@ -121,12 +121,12 @@
         \]
     \end{proposition}
     \begin{proof}
-        Per la definició~d'\myref{def:àlgebra} tenim que~\(A^{\complement}\),~\(B^{\complement}\in\algebra{A}\) i, de nou per la definició~d'\myref{def:àlgebra}, tenim que~\(A^{\complement}\cup B^{\complement}\in\algebra{A}\).
+        Per la definició~d'\myref{def:algebra} tenim que~\(A^{\complement}\),~\(B^{\complement}\in\algebra{A}\) i, de nou per la definició~d'\myref{def:algebra}, tenim que~\(A^{\complement}\cup B^{\complement}\in\algebra{A}\).
         Ara bé,%REF
         tenim que~\(A^{\complement}\cup B^{\complement}=A\cap B\), i per tant~\(A\cap B\in\algebra{A}\).
     \end{proof}
     \begin{definition}[\(\sigma\)-àlgebra]
-        \labelname{\ensuremath{\sigma}-àlgebra}\label{def:sigma àlgebra}
+        \labelname{\ensuremath{\sigma}-àlgebra}\label{def:sigma-algebra}
         Sigui~\(\Algebra{A}\) un àlgebra tal que per a tota família~\(\{A_{n}\}_{n\in\NN}\) d'elements~d'\(\Algebra{A}\) tenim que
         \[
             \bigcup_{n=0}^{\infty}A_{n}\in\Algebra{A}.
@@ -138,7 +138,7 @@
         Aleshores~\(\Algebra{A}\) és una~\(\sigma\)-àlgebra.
     \end{observation}
     \begin{proposition}
-        \label{prop:les sigma àlgebras són tancades per interseccions numerables}
+        \label{prop:les-sigma-algebras-son-tancades-per-interseccions-numerables}
         Sigui~\(\{A_{n}\}_{n\in\NN}\) una família d'elements d'un~\(\sigma\)-àlgebra~\(\Algebra{A}\).
         Aleshores
         \[
@@ -151,11 +151,11 @@
         \[
             A^{\complement}=\Big(\bigcap_{n=0}^{\infty}A_{n}\Big)^{\complement}=\Big(\bigcup_{n=0}^{\infty}A_{n}^{\complement}\Big).
         \]
-        Ara bé, per la definició~d'\myref{def:àlgebra} tenim que~\(A_{n}^{\complement}\in\Algebra{A}\) per a tot~\(n\in\NN\), i per la definició de~\myref{def:sigma àlgebra} trobem que~\(A^{\complement}\in\Algebra{A}\), i de nou per la definició~d'\myref{def:àlgebra} tenim que~\(A\in\Algebra{A}\).
+        Ara bé, per la definició~d'\myref{def:algebra} tenim que~\(A_{n}^{\complement}\in\Algebra{A}\) per a tot~\(n\in\NN\), i per la definició de~\myref{def:sigma-algebra} trobem que~\(A^{\complement}\in\Algebra{A}\), i de nou per la definició~d'\myref{def:algebra} tenim que~\(A\in\Algebra{A}\).
     \end{proof}
 \subsection{L'àlgebra de Borel}
     \begin{proposition}
-        \label{prop:existeix una sigma àlgebra mínima}
+        \label{prop:existeix-una-sigma-algebra-minima}
         Sigui~\(\{\Algebra{A}_{i}\}_{i\in I}\) una família de~\(\sigma\)-àlgebres sobre un conjunt~\(\Omega\).
         Aleshores
         \[
@@ -164,33 +164,33 @@
         és una~\(\sigma\)-àlgebra sobre~\(\Omega\).
     \end{proposition}
     \begin{proof}
-        Comprovem que~\(\Algebra{A}\) satisfà la definició~\myref{def:sigma àlgebra}.
+        Comprovem que~\(\Algebra{A}\) satisfà la definició~\myref{def:sigma-algebra}.
         Veiem que~\(\Omega\in\Algebra{A}\).
-        Tenim per la definició de~\myref{def:àlgebra} que~\(\Omega\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició d'\myref{def:intersecció de conjunts} trobem que~\(\Omega\in\Algebra{A}\).
+        Tenim per la definició de~\myref{def:algebra} que~\(\Omega\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició d'\myref{def:interseccio-de-conjunts} trobem que~\(\Omega\in\Algebra{A}\).
 
         Prenem ara un~\(A\in\Algebra{A}\) i considerem~\(A^{\complement}\).
-        Si~\(A\in\Algebra{A}\) tenim que per a tot~\(i\in I\) es satisfà~\(A\in\Algebra{A}_{i}\), i per la definició~d'\myref{def:àlgebra} trobem que~\(A^{\complement}\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició d'\myref{def:intersecció de conjunts} tenim que es satisfà~\(A^{\complement}\in\Algebra{A}\).
+        Si~\(A\in\Algebra{A}\) tenim que per a tot~\(i\in I\) es satisfà~\(A\in\Algebra{A}_{i}\), i per la definició~d'\myref{def:algebra} trobem que~\(A^{\complement}\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició d'\myref{def:interseccio-de-conjunts} tenim que es satisfà~\(A^{\complement}\in\Algebra{A}\).
 
         Per acabar premen~\(A\),~\(B\in\Algebra{A}\).
-        Tenim que~\(A\),~\(B\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:àlgebra} trobem que~\(A\cup B\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:intersecció de conjunts} trobem que~\(A\cup B\in\Algebra{A}\).
+        Tenim que~\(A\),~\(B\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:algebra} trobem que~\(A\cup B\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:interseccio-de-conjunts} trobem que~\(A\cup B\in\Algebra{A}\).
 
-        Per tant per la definició~d'\myref{def:àlgebra} tenim que~\(\Algebra{A}\) és un àlgebra sobre~\(\Omega\).
+        Per tant per la definició~d'\myref{def:algebra} tenim que~\(\Algebra{A}\) és un àlgebra sobre~\(\Omega\).
 
         Prenem ara una família~\(\{A_{n}\}_{n\in\mathbb{N}}\) d'elements~d'\(\Algebra{A}\) i denotem
         \[
             A=\bigcup_{n=0}^{\infty}A_{n}.
         \]
-        Tenim de nou que~\(\{A_{n}\}_{n\in\mathbb{N}}\) també és una família d'elements~d'\(\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:sigma àlgebra} tenim que~\(A\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:intersecció de conjunts} trobem que~\(A\in\Algebra{A}\), i per la definició~d'\myref{def:sigma àlgebra} trobem que~\(\Algebra{A}\) és una~\(\sigma\)-àlgebra sobre~\(\Omega\).
+        Tenim de nou que~\(\{A_{n}\}_{n\in\mathbb{N}}\) també és una família d'elements~d'\(\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:sigma-algebra} tenim que~\(A\in\Algebra{A}_{i}\) per a tot~\(i\in I\), i per la definició~d'\myref{def:interseccio-de-conjunts} trobem que~\(A\in\Algebra{A}\), i per la definició~d'\myref{def:sigma-algebra} trobem que~\(\Algebra{A}\) és una~\(\sigma\)-àlgebra sobre~\(\Omega\).
     \end{proof}
     \begin{definition}[\ensuremath{\sigma}-àlgebra generada per un conjunt]
-        \labelname{\ensuremath{\sigma}-àlgebra generada per un conjunt}\label{def:sigma àlgebra generada per un conjunt}
+        \labelname{\ensuremath{\sigma}-àlgebra generada per un conjunt}\label{def:sigma-algebra-generada-per-un-conjunt}
         Sigui~\(\Algebra{C}\subseteq\parts(\Omega)\) una família de subconjunts d'un conjunt~\(\Omega\).
         Denotarem el mínim~\(\sigma\)-àlgebra generada per~\(\Algebra{C}\) com~\(\sigma(\Algebra{C})\) i direm que és la~\(\sigma\)-àlgebra generada per~\(\Algebra{C}\).
 
-        Aquesta definició té sentit per la proposició~\myref{prop:existeix una sigma àlgebra mínima}.
+        Aquesta definició té sentit per la proposició~\myref{prop:existeix-una-sigma-algebra-minima}.
     \end{definition}
     \begin{example}[\ensuremath{\sigma}-àlgebra de singletons]
-        \labelname{\ensuremath{\sigma}-àlgebra de singletons}\label{ex:sigma àlgebra de singletons}
+        \labelname{\ensuremath{\sigma}-àlgebra de singletons}\label{ex:sigma-algebra-de-singletons}
         Denotem~\(\Algebra{C}=\{\{x\}\subseteq\RR\mid x\in\RR\}\).
         Volem veure que
         \[
@@ -201,7 +201,7 @@
         %TODO % Fer a topo i sorprendre als nens amb això. O al revès potser molaria més. Fer aquí i referenciar a topo com un boss. Per allà on axiomes de separació pot ser útil.
     \end{solution}
     \begin{definition}[\(\sigma\)-àlgebra de Borel]
-        \labelname{\ensuremath{\sigma}-àlgebra}\label{def:sigma àlgebra de Borel}
+        \labelname{\ensuremath{\sigma}-àlgebra}\label{def:sigma-algebra-de-Borel}
         Sigui
         \[
             \borel(\RR)=\{\obert{U}\subseteq\RR\mid\obert{U}\text{ és un obert de }\RR\}.
@@ -234,7 +234,7 @@
         i direm que és la unió disjunta.
     \end{notation}
     \begin{proposition}
-        \label{prop:la probabilitat del buit és nulla}
+        \label{prop:la-probabilitat-del-buit-es-nulla}
         Sigui~\(\Probabilitat\) una probabilitat.
         Aleshores~\(\Probabilitat(\emptyset)=0\).
     \end{proposition}
@@ -251,7 +251,7 @@
         i obtenim que~\(\Probabilitat(\emptyset)=0\).
     \end{proof}
     \begin{proposition}
-        \label{prop:les funcions probabilitat són creixents monòtonament}
+        \label{prop:les-funcions-probabilitat-son-creixents-monotonament}
         Siguin~\(\Probabilitat\) una probabilitat sobre una~\(\sigma\)-àlgebra~\(\Algebra{A}\) i~\(A\),~\(B\in\Algebra{A}\) dos esdeveniments tals que~\(A\subseteq B\).
         Aleshores
         \[
@@ -273,7 +273,7 @@
         \]
     \end{proof}
     \begin{proposition}
-        \label{prop:probabilitat de la resta de esdeveniments}
+        \label{prop:probabilitat-de-la-resta-de-esdeveniments}
         Siguin~\(\Probabilitat\) una probabilitat sobre una~\(\sigma\)-àlgebra~\(\Algebra{A}\) i~\(A\),~\(B\in\Algebra{A}\) dos esdeveniments tals que~\(A\subseteq B\).
         Aleshores
         \[
@@ -295,7 +295,7 @@
         \]
     \end{proof}
     \begin{corollary}
-        \label{cor:probabilitat del complementari}
+        \label{cor:probabilitat-del-complementari}
         Siguin~\(\Probabilitat\) una probabilitat sobre una~\(\sigma\)-àlgebra~\(\Algebra{A}\) i~\(A\in\Algebra{A}\) un esdeveniment.
         Aleshores
         \[
@@ -329,10 +329,10 @@
             &\phantom{=}+(-1)^{m}\Probabilitat(A_{1}\cap\dots\cap A_{m}) \\
             &=\sum_{i=1}^{m}\Probabilitat(A_{i})-\sum_{i=1}^{m}\sum_{j=i}^{m}\Probabilitat(A_{i}\cap A_{j})+\dots+(-1)^{m+1}\Probabilitat\Big(\bigcap_{i=1}^{m}A_{i}\Big),
         \end{align*}
-        i pel \myref{thm:principi d'inducció} hem acabat.
+        i pel \myref{thm:principi-dinduccio} hem acabat.
     \end{proof}
     \begin{corollary}
-        \label{cor:subadditivitat finita}
+        \label{cor:subadditivitat-finita}
         Siguin~\(\Probabilitat\) una probabilitat sobre una~\(\sigma\)-àlgebra~\(\Algebra{A}\) i~\(\{A_{i}\}_{i=1}^{n}\subseteq\Algebra{A}\) una família d'esdeveniments.
         Aleshores
         \[
@@ -340,7 +340,7 @@
         \]
     \end{corollary}
     \begin{theorem}[Definició de Laplace]
-        \labelname{}\label{thm:definició de Laplace}
+        \labelname{}\label{thm:definicio-de-Laplace}
         Sigui~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat amb~\(\Omega=\{\omega_{1},\dots,\omega_{n}\}\) i~\(\Algebra{A}=\parts(\Omega)\) tals que per a tot~\(i\),~\(j\in\{1,\dots,n\}\) tenim que~\(\Probabilitat(\{\omega_{i}\})=\Probabilitat(\{\omega_{j}\})\).
         Aleshores per a tot esdeveniment~\(A\in\Algebra{A}\) tenim
         \[
@@ -377,7 +377,7 @@
 %            \[\Probabilitat(A)=\Probabilitat\Big(\biguplus_{j=1}^{r}\{\omega_{i_{j}}\}\Big)=\sum_{j=1}^{r}\Probabilitat(\{\omega_{i_{j}}\})=\frac{r}{n}=\frac{\abs{A}}{\abs{\Omega}}.\qedhere\]
     \end{proof}
     \begin{proposition}[Continuïtat seqüencial per successions creixents]
-        \labelname{continuïtat seqüencial per successions creixents}\label{prop:continuitat sequencial per successions creixents}
+        \labelname{continuïtat seqüencial per successions creixents}\label{prop:continuitat-sequencial-per-successions-creixents}
         Siguin~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat i~\(\{A_{n}\}_{n\in\NN}\subseteq\Algebra{A}\) una família d'esdeveniments tals que
         \[
             A_{0}\subseteq A_{1}\subseteq\dots\subseteq A_{n}\subseteq\cdots
@@ -394,7 +394,7 @@
     \begin{proof}
         Considerem els conjunts
         \begin{equation}
-            \label{prop:continuitat sequencial per successions creixents:eq1}
+            \label{prop:continuitat-sequencial-per-successions-creixents:eq1}
             B_{n}=A_{n}\cap A_{n-1}^{\complement}=A_{n}\setminus A_{n-1},\qquad\text{amb}\qquad B_{0}=\emptyset.
         \end{equation}
         Aleshores tenim que % REVISAR
@@ -406,15 +406,15 @@
             \Probabilitat(A)&=\Probabilitat\Big(\bigcup_{n=0}^{\infty}A_{n}\Big) \\
             &=\Probabilitat\Big(\biguplus_{n=0}^{\infty}B_{n}\Big) \\
             &=\sum_{n=0}^{\infty}\Probabilitat(B_{n}) \\
-            &=\sum_{n=0}^{\infty}\Probabilitat(A_{n}\setminus A_{n-1}) \tag{\ref{prop:continuitat sequencial per successions creixents:eq1}}\\
-            &=\sum_{n=0}^{\infty}\big(\Probabilitat(A_{n})-\Probabilitat(A_{n-1})\big)\tag{\ref{prop:probabilitat de la resta de esdeveniments}} \\
+            &=\sum_{n=0}^{\infty}\Probabilitat(A_{n}\setminus A_{n-1}) \tag{\ref{prop:continuitat-sequencial-per-successions-creixents:eq1}}\\
+            &=\sum_{n=0}^{\infty}\big(\Probabilitat(A_{n})-\Probabilitat(A_{n-1})\big)\tag{\ref{prop:probabilitat-de-la-resta-de-esdeveniments}} \\
             &=\lim_{n\to\infty}\Probabilitat(A_{n})-\Probabilitat(A_{0}) \\
-            &=\lim_{n\to\infty}\Probabilitat(A_{n})-\Probabilitat(\emptyset)=\lim_{n\to\infty}\Probabilitat(A_{n}), \tag{\ref{prop:la probabilitat del buit és nulla}}
+            &=\lim_{n\to\infty}\Probabilitat(A_{n})-\Probabilitat(\emptyset)=\lim_{n\to\infty}\Probabilitat(A_{n}), \tag{\ref{prop:la-probabilitat-del-buit-es-nulla}}
         \end{align*}
         com volíem veure.
     \end{proof}
     \begin{proposition}[Continuïtat seqüencial per successions decreixents]
-        \labelname{continuïtat seqüencial per successions decreixents}\label{prop:continuitat sequencial per successions decreixents}
+        \labelname{continuïtat seqüencial per successions decreixents}\label{prop:continuitat-sequencial-per-successions-decreixents}
         Siguin~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat i~\(\{A_{n}\}_{n\in\NN}\subseteq\Algebra{A}\) una família d'esdeveniments tals que
         \[
             A_{0}\supseteq A_{1}\supseteq\dots\supseteq A_{n}\supseteq\cdots
@@ -437,7 +437,7 @@
         \[
             B_{0}\subseteq B_{1}\subseteq\dots\subseteq B_{n}\subseteq\cdots,
         \]
-        i per la proposició de \myref{prop:continuitat sequencial per successions creixents} trobem que
+        i per la proposició de \myref{prop:continuitat-sequencial-per-successions-creixents} trobem que
         \[
             \lim_{n\to\infty}\Probabilitat(B_{n})=\Probabilitat\Big(\bigcup_{n=0}^{\infty}B_{n}\Big).
         \]
@@ -455,7 +455,7 @@
 \section{Probabilitat condicionada i independència}
 \subsection{Probabilitat condicionada}
     \begin{definition}[Probabilitat condicionada]
-        \labelname{probabilitat condicionada}\label{def:probabilitat condicionada}
+        \labelname{probabilitat condicionada}\label{def:probabilitat-condicionada}
         Siguin~\(A\),~\(B\) dos esdeveniments amb~\(\Probabilitat(A)\neq0\).
         Aleshores definim
         \[
@@ -464,13 +464,13 @@
         com la probabilitat condicionada de~\(B\) sobre~\(A\), o la probabilitat de~\(B\) donat~\(A\).
     \end{definition}
     \begin{observation}[Regla de les probabilitats compostes]
-        \labelname{regla de les probabilitats compostes}\label{obs:regla de les probabilitats compostes}
+        \labelname{regla de les probabilitats compostes}\label{obs:regla-de-les-probabilitats-compostes}
         \[
             \Probabilitat(A\cap B)=\Probabilitat(A)\Probabilitat(B\sota A).
         \]
     \end{observation}
     \begin{proposition}
-        \label{prop:la probabilitat condicionada és una probabilitat}
+        \label{prop:la-probabilitat-condicionada-es-una-probabilitat}
         Siguin~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat i~\(A\in\Algebra{A}\) un esdeveniment amb~\(\Probabilitat(A)\neq0\).
         Aleshores l'aplicació
         \begin{align*}
@@ -483,8 +483,8 @@
         \end{proposition}
     \end{proposition}
     \begin{corollary}
-        \label{cor:probabilitat condicionada del complementari}
-        \label{cor:la probabilitat condicionada és una probabilitat}
+        \label{cor:probabilitat-condicionada-del-complementari}
+        \label{cor:la-probabilitat-condicionada-es-una-probabilitat}
         Sigui~\(A\) un esdeveniment amb~\(\Probabilitat(A)\neq0\).
         Aleshores
         \[
@@ -495,7 +495,7 @@
         %TODO
     \end{example}
     \begin{theorem}[Fórmula de les probabilitats compostes]
-        \labelname{fórmula de les probabilitats compostes}\label{thm:fórmula de les probabilitats compostes}
+        \labelname{fórmula de les probabilitats compostes}\label{thm:formula-de-les-probabilitats-compostes}
         Siguin~\(A_{1},\dots,A_{n}\) esdeveniments tals que~\(\Probabilitat(A_{1}\cap\dots\cap A_{n-1})\neq0\).
         Aleshores
         \[
@@ -510,7 +510,7 @@
     \end{example}
 \subsection{La fórmula de les probabilitats totals i la fórmula de Bayes}
     \begin{theorem}[Teorema de les probabilitats totals]
-        \labelname{Teorema de les probabilitats totals}\label{thm:Teorema de les probabilitats totals}
+        \labelname{Teorema de les probabilitats totals}\label{thm:Teorema-de-les-probabilitats-totals}
         Siguin~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat,~\(\{A_{n}\}_{n\in I}\subseteq\Algebra{A}\) una família numerable d'esdeveniments tals que
         \[
             \Omega=\biguplus_{n\in I}A_{n}
@@ -525,7 +525,7 @@
         %TODO
     \end{proof}
     \begin{theorem}[Fórmula de Bayes]
-        \labelname{fórmula de Bayes}\label{thm:fórmula de Bayes}
+        \labelname{fórmula de Bayes}\label{thm:formula-de-Bayes}
         Siguin~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat,~\(\{A_{n}\}_{n=1}^{N}\subseteq\Algebra{A}\) una família d'esdeveniments tals que
         \[
             \Omega=\biguplus_{n\in I}A_{n}
@@ -544,7 +544,7 @@
     \end{example}
 \subsection{Independència d'esdeveniments}
     \begin{definition}[Esdeveniments independents]
-        \labelname{esdeveniments independents}\label{def:esdeveniments independents}
+        \labelname{esdeveniments independents}\label{def:esdeveniments-independents}
         Siguin~\(A\) i~\(B\) dos esdeveniments tals que
         \[
             \Probabilitat(A\cap B)=\Probabilitat(A)\Probabilitat(B).
@@ -552,7 +552,7 @@
         Aleshores direm que els esdeveniments~\(A\) i~\(B\) són independents.
     \end{definition}
     \begin{observation}
-        \label{obs:condició equivalent a esdeveniments independents}
+        \label{obs:condicio-equivalent-a-esdeveniments-independents}
         Siguin~\(A\) i~\(B\) dos esdeveniments.
         Aleshores~\(A\) i~\(B\) són independents si i només si~\(\Probabilitat(B\sota A)=\Probabilitat(B)\).
     \end{observation}
@@ -563,9 +563,9 @@
         %TODO
     \end{example}
     \begin{proposition}
-        \label{prop:el buit i el total són esdeveniments independents de la resta}
-        \label{prop:el buit és un esdeveniment independent de la resta}
-        \label{prop:el total és un esdeveniment independent de la resta}
+        \label{prop:el-buit-i-el-total-son-esdeveniments-independents-de-la-resta}
+        \label{prop:el-buit-es-un-esdeveniment-independent-de-la-resta}
+        \label{prop:el-total-es-un-esdeveniment-independent-de-la-resta}
         Sigui~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat.
         Aleshores per a tot esdeveniment~\(A\in\Algebra{A}\) tenim que~\(\Omega\) i~\(A\) són esdeveniments independents i~\(\emptyset\) i~\(A\) són esdeveniments independents.
     \end{proposition}
@@ -573,7 +573,7 @@
         %TODO
     \end{proof}
     \begin{proposition}
-        \label{prop:el complementari d'un esdeveniment conserva la independència}
+        \label{prop:el-complementari-dun-esdeveniment-conserva-la-independencia}
         Siguin~\(A\) i~\(B\) dos esdeveniments.
         Aleshores són equivalents
         \begin{enumerate}
@@ -587,7 +587,7 @@
         %TODO
     \end{proof}
     \begin{definition}[Esdeveniments independents]
-        \labelname{esdeveniments independents}\label{def:esdeveniments independents cas general}
+        \labelname{esdeveniments independents}\label{def:esdeveniments-independents-cas-general}
         Sigui~\(\{A_{i}\}_{i\in I}\) una família d'esdeveniments tals que per a qualsevol~\(i_{1},\dots,i_{k}\in I\) diferents dos a dos tenim que
         \[
             \Probabilitat(\bigcap_{j=1}^{k}A_{i_{j}})=\prod_{j=1}^{k}\Probabilitat(A_{i_{j}}).
@@ -598,7 +598,7 @@
 \section{Distribució i funció de distribució d'una variable aleatòria}
 \subsection{Variables aleatòries}
     \begin{definition}[Variable aleatòria]
-        \labelname{variable aleatòria}\label{def:variable aleatòria}
+        \labelname{variable aleatòria}\label{def:variable-aleatoria}
         Siguin~\(\Algebra{A}\) una~\(\sigma\)-àlgebra sobre un conjunt~\(\Omega\) i~\(X\colon\Omega\longrightarrow\RR\) una aplicació tal que per a tot conjunt~\(B\in\borel(\RR)\) tenim
         \[
             X^{-1}(B)\in\Algebra{A}.
@@ -609,7 +609,7 @@
         %TODO
     \end{example}
     \begin{notation}
-        \label{notation:variables aleatòries}
+        \label{notation:variables-aleatories}
         Sigui~\(X\colon\Omega\longrightarrow\RR\) una variable aleatòria sobre un~\(\sigma\)-àlgebra~\(\Algebra{A}\).
         Aleshores denotem
         \begin{enumerate}
@@ -622,7 +622,7 @@
         \end{enumerate}
     \end{notation}
     \begin{proposition}
-        \label{prop:condició suficient per ser una variable aleatòria}
+        \label{prop:condicio-suficient-per-ser-una-variable-aleatoria}
         Siguin~\(\Algebra{A}\) una~\(\sigma\)-àlgebra sobre un conjunt~\(\Omega\) i~\(X\colon\Omega\longrightarrow\RR\) una aplicació tal que per a tot~\(x\in\RR\) tenim que
         \[
             X^{-1}((-\infty,x])\in\Algebra{A}.
@@ -633,7 +633,7 @@
         %TODO
     \end{proof}
     \begin{proposition}
-        \label{prop:les variables aleatòries formen un anell}
+        \label{prop:les-variables-aleatories-formen-un-anell}
         Siguin~\(X\) i~\(Y\) dues variables aleatòries i~\(\lambda\in\mathbb{R}\) un escalar.
         Aleshores~\(X+y\),~\(XY\) i~\(\lambda X\) són variables aleatòries.
     \end{proposition}
@@ -641,7 +641,7 @@
         %TODO
     \end{proof}
     \begin{proposition}
-        \label{prop:les variables aleatòries formen un cos}
+        \label{prop:les-variables-aleatories-formen-un-cos}
         Sigui~\(X\colon\Omega\longrightarrow\RR\) una variable aleatòria sobre una~\(\sigma\)-àlgebra tal que per a tot~\(\omega\in\Omega\) tenim que~\(X(\omega)\neq0\).
         Aleshores~\(1/X\) és una variable aleatòria.
     \end{proposition}
@@ -649,7 +649,7 @@
         %TODO
     \end{proof}
     \begin{proposition}
-        \label{prop:el cos de variables aleatòries és tancat}
+        \label{prop:el-cos-de-variables-aleatories-es-tancat}
         Sigui~\((X_{n})_{n\in\NN}\) una successió de variables aleatòries sobre una~\(\sigma\)-àlgebra sobre un conjunt~\(\Omega\) tals que per a tot~\(\omega\in\Omega\) tenim que la successió~\((X_{n}(\omega))_{n\in\NN}\) és convergent.
         Aleshores la funció
         \begin{align*}
@@ -663,7 +663,7 @@
     \end{proof}
 \subsection{Distribució o llei d'una variable aleatòria}
     \begin{proposition}
-        \label{prop:distribució d'una variable aleatòria}
+        \label{prop:distribucio-duna-variable-aleatoria}
         Siguin~\(X\colon\Omega\longrightarrow\RR\) una variable aleatòria i
         \begin{align*}
             \Probabilitat_{X}\colon\borel(\RR)&\longrightarrow\RR \\
@@ -675,7 +675,7 @@
         %TODO
     \end{proof}
     \begin{definition}[Distribució d'una variable aleatòria]
-        \labelname{distribució d'una variable aleatòria}\label{def:distribució d'una variable aleatòria}
+        \labelname{distribució d'una variable aleatòria}\label{def:distribucio-duna-variable-aleatoria}
         Sigui~\(X\colon\Omega\longrightarrow\RR\) una variable aleatòria.
         Aleshores direm que la funció
         \begin{align*}
@@ -690,8 +690,8 @@
     \end{example}
 \subsection{Igualtat i igualtat quasi segura de variables aleatòries}
     \begin{definition}[Igualtat de variables aleatòries]
-        \labelname{variables aleatòries amb la mateixa distribució}\label{def:variables aleatòries amb la mateixa distribució}
-        \labelname{igualtat de variables aleatòries}\label{def:igualtat de variables aleatòries}
+        \labelname{variables aleatòries amb la mateixa distribució}\label{def:variables-aleatories-amb-la-mateixa-distribucio}
+        \labelname{igualtat de variables aleatòries}\label{def:igualtat-de-variables-aleatories}
         Siguin~\(X\) i~\(Y\) dues variables aleatòries tals que per a tot~\(B\in\borel(\RR)\) tenim que
         \[
             \Probabilitat_{X}(B)=\Probabilitat_{Y}(B).
@@ -705,7 +705,7 @@
         %TODO
     \end{example}
     \begin{definition}[Igualtat quasi segura de variables aleatòries]
-        \labelname{igualtat quasi segura de variables aleatòries}\label{def:igualtat quasi segura de variables aleatòries}
+        \labelname{igualtat quasi segura de variables aleatòries}\label{def:igualtat-quasi-segura-de-variables-aleatories}
         Siguin~\(X\) i~\(Y\) dues variables aleatòries sobre una~\(\sigma\)-àlgebra~\(\Algebra{A}\) tals que~\(\Probabilitat\{X=Y\}=1\).
         Aleshores direm que~\(X\) i~\(Y\) són iguals quasi segurament i ho denotarem com
         \[
@@ -713,7 +713,7 @@
         \]
     \end{definition}
     \begin{observation}
-        \label{obs:dues variables iguals quasi segurament són iguals en distribució}
+        \label{obs:dues-variables-iguals-quasi-segurament-son-iguals-en-distribucio}
         Siguin~\(X\) i~\(Y\) dues variables aleatòries tals que~\(X\qs Y\).
         Aleshores~\(X\igualsendistribucio Y\).
     \end{observation}
@@ -722,7 +722,7 @@
     \end{example}
 \subsection{Funció de distribució d'una variable aleatòria}
     \begin{definition}[Funció de distribució]
-        \labelname{funció de distribució d'una variable aleatòria}\label{def:funció de distribució d'una variable aleatòria}
+        \labelname{funció de distribució d'una variable aleatòria}\label{def:funcio-de-distribucio-duna-variable-aleatoria}
         Siguin~\(X\) una variable aleatòria i
         \begin{align*}
             F\colon\RR&\longrightarrow[0,1] \\
@@ -732,7 +732,7 @@
         Aleshores direm que~\(F\) és la funció de distribució de~\(X\).
     \end{definition}
     \begin{proposition}
-        \label{prop:les funcions de distribució són creixents}
+        \label{prop:les-funcions-de-distribucio-son-creixents}
         Sigui~\(F\) una funció de distribució.
         Aleshores~\(F\) és creixent.
     \end{proposition}
@@ -740,8 +740,8 @@
         %TODO
     \end{proof}
     \begin{proposition} %TODO REVISAR
-        \label{prop:les funcions de distribució són contínues per la dreta}
-        \label{prop:les funcions de distribució tenen límit per l'esquerra}
+        \label{prop:les-funcions-de-distribucio-son-continues-per-la-dreta}
+        \label{prop:les-funcions-de-distribucio-tenen-limit-per-lesquerra}
         Sigui~\(F\) una funció de distribució.
         Aleshores per a tot~\(x\in\RR\) tenim que
         \[
@@ -752,7 +752,7 @@
         %TODO
     \end{proof}
     \begin{proposition}
-        \label{prop:límits laterals d'una funció de distribució}
+        \label{prop:limits-laterals-duna-funcio-de-distribucio}
         Sigui~\(F\) una funció de distribució.
         Aleshores
         \[
@@ -763,7 +763,7 @@
         %TODO
     \end{proof}
     \begin{proposition}
-        \label{prop:les funcions de distribució tienen com a màxim un nombre numerable de punts de discontinuitat}
+        \label{prop:les-funcions-de-distribucio-tienen-com-a-maxim-un-nombre-numerable-de-punts-de-discontinuitat}
         Sigui~\(F\) una funció de distribució.
         Aleshores el conjunt de punts de discontinuïtat de~\(F\) és com a màxim numerable.
     \end{proposition}
@@ -771,7 +771,7 @@
         %TODO % Fer desprès de FVR
     \end{proof}
     \begin{proposition}
-        \label{prop:funcions de distribució per calcular variables aleatòries en intervals tancats}
+        \label{prop:funcions-de-distribucio-per-calcular-variables-aleatories-en-intervals-tancats}
         Sigui~\(F\) una funció de distribució d'una variable aleatòria~\(X\).
         Aleshores per a tot~\(s\),~\(t\in\RR\) tenim que
         \[
@@ -779,7 +779,7 @@
         \]
     \end{proposition}
     \begin{proposition}
-        \label{prop:funcions de distribució per calcular variables aleatòries en semirectes}
+        \label{prop:funcions-de-distribucio-per-calcular-variables-aleatories-en-semirectes}
         Sigui~\(F\) una funció de distribució d'una variable aleatòria~\(X\).
         Aleshores per a tot~\(x\in\RR\) tenim que
         \[
@@ -787,7 +787,7 @@
         \]
     \end{proposition}
     \begin{proposition}
-        \label{prop:funcions de distribució per calcular variables aleatòries en punts}
+        \label{prop:funcions-de-distribucio-per-calcular-variables-aleatories-en-punts}
         Sigui~\(F\) una funció de distribució d'una variable aleatòria~\(X\).
         Aleshores
         \[
@@ -797,8 +797,8 @@
 \section{Variables aleatòries discretes}
 \subsection{Variables aleatòries discretes}
     \begin{definition}[Variable aleatòria discreta]
-        \labelname{variable aleatòria discreta}\label{def:variable aleatòria discreta}
-        \labelname{suport d'una variable aleatòria discreta}\label{def:suport d'una variable aleatòria discreta}
+        \labelname{variable aleatòria discreta}\label{def:variable-aleatoria-discreta}
+        \labelname{suport d'una variable aleatòria discreta}\label{def:suport-duna-variable-aleatoria-discreta}
         Sigui~\(X\) una variable aleatòria tal que existeix un conjunt finit o numerable~\(S\subseteq\RR\) tal que
         \[
             \Probabilitat\{X\in S\}=1,
@@ -814,7 +814,7 @@
         %TODO
     \end{example}
     \begin{observation}
-        \label{obs:els conjunts finits o numerables són borelians}
+        \label{obs:els-conjunts-finits-o-numerables-son-borelians}
         Sigui~\(S\subseteq\RR\) un conjunt finit o numerable.
         Aleshores~\(S\) és borelià.
     \end{observation}
@@ -823,8 +823,8 @@
     \end{proof}
 \subsection{Funció de probabilitat d'una variable aleatòria}
     \begin{definition}[Funció de probabilitat]
-        \labelname{funció de probabilitat d'una variable aleatòria discreta}\label{def:funció de probabilitat d'una variable aleatòria discreta}
-        \labelname{repartiment de massa d'una variable aleatòria discreta}\label{def:repartiment de massa d'una variable aleatòria discreta}
+        \labelname{funció de probabilitat d'una variable aleatòria discreta}\label{def:funcio-de-probabilitat-duna-variable-aleatoria-discreta}
+        \labelname{repartiment de massa d'una variable aleatòria discreta}\label{def:repartiment-de-massa-duna-variable-aleatoria-discreta}
         Siguin~\(X\) una variable aleatòria discreta amb suport~\(S\) i
         \begin{align*}
             p\colon S&\longrightarrow[0,1] \\
@@ -835,7 +835,7 @@
         També direm que~\(p\) és el repartiment de massa de~\(X\).
     \end{definition}
     \begin{observation}
-        \label{prop:la funció de probabilitat d'una variable aleatòria discreta suma 1 en el suport}
+        \label{prop:la-funcio-de-probabilitat-duna-variable-aleatoria-discreta-suma-1-en-el-suport}
         Sigui~\(X\) una variable aleatòria discreta amb suport~\(S\) i funció de probabilitat~\(p\).
         Aleshores
         \[
@@ -846,7 +846,7 @@
         %TODO
     \end{proof}
     \begin{proposition}
-        \label{prop:probabilitat d'un conjunt en una variable aleatòria discreta}
+        \label{prop:probabilitat-dun-conjunt-en-una-variable-aleatoria-discreta}
         Siguin~\(X\) una variable aleatòria discreta amb suport~\(S\) i funció de probabilitat~\(p\), i~\(B\in\borel(\RR)\) un borelià.
         Aleshores
         \[
@@ -858,7 +858,7 @@
     \end{proof}
     %Potser caldrà reescriure aquestes coses per fer-les formals. I anar-les arrosegant per fer les solucions poc a poc? Però aleshores es pot fer molt llarg. Decidiré quan em posi a fer-les.
     \begin{example}[Variable aleatòria degenerada]
-        \labelname{variable aleatòria degenerada}\label{ex:variable aleatòria degenerada}
+        \labelname{variable aleatòria degenerada}\label{ex:variable-aleatoria-degenerada}
         Siguin~\((\Omega,\Algebra{A},\Probabilitat)\) un espai de probabilitat i~\(a\in\RR\) un real.
         Volem veure que la funció
         \begin{align*}
@@ -872,7 +872,7 @@
         %TODO
     \end{solution}
     \begin{example}[Llei de Bernoulli]
-        \labelname{llei de Bernoulli}\label{def:llei de Bernoulli}
+        \labelname{llei de Bernoulli}\label{def:llei-de-Bernoulli}
         Sigui~\(X\) una variable aleatòria discreta amb suport~\(S=\{0,1\}\).
         Volem calcular i dibuixar la seva funció de probabilitat i de distribució.
     \end{example}
@@ -880,7 +880,7 @@
         %TODO
     \end{solution}
     \begin{example}[Llei uniforme sobre~\(n\) punts]
-        \labelname{llei uniforme sobre~\(n\) punts}\label{def:llei uniforme sobre n punts}
+        \labelname{llei uniforme sobre~\(n\) punts}\label{def:llei-uniforme-sobre-n-punts}
         Sigui~\(X\) una variable aleatòria discreta amb suport~\(S=\{x_{1},\dots,x_{n}\}\) tal que per a tot~\(i\in\{1,\dots,n\}\) tenim que
         \[
             P\{X=x_{i}\}=\frac{1}{n}.
@@ -900,9 +900,9 @@
 \section{Variables aleatòries absolutament contínues} % i mixtes
 \subsection{Funcions de densitat i de distribució}
     \begin{definition}[Variable aleatòria absolutament contínua]
-        \labelname{variable aleatòria absolutament contínua}\label{def:variable aleatòria absolutament contínua}
-        \labelname{funció de densitat d'una variable aleatòria absolutament contínua}\label{def:funció de densitat d'una variable aleatòria abolsutament contínua}
-        \labelname{funció de distribució d'una variable aleatòria absolutament contínua}\label{def:funció de distribució d'una variable aleatòria absolutament contínua}
+        \labelname{variable aleatòria absolutament contínua}\label{def:variable-aleatoria-absolutament-continua}
+        \labelname{funció de densitat d'una variable aleatòria absolutament contínua}\label{def:funcio-de-densitat-duna-variable-aleatoria-abolsutament-continua}
+        \labelname{funció de distribució d'una variable aleatòria absolutament contínua}\label{def:funcio-de-distribucio-duna-variable-aleatoria-absolutament-continua}
         Sigui~\(X\) una variable aleatòria tal que existeix una funció~\(f\colon\RR\longleftarrow\RR\) satisfent
         \begin{enumerate}
             \item Per a tot~\(x\in\RR\) tenim que~\(f(x)\geq0\).
@@ -921,7 +921,7 @@
         és la funció de distribució de~\(X\).
     \end{definition}
     \begin{observation}
-        \label{obs:la funció distribució d'una variable aleatòria absolutament contínua és contínua}
+        \label{obs:la-funcio-distribucio-duna-variable-aleatoria-absolutament-continua-es-continua}
         Sigui~\(F\) la funció de distribució d'una variable aleatòria absolutament contínua~\(X\).
         Aleshores~\(F\) és contínua.
         % i absolutament contínua
@@ -930,7 +930,7 @@
 %        %TODO % Veure si ho ha un exemple previ a les lleis i distribucions
 %    \end{example}
     \begin{example}[Llei uniforme]
-    \labelname{llei uniforme}\label{ex:llei uniforme}
+    \labelname{llei uniforme}\label{ex:llei-uniforme}
         Siguin~\(a\),~\(b\in\RR\) dos reals amb~\(a<b\) i~\(X\) una variable aleatòria tal que la seva funció de densitat sigui
         \begin{align*}
             f(x)=\frac{1}{b-a}\ind_{(a,b)}(x).
@@ -943,7 +943,7 @@
         %TODO
     \end{solution}
     \begin{example}[Llei exponencial]
-        \labelname{llei exponencial}\label{ex:llei exponencial}
+        \labelname{llei exponencial}\label{ex:llei-exponencial}
         Siguin~\(\lambda\in\RR\) un real amb~\(\lambda>0\) i~\(X\) una variable aleatòria tal que la seva funció de densitat sigui
         \begin{align*}
             f(x)=\lambda\e^{-\lambda x}\ind_{(0,\infty)}(x).
@@ -957,7 +957,7 @@
     \end{solution}
     % Propietat de la falta de memòria
     \begin{example}[Distribució gaussiana]
-        \labelname{distribució gaussiana}\label{ex:distribució gaussiana}
+        \labelname{distribució gaussiana}\label{ex:distribucio-gaussiana}
         Siguin~\(\mu\),~\(\sigma\in\RR\) un real amb~\(\sigma>0\) i~\(Z\) una variable aleatòria tal que la seva funció de densitat sigui
         \begin{align*}
             f(x)=\frac{1}{\sigma\sqrt{2\pi}}\e^{-\frac{(x-\mu)^{2}}{2\sigma^{2}}}.
@@ -970,7 +970,7 @@
         %TODO
     \end{solution}
     \begin{example}[Distribució Gamma]
-        \labelname{distribució Gamma}\label{ex:distribució Gamma}
+        \labelname{distribució Gamma}\label{ex:distribucio-Gamma}
         Siguin~\(r\),~\(\alpha\in\RR\) dos reals amb~\(r>0\) i~\(\alpha>0\).
         Volem veure que existeix una variable aleatòria~\(X\) amb funció de distribució
         \[
@@ -990,7 +990,7 @@
 %    \end{example}
 \subsection{Criteri per calcular densitats de variables aleatòries}
     \begin{proposition}
-        \label{prop:criteri per calcular densitats de variables aleatòries}
+        \label{prop:criteri-per-calcular-densitats-de-variables-aleatories}
         Sigui~\(X\) una variable aleatòria amb funció de distribució~\(F\colon\RR\longrightarrow\RR\) tal que
         \begin{enumerate}
             \item La funció~\(F\) és contínua~\(\RR\).

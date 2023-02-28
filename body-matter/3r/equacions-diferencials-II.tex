@@ -71,8 +71,8 @@
 %    \subsection{Anàlisi qualitativa dels punts d'equilibri}
     \subsection{Comportament límit de les òrbites} % 4.1 Equações Diferenciais Ordinárias
     \begin{definition}[Conjunts \(\omega\)-límit i \(\alpha\)-límit]
-        \labelname{conjunt \ensuremath{\omega}-límit}\label{def:conjunt omega-límit}
-        \labelname{conjunt \ensuremath{\alpha}-límit}\label{def:conjunt alpha-límit}
+        \labelname{conjunt \ensuremath{\omega}-límit}\label{def:conjunt-omega-limit}
+        \labelname{conjunt \ensuremath{\alpha}-límit}\label{def:conjunt-alpha-limit}
         Sigui \(\varphi_{x}\colon\mathbb{R}\longrightarrow\mathbb{R}^{n}\) l'òrbita d'un punt \(x\in\mathbb{R}^{n}\).
         Aleshores definim
         \[
@@ -93,9 +93,9 @@
         Aleshores el conjunt \(\omega\)-límit de \(x\) en la primera equació diferencial és el conjunt \(\alpha\)-límit de \(x\) en la segona equació diferencial i, anàlogament, el conjunt \(\alpha\)-límit de \(x\) en la primera equació diferencial és el conjunt \(\omega\)-límit de \(x\) en la segona equació diferencial.
     \end{observation}
     \begin{definition}[Conjunts invariants]
-        \labelname{conjunt positivament invariant}\label{def:conjunt positivament invariant}
-        \labelname{conjunt negativament invariant}\label{def:conjunt negativament invariant}
-        \labelname{conjunt invariant}\label{def:conjunt invariant}
+        \labelname{conjunt positivament invariant}\label{def:conjunt-positivament-invariant}
+        \labelname{conjunt negativament invariant}\label{def:conjunt-negativament-invariant}
+        \labelname{conjunt invariant}\label{def:conjunt-invariant}
         Sigui \(\varphi_{x}\) l'òrbita d'un punt \(x\in\mathbb{R}^{n}\).
         Aleshores definim
         \[
@@ -104,27 +104,27 @@
         i direm que un conjunt \(C\subseteq\mathbb{R}^{n}\) és positivament invariant si per a tot \(y\in C\) tenim que \(\gamma^{+}(y)\subseteq C\), que és negativament invariant si per a tot \(y\in C\) tenim que \(\gamma^{-}(y)\subseteq C\) i que és invariant si per a tot \(y\in C\) tenim que \(\gamma(y)\subseteq C\).
     \end{definition}
     \begin{theorem}
-        \label{thm:propietats topològiques dels omega-límits}
+        \label{thm:propietats-topologiques-dels-omega-limits}
         Siguin
         \(\dot{x}=f(x)\)
         una equació diferencial sobre \(\mathbb{R}^{n}\), \(\tancat{K}\) un compacte de \(\mathbb{R}^{n}\) i \(p\in\mathbb{R}^{n}\) un punt tals que \(\gamma^{+}(x)\subset\tancat{K}\).
         Aleshores
         \begin{enumerate}
-            \item\label{enum1:thm:propietats topològiques dels omega-límits} \(\omega(x)\neq\emptyset\).
-            \item\label{enum2:thm:propietats topològiques dels omega-límits} \(\omega(x)\) és un tancat.
-            \item\label{enum3:thm:propietats topològiques dels omega-límits} \(\omega(x)=\omega(\varphi_{x}(t))\) per a tot \(t\in\mathbb{R}\).
-            \item\label{enum4:thm:propietats topològiques dels omega-límits} \(\omega(x)\) és connex.
+            \item\label{enum1:thm:propietats-topologiques-dels-omega-limits} \(\omega(x)\neq\emptyset\).
+            \item\label{enum2:thm:propietats-topologiques-dels-omega-limits} \(\omega(x)\) és un tancat.
+            \item\label{enum3:thm:propietats-topologiques-dels-omega-limits} \(\omega(x)=\omega(\varphi_{x}(t))\) per a tot \(t\in\mathbb{R}\).
+            \item\label{enum4:thm:propietats-topologiques-dels-omega-limits} \(\omega(x)\) és connex.
         \end{enumerate}
     \end{theorem}
     \begin{proof}
-        Comencem veient el punt \eqref{enum1:thm:propietats topològiques dels omega-límits}.
+        Comencem veient el punt \eqref{enum1:thm:propietats-topologiques-dels-omega-limits}.
         Per hipòtesi tenim que \(\gamma^{+}(x)\subset\tancat{K}\).
         Ara bé, tenim que \(\varphi_{x}(0)=x\in\gamma^{+}(x)\), i per tant \(x\in\tancat{K}\) i tenim que \(\tancat{K}\neq\emptyset\).
         %TODO (pàg. 132 Equações Diferenciais Ordinárias)
     \end{proof}
     \subsection{Teorema de Poincaré-Bendixson}
     \begin{definition}[Secció transversal]
-        \labelname{secció transversal}\label{def:secció transversal}
+        \labelname{secció transversal}\label{def:seccio-transversal}
         Siguin \(\dot{x}=f(x)\) una equació diferencial sobre un obert \(\obert{U}\subseteq\mathbb{R}^{2}\) i \(\Sigma\subseteq\obert{U}\) una corba tal que per a tot \(x,y\in\Sigma\) es satisfà \(f(x)=f(y)\).
         Aleshores direm que \(\Sigma\) és una secció transversal de l'equació diferencial.
         % \Sigma no és una corba, és la seva imatge
@@ -138,33 +138,33 @@
 %        \end{proof}
 %    \end{lemma}
     \begin{definition}[Aplicació de retorn]
-        \labelname{aplicació de retorn}\label{def:aplicació de retorn}
+        \labelname{aplicació de retorn}\label{def:aplicacio-de-retorn}
         Siguin \(\dot{x}=f(x)\) una equació diferencial sobre un obert \(\obert{U}\subseteq\mathbb{R}^{2}\) i \(A\subseteq\obert{U}\) un conjunt tals que per a tot \(p\in A\) punt regular i tota secció transversal \(\Sigma\subseteq A\) existeix un entorn \(\obert{V}\subseteq\obert{U}\) de \(p\) tal que per a tot \(x\in\Sigma\cap\obert{V}\) existeix un \(t\neq0\) tal que \(\varphi_{x}(t)\in\Sigma\cap\obert{V}\).
         Aleshores direm que \(A\) admet una aplicació de retorn.
     \end{definition}
     \begin{definition}[Gràfic]
-        \labelname{gràfic}\label{def:gràfic}
+        \labelname{gràfic}\label{def:grafic}
         Siguin \(\dot{x}=f(x)\) una equació diferencial sobre un obert \(\obert{U}\subseteq\mathbb{R}^{2}\) i \(A\subseteq\obert{U}\) un conjunt invariant que conté punts regulars i punts crítics tal que per a tot punt \(x\in A\) tenim \(\alpha(x)=\{p\}\) i \(\omega(x)=\{q\}\) per a certs punts crítics \(p,q\in A\), i tals que \(A\) admet una aplicació de retorn.
         Aleshores direm que \(A\) és un gràfic.
     \end{definition}
     \begin{theorem}[Teorema de Poincaré-Bendixson]
-        \labelname{Teorema de Poincaré-Bendixson}\label{thm:Teorema de Poincaré-Bendixson}
+        \labelname{Teorema de Poincaré-Bendixson}\label{thm:Teorema-de-Poincare-Bendixson}
         Siguin \(\dot{x}=f(x)\) una equació diferencial en \(\Omega\subseteq\mathbb{R}^{2}\) amb un nombre finit de punts crítics i \(\tancat{K}\subseteq\Omega\) un compacte tal que \(\gamma^{+}(x)\subseteq\tancat{K}\).
         Aleshores
         \begin{enumerate}
-            \item\label{enum1:thm:Teorema de Poincaré-Bendixson} si \(\omega(x)\) només conté punts crítics tenim que \(\omega(x)=\{p\}\).
-            \item\label{enum2:thm:Teorema de Poincaré-Bendixson} si \(\omega(x)\) conté punts crítics i punts regulars tenim que \(\omega(x)\) és un gràfic.
-            \item\label{enum3:thm:Teorema de Poincaré-Bendixson} si \(\omega(x)\) no conté punts crítics tenim que \(\omega(x)\) és una òrbita periòdica.
+            \item\label{enum1:thm:Teorema-de-Poincare-Bendixson} si \(\omega(x)\) només conté punts crítics tenim que \(\omega(x)=\{p\}\).
+            \item\label{enum2:thm:Teorema-de-Poincare-Bendixson} si \(\omega(x)\) conté punts crítics i punts regulars tenim que \(\omega(x)\) és un gràfic.
+            \item\label{enum3:thm:Teorema-de-Poincare-Bendixson} si \(\omega(x)\) no conté punts crítics tenim que \(\omega(x)\) és una òrbita periòdica.
         \end{enumerate}
     \end{theorem}
     \begin{proof}
-%            Aquest enunciat té sentit pel Teorema \myref{thm:propietats topològiques dels omega-límits}. %TODO
+%            Aquest enunciat té sentit pel Teorema \myref{thm:propietats-topologiques-dels-omega-limits}. %TODO
     \end{proof}
 %    \begin{definition}[Corona circular]
 %        \labelname{corona circular}\label{def:corona circular}
 %    \end{definition}
     \begin{theorem}
-        \label{thm:dins d'una òrbita periòdica hi ha un punt crític}
+        \label{thm:dins-duna-orbita-periodica-hi-ha-un-punt-critic}
         Sigui \(\varphi\colon\mathbb{R}\longrightarrow\mathbb{R}^{2}\) una òrbita periòdica d'una equació diferencial \(\dot{x}=f(x)\).
         Aleshores existeix un \(p\in\interior(\varphi(\mathbb{R}))\) tal que \(p\) és un punt crític.
     \end{theorem}
@@ -173,7 +173,7 @@
     \end{proof}
     \subsection{Criteri de Bendixson-Dulac}
     \begin{theorem}[Criteri de Bendixson-Dulac]
-        \labelname{criteri de Bendixson-Dulac}\label{thm:Criteri de Bendixson-Dulac}
+        \labelname{criteri de Bendixson-Dulac}\label{thm:Criteri-de-Bendixson-Dulac}
     \end{theorem}
     \begin{proof}
         %TODO
@@ -187,7 +187,7 @@
 \section{Equacions en derivades parcials de primer ordre}
     \subsection{Equació general de primer ordre}
     \begin{definition}[Equació en derivades parcials de primer ordre]
-        \labelname{equació en derivades parcials de primer ordre}\label{def:equació en derivades parcials de primer ordre}
+        \labelname{equació en derivades parcials de primer ordre}\label{def:equacio-en-derivades-parcials-de-primer-ordre}
         Siguin \(\Omega\subseteq\mathbb{R}^{2n+1}\) un obert i \(F\colon\Omega\longrightarrow\mathbb{R}\) una funció.
         Aleshores, denotant
         \[
@@ -200,7 +200,7 @@
         és una equació en derivades parcials de primer ordre sobre \(\Omega\).
     \end{definition}
     \begin{definition}[Solució d'una equació en derivades parcials]
-        \labelname{solució d'una equació en derivades parcials}\label{def:solució d'una equació en derivades parcials}
+        \labelname{solució d'una equació en derivades parcials}\label{def:solucio-duna-equacio-en-derivades-parcials}
         Siguin
         \[
             F(x_{1},\dots,x_{n},u(x),u_{1}(x),\dots,u_{n}(x))=0
@@ -214,7 +214,7 @@
     \end{definition}
     \subsection{Equacions quasi-lineals de primer ordre}
     \begin{definition}[Equació quasi-lineal]
-        \labelname{equació diferencial quasi-lineal}\label{def:equació diferencial quasi lineal}
+        \labelname{equació diferencial quasi-lineal}\label{def:equacio-diferencial-quasi-lineal}
         Siguin \(\Omega\subseteq\mathbb{R}^{n}\times\mathbb{R}\) un obert, \(\{P_{i}\}_{i=1}^{N}\) una família de funcions de \(\Omega\) a \(\mathbb{R}\) i \(R\colon\Omega\longrightarrow\mathbb{R}\) una funció.
         Aleshores direm que l'expressió
         \[
