@@ -70,7 +70,7 @@
         \]
         amb~\(t_{i}<\xi_{i,j}<t_{i+1}\), per a tot~\(i\in\{0,\dots,n-1\},\ j\in\{1,\dots,m\}\).
         Per tant
-        \begin{equation}\label{eq:1}
+        \begin{equation}\label{prop:els arcs de classe c1 són rectificables:eq}
         \Long(P_{n})=\sum_{i=0}^{n-1}(t_{i+1}-t_{i})\sqrt{\sum_{j=1}^{m}\left(x_{j}'(\xi_{i,j})\right)^2}.
         \end{equation}
 
@@ -81,7 +81,7 @@
         \]
 
         I com que~\(t_{i}<\xi_{i,j}<t_{i+1}\) tenim que~\(\xi_{i,j}=t_{i}\) per a tot~\(j\in\{1,\dots,m\}\).
-        Així veiem que si~\(n\to\infty\) podem reescriure \eqref{eq:1} com
+        Així veiem que si~\(n\to\infty\) podem reescriure \eqref{prop:els arcs de classe c1 són rectificables:eq} com
         \begin{displaymath}
         \Long(P_{n})=\lim_{n\to\infty}\sum_{i=0}^{n-1}(t_{i+1}-t_{i})\norm{f'(t_{i})}=\int_{a}^{b}\norm{f'(t)}\diff t.
         \end{displaymath}
@@ -389,7 +389,7 @@
             df(a)(\vec{h})=\sum_{i=1}^{d}h_{i}df(a)(\vec{e_{i}})=\sum_{i=1}^{d}h_{i}D_{i}f(a),
         \]
         i si~\(f(a)=(f_{1}(a),\dots,f_{m}(a))\),
-        \begin{equation}\label{eq:2}
+        \begin{equation}\label{prop:la matriu jacobiana d'una funció és la matriu associada a la seva diferencial:eq1}
         D_{i}f(a)=
         \left[\begin{matrix}
         D_{i}f_{1}(a)\\
@@ -406,7 +406,7 @@
         h_{1}\\\vdots\\h_{d}
         \end{matrix}
         \right].\]
-        On, recordant \eqref{eq:2},
+        On, recordant \eqref{prop:la matriu jacobiana d'una funció és la matriu associada a la seva diferencial:eq1},
         \[\left[\begin{matrix}
         D_{1}f(a)~\cdots~D_{d}f(a)
         \end{matrix}\right]=
@@ -554,7 +554,7 @@
     \end{observation}
     \begin{definition}[Extrems relatius i punts crítics]
         \labelname{extrem relatiu}\label{def:extrems relatius}
-        \labelname{punt crític}\label{punts crítics}
+        \labelname{punt crític}\label{def:punts crítics}
         Sigui~\(U\subseteq\mathbb{R}^{d}\) un obert,~\(a\in U\) un punt i~\(f\colon U\to\mathbb{R}\) una funció escalar.
         Direm que el punt~\(a\) és un extrem relatiu de~\(f\) si hi ha una bola de radi~\(r>0\) centrada en el punt~\(a\),~\(\B(a,r)\), tal que, per a tot~\(x\in\B(a,r)\),~\(f(a)\geq f(x)\) (direm que~\(a\) és un màxim relatiu) o tal que~\(f(a)\leq f(x)\) (direm que~\(a\) és un mínim relatiu).
 
@@ -1062,10 +1062,12 @@
     \end{theorem}
     \begin{proof}
         Siguin~\(\lambda_{1},\dots,\lambda_{k}\), aleshores considerem el següent sistema d'equacions lineals
-        \begin{equation}\label{eq:4}
+        \begin{equation}\label{thm:Multiplicadors de Lagrange:eq1}
         \sum_{j=1}^{k}\lambda_{j}D_{i}g_{j}(a)=-D_{i}f(a)\quad\forall i\in\{1,\dots,k\}
         \end{equation}
-        Com que~\(g_{1},\dots,g_{k}\) són funcionalment independents en~\(a\), la matriu formada pels gradients de~\(g_{1},\dots,g_{k}\) en~\(a\) té rang~\(k\) (proposició \myref{prop:dependència funcional 4 punts}) el sistema d'equacions lineals \eqref{eq:4} té una única solució.
+        Com que~\(g_{1},\dots,g_{k}\) són funcionalment independents en~\(a\),
+        la matriu formada pels gradients de~\(g_{1},\dots,g_{k}\) en~\(a\) té
+        rang~\(k\) (proposició \myref{prop:dependència funcional 4 punts}) el sistema d'equacions lineals \eqref{thm:Multiplicadors de Lagrange:eq1} té una única solució.
         Ara només ens cal veure que aquests mateixos reals~\(\lambda_{1},\dots,\lambda_{k}\) també són solució de les~\(m=d-k\) equacions restants.
 
         Per fer això ens caldrà el \myref{thm:Funció implícita}.
@@ -1189,11 +1191,11 @@
             d^{n}f(a)(\vec{v}_{n}\dots\vec{v}_{1})=\frac{\partial^{n}f}{\partial \vec{v}_{n}\cdots\partial\vec{v}_{1}}=D_{\vec{v}_{n},\dots,\vec{v}_{1}}f(a).
         \]
     \end{definition}
-    \begin{theorem}Siguin~\(U\subseteq\mathbb{R}^{d}\) un obert i~\(f\colon U\to\mathbb{R}^{d}\) una funció~\(2\)-vegades diferenciable en~\(a\in U\), aleshores
+    \begin{theorem}
+        Siguin~\(U\subseteq\mathbb{R}^{d}\) un obert i~\(f\colon U\to\mathbb{R}^{d}\) una funció~\(2\)-vegades diferenciable en~\(a\in U\), aleshores
         \[
             D_{\vec{v},\vec{u}}f(a)=D_{\vec{u},\vec{v}}f(a).
         \]
-        \begin{note}
     \begin{proof}
         Notem que podem dir~\(f(x)=(f_{1}(x),\dots,f_{m}(x))\), on~\(f_{1},\dots,f_{m}\) són funcions escalars definides en~\(U\), i per la proposició \myref{prop:diferenciable iff components diferenciables} només cal que fem la demostració pel cas~\(m=1\), ja que implicarà el general.
         També observem que podem donar un canvi de variables on els vectors~\(\vec{v},\vec{u}\) siguin els nous eixos de coordenades,~\(\vec{e}_{1},\vec{e}_{2}\) respectivament.
@@ -1207,14 +1209,14 @@
         Q(h)=f(h,h)-f(h,0)-(f(0,h)-f(0,0))
         \end{equation}
         Si fem~\(A(t)=f(t,h)-f(t,0)\) tenim~\(Q(h)=A(h)-A(0)\), i pel \myref{thm:TVM} existeix un escalar~\(0<\xi<h\) tal que
-        \begin{equation}\label{eq:5}
+        \begin{equation}\label{thm:derivar commuta:eq1}
         A(h)-A(0)=hA'(\xi)=h(D_{1}f(\xi,h)-D_{1}f(\xi,0))
         \end{equation}
         i com que, per hipòtesi,~\(D_{1}f\) és diferenciable en~\((0,0)\), per l'observació \myref{obs:diferencial defineix espai tangent} podem escriure,
         \[
             D_{1}f(x,y)=D_{1}f(0,0)+xD_{1,1}f(0,0)+yD_{2,1}f(0,0)+\omicron(\norm{x,y}).
         \]
-        Ho apliquem a \eqref{eq:5} i obtenim
+        Ho apliquem a \eqref{thm:derivar commuta:eq1} i obtenim
         \begin{multline*}
         hA'(c)=h\big(D_{1}f(0,0)+\xi D_{1,1}f(0,0)+\\+hD_{2,1}f(0,0)-D_{1}f(0,0)-\xi D_{1,1}f(0,0)+\omicron(h)\big)
         \end{multline*}
@@ -1239,8 +1241,9 @@
             D_{2,1}f(0,0)=D_{1,2}f(0,0).\qedhere
         \]
     \end{proof}
-            Sospito que una demostració ``més general'' seria similar a la del \myref{thm:Condició suficient per diferenciable}, per si algun valent no ha quedat satisfet.
-        \end{note}
+    \begin{note}
+        Sospito que una demostració ``més general'' seria similar a la del \myref{thm:Condició suficient per diferenciable}, per si algun valent no ha quedat satisfet.
+    \end{note}
     \end{theorem}
     \begin{corollary}\label{obs:diferencial bilineal}
         \(d^{2}f(a)\) és una aplicació bilineal simètrica.
@@ -1274,7 +1277,7 @@
         \end{align*}
         Aleshores~\(f(b)-f(a)=g(1)-g(0)\).
         Aleshores, amb~\(\xi\in(0,1)\), pel \myref{thm:Teorema de Taylor} tenim
-        \begin{equation}\label{eq:6}
+        \begin{equation}\label{thm:Formula de Taylor multivariable:eq1}
         g(1)-g(0)=\sum_{k=1}^{n-1}\frac{1}{k!}g^{(k)}(0)+\frac{1}{m!}g^{(n)}(\xi).
         \end{equation}
         Si pensem, amb~\(h(\xi)=a+\xi(b-a)\), que~\(g(\xi)=f(p(\xi))\), ha de ser~\(p(\xi)=(p_{1}(\xi),\dots,p_{d}(\xi))\), i si denotem~\(a=(a_{1},\dots,a_{d}),b=(b_{1},\dots,b_{d})\), tenim, amb~\(i\in\{1,\dots,d\}\), que~\(\frac{\partial p}{\partial x_{i}}(\xi)=b_{i}-a_{i}\).
@@ -1290,7 +1293,7 @@
         \[
             g^{(n)}(t)=f^{(n)}[p(\xi),b-a],
         \]
-        i per tant, recordant \eqref{eq:6}, tenim
+        i per tant, recordant \eqref{thm:Formula de Taylor multivariable:eq1}, tenim
         \[
             f(b)-f(a)=\sum_{k=1}^{n-1}\frac{1}{k!}f^{(k)}[a,b-a]+\frac{1}{n}f^{(n)}[z,b-a]
         \]
@@ -1342,7 +1345,7 @@
             f(a+t)-f(a)=\tfrac{1}{2}f^{(2)}[a,t]+\norm{t^{2}}\omicron(t).
         \]
         Per tant
-        \begin{equation}\label{eq:7}
+        \begin{equation}\label{prop:criteris de la segona diferencial sobre maxims i minims relatius:eq1}
         f(a+t)-f(a)=Q(t)+\norm{t}^{2}\omicron(t)\geq m\norm{t}^{2}+\norm{t}^{2}\omicron(t).
         \end{equation}
         Com que~\(\omicron(t)\to0\) és si i només si~\(t\to0\), existeix un~\(\varepsilon>0\) tal que, amb~\(0<\norm{t}<\varepsilon\) tenim~\(\omicron(t)<\frac{m}{2}\), i~\(0\leq\norm{t}^{2}\omicron(t)<\frac{m}{2}\norm{t}^{2}\), i així
@@ -1353,7 +1356,7 @@
         Ara només ens queda demostrar \eqref{enum:criteris de la segona diferencial sobre maxims i minims relatius 3} i \eqref{enum:criteris de la segona diferencial sobre maxims i minims relatius 4}, de nou, només ens caldrà demostrar-ne una, ja que l'altre demostració serà anàloga.
         Suposem doncs que~\(a\) és un mínim relatiu.
 
-        Seguint l'argument sobre la fórmula de Taylor per a múltiples variables que hem fet a la primera meitat d'aquesta demostració arribem a la desigualtat \eqref{eq:7} i tenim
+        Seguint l'argument sobre la fórmula de Taylor per a múltiples variables que hem fet a la primera meitat d'aquesta demostració arribem a la desigualtat \eqref{prop:criteris de la segona diferencial sobre maxims i minims relatius:eq1} i tenim
         \[
             f(a+t)-f(a)\leq m\norm{t}^{2}+\norm{t}^{2}\omicron(t).
         \]

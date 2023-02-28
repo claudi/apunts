@@ -988,7 +988,7 @@
         Siguin~\(e\) l'element neutre de~\(G_{1}\) i~\(e'\) l'element neutre de~\(G_{2}\).
         Definim l'aplicació
         \begin{align}
-        \label{eq:8}
+        \label{thm:Teorema fonamental dels isomorfismes:eq1}
         \varphi\colon G_{1}/\ker(f)&\longleftrightarrow\Ima(f)\\
         [x]&\longmapsto f(x)\nonumber
         \end{align}
@@ -999,19 +999,19 @@
         Per tant
         \begin{align*}
         \varphi([x'])&=\varphi([x\ast h])\tag{Definició \eqref{def:producte entre classes versió grups}}\\
-        &=f(x\ast h)\tag{Definició \eqref{eq:8}}\\
+        &=f(x\ast h)\tag{Definició \eqref{thm:Teorema fonamental dels isomorfismes:eq1}}\\
         &=f(x)\circ f(h)\tag{\myref{def:morfisme entre grups}}\\
         &=f(x)\circ e'\tag{\myref{def:nucli d'un morfisme entre grups}}\\
-        &=f(x)=\varphi([x])\tag{Definició \eqref{eq:8}}
+        &=f(x)=\varphi([x])\tag{Definició \eqref{thm:Teorema fonamental dels isomorfismes:eq1}}
         \end{align*}
         i per tant~\(\varphi\) està ben definida.
         Veiem ara que~\(\varphi\) és un morfisme entre grups.
         Tenim que
         \begin{align*}
         \varphi([x]\ast[y])&=\varphi([x\ast y])\tag{Definició \eqref{def:producte entre classes versió grups}}\\
-        &=f(x\ast y)\tag{Definició \eqref{eq:8}}\\
+        &=f(x\ast y)\tag{Definició \eqref{thm:Teorema fonamental dels isomorfismes:eq1}}\\
         &=f(x)\circ f(y)\tag{\myref{def:morfisme entre grups}}\\
-        &=\varphi([x])\circ \varphi([y]),\tag{Definició \eqref{eq:8}}
+        &=\varphi([x])\circ \varphi([y]),\tag{Definició \eqref{thm:Teorema fonamental dels isomorfismes:eq1}}
         \end{align*}
         i per la definició de \myref{def:morfisme entre grups}~\(\varphi\) és un morfisme entre grups.
         Continuem demostrant que~\(\varphi\) és injectiva.
@@ -2418,7 +2418,7 @@
         Si~\(a\leq b\) implica~\(b=a\) per a tot~\(b\in{B}\) direm que~\(a\) és maximal per~\({B}\).
     \end{definition}
     \begin{axiom}[Lema de Zorn]
-        \label{lema de Zorn}
+        \label{lema:lema de Zorn}
         Sigui~\(\mathcal{A}\) amb~\(\leq\) una cadena tal que per a tot subconjunt~\(\mathcal{C}\subseteq\mathcal{A}\) la cadena~\(\mathcal{C}\) té alguna cota superior.
         Aleshores~\(\mathcal{A}\) té algun element maximal.
     \end{axiom}
@@ -2448,7 +2448,7 @@
         Aleshores~\(1\in J\), i per tant~\(1\in I\) per a cert~\(I\in A\), però això no pot ser ja que si~\(I\in A\) s'ha de complir~\(I\neq A\), i per tant~\(1\notin I\).
         Per tant~\(J\neq R\) i tenim que~\(J\in A\).
 
-        Ara bé, pel \myref{lema de Zorn} tenim que existeix~\(M\in\mathcal{C}\) tal que per a tot~\(I\in\mathcal{C}\) tenim~\(I\subseteq M\) i per la definició d'\myref{def:ideal maximal} tenim que~\(M\) és un ideal maximal de~\(R\).
+        Ara bé, pel \myref{lema:lema de Zorn} tenim que existeix~\(M\in\mathcal{C}\) tal que per a tot~\(I\in\mathcal{C}\) tenim~\(I\subseteq M\) i per la definició d'\myref{def:ideal maximal} tenim que~\(M\) és un ideal maximal de~\(R\).
     \end{proof}
     \subsection{Divisibilitat}
     \begin{definition}[Divisors i múltiples]
