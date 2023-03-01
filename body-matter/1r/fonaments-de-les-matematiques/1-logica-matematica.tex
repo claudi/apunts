@@ -1,0 +1,317 @@
+\documentclass[../fonaments-de-les-matematiques.tex]{subfiles}
+
+\begin{document}
+\chapter{Lògica matemàtica}
+\section{Els fonaments}
+    \subsection{Processos fonamentals de les matemàtiques}
+    Definirem de manera informal els conceptes d'\emph{objecte matemàtic}, de \emph{relació} entre objectes i de \emph{demostració} d'una relació.
+    Aquests són els tres processos fonamentals de les matemàtiques.
+
+    Els \emph{objectes matemàtics} són abstraccions de conceptes.
+    Anomenem a les possibles propietats d'aquests objectes \emph{relacions}.
+    Aquestes poden ser o bé vertaderes o bé falses.
+
+    Anomenem a algunes d'aquestes relacions \emph{axiomes}, que són relacions que prenem com a vertaderes des d'un principi.
+    Per determinar la veracitat d'altres relacions empararem les \emph{demostracions}.
+    Direm que una relació és vertadera quan es pot deduir a partir dels axiomes amb una demostració, que és una successió d'arguments rigorosos per convèncer-nos que una relació és vertadera.
+    \subsection{Operacions lògiques elementals}
+    \begin{definition}[Disjunció]
+        \labelname{disjunció}\label{def:disjuncio}
+        Siguin~\(R\) i~\(S\) dues relacions.
+        Aleshores definim una relació anomenada disjunció% que només és vertadera quan almenys una de les relacions~\(R\) i~\(S\) és vertadera
+        .
+        L'escriurem~\(R\lor S\), i ho llegirem~``\(R\) o~\(S\)''.
+    \end{definition}
+    \begin{definition}[Negació]
+        \labelname{negació}\label{def:negacio}
+        Sigui~\(R\) una relació.
+        Aleshores definim una relació anomenada negació% que només és vertadera quan~\(R\) és falsa
+        .
+        L'escriurem~\(\lnot R\) i ho llegirem~``no~\(R\)''.
+    \end{definition}
+    \begin{definition}[Conjunció]
+        \labelname{conjunció}\label{def:conjuncio}
+        Siguin~\(R\) i~\(S\) dues relacions.
+        Aleshores definim una relació anomenada conjunció definida com
+        \[
+            R\land S=\lnot((\lnot R)\lor(\lnot S)).
+        \]
+        Ho llegirem~``\(R\) i~\(S\)''.
+    \end{definition}
+    \begin{definition}[Disjunció excloent]
+        \labelname{disjunció excloent}\label{def:disjuncio-excloent}
+        Siguin~\(R\) i~\(S\) dues relacions.
+        Aleshores definim una relació anomenada disjunció excloent definida com
+        \[
+            R\lxor S=(R\land(\lnot S))\lor((\lnot R)\land S).
+        \]
+        Ho llegirem~``o bé~\(R\) o bé~\(S\)''.
+    \end{definition}
+    \begin{definition}[Implicació]
+        \labelname{implicació}\label{def:implicacio}
+        Siguin~\(R\) i~\(S\) dues relacions.
+        Aleshores definim una relació anomenada implicació definida com
+        \[
+            R\implica S=S\lor(\lnot R).
+        \]
+        Ho llegirem~``\(R\) implica~\(S\)'' o~``si~\(R\) aleshores~\(S\)''.
+    \end{definition}
+    \begin{definition}[Doble implicació]
+        \labelname{doble implicació}\label{def:doble-implicacio}
+        Siguin~\(R\) i~\(S\) dues relacions.
+        Aleshores definim una relació anomenada doble implicació definida com
+        \[
+            R\sii S=(R\implica S)\land(S\implica R).
+        \]
+        Ho llegirem com~``\(R\) si i només si~\(S\)'' o~``\(R\) és equivalent a~\(S\)''.
+    \end{definition}
+    \subsection{Relacions vertaderes}
+    \begin{axiom}
+        \label{axiom:relacions-1}
+        Sigui~\(R\) una relació.
+        Aleshores la relació
+        \[
+            (R\lor R)\implica R
+        \]
+        és vertadera.
+    \end{axiom}
+    \begin{axiom}
+        \label{axiom:relacions-2}
+        Siguin~\(R\) i~\(S\) dues relacions.
+        Aleshores la relació
+        \[
+            R\implica(R\lor S)
+        \]
+        és vertadera.
+    \end{axiom}
+    \begin{axiom}
+        \label{axiom:relacions-3}
+        Siguin~\(R\) i~\(S\) dues relacions.
+        Aleshores la relació
+        \[
+            (R\lor S)\implica(S\lor R)
+        \]
+        és vertadera.
+    \end{axiom}
+    \begin{axiom}
+        \label{axiom:relacions-4}
+        Siguin~\(R\),~\(S\) i~\(T\) tres relacions.
+        Aleshores la relació
+        \[
+            (R\implica S)\implica((R\lor T)\implica(S\lor T))
+        \]
+        és vertadera.
+    \end{axiom}
+    \begin{axiom}
+        \label{axiom:relacions-5}
+        Siguin~\(R\) i~\(S\) dues relacions tals que~\(R\) i~\(R\implica S\) siguin vertaderes.
+        Aleshores~\(S\) és vertadera.
+    \end{axiom}
+    \begin{definition}[Relació falsa]
+        Sigui~\(R\) una relació tal que~\(\lnot R\) sigui vertadera.
+        Aleshores direm que~\(R\) és falsa.
+    \end{definition}
+    \subsection{Tautologies}
+    \begin{tautology}
+        \label{taut:transitivitat-implicacions}
+        Siguin~\(R\),~\(S\) i~\(T\) tres relacions tals que~\(R\implica S\) i~\(S\implica T\) siguin vertaderes.
+        Aleshores la relació~\(R\implica T\) és vertadera.
+    \end{tautology}
+    \begin{proof}
+        Per l'axioma \myref{axiom:relacions-4} la relació
+        \[
+            (S\implica T)\implica(S\lor(\lnot R)\implica(T\lor(\lnot R)))
+        \]
+        és vertadera.
+        Ara bé, per la definició d'\myref{def:implicacio} això ho podem escriure com
+        \[
+            (S\implica T)\implica((R\implica S)\implica(R\implica T))
+        \]
+        i com que, per hipòtesi, la relació~\(S\implica T\) és vertadera per l'axioma \myref{axiom:relacions-5} tenim que la relació~\((R\implica S)\implica(R\implica T)\) és vertadera, i com que, de nou per hipòtesi, tenim que la relació~\(R\implica S\) és vertadera tenim per l'axioma \myref{axiom:relacions-5} que la relació~\(R\implica T\) és vertadera, com volíem veure.
+    \end{proof}
+    \begin{tautology}[Tercer exclòs]
+        \labelname{tercer exclòs}\label{taut:R-o-no-R-es-vertadera}\label{taut:tercer-exclos}
+        Sigui~\(R\) una relació.
+        Aleshores la relació~\(R\lor(\lnot R)\) és vertadera.
+    \end{tautology}
+    \begin{proof}
+        La relació~\(R\lor(\lnot R)\) és equivalent, per la definició d'\myref{def:implicacio}, a~\(R\implica R\).
+        Per l'axioma \myref{axiom:relacions-1} tenim que la relació~\((R\lor R)\implica R\) és vertadera, i per l'axioma \myref{axiom:relacions-2} tenim que la relació~\(R\implica(R\lor R)\) és vertadera.
+        Per tant, per la tautologia \myref{taut:transitivitat-implicacions}, veiem que~\(R\implica R\).
+    \end{proof}
+    \begin{tautology}
+        \label{taut:disjuncio-es-vertadera-si-una-de-les-relaciones-es-vertadera}
+        Siguin~\(R\) i~\(S\) dues relacions tals que~\(R\) sigui vertadera.
+        Aleshores les relacions~\(R\lor S\) i~\(S\lor R\) són vertaderes.
+    \end{tautology}
+    \begin{proof}
+        Per l'axioma \myref{axiom:relacions-2} tenim que~\(R\implica(R\lor S)\) és vertadera, i per l'axioma \myref{axiom:relacions-3} tenim que~\((R\lor S)\implica(S\lor R)\) és vertadera.
+
+        Ara bé, per hipòtesi tenim que~\(R\) és vertadera, i per l'axioma \myref{axiom:relacions-5} veiem que les relacions~\(R\lor S\) i~\(S\lor R\) són vertaderes.
+    \end{proof}
+    \begin{tautology}
+        \label{taut:R-es-equivalent-a-no-no-R}
+        Sigui~\(R\) una relació.
+        Aleshores la relació~\(R\sii\lnot(\lnot R)\) és vertadera.
+    \end{tautology}
+    \begin{proof}
+        Per la definició de \myref{def:doble-implicacio} hem de veure que la relació
+        \[
+            (\lnot(\lnot R)\lor(\lnot R))\land(R\lor(\lnot(\lnot(\lnot R)))
+        \]
+        és vertadera.
+        Ara bé, si~\(R\) és vertadera trobem per la definició de \myref{def:negacio} que~\(\lnot R\) és falsa, i aleshores per la tautologia del \myref{taut:R-o-no-R-es-vertadera} les relacions~\(\lnot(\lnot R)\lor(\lnot R)\) i~\(R\lor(\lnot(\lnot(\lnot R))\) són vertaderes
+
+        Si~\(R\) és falsa trobem per la definició de \myref{def:negacio} que~\(\lnot R\) és vertadera, aleshores, de nou per la tautologia del \myref{taut:R-o-no-R-es-vertadera}, les relacions~\(\lnot(\lnot R)\lor(\lnot R)\) i~\(R\lor(\lnot(\lnot(\lnot R))\) són vertaderes, com volíem veure.
+    \end{proof}
+    \begin{tautology}[Primera llei de De Morgan]
+        \labelname{primera llei de De Morgan}\label{taut:primera-llei-de-De-Morgan}
+        Siguin~\(R\) i~\(S\) dues relacions.
+        Aleshores la relació
+        \[
+            \lnot(R\lor S)\sii((\lnot R)\land(\lnot S))
+        \]
+        és vertadera.
+    \end{tautology}
+    \begin{proof}
+        Per la definició de \myref{def:conjuncio} volem veure que la relació
+        \[
+            \lnot(R\lor S)\sii\lnot((\lnot(\lnot R))\lor(\lnot(\lnot S)))
+        \]
+        és vertadera.
+        Aleshores, per la tautologia del \myref{taut:R-o-no-R-es-vertadera} això és equivalent a veure que la relació
+        \[
+            \lnot(R\lor S)\sii\lnot(R\lor S)
+        \]
+        és vertadera, i per l'axioma \myref{axiom:relacions-3} hem acabat.
+    \end{proof}
+    \begin{tautology}[Segona llei de De Morgan]
+        \labelname{segona llei de De Morgan}\label{taut:segona-llei-de-De-Morgan}
+        Siguin~\(R\) i~\(S\) dues relacions.
+        Aleshores la relació
+        \[
+            \lnot(R\land S)\sii((\lnot R)\lor(\lnot S))
+        \]
+        és vertadera.
+    \end{tautology}
+    \begin{proof}
+        Per la definició de \myref{def:conjuncio} hem de veure que la relació
+        \[
+            ((\lnot R)\lor(\lnot S))\sii\lnot((\lnot(\lnot R))\land(\lnot (\lnot S))),
+        \]
+        i per la tautologia \myref{taut:R-es-equivalent-a-no-no-R} això és equivalent a veure que la relació
+        \[
+            ((\lnot R)\lor(\lnot S))\sii\lnot(R\land S),
+        \]
+        que és conseqüència de la \myref{taut:primera-llei-de-De-Morgan}.
+    \end{proof}
+    \begin{tautology}[Llei de les contrarecíproques]
+        \labelname{la llei de les contrarecíproques}\label{taut:llei-de-les-contrareciproques}
+        Siguin~\(R\) i~\(S\) dues relacions.
+        Aleshores la relació
+        \[
+            (R\implica S)\sii((\lnot S)\implica(\lnot R))
+        \]
+        és vertadera.
+    \end{tautology}
+    \begin{proof}
+        Per la definició d'\myref{def:implicacio} hem de veure que la relació
+        \[
+            (S\lor(\lnot R))\sii((\lnot R)\lor(\lnot(\lnot S)))
+        \]
+        és vertadera.
+        Ara bé, per la tautologia \myref{taut:R-es-equivalent-a-no-no-R} tenim que això és equivalent a veure que la relació
+        \[
+            (S\lor(\lnot R))\sii((\lnot R)\lor S)
+        \]
+        és vertadera, i pels axiomes \myref{axiom:relacions-3} i \myref{axiom:relacions-4} i la definició de \myref{def:doble-implicacio} tenim que aquesta relació és vertadera, com volíem veure.
+    \end{proof}
+    \begin{tautology}
+        \label{taut:condicio-equivalent-a-conjuncio}
+        Siguin~\(R\) i~\(S\) dues relacions.
+        Aleshores la relació~\(R\land S\) és vertadera si i només si~\(R\) és vertadera i~\(S\) és vertadera.
+    \end{tautology}
+    \begin{proof}
+        Veiem primer l'implicació cap a la dreta (\(\implica\)).
+        Suposem doncs que~\(R\) i~\(S\) són vertaderes.
+        Per l'axioma \myref{axiom:relacions-2} la relació~\(S\lor(\lnot R)\) és vertadera i, per la definició de \myref{def:implicacio} tenim que~\(R\implica S\) és vertadera.
+        Ara bé, per la tautologia de \myref{taut:llei-de-les-contrareciproques} tenim que la relació~\((\lnot S)\implica(\lnot R)\) és vertadera, i pels axiomes \myref{axiom:relacions-4} i \myref{axiom:relacions-1} tenim que la relació
+        \[
+            ((\lnot S)\lor(\lnot R))\implica(\lnot R)
+        \]
+        és vertadera, i de nou per la tautologia de \myref{taut:llei-de-les-contrareciproques} trobem que la relació
+        \[
+            (\lnot(\lnot R))\implica(\lnot(\lnot S)\lor(\lnot R))
+        \]
+        és vertadera, i per la tautologia \myref{taut:R-es-equivalent-a-no-no-R} trobem que la relació
+        \[
+            R\implica(\lnot((\lnot S)\lor(\lnot R)))
+        \]
+        és vertadera, i per la definició de \myref{def:conjuncio} això és equivalent a que la relació
+        \[
+            R\implica(R\land S)
+        \]
+        és vertadera, i per tant per l'axioma \myref{axiom:relacions-5} trobem que~\(R\land S\) és vertadera, com volíem veure.
+
+        Veiem ara l'implicació cap a l'esquerra (\(\implicatper\)).
+        Suposem doncs que la relació~\(R\land S\) és vertadera.
+        Per la tautologia de \myref{taut:llei-de-les-contrareciproques} tenim que la relació~\((R\land S)\implica S\) és vertadera si i només si la relació
+        \[
+            (\lnot R)\implica(\lnot(\lnot((\lnot R)\lor(\lnot S))))
+        \]
+        és vertadera.
+        Ara bé, per la tautologia \myref{taut:R-es-equivalent-a-no-no-R} tenim que això és equivalent a veure que la relació
+        \[
+            (\lnot R)\implica((\lnot R)\lor(\lnot S))
+        \]
+        és vertadera, que és conseqüència de l'axioma \myref{axiom:relacions-2}, i per tant la relació~\((R\land S)\implica R\) és vertadera.
+        La demostració del cas~\((R\land S)\implica S\) és anàloga.
+    \end{proof}
+    \begin{tautology}
+        \label{taut:condicions-per-disjuncio}
+        Siguin~\(R\) i~\(S\) dues relacions tals que~\(R\) sigui falsa i~\(R\lor S\) sigui vertadera.
+        Aleshores la relació~\(S\) és vertadera.
+    \end{tautology}
+    \begin{proof}
+        Per la tautologia \myref{taut:R-es-equivalent-a-no-no-R} tenim que la relació~\(R\implica(\lnot(\lnot R))\) és vertadera, i per l'axioma \myref{axiom:relacions-4} això és que la relació
+        \[
+            (R\lor S)\sii(\lnot(\lnot R)\lor S)
+        \]
+        és vertadera.
+        Ara bé, per la definició d'\myref{def:implicacio} tenim que això és equivalent a la relació
+        \[
+            (R\lor S)\sii((\lnot R)\implica S).
+        \]
+        I com que, per hipòtesi,~\(R\lor S\) i~\(\lnot R\) són vertaderes, tenim que~\(S\) és vertadera, com volíem veure.
+    \end{proof}
+    \begin{tautology}
+        \label{taut:disjuncio-excloent-1}
+        Siguin~\(R\) i~\(S\) dues relacions tals que~\(S\) sigui falsa i~\(R\lxor S\) sigui vertadera.
+        Aleshores~\(R\) és vertadera.
+    \end{tautology}
+    \begin{proof}
+        Tenim, per la definició de \myref{def:disjuncio-excloent}, que la relació
+        \[
+            (R\land(\lnot S))\lor((\lnot R)\land S)
+        \]
+        és vertadera.
+        Ara bé, com per hipòtesi~\(S\) és falsa per la tautologia \myref{taut:condicions-per-disjuncio} tenim que la relació~\((\lor R)\land S\) és falsa.
+        Per tant per la tautologia \myref{taut:condicio-equivalent-a-conjuncio} tenim que la relació~\(R\land(\lnot S)\) és vertadera, i per la tautologia \myref{taut:condicio-equivalent-a-conjuncio} tenim que~\(R\) és vertadera.
+    \end{proof}
+    \begin{tautology}
+        \label{taut:disjuncio-excloent-2}
+        Siguin~\(R\) i~\(S\) dues relacions tals que~\(R\) i~\(R\lxor S\) siguin vertaderes.
+        Aleshores~\(S\) és falsa.
+    \end{tautology}
+    \begin{proof}
+        Tenim, per la definició de \myref{def:disjuncio-excloent}, que la relació
+        \[
+            (R\land(\lnot S))\lor((\lnot R)\land S)
+        \]
+        és vertadera.
+        Com per hipòtesi la relació~\(R\) és vertadera, per la definició de \myref{def:negacio} tenim que~\(\lnot R\) és falsa.
+        I per la tautologia \myref{taut:condicio-equivalent-a-conjuncio} tenim que la relació~\((\lnot R)\land S\) és falsa, i per la tautologia \myref{taut:condicions-per-disjuncio} tenim que la relació~\(R\land(\lnot S)\) és vertadera.
+
+        Ara bé, de nou per la tautologia \myref{taut:condicio-equivalent-a-conjuncio}, tenim que la relació~\(\lnot S\) ha de ser vertadera, i per la definició de \myref{def:negacio} trobem que~\(S\) és falsa.
+    \end{proof}
+\end{document}

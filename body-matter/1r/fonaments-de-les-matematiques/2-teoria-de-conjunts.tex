@@ -1,0 +1,411 @@
+\documentclass[../fonaments-de-les-matematiques.tex]{subfiles}
+
+\begin{document}
+\chapter{Teoria de conjunts}
+\section{Conjunts}
+    \subsection{Elements i subconjunts}
+    Igual que en la secció anterior, només farem una introducció informal a la teoria de conjunts.
+
+    Definirem \emph{conjunt} com un objecte matemàtic, i entre conjunts la relació~\(\in\) de pertinència.
+    Interpretem la relació~\(x\in A\) com que~\(x\) és un \emph{element} de~\(A\) o que~\(x\) pertany a~\(A\).
+    Si la relació~\(x\in A\) és falsa aleshores ho denotarem com~\(x\notin A\) i direm que~\(x\) no pertany a~\(A\).
+    \begin{axiom}[Axioma d'Extensionalitat]
+        \labelname{axioma d'extensionalitat}\label{axiom:axioma-dextensionalitat}
+        Siguin~\(A\) i~\(B\) dos conjunts tals que per a tot~\(x\) tenim~\(x\in A\) si i només si~\(x\in B\).
+        Aleshores~\(A=B\).
+    \end{axiom}
+    \begin{definition}[Subconjunt]
+        \labelname{subconjunt}\label{def:subconjunt}
+        Siguin~\(A\) i~\(B\) dos conjunts tals que per a tot~\(x\in B\) tenim~\(x\in A\).
+        Aleshores direm que~\(B\) és un subconjunt de~\(A\) i ho denotarem~\(B\subseteq A\).
+    \end{definition}
+    \begin{theorem}[Doble inclusió]
+        \labelname{Teorema de la doble inclusió}\label{thm:doble-inclusio}
+        Siguin~\(A\) i~\(B\) dos conjunts.
+        Aleshores~\(A=B\) si i només si~\(A\subseteq B\) i~\(B\subseteq A\).
+    \end{theorem}
+    \begin{proof}
+        Comencem veient que la condició és suficient (\(\implicatper\)).
+        Suposem doncs que~\(A\subseteq B\) i~\(B\subseteq A\).
+        Per la definició de \myref{def:subconjunt} tenim que si~\(x\in A\) aleshores~\(x\in B\), ja que per hipòtesi~\(A\subset B\).
+        De mateixa manera tenim que si~\(x\in B\) aleshores~\(x\in A\), ja que per hipòtesi~\(B\subseteq A\).
+        Per tant, per l'\myref{axiom:axioma-dextensionalitat} tenim que~\(A=B\).
+
+        Veiem ara que la condició és necessària (\(\implica\)).
+        Suposem doncs que~\(A=B\).
+        Tenim que si~\(x\in A\), aleshores~\(x\in B\), i per la definició de \myref{def:subconjunt} això és que~\(A\subseteq B\).
+        De mateixa manera, si~\(x\in B\) tenim~\(x\in A\), i de nou per la definició de \myref{def:subconjunt} tenim que~\(B\subseteq A\), com volíem veure.
+    \end{proof}
+    \begin{axiom}[Axioma del Conjunt Potència]
+        \labelname{axioma del conjunt potència}\label{axiom:conjunt-potencia}
+        Sigui~\(A\) un conjunt.
+        Aleshores existeix un conjunt~\(\mathcal{P}(A)\) tal que~\(B\subseteq A\) si i només si~\(B\in\mathcal{P}(A)\).
+    \end{axiom}
+    \begin{notation}
+        Denotarem els conjunts com claus separant els seus elements amb comes.
+        Per exemple, si tinguéssim un conjunt~\(X\) que conté únicament els elements~\(a\),~\(b\) i~\(c\) el podríem denotar com
+        \[
+            X=\{a,b,c\}.
+        \]
+
+        Si tots els elements de~\(X\) satisfan una relació~\(R\) denotarem
+        \[
+            X=\{x\mid x\text{ satisfà }R\}.
+        \]
+        %Per exemple, podríem construir el conjunt~\(X\) que té per elements els caràcters~\(\mathbb{A}\),~\(\mathbb{B}\),~\(\mathbb{C}\),~\(\mathbb{D}\),~\(\mathbb{E}\),~\(\mathbb{F}\),~\(\mathbb{G}\),~\(\mathbb{H}\),~\(\mathbb{I}\),~\(\mathbb{J}\),~\(\mathbb{K}\),~\(\mathbb{L}\),~\(\mathbb{M}\),~\(\mathbb{N}\),~\(\mathbb{O}\),~\(\mathbb{P}\),~\(\mathbb{Q}\),~\(\mathbb{R}\),~\(\mathbb{S}\),~\(\mathbb{T}\),~\(\mathbb{U}\),~\(\mathbb{V}\),~\(\mathbb{W}\),~\(\mathbb{X}\),~\(\mathbb{Y}\) i~\(\mathbb{Z}\); i el denotaríem com \[X=\{\mathbb{A}, \mathbb{B}, \mathbb{C}, \mathbb{D}, \mathbb{E}, \mathbb{F}, \mathbb{G}, \mathbb{H}, \mathbb{I}, \mathbb{J}, \mathbb{K}, \mathbb{L}, \mathbb{M}, \mathbb{N}, \mathbb{O}, \mathbb{P}, \mathbb{Q}, \mathbb{R}, \mathbb{S}, \mathbb{T}, \mathbb{U}, \mathbb{V}, \mathbb{W}, \mathbb{X}, \mathbb{Y}, \mathbb{Z}\}.\]
+    \end{notation}
+    \begin{axiom}[Axioma de Separació]
+        \labelname{axioma de separació}\label{axiom:axioma-de-separacio}
+        Siguin~\(A\) un conjunt i~\(R\) una relació.
+        Aleshores el conjunt~\(\{x\mid(x\in A)\land(x\text{ satisfà }R)\}\) existeix.
+    \end{axiom}
+    \begin{proposition}
+        \label{prop:conjunt-buit}
+        Existeix un únic conjunt sense elements.
+    \end{proposition}
+    \begin{proof}
+        Considerem un conjunt~\(A\).
+        Aleshores, per l'\myref{axiom:axioma-de-separacio} tenim que existeix un conjunt
+        \[
+            X=\{x\mid(x\in A)\land(x\notin A)\},
+        \]
+        i per la tautologia \myref{taut:condicio-equivalent-a-conjuncio} tenim que la relació~\((x\in A)\land(x\notin A)\) és falsa.
+        Per tant el conjunt~\(X\) no té elements.
+
+        La unicitat la tenim per l'\myref{axiom:axioma-dextensionalitat}.
+    \end{proof}
+    \begin{definition}[Conjunt buit]
+        Direm que el conjunt que no té elements és el conjunt buit, i el denotarem com~\(\emptyset\).
+
+        Aquesta definició té sentit per la proposició \myref{prop:conjunt-buit}.
+    \end{definition}
+    \begin{axiom}[Axioma de Regularitat]
+        \labelname{axioma de regularitat}\label{axiom:axioma-de-regularitat}
+        Sigui~\(A\) un conjunt.
+        Aleshores tenim que~\(\emptyset\subseteq A\).
+    \end{axiom}
+    \subsection{Unió i intersecció de conjunts}
+    \begin{axiom}[Axioma d'Infinitud]
+        Existeix un conjunt infinit.
+    \end{axiom}
+    \begin{axiom}[Axioma de la Unió]
+        \labelname{axioma de la unió}\label{axiom:axioma-de-la-unio}
+        Sigui~\(\{A_{i}\}_{i\in I}\) és una família de conjunts.
+        Aleshores el conjunt~\(\{x\mid x\in A_{i}\text{ per a cert }i\in I\}\) existeix.
+    \end{axiom}
+    \begin{definition}[Unió de conjunts]
+        \labelname{unió de conjunts}\label{def:unio-de-conjunts}
+        Siguin~\(A\) i~\(B\) dos conjunts.
+        Aleshores direm que el conjunt
+        \[
+            A\cup B=\{x\mid(x\in A)\lor(x\in B)\}
+        \]
+        és la unió de~\(A\) i~\(B\).
+
+        Aquesta definició té sentit per l'\myref{axiom:axioma-de-la-unio}.
+    \end{definition}
+    \begin{definition}[Intersecció de conjunts]
+        \labelname{intersecció de conjunts}\label{def:interseccio-de-conjunts}
+        Siguin~\(A\) i~\(B\) dos conjunts.
+        Aleshores direm que el conjunt
+        \[
+            A\cap B=\{x\mid(x\in A)\land(x\in B)\}
+        \]
+        és la intersecció de~\(A\) i~\(B\).
+
+        Aquesta definició té sentit per l'\myref{axiom:axioma-de-separacio}.
+    \end{definition}
+    \begin{notation}
+        Si~\(\{A_{i}\}_{i\in I}\) és una família de conjunts, denotarem la unió de tots aquests com
+        \[
+            \bigcup_{i\in I}A_{i}=\{x\mid x\in A_{i}\text{ per a cert }i\in I\}.
+        \]
+        Denotem la intersecció de tots aquests com
+        \[
+            \bigcap_{i\in I}A_{i}=\{x\mid x\in A_{i}\text{ per a tot }i\in I\}.
+        \]
+    \end{notation}
+\section{Aplicacions entre conjunts}
+    \subsection{Aplicacions}
+    \begin{axiom}[Axioma del Parell]
+        \labelname{axioma del parell}\label{axiom:axioma-del-parell}
+        Per a qualsevol parella d'elements~\(a,b\) existeix un conjunt~\(\{a,b\}\) que conté únicament~\(a\) i~\(b\).
+    \end{axiom}
+    \begin{definition}[Parelles ordenades]
+        \labelname{parelles ordenades}\label{def:parelles-ordenades}
+        Siguin~\(a\) i~\(b\) dos elements.
+        Aleshores direm que~\((a,b)=\{a,\{a,b\}\}\) és una parella ordenada.
+
+        Aquesta definició té sentit per l'\myref{axiom:axioma-del-parell}.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:parelles-ordenades}
+        Siguin~\((a,b)\) i~\((c,d)\) dues parelles ordenades.
+        Aleshores~\((a,b)=(c,d)\) si i només si~\(a=c\) i~\(b=d\).
+    \end{proposition}
+    \begin{proof}
+        Suposem que~\(a=c\) i~\(b=d\).
+        Aleshores tenim que~\(a\in\{c,\{c,d\}\}\),~\(\{a,b\}\in\{c,\{c,d\}\}\),~\(c\in\{a,\{a,b\}\}\) i~\(\{c,d\}\in\{a,\{a,b\}\}\), i per tant, per la definició de \myref{def:subconjunt} tenim que~\(\{c,\{c,d\}\}\subseteq\{a,\{a,b\}\}\) i~\(\{a,\{a,b\}\}\in\{c,\{c,d\}\}\), i pel \myref{thm:doble-inclusio} tenim que això és si i només si~\(\{a,\{a,b\}\}=\{c,\{c,d\}\}\), i per la definició de \myref{def:parelles-ordenades} trobem que~\((a,b)=(c,d)\).
+    \end{proof}
+    \begin{definition}[Producte cartesià de conjunts]
+        \labelname{producte cartesià de conjunts}\label{def:producte-cartesia-de-conjunts}
+        Siguin~\(A\) i~\(B\) dos conjunts.
+        Aleshores definim el conjunt
+        \[
+            A\times B=\{(a,b)\mid a\in A,b\in B\}
+        \]
+        com el producte cartesià de~\(A\) i~\(B\).
+    \end{definition}
+    \begin{definition}[Aplicació]
+        \labelname{aplicació}\label{def:aplicacio}
+        Siguin~\(A\) i~\(B\) dos conjunts i~\(f\) un subconjunt de~\(A\times B\) tal que si~\((a,b)\) i~\((a,b')\) són elements de~\(f\), aleshores~\(b=b'\).
+        Aleshores direm que~\(f\) és una aplicació de~\(A\) sobre~\(B\) i escriurem~\(b=f(a)\).
+        També denotarem~\(f\colon A\longrightarrow B\) i
+        \begin{align*}
+        f\colon A&\longrightarrow B\\
+        a&\longmapsto b
+        \end{align*}
+    \end{definition}
+%    \begin{notation}[Operació]
+%        \labelname{operació}\label{notation:operació}
+%        Siguin~\(A\),~\(B\) i~\(C\) conjunts i~\(\star\) una aplicació de~\(A\times B\) en~\(C\). Aleshores direm que~\(\star\) és una operació i denotarem
+%        \[\star(a,b)=a\star b\quad\text{per a tot }a\in A,b\in B.\]
+%    \end{notation}
+    \begin{axiom}[Axioma de Reemplaçament]
+        Siguin~\(A\) i~\(B\) dos conjunts i~\(f\) una aplicació de~\(A\) sobre~\(B\).
+        Aleshores el conjunt~\(\{f(x)\in B\mid x\in A\}\) existeix.
+    \end{axiom}
+%    \begin{axiom}[Axioma d'Elecció]
+%        Tota família de conjunts no buits té una aplicació que permet seleccionar un element de cada conjunt.
+%    \end{axiom}
+    \subsection{Tipus d'aplicacions}
+    \begin{definition}[Aplicació injectiva]
+        \labelname{aplicació injectiva}\label{def:aplicacio-injectiva}
+        Sigui~\(f\colon X\longrightarrow Y\) una aplicació tal que per a tot~\(a\),~\(a'\) elements de~\(X\) satisfent~\(f(a)=f(a')\) tenim~\(a=a'\).
+        Aleshores direm que~\(f\) és injectiva.
+    \end{definition}
+    \begin{definition}[Aplicació exhaustiva]
+        \labelname{aplicació exhaustiva}\label{def:aplicacio-exhaustiva}
+        Sigui~\(f\colon X\longrightarrow Y\) una aplicació tal que per a tot~\(b\in Y\) existeix~\(a\in A\) satisfent~\(f(a)=b\).
+        Aleshores direm que~\(f\) és exhaustiva.
+    \end{definition}
+    \begin{definition}[Aplicació bijectiva]
+        \labelname{aplicació bijectiva}\label{def:aplicacio-bijectiva}
+        Sigui~\(f\colon X\longrightarrow Y\) una aplicació injectiva i exhaustiva.
+        Aleshores direm que~\(f\) és bijectiva.
+    \end{definition}
+    \subsection{Conjugació d'aplicacions}
+    \begin{proposition}
+        \label{prop:conjugacio-daplicacions}
+        Siguin~\(f\colon A\rightarrow B\) i~\(g\colon B\rightarrow C\) dues aplicacions.
+        Aleshores~\(h(a)=g(f(a))\) per a tot~\(a\in A\) és una aplicació de~\(A\) en~\(C\).
+    \end{proposition}
+    \begin{proof}
+        Per la definició d'\myref{def:aplicacio} hem de veure que~\(h\) està ben definida.
+        És a dir, que si prenem dos elements~\(a\) i~\(a'\) de~\(A\) tals que~\(a=a'\), aleshores~\(h(a)=h(a')\).
+
+        Siguin doncs~\(a\) i~\(a'\) dos elements de~\(A\) tals que~\(a=a'\).
+        Com que, per hipòtesi,~\(f\) és una aplicació tenim per la definició d'\myref{def:aplicacio} que~\(f(a)=f(a')=b\), per a cert~\(b\in B\), i per tant, com que per hipòtesi~\(g\) és una aplicació, trobem~\(g(f(a))=g(b)=c\) i~\(g(f(a'))=g(b)=c\) per a cert~\(c\in C\), i per tant~\(h(a)=h(a')\), com volíem veure.
+
+        També tenim que~\(f\subseteq A\times C\), ja que si~\(c=h(a)\) tenim~\(c=g(f(a))\), i per la definició d'\myref{def:aplicacio} tenim que~\(a\in A\) i~\(c\in C\).
+        Per tant, per la definició de \myref{def:subconjunt} tenim que~\(h\) és una aplicació.
+    \end{proof}
+    \begin{definition}[Conjugació d'aplicacions]
+        \labelname{conjugació d'aplicacions}\label{def:conjugacio-daplicacions}
+        Siguin~\(f\colon A\rightarrow B\) i~\(g\colon B\rightarrow C\) dues aplicacions.
+        Aleshores direm que l'aplicació~\(g(f)\) és la composició de~\(g\) amb~\(f\) i ho denotarem com
+        \begin{align*}
+        g\circ f\colon A&\longrightarrow C\\
+        a&\longmapsto g(f(a)).
+        \end{align*}
+
+        Aquesta definició té sentit per la proposició \myref{prop:conjugacio-daplicacions}.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:associativitat-de-la-conjugacio-de-funcions}
+        Siguin~\(f\colon A\rightarrow B\),~\(g\colon B\rightarrow C\) i~\(h\colon C\rightarrow D\) aplicacions.
+        Aleshores
+        \[
+            (h\circ g)\circ f=h\circ(g\circ f).
+        \]
+    \end{proposition}
+    \begin{proof}
+        Hem de veure que per a tot~\(a\in A\) tenim~\(((h\circ g)\circ f)(a)=(h\circ(g\circ f))(a)\).
+        Ara bé, tenim que
+        \[
+            ((h\circ g)\circ f)(a)=(h\circ g)(f(a))=h(g(f(a)))
+        \]
+        i
+        \[
+            (h\circ(g\circ f))(a)=h((g\circ f)(a))=h(g(f(a))).
+        \]
+        Per tant, per la definició d'\myref{def:aplicacio} tenim que~\((h\circ g)\circ f=h\circ(g\circ f)\).
+    \end{proof}
+    \begin{theorem}
+        \label{thm:composicio-dinjectives-injectiva}
+        Siguin~\(f\colon A\rightarrow B\) i~\(g\colon B\rightarrow C\) dues aplicacions injectives.
+        Aleshores l'aplicació~\(g\circ f\) és injectiva.
+    \end{theorem}
+    \begin{proof}
+        Prenem~\(a\) i~\(a'\) dos elements de~\(A\) tals que~\((g\circ f)(a)=(g\circ f)(a')\).
+        Aleshores tenim~\(g(f(a))=g(f(a'))\), i per la definició d'\myref{def:aplicacio-injectiva} com que, per hipòtesi~\(g\) i és injectiva tenim que~\(f(a)=f(a')\), i com que, per hipòtesi,~\(f\) és injectiva, tenim que~\(a=a'\), i de nou per la definició d'\myref{def:aplicacio-injectiva} tenim que~\(g\circ f\) és injectiva.
+    \end{proof}
+    \begin{theorem}
+        \label{thm:composicio-dexhaustives-exhaustiva}
+        Siguin~\(f\colon A\rightarrow B\) i~\(g\colon B\rightarrow C\) dues aplicacions exhaustives.
+        Aleshores l'aplicació~\(g\circ f\) és exhaustiva.
+    \end{theorem}
+    \begin{proof}
+        Prenem un element~\(c\in C\).
+        Aleshores per la definició d'\myref{def:aplicacio-exhaustiva} tenim que existeixen~\(a\in A\) i~\(b\in B\) tals que~\(b=f(a)\) i~\(c=g(b)\).
+        Per tant per la definició d'\myref{def:aplicacio-exhaustiva} tenim que~\(g\circ f\) és una aplicació exhaustiva, ja que per a tot~\(c\in C\) existeix~\(a\in A\) tal que~\((g\circ f)(a)=c\).
+    \end{proof}
+    \begin{theorem}
+        \label{thm:composicio-de-bijectives-bijectiva}
+        \label{thm:conjugacio-de-bijectives-bijectiva}
+        Siguin~\(f\colon A\rightarrow B\) i~\(g\colon B\rightarrow C\) dues aplicacions bijectiva.
+        Aleshores l'aplicació~\(g\circ f\) és bijectiva.
+    \end{theorem}
+    \begin{proof}
+        Per la definició d'\myref{def:aplicacio-bijectiva} hem de veure que~\(g\circ f\) és injectiva i exhaustiva.
+        Ara bé, per hipòtesi tenim que~\(f\) i~\(g\) són bijectives, i de nou per la definició d'\myref{def:aplicacio-bijectiva} tenim que~\(f\) i~\(g\) són ambdues injectives i exhaustives.
+        Per tant, pel Teorema \myref{thm:composicio-dinjectives-injectiva} tenim que~\(g\circ f\) és injectiva, i pel Teorema \myref{thm:composicio-dexhaustives-exhaustiva} tenim que~\(g\circ f\) és exhaustiva, com volíem veure.
+    \end{proof}
+    \subsection{Aplicacions invertibles}
+    \begin{definition}[Aplicació invertible]
+        \labelname{aplicació invertible}\label{def:aplicacio-invertible}
+        \labelname{inversa d'una aplicació}\label{def:inversa-duna-aplicacio}
+        Siguin~\(f\colon A\rightarrow B\) i~\(g\colon B\rightarrow A\) dues aplicacions tals que per a tot~\(a\in A\) i~\(b\in B\) es compleix
+        \[
+            (f\circ g)(a)=a\quad\text{i}\quad(g\circ f)(b)=b.
+        \]
+        Aleshores direm que~\(f\) és la inversa de~\(g\) i que~\(f\) és una aplicació invertible o que~\(f\) té inversa.
+    \end{definition}
+    \begin{theorem}
+        \label{thm:unicitat-de-les-inverses-de-les-aplicacions-bijectives}
+        Siguin~\(f\colon A\rightarrow B\) una aplicació invertible i~\(g_{1}\colon B\rightarrow A\) i~\(g_{2}\colon B\rightarrow A\) dues inverses de~\(f\).
+        Aleshores~\(g_{1}=g_{2}\).
+    \end{theorem}
+    \begin{proof}
+        Per la definició d'\myref{def:aplicacio-invertible} tenim que per a tot~\(a\in A\),~\(b\in B\)
+        \[
+            (g_{1}\circ f)(a)=a\quad\text{i}\quad(f\circ g_{2})(b)=b.
+        \]
+        Ara bé, tenim
+        \[
+            ((g_{1}\circ f)\circ g_{2})(b)=g_{2}(b)\quad\text{i}\quad(g_{1}\circ(f\circ g_{2}))(b)=g_{1}(b)
+        \]
+        i per la proposició \myref{prop:associativitat-de-la-conjugacio-de-funcions} trobem que~\(g_{1}=g_{2}\), com volíem veure.
+    \end{proof}
+    \begin{notation}
+        \label{notation:aplicacio-identitat}
+        Aprofitant el Teorema \myref{thm:unicitat-de-les-inverses-de-les-aplicacions-bijectives} denotarem la inversa d'una aplicació~\(f:A\rightarrow B\) amb~\(f^{-1}\), i per tant definim l'aplicació
+        \[
+            f^{-1}\circ f=\Id_{A}.
+        \]
+
+        Aleshores tenim que~\(Id_{A}\colon A\rightarrow A\) és l'aplicació bijectiva i satisfà~\(Id_{A}(a)=a\) per a tot~\(a\in A\).
+
+        També denotarem la conjugació d'una aplicació~\(g\colon A\rightarrow A\) amb sí mateixa~\(k\) de vegades com \[g^{k}=g\circ\overset{k)}{\cdots}\circ g.\]
+    \end{notation}
+    \begin{theorem}
+        \label{thm:bijectiva-iff-invertible}
+        Sigui~\(f\colon A\rightarrow B\) una funció.
+        Aleshores~\(f\) és bijectiva si i només si~\(f\) és invertible.
+    \end{theorem}
+    \begin{proof}
+        Comencem veient que la condició és necessària (\(\implica\)).
+        Suposem doncs que~\(f\) és una aplicació bijectiva.
+        Per la definició d'\myref{def:aplicacio-bijectiva} tenim que~\(f\) és injectiva i exhaustiva.
+        Per tant per la definició d'\myref{def:aplicacio-injectiva} i la definició d'\myref{def:aplicacio-exhaustiva} tenim que per a tot~\(b\in B\) existeix un únic~\(a\in A\) tal que~\(b=f(a)\).
+
+        Per tant definim l'aplicació~\(g\colon B\rightarrow A\) tal que~\(g(b)=a\).
+        Ara bé, tenim que per a tot~\(a\in A\) i~\(b\in B\)
+        \[
+            (g\circ f)(a)=a\quad\text{i}\quad(f\circ g)(b)=b,
+        \]
+        i per la definició d'\myref{def:aplicacio-invertible} tenim que~\(f\) és invertible, com volíem veure.
+
+        Comprovem ara que la condició és suficient (\(\implicatper\)).
+        Suposem doncs que~\(f\) té inversa.
+        Prenem dos elements~\(a\) i~\(a'\) de~\(A\) tals que~\(f(a)=f(a')\).
+        Ara bé, per la definició d'\myref{def:aplicacio-invertible} tenim que~\((f^{-1}\circ f)(a)=a\) i~\((f^{-1}\circ f)(a')=a'\) amb~\((f^{-1}\circ f)(a)=(f^{-1}\circ f)(a')\), i per tant~\(a=a'\) i per la definició d'\myref{def:aplicacio-injectiva} tenim que~\(f\) és injectiva.
+
+        Sigui~\(b\) un element de~\(B\) i prenem~\(a\) de~\(A\) tal que~\(f^{-1}(b)=a\).
+        Aleshores trobem
+        \[
+            b=Id_{B}(b)=f\circ f^{-1}(b)=f(a),
+        \]
+        i per la definició d'\myref{def:aplicacio-exhaustiva} tenim que~\(f\) és un aplicació exhaustiva, i per la definició d'\myref{def:aplicacio-bijectiva} trobem que~\(f\) és bijectiva.
+    \end{proof}
+    \begin{corollary}
+        \label{cor:la-inversa-duna-aplicacio-invertible-es-invertible}
+        Si~\(f\) és invertible aleshores~\(f^{-1}\) és invertible i~\(\left(f^{-1}\right)^{-1}=f\).
+    \end{corollary}
+\section{Relacions d'equivalència}
+    \subsection{Relacions d'equivalència}
+    \begin{definition}[Relació binària]
+        \labelname{relació binària}\label{def:relacio-binaria}
+        Siguin~\(X\) un conjunt no buit,~\(\sim\) un subconjunt de~\(X\times X\) i~\((x,y)\) un element del subconjunt~\(\sim\).
+        Aleshores direm que els elements~\(x\) i~\(y\) estan relacionats i escriurem~\(x\sim y\).
+        També direm que~\(\sim\) és una relació binària.
+
+        Si~\((x',y')\) no és un element de~\(\sim\) escriurem~\(x'\nsim y'\).
+    \end{definition}
+    \begin{definition}[Relació d'equivalència]
+        \labelname{relació d'equivalència}\label{def:relacio-dequivalencia}
+        Siguin~\(X\) un conjunt no buit i~\(\sim\) una relació que satisfà les propietats
+        \begin{enumerate}
+            \item Reflexiva: Si~\(x\) és un element de~\(X\), aleshores~\(x\sim x\).
+            \item Simètrica: Si~\(x,y\) són elements de~\(X\) tals que~\(x\sim y\), aleshores~\(y\sim x\).
+            \item Transitiva: Si~\(x,y,z\) són elements de~\(X\) tals que~\(x\sim y\) i~\(y\sim z\), aleshores~\(x\sim z\).
+        \end{enumerate}
+        Aleshores direm que~\(\sim\) és una relació d'equivalència en~\(X\).
+    \end{definition}
+    \subsection{Classes d'equivalència i conjunt quocient}
+    \begin{definition}[Classe d'equivalència]
+        \labelname{classe d'equivalència}\label{def:classe-dequivalencia}
+        Siguin~\(X\) un conjunt no buit,~\(\sim\) una classe d'equivalència en~\(X\) i
+        \[
+            [x]=\{y\in X\mid x\sim y\}
+        \]
+        un subconjunt de~\(X\).
+        Aleshores direm que~\([x]\) és la classe d'equivalència de~\(x\).
+
+        També denotarem~\([x]=\overline{x}\).
+    \end{definition}
+    \begin{proposition}
+        Siguin~\(X\) un conjunt no buit i~\(x,y\) elements de~\(X\).
+        Aleshores o bé~\([x]=[y]\) o bé~\([x]\cap[y]=\emptyset\).
+    \end{proposition}
+    \begin{proof}
+        Denotarem la relació d'equivalència amb~\(\sim\).
+
+        Suposem que~\(x\sim y\).
+        Tenim que~\([x]\subseteq[y]\), ja que si prenem~\(z\in X\) tal que~\(z\in[x]\).
+        Aleshores per la definició de \myref{def:classe-dequivalencia} tenim que~\(x\sim z\).
+        Per hipòtesi tenim que~\(x\sim y\), i per tant, per la definició de \myref{def:relacio-dequivalencia} tenim que~\(y\sim z\), i per la definició de \myref{def:classe-dequivalencia} trobem~\(z\in[y]\).
+        Per tant, per la definició de \myref{def:subconjunt} tenim que~\([x]\subseteq[y]\).
+
+        Ara bé, també tenim que~\([y]\subseteq[x]\), ja que si prenem~\(z\in X\) tal que~\(z\in[y]\).
+        Aleshores per la definició de \myref{def:classe-dequivalencia} tenim que~\(y\sim z\).
+        Per hipòtesi tenim que~\(x\sim y\), i per tant, per la definició de \myref{def:relacio-dequivalencia} tenim que~\(z\sim z\), i per la definició de \myref{def:classe-dequivalencia} trobem~\(z\in[x]\).
+        Per tant, per la definició de \myref{def:subconjunt} tenim que~\([y]\subseteq[z]\).
+        Per tant, pel \myref{thm:doble-inclusio} tenim que~\([x]=[y]\).
+
+        Suposem ara que~\(x\nsim y\) i prenem un element~\(z\in[x]\cap[y]\).
+        Aleshores, per la definició de \myref{def:classe-dequivalencia} tenim que~\(z\sim x\) i~\(y\sim z\), i per la definició de \myref{def:relacio-dequivalencia} tenim que~\(x\sim y\).
+        Ara bé, havíem suposat que~\(x\nsim y\).
+        Per tant~\(z\) no pot existir i trobem~\([x]\cap[y]=\emptyset\).
+    \end{proof}
+%    \subsection{Conjunt quocient}
+    \begin{definition}[Conjunt quocient]
+        \labelname{conjunt quocient}\label{def:conjunt-quocient}
+        Siguin~\(X\) un conjunt no buit i~\(\sim\) una relació d'equivalència en~\(X\).
+        Aleshores definim el conjunt
+        \[
+            X/\sim=\{[x]\mid x\in X\}
+        \]
+        com el conjunt quocient de~\(X\) per~\(\sim\).
+    \end{definition}
+\end{document}

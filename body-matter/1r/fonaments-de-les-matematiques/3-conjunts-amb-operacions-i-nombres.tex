@@ -1,0 +1,2018 @@
+\documentclass[../fonaments-de-les-matematiques.tex]{subfiles}
+
+\begin{document}
+\chapter{Conjunts amb operacions i els nombres}
+\section{Els nombres naturals}
+    \subsection{Axiomes de Peano}
+    \begin{definition}[Nombres naturals]
+        \labelname{nombres naturals}\label{def:nombres-naturals}
+        Siguin~\(\mathbb{N}\) un conjunt i~\(S\) una aplicació que satisfan
+        \begin{enumerate}
+            \item~\(1\in\mathbb{N}\).
+            \item Si~\(n\in\mathbb{N}\), aleshores~\(S(n)\in\mathbb{N}\).
+            \item Si~\(n\in\mathbb{N}\), aleshores~\(S(n)\neq1\).
+            \item Si~\(n,m\in\mathbb{N}\) amb~\(S(n)=S(m)\), aleshores~\(n=m\).
+            \item Si~\(\mathbb{M}\) és un conjunt tal que~\(1\in\mathbb{M}\) i tal que~\(S(m)\in\mathbb{M}\) per a tot~\(m\in\mathbb{M}\), aleshores~\(\mathbb{N}\subseteq\mathbb{M}\).
+        \end{enumerate}
+        Aleshores direm que~\(\mathbb{N}\) és el conjunt dels nombres naturals, i anomenarem els elements de~\(\mathbb{N}\) nombres naturals.
+    \end{definition}
+    \begin{lemma}
+        \label{lema:primer-element}
+        \(\mathbb{N}=\{1,S(1),S(S(1)),S(S(S(1))),\dots\}\).
+    \end{lemma}
+    \begin{proof}
+        Ho farem pel principi de doble inclusió.
+        Per la definició de \myref{def:nombres-naturals} tenim que si~\(n\in\mathbb{N}\), aleshores~\(S(n)\in\mathbb{N}\).
+        Per tant trobem que
+        \[
+            \mathbb{N}\supseteq\{1,S(1),S(S(1)),S(S(S(1))),\dots\}.
+        \]
+
+        Tenim també, per la definició de \myref{def:nombres-naturals}, que si~\(\mathbb{M}\) és un conjunt tal que~\(1\in\mathbb{M}\) i tal que~\(S(m)\in\mathbb{M}\) per a tot~\(m\in\mathbb{M}\), aleshores~\(\mathbb{N}\subseteq\mathbb{M}\), i per tant
+        \[
+            \mathbb{N}\subseteq\{1,S(1),S(S(1)),S(S(S(1))),\dots\},
+        \]
+        i pel \myref{thm:doble-inclusio} tenim que
+        \[
+            \mathbb{N}=\{1,S(1),S(S(1)),S(S(S(1))),\dots\},
+        \]
+        com volíem veure.
+    \end{proof}
+    \begin{notation}
+        Denotarem~\(S(1)=2\),~\(S(2)=3\),~\(S(3)=4\), etc.
+        Per tant
+        \[
+            \mathbb{N}=\{1,2,3,4\dots\}.
+        \]
+        Això té sentit pel lema \myref{lema:primer-element}.
+    \end{notation}
+    \begin{notation}
+        Denotarem l'acció d'aplicar l'aplicació~\(S\) al nombre natural~\(n\) un nombre natural~\(k\) de vegades com~\(S^{k}(n)\).
+    \end{notation}
+    \begin{theorem}[Teorema del primer element]
+        \labelname{Teorema del primer element}\label{thm:primer-element}
+        Sigui~\(A\) un subconjunt no buit de~\(\mathbb{N}\).
+        Aleshores existeix~\(a\in A\) tal que no existeixi cap~\(b\in A\) satisfent~\(S(b)=a\).
+    \end{theorem}
+    \begin{proof}
+        Sigui~\(a\) un element de~\(A\).
+        Aleshores pel lema \myref{lema:primer-element} tenim que~\(a=S^{k}(1)\) per a cert~\(k\in\mathbb{N}\).
+        Si~\(1\in A\) hem acabat per la definició de \myref{def:nombres-naturals}.
+        Suposem doncs que~\(1\notin A\).
+        Si~\(S(1)\in A\) també hem vist el que volíem.
+        Podem iterar aquest procés un màxim de~\(k\) vegades, ja que~\(S^{k}(1)\) és, per hipòtesi, un nombre natural, i per tant seria~\(a\) un element de~\(A\) tal que no existeix~\(b\) satisfent~\(S(b)=a\).
+    \end{proof}
+    \begin{definition}[Primer element]
+        \labelname{primer element}\label{def:primer-element}
+        Sigui~\(A\) un subconjunt no buit de~\(\mathbb{N}\) i~\(a\) un element de~\(A\) tal que no existeix cap~\(b\in A\) satisfent~\(S(b)=a\).
+        Aleshores direm que~\(a\) és el primer element de~\(A\).
+
+        Aquesta definició té sentit per la definició de \myref{def:nombres-naturals} i el Teorema \myref{thm:primer-element}.
+    \end{definition}
+    \begin{theorem}[Principi d'inducció]
+        \labelname{principi d'inducció}\label{thm:principi-dinduccio}
+        Sigui~\(R(n)\) una relació depenent d'un paràmetre~\(n\in\mathbb{N}\) tal que
+        \begin{enumerate}
+            \item\label{enum:thm:principi-dinduccio-1}~\(R(1)\) és vertadera.
+            \item\label{enum:thm:principi-dinduccio-2} Si~\(R(n)\) és vertadera aleshores~\(R(S(n))\) és vertadera.
+        \end{enumerate}
+        Aleshores~\(R(n)\) és vertadera per a tot~\(n\in\mathbb{N}\).
+    \end{theorem}
+    \begin{proof}
+        Definim el conjunt
+        \[
+            A=\{n\in\mathbb{N}\mid R(n)\text{ és falsa}\}.
+        \]
+        Per la definició de \myref{def:subconjunt} tenim que~\(A\subseteq\mathbb{N}\).
+        Suposem que~\(A\) és un conjunt no buit.
+        Aleshores pel \myref{thm:primer-element} tenim que existeix un primer element~\(a\) de~\(A\).
+        Ara bé, pel punt \eqref{enum:thm:principi-dinduccio-1} tenim que~\(a\neq1\), per tant, pel lema \myref{lema:primer-element} tenim que~\(a=S(b)\) per a cert~\(b\in\mathbb{N}\).
+        Com que~\(a\) és el primer element de~\(A\), per la definició de \myref{def:primer-element} tenim que~\(b\notin A\), i per tant~\(P(b)\) és vertadera.
+        Ara bé, pel punt \eqref{enum:thm:principi-dinduccio-2} tenim que~\(P(S(b))=P(a)\) és vertadera, i per tant~\(a\notin A\), arribant a contradicció.
+        Per tant trobem que~\(A\) és el conjunt buit, i trobem que~\(R(n)\) és vertadera per a tot~\(n\in\mathbb{N}\).
+    \end{proof}
+    \subsection{Operacions sobre els nombres naturals} % https://math.stackexchange.com/questions/60432/how-to-prove-cancellation-property-of-integer-multiplication?rq=1
+    \begin{definition}[Suma de nombres naturals]
+        \labelname{suma de nombres naturals}\label{def:suma-de-nombres-naturals}
+        Definim la suma de nombres naturals com una operació~\(+\) que satisfà per a tot~\(n,k\in\mathbb{N}\)
+        \[
+            n+1=S(n)\quad\text{i}\quad n+S(k)=S(n+k).
+        \]
+    \end{definition}
+    \begin{definition}[Producte de nombres naturals]
+        \labelname{producte de nombres naturals}\label{def:producte-de-nombres-naturals}
+        Definim el producte de nombres naturals com una operació~\(\cdot\) que satisfà per a tot~\(n,k\in\mathbb{N}\)
+        \[
+            n\cdot1=n\quad\text{i}\quad n\cdot S(k)=n\cdot k+n.
+        \]
+        Denotarem~\(n\cdot k=nk\) per a tot~\(n,k\in\mathbb{N}\).
+    \end{definition}
+    \begin{proposition}
+        \label{prop:associativitat-suma-de-naturals-per-Peano}
+        Siguin~\(x,y,z\) tres nombres naturals.
+        Aleshores
+        \[
+            (x+y)+z=x+(y+z).
+        \]
+    \end{proposition}
+    \begin{proof}
+        Definim el conjunt
+        \[
+            A=\{z\in\mathbb{N}\mid (x+y)+z=x+(y+z)\text{ per a tot }x,y\in\mathbb{N}\}.
+        \]
+        Per la definició de \myref{def:subconjunt} trobem que~\(A\subseteq\mathbb{N}\).
+
+        Tenim que~\(1\in A\), ja que per a tot~\(x,y\in\mathbb{N}\) tenim
+        \begin{align*}
+        x+(y+1)&=x+S(y)\tag{\myref{def:suma-de-nombres-naturals}}\\
+        &=S(x+y)\tag{\myref{def:suma-de-nombres-naturals}}\\
+        &=(x+y)+1.\tag{\myref{def:suma-de-nombres-naturals}}
+        \end{align*}
+        També tenim que si~\(z\in A\), aleshores~\(S(z)\in A\).
+        Efectivament, tenim per a tot~\(x,y\in\mathbb{N}\)
+        \begin{align*}
+        x+(y+S(z))&=x+S(y+z)\tag{\myref{def:suma-de-nombres-naturals}}\\
+        &=S(x+(y+z))\tag{\myref{def:suma-de-nombres-naturals}}\\
+        &=S((x+y)+z)\tag{Per hipòtesi}\\
+        &=(x+y)+S(z).\tag{\myref{def:suma-de-nombres-naturals}}
+        \end{align*}
+        Ara bé.
+        Per la definició de \myref{def:nombres-naturals}, tenim que si~\(A\) és un conjunt tal que~\(1\in A\) i tal que~\(S(z)\in A\) per a tot~\(z\in A\), aleshores~\(\mathbb{N}\subseteq A\), i pel \myref{thm:doble-inclusio} tenim que~\(A=\mathbb{N}\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:lema-a-commutativitat-N-per-la-suma}
+        Siguin~\(x,y\) dos nombres naturals.
+        Aleshores
+        \[
+            x+S(y)=S(x)+y.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Definim el conjunt
+        \[
+            A=\{y\in\mathbb{N}\mid x+S(y)=S(x)+y\text{ per a tot }x\in\mathbb{N}\}.
+        \]
+        Per la definició de \myref{def:subconjunt} trobem que~\(A\subseteq\mathbb{N}\).
+
+        Tenim que~\(1\in A\), ja que per a tot~\(x\in\mathbb{N}\)
+        \begin{align}
+        x+S(1)&=S(x+1)\tag{\myref{def:suma-de-nombres-naturals}}\\
+        &=S(S(x))\tag{\myref{def:suma-de-nombres-naturals}}\\
+        &=S(x)+1.\tag{\myref{def:suma-de-nombres-naturals}}
+        \end{align}
+        També tenim que si~\(y\in A\), aleshores~\(S(y)\in A\).
+        Efectivament, tenim que per a tot~\(x\in\mathbb{N}\)
+        \begin{align*}
+        x+S(S(y))&=S(x+S(y))\tag{\myref{def:suma-de-nombres-naturals}}\\
+        &=S(S(x)+y)\tag{Per hipòtesi}\\
+        &=S(x)+S(y).\tag{\myref{def:suma-de-nombres-naturals}}
+        \end{align*}
+        Ara bé.
+        Per la definició de \myref{def:nombres-naturals}, tenim que si~\(A\) és un conjunt tal que~\(1\in A\) i tal que~\(S(y)\in A\) per a tot~\(y\in A\), aleshores~\(\mathbb{N}\subseteq A\), i pel \myref{thm:doble-inclusio} tenim que~\(A=\mathbb{N}\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:commutativitat-naturals-per-Peano}
+        Siguin~\(x,y\) dos nombres naturals.
+        Aleshores
+        \[
+            x+y=y+x.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Definim el conjunt
+        \[
+            B=\{y\in\mathbb{N}\mid 1+y=y+1\}.
+        \]
+        Per la definició de \myref{def:subconjunt} trobem que~\(B\subseteq\mathbb{N}\).
+
+        Tenim que~\(1\in B\), ja que~\(1+1=1+1\).
+        També tenim que si~\(y\in B\), aleshores~\(S(y)\in B\).
+        Efectivament,
+        \begin{align*}
+        S(y)+1&=y+S(1)\tag{Proposició \myref{prop:lema-a-commutativitat-N-per-la-suma}}\\
+        &=S(y+1)\tag{\myref{def:suma-de-nombres-naturals}}\\
+        &=S(1+y)\tag{Per hipòtesi}\\
+        &=1+S(y).\tag{\myref{def:suma-de-nombres-naturals}}
+        \end{align*}
+        Ara bé.
+        Per la definició de \myref{def:nombres-naturals}, tenim que si~\(B\) és un conjunt tal que~\(1\in B\) i tal que~\(S(y)\in B\) per a tot~\(y\in B\), aleshores~\(\mathbb{N}\subseteq B\), i pel \myref{thm:doble-inclusio} tenim que~\(\mathbb{N}=B\).
+
+        Definim ara el conjunt
+        \[
+            A=\{y\in\mathbb{N}\mid x+y=y+x\text{ per a tot }x\in\mathbb{N}\}.
+        \]
+        Per la definició de \myref{def:subconjunt} trobem que~\(B\subseteq A\subseteq\mathbb{N}\).
+
+        Tenim que~\(1\in A\), ja que~\(1\in B\subseteq A\).
+        També tenim que si~\(y\in A\), aleshores~\(S(y)\in A\).
+        Efectivament, tenim que per a tot~\(x\in\mathbb{N}\)
+        \begin{align*}
+        x+S(y)&=S(x+y)\tag{\myref{def:suma-de-nombres-naturals}}\\
+        &=S(y+x)\tag{Per hipòtesi}\\
+        &=y+S(x).\tag{\myref{def:suma-de-nombres-naturals}}\\
+        &=S(y)+x.\tag{Proposició \myref{prop:lema-a-commutativitat-N-per-la-suma}}
+        \end{align*}
+        Ara bé.
+        Per la definició de \myref{def:nombres-naturals}, tenim que si~\(A\) és un conjunt tal que~\(1\in A\) i tal que~\(S(y)\in A\) per a tot~\(y\in A\), aleshores~\(\mathbb{N}\subseteq A\), i pel \myref{thm:doble-inclusio} tenim que~\(A=\mathbb{N}\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:distributiva-pel-producte-naturals-per-Peano}
+        Siguin~\(x,y,z\) tres nombres naturals.
+        Aleshores
+        \[
+            x\cdot(y+z)=x\cdot y+x\cdot z.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Definim el conjunt
+        \[
+            A=\{z\in\mathbb{N}\mid x\cdot(y+z)=x\cdot y+x\cdot z\text{ per a tot }x,y\in\mathbb{N}\}.
+        \]
+        Per la definició de \myref{def:subconjunt} trobem que~\(A\subseteq\mathbb{N}\).
+
+        Tenim que~\(1\in A\), ja que per a tot~\(x,y\in\mathbb{N}\) tenim
+        \begin{align*}
+        x\cdot(y+1)&=x\cdot S(y)\tag{\myref{def:suma-de-nombres-naturals}}\\
+        &=x\cdot y+x\tag{\myref{def:producte-de-nombres-naturals}}\\
+        &=x\cdot y+x\cdot 1.\tag{\myref{def:producte-de-nombres-naturals}}
+        \end{align*}
+        També tenim que si~\(z\in A\), aleshores~\(S(z)\in A\).
+        Efectivament, tenim per a tot~\(x,y\in\mathbb{N}\)
+        \begin{align*}
+        x\cdot(y+S(z))&=x\cdot S(y+z)\tag{\myref{def:suma-de-nombres-naturals}}\\
+        &=x\cdot(y+z)+x\tag{\myref{def:producte-de-nombres-naturals}}\\
+        &=(x\cdot y+x\cdot z)+x\tag{Per hipòtesi}\\
+        &=x\cdot y+(x\cdot z+x)\tag{Proposició \myref{prop:associativitat-suma-de-naturals-per-Peano}}\\
+        &=x\cdot y+x\cdot S(z).\tag{\myref{def:producte-de-nombres-naturals}}
+        \end{align*}
+        Ara bé.
+        Per la definició de \myref{def:nombres-naturals}, tenim que si~\(A\) és un conjunt tal que~\(1\in A\) i tal que~\(S(z)\in A\) per a tot~\(z\in A\), aleshores~\(\mathbb{N}\subseteq A\), i pel \myref{thm:doble-inclusio} tenim que~\(A=\mathbb{N}\).
+    \end{proof}
+    \begin{proposition}
+        Siguin~\(x,y,z\) tres nombres naturals.
+        Aleshores
+        \[
+            (x\cdot y)\cdot z=x\cdot(y\cdot z).
+        \]
+    \end{proposition}
+    \begin{proof}
+        Definim el conjunt
+        \[
+            A=\{z\in\mathbb{N}\mid (x\cdot y)\cdot z=x\cdot(y\cdot z)\text{ per a tot }x,y\in\mathbb{N}\}.
+        \]
+        Per la definició de \myref{def:subconjunt} trobem que~\(A\subseteq\mathbb{N}\).
+
+        Tenim que~\(1\in A\), ja que per a tot~\(x,y\in\mathbb{N}\) tenim
+        \begin{align*}
+        x\cdot(y\cdot1)&=x+y\tag{\myref{def:producte-de-nombres-naturals}}\\
+        &=(x\cdot1)\cdot y.\tag{\myref{def:producte-de-nombres-naturals}}
+        \end{align*}
+        També tenim que si~\(z\in A\), aleshores~\(S(z)\in A\).
+        Efectivament, tenim per a tot~\(x,y\in\mathbb{N}\)
+        \begin{align*}
+        x\cdot(y\cdot S(z))&=x\cdot(y\cdot z+y)\tag{\myref{def:producte-de-nombres-naturals}}\\
+        &=x\cdot(y\cdot z)+x\cdot y\tag{Proposició \myref{prop:distributiva-pel-producte-naturals-per-Peano}}\\
+        &=(x\cdot y)\cdot z+x\cdot y\tag{Per hipòtesi}\\
+        &=(x\cdot y)\cdot S(z).\tag{\myref{def:producte-de-nombres-naturals}}
+        \end{align*}
+        Ara bé.
+        Per la definició de \myref{def:nombres-naturals}, tenim que si~\(A\) és un conjunt tal que~\(1\in A\) i tal que~\(S(z)\in A\) per a tot~\(z\in A\), aleshores~\(\mathbb{N}\subseteq A\), i pel \myref{thm:doble-inclusio} tenim que~\(A=\mathbb{N}\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:commutativitat-producte-naturals-per-Peano}
+        Siguin~\(x,y\) dos nombres naturals.
+        Aleshores
+        \[
+            x\cdot y=y\cdot x.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Definim el conjunt
+        \[
+            B=\{y\in\mathbb{N}\mid 1\cdot y=y\cdot 1\}.
+        \]
+        Per la definició de \myref{def:subconjunt} trobem que~\(B\subseteq\mathbb{N}\).
+
+        Tenim que~\(1\in B\), ja que~\(1\cdot1=1\cdot1\).
+        També tenim que si~\(x\in B\), aleshores~\(S(x)\in B\).
+        Efectivament,
+        \begin{align*}
+        S(x)\cdot 1&=(x+1)\cdot 1\tag{\myref{def:suma-de-nombres-naturals}}\\
+        &=x\cdot 1+1\cdot 1\tag{\myref{def:producte-de-nombres-naturals}}\\
+        &=x\cdot 1+1\tag{\myref{def:producte-de-nombres-naturals}}\\
+        &=1\cdot x+1\tag{Per hipòtesi}\\
+        &=1\cdot S(x).\tag{\myref{def:producte-de-nombres-naturals}}
+        \end{align*}
+        Ara bé.
+        Per la definició de \myref{def:nombres-naturals}, tenim que si~\(B\) és un conjunt tal que~\(1\in B\) i tal que~\(S(y)\in B\) per a tot~\(y\in B\), aleshores~\(\mathbb{N}\subseteq B\), i pel \myref{thm:doble-inclusio} tenim que~\(\mathbb{N}=B\).
+
+        Definim ara el conjunt
+        \[
+            A=\{y\in\mathbb{N}\mid x+y=y+x\text{ per a tot }x\in\mathbb{N}\}.
+        \]
+        Per la definició de \myref{def:subconjunt} trobem que~\(B\subseteq A\subseteq\mathbb{N}\).
+
+        Tenim que~\(1\in A\), ja que~\(1\in B\subseteq A\).
+        També tenim que si~\(y\in A\), aleshores~\(S(y)\in A\).
+        Efectivament, tenim que per a tot~\(x\in\mathbb{N}\)
+        \begin{align*}
+        x\cdot S(y)&=x\cdot y+x\tag{\myref{def:producte-de-nombres-naturals}}\\
+        &=y\cdot x+x\tag{Per hipòtesi}\\
+        &=y\cdot x+x\cdot 1\tag{\myref{def:producte-de-nombres-naturals}}\\
+        &=y\cdot x+1\cdot x\tag{\(1\in A\)}\\
+        &=(y+1)\cdot x\tag{Proposició \myref{prop:distributiva-pel-producte-naturals-per-Peano}}\\
+        &=S(y)\cdot x.\tag{\myref{def:producte-de-nombres-naturals}}
+        \end{align*}
+        Ara bé.
+        Per la definició de \myref{def:nombres-naturals}, tenim que si~\(A\) és un conjunt tal que~\(1\in A\) i tal que~\(S(y)\in A\) per a tot~\(y\in A\), aleshores~\(\mathbb{N}\subseteq A\), i pel \myref{thm:doble-inclusio} tenim que~\(A=\mathbb{N}\).
+    \end{proof}
+    \begin{theorem}
+        \label{thm:podem-tatxar-per-la-suma-nombres-naturals}
+        Siguin~\(x\),~\(y\) i~\(z\) tres nombres naturals tals que~\(x+z=x+y\).
+        Aleshores~\(x=y\).
+    \end{theorem}
+    \begin{proof}
+        Definim el conjunt
+        \[
+            A=\{z\in\mathbb{N}\mid x+z=y+z\implica x=y\text{ per a tot }x,y\in\mathbb{N}\}.
+        \]
+        Per la definició de \myref{def:subconjunt} trobem que~\(A\subseteq\mathbb{N}\).
+
+        Tenim que~\(1\in A\), ja que si~\(x+1=y+1\) per la definició de \myref{def:suma-de-nombres-naturals} trobem que~\(S(x)=S(y)\), i per la definició de \myref{def:nombres-naturals} trobem que~\(x=y\).
+        També tenim que si~\(z\in A\), aleshores~\(S(z)\in A\).
+        Efectivament, per a tot~\(x,y\in\mathbb{N}\) tals que~\(x+S(z)=y+S(z)\) tenim per la definició de \myref{def:suma-de-nombres-naturals} que
+        \[
+            x+z+1=y+z+1,
+        \]
+        i per la proposició \myref{prop:commutativitat-naturals-per-Peano} tenim que
+        \[
+            x+1+z=y+1+z.
+        \]
+        Per tant, per la definició de \myref{def:suma-de-nombres-naturals}, trobem
+        \[
+            S(x)+z=S(y)+z,
+        \]
+        i per hipòtesi,~\(S(x)=S(y)\), i per la definició de \myref{def:nombres-naturals} tenim que~\(x=z\).
+
+        Ara bé.
+        Per la definició de \myref{def:nombres-naturals}, tenim que si~\(A\) és un conjunt tal que~\(1\in A\) i tal que~\(S(z)\in A\) per a tot~\(z\in A\), aleshores~\(\mathbb{N}\subseteq A\), i pel \myref{thm:doble-inclusio} tenim que~\(A=\mathbb{N}\).
+    \end{proof}
+    \begin{theorem}
+        \label{thm:podem-tatxar-pel-producte-nombres-naturals}
+        Siguin~\(x\),~\(y\) i~\(z\) tres nombres naturals tals que~\(xz=yz\).
+        Aleshores~\(x=y\).
+    \end{theorem}
+    \begin{proof}
+        Definim el conjunt
+        \[
+            A=\{z\in\mathbb{N}\mid xz=yz\implica x=y\text{ per a tot }x,y\in\mathbb{N}\}.
+        \]
+        Per la definició de \myref{def:subconjunt} trobem que~\(A\subseteq\mathbb{N}\).
+
+        Tenim que~\(1\in A\), ja que si~\(x\cdot1=y\cdot1\) per la definició de \myref{def:producte-de-nombres-naturals} trobem que~\(x=y\).
+        També tenim que si~\(z\in A\), aleshores~\(S(z)\in A\).
+        Efectivament, per a tot~\(x,y\in\mathbb{N}\) tals que~\(x\cdot S(z)=y\cdot S(z)\) tenim per la definició de \myref{def:producte-de-nombres-naturals} que
+        \[
+            x\cdot z+x\cdot1=y\cdot z+y\cdot1.
+        \]
+
+        Ara bé, per hipòtesi tenim que~\(x\cdot z=y\cdot z\), i pel Teorema \myref{thm:podem-tatxar-per-la-suma-nombres-naturals} trobem~\(x=y\).
+
+        Ara bé.
+        Per la definició de \myref{def:nombres-naturals}, tenim que si~\(A\) és un conjunt tal que~\(1\in A\) i tal que~\(S(z)\in A\) per a tot~\(z\in A\), aleshores~\(\mathbb{N}\subseteq A\), i pel \myref{thm:doble-inclusio} tenim que~\(A=\mathbb{N}\).
+    \end{proof}
+\section{Els nombres enters}
+    \subsection{Construcció dels nombres enters}
+    \begin{proposition}
+        Sigui~\(\sim\) una relació binària sobre~\(A=\mathbb{N}\cup\{0\}\), amb~\(n+0=0+n=n\) i~\(n\cdot 0=0\cdot n=0\), tal que per a tot~\((a,b)\) i~\((c,d)\) elements de~\(A\times A\)
+        \[
+            (a,b)\sim(c,d)\sii a+d=b+c.
+        \]
+        Aleshores~\(\sim\) és una relació d'equivalència.
+    \end{proposition}
+    \begin{proof}
+        Comprovem les propietats de la definició de relació d'equivalència:
+        \begin{enumerate}
+            \item Reflexiva: Sigui~\((a,b)\) un element de~\(A\times A\).
+            Aleshores per la proposició \myref{prop:commutativitat-naturals-per-Peano} tenim que~\(a+b=b+a\), i per tant~\((a,b)\sim(a,b)\).
+            \item Simètrica: Siguin~\((a,b)\) i~\((c,d)\) elements de~\(A\times A\) tals que~\((a,b)\sim(c,d)\).
+            Aleshores significa que~\(a+d=b+c\), i per la la proposició \myref{prop:commutativitat-naturals-per-Peano} tenim que~\(c+b=d+a\) i per tant~\((c,d)\sim(a,b)\).
+            \item Transitiva: Siguin~\((a,b)\),~\((c,d)\) i~\((e,f)\) elements de~\(A\times A\) tals que~\((a,b)\sim(c,d)\) i~\((c,d)\sim(e,f)\).
+            Això és que
+            \[
+                a+d=b+c\quad\text{i}\quad c+f=d+e.
+            \]
+            Ara bé, tenim
+            \[
+                a+d+f=b+c+f
+            \]
+            i per tant
+            \[
+                a+d+f=b+d+e
+            \]
+            d'on trobem~\(a+f=b+e\), i per tant~\((a,b)\sim(e,f)\).
+        \end{enumerate}
+        I per la definició de \myref{def:relacio-dequivalencia} hem acabat.
+    \end{proof}
+    \begin{definition}[Nombres enters]
+        \labelname{nombres enters}\label{def:nombres-enters}
+        Sigui~\(\sim\) una relació d'equivalència sobre~\(A=\mathbb{N}\cup\{0\}\), amb~\(n+0=0+n=n\) i~\(n\cdot 0=0\cdot n=0\), i~\(\sim\) una relació d'equivalència tal que per a tot~\((a,b)\) i~\((c,d)\) elements de~\(A\times A\)
+        \[
+            (a,b)\sim(c,d)\sii a+d=b+c.
+        \]
+        Aleshores direm que el conjunt quocient~\(\mathbb{Z}=A\times A/\sim\) és el conjunt dels nombres enters.
+        També direm que els elements de~\(\mathbb{Z}\) són nombres enters.
+    \end{definition}
+    \begin{definition}[Resta de nombres naturals]
+        \labelname{resta de nombres naturals}\label{def:resta-de-nombres-naturals}
+        Siguin~\(a\),~\(b\) i~\(c\) nombres naturals tals que~\(a\geq b\) i~\(a=b+c\).
+        Aleshores escriurem~\(a-b=c\).
+    \end{definition}
+    \subsection{Operacions sobre els nombres enters} %Veure que les opreacions estan ben definides
+    \begin{definition}[Suma de nombres enters]
+        \labelname{suma de nombres enters}\label{def:suma-de-nombres-enters}
+        Siguin~\(\overline{(a,b)}\) i~\(\overline{(c,d)}\) dos nombres enters.
+        Definim la suma de nombres enters com una operació~\(+\) que satisfà
+        \[
+            \overline{(a,b)}+\overline{(c,d)}=\overline{(a+c,b+d)}.
+        \]
+    \end{definition}
+    \begin{definition}[Producte de nombres enters]
+        \labelname{producte de nombres enters}\label{def:producte-de-nombres-enters}
+        Siguin~\(\overline{(a,b)}\) i~\(\overline{(c,d)}\) dos nombres enters.
+        Definim el producte de nombres enters com una operació~\(\cdot\) que satisfà
+        \[
+            \overline{(a,b)}\cdot\overline{(c,d)}=\overline{(ac+bd,ad+bc)}.
+        \]
+    \end{definition}
+    \begin{proposition}
+        \label{prop:elements-neutres-dels-nombres-enters}
+        \label{prop:Z-es-un-grup}\label{prop:Z-es-un-anell}
+        Sigui~\(\overline{(a,b)}\) un nombre enter.
+        Aleshores
+        \begin{enumerate}
+            \item\label{enum:prop:elements-neutres-dels-nombres-enters-1}
+            \(\overline{(a,b)}+\overline{(0,0)}=\overline{(a,b)}\).
+            \item\label{enum:prop:elements-neutres-dels-nombres-enters-2}
+            \(\overline{(a,b)}\cdot\overline{(1,0)}=\overline{(a,b)}\).
+            \item\label{enum:prop:elements-neutres-dels-nombres-enters-3}
+            \(\overline{(a,b)}+\overline{(b,a)}=\overline{(0,0)}\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        Comencem veient el punt \eqref{enum:prop:elements-neutres-dels-nombres-enters-1}.
+        Per la definició de \myref{def:producte-de-nombres-enters} tenim que
+        \[
+            \overline{(a,b)}+\overline{(0,0)}=\overline{(a+0,0+b)},
+        \]
+        i per la proposició \myref{prop:commutativitat-naturals-per-Peano} i definició de \myref{def:nombres-enters}  trobem
+        \[
+            \overline{(a,b)}+\overline{(0,0)}=\overline{(a,b)}.
+        \]
+
+        Veiem ara el punt \eqref{enum:prop:elements-neutres-dels-nombres-enters-2}.
+        Per la definició de \myref{def:producte-de-nombres-enters} tenim que
+        \[
+            \overline{(a,b)}\cdot\overline{(1,0)}=\overline{(a\cdot 1+b\cdot 0,a\cdot0+b\cdot1)},
+        \]
+        i per la definició de \myref{def:producte-de-nombres-naturals} i la definició de \myref{def:nombres-enters} trobem
+        \[
+            \overline{(a,b)}\cdot\overline{(1,0)}=\overline{(a,b)}.
+        \]
+
+        Veiem el punt \eqref{enum:prop:elements-neutres-dels-nombres-enters-3}.
+        Per la definició de \myref{def:suma-de-nombres-enters} tenim que
+        \[
+            \overline{(a,b)}+\overline{(b,a)}=\overline{(a+b,b+a)}.
+        \]
+        Ara bé, per la proposició \myref{prop:commutativitat-naturals-per-Peano} i la definició de \myref{def:nombres-enters} tenim que
+        \[
+            a+b+0=b+a+0
+        \]
+        i, de nou per la definició de \myref{def:nombres-enters}, trobem~\((a+b,b+a)\sim(0,0)\), i per la definició de \myref{def:classe-dequivalencia} tenim que~\(\overline{(a+b,a+b)}=\overline{(0,0)}\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:notacio-nombres-enters}
+        Sigui~\(\overline{(a,b)}\) un nombre enter.
+        Aleshores
+        \begin{enumerate}
+            \item\label{enum:prop:notacio-nombres-enters-1} Si~\(a\geq b\),~\(\overline{(a,b)}=\overline{(a-b,0)}\).
+            \item\label{enum:prop:notacio-nombres-enters-2} Si~\(a\leq b\),~\(\overline{(a,b)}=\overline{(0,b-a)}\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        Comencem veient el punt \eqref{enum:prop:notacio-nombres-enters-1}.
+        Tenim que
+        \[
+            a+0=a+b-b,
+        \]
+        ja que~\(b+0=b\), i per tant, per la definició de \myref{def:resta-de-nombres-naturals} tenim que~\(b-b=0\).
+        Per tant, per la definició de \myref{def:nombres-enters} tenim~\((a,b)\sim(a-b,0)\), i per la definició de \myref{def:classe-dequivalencia} trobem que~\(\overline{(a,b)}=\overline{(a-b,0)}\).
+
+        La demostració del punt \eqref{enum:prop:notacio-nombres-enters-2} és anàloga.
+    \end{proof}
+    \begin{notation}
+        \label{notation:nombres-enters}
+        Denotarem~\(\overline{(a,0)}=a\) i~\(\overline{(0,a)}=-a\).
+        Per tant
+        \[
+            \mathbb{Z}=\{\dots,-3,-2,-1,0,1,2,3,\dots\}.
+        \]
+    \end{notation}
+    \begin{observation}
+        \label{obs:elements-que-es-tatxen-son-iguals}
+        \(a-b=0\sii a=b.\)
+    \end{observation}
+    \begin{theorem}
+        \label{thm:caracteritzacio-del-0-dels-enters}
+        Sigui~\(\overline{(a,b)}\) un nombre enter.
+        Aleshores
+        \[
+            \overline{(a,b)}=\overline{(0,0)}\sii a=b.
+        \]
+    \end{theorem}
+    \begin{proof}
+        Suposem que~\(\overline{(a,b)}=\overline{(0,0)}\).
+        Per la definició de \myref{def:classe-dequivalencia} això és
+        \[
+            (a,b)\sim(0,0),
+        \]
+        i per la definició de \myref{def:nombres-enters} tenim que això és
+        \[
+            a+0=b+0
+        \]
+        i de nou per la definició de \myref{def:nombres-enters} això és
+        \[
+            a=b.\qedhere
+        \]
+    \end{proof}
+    \begin{proposition}
+        \label{prop:Z-es-un-grup-abelia}
+        Siguin~\(\overline{(a,b)}\) i~\(\overline{(c,d)}\) nombres enters.
+        Aleshores
+        \[
+            \overline{(a,b)}+\overline{(c,d)}=\overline{(c,d)}+\overline{(a,b)}.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Per la definició de \myref{def:suma-de-nombres-enters} tenim que
+        \begin{align*}
+        \overline{(a,b)}+\overline{(c,d)}&=\overline{(a+d,b+c)}\\
+        &=\overline{(d+a,c+b)}\tag{\myref{prop:commutativitat-naturals-per-Peano}}\\
+        &=\overline{(c,d)}+\overline{(a,b)},\tag{\myref{def:suma-de-nombres-enters}}
+        \end{align*}
+        com volíem veure.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:Z-es-un-anell-commutatiu}
+        Siguin~\(\overline{(a,b)}\) i~\(\overline{(c,d)}\) nombres enters.
+        Aleshores
+        \[
+            \overline{(a,b)}\cdot\overline{(c,d)}=\overline{(c,d)}\cdot\overline{(a,b)}.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Per la definició de \myref{def:producte-de-nombres-enters} tenim que
+        \begin{align*}
+        \overline{(a,b)}\cdot\overline{(c,d)}&=\overline{(ac+bd,ad+bc)}\\
+        &=\overline{(ca+db,da+cb)}\tag{\myref{prop:commutativitat-producte-naturals-per-Peano}}\\
+        &=\overline{(ca+db,cb+da)}\tag{\myref{prop:commutativitat-naturals-per-Peano}}\\
+        &=\overline{(c,d)}\cdot\overline{(a,b)},\tag{\myref{def:producte-de-nombres-enters}}
+        \end{align*}
+        com volíem veure.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:Z-es-un-grup-associativitat}
+        Siguin~\(\overline{(a,b)}\),~\(\overline{(c,d)}\) i~\(\overline{(e,f)}\) nombres enters.
+        Aleshores
+        \[
+            \overline{(a,b)}+\left(\overline{(c,d)}+\overline{(e,f)}\right)=\left(\overline{(a,b)}+\overline{(c,d)}\right)+\overline{(e,f)}.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Per la definició de \myref{def:suma-de-nombres-enters} tenim que
+        \begin{align*}
+        \overline{(a,b)}+\left(\overline{(c,d)}+\overline{(e,f)}\right)&=\overline{(a,b)}+\overline{(c+f,d+e)}\\
+        &=\overline{\left(a+(d+e),b+(c+f)\right)}\\
+        &=\overline{\left((a+d)+e,(b+c)+f\right)}\tag{\myref{prop:associativitat-suma-de-naturals-per-Peano}}\\
+        &=\overline{(a+d,b+c)}+\overline{(e,f)}\\
+        &=\left(\overline{(a,b)}+\overline{(c,d)}\right)+\overline{(e,f)},
+        \end{align*}
+        com volíem veure.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:Z-es-un-anell-associativitat}
+        Siguin~\(\overline{(a,b)}\),~\(\overline{(c,d)}\) i~\(\overline{(e,f)}\) nombres enters.
+        Aleshores
+        \[
+            \overline{(a,b)}\cdot\left(\overline{(c,d)}\cdot\overline{(e,f)}\right)=\left(\overline{(a,b)}\cdot\overline{(c,d)}\right)\cdot\overline{(e,f)}.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Per la definició de \myref{def:producte-de-nombres-enters} tenim que
+        \begin{align*}
+        \overline{(a,b)}\cdot\left(\overline{(c,d)}\cdot\overline{(e,f)}\right)&=\overline{(a,b)}\cdot\overline{(ce+df,cf+de)}\\
+        &=\overline{\left(a(ce+df)+b(cf+de),a(cf+de)+b(cf+de)\right)}\\
+        \shortintertext{Per la proposició \myref{prop:distributiva-pel-producte-naturals-per-Peano}}
+        &=\overline{(ace+adf+bcf+bde,acf+ade+bcf+bde)}\\
+        \shortintertext{i per la proposició \myref{prop:commutativitat-producte-naturals-per-Peano}}
+        &=\overline{(ace+bde+adf+bcf,acf+bdf+ade+bce)}\\
+        \shortintertext{i de nou per la proposició \myref{prop:distributiva-pel-producte-naturals-per-Peano}}
+        &=\overline{\left((ac+bd)e+(ad+bc)f,(ac+bd)f+(ad+bc)e\right)}\\
+        &=\overline{(ac+bd,ad+bc)}\cdot\overline{(e,f)}\\
+        &=\left(\overline{(a,b)}\cdot\overline{(c,d)}\right)\cdot\overline{(e,f)},
+        \end{align*}
+        com volíem veure.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:distributiva-suma-pel-producte-enters}
+        \label{prop:Z-es-un-anell-distributiva-suma-pel-producte}
+        Siguin~\(\overline{(a,b)}\),~\(\overline{(c,d)}\) i~\(\overline{(e,f)}\) nombres enters.
+        Aleshores
+        \[
+            \overline{(a,b)}\cdot\left(\overline{(c,d)}+\overline{(e,f)}\right)=\overline{(a,b)}\cdot\overline{(c,d)}+\overline{(a,b)}\cdot\overline{(e,f)}
+        \]
+        i
+        \[
+            \left(\overline{(a,b)}+\overline{(c,d)}\right)\cdot\overline{(e,f)}=\overline{(a,b)}\cdot\overline{(e,f)}+\overline{(c,d)}\cdot\overline{(e,f)}.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Per la definició de \myref{def:suma-de-nombres-enters} tenim que
+        \begin{align*}
+        \overline{(a,b)}\cdot\left(\overline{(c,d)}+\overline{(e,f)}\right)&=\overline{(a,b)}\cdot\overline{(c+e,d+f)}\\
+        \shortintertext{per la definició de \myref{def:producte-de-nombres-enters}}
+        &=\overline{(a(c+e)+b(d+f),a(d+f)+b(c+e))}\\
+        \shortintertext{per la proposició \myref{prop:distributiva-pel-producte-naturals-per-Peano}}
+        &=\overline{(ac+ae+bd+bf,ad+af+bc+be)}\\
+        \shortintertext{per la proposició \myref{prop:commutativitat-naturals-per-Peano}}
+        &=\overline{(ac+bd+ae+bd,ad+bc+af+be)}\\
+        \shortintertext{per la definició de \myref{def:suma-de-nombres-naturals}}
+        &=\overline{(ac+bd,ad+bc)}+\overline{(ae+bd,af+be)}\\
+        \shortintertext{i per la definició de \myref{def:producte-de-nombres-naturals}}
+        &=\overline{(a,b)}\cdot\overline{(c,d)}+\overline{(a,b)}\cdot\overline{(e,f)}\qedhere
+        \end{align*}
+    \end{proof}
+    \begin{theorem}
+        \label{thm:Z-es-un-DI}
+        Siguin~\(\overline{(a,b)}\) i~\(\overline{(c,d)}\) dos nombres enters tals que~\(\overline{(a,b)}\cdot\overline{(c,d)}=\overline{(0,0)}\).
+        Aleshores~\(\overline{(a,b)}=\overline{(0,0)}\) ó~\(\overline{(c,d)}=\overline{(0,0)}\).
+    \end{theorem}
+    \begin{proof}
+        Per la definició de \myref{def:producte-de-nombres-enters} tenim que
+        \[
+            \overline{(a,b)}\cdot\overline{(c,d)}=\overline{(ac+bd,ad+bc)}.
+        \]
+        Com que per hipòtesi~\(\overline{(a,b)}\cdot\overline{(c,d)}=\overline{(0,0)}\), tenim que per la definició de \myref{def:nombres-enters} tenim que
+        \[
+            ac+bd+0=ad+bc+0,
+        \]
+        i de nou per la definició de \myref{def:nombres-enters} això és
+        \[
+            ac+bd=ad+bc.
+        \]
+
+        Suposem que~\(\overline{(c,d)}\neq\overline{(0,0)}\).
+        Pel Teorema \myref{thm:caracteritzacio-del-0-dels-enters} trobem que~\(c\neq d\).
+
+        Suposem també que~\(c>d\).
+        Això és que existeix un natural~\(k\) satisfent~\(c+k=d\).
+        Per tant %REF
+        \[
+            a(d+k)+db=ad+b(d+k)
+        \]
+        i per la proposició \myref{prop:distributiva-suma-pel-producte-enters} i la proposició \myref{prop:Z-es-un-grup-abelia} tenim que
+        \[
+            ad+db+ak=ad+bd+bk.
+        \]
+        Ara bé, pel Teorema \myref{thm:podem-tatxar-per-la-suma-nombres-naturals} i el Teorema \myref{thm:podem-tatxar-pel-producte-nombres-naturals} tenim que
+        \[
+            a=b
+        \]
+        i per la proposició \myref{thm:caracteritzacio-del-0-dels-enters} trobem que~\(\overline{(a,b)}=\overline{(0,0)}\).
+
+        Les demostracions dels altres casos són anàlogues.
+    \end{proof}
+    \begin{corollary}
+        \label{corollary:podem-tatxar-pels-costats-en-Z-pel-producte}
+        Siguin~\(a\),~\(b\) i~\(c\) nombres enters amb~\(c\neq0\) tals que
+        \[
+            ac=bc.
+        \]
+        Aleshores~\(a=b\).
+    \end{corollary}
+    \begin{proof}
+        Per la proposició \myref{prop:distributiva-suma-pel-producte-enters} trobem
+        \[
+            (a-b)c=0,
+        \]
+        aleshores pel Teorema \myref{thm:Z-es-un-DI} trobem que ha de ser~\(a-b=0\), i per l'observació \myref{obs:elements-que-es-tatxen-son-iguals} tenim~\(a=b\), com volíem veure.
+    \end{proof}
+    \subsection{Divisibilitat dels nombres enters}
+    \begin{definition}[Divisors i múltiples]
+        \labelname{divisor}\label{def:divisor-Z}
+        \labelname{múltiple}\label{def:multiple-Z}
+        Siguin~\(a\) i~\(b\) dos nombres enters tal que existeix un nombre enter~\(c\) satisfent~\(a=bc\).
+        Aleshores direm que~\(b\) divideix a~\(a\) o que~\(a\) és múltiple de~\(b\).
+    \end{definition}
+    \begin{notation}
+        Siguin~\(a\) i~\(b\) enters tals que~\(b\) divideix a~\(a\).
+        Denotarem~\(b\divides a\).
+    \end{notation}
+    \begin{proposition}
+        \label{prop:oposats-tenen-els-mateixos-divisors}
+        \label{prop:oposats-tenen-els-mateixos-multiples}
+        Siguin~\(a\) i~\(b\) enters.
+        Aleshores
+        \begin{enumerate}
+            \item\label{enum:prop:oposats-tenen-els-mateixos-divisors}~\(b\divides a\) si i només si~\(b\divides-a\).
+            \item\label{enum:prop:oposats-tenen-els-mateixos-multiples}~\(b\divides a\) si i només si~\(-b\divides a\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        Comencem veient el punt \eqref{enum:prop:oposats-tenen-els-mateixos-divisors}.
+        Si~\(b\divides a\) per la definició de \myref{def:divisor-Z} tenim que existeix un enter~\(c\) tal que~\(a=bc\), i per tant~\(-a=b(-c)\), i equivalentment~\(b\divides-a\).
+
+        Veiem ara el punt \eqref{enum:prop:oposats-tenen-els-mateixos-multiples}.
+        Si~\(b\divides a\) per la definició de \myref{def:divisor-Z} tenim que existeix un enter~\(c\) tal que~\(a=bc\), i per tant~\(a=(-c)(-b)\), i equivalentment~\(-b\divides a\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:divisors-divideixen-el-divident-escalat}
+        Siguin~\(c\),~\(b\) i~\(a\) enters tals que~\(c|a\).
+        Aleshores~\(c\divides ab\).
+    \end{proposition}
+    \begin{proof}
+        Si~\(c\divides a\) per la definició de \myref{def:divisor-Z} tenim que existeix un~\(k\) tal que~\(a=kc\).
+        Ara bé, també tenim~\(ab=kbc\), i per tant~\(c\divides ab\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:un-divisor-divideix-la-suma-o-la-resta-dels-seus-dividents}
+        Siguin~\(a\),~\(b\) i~\(c\) enters tals que~\(c\divides a\) i~\(c\divides b\).
+        Aleshores~\(c\divides a+b\) i~\(c\divides a-b\).
+    \end{proposition}
+    \begin{proof}
+        Per la definició de \myref{def:divisor-Z} tenim que existeixen enters~\(k\) i~\(k'\) tals que~\(a=kc\) i~\(c=k'b\).
+        Per tant per la proposició \myref{prop:distributiva-suma-pel-producte-enters} trobem
+        \[
+            a+b=(k+k')c\quad\text{i}\quad a-b=(k-k')c.\qedhere
+        \]
+    \end{proof}
+    \begin{proposition}
+        \label{prop:transitivitat-de-la-divisibilitat}
+        Siguin~\(a\),~\(b\) i~\(c\) enters tal que~\(a\divides b\) i~\(b\divides c\).
+        Aleshores~\(a\divides c\).
+    \end{proposition}
+    \begin{proof}
+        Per la definició de \myref{def:divisor-Z} tenim que existeixen enters~\(k\) i~\(k'\) tals que~\(a=kb\) i~\(b=k'c\).
+        Per tant~\(a=kk'c\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:simetria-en-la-divisibilitat-implica-igualtat}
+        Siguin~\(a\) i~\(b\) enters tals que~\(a\divides b\) i~\(b\divides a\).
+        Aleshores~\(a=b\) ó~\(a=-b\).
+    \end{proposition}
+    \begin{proof}
+        Per la definició de \myref{def:divisor-Z} tenim que existeixen enters~\(k\) i~\(k'\) tals que~\(a=kb\) i~\(b=k'a\).
+        Per tant trobem
+        \[
+            b=kk'b
+        \]
+        i tenim
+        \[
+            0=kk'b-b
+        \]
+        i per la proposició \myref{prop:distributiva-suma-pel-producte-enters} trobem
+        \[
+            0=(kk'-1)b.
+        \]
+        Ara bé, si~\(b=0\) tenim que~\(a=k0\) i~\(a=0\), i per tant~\(a=b\).
+        Si~\(b\neq0\) pel Teorema \myref{thm:Z-es-un-DI} trobem que ha de ser~\(kk'=1\) i per tant ha de ser~\(k=1\) i~\(k'=1\) ó~\(k=-1\) i~\(k'=-1\) i trobem que~\(a=b\) ó~\(a=-b\).
+    \end{proof}
+    \subsection{Màxim comú divisor}
+    \begin{definition}[Màxim comú divisor]
+        \labelname{màxim comú divisor}\label{def:maxim-comu-divisor}
+        Siguin~\(a\) i~\(b\) enters.
+        Aleshores definim
+        \[
+            \mcd(a,b)=\max_{c\in\mathbb{Z}}\{c\divides a\text{ i }c\divides b\}
+        \]
+        com el màxim comú divisor de~\(a\) i~\(b\).
+    \end{definition}
+    \begin{proposition}
+        Siguin~\(a\) i~\(b\) enters.
+        Aleshores~\(\mcd(a,b)=\mcd(b,a)\).
+    \end{proposition}
+    \begin{proof}
+        Per la definició de \myref{def:maxim-comu-divisor} tenim que
+        \[
+            \mcd(a,b)=\max_{c\in\mathbb{Z}}\{c\divides a\text{ i }c\divides b\}\quad\text{i}\quad\mcd(b,a)=\max_{c\in\mathbb{Z}}\{c\divides b\text{ i }c\divides a\},
+        \]
+        i per tant, per la Tautologia \myref{taut:condicio-equivalent-a-conjuncio} trobem que~\(\mcd(a,b)=\mcd(b,a)\).
+    \end{proof}
+    \begin{proposition}
+        Siguin~\(a\) i~\(b\) enters.
+        Aleshores per a tot~\(\lambda\) enter
+        \[
+            \mcd(a,b)=\mcd(a-\lambda b,b)=\mcd(a,b-\lambda a).
+        \]
+    \end{proposition}
+    \begin{proof}
+        Prenem un enter~\(c\) tal que~\(c\divides a\) i~\(c\divides b\).
+        Aleshores per la proposició \myref{prop:divisors-divideixen-el-divident-escalat} tenim que~\(c\) divideix~\(-\lambda b\), i per la proposició \myref{prop:un-divisor-divideix-la-suma-o-la-resta-dels-seus-dividents} trobem que~\(c\divides a-\lambda b\), i per la definició de \myref{def:maxim-comu-divisor} tenim que, efectivament,~\(\mcd(a,b)=\mcd(a-\lambda b,b)\).
+    \end{proof}
+    \subsection{La divisió euclidiana i la identitat de Bézout}
+    \begin{lemma}
+        \label{lema:criteri-de-divisibilitat-dEuclides}
+        Siguin~\(D\) i~\(d\) nombres enters amb~\(D,d>0\).
+        Aleshores existeixen dos únics~\(q\),~\(r\) enters tals que
+        \[
+            D=dq+r
+        \]
+        amb~\(0\leq r<d\).
+    \end{lemma}
+    \begin{proof}
+        Definim el conjunt
+        \[
+            S=\{x\in\mathbb{Z}\mid x\geq0\text{ i existeix }z\in\mathbb{Z}\text{ tal que }x=D-dz\}.
+        \]
+        Observem que~\(D\in S\), i per tant~\(S\neq\emptyset\).
+        Sigui doncs~\(r=\min\{x\in S\}\).
+        Per tant existeix un enter~\(q\) tal que
+        \[
+            r=D-dq.
+        \]
+
+        Ara bé, tenim que~\(r<d\), ja que si~\(r\geq d\) tindríem
+        \begin{align*}
+        0&\geq r-d\\
+        &=D-dq-d\\
+        &=D-d(q+1)\tag{\myref{prop:distributiva-suma-pel-producte-enters}}
+        \end{align*}
+        i per tant~\(r-d\) seria un element de~\(S\), amb~\(r-d<r\), però això entraria amb contradicció amb que~\(r=\min\{x\in S\}\).
+        Per tant~\(\leq r<d\) i hem acabat.
+    \end{proof}
+    \begin{theorem}[Criteri de divisibilitat d'Euclides] %MOURE?
+        \labelname{criteri de divisibilitat d'Euclides}\label{thm:divisio-euclidiana}
+        \label{thm:criteri-de-divisibilitat-dEuclides} %Veure que les referències estan bé.
+        Siguin~\(D\) i~\(d\) nombres enters amb~\(d\neq0\).
+        Aleshores existeixen dos únics~\(q\),~\(r\) enters tals que
+        \[
+            D=dq+r
+        \]
+        amb~\(0\leq r<\abs{d}\).
+    \end{theorem}
+    \begin{proof}
+        Veiem primer que si~\(q\) i~\(r\) existeixen aquests són únics.
+        Suposem doncs que existeixen~\(q_{1}, q_{2}, r_{1}, r_{2}\) tals que
+        \[
+            D=dq_{1}+r_{1}=dq_{2}+r_{2}
+        \]
+        amb~\(0\leq r_{1}<\abs{d}\) i~\(0\leq r_{2}<\abs{d}\).
+        Aleshores tenim
+        \[
+            D-D=d(q_{1}-q_{2})+(r_{1}-r_{2})
+        \]
+        i per tant
+        \[
+            r_{2}-r_{1}=d(q_{1}-q_{2}).
+        \]
+        Ara bé, tenim que~\(r_{2}-r_{1}<\abs{d}\), ja que per hipòtesi~\(r_{1},r_{2}<\abs{d}\), i per tant ha de ser~\(r_{2}-r_{1}=0\), i per l'observació \myref{obs:elements-que-es-tatxen-son-iguals} tenim~\(r_{1}=r_{2}\).
+        Ara bé, aleshores tenim
+        \[
+            0=d(q_{1}-q_{2})
+        \]
+        i com que, per hipòtesi,~\(d\neq0\), pel Teorema \myref{thm:Z-es-un-DI} ha de ser~\(q_{1}-q_{2}=0\), i de nou per l'observació \myref{obs:elements-que-es-tatxen-son-iguals} tenim~\(q_{1}=q_{2}\).
+        Per tant la unicitat queda demostrada.
+
+        Veiem ara que existeixen.
+        Efectivament, si~\(D,d>0\) l'enunciat és cert pel lema \myref{lema:criteri-de-divisibilitat-dEuclides}.
+
+        Si~\(D<0\) i~\(d>0\) definim~\(D'=-D\).
+        Aleshores~\(D'>0\), i pel lema \myref{lema:criteri-de-divisibilitat-dEuclides} tenim que existeixen~\(q'\) i~\(r'\) enters tals que
+        \[
+            D'=dq'+r'
+        \]
+        amb~\(0\leq r'<d\).
+        I per tant
+        \begin{align*}
+        D&=-(dq'+r')\\
+        &=d(-q')-r'\tag{\myref{prop:distributiva-suma-pel-producte-enters}}\\
+        &=d(-q')-d+d-r'\\
+        &=d(-q'-1)+(d-r')\tag{\myref{prop:distributiva-suma-pel-producte-enters}}
+        \end{align*}
+        i si prenem~\(q=-q'-1\) i~\(r=d-r'\) tenim
+        \[
+            D=dq+r
+        \]
+        amb~\(0\leq d-r'<d\).
+
+        Si~\(d<0\) prenem~\(d'=-d\), i aleshores~\(d'>0\) i pels casos anteriors hem acabat.
+    \end{proof}
+    \begin{theorem}[Identitat de Bézout]
+        \labelname{la identitat de Bézout}\label{thm:identitat-de-Bezout}
+        Siguin~\(a\) i~\(b\) dos enters.
+        Aleshores existeixen enters~\(\alpha\) i~\(\beta\) tals que
+        \[
+            \alpha a+\beta b=\mcd(a,b).
+        \]
+    \end{theorem}
+    \begin{proof}
+        Considerem el conjunt
+        \[
+            S=\{ax+by\mid x,y\in\mathbb{Z}, ax+by>0\}.
+        \]
+        Observem que si~\(x=1\) i~\(y=0\), l'enter~\(a\) pertany a~\(S\).
+        Per tant~\(S\) és un conjunt no buit i tenim que existeixen enters~\(s\) i~\(t\) tals que~\(as+bt=\min\{d\in S\}\).
+        Posem~\(d=as+bt\).
+        Pel \myref{thm:criteri-de-divisibilitat-dEuclides} tenim que existeixen dos enters~\(q\) i~\(r\) amb~\(0\leq r<d\) tals que
+        \[
+            a=dq+r.
+        \]
+        Tenim que~\(r\) és un element de~\(S\cup\{0\}\), ja que
+        \begin{align*}
+        r&=a-qd\\
+        &=a-q(as+bt)\\
+        &=a(1-qs)-b(qt).
+        \end{align*}
+        Ara bé, tenim que~\(0\leq r<d\) i~\(as+bt=\min\{d\in S\}\).
+        Per tant ha de ser~\(r=0\) i per la definició de \myref{def:divisor-Z} trobem~\(d\divides a\).
+        Amb un argument anàleg podem veure que~\(d\divides b\).
+        Suposem ara que existeix~\(c\) tal que~\(c\divides a\) i~\(c\divides b\).
+        Per la definició de \myref{def:divisor-Z} tenim que existeixen~\(k\) i~\(k'\) satisfent
+        \[
+            a=kc\quad\text{i}\quad b=k'c
+        \]
+        i per tant
+        \begin{align*}
+        d&=as+bt\\
+        &=cks+ck't\\
+        &=c(ks+k't),
+        \end{align*}
+        i per tant~\(c<d\), i per la definició de \myref{def:maxim-comu-divisor} trobem que~\(\mcd(a,b)=as+bt\).
+    \end{proof}
+    \begin{definition}[Coprimers]
+        \labelname{coprimers}\label{def:coprimers}
+        Siguin~\(a\) i~\(b\) dos enters tals que~\(\mcd(a,b)=1\).
+        Aleshores direm que~\(a\) i~\(b\) són coprimers.
+    \end{definition}
+    \begin{theorem}
+        \label{thm:condicio-equivalent-a-coprimers-per-Bezout}
+        Siguin~\(a\) i~\(b\) dos enters.
+        Aleshores~\(a\) i~\(b\) són coprimers si i només si existeixen dos enters~\(\alpha\) i~\(\beta\) tals que
+        \[
+            \alpha a+\beta b=1.
+        \]
+    \end{theorem}
+    \begin{proof}
+        Veiem que la condició és suficient (\(\implica\)).
+        Suposem doncs que~\(a\) i~\(b\) són coprimers.
+        Per \myref{thm:identitat-de-Bezout} hem acabat.
+
+        Veiem ara que la condició és necessària (\(\implicatper\)).
+        Suposem doncs que existeixen dos enters~\(\alpha\) i~\(\beta\) tals que~\(\alpha a+\beta b=1\).
+        Tenim que si existeix un enter~\(c\) tal que~\(c\divides a\) i~\(c\divides b\), aleshores~\(c\divides 1\), i per la definició de \myref{def:maxim-comu-divisor} trobem que~\(\mcd(a,b)=1\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:un-enter-que-divideix-al-producte-de-dos-on-un-nes-coprimer-divideix-a-laltre}
+        Siguin~\(c\) un enter i~\(a\) i~\(b\) dos enters coprimers tals que~\(a\divides bc\).
+        Aleshores~\(a\divides c\).
+    \end{proposition}
+    \begin{proof}
+        Pel Teorema \myref{thm:condicio-equivalent-a-coprimers-per-Bezout} tenim que existeixen dos enters~\(\alpha\) i~\(\beta\) tals que
+        \[
+            1=\alpha a+\beta b.
+        \]
+        Per tant
+        \[
+            c=c\alpha a+c\beta b,
+        \]
+        i per la definició de \myref{def:divisor-Z} tenim que existeix un enter~\(k\) tal que~\(ak=bc\).
+        Per tant
+        \[
+            c=c\alpha a+ak\beta
+        \]
+        i per la proposició \myref{prop:distributiva-suma-pel-producte-enters} tenim que~\(c=(c\alpha+k\beta)a\) i per la definició de \myref{def:divisor-Z} tenim que~\(a\divides c\).
+    \end{proof}
+    \subsection{Mínim comú múltiple}
+    \begin{definition}[Mínim comú múltiple]
+        \labelname{mínim comú múltiple}\label{def:minim-comu-multiple}
+        Siguin~\(a\) i~\(b\) dos enters.
+        Aleshores definim
+        \[
+            \mcm(a,b)=\min\{m\in\mathbb{Z}\mid m>0, a\divides m\text{ i }a\divides m\}
+        \]
+        com el mínim comú múltiple de~\(a\) i~\(b\).
+    \end{definition}
+    \begin{theorem}
+        Siguin~\(a\) i~\(b\) dos enters.
+        Aleshores
+        \[
+            \mcd(a,b)\mcm(a,b)=\abs{ab}.
+        \]
+    \end{theorem}
+    \begin{proof}
+        Sigui~\(d=\mcd(a,b)\).
+        Per la definició de \myref{def:maxim-comu-divisor} existeixen~\(a'\) i~\(b'\) tals que~\(a=da'\) i~\(b=db'\).
+        Per tant, per la proposició \myref{prop:divisors-divideixen-el-divident-escalat} trobem que~\(d\divides ab\), i per la definició de \myref{def:divisor-Z} trobem que existeix un enter~\(l\) tal que~\(dl=\abs{ab}\).
+        Per tant~\(dl=da'b\) i~\(dl=adb'\), i pel corol·lari \myref{corollary:podem-tatxar-pels-costats-en-Z-pel-producte} tenim que~\(l=a'b\) i~\(l=ab'\), i per la definició de \myref{def:divisor-Z} tenim que~\(a\divides l\) i~\(b\divides l\).
+
+        Sigui~\(m\) un enter tal que~\(a\divides m\) i~\(b\divides m\).
+        Per la definició de \myref{def:divisor-Z} tenim que existeixen dos enters~\(k_{1}\) i~\(k_{2}\) tals que~\(m=ak_{1}\) i~\(m=bk_{2}\).
+        Ara bé, per \myref{thm:identitat-de-Bezout} tenim que existeixen dos enters~\(\alpha\) i~\(\beta\) tals que~\(\alpha a+\beta b=d\).
+        Per tant
+        \begin{align*}
+        md&=m\alpha a+ma\beta\tag{\myref{prop:distributiva-suma-pel-producte-enters}}\\
+        &=bk_{2}\alpha a+ak_{1}\beta b\\
+        &=ab(bk_{2}+ak_{1})\tag{\myref{prop:distributiva-suma-pel-producte-enters}}\\
+        &=dl(bk_{2}+ak_{1})
+        \end{align*}
+        i de nou pel corol·lari \myref{corollary:podem-tatxar-pels-costats-en-Z-pel-producte} trobem que~\(m=l(bk_{2}+ak_{1})\), i per tant~\(l\leq m\).
+        Per tant, per la definició de \myref{def:minim-comu-multiple} tenim que~\(l=\mcm(a,b)\), i per tant
+        \[
+            |ab|=\mcd(a,b)\mcm(a,b).\qedhere
+        \]
+    \end{proof}
+    \subsection{Teorema Fonamental de l'Aritmètica}
+    \begin{definition}[Enter primer]
+        \labelname{enter primer}\label{def:enter-primer}
+        Siguin~\(p>1\) un enter amb i~\(d\) un enter tal que si~\(d\divides p\) aleshores~\(d\) és igual a~\(1\) ó~\(p\).
+        Aleshores direm que~\(p\) és primer.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:Si-un-primer-divideix-al-producte-aleshores-divideix-els-elements}
+        Siguin~\(a\) i~\(b\) dos enters i~\(p\) un primer tals que~\(p\divides ab\).
+        Aleshores~\(p\divides a\) ó~\(p\divides b\).
+    \end{proposition}
+    \begin{proof}
+        Suposem que~\(p\ndivides a\).
+        Aleshores per la definició de \myref{def:coprimers} tenim que~\(p\) i~\(a\) són coprimers.
+        Per tant per la proposició \myref{prop:un-enter-que-divideix-al-producte-de-dos-on-un-nes-coprimer-divideix-a-laltre} tenim que~\(p\divides b\).
+        El cas~\(p\ndivides b\) és anàleg.
+    \end{proof}
+    \begin{lemma}
+        \label{lema:thm:Teorema-Fonamental-de-lAritmetica-1}
+        Sigui~\(a\) un enter amb~\(a>1\).
+        Aleshores existeixen~\(p_{1},\dots,p_{n}\) primers i~\(r_{1},\dots,r_{n}\) enters positius tals que
+        \[
+            a=p_{1}^{r_{n}}\cdots p_{n}^{r_{n}}.
+        \]
+    \end{lemma}
+    \begin{proof}
+        Observem primer que si~\(a\) és primer tenim~\(a=a\) i aquest cas particular de l'enunciat és cert.
+
+        Ho farem per inducció.
+        Si~\(a=2\) tenim que~\(a\) és primer i hem acabat.
+
+        Suposem ara que~\(a>2\) i que l'enunciat és cert per a~\(a\) fix.
+        Volem veure que també és cert per a~\(a+1\).
+        Si~\(a+1\) és primer, per la definició d'\myref{def:enter-primer} hem acabat.
+        Suposem doncs que~\(a+1\) no és primer.
+        Aleshores existeixen enters~\(\alpha\) i~\(\beta\) tals que~\(a+1=\alpha\beta\).
+        Bé, tenim que es compleix~\(2\leq\alpha\leq a\) i~\(2\leq\beta\leq a\).
+        Ara bé, per l'hipòtesi d'inducció tenim que existeixen~\(p_{1},\dots,p_{r}\),~\(q_{1},\dots,q_{s}\) primers tals que
+        \[
+            \alpha=p_{1}\cdots p_{r}\quad\text{i}\quad\beta=q_{1}\cdots q_{s},
+        \]
+        i per tant
+        \[
+            a+1=p_{1}\cdots p_{r}q_{1}\cdots q_{s},
+        \]
+        i pel \myref{thm:principi-dinduccio} tenim que l'enunciat és cert.
+    \end{proof}
+    \begin{lemma}
+        \label{lema:thm:Teorema-Fonamental-de-lAritmetica-2}
+        Siguin~\(a>1\) un enter i~\(p_{1},\dots,p_{n}\) i~\(q_{1},\dots,q_{r}\) primers satisfent~\(p_{1}\leq\dots\leq p_{n}\),~\(q_{1}\leq\dots\leq q_{r}\) tals que
+        \[
+            a=p_{1}\cdots p_{n}\quad\text{i}\quad a=q_{1}\cdots q_{r}.
+        \]
+        Aleshores~\(n=r\) i~\(p_{i}=q_{i}\) per a tot~\(i\in\{1,\dots,n\}\).
+    \end{lemma}
+    \begin{proof}
+        Tenim que
+        \[
+            p_{1}\cdots p_{n}=q_{1}\cdots q_{r},
+        \]
+        i per la definició de \myref{def:divisor-Z} trobem que~\(p_{1}\divides q_{1}\cdots q_{r}\), i per la proposició \myref{prop:Si-un-primer-divideix-al-producte-aleshores-divideix-els-elements} trobem que~\(p_{1}\divides q_{j_{1}}\) per a cert~\(j_{1}\in\{1,\dots,r\}\) i per la definició d'\myref{def:enter-primer} trobem que existeix un~\(\{j_{1}\in\{1,\dots,r\}\) tal que~\(p_{1}=q_{j_{1}}\).
+        Aleshores pel corol·lari \myref{corollary:podem-tatxar-pels-costats-en-Z-pel-producte} trobem que
+        \[
+            p_{2}\cdots p_{n}=q_{1}\cdots q_{j_{1}-1}q_{j_{1}+1}\cdots q_{r}.
+        \]
+
+        Podem iterar aquest procés~\(k=\min(n,r)\) vegades.
+        Ara bé, si~\(n>r\) tenim
+        \[
+            p_{k+1}\cdots p_{n}=1,
+        \]
+        que, per la definició d'\myref{def:enter-primer}, no és possible, i si~\(n<r\) trobem
+        \[
+            1=q_{j_{k+1}}\cdots q_{j_{r}}
+        \]
+        on~\(j_{k+1},\dots,j_{r}\in\{1,\dots,r\}\setminus\{j_{1},\dots,j_{k}\}\), i de nou per la definició d'\myref{def:enter-primer}, no és possible.
+        Per tant ha de ser~\(n=r\) i hem acabat.
+    \end{proof}
+    \begin{theorem}[Teorema Fonamental de l'Aritmètica]
+        %https://proofwiki.org/wiki/Fundamental_Theorem_of_Arithmetic
+        \labelname{Teorema Fonomental de l'Aritmètica}\label{thm:Teorema-Fonamental-de-lAritmetica}
+        Sigui~\(a>1\) un enter.
+        Aleshores existeixen~\(p_{1},\dots,p_{n}\) primers amb~\(p_{1}\geq p_{2}\geq\dots\geq p_{n}\) únics tals que~\(a=p_{1}\cdots p_{n}\).
+    \end{theorem}
+    \begin{proof}
+        És conseqüència del lema \myref{lema:thm:Teorema-Fonamental-de-lAritmetica-1} i el lema \myref{lema:thm:Teorema-Fonamental-de-lAritmetica-2}.
+    \end{proof}
+    \begin{theorem}[Teorema d'Euclides]
+        \labelname{Teorema d'Euclides}\label{thm:Teorema-dEuclides}
+        Sigui~\(m\) un natural.
+        Aleshores existeix un nombre natural~\(n>m\) tal que~\(p_{1},\dots,p_{n}\) siguin nombres primers diferents dos a dos.
+    \end{theorem}
+    \begin{proof}
+        Siguin~\(p_{1},\dots,p_{m}\) primers diferents.
+        Definim
+        \[
+            p=\left(\prod_{i=1}^{m}p_{i}\right)+1.
+        \]
+        Per la definició de \myref{def:divisor-Z} tenim que~\(p_{j}\divides\prod_{i=0}^{m}p_{i}\) per a tot~\(j\in\{1,\dots,m\}\).
+        Fixem aquest~\(j\in\{1,\dots,m\}\), i de nou per la definició de \myref{def:divisor-Z} tenim que existeix un enter~\(q\) tal que
+        \[
+            qp_{j}=\prod_{i=0}^{m}p_{i}
+        \]
+        i tenim que
+        \[
+            p=qp_{j}+1,
+        \]
+        o equivalentment,
+        \[
+            p-qp_{j}=1.
+        \]
+
+        Per tant pel Teorema \myref{thm:condicio-equivalent-a-coprimers-per-Bezout} i la definició de \myref{def:coprimers} trobem que~\(p\) i~\(p_{j}\) són coprimers per a tot~\(j\in\{1,\dots,m\}\).
+
+        Si~\(p\) és primer hem acabat, ja que~\(p\) és més gran que~\(p_{1},\dots,p_{n}\), i per tant diferent.
+        Ara bé, si~\(p\) no és primer pel lema \myref{lema:thm:Teorema-Fonamental-de-lAritmetica-1} tenim que existeix un primer~\(p'\) tal que~\(p'\divides p\), però hem vist que~\(p_{1}\,dots,p_{m}\ndivides p\), per tant~\(p'\) és diferent de~\(p_{1},\dots,p_{m}\) i hem acabat.
+    \end{proof}
+\section{Els nombres modulars}
+    \subsection{Construcció dels nombres modulars}
+    \begin{proposition}
+        \label{prop:relacio-dequivalencia-Z-m}
+        Siguin~\(m\) un nombre enter.
+        Aleshores la relació
+        \[
+            x\sim y\sii x-y=mk\quad\text{per a cert }k\in\mathbb{Z}\text{ per a tot }x,y\in\mathbb{Z}
+        \]
+        és una relació d'equivalència.
+    \end{proposition}
+    \begin{proof}
+        Comprovem les propietats de la definició de relació d'equivalència:
+        \begin{enumerate}
+            \item Reflexiva: Sigui~\(x\) un nombre enter.
+            Aleshores per l'observació \myref{obs:elements-que-es-tatxen-son-iguals} tenim que~\(x-x=0\) i per la definició de \myref{def:nombres-enters} trobem que~\(0=m\cdot 0\), i per tant~\(x\sim x\).
+            \item Simètrica: Siguin~\(x\) i~\(y\) dos enters tals que~\(x\sim y\).
+            Per hipòtesi tenim que~\(x-y=km\) per a cert~\(k\) enter, i per tant~\(y-x=-km\) i tenim~\(y\sim x\).
+            \item Transitiva: Siguin~\(x\),~\(y\) i~\(z\) nombres enters tals que~\(x\sim y\) i~\(y\sim z\).
+            Per hipòtesi això és que~\(x-y=mk\) i~\(y-z=mk'\) per a cert~\(k,k'\) enters.
+            Per tant trobem
+            \begin{align*}
+            x-z&=x-y+y-z\\
+            &=mk+mk'\\
+            &=m(k+k')
+            \end{align*}
+            i per tant~\(x\sim z\).
+        \end{enumerate}
+        I per la definició de \myref{def:relacio-dequivalencia} hem acabat.
+    \end{proof}
+    \begin{definition}[Nombres modulars]
+        \labelname{nombres modulars}\label{def:nombres-modulars}\label{def:Z-m}
+        \labelname{nombres modulars congruents}\label{def:nombres-modulars-congruents}
+        Siguin~\(m\) un enter i
+        \[
+            x\sim y\sii x-y=mk\quad\text{per a cert }k\in\mathbb{Z}\text{ per a tot }x,y\in\mathbb{Z}
+        \]
+        una relació d'equivalència.
+        Aleshores denotem el conjunt quocient~\(\mathbb{Z}/\sim\) com~\(\mathbb{Z}/(m)\), i si~\(x\sim y\) escriurem~\(x\equiv y\pmod{m}\).
+        Direm que~\(\mathbb{Z}/(m)\) són nombres modulars i si~\(x\sim y\) direm que~\(x\) i~\(y\) són congruents mòdul~\(m\).
+
+        Aquesta definició té sentit per la proposició \myref{prop:relacio-dequivalencia-Z-m}
+    \end{definition}
+    \subsection{Operacions sobre nombres modulars} %Veure que estan ben definides
+    \begin{definition}[Suma de nombres modulars]
+        \labelname{suma de nombres modulars}\label{def:suma-de-nombres-modulars}
+        Siguin~\(\overline{x}\) i~\(\overline{y}\) dos elements de~\(\mathbb{Z}/(m)\).
+        Aleshores definim la seva suma com l'operació
+        \[
+            \overline{x}+\overline{y}=\overline{x+y}.
+        \]
+    \end{definition}
+    \begin{definition}[Producte de nombres modulars]
+        \labelname{producte de nombres modulars}\label{def:producte-de-nombres-modulars}
+        Siguin~\(\overline{x}\) i~\(\overline{y}\) dos elements de~\(\mathbb{Z}/(m)\).
+        Aleshores definim el seu producte com l'operació
+        \[
+            \overline{x}\cdot\overline{y}=\overline{x\cdot y}.
+        \]
+    \end{definition}
+    \begin{proposition}
+        \label{prop:Z-m-es-un-grup-abelia}
+        Siguin~\(\overline{a}\),~\(\overline{b}\) i~\(\overline{c}\) elements de~\(\mathbb{Z}/(m)\).
+        Aleshores
+        \begin{enumerate}
+            \item\label{enum:prop:Z-m-es-un-grup-abelia-1}~\(\overline{a}+\overline{b}=\overline{b}+\overline{a}\).
+%            \item~\(\overleftarrow{a}\cdot\overline{b}=\overline{b}\cdot\overline{a}\).
+            \item\label{enum:prop:Z-m-es-un-grup-abelia-2}~\(\overline{a}+(\overline{b}+\overline{c})=(\overline{a}+\overline{b})+\overline{c}\).
+            \item\label{enum:prop:Z-m-es-un-grup-abelia-3}~\(\overline{a}+\overline{0}=\overline{a}\).
+            \item\label{enum:prop:Z-m-es-un-grup-abelia-4}~\(\overline{a}+\overline{-a}=\overline{0}\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        Per veure el punt \eqref{enum:prop:Z-m-es-un-grup-abelia-1} fem
+        \begin{align*}
+        \overline{a}+\overline{b}&=\overline{a+b}\tag{\myref{def:suma-de-nombres-modulars}}\\
+        &=\overline{b+a}\tag{\ref{prop:Z-es-un-grup-abelia}}\\
+        &=\overline{b}+\overline{a}.\tag{\myref{def:suma-de-nombres-modulars}}
+        \end{align*}
+        Per veure el punt \eqref{enum:prop:Z-m-es-un-grup-abelia-2} fem
+        \begin{align*}
+        \overline{a}+(\overline{b}+\overline{c})&=\overline{a}+\overline{b+c}\tag{\myref{def:suma-de-nombres-modulars}}\\
+        &=\overline{a+(b+c)}\tag{\myref{def:suma-de-nombres-modulars}}\\
+        &=\overline{(a+b)+c}\tag{\myref{prop:Z-es-un-grup-associativitat}}\\
+        &=\overline{a+b}+\overline{c}\tag{\myref{def:suma-de-nombres-modulars}}\\
+        &=(\overline{a}+\overline{b})+\overline{c}.\tag{\myref{def:suma-de-nombres-modulars}}
+        \end{align*}
+        Per veure el punt \eqref{enum:prop:Z-m-es-un-grup-abelia-3} fem
+        \begin{align*}
+        \overline{a}+\overline{0}&=\overline{a+0}\tag{\myref{def:suma-de-nombres-modulars}}\\
+        &=\overline{a}.\tag{\ref{prop:Z-es-un-grup}}
+        \end{align*}
+        Per veure el punt \eqref{enum:prop:Z-m-es-un-grup-abelia-4} fem
+        \begin{align*}
+        \overline{a}+\overline{-a}&=\overline{a-a}\tag{\myref{def:suma-de-nombres-modulars}}\\
+        &=\overline{0}.\tag{\myref{obs:elements-que-es-tatxen-son-iguals}}
+        \end{align*}
+        I hem acabat.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:Z-m-es-un-anell-commutatiu}
+        Siguin~\(\overline{a}\),~\(\overline{b}\) i~\(\overline{c}\) elements de~\(\mathbb{Z}/(m)\).
+        Aleshores
+        \begin{enumerate}
+            \item\label{enum:prop:Z-m-es-un-anell-commutatiu-1}
+            \(\overline{a}\cdot\overline{b}=\overline{b}\cdot\overline{a}\).
+            \item\label{enum:prop:Z-m-es-un-anell-commutatiu-2}
+            \(\overline{a}\cdot\overline{1}=\overline{a}\).
+            \item\label{enum:prop:Z-m-es-un-anell-commutatiu-3}
+            \(\overline{a}\cdot(\overline{b}\cdot\overline{c})=(\overline{a}\cdot\overline{b})\cdot\overline{c}\).
+            \item\label{enum:prop:Z-m-es-un-anell-commutatiu-4}
+            \(\overline{a}\cdot(\overline{b}+\overline{c})=\overline{a}\cdot\overline{b}+\overline{a}\cdot\overline{c}\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        Per veure el punt \eqref{enum:prop:Z-m-es-un-anell-commutatiu-1} fem
+        \begin{align*}
+        \overline{a}\cdot\overline{b}&=\overline{a\cdot b}\tag{\myref{def:producte-de-nombres-modulars}}\\
+        &=\overline{b\cdot a}\tag{\myref{prop:Z-es-un-anell-commutatiu}}\\
+        &=\overline{b}\cdot\overline{a}.\tag{\myref{def:producte-de-nombres-modulars}}\\
+        \end{align*}
+        Per veure el punt \eqref{enum:prop:Z-m-es-un-anell-commutatiu-2} fem, per la definició de \myref{def:producte-de-nombres-modulars}
+        \[
+            \overline{a}\cdot\overline{1}=\overline{a\cdot 1},
+        \]
+        i per la proposició \myref{prop:Z-es-un-anell} trobem
+        \[
+            \overline{a}\cdot\overline{1}=\overline{a}.
+        \]
+        Per veure el punt \eqref{enum:prop:Z-m-es-un-anell-commutatiu-3} fem
+        \begin{align*}
+        \overline{a}\cdot(\overline{b}\cdot\overline{c})&=\overline{a}\cdot\overline{b\cdot c}\tag{\myref{def:producte-de-nombres-modulars}}\\
+        &=\overline{a\cdot(b\cdot c)}\tag{\myref{def:producte-de-nombres-modulars}}\\
+        &=\overline{(a\cdot b)\cdot c}\tag{\myref{prop:Z-es-un-anell-associativitat}}\\
+        &=\overline{a\cdot b}\cdot\overline{c}\tag{\myref{def:producte-de-nombres-modulars}}\\
+        &=(\overline{a}\cdot\overline{b})\cdot\overline{c}.\tag{\myref{def:producte-de-nombres-modulars}}
+        \end{align*}
+        Per veure el punt \eqref{enum:prop:Z-m-es-un-anell-commutatiu-4} fem
+        \begin{align*}
+        \overline{a}\cdot(\overline{b}+\overline{c})&=\overline{a}\cdot\overline{b+c}\tag{\myref{def:suma-de-nombres-modulars}}\\
+        &=\overline{a\cdot(b+c)}\tag{\myref{def:producte-de-nombres-modulars}}\\
+        &=\overline{ab+ac}\tag{\myref{prop:distributiva-suma-pel-producte-enters}}\\
+        &=\overline{ab}+\overline{ac}\tag{\myref{def:suma-de-nombres-modulars}}\\
+        &=\overline{a}\cdot\overline{b}+\overline{a}\cdot\overline{c}.\tag{\myref{def:producte-de-nombres-modulars}}
+        \end{align*}
+        I hem acabat.
+    \end{proof}
+%    \begin{proposition}
+%        Veure que~\(\mathbb{Z}/(p)\) és un DI i cos
+%    \end{proposition}
+    \subsection{Congruències i aritmètica modular}
+    \begin{proposition}
+        Siguin~\(a\),~\(a'\),~\(b\),~\(b'\) i~\(m>1\) enters tals que
+        \[
+            a\equiv a'\pmod{m}\quad\text{i}\quad b\equiv b'\pmod{m}.
+        \]
+        Aleshores
+        \[
+            a+b\equiv a'+b'\pmod{m}\quad\text{i}\quad ab\equiv a'b'\pmod{m}.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Per la definició de \myref{def:nombres-modulars-congruents} tenim que existeixen enters~\(\lambda\) i~\(\mu\) tals que~\(a-a'=\lambda m\) i~\(b-b'=\mu m\).
+        Per tant
+        \begin{align*}
+        (a+b)-(a'-b')&=(a-a')+(b-b')\\
+        &=\lambda m+\mu m\\
+        &=(\lambda+\mu)m,\tag{\ref{prop:Z-m-es-un-anell-commutatiu}}
+        \end{align*}
+        i per la definició de \myref{def:nombres-modulars-congruents} trobem que~\(a+b\equiv a'+b'\pmod{m}\).
+        També veiem que
+        \begin{align*}
+        ab-a'b'&=(a'+\lambda m)(b'-\mu m)-a'b'\\
+        &=a'b'+(a'\mu+b'\lambda+\lambda\mu m)m-a'b'\\
+        &=(a'\mu+b'\lambda+\lambda\mu m)m,
+        \end{align*}
+        i per tant~\(ab\equiv a'b'\pmod{m}\).
+    \end{proof}
+    \begin{definition}[Nombre modular invertible]
+        \labelname{nombre modular invertible}\label{def:nombre-modular-invertible}
+        Sigui~\(\overline{a}\) un element de~\(\mathbb{Z}/(m)\) tal que existeix un element~\(\overline{a'}\) de~\(\mathbb{Z}/(m)\) satisfent~\(\overline{a}\overline{a'}=\overline{1}\).
+        Aleshores direm que~\(\overline{a}\) és invertible pel producte i que~\(\overline{a'}\) és la inversa de~\(\overline{a}\).
+
+        Denotarem~\(\overline{a}^{-1}\) com la inversa de~\(\overline{a}\)
+    \end{definition}
+    \begin{proposition}
+        \label{prop:condicio-equivalent-a-invertible-en-Z-m}
+        Sigui~\(\overline{a}\) un element de~\(\mathbb{Z}/(m)\) Aleshores~\(\overline{a}\) és invertible si i només si~\(a\) i~\(m\) són coprimers.
+    \end{proposition}
+    \begin{proof}
+        Per la definició de \myref{def:nombre-modular-invertible} tenim que~\(\overline{a}\) és invertible si existeix un element~\(a'\) tal que~\(aa'\equiv1\pmod{m}\), i per la definició de \myref{def:nombres-modulars-congruents} tenim que això és si existeix un enter~\(\lambda\) tal que~\(aa'-1=\lambda m\).
+
+        Això és equivalent a que~\(aa'-\lambda m=1\), i per \myref{thm:identitat-de-Bezout} tenim que això és si i només si~\(\mcd(a,m)=1\), i per la definició de \myref{def:coprimers} tenim que~\(a\) i~\(m\) són coprimers.
+    \end{proof}
+    \begin{corollary}
+        \label{corollary:Z-p-es-un-cos}
+        \label{corollary:Z-p-es-un-cos-sii-p-es-primer}
+        Sigui~\(p>1\) un enter.
+        Aleshores~\(p\) és primer si i només si~\(\overline{a}\) és invertible per a tot~\(\overline{a}\in\mathbb{Z}/(p)\setminus\{\overline{0}\}\).
+    \end{corollary}
+%        \begin{proof}\end{proof}
+    \begin{theorem}[El Petit Teorema de Fermat]
+        \labelname{el Petit Teorema de Fermat}\label{thm:el-Petit-Teorema-de-Fermat}
+        Siguin~\(p\) un primer i~\(a\) un enter tal que~\(p\ndivides a\).
+        Aleshores
+        \[
+            a^{p-1}\equiv1\pmod{p}.
+        \]
+    \end{theorem}
+    \begin{proof}
+        Observem que per la definició de \myref{def:divisor-Z} i la definició de \myref{def:coprimers} tenim que~\(a\) i~\(p\) són coprimers.
+        Per tant per la proposició \myref{prop:condicio-equivalent-a-invertible-en-Z-m} tenim que~\(a\) és invertible.
+
+        Considerem el conjunt
+        \[
+            X=\{\overline{a},\overline{2a},\overline{3a},\dots,\overline{(p-1)a}\}.
+        \]
+        Veiem que tots els elements de~\(X\) són diferents.
+        Efectivament, si~\(na\equiv ma\pmod{p}\) per a certs enters~\(n\) i~\(m\) per la definició de \myref{def:nombre-modular-invertible} trobem que~\(n\equiv m\pmod{p}\).
+
+        També tenim que % REVISAR % FER % WTF Com? %TODO
+        \[
+            a\cdot2a\cdot3a\cdots(p-1)a\equiv 1\cdot2\cdot3\cdots(p-1)\pmod{p},
+        \]
+        i per tant
+        \[
+            a^{n-1}(p-1)!\equiv(p-1)!\pmod{p},
+        \]
+        i de nou per la definició de \myref{def:divisor-Z} i la definició de \myref{def:coprimers} tenim que~\((p-1)!\) i~\(p\) són coprimers, per tant per la proposició \myref{prop:condicio-equivalent-a-invertible-en-Z-m} tenim que~\((p-1)!\) és invertible i trobem
+        \[
+            a^{p-1}\equiv1\pmod{p}.\qedhere
+        \]
+    \end{proof}
+    \subsection{El Teorema xinès de les restes}
+    \begin{lemma}
+        \label{lema:thm:Teorema-xines-de-les-restes}
+        Siguin~\(m_{1},\dots,m_{n}\) naturals més grans que~\(1\),~\(a_{1},\dots,a_{n}\) enters i~\(x_{0}\) un enter tal que
+        \[\begin{cases}
+            x_{0}\equiv a_{1}\pmod{m_{1}}\\
+            \quad\ \vdots\\
+            x_{0}\equiv a_{n}\pmod{m_{n}}
+        \end{cases}\]
+        Aleshores, si~\(x=x_{0}+\lambda M\) amb~\(M=\mcm(m_{1},\dots,m_{n})\) i per a tot~\(\lambda\) enter es satisfà
+        \[\begin{cases}
+        x\equiv a_{1}\pmod{m_{1}}\\
+        \quad\ \vdots\\
+        x\equiv a_{n}\pmod{m_{n}}
+        \end{cases}\]
+    \end{lemma}
+    \begin{proof}
+        Tenim que, per a tot~\(i\in\{1,\dots,n\}\), és satisfà~\(x\equiv a_{i}\pmod{m_{i}}\) si i només si es satisfà~\(x\equiv x_{0}\pmod{m_{i}}\).
+        Per tant hem de veure que es satisfà
+        \[\begin{cases}
+        x\equiv x_{0}\pmod{m_{1}}\\
+        \quad\ \vdots\\
+        x\equiv x_{0}\pmod{m_{n}}
+        \end{cases}\]
+
+        Ara bé, per la definició de \myref{def:nombres-modulars-congruents} i la definició de \myref{def:maxim-comu-divisor} tenim que ha de ser
+        \[
+            x-x_{0}=\lambda M
+        \]
+        per a cert~\(\lambda\) enter.
+    \end{proof}
+    \begin{theorem}[Teorema xinès de les restes]
+        \labelname{Teorema xinès de les restes}\label{thm:TXR}\label{thm:Teorema-xines-de-les-restes}
+        Siguin~\(m_{1},\dots,m_{n}\) enters més grans que~\(1\) coprimers dos a dos i~\(a_{1},\dots,a_{n}\) enters.
+        Aleshores el sistema
+        \[\begin{cases}
+        x\equiv a_{1}\pmod{m_{1}}\\
+        \quad\ \vdots\\
+        x\equiv a_{n}\pmod{m_{n}}
+        \end{cases}\]
+        té una única solució, que és~\(\abs{m_{1}\cdots m_{n}}\).
+    \end{theorem}
+    \begin{proof}
+        Prenem~\(M=\mcm(m_{1},\dots,m_{n})\).
+        Per la definició de \myref{def:minim-comu-multiple} i la definició de \myref{def:coprimers} tenim que \[M=\mcm(m_{1},\dots,m_{n})=\abs{\prod_{i=1}^{n}m_{i}}.\]
+        Per a tot~\(i\in\{1,\dots,n\}\) definim
+        \[
+            M_{i}=m_{1}\cdots m_{i-1}m_{i+1}\cdots m_{n}
+        \]
+        i tenim, per la definició de \myref{def:coprimers}, que~\(M_{i}\) i~\(m_{i}\) són coprimers.
+
+        Per tant la congruència
+        \[
+            M_{i}x\equiv a_{i}\pmod{m_{i}}
+        \]
+        té solució, ja que per la proposició \myref{prop:condicio-equivalent-a-invertible-en-Z-m} tenim que~\(M_{i}\) és invertible i per tant~\(x\equiv a_{i}M_{i}^{-1}\pmod{m_{i}}\).
+        Denotem~\(b_{i}=a_{i}M_{i}^{-1}\) i considerem
+        \[
+            x_{0}=M_{1}b_{1}+\dots+M_{n}b_{n}.
+        \]
+
+        Aleshores tenim per la definició de \myref{def:nombres-modulars} tenim que
+        \[
+            x_{0}\equiv M_{i}b_{i}\pmod{m_{i}}.
+        \]
+
+        Per tant, pel lema \myref{lema:thm:Teorema-xines-de-les-restes} tenim que
+        \[
+            x=x_{0}+\lambda M
+        \]
+        amb~\(M=\mcm(m_{1},\dots,m_{n})\) són les solucions del sistema, i per la definició de \myref{def:nombres-modulars} trobem que~\(x=x_{0}\) i per tant és única.
+    \end{proof}
+\section{Les permutacions}
+    \subsection{El grup simètric}
+    \begin{definition}[Permutació]
+        \labelname{permutació}\label{def:permutacio}
+        Sigui~\(X\) un conjunt i~\(\sigma\colon X\rightarrow X\) una aplicació bijectiva.
+        Aleshores direm que~\(\sigma\) és una permutació.
+    \end{definition}
+    \begin{definition}[Grup simètric]
+        \labelname{grup simètric}\label{def:grup-simetric}
+        Siguin~\(X\) un conjunt no buit i
+        \[
+            \GrupSimetric_{X}=\{\sigma\colon X\rightarrow X\mid\sigma\text{ és una permutació}\}
+        \]
+        un conjunt.
+        Aleshores direm que~\(\GrupSimetric_{X}\) és el grup simètric de~\(X\).
+
+        Si~\(X=\{1,\dots,n\}\) aleshores denotarem el grup simètric de~\(X\) com~\(\GrupSimetric_{n}\).
+    \end{definition}
+    \begin{definition}[Elements moguts per una permutació]
+        \labelname{conjunt d'elements moguts per una permutació}\label{def:conjunt-delements-moguts-per-una-permutacio}
+        Siguin~\(X\) un conjunt no buit,~\(\sigma\in\GrupSimetric_{X}\) una permutació i
+        \[
+            \Mou(\sigma)=\{x\in X\mid\sigma(x)\neq x\}
+        \]
+        un conjunt.
+        Aleshores direm que~\(\Mou(\sigma)\) és el conjunt d'elements de~\(X\) moguts per~\(\sigma\).
+    \end{definition}
+    \begin{proposition}
+        \label{prop:permutacio-identitat-si-i-nomes-si-no-mou-res}
+        \label{prop:permutacio-no-mou-res-si-i-nomes-si-es-la-identitat}
+        Siguin~\(X\) un conjunt no buit i~\(\sigma\) una permutació de~\(\GrupSimetric_{X}\).
+        Aleshores
+        \[
+            \Mou(\sigma)=\emptyset\sii\sigma=\Id_{X}.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Comencem veient l'implicació cap a la dreta (\(\implica\)).
+        Suposem doncs que~\(\Mou(\sigma)=\emptyset\).
+        Aleshores per la definició de \myref{def:conjunt-delements-moguts-per-una-permutacio} trobem que~\(\{x\in X\mid\sigma(x)\neq x\}=\emptyset\), i per tant ha de ser~\(\sigma(x)=x\) per a tot~\(x\in X\), i per tant~\(\sigma=\Id_{X}\).
+
+        Veiem ara l'implicació cap a l'esquerra (\(\implicatper\)).
+        Prenem~\(\Id_{X}\).
+        Aleshores ha de ser~\(\Mou(\Id_{X})=\emptyset\), ja que per la definició de \myref{def:conjunt-delements-moguts-per-una-permutacio} tenim que~\(\Mou(\Id_{X})=\{x\in X\mid\Id_{X}(x)\neq x\}\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:Mou-de-la-conjugacio-es-unio-dels-Mous}
+        Siguin~\(X\) un conjunt no buit i~\(\sigma\) i~\(\tau\) dues permutacions de~\(\GrupSimetric_{X}\).
+        Aleshores
+        \[
+            \Mou(\sigma\circ\tau)\subseteq\Mou(\sigma)\cup\Mou(\tau).
+        \]
+    \end{proposition}
+    \begin{proof}
+        Prenem~\(a\in X\) tal que~\(a\in\Mou(\sigma\circ\tau)\).
+        Això és, per la definició de \myref{def:conjunt-delements-moguts-per-una-permutacio}, que~\(a\in\{x\in X\mid\sigma\circ\tau(x)\neq x\}\).
+        Volem veure que~\(a\in\Mou(\sigma)\cup\Mou(\tau)\), i per la definició d'\myref{def:unio-de-conjunts} hem de veure que~\(a\in\Mou(\sigma)\) ó~\(a\in\Mou(\tau)\).
+
+        Si~\(a\notin\Mou(\tau)\) tenim que~\(\tau(a)=a\), i tenim~\(\sigma\circ\tau(a)=\sigma(a)\).
+        Ara bé, ha de ser~\(\sigma(a)\neq a\), ja que si no tindríem~\(a\notin\Mou(\sigma\circ\tau)\).
+        Per tant ha de ser~\(a\in\Mou(\sigma)\).
+
+        Si~\(a\notin\Mou(\sigma)\) tenim que~\(\sigma(a)=a\), i per tant tenim que~\(\tau(a)\neq a\), ja que si~\(\tau(a)=a\) tindríem~\(\sigma\circ\tau(a)=\sigma(a)=a\), i seria~\(a\notin\Mou(\sigma\circ\tau)\).
+        Per tant ha de ser~\(a\in\Mou(\tau)\).
+
+        Per tant tenim que si~\(a\in\Mou(\sigma\circ\tau)\) aleshores~\(a\in\Mou(\sigma)\cup\Mou(\tau)\), i per la definició de \myref{def:subconjunt} trobem que~\(\Mou(\sigma\circ\tau)\subseteq\Mou(\sigma)\cup\Mou(\tau)\), com volíem veure.
+    \end{proof}
+    \subsection{Permutacions disjuntes}
+    \begin{definition}[Permutacions disjuntes]
+        \labelname{permutacions disjuntes}\label{def:permutacions-disjuntes}
+        Siguin~\(X\) un conjunt no buit i~\(\sigma\) i~\(\tau\) dues permutacions de~\(\GrupSimetric_{X}\) tals que~\(\Mou(\sigma)\cap\Mou(\tau)=\emptyset\).
+        Aleshores direm que~\(\sigma\) i~\(\tau\) són disjuntes.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:mou-de-permutacions-conjugades-es-unio-dels-mous-de-les-permutacions}
+        Siguin~\(X\) un conjunt no buit i~\(\sigma\) i~\(\tau\) dues permutacions disjuntes de~\(\GrupSimetric_{X}\).
+        Aleshores
+        \[
+            \Mou(\sigma\circ\tau)=\Mou(\sigma)\cup\Mou(\tau).
+        \]
+    \end{proposition}
+    \begin{proof}
+        Per la proposició \myref{prop:Mou-de-la-conjugacio-es-unio-dels-Mous} tenim que~\(\Mou(\sigma\circ\tau)\subseteq\Mou(\sigma)\cup\Mou(\tau)\).
+        Veiem doncs que~\(\Mou(\sigma\circ\tau)\supseteq\Mou(\sigma)\cup\Mou(\tau)\).
+
+        Prenem un element~\(a\in\Mou(\sigma)\cup\Mou(\tau)\).
+        Com que, per hipòtesi,~\(\sigma\) i~\(\tau\) són dues permutacions disjuntes, per la definició de \myref{def:permutacions-disjuntes} tenim que~\(\Mou(\sigma)\cap\Mou(\tau)=\emptyset\) i per la definició d'\myref{def:interseccio-de-conjunts} tenim que o bé~\(a\in\Mou(\sigma)\) o bé~\(a\in\Mou(\tau)\).
+
+        Suposem que~\(a\in\Mou(\sigma)\).
+        Per la definició de \myref{def:conjunt-delements-moguts-per-una-permutacio} tenim que~\(\sigma(a)\neq a\) i~\(\tau(a)=a\), ja que~\(a\notin\Mou(\tau)\).
+        Per tant~\(\sigma\circ\tau(a)=\sigma(a)\neq a\), i per tant~\(a\in\Mou(\sigma\circ\tau)\).
+
+        Suposem ara que~\(a\in\Mou(\tau)\).
+        Per la definició de \myref{def:conjunt-delements-moguts-per-una-permutacio} tenim que~\(\tau(a)\neq a\) i~\(\sigma(a)=a\), ja que~\(a\notin\Mou(\sigma)\).
+        Per tant~\(\sigma\circ\tau(a)=\sigma(b)\) per a cert~\(b\neq a\),~\(b=\tau(a)\).
+        Ara bé, com que per la definició de \myref{def:permutacio}~\(\sigma\) és una aplicació bijectiva, i per la definició d'\myref{def:aplicacio-bijectiva} trobem que~\(\sigma\) és una aplicació injectiva, i per la definició d'\myref{def:aplicacio-injectiva} tenim que~\(\sigma(b)\neq a\), ja que~\(\sigma(a)=a\) i~\(b\neq a\).
+        Per hem vist que \[\Mou(\sigma\circ\tau)\subseteq\Mou(\sigma)\cup\Mou(\tau)\quad\text{i}\quad\Mou(\sigma\circ\tau)\supseteq\Mou(\sigma)\cup\Mou(\tau),\]
+        i pel \myref{thm:doble-inclusio} tenim que
+        \[
+            \Mou(\sigma\circ\tau)=\Mou(\sigma)\cup\Mou(\tau).\qedhere
+        \]
+    \end{proof}
+    \begin{lemma}
+        \label{lema:permutacions-disjuntes-commuten}
+        Siguin~\(X\) un conjunt no buit i~\(\tau\) una permutació de~\(\GrupSimetric_{X}\).
+        Aleshores
+        \[
+            x\in\Mou(\sigma)\sii\sigma(x)\in\Mou(\sigma).
+        \]
+    \end{lemma}
+    \begin{proof} % REVISAR
+        Per la definició de \myref{def:permutacio} tenim que~\(\sigma\) és bijectiva, i per la definició de \myref{def:conjunt-delements-moguts-per-una-permutacio} trobem que~\(\sigma(x)=x\) si i només si~\(\sigma(\sigma(x))=\sigma(x)\).
+
+        Prenent la negació d'això trobem que~\(\sigma(x)\neq x\) si i només si~\(\sigma(\sigma(x))\neq\sigma(x)\), que per la definició de \myref{def:conjunt-delements-moguts-per-una-permutacio} és equivalent a~\(x\in\Mou(\sigma)\sii\sigma(x)\in\Mou(\sigma)\).
+    \end{proof}
+    \begin{theorem}
+        \label{thm:permutacions-disjuntes-commuten}
+        Siguin~\(X\) un conjunt no buit i~\(\sigma\) i~\(\tau\) dues permutacions disjuntes de~\(\GrupSimetric_{X}\).
+        Aleshores
+        \[
+            \sigma\circ\tau=\tau\circ\sigma.
+        \]
+    \end{theorem}
+    \begin{proof}
+        Per la definició de \myref{def:permutacions-disjuntes} i la definició de \myref{def:conjunt-delements-moguts-per-una-permutacio} tenim que, per hipòtesi,~\(\Mou(\sigma)\cap\Mou(\tau)=\emptyset\).
+        Per tant, per a tot~\(x\in X\) tenim o bé~\(x\in\Mou(\sigma)\), o bé~\(x\in\Mou(\tau)\) o bé~\(x\notin\Mou(\sigma)\cup\Mou(\tau)\).
+        Estudiem els cassos.
+
+        Suposem que~\(x\in\Mou(\sigma)\), i per tant~\(x\notin\Mou(\tau)\).
+        Per la definició de \myref{def:conjunt-delements-moguts-per-una-permutacio} tenim que~\(\tau(x)=x\) i per tant~\(\sigma(\tau(x))=\sigma(x)\).
+        Ara bé, pel lema \myref{lema:permutacions-disjuntes-commuten} tenim que~\(\sigma(x)\in\Mou(\sigma)\), d'on trobem que~\(\sigma(x)\notin\Mou(\tau)\), ja que, per hipòtesi,~\(\Mou(\sigma)\cap\Mou(\tau)=\emptyset\), i per tant~\(\tau(\sigma(x))=\sigma(x)\).
+
+        Suposem que~\(x\in\Mou(\tau)\), i per tant~\(x\notin\Mou(\sigma)\).
+        Per la definició de \myref{def:conjunt-delements-moguts-per-una-permutacio} tenim que~\(\sigma(x)=x\) i per tant~\(\tau(\sigma(x))=\tau(x)\).
+        Ara bé, pel lema \myref{lema:permutacions-disjuntes-commuten} tenim que~\(\tau(x)\in\Mou(\tau)\), d'on trobem que~\(\tau(x)\notin\Mou(\sigma)\), ja que, per hipòtesi,~\(\Mou(\tau)\cap\Mou(\sigma)=\emptyset\), i per tant~\(\sigma(\tau(x))=\tau(x)\).
+        %TODO: revisar copia y pega
+
+        Suposem per acabar que~\(x\notin\Mou(\sigma)\cup\Mou(\tau)\).
+        Aleshores tenim que~\(\sigma(x)=x\) i~\(\tau(x)=x\), i per tant~\(\sigma\circ\tau=\tau\circ\sigma\), com volíem veure.
+    \end{proof} % PROPO verure que dues aplicacions són iguals si tenen imatges iguals per antiimatges iguals. I fer referencies.
+    \subsection{Cicles}
+    \begin{definition}[\(r\)-cicle]
+        \labelname{\ensuremath{r}-cicle}
+        \label{def:r-cicle}
+        Siguin~\(X\) un conjunt no buit i~\(\sigma\) una permutació de~\(\GrupSimetric_{X}\) tals que~\(\Mou(\sigma)=\{a_{1},\dots,a_{r}\}\) amb~\(\sigma(a_{i})=a_{i+1}\) per a tot~\(i\in\{1,\dots,r-1\}\) i~\(\sigma(a_{r})=a_{1}\).
+        Aleshores direm que~\(\sigma\) és un~\(r\)-cicle, o un cicle, i denotarem
+        \[
+            \sigma=(a_{1},\dots,a_{r}).
+        \]
+    \end{definition}
+    \begin{proposition}
+        \label{prop:escriure-r-cicles-amb-un-representant}
+        Siguin~\(X\) un conjunt no buit,~\(a\) un element de~\(\Mou(\sigma)\) i~\(\sigma\) un~\(r\)-cicle de~\(\GrupSimetric_{X}\).
+        Aleshores
+        \[
+            \sigma=(a,\sigma(a),\sigma^{2}(a),\dots,\sigma^{r-1}(a)).
+        \]
+    \end{proposition}
+    \begin{proof}
+        Per la definició d'\myref{def:r-cicle} tenim que~\(\Mou(\sigma)=\{a_{1},\dots,a_{r}\}\), i com que~\(a\in\Mou(\sigma)\) tenim que~\(a=a_{k}\) per a cert~\(k\in\{1,\dots,r\}\).
+        Tenim doncs que
+        \[
+            \sigma=(a,a_{k+1},\dots,a_{r-k}).
+        \]
+        Ara bé, per la definició d'\myref{def:r-cicle} tenim que
+        \[
+            a_{i+1}=\sigma(a_{i})\quad\text{per a tot }i\in\{1,\dots,r-1\}
+        \]
+        i~\(a_{1}=\sigma(a_{r})\).
+        Per tant trobem
+        \[
+            \sigma^{i}(a)=a_{k+i}\quad\text{per a tot }i\in\{-k+1,\dots,r-k-1\},
+        \]
+        i per tant trobem
+        \[
+            \sigma=(a,\sigma(a),\sigma^{2}(a),\dots,\sigma^{r-1}(a)).\qedhere
+        \]
+    \end{proof}
+    \begin{lemma}
+        \label{lema:ordre-dun-r-cicle}
+        \label{lema:inversa-dun-r-cicle}
+        Siguin~\(X\) un conjunt no buit i~\(\sigma\) un~\(r\)-cicle de~\(\GrupSimetric_{X}\).
+        Aleshores~\(r=\min\{k\in\mathbb{N}\mid\sigma^{k}=\Id_{X}\}\).
+    \end{lemma}
+    \begin{proof}
+        Per la definició d'\myref{def:r-cicle} tenim que existeixen~\(a_{1},\dots,a_{r}\) tals que~\(\Mou(\sigma)=\{a_{1},\dots,a_{r}\}\) amb~\(\sigma(a_{i})=a_{i+1}\) per a tot~\(i\in\{1,\dots,r-1\}\) i~\(\sigma(a_{r})=a_{1}\), i per tant~\(\sigma^{r}=\Id_{X}\) ja que tenim~\(\sigma^{r}(x)=x\) per a tot~\(x\in X\).
+        Ara bé, per la proposició \myref{prop:escriure-r-cicles-amb-un-representant} tenim que, amb~\(a\in\Mou(\sigma)\),
+        \[
+            \sigma=(a,\sigma(a),\sigma^{2}(a),\dots,\sigma^{r-1}(a))
+        \]
+        i per la definició d'\myref{def:r-cicle} tenim que~\(\sigma^{i}(a)\neq a\) per a tot~\(i\in\{0,\dots,r-1\}\), i per tant~\(r=\min\{k\in\mathbb{N}\mid\sigma^{k}=\Id_{X}\}\), com volíem veure.
+    \end{proof}
+    \begin{theorem}
+        \label{thm:inversa-dun-r-cicle}
+        Siguin~\(X\) un conjunt no buit i~\(\sigma\) un~\(r\)-cicle de~\(\GrupSimetric_{X}\).
+        Aleshores
+        \[
+            \sigma^{-1}=\sigma^{r-1}.
+        \]
+    \end{theorem}
+    \begin{proof}
+        Pel lema \myref{lema:inversa-dun-r-cicle} tenim que~\(\sigma^{r}=\Id_{X}\).
+        Aleshores tenim~\(\sigma\circ\sigma^{r-1}=\Id_{X}\) i~\(\sigma^{r-1}\circ\sigma=\Id_{X}\).
+        Per tant per la definició d'\myref{def:inversa-duna-aplicacio} trobem que~\(\sigma^{-1}=\sigma^{r-1}\).
+    \end{proof}
+    \begin{theorem}[Descomposició de permutacions en cicles disjunts]
+        \labelname{Teorema de descomposició de permutacions en cicles disjunts}\label{thm:descomposicio-duna-permutacio-en-cicles-disjunts}
+        Sigui~\(X\) un conjunt finit no buit i~\(\sigma\) una permutació de~\(\GrupSimetric_{X}\).
+        Aleshores existeixen~\(\alpha_{1},\dots,\alpha_{s}\) cicles disjunts dos a dos de~\(\GrupSimetric_{X}\) tals que
+        \[
+            \sigma=\alpha_{1}\circ\dots\circ\alpha_{s},
+        \]
+        i aquests~\(\alpha_{1},\dots,\alpha_{s}\) són únics llevat de l'ordre en que es conjuguen.
+    \end{theorem}
+    \begin{proof}
+        Prenem~\(a_{1}\in\Mou(\sigma)\) i el conjunt~\(\{a_{1},\sigma(a_{1}),\sigma^{2}(a_{1}),\dots\}\).
+        Com que, per hipòtesi,~\(X\) és finit tenim que existeixen~\(i\) i~\(j\) tals que~\(\sigma^{i}(a_{1})=\sigma^{j}(a_{1})\), i per tant~\(\sigma^{i-j}(a_{1})=a_{1}\).
+
+        Sigui doncs~\(k_{1}=\min\{k\in\mathbb{N}\mid\sigma^{k}(a)=a\}\).
+        Per la definició d'\myref{def:r-cicle} tenim que
+        \begin{equation}
+        \label{eq:thm:descomposicio-de-permutacions-en-cicles-disjunts-2}
+        \alpha_{1}=(a_{1},\sigma(a_{1}),\dots,\sigma^{k_{1}-1}(a_{1}))
+        \end{equation}
+        és un~\(k_{1}\)-cicle.
+
+        Si existeix un~\(a_{2}\in X\) que no pertanyi a~\(\{a_{1},\sigma(a_{1}),\dots,\sigma^{k_{1}-1}(a_{1})\}\).
+        Amb el mateix procés podem generar un nou~\(k_{2}\)-cicle~\(\alpha_{2}\) disjunt amb~\(\alpha_{1}\), i així obtenim~\(\alpha_{1},\dots,\alpha_{s}\) cicles disjunts dos a dos.
+        Aleshores trobem
+        \[
+            \sigma=\alpha_{1}\circ\dots\circ\alpha_{s},
+        \]
+        ja que~\(\sigma(x)=\alpha_{1}\circ\dots\circ\alpha_{s}(x)\) per a tot~\(x\in X\).
+
+
+        Tenim doncs que
+        \begin{equation}
+        \label{eq:thm:descomposicio-de-permutacions-en-cicles-disjunts-3}
+        \alpha_{i}=\left(a_{i},\sigma(\alpha_{i}),\dots,\sigma^{k_{i}-1}(\alpha_{i})\right).
+        \end{equation}
+        Suposem ara que existeixen~\(\beta_{1},\dots,\beta_{r}\) cicles disjunts dos a dos de~\(\GrupSimetric_{X}\) tals que
+        \begin{equation}
+        \label{eq:thm:descomposicio-de-permutacions-en-cicles-disjunts-1}
+        \sigma=\alpha_{1}\circ\dots\circ\alpha_{s}=\beta_{1}\circ\dots\circ\beta_{r}.
+        \end{equation}
+        Per la proposició \myref{prop:mou-de-permutacions-conjugades-es-unio-dels-mous-de-les-permutacions} tenim que~\(a_{i}\in\Mou(\beta_{j_{i}})\) per a cert~\(j_{i}\in\{1,\dots,r\}\), i per la definició de \myref{def:permutacions-disjuntes} i la definició d'\myref{def:interseccio-de-conjunts} tenim que aquest~\(j_{i}\) és únic.
+
+        Ara bé, com que per hipòtesi~\(\beta_{j_{i}}\) és un cicle, per la proposició \myref{prop:escriure-r-cicles-amb-un-representant} tenim que
+        \[
+            \beta_{j_{i}}=\left(a_{i},\beta_{j_{i}}(a_{i}),\dots,\beta^{k'_{j_{i}}-1}_{j_{i}}(a_{i})\right)
+        \]
+        per a cert~\(k'_{j_{i}}\).
+        Ara bé, tenim per \eqref{eq:thm:descomposicio-de-permutacions-en-cicles-disjunts-1} que~\(\beta^{k}_{j_{i}}(a_{i})=\sigma^{k}(a_{i})\) per a tot~\(k\).
+        Per tant
+        \[
+            \beta_{j_{i}}=\left(a_{i},\sigma(a_{i}),\dots,\sigma^{k'_{j_{i}}-1}(a_{i})\right).
+        \]
+        Ara bé, havíem definit~\(k_{i}=\min\{k\in\mathbb{N}\mid\sigma^{k}(a_{i})=a_{i}\}\).
+        Per tant~\(k'_{j_{i}}=k_{i}\) i, com que per hipòtesi~\(a_{i}\in\Mou(\alpha_{j_{i}})\) és un cicle, per la proposició \myref{prop:escriure-r-cicles-amb-un-representant}, per \eqref{eq:thm:descomposicio-de-permutacions-en-cicles-disjunts-2} i per \eqref{eq:thm:descomposicio-de-permutacions-en-cicles-disjunts-3} tenim que~\(\alpha_{i}=\beta_{j_{i}}\).
+        Per tant podem reescriure \eqref{eq:thm:descomposicio-de-permutacions-en-cicles-disjunts-2} com
+        \[
+            \sigma=\alpha_{1}\circ\dots\circ\alpha_{s}=\alpha_{1}\circ\dots\circ\alpha_{s}\circ\beta_{j_{s+1}}\circ\dots\circ\beta_{j_{r}},
+        \]
+        i per tant ha de ser~\(\beta_{j_{s+1}}\circ\dots\circ\beta_{j_{r}}=\Id_{X}\).
+    \end{proof}
+    \subsection{Descomposició en transposicions i signe}
+    \begin{definition}[Transposició]
+        \labelname{transposició}\label{def:transposicio}
+        Siguin~\(X\) un conjunt no buit i~\(\tau\) un~\(2\)-cicle de~\(\GrupSimetric_{X}\).
+        Aleshores direm que~\(\tau\) és una transposició.
+    \end{definition}
+    \begin{observation}
+        \(\tau=\tau^{-1}\).
+    \end{observation}
+    \begin{proposition}
+        Siguin~\(X\) un conjunt finit no buit i~\(\sigma\) una permutació de~\(\GrupSimetric_{X}\).
+        Aleshores existeixen transposicions~\(\tau_{1},\dots,\tau_{s}\) de~\(\GrupSimetric_{X}\) tals que
+        \[
+            \sigma=\tau_{1}\circ\dots\circ\tau_{s}.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Observem que per a tot~\(r\)-cicle~\(\alpha\) de~\(\GrupSimetric_{X}\) existeixen transposicions~\(\tau_{1},\dots,\tau_{r}\) de~\(\GrupSimetric_{X}\) tals que~\(\alpha=\tau_{1}\circ\dots\circ\tau_{r}\).
+        Efectivament, per la definició d'\myref{def:r-cicle} tenim que si~\(\alpha=(a_{1},\dots,a_{r})\) aleshores
+        \[
+            \alpha=(a_{1},\dots,a_{r})=(a_{1},a_{2})\circ(a_{2},a_{3})\circ\dots\circ(a_{n-1},a_{r}),
+        \]
+        i per la definició de \myref{def:transposicio} tenim que~\((a_{i},a_{i+1})\) és una transposició de~\(\GrupSimetric_{X}\) per a tot~\(i\in\{1,\dots,r-1\}\).
+
+        Per tant, pel \myref{thm:descomposicio-duna-permutacio-en-cicles-disjunts} hem acabat.
+    \end{proof}
+    \begin{theorem}
+        \label{thm:paritat-nombre-de-transposicions-en-la-descomposicio-duna-permutacio}
+        \label{thm:signe-duna-permutacio}
+        Siguin~\(X\) un conjunt finit no buit,~\(\sigma\) una permutació de~\(\GrupSimetric_{X}\) i~\(\tau_{1},\dots,\tau_{r}\),~\(\tau'_{1},\dots,\tau'_{r'}\) transposicions de~\(\GrupSimetric_{X}\) tals que
+        \[
+            \sigma=\tau_{1}\circ\dots\circ\tau_{r}=\tau'_{1}\circ\dots\circ\tau'_{r'}.
+        \]
+        Aleshores~\(r-r'\) és parell.
+    \end{theorem}
+    \begin{proof}
+        :(%TODO%FER
+    \end{proof}
+    \begin{definition}[Signe d'una permutació]
+        \labelname{signe d'una permutació}\label{def:signe-duna-permutacio}
+        Siguin~\(X\) un conjunt finit no buit,~\(\sigma\) una permutació de~\(\GrupSimetric_{X}\) i~\(\tau_{1},\dots,\tau_{r}\) transposicions de~\(\GrupSimetric_{X}\) tals que
+        \[
+            \sigma=\tau_{1}\circ\dots\circ\tau_{r}.
+        \]
+        Aleshores definim
+        \[
+            \sig(\sigma)={(-1)}^{r}
+        \]
+        com el signe de~\(\sigma\).
+
+        Aquesta definició té sentit pel Teorema \myref{thm:signe-duna-permutacio}.
+    \end{definition}
+\section{Els nombres racionals}
+    \subsection{Construcció dels nombres racionals}
+    \begin{proposition}
+        \label{prop:nombres-racionals}
+        Sigui~\(\sim\) una relació tal que per a tot~\((a,b)\),~\((c,d)\) elements de~\(\mathbb{Z}\times\mathbb{Z}\setminus\{0\}\) tenim
+        \[
+            (a,b)\sim(c,d)\sii ad=bc.
+        \]
+        Aleshores~\(\sim\) és una relació d'equivalència.
+    \end{proposition}
+    \begin{proof}
+        Comprovem les propietats de la definició de relació d'equivalència:
+        \begin{enumerate}
+            \item Reflexiva: Per la proposició \myref{prop:Z-es-un-anell-commutatiu} tenim~\(ab=ba\), i per tant~\((a,b)\sim(a,b)\).
+            \item Simètrica: Siguin~\((a,b)\) i~\((c,d)\) dos elements de~\(\mathbb{Z}\times\mathbb{Z}\setminus\{0\}\) tals que~\((a,b)\sim(c,d)\).
+            Per hipòtesi tenim que~\(ad=bc\), i per la proposició \myref{prop:Z-es-un-anell-commutatiu} tenim que~\(cb=da\) i trobem~\((c,d)\sim(a,b)\).
+            \item Transitiva:  Siguin~\((a,b)\),~\((c,d)\) i~\((e,f)\) elements de~\(\mathbb{Z}\times\mathbb{Z}\setminus\{0\}\) tals que~\((a,b)\sim(c,d)\) i~\((c,d)\sim(e,f)\).
+            Per hipòtesi això és~\(ad=bc\) i~\(cf=de\).
+            Ara bé, tenim
+            \[
+                bcf=bde
+            \]
+            i per tant
+            \[
+                adf=bde
+            \]
+            i pel corol·lari \myref{corollary:podem-tatxar-pels-costats-en-Z-pel-producte} trobem que~\(af=be\) i tenim que~\((a,b)\sim(e,f)\).
+        \end{enumerate}
+        I per la definició de \myref{def:relacio-dequivalencia} hem acabat.
+    \end{proof}
+    \begin{definition}[Conjunt dels nombres racionals]
+        \labelname{nombres racionals}\label{def:nombres-racionals}
+        Sigui~\(\sim\) una relació d'equivalència tal que
+        \[
+            (a,b)\sim(c,d)\sii ad=bc
+        \]
+        per a tot~\((a,b)\),~\((c,d)\) elements de~\(\mathbb{Z}\times\mathbb{Z}\setminus\{0\}\).
+        Aleshores direm que el conjunt quocient~\(\mathbb{Q}=\mathbb{Z}\times\mathbb{Z}\setminus\{0\}/\sim\) és el conjunt dels nombres racionals.
+        Direm que els elements de~\(\mathbb{Q}\) són nombres racionals.
+
+        Aquesta definició té sentit per la proposició \myref{prop:nombres-racionals}.
+    \end{definition}
+    \begin{notation}
+        Sigui~\(\overline{(a,b)}\) un element de~\(\mathbb{Q}\).
+        Aleshores denotarem
+        \[
+            \overline{(a,b)}=\frac{a}{b}.
+        \]
+    \end{notation}
+    \begin{proposition}
+        \label{prop:element-neutre-del-producte-en-racionals}
+        Sigui~\(\frac{a}{b}\) un nombre racional.
+        Aleshores
+        \[
+            \frac{a}{b}=\frac{1}{1}\sii a=b.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Per la definició de \myref{def:classe-dequivalencia} tenim que
+        \[
+            (a,b)\sim(1,1),
+        \]
+        si i només si, per la definició de \myref{def:nombres-enters}, tenim
+        \[
+            a\cdot1=b\cdot1.
+        \]
+        I per tant, per la proposició \myref{prop:Z-es-un-anell} trobem que ha de ser~\(a=b\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:element-neutre-per-la-suma-Q}
+        Siguin~\(\frac{0}{a}\) i~\(\frac{0}{b}\) racionals.
+        Aleshores
+        \[
+            \frac{0}{a}=\frac{0}{b}.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Tenim que~\(0\cdot b=0\cdot a\), i per tant per la definició de \myref{def:nombres-racionals} trobem~\(\overline{(0,a)}\sim\overline{(0,b)}\) i per la definició de \myref{def:classe-dequivalencia} trobem
+        \[
+            \frac{0}{a}=\frac{0}{b}.\qedhere
+        \]
+    \end{proof}
+    \subsection{Operacions entre nombres racionals}
+    \begin{definition}[Suma de nombres racionals]
+        \labelname{suma de nombres racionals}\label{def:suma-de-nombres-racionals}
+        Siguin~\(\frac{a}{b}\) i~\(\frac{c}{d}\) nombres racionals.
+        Aleshores definim la suma de~\(\frac{a}{b}\) i~\(\frac{c}{d}\) com una operació~\(+\) que satisfà
+        \[
+            \frac{a}{b}+\frac{c}{d}=\frac{ad+cb}{bd}.
+        \]
+    \end{definition}
+    \begin{definition}[Producte de nombres racionals]
+        \labelname{producte de nombres racionals}\label{def:producte-de-nombres-racionals}
+        Siguin~\(\frac{a}{b}\) i~\(\frac{c}{d}\) nombres racionals.
+        Aleshores definim el producte de~\(\frac{a}{b}\) i~\(\frac{c}{d}\) com una operació~\(\cdot\) que satisfà
+        \[
+            \frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd}.
+        \]
+        Escriurem
+        \[
+            \frac{a}{b}\cdot\frac{c}{d}=\frac{a}{b}\frac{c}{d}.
+        \]
+    \end{definition}
+    \begin{proposition}
+        \label{prop:Q-es-un-grup-abelia}
+        Siguin~\(\frac{a}{b}\),~\(\frac{c}{d}\) i~\(\frac{e}{f}\) nombres racionals.
+        Aleshores es satisfà
+        \begin{enumerate}
+            \item\label{enum:prop:Q-es-un-grup-abelia-1}
+            \(\frac{a}{b}+\frac{c}{d}=\frac{c}{d}+\frac{a}{b}\).
+            \item\label{enum:prop:Q-es-un-grup-abelia-2}
+            \(\frac{a}{b}+\Big(\frac{c}{d}+\frac{e}{f}\Big)=\Big(\frac{a}{b}+\frac{c}{d}\Big)+\frac{e}{f}\).
+            \item\label{enum:prop:Q-es-un-grup-abelia-3}
+            \(\frac{a}{b}+\frac{0}{1}=\frac{a}{b}\).
+            \item\label{enum:prop:Q-es-un-grup-abelia-4}
+            \(\frac{a}{b}+\frac{-a}{b}=\frac{0}{1}\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        Per veure el punt \eqref{enum:prop:Q-es-un-grup-abelia-1} fem
+        \begin{align*}
+            \frac{a}{b}+\frac{c}{d}&=\frac{ad+cb}{bd}\tag{\myref{def:suma-de-nombres-racionals}}\\
+            &=\frac{cb+ad}{bd}\tag{\myref{prop:Z-es-un-grup-abelia}}\\
+            &=\frac{cb+ad}{db}\tag{\myref{prop:Z-es-un-anell-commutatiu}}\\
+            &=\frac{c}{d}+\frac{a}{b}.\tag{\myref{def:suma-de-nombres-racionals}}
+        \end{align*}
+        Per veure el punt \eqref{enum:prop:Q-es-un-grup-abelia-2} fem
+        \begin{align*}
+            \frac{a}{b}+\left(\frac{c}{d}+\frac{e}{f}\right)&=\frac{a}{b}+\frac{cf+ed}{df}\tag{\myref{def:suma-de-nombres-racionals}}\\
+            &=\frac{adf+(cf+ed)b}{bdf}\tag{\myref{def:suma-de-nombres-racionals}}\\
+            &=\frac{adf+cfb+edb}{bdf}\tag{\myref{prop:distributiva-suma-pel-producte-enters}}\\
+            &=\frac{adf+cbf+ebd}{bdf}\tag{\myref{prop:Z-es-un-anell-commutatiu}}\\
+            &=\frac{(ad+cb)f+ebd}{bdf}\tag{\myref{prop:distributiva-suma-pel-producte-enters}}\\
+            &=\frac{ad+cb}{bd}+\frac{e}{f}\tag{\myref{def:suma-de-nombres-racionals}}\\
+            &=\left(\frac{a}{b}+\frac{c}{d}\right)+\frac{e}{f}.\tag{\myref{def:suma-de-nombres-racionals}}
+        \end{align*}
+        Per veure el punt \eqref{enum:prop:Q-es-un-grup-abelia-3} fem
+        \begin{align*}
+            \frac{a}{b}+\frac{0}{1}&=\frac{a\cdot 1}{b\cdot 1}\tag{\myref{def:suma-de-nombres-racionals}}\\
+            &=\frac{a}{b}.\tag{\myref{prop:Z-es-un-anell}}
+        \end{align*}
+        Per veure el punt \eqref{enum:prop:Q-es-un-grup-abelia-4} fem
+        \begin{align*}
+            \frac{a}{b}+\frac{-a}{b}&=\frac{ab-ab}{bb}\tag{\myref{def:suma-de-nombres-racionals}}\\
+            &=\frac{0}{bb}\tag{\myref{prop:Z-es-un-grup}}\\
+            &=\frac{0}{1}.\tag{\myref{prop:element-neutre-per-la-suma-Q}}
+        \end{align*}
+        i hem acabat.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:Q-es-un-anell-commutatiu}
+        Siguin~\(\frac{a}{b}\),~\(\frac{c}{d}\) i~\(\frac{e}{f}\) nombres racionals.
+        Aleshores es satisfà
+        \begin{enumerate}
+            \item\label{enum:prop:Q-es-un-anell-commutatiu-1}
+            \(\frac{a}{b}\frac{c}{d}=\frac{c}{d}\frac{a}{b}\).
+            \item\label{enum:prop:Q-es-un-anell-commutatiu-2}
+            \(\frac{a}{b}\frac{1}{1}=\frac{a}{b}\).
+            \item\label{enum:prop:Q-es-un-anell-commutatiu-3}
+            \(\frac{a}{b}\left(\frac{c}{d}\frac{e}{f}\right)=\left(\frac{a}{b}\frac{c}{d}\right)\frac{e}{f}\).
+            \item\label{enum:prop:Q-es-un-anell-commutatiu-4}
+            \(\frac{a}{b}\left(\frac{c}{d}+\frac{e}{f}\right)=\frac{a}{b}\frac{c}{d}+\frac{a}{b}\frac{e}{f}\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        Per veure el punt \eqref{enum:prop:Q-es-un-anell-commutatiu-1} fem
+        \begin{align*}
+            \frac{a}{b}\frac{c}{d}&=\frac{ac}{bd}\tag{\myref{def:producte-de-nombres-racionals}}\\
+            &=\frac{ca}{db}\tag{\myref{prop:Z-es-un-anell-commutatiu}}\\
+            &=\frac{c}{d}\frac{a}{b}.\tag{\myref{def:producte-de-nombres-racionals}}
+        \end{align*}
+        Per veure el punt \eqref{enum:prop:Q-es-un-anell-commutatiu-2} fem
+        \begin{align*}
+            \frac{a}{b}\frac{1}{1}&=\frac{a\cdot 1}{b\cdot 1}\tag{\myref{def:producte-de-nombres-racionals}}\\
+            &=\frac{a}{b}.\tag{\myref{prop:Z-es-un-grup}}
+        \end{align*}
+        Per veure el punt \eqref{enum:prop:Q-es-un-anell-commutatiu-3} fem
+        \begin{align*}
+            \frac{a}{b}\left(\frac{c}{d}\frac{e}{f}\right)&=\frac{a}{b}\frac{ce}{df}\tag{\myref{def:producte-de-nombres-racionals}}\\
+            &=\frac{a(ce)}{b(df)}\tag{\myref{def:producte-de-nombres-racionals}}\\
+            &=\frac{(ac)e}{(bd)f}\tag{\myref{prop:Z-es-un-anell-associativitat}}\\
+            &=\frac{ac}{bd}\frac{e}{f}\tag{\myref{def:producte-de-nombres-racionals}}\\
+            &=\left(\frac{a}{b}\frac{c}{d}\right)\frac{e}{f}.\tag{\myref{def:producte-de-nombres-racionals}}
+        \end{align*}
+        Per veure el punt \eqref{enum:prop:Q-es-un-anell-commutatiu-4} fem
+        \begingroup\allowdisplaybreaks
+        \begin{align*}
+            \frac{a}{b}\left(\frac{c}{d}+\frac{e}{f}\right)&=\frac{a}{b}\frac{cf+de}{df}\tag{\myref{def:suma-de-nombres-racionals}}\\
+            &=\frac{a(cf+de)}{bdf}\tag{\myref{def:producte-de-nombres-racionals}}\\
+            &=\frac{acf+ade}{bdf}\tag{\myref{prop:Z-es-un-anell-distributiva-suma-pel-producte}}\\
+            &=\frac{acf+ade}{bdf}\frac{1}{1}\tag{\myref{def:producte-de-nombres-racionals}}\\
+            &=\frac{acf+ade}{bdf}\frac{b}{b}\tag{\myref{prop:element-neutre-del-producte-en-racionals}}\\
+            &=\frac{(acf+aed)b}{bdfb}\tag{\myref{def:producte-de-nombres-racionals}}\\
+            &=\frac{acfb+aedb}{bdfb}\tag{\myref{def:producte-de-nombres-enters}}\\
+            &=\frac{acbf+aebd}{bdbf}\tag{\myref{prop:Z-es-un-anell-commutatiu}}\\
+            &=\frac{ac}{bd}+\frac{ae}{bf}\tag{\myref{def:suma-de-nombres-racionals}}\\
+            &=\frac{a}{b}\frac{c}{d}+\frac{a}{b}\frac{e}{f}.\tag{\myref{def:producte-de-nombres-racionals}}
+        \end{align*}
+        \endgroup
+        I hem acabat.
+    \end{proof}
+    \begin{theorem}
+        \label{thm:Q-es-un-DI}
+        Siguin~\(\frac{a}{b}\) i~\(\frac{c}{d}\) dos racionals tals que
+        \[
+            \frac{a}{b}\frac{c}{d}=\frac{0}{1}.
+        \]
+        Aleshores~\(a=0\) ó~\(c=0\).
+    \end{theorem}
+    \begin{proof}
+        Per la definició de \myref{def:producte-de-nombres-racionals} trobem que
+        \[
+            \frac{ac}{bd}=\frac{0}{1},
+        \]
+        i per la definició de \myref{def:nombres-racionals} tenim que es satisfà
+        \[
+            ac\cdot1=bd\cdot0.
+        \]
+        Per tant
+        \[
+            ac=0,
+        \]
+        i pel Teorema \myref{thm:Z-es-un-DI} tenim que ha de ser~\(a=0\) ó~\(c=0\).
+    \end{proof}
+    \begin{theorem}
+        \label{thm:Q-es-un-cos}
+        Sigui~\(\frac{a}{b}\) un racional amb~\(a\neq0\).
+        Aleshores
+        \[
+            \frac{a}{b}\frac{b}{a}=\frac{1}{1}.
+        \]
+    \end{theorem}
+    \begin{proof}
+        Per la definició de \myref{def:producte-de-nombres-racionals} i la proposició \myref{prop:Z-es-un-anell-commutatiu} tenim que
+        \[
+            \frac{a}{b}\frac{b}{a}=\frac{ab}{ab}
+        \]
+        i per la proposició \myref{prop:element-neutre-del-producte-en-racionals} tenim que
+        \[
+            \frac{a}{b}\frac{b}{a}=\frac{1}{1}.\qedhere
+        \]
+    \end{proof}
+%\section{Els nombres reals}
+%http://www.math.uni-konstanz.de/~krapp/Constructions_of_the_real_numbers.pdf
+\end{document}
