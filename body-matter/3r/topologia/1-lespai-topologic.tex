@@ -1,0 +1,657 @@
+\documentclass[../topologia.tex]{subfiles}
+
+\begin{document}
+\chapter{L'espai topològic}
+\section{Espais mètrics}
+    \subsection{Boles i oberts}
+    \begin{definition}[Espai mètric]
+        \labelname{espai mètric}\label{def:espai-metric}
+        \labelname{distància}\label{def:distancia}
+        Sigui~\(X\) un conjunt i~\(\distancia\colon X\times X\longrightarrow\mathbb{R}\) una aplicació que per a tot~\(x\),~\(y\) i~\(z\) de~\(X\) satisfà
+        \begin{enumerate}
+            \item~\(\distancia(x,y)=0\) si i només si~\(x=y\).
+            \item~\(\distancia(x,y)=\distancia(y,x)\).
+            \item~\(\distancia(x,y)\leq\distancia(x,z)+\distancia(z,y)\).
+            \item~\(\distancia(x,y)\leq0\).
+        \end{enumerate}
+        Aleshores direm que~\(X\) amb la distància~\(\distancia\) és un espai mètric.
+        També direm que~\(\distancia\) és la distància o mètrica de l'espai mètric.
+    \end{definition}
+    \begin{definition}[Bola]
+        \labelname{bola}\label{def:bola}
+        Siguin~\(X\) amb la distància~\(\distancia\) un espai mètric,~\(a\) un element de~\(X\) i~\(r>0\) un nombre real.
+        Aleshores definim
+        \[
+            \bola(a,r)=\{x\in X\mid\distancia(x,a)<r\}
+        \]
+        com la bola de radi~\(r\) centrada en~\(a\).
+    \end{definition}
+    \begin{definition}[Obert]
+        \labelname{obert}\label{def:obert-espai-metric}
+        Sigui~\(X\) amb la distància~\(\distancia\) un espai mètric i~\(\obert{U}\) un subconjunt de~\(X\) tals que per a tot element~\(x\) de~\(\obert{U}\) existeix un~\(\varepsilon>0\) real tal que~\(\bola(x,\varepsilon)\subseteq\obert{U}\).
+        Aleshores direm que~\(\obert{U}\) és un obert.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:les-boles-son-oberts}
+        Siguin~\(X\) amb la distància~\(\distancia\) un espai mètric i~\(\bola(a,r)\) una bola de~\(X\).
+        Aleshores~\(\bola(a,r)\) és un obert.
+    \end{proposition}
+    \begin{proof}
+        Prenem un element~\(b\) de~\(\bola(a,r)\) i definim
+        \begin{equation}
+        \label{prop:les-boles-son-oberts:eq1}
+            \varepsilon=\frac{r-\distancia(a,b)}{2}.
+        \end{equation}
+        Aleshores considerem la bola~\(\bola(b,\varepsilon)\) i tenim que~\(\bola(b,\varepsilon)\subseteq\bola(a,r)\), ja que si prenem un element~\(x\) de~\(\bola(b,\varepsilon)\), per la definició de \myref{def:distancia} trobem que
+        \begin{align*}
+            \distancia(x,a)&\leq\distancia(x,b)+\distancia(b,a)\\
+            &<\varepsilon+\distancia(b,a)\tag{\myref{def:bola}}\\
+            &=\frac{r-\distancia(a,b)}{2}+\distancia(b,a)\tag{\myref{prop:les-boles-son-oberts:eq1}}\\
+            &=\frac{r-\distancia(a,b)}{2}+\distancia(a,b)\tag{\myref{def:distancia}}\\
+            &=\frac{r+\distancia(a,b)}{2}<r,
+        \end{align*}
+        ja que, per la definició de \myref{def:bola} tenim que~\(\distancia(a,b)<r\) i per tant trobem~\(r+\distancia(a,b)<2r\).
+    \end{proof}
+    \begin{proposition}[Propietat de Hausdorff]
+        \labelname{}\label{prop:propietat-de-Hausdorff}
+        \label{prop:els-espais-metris-son-Hausdorff}
+        Siguin~\(X\) amb la distància~\(\distancia\) un espai mètric i~\(x\) i~\(y\) dos elements diferents de~\(X\).
+        Aleshores existeixen dos oberts~\(\obert{U}\) i~\(\obert{V}\) disjunts tals que~\(x\) és un element de~\(\obert{U}\) i~\(y\) és un element de~\(\obert{V}\).
+    \end{proposition}
+    \begin{proof}
+        Definim~\(r=\frac{\distancia(x,y)}{3}\) i considerem les boles~\(\bola(x,r)\) i~\(\bola(y,r)\).
+        Per la definició de \myref{def:distancia} i la definició de \myref{def:bola} tenim que~\(x\) és un element de~\(\bola(x,r)\) i~\(y\) és un element de~\(\bola(y,r)\).
+
+        També tenim que les boles~\(\bola(x,r)\) i~\(\bola(y,r)\) són disjuntes, ja que si prenem un element~\(a\) de~\(X\) tal que~\(a\) pertanyi a~\(\bola(x,r)\) i a~\(\bola(y,r)\) aleshores tenim, per la definició de \myref{def:bola}, que~\(\distancia(x,a)<r\) i~\(\distancia(a,y)<r\), i per la definició de \myref{def:distancia} tenim que
+        \[
+            \distancia(x,a)+\distancia(a,y)\geq \distancia(x,y).
+        \]
+        Ara bé, tenim per hipòtesi que~\(r=\frac{\distancia(x,y)}{3}\).
+        Per tant
+        \begin{align*}
+            \distancia(x,y) &\leq \distancia(x,a)+\distancia(a,y) \\
+            &\leq \frac{\distancia(x,y)}{3} + \frac{\distancia(x,y)}{3} \\
+            &\leq \frac{2\distancia(x,y)}{3} < \distancia(x,y),
+        \end{align*}
+        i per tant aquest~\(a\) no existeix i trobem que~\(\bola(x,r)\) i~\(\bola(y,r)\) són disjunts.
+
+        Per acabar, per la proposició \myref{prop:les-boles-son-oberts} tenim que les boles~\(\bola(x,r)\) i~\(\bola(y,r)\) són oberts, i hem acabat.
+    \end{proof}
+\section{L'espai topològic}
+    \subsection{Una topologia d'un conjunt i els oberts}
+    \begin{definition}[Topologia]    % Reescriure amb notació
+        \labelname{topologia}\label{def:topologia}
+        \labelname{espai topològic}\label{def:espai-topologic}
+        \labelname{obert}\label{def:obert}
+        \labelname{punt}\label{def:punt}
+        Sigui~\(X\) un conjunt i~\(\tau\) una família de subconjunts de~\(X\) tals que
+        \begin{enumerate}
+        \item~\(\emptyset\) i~\(X\) són elements de~\(\tau\).
+        \item La intersecció d'una família finita d'elements de~\(\tau\) és un element de~\(\tau\).
+        \item La unió d'una família d'elements de~\(\tau\) és un element de~\(\tau\).
+        \end{enumerate}
+        Aleshores direm que~\(\tau\) és una topologia de~\(X\) o que~\(X\) amb la topologia~\(\tau\) és un espai topològic.
+
+        També direm que els elements de~\(\tau\) són oberts i que els elements de~\(X\) són punts.
+    \end{definition}
+    \begin{example}[Topologia induïda per una mètrica]
+        \labelname{}\label{ex:topologia-induida-per-una-metrica}
+        Siguin~\(X\) amb la distància~\(\distancia\) un espai mètric i~\(\tau=\{\obert{U}\subseteq X\mid \obert{U}\text{ és un obert}\}\).
+        Volem veure que~\(X\) amb la topologia~\(\tau\) és un espai topològic.
+    \end{example}
+    \begin{solution}
+        Per la definició d'\myref{def:obert-espai-metric} trobem que~\(\emptyset\) és un obert, ja que per l'\myref{axiom:axioma-de-regularitat} tenim que~\(\emptyset\) és un subconjunt de~\(X\), i per a tot~\(x\) de~\(X\) existeix un~\(\varepsilon>0\) tal que~\(\bola(x,\varepsilon)\) pertany a~\(\emptyset\).
+        També tenim que~\(X\) és un obert, ja que pel \myref{thm:doble-inclusio} tenim que~\(X\subseteq X\) i si prenem un element~\(x\) de~\(X\) tenim que per a tot~\(\varepsilon>0\) la bola~\(\bola(x,\varepsilon)\) és un subconjunt de~\(X\).
+        Per tant~\(\emptyset\) i~\(X\) són elements de~\(\tau\).
+
+        Prenem~\(\{\obert{U}_{i}\}_{i=1}^{n}\) una família d'elements de~\(\tau\) i considerem
+        \[
+            \obert{U}=\bigcap_{i=1}^{n}\obert{U}_{i}.
+        \]
+
+        Sigui~\(x\) un element de~\(\obert{U}\).
+        Per la definició d'\myref{def:obert} tenim que per a tot~\(i\in\{1,\dots,n\}\) existeix un~\(\varepsilon_{i}>0\) real tal que
+        \[
+            \bola(x,\varepsilon_{i})\subseteq\obert{U}_{i}.
+        \]
+        Per tant, si definim~\(\varepsilon=\min_{i\in\{1,\dots,n\}}\varepsilon_{i}\).
+        Aleshores per la definició de \myref{def:bola} tenim que
+        \[
+            \bola(x,\varepsilon)\subseteq\bola(x,\varepsilon_{i})\quad\text{per a tot }i\in\{1,\dots,n\}.
+        \]
+        i per tant~\(\bola(x,\varepsilon)\subset\obert{U}\) i per la definició d'\myref{def:obert} tenim que~\(\obert{U}\) és un obert.
+
+        Prenem~\(\{\obert{U}_{i}\}_{i\in I}\) una família d'oberts de~\(\tau\) i considerem
+        \[
+            \obert{U}=\bigcup_{i\in I}\obert{U}_{i}.
+        \]
+
+        Sigui~\(x\) un element de~\(\obert{U}\).
+        Per la definició d'\myref{def:unio-de-conjunts} tenim que existeix un~\(i\in I\) tal que~\(\obert{U}_{i}\) conté~\(x\).
+        Ara bé, per hipòtesi tenim que~\(\obert{U}_{i}\) és un obert, i per la definició d'\myref{def:obert-espai-metric} trobem que existeix un~\(\varepsilon>0\) tal que~\(\bola(x,\varepsilon)\) és un subconjunt de~\(\obert{U}_{i}\), i com que~\(\obert{U}_{i}\) és un subconjunt de~\(\obert{U}\) tenim que~\(\bola(x,\varepsilon)\) també és un subconjunt de~\(\obert{U}\), i per la definició d'\myref{def:obert-espai-metric} trobem que~\(\obert{U}\) és un obert, i per la definició d'\myref{def:espai-topologic} hem acabat.
+    \end{solution}
+    \begin{example}[Topologia grollera]
+        \labelname{}\label{ex:topologia-grollera}
+        Siguin~\(X\) i~\(\tau=\{\emptyset,X\}\) dos conjunts.
+        Aleshores~\(\tau\) és una topologia de~\(X\).
+    \end{example}
+    \begin{solution}
+        Comprovem les condicions de la definició de topologia.
+        Com que~\(\tau=\{\emptyset,X\}\) tenim que~\(\emptyset\) i~\(X\) són elements de~\(\tau\).
+        Observem també que~\(\emptyset\cap X=\emptyset\),~\(X\cap X=X\) i~\(\emptyset\cup X=X\cup X=X\), i per la definició de \myref{def:topologia}, tenim que~\(\tau\) és una topologia de~\(X\).
+    \end{solution}
+    \begin{example}[Topologia discreta]
+        \labelname{}\label{ex:topologia-discreta}
+        Siguin~\(X\) i~\(\tau=\mathcal{P}(X)\) dos conjunts.
+        Aleshores~\(\tau\) és una topologia de~\(X\).
+    \end{example}
+    \begin{solution}
+        Tenim per l'\myref{axiom:conjunt-potencia} que~\(\emptyset\) i~\(X\) són subconjunts de~\(\tau\), ja que per l'\myref{axiom:axioma-de-regularitat} trobem que~\(\emptyset\subseteq X\), i pel \myref{thm:doble-inclusio} trobem que~\(X\subseteq X\).
+
+        Per la definició d'\myref{def:unio-de-conjunts} trobem que si~\(\{\obert{U}_{i}\}_{i\in I}\) és una família de subconjunts de~\(X\) aleshores
+        \[
+            \bigcup_{i\in I}\obert{U}_{i}\subseteq X,
+        \]
+        i per la definició d'\myref{def:interseccio-de-conjunts} trobem que si~\(\{\obert{U}_{i}\}_{i=1}^{n}\) és una família de subconjunts de~\(X\) aleshores
+        \[
+            \bigcap_{i=1}^{n}\obert{U}_{i}\subseteq X,
+        \]
+        i per tant, com que~\(\tau=\mathcal{P}(X)\) trobem per la definició de \myref{def:topologia} que~\(\tau\) és una topologia de~\(X\).
+    \end{solution}
+    \subsection{Tancats}
+    \begin{definition}[Tancat]
+        \labelname{tancat}\label{def:tancat}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic i~\(\tancat{C}\) un subconjunt de~\(X\) tal que~\(X\setminus\tancat{C}\) sigui obert.
+        Aleshores direm que~\(\tancat{C}\) és tancat.
+    \end{definition}
+    \begin{theorem}
+        \label{thm:equivalencia-obert-tancat-definicio-de-topologia}
+        Sigui~\(X\) amb la topologia~\(\tau\) un espai topològic.
+        Aleshores
+        \begin{enumerate}
+            \item\label{thm:equivalencia-obert-tancat-definicio-de-topologia:enum-1}~\(\emptyset\) i~\(X\) són tancats.
+            \item\label{thm:equivalencia-obert-tancat-definicio-de-topologia:enum-2} La unió de qualsevol família finita de tancats és un tancat.
+            \item\label{thm:equivalencia-obert-tancat-definicio-de-topologia:enum-3} La intersecció de qualsevol família de tancats és un tancat.
+        \end{enumerate}
+    \end{theorem}
+    \begin{proof}
+        Comencem veient el punt \eqref{thm:equivalencia-obert-tancat-definicio-de-topologia:enum-1}.
+        Tenim que~\(X\setminus\emptyset=X\).
+        Per la definició d'\myref{def:espai-topologic} tenim que~\(X\) és un obert, i per la definició de \myref{def:tancat} trobem que~\(\emptyset\) és un tancat.
+
+        També tenim que~\(X\setminus X=\emptyset\).
+        Per la definició d'\myref{def:espai-topologic} tenim que~\(\emptyset\) és un obert, i per la definició de \myref{def:tancat} trobem que~\(X\) és un tancat.
+
+        Veiem ara el punt \eqref{thm:equivalencia-obert-tancat-definicio-de-topologia:enum-2}.
+        Prenem una família~\(\{\tancat{C}_{i}\}_{i=1}^{n}\) de tancats de~\(X\) i considerem
+        \[
+            X\setminus\bigcup_{i=1}^{n}\tancat{C}_{i}=X\cap\left(\bigcup_{i=1}^{n}\tancat{C}_{i}\right)^{\complement}.
+        \]
+        Per la \myref{taut:primera-llei-de-De-Morgan} trobem que
+        \begin{align*}
+            X\cap\left(\bigcup_{i=1}^{n}\tancat{C}_{i}\right)^{\complement}&=X\cap\left(\bigcap_{i=1}^{n}\tancat{C}_{i}^{\complement}\right) \\
+            &=\bigcap_{i=1}^{n}\left(X\cap\tancat{C}_{i}^{\complement}\right) \\
+            &=\bigcap_{i=1}^{n}\left(X\setminus\tancat{C}_{i}\right).
+        \end{align*}
+        Per hipòtesi tenim que per a tot~\(i\in\{1,\dots,n\}\) el conjunt~\(\tancat{C}_{i}\) és un tancat, i per la definició de \myref{def:tancat} tenim que per a tot~\(i\in\{1,\dots,n\}\) el conjunt~\(X\setminus\tancat{C}_{i}\) és un obert, i per la definició d'\myref{def:espai-topologic} tenim que~\(\bigcap_{i=1}^{n}\left(X\setminus\tancat{C}_{i}\right)\) és un obert.
+        Ara bé, tenim que
+        \[
+            X\setminus\bigcup_{i=1}^{n}\tancat{C}_{i}=\bigcap_{i=1}^{n}\left(X\setminus\tancat{C}_{i}\right),
+        \]
+        i per tant, per la definició de \myref{def:tancat} trobem que~\(\bigcup_{i=1}^{n}\tancat{C}_{i}\) és un tancat.
+
+        Veiem per acabat el punt \eqref{thm:equivalencia-obert-tancat-definicio-de-topologia:enum-3}.
+        Prenem una família~\(\{\tancat{C}_{i}\}_{i\in I}\) de tancats de~\(X\) i considerem
+        \[
+            X\setminus\bigcap_{i\in I}\tancat{C}_{i}=X\cap\left(\bigcap_{i\in I}\tancat{C}_{i}\right)^{\complement}.
+        \]
+        Per la \myref{taut:segona-llei-de-De-Morgan} trobem que
+        \begin{align*}
+            X\cap\left(\bigcap_{i\in I}\tancat{C}_{i}\right)^{\complement}&=X\cap\left(\bigcup_{i\in I}\tancat{C}_{i}^{\complement}\right) \\
+            &=\bigcup_{i\in I}\left(X\cap\tancat{C}_{i}^{\complement}\right) \\
+            &=\bigcup_{i\in I}\left(X\setminus\tancat{C}_{i}\right).
+        \end{align*}
+        Ara bé, per la definició de \myref{def:tancat} tenim que per a tot~\(i\in I\) el conjunt~\(X\setminus\tancat{C}_{i}\) és un obert, i per la definició d'\myref{def:espai-topologic} trobem que el conjunt~\(\bigcup_{i\in I}\left(X\setminus\tancat{C}_{i}\right)\) és un obert.
+        Tenim
+        \[
+            X\setminus\bigcap_{i\in I}\tancat{C}_{i}=\bigcup_{i\in I}\left(X\setminus\tancat{C}_{i}\right),
+        \]
+        i, de nou per la definició de \myref{def:tancat}, tenim que~\(\bigcap_{i\in I}\tancat{C}_{i}\) és un tancat, com volíem veure.
+    \end{proof}
+    \subsection{Base d'una topologia}
+    \begin{definition}[Base d'una topologia]
+        \labelname{base d'una topologia}\label{def:base-duna-topologia}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic i~\(\base{B}\) una família d'oberts tals que per a tot obert~\(\obert{U}\) de~\(X\) i per a tot punt~\(x\) de~\(\obert{U}\) existeix un~\(B\in\base{B}\) tal que~\(x\in B\subseteq\obert{U}\).
+        Aleshores direm que~\(\base{B}\) és una base de la topologia~\(\tau\).
+    \end{definition}
+    \begin{example}
+        Siguin~\(X\) amb la distància~\(\distancia\) un espai mètric i
+        \[
+            \base{B}=\{\bola(x,\varepsilon)\mid x\in X\text{ i }\varepsilon>0\}
+        \]
+        un conjunt.
+        Aleshores~\(\base{B}\) és una base de la topologia~\(\tau\) induïda per la mètrica.
+    \end{example}
+    \begin{solution}
+        Tenim que
+        \[
+            \tau=\{\obert{U}\subseteq X\mid\obert{U}\text{ es un obert}\}.
+        \]
+
+        Prenem doncs un obert~\(\obert{U}\) de~\(\tau\) i un punt~\(x\) de~\(\obert{U}\).
+        Per la definició d'\myref{def:obert-espai-metric} tenim que existeix un~\(\varepsilon>0\) real tal que~\(\bola(x,\varepsilon)\) és un subconjunt de~\(\obert{U}\), i per la definició de \myref{def:base-duna-topologia} hem acabat.
+    \end{solution}
+    \begin{definition}[Finor d'una topologia]
+        \labelname{finor d'una topologia}\label{def:finor-duna-topologia}
+        Siguin~\(X\) un conjunt i~\(\tau\),~\(\tau'\) dues topologies de~\(X\) tals que~\(\tau\subset\tau'\).
+        Aleshores direm que~\(\tau'\) és més fina que~\(\tau\).
+    \end{definition}
+%    \begin{proposition}
+%        Siguin~\(X\) un conjunt i~\(\tau\),~\(\tau'\) dues topologies de~\(X\) tals que~\(\tau'\) sigui més fina que~\(\tau\). Aleshores l'aplicació~\(\Id\colon X\longrightarrow X'\) és una aplicació contínua.
+%        \begin{proof}
+%
+%        \end{proof}
+%    \end{proposition}
+    \begin{proposition}
+        \label{prop:condicio-equivalent-a-base-duna-topologia}
+        \label{prop:condicio-per-que-una-topologia-sigui-la-mes-fina-que-conte-una-base}
+        Siguin~\(X\) un conjunt i~\(\base{B}\) una família de subconjunts de~\(X\) tals que
+        \[
+            \bigcup_{B\in\base{B}}B=X
+        \]
+        i tal que per a tot~\(\obert{U}\) i~\(\obert{V}\) de~\(\base{B}\) i per a tot~\(x\) de~\(\obert{U}\cap\obert{V}\) existeix un~\(\obert{W}\) de~\(\base{B}\) tal que~\(x\) pertanyi a~\(\obert{W}\) i~\(\obert{W}\subseteq\obert{U}\cap\obert{V}\).    Aleshores existeix una única topologia~\(\tau\) de~\(X\) tal que~\(\base{B}\) és una base de~\(\tau\) i~\(\tau\) és la topologia menys fina que conté els elements de~\(\base{B}\).
+    \end{proposition}
+    \begin{proof}
+        Definim
+        \begin{equation}
+            \label{prop:condicio-equivalent-a-base-duna-topologia:eq1}
+            \tau=\left\{\obert{U}\subseteq X\mid\obert{U}=\cup_{i\in I}B_{i}\text{ amb }B_{i}\in\base{B}\right\}
+        \end{equation}
+        Observem que~\(X\) i~\(\emptyset\) pertanyen a~\(\tau\).
+
+        Siguin~\(\obert{U}\) i~\(\obert{V}\) dos elements de~\(\base{B}\) i prenem un element~\(x\) de~\(\obert{U}\cap\obert{V}\).
+        Per hipòtesi tenim que existeix un element ~\(\obert{W}_{x}\) de~\(\base{B}\) tal que~\(x\in\obert{W}\subseteq\obert{U}\cap\obert{V}\).
+        Per tant
+        \[
+            \obert{U}\cap\obert{V}=\bigcup_{x\in\obert{U}\cap\obert{V}}\obert{W}_{x},
+        \]
+        i per la definició del conjunt~\(\tau\) tenim que~\(\obert{U}\cap\obert{V}\) és un element de~\(\tau\).
+
+        Prenem dos elements~\(\obert{U}\) i~\(\obert{V}\) del conjunt~\(\tau\).
+        Per la definició \eqref{prop:condicio-equivalent-a-base-duna-topologia:eq1} trobem que existeixen dues famílies~\(\{\obert{U}_{i}\}_{i\in I}\) i~\(\{\obert{V}_{j}\}_{j\in J}\) d'elements de~\(\base{B}\) tals que
+        \[
+            \obert{U}=\bigcup_{i\in I}\obert{U}_{i}\quad\text{i}\quad\obert{V}=\bigcup_{j\in J}\obert{V}_{j}.
+        \]
+
+        Per tant tenim que
+        \[
+            \obert{U}\cap\obert{V}=\bigcup_{i\in I}\bigcup_{j\in J}(\obert{U}_{i}\cap\obert{V}_{j}),
+        \]
+        i per la definició \eqref{prop:condicio-equivalent-a-base-duna-topologia:eq1} trobem que~\(\obert{U}\cap\obert{V}\) pertany a~\(\tau\).
+        Per tant per la definició de \myref{def:topologia} trobem que~\(\tau\) és una topologia de~\(X\).
+
+        Veiem ara que~\(\base{B}\) és base de la topologia~\(\tau\).
+        Prenem un obert~\(\obert{U}\) de~\(\tau\) i~\(x\) un element de~\(\obert{U}\).
+        Per la definició \eqref{prop:condicio-equivalent-a-base-duna-topologia:eq1} tenim que existeix una família~\(\{B_{i}\}_{i\in I}\) d'elements de~\(\base{B}\) tal que
+        \[
+            \obert{U}=\bigcup_{i\in I}B_{i}.
+        \]
+        Per tant existeix un element~\(B\) de~\(\base{B}\) tal que~\(x\in B\) i~\(B\subseteq\obert{U}\) i per la definició de \myref{def:base-duna-topologia} trobem que~\(\base{B}\) és una base de la topologia~\(\tau\).
+
+        Continuem veient que~\(\tau\) és la topologia menys fina que conté els elements de~\(\base{B}\).
+        Suposem que existeix una topologia~\(\tau'\) de~\(X\) tal que~\(\tau\) és més fina que~\(\tau'\) i tal que~\(\tau'\) conté els elements de~\(\base{B}\).
+        Per la definició de \myref{def:finor-duna-topologia} això és que~\(\tau'\subset\tau\).
+
+        Prenem un obert~\(\obert{U}\) de~\(\tau\).
+        Per la definició \eqref{prop:condicio-equivalent-a-base-duna-topologia:eq1} trobem que existeix una família~\(\{B_{i}\}_{i\in I}\) d'elements de~\(\base{B}\) tals que
+        \[
+            \obert{U}=\bigcup_{i\in I}B_{i}.
+        \]
+        Ara bé, tenim per hipòtesi que~\(\base{B}\) és un subconjunt de la topologia~\(\tau'\), i per la definició de \myref{def:topologia} trobem que~\(\obert{U}\) pertany a~\(\tau'\).
+        Per tant ha de ser~\(\tau\subseteq\tau'\), i trobem que~\(\tau\) és la topologia menys fina que conté els elements de~\(\base{B}\).
+
+        Veiem ara que aquesta topologia~\(\tau\) és única.
+        Suposem que existeix una altre topologia~\(\tau'\) tal que~\(\base{B}\) és una base de~\(\tau'\) i~\(\tau'\) és la topologia menys fina que conté els elements de~\(\base{B}\).
+
+        Prenem un obert~\(\obert{U}\) de~\(\tau\).
+        Per la definició \eqref{prop:condicio-equivalent-a-base-duna-topologia:eq1} trobem que existeix una família~\(\{B_{i}\}_{i\in I}\) d'elements de~\(\base{B}\) tals que
+        \[
+            \obert{U}=\bigcup_{i\in I}B_{i}.
+        \]
+        Per la definició de \myref{def:topologia} tenim que~\(\obert{U}\) és un element de~\(\tau'\), ja que per hipòtesi~\(\base{B}\) és un subconjunt de~\(\tau'\).
+        Per tant tenim que~\(\tau\subseteq\tau'\).
+        Ara bé, ja hem vist que~\(\tau\) és la topologia menys fina que conté els elements de~\(\base{B}\), i per la definició de \myref{def:finor-duna-topologia} això és que~\(\tau'\subseteq\tau\), i pel \myref{thm:doble-inclusio} ha de ser~\(\tau=\tau'\), com volíem veure.
+    \end{proof}
+    \subsection{Entorns, interior i adherència}
+    \begin{definition}[Entorn]
+        \labelname{entorn}\label{def:entorn}
+        \labelname{punt interior}\label{def:punt-interior}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic,~\(x\) un punt i~\(N\) un conjunt tal que existeix un obert~\(\obert{U}\) satisfent que~\(x\) és un element de~\(\obert{U}\) i~\(\obert{U}\) és un subconjunt de~\(N\).
+        Aleshores direm que~\(N\) és un entorn de~\(x\).
+
+        També direm que~\(x\) és un punt interior de~\(N\).
+    \end{definition}
+    \begin{observation}
+        \label{obs:tot-punt-te-un-entorn}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic i~\(x\) un punt.
+        Aleshores existeix un subconjunt~\(N\) de~\(X\) tal que~\(N\) és un entorn de~\(x\).
+    \end{observation}
+    \begin{proof}
+        Si~\(N=X\) tenim~\(x\in X\subseteq N\).
+        Per la definició de \myref{def:topologia} tenim que~\(X\) és un obert i per la definició d'\myref{def:entorn} trobem que~\(N\) és un entorn de~\(x\).
+    \end{proof}
+    \begin{definition}[Interior]
+        \labelname{interior}\label{def:interior}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic,~\(x\) un punt de~\(X\),~\(A\) subconjunt de~\(X\) i
+        \[
+            \interior(A)=\{x\in X\mid A\text{ és un entorn de }x\}.
+        \]
+        Aleshores direm que~\(\interior(A)\) és l'interior del conjunt~\(A\).
+    \end{definition}
+    \begin{proposition}
+        \label{prop:linterior-dun-conjunt-es-un-obert}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic i~\(A\) un subconjunt de~\(X\).
+        Aleshores~\(\interior(A)\) és un obert.
+    \end{proposition}
+    \begin{proof}
+        Prenem un punt~\(x\) de~\(\interior(A)\).
+        Per la definició d'\myref{def:interior} tenim que existeix un obert~\(\obert{U}_{x}\) tal que~\(x\in\obert{U}_{x}\) i~\(\obert{U}_{x}\subseteq A\).
+        Aleshores tenim
+        \begin{align*}
+            \interior(A)&=\bigcup_{x\in\interior(A)}\{x\} \\
+            &\subseteq\bigcup_{x\in\interior(A)}\obert{U}_{x} \\
+            &\subseteq\bigcup_{x\in\interior(A)}\interior(A)=\interior(A).
+        \end{align*}
+
+        Per tant tenim que
+        \[
+            \interior(A)\subseteq\bigcup_{x\in\interior(A)}\obert{U}_{x}\quad\text{i}\quad\bigcup_{x\in\interior(A)}\obert{U}_{x}\subseteq\interior(A),
+        \]
+        i pel \myref{thm:doble-inclusio} trobem
+        \[
+            \interior(A)=\bigcup_{x\in\interior(A)}\obert{U}_{x}
+        \]
+        i per la definició de \myref{def:topologia} trobem que~\(\interior(A)\) és un obert.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:linterior-dun-conjunt-es-la-unio-de-tots-els-oberts-continguts-en-el-conjunt}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic,~\(A\) un subconjunt de~\(X\) i
+        \[
+            Y=\{\obert{U}\in\tau\mid\obert{U}\subseteq A\}.
+        \]
+        Aleshores
+        \[
+            \interior(A)=\bigcup_{\obert{U}\in Y}\obert{U}.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Sigui~\(x\) un element de~\(A\) tal que existeixi un obert~\(\obert{U}_{x}\) satisfent que~\(x\) és un element de~\(\obert{U}_{x}\) i~\(\obert{U}_{x}\) és un subconjunt de~\(A\).
+        Aleshores tenim
+        \begin{align*}
+            \interior(A)&=\bigcup_{x\in\interior(A)}\{x\} \\
+            &\subseteq\bigcup_{x\in\interior(A)}\obert{U}_{x} \\
+            &\subseteq\bigcup_{x\in\interior(A)}\interior(A)=\interior(A)
+        \end{align*}
+        i pel \myref{thm:doble-inclusio} trobem
+        \[
+            \interior(A)=\bigcup_{\obert{U}\in Y}\obert{U}
+        \]
+        com volíem veure.
+    \end{proof}
+    \begin{corollary}
+        \label{cor:linterior-dun-conjunt-conte-tots-els-seus-oberts}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic,~\(A\) un subconjunt de~\(X\) i~\(\obert{U}\) un obert tal que~\(\obert{U}\) sigui un subconjunt de~\(A\).
+        Aleshores~\(\obert{U}\) és un subconjunt de~\(\interior(A)\).
+    \end{corollary}
+    \begin{corollary}
+        \label{cor:un-conjunt-es-obert-si-i-nomes-si-es-el-seu-interior}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic i~\(A\) un subconjunt de~\(X\).
+        Aleshores~\(A\) és un obert si i només si~\(A=\interior(A)\).
+    \end{corollary}
+    \begin{definition}[Punt adherent]
+        \labelname{punt adherent}\label{def:punt-adherent}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic,~\(A\) un subconjunt de~\(X\) i~\(x\) un punt tal que per a tot entorn~\(N\) de~\(x\) tenim
+        \[
+            A\cap N\neq\emptyset.
+        \]
+        Aleshores direm que~\(x\) és un punt adherent a~\(A\).
+    \end{definition}
+    \begin{definition}[Clausura]
+        \labelname{clausura}\label{def:clausura}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic i~\(A\) un conjunt.
+        Aleshores direm que
+        \[
+            \clausura(A)=\{x\in X\mid x\text{ és un punt adherent a }A\}
+        \]
+        és la clausura de~\(A\).
+    \end{definition}
+    \begin{observation}
+        \label{obs:la-clausura-dun-conjunt-conte-el-conjunt}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic i~\(A\) un subconjunt de~\(X\).
+        Aleshores
+        \[
+            A\subseteq\clausura(A).
+        \]
+    \end{observation}
+    \begin{proposition}
+        \label{prop:la-clausura-dun-conjunt-es-un-tancat}
+        Siguin~\(X\) amb~\(\tau\) un espai topològic i~\(A\) un subconjunt de~\(X\).
+        Aleshores~\(\clausura(A)\) és un tancat.
+    \end{proposition}
+    \begin{proof}
+         Prenem un element~\(x\) de~\(X\setminus\clausura(A)\).
+         Per la definició de \myref{def:clausura} tenim que existeix un entorn~\(N\) de~\(x\) tal que
+         \begin{equation}
+             \label{prop:la-clausura-dun-conjunt-es-un-tancat:eq1}
+             A\cap N=\emptyset,
+         \end{equation}
+         i per la definició d'\myref{def:entorn} tenim que existeix un obert~\(\obert{U}_{x}\) tal que~\(x\) és un element de~\(\obert{U}_{x}\) i que~\(\obert{U}_{x}\) és un subconjunt de~\(N\).
+         Per tant, per \eqref{prop:la-clausura-dun-conjunt-es-un-tancat:eq1} tenim que~\(A\cap\obert{U}_{x}=\emptyset\).
+
+         Per tant trobem
+         \begin{align*}
+             X\setminus\clausura(A)&=\bigcup_{x\in X\setminus\clausura(A)}\{x\} \\
+             &\subseteq\bigcup_{x\in X\setminus\clausura(A)}\obert{U}_{x}\subseteq X\setminus\clausura(A),
+         \end{align*}
+         i pel \myref{thm:doble-inclusio} trobem que
+         \[
+             X\setminus\clausura(A)=\subseteq\bigcup_{x\in X\setminus\clausura(A)}\obert{U}_{x},
+         \]
+         i com que~\(\obert{U}_{x}\) és un obert, per la definició de \myref{def:topologia} tenim que~\(X\setminus\clausura(A)\) és un obert, i per la definició de \myref{def:tancat} trobem que~\(\clausura(A)\) és un tancat.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:la-clausura-dun-conjunt-es-linterseccio-de-tots-els-tancats-que-contenen-el-conjunt}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic,~\(A\) un subconjunt de~\(X\) i
+        \[
+            Y=\{\tancat{C}\subseteq X\mid A\subseteq\tancat{C}\text{ i }\tancat{C}\text{ és un tancat}\}.
+        \]
+        Aleshores
+        \[
+            \clausura(A)=\bigcap_{\tancat{C}\in Y}\tancat{C}.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Sigui~\(x\) un punt adherent a~\(A\) amb~\(x\notin A\).
+        Suposem que existeix un tancat~\(\tancat{C}\) tal que~\(A\) és un subconjunt de~\(\tancat{C}\) i tal que~\(x\) no pertany a~\(\tancat{C}\).
+        Aleshores~\(x\) és un element de~\(X\setminus\tancat{C}\), i per la definició de \myref{def:tancat} tenim que~\(\obert{U}=X\setminus\tancat{C}\) és un obert.
+        Ara bé, per la definició d'\myref{def:entorn} tenim que~\(\obert{U}\) és un entorn de~\(x\), però~\(A\) és un subconjunt de~\(\tancat{C}\), i per tant tenim que~\(X\setminus\tancat{C}\) és un subconjunt de~\(X\setminus A\), i tenim que~\(\obert{U}\) és un subconjunt de~\(X\setminus A\), i per tant~\(A\cap\obert{U}=\emptyset\).
+        Ara bé, per la definició de \myref{def:punt-adherent} tenim que~\(A\cap\obert{U}\neq\emptyset\).
+        Per tant ha de ser que~\(x\) pertany a~\(\tancat{C}\) i trobem que
+        \begin{equation}
+            \label{prop:la-clausura-dun-conjunt-es-linterseccio-de-tots-els-tancats-que-contenen-el-conjunt:eq1}
+            \clausura(A)\subseteq\bigcap_{\tancat{C}\in Y}\tancat{C}.
+        \end{equation}
+
+        Per la proposició \myref{prop:la-clausura-dun-conjunt-es-un-tancat} tenim que~\(\clausura(A)\) és un tancat, i per tant~\(\clausura(A)\) és un element de~\(Y\) i tenim que
+        \begin{equation}
+            \label{prop:la-clausura-dun-conjunt-es-linterseccio-de-tots-els-tancats-que-contenen-el-conjunt:eq2}
+            \bigcap_{\tancat{C}\in Y}\tancat{C}\subseteq\clausura(A).
+        \end{equation}
+
+        Ara bé, tenim \eqref{prop:la-clausura-dun-conjunt-es-linterseccio-de-tots-els-tancats-que-contenen-el-conjunt:eq1} i \eqref{prop:la-clausura-dun-conjunt-es-linterseccio-de-tots-els-tancats-que-contenen-el-conjunt:eq2}, i pel \myref{thm:doble-inclusio} trobem que
+        \[
+            \clausura(A)=\bigcap_{\tancat{C}\in Y}\tancat{C}.\qedhere
+        \]
+    \end{proof}
+    \begin{corollary}
+        \label{cor:la-clausura-dun-conjunt-es-el-tancat-mes-petit-que-el-conte}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic,~\(A\) un subconjunt de~\(X\) i~\(\tancat{C}\) un tancat tal que~\(A\) és un subconjunt de~\(\tancat{C}\).
+        Aleshores~\(\clausura(A)\subseteq\tancat{C}\).
+    \end{corollary}
+    \begin{corollary}
+        \label{cor:un-conjunt-es-tancat-si-i-nomes-si-es-igual-a-la-seva-clausura}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic i~\(A\) un subconjunt de~\(X\).
+        Aleshores~\(A\) és tancat si i només si~\(A=\clausura(A)\).
+    \end{corollary}
+    \begin{proposition}
+        \label{prop:la-clausura-dun-conjunt-es-el-complementari-de-linterior-del-complementari-del-conjunt}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic i~\(A\) un subconjunt de~\(X\).
+        Aleshores
+        \[
+            \clausura(X\setminus A)=X\setminus\interior(A).
+        \]
+    \end{proposition}
+    \begin{proof} % https://math.stackexchange.com/questions/970825/prove-that-the-closure-of-complement-is-the-complement-of-the-interior
+        Prenem un element~\(x\) de~\(\clausura(X\setminus A)\).
+        Per la definició de \myref{def:clausura} tenim que per a tot obert~\(\obert{U}\) que conté~\(x\) tenim que
+        \[
+            \obert{U}\cap(X\setminus A)\neq\emptyset.
+        \]
+        Ara bé, per la definició d'\myref{def:interior} que~\(\interior(A)\) és un subconjunt de~\(A\), i per tant~\(X\setminus A\) és un subconjunt de~\(X\setminus\interior(A)\), i per tant~\(\obert{U}\cap(X\setminus\interior(A))\neq\emptyset\).
+        Per tant per la definició d'\myref{def:interior} trobem que
+        \begin{equation}
+            \label{prop:la-clausura-dun-conjunt-es-el-complementari-de-linterior-del-complementari-del-conjunt:eq1}
+            \clausura(X\setminus A)\subseteq X\setminus\interior(A)
+        \end{equation}
+
+        Prenem ara un element~\(x\) de~\(X\setminus\interior(A)\).
+        Per la definició d'\myref{def:interior} tenim que no existeix cap obert~\(\obert{U}\) tal que~\(x\) sigui un element de~\(\obert{U}\) i~\(\obert{U}\) sigui un subconjunt de~\(A\), o equivalentment, que~\(\obert{U}\cap(X\setminus A)\neq\emptyset\) per a tot obert~\(\obert{U}\) tal que~\(x\) sigui un element de ~\(\obert{U}\) i que~\(\obert{U}\) sigui un subconjunt de~\(A\).
+        Ara bé, per la definició de \myref{def:clausura} tenim que~\(\obert{U}\) és un element de~\(\clausura(X\setminus A)\), i per tant trobem que
+        \begin{equation}
+            \label{prop:la-clausura-dun-conjunt-es-el-complementari-de-linterior-del-complementari-del-conjunt:eq2}
+            X\setminus\interior(A)\subseteq\clausura(X\setminus A).
+        \end{equation}
+
+        Per tant, amb \eqref{prop:la-clausura-dun-conjunt-es-el-complementari-de-linterior-del-complementari-del-conjunt:eq1} i \eqref{prop:la-clausura-dun-conjunt-es-el-complementari-de-linterior-del-complementari-del-conjunt:eq2} i el \myref{thm:doble-inclusio} trobem que~\(\clausura(X\setminus A)=X\setminus\interior(A)\), com volíem veure.
+    \end{proof}
+\section{Aplicacions contínues}
+    \subsection{Aplicacions obertes, tancades i contínues}
+    \begin{definition}[Aplicació oberta]
+        \labelname{aplicació oberta}\label{def:aplicacio-oberta}
+        Siguin~\(X\) amb la topologia~\(\tau_{X}\) i~\(Y\) amb la topologia~\(\tau_{Y}\) dos espais topològics i~\(f\colon X\longrightarrow Y\) una aplicació tal que per a tot obert~\(\obert{U}\) de~\(X\) tenim que el conjunt~\(\{f(x)\in Y\mid x\in\obert{U}\}\) és un obert de~\(Y\).
+        Aleshores direm que~\(f\) és una aplicació oberta.
+    \end{definition}
+    \begin{observation}
+        \label{obs:la-composicio-daplicacions-obertes-es-oberta}
+        La composició d'aplicacions obertes és oberta.
+    \end{observation}
+    \begin{definition}[Aplicació tancada]
+        \labelname{aplicació tancada}\label{def:aplicacio-tancada}
+        Siguin~\(X\) amb la topologia~\(\tau_{X}\) i~\(Y\) amb la topologia~\(\tau_{Y}\) dos espais topològics i~\(f\colon X\longrightarrow Y\) una aplicació tal que per a tot tancat~\(\tancat{C}\) de~\(X\) tenim que el conjunt~\(\{f(x)\in Y\mid x\in\tancat{C}\}\) és un tancat de~\(Y\).
+        Aleshores direm que~\(f\) és una aplicació tancada.
+    \end{definition}
+    \begin{observation}
+        \label{obs:la-composicio-daplicacions-tancades-es-tancada}
+        La composició d'aplicacions tancades és tancada.
+    \end{observation}
+    \begin{definition}[Aplicació contínua]
+        \labelname{aplicació contínua}\label{def:aplicacio-continua}
+        Siguin~\(X\) amb la topologia~\(\tau_{X}\) i~\(Y\) amb la topologia~\(\tau_{Y}\) dos espais topològics i~\(f\colon X\longrightarrow Y\) una aplicació tal que per a tot obert~\(\obert{V}\) de~\(Y\) el conjunt~\(\{x\in X\mid f(x)\in\obert{V}\}\) és un obert de~\(X\).
+        Aleshores direm que~\(f\) és una aplicació contínua.
+    \end{definition}
+    \begin{observation}
+        \label{obs:la-composicio-daplicacions-continues-es-continua}
+        La composició d'aplicacions contínues és contínua.
+    \end{observation}
+    \begin{example}
+        \label{ex:les-esferes-son-tancats}
+        Considerem
+        \[
+            \esfera^{n}=\{x\in\mathbb{R}^{n+1}\mid\norm{x}=1\}.
+        \]
+        Volem veure que~\(\esfera^{n}\) és un tancat de~\(\mathbb{R}^{n+1}\).
+    \end{example}
+    \begin{solution}
+        Definim l'aplicació
+        \begin{align*}
+            f:\mathbb{R}^{n+1}&\longrightarrow\mathbb{R} \\
+            x&\longmapsto\norm{x}.
+        \end{align*}
+        \begin{comment}
+            Veiem que~\(f\) és una aplicació tancada.
+            Sigui~\(\tancat{C}\) un tancat de~\(\mathbb{R}^{n+1}\) i considerem el conjunt
+            \[
+                \tancat{K}=\{f(x)\in\mathbb{R}\mid x\in\tancat{C}\}.
+            \]
+            Tenim que~\(\tancat{K}\) és un tancat de~\(\mathbb{R}\), ja que si~\(y\) és un element de~\(\tancat{K}\), aleshores~\(y\neq f(x)\) per a tot~\(x\) de~\(\obert{C}\), i per tant existeix un real~\(d>0\) tal que
+            \[
+                d=\min_{x\in\tancat{C}}\abs{f(x)-y},
+            \]
+            i per tant tenim que per a tot~\(y\) de~\(\mathbb{R}\setminus\tancat{K}\) existeix una bola~\(\bola(y,d)\) tal que~\(\bola(y,d)\cap\tancat{K}=\emptyset\), i per la definició d'\myref{def:obert-espai-metric} trobem que~\(\mathbb{R}\setminus\tancat{K}\) és un obert de~\(\mathbb{R}\).
+            Aleshores per la definició de \myref{def:tancat} trobem que~\(\tancat{K}\) és un tancat, i per la definició d'\myref{def:aplicacio-tancada} trobem que~\(f\) és una aplicació tancada.
+
+            Ara bé, tenim que~\(\{1\}\) és un tancat de~\(\mathbb{R}\)
+        \end{comment}
+        Veiem que~\(f\) és una aplicació contínua.
+        Sigui~\(\obert{V}\) un obert de~\(\mathbb{R}\) i considerem el conjunt
+        \begin{equation}
+            \label{ex:les-esferes-son-tancats:eq1}
+            \obert{U}=\{x\in\mathbb{R}^{n+1}\mid f(x)\in\obert{V}\}.
+        \end{equation}
+        Prenem un element~\(x\) de~\(\mathbb{R}^{n+1}\).
+        Com que, per hipòtesi, tenim que~\(\obert{V}\) és un obert de~\(\mathbb{R}\), per la definició d'\myref{def:obert-espai-metric} tenim que existeix un real~\(\delta>0\) tal que la bola~\(\bola(f(x),\delta)\) és un subconjunt de~\(\mathbb{R}\), i per la definició \eqref{ex:les-esferes-son-tancats:eq1} tenim que existeix un element~\(y\) de~\(\mathbb{R}^{n+1}\) tal que~\(f(y)\) és un element de~\(\bola(f(x),\delta)\), i per la definició de \myref{def:bola} trobem que~\(\abs{f(x)-f(y)}<\delta\).
+    \end{solution}
+    \subsection{Homeomorfismes entre topologies}
+    \begin{definition}[Homeomorfisme]
+        \labelname{homeomorfisme entre topologies}\label{def:homeomorfisme-entre-topologies}
+        Siguin~\(X\) amb la topologia~\(\tau_{X}\) i~\(Y\) amb la topologia~\(\tau_{Y}\) dos espais topològics i~\(f\colon X\longrightarrow Y\) una aplicació bijectiva, oberta i contínua.
+        Aleshores direm que~\(f\) és un homeomorfisme.
+    \end{definition}
+    \begin{definition}[Espais topològics homeomorfs]
+        \labelname{espais topològics homeomorfs}\label{def:espais-topologics-homeomorfs}
+        Siguin~\(X\) amb la topologia~\(\tau_{X}\) i~\(Y\) amb la topologia~\(\tau_{Y}\) dos espais topològics tals que existeix un homeomorfisme~\(f\colon X\longrightarrow Y\).
+        Aleshores direm que~\(X\) i~\(Y\) són dos espais topològics homeomorfs.
+        També denotarem
+        \[
+            X\cong Y.
+        \]
+    \end{definition}
+    \begin{example}
+        \label{ex:R-es-homeomorf-a-linterval-0-1}
+        Volem veure que~\(\mathbb{R}\) és homeomorf a l'interval~\((0,1)\).
+    \end{example}
+    \begin{solution}
+        %TODO
+    \end{solution}
+    \begin{proposition}
+        \label{prop:ser-homeomorf-es-una-relacio-dequivalencia}
+        Siguin~\(X\) amb la topologia~\(\tau_{X}\) i~\(Y\) amb la topologia~\(\tau_{Y}\) dos espais topològics.
+        Aleshores la relació
+        \[
+            X\cong Y\sii X\text{ és homeomorf a }Y
+        \]
+        és una relació d'equivalència.
+    \end{proposition}
+    \begin{proof}
+        Comprovem les propietats de la definició de relació d'equivalència:
+        \begin{enumerate}
+            \item Reflexiva: Tenim que l'aplicació~\(\Id_{X}\) és bijectiva, oberta i contínua.
+            Per la definició d'\myref{def:homeomorfisme-entre-topologies} tenim que~\(\Id_{x}\) és un homeomorfisme, i per la definició d'\myref{def:espais-topologics-homeomorfs} tenim que~\(X\cong X\).
+            \item Simètrica: Siguin~\(X\) amb la topologia~\(\tau_{X}\) i~\(Y\) amb la topologia~\(\tau_{Y}\) dos espais topològics homeomorfs.
+            Per la definició d'\myref{def:espais-topologics-homeomorfs} tenim que existeix un homeomorfisme~\(f\colon X\longrightarrow Y\).
+
+            Pel Teorema \myref{thm:bijectiva-iff-invertible} trobem que existeix l'aplicació inversa~\(f^{-1}\) de~\(Y\) a~\(X\), i pel \corollari{} \myref{cor:la-inversa-duna-aplicacio-invertible-es-invertible} tenim que l'aplicació~\(f^{-1}\) és bijectiva.
+
+            També trobem que~\(f^{-1}\) és oberta, ja que per la definició d'\myref{def:homeomorfisme-entre-topologies} tenim que~\(f\) és contínua, i per la definició d'\myref{def:aplicacio-oberta} i la definició d'\myref{def:aplicacio-continua} trobem que~\(f^{1}\) és oberta.
+            De mateixa manera trobem que~\(f^{-1}\) és contínua, ja que per la definició d'\myref{def:homeomorfisme-entre-topologies} tenim que~\(f\) és oberta, i per la definició d'\myref{def:aplicacio-continua} i la definició d'\myref{def:aplicacio-oberta} trobem que~\(f^{-1}\) és contínua.
+
+            Per tant, per la definició d'\myref{def:homeomorfisme-entre-topologies} trobem que~\(f^{-1}\) és un homeomorfisme entre topologies i per tant~\(Y\cong X\).
+            \item Transitiva: Siguin~\(X_{1}\) amb la topologia~\(\tau_{1}\),~\(X_{2}\) amb la topologia~\(\tau_{2}\) i~\(X_{3}\) amb la topologia~\(\tau_{3}\) tres espais topològics tals que~\(X_{1}\cong X_{2}\) i~\(X_{2}\cong X_{3}\).
+            Per la definició d'\myref{def:espais-topologics-homeomorfs} tenim que existeixen dos homeomorfismes~\(f\colon X_{1}\longrightarrow X_{2}\) i~\(g\colon X_{2}\longrightarrow X_{3}\).
+
+            Considerem l'aplicació~\(h=g\circ f\).
+            Pel Teorema \myref{thm:conjugacio-de-bijectives-bijectiva} trobem que~\(h\) és bijectiva, i per l'observació \myref{obs:la-composicio-daplicacions-obertes-es-oberta} i l'observació \myref{obs:la-composicio-daplicacions-continues-es-continua} trobem que~\(h\) és oberta i contínua, i per la definició d'\myref{def:homeomorfisme-entre-topologies} trobem que~\(h\) és un homeomorfisme entre~\(X_{1}\) i~\(X_{3}\), i per la definició d'\myref{def:espais-topologics-homeomorfs} trobem que~\(X_{1}\cong X_{3}\).
+        \end{enumerate}
+        I per la definició de \myref{def:relacio-dequivalencia} hem acabat.
+    \end{proof}
+\end{document}

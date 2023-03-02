@@ -1,0 +1,687 @@
+\documentclass[../topologia.tex]{subfiles}
+
+\begin{document}
+\chapter{Espais topològics}
+\section{Espais compactes}
+    \subsection{Recobriments}
+    \begin{definition}[Recobriment]
+        \labelname{recobriment d'un espai}\label{def:recobriment-dun-espai}
+        \labelname{recobriment finit d'un espai}\label{def:recobriment-finit-dun-espai}
+        \labelname{recobriment infinit d'un espai}\label{def:recobriment-infinit-dun-espai}
+        Siguin~\(X\) un espai topològic i~\(\{\obert{U}_{i}\}_{i\in I}\) una família de subespais de~\(X\) tals que
+        \[
+            X=\bigcup_{i\in I}\obert{U}_{i}.
+        \]
+        Aleshores direm que~\(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment de~\(X\).
+
+        Si~\(I\) és finit direm que~\(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment finit de~\(X\), i si~\(I\) és infinit direm que~\(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment infinit de~\(X\).
+    \end{definition}
+    \begin{definition}[Recobriment obert]
+        \labelname{recobriment obert}\label{def:recobriment-obert}
+        Sigui~\(\{\obert{U}_{i}\}_{i\in I}\) un recobriment d'un espai topològic~\(X\) tal que per a tot~\(i\) de~\(I\) tenim que~\(\obert{U}_{i}\) és un obert de~\(X\).
+        Aleshores direm que~\(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment obert de~\(X\).
+    \end{definition}
+    \begin{example}
+        \label{ex:un-recobriment-obert-de-R}
+        Volem trobar un recobriment de~\(\mathbb{R}\).
+    \end{example}
+    \begin{solution}
+        Prenem la família d'oberts~\(\{(-i,i)\}_{i\in\mathbb{N}}\).
+        Aleshores tenim que
+        \[
+            \mathbb{R}=\bigcup_{i\in\mathbb{N}}(-i,i),
+        \]
+        ja que si~\(x\) és un element de~\(\mathbb{R}\) trobem que existeix un natural~\(m\) tal que~\(\abs{x}<m\), i per tant~\(x\) pertany a l'interval~\((-m,m)\).
+    \end{solution}
+    \begin{definition}[Subrecobriment]
+        \labelname{subrecobriment}\label{def:subrecobriment}
+        \labelname{subrecobriment finit}\label{def:subrecobriment-finit}
+        \labelname{subrecobriment infinit}\label{def:subrecobriment-infinit}
+        Siguin~\(\{\obert{U}_{i}\}_{i\in I}\) un recobriment d'un espai topològic~\(X\) i~\(J\) un subconjunt de~\(I\) tal que la família~\(\{\obert{U}_{j}\}_{j\in J}\) és un recobriment de~\(X\).
+        Aleshores direm que~\(\{\obert{U}_{j}\}_{j\in J}\) és un subrecobriment de~\(\{\obert{U}_{i}\}_{i\in I}\).
+
+        Si~\(J\) és finit direm que~\(\{\obert{U}_{j}\}_{j\in J}\) és un recobriment finit de~\(\{\obert{U}_{i}\}_{i\in I}\), i si~\(J\) és infinit direm que~\(\{\obert{U}_{j}\}_{j\in J}\) és un recobriment infinit de~\(\{\obert{U}_{i}\}_{i\in I}\).
+    \end{definition}
+    \subsection{Compacitat}
+    \begin{definition}[Compacte]
+        \labelname{espai topològic compacte}\label{def:espai-topologic-compacte}
+        Sigui~\(X\) un espai topològic tal que tot recobriment obert de~\(X\) admet un subrecobriment finit.
+        Aleshores direm que~\(X\) és compacte.
+    \end{definition}
+    \begin{example}
+        \label{ex:R-no-es-compacte}
+        Volem veure que~\(\mathbb{R}\) no és compacte.
+    \end{example}
+    \begin{solution}
+        Per l'exemple \myref{ex:un-recobriment-obert-de-R} tenim que~\(\{(-i,i)\}_{i\in\mathbb{N}}\) és un recobriment obert de~\(\mathbb{R}\).
+
+        Suposem que existeix un subrecobriment finit de~\(\{(-i,i)\}_{i\in\mathbb{N}}\).
+        Això és que existeix un subconjunt~\(I\) de~\(\mathbb{N}\) finit tal que~\(\{(-i,i)\}_{i\in I}\) és un recobriment de~\(\mathbb{R}\).
+        Com que~\(I\) és finit tenim que existeix un natural~\(m\) tal que~\(m=\max\{i\in I\}\), i tenim que~\(m+1\) no pertany a cap interval de la família~\(\{(-i,i)\}_{i\in I}\).
+        Per tant trobem que
+        \[
+            m+1\notin\bigcup_{i\in I}(-i,i).
+        \]
+
+        Ara bé, per la definició de \myref{def:recobriment-dun-espai} trobem que ha de ser
+        \[
+            m+1\in\mathbb{R}=\bigcup_{i\in I}(-i,i),
+        \]
+        i arribem a contradicció, trobant que no existeix cap subrecobriment finit de~\(\{(-i,i)\}_{i\in\mathbb{N}}\).
+    \end{solution}
+    \begin{proposition}
+        \label{prop:la-compacitat-es-una-propietat-topologica}
+        Siguin~\(X\) i~\(Y\) dos espais topològics homeomorfs.
+        Aleshores~\(X\) és compacte si i només si~\(Y\) és compacte.
+    \end{proposition}
+    \begin{proof}
+        Per la definició de \myref{def:relacio-dequivalencia} tenim que si~\(X\cong Y\) aleshores~\(Y\cong X\), i per tant només ens cal veure que si~\(X\) és compacte aleshores~\(Y\) és compacte.
+
+        Suposem doncs que~\(X\) és compacte.
+        Per la definició d'\myref{def:espais-topologics-homeomorfs} tenim que existeix un homeomorfisme~\(f\colon X\longrightarrow Y\).
+
+        Sigui~\(\{\obert{U}_{i}\}_{i\in I}\) un recobriment obert de~\(Y\).
+        Per la definició d'\myref{def:homeomorfisme-entre-topologies} i la definició de \myref{def:recobriment-obert} tenim que la família~\(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in I}\) és un recobriment obert de~\(X\).
+
+        Ara bé, per la definició d'\myref{def:espai-topologic-compacte} trobem que existeix un subrecobriment finit~\(\{\Antiima_{\obert{U}_{j}}(f)\}_{j\in J}\) de~\(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in I}\), i de nou per la definició d'\myref{def:homeomorfisme-entre-topologies} i la definició de \myref{def:recobriment-obert} tenim que la família~\(\{\obert{U}_{j}\}_{j\in J}\) és un subrecobriment obert de~\(\{\obert{U}_{i}\}_{i\in I}\), i per la definició d'\myref{def:espai-topologic-compacte} trobem que~\(Y\) és compacte.
+    \end{proof}
+    \begin{example}
+        \label{ex:linterval-0-1-no-es-compacte}
+        Volem veure que l'interval~\((0,1)\) no és compacte.
+    \end{example}
+    \begin{solution}
+        Per l'exemple \myref{ex:R-es-homeomorf-a-linterval-0-1} tenim que l'interval~\((0,1)\) és homeomorf a~\(\mathbb{R}\), per l'exemple \myref{ex:R-no-es-compacte} trobem que~\(\mathbb{R}\) no és compacte i per la proposició \myref{prop:la-compacitat-es-una-propietat-topologica} tenim que~\((0,1)\) no és compacte.
+    \end{solution}
+    \begin{proposition}
+        \label{prop:un-espai-topologic-finit-es-compacte}
+        Sigui~\(X\) un espai topològic finit.
+        Aleshores~\(X\) és compacte.
+    \end{proposition}
+    \begin{proof}
+        Sigui~\(\{\obert{U}_{i}\}_{i\in I}\) un recobriment obert de~\(X\), i per la definició de \myref{def:recobriment-obert} tenim que~\(\{\obert{U}_{i}\}_{i\in I}\subseteq\tau\).
+
+        Ara bé, tenim que~\(\tau\subseteq\mathcal{P}(X)\), i com que~\(X\) és finit,~\(\mathcal{P}(X)\) també ho és, i per tant~\(\{\obert{U}_{i}\}_{i\in I}\) és finit i per la definició de \myref{def:recobriment-finit-dun-espai} trobem que~\(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment finit de~\(X\), i per la definició d'\myref{def:espai-topologic-compacte} tenim que~\(X\) és compacte.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:un-espai-topologic-discret-es-compacte-si-i-nomes-si-es-finit}
+        Sigui~\(X\) un espai topològic amb la topologia discreta.
+        Aleshores~\(X\) és compacte si i només si~\(X\) és finit.
+    \end{proposition}
+    \begin{proof}
+        Comencem veient que la condició és suficient (\(\implica\)).
+        Veurem que si~\(X\) és infinit aleshores~\(X\) no és compacte.
+
+        Per l'exemple \myref{ex:topologia-discreta} tenim que tot subconjunt de~\(X\) és un obert, i com que
+        \[
+            X=\bigcup_{x\in X}\{x\}
+        \]
+        per la definició de \myref{def:recobriment-obert} trobem que~\(\{\{x\}\}_{x\in X}\) és un recobriment obert de~\(X\).
+
+        Ara bé, com que~\(X\) és infinit, si~\(\{\{x\}\}_{x\in I}\) és un subrecobriment finit de~\(\{\{x\}\}_{x\in X}\) tenim que existeix algun~\(x_{0}\) de~\(X\) tal que~\(x_{0}\notin I\), i per tant
+        \[
+            x_{0}\notin\bigcup_{x\in I}\{x\}
+        \]
+        i trobem que el recobriment~\(\{\{x\}\}_{x\in X}\) no admet cap subrecobriment finit, i per la definició d'\myref{def:espai-topologic-compacte} trobem que~\(X\) no és compacte.
+
+        Per veure que la condició és necessària (\(\implicatper\)) en tenim prou amb la proposició \myref{prop:un-espai-topologic-finit-es-compacte}.
+    \end{proof}
+    \begin{definition}[Compacitat per tancats]
+        \labelname{compacitat per tancats}\label{def:compacitat-per-tancats}
+        \labelname{compacte per tancats}\label{def:compacte-per-tancats}
+        Sigui~\(X\) un espai topològic tal que per a tota família de tancats~\(\{\tancat{C}_{i}\}_{i\in I}\) de~\(X\) amb
+        \[
+            \bigcap_{i\in I}\tancat{C}_{i}=\emptyset
+        \]
+        existeix una subfamília finita~\(\{\tancat{C}_{i}\}_{i\in J}\) tal que
+        \[
+            \bigcap_{i\in J}\tancat{C}_{i}=\emptyset.
+        \]
+        Aleshores direm que~\(X\) és compacte per tancats.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:compacte-si-i-nomes-si-compacte-per-tancats}
+        \label{prop:equivalencia-entre-compacitat-i-compacitat-per-tancats}
+        Sigui~\(X\) un espai topològic.
+        Aleshores~\(X\) és compacte si i només si~\(X\) és compacte per tancats.
+    \end{proposition}
+    \begin{proof}
+        Siguin~\(X\) un espai topològic compacte i~\(\{\tancat{C}_{i}\}_{i\in I}\) una família de tancats de~\(X\) tals que
+        \[
+            \bigcap_{i\in I}\tancat{C}_{i}=\emptyset.
+        \]
+        Per la definició de \myref{def:tancat} tenim que per a tot~\(i\) de~\(I\) el conjunt~\(\obert{U}_{i}=X\setminus\tancat{C}_{i}\) és un obert de~\(X\), i tenim que
+        \begin{align*}
+            X&=X\setminus\emptyset \\
+            &=X\setminus\left(\bigcap_{i\in I}\tancat{C}_{i}\right) \\
+            &=\bigcup_{i\in I}(X\setminus\tancat{C}_{i})=\bigcup_{i\in I}\obert{U}_{i},
+        \end{align*}
+        i per la definició de \myref{def:recobriment-obert} trobem que~\(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment obert de~\(X\).
+        Ara bé, per la definició d'\myref{def:espai-topologic-compacte} tenim que existeix un subrecobriment finit~\(\{\obert{U}_{i}\}_{i\in J}\) de~\(\{\obert{U}_{i}\}_{i\in I}\), i per la definició de \myref{def:subrecobriment} tenim que
+        \begin{align*}
+            X&=\bigcup_{i\in J}\obert{U}_{i} \\
+            &=\bigcup_{i\in J}(X\setminus\tancat{C}_{i})=X\setminus\bigcap_{i\in J}\tancat{C}_{i},
+        \end{align*} %REFS
+        i per tant trobem que
+        \[
+            \bigcap_{i\in J}\tancat{C}_{i}=\emptyset
+        \]
+        i per la definició de \myref{def:compacte-per-tancats} trobem que~\(X\) és compacte per tancats.
+    \end{proof}
+    \begin{definition}[Compacitat de subconjunts]
+        \labelname{compacitat d'un subconjunt}\label{def:compacitat-dun-subconjunt}
+        \labelname{subconjunt compacte}\label{def:subconjunt-compacte}
+        \labelname{recobriment obert d'un subconjunt}\label{def:recobriment-obert-dun-subconjunt}
+        Sigui~\(A\) un subconjunt d'un espai topològic~\(X\) tal que per a tota família d'oberts~\(\{\obert{U}_{i}\}_{i\in I}\) de~\(X\) tal que
+        \[
+            A\subseteq\bigcup_{i\in I}\obert{U}_{i}
+        \]
+        existeix una subfamília finita~\(\{\obert{U}_{i}\}_{i\in J}\) de~\(\{\obert{U}_{i}\}_{i\in I}\) tal que
+        \[
+            A\subseteq\bigcup_{i\in J}\obert{U}_{i}.
+        \]
+        Aleshores direm que~\(A\) és un subconjunt compacte de~\(X\).
+        També direm que~\(\{\obert{U}_{i}\}_{i\in I}\) és un recobriment obert de~\(A\).
+    \end{definition}
+    \subsection{Propietats dels espais compactes}
+    \begin{theorem}
+        \label{thm:la-imatge-dun-compacte-per-una-aplicacio-continua-es-un-compacte}
+        Siguin~\(A\) un subconjunt compacte d'un espai topològic~\(X\),~\(Y\) un espai topològic i~\(f\colon X\longrightarrow Y\) una aplicació contínua.
+        Aleshores~\(\Ima_{A}(f)\) és un subconjunt compacte de~\(Y\).
+    \end{theorem}
+    \begin{proof} %REFS infinites
+        Sigui~\(\{\obert{U}_{i}\}_{i\in I}\) un recobriment obert de~\(\Ima_{A}(f)\).
+        Per la definició de \myref{def:recobriment-obert-dun-subconjunt} trobem que
+        \[
+            \Ima_{A}(f)\subseteq\bigcup_{i\in I}\obert{U}_{i},
+        \]
+        i per tant tenim que
+        \[
+            A\subseteq\bigcup_{i\in I}\Antiima_{\obert{U}_{i}}(f).
+        \]
+        Com que, per la definició de \myref{def:recobriment-obert-dun-subconjunt}, per a tot~\(i\) de~\(I\) el conjunt~\(\obert{U}_{i}\) és un obert de~\(Y\), per la definició de \myref{def:funcio-continua} tenim que~\(\Antiima_{\obert{U}_{i}}(f)\) és un obert de~\(X\), i trobem per la definició de \myref{def:recobriment-obert-dun-subconjunt} que~\(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in I}\) és un recobriment obert de~\(A\).
+
+        Ara bé, tenim per hipòtesi que~\(A\) és un subconjunt compacte de~\(X\), i per la definició de \myref{def:subconjunt-compacte} tenim que existeix una subfamília finita~\(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in J}\) de~\(\{\Antiima_{\obert{U}_{i}}(f)\}_{i\in I}\) tal que
+        \[
+            A\subseteq\bigcup_{i\in J}\Antiima_{\obert{U}_{i}}(f).
+        \]
+
+        Tenim doncs que
+        \[
+            \Ima_{A}(f)\subseteq\bigcup_{i\in J}\obert{U}_{i},
+        \]
+        i per la definició de \myref{def:compacitat-dun-subconjunt} hem acabat.
+    \end{proof}
+    \begin{corollary}
+        \label{cor:el-quocient-dun-compacte-es-un-compacte}
+        Siguin~\(X\) un espai topològic compacte i~\(p\) una aplicació exhaustiva.
+        Aleshores~\(X/p\) és compacte.
+    \end{corollary}
+    \begin{proof}
+        Per l'observació \myref{obs:laplicacio-que-indueix-la-topologia-en-un-espai-quocient-es-continua} tenim que~\(p\colon X\longrightarrow X/p\) és contínua.
+        Per la definició d'\myref{def:imatge-duna-aplicacio} i la definició d'\myref{def:aplicacio-exhaustiva} tenim que~\(X/p=\Ima(p)\), i pel Teorema \myref{thm:la-imatge-dun-compacte-per-una-aplicacio-continua-es-un-compacte} trobem que~\(X/p\) és compacte.
+    \end{proof}
+    \begin{theorem}
+        \label{thm:un-tancat-en-un-compacte-es-compacte}
+        Sigui~\(\tancat{C}\) un tancat d'un espai topològic compacte~\(X\).
+        Aleshores~\(\tancat{C}\) és compacte.
+    \end{theorem}
+    \begin{proof}
+        Sigui~\(\{\obert{U}_{i}\}_{i\in I}\) un recobriment obert de~\(\tancat{C}\).
+        Per la definició de \myref{def:recobriment-obert-dun-subconjunt} tenim que
+        \[
+            \tancat{C}\subseteq\bigcup_{i\in I}\obert{U}_{i}.
+        \]
+        Per tant %REF
+        \[
+            X=\left(\bigcup_{i\in I}\obert{U}_{i}\right)\cup(X\setminus\tancat{C}),
+        \]
+        i per la definició de \myref{def:recobriment-obert} tenim que~\(\{\obert{U}_{i}\}_{i\in I}\cup(X\setminus\tancat{C})\) és un recobriment obert de~\(X\).
+
+        Ara bé, per hipòtesi tenim que~\(X\) és un compacte, i per la definició d'\myref{def:espai-topologic-compacte} tenim que existeix un subrecobriment finit de~\(\{\obert{U}_{i}\}_{i\in I}\cup(X\setminus\tancat{C})\), i per tant existeix un subconjunt finit~\(J\) de~\(I\) tal que
+        \[
+            \tancat{C}\subseteq\bigcup_{i\in J}\obert{U}_{i},
+        \]
+        i per la definició de \myref{def:compacitat-dun-subconjunt} hem acabat.
+    \end{proof}
+    \begin{theorem}[Teorema de Tychonoff]
+        \labelname{Teorema de Tychonoff}\label{thm:Teorema-de-Tychonoff}
+        Siguin~\(X\) i~\(Y\) dos espais topològics no buits.
+        Aleshores~\(X\times Y\) és compacte si i només si~\(X\) i~\(Y\) són compactes.
+    \end{theorem}
+    \begin{proof}
+        Comencem veient que la condició és suficient (\(\implica\)).
+        Suposem doncs que~\(X\times Y\) és un compacte.
+        Per l'exemple \myref{ex:les-projeccions-en-la-topologia-producte-son-continues-i-obertes} trobem que les projeccions
+        \begin{align*}
+            \pi_{X}\colon X\times Y&\longrightarrow X \\
+            (x,y)&\longmapsto x
+        \end{align*}
+        i
+        \begin{align*}
+            \pi_{Y}\colon X\times Y&\longrightarrow Y \\
+            (x,y)&\longmapsto y
+        \end{align*}
+        són aplicacions contínues, i per la proposició \myref{prop:la-compacitat-es-una-propietat-topologica} trobem que~\(X\) i~\(Y\) són compactes.
+
+        Veiem ara que la condició és necessària (\(\implicatper\)).
+        Suposem doncs que~\(X\) i~\(Y\) són compactes i sigui~\(\{\obert{W}_{i}\}_{i\in I}\) un recobriment obert de~\(X\times Y\).
+
+        Prenem un punt~\(x_{0}\) de~\(X\).
+        Aleshores per la definició de \myref{def:recobriment-dun-espai} tenim que per a tot~\(y\) de~\(Y\) existeix un~\(i_{x_{0},y}\) de~\(I\) tal que el punt~\((x_{0},y)\) pertany a~\(\obert{W}_{i_{x_{0},y}}\), i per la definició de \myref{def:topologia-quocient} tenim que existeixen oberts~\(\obert{U}_{i_{x_{0},y}}\) i~\(\obert{V}_{i_{x_{0},y}}\) de~\(X\) i~\(Y\), respectivament, tals que
+        \[
+            (x_{0},y)\in\obert{U}_{i_{x_{0},y}}\times\obert{V}_{i_{x_{0},y}}\subseteq\obert{W}_{i_{x_{0},y}}.
+        \]
+
+        Trobem doncs que
+        \begin{align*}
+            Y&=\bigcup_{y\in Y}\{y\} \\
+            &\subseteq\bigcup_{y\in Y}\obert{V}_{i_{x_{0},y}}\subseteq Y,
+        \end{align*}
+        i pel \myref{thm:doble-inclusio} trobem que
+        \[
+            \bigcup_{y\in Y}\obert{V}_{i_{x_{0},y}}=Y.
+        \]
+        Aleshores per la definició de \myref{def:recobriment-obert} trobem que~\(\{\obert{V}_{i_{x_{0},y}}\}_{y\in Y}\) és un recobriment obert de~\(Y\), i com que, per hipòtesi,~\(Y\) és compacte, tenim per la definició d'\myref{def:espai-topologic-compacte} que existeix un subrecobriment finit~\(\{\obert{V}_{i_{x_{0},y}}\}_{y\in Y_{x_{0}}}\) de~\(\{\obert{V}_{i_{x_{0},y}}\}_{y\in Y}\).
+
+        Definim ara
+        \begin{equation}
+            \label{thm:Teorema-de-Tychonoff:eq2}
+            \obert{U}_{x_{0}}=\bigcap_{y\in Y_{x_{0}}}\obert{U}_{i_{x_{0},y}}.
+        \end{equation}
+        Com que~\(Y_{x_{0}}\) és finit, trobem per la definició de \myref{def:topologia} que~\(\obert{U}_{x_{0}}\) és un obert de~\(X\).
+        Tenim doncs que
+        \begin{align*}
+            X&=\bigcup_{x\in X}\{x\} \\
+            &\subseteq\bigcup_{x\in X}\obert{U}_{x}\subseteq X,
+        \end{align*}
+        i pel \myref{thm:doble-inclusio} trobem que
+        \[
+            \bigcup_{x\in X}\obert{U}_{x}=X,
+        \]
+        i de nou per la definició de \myref{def:recobriment-obert} trobem que~\(\{\obert{U}_{x}\}_{x\in X}\) és un recobriment obert de~\(X\), i per la definició d'\myref{def:espai-topologic-compacte} trobem que existeix un subrecobriment finit~\(\{\obert{U}_{x}\}_{x\in J'}\) de~\(\{\obert{U}_{x}\}_{x\in X}\).
+
+        Definim el conjunt
+        \begin{equation}
+            \label{thm:Teorema-de-Tychonoff:eq1}
+            J=\{(x,y)\in X\times Y\mid x\in J'\text{ i }y\in Y_{x}\}
+        \end{equation}
+        i considerem la subfamília
+        \[
+            \{\obert{W}_{i_{x,y}}\}_{(x,y)\in J}
+        \]
+        de~\(\{\obert{W}_{i}\}_{i\in I}\).
+        Sigui~\((x,y)\) un punt de~\(X\times Y\).
+        Aleshores, com que la família~\(\{\obert{U}_{x}\}_{x\in J'}\) és un recobriment de~\(X\) trobem per la definició de \myref{def:recobriment-dun-espai} que existeix un~\(p\) de~\(J'\) tal que~\(x\) pertany a~\(\obert{U}_{p}\), i com que la família~\(\{\obert{V}_{i_{x_{0},y}}\}_{y\in Y_{p}}\) és un recobriment de~\(Y\) trobem que existeix un~\(q\) de~\(Y_{p}\) tal que~\(y\) pertany a~\(\obert{V}_{q}\).
+
+        Ara bé, també tenim per \eqref{thm:Teorema-de-Tychonoff:eq2} i la definició d'\myref{def:interseccio-de-conjunts} que~\(x\) pertany a~\(\obert{U}_{i_{p,q}}\), i per tant
+        \[
+            (x,y)\in\obert{U}_{i_{p,q}}\times\obert{V}_{i_{p,q}}\subseteq\obert{W}_{i_{p,q}},
+        \]
+        i per tant tenim que~\(\{\obert{W}_{i_{x,y}}\}_{(x,y)\in J}\) és un subrecobriment de~\(\{\obert{W}_{i}\}_{i\in I}\), i com que els conjunts~\(J'\) i~\(Y_{x}\) són finits, trobem per \eqref{thm:Teorema-de-Tychonoff:eq1} que~\(J\) és finit, aleshores per la definició de \myref{def:subrecobriment-finit} trobem que~\(\{\obert{W}_{i_{x,y}}\}_{(x,y)\in J}\) és un subrecobriment finit de~\(\{\obert{W}_{i}\}_{i\in I}\) i per la definició d'\myref{def:espai-topologic-compacte} tenim que~\(X\times Y\) és compacte, com volíem.
+    \end{proof}
+%\section{Els compactes de \ensuremath{\mathbb{R}^{n}}}
+%    \subsection{Teorema de Heine-Borel}
+%    \begin{theorem}[Teorema de Heine-Borel]
+%        \labelname{Teorema de Heine-Borel}\label{thm:Teorema de Heine-Borel}
+%        Sigui~\(S\) un subconjunt de~\(\mathbb{R}^{n}\). Aleshores~\(S\) és compacte si i només si~\(S\) és tancat i acotat.
+%        \begin{proof}
+%            %TODO
+%        \end{proof}
+%    \end{theorem}
+%    \subsection{Compactificació per un punt}
+%    \begin{definition}[Compactificació per un punt]
+%        \labelname{compactificació per un punt}\label{def:compactificació per un punt}
+%        Siguin~\(X\) un espai topològic i~\(x_{0}\) un element que no pertany a~\(X\).
+%    \end{definition}
+\section{Espais de Hausdorff}
+    \subsection{L'axioma de Hausdorff}
+    \begin{definition}[Espai Hausdorff]
+        \labelname{espai Hausdorff}\label{def:espai-Hausdorff}
+        Sigui~\(X\) un espai topològic tal que per a tots dos punts diferents~\(x\) i~\(y\) de~\(X\) existeixen dos oberts disjunts~\(\obert{U}\) i~\(\obert{V}\) de~\(X\) tals que~\(x\) pertany a~\(\obert{U}\) i~\(y\) pertany a~\(\obert{V}\).
+        Aleshores direm que~\(X\) és Hausdorff.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:els-espais-metrics-son-Hausdorff}
+        Sigui~\(X\) un espai mètric.
+        Aleshores~\(X\) és Hausdorff.
+    \end{proposition}
+    \begin{proof}
+        Per l'exemple \myref{ex:topologia-induida-per-una-metrica} trobem que~\(X\) és un espai topològic i per la proposició \myref{prop:els-espais-metris-son-Hausdorff} tenim que~\(X\) és Hausdorff.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:ser-Hausdorff-es-una-propietat-topologica}
+        Siguin~\(X\) i~\(Y\) dos espais topològics homeomorfs.
+        Aleshores~\(X\) és Hausdorff si i només si~\(Y\) és Hausdorff.
+    \end{proposition}
+    \begin{proof}
+        Per la proposició \myref{prop:ser-homeomorf-es-una-relacio-dequivalencia} tenim que si~\(X\cong Y\) aleshores~\(Y\cong X\), i per tant només ens cal veure que si~\(X\) és Hausdorff aleshores~\(Y\) és Hausdorff.
+
+        Suposem doncs que~\(X\) és Hausdorff.
+        Prenem dos punts diferents~\(x\) i~\(y\) de~\(Y\).
+        Per la definició d'\myref{def:espais-topologics-homeomorfs} tenim que existeix un homeomorfisme~\(f\colon X\longrightarrow Y\), i per la definició d'\myref{def:homeomorfisme-entre-topologies} trobem que~\(f\) és bijectiva.
+        Considerem doncs els punts~\(f^{-1}(x)\) i~\(f^{-1}(y)\).
+        Com que, per hipòtesi,~\(X\) és Hausdorff, tenim per la definició d'\myref{def:espai-Hausdorff} que existeixen dos oberts disjunts~\(\obert{U}\) i~\(\obert{V}\) de~\(X\) tals que~\(f^{-1}(x)\) pertany a~\(\obert{U}\) i~\(f^{-1}(y)\) pertany a~\(\obert{V}\).
+
+        Ara bé, per la definició d'\myref{def:homeomorfisme-entre-topologies} trobem que~\(f\) és una aplicació oberta, i per tant trobem que els conjunts~\(\Ima_{\obert{U}}(f)\) i~\(\Ima_{\obert{V}}(f)\) són oberts de~\(Y\), i tenim que~\(x\) pertany a~\(\Ima_{\obert{U}}(f)\) i~\(y\) pertany a~\(\Ima_{\obert{V}}(f)\), i per la definició d'\myref{def:imatge-duna-aplicacio} tenim que aquests són disjunts.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:els-punts-en-un-Hausdorff-son-tancats}
+        Sigui~\(X\) un espai Hausdorff.
+        Aleshores per a tot~\(x\) el conjunt~\(\{x\}\) és un tancat.
+    \end{proposition}
+    \begin{proof}
+        Per la definició d'\myref{def:espai-Hausdorff} trobem que per a tot punt~\(y\) diferent de~\(x\) existeixen dos oberts disjunts~\(\obert{U}_{y}\) i~\(\obert{V}_{y}\) tals que~\(x\) pertany a~\(\obert{U}_{y}\) i~\(y\) pertany a~\(\obert{V}_{y}\).
+        Aleshores tenim que
+        \begin{align*}
+            X\setminus\{x\}&=\bigcup_{y\in X\setminus\{x\}}\{y\} \\
+            &\subseteq\bigcup_{y\in X\setminus\{x\}}\obert{U}_{y}\subseteq X\setminus\{x\}
+        \end{align*}
+        i pel \myref{thm:doble-inclusio} trobem que
+        \[
+            X\setminus\{x\}=\bigcup_{y\in X\setminus\{x\}}\obert{U}_{y}.
+        \]
+        Ara bé, per la definició de \myref{def:topologia} trobem que~\(X\setminus\{x\}\) és un obert, i per la definició de \myref{def:tancat} trobem que~\(\{x\}\) és un tancat.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:els-subespais-dun-Hausdorff-son-Hausdorff}
+        Sigui~\(X\) un espai Hausdorff i~\(A\) un subespai de~\(X\).
+        Aleshores~\(A\) és Hausdorff.
+    \end{proposition}
+    \begin{proof}
+        Siguin~\(x\) i~\(y\) dos elements diferents de~\(A\).
+        Aleshores per la definició d'espai Hausdorff tenim que existeixen dos oberts disjunts~\(\obert{U}\) i~\(\obert{V}\) de~\(X\) tals que~\(x\) pertany a~\(\obert{U}\) i~\(y\) pertany a~\(\obert{V}\).
+        Aleshores per la definició de \myref{def:topologia-induida-per-un-subconjunt} trobem que els conjunts~\(\obert{U}\cap A\) i~\(\obert{V}\cap A\) són oberts disjunts de~\(A\) que contenen~\(x\) i~\(y\), respectivament, i per la definició d'\myref{def:espai-Hausdorff} hem acabat.
+    \end{proof}
+    \subsection{Axiomes de separació de Tychonoff}
+    \begin{definition}[Espai de Kolmogorov]
+        \labelname{espai de Kolmogorov}\label{def:espai-de-Kolmogorov}
+        Sigui~\(X\) un espai topològic tal que per a tots dos punts diferents~\(x\) i~\(y\) existeix un obert~\(\obert{U}\) que o bé conté~\(x\) i no~\(y\), o bé conté~\(y\) i no~\(x\).
+        Aleshores direm que~\(X\) és un espai de Kolmogorov.
+    \end{definition}
+    \begin{definition}[Espai de Fréchet]
+        \labelname{espai de Fréchet}\label{def:espai-de-Frechet}
+        Sigui~\(X\) un espai topològic tal que per a tots dos punts diferents~\(x\) i~\(y\) existeixen dos oberts~\(\obert{U}\) i~\(\obert{V}\) tals que~\(x\) pertany a~\(\obert{U}\setminus\obert{V}\) i~\(y\) pertany a~\(\obert{V}\setminus\obert{U}\).
+        Aleshores direm que~\(X\) és un espai de Fréchet.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:els-espais-de-Frechet-son-de-Kolmogorov}
+        Sigui~\(X\) un espai de Fréchet.
+        Aleshores~\(X\) és un espai de Kolmogorov.
+    \end{proposition}
+    \begin{proof}
+        Siguin~\(x\) i~\(y\) dos punts diferents de~\(X\).
+        Aleshores per la definició d'\myref{def:espai-de-Frechet} trobem que existeixen dos oberts~\(\obert{U}\) i~\(\obert{V}\) tals que~\(x\) pertany a~\(\obert{U}\setminus\obert{V}\) i~\(y\) pertany a~\(\obert{V}\setminus\obert{U}\).
+        En particular~\(x\) pertany a~\(\obert{U}\) i~\(y\) no pertany a~\(\obert{U}\), i per la definició d'\myref{def:espai-de-Kolmogorov} hem acabat.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:si-en-un-espai-topologic-tots-els-punts-son-tancats-aquest-es-Frechet}
+        Sigui~\(X\) un espai tal que per a tot~\(x\) de~\(X\), el conjunt~\(\{x\}\) és un tancat.
+        Aleshores~\(X\) és un espai de Fréchet.
+    \end{proposition}
+    \begin{proof}
+        Siguin~\(x\) i~\(y\) dos punts diferents de~\(X\).
+        Per hipòtesi tenim que els conjunts~\(\{x\}\) i~\(\{y\}\) són tancats i per la definició de \myref{def:tancat} trobem que els conjunts~\(X\setminus\{x\}\) i~\(X\setminus\{y\}\) són oberts.
+        Ara bé, com que per hipòtesi els punts~\(x\) i~\(y\) són diferents trobem que~\(x\) pertany a~\(X\setminus\{y\}\) i~\(y\) pertany a~\(X\setminus\{x\}\), i per la definició d'\myref{def:espai-de-Frechet} trobem que~\(X\) és un espai de Fréchet, com volíem veure.
+    \end{proof}
+    \begin{corollary}
+        \label{cor:els-espais-Hausdorff-son-Frechet}
+        Sigui~\(X\) un espai Hausdorff.
+        Aleshores~\(X\) és un espai de Fréchet.
+    \end{corollary}
+    \begin{proof}
+        Per la proposició \myref{prop:els-punts-en-un-Hausdorff-son-tancats} trobem que si~\(x\) és un punt de~\(X\) aleshores el conjunt~\(\{x\}\) és un tancat, i per la proposició \myref{prop:si-en-un-espai-topologic-tots-els-punts-son-tancats-aquest-es-Frechet} trobem que~\(X\) és un espai de Fréchet.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:en-un-espai-de-Frechet-els-punts-son-tancats}
+        Siguin~\(X\) un espai de Fréchet i~\(x\) un punt de~\(X\).
+        Aleshores~\(\{x\}\) és un tancat.
+    \end{proposition}
+    \begin{proof}
+        Per la definició d'\myref{def:espai-de-Frechet} trobem que per a tot punt~\(y\) de~\(X\) diferent de~\(x\) existeixen dos oberts~\(\obert{U}_{y}\) i~\(\obert{V}_{y}\) tals que~\(x\) pertany a~\(\obert{U}_{y}\setminus\obert{V}_{y}\) i~\(y\) pertany a~\(\obert{V}_{y}\setminus\obert{U}_{y}\).
+        Considerem
+        \begin{equation}
+            \label{prop:en-un-espai-de-Frechet-els-punts-son-tancats:eq1}
+            \obert{V}=\bigcup_{y\in X\setminus\{x\}}\obert{V}_{y}.
+        \end{equation}
+        Tenim que~\(x\) no pertany a~\(\obert{V}\), ja que~\(x\) no pertany a cap dels~\(\obert{V}_{y}\), i tenim que
+        \begin{align*}
+            X\setminus\{x\}&\subseteq\bigcup_{y\in X\setminus\{x\}}\{y\} \\
+            &\subseteq\bigcup_{y\in X\setminus\{x\}}\obert{V}_{y}\\
+            &=\obert{V}\subseteq X\setminus\{x\},
+        \end{align*}
+        i pel \myref{thm:doble-inclusio} trobem que
+        \[
+            \obert{V}=X\setminus\{x\}.
+        \]
+
+        Per la definició de \myref{def:topologia} i \eqref{prop:en-un-espai-de-Frechet-els-punts-son-tancats:eq1} trobem que~\(\obert{V}\) és un obert, i per la definició de \myref{def:tancat}  trobem que~\(\{x\}\) és un tancat.
+    \end{proof}
+    \begin{definition}[Espai regular]
+        \labelname{espai regular}\label{def:espai-regular}
+        Sigui~\(X\) un espai de Fréchet tal que donats un tancat~\(\tancat{C}\) i un punt~\(x\) que no pertany a~\(\tancat{C}\) existeixen dos oberts disjunts~\(\obert{U}\) i~\(\obert{V}\) tals que~\(x\) pertany a~\(\obert{U}\) i~\(\tancat{C}\) és un subconjunt de~\(\obert{V}\).
+        Aleshores direm que~\(X\) és un espai regular.
+    \end{definition}
+    \begin{proposition}
+        Sigui~\(X\) un espai regular.
+        Aleshores~\(X\) és un espai Hausdorff.
+    \end{proposition}
+    \begin{proof}
+        Prenem dos punts diferents~\(x\) i~\(y\) de~\(X\).
+        Com que, per hipòtesi,~\(X\) és un espai regular, i per la definició d'\myref{def:espai-regular} trobem que~\(X\) és un espai de Fréchet, per la proposició \myref{prop:en-un-espai-de-Frechet-els-punts-son-tancats} trobem que~\(\{y\}\) és un tancat, i per la definició d'\myref{def:espai-regular} trobem que existeixen dos oberts disjunts~\(\obert{U}\) i~\(\obert{V}\) tals que~\(x\) pertany a~\(\obert{U}\) i~\(\{y\}\) és un subconjunt de~\(\obert{V}\), i en particular~\(y\) pertany a~\(\obert{V}\).
+        Aleshores per la definició d'\myref{def:espai-Hausdorff} hem acabat.
+    \end{proof}
+    \begin{definition}[Espai normal]
+        \labelname{espai normal}\label{def:espai-normal}
+        Sigui~\(X\) un espai de Fréchet tal que donats dos tancats disjunts~\(\tancat{C}\) i~\(\tancat{K}\) existeixen dos oberts disjunts~\(\obert{U}\) i~\(\obert{V}\) tals que~\(\tancat{C}\) és un subconjunt de~\(\obert{U}\) i~\(\tancat{K}\) és un subconjunt de~\(\obert{V}\).
+        Aleshores direm que~\(X\) és un espai normal.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:els-espais-normals-son-espais-regulars}
+        Sigui~\(X\) un espai normal.
+        Aleshores~\(X\) és un espai regular.
+    \end{proposition}
+    \begin{proof}
+        Siguin~\(\tancat{C}\) un tancat de~\(X\) i~\(x\) un punt de~\(X\setminus\tancat{C}\).
+        Com que per hipòtesi~\(X\) és un espai normal, per la definició d'\myref{def:espai-normal} trobem que~\(X\) és un espai de Fréchet, i per la proposició \myref{prop:en-un-espai-de-Frechet-els-punts-son-tancats} trobem que el conjunt~\(\{x\}\) és un tancat, i tenim que~\(\{x\}\) i~\(\tancat{C}\) són disjunts.
+
+        Ara bé, per la definició d'\myref{def:espai-normal} trobem que existeixen dos oberts disjunts~\(\obert{U}\) i~\(\obert{V}\) tals que~\(\{x\}\) és un subconjunt de~\(\obert{U}\) i~\(\tancat{C}\) és un subconjunt de~\(\obert{V}\).
+        Aleshores tenim que~\(x\) pertany a~\(\obert{U}\), i per la definició d'\myref{def:espai-regular} trobem que~\(X\) és un espai regular.
+    \end{proof}
+    \subsection{Propietats dels espais Hausdorff}
+    \begin{proposition}
+        \label{prop:els-compactes-en-un-Hausdorff-son-tancats}
+        Sigui~\(X\) un espai Hausdorff i~\(A\) un compacte de~\(X\).
+        Aleshores~\(A\) és un tancat de~\(X\).
+    \end{proposition}
+    \begin{proof} % REVISAR i arreglar wording
+        Si~\(A=X\) ó~\(A=\emptyset\) aleshores pel Teorema \myref{thm:equivalencia-obert-tancat-definicio-de-topologia} trobem que~\(A\) és tancat i hem acabat.
+
+        Suposem doncs que~\(A\) no és~\(X\) ni~\(\emptyset\).
+        Tenim que existeix un punt~\(x\) de~\(X\setminus A\).
+        Per la definició d'\myref{def:espai-Hausdorff} trobem que per a tot~\(a\) de~\(A\) existeixen dos oberts disjunts~\(\obert{U}_{a,x}\) i~\(\obert{V}_{a,x}\) tals que~\(x\) pertany a~\(\obert{U}_{a,x}\) i~\(a\) pertany a~\(\obert{V}_{a,x}\).
+        Aleshores trobem que
+        \begin{align*}
+            A&=\bigcup_{a\in A}\{a\} \\
+            &\subseteq\bigcup_{a\in A}\obert{V}_{a,x},
+        \end{align*}
+        i per tant trobem que
+        \[
+            \bigcup_{a\in A}\obert{V}_{a,x}\subseteq A.
+        \]
+        Aleshores per la definició de \myref{def:recobriment-obert} trobem que la família~\(\{\obert{V}_{a,x}\}_{a\in A}\) és un recobriment obert de~\(A\), i com que, per hipòtesi,~\(A\) és compacte trobem per la definició de \myref{def:subconjunt-compacte} que existeix un subrecobriment finit~\(\{\obert{V}_{a,x}\}_{a\in A'}\) de~\(\{\obert{V}_{a,x}\}_{a\in A}\), i per la definició de \myref{def:subrecobriment} trobem que
+        \begin{equation}
+            \label{prop:els-compactes-en-un-Hausdorff-son-tancats:eq1}
+            \bigcup_{a\in A'}\obert{V}_{a,x}\subseteq A.
+        \end{equation}
+
+        Per la definició de topologia trobem que el conjunt
+        \[
+            \obert{U}_{x}=\bigcap_{a\in A'}\obert{U}_{a,x}
+        \]
+        és un obert de~\(X\) i com que, per hipòtesi, per a tot~\(a\) de~\(A\) tenim que
+        \[
+            \obert{U}_{a,x}\cap\obert{V}_{a,x}=\emptyset
+        \]
+        trobem per \eqref{prop:els-compactes-en-un-Hausdorff-son-tancats:eq1} que per a tot~\(x\) de~\(X\setminus A\) es satisfà
+        \[
+            A\cap\obert{U}_{x}=\emptyset,
+        \]
+        i per tant
+        \[
+            \bigcup_{x\in X\setminus A}\obert{U}_{x}\subseteq X\setminus A.
+        \]
+
+        Ara bé, tenim que
+        \begin{align*}
+            X\setminus A&=\bigcup_{x\in X\setminus A}\{x\} \\
+            &\subseteq\bigcup_{x\in X\setminus A}\obert{U}_{x} \\
+            &\subseteq X\setminus A,
+        \end{align*}
+        i pel \myref{thm:doble-inclusio} trobem que
+        \[
+            X\setminus A=\bigcup_{x\in X\setminus A}\obert{U}_{x}.
+        \]
+        Aleshores per la definició de \myref{def:topologia} trobem que~\(X\setminus A\) és un obert i per la definició de \myref{def:tancat} trobem que~\(A\) és un tancat.
+    \end{proof}
+    \begin{theorem}
+        \label{thm:dos-espais-son-Hausdorff-si-i-nomes-si-el-seu-producte-es-Hausdorff}
+        Siguin~\(X\) i~\(Y\) dos espais topològics no buits.
+        Aleshores~\(X\times Y\) és Hausdorff si i només si~\(X\) i~\(Y\) són Hausdorff.
+    \end{theorem}
+    \begin{proof}
+        Comencem veient que la condició és suficient (\(\implica\)).
+        Suposem doncs que~\(X\times Y\) és Hausdorff.
+        Prenem un element~\(y\) de~\(Y\).
+        Tenim pel \corollari{} \myref{cor:un-espai-topologic-producte-amb-un-element-es-homeomorf-a-lespai-topologic} que~\(X\times\{y\}\cong X\) i tenim que~\(X\times\{y\}\subseteq X\times Y\).
+        Per hipòtesi tenim que~\(X\times Y\) és Hausdorff.
+        Aleshores per la proposició \myref{prop:els-subespais-dun-Hausdorff-son-Hausdorff} trobem que~\(X\times\{y\}\) és Hausdorff i per la proposició \myref{prop:ser-Hausdorff-es-una-propietat-topologica} trobem que~\(X\) és Hausdorff.
+
+        La demostració per veure que~\(Y\) és Hausdorff és anàloga.
+
+        Veiem ara que la condició és necessària.
+        Suposem doncs que~\(X\) i~\(Y\) són Hausdorff.
+        Prenem dos punts diferents~\((x_{1},y_{1})\) i~\((x_{2},y_{2})\) de~\(X\times Y\).
+        Si~\(y_{1}=y_{2}\) tenim per la proposició \myref{prop:parelles-ordenades} que~\(x_{1}\neq x_{2}\).
+        Com que, per hipòtesi,~\(X\) és Hausdorff tenim per la definició d'\myref{def:espai-Hausdorff} que existeixen dos oberts disjunts~\(\obert{U}\) i~\(\obert{V}\) tals que~\(x_{1}\) pertany a~\(\obert{U}\) i~\(x_{2}\) pertany a~\(\obert{V}\).
+        Aleshores per la definició de \myref{def:topologia-producte} i la definició de \myref{def:topologia} trobem que els conjunts~\((\obert{U},Y)\) i~\((\obert{V},Y)\) són oberts disjunts de~\(X\times Y\) i per la definició d'\myref{def:espai-Hausdorff} tenim que~\(X\times Y\) és Hausdorff.
+
+        Si~\(x_{1}=x_{2}\) tenim de nou per la proposició \myref{prop:parelles-ordenades} que~\(y_{1}\neq y_{2}\) i l'argument per veure que~\(X\times Y\) és Hausdorff és anàleg.
+    \end{proof}
+    \begin{theorem}
+        Siguin~\(X\) un espai compacte,~\(Y\) un espai Hausdorff i~\(f\colon X\longrightarrow Y\) una aplicació contínua i bijectiva.
+        Aleshores~\(X\cong Y\).
+    \end{theorem}
+    \begin{proof}
+        per la definició d'\myref{def:espais-topologics-homeomorfs} en tenim prou amb veure que~\(f\) és un homeomorfisme, i per la definició d'\myref{def:homeomorfisme-entre-topologies} en tenim prou amb veure que~\(f\) és una aplicació tancada.
+        Sigui~\(\tancat{C}\) un tancat de~\(X\).
+        Com que, per hipòtesi,~\(X\) és un compacte, pel Teorema \myref{thm:un-tancat-en-un-compacte-es-compacte} trobem que~\(\tancat{C}\) és un compacte.
+        Per hipòtesi tenim també que~\(f\) és contínua, i pel teorema \myref{thm:la-imatge-dun-compacte-per-una-aplicacio-continua-es-un-compacte} trobem doncs que~\(\Ima_{\tancat{C}}(f)\) és un compacte de~\(Y\).
+        De nou per hipòtesi tenim que~\(Y\) és Hausdorff i per la proposició \myref{prop:els-compactes-en-un-Hausdorff-son-tancats} trobem que~\(\Ima_{\tancat{C}}(f)\) és un tancat de~\(Y\).
+        Per tant per la definició d'\myref{def:aplicacio-tancada} trobem que~\(f\) és tancada i hem acabat.
+    \end{proof}
+    \begin{theorem}
+        \label{thm:els-espais-Hausdorff-compactes-son-espais-normals}
+        Sigui~\(X\) un espai Hausdorff compacte.
+        Aleshores~\(X\) és un espai normal.
+    \end{theorem}
+    \begin{proof} % Llegir. L'he copiat com un loro
+        Siguin~\(\tancat{C}\) i~\(\tancat{K}\) dos tancats disjunts i fixem un punt~\(x\) de~\(\tancat{C}\).
+        Com que, per hipòtesi,~\(X\) és Hausdorff, per la definició d'\myref{def:espai-Hausdorff} trobem que per a tot~\(y\) de~\(\tancat{K}\) existeixen dos oberts disjunts~\(\obert{U}_{x,y}\) i~\(\obert{V}_{x,y}\) tals que~\(x\) pertany a~\(\obert{U}_{x,y}\) i~\(y\) pertany a~\(\obert{V}_{x,y}\).
+        Tenim doncs que
+        \begin{align*}
+            \tancat{K}&=\bigcup_{y\in\tancat{K}}\{y\} \\
+            &\subseteq\bigcup_{y\in\tancat{K}}\obert{V}_{x,y},
+        \end{align*}
+        i per la definició de \myref{def:recobriment-obert} trobem que la família~\(\{\obert{V}_{x,y}\}_{y\in\tancat{K}}\) és un recobriment obert de~\(\tancat{K}\).
+        Aleshores, com que per hipòtesi~\(X\) és un espai compacte, pel Teorema \myref{thm:un-tancat-en-un-compacte-es-compacte} trobem que~\(\tancat{K}\) és un compacte i per la definició de \myref{def:subconjunt-compacte} tenim que existeix un subrecobriment finit~\(\{\obert{V}_{x,y}\}_{y\in I_{x}}\) de~\(\{\obert{V}_{x,y}\}_{y\in\tancat{K}}\).
+        Considerem els conjunts
+        \[
+            \obert{U}_{x}=\bigcap_{y\in I_{x}}\obert{U}_{x,y}\quad\text{i}\quad\obert{V}_{x}=\bigcup_{y\in I_{x}}\obert{V}_{x,y}.
+        \]
+        Com que~\(I_{x}\) és finit, per la definició de \myref{def:topologia} trobem que~\(\obert{U}_{x}\) i~\(\obert{V}_{x}\) són oberts de~\(X\) i tenim que
+        \[
+            \obert{U}_{x}\cap\obert{V}_{x}=\emptyset
+        \]
+        i~\(x\) pertany a~\(\obert{U}_{x}\) i~\(y\) pertany a~\(\obert{V}_{x}\).
+
+        Ara bé, tenim que
+        \begin{align*}
+            \tancat{C}&=\bigcup_{x\in\tancat{C}}\{x\} \\
+            &\subseteq\bigcup_{x\in\tancat{C}}\obert{U}_{x},
+        \end{align*}
+        i per la definició de \myref{def:recobriment-obert} trobem que la família~\(\{\obert{U}_{x}\}_{y\in\tancat{C}}\) és un recobriment obert de~\(\tancat{C}\).
+        Aleshores, com que per hipòtesi~\(X\) és un espai compacte, pel Teorema \myref{thm:un-tancat-en-un-compacte-es-compacte} trobem que~\(\tancat{C}\) és un compacte i per la definició de \myref{def:subconjunt-compacte} tenim que existeix un subrecobriment finit~\(\{\obert{U}_{x}\}_{y\in I}\) de~\(\{\obert{U}_{x}\}_{y\in\tancat{X}}\).
+        Definim
+        \[
+            \obert{U}=\bigcap_{x\in I}\obert{U}_{x}\quad\text{i}\quad\obert{V}=\bigcup_{x\in I}\obert{V}_{x}.
+        \]
+        Com que~\(I\) és finit, per la definició de \myref{def:topologia} trobem que~\(\obert{U}\) i~\(\obert{V}\) són oberts de~\(X\) i tenim que
+        \[
+            \obert{U}\cap\obert{V}=\emptyset
+        \]
+        i~\(\tancat{C}\) és un subconjunt de~\(\obert{U}\) i~\(\tancat{K}\) és un subconjunt de~\(\obert{V}\), i per la definició d'\myref{def:espai-normal} hem acabat.
+    \end{proof}
+    \begin{lemma}
+        \label{lema:els-elements-del-quocient-dun-Hausdorff-compacte-per-un-grup-finit-son-tancats-en-lespai-original}
+        Siguin~\(G\) un grup finit que actua sobre un espai Hausdorff compacte~\(X\) i~\(x\) un punt de~\(X\).
+        Aleshores~\(\overline{x}\) és un tancat de~\(X\).
+    \end{lemma}
+    \begin{proof}
+        Per la definició de \myref{def:classe-dequivalencia} trobem que
+        \[
+            \overline{y}=\{x\in X\mid x\sim y\},
+        \]
+        i per la definició de \myref{def:quocient-dun-espai-per-laccio-dun-grup} trobem que
+        \[
+            \overline{y}=\{x\in X\mid\text{ existeix un }g\in G\text{ tal que }y=\theta_{g}(x)\}.
+        \]
+
+        Com que per hipòtesi~\(G\) és finit, trobem que~\(\overline{y}\) és finit.
+        Tenim també que
+        \[
+            \overline{y}=\bigcup_{x\in\overline{y}}\{x\},
+        \]
+        i com que~\(\overline{y}\) és finit aquesta és una unió finita.
+        Ara bé, per la proposició \myref{prop:els-punts-en-un-Hausdorff-son-tancats} trobem que els conjunts~\(\{x\}\) són tancats i pel Teorema \myref{thm:equivalencia-obert-tancat-definicio-de-topologia} hem acabat.
+    \end{proof}
+    \begin{theorem}
+        \label{thm:el-quocient-dun-Hausdorff-compacte-per-un-grup-finit-es-Hausdorff-compacte}
+        Sigui~\(G\) un grup finit que actua sobre un espai Hausdorff compacte~\(X\).
+        Aleshores~\(X/G\) és un espai Hausdorff compacte.
+    \end{theorem}
+    \begin{proof} % http://math.ucr.edu/~res/math205C-2011/freeactions.pdf % Revisar
+        Siguin~\(x\) i~\(y\) dos punts de~\(X\) tals que~\(\overline{x}\) és diferent de~\(\overline{y}\).
+        Pel lema \myref{lema:els-elements-del-quocient-dun-Hausdorff-compacte-per-un-grup-finit-son-tancats-en-lespai-original} trobem que~\(\overline{y}\) és un tancat, i per la proposició \myref{prop:els-punts-en-un-Hausdorff-son-tancats} trobem que el conjunt~\(\{x\}\) és un tancat.
+
+        Per hipòtesi tenim que~\(X\) és un espai Hausdorff compacte, i pel Teorema \myref{thm:els-espais-Hausdorff-compactes-son-espais-normals} trobem que~\(X\) és un espai normal.
+        Aleshores per la definició d'\myref{def:espai-normal} trobem que existeixen dos oberts disjunts~\(\obert{U}'\) i~\(\obert{V}'\) tals que~\(\{x\}\) és un subconjunt de~\(\obert{U}'\) i~\(\overline{y}\) és un subconjunt de~\(\obert{V}'\).
+
+        Sigui
+        \[
+            \obert{V}=\bigcap_{g\in G}\Ima_{\obert{V}'}(\theta_{g}).
+        \]
+        Per la definició de \myref{def:topologia-quocient} trobem que~\(\Ima_{\obert{V}'}(\theta_{g})\) és un obert de~\(X/G\), i com que per hipòtesi~\(G\) és finit, pel Teorema \myref{thm:equivalencia-obert-tancat-definicio-de-topologia} trobem que~\(\obert{V}\) és un obert de~\(X/G\).
+        També tenim per la definició de \myref{def:quocient-dun-espai-per-laccio-dun-grup} que~\(\overline{y}\) és un element de~\(\obert{V}\).
+        Per l'observació \myref{obs:els-accions-de-grup-en-un-espai-topologic-son-homeomorfismes} tenim que~\(\theta_{g}\) és un homeomorfisme, i per la definició d'\myref{def:homeomorfisme-entre-topologies} trobem que~\(\theta_{g}\) és bijectiva.
+        Aleshores, com que tenim que~\(\obert{U}'\) i~\(\obert{V}'\) són disjunts tenim que~\(\obert{U}'\) i~\(\obert{V}\) són disjunts.
+        Sigui ara
+        \[
+            \obert{U}=\bigcup_{g\in G}\Ima_{\obert{U}'}(\theta_{g}).
+        \]
+        Per la definició de \myref{def:topologia-quocient} trobem que~\(\Ima_{\obert{U}'}(\theta_{g})\) és un obert de~\(X/G\), i per la definició de \myref{def:topologia} trobem que~\(\obert{U}\) és un obert de~\(X/G\).
+        Per l'observació \myref{obs:els-accions-de-grup-en-un-espai-topologic-son-homeomorfismes} tenim que~\(\theta_{g}\) és un homeomorfisme, i per la definició d'\myref{def:homeomorfisme-entre-topologies} trobem que~\(\theta_{g}\) és bijectiva.
+        Aleshores, com que tenim que~\(\obert{U}'\) i~\(\obert{V}\) són disjunts tenim que~\(\obert{U}\) i~\(\obert{V}\) són disjunts.
+
+        Sigui~\(\pi\) la projecció
+        \begin{align*}
+            \pi\colon X&\longrightarrow X/G \\
+            x&\longmapsto\overline{x}.
+        \end{align*}
+        Per la definició de \myref{def:topologia-quocient} trobem que els conjunts~\(\Ima_{\obert{U}}(\pi)\) i~\(\Ima_{\obert{V}}(\pi)\) són oberts de~\(X/G\), i tenim que aquests són disjunts ja que si~\(\pi(z)\) pertany a la seva intersecció, per la definició de \myref{def:quocient-dun-espai-per-laccio-dun-grup} trobem que~\(\overline{z}\) ha de ser un element de~\(\obert{U}\cap\obert{V}\), i tenim que aquests són disjunts.
+        Per tant per la definició d'\myref{def:espai-Hausdorff} tenim que~\(X/G\) és Hausdorff.
+
+        Per l'observació \myref{obs:laplicacio-que-indueix-la-topologia-en-un-espai-quocient-es-continua} tenim que~\(\pi\) és contínua, i pel Teorema \myref{thm:la-imatge-dun-compacte-per-una-aplicacio-continua-es-un-compacte} trobem que~\(X/G\) és compacte i hem acabat.
+    \end{proof}
+%\section{La topologia de Zariski}
+%    \subsection{Propietats de la topologia de Zariski}
+\end{document}

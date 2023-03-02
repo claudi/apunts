@@ -1,0 +1,591 @@
+\documentclass[../topologia.tex]{subfiles}
+
+\begin{document}
+\chapter{Altres topologies}
+\section{Topologies induïdes}
+    \subsection{La topologia induïda per un subconjunt}
+    \begin{proposition}
+        \label{prop:topologia-induida-per-un-subconjunt}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic i~\(A\) un subconjunt de~\(X\).
+        Aleshores~\(A\) amb la topologia
+        \begin{equation}
+            \label{prop:topologia-induida-per-un-subconjunt:eq1}
+            \tau_{A}=\{\obert{U}\subseteq A\mid\text{Existeix un obert }\obert{W}\text{ de }X\text{ tal que }\obert{U}=\obert{W}\cap A\}
+        \end{equation}
+        és un espai topològic.
+    \end{proposition}
+    \begin{proof}
+        Observem que~\(A\) pertany a~\(\tau_{A}\), ja que per la definició de \myref{def:topologia} tenim que~\(X\) és un obert de~\(X\), i trobem~\(X\cap A=A\).
+        També tenim que~\(\emptyset\) pertany a~\(\tau_{A}\), ja que per la definició de \myref{def:topologia} tenim que~\(\emptyset\) és un obert de~\(X\), i trobem~\(\emptyset\cap A=\emptyset\).
+
+        Sigui~\(\{\obert{U}_{i}\}_{i\in I}\) una família d'elements de~\(\tau_{A}\).
+        Per la definició \eqref{prop:topologia-induida-per-un-subconjunt:eq1} tenim que existeix una família~\(\{\obert{W}_{i}\}_{i\in I}\) d'oberts de~\(X\) tals que~\(\obert{U}_{i}=\obert{W}_{i}\cap A\), per a tot~\(i\) de~\(I\).
+        Considerem ara
+        \[
+            \obert{U}=\bigcup_{i\in I}\obert{U}_{i}.
+        \]
+        Tenim que
+        \[
+            \obert{U}=\bigcup_{i\in I}\obert{W}_{i}\cap A,
+        \]
+        i tenim
+        \[
+            \obert{U}=A\cap\left(\bigcup_{i\in I}\obert{W}_{i}\right),
+        \]
+        i per la definició de \myref{def:topologia} tenim que~\(\bigcup_{i\in I}\obert{W}_{i}\) és un obert de~\(X\), i per la definició \eqref{prop:topologia-induida-per-un-subconjunt:eq1} trobem que~\(\obert{U}\) pertany a~\(\tau_{A}\).
+
+        Sigui~\(\{\obert{U}\}_{i=1}^{n}\) una família d'elements de~\(\tau_{A}\).
+        Per la definició \eqref{prop:topologia-induida-per-un-subconjunt:eq1} tenim que existeix una família~\(\{\obert{W}_{i}\}_{i=1}^{n}\) d'oberts de~\(X\) tals que~\(\obert{U}_{i}=\obert{W}_{i}\cap A\), per a tot~\(i\) de~\(\{1,\dots,n\}\).
+        Considerem ara
+        \[
+            \obert{U}=\bigcap_{i=1}^{n}\obert{U}_{i}.
+        \]
+        Tenim que
+        \[
+            \obert{U}=\bigcap_{i=1}^{n}\obert{W}_{i}\cap A,
+        \]
+        i tenim
+        \[
+            \obert{U}=A\cap\left(\bigcap_{i=1}^{n}\obert{W}_{i}\right),
+        \]
+        i per la definició de \myref{def:topologia} tenim que~\(\bigcap_{i=1}^{n}\obert{W}_{i}\) és un obert de~\(X\), i per la definició \eqref{prop:topologia-induida-per-un-subconjunt:eq1} trobem que~\(\obert{U}\) pertany a~\(\tau_{A}\).
+        Per tant per la definició d'\myref{def:espai-topologic} trobem que~\(A\) amb la topologia~\(\tau_{A}\) és un espai topològic.
+    \end{proof}
+    \begin{definition}[Topologia induïda per un subconjunt]
+        \labelname{topologia induïda per un subconjunt}\label{def:topologia-induida-per-un-subconjunt}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic i~\(A\) un subconjunt de~\(X\).
+        Aleshores denotem
+        \[
+            \tau_{A}=\{\obert{U}\subseteq A\mid\text{Existeix un obert }\obert{W}\text{ de }X\text{ tal que }\obert{U}=\obert{W}\cap A\}
+        \]
+        i direm que~\(\tau_{A}\) és la topologia induïda per~\(A\).
+
+        Aquesta definició té sentit per la proposició \myref{prop:topologia-induida-per-un-subconjunt}.
+    \end{definition}
+    \begin{definition}[Subespai topològic]
+        \labelname{subespai topològic}\label{def:subespai-topologic}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic i~\(A\) un subconjunt de~\(X\).
+        Aleshores direm que~\(A\) amb la topologia~\(\tau_{A}\) és un subespai topològic de~\(X\).
+    \end{definition}
+    \begin{proposition}
+        \label{prop:C-es-un-tancat-si-i-nomes-si-existeix-un-tancat-K-tal-que-linterseccio-de-A-i-K-es-C}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic i~\(\tau_{A}\) la topologia induïda per un subconjunt~\(A\) de~\(X\).
+        Aleshores~\(\tancat{C}\) és un tancat de~\(A\) si i només si existeix un tancat~\(\tancat{K}\) de~\(\tau\) tal que~\(\tancat{C}=A\cap\tancat{K}\).
+    \end{proposition}
+    \begin{proof}
+        Comencem veient que la condició és suficient (\(\implica\)).
+        Sigui~\(\tancat{C}\) un tancat de~\(A\).
+        Per la definició de \myref{def:tancat} tenim que això és equivalent a que~\(A\setminus\tancat{C}\) és un obert.
+        Per la definició de \myref{def:topologia-induida-per-un-subconjunt} tenim que això és si i només si existeix un obert~\(\obert{U}\) de~\(X\) tal que~\(A\setminus\tancat{C}=\obert{U}\cap A\).
+        Ara bé, tenim que~\(\obert{U}=X\setminus(X\setminus\obert{U})\), i per la definició de \myref{def:tancat} tenim que~\(\tancat{K}=X\setminus\obert{U}\) és un tancat, i tenim que
+        \begin{align*}
+            \tancat{C}&=A\setminus A\setminus\tancat{C} \\
+            &=A\setminus(\obert{U}\cap A) \\
+            &=A\setminus\obert{U} \\
+            &=A\cap(X\setminus\obert{U}) \\
+            &=A\cap\tancat{K}
+        \end{align*}
+        i hem acabat.
+
+        Veiem ara que la condició és necessària (\(\implicatper\)).
+        Sigui~\(\tancat{K}\) un tancat de~\(X\).
+        Prenem~\(\tancat{C}=A\cap\tancat{K}\).
+        Aleshores tenim
+        \begin{align*}
+            A\setminus\tancat{C}&=A\setminus(A\cap\tancat{K}) \\
+            &=A\cap(X\setminus\tancat{K}).
+        \end{align*}
+        Ara bé, per hipòtesi, tenim que~\(\tancat{K}\) és un tancat de~\(X\), i per tant~\(X\setminus\tancat{K}\) és un obert, i per la definició de \myref{def:topologia-induida-per-un-subconjunt} trobem que~\(A\cap(X\setminus\tancat{K})\) és un obert de~\(A\), i per la definició de \myref{def:tancat} tenim que~\(A\setminus\tancat{C}\) és un tancat de~\(A\), com volíem veure.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:un-subconjunt-dun-subespai-topologic-obert-es-un-obert-si-i-nomes-si-tambe-es-un-obert-de-la-topologia}
+        Siguin~\(X\) amb la topologia~\(\tau\) una espai topològic,~\(\obert{A}\) un obert de~\(X\),~\(\tau_{A}\) la topologia induïda per~\(A\) i~\(\obert{U}\) un subconjunt de~\(A\).
+        Aleshores~\(\obert{U}\) és un obert de~\(A\) si i només si~\(\obert{U}\) és un obert de~\(X\).
+    \end{proposition}
+    \begin{proof}
+        Comencem veient que la condició és suficient (\(\implica\)).
+        Suposem doncs que~\(\obert{U}\) és un obert de~\(A\).
+        Per la definició de \myref{def:topologia-induida-per-un-subconjunt} tenim que existeix un obert~\(\obert{W}\) de~\(X\) tal que~\(\obert{U}=A\cap\obert{W}\).
+        Ara bé, com que, per hipòtesi,~\(A\) i~\(\obert{W}\) són dos oberts de~\(X\) per la definició de \myref{def:topologia} trobem que~\(\obert{U}\) és un obert de~\(X\).
+
+        Veiem ara que la condició és necessària (\(\implicatper\)).
+        Suposem doncs que~\(\obert{U}\) és un obert de~\(X\).
+        Com que, per la definició de \myref{def:topologia},~\(\obert{U}\) és un subconjunt de~\(A\), tenim que~\(\obert{U}=A\cap\obert{U}\), i per la definició de \myref{def:topologia-induida-per-un-subconjunt} trobem que~\(\obert{U}\) és un obert de~\(A\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:un-subconjunt-dun-subespai-topologic-es-un-tancat-si-i-nomes-si-tambe-es-un-tancat-de-la-topologia}
+        Siguin~\(X\) amb la topologia~\(\tau\) una espai topològic,~\(\tancat{A}\) un tancat de~\(X\),~\(\tau_{A}\) la topologia induïda per~\(A\) i~\(\tancat{C}\) un subconjunt de~\(A\).
+        Aleshores~\(\tancat{C}\) és un tancat de~\(A\) si i només si~\(\tancat{C}\) és un tancat de~\(X\).
+    \end{proposition}
+    \begin{proof}
+        Comencem veient que la condició és suficient (\(\implica\)).
+        Suposem doncs que~\(\tancat{C}\) és un tancat de~\(A\).
+        Per la proposició \myref{prop:C-es-un-tancat-si-i-nomes-si-existeix-un-tancat-K-tal-que-linterseccio-de-A-i-K-es-C} tenim que existeix un tancat~\(tancat{K}\) de~\(X\) tal que~\(\tancat{C}=A\cap\tancat{K}\).
+        Ara bé, com que~\(A\) i~\(\tancat{K}\) són dos tancats de~\(X\), pel Teorema \myref{thm:equivalencia-obert-tancat-definicio-de-topologia} trobem que~\(\tancat{C}\) és un tancat de~\(X\).
+
+        Veiem ara que la condició és necessària (\(\implicatper\)).
+        Suposem doncs que~\(\tancat{C}\) és un tancat de~\(X\).
+        Com que, per la definició de \myref{def:topologia},~\(\tancat{C}\) és un subconjunt de~\(A\), tenim que~\(\tancat{C}=A\cap\tancat{C}\), i per la definició de \myref{def:topologia-induida-per-un-subconjunt} trobem que~\(\tancat{C}\) és un tancat de~\(A\).
+    \end{proof}
+    \subsection{La topologia producte}
+    \begin{proposition}
+        \label{prop:la-topologia-producte}
+        Siguin~\(X\) amb la topologia~\(\tau_{X}\) i~\(Y\) amb la topologia~\(\tau_{Y}\) dos espais topològics,
+        \[
+            \base{B}=\{\obert{V}_{X}\times\obert{V}_{Y}\subseteq X\times Y\mid\obert{V}_{X}\in\tau_{X}\text{ i }\obert{V}_{Y}\in\tau_{Y}\}
+        \]
+        i
+        \[
+            \tau=\{\obert{U}\subseteq X\times Y\mid\text{Existeix una família }\{\obert{U}_{i}\}_{i\in I}\subseteq\base{B}\text{ tal que }\obert{U}=\cup_{i\in I}\obert{U}_{i}\}.
+        \]
+        Aleshores~\(\tau\) és una topologia de~\(X\times Y\).
+    \end{proposition}
+    \begin{proof}
+        Per l'\myref{axiom:axioma-de-regularitat} trobem que~\(\emptyset\) és un subconjunt de~\(\base{B}\), i per la definició de~\(\tau\) trobem que~\(\emptyset\) és un element de~\(\tau\).
+
+        Per la definició de \myref{def:topologia} trobem que~\(X\) és un obert de~\(X\) i~\(Y\) és un obert de~\(Y\).
+        Per tant~\(X\times Y\) és un element de~\(\base{B}\) i per la definició de~\(\tau\) trobem que~\(X\times Y\) és un element de~\(\tau\).
+
+        Prenem una família~\(\{\obert{U}_{i}\}_{i\in I}\) d'elements de~\(\tau\) i considerem
+        \[
+            \obert{U}=\bigcup_{i\in I}\obert{U}_{i}.
+        \]
+        Per la definició de~\(\tau\) trobem que per a cada~\(i\) de~\(I\) existeix una família~\(\{\obert{V}_{j}\}_{j\in J_{i}}\) d'elements de~\(\base{B}\) tals que
+        \[
+            \obert{U}_{i}=\bigcup_{j\in J_{i}}V_{j}.
+        \]
+        Ara bé, per la definició de~\(\base{B}\) trobem que per a tot~\(j\) de~\(J_{i}\) existeixen oberts~\(\obert{V}_{j,X}\) de~\(X\) i oberts~\(\obert{V}_{j,Y}\) de~\(Y\) tals que
+        \[
+            \obert{V}_{j}=\obert{V}_{j,X}\times\obert{V}_{j,Y},
+        \]
+        i per tant trobem que
+        \[
+            \obert{U}=\bigcup_{i\in I}\bigcup_{j\in J_{i}}\left(\obert{V}_{j,X}\times\obert{V}_{j,Y}\right),
+        \]
+        i per la definició de~\(\tau\) trobem que~\(\obert{U}\) és un element de~\(\tau\).
+
+        Siguin~\(\obert{U}\) i~\(\obert{V}\) dos elements de~\(\tau\) i considerem
+        \[
+            \obert{W}=\obert{U}\cap\obert{V}.
+        \]
+        Per la definició de~\(\tau\) tenim que existeixen dues famílies~\(\{\obert{U}_{i}\}_{i\in I}\) i~\(\{\obert{V}_{j}\}_{j\in J}\) de~\(\base{B}\) tals que
+        \[
+            \obert{U}=\bigcup_{i\in I}\obert{U}_{i}\quad\text{i}\quad\obert{V}=\bigcup_{j\in J}\obert{V}_{j},
+        \]
+        i per la definició de~\(\base{B}\) trobem que per a cada~\(i\) de~\(I\) existeixen un obert~\(\obert{U}_{i,X}\) de~\(X\) i un obert~\(\obert{U}_{i,Y}\) de~\(Y\) tals que
+        \[
+            \obert{U}_{i}=\obert{U}_{i,X}\times\obert{U}_{i,Y}
+        \]
+        i per a cada~\(j\) de~\(J\) existeixen un obert~\(\obert{V}_{j,X}\) de~\(X\) i un obert~\(\obert{V}_{j,Y}\) de~\(Y\) tals que
+        \[
+            \obert{V}_{j}=\obert{V}_{j,X}\times\obert{V}_{j,Y}.
+        \]
+
+        Per tant tenim que
+        \[
+            \obert{U}=\left(\bigcup_{i\in I}\left(\obert{U}_{i,X}\times\obert{U}_{i,Y}\right)\right)\cap\left(\bigcup_{j\in J}\left(\obert{V}_{j,X}\times\obert{V}_{j,Y}\right)\right)
+        \]
+        i trobem que
+        \[
+            \obert{U}=\left(\bigcup_{i\in I}\obert{U}_{i,X}\times\bigcup_{i\in I}\obert{U}_{i,Y}\right)\cap\left(\bigcup_{j\in J}\obert{V}_{j,X}\times\bigcup_{j\in J}\obert{V}_{j,Y}\right)
+        \]
+        i per tant
+        \[
+            \obert{U}=\left(\bigcup_{i\in I}\obert{U}_{i,X}\cap\bigcup_{j\in J}\obert{V}_{j,X}\right)\times\left(\bigcup_{i\in I}\obert{U}_{i,Y}\cap\bigcup_{j\in J}\obert{V}_{j,Y}\right),
+        \]
+        i per la definició de \myref{def:topologia} trobem que
+        \[
+            \bigcup_{i\in I}\obert{U}_{i,X}\cap\bigcup_{j\in J}\obert{V}_{j,X}\quad\text{i}\quad\bigcup_{i\in I}\obert{U}_{i,Y}\cap\bigcup_{j\in J}\obert{V}_{j,Y}
+        \]
+        són oberts, i per la definició de~\(\tau\) trobem que~\(\obert{U}\) és un element de~\(\tau\), i per la definició de \myref{def:topologia} trobem que~\(\tau\) és una topologia de~\(X\times Y\), com volíem veure.
+    \end{proof}
+    \begin{definition}[Topologia producte]
+        \labelname{topologia producte}\label{def:topologia-producte}
+        Siguin~\(X\) amb la topologia~\(\tau_{X}\) i~\(Y\) amb la topologia~\(\tau_{Y}\) dos espais topològics i
+        \[
+            \base{B}=\{\obert{V}_{X}\times\obert{V}_{Y}\subseteq X\times Y\mid\obert{V}_{X}\in\tau_{X}\text{ i }\obert{V}_{Y}\in\tau_{Y}\}.
+        \]
+        Aleshores direm que~\(X\times Y\) amb la topologia
+        \[
+            \tau=\{\obert{U}\subseteq X\times Y\mid\text{Existeix una família }\{\obert{U}_{i}\}_{i\in I}\subseteq\base{B}\text{ tal que }\obert{U}=\cup_{i\in I}\obert{U}_{i}\}
+        \]
+        és l'espai topològic producte de~\(X\) i~\(Y\) i que~\(\tau\) és la topologia producte de~\(X\) i~\(Y\).
+
+        Aquesta definició té sentit per la proposició \myref{prop:la-topologia-producte}
+    \end{definition}
+    \begin{example}[Projeccions]
+        \labelname{}\label{ex:les-projeccions-en-la-topologia-producte-son-continues-i-obertes}
+        Siguin~\(X\times Y\) amb la topologia~\(\tau\) la topologia producte de~\(X\) i~\(Y\) i
+        \begin{align*}
+            \pi_{X}\colon X\times Y&\longrightarrow X \\
+            (x,y)&\longmapsto x
+        \end{align*}
+        un aplicació.
+        Volem veure que~\(\pi_{X}\) és contínua i oberta.
+    \end{example}
+    \begin{solution}
+        Comencem veient que~\(\pi_{X}\) és contínua.
+        Prenem un obert~\(\obert{U}\) de~\(X\) i considerem
+        \[
+            \{(x,y)\in X\times Y\mid \pi_{X}(x,y)\in\obert{U}\}.
+        \]
+        Tenim doncs que
+        \[
+            \obert{U}\times Y=\{(x,y)\in X\times Y\mid \pi_{X}(x,y)\in\obert{U}\},
+        \]
+        i com que, per hipòtesi,~\(Y\) és un espai topològic, tenim que~\(Y\) és un obert de~\(Y\), i de nou per hipòtesi tenim que~\(\obert{U}\) és un obert de~\(X\).
+        Per tant trobem que~\(\obert{U}\times Y\) és un obert de~\(X\times Y\), i per la definició d'\myref{def:aplicacio-continua} trobem que~\(\pi_{X}\) és contínua.
+
+        Veiem ara que~\(\pi_{X}\) és oberta.
+        Prenem un obert~\(A\) de~\(X\times Y\) i un punt~\(x\) de~\(\{\pi_{X}(x,y)\in X\mid(x,y)\in A\}\).
+        Aleshores tenim que existeix un punt~\(a\) de~\(A\) tal que~\(\pi_{X}(a)=x\).
+        Per la definició de \myref{def:topologia-producte} tenim que existeixen un obert~\(\obert{U}_{x}\) de~\(X\) i un obert~\(\obert{V}_{x}\) de~\(Y\) tals que
+        \[
+            a\in\obert{U}_{x}\times\obert{V}_{x}\subseteq A.
+        \]
+        Observem que
+        \[
+            \obert{U}=\{\pi_{X}(x,y)\in X\mid(x,y)\in\obert{U}_{x}\times\obert{V}_{x}\}
+        \]
+        és un obert de~\(X\), i per tant
+        \[
+            x\in\obert{U}_{x}\subseteq\{\pi_{X}(x,y)\in X\mid(x,y)\in A\},
+        \]
+        i, denotant~\(B=\{\pi_{X}(x,y)\in X\mid(x,y)\in A\}\), trobem que
+        \begin{align*}
+            B&\subseteq\bigcup_{x\in B}\{x\} \\
+            &\subseteq\bigcup_{x\in B}\obert{U}_{x}\subseteq B,
+        \end{align*}
+        i per tant trobem que~\(\{\pi_{X}(x,y)\in X\mid(x,y)\in A\}\) és un obert de~\(X\), i per la definició d'\myref{def:aplicacio-oberta} trobem que~\(\pi_{X}\) és una aplicació oberta.
+        % REVISAR? Estic medio empanado
+    \end{solution}
+    \begin{corollary} %REF
+        \label{cor:un-espai-topologic-producte-amb-un-element-es-homeomorf-a-lespai-topologic}
+        Sigui~\(X\) un espai topològic i~\(y\) un element.
+        Aleshores
+        \[
+            X\times\{y\}\cong X.
+        \]
+    \end{corollary}
+    \begin{theorem}
+        \label{thm:una-aplicacio-es-continua-si-i-nomes-si-les-seves-components-son-continues}
+        Siguin~\(Z\) amb la topologia~\(\tau_{Z}\) un espai topològic,~\(X\times Y\) amb la topologia producte de~\(X\) i~\(Y\),~\(f\colon Z\longrightarrow X\times Y\) una aplicació.
+        Aleshores~\(f\) és contínua si i només si les aplicacions~\(\pi_{X}\circ f\) i~\(\pi_{Y}\circ f\) són contínues.
+    \end{theorem}
+    \begin{proof}
+        Comencem veient que la condició és suficient (\(\implica\)).
+        Suposem doncs que~\(f\) és contínua.
+        Aleshores per l'exemple \myref{ex:les-projeccions-en-la-topologia-producte-son-continues-i-obertes} trobem que les aplicacions~\(\pi_{X}\) i~\(\pi_{Y}\) són contínues i per l'observació \myref{obs:la-composicio-daplicacions-continues-es-continua} hem acabat.
+
+        Veiem ara que la condició és necessària (\(\implicatper\)).
+        Suposem doncs que les aplicacions~\(\pi_{X}\circ f\) i~\(\pi_{Y}\circ f\) són contínues.
+
+        Sigui~\(\obert{V}\times\obert{W}\) un obert de~\(X\times Y\).
+        Per la definició de \myref{def:topologia-producte} tenim que~\(\obert{V}\) és un obert de~\(X\) i~\(\obert{W}\) és un obert de~\(Y\).
+        Ara bé, com que per hipòtesi les aplicacions~\(\pi_{X}\circ f\) i~\(\pi_{Y}\circ f\) són contínues, tenim per la definició d'\myref{def:aplicacio-continua} que els conjunts
+        \[\obert{U}_{X}=\{x\in Z\mid \pi_{X}\circ f(x)\in\obert{V}\}\quad\text{i}\quad
+        \obert{U}_{Y}=\{x\in Z\mid \pi_{Y}\circ f(x)\in\obert{W}\}\]
+        són oberts de~\(Z\), i per la definició de \myref{def:topologia} trobem que el conjunt
+        \[
+            \obert{U}=\obert{U}_{X}\cup\obert{U}_{Y}
+        \]
+        és un obert de~\(Z\).
+        Per tant tenim que
+        \[
+            \obert{U}=\{x\in Z\mid f(x)\in\obert{V}\times\obert{W}\},
+        \]
+        és un obert de~\(Z\), i com que per hipòtesi el conjunt~\(\obert{V}\times\obert{W}\) és un obert de~\(X\times Y\), per la definició d'\myref{def:aplicacio-oberta} trobem que~\(f\) és una aplicació oberta.
+        %REVISAR
+    \end{proof}
+    \begin{proposition}
+        \label{prop:si-dues-parelles-despais-topologics-son-homeomorfs-els-seus-productes-cartesians-tambe-ho-son}
+        Siguin~\(X_{1}\) amb la topologia~\(\tau_{X_{1}}\), ~\(X_{2}\) amb la topologia~\(\tau_{X_{2}}\),~\(Y_{1}\) amb la topologia~\(\tau_{Y_{1}}\) i~\(Y_{2}\) amb la topologia~\(\tau_{Y_{2}}\) quatre espais topològics tals que
+        \[
+            X_{1}\cong X_{2}\quad\text{i}\quad Y_{1}\cong Y_{2}.
+        \]
+        Aleshores
+        \[
+            X_{1}\times Y_{1}\cong X_{2}\times Y_{2}.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Per la definició d'\myref{def:espais-topologics-homeomorfs} trobem que existeixen dos homeomorfismes~\(f\colon X_{1}\longrightarrow X_{2}\) i~\(g\colon Y_{1}\longrightarrow Y_{2}\).
+        Considerem doncs l'aplicació
+        \begin{align*}
+            h\colon X_{1}\times Y_{1}&\longrightarrow X_{2}\times Y_{2} \\
+            (x,y)&\longmapsto(f(x),g(y)).
+        \end{align*}
+        Com que, per hipòtesi, les aplicacions~\(f\) i~\(g\) són homeomorfismes, tenim per la definició d'\myref{def:homeomorfisme-entre-topologies} que~\(f\) i~\(g\) són bijectives.
+        Ara bé, trobem que~\(h\) també és bijectiva, ja que té per inversa la funció
+        \begin{align*}
+            h^{-1}\colon X_{2}\times Y_{2}&\longrightarrow X_{1}\times Y_{1} \\
+            (x,y)&\longmapsto(f^{-1}(x),g^{-1}(y)).
+        \end{align*}
+
+        Continuem veient que~\(h\) és una aplicació oberta.
+        Per la definició d'\myref{def:aplicacio-oberta} i la definició d'\myref{def:aplicacio-continua} en tenim prou amb veure que~\(h^{-1}\) és una aplicació contínua.
+        Observem que per a tot~\((x,y)\) de~\(X_{2}\times Y_{2}\) tenim
+        \[
+            \pi_{X_{1}}\circ h^{-1}(x,y)=f^{-1}(x)\quad\text{i}\quad\pi_{Y_{1}}\circ h^{-1}(x,y)=g^{-1}(y),
+        \]
+        i com que, per hipòtesi, les aplicacions~\(f^{-1}\) i~\(g^{-1}\) són contínues tenim pel Teorema \myref{thm:una-aplicacio-es-continua-si-i-nomes-si-les-seves-components-son-continues} que l'aplicació~\(h^{-1}\) és contínua, i per tant~\(h\) és una aplicació oberta.
+
+        Per acabar veiem ara que~\(h\) és una aplicació contínua.
+        Observem que per a tot~\((x,y)\) de~\(X_{1}\times Y_{1}\) tenim
+        \[
+            \pi_{X_{2}}\circ h(x,y)=f(x)\quad\text{i}\quad\pi_{Y_{2}}\circ h(x,y)=g(y),
+        \]
+        i com que, per hipòtesi, les aplicacions~\(f\) i~\(g\) són aplicacions contínues tenim pel Teorema \myref{thm:una-aplicacio-es-continua-si-i-nomes-si-les-seves-components-son-continues} que l'aplicació~\(h\) és contínua.
+
+        Per tant per la definició d'\myref{def:homeomorfisme-entre-topologies} trobem que~\(h\) és un homeomorfisme, i per la definició d'\myref{def:espais-topologics-homeomorfs} trobem que~\(X_{1}\times Y_{1}\cong X_{2}\times Y_{2}\), com volíem veure.
+    \end{proof}
+\section{La topologia quocient}
+    \subsection{Topologia quocient per una aplicació}
+    \begin{proposition}
+        \label{prop:topologia-quocient}
+        Siguin~\(X\) amb la topologia~\(\tau_{X}\) un espai topològic,~\(Y\) un conjunt i~\(p\colon X\longrightarrow Y\) una aplicació exhaustiva.
+        Aleshores
+        \begin{equation}
+            \label{prop:topologia-quocient:eq1}
+            \tau_{Y}=\{\obert{U}\subseteq Y\mid\Antiima_{\obert{U}}(p)\in\tau_{X}\}
+        \end{equation}
+        és una topologia de~\(Y\).
+    \end{proposition}
+    \begin{proof} %REFS
+        Comprovem que~\(\tau_{Y}\) satisfà la definició de \myref{def:topologia}.
+        Tenim que~\(\emptyset\) pertany a~\(\tau_{Y}\).
+        Per la definició d'\myref{def:antiimatge-duna-aplicacio} trobem que~\(\Ima_{\emptyset}(p)=\emptyset\), i com que per la definició de \myref{def:topologia} tenim que~\(\emptyset\) pertany a~\(\tau_{X}\) trobem que~\(\emptyset\) és un element de~\(\tau_{Y}\).
+
+        Veiem ara que~\(Y\) pertany a~\(\tau_{Y}\).
+        Per la definició d'\myref{def:antiimatge-duna-aplicacio} i com que, per hipòtesi,~\(p\) és exhaustiva, per la definició d'\myref{def:aplicacio-exhaustiva} tenim que~\(\Ima_{Y}^{-1}(p)=X\), i per la definició de \myref{def:topologia} tenim que~\(X\) és un obert, i per tant~\(Y\) pertany a~\(\tau_{Y}\).
+
+        Sigui~\(\{\obert{U}_{i}\}_{i\in I}\) una família d'elements de~\(\tau_{Y}\).
+        Aleshores tenim que
+        \[
+            \Antiima_{\bigcup_{i\in I}\obert{U}_{i}}(p)=\bigcup_{i\in I}\Antiima_{\obert{U}_{i}}(p),
+        \]
+        i com que.
+        per \eqref{prop:topologia-quocient:eq1} trobem que~\(\Antiima_{\obert{U}_{i}}(p)\) és un obert de~\(X\) per a tot~\(i\) de~\(I\), i per la definició de topologia trobem que
+        \[
+            \bigcup_{i\in I}\Antiima_{\obert{U}_{i}}(p)
+        \]
+        és un obert de~\(X\), i per tant tenim que~\(\bigcup_{i\in I}\obert{U}_{i}\) és un element de~\(\tau_{Y}\).
+
+        Prenem ara una família~\(\{\obert{U}_{i}\}_{i=1}^{n}\) d'elements de~\(\tau_{Y}\).
+        Tenim que
+        \[
+            \Antiima_{\bigcup_{i=1}^{n}\obert{U}_{i}}(p)=\bigcup_{i=1}^{n}\Antiima_{\obert{U}_{i}}(p),
+        \]
+        i com que.
+        per \eqref{prop:topologia-quocient:eq1} trobem que~\(\Antiima_{\obert{U}_{i}}(p)\) és un obert de~\(X\) per a tot~\(i\) de~\(\{1,\dots,n\}\), i per la definició de topologia trobem que
+        \[
+            \bigcup_{i=1}^{n}\Antiima_{\obert{U}_{i}}(p)
+        \]
+        és un obert de~\(X\), i per tant tenim que~\(\bigcup_{i=1}^{n}\obert{U}_{i}\) és un element de~\(\tau_{Y}\).
+    \end{proof}
+    \begin{definition}[Topologia quocient]
+        \labelname{topologia quocient}\label{def:topologia-quocient}
+        Siguin~\(X\) amb la topologia~\(\tau_{X}\) un espai topològic,~\(Y\) un conjunt i~\(p\colon X\longrightarrow Y\) una aplicació exhaustiva.
+        Aleshores direm que~\(Y\) amb la topologia
+        \[
+            \tau_{Y}=\{\obert{U}\subseteq Y\mid\Antiima_{\obert{U}}(p)\in\tau_{X}\}
+        \]
+        és un espai topològic quocient, o que~\(Y\) té la topologia quocient per~\(p\).
+
+        Aquesta definició té sentit per la proposició \myref{prop:topologia-quocient}.
+    \end{definition}
+    \begin{observation}
+        \label{obs:laplicacio-que-indueix-la-topologia-en-un-espai-quocient-es-continua}
+        Sigui~\(Y\) un espai topològic amb la topologia quocient per una aplicació~\(p\).
+        Aleshores~\(p\) és contínua.
+    \end{observation} %REF prove?
+    \begin{proposition}
+        \label{prop:la-topologia-quocient-es-equivalent-per-tancats}
+        Sigui~\(Y\) un espai topològic amb la topologia quocient per una aplicació~\(p\).
+        Aleshores un subconjunt~\(\tancat{C}\) de~\(Y\) és tancat si i només si~\(\Antiima_{\tancat{C}}(p)\) és un tancat.
+    \end{proposition}
+    \begin{proof} %REFS
+        Denotem per~\(X\) l'espai topològic sobre el que~\(p\) està definida.
+        Sigui~\(\tancat{C}\) un tancat de~\(Y\).
+        Aleshores, per la definició de \myref{def:tancat}, tenim que~\(Y\setminus\tancat{C}\) és un obert de~\(Y\).
+        Ara bé, tenim que~\(\Antiima_{Y\setminus\tancat{C}}(p)\) és un obert de~\(X\).
+        Ara bé, tenim que
+        \[
+            \Antiima_{Y\setminus\tancat{C}}(p)=X\setminus\Antiima_{\tancat{C}}(p),
+        \]
+        i per la definició de \myref{def:tancat} trobem que~\(\Antiima_{\tancat{C}}(p)\) és un tancat de~\(X\), com volíem veure.
+    \end{proof}
+    \begin{theorem}
+        \label{thm:la-composicio-duna-aplicacio-amb-laplicacio-que-indueix-la-topologia-en-un-espai-quocient-es-continua-si-i-nomes-si-aquesta-aplicacio-es-continua}
+        Siguin~\(Y\) un espai topològic amb la topologia quocient per una aplicació~\(p\),~\(Z\) un espai topològic i~\(f\colon Y\longrightarrow Z\) una aplicació.
+        Aleshores~\(f\circ p\) és contínua si i només si~\(f\) és contínua.
+    \end{theorem}
+    \begin{proof}
+        Denotem per~\(X\) l'espai topològic sobre el que~\(p\) està definida.
+
+        Comencem veient que la condició és suficient (\(\implica\)).
+        Suposem doncs que~\(f\circ p\) és contínua.
+        Sigui~\(\obert{U}\) un obert de~\(Z\).
+        Per la definició d'\myref{def:aplicacio-continua} en tenim prou en veure que~\(\Antiima_{\obert{U}}(f)\) és un obert.
+
+        Tenim per la definició d'\myref{def:aplicacio-continua} que~\(\Antiima_{\obert{U}}(p\circ f)\) és un obert de~\(X\)., i per tant, per la definició de \myref{def:topologia-quocient} tenim que~\(\Antiima_{\obert{U}}(f)\) és un obert de~\(Y\), com volíem.
+
+        Veiem ara que la condició és necessària (\(\implicatper\)).
+        Suposem doncs que~\(f\) és contínua.
+        Aleshores per l'observació \myref{obs:la-composicio-daplicacions-continues-es-continua} hem acabat.
+    \end{proof}
+    \begin{example}
+        Volem calcular la topologia de l'espai quocient~\(A=\{a,b,c\}\) induït per l'aplicació~\(p\colon\mathbb{R}\longrightarrow A\), definida per
+        \begin{equation}
+            \label{ex:topologia-quocient-caracteritzacio-signe-dun-real}
+            p(x)=\begin{cases}
+                a & \text{si }x>0 \\
+                b & \text{si }x<0 \\
+                c & \text{si }x=0.
+            \end{cases}
+        \end{equation}
+    \end{example}
+    \begin{solution}
+        Calculem els oberts de~\(A\).
+        Tenim per la definició de \myref{def:topologia-quocient} que aquests són les antiimatges dels oberts de~\(\mathbb{R}\) per~\(p\).
+        Prenem un obert~\(\obert{U}\) de~\(\mathbb{R}\).
+
+        Observem primer que si~\(\obert{U}=\emptyset\) aleshores
+        \[
+            \Antiima_{\obert{U}}(p)=\emptyset,
+        \]
+        i si~\(0\) pertany a~\(\obert{U}\) aleshores, per la definició d'\myref{def:obert-espai-metric} tenim que existeixen un~\(x\) de~\(\obert{U}\) positiu i un~\(y\) de~\(\obert{U}\) negatiu, i per tant
+        \[
+            \Antiima_{\obert{U}}(p)=\{a,b,c\}.
+        \]
+        Suposem doncs que~\(0\) no pertany a~\(\obert{U}\).
+
+        Suposem que per a tot~\(x\) de~\(\obert{U}\) tenim que~\(x>0\).
+        Aleshores, per la definició d'\myref{def:antiimatge-duna-aplicacio} i \eqref{ex:topologia-quocient-caracteritzacio-signe-dun-real} tenim que
+        \[
+            \Antiima_{\obert{U}}(p)=\{a\}.
+        \]
+
+        Suposem ara que per a tot~\(x\) detext{ si }0~\(\obert{U}\) tenim que~\(x>0\).
+        Aleshores, de nou per la definició d'\myref{def:antiimatge-duna-aplicacio} i \eqref{ex:topologia-quocient-caracteritzacio-signe-dun-real} tenim que
+        \[
+            \Antiima_{\obert{U}}(p)=\{b\}.
+        \]
+
+        Suposem ara que existeixen un~\(x\) de~\(\obert{U}\) positiu i un~\(y\) de~\(\obert{U}\) negatiu.
+        Aleshores, com que tenim que~\(0\) no pertany a~\(\obert{U}\), trobem que
+        \[
+            \Antiima_{\obert{U}}(p)=\{a,b\}.
+        \]
+
+        Per tant trobem que els oberts de~\(A\) són
+        \[
+            \tau=\{\emptyset,\{a\},\{b\},\{a,b\},\{a,b,c\}\}.\qedhere
+        \]
+    \end{solution}
+    \subsection{Topologia quocient per una relació d'equivalència}
+    \begin{example}[Projecció a un quocient]
+        \labelname{}\label{ex:topologia-projeccio-a-un-quocient}
+        Siguin~\(X\) un espai topològic i~\(\sim\) una relació d'equivalència.
+        Volem veure que~\(X/\sim\) té la topologia quocient per l'aplicació
+        \begin{align*}
+            \pi\colon X&\longrightarrow X/\sim \\
+            x&\longmapsto\overline{x}.
+        \end{align*}
+    \end{example}
+    \begin{solution}
+        Hem de veure que~\(\pi\) és exhaustiva.
+        Prenem un element~\(\overline{x}\) de~\(X/\sim\).
+        Aleshores tenim que~\(\pi(x)=\overline{x}\) i per la definició de \myref{def:topologia-quocient} hem acabat.
+    \end{solution}
+    \begin{definition}
+        \label{def:topologia-projeccio-a-un-quocient}
+        Siguin~\(X\) un espai topològic,~\(\sim\) una relació d'equivalència sobre~\(X\) i~\(\pi\) la projecció de~\(X\) en~\(X/\sim\) donada per
+        \begin{align*}
+            \pi\colon X&\longrightarrow X/\sim \\
+            x&\longmapsto\overline{x}.
+        \end{align*}
+        Aleshores denotem la topologia~\(Y\) induïda per~\(\pi\) com~\(X/\sim\).
+
+        Aquesta definició té sentit per l'exemple \myref{ex:topologia-projeccio-a-un-quocient}.
+    \end{definition}
+    \begin{example}
+        \label{ex:l'esfera en el pla és homeomorfa a la recta [0,1] amb 0sim1}
+        Volem veure que l'espai quocient
+        \[
+            Y=[0,1]/\{0\sim1\}
+        \]
+        amb la projecció~\(\pi\) és homeomorf a
+        \[
+            \esfera^{1}=\{x\in\mathbb{R}^{2}\mid\norm{x}=1\}.
+        \]
+    \end{example}
+    \begin{solution}
+        %TODO
+    \end{solution}
+    \subsection{Topologia quocient per un grup}
+    \begin{definition}[Acció d'un grup sobre un espai topològic]
+        \labelname{acció d'un grup sobre un espai topològic}\label{def:accio-dun-grup-sobre-un-espai-topologic}
+        Siguin~\(G\) amb l'operació~\(\ast\) un grup amb element neutre~\(e\) i~\(X\) un espai topològic tals que per a tot~\(g\) de~\(G\) existeix una aplicació contínua~\(\theta_{g}\colon X\longrightarrow X\) tal que per a tot~\(x\) de~\(X\) es satisfà~\(\theta_{e}(x)=x\) i per a tot~\(g\) i~\(h\) de~\(G\) es satisfà~\(\theta_{g}\circ\theta_{h}=\theta_{g\ast h}\).
+        Aleshores direm que~\(G\) actua sobre~\(X\).
+    \end{definition}
+    \begin{observation}
+        \label{obs:els-accions-de-grup-en-un-espai-topologic-son-homeomorfismes}
+        Sigui~\(G\) un grup que actua sobre~\(X\) i~\(g\) un element de~\(G\).
+        Aleshores~\(\theta_{g}\) és un homeomorfisme.
+    \end{observation} %FER Prove?
+    \begin{definition}[Domini fonamental]
+        \labelname{domini fonamental}\label{def:domini-fonamental}
+        Siguin~\(G\) un grup que actua sobre un espai topològic~\(X\) i~\(D\) un subespai de~\(X\) tal que per a tot~\(x\) de~\(X\) existeixen un~\(g\) de~\(G\) i~\(d\) de~\(D\) tals que
+        \[
+            x=\theta_{g}(d).
+        \]
+        Aleshores direm que~\(D\) és un domini fonamental de~\(X\).
+    \end{definition}
+    \begin{example}
+        \label{ex:domini-fonamental}
+        Considerem les aplicacions
+        \[
+            S(x,y)=(x,y+1)\quad\text{i}\quad T(x,y)=(x-1,-y)
+        \]
+        sobre l'espai topològic~\(\mathbb{R}^{2}\) i el grup~\(G=\langle\{S,T\}\rangle\).
+        Volem veure que~\([0,1)\times[0,1)\) és un domini fonamental de~\(X\).
+    \end{example}
+    \begin{solution} %REFS (part entera?) % Veure que el grup actua i tal i qual
+        Observem que la inversa de~\(T\) és~\(T^{-1}=(x+1,y)\), i~\(T^{-1}\) per la definició de pertany a~\(G\).
+
+        Prenem un punt~\((x,y)\) de~\(\mathbb{R}^{2}\).
+        Tenim que existeixen dos enters~\(x_{0}\) i~\(y_{0}\) tals que~\(x_{0}\leq x<x_{0}+1\) i~\(y_{0}\leq y<y_{0}+1\).
+        Per tant
+        \[
+            (x_{0},y_{0})=S^{x_{0}}(x-x_{0},0)+T^{-y_{0}}(0,y-y_{0}),
+        \]
+        i per la definició de \myref{def:domini-fonamental} hem acabat.
+    \end{solution} % REVISAR
+    \begin{proposition}
+        \label{prop:quocient-dun-espai-per-laccio-dun-grup-relacio}
+        Sigui~\(G\) amb l'operació~\(\ast\) un grup que actua sobre un espai topològic~\(X\).
+        Aleshores la relació~\(\sim\) definida per a tot~\(x\) i~\(y\) de~\(X\) com
+        \[
+            x\sim y\sii\text{existeix un }g\in G\text{ tal que }\theta_{g}(x)=y
+        \]
+        és una relació d'equivalència.
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{definition}[Quocient d'un espai per l'acció d'un grup]
+        \labelname{quocient d'un espai per l'acció d'un grup}\label{def:quocient-dun-espai-per-laccio-dun-grup}
+        Sigui~\(G\) amb l'operació~\(\ast\) un grup que actua sobre un espai topològic~\(X\) i~\(\sim\) la relació d'equivalència definida per a tot~\(x\) i~\(y\) de~\(X\) com
+        \[
+            x\sim y\sii\text{existeix un }g\in G\text{ tal que }\theta_{g}(x)=y.
+        \]
+        Aleshores denotarem per
+        \[
+            X/\sim=X/G
+        \]
+        la topologia quocient de~\(X\) per~\(G\).
+
+        Aquesta definició té sentit per la proposició \myref{prop:quocient-dun-espai-per-laccio-dun-grup-relacio}.
+    \end{definition}
+\end{document}

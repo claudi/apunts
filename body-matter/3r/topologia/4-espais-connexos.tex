@@ -1,0 +1,357 @@
+\documentclass[../topologia.tex]{subfiles}
+
+\begin{document}
+\chapter{Espais connexos}
+\section{Connexió}
+    \subsection{Els espais connexos}
+    \begin{proposition}
+        \label{prop:topologia-a-la-unio-disjunta}
+        Siguin~\(X\) amb la topologia~\(\tau_{1}\) i~\(Y\) amb la topologia~\(\tau_{2}\) dos espais topològics.
+        Aleshores el conjunt~\(X\uniodisjunta Y\) amb la topologia
+        \begin{equation}
+            \label{prop:topologia-a-la-unio-disjunta:eq1}
+            \tau=\{\obert{U}\uniodisjunta\obert{V}\mid\obert{U}\in\tau_{1}\text{ i }\obert{V}\in\tau_{2}\}
+        \end{equation}
+        és un espai topològic.
+    \end{proposition}
+    \begin{proof}
+        Per la definició de \myref{def:topologia} tenim que~\(X\) és un obert de~\(X\) i~\(Y\) és un obert de~\(Y\), i per \eqref{prop:topologia-a-la-unio-disjunta:eq1} tenim que~\(X\uniodisjunta Y\) pertany a~\(\tau\).
+        Tenim també per la definició de \myref{def:topologia} que~\(\emptyset\) és un obert de~\(X\) i~\(Y\), i tenim que~\(\emptyset\times\{0\}=\emptyset\) i~\(\emptyset\times\{1\}=\emptyset\).
+        Per tant de nou per \eqref{prop:topologia-a-la-unio-disjunta:eq1} tenim que~\(\emptyset\) pertany a~\(\tau\).
+
+        Prenem ara una família~\(\{\obert{U}_{i}\uniodisjunta\obert{V}_{i}\}_{i\in I}\) d'elements de~\(\tau\) i considerem
+        \[
+            \obert{U}=\bigcup_{i\in I}\obert{U}_{i}\uniodisjunta\obert{V}_{i}.
+        \]
+        Tenim que
+        \begin{align*}
+            \obert{U}&=\bigcup_{i\in I}\obert{U}_{i}\uniodisjunta\obert{V}_{i} \\
+            &=\bigcup_{i\in I}\big((\obert{U}_{i}\times\{0\})\cup(\obert{V}_{i}\times\{1\})\big) \tag{\ref{def:unio-disjunta}} \\
+            &=\left(\bigcup_{i\in I}(\obert{U}_{i}\times\{0\})\right)\cup\left(\bigcup_{i\in I}(\obert{V}_{i}\times\{1\})\right) \\
+            &=\left(\bigcup_{i\in I}\obert{U}_{i}\times\{0\}\right)\cup\left(\bigcup_{i\in I}\obert{V}_{i}\times\{1\}\right).
+        \end{align*}
+        Per la definició de \myref{def:topologia} trobem que els conjunts
+        \[
+            \bigcup_{i\in I}\obert{U}_{i}\quad\text{i}\quad\bigcup_{i\in I}\obert{V}_{i}
+        \]
+        són oberts de~\(X\) i~\(Y\), respectivament; i per \eqref{prop:topologia-a-la-unio-disjunta:eq1} trobem que~\(\obert{U}\) pertany a~\(\tau\).
+
+        Prenem ara una família finita~\(\{\obert{U}_{i}\uniodisjunta\obert{V}_{i}\}_{i=1}^{n}\) d'elements de~\(\tau\) i considerem
+        \[
+            \obert{U}=\bigcap_{i=1}^{n}\obert{U}_{i}\uniodisjunta\obert{V}_{i}.
+        \]
+        Tenim que
+        \begin{align*}
+            \obert{U}&=\bigcap_{i=1}^{n}\obert{U}_{i}\uniodisjunta\obert{V}_{i} \\
+            &=\bigcap_{i=1}^{n}\big((\obert{U}_{i}\times\{0\})\cup(\obert{V}_{i}\times\{1\})\big) \tag{\ref{def:unio-disjunta}} \\
+            &=\left(\bigcap_{i=1}^{n}(\obert{U}_{i}\times\{0\})\right)\cup\left(\bigcap_{i=1}^{n}(\obert{V}_{i}\times\{1\})\right) \\
+            &=\left(\bigcap_{i=1}^{n}\obert{U}_{i}\times\{0\}\right)\cup\left(\bigcap_{i=1}^{n}\obert{V}_{i}\times\{1\}\right).
+        \end{align*}
+        Per la definició de \myref{def:topologia} trobem que els conjunts
+        \[
+            \bigcap_{i=1}^{n}\obert{U}_{i}\quad\text{i}\quad\bigcap_{i=1}^{n}\obert{V}_{i}
+        \]
+        són oberts de~\(X\) i~\(Y\), respectivament; i per \eqref{prop:topologia-a-la-unio-disjunta:eq1} trobem que~\(\obert{U}\) pertany a~\(\tau\).
+
+        Per tant per la definició de \myref{def:topologia} trobem que~\(\tau\) és una topologia de~\(X\uniodisjunta Y\), com volíem veure.
+    \end{proof}
+    \begin{definition}[Unió disconnexa]
+        \labelname{unió disconnexa}\label{def:unio-disconnexa}
+        Siguin~\(X\) i~\(Y\) dos espais topològics.
+        Aleshores direm que l'espai topològic~\(X\uniodisjunta Y\) amb la topologia
+        \[
+            \tau=\{\obert{U}\uniodisjunta\obert{V}\mid\obert{U}\text{ és un obert de }X\text{ i }\obert{V}\text{ és un obert de }Y\}
+        \]
+        és la unió disconnexa de~\(X\) i~\(Y\).
+
+        Aquesta definició té sentit per la proposició \myref{prop:topologia-a-la-unio-disjunta}.
+    \end{definition}
+    \begin{definition}[Espai connex]
+        \labelname{espai connex}\label{def:espai-connex}
+        Sigui~\(X\) un espai topològic tal que no existeixen dos espais no buits~\(Y_{1}\) i~\(Y_{2}\) tals que~\(X\cong Y_{1}\uniodisjunta Y_{2}\).
+        Aleshores direm que~\(X\) és connex.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:condicions-equivalents-a-espai-connex}
+        Sigui~\(X\) un espai topològic.
+        Aleshores són equivalents
+        \begin{enumerate}
+            \item\label{prop:condicions-equivalents-a-espai-connex:eq1}~\(X\) és connex.
+            \item\label{prop:condicions-equivalents-a-espai-connex:eq2} No existeixen dos oberts no buits disjunts~\(\obert{U}\) i~\(\obert{V}\) tals que~\(X=\obert{U}\cup\obert{V}\).
+            \item\label{prop:condicions-equivalents-a-espai-connex:eq3} No existeixen dos tancats no buits disjunts~\(\tancat{C}\) i~\(\tancat{K}\) tals que~\(X=\tancat{C}\cup\tancat{K}\).
+            \item\label{prop:condicions-equivalents-a-espai-connex:eq4} Si~\(A\) és un subconjunt de~\(X\) tal que~\(A\) és obert i tancat aleshores~\(A=\emptyset\) ó~\(A=X\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        %TODO
+%            Veiem que \eqref{prop:condicions-equivalents-a-espai-connex:eq1}\(\implica\)\eqref{prop:condicions-equivalents-a-espai-connex:eq2}. Suposem que~\(X\) és connex i prenem dos oberts no buits disjunts~\(\obert{U}\) i~\(\obert{V}\). Pel \corollari{} \myref{cor:un-espai-topologic-producte-amb-un-element-es-homeomorf-a-lespai-topologic} tenim que~\(\obert{U}\times\{0\}\cong\obert{U}\) i~\(\obert{V}\times\{1\}\cong\obert{V}\), i com que per hipòtesi~\(\obert{U}\) i~\(\obert{V}\) són disjunts tenim que
+%            \[\obert{U}\cup\obert{V}\cong\obert{U}\uniodisjunta\obert{V},\] %REF
+%            i aleshores per la definició d'\myref{def:espai-connex} trobem que no existeixen dos oberts no buits disjunts~\(\obert{U}\) i~\(\obert{V}\) tals que~\(X=\obert{U}\cup\obert{V}\).
+    \end{proof}
+    \begin{example}
+        \label{ex:lespai-amb-la-topologia-grollera-es-connex}
+        Volem veure que un espai topològic~\(X\) amb la topologia grollera.
+        Aleshores~\(X\) és connex.
+    \end{example}
+    \begin{solution}
+        Tenim per l'exemple \myref{ex:topologia-grollera} i la definició de \myref{def:tancat} que els tancats i els oberts de~\(X\) són~\(\emptyset\) i~\(X\).
+        Aleshores per la proposició \myref{prop:condicions-equivalents-a-espai-connex} trobem que~\(X\) és connex.
+    \end{solution}
+    \subsection{Propietats dels espais connexos}
+    \begin{proposition}
+        \label{prop:la-unio-duna-familia-no-disjunta-de-connexos-es-connexa}
+        Siguin~\(X\) un espai topològic i~\(\{\obert{U}_{i}\}_{i\in I}\) una família de subespais topològics connexos de~\(X\) tals que
+        \[
+            \bigcap_{i\in I}\obert{U}_{i}\neq\emptyset.
+        \]
+        Aleshores tenim que
+        \[
+            \obert{U}=\bigcup_{i\in I}\obert{U}_{i}
+        \]
+        és un espai topològic connex.
+    \end{proposition}
+    \begin{proof}
+%            Sigui~\(A\) un subespai obert i tancat de~\(\obert{U}\). Si~\(A=\emptyset\) tenim per la proposició \myref{prop:condicions-equivalents-a-espai-connex} hem acabat. Suposem doncs que~\(A\neq\emptyset\). Aleshores
+    \end{proof}
+    \begin{corollary}
+        \label{cor:la-unio-duna-familia-numerable-de-connexos-no-disjunts-dos-a-dos-es-connexa}
+        Siguin~\(X\) un espai topològic i~\(\{\obert{U}_{i}\}_{i\in\mathbb{N}}\) una família de subespais topològics connexos de~\(X\) tals que
+        \[
+            \obert{U}_{i}\cap\obert{U}_{i+1}\neq\emptyset\quad\text{per a tot }i\in\mathbb{N}.
+        \]
+        Aleshores tenim que
+        \[
+            \obert{U}=\bigcup_{i\in I}\obert{U}_{i}
+        \]
+        és un espai topològic connex.
+    \end{corollary}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{example}
+        \label{ex:els-connexos-en-R-son-els-intervals}
+        Volem veure que un subconjunt de~\(\mathbb{R}\) és connex si i només si és un interval.
+    \end{example}
+    \begin{solution}
+        %TODO
+    \end{solution}
+    \begin{proposition}
+        \label{prop:la-connexio-es-conserva-per-aplicacions-continues}
+        Siguin~\(A\) un subespai connex d'un espai topològic~\(X\) i~\(f\colon X\longrightarrow Y\) una aplicació contínua.
+        Aleshores~\(\Ima_{A}(f)\) és connex.
+    \end{proposition}
+    \begin{proof}
+        %TODO
+%            Considerem l'aplicació
+%            \begin{align*}
+%                g\colon A&\longrightarrow\Ima_{A}(f) \\
+%                g(x)&\longmapsto f(x).
+%            \end{align*}
+%            Per la definició d'\myref{def:imatge-duna-aplicacio} i la definició d'\myref{def:aplicacio-continua} tenim que~\(g\) és contínua. Prenem un subespai~\(S\) de~\(\Ima_{A}(g)\) tal que~\(S\) sigui obert i tancat en~\(\Ima_{A}(g)\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:dos-espais-topologics-son-connexos-si-i-nomes-si-el-seu-producte-cartesia-ho-es}
+        Siguin~\(X\) i~\(Y\) dos espais topològics.
+        Aleshores~\(X\times Y\) és un espai connex si i només si~\(X\) i~\(Y\) són espais connexos.
+    \end{proposition}
+    \begin{proof}
+        Comencem veient que la condició és suficient (\(\implica\)).
+        Suposem doncs que~\(X\times Y\) és un espai connex.
+        Tenim per l'exemple \myref{ex:les-projeccions-en-la-topologia-producte-son-continues-i-obertes} que les projeccions~\(\pi_{X}\) i~\(\pi_{Y}\) són contínues, i per la proposició \myref{prop:la-connexio-es-conserva-per-aplicacions-continues} tenim que~\(X\) i~\(Y\) són connexos.
+
+        Veiem ara que la condició és necessària (\(\implicatper\)).
+        Suposem doncs que~\(X\) i~\(Y\) són espais connexos i fixem un~\(y\) de~\(Y\).
+        Aleshores tenim que
+        \[
+            X\times Y=\bigcup_{x\in X}\left((X\times\{y\})\cup(\{x\}\times Y)\right)
+        \]
+        i per la proposició \myref{prop:la-unio-duna-familia-no-disjunta-de-connexos-es-connexa} hem acabat.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:un-conjunt-inclos-entre-un-connex-i-la-seva-clausura-es-connex}
+        Sigui~\(A\) un subespai connex d'un espai topològic~\(X\) i~\(B\) un conjunt tal que
+        \[
+            A\subseteq B\subseteq\clausura(A).
+        \]
+        Aleshores~\(B\) és connex.
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \subsection{Connexió per camins}
+    \begin{definition}[Camí]
+        \labelname{camí}\label{def:cami}
+        \labelname{origen d'un camí}\label{def:origen-dun-cami}
+        \labelname{final d'un camí}\label{def:final-dun-cami}
+        Siguin~\(X\) un espai topològic i~\(\omega\colon[0,1]\longrightarrow X\) una aplicació contínua.
+        Aleshores direm que~\(\omega\) és un camí.
+
+        També direm que~\(\omega(0)\) és l'origen del camí i~\(\omega(1)\) el final del camí.
+    \end{definition}
+    \begin{definition}[Connex per camins]
+        \labelname{connexió per camins}\label{def:connexio-per-camins}
+        Sigui~\(X\) un espai topològic tal que per a tots dos punts~\(x\) i~\(y\) de~\(X\) existeix un camí~\(\omega\) tal que~\(x\) és l'origen de~\(\omega\) i~\(y\) és el final de~\(\omega\).
+        Aleshores direm que~\(X\) és connex per camins.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:els-connexos-per-camins-son-connexos}
+        Sigui~\(X\) un espai topològic connex per camins.
+        Aleshores~\(X\) és connex.
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{example}
+        \label{ex:no-tots-els-espais-connexos-son-connexos-per-camins}
+        Volem veure que no tots els espais connexos són connexos per camins.
+    \end{example}
+    \begin{solution}
+        %TODO
+    \end{solution}
+    \subsection{Components connexos d'un espai}
+    \begin{proposition}
+        \label{prop:components-connexos}
+        Sigui~\(X\) un espai topològic i~\(\sim\) una relació sobre~\(X\) tal que~\(x\sim y\) si i només si existeix un subespai~\(C\) connex de~\(X\) tal que~\(x\) i~\(y\) pertanyen a~\(C\).
+        Aleshores~\(\sim\) és una relació d'equivalència.
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{definition}[Components connexos]
+        \labelname{components connexos}\label{def:compontents-connexos}
+        Siguin~\(X\) un espai topològic i~\(\sim\) una relació sobre~\(X\) tal que~\(x\sim y\) si i només si existeix un subespai~\(C\) connex de~\(X\) tal que~\(x\) i~\(y\) pertanyen a~\(C\).
+        Aleshores direm que les classes d'equivalència de~\(\sim\) són components connexos de~\(X\).
+
+        Denotarem~\(\overline{x}\) com~\(\componentconnex(x)\).
+
+        Aquesta definició té sentit per la proposició \myref{prop:components-connexos}.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:el-component-connex-dun-punt-es-la-unio-dels-connexos-que-el-contenen}
+        Sigui~\(x\) un punt d'un espai topològic~\(X\).
+        Aleshores
+        \[
+            \componentconnex(x)=\bigcup_{\substack{x\in C\\C\text{ és connex}}}C.
+        \] % Kern
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}
+        \label{prop:el-component-connex-dun-punt-es-connex}
+        Sigui~\(x\) un punt d'un espai topològic~\(X\).
+        Aleshores~\(\componentconnex(x)\) és connex.
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}
+        \label{prop:el-component-connex-dun-punt-conte-tots-els-connexos-que-contenen-el-punt}
+        Siguin~\(x\) un punt d'un espai topològic~\(X\) i~\(C\) un connex que conté~\(x\).
+        Aleshores~\(C\) és un subconjunt de~\(\componentconnex(x)\).
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}
+        \label{prop:els-components-connexos-son-disjunts}
+        Siguin~\(x\) i~\(y\) dos punts d'un espai topològic~\(X\) tals que~\(\componentconnex(x)\neq\componentconnex(y)\).
+        Aleshores~\(\componentconnex(x)\cap\componentconnex(y)=\emptyset\).
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}
+        \label{prop:un-component-connex-es-un-tancat}
+        Sigui~\(x\) un punt d'un espai topològic~\(X\).
+        Aleshores~\(\componentconnex(x)\) és un tancat.
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+
+
+    \begin{comment}
+\section{Espai d'Alexandroff}
+    \subsection{Propietats bàsiques}
+    \begin{definition}[Topologia d'Alexandroff]
+        \labelname{topologia d'Alexandroff}\label{def:topologia d'Alexandroff}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic tal que per a tota família d'oberts~\(\{\obert{U}_{i}\}_{i\in I}\) de~\(X\) tenim que
+        \[
+            \bigcap_{i\in I}\obert{U}_{i}
+        \]
+        és un obert de~\(X\).
+        Aleshores direm que~\(\tau\) és una topologia d'Alexandroff o que~\(X\) amb~\(\tau\) és un espai topològic d'Alexandroff.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:els espais topològics finits són d'Alexandroff}
+        Siguin~\(X\) amb la topologia~\(\tau\) un espai topològic amb~\(X\) finit.
+        Aleshores~\(\tau\) és una topologia d'Alexandroff.
+    \end{proposition}
+    \begin{proof}
+        Com que~\(X\) és finit tenim que~\(\mathcal{P}(X)\) és finit, i com que~\(\tau\) és, per la definició de \myref{def:topologia}, un subconjunt de~\(\mathcal{P}(X)\) trobem que~\(\tau\) és finit.
+        %REF
+
+        Sigui~\(\{\obert{U}_{i}\}_{i\in I}\) una família d'oberts de~\(X\) i definim
+        \[
+            \obert{U}=\bigcap_{i\in I}\obert{U}_{i}.
+        \]
+        Tenim que~\(\{\obert{U}_{i}\}_{i\in I}\) és un subconjunt de~\(\tau\), i tenim també que~\(\tau\) és finit, per tant~\(\{\obert{U}_{i}\}_{i\in I}\) ha de ser finit i per tant existeix un natural~\(n\) tal que~\(\{\obert{U}_{i}\}_{i\in I}=\{\obert{U}_{i}\}_{i=1}^{n}\), i per la definició de \myref{def:topologia} hem acabat.
+    \end{proof}
+    \end{comment}
+%
+%    \begin{definition}[Aplicació contínua i homeomorfisme]
+%        \labelname{aplicació contínua}\label{def:aplicacio-continua}
+%        \labelname{homeomorfisme}\label{def:homeomorfisme topo}
+%        Siguin~\(X\) amb~\(\tau\) i~\(X'\) amb~\(\tau'\) dos espais topològics i~\(f\colon X\longrightarrow X'\) una aplicació tal que per a tot obert~\(\obert{U}\) de~\(X'\) tenim que el conjunt
+%        \[f^{-1}(\obert{U})=\{x\in X\mid f(x)\in\obert{U}\}\]
+%        és un obert de~\(X\). Aleshores direm que~\(f\) és una aplicació contínua.
+%
+%        Si~\(f\) és invertible i la seva inversa és una aplicació contínua direm que~\(f\) és un homeomorfisme.
+%    \end{definition}
+%    \begin{observation}
+%        \label{obs:les funcions contínues són aplicacions contínues}
+%        Sigui~\(f\) una funció contínua. Aleshores~\(f\) és una aplicació contínua. %Proof?
+%    \end{observation}
+%    \begin{proposition}
+%        Siguin~\(X_{1}\) amb la topologia~\(\tau_{1}\),~\(X_{2}\) amb la topologia~\(\tau_{2}\) i~\(X_{3}\) amb la topologia~\(\tau_{3}\) tres espais topològics i~\(f\colon X_{1}\longrightarrow X_{2}\) i~\(g\colon X_{2}\longrightarrow X_{3}\) dues aplicacions contínues. Aleshores l'aplicació
+%        \begin{align*}
+%            h\colon X_{1}&\longrightarrow X_{3} \\
+%            x&\longmapsto f(g(x))
+%        \end{align*}
+%        és una aplicació contínua.
+%        \begin{proof}
+%
+%        \end{proof}
+%    \end{proposition}
+
+%    \begin{theorem}
+%        Siguin~\(X\) amb la distància~\(\distancia\) i~\(X'\) amb la distància~\(\distancia'\) dos espais mètrics i~\(f\colon X\longrightarrow X'\) una funció. Aleshores~\(f\) és contínua si i només si per a tot~\(\obert{U}\) obert de~\(X'\) tenim que~\(\Ima_{\obert{U}}(f^{-1})\) és obert.
+%        \begin{proof}
+%            Veiem primer que la condició és necessària (\(\implica\)). Suposem doncs que~\(f\) és contínua. Prenem un obert~\(\obert{U}\) de~\(X'\) i un element~\(y\) de~\(X'\) tal que~\(f^{-1}(y)\in\Ima_{\obert{U}}(f^{-1})\), i denotem~\(x=f^{-1}(y)\). Per la definició d'\myref{def:obert-espai-metric} tenim que existeix un nombre real~\(\varepsilon>0\) tal que~\(\bola(y,\varepsilon)\subset\Ima_{\obert{U}}(f^{-1})\).
+%
+%            Prenem un element~\(x'\) de~\(\bola(y,\varepsilon)\). Per la definició de \myref{def:bola} tenim que~\(\distancia(x,x')<\varepsilon\), i per la definició de \myref{def:funcio-continua} tenim que existeix un~\(\delta>0\) real tal que~\(\distancia'(f(x'),y)<\varepsilon\), i per la definició de \myref{def:bola} això és que~\(f(x')\in\bola(y,\varepsilon)\). Per tant tenim que~\(\Ima_{\bola(x,\delta)}(f)\subset\bola(y,\varepsilon)\) i trobem que~\(\bola(x,\delta)\subset\Ima_{\obert{U}}(f^{-1})\), i per la definició d'\myref{def:obert-espai-metric} trobem que~\(\Ima_{\obert{U}}(f^{-1})\) és un obert, com volíem veure.
+%
+%            Veiem ara que la condició és suficient (\(\implicatper\)). Suposem doncs que per a tot~\(\obert{U}\) obert de~\(X'\) tenim que~\(\Ima_{\obert{U}}(f^{-1})\) és obert.
+%
+%            Prenem un element~\(xy\) de~\(X\) i un real~\(\varepsilon>0\). Si denotem~\(y=f(x)\) tenim, per la proposició \myref{prop:les-boles-son-oberts}, que la bola~\(\bola(y,\varepsilon)\) és un obert. Per hipòtesi tenim que~\(\Ima_{\bola(y,\varepsilon)}(f^{-1})\) és un obert, i per la definició d'\myref{def:obert-espai-metric} tenim que existeix un nombre real~\(\delta>0\) tal que~\(\bola(x,\delta)\subset\Ima_{\bola(y,\varepsilon)}(f^{-1})\).
+%
+%            Ara bé, per la definició de \myref{def:bola} tenim que això és que per a tot~\(x_{0}\) de~\(x\) amb~\(\distancia'(y,f(x_{0}))<\varepsilon\) tenim que~\(\distancia(x,x_{0})<\delta\), i per tant, per la definició de \myref{def:funcio-continua} tenim que~\(f\) és contínua.
+%        \end{proof}
+%    \end{theorem}
+
+%    \begin{definition}[El conjunt de Cantor]
+%        \labelname{conjunt de Cantor}\label{def:conjunt de Cantor}
+%        Siguin
+%        \[X_{1}=\left(\frac{1}{3},\frac{2}{3}\right)\quad\text{i}\quad I_{1}=[0,1]\setminus X_{1}.\]
+%        Definim
+%        \[X_{n+1}=X_{n}\cup\left(\bigcup_{i=0}^{3^{n}-1}\left(\frac{1+3i}{3^{n+1}},\frac{2+3i}{3^{n+1}}\right)\right)\]
+%        i~\(I_{n+1}=[0,1]\setminus X_{n+1}\). Aleshores direm que
+%        \[C=\bigcap_{i=0}^{\infty}I_{n}\]
+%        és el conjunt de Cantor.
+%    \end{definition}
+
+%    \subsection{Varietats}
+%    \subsection{Teorema de classificació de les superfícies compactes}
+
+\end{document}
