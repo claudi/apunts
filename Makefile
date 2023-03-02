@@ -14,7 +14,7 @@ main.pdf: main.tex $(classes) $(assets) main.bbl main.ind main.gls
 	pdflatex $(flags) $<
 
 .PHONY: draft
-draft: main.tex $(classes)
+draft: main.tex $(classes) $(assets)
 	pdflatex $(flags) $(draft) "\newcommand{\myref}[1]{\ref{#1}}\input{$<}"
 
 .PHONY: clean
