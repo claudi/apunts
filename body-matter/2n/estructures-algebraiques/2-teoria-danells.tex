@@ -1,0 +1,1664 @@
+\documentclass[../estructures-algebraiques.tex]{subfiles}
+
+\begin{document}
+\chapter{Teoria d'anells}
+\section{Anells}
+    \subsection{Propietats bàsiques dels anells i subanells}
+    \begin{definition}[Anell]
+        \labelname{anell}
+        \label{def:anell}
+        \labelname{anell commutatiu}
+        \label{def:anell-commutatiu}
+        \labelname{anell i element neutre pel producte}
+        \label{def:anell-i-element-neutre-pel-producte}
+        Sigui~\(R\) un conjunt no buit i
+        \[
+            +\colon R\times R\longrightarrow R\qquad\qquad\quad\cdot\colon R\times R\longrightarrow R
+        \]
+        dues operacions que satisfan
+        \begin{enumerate}
+            \item~\(R\) amb l'operació~\(+\) és un grup abelià.
+            \item Existeix un element~\(e\) de~\(R\) tal que~\(x\cdot e=e\cdot x=x\) per a tot~\(x\in R\).
+            \item Per a tot~\(x,y,z\in R\) tenim
+            \[
+                x\cdot(y\cdot z)=(x\cdot y)\cdot z.
+            \]
+            \item Per a tot~\(x,y,z\in R\) tenim
+            \[
+                x\cdot(y+z)=x\cdot y+x\cdot z\quad\text{i}\quad(x+y)\cdot z=x\cdot z+y\cdot z.
+            \]
+        \end{enumerate}
+        Aleshores direm que~\(R\) és un anell amb la suma~\(+\) i el producte~\(\cdot\).
+        També direm que~\(R\) és un anell amb element neutre pel producte~\(e\).
+
+        Si per a tot~\(x,y\in R\) tenim~\(x\cdot y=y\cdot x\) direm que~\(R\) és un anell commutatiu.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:unicitat-neutre-del-producte-anell}
+        Sigui~\(R\) un anell amb element neutre pel producte~\(e\).
+        Aleshores l'element neutre pel producte de~\(R\) és únic.
+    \end{proposition}
+    \begin{proof}
+        Sigui~\(\cdot\) el producte de~\(R\).
+        Suposem que existeix un altre~\(e'\) tal que~\(x\cdot e'=e'\cdot x=x\) per a tot~\(x\in R\).
+        Aleshores tindríem
+        \[
+            e\cdot e'=e'\cdot e=e
+        \]
+        a la vegada que
+        \[
+            e\cdot e'=e'\cdot e=e'
+        \]
+        i per tant ha de ser~\(e=e'\) i tenim que aquest és únic.
+    \end{proof}
+    \begin{definition}[Elements neutres d'un anell]
+        \labelname{l'element neutre d'un anell per la suma}
+        \label{def:lelement-neutre-dun-anell-per-la-suma}
+        \labelname{l'element neutre d'un anell pel producte}
+        \label{def:lelement-neutre-dun-anell-pel-producte}
+        Sigui~\(R\) un anell.
+        Aleshores direm que~\(0_{R}\) és l'element neutre de~\(R\) per la suma i~\(1_{R}\) és l'element neutre de~\(R\) pel producte i els denotarem per~\(0_{R}\) i~\(1_{R}\), respectivament.
+
+        Aquesta definició té sentit per la proposició \myref{prop:unicitat-neutre-del-grup} i la proposició \myref{prop:unicitat-neutre-del-producte-anell}.
+    \end{definition}
+    \begin{notation}
+        Donat un anell~\(R\) un anell amb el producte~\(\cdot\).
+        Aleshores escriurem
+        \[
+            (x_{1}\cdot x_{2})\cdot x_{3}=x_{1}\cdot x_{2}\cdot x_{3}.
+        \]
+
+        Això té sentit per la definició d'\myref{def:anell}.
+        També, si el context ho permet (quan treballem amb un únic anell~\(R\)), denotarem~\(1_{R}=1\) i~\(0_{R}=0\).
+    \end{notation}
+    %EXPLICAR notació aditiva pel -a inversa de a per la suma.
+    \begin{proposition}
+        \label{prop:propietats-basiques-anells}
+        Sigui~\(R\) un anell amb la suma~\(+\) i el producte~\(\cdot\).
+        Aleshores per a tot~\(a,b,c\in R\) tenim
+        \begin{enumerate}
+            \item\label{enum:prop:propietats-basiques-anells-1}~\(0\cdot a=a\cdot0=0\).
+            \item\label{enum:prop:propietats-basiques-anells-2}~\((-1)\cdot a=a\cdot(-1)=-a\).
+            \item\label{enum:prop:propietats-basiques-anells-3}~\((-a)\cdot(-b)=a\cdot b\).
+            \item\label{enum:prop:propietats-basiques-anells-4}~\((-a)\cdot b=a\cdot(-b)=-(a\cdot b)\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        Comprovem el punt \eqref{enum:prop:propietats-basiques-anells-1}.
+        Només veurem que~\(0\cdot a=0\) ja que l'altre demostració és anàloga.
+        Com que~\(0=0+0\) per la definició de \myref{def:lelement-neutre-dun-anell-per-la-suma}, per la definició d'\myref{def:anell} tenim que
+        \begin{align*}
+        0\cdot a&=(0+0)\cdot a\\
+        &=0\cdot a+0\cdot a
+        \end{align*}
+        i per tant, per la definició de \myref{def:grup}
+        \[
+            0\cdot a-(0\cdot a)=0\cdot a+0\cdot a-(0\cdot a)
+        \]
+        d'on veiem
+        \[
+            0\cdot a=0,
+        \]
+        com volíem veure.
+
+        Veiem ara el punt \eqref{enum:prop:propietats-basiques-anells-2}.
+        Per la definició d'\myref{def:anell} tenim
+        \[
+            1\cdot a+(-1)\cdot a=(1-1)\cdot a\quad\text{i}\quad(-1)\cdot a+1\cdot a=(-1+1)\cdot a
+        \]
+        i per tant, com que~\(1-1=-1+1=0\) per la definició de \myref{def:lelement-neutre-dun-anell-per-la-suma}, tenim que~\(a+(-1)\cdot a=(-1)\cdot a+a=0\), però per la proposició \myref{prop:unicitat-inversa-en-grups} tenim que~\((-1)\cdot a=-a\).
+        L'altre igualtat és anàloga.
+
+        Continuem veient el punt \eqref{enum:prop:propietats-basiques-anells-3}.
+        Pel punt \eqref{enum:prop:propietats-basiques-anells-2} tenim que
+        \[
+            (-a)\cdot(-b)=a\cdot (-1)\cdot(-1)\cdot b.
+        \]
+        Ara bé, pel punt \eqref{enum:prop:propietats-basiques-anells-2} de nou tenim que~\((-1)\cdot(-1)=-(-1)\), i per la proposició \myref{prop:grups:linvers-de-linvers-dun-element-es-lelement} tenim que~\(-(-1)=1\) i per tant
+        \[
+            (-a)\cdot(-b)=a\cdot b.
+        \]
+
+        Per veure el punt \eqref{enum:prop:propietats-basiques-anells-4} només veurem que~\((-a)\cdot b=-(a\cdot b)\) ja que l'altre demostració és anàloga.
+        Pel punt \eqref{enum:prop:propietats-basiques-anells-2} tenim que
+        \[
+            -(a\cdot b)=(-1)\cdot(a\cdot b)\quad{\text{i}}\quad(-a)\cdot b=(-1)\cdot a\cdot b.
+        \]
+        Ara bé, per la definició d'\myref{def:anell}
+        \[
+            (-1)\cdot a\cdot b-(-1)\cdot(a\cdot b)=(-1-(-1))\cdot(a\cdot b),
+        \]
+        i per la proposició \myref{prop:grups:linvers-de-linvers-dun-element-es-lelement} tenim que~\(-(-1)=1\) i per tant, per la definició de \myref{def:grup} tenim~\(-1+1=0\) i trobem
+        \[
+            (-1)\cdot a\cdot b-(-1)\cdot(a\cdot b)=0\cdot(a\cdot b)=0,
+        \]
+        i podem veure també que
+        \[
+            (-1)\cdot(a\cdot b)-(-1)\cdot a\cdot b=0
+        \]
+        de manera anàloga.
+        Aleshores, per la proposició \myref{prop:unicitat-inversa-en-grups} tenim que
+        \[
+            (-a)\cdot b=-(a\cdot b),
+        \]
+        com volíem veure.
+    \end{proof}
+    \begin{proposition}
+        \label{prop:unicitat-invers-en-anells}
+        Siguin~\(R\) un anell amb el producte~\(\cdot\) i~\(a\) un element de~\(R\) tal que existeixi~\(b\in R\) que satisfaci
+        \[
+            a\cdot b=b\cdot a=1.
+        \]
+        Aleshores~\(b\) és únic.
+    \end{proposition}
+    \begin{proof}
+        Suposem que existeix un altre element~\(b'\in R\) tal que
+        \[
+            a\cdot b'=b'\cdot a=1.
+        \]
+        Aleshores tenim
+        \[
+            a\cdot b=a\cdot b'
+        \]
+        i per tant
+        \[
+            b\cdot a\cdot b=b\cdot a\cdot b'
+        \]
+        i com que per hipòtesi~\(b\cdot a=1\) per la definició de \myref{def:lelement-neutre-dun-anell-pel-producte} trobem
+        \[
+            b=b'.\qedhere
+        \]
+    \end{proof}
+    \begin{definition}[Element invertible]
+        \labelname{element invertible}
+        \label{def:element-invertible-pel-producte-dun-anell}
+        Siguin~\(R\) un anell amb el producte~\(\cdot\) i~\(x\) un element de~\(R\) tal que existeixi~\(x'\in R\) tals que
+        \[
+            x\cdot x'=x'\cdot x=1.
+        \]
+        Aleshores direm que~\(x\) és invertible o que~\(x\) és un element invertible de~\(R\).
+    \end{definition}
+    \begin{definition}[L'invers d'un element]
+        \labelname{l'invers d'un element invertible}
+        \label{def:linvers-dun-element-dun-anell}
+        Siguin~\(R\) un anell amb el producte~\(\cdot\) i~\(x\) un element invertible de~\(R\).
+        Aleshores denotarem per~\(x^{-1}\) l'element de~\(R\) tal que
+        \[
+            x\cdot x^{-1}=x^{-1}\cdot x=1.
+        \]
+        Direm que~\(x^{-1}\) és l'invers de~\(x\).
+
+        Aquesta definició té sentit per la proposició \myref{prop:unicitat-invers-en-anells}.
+    \end{definition}
+    \begin{definition}[Subanell]
+        \labelname{subanell}
+        \label{def:subanell}
+        Siguin~\(R\) un anell amb la suma~\(+\) i el producte~\(\cdot\) i~\(S\subseteq R\) un subconjunt amb~\(1\in S\) tal que per a tot~\(a,b\in S\) tenim~\(a\cdot b,a+b\in S\) i~\(S\) un anell amb la suma~\(+\) i el producte~\(\cdot\).
+        Aleshores direm que~\(S\) és un subanell de~\(R\)
+
+        Ho denotarem amb~\(S\leq R\).
+    \end{definition}
+    \subsection{Ideals i ideals principals} % completar dividir lol
+    \begin{definition}[Ideal]
+        \labelname{ideal d'un anell}
+        \label{def:ideal-dun-anell}
+        Siguin~\(R\) un anell commutatiu amb la suma~\(+\) i el producte~\(\cdot\) amb~\(1\neq0\) i~\(I\) un subconjunt no buit de~\(R\) tal que~\(I\) sigui un subgrup del grup~\(R\) amb la suma~\(+\) i tal que per a tot~\(x\in I\),~\(r\in R\) tenim~\(r\cdot x\in I\).
+        Aleshores direm que~\(I\) és un ideal de~\(R\).
+    \end{definition}
+    \begin{observation}
+        \label{obs:lelement-neutre-per-la-suma-pertany-a-lideal}
+        \(0\in I\).
+    \end{observation}
+    \begin{notation}
+        Si~\(I\) és un ideal d'un anell~\(R\) denotarem~\(I\triangleleft R\).
+    \end{notation}
+    \begin{proposition}
+        \label{prop:condicio-equivalent-a-ideal-dun-anell}
+        Siguin~\(R\) un anell commutatiu amb la suma~\(+\) i el producte~\(\cdot\) amb~\(1\neq0\) i~\(I\) un subconjunt no buit de~\(R\).
+        Aleshores tenim que~\(I\) és un ideal de~\(R\) si i només si
+        \begin{enumerate}
+            \item Per a tot~\(x,y\in I\) tenim~\(x-y\in I\).
+            \item Per a tot~\(r\in R\),~\(x\in I\) tenim~\(r\cdot x\in I\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        Veiem que la condició és suficient (\(\implica\)).
+        Suposem que~\(I\) és un ideal de~\(R\).
+        Hem de veure que per a tot~\(x,y\in I\),~\(r\in R\) tenim~\(x-y\in I\) i~\(r\cdot x\in I\).
+        Per la definició de \myref{def:grup} tenim que~\(x-y\in I\), ja que, per la definició d'\myref{def:ideal-dun-anell} tenim que~\(I\) és un grup amb la suma~\(+\).
+        També trobem~\(r\cdot x\in I\) per la definició d'\myref{def:ideal-dun-anell}.
+
+        Veiem ara que la condició és necessària (\(\implicatper\)).
+        Suposem que per a tot~\(x,y\in I\),~\(r\in R\) tenim~\(x-y\in I\) i~\(r\cdot x\in I\).
+        Per la proposició \myref{prop:condicio-equivalent-a-subgrup} tenim que~\(I\) és un subgrup del grup~\(R\) amb la suma~\(+\), i per la definició d'\myref{def:ideal-dun-anell} tenim que~\(I\) és un ideal de~\(R\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:combinacio-dideals-per-obtenir-ideals}
+        Siguin~\(I,J\) dos ideals d'un anell~\(R\) amb la suma~\(+\) i el producte~\(\cdot\).
+        Aleshores els conjunts
+        \begin{enumerate}
+            \item\label{enum:prop:combinacio-dideals-per-obtenir-ideals-1}~\(I+J=\{x+y\mid x\in I, y\in J\}\).
+            \item\label{enum:prop:combinacio-dideals-per-obtenir-ideals-2}~\(I\cap J\).
+            \item\label{enum:prop:combinacio-dideals-per-obtenir-ideals-3}~\(IJ=\{x_{1}\cdot y_{1}+\dots x_{n}\cdot y_{n}\mid x_{1},\dots,x_{n}\in I, y_{1},\dots,y_{n}\in J, n\in\mathbb{N}\}\).
+        \end{enumerate}
+        són ideals de~\(R\).
+    \end{proposition}
+    \begin{proof}
+        Comencem demostrant el punt \eqref{enum:prop:combinacio-dideals-per-obtenir-ideals-1}.
+        Per la proposició \myref{prop:condicio-equivalent-a-ideal-dun-anell} només ens cal veure que per a tot~\(a,b\in I+J\),~\(r\in R\) tenim~\(a-b\in I+J\) i~\(r\cdot a\in I+J\).
+        Prenem doncs~\(a,b\in I+J\).
+        Aleshores tenim~\(a=a_{1}+a_{2}\) i~\(b=b_{1}+b_{2}\) per a certs~\(a_{1},b_{1}\in I\) i~\(a_{2}, b_{2}\in J\).
+        Volem veure que~\(a-b\in I+J\).
+        Això és
+        \begin{align*}
+        a_{1}+a_{2}-(b_{1}+b_{2})&=a_{1}+a_{2}-b_{1}-b_{2}\tag{\myref{prop:propietats-basiques-anells}}\\
+        &=(a_{1}-b_{1})+(a_{2}-b_{2})\tag{\myref{def:grup-abelia}}
+        \end{align*}
+        i com que, per hipòtesi,~\(I,J\) són ideals de~\(R\) per la proposició \myref{prop:condicio-equivalent-a-ideal-dun-anell} tenim que~\(a_{1}-b_{1}\in I\) i~\(a_{2}-b_{2}\in J\), i per tant~\(a-b=(a_{1}-b_{1})+(a_{2}-b_{2})\in I+J\).
+
+        Veiem ara que per a tot~\(r\in R\) es satisfà~\(r\cdot a\in I+J\).
+        Tenim
+        \begin{align*}
+        r\cdot a&=r\cdot(a_{1}+a_{2})\tag{\myref{def:anell}}\\
+        &=r\cdot a_{1}+r\cdot a_{2}\tag{\myref{def:anell}}
+        \end{align*}
+        i per la proposició \myref{prop:condicio-equivalent-a-ideal-dun-anell} tenim que~\(r\cdot a_{1}\in I\) i~\(r\cdot a_{2}\in J\), i per tant~\(r\cdot a=r\cdot a_{1}+r\cdot a_{2}\in I+J\).
+        Aleshores per la proposició \myref{prop:condicio-equivalent-a-ideal-dun-anell} tenim que~\(I+J\) és un ideal de l'anell~\(R\).
+
+        Veiem ara el punt \eqref{enum:prop:combinacio-dideals-per-obtenir-ideals-2}.
+        Per la proposició \myref{prop:condicio-equivalent-a-ideal-dun-anell} només ens cal veure que per a tot~\(a,b\in I\cap J\),~\(r\in R\)  tenim~\(a-b\in I\cap J\) i~\(r\cdot a\in I\cap J\).
+        Prenem doncs~\(a,b\in I\cap J\), i per tant~\(a,b\in I\) i~\(a,b\in J\), i per la proposició \myref{prop:condicio-equivalent-a-ideal-dun-anell} tenim que~\(a-b\in I\) i~\(a-b\in J\), i tenim que~\(a-b\in I\cap J\).
+
+        Per veure que~\(r\cdot a\in I\cap J\) per a tot~\(r\in R\) tenim per la definició d'\myref{def:ideal-dun-anell} que~\(r\cdot a\in I\) i~\(r\cdot a\in J\), i per tant~\(r\cdot a\in I\cap J\) i per la proposició \myref{prop:condicio-equivalent-a-ideal-dun-anell}~\(I\cap J\) és un ideal de~\(R\).
+
+        Acabem veient el punt \eqref{enum:prop:combinacio-dideals-per-obtenir-ideals-3}.
+        Per la proposició \myref{prop:condicio-equivalent-a-ideal-dun-anell} només ens cal veure que per a tot~\(a,b\in IJ\),~\(r\in R\)  tenim~\(a-b\in IJ\) i~\(r\cdot a\in IJ\).
+        Prenem doncs~\(a,b\in IJ\), i tenim que~\(a=x_{1}\cdot y_{1}+\dots+x_{n}\cdot y_{n}\),~\(b=x'_{1}\cdot y'_{1}+\dots+x'_{m}\cdot y'_{m}\) per a certs~\(x_{1},\dots,x_{n},x'_{1},\dots,x'_{m}\in I\),~\(y_{1},\dots,y_{n},y'_{1},\dots,y'_{m}\in J\).
+        Per veure que~\(a-b\in IJ\) fem, per la proposició \myref{prop:propietats-basiques-anells},
+        \begin{multline*}
+        a-b=x_{1}\cdot y_{1}+\dots+x_{n}\cdot y_{n}-(x'_{1}\cdot y'_{1}+\dots+x'_{m}\cdot y'_{m})=\\
+        =x_{1}\cdot y_{1}+\dots+x_{n}\cdot y_{n}-x'_{1}\cdot y'_{1}-\dots-x'_{m}\cdot y'_{m}
+        \end{multline*}
+        i com que~\(I\) és, per hipòtesi, un anell, per les proposicions \myref{prop:propietats-basiques-anells} i \myref{prop:condicio-equivalent-a-ideal-dun-anell} tenim que~\(-x'_{1},\dots,-x'_{m}\in I\) i~\(a-b=x_{1}\cdot y_{1}+\dots+x_{n}\cdot y_{n}-x'_{1}\cdot y'_{1}-\dots-x'_{m}\cdot y'_{m}\in IJ\).
+
+        Veiem ara que per a tot~\(r\in R\) es satisfà~\(r\cdot a\in I\).
+        Això és
+        \begin{align*}
+        r\cdot a&=r\cdot(x_{1}\cdot y_{1}+\dots+x_{n}\cdot y_{n})\\
+        &=r\cdot x_{1}\cdot y_{1}+\dots+r\cdot x_{n}\cdot y_{n}\tag{\myref{prop:propietats-basiques-anells}}
+        \end{align*}
+        i com que~\(I\) és, per hipòtesi, un anell, per les proposicions \myref{prop:propietats-basiques-anells} i \myref{prop:condicio-equivalent-a-ideal-dun-anell} tenim que~\(r\cdot x_{1},\dots,r\cdot x_{n}\in I\), i per tant~\(r\cdot a=r\cdot x_{1}\cdot y_{1}+\dots+r\cdot x_{n}\cdot y_{n}\in IJ\) i per la proposició \myref{prop:condicio-equivalent-a-ideal-dun-anell} tenim que~\(IJ\) és un ideal de~\(R\).
+    \end{proof}
+    \begin{definition}[Ideal principal]
+        \labelname{ideal principal}
+        \label{def:ideal-principal}
+        Sigui~\(I\) un ideal d'un anell~\(R\) amb el producte~\(\cdot\) tal que~\(I=\{a\}R=R\{a\}=\{r\cdot a\mid r\in R\}\) per a cert~\(a\in I\).
+        Aleshores direm que~\(I\) és un anell principal de~\(R\).
+        Ho denotarem amb~\(I=(a)\).
+    \end{definition}
+    \begin{notation}
+        Si~\((a)\) és un ideal principal d'un anell~\(R\) denotarem~\((a)\trianglelefteq R\).
+    \end{notation}
+    \subsection{Cossos i l'anell quocient}
+    \begin{definition}[Cos] % Refer amb la definició de cos nova
+        \labelname{cos}
+        \label{def:cos-per-anells}
+        Sigui~\(\mathbb{K}\) un anell commutatiu amb la suma~\(+\) i el producte~\(\cdot\) amb~\(1\neq0\) tal que~\(\mathbb{K}\setminus\{0\}\) sigui un grup abelià amb el producte~\(\cdot\).
+        Aleshores direm que~\(\mathbb{K}\) és un cos amb la suma~\(+\) i el producte~\(\cdot\).
+    \end{definition}
+    \begin{proposition}
+        \label{prop:condicio-equivalent-a-cos-per-anells}
+        Sigui~\(\mathbb{K}\) un anell commutatiu amb~\(1\neq0\).
+        Aleshores tenim que~\(\mathbb{K}\) és un cos si i només si els únics ideals de~\(\mathbb{K}\) són~\((0)\) i~\(\mathbb{K}\).
+    \end{proposition}
+    \begin{proof}
+        Siguin~\(+\) la suma de~\(R\) i~\(\cdot\) el producte de~\(R\).
+        Comencem comprovant que la condició és suficient (\(\implica\)).
+        Suposem doncs que~\(\mathbb{K}\) és un cos amb la suma~\(+\) i el producte~\(\cdot\) i que~\(I\) és un ideal de~\(\mathbb{K}\) amb~\(I\neq(0)\), i per tant existeix~\(a\in\mathbb{K}\),~\(a\neq0\) tal que~\(a\in I\).
+        Com que, per hipòtesi,~\(\mathbb{K}\setminus\{0\}\) és un grup amb l'operació~\(\cdot\) i~\(a\ne0\) per la definició de \myref{def:linvers-dun-element-dun-grup} existeix~\(a^{-1}\in\mathbb{K}\) tal que~\(a\cdot a^{-1}=1\), i per la definició d'\myref{def:ideal-dun-anell} trobem que~\(1\in I\), i per tant per la proposició \myref{prop:condicio-equivalent-a-ideal-dun-anell} tenim que per a tot~\(x\in\mathbb{K}\) tenim~\(x\cdot1=x\in I\), i per tant~\(I=\mathbb{K}\).
+
+        Veiem ara que la condició és necessària (\(\implicatper\)).
+        Suposem que els únics ideals de~\(\mathbb{K}\) són~\((0)\) i~\(\mathbb{K}\).
+        Prenem un element~\(a\in\mathbb{K}\),~\(a\neq0\) i considerem l'ideal principal~\((a)\), que per hipòtesi ha de ser~\((a)=(1)=\mathbb{K}\), i per la definició d'\myref{def:ideal-principal} tenim que existeix~\(a'\in(1)\) tal que~\(a\cdot a'=1\), i per tant, per la definició de \myref{def:grup} tenim que~\(\mathbb{K}\setminus\{0\}\) és un grup amb el producte~\(\cdot\) i per la definició de \myref{def:cos-per-anells} tenim que~\(\mathbb{K}\) és un cos amb la suma~\(+\) i el producte~\(\cdot\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:relacio-dequivalencia-en-anells-per-ideals}
+        Sigui~\(I\) un ideal d'un anell~\(R\) amb la suma~\(+\).
+        Aleshores la relació
+        \[
+            x\sim y\sii x-y\in I\quad\text{per a tot }x,y\in R
+        \]
+        és una relació d'equivalència.
+    \end{proposition}
+    \begin{proof}
+        Sigui~\(\cdot\) el producte de~\(R\).
+        Comprovem que~\(\sim\) satisfà la definició de \myref{def:relacio-dequivalencia}:
+        \begin{enumerate}
+            \item Reflexiva: Prenem~\(x\in R\).
+            Per l'observació \myref{obs:lelement-neutre-per-la-suma-pertany-a-lideal} tenim que~\(0\in I\), i per tant~\(x-x=0\in I\) i veiem que~\(x\sim x\).
+            \item Simètrica: Siguin~\(x_{1},x_{2}\in I\) tals que~\(x_{1}\sim x_{2}\).
+            Això és que~\(x_{1}-x_{2}\in I\).
+            Per la definició d'\myref{def:ideal-dun-anell} tenim que~\((-1)\cdot(x_{1}-x_{2})\in I\), i per la proposició \myref{prop:propietats-basiques-anells} tenim que~\(x_{2}-x_{1}\in I\), és a dir,~\(x_{2}\sim x_{1}\).
+            \item Transitiva: Siguin~\(x_{1},x_{2},x_{3}\in R\) tals que~\(x_{1}\sim x_{2}\) i~\(x_{2}\sim x_{3}\).
+            Per la definició d'\myref{def:ideal-dun-anell} tenim que~\(x_{3}-x_{2}\in I\), i per la proposició \myref{prop:condicio-equivalent-a-ideal-dun-anell} tenim que~\(x_{1}-x_{2}-(x_{3}-x_{2})\in I\).
+            Ara bé, per la proposició \myref{prop:propietats-basiques-anells} tenim que això és~\(x_{1}-x_{3}\in I\), i per tant~\(x_{1}\sim x_{3}\).
+        \end{enumerate}
+        Per tant~\(\sim\) és una relació d'equivalència.
+    \end{proof}
+    % Definir R/I = R/~ ? No sé si ho he fet abans.
+    \begin{proposition}
+        \label{prop:anell-quocient}
+        Sigui~\(I\) un ideal d'un anell~\(R\) amb la suma~\(+\) i el producte~\(\cdot\).
+        Aleshores~\(R/I\) amb la suma~\([x]+[y]=[x+y]\) i el producte~\([x]\cdot[y]=[x\cdot y]\) és un anell.
+    \end{proposition}
+    \begin{proof}
+        Aquest enunciat té sentit per la proposició \myref{prop:relacio-dequivalencia-en-anells-per-ideals}.
+
+        Per la proposició \myref{TODO:grup-quocient} tenim que~\(R/I\) és un grup amb l'operació~\(+\), i com que
+        \begin{align*}
+            [x]+[y]&=[x+y]\\
+            &=[y+x]\tag{\myref{def:grup-abelia}}\\
+            &=[y]+[x]
+        \end{align*}
+        tenim que~\(R/I\) és un grup abelià amb la suma~\(+\).
+        Veiem ara que per a tot~\(x,y,z\in R/I\) tenim~\([x]\cdot([y]\cdot[z])=([x]\cdot[y])\cdot[z]\) i~\([x]\cdot([y]+[z])=[x]\cdot[y]+[x]\cdot[z]\).
+        Tenim
+        \begin{align*}
+            [x]\cdot([y]\cdot[z])&=[x]\cdot[y\cdot z]\\
+            &=[x\cdot(y\cdot z)]\\
+            &=[(x\cdot y)\cdot z]\\
+            &=[x\cdot y]\cdot[z]=([x]\cdot[y])\cdot[z]
+        \end{align*}
+        i
+        \begin{align*}
+            [x]\cdot([y]+[z])&=[x]\cdot[y+z]\\
+            &=[x\cdot(y+z)]\\
+            &=[x\cdot y+x\cdot z]=[x]\cdot[y]+[x]\cdot[z]
+        \end{align*}
+        i per la definició d'\myref{def:anell} tenim que~\(R/I\) és un anell amb la suma~\(+\) i el producte~\(\cdot\), com volíem veure.
+    \end{proof}
+    \begin{definition}[Anell quocient]
+        \labelname{anell quocient}
+        \label{def:anell-quocient}
+        Siguin~\(R\) un anell commutatiu amb~\(1\neq0\) i~\(I\) un ideal de~\(R\).
+        Aleshores direm que~\(R/I\) és un anell quocient.
+
+        Aquesta definició té sentit per la proposició \myref{prop:anell-quocient}.
+    \end{definition}
+\section{Tres Teoremes d'isomorfisme entre anells}
+    \subsection{Morfismes entre anells}
+    \begin{definition}[Morfisme entre anells]
+        \labelname{morfisme entre anells}
+        \label{def:morfisme-entre-anells}
+        \labelname{epimorfisme entre anells}
+        \label{def:epimorfisme-entre-anells}
+        \labelname{monomorfisme entre anells}
+        \label{def:monomorfisme-entre-anells}
+        \labelname{isomorfisme entre anells}
+        \label{def:isomorfisme-entre-anells}
+        \labelname{endomorfisme entre anells}
+        \label{def:endomorfisme-entre-anells}
+        Siguin~\(R\) un anell commutatiu amb la suma~\(+_{R}\) i el producte~\(\ast_{R}\),~\(S\) un anell commutatiu amb la suma~\(+_{S}\) i el producte~\(\ast_{S}\) amb~\(1_{R}\neq0_{R}\) i~\(1_{S}\neq0_{S}\) i~\(f\colon R\longrightarrow S\) una aplicació tal que
+        \begin{enumerate}
+            \item~\(f(x+_{R}y)=f(x)+_{S}f(y)\) per a tot~\(x,y\in R\).
+            \item~\(f(x\ast_{R}y)=f(x)\ast_{S}f(y)\) per a tot~\(x,y\in R\).
+            \item~\(f(1_{R})=1_{S}\).
+        \end{enumerate}
+        Aleshores diem que~\(f\) és un morfisme entre anells.
+        Definim també
+        \begin{enumerate}
+            \item Si~\(f\) és injectiva direm que~\(f\) és un monomorfisme entre anells.
+            \item Si~\(f\) és exhaustiva direm que~\(f\) és un epimorfisme entre anells.
+            \item Si~\(f\) és bijectiva direm que~\(f\) és un isomorfisme entre anells.
+            També escriurem~\(R\cong S\).
+            \item Si~\(R=S\) direm que~\(f\) és un endomorfisme entre anells.
+            \item Si~\(R=S\) i~\(f\) és bijectiva direm que~\(f\) és un automorfisme entre anells.
+        \end{enumerate}
+    \end{definition}
+    \begin{observation}
+        \label{obs:morfisme-entre-anells-es-morfisme-entre-grups}
+        Si~\(f\) és un morfisme entre anells aleshores~\(f\) és un morfisme entre grups.
+    \end{observation}
+    \begin{proposition}
+        \label{prop:propietats-morfismes-entre-anells}
+            Siguin~\(R\) i~\(S\) dos anells commutatius amb~\(1_{R}\neq0_{R}\) i~\(1_{S}\neq0_{S}\) i~\(f\colon R\longrightarrow S\) un morfisme entre anells.
+            Aleshores
+        \begin{enumerate}
+            \item~\(f(0_{R})=0_{S}\).
+            \item~\(f(-x)=-f(x)\) per a tot~\(x\in R\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        Siguin~\(+_{R}\) la suma de~\(R\) i~\(+_{S}\) la suma de~\(S\).
+        Per l'observació \myref{obs:morfisme-entre-anells-es-morfisme-entre-grups} tenim que~\(f\) és un morfisme entre els grups~\(R\) amb la suma~\(+_{R}\) i~\(S\) amb la suma~\(+_{S}\), i per la proposició \myref{prop:morfismes-conserven-neutre-i-linvers-commuta-amb-el-morfisme} tenim que~\(f(0_{R})=0_{S}\) i~\(f(-x)=-f(x)\) per a tot~\(x\in R\).
+    \end{proof}
+    \begin{definition}[Nucli i imatge]
+        \labelname{nucli d'un morfisme entre anells}
+        \label{def:nucli-dun-morfisme-entre-anells}
+        \labelname{imatge d'un morfisme entre anells}
+        \label{def:imatge-dun-morfisme-entre-anells}
+        Siguin~\(R\) i~\(S\) dos anells commutatius amb~\(1_{R}\neq0_{R}\) i~\(1_{S}\neq0_{S}\) i~\(f\colon R\longrightarrow S\) un morfisme entre anells.
+        Aleshores definim
+        \[
+            \ker(f)=\{x\in R\mid f(x)=0_{S}\}
+        \]
+        com el nucli de~\(f\), i
+        \[
+            \Ima(f)=\{y\in S\mid f(x)=y\text{ per a cert }x\in R\}
+        \]
+        com la imatge de~\(f\).
+    \end{definition}
+    \begin{observation}
+        \label{obs:nucli-dun-morfisme-entre-anells-es-subconjunt-del-grup-dentrada-imatge-nes-del-de-sortida}
+        \(\ker(f)\subseteq R\),~\(\Ima(f)\subseteq S\).
+    \end{observation}
+    \begin{proposition}
+        \label{prop:el-nucli-dun-morfisme-entre-anells-es-ideal-la-imatge-dun-morfisme-entre-anells-es-subanell}
+            Siguin~\(R\) i~\(S\) dos anells commutatius amb~\(1_{R}\neq0_{R}\) i~\(1_{S}\neq0_{S}\) i~\(f\colon R\longrightarrow S\) un morfisme entre anells.
+            Aleshores
+        \begin{enumerate}
+            \item\label{enum:prop:el-nucli-dun-morfisme-entre-anells-es-ideal-la-imatge-dun-morfisme-entre-anells-es-subanell-1}~\(\ker(f)\triangleleft R\).
+            \item\label{enum:prop:el-nucli-dun-morfisme-entre-anells-es-ideal-la-imatge-dun-morfisme-entre-anells-es-subanell-2}~\(\Ima(f)\leq S\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        Aquest enunciat té sentit per l'observació \myref{prop:el-nucli-dun-morfisme-entre-anells-es-ideal-la-imatge-dun-morfisme-entre-anells-es-subanell}
+
+        Siguin~\(+_{R}\) la suma de~\(R\),~\(\ast_{R}\) el producte de~\(R\),~\(+_{S}\) la suma de~\(S\) i~\(\ast_{S}\) el producte de~\(S\).
+        Comencem veient el punt \eqref{enum:prop:el-nucli-dun-morfisme-entre-anells-es-ideal-la-imatge-dun-morfisme-entre-anells-es-subanell-1}.
+        Com que, per la proposició \myref{prop:propietats-morfismes-entre-anells}, tenim que~\(f(0_{R})=0_{S}\) veiem, per la definició de \myref{def:nucli-dun-morfisme-entre-anells}, que~\(\ker(f)\neq\emptyset\).
+        Prenem doncs~\(a\in\ker(f)\).
+        Observem que, per la definició de \myref{def:morfisme-entre-anells}, tenim que~\(f(r\ast_{R}a)=f(r)\ast_{S}f(a)\) per a tot~\(r\in R\), i per tant, com que per la definició de \myref{def:nucli-dun-morfisme-entre-anells} es compleix~\(f(a)=0_{S}\) tenim que \[f(r\ast_{R}a)=f(r)\ast_{S}f(a)=f(r)\ast_{S}0_{S}=0_{S}\]
+        i per tant~\(r\ast_{R}a\in\ker(f)\) per a tot~\(r\in R\),~\(a\in\ker(f)\).
+        Ara bé per la definició d'\myref{def:ideal-dun-anell} tenim que~\(\ker(f)\) és un ideal de~\(R\).
+
+        Veiem ara el punt \eqref{enum:prop:el-nucli-dun-morfisme-entre-anells-es-ideal-la-imatge-dun-morfisme-entre-anells-es-subanell-2}.
+        Veiem que per a tot~\(x,y\in\Ima(f)\) tenim~\(x\ast_{S}y\in\Ima(f)\).
+        Per la definició d'\myref{def:imatge-dun-morfisme-entre-anells} tenim que existeixen~\(a,b\in R\) tals que~\(f(a)=x\) i~\(f(b)=y\).
+        Ara bé, per la definició d'\myref{def:anell} tenim que~\(a\ast_{R}b=c\in R\), i per tant per la definició d'\myref{def:imatge-dun-morfisme-entre-anells} tenim que~\(f(c)=x\ast_{S}y\in\Ima(f)\).
+        Veiem ara que~\(\Ima(f)\) és un anell amb la suma~\(+_{S}\) i el producte~\(\ast_{S}\).
+        Com que, per l'observació \myref{obs:morfisme-entre-anells-es-morfisme-entre-grups} tenim que~\(f\) és un morfisme entre grups per la proposició \myref{prop:la-imatge-dun-morfisme-es-un-subgrup-del-grup-darribada} tenim que~\(\Ima(f)\) és un subgrup del grup~\(S\) amb la suma~\(+_{S}\); i per la definició d'\myref{def:anell} tenim que per a tot~\(x,y,z\in R\) es satisfà
+        \[
+            x\ast_{R}(y\ast_{R}z)=(x\ast_{R}y)\ast_{R}z\quad\text{i}\quad x\ast_{R}(y+_{R}z)=x\ast_{R}y+_{R}x\ast_{R}z,
+        \]
+        i per la definició de \myref{def:subanell} tenim que~\(\Ima(f)\) és un subanell de~\(S\).
+    \end{proof}
+%    \begin{proposition}
+%        \label{prop:ideals per morfismes d'anells}
+%            Siguin~\(R\) un anell commutatiu amb la suma~\(+_{R}\) i el producte~\(\ast_{R}\),~\(S\) un anell commutatiu amb la suma~\(+_{S}\) i el producte~\(\ast_{S}\) satisfent~\(1_{R}\neq0_{R}\) i~\(1_{S}\neq0_{S}\),~\(I\) un ideal de~\((R,+_{R},\ast_{R})\),~\(J\) un ideal de~\((S,+_{S},\ast_{S})\) i~\(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
+%        \begin{enumerate}
+%            \item\label{eq:prop:ideals per morfismes d'anells 1}~\(\{x\in R\mid f(x)\in J\}\) és un ideal de~\((R,+_{R},\ast_{R})\).
+%            \item\label{eq:prop:ideals per morfismes d'anells 2} Si~\(f\) és exhaustiva,~\(\{f(x)\in S\mid x\in J\}\) és un ideal de~\((S,+_{S},\ast_{S})\).
+%        \end{enumerate}
+%        \begin{proof}
+%            %TODO
+%        \end{proof}
+%    \end{proposition}
+%%    \begin{proposition}
+%            Siguin~\(R\) un anell commutatiu amb la suma~\(+_{R}\) i el producte~\(\ast_{R}\),~\(S\) un anell commutatiu amb la suma~\(+_{S}\) i el producte~\(\ast_{S}\) amb~\(1_{R}\neq0_{R}\) i~\(1_{S}\neq0_{S}\),~\((R',+_{R},\ast_{R})\) un subanell de~\((R,+_{R},\ast_{R})\),~\((S',+_{S},\ast_{S})\) un subanell de~\((S,+_{S},\ast_{S})\) i~\(f\colon R\longrightarrow S\) un morfisme entre anells. Aleshores
+%        \begin{enumerate}
+%            \item~\((\{f(x)\in S\mid x\in R\},+_{S},\ast_{S})\) és un subanell de~\((S,+_{S},\ast_{S})\). % Notació lletja
+%            \item~\((\{x\in R\mid f(x)\in S\},+_{R},\ast_{R})\) és un subanell de~\((R,+_{R},\ast_{R})\).
+%        \end{enumerate}
+%        \begin{proof}
+%            %TODO
+%        \end{proof}
+%    \end{proposition}
+    \begin{proposition}
+        \label{prop:operacio-morfismes-entre-anells-es-morfisme-entre-anells}
+        Siguin~\(R\) ,~\(S\) i~\(D\) tres anells commutatius amb~\(1_{R}\neq0_{R}\),~\(1_{S}\neq0_{S}\) i~\(1_{D}\neq0_{D}\) i~\(f\colon R\longrightarrow S\),~\(g\colon S\longrightarrow D\) dos morfismes entre anells.
+        Aleshores~\(g\circ f\colon R\longrightarrow D\) és un morfisme entre anells.
+    \end{proposition}
+    \begin{proof}
+        Siguin~\(+_{R}\) la suma de~\(R\),~\(\ast_{R}\) el producte de~\(R\),~\(+_{S}\) la suma de~\(S\),~\(\ast_{S}\) el producte de~\(S\),~\(+_{D}\) la suma de~\(D\) i~\(\ast_{D}\) el producte de~\(D\).
+        Per la definició de \myref{def:morfisme-entre-anells} trobem que
+        \begin{align*}
+        g(f(x+_{R}y))&=g(f(x)+_{S}g(y))\\
+        &=g(f(x))+_{D}g(f(x)),
+        \end{align*}
+        i
+        \begin{align*}
+        g(f(x\ast_{R}y))&=g(f(x)\ast_{S}g(y))\\
+        &=g(f(x))\ast_{D}g(f(x)).
+        \end{align*}
+        També tenim
+        \[
+            g(f(1_{R}))=g(1_{S})=1_{D}
+        \]
+        i per la definició de \myref{def:morfisme-entre-anells} tenim que~\(g\circ f\) és un morfisme entre anells, com volíem veure.
+    \end{proof}
+    \begin{corollary}
+        \label{corollary:conjugacio-isomorfismes-enre-anells-es-isomorfisme-entre-anells}
+        Si~\(f,g\) són isomorfismes aleshores~\(g\circ f\) és isomorfisme.
+    \end{corollary}
+    \begin{lemma}
+        \label{lema:ker-f-es-ideal-de-lanell-dentrada}
+        \label{lema:Ima-f-es-subanell-de-lanell-de-sortida}
+        Siguin~\(R\) i~\(S\) dos anells commutatius amb~\(1_{R}\neq0_{R}\) i~\(1_{S}\neq0_{S}\) i~\(f\colon R\longrightarrow S\) un morfisme entre anells.
+        Aleshores
+        \[
+            \ker(f)\text{ és un ideal de }R\quad\text{i}\quad\Ima(f)\text{ és un subanell de }S.
+        \]
+    \end{lemma}
+    \begin{proof}
+        Siguin~\(+_{R}\) la suma de~\(R\),~\(\ast_{R}\) el producte de~\(R\),~\(+_{S}\) la suma de~\(S\) i~\(\ast_{S}\) el producte de~\(S\).
+        Comencem veient que~\(\ker(f)\) és un ideal de~\(R\).
+        Per l'observació \myref{obs:morfisme-entre-anells-es-morfisme-entre-grups} tenim que~\(\ker(f)\) és un morfisme entre grups, i per la proposició \myref{prop:el-nucli-dun-morfisme-es-un-subgrup-normal-del-grup-de-sortda} tenim que~\(\ker(f)\) és un subgrup del grup~\(R\) amb la suma~\(+_{R}\).
+
+        Prenem~\(x\in\ker(f)\) i~\(r\in R\).
+        Volem veure que~\(r\ast_{R}r\in\ker(f)\).
+        Tenim
+        \begin{align*}
+            f(r\ast_{R}x)&=f(r)\ast_{S}f(x)\tag{\myref{def:morfisme-entre-anells}}\\
+            &=f(r)\ast_{S}0_{S}\tag{\myref{def:nucli-dun-morfisme-entre-anells}}\\
+            &=0_{S}\tag{\myref{def:lelement-neutre-dun-anell-pel-producte}}
+        \end{align*}
+        i per la definició de \myref{def:nucli-dun-morfisme-entre-anells} tenim que~\(r\ast_{R}x\in\ker(f)\), i per la proposició \myref{prop:condicio-equivalent-a-ideal-dun-anell} tenim que~\(\ker(f)\) és un ideal de~\(R\).
+
+        Veiem ara que~\(\Ima(f)\) és un subanell de~\(S\).
+        Per l'observació \myref{obs:morfisme-entre-anells-es-morfisme-entre-grups} tenim que~\(\Ima(f)\) és un morfisme entre grups, i per la proposició \myref{prop:la-imatge-dun-morfisme-es-un-subgrup-del-grup-darribada} tenim que~\(\Ima(f)\) és un subgrup del grup~\(S\) amb la suma~\(+_{S}\).
+
+        Prenem~\(x,y\in\Ima(f)\).
+        Volem veure que~\(x\ast_{S}y\in\Ima(f)\).
+        Per la definició d'\myref{def:imatge-dun-morfisme-entre-anells} tenim que existeixen~\(x',y'\in R\) tals que~\(f(x')=x\) i~\(f(y')=y\).
+        Ara bé, per la definició d'\myref{def:anell} tenim que~\(x'\ast_{R}y'\in R\), i per tant
+        \begin{align*}
+        f(x'\ast_{R}y')&+f(x')\ast_{S}f(y')\tag{\myref{def:morfisme-entre-anells}}\\
+        &=x\ast_{S}y
+        \end{align*}
+        i per la definició de \myref{def:imatge-dun-morfisme-entre-grups} trobem que~\(x\ast_{S}y\in\Ima(f)\).
+
+        També tenim, per la definició de \myref{def:morfisme-entre-anells}, que~\(1_{S}\in\Ima(f)\), ja que~\(f(1_{R})=1_{S}\), i per tant, per la definició de \myref{def:subanell}, tenim que~\(\Ima(f)\) és un subanell de~\(S\).
+    \end{proof}
+    \subsection{Teoremes d'isomorfisme entre anells} %TODO
+    \begin{theorem}[Primer Teorema de l'isomorfisme]
+        \labelname{Primer Teorema de l'isomorfisme entre anells}\label{thm:Primer-Teorema-de-lisomorfisme-entre-anells}
+        Siguin~\(R\) i~\(S\) dos anells i~\(\varphi\colon R\longrightarrow S\) un morfisme entre anells.
+        Aleshores
+        \[
+            R/\ker(\varphi)\cong\Ima(\varphi).
+        \]
+    \end{theorem}
+    \begin{proof}
+        Aquest enunciat té sentit per la proposició \myref{prop:el-nucli-dun-morfisme-entre-anells-es-ideal-la-imatge-dun-morfisme-entre-anells-es-subanell}.
+        %TODO
+    \end{proof}
+    \begin{theorem}[Segon Teorema de l'isomorfisme]
+        \labelname{Segon Teorema de l'isomorfisme entre anells}\label{thm:Segon-Teorema-de-lisomorfisme-entre-anells}
+        Siguin~\(R\) un anell commutatiu amb~\(1\neq0\) i~\(I\) i~\(J\) dos ideals de~\(R\).
+        Aleshores
+        \[
+            (I+J)/I\cong J/(I\cap J).
+        \]
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{lemma}
+        \label{lema:Tercer-Teorema-de-lisomorfisme-entre-anells}
+        Siguin~\(R\) un anell commutatiu amb~\(1\neq0\) i~\(I\) i~\(J\) dos ideals de~\(R\) tals que~\(I\subseteq J\).
+        Aleshores~\(J/I\) és un ideal de~\(R/I\).
+        %Definr~\(I\subseteq J\), (projecció)
+    \end{lemma}
+    \begin{proof}
+        %TODO % J/I hauria de ser \bar{J}, \bar{J}^{I} o algo aixi, com a referència pel Claudi del futur.
+    \end{proof}
+    \begin{theorem}[Tercer Teorema de l'isomorfisme]
+        \labelname{Tercer Teorema de l'isomorfisme entre anells}\label{thm:Tercer-Teorema-de-lisomorfisme-entre-anells}
+        Siguin~\(R\) un anell commutatiu amb~\(1\neq0\) i~\(I\) i~\(J\) dos ideals de~\(R\) tals que~\(I\subseteq J\).
+        Aleshores
+        \[
+            (R/I)/(J/I)\cong R/J.
+        \]
+    \end{theorem}
+    \begin{proof}
+        Aquest enunciat té sentit pel lema \myref{lema:Tercer-Teorema-de-lisomorfisme-entre-anells}.
+        %TODO
+    \end{proof}
+    \subsection{Característica d'un anell}
+    \begin{definition}[Característica]
+        \labelname{característica d'un anell}
+        \label{def:caracteristica-dun-anell}
+        Sigui~\(R\) un anell amb la suma~\(+\).
+        Direm que~\(R\) té característica~\(n>0\) si \[n=\min_{m\in\mathbb{N}}\left\{1+\overset{m)}{\cdots}+1=0\right\}.\]
+        Ho denotarem amb~\(\ch(R)=n\).
+        Si aquest~\(n\) no existeix diem que~\(R\) té característica~\(0\) i~\(\ch(R)=0\).
+    \end{definition}
+    \begin{proposition}
+        \label{prop:morfisme-entre-anells-per-trobar-caracteristica}
+        Siguin~\(R\) un anell amb la suma~\(+\) i
+        \begin{align*}
+        f\colon\mathbb{Z}&\longrightarrow R\\
+        n&\longmapsto 1+\overset{n)}{\cdots}+1
+        \end{align*}
+        una aplicació.
+        Aleshores~\(f\) és un morfisme entre anells i~\(\ker(f)=(\ch(R))\).
+    \end{proposition}
+    \begin{proof}
+        Aquest enunciat té sentit per la proposició \myref{prop:el-nucli-dun-morfisme-entre-anells-es-ideal-la-imatge-dun-morfisme-entre-anells-es-subanell}.
+        %Té sentit ja que~\(\mathbb{N}\) és un anell. %AFEGIR
+
+        Sigui~\(\cdot\) el producte de~\(R\).
+        Comencem veient que~\(f\) és un morfisme entre anells.
+        Veiem que~\(f\) és un morfisme entre els grup.
+        Tenim que per a tot~\(n,m\in\mathbb{Z}\)
+        \begin{align*}
+            f(n+m)&=1+\overset{n+m)}{\cdots}+1\\
+            &=(1+\overset{n)}{\cdots}+1)+(1+\overset{m)}{\cdots}+1)\\
+            &=f(n)+f(m)
+        \end{align*}
+        i per la definició de \myref{def:morfisme-entre-grups} tenim que~\(f\) és un morfisme entre grups.
+        Veiem ara que~\(f(1)=1\).
+        Tenim que~\(f(1)=1\cdot1=1\) i per tant per la definició de \myref{def:morfisme-entre-anells} tenim que~\(f\) és un morfisme entre anells.
+
+        Veiem ara que~\(\ker(f)=(\ch(n))\).
+        Per la definició de \myref{def:nucli-dun-morfisme-entre-anells} tenim que~\(\ker(f)=\{x\in\mathbb{N}\mid f(n)=0\}\).    Per tant
+        \[
+            \ker(f)=\{n\in\mathbb{N}\mid n\cdot1=0\}
+        \]
+        i per la definició de \myref{def:caracteristica-dun-anell} tenim que~\(n=\ch(R)\), i per tant~\(\ker(f)=\{k\cdot n\mid k\in\mathbb{N}\}\).
+        Ara bé, per la definició d'\myref{def:ideal-dun-anell} tenim que~\(\ker(f)=(n)\), com volíem veure.
+    \end{proof}
+    \begin{corollary}
+        \label{corollary:subcos-isomorf-respecte-caracteristica}
+        Si~\(\ch(R)=0\) aleshores existeix un subanell~\(S\) de~\(R\) tal que~\(S\cong\mathbb{Z}\).
+        Si~\(\ch(R)=n\) aleshores existeix un subanell~\(S\) de~\(R\) tal que~\(S\cong\mathbb{Z}/(n)\).
+    \end{corollary}
+    %\begin{proposition}\(\ch(K)=0\) ó~\(\ch(K)=p\) primer.\end{proposition}
+    %    \begin{corollary}
+    %\(x\in R\) invertible,~\(S\) subanell de~\(R\) amb~\(x\in S\) no implica~\(x^{-1}\in S\).
+    %        Sigui~\(\mathbb{K}\) un cos amb la suma~\(+\) i el producte~\(\cdot\) i~\(p\) un primer. Aleshores
+    %        \begin{enumerate}
+    %            \item Si~\(\ch(\mathbb{K})=0\), el cos~\((\mathbb{K},+,\cdot)\) conté un subcòs isomorf a~\(\mathbb{Q}\). % Treure notació (A,+,*)
+    %            \item Si~\(\ch(\mathbb{K})=p\), el cos~\((\mathbb{K},+,\cdot)\) conté un subcòs isomorf a~\(\mathbb{Z}/(p)\).
+    %        \end{enumerate}
+    %        \begin{proof}
+    %            Comencem veient el punt
+    %        \end{proof}
+    %    \end{corollary}
+\section{Dominis}
+    \subsection{Dominis d'integritat, ideals primers i maximals}
+    \begin{definition}[Divisor de 0]
+        \labelname{divisor de 0 en un anell}
+        \label{def:divisor-de-0-en-un-anell}
+        Siguin~\(R\) amb el producte~\(\cdot\) un anell commutatiu amb~\(1\neq0\) i~\(a,b\neq0\) dos elements de~\(R\) tals que~\(a\cdot b=0\).
+        Aleshores diem que~\(a\) és un divisor de 0 en~\(R\).
+    \end{definition}
+    \begin{definition}[Dominis d'integritat]
+        \labelname{domini d'integritat}
+        \label{def:domini-dintegritat}
+        \label{def:DI}
+        Sigui~\(D\) un anell commutatiu amb~\(1\neq0\) tal que no existeix cap~\(a\in D\) tal que~\(a\) sigui un divisor de~\(0\) en~\(D\).
+        Aleshores direm que~\(D\) és un domini d'integritat.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:podem-tatxar-pels-costats-en-DI}
+        Siguin~\(D\) un domini d'integritat amb el producte~\(\cdot\) i~\(a\neq0\) un element de~\(D\).
+        Aleshores
+        \[
+            a\cdot x=a\cdot y\Longrightarrow x=y.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Sigui~\(+\) la suma de~\(D\).
+        Tenim
+        \[
+            a\cdot x-a\cdot y=0
+        \]
+        i per la proposició \myref{prop:propietats-basiques-anells} tenim que
+        \[
+            (x-y)\cdot a=0.
+        \]
+
+        Ara bé, com que, per hipòtesi,~\(D\) és un domini d'integritat i~\(a\neq0\) tenim que ha de ser~\(x-y=0\), i per tant trobem~\(x=y\).
+    \end{proof}
+    \begin{definition}[Ideal primer]
+        \labelname{ideal primer}
+        \label{def:ideal-primer}
+        Sigui~\(I\) un ideal d'un anell~\(R\) amb~\(I\neq R\) tal que si~\(a\cdot b\in I\) tenim~\(a\in I\) o~\(b\in I\).
+        Aleshores direm que~\(I\) és un ideal primer de~\(R\).
+    \end{definition}
+    \begin{proposition}
+        \label{prop:R-I-domini-dintegritat-sii-I-ideal-primer}
+        Sigui~\(I\) un ideal d'un anell~\(R\) amb~\(I\neq R\).
+        Aleshores
+        \[
+            R/I\text{ és un domini d'integritat}\sii I\text{ és un ideal primer de }R.
+        \]
+    \end{proposition}
+    \begin{proof} % Dreta i esquerra en comptes de suficient i necessàri
+        Siguin~\(+\) la suma de~\(R\) i~\(\cdot\) el producte de~\(R\).
+        Comencem demostrant que la condició és suficient (\(\implica\)).
+        Suposem doncs que~\(R/I\) és un domini d'integritat i prenem~\([a],[b]\in R/I\) tals que~\([a]\cdot[b]=[0]\).
+        Aleshores per la definició d'\myref{def:anell-quocient} tenim que~\(a\cdot b\in I\).
+        Ara bé, com que per hipòtesi~\(R/I\) és un domini d'integritat tenim que ha de ser~\([a]=[0]\) ó~\([b]=[0]\), i per tant trobem que ha de ser~\(a\in I\) o~\(b\in I\), i per la definició d'\myref{def:ideal-primer} trobem que~\(I\) és un ideal primer de~\(R\).
+
+        Veiem ara que la condició és necessària (\(\implicatper\)).
+        Suposem doncs que~\(I\) és un ideal primer de~\(R\).
+        Per la proposició \myref{prop:anell-quocient} tenim que~\(R/I\) és un anell commutatiu amb~\(1\neq0\).
+        Prenem doncs~\(a\in R\),~\(a\notin I\) i suposem que existeix~\(b\in R\) tal que~\([a]\cdot[b]=[0]\).
+        Això és que~\(a\cdot b\in I\), i com que per hipòtesi~\(I\) és un ideal primer, per la definició d'\myref{def:ideal-primer} trobem que ha de ser~\(b\in I\), i per tant~\([b]=[0]\) i per la definició de \myref{def:domini-dintegritat} tenim que~\(R/I\) és un domini d'integritat.
+    \end{proof}
+    \begin{corollary}
+        \label{corollary:domini-dintegritat-sii-0-ideal-primer}
+        Un anell~\(R\) és un domini d'integritat si i només si~\((0)\) és un ideal primer.
+    \end{corollary}
+    \begin{definition}[Ideal maximal]
+        \labelname{ideal maximal}
+        \label{def:ideal-maximal}
+        Sigui~\(M\) un ideal d'un anell~\(R\) amb~\(M\neq R\) tal que  per a tot ideal~\(I\) de~\(R\) amb~\(M\subseteq I\subseteq R\) ha de ser~\(I=M\) o~\(I=R\).
+        Aleshores direm que~\(M\) és un ideal maximal de~\(R\).
+    \end{definition}
+    \begin{proposition}
+        \label{prop:condicio-equivalent-a-ideal-maximal-per-R-M-cos}
+        Sigui~\(M\) un ideal d'un anell~\(R\) amb~\(1\neq 0\).
+        Aleshores %TODO revisar enunciat
+        \[
+            R/M\text{ és un cos}\sii M\text{ és un ideal maximal de }R.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Aquest enunciat té sentit per la proposició \myref{prop:anell-quocient}.
+
+        Comencem veient la implicació cap a la dreta (\(\implica\)).
+        Suposem doncs que~\(R/M\) és un cos i prenem un ideal~\(I/M\) %REF lema teorema d'isomorfia anells per donar-li sentit
+         de~\(R/M\).
+         Aleshores ha de ser~\(M\subseteq I\subseteq R\).
+         Per la proposició \myref{prop:condicio-equivalent-a-cos-per-anells} tenim que els únics ideals de~\(R/M\) són~\(([0])\) i~\(R/M\), i per tant ha de ser~\(I=M\) ó~\(I=R\), i per la definició d'\myref{def:ideal-maximal} tenim que~\(M\) és un ideal maximal de~\(R\).
+
+        Veiem ara la implicació cap a l'esquerra (\(\implicatper\)).
+        Suposem doncs que~\(M\) és un ideal maximal de l'anell~\(R\) i considerem, per la proposició \myref{prop:anell-quocient}, l'anell~\(R/M\).
+        Per la proposició \myref{prop:condicio-equivalent-a-cos-per-anells} tenim que només hem de veure que els únics ideals de~\(R/M\) són~\((0)\) i~\(R\).
+        Prenem un ideal~\(I/M\) de~\(R/M\).
+        Aquest ha de ser tal que~\(M\subseteq I\subseteq R\), i per la definició d'\myref{def:ideal-maximal} tenim que ha de ser~\(I=M\) o~\(I=R\), i per tant~\(I/M\) ha de ser~\(([0])\) ó~\(R/M\) i per la proposició \myref{prop:anell-quocient} tenim que~\(R/M\) és un cos.
+    \end{proof}
+    \begin{corollary}
+        \label{corollary:M-maximal-implica-M-primer}
+        \(M\) és maximal~\(\Longrightarrow\)~\(M\) és primer.
+    \end{corollary}
+    \begin{theorem}
+        Sigui~\(R\) un anell commutatiu amb~\(1\neq0\).
+        Aleshores~\(R\) és un domini d'integritat si i només si~\(R\setminus\{0\}\) és un cos.
+        %Ha de ser \abs{R} finit?
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}
+        \label{prop:ideal-primer-en-DI-es-maximal}
+        Sigui~\(I\neq(0)\) un ideal primer d'un domini d'integritat~\(D\).
+        Aleshores~\(I\) és maximal.
+    \end{proposition}
+    \begin{proof}
+        Sigui~\(\cdot\) el producte de~\(D\).
+        Posem~\(I=(a)\).
+        Per hipòtesi tenim que~\(a\neq0\) i que~\(I\) és un ideal primer.
+        Sigui~\(b\in D\) tal que~\((a)\subseteq(b)\).
+        Aleshores tenim que~\(a\in(b)\), i per la definició d'\myref{def:ideal-principal} tenim que~\(a=a'\cdot b\) per a cert~\(a'\in D\).
+        Aleshores, per la definició d'\myref{def:ideal-primer}, tenim que~\(a'\in(a)\) ó~\(b\in(a)\).
+
+        Suposem que~\(a'\in(a)\).
+        Aleshores tenim que~\(a'=a\cdot\beta\) per a cert~\(\beta\in D\), i per tant~\(a=a\cdot\beta\cdot b\), i per la proposició \myref{prop:podem-tatxar-pels-costats-en-DI} tenim que~\(1=\beta\cdot b\), i per tant~\(1\in(b)\), d'on trobem~\((b)=R\).
+        Suposem ara que~\(b\in I\).
+        Aleshores~\((a)=(b)\), i per la definició d'\myref{def:ideal-maximal} tenim que~\(I=(a)\) és un ideal maximal de~\(D\), com volíem veure.
+    \end{proof}
+    \subsection{Lema de Zorn}
+    \begin{definition}[Relació d'ordre]
+        \labelname{relació d'ordre}
+        \label{def:relacio-dordre}
+        Sigui~\(A\) un conjunt no buit i~\(\leq\) una relació binària en~\(A\) que satisfaci
+        \begin{enumerate}
+            \item Reflexiva:~\(a\leq a\) per a tot~\(a\in A\).
+            \item Antisimètrica:~\(a\leq b\) i~\(b\leq a\) impliquen~\(a=b\) per a tot~\(a,b\in A\).
+            \item Transitiva: Si~\(a\leq b\) i~\(b\leq c\), aleshores~\(a\leq c\) per a tot~\(a,b,c\in A\).
+        \end{enumerate}
+        Aleshores direm que~\(\leq\) és una relació d'ordre.
+    \end{definition}
+    \begin{definition}[Cadena]
+        \labelname{cadena}
+        \label{def:cadena}
+        Siguin~\(\mathcal{C}\) un conjunt i~\(\leq\) una relació d'ordre en~\(A\) tal que per a tot~\(a,b\in A\) es satisfà~\(a\leq b\) ó~\(b\leq a\).
+        Aleshores direm que~\(\mathcal{C}\) amb~\(\leq\) és una cadena.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:subconjunts-dun-conjunt-amb-inclusio-son-una-cadena}
+        Siguin~\(Y\) i~\(\mathcal{X}\subseteq\mathcal{P}(Y)\) dos conjunts tals que per a tot~\(A,B\in X\) tenim~\(A\subseteq B\) o~\(B\subseteq A\).
+        Aleshores~\(\mathcal{X}\) amb~\(\subseteq\) és una cadena.
+    \end{proposition}
+    \begin{proof}
+        Comprovem  que~\(\subseteq\) satisfà les condicions de la definició de \myref{def:relacio-dordre}:
+        \begin{enumerate}
+            \item Reflexiva: Si~\(A\in\mathcal{X}\) tenim~\(A=A\), i en particular~\(A\subseteq A\).
+            %REFERENCIES
+            \item Antisimètrica: Si~\(A,B\in\mathcal{X}\) tals que~\(A\subseteq B\) i~\(B\subseteq A\) tenim, per doble inclusió, que~\(A=B\).
+            %REFERENCIA doble inclusió
+            \item Transitiva: Si~\(A,B,C\in\mathcal{X}\) tals que~\(A\subseteq B\) i~\(B\subseteq C\) aleshores~\(A\subseteq C\).
+        \end{enumerate}
+        per tant, per les definicions de \myref{def:relacio-dordre} i \myref{def:cadena} tenim que~\(\mathcal{X}\) amb~\(\subseteq\) és una cadena.
+    \end{proof}
+    \begin{definition}[Cota superior d'una cadena]
+        \labelname{cota superior d'una cadena}
+        \label{def:cota-superior-duna-cadena}
+        \labelname{element maximal d'una cadena}
+        \label{def:element-maximal-duna-cadena}
+        Siguin~\(\mathcal{C}\) amb~\(\leq\) una cadena,~\(a\) un element de~\(\mathcal{C}\) i~\({B}\) un subconjunt de~\(\mathcal{C}\) tal que per a tot~\(b\in{B}\) es compleix~\(b\leq A\).
+        Aleshores direm que~\(a\) és una cota superior de~\({B}\).
+
+        Si~\(a\leq b\) implica~\(b=a\) per a tot~\(b\in{B}\) direm que~\(a\) és maximal per~\({B}\).
+    \end{definition}
+    \begin{axiom}[Lema de Zorn]
+        \label{lema:lema-de-Zorn}
+        Sigui~\(\mathcal{A}\) amb~\(\leq\) una cadena tal que per a tot subconjunt~\(\mathcal{C}\subseteq\mathcal{A}\) la cadena~\(\mathcal{C}\) té alguna cota superior.
+        Aleshores~\(\mathcal{A}\) té algun element maximal.
+    \end{axiom}
+    \begin{theorem}
+        \label{thm:ideal-maximal-exsiteix}
+        Sigui~\(R\) un anell commutatiu amb~\(1\neq0\).
+        Aleshores existeix~\(M\subseteq R\) tal que~\(M\) sigui un ideal maximal de~\(R\).
+    \end{theorem}
+    \begin{proof}
+        Siguin~\(+\) la suma de~\(R\) i~\(\cdot\) el producte de~\(R\).
+        Definim el conjunt
+        \[
+            A=\{I\triangleleft R\mid I\neq R\}.
+        \]
+        i amb un subconjunt~\(\mathcal{C}\subseteq A\) considerem, per la proposició \myref{prop:subconjunts-dun-conjunt-amb-inclusio-son-una-cadena}, la cadena~\(\mathcal{C}\) amb~\(\subseteq\).
+        Considerem ara el conjunt
+        \[
+            J=\bigcup_{I\in\mathcal{C}}I
+        \]
+        i veiem que~\(J\) és un ideal de~\(R\), ja que si~\(x,y\in J\) tenim~\(x\in J_{1}\) i~\(y\in J_{2}\) per a certs~\(J_{1},J_{2}\in\mathcal{C}\).
+        Ara bé, si~\(J_{2}\subseteq J_{1}\) tenim que~\(x-y\in J_{1}\), i per tant~\(x-y\in J\), i si~\(J_{1}\subseteq J_{2}\) tenim que~\(x-y\in J_{2}\), i per tant~\(x-y\in J\).
+        Si prenem~\(x\in J\) i~\(r\in R\) aleshores~\(r\cdot x\in J\), ja que tenim~\(x\in J_{1}\) per a cert~\(J_{1}\in\mathcal{C}\), i per tant~\(r\cdot x\in J_{1}\), i en particular~\(r\cdot x\in J\).
+        Per tant per la definició d'\myref{def:ideal-dun-anell} tenim que~\(J\) és un ideal de~\(R\).
+        Per veure que~\(J\in A\) hem de comprovar que~\(J\neq R\).
+        Ho fem per contradicció.
+        Suposem que~\(J=R\).
+        Aleshores~\(1\in J\), i per tant~\(1\in I\) per a cert~\(I\in A\), però això no pot ser ja que si~\(I\in A\) s'ha de complir~\(I\neq A\), i per tant~\(1\notin I\).
+        Per tant~\(J\neq R\) i tenim que~\(J\in A\).
+
+        Ara bé, pel \myref{lema:lema-de-Zorn} tenim que existeix~\(M\in\mathcal{C}\) tal que per a tot~\(I\in\mathcal{C}\) tenim~\(I\subseteq M\) i per la definició d'\myref{def:ideal-maximal} tenim que~\(M\) és un ideal maximal de~\(R\).
+    \end{proof}
+    \subsection{Divisibilitat}
+    \begin{definition}[Divisors i múltiples]
+        \labelname{divisor}\label{def:divisor-per-anells}
+        \labelname{múltiple}\label{def:multiple-per-anells}
+        Siguin~\(D\) un domini d'integritat amb el producte~\(\cdot\) i~\(a,b\in D\) tals que existeix~\(c\in D\) tal que~\(b=a\cdot c\).
+        Aleshores direm que~\(a\) divideix~\(b\) o que~\(b\) és múltiple de~\(a\).
+        Ho denotarem amb~\(a\divides b\).
+    \end{definition}
+    \begin{observation}
+        \label{obs:divisors-son-ideals-continguts}
+        \(b\divides a\sii(a)\subseteq(b)\).
+    \end{observation}
+    \begin{proposition}
+        \label{prop:podem-passar-els-multiples-de-costat-a-costat}
+        Siguin~\(D\) un domini d'integritat amb el producte~\(\cdot\) i~\(a,b,c,c'\) quatre elements de~\(D\) amb~\(a\neq0\),~\(b\neq0\), tals que~\(a\divides b\) i~\(b\divides a\), i~\(a=c\cdot b\) i~\(b=c'\cdot a\).
+        Aleshores~\(c'=c^{-1}\).
+    \end{proposition}
+    \begin{proof}
+        Tenim que~\(b=c'\cdot c\cdot b\), i per la proposició \myref{prop:podem-tatxar-pels-costats-en-DI} tenim que~\(1=c'\cdot c\), i per la definició d'\myref{def:element-invertible-pel-producte-dun-anell} tenim que~\(c'=c^{-1}\).
+    \end{proof}
+    \begin{proposition}
+        \label{prop:associats-es-relacio-dequivalencia}
+        Sigui~\(R\) un anell commutatiu amb el producte~\(\cdot\) amb~\(1\neq0\) i~\(\sim\) una relació binària tal que per a tot~\(x,y\in R\) tenim
+        \[
+            x\sim y\Longrightarrow x=u\cdot y\text{ per a algun }u\in R\text{ invertible}.
+        \]
+        Aleshores~\(\sim\) és una relació d'equivalència.
+    \end{proposition}
+    \begin{proof}
+        Comprovem les condicions de la definició de \myref{def:relacio-dequivalencia}:
+        \begin{enumerate}
+            \item Simètrica: Per a tot~\(x\in R\) tenim~\(x=1\cdot x\).
+            \item Reflexiva: Siguin~\(x,y\in R\) tals que~\(x\sim y\).
+            Aleshores tenim que existeix~\(u\in R\) invertible tal que~\(x=u\cdot y\).
+            Ara bé, com que~\(u\) és invertible tenim per la definició d'\myref{def:element-invertible-pel-producte-dun-anell} que~\(y=u^{-1}\cdot x\), i per tant~\(y\sim x\).
+            \item Transitiva: Siguin~\(x,y,z\in R\) tals que~\(x\sim y\) i~\(y\sim z\).
+            Aleshores tenim que~\(x=u\cdot y\) i~\(y=u'\cdot z\) per a certs~\(u,u'\in R\) invertibles, i per tant~\(x=u\cdot u'\cdot z\), i com que~\(1=u\cdot u'\cdot {u'}^{-1}\cdot{u}^{-1}\) per la definició d'\myref{def:element-invertible-pel-producte-dun-anell} tenim que~\(x\sim z\).
+        \end{enumerate}
+        i per la definició de \myref{def:relacio-dequivalencia} tenim que~\(\sim\) és una relació d'equivalència.
+    \end{proof}
+    \begin{definition}[Elements associats]
+        \labelname{elements associats}
+        \label{def:elements-associats}
+        Siguin~\(R\) un anell commutatiu amb~\(1\neq0\) i~\(a,b\in R\) dos elements tals que existeix un element invertible~\(u\in R\) tal que~\(a=u\cdot b\).
+        Aleshores direm que~\(a\) i~\(b\) són associats i escriurem~\(a\sim b\).
+
+        Aquesta definició té sentit per la proposició \myref{prop:associats-es-relacio-dequivalencia}.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:maxim-comu-divisor-anells}
+        Siguin~\(D\) un domini d'integritat,~\(a\) i~\(b\) dos elements de~\(D\) i~\(X\subseteq D\) un conjunt tal que per a tot~\(d\in X\) tenim~\(d\divides a\),~\(d\divides b\) i per a tot~\(c\in D\) tal que~\(c\divides a\),~\(c\divides b\) es compleix~\(c\divides d\).
+        Aleshores per a tot~\(d'\in D\) tenim que~\(d'\in X\) si i només si~\(d\sim d'\).
+    \end{proposition}
+    \begin{proof}
+        Sigui~\(\cdot\) el producte de~\(D\).
+        Comencem amb la implicació cap a la dreta (\(\implica\)).
+        Suposem que~\(d'\in X\).
+        Hem de veure que~\(d\sim d'\).
+        Tenim~\(d\divides d'\) i~\(d'\divides d\) i per la definició de \myref{def:divisor-per-anells} trobem que~\(d\sim d'\).
+
+        Fem ara la implicació cap a l'esquerra (\(\implicatper\)).
+        Suposem que~\(d'\sim d\).
+        Hem de veure que~\(d'\in X\).
+        Per hipòtesi tenim que~\(d\divides a\) i~\(d\divides b\).
+        Per tant existeixen~\(\alpha,\beta\in D\) tals que~\(a=\alpha d\) i~\(b=\beta d\), i per la proposició \myref{prop:podem-passar-els-multiples-de-costat-a-costat} tenim que si~\(d'=d\cdot u\) amb~\(u\in D\) invertible aleshores~\(d=d'\cdot u^{-1}\).
+        Per tant
+        \[
+            a=\alpha\cdot d'\cdot u^{-1}\quad\text{i}\quad b=\beta\cdot d'\cdot u^{-1}
+        \]
+        i per tant~\(d'\divides a\) i~\(d'\divides b\).
+        Ara bé, com que per hipòtesi~\(d\sim d'\), per la definició d'\myref{def:elements-associats} tenim que~\(d'\in X\).
+    \end{proof}
+    \begin{definition}[Màxim comú divisor]
+        \labelname{màxim comú divisor}
+        \label{def:maxim-comu-divisor-anells}
+        \label{def:mcd-anells}
+        Siguin~\(D\) un domini d'integritat i~\(a,b,d\in D\) tres elements tals que~\(d\divides a\) i~\(d\divides b\) i tals que per a tot~\(c\in D\) que satisfaci~\(c\divides a\) i~\(c\divides b\) tenim~\(c\divides d\).
+        Aleshores direm que~\(d\) és el màxim comú divisor de~\(a\) i~\(b\).
+        Direm que~\(d\) és un màxim comú divisor de~\(a\) i~\(b\) o que~\(d\sim\mcd(a,b)\).
+        Entendrem que~\(\mcd(a,b)\) és un element de~\(D\).
+
+        Aquesta definició té sentit per la proposició \myref{prop:maxim-comu-divisor-anells}.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:minim-comu-multiple-anells}
+        Siguin~\(D\) un domini d'integritat,~\(a\) i~\(b\) dos elements de~\(D\) i~\(X\subseteq D\) un conjunt tal que per a tot~\(m\in X\) tenim~\(a\divides m\),~\(b\divides m\) i per a tot~\(c\in D\) tal que~\(a\divides c\),~\(b\divides c\) es compleix~\(m\divides c\).
+        Aleshores tenim que per a tot~\(m'\in X\) si i només si~\(m\sim m'\).
+    \end{proposition}
+    \begin{proof}
+        Sigui~\(\cdot\) el producte de~\(D\).
+        Comencem amb la implicació cap a la dreta (\(\implica\)).
+        Suposem que~\(m'\in X\).
+        Hem de veure que~\(m\sim m'\).
+        Tenim~\(m'\divides m\) i~\(m\divides m'\) i per la definició de \myref{def:multiple-per-anells} trobem que~\(m\sim m'\).
+        %REVISAR. Em feia mandra pensar i he copiat la de dalt :S
+
+        Fem ara la implicació cap a l'esquerra (\(\implicatper\)).
+        Suposem que~\(m'\sim m\).
+        Hem de veure que~\(m'\in X\).
+        Per hipòtesi tenim que~\(a\divides m\) i~\(b\divides m\).
+        Per tant existeixen~\(\alpha,\beta\in D\) tals que~\(m=\alpha\cdot a\) i~\(m=\beta\cdot b\), i per la proposició \myref{prop:podem-passar-els-multiples-de-costat-a-costat} tenim que si~\(m'=u\cdot m\) amb~\(u\in D\) invertible aleshores~\(m=m'\cdot u^{-1}\).
+        Per tant
+        \[
+            m'=\alpha\cdot a\cdot u^{-1}\quad\text{i}\quad m'=\beta\cdot b\cdot{u'}^{-1}
+        \]
+        i per tant~\(m'\divides a\) i~\(m'\divides b\).
+        Ara bé, com que per hipòtesi~\(m\sim m'\), per la definició d'\myref{def:elements-associats} tenim que~\(m'\in X\).
+        %REVISAR. Em feia mandra pensar i he copiat la de dalt :S
+    \end{proof}
+    \begin{definition}[Mínim comú múltiple]
+        \labelname{mínim comú múltiple}
+        \label{def:minim-comu-multiple-anells}
+        \label{def:mcm-anells}
+        Siguin~\(D\) un domini d'integritat i~\(a,b,m\in D\) tres elements tals que~\(a\divides m\) i~\(b\divides m\) i tals que per a tot~\(c\in D\) que satisfaci~\(a\divides c\) i~\(b\divides c\) tenim~\(m\divides c\).
+        Aleshores direm que~\(m\) és el mínim comú múltiple de~\(a\) i~\(b\).
+        Direm que~\(m\) és un mínim comú múltiple de~\(a\) i~\(b\) o que~\(m\sim\mcm(a,b)\).
+        Entendrem que~\(\mcm(a,b)\) és un element de~\(D\).
+
+        Aquesta definició té sentit per la proposició \myref{prop:minim-comu-multiple-anells}.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:combinacio-dideals-principals-per-obtenir-ideals-principals}
+        Siguin~\((a),(b)\) dos ideals principals d'un domini d'integritat~\(D\) amb la suma~\(+\) i el producte~\(\cdot\).
+        Aleshores tenim les igualtats
+        \begin{enumerate}
+            \item\label{enum:prop:combinacio-dideals-principals-per-obtenir-ideals-principals-1}~\((a)+(b)=(\mcd(a,b))\).
+            \item\label{enum:prop:combinacio-dideals-principals-per-obtenir-ideals-principals-2}~\((a)\cap(b)=(\mcm(a,b))\).
+            \item\label{enum:prop:combinacio-dideals-principals-per-obtenir-ideals-principals-3}~\((a)(b)=(a\cdot b)\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}%pulir
+        Comencem veient el punt \eqref{enum:prop:combinacio-dideals-principals-per-obtenir-ideals-principals-1}.
+        Per la proposició \myref{prop:combinacio-dideals-per-obtenir-ideals} tenim que~\((a)+(b)=\{x+y\mid x\in(a),y\in(b)\}\), i per la definició d'\myref{def:ideal-principal} això és
+        \[
+            (a)+(b)=\{r_{1}\cdot a+r_{2}\cdot b\mid r_{1},r_{2}\in R\},
+        \]
+        que podem reescriure com
+        \[
+            (a)+(b)=\{x\mid\text{existeixen }m,n\in R\text{ tals que }x=n\cdot m+b\cdot n\}
+        \]
+        i per tant~\((a)+(b)=(\mcd(a,b))\) és un ideal principal de~\(R\).
+        %REFERENCIES
+
+        Continuem veient el punt \eqref{enum:prop:combinacio-dideals-principals-per-obtenir-ideals-principals-2}.
+        Per la proposició \myref{prop:combinacio-dideals-per-obtenir-ideals} tenim que
+        \[
+            (a)\cap(b)=\{x\mid x\in(a),x\in(b)\},
+        \]
+        que, per la definició d'\myref{def:ideal-principal}, podem reescriure com
+        \[
+            (a)\cap(b)=\{x\mid x\text{ divideix }a\text{ i }b\}
+        \]
+        i per tant~\((a)\cap(b)=(\mcm(a,b))\) és un ideal principal de~\(R\).
+        %REFERENCIES
+
+        Acabem veient el punt \eqref{enum:prop:combinacio-dideals-principals-per-obtenir-ideals-principals-3}.
+        Per la proposició \myref{prop:combinacio-dideals-per-obtenir-ideals} tenim que
+        \[
+            (a)(b)=\{x_{1}\cdot y_{1}+\dots+x_{n}\cdot y_{n}\mid x_{1},\dots,x_{n}\in(a),y_{1},\dots,y_{n}\in(b)\},
+        \]
+        que, per la definició d'\myref{def:ideal-principal} i la proposició \myref{prop:propietats-basiques-anells}, podem reescriure com
+        \begin{align*}
+        (a)(b)&=\{(r_{1}\cdot a)(r'_{1}\cdot b)+\dots+(r_{n}\cdot a)(r'_{n}\cdot b)\mid r_{1},\dots,r_{n},r'_{1},\dots,r'_{n}\in R\}\\
+        &=\{(r_{1}\cdot r'_{1}+\dots+r_{n}\cdot r'_{n})\cdot(a\cdot b)\mid r_{1},\dots,r_{n},r'_{1},\dots,r'_{n}\in R\},
+        \end{align*}
+        i si fixem~\(r_{2}=\dots r_{n}=0\) i~\(r'_{1}=1\) tenim, amb~\(r_{1}=r\) que
+        \[
+            (a)(b)=\{r\cdot(a\cdot b)\mid r\in R\},
+        \]
+        i per la definició d'\myref{def:ideal-principal} tenim que~\((a)(b)\) és un ideal principal de~\(R\) amb
+        \[
+            (a)(b)=(a\cdot b).\qedhere
+        \]
+    \end{proof}
+    %    \begin{proposition}
+    %        \label{prop:propietats mcm mcd}
+    %        Siguin~\(D\) un domini d'integritat amb la suma~\(+\) i el producte~\(\cdot\) i~\(a,b\) dos elements de~\(D\). Aleshores
+    %        \begin{enumerate}
+    %            \item\label{enum:prop:propietats mcm mcd 1}~\(\mcd(a,0)\sim0\) i~\(\mcm(a,0)\sim0\).
+    %            \item\label{enum:prop:propietats mcm mcd 2} Si~\(d\neq0\) és un element de~\(D\) tal que~\(d\sim\mcd(a,b)\) i~\(a',b'\in D\) són tals que~\(a=a'\cdot d\) i~\(b=b'\cdot d\)  aleshores~\(\mcd(a,b)\sim1\).
+    %            \item\label{enum:prop:propietats mcm mcd 3} Si~\(c\) és un element de~\(D\) aleshores~\(\mcd(c\cdot a,c\cdot b)\sim c\cdot\mcd(a,b)\).
+    %            \item Si~\(a\neq0\) i~\(b\neq0\), i existeix~\(c\in D\) tal que, si~\(m\sim\mcm(a,b)\), tenim~\(a\cdot b=m\cdot c\), aleshores~\(c\sim\mcd(a,b)\).
+    %        \end{enumerate}
+    %        \begin{proof}
+    %            Comencem veient el punt \eqref{enum:prop:propietats mcm mcd 1}.
+    %        \end{proof}
+    %    \end{proposition}
+    \begin{definition}[Primer]
+        \labelname{primer}
+        \label{def:primer-en-un-anell}
+        Siguin~\(D\) un domini d'integritat,~\(p\neq0\) un element de~\(D\) tal que per a tot~\(a,b\) dos elements de~\(D\) que satisfacin~\(p\divides a\cdot b\) tenim~\(p\divides a\) ó~\(p\divides b\).
+        Aleshores direm que~\(p\) és primer.
+    \end{definition}
+    \begin{observation}
+        \label{obs:ideals-primer-iff-primer}
+        \(a\neq0\),~\((a)\) és un ideal primer si i només si~\(a\) és primer.
+    \end{observation}
+    \begin{definition}[Element irreductible]
+        \labelname{irreductible}
+        \label{def:irreductible-en-un-anell}
+        Siguin~\(D\) un domini d'integritat amb el producte~\(\cdot\),~\(a\neq0\) un element no invertible de~\(D\) i~\(b,c\) dos elements de~\(D\) tals que~\(a=b\cdot c\).
+        Aleshores direm que~\(a\) és irreductible si~\(b\) ó~\(c\) són invertibles.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:en-un-DI-un-primer-es-un-irreductible}
+        Siguin~\(D\) un domini d'integritat i~\(p\) un element primer de~\(D\).
+        Aleshores~\(p\) és irreductible.
+    \end{proposition}
+    \begin{proof}
+        Sigui~\(\cdot\) el producte de~\(D\).
+        Suposem que~\(a\) i~\(b\) són dos elements de~\(D\) tals que~\(p=a\cdot b\).
+        Per la definició de \myref{def:primer-en-un-anell} tenim que ha de ser~\(p\divides a\) ó~\(p\divides b\).
+        Si~\(p\divides a\) tenim que~\(a=\alpha\cdot p\) per a cert~\(\alpha\in D\).
+
+        Ara bé, per hipòtesi, tenim que~\(p=a\cdot b\).
+        Per tant~\(a=\alpha\cdot a\cdot b\), i per la proposició \myref{prop:podem-tatxar-pels-costats-en-DI} tenim que~\(1=\alpha\cdot b\), i per la definició d'\myref{def:element-invertible-pel-producte-dun-anell} tenim que~\(b\) és invertible i per la definició d'\myref{def:irreductible-en-un-anell} tenim que~\(p\) és irreductible.
+
+        El cas~\(p\divides b\) és anàleg.
+    \end{proof}
+    \subsection{Dominis de factorització única}
+    \begin{definition}[Domini de factorització única]
+        \labelname{domini de factorització única}
+        \label{def:domini-de-factoritzacio-unica}
+        \label{def:DFU}
+        Sigui~\(D\) un domini d'integritat amb el producte~\(\cdot\) tal que per a tot element no invertible~\(a\neq0\) de~\(D\)
+        \begin{enumerate}
+            \item Existeixen~\(p_{1},\dots,p_{n}\) elements irreductibles de~\(D\) tals que
+            \[
+                a=p_{1}\cdot\ldots\cdot p_{n}.
+            \]
+            \item Si existeixen~\(p_{1},\dots,p_{r}\) i~\(q_{1},\dots,q_{s}\) elements irreductibles de~\(D\) tals que
+            \[
+                a=p_{1}\cdot\ldots\cdot p_{r}=q_{1}\cdot\ldots\cdot q_{s}
+            \]
+            aleshores~\(r=s\) i existeix~\(\sigma\in S_{r}\) tal que
+            \[
+                p_{1}\cdot\ldots\cdot p_{r}=q_{\sigma(1)}\cdot\ldots\cdot q_{\sigma(r)},
+            \]
+            amb~\(p_{i}\sim q_{\sigma(i)}\) per a tot~\(i\in\{1,\dots,r\}\).
+        \end{enumerate}
+        Aleshores direm que~\(D\) és un domini de factorització única.
+    \end{definition}
+    \begin{theorem}
+        \label{thm:condicio-equivalent-per-DI-sii-DFU}
+        Sigui~\(D\) un domini d'integritat amb i el producte~\(\cdot\).
+        Aleshores~\(D\) és un domini de factorització única si i només si tenim
+        \begin{enumerate}
+            \item\label{enum:thm:condicio-equivalent-per-DI-sii-DFU-1} Per a tot~\(a\neq0\) element no invertible de~\(D\) existeixen~\(p_{1},\dots,p_{r}\) elements irreductibles de~\(D\) tals que
+            \[
+                a=p_{1}\cdot\ldots\cdot p_{r}
+            \]
+            \item\label{enum:thm:condicio-equivalent-per-DI-sii-DFU-2} Si~\(a\) és in element irreductible de~\(D\) aleshores~\(a\) és primer.
+        \end{enumerate}
+    \end{theorem}
+    \begin{proof}
+        Comencem demostrant que la condició és suficient (\(\implica\)).
+        Suposem doncs que~\(D\) és un domini de factorització única.
+        El punt \eqref{enum:thm:condicio-equivalent-per-DI-sii-DFU-1} és conseqüència de la definició de \myref{def:domini-de-factoritzacio-unica}.
+        Per tant només ens queda veure que tot element irreductible és primer.
+
+        Siguin~\(p\) un element irreductible de~\(D\) i~\(a,b\) dos elements no invertibles no nuls de~\(D\) tals que~\(p\divides a\cdot b\).
+        Per la definició de \myref{def:DFU} tenim que existeixen~\(p_{1},\dots,p_{r},q_{1},\dots,q_{s}\) elements irreductibles de~\(D\) tals que
+        \[
+            a=p_{1}\cdot\ldots\cdot p_{r}\quad\text{i}\quad b=q_{1}\cdot\ldots\cdot q_{s}
+        \]
+        i per tant
+        \[
+            a\cdot b=p_{1}\cdot\ldots\cdot p_{r}\cdot q_{1}\cdot\ldots\cdot q_{s}
+        \]
+        i com que, per hipòtesi,~\(p\divides a\cdot b\) i la definició de \myref{def:DFU} tenim que
+        \[
+            a\cdot b=p\cdot\alpha_{1}\cdot\ldots\cdot\alpha_{t}
+        \]
+        per a certs~\(\alpha_{1},\cdots,\alpha_{t}\) elements irreductibles de~\(D\).
+        Per tant tenim
+        \[
+            a\cdot b=p\cdot\alpha_{1}\cdot\ldots\cdot\alpha_{t}=p_{1}\cdot\ldots\cdot p_{r}\cdot q_{1}\cdot\ldots\cdot q_{s}
+        \]
+        i, de nou per la definició de \myref{def:DFU}, tenim que~\(p\sim p_{i}\) ó~\(p\sim q_{j}\) per a certs~\(i\in\{1,\dots,r\}\),~\(j\in\{1,\dots,s\}\), i per tant~\(p\divides a\) ó~\(p\divides b\), i per la definició de \myref{def:primer-en-un-anell} tenim que~\(p\) és primer.
+
+        Veiem ara que la condició és necessària (\(\implicatper\)).
+        Suposem doncs que
+        \begin{enumerate}
+            \item Per a tot~\(a\) element no invertible de~\(D\) existeixen~\(p_{1},\dots,p_{r}\) elements irreductibles de~\(D\) tals que
+            \[
+                a=p_{1}\cdot\ldots\cdot p_{r}
+            \]
+            \item Si~\(a\) és in element irreductible de~\(D\) aleshores~\(a\) és primer.
+        \end{enumerate}
+        Sigui~\(a\) un element no invertible de~\(D\).
+        Pel punt \eqref{enum:thm:condicio-equivalent-per-DI-sii-DFU-1} tenim que existeixen~\(p_{1},\dots,p_{r}\) elements irreductibles de~\(D\) tals que
+        \[
+            a=p_{1}\cdot\ldots\cdot p_{r}.
+        \]
+
+        Suposem que existeixen també~\(q_{1},\dots,q_{s}\) elements irreductibles de~\(D\) tals que
+        \[
+            a=q_{1},\dots,q_{s}.
+        \]
+        Aleshores volem veure que~\(r=s\) i que existeix~\(\sigma\in S_{r}\) tal que
+        \[
+            p_{1}\cdot\ldots\cdot p_{r}=q_{\sigma(1)}\cdot\ldots\cdot q_{\sigma(r)},
+        \]
+        amb~\(p_{i}\sim q_{\sigma(i)}\) per a tot~\(i\in\{1,\dots,r\}\).
+
+        Tenim que~\(p_{1}\divides a\), i com que pel punt \eqref{enum:thm:condicio-equivalent-per-DI-sii-DFU-2} tenim que~\(p_{1}\) és primer, per la definició de \myref{def:primer-en-un-anell} tenim que~\(p_{1}\divides q_{j}\) per a cert~\(j\in\{1,\dots,s\}\), i per la definició de \myref{def:irreductible-en-un-anell} i la definició d'\myref{def:elements-associats} tenim que~\(p_{1}\sim q_{j}\).
+        Sigui doncs~\(\sigma\in S_{s}\) tal que~\(p_{1}\divides q_{\sigma(1)}\).
+        Aleshores tenim
+        \[
+            p_{1}\cdot p_{2}\cdot\ldots\cdot p_{r}=u_{1}\cdot q_{\sigma(1)}\cdot\ldots\cdot q_{s}
+        \]
+        per a cert~\(u_{1}\) element invertible de~\(D\).
+        Podem iterar aquest argument per a~\(p_{2},\dots,p_{t}\), on~\(t=\min(r,s)\) per obtenir
+        \[
+            p_{1}\cdot\ldots\cdot p_{t}\cdot p_{t+1}\cdot\ldots\cdot p_{r}=(u_{1}\cdot q_{1})\cdot\ldots\cdot(u_{t}\cdot q_{t})\cdot p_{t+1}\cdot\ldots \cdot p_{s}
+        \]
+        per a certs~\(u_{1},\dots, u_{t}\) elements invertibles de~\(D\).
+        Ara bé, tenim que~\(r=s\), ja que si~\(r>s\) tindríem que~\(p_{s+1},\dots,p_{r}\) són invertibles, i si~\(s>r\) tindríem que~\(q_{r+1},\dots,q_{s}\) són invertibles, però per la definició d'\myref{def:irreductible-en-un-anell} i la definició d'\myref{def:element-invertible-pel-producte-dun-anell} tenim que això no pot ser, i per tant~\(r=s\) i per la definició de \myref{def:DFU} tenim que~\(D\) és un domini de factorització única, com volíem veure.
+    \end{proof}
+    \begin{proposition}
+        Siguin~\(D\) un domini de factorització única amb i el producte~\(\cdot\) i~\(a,b\) dos elements no invertibles i no nuls de~\(D\) tals que existeixen~\(p_{1},\dots,p_{r}\) tals que
+        \[
+            a=p_{1}^{\alpha_{1}}\cdot\ldots\cdot p_{r}^{\alpha_{r}}\quad\text{i}\quad b=p_{1}^{\beta_{1}}\cdot\ldots\cdot p_{r}^{\beta_{r}}
+        \]
+        per a certs~\(\alpha_{1},\dots,\alpha_{r},\beta_{1},\dots,\beta_{r}\) enters no negatius.
+        Aleshores
+        \[
+            \prod_{i=1}^{r}p_{i}^{\min(\alpha_{i},\beta_{i})}\sim\mcd(a,b)\quad\text{i}\quad\prod_{i=1}^{r}p_{i}^{\max(\alpha_{i},\beta_{i})}\sim\mcm(a,b).
+        \]
+    \end{proposition}
+    \begin{proof}
+        Denotem~\(d=\prod_{i=1}^{r}p_{i}^{\min(\alpha_{i},\beta_{i})}\) i~\(m=\prod_{i=1}^{r}p_{i}^{\max(\alpha_{i},\beta_{i})}\).
+
+        Prenem~\(c\) un element de~\(D\) tal que~\(c\divides a\) i~\(c\divides b\).
+        Aleshores tenim que
+        \[
+            c=p_{1}^{\gamma_{1}}\cdot\ldots\cdot p_{r}^{\gamma_{r}}
+        \]
+        per a certs~\(\gamma_{i}\leq\min(\alpha_{i},\beta_{i})\) per a tot~\(i\in\{1,\dots,r\}\).
+        Ara bé, com que~\(\gamma_{i}\leq\min(\alpha_{i},\beta_{i})\) per a tot~\(i\in\{1,\dots,r\}\), i per tant~\(d\divides c\), i per la definició de \myref{def:maxim-comu-divisor-anells} tenim que~\(d\sim\mcd(a,b)\).
+
+        Prenem ara~\(c\) un element de~\(D\) tal que~\(a\divides c\) i~\(b\divides c\).
+        Aleshores tenim que
+        \[
+            c=q\cdot p_{1}^{\gamma_{1}}\cdot\ldots\cdot p_{r}^{\gamma_{r}}
+        \]
+        per a cert~\(q\in D\) i certs~\(\gamma_{i}\geq\max(\alpha_{i},\beta_{i})\) per a tot~\(i\in\{1,\dots,r\}\).
+        Ara bé, com que~\(\gamma_{i}\geq\max(\alpha_{i},\beta_{i})\) per a tot~\(i\in\{1,\dots,r\}\), i per tant~\(m\divides c\), i per la definició de \myref{def:minim-comu-multiple-anells} tenim que~\(m\sim\mcm(a,b)\).
+    \end{proof}
+    \subsection{Anells Noetherians}
+    \begin{definition}[Anell Noetherià]
+        \labelname{anell Noetherià}
+        \label{def:anell-Noetheria}
+        Sigui~\(N\) un anell commutatiu amb~\(1\neq0\) tal que si
+        \[
+            I_{1}\subseteq I_{2}\subseteq I_{3}\subseteq\dots
+        \]
+        són ideals de~\(N\) existeix~\(n_{0}\) tal que per a tot~\(i\geq n_{0}\) tenim~\(I_{i}=I_{i+1}\).
+        Aleshores diem que~\(N\) és Noetherià.
+    \end{definition}
+    \begin{observation}
+        \(\{I_{1},I_{2},I_{3}\dots\}\) amb la relació d'ordre~\(\subseteq\) és una cadena.
+    \end{observation}
+    \begin{lemma}
+        \label{lema:DIP-es-DFU}
+        Siguin~\(N\) un domini d'integritat Noetherià amb el producte~\(\cdot\) i~\(a\neq0\) un element no invertible de~\(N\).
+        Aleshores existeixen~\(p_{1},\dots,p_{n}\) elements irreductibles de~\(N\) tals que
+        \[
+            a=p_{1}\cdot\ldots\cdot p_{n}.
+        \]
+    \end{lemma}
+    \begin{proof}
+        Ho farem per reducció a l'absurd.
+        Definim el conjunt
+        \[
+            X=\{a\in N\text{ invertible}\mid a\neq p_{1}\cdot\ldots\cdot p_{n}\text{ per a }p_{1},\dots,p_{n}\in N\text{ irreductibles}\}.
+        \]
+        Volem veure que~\(X=\emptyset\).
+        Suposem doncs que~\(X\neq\emptyset\) i prenem~\(a_{1}\in X\).
+        Per la definició d'\myref{def:irreductible-en-un-anell} tenim que~\(a_{1}\) no és irreductible, i per tant existeixen~\(b_{1},c_{1}\in N\) no invertibles tals que
+        \[
+            a_{1}=b_{1}\cdot c_{1}
+        \]
+        i ha de ser~\(b_{1}\in X\) o~\(c_{1}\in X\).
+
+        Suposem que~\(b_{1}\in X\), la demostració de l'altre opció és anàloga.
+        Aleshores tenim, per l'observació \myref{obs:divisors-son-ideals-continguts}, que~\((a)\subset(b)\).
+        Ara bé, també tindríem que~\(b_{1}=b_{2}\cdot c_{2}\) per a certs~\(b_{2},c_{2}\) elements no invertibles de~\(N\) amb~\(b_{2}\in X\) o~\(c_{2}\in X\), i podem iterar aquest argument per construir
+        \[
+            (a_{1})\subset(b_{1})\subset(b_{2})\subset(b_{3})\subset\dots
+        \]
+        però això entra en contradicció amb la definició d'\myref{def:anell-Noetheria}, i per tant~\(X=\emptyset\), com volíem veure.
+    \end{proof}
+    \subsection{Dominis d'ideals principals}
+    \begin{definition}[Domini d'ideals principals]
+        \labelname{domini d'ideals principals}
+        \label{def:domini-dideals-principals}
+        \label{def:DIP}
+        Sigui~\(D\) un domini d'integritat tal que tot ideal de~\(D\) és un ideal principal.
+        Aleshores direm que~\(D\) és un domini d'ideals principals.
+    \end{definition}
+    \begin{proposition}
+        \label{prop:irreductible-sii-ideal-maximal}
+        Sigui~\(D\) un domini d'ideals principals.
+        Aleshores un element~\(a\in D\) és irreductible si i només si~\((a)\) és un ideal maximal.
+    \end{proposition}
+    \begin{proof}
+        Sigui~\(\cdot\) el producte de~\(D\).
+        Comencem veient que la condició és suficient (\(\implicatper\)).
+        Suposem doncs que~\(a\) és un element irreductible de~\(D\) i prenem~\(b\in D\) tal que~\((a)\subseteq(b)\neq D\).
+        Aleshores, per l'observació \myref{obs:divisors-son-ideals-continguts} tenim que~\(b\divides a\), és a dir, existeix~\(r\in D\) tal que~\(a=b\cdot r\), i per la definició d'\myref{def:irreductible-en-un-anell} tenim que~\(r\) ó~\(b\) són invertibles.
+        Ara bé, com que, per hipòtesi,~\((b)\neq D\) tenim que~\(b\) no és invertible, %REF
+        per tant ha de ser~\(r\) invertible per la definició d'\myref{def:element-invertible-pel-producte-dun-anell} tenim que~\(a\cdot r^{-1}=b\), per l'observació \myref{obs:divisors-son-ideals-continguts} tenim que~\((a)=(b)\), i per la definició d'\myref{def:ideal-maximal} tenim que~\((a)\) és un ideal maximal.
+
+        Tenim que la condició és necessària (\(\implica\)) per la proposició \myref{prop:ideal-primer-en-DI-es-maximal}.
+        %REVISAR
+    \end{proof}
+    \begin{proposition}
+        \label{prop:en-DIP-irreductible-implica-primer}
+        Siguin~\(D\) un domini d'ideals principals i~\(a\) un element irreductible de~\(D\).
+        Aleshores~\(a\) és primer.
+    \end{proposition}
+    \begin{proof}
+        Per la proposició \myref{prop:irreductible-sii-ideal-maximal} tenim que~\((a)\) és maximal, pel corol·lari \myref{corollary:M-maximal-implica-M-primer} veiem que~\((a)\) és primer, i per l'observació \myref{obs:ideals-primer-iff-primer} trobem que~\(a\) és primer, com volíem veure.
+    \end{proof}
+    \begin{theorem}
+        \label{thm:DIP-es-Noetheria}
+        Sigui~\(D\) un domini d'ideals principals.
+        Aleshores~\(D\) és Noetherià.
+    \end{theorem}
+    \begin{proof}
+        Siguin~\(I_{1},\dots,I_{i},\dots\) ideals de~\(D\) tals que
+        \[
+            I_{1}\subseteq I_{2}\subseteq I_{3}\subseteq\dots
+        \]
+        i
+        \[
+            \mathcal{I}=\bigcup_{i=1}^{\infty}I_{i}.
+        \]
+        Aleshores tenim que~\(\mathcal{I}\) és un ideal.
+        També veiem que si~\(x\in\mathcal{I}\) existeix~\(n\) tal que~\(x\in I_{n}\), i per la definició d'\myref{def:ideal-dun-anell} tenim que si~\(y\in D\) aleshores~\(x\cdot y\in I_{n}\).
+
+        Ara bé, com que per hipòtesi~\(D\) és un domini d'ideals principals tenim, per la definició de \myref{def:DIP} que existeix~\(a\in D\) tal que~\(\mathcal{I}=(a)\), i per tant existeix~\(n\) tal que~\(a\in I_{n}\), i trobem que
+        \[
+            \mathcal{I}=(a)\subseteq I_{n}\subseteq I_{n+k}\subseteq\mathcal{I}
+        \]
+        per a tot~\(k\in\mathbb{N}\), i pel \myref{thm:doble-inclusio} trobem que~\(I_{n}=I_{n+k}\) per a tot~\(k\in\mathbb{N}\), i per la definició d'\myref{def:anell-Noetheria} trobem que~\(D\) és un anell Noetherià.
+    \end{proof}
+    \begin{theorem}
+        \label{thm:DIP-es-DFU}
+        Sigui~\(D\) un domini d'ideals principals.
+        Aleshores~\(D\) és un domini de factorització única.
+    \end{theorem}
+    \begin{proof}
+        Sigui~\(\cdot\) el producte de~\(D\).
+        Pel Teorema \myref{thm:DIP-es-Noetheria} tenim que~\(D\) és un anell Noetherià, i pel lema \myref{lema:DIP-es-DFU} tenim que per a tot element no irreductible~\(a\) de~\(D\) existeixen~\(p_{1},\dots,p_{n}\) elements irreductibles de~\(N\) tals que
+        \[
+            a=p_{1}\cdot\ldots\cdot p_{n}.
+        \]
+
+        També tenim, per la proposició \myref{prop:en-DIP-irreductible-implica-primer} que si~\(a\) és un element irreductible de~\(D\) aleshores~\(a\) és primer.
+
+        Per acabar, pel Teorema \myref{thm:condicio-equivalent-per-DI-sii-DFU} tenim que~\(D\) és un domini de factorització única.
+    \end{proof}
+    \subsection{Dominis Euclidians}
+    \begin{definition}[Domini Euclidià]
+        \labelname{domini Euclidià}
+        \label{def:domini-Euclidia}
+        \label{def:DE}
+        Siguin~\(D\) un domini d'integritat amb la suma~\(+\) i el producte~\(\cdot\) i~\(U\colon D\setminus\{0\}\longrightarrow\mathbb{N}\) una aplicació tal que
+        \begin{enumerate}
+            \item~\(U(x)\leq U(x\cdot y)\) per a tot~\(x,y\in D\setminus\{0\}\).
+            \item Per a tot~\(x,y\in D\),~\(y\neq0\) existeixen~\(Q,r\in D\) tals que~\(x=Q\cdot y+r\), amb~\(r=0\) ó~\(U(r)<U(y)\).
+        \end{enumerate}
+        Aleshores direm que~\(D\) és un domini Euclidià amb la norma~\(U\).
+    \end{definition}
+    \begin{proposition}
+        \label{prop:norma-de-1-es-la-mes-petita-en-DE}
+        Sigui~\(D\) un domini Euclidià amb la norma~\(U\).
+        Aleshores
+        \[
+            U(1)\leq U(x)\quad\text{per a tot }x\in D\setminus\{0\}.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Sigui~\(\cdot\) el producte de~\(D\).
+        Per la definició de \myref{def:DE} tenim que~\(U(x)\leq U(x\cdot y)\) per a tot~\(x,y\in D\setminus\{0\}\).
+        Per tant
+        \[
+            U(1)\leq U(1\cdot x)=U(x)\quad\text{per a tot }x\in D\setminus\{0\}.\qedhere
+        \]
+    \end{proof}
+    \begin{proposition}
+        Sigui~\(D\) un domini Euclidià amb la norma~\(U\).
+        Aleshores
+        \[
+            U(u)=U(1)\sii u\text{ és un element invertible de }D.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Siguin~\(+\) la suma de~\(D\) i~\(\cdot\) el producte de~\(D\).
+        Comencem veient l'implicació cap a la dreta (\(\implica\)).
+        Suposem doncs que~\(u\) és un element invertible de~\(D\).
+
+        Per la proposició \myref{prop:norma-de-1-es-la-mes-petita-en-DE} tenim que~\(U(1)\leq U(u)\) i que~\(U(u)\leq U(u\cdot u^{-1})\).
+        Ara bé, per la definició de \myref{def:linvers-dun-element-dun-anell} tenim que~\(u\cdot u^{-1}=1\), i per tant
+        \[
+            U(1)\leq U(u)\leq U(u\cdot u^{-1})=U(1),
+        \]
+        i trobem~\(U(u)=U(1)\).
+
+        Veiem ara l'implicació cap a l'esquerra (\(\implicatper\)).
+        Suposem que~\(U(u)=U(1)\).
+
+        Per la definició de \myref{def:DE} tenim que existeixen~\(Q\) i~\(r\) elements de~\(D\) tals que
+        \[
+            1=Q\cdot u+r
+        \]
+        amb~\(r=0\) ó~\(U(r)<U(u)\).
+        Ara bé, per hipòtesi~\(U(u)=U(1)\), i per la proposició \myref{prop:norma-de-1-es-la-mes-petita-en-DE} trobem que ha de ser~\(r=0\).
+        Per tant tenim
+        \[
+            1=Q\cdot u
+        \]
+        i per la definició d'\myref{def:element-invertible-pel-producte-dun-anell} trobem que~\(u\) és invertible.
+    \end{proof}
+    \begin{theorem}
+        Sigui~\(D\) un domini Euclidià.
+        Aleshores~\(D\) és un domini d'ideals principals.
+    \end{theorem}
+    \begin{proof}
+        Siguin~\(+\) la suma de~\(D\),~\(\cdot\) el producte de~\(D\),~\(U\) una norma de~\(D\) i~\(I\) un ideal de~\(D\).
+        Si~\(I=\{0\}\) aleshores~\(I=(0)\).
+        Suposem doncs que~\(I\neq(0)\) i prenem~\(b\in I\) tal que~\(U(b)\leq U(x)\) per a tot~\(x\in I\),~\(x\neq0\).
+
+        Prenem ara~\(a\in I\).
+        Per la definició de \myref{def:DE} tenim que existeixen~\(Q,r\in D\) tals que
+        \[
+            a=Q\cdot b+r
+        \]
+        amb~\(r=0\) ó~\(U(r)<U(b)\).
+        I com que, per la definició d'\myref{def:anell} tenim que~\(D\) és un grup amb l'operació~\(+\) tenim
+        \[
+            r=a-Q\cdot b,
+        \]
+        i per la proposició \myref{prop:condicio-equivalent-a-ideal-dun-anell} tenim que
+        \[
+            r=a-Q\cdot b\in I
+        \]
+        i per tant,~\(r\in I\) amb~\(r=0\) ó~\(U(r)<U(b)\).
+        Ara bé, per hipòtesi tenim que~\(U(r)\geq U(b)\), per tant ha de ser~\(r=0\) i tenim que
+        \[
+            a=Q\cdot b,
+        \]
+        d'on trobem que~\(I\) és un ideal principal, i per la definició de \myref{def:DIP} tenim que~\(D\) és un domini d'ideals principals.
+    \end{proof}
+    \begin{theorem}
+        Sigui~\(\mathbb{K}\) un cos.
+        Aleshores~\(\mathbb{K}\) és un domini Euclidià.
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+\section{Anells de polinomis}
+    \subsection{Cos de fraccions d'un domini d'integritat}
+    \begin{proposition}
+        \label{prop:relacio-dequivalencia-cos-de-fraccions}
+        Siguin~\(D\) un domini d'integritat amb el producte~\(\cdot\) i~\(\sim\) definida a~\(D\times D\setminus\{0\}\) una relació binària tal que per a tot~\(a,c\in D\),~\(b,d\in D\setminus\{0\}\)
+        \[
+            (a,b)\sim(c,d)\sii a\cdot d=b\cdot c.
+        \]
+        Aleshores~\(\sim\) és una relació d'equivalència.
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{notation}
+        Denotarem el conjunt quocient~\(D\times D\setminus\{0\}/\sim\) com~\(\cosdefraccions(D)\) i la classe d'equivalència~\(\overline{(a,b)}\in\cosdefraccions(D)\) com~\(\frac{a}{b}\).
+    \end{notation}
+    \begin{lemma}
+        \label{lema:cos-de-fraccions}
+        Siguin~\(D\) un domini d'integritat amb la suma~\(+\) i el producte~\(\cdot\).
+        Aleshores~\(\cosdefraccions(D)\) és un anell commutatiu amb~\(1\neq0\) amb les operacions
+        \[
+            \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+c\cdot b}{b\cdot d}\quad\text{i}\quad\frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}.\quad\text{per a tot }a,c\in D\text{, }b,d\in D\setminus\{0\}.
+        \]
+    \end{lemma}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}
+        \label{thm:cos-de-fraccions}
+        Sigui~\(D\) un domini d'integritat.
+        Aleshores~\(\cosdefraccions(D)\) és el mínim cos que conté~\(D\).
+%        Sigui~\(D\) un domini d'integritat amb la suma~\(+\) i el producte~\(\cdot\). Aleshores~\(\cosdefraccions(D)\) és un cos amb la suma~\(+\) i el producte~\(\cdot\).
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}[Unicitat de \ensuremath{\cosdefraccions(D)}]
+        \labelname{Teorema d'unicitat del cos de fraccions d'un domini}\label{thm:unicitat-del-cos-de-fraccions-dun-domini}
+        Siguin~\(D\) un domini d'integritat amb la suma~\(+\) i el producte~\(\cdot\) i~\(\cosdefraccions_{1}(D)\) i~\(\cosdefraccions_{2}(D)\) dos cossos  amb la suma~\(+\) i el producte~\(\cdot\).
+        Aleshores
+        \[
+            \cosdefraccions_{1}(D)\cong\cosdefraccions_{2}(D)
+        \]
+    \end{theorem}
+    \begin{proof}
+        %TODO %Té sentit per l'anterior?
+    \end{proof}
+    \begin{definition}[Cos de fraccions]
+        \labelname{cos de fraccions d'un domini}\label{def:cos-de-fraccions}
+        Siguin~\(D\) un domini d'integritat.
+        Aleshores direm que~\(\cosdefraccions(D)\) és el cos de fraccions de~\(D\).
+        %Té sentit per l'anterior
+    \end{definition}
+    \subsection{El Teorema de Gauss}
+    \begin{proposition}
+        \label{prop:lanell-de-polinomis-es-un-anell}
+        Siguin~\(R\) un anell amb la suma~\(+\) i el producte~\(\cdot\) i
+        \[
+            R[x]=\{a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}\mid n\in\mathbb{N}, a_{0},\dots,a_{n}\in R\}
+        \]
+        un conjunt.
+        Aleshores~\(R[x]\) és un anell amb la suma~\(+\) i el producte~\(\cdot\).
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{observation}
+        \label{obs:els-anells-de-polinomis-conserven-neutre-i-unitat}
+        \(1_{R}=1_{R[x]}\),~\(0_{R}=0_{R[x]}\).
+    \end{observation}
+    \begin{observation}
+        \label{obs:els-anells-de-polinomis-conserven-commutativitat}
+        Si~\(R\) és un anell commutatiu aleshores~\(R[x]\) també és un anell commutatiu.
+    \end{observation}
+    \begin{definition}[Anell de polinomis]
+        \labelname{anell de polinomis}
+        \label{def:anell-de-polinomis}
+        Siguin~\(R\) un anell amb la suma~\(+\) i el producte~\(\cdot\) i
+        \[
+            R[x]=\{a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}\mid n\in\mathbb{N},a_{0},\dots,a_{n}\in R\}.
+        \]
+        Aleshores direm que l'anell~\(R[x]\) és l'anell de polinomis de~\(R\).
+
+        Aquesta definició té sentit per la proposició \myref{prop:lanell-de-polinomis-es-un-anell}.
+    \end{definition}
+    \begin{observation}
+        \label{obs:un-anell-esta-contingut-en-el-seu-anell-de-polinomis}
+        \(R\subseteq R[x]\).
+    \end{observation}
+    \begin{theorem}[Teorema de la base de Hilbert]
+        Sigui~\(R\) un anell Noetherià.
+        Aleshores~\(R[x]\) és un anell Noetherià.
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{definition}[Contingut d'un polinomi]
+        \labelname{contingut d'un polinomi}
+        \label{def:contingut-dun-polinomi}
+        Siguin~\(D\) un domini de factorització única i~\(f(x)=a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{n}x^{n}\) un element de~\(D[x]\).
+        Aleshores definim
+        \[
+            \cont(f)\sim\mcd(a_{0},\dots,a_{n})
+        \]
+        com el contingut de~\(f\).
+        %Veure que en DFU el mcd existeix (última pagina lila) i associativitat mcd (crec que ja ho tinc fet).
+
+        Interpretarem~\(\cont(f(x))\) com un element de~\(D\).
+    \end{definition}
+    \begin{definition}[Polinomi primitiu]
+        Siguin~\(D\) un domini de factorització única i~\(f(x)\) un element de~\(D[x]\) tal que
+        \[
+            \cont(f(x))\sim1.
+        \]
+        Aleshores direm que~\(f(x)\) és un polinomi primitiu.
+    \end{definition}
+    \begin{lemma}[Lema de Gauss]
+        \labelname{lema de Gauss}
+        \label{lema:lema-de-Gauss}
+        Siguin~\(D\) un domini de factorització única i~\(f(x),g(x)\) dos polinomis primitius de~\(D[x]\).
+        Aleshores~\(f(x)\cdot g(x)\) és un polinomi primitiu.
+    \end{lemma}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{corollary}
+        Siguin~\(D\) un domini de factorització única i~\(f(x)\) i~\(g(x)\) dos elements de~\(D[x]\).
+        Aleshores
+        \[
+            \cont(f(x)\cdot g(x))\sim\cont(f(x))\cdot\cont(g(x)).
+        \]
+    \end{corollary}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{lemma}
+        Siguin~\(D\) un domini d'integritat i~\(p\) un element irreductible de~\(D\).
+        Aleshores tenim que~\(p\) és un element irreductible de~\(D[x]\).
+    \end{lemma}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}
+        Sigui~\(D\) un domini de factorització única i~\(f(x)\) un polinomi de~\(D[x]\).
+        Aleshores~\(\grau(f(x))\geq1\) i~\(f(x)\) és un polinomi irreductible de~\(D[x]\) si i només si~\(\cont(f(x))\sim1\) i~\(f(x)\) és irreductible en~\(\cosdefraccions(D)[x]\).
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}[Teorema de Gauss]
+        Sigui~\(D\) un domini de factorització única.
+        Aleshores~\(D[x]\) és un domini de factorització única.
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}
+        Sigui~\(D\) un domini d'integritat.
+        Aleshores són equivalents
+        \begin{enumerate}
+            \item~\(D\) és un domini de factorització única.
+            \item~\(D[x]\) és un domini de factorització única.
+            \item~\(D[x_{1},\dots,x_{n}]\) és un domini de factorització única.
+        \end{enumerate}
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \subsection{Criteris d'irreductibilitat}
+    \begin{definition}[Arrel]
+        \labelname{arrel d'un polinomi}\label{def:arrel-dun-polinomi}
+        Siguin~\(R\) un anell commutatiu amb~\(1\neq0\),~\(f(x)\) un element de~\(R[x]\) i~\(\alpha\) un element de~\(R\) tal que~\(f(\alpha)=0\).
+        Aleshores direm que~\(\alpha\) és una arrel de~\(f(x)\).
+    \end{definition}
+    \begin{proposition}
+        Siguin~\(\mathbb{K}\) un cos i~\(f(x)\) un element de~\(\mathbb{K}[x]\).
+        Aleshores
+        \begin{enumerate}
+            \item Si~\(\grau(f(x))=1\) aleshores~\(f(x)\) és irreductible.
+            \item Si~\(\grau(f(x))=2\text{ ó }3\) aleshores~\(f(x)\) és irreductible si i només si~\(f(x)\) no té cap arrel.
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}
+        Siguin~\(D\) un domini de factorització única amb la suma~\(+\) i el producte~\(\cdot\),~\(f(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n}\) un polinomi de~\(D[x]\) i~\(\frac{a}{b}\in\cosdefraccions(D)\) una arrel de~\(f(x)\) amb~\(\mcd(a,b)\sim1\).
+        Aleshores tenim que~\(a\divides a_{0}\) ó~\(b\divides a_{n}\).
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}[Criteri modular]
+        \labelname{Teorema del criteri modular}\label{thm:Criteri-modular}
+        Siguin~\(D\) un domini de factorització única amb la suma~\(+\) i el producte~\(\cdot\),~\(f(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n}\) un polinomi primitiu de~\(D[x]\) i~\(p\) un element irreductible de~\(D\) amb~\(p\ndivides a_{n}\) tals que
+        \[
+            \overline{f(x)}=\overline{a_{0}}+\overline{a_{1}}\cdot x+\dots+\overline{a_{n}}\cdot x^{n}
+        \]
+        sigui un polinomi irreductible de~\(D/(p)[x]\).
+        Aleshores~\(f(x)\) és un polinomi irreductible de~\(D[x]\).
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}[Criteri d'Eisenstein]
+        \labelname{Teorema del Criteri d'Eisenstein}\label{thm:Criteri-dEisenstein}
+        Siguin~\(D\) un domini de factorització única amb la suma~\(+\) i el producte~\(\cdot\),~\(f(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n}\) un polinomi primitiu de~\(D[x]\) amb~\(n\geq1\) i~\(p\) un element irreductible de~\(D\) satisfent~\(p\divides a_{0},\dots,p\divides a_{n-1}\) i~\(p\ndivides a_{n},p^{2}\ndivides a_{0}\).
+        Aleshores~\(f(x)\) és un polinomi irreductible de~\(D[x]\).
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{corollary}
+        Siguin~\(D\) un domini de factorització única amb la suma~\(+\) i el producte~\(\cdot\),~\(f(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n}\) un polinomi de~\(D[x]\) amb~\(n\geq1\) i~\(p\) un element irreductible de~\(D\) tal que~\(p\divides a_{0},\dots,p\divides a_{n-1}\) i~\(p\ndivides a_{n},p^{2}\ndivides a_{0}\).
+        Aleshores~\(f(x)\) és un polinomi irreductible de~\(\cosdefraccions(D)[x]\).
+    \end{corollary}
+    \begin{proof}
+        %TODO
+    \end{proof}
+\end{document}

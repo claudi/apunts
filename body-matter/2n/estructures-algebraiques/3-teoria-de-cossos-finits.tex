@@ -1,0 +1,240 @@
+\documentclass[../estructures-algebraiques.tex]{subfiles}
+
+\begin{document}
+\chapter{Teoria de cossos finits}
+\section{Cossos finits}
+    \subsection{Propietats bàsiques dels cossos finits}
+    \begin{proposition}
+        \label{prop:un-subcos-es-un-espai-vectorial}
+        Siguin~\(\mathbb{K}\) i~\(\mathbb{E}\) dos cossos tals que~\(\mathbb{K}\subseteq\mathbb{E}\).
+        Aleshores~\(\mathbb{E}\) és un~\(\mathbb{K}\)-espai vectorial.
+    \end{proposition}
+    \begin{proof}
+        %TODO - Fer àlgebra lineal primer.
+    \end{proof}
+    \begin{definition}[Cos finit]
+        \labelname{cos finit}\label{def:cos-finit}
+        Sigui~\(\mathbb{K}\) un cos tal que~\(\abs{\mathbb{K}}\in\mathbb{N}\).
+        Aleshores direm que~\(\mathbb{K}\) és un cos finit.
+    \end{definition}
+    \begin{observation}
+        Sigui~\(\mathbb{K}\) un cos finit.
+        Aleshores~\(\ch(\mathbb{K})\) és primer.
+    \end{observation}
+    \begin{theorem}
+        Sigui~\(\mathbb{K}\) un cos finit.
+        Aleshores
+        \[
+            \ch(\mathbb{K})=p\sii\abs{\mathbb{K}}=p^{n}\text{ per a cert }n\in\mathbb{N}.
+        \]
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{corollary}
+        Siguin~\(\mathbb{K}\) un cos finit i~\(\mathbb{F}\) un subcòs de~\(\mathbb{K}\) amb~\(\abs{\mathbb{K}}=p^{n}\).
+        Aleshores~\(\abs{\mathbb{F}}=p^{d}\) amb~\(d\divides n\).
+    \end{corollary}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}[Teorema de l'element primitiu]
+        \labelname{Teorema de l'element primitiu}\label{thm:teorema-de-lelement-primitiu}
+        Sigui~\(\mathbb{K}\) un cos finit.
+        Aleshores~\(\mathbb{K}\setminus\{0\}\) és un grup cíclic amb el producte~\(\cdot\).
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{definition}[Element primitiu]
+        \labelname{element primitiu d'un cos finit}\label{def:element-primitiu-dun-cos-finit}
+        Sigui~\(\mathbb{K}\) un cos finit i~\(\beta\) un element de~\(\mathbb{K}\) tal que~\(\langle\{\beta\}\rangle=\mathbb{K}\setminus\{0\}\).
+        Aleshores direm que~\(\beta\) és un element primitiu de~\(\mathbb{K}\).
+
+        Aquesta definició té sentit pel \myref{thm:teorema-de-lelement-primitiu}.
+    \end{definition}
+    \begin{theorem}
+        Sigui~\(\mathbb{K}\) un cos finit amb~\(\abs{\mathbb{K}}=p\).
+        Aleshores existeix un polinomi irreductible~\(f(x)\) en~\(\mathbb{Z}/(p)[x]\) tal que
+        \[
+            \mathbb{K}\cong\mathbb{Z}/(p)[x]/(f(x)).
+        \]
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \subsection{Arrels d'un polinomi}
+    \begin{definition}[Descomposició d'un polinomi]
+        \labelname{descomposició d'un polinomi}\label{def:descomposicio-dun-polinomi}
+        Siguin~\(\mathbb{K}\) un cos amb la suma~\(+\) i el producte~\(\cdot\) i~\(f(x)\) un polinomi de~\(\mathbb{K}\) tal que existeixen~\(\alpha_{1},\dots,\alpha_{n}\in\mathbb{K}\) satisfent~\(f(x)=(x-\alpha_{1})\cdot\ldots\cdot(x-\alpha_{n})\).
+        Aleshores direm que~\(f(x)\) descompon en~\(\mathbb{K}\).
+    \end{definition}
+    \begin{theorem}[Teorema de Kronecker]
+        \labelname{Teorema de Kronecker}\label{thm:Teorema-de-Kronecker}
+        Siguin~\(\mathbb{K}\) un cos i~\(f(x)\) un polinomi de~\(\mathbb{K}[x]\).
+        Aleshores existeix un cos~\(\mathbb{L}\), amb~\(\mathbb{K}\subseteq\mathbb{L}\), tal que~\(f(x)\) descompon en~\(\mathbb{L}\).
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{definition}[Cos de descomposició]
+        \labelname{cos de descomposició d'un polinomi}\label{def:cos-de-descomposicio-dun-polinomi}
+        Siguin~\(\mathbb{K}\) un cos amb la suma~\(+\) i el producte~\(\cdot\),~\(f(x)\) un polinomi de~\(\mathbb{K}\) i~\(\mathbb{L}\) el mínim cos on~\(f(x)\) descompon amb~\(f(x)=(x-\alpha_{1})\cdot\ldots\cdot(x-\alpha_{n})\), amb~\(\alpha_{1},\dots,\alpha_{n}\in\mathbb{L}\).
+        Aleshores direm que~\(\mathbb{L}\) és el cos descomposició de~\(f(x)\).
+        Denotarem~\(\mathbb{L}=\mathbb{K}(f(x))\).
+
+        Aquesta definició té sentit pel \myref{thm:Teorema-de-Kronecker}.
+    \end{definition}
+    \begin{definition}[Derivada formal]
+        \labelname{derivada formal}\label{def:derivada-formal}
+        Siguin~\(\mathbb{K}\) un cos amb la suma~\(+\) i el producte~\(\cdot\) i~\(f(x)=a_{0}+a_{1}x+\dots+a_{n}x^{n}\) un polinomi de~\(\mathbb{K}\).
+        Aleshores definim la derivada formal de~\(f(x)\) com
+        \[
+            f'(x)=a_{1}+2\cdot a_{2}x+3\cdot a_{3}x^{2}+\dots+n\cdot a_{n}x^{n-1}.
+        \]
+    \end{definition}
+    \begin{proposition}
+        \label{prop:propietats-de-la-derivada-formal}
+        Siguin~\(\mathbb{K}\) un cos amb la suma~\(+\) i el producte~\(\cdot\) i~\(f(x)\),~\(g(x)\) dos polinomis de~\(\mathbb{K}\).
+        Aleshores es compleix
+        \begin{enumerate}
+            \item~\((a\cdot f(x))'=a\cdot f'(x)\) per a tot~\(a\in\mathbb{K}\).
+            \item~\((f(x)+g(x))'=f'(x)+g'(x)\).
+            \item~\((f(x)\cdot g(x))'=f'(x)\cdot g(x)+f(x)\cdot g'(x)\).
+            \item~\({(f(x)^{n})}'=n\cdot f(x)^{n-1}\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}
+        Siguin~\(\mathbb{K}\) un cos amb la suma~\(+\) i el producte~\(\cdot\) amb~\(\ch(\mathbb{K})=0\) i~\(f(x)=a_{0}+a_{1}x+\cdots+a_{n}x^{n}\) un polinomi de~\(\mathbb{K}\) amb~\(n\geq1\).
+        Aleshores~\(n\cdot a_{n}\neq0\) i~\(f'(x)\neq0\).
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}
+        Siguin~\(\mathbb{K}\) un cos amb la suma~\(+\) i el producte~\(\cdot\) amb~\(\ch(\mathbb{K})=p\) no nul i~\(f(x)=a_{0}+a_{1}x+\cdots+a_{n}x^{n}\) un polinomi de~\(\mathbb{K}\) amb~\(n\geq1\).
+        Aleshores
+        \[
+            f'(x)\neq0\sii p\divides i\text{ per a tot }i\geq1\text{ tal que }a_{i}\neq0.
+        \]
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{definition}[Arrels múltiples]
+        \labelname{arrel múltiple}\label{def:arrel-multiple}
+        Siguin~\(\mathbb{K}\) un cos amb la suma~\(+\) i el producte~\(\cdot\) i~\(f(x)\) un polinomi de~\(\mathbb{K}[x]\),~\(\alpha\) una arrel de~\(f(x)\) i~\(g(x)\) un polinomi de~\(\mathbb{K}(f(x))\) tal que
+        \[
+            f(x)=(x-\alpha)^{m}\cdot g(x)
+        \]
+        amb~\(m\geq2\).
+        Aleshores direm que~\(\alpha\) és una arrel múltiple de~\(f(x)\).
+    \end{definition}
+    \begin{proposition}
+        Siguin~\(\mathbb{K}\) un cos i~\(f(x)\) un polinomi de~\(\mathbb{K}[x]\).
+        Aleshores~\(\alpha\) és una arrel múltiple de~\(f(x)\) si i només si~\(\alpha\) és una arrel de~\(f'(x)\).
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{corollary}
+        Siguin~\(\mathbb{K}\) un cos i~\(f(x)\) un polinomi de~\(\mathbb{K}[x]\) satisfent~\(\grau(f(x))\geq1\).
+        Aleshores~\(\mcd(f(x),f'(x))=1\) si i només si~\(f(x)\) no té arrels múltiples.
+    \end{corollary}
+    \begin{proof}
+        %TODO
+    \end{proof}
+\section{Caracterització dels cossos finits i els seus subcossos}
+    \subsection{Teoremes d'existència i unicitat dels cossos finits}
+    \begin{theorem}[Teorema d'existència dels cossos finits]
+        Siguin~\(p\) un primer i~\(n\) un natural.
+        Aleshores existeix un cos~\(\mathbb{K}\) tal que~\(\abs{\mathbb{K}}=p^{n}\).
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{corollary}
+        Siguin~\(p\) un primer i~\(n\) un natural.
+        Aleshores existeix un polinomi~\(f(x)\) de~\(\mathbb{Z}/(p)[x]\) amb~\(\grau(f(x))=n\).
+    \end{corollary}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{lemma}
+        Siguin~\(n\),~\(d\) dos naturals tal que~\(d\divides n\),~\(p\) un primer i~\(f(x)\) un polinomi irreductible de~\(\mathbb{Z}/(p)[x]\).
+        Aleshores~\(f(x)\divides(x^{p^{n}}-x)\).
+    \end{lemma}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}[Teorema d'unicitat dels cossos finits]
+        Siguin~\(\mathbb{K}\) i~\(\mathbb{F}\) dos cossos finits amb~\(\abs{\mathbb{K}}=\abs{\mathbb{F}}=p^{n}\).
+        Aleshores % puc treure =p^{n} ?
+        \[
+            \mathbb{K}\cong\mathbb{F}.
+        \]
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}[Teorema d'existència dels subcossos finits]
+        Siguin~\(\mathbb{K}\) un cos amb~\(\abs{\mathbb{K}}=p^{n}\) i~\(d\) un natural tal que~\(d\divides n\).
+        Aleshores existeix un~\(\mathbb{L}\subseteq\mathbb{K}\) amb~\(\abs{\mathbb{L}}=p^{d}\) tal que~\(\mathbb{L}\) és un subcòs de~\(\mathbb{K}\).
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}[Teorema d'unicitat dels subcossos finits]
+        Siguin~\(\mathbb{K}\) un cos amb~\(\abs{\mathbb{K}}=p^{n}\),~\(d\) un natural tal que~\(d\divides n\) i~\(\mathbb{L}_{1}\),~\(\mathbb{L}_{2}\) dos subcossos de~\(\mathbb{K}\) amb~\(\abs{\mathbb{L}_{1}}=\abs{\mathbb{L}_{2}}=p^{d}\).
+        Aleshores~\(\mathbb{L}_{1}=\mathbb{L}_{2}\).
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{notation}
+        Denotarem el cos de~\(p^{n}\) elements com~\(\mathbb{F}_{p^{n}}\).
+    \end{notation}
+    \subsection{El morfisme de Frobenius}    %Juntar arrels amb això?
+    \begin{theorem}
+        Siguin~\(n\) un natural,~\(p\) un primer i
+        \[
+            \mathcal{F}=\{f(x)\in\mathbb{Z}/(p)[x]\mid f(x)\text{ és un polinomi mónic irreductible de grau }d\divides n\}.
+        \]
+        Aleshores
+        \[
+            x^{p^{n}}-x=\prod_{f(x)\in\mathcal{F}}f(x).
+        \]
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}[Morfisme de Frobenius]
+        Sigui~\(\mathbb{F}_{p^{n}}\) un cos finit.
+        Aleshores l'aplicació
+        \begin{align*}
+        \Phi\colon\mathbb{F}_{p^{n}}&\longrightarrow\mathbb{F}_{p^{n}}\\
+        a&\longmapsto a^{p}
+        \end{align*}
+        és un automorfisme.
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}
+        Siguin~\(p\) un primer,~\(f(x)\) un polinomi irreductible de l'anell de polinomis~\(\mathbb{Z}/(p)[x]\) amb~\(\grau(f(x))=n\) i~\(\alpha\) una arrel de~\(f(x)\) en~\(\mathbb{K}(p(x))\).
+        Aleshores les arrels de~\(f(x)\) són~\(\alpha,\alpha^{p},\alpha^{p^{2}},\alpha^{p^{3}},\dots,\alpha^{p^{n-1}}\) i~\(\alpha^{p^{n}}=\alpha\).
+    \end{theorem}
+    \begin{proof}
+        %TODO %Aquest enunciat té sentit pel \myref{thm:Teorema-de-Kronecker}
+    \end{proof}
+    \begin{theorem}
+        Siguin~\(p\) un primer,~\(f(x)\) un polinomi irreductible de l'anell de polinomis~\(\mathbb{Z}/(p)[x]\) amb~\(\grau(f(x))=n\) i~\(\alpha\) una arrel de~\(f(x)\) en~\(\mathbb{K}(p(x))\).
+        Aleshores les arrels de~\(f(x)\) són~\(\alpha,\alpha^{p},\alpha^{p^{2}},\alpha^{p^{3}},\dots,\alpha^{p^{n-1}}\) i~\(\alpha^{p^{i}}\neq\alpha^{p^{j}}\) per a tot~\(i\neq j\),~\(i,j\in\{0,\dots,n-1\}\).
+    \end{theorem}
+    \begin{proof}
+        %TODO. sentit pel teorema previ
+    \end{proof}
+\end{document}

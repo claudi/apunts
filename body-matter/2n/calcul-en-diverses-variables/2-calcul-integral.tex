@@ -1,0 +1,506 @@
+\documentclass[../calcul-en-diverses-variables.tex]{subfiles}
+
+\begin{document}
+\chapter{Càlcul integral}
+\section{La integral Riemann}
+    \subsection{Funcions integrables Riemann}
+    \begin{definition}[Rectangle]
+        \labelname{rectangle}\label{def:Rectangle}
+        Siguin~\([a_{1},b_{1}],\dots,[a_{d},b_{d}]\subset\mathbb{R}\)~\(d\) intervals tancats.
+        Direm que~\(\mathfrak{R}=[a_{1},b_{1}]\times\dots\times[a_{d},b_{d}]\) és un rectangle de~\(\mathbb{R}^{d}\).
+    \end{definition}
+    \begin{definition}[Partició d'un rectangle i finor d'una partició]
+        \labelname{partició d'un rectangle}\label{def:Particio-dun-rectangle}
+        \labelname{finor d'una partició}\label{def:finor-duna-particio}
+        Siguin~\(\mathfrak{R}=[a_{1},b_{1}]\times\dots\times[a_{d},b_{d}]\) un rectangle de~\(\mathbb{R}^{d}\) i~\(P_{i}\) una partició de~\([a_{i},b_{i}]\) per a tot~\(i\in\{1,\dots,d\}\).
+        Aleshores~\(P=P_{1}\times\dots\times P_{d}\) és una partició de~\(\mathfrak{R}\).
+
+        Si~\(P_{i}=\{t_{i,0},\dots,t_{i,n}\}\), amb~\(a_{i}=t_{i,0}<\dots<t_{i,n}=b_{i}\), direm que els rectangles definits per~\([t_{1,i_{1}},t_{1,i_{1}+1}]\times\dots\times[t_{d,i_{d}},t_{d,i_{d}+1}]\subset \mathfrak{R}\), amb~\(0\leq i_{j}\leq d-1\) per a tot~\(j\in\{1,\dots,d\}\), són subrectangles de~\(\mathfrak{R}\).
+
+        Sigui~\(Q\) una altre partició de~\(\mathfrak{R}\).
+        Direm que~\(Q\) és més fina que~\(P\) si~\(P\subset Q\).
+    \end{definition}
+    \begin{definition}[Suma superior i inferior]
+        \labelname{suma superior i inferior}\label{def:Suma-superior-i-inferior}
+        Sigui~\(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle,~\(P\) una partició i~\(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada.
+        Per a cada subrectangle de~\(\mathfrak{R}\),~\(\mathfrak{R}_{i}\), amb~\(i\in I\), on~\(I\) és el conjunt d'índexs que denoten els subrectangles de~\(\mathfrak{R}\) definits per~\(P\), definim la suma superior de~\(f\) per~\(P\) com
+        \[
+            \Ssup(f,P)=\sum_{i\in I}\sup_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}},
+        \]
+        i la suma inferior de~\(f\) per~\(P\) com
+        \[
+            \sinf(f,P)=\sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}.
+        \]
+    \end{definition}
+    \begin{proposition}
+        \label{prop:finor-desigualtats-i-sumes}\label{prop:Particions-supremes-infimes}
+        Siguin~\(P\) i~\(Q\) dues particions d'un rectangle~\(\mathfrak{R}\subset\mathbb{R}^{d}\) i~\(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada.
+        Aleshores, si~\(Q\) és més fina que~\(P\)
+        \[
+            \sinf(f,P)\leq\sinf(f,Q)\quad\text{i}\quad\Ssup(f,Q)\leq\Ssup(f,P).
+        \]
+    \end{proposition}
+    \begin{proof}
+        Demostrarem només la primera desigualtat, ja que la segona té una demostració anàloga.
+        Comencem notant que podem fer la demostració suposant~\(P=P_{1}\times\dots\times P_{d}\), on~\(P_{i}=t_{i,0}<\dots<t_{i,n}\) és una partició de~\([a_{i},b_{i}]\) i~\(Q=Q_{1}\times\dots\times Q_{d}\), on, per a tot~\(j\in\{1,\dots,d\}\smallsetminus k\),~\(P_{j}=Q_{j}\), i~\(Q_{k}=t_{k,0}<\dots<t_{k,l}<q<t_{k,l+1}<\dots<t_{k,n}\), per algun~\(l\in\{0,\dots,n-1\}\).
+        Suposarem~\(l=0,k=1\) per simplificar la notació.
+        Aleshores, per la definició de \myref{def:Suma-superior-i-inferior} tenim
+        \[
+            \sinf(f,P)=\sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}},
+        \]
+        on~\(I\) és el conjunt d'índexs dels subrectangles de~\(\mathfrak{R}\) definits per~\(P\).
+
+        Observem que tots els subrectangles de~\(\mathfrak{R}\) són els mateixos respecte les particions~\(P\) i~\(Q\), excepte els que s'obtenen fent~\(\{t_{1,0},q,t_{1,1}\}\times Q_{2}\times\dots\times Q_{d}\).
+        Per tant, els únics termes del sumatori que canvien són, amb un nou conjunt d'índexs~\(J\), per a tot~\(j\in J\),
+        \[
+            \inf_{x\in \mathfrak{R}_{j}}f(x)\abs{\mathfrak{R}_{j}}.
+        \]
+        Ara considerem el conjunt d'índex dels rectangles definits per~\(\{t_{1,0},t_{1,1}\}\times Q_{2}\times\dots\times Q_{d}\),~\(I'\subset I\), i tenim
+        \[
+            \sum_{i'\in I'}\inf_{x\in \mathfrak{R}_{i'}}f(x)\abs{\mathfrak{R}_{i'}}\leq\sum_{j\in J}\inf_{x\in \mathfrak{R}_{j}}f(x)\abs{\mathfrak{R}_{j}}.
+        \]
+        I per tant%
+            \begin{comment}
+                \marginpar{Cut my life into pieces\\
+                This is my last resort\\
+                Suffocation\hfil\twonotes\hfil\\
+                No breathing\\
+                Don't give a fuck\\
+                if I cut my arm, bleeding}
+            \end{comment}
+        \begin{multline*}
+        \sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}=
+        \sum_{i\in I\smallsetminus I'}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}+\sum_{i'\in I'}\inf_{x\in \mathfrak{R}_{i'}}f(x)\abs{\mathfrak{R}_{i'}}\leq\\
+        \leq\sum_{j\in J}\inf_{x\in \mathfrak{R}_{j}}f(x)\abs{\mathfrak{R}_{j}}+\sum_{i\in I\smallsetminus J}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}
+        =\sum_{i\in I\cup J}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}.
+        \end{multline*}
+        però, per la definició de \myref{def:Suma-superior-i-inferior},
+        \[
+            \sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}=\sinf(f,P)\quad\text{i}\quad\sum_{i\in I\cup J}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}=\sinf(f,Q),
+        \]
+        i per tant trobem
+        \[
+            \sinf(f,P)=\sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}\leq\sum_{i\in I\cup J}\inf_{x\in \mathfrak{R}_{i}}f(x)\abs{\mathfrak{R}_{i}}=\sinf(f,Q).\qedhere
+        \]
+    \end{proof}
+    \begin{proposition}
+        \label{prop:Sumes-i-finor-de-particions}
+        Siguin~\(P,Q\) dues particions arbitràries d'un rectangle~\(\mathfrak{R}\subset\mathbb{R}^{d}\) i~\(f\colon\mathfrak{R}\to\mathbb{R}^{d}\) una funció acotada.
+        Aleshores
+        \[
+            \sinf(f,P)\leq\Ssup(f,Q).
+        \]
+    \end{proposition}
+    \begin{proof}
+        Considerem la partició definida per~\(P\cup Q\).
+        Com que~\(Q\subseteq P\cup Q\) i~\(Q\subseteq P\cup Q\),~\(P\cup Q\) és més fina que~\(P\) i~\(Q\).
+        Per tant, per la proposició \myref{prop:finor-desigualtats-i-sumes}, tenim
+        \[
+            \sinf(f,P)\leq\sinf(f,P\cup Q)\leq\Ssup(f,P\cup Q)\leq\Ssup(f,Q).\qedhere
+        \]
+    \end{proof}
+    \begin{definition}[Integral superior i inferior]
+        \labelname{integral superior i inferior}\label{def:Integral-superior-i-inferior}
+        Siguin~\(\mathfrak{R}\) un rectangle de~\(\mathbb{R}^{d}\) i~\(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada.
+        Aleshores definim la integral superior de~\(f\) en~\(\mathfrak{R}\) com
+        \[
+            \int^{\mathfrak{R}^{+}}f=\inf_{P\in\mathcal{P}}\Ssup(f,P)
+        \]
+        i la integral inferior de~\(f\) en~\(\mathfrak{R}\) com
+        \[
+            \int_{\mathfrak{R}^{-}}f=\sup_{P\in\mathcal{P}}\sinf(f,P),
+        \]
+        on~\(\mathcal{P}\) és el conjunt de particions de~\(\mathfrak{R}\).
+    \end{definition}
+    \begin{proposition}
+        Siguin~\(R\) un rectangle de~\(\mathbb{R}^{d}\) i~\(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada.
+        Aleshores
+        \[
+            \int_{\mathfrak{R}^{-}}f\leq\int^{\mathfrak{R}^{+}}f.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Sigui~\(\mathcal{P}\) el conjunt de particions de~\(\mathfrak{R}\).
+        Com que, per la proposició \myref{prop:Sumes-i-finor-de-particions}, tenim~\(\sinf(f,P)\leq\Ssup(f,Q)\) per a~\(P,Q\in\mathcal{P}\) arbitraris, ha de ser
+        \[
+            \int_{\mathfrak{R}^{-}}f=\sup_{P\in\mathcal{P}}\sinf(f,P)\leq\inf_{P\in\mathcal{P}}\Ssup(f,P)=\int^{\mathfrak{R}^{+}}f.\qedhere
+        \]
+    \end{proof}
+    \begin{definition}[Funció integrable Riemann]
+        \labelname{funció integrable Riemann}\label{def:Integrable-Riemann}
+        Siguin~\(\mathfrak{R}\) un rectangle de~\(\mathbb{R}^{d}\) i~\(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada.
+        Direm que~\(f\) és integrable Riemann si~\(\int_{\mathfrak{R}^{-}}f=\int^{\mathfrak{R}^{+}}f\).
+
+        També direm que~\(\int_\mathfrak{R}f=\int_{\mathfrak{R}^{-}}f=\int^{\mathfrak{R}^{+}}f\) és la integral Riemann de~\(f\) en~\(\mathfrak{R}\).
+    \end{definition}
+    \begin{theorem}[Criteri d'integrabilitat Riemann]
+        \labelname{Teorema del criteri d'integrabilitat Riemann}\label{thm:Criteri-dintegrabilitat-Riemann}
+        Siguin~\(\mathfrak{R}\) un rectangle de~\(\mathbb{R}^{d}\),\ \(\{\mathfrak{R}_{i}\}_{i\in I}\) la família de subrectangles de~\(\mathfrak{R}\) definits per~\(P\) i~\(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada.
+        Aleshores~\(f\) és integrable Riemann si i només si per a tot~\(\varepsilon>0\) existeix una partició~\(P\) tal que
+        \[
+            \Ssup(f,P)-\sinf(f,P)=\sum_{i\in I}\left(\sup_{x\in \mathfrak{R}_{i}}f(x)-\inf_{x\in \mathfrak{R}_{i}}f(x)\right)\abs{\mathfrak{R}_{j}}<\varepsilon.
+        \]
+    \end{theorem}
+    \begin{proof}
+        Comencem demostrant que la condició és necessària~\((\implica)\).
+        Sigui~\(\mathcal{P}\) el conjunt de particions de~\(\mathfrak{R}\).
+        Per la definició de \myref{def:Integrable-Riemann} i la definició de \myref{def:Integral-superior-i-inferior} tenim
+        \[
+            \sup_{P\in\mathcal{P}}\sinf(f,P)=\int_{\mathfrak{R}^{-}}f=\int_{\mathfrak{R}}f=\int^{\mathfrak{R}^{+}}f=\inf_{P\in\mathcal{P}}\Ssup(f,P),
+        \]
+        per tant, existeixen un~\(\varepsilon>0\) i unes particions~\(P,Q\in\mathcal{P}\) tals que
+        \[
+            -\frac{\varepsilon}{2}+\int_{\mathfrak{R}}f<\sinf(f,P),
+        \]
+        i
+        \[
+            \Ssup(f,Q)<\frac{\varepsilon}{2}+\int_{\mathfrak{R}}f.
+        \]
+        Per la proposició \myref{prop:finor-desigualtats-i-sumes} tenim~\(\sinf(f,P)\leq\sinf(f,P\cup Q)\leq\Ssup(f,P\cup Q)\leq\Ssup(f,Q)\), per tant ha de ser~\(\Ssup(f,P\cup Q)-\sinf(f,P\cup Q)<\varepsilon\), com calia veure.
+
+        Per demostrar que la condició és suficient~\((\implicatper)\) veiem que, per hipòtesi,
+        \[
+            0\leq\int^{\mathfrak{R}^{+}}f-\int_{\mathfrak{R}^{-}}f\leq\Ssup(f,P)-\sinf(f,P)<\varepsilon,
+        \]
+        i quan~\(\varepsilon\to0\) ha de ser, per la definició de \myref{def:Integrable-Riemann},
+        \[
+            \int^{\mathfrak{R}^{+}}f=\int_{\mathfrak{R}^{-}}f=\int_{\mathfrak{R}}f.\qedhere
+        \]
+    \end{proof}
+    \begin{notation}[Límit d'una partició]
+        Sigui~\(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle i~\(\mathcal{P}\) el conjunt de particions de~\(\mathfrak{R}\).
+        Quan vulguem parlar d'una partició de~\(\mathfrak{R}\) que es fa fina ho denotarem amb
+        \[
+            \lim_{P\in\mathcal{P}},
+        \]
+        que es refereix a definir una partició~\(P\) de~\(\mathfrak{R}\) tal que
+        \[
+            \max_{i\in I}\max_{x,y\in \mathfrak{R}_{i}}\norm{x-y}\to0
+        \]
+        on~\(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles de~\(\mathfrak{R}\) definits per~\(P\).
+    \end{notation}
+    \begin{corollary}\label{corollary:Sumes-superior-i-inferior-iguals-integrable-Riemann}
+        Si~\(\mathcal{P}\) és el conjunt de particions de~\(\mathfrak{R}\), aleshores~\(f\) és integrable Riemann si i només si
+        \[
+            \lim_{P\in\mathcal{P}}\Ssup(f,P)-\sinf(f,P)=0.
+        \]%potser reescriure el teorema anterior en aquests termes?
+    \end{corollary}
+    \begin{theorem}
+        \label{thm:Continua-acotada-implica-integrable-Riemann}
+        Siguin~\(\mathfrak{R}\) un rectangle de~\(\mathbb{R}^{d}\) i~\(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada i contínua.
+        Aleshores~\(f\) és integrable Riemann en~\(\mathfrak{R}\).
+    \end{theorem}
+    \begin{proof}
+        Pel \myref{thm:Teorema-de-Heine},~\(f\) és uniformement contínua en~\(\mathfrak{R}\), per tant, per la definició de \myref{def:uniformement-continua}, donat un~\(\varepsilon>0\) hi ha un~\(\delta>0\) tal que
+        \[
+            \abs{f(x)-f(y)}<\frac{\varepsilon}{\abs{\mathfrak{R}}}\text{ si }\norm{x-y}<\delta.
+        \]
+
+        Sigui~\(\{\mathfrak{R}_{i}\}_{i\in I}\) el conjunt de subrectangles de~\(\mathfrak{R}\) definits per una partició~\(P\) de~\(\mathfrak{R}\) tal que
+        \[
+            \max_{i\in I}\max_{x,y\in \mathfrak{R}_{i}}\norm{x-y}<\delta,
+        \]
+        això és que els diàmetres dels subrectangles definits per la partició~\(P\) estiguin fitats per~\(\delta\).
+
+        Considerem
+        \begin{equation}\label{eq:thm:Continua-acotada-implica-integrable-Riemann}
+        \Ssup(f,P)-\sinf(f,P)=\sum_{i\in I}\left(\sup_{x\in \mathfrak{R}_{i}}f(x)-\inf_{x\in \mathfrak{R}_{i}}f(x)\right)\abs{\mathfrak{R}_{i}}.
+        \end{equation}
+        Com que, per hipòtesi,~\(f\) és contínua en cada~\(\mathfrak{R}_{i}\), pel \myref{thm:Weierstrass-maxims-i-minims-multiples-variables} tenim que els màxims i mínims de~\(f\) en cada~\(\mathfrak{R}_{i}\) són accessibles.
+        Denotem doncs amb~\(M_{i},m_{i}\) els punts de~\(\mathfrak{R}_{i}\) tals que~\(f(M_{i})=\max_{x\in \mathfrak{R}_{i}}f(x)\) i~\(f(m_{i})=\min_{x\in \mathfrak{R}_{i}}f(x)\).
+        Per \eqref{eq:thm:Continua-acotada-implica-integrable-Riemann} tindrem~\(\norm{M_{i}-m_{i}}<\delta\), i com que~\(f\) és contínuament uniforme en cada~\(\mathfrak{R}_{i}\),~\(f(M_{i})-f(m_{i})<\frac{\varepsilon}{\abs{\mathfrak{R}}}\), i per tant tenim
+        \[
+            \Ssup(f,P)-\sinf(f,P)=\sum_{i\in I}\left(\sup_{x\in \mathfrak{R}_{i}}f(x)-\inf_{x\in \mathfrak{R}_{i}}f(x)\right)\abs{\mathfrak{R}_{i}}\leq\frac{\varepsilon}{\abs{\mathfrak{R}}}\sum_{i\in \mathfrak{R}_{i}}\abs{\mathfrak{R}_{i}}=\varepsilon,
+        \]
+        i això completa la prova.
+    \end{proof}
+    \subsection{La integral com a límit de sumes}
+    \begin{definition}[Suma de Riemann]
+        \labelname{suma de Riemann}\label{def:Suma-de-Riemann}
+        Siguin~\(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle,~\(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada i~\(P\) una partició de~\(\mathfrak{R}\).
+        Aleshores definim la suma de Riemann de~\(f\) associada a~\(P\) com
+        \[
+            \Sigma(f,P)=\sum_{i\in I}f(\xi_{i})\abs{\mathfrak{R}_{i}},
+        \]
+        on~\(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles de~\(\mathfrak{R}\) definits per~\(P\) i~\(\xi_{i}\) és un punt qualsevol de~\(\mathfrak{R}_{i}\), per a tot~\(i\in I\).
+    \end{definition}
+    \begin{observation}
+        \label{obs:Sumes-inferior-i-superior-i-suma-de-riemann}
+        \[
+            \sinf(f,P)\leq\Sigma(f,P)\leq\Ssup(f,P).
+        \]
+    \end{observation}
+    \begin{proposition}
+        \label{prop:Integrable-Riemann-iff-existeix-la-suma}
+        Siguin~\(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle,~\(\mathcal{P}\) el conjunt de particions de~\(\mathfrak{R}\) i~\(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada.
+        Aleshores~\(f\) és integrable Riemann si i només si existeix un~\(L\in\mathbb{R}\) tal que
+        \[
+            \lim_{P\in\mathcal{P}}\Sigma(f,P)=L.
+        \]
+    \end{proposition}
+    \begin{proof}
+        Pel \corollari{} \myref{corollary:Sumes-superior-i-inferior-iguals-integrable-Riemann} tenim
+        \[
+            \lim_{P\in\mathcal{P}}\Ssup(f,P)=\lim_{P\in\mathcal{P}}\sinf(f,P),
+        \]
+        i per l'observació \myref{obs:Sumes-inferior-i-superior-i-suma-de-riemann} i el \myref{thm:sandvitx} ha de ser
+        \[
+            \lim_{P\in\mathcal{P}}\Ssup(f,P)=\lim_{P\in\mathcal{P}}\Sigma(f,P)=\lim_{P\in\mathcal{P}}\sinf(f,P),
+        \]
+        i amb això es veu que ha de existir un real~\(L\) tal que~\(\lim_{P\in\mathcal{P}}\Sigma(f,P)=L\).
+    \end{proof}
+    \begin{notation}
+        Seguint el resultat de la proposició \myref{prop:Integrable-Riemann-iff-existeix-la-suma} denotarem
+        \[
+            \int_{\mathfrak{R}}f(x)\diff x=\Sigma(f,P_{n})=\sum_{i\in I}f(x)\abs{\mathfrak{R}_{i}}=L.
+        \]
+        on~\(\int\) es refereix al sumatori infinit,~\(f(\xi_{i})\) es transforma en~\(f(x)\) i~\(\abs{\mathfrak{R}_{i}}\) s'escriu~\(\diff x\), tot quan fem la partició ``infinitament més fina'', amb el límit~\(\lim_{P\in\mathcal{P}}P\).%reescriure millor
+    \end{notation}
+    \subsection{Propietats de la integral Riemann definida}
+    \begin{proposition}
+        \label{prop:propietats-basiques-multiple-integrals-Riemann-definides}
+        Siguin~\(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle i~\(f,g\colon\mathfrak{R}\to\mathbb{R}\) dues funcions integrables Riemann.
+        Aleshores són certs els següents enunciats:
+        \begin{enumerate}
+            \item\label{enum:propietats-basiques-multiple-integrals-Riemann-definides-1} Siguin~\(\lambda,\mu\) dos escalars.
+            Aleshores
+            \[
+                \int_{\mathfrak{R}}(\lambda f+\mu g)=\lambda\int_{\mathfrak{R}}f+\mu\int_{\mathfrak{R}}g.
+            \]
+            \item\label{enum:propietats-basiques-multiple-integrals-Riemann-definides-2} La funció producte~\(fg\) també és integrable Riemann.
+            \item\label{enum:propietats-basiques-multiple-integrals-Riemann-definides-3} Sigui~\(C\) un escalar.
+            Si~\(f(x)\leq Cg(x)\) per a tot~\(x\in \mathfrak{R}\), aleshores \[\int_{\mathfrak{R}}f\leq C\int_{\mathfrak{R}}g.\]
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        Sigui~\(\mathcal{P}\) el conjunt de particions de~\(\mathfrak{R}\).
+
+        Comencem demostrant el punt \eqref{enum:propietats-basiques-multiple-integrals-Riemann-definides-1}, Per la proposició \myref{prop:Integrable-Riemann-iff-existeix-la-suma} i la definició de \myref{def:Suma-de-Riemann} tenim
+        \[
+            \sum_{i\in I}\left(\lambda f(\xi_{i})+\mu g(\xi_{i})\right)\abs{\mathfrak{R}_{i}},
+        \]
+        on~\(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles de~\(\mathfrak{R}\) definits per una partició~\(P\in\mathcal{P}\) i~\(\xi_{i}\) és un punt qualsevol de~\(\mathfrak{R}_{i}\) per a tot~\(i\in I\).
+        Això ho podem reescriure com
+        \[
+            \lambda\sum_{i\in I}f(\xi_{i})\abs{\mathfrak{R}_{i}}+\mu\sum_{i\in I}g(\xi_{i})\abs{\mathfrak{R}_{i}}
+        \]
+        i per tant
+        \[
+            \int_{\mathfrak{R}}(\lambda f+\mu g)=\lambda\int_{\mathfrak{R}}f+\mu\int_{\mathfrak{R}}g,
+        \]
+        com volíem demostrar.
+
+        Demostrem ara el punt \eqref{enum:propietats-basiques-multiple-integrals-Riemann-definides-2} (En veritat la demostraré quan em doni la gana, i resulta que això no és ara).
+        %recordar acabar.
+
+        Podem veure el punt \eqref{enum:propietats-basiques-multiple-integrals-Riemann-definides-3} a partir del punt \eqref{enum:propietats-basiques-multiple-integrals-Riemann-definides-1}, ja que si~\(f(x)\leq Cg(x)\) per a tot~\(x\in \mathfrak{R}\), amb~\(\xi_{i}\) qualsevol punt de~\(\mathfrak{R}_{i}\) per tot~\(i\in I\), on~\(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles de~\(\mathfrak{R}\), tenim
+        \[
+            \sum_{i\in I}f(\xi_{i})\abs{\mathfrak{R}_{i}}\leq C\sum_{i\in I}g(\xi_{i})\abs{\mathfrak{R}_{i}},
+        \]
+        i ja hem acabat.
+    \end{proof}
+    \begin{theorem}
+        \label{thm:podem-partir-les-integrals-Riemann}
+        Siguin~\({{\mathfrak{R}}}\subset\mathbb{R}^{d}\) un rectangle,~\(\mathcal{S}\) un conjunt de rectangles disjunts de~\(\mathfrak{R}\) tals que~\(\bigcup_{S\in\mathcal{S}}S=\mathfrak{R}\) i~\(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada.
+        Aleshores~\(f\) és integrable Riemann en~\(\mathfrak{R}\) si i només si~\(f\) és integrable Riemann en cada~\(S\in\mathcal{S}\), i
+        \[
+            \int_{\mathfrak{R}}f=\sum_{S\in\mathcal{S}}\int_{S}f.
+        \]
+    \end{theorem}
+    \begin{proof}
+        Comencem demostrant la doble implicació~\((\sii)\).
+        Suposem que~\(f\) és integrable Riemann en~\(\mathfrak{R}\).
+        Com que~\(f\) és integrable Riemann en~\(\mathfrak{R}\), per la proposició \myref{prop:Integrable-Riemann-iff-existeix-la-suma} i la definició de \myref{def:Suma-de-Riemann}.
+        Tenim que, sent~\(\mathcal{P}\) el conjunt de particions de~\(\mathfrak{R}\), existeix un real~\(L\) tal que
+        \[
+            \sum_{i\in I}f(x)\abs{\mathfrak{R}_{i}}=L,
+        \]
+        on~\(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles de~\(\mathfrak{R}\) definits per una partició~\(P\in\mathcal{P}\).
+        Considerem ara el conjunt de particions de~\(S\), per a tot~\(S\in\mathcal{S}\), que denotarem com~\(\mathcal{P}_{S}\).
+        Com que~\(S\subset\mathfrak{R}\) per a tot~\(S\in\mathcal{S}\), per la definició de \myref{def:Particio-dun-rectangle}, tenim que
+        \[
+            \lim_{P_{S}\in\mathcal{P}_{S}}P_{S}\subset\lim_{P\in\mathcal{P}}P,
+        \]
+        per a tot~\(S\in\mathcal{S}\); i com que~\(\bigcup_{S\in\mathcal{S}}S=\mathfrak{R}\) tenim que
+        \[
+            \bigcup_{S\in\mathcal{S}}\lim_{P_{S}\in\mathcal{P}_{S}}P_{S}=\lim_{P\in\mathcal{P}}P.
+        \]
+        Per tant, si~\(I_{S}\) és el conjunt d'índexs dels subrectangles~\(\mathfrak{R}_{S,i}\) de~\(S\) definits per una partició~\(P_{S}\), per a tot~\(S\in\mathcal{S}\), com que, per hipòtesi, els rectangles~\(S\in\mathcal{S}\) són disjunts, tenim
+        \[
+            \sum_{i\in I}f(x)\abs{\mathfrak{R}_{i}}=\sum_{S\in\mathcal{S}}\sum_{i\in I_{S}}f(x)\abs{\mathfrak{R}_{S,i}}=L,
+        \]
+        i, de nou, per la proposició \myref{prop:Integrable-Riemann-iff-existeix-la-suma} tenim que~\(f\) és integrable en cada~\(S\in\mathcal{S}\), com volíem veure.
+
+        Aquesta demostració també ens serveix per veure que
+        \[
+            \int_{\mathfrak{R}}f=\sum_{S\in\mathcal{S}}\int_{S}f,
+        \]
+        per la definició de \myref{def:Suma-de-Riemann}.
+        %revisar alguns subíndexs als límits i \bigcups.
+    \end{proof}
+    \begin{theorem}
+        \label{thm:la-norma-duna-integral-es-menys-que-lintegral-de-la-norma}
+        Siguin~\(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle i~\(f\colon\mathfrak{R}\to\mathbb{R}\) una funció integrable Riemann amb~\(\abs{f(x)}\leq M\) per a tot~\(x\in \mathfrak{R}\).
+        Aleshores la funció~\(\abs{f}\) és integrable Riemann i
+        \[
+            \abs{\int_{\mathfrak{R}}f}\leq\int_{\mathfrak{R}}\abs{f}\leq M\abs{\mathfrak{R}}.
+        \]
+    \end{theorem}
+    \begin{proof}
+        Sigui~\(\{\mathfrak{R}_{i}\}_{i\in I}\) el conjunt de subrectangles definits per una partició de~\(\mathfrak{R}\).
+        Aleshores
+        \[
+            \sup_{x\in \mathfrak{R}_{i}}f(x)-\inf_{x\in \mathfrak{R}_{i}}f(x)=\sup_{x,y\in \mathfrak{R}_{i}}\abs{f(x)-f(y)},\quad\text{per a tot }i\in I,
+        \]
+        i
+        \[
+            \sup_{x\in \mathfrak{R}_{i}}\abs{f(x)}-\inf_{x\in \mathfrak{R}_{i}}\abs{f(x)}=\sup_{x,y\in \mathfrak{R}'_{i}}\abs{\abs{f(x)}-\abs{f(y)}},\quad\text{per a tot }i\in I.
+        \]
+        Per tant, per la definició de \myref{def:Suma-superior-i-inferior}, si~\(P\) és una partició de~\(\mathfrak{R}\) tenim
+        \[
+            \Ssup(\abs{f},P)-\sinf(\abs{f},P)\leq\Ssup(f,P)-\sinf(f,P)
+        \]
+        Com que, per hipòtesi,~\(f\) és integrable Riemann, pel \myref{thm:Criteri-dintegrabilitat-Riemann} tenim que per a tot~\(\varepsilon>0\) existeix una partició~\(P\) de~\(\mathfrak{R}\) tal que
+        \[
+            \Ssup(f,P)-\sinf(f,P)<\varepsilon,
+        \]
+        el que significa que
+        \[
+            \Ssup(\abs{f},P)-\sinf(\abs{f},P)\leq\Ssup(f,P)-\sinf(f,P)<\varepsilon.
+        \]
+        I pel mateix criteri d'integrabilitat Riemann~\(\abs{f}\) també és integrable Riemann.
+
+        Per veure les desigualtats de l'enunciat, amb~\(\mathcal{P}\) el conjunt de particions de~\(\mathfrak{R}\) i~\(\{\mathfrak{R}_{i}\}_{i\in I}\) el conjunt de subrectangles definits per una partició~\(\lim_{P\in\mathcal{P}}\) de~\(\mathfrak{R}\), tenim
+        \[
+            \abs{\int_{\mathfrak{R}}f}=\lim_{P\in\mathcal{P}}\abs{\sum_{i\in I}f(x)\abs{\mathfrak{R}_{i}}}\leq\lim_{P\in\mathcal{P}}\sum_{i\in I}\abs{f(x)}\abs{\mathfrak{R}_{i}}=\int_{\mathfrak{R}}\abs{f}.
+        \]
+        Com que, per hipòtesi,~\(\abs{f(x)}\leq M\) per a tot~\(x\in \mathfrak{R}\), tenim
+        \[
+            \int_{\mathfrak{R}}\abs{f}\leq\int_{\mathfrak{R}}M=M\abs{\mathfrak{R}}.\qedhere
+        \]
+    \end{proof}
+    \begin{corollary}
+        Si~\(f(x)\geq0\) per a tot~\(x\in \mathfrak{R}\),~\(\int_{\mathfrak{R}}f\geq0\).
+    \end{corollary}
+    \begin{proposition}
+        Siguin~\(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle i~\(f\colon\mathfrak{R}\to\mathbb{R}\) una funció contínua i acotada tal que~\(f(x)\geq0\) per a tot~\(x\in \mathfrak{R}\) i~\(\int_{\mathfrak{R}}f=0\).
+        Aleshores~\(f(x)=0\) per a tot~\(x\in \mathfrak{R}\).
+    \end{proposition}
+    \begin{proof}
+        Observem que la proposició té sentit pel Teorema \myref{thm:Continua-acotada-implica-integrable-Riemann}.
+
+        Farem aquesta demostració per reducció a l'absurd.
+        Suposem que existeix un punt~\(c\in \mathfrak{R}\) tal que~\(f(c)>0\).
+        Com que, per hipòtesi,~\(f\) és contínua en un rectangle~\(\mathfrak{R}\), acotat per la definició de \myref{def:Rectangle}, pel \myref{thm:Teorema-de-Heine}~\(f\) és uniformement contínua en~\(\mathfrak{R}\), per tant, per la definició de \myref{def:uniformement-continua}, per a tot~\(\varepsilon>0\) existeix un~\(\delta>0\) tals que
+        \[
+            \text{si }\abs{x-c}<\delta\text{ aleshores }\abs{f(x)-f(c)}t<\varepsilon=\frac{f(c)}{2}.
+        \]
+        Per tant, si definim un rectangle~\(S\) inscrit en la bola de radi~\(\delta\) centrada en el punt~\(c\),~\(\B(c,\delta)\), tenim %afegir definició de rectangle d'aresta donada abans d'això i usar
+        \[
+            \int_{\mathfrak{R}}f\geq\int_{S}f\geq\frac{f(x)}{2}\abs{S}>0,
+        \]
+        però això contradiu la hipòtesi de que~\(\int_{\mathfrak{R}}f=0\), per tant la proposició queda demostrada per reducció a l'absurd.
+    \end{proof}
+\section{Les funcions integrables Riemann}
+    \subsection{Caracterització de les funcions integrables Riemann}
+    \begin{definition}[Osci{\lgem}ació d'una funció en un punt]
+        \labelname{osci{\lgem}ació d'una funció en un punt}\label{def:oscillacio-duna-funcio-en-un-punt}
+        Siguin~\(U\subseteq\mathbb{R}^{d}\) un obert,~\(a\in U\) un punt,~\(\B(a,\delta)\subseteq U\) una bola oberta centrada en~\(a\) de radi~\(\delta>0\) i~\(f\colon U\to\mathbb{R}^{m}\) una funció.
+        Aleshores definim l'aplicació
+        \[
+            \omega_{f}(a)=\lim_{\delta\to0}\sup_{x,y\in B(a,\delta)}\norm{f(x)-f(y)}
+        \]
+        com l'osci{\lgem}ació de la funció~\(f\) en el punt~\(a\).
+    \end{definition}
+    \begin{proposition}
+        \label{prop:oscillacio-equivalent-a-continua}
+        Siguin~\(U\subseteq\mathbb{R}^{d}\) un obert,~\(f\colon U\to\mathbb{R}^{m}\) una funció definida en un punt~\(a\in U\).
+        Aleshores~\(f\) és contínua en~\(a\) si i només si~\(\omega_{f}(a)=0\), on~\(\omega_{f}(a)\) és la osci{\lgem}ació de~\(f\) en~\(a\).
+    \end{proposition}
+    \begin{proof}
+        Suposem que~\(\omega_{f}(a)=0\).
+        Observem que quan~\(\delta\to0\), per a tot~\(x,y,\in\B(a,\delta)\) tenim~\(x\to a\) i~\(y\to a\), i com que~\(\omega_{f}(a)=0\), podem escriure
+        \begin{align*}
+        \omega_{f}(a)&=\lim_{\delta\to0}\sup_{x,y\in B(a,\delta)}\norm{f(x)-f(y)}\\
+        &=\lim_{x,y\to a}\norm{f(a)-f(x)}=0
+        \end{align*}
+        i per tant tenim~\(\lim_{x\to a}f(x)=\lim_{y\to a}f(y)\), i equivalentment
+        \[
+            \lim_{x\to a}f(x)=f(a),
+        \]
+        que és la definició de \myref{def:funcio-continua}.
+    \end{proof}
+    \begin{definition}[Conjunt de discontinuïtats d'una funció]
+        \labelname{conjunt de discontinuïtats d'una funció}\label{def:conjunt-de-discontinuitats-duna-funcio}
+        Siguin~\(U\subseteq\mathbb{R}^{d}\) un obert,~\(f\colon U\to\mathbb{R}^{m}\) una funció,~\(\tau\) un escalar positiu i~\(\omega_{f}(x)\) l'osci{\lgem}ació de~\(f\) en un punt~\(x\in U\).
+        Aleshores denotem el conjunt
+        \[
+            D_{\tau}=\{x\in U\mid\omega_{f}(x)\geq\tau\}
+        \]
+        com el conjunt de desigualtats majors que~\(\tau\) d'una funció.
+    \end{definition}
+    \begin{observation}
+        \(D_{\tau}\) és compacte.%demostrar el cas general del que diu la proposició i fer referències com Déu mana." per la proposició \myref{todo:conjunt-definit-per-desigualtats-estrictes-es-compacte}"
+    \end{observation}
+    \begin{definition}[Contingut exterior de Jordan]
+        \labelname{contingut exterior de Jordan}\label{def:contingut-exterior-de-Jordan}
+        Siguin~\(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle,~\(A\subseteq \mathfrak{R}\) un conjunt,~\(1_{A}\) la funció indicatriu de~\(A\) i~\(\{\mathfrak{R}_{i}\}_{i\in I}\) el conjunt de subrectangles definits per una partició de~\(\mathfrak{R}\) amb la condició de que~\(\mathfrak{R}_{i}\cap A\neq\emptyset\) per a tot~\(i\in I\).
+        Aleshores definim
+        \[
+            c(A)=\sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}1_{A}(x)\abs{\mathfrak{R}_{i}}
+        \]
+        com el contingut exterior de Jordan de~\(A\).
+    \end{definition}
+    \begin{note}
+        La condició sobre~\(\mathfrak{R}_{i}\) pot dir-se com que els~\(\mathfrak{R}_{i}\) cobreixen~\(A\).
+    \end{note}
+    \begin{observation}
+        Siguin~\(\{A_{i}\}_{i\in I}\) un conjunt finit de conjunts amb~\(c(A_{i})=0\) per a tot~\(i\in I\) i~\(A=\bigcup_{i\in I}A_{i}\).
+        Aleshores~\(c\left(A\right)=0\).
+    \end{observation}
+    \begin{theorem}
+        Siguin~\(\mathfrak{R}\subset\mathbb{R}^{d}\) un rectangle i~\(f\colon\mathfrak{R}\to\mathbb{R}\) una funció acotada.
+        Aleshores~\(f\) és integrable Riemann en~\(\mathfrak{R}\) si i només si el contingut exterior de Jordan del conjunt de desigualtats majors que~\(\tau>0\) de~\(f\) en~\(\mathfrak{R}\) és zero, és a dir,~\(c(D_{\tau})=0\) per a tot~\(\tau>0\).
+    \end{theorem}
+    \begin{proof}
+        Comencem amb la implicació cap a l'esquerra (\(\implicatper\)).
+        Suposem doncs que~\(D_{\tau}=0\) per a tot~\(\tau>0\).
+        Per la definició de \myref{def:contingut-exterior-de-Jordan} això és
+        \[
+            \sum_{i\in I}\inf_{x\in \mathfrak{R}_{i}}1_{D_{\tau}}(x)\abs{\mathfrak{R}_{i}}=0
+        \]
+        on~\(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles de~\(\mathfrak{R}\) definits per una partició del conjunt~\(\mathcal{P}\) de particions de~\(\mathfrak{R}\).
+        Considerem el conjunt de subrectangles~\(\{\mathfrak{R}_{j}\}_{j\in J}\) tals que~\(\mathfrak{R}_{j}\cap D_{\tau}\neq\emptyset\).
+        Ara bé, per la proposició \myref{prop:oscillacio-equivalent-a-continua} tenim que~\(f\) és contínua, i pel Teorema \myref{thm:Continua-acotada-implica-integrable-Riemann} veiem que~\(f\) és integrable Riemann en~\(\mathfrak{R}\).
+
+        Comprovem ara la implicació cap a la dreta (\(\implica\)).
+        Suposem doncs que~\(f\) és integrable Riemann en~\(\mathfrak{R}\) i fixem~\(\varepsilon>0\).
+        Pel \myref{thm:Criteri-dintegrabilitat-Riemann} tenim que per a tot~\(\varepsilon>0\) existeix una partició~\(P\) de~\(\mathfrak{R}\) tal que
+        \[
+            \sum_{i\in I}\left(\sup_{x\in \mathfrak{R}_{i}}f(x)-\inf_{x\in \mathfrak{R}_{i}}f(x)\right)\abs{\mathfrak{R}_{j}}<\varepsilon
+        \]
+        on~\(\{\mathfrak{R}_{i}\}_{i\in I}\) és el conjunt de subrectangles definits per~\(P\).
+        Sigui~\(J\) el conjunt de subrectangles~\(\{\mathfrak{R}_{j}\}_{j\in J}\) tals que~\(\mathfrak{R}_{j}\cap D_{\tau}\neq\emptyset\).
+        Tindrem
+        \[
+            \sup_{x\in \mathfrak{R}_{j}}f(x)-\inf_{x\in \mathfrak{R}_{j}}f(x)\geq\tau
+        \]
+        per a tot~\(j\in J\), i per tant, amb~\(\mathfrak{R}'=\bigcup_{j\in J}\mathfrak{R}_{j}\), per la definició de \myref{def:contingut-exterior-de-Jordan}
+        \begin{align*}
+            \sum_{j\in J}\left(\sup_{x\in \mathfrak{R}_{j}}f(x)-\inf_{x\in \mathfrak{R}_{j}}f(x)\right)\abs{\mathfrak{R}_{j}}&\geq\sum_{j\in J}\tau\abs{\mathfrak{R}_{j}}\\
+            &=\tau\sum_{j\in J}\abs{\mathfrak{R}_{j}}\\
+            &\geq\tau\sum_{j\in I}\inf_{x\in \mathfrak{R}_{j}}1_{\mathfrak{R}'}(x)\abs{\mathfrak{R}_{j}}\\
+            &=\tau c(D_{\tau})
+        \end{align*}
+        Ara bé, com que~\(f\) és integrable, pel \myref{thm:Criteri-dintegrabilitat-Riemann} tenim que
+        \[
+            \sum_{j\in J}\left(\sup_{x\in \mathfrak{R}_{j}}f(x)-\inf_{x\in \mathfrak{R}_{j}}f(x)\right)\abs{\mathfrak{R}_{j}}<\varepsilon
+        \]
+        per a tota~\(\varepsilon>0\), i per tant quan~\(\varepsilon\to0\) ha de ser~\(D_{\tau}=0\), com volíem veure.
+    \end{proof}
+    \subsection{Integració sobre conjunts generals}
+    \begin{note}
+        Tota la teoria de l'integració Riemann que hem vist ha estat sobre rectangles.
+        Ara tractem de generalitzar-la desfent-nos d'aquesta limitació.
+    \end{note}
+\end{document}

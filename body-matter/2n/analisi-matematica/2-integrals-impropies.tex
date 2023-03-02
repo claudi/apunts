@@ -1,0 +1,357 @@
+\documentclass[../analisi-matematica.tex]{subfiles}
+
+\begin{document}
+\chapter{Integrals impròpies}
+\section{Integral impròpia de Riemann}
+    \subsection{Funcions localment integrables}
+    \begin{definition}[Funció localment integrable]
+        \labelname{funció localment integrable}\label{def:funcio-localment-integrable}
+        Sigui~\(f\colon[a,b)\longrightarrow\mathbb{R}\) amb~\(b\in\mathbb{R}\cup\infty\) una funció tal que~\(f\) és integrable Riemann per en~\([a,x]\) per a tot~\(x<b\).
+        Aleshores direm que~\(f\) és localment integrable en un interval~\([a,b)\).
+    \end{definition}
+    \begin{definition}[Integral impròpia]
+        \labelname{integral impròpia}\label{def:integral-impropia}
+        \labelname{integral impròpia convergent}\label{def:integral-impropia-convergent}
+        \labelname{integral impròpia divergent}\label{def:integral-impropia-divergent}
+        Sigui~\(f\) una funció localment integrable en un interval~\([a,b)\) tal que existeix el límit
+        \[
+            \lim_{x\to b}\int_{a}^{x}f(t)\diff t.
+        \]
+        Aleshores denotarem
+        \[
+            \lim_{x\to b}\int_{a}^{x}f(t)\diff t=\int_{a}^{b}f(t)\diff t,
+        \]
+        i direm que~\(\int_{a}^{b}f(t)\diff t\) és la integral impròpia de~\(f\), i que la integral impròpia de~\(f\) és divergent.
+
+        Si el límit
+        \[
+            \lim_{x\to b}\int_{a}^{x}f(t)\diff t.
+        \]
+        no existeix direm que la integral impròpia de~\(f\) és divergent.
+    \end{definition}
+    \begin{example}
+        \label{ex:funcio-de-la-serie-harmonica-en-integrals-impropies-entre-1-i-infinit}
+        Volem estudiar la convergència de la integral impròpia
+        \[
+            \int_{1}^{\infty}\frac{1}{x^{\alpha}}\diff x
+        \]
+        segons els valors de~\(\alpha\) real.
+    \end{example}
+    \begin{solution}
+        %TODO
+    \end{solution}
+    \begin{example}
+        \label{ex:funcio-de-la-serie-harmonica-en-integrals-impropies-entre-0-i-1}
+        Volem estudiar la convergència de la integral impròpia
+        \[
+            \int_{0}^{1}\frac{1}{x^{\alpha}}\diff x
+        \]
+        segons els valors de~\(\alpha\) real.
+    \end{example}
+    \begin{solution}
+        %TODO
+    \end{solution}
+    \subsection{Integrals impròpies de funcions positives}
+    \begin{lemma}
+        \label{lema:criteri-de-comparacio-dintegrals-impropies}
+        Siguin~\(f\) i~\(g\) dues funcions positives localment integrables en un interval~\([a,b)\) tals que existeixen dos reals~\(C>0\) i~\(x_{0}<b\) satisfent, per a tot~\(x\) en~\([x_{0},b)\), que
+        \[
+            f(x)\leq Cg(x)
+        \]
+        i tals que la integral impròpia de~\(g\) és convergent.
+        Aleshores la integral impròpia de~\(f\) és convergent.
+    \end{lemma}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}[Criteri de comparació]
+        \labelname{criteri de comparació d'integrals impròpies}\label{def:criteri-de-comapracio-dintegrals-impropies}
+        Siguin~\(f\) i~\(g\) dues funcions positives localment integrables en un interval~\([a,b)\) i
+        \[
+            L=\lim_{x\to b}\frac{f(x)}{g(x)}
+        \]
+        tals que
+        \begin{enumerate}
+            \item\label{def:criteri-de-comapracio-dintegrals-impropies:eq1}~\(L\neq0\) i~\(L\neq\infty\).
+            Aleshores~\(\int_{a}^{b}f(x)\diff x\) és convergent si i només si~\(\int_{a}^{b}g(x)\diff x\) és convergent.
+            \item\label{def:criteri-de-comapracio-dintegrals-impropies:eq2}~\(L=0\) i~\(\int_{a}^{b}g(x)\diff x\) és convergent.
+            Aleshores~\(\int_{a}^{b}f(x)\diff x\) és convergent.
+            \item\label{def:criteri-de-comapracio-dintegrals-impropies:eq3}~\(L=\infty\) i~\(\int_{a}^{b}f(x)\diff x\) és convergent.
+            Aleshores~\(\int_{a}^{b}g(x)\diff x\) és convergent.
+        \end{enumerate}
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{example}
+        \label{ex:criteri-de-comapracio-dintegrals-impropies}
+        Exemple de criteri de comparació d'integrals impròpies.
+        % Buscar als exàmens
+    \end{example}
+    \begin{solution}
+        %TODO
+    \end{solution}
+    \begin{theorem}[Criteri de la integral]
+        \labelname{criteri de la integral}\label{thm:criteri-de-la-integral-per-integrals-impropies}
+        Sigui~\(f\colon[1,\infty)\longrightarrow(0,\infty)\) una funció decreixent.
+        Aleshores la integral impròpia~\(\int_{1}^{\infty}f(x)\diff x\) és convergent si i només si la sèrie~\(\sum_{n=1}^{\infty}f(n)\) és convergent.
+    \end{theorem}
+    \begin{proof}
+        És conseqüència del lema \myref{lema:criteri-de-la-integral} i la definició d'\myref{def:integral-impropia-convergent}.
+    \end{proof}
+    \begin{example}
+        \label{ex:criteri-de-la-integral-per-integrals-impropies}
+        Volem veure per a quins valors de~\(\alpha>0\) real la integral
+        \begin{equation}
+            \label{ex:criteri-de-la-integral-per-integrals-impropies:eq1}
+            \int_{0}^{\infty}\alpha^{x}\diff x
+        \end{equation}
+        és convergent.
+    \end{example}
+    \begin{solution}
+        %TODO
+        % Definim~\(f(x)=\alpha^{x}\). Observem que~\(f(x)\) és localment integrable en~\([1,\infty)\). Partir integral.
+    \end{solution}
+    \subsection{Convergència d'una integral impròpia}
+    \begin{theorem}[Condició de Cauchy]
+        \labelname{condició de Cauchy}\label{thm:Condicio-de-Cauchy-per-integrals-impropies}
+        Sigui~\(\int_{a}^{b}f(x)\diff x\) una funció localment integrable en~\([a,b)\).
+        Aleshores la integral~\(\int_{a}^{b}f(x)\diff x\) és convergent si i només si per a tot~\(\varepsilon>0\) existeix un~\(x_{0}\) real tal que per a tot~\(N\) i~\(M\) reals amb~\(N,M\geq x_{0}\) i~\(N\leq M<b\) tenim
+        \[
+            \abs{\int_{N}^{M}f(x)\diff x}<\varepsilon.
+        \]
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{definition}[Convergència absoluta]
+        \labelname{convergència absoluta d'una integral impròpia}\label{def:convergencia-absoluta-duna-integral-impropia}
+        Sigui~\(\int_{a}^{b}f(x)\diff x\) una funció localment integrable en~\([a,b)\) tal que la integral
+        \[
+            \int_{a}^{b}\abs{f(x)}\diff x
+        \]
+        és convergent.
+        Aleshores direm que la integral~\(\int_{a}^{b}f(x)\diff x\) és absolutament convergent.
+    \end{definition}
+    \begin{proposition}
+        Sigui~\(\int_{a}^{b}f(x)\diff x\) una integral absolutament convergent.
+        Aleshores la integral~\(\int_{a}^{b}f(x)\diff x\) és convergent.
+    \end{proposition}
+    \begin{proof}
+        %TODO % Desigualtats ràpides + Cauchy
+    \end{proof}
+    \begin{example}
+        \label{ex:convergencia-absoluta-duna-integral-impropia-amb-un-polinomi-i-una-exponencial}
+        Siguin~\(\alpha\) i~\(\beta\) dos reals no negatius i~\(p(x)\) un polinomi.
+        Volem estudiar la convergència de la integral
+        \[
+            \int_{0}^{\infty}p(x)\e^{\alpha x^{\beta}}\diff x.
+        \]
+    \end{example}
+    \begin{solution}
+        %TODO
+    \end{solution}
+    \begin{theorem}[Criteri de Dirichlet]
+        \labelname{criteri de Dirichlet}\label{thm:criteri-de-Dirichlet-per-integrals-impropies}
+        Siguin~\(f\) i~\(g\) dues funcions localment integrables de classe~\(\mathcal{C}^{1}\) satisfent que existeix un real~\(C\) tal que~\(\int_{a}^{x}\abs{f(x)}\diff x<C\) per a tot~\(x\in[a,b)\) i que~\(g\) és una funció decreixent amb
+        \[
+            \lim_{x\to\infty}g(x)=0.
+        \]
+        Aleshores la integral
+        \[
+            \int_{a}^{b}f(x)g(x)\diff x
+        \]
+        és convergent.
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{example}
+        Sigui~\(\alpha>0\) un real.
+        Volem estudiar la convergència de la integral
+        \[
+            \int_{0}^{\infty}\frac{\sin(x)}{x^{\alpha}}\diff x.
+        \]
+    \end{example}
+    \begin{solution}
+        %TODO
+    \end{solution}
+    \begin{theorem}[Criteri d'Abel]
+        \labelname{criteri d'Abel}\label{thm:criteri-dAbel-per-integrals-impropies}
+        Siguin~\(f\) i~\(g\) dues funcions localment integrables satisfent que~\(f\) és monòtona i acotada i que la integral
+        \[
+            \int_{a}^{b}g(x)\diff x
+        \]
+        és convergent.
+        Aleshores la integral
+        \[
+            \int_{a}^{b}f(x)g(x)\diff x
+        \]
+        és convergent.
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{example}
+        \label{ex:criteri-dAbel-per-integrals-impropies}
+        Volem estudiar la convergència de la integral
+        \[
+            \int_{0}^{\infty}\frac{\sin(x)}{\e^{x}}\diff x.
+        \]
+    \end{example}
+    \begin{solution}
+%            \[\int_{0}^{\infty}\e^{-x}x^{\alpha}\frac{\sin(x)}{x^{\alpha}}\diff x.\]
+%            Potser buscar un millor exemple pel criteri d'Abel
+    %TODO
+    \end{solution}
+\section{Aplicacions de les integrals impròpies}
+    \subsection{Integrals dependents d'un paràmetre}
+    \begin{theorem}
+        \label{thm:criteri-per-la-derivacio-sota-el-signe-de-la-integral}
+        Sigui~\(f\colon[a,b]\times[c,d]\longrightarrow\mathbb{R}\) una funció contínua tal que~\(f\) és derivable respecte la segona variable i~\(\frac{\partial f}{\partial y}(x,y)\) és contínua en~\([a,b]\times[c,d]\).
+        Aleshores la funció
+        \[
+            F(y)=\int_{a}^{b}f(x,y)\diff x
+        \]
+        és derivable en l'interval~\((c,d)\) i
+        \[
+            F'(y)=\int_{a}^{b}\frac{\partial f}{\partial y}(x,y)\diff x.
+        \]
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{example}[Integral de Gauss]
+        \label{ex:integral-de-Gauss}
+        Volem calcular el valor de la integral
+        \[
+            \int_{-\infty}^{\infty}e^{-x^{2}}\diff x.
+        \] % Partir en el 0 i veure que és simètrica. Seguir exemple de classe.
+    \end{example}
+    \begin{solution}
+        \(\sqrt{\uppi}\).
+        %TODO
+    \end{solution}
+    \begin{theorem}
+        \label{thm:criteri-per-la-derivabilitat-sota-el-signe-de-la-integral}
+        Siguin~\(f\colon[a,b)\times[c,d]\) una funció contínua tal que la seva derivada respecte la segona variable existeix i és contínua en~\([a,b)\times[c,d]\) i~\(y_{0}\) un real en~\([c,d]\) tal que existeixi un~\(\delta>0\) satisfent que la integral
+        \[
+            \int_{a}^{b}\sup_{y\in(y_{0}-\delta,y_{0}+\delta)}\abs{\frac{\partial f}{\partial y}(x,y)}\diff x
+        \]
+        és convergent.
+        Aleshores la funció
+        \[
+            F(y)=\int_{a}^{b}f(x,y)\diff x
+        \]
+        és derivable en~\(y_{0}\) i
+        \[
+            F'(y_{0})=\int_{a}^{b}\frac{\partial f}{\partial y}(x,y_{0})\diff x.
+        \]
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{example}
+        \label{ex:trobar-una-funcio-derivant-sota-el-signe-de-la-integral}
+        Volem calcular
+        \[
+            \int_{0}^{\infty}\e^{-tx}\frac{\sin(x)}{x}\diff x
+        \]
+        per~\(t>0\).
+    \end{example}
+    \begin{solution}
+        \(\frac{\uppi}{2}-\arctan(t)\).
+        %TODO
+    \end{solution}
+    \begin{example}
+        \label{ex:trobar-un-valor-derivant-sota-el-signe-de-la-integral-inventant-se-una-funcio}
+        Volem calcular
+        \[
+            \int_{0}^{1}\frac{x^{2}-1}{\log(x)}\diff x.
+        \]
+    \end{example}
+    \begin{solution}
+        \(\log(3)\).
+        %TODO
+    \end{solution}
+    \subsection{La funció Gamma d'Euler}
+    \begin{definition}[Gamma d'Euler]
+        \labelname{Gamma d'Euler}\label{def:Gamma-dEuler}
+        Sigui~\(r\) un real positiu.
+        Aleshores definim
+        \[
+            \Gamma(r)=\int_{0}^{\infty}x^{r-1}\e^{-x}\diff x
+        \]
+        com la funció Gamma d'Euler.
+    \end{definition}
+    \begin{theorem}
+        \label{thm:la-funcio-Gamma-dEuler-es-convergent}
+        La funció Gamma d'Euler és convergent.
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{lemma} % Repassar, fa aquesta part una mica al revés?
+        \label{lema:la-Gamma-dEuler-es-comporta-com-un-factorial-amb-reals}
+        Sigui~\(r>0\) un real.
+        Aleshores
+        \[
+            \Gamma(r+1)=r\Gamma(r).
+        \]
+    \end{lemma}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{observation}
+        \label{obs:valor-n-1-per-la-Gamma-dEuler}
+        Es satisfà
+        \[
+            \Gamma(1)=1.
+        \]
+    \end{observation}
+    \begin{proof} %REFS? % NOTACIÓ EVALUACIÓ
+        Per la definició de \myref{def:Gamma-dEuler} tenim que
+        \[
+            \Gamma(1)=\int_{0}^{\infty}\e^{-x}\diff x=\left.\frac{\e^{-x}}{-1}\right\vert_{x=0}^{\infty}=1.\qedhere
+        \]
+    \end{proof}
+    \begin{lemma} % Repassar, fa aquesta part una mica al revés?
+        \label{lema:la-Gamma-dEuler-es-comporta-com-un-factorial}
+        Sigui~\(n\) un natural.
+        Aleshores
+        \[
+            \Gamma(n)=(n-1)!
+        \]
+    \end{lemma}
+    \begin{proof}
+        És conseqüència del lema \myref{lema:la-Gamma-dEuler-es-comporta-com-un-factorial-amb-reals} i l'observació \myref{obs:valor-n-1-per-la-Gamma-dEuler}.
+    \end{proof}
+    \begin{theorem}
+        \label{thm:formula-dStirling}
+        Es satisfà
+        \[
+            \lim_{r\to\infty}\frac{\Gamma(r+1)}{e^{-r}r^{r}\sqrt{2\uppi r}}=1.
+        \]
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{corollary}[Fórmula d'Stirling]
+        \labelname{fórmula d'Stirling}\label{cor:formula-dStirling}
+        Es satisfà
+        \[
+            \lim_{n\to\infty}\frac{n!}{e^{-n}n^{n}\sqrt{2\uppi n}}=1.
+        \]
+    \end{corollary}
+    \begin{example}
+        Volem calcular
+        \[
+            \Gamma\left(\frac{1}{2}\right).
+        \]
+    \end{example}
+    \begin{solution}
+        \(\sqrt{\uppi}\).
+        %TODO
+    \end{solution}
+    %TODO Buscar un exemple sabroso a \url{http://www.math.uconn.edu/~kconrad/blurbs/analysis/diffunderint.pdf} per acabar tot aquest tema a lo grande.
+\end{document}

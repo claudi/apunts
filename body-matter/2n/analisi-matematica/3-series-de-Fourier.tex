@@ -1,0 +1,394 @@
+\documentclass[../analisi-matematica.tex]{subfiles}
+
+\begin{document}
+\chapter{Sèries de Fourier}
+\section{Funcions periòdiques}
+%    \subsection{Els nombres complexos}
+    \subsection{Funcions periòdiques complexes}
+    \begin{definition}[Funció \ensuremath{T}-periòdica]
+        \labelname{funció \ensuremath{T}-periòdica}\label{def:funcio-periodica}
+        Sigui~\(f\colon\mathbb{R}\longrightarrow\mathbb{C}\) una funció tal que existeix un~\(T>0\) real satisfent
+        \[
+            T=\min_{T\in\mathbb{R}^{+}}\{f(x+T)=f(x)\text{ per a tot }x\in\mathbb{R}\}.
+        \]
+        Aleshores direm que~\(f\) és una funció~\(T\)-periòdica.
+    \end{definition}
+    \begin{example}
+        \label{ex:periode-del-sinus}
+        \label{ex:periode-del-cosinus}
+        \label{ex:periode-de-lexponencial-complexa}
+        Volem veure que les funcions
+        \[
+            f(t)=\sin(2\uppi\omega t),\quad g(t)=\cos(2\uppi\omega t)\quad\text{i}\quad h(t)=\e^{2\uppi\iu\omega t}
+        \]
+        són funcions~\(\frac{1}{\omega}\)-periòdiques.
+    \end{example}
+    \begin{solution}
+        %TODO
+    \end{solution}
+    \begin{lemma}
+        Sigui~\(f\) una funció~\(T\) periòdica.
+        Aleshores~\(f(x+T')=f(x)\) per a tot~\(x\) real si i només si existeix un enter~\(K\) tal que~\(T'=KT\).
+    \end{lemma}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}
+        \label{prop:podem-despla-ar-la-integral-duna-funcio-T-periodica}
+        Sigui~\(f\) una funció~\(T\)-periòdica i integrable.
+        Aleshores per a tot~\(a\) real es satisfà
+        \[
+            \int_{0}^{T}f(x)\diff x=\int_{a}^{a+T}f(x)\diff x.
+        \]
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{lemma}
+        \label{lema:les-funciones-periodiques-i-continues-estan-acotades}
+        Sigui~\(f\) una funció~\(T\)-periòdica i contínua.
+        Aleshores~\(\abs{f}\) està acotada.
+    \end{lemma}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{lemma}
+        \label{lema:les-funcions-periodiques-no-poden-ser-aproximades-per-una-serie-de-potencies}
+        Sigui~\(f\) una funció~\(T\)-periòdica.
+        Aleshores no existeix cap sèrie de potències~\(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) tal que~\(\sum_{n=0}^{\infty}a_{n}(x-x_{0})^{n}\) convergeixi uniformement a~\(f\) en~\(\mathbb{R}\).
+    \end{lemma}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \subsection{Funcions contínues a trossos}
+    \begin{definition}[Funció contínua a trossos]
+        \labelname{funció contínua a trossos}\label{def:funcio-continua-a-trossos}
+        Sigui~\(f\colon[0,1]\longrightarrow\mathbb{C}\) una funció tal que el conjunt
+        \[
+            \{x\in[0,1]\mid f\text{ té una discontinuïtat salt finit en }x\}
+        \]
+        és finit.
+        Aleshores direm que~\(f\) és contínua a trossos.
+
+        Denotarem
+        \[
+            \mathcal{C}=\{f\colon[0,1]\longrightarrow\mathbb{C}\mid f\text{ és contínua a trossos}\}.
+        \]
+    \end{definition}
+    \begin{observation}
+        \label{obs:les-funcions-continues-a-trossos-son-integrables}
+        Si~\(f\) pertany a~\(\mathcal{C}\) aleshores~\(f\) és integrable Riemann.
+    \end{observation}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{definition}[Conjunt d'extensions periòdiques]
+        \labelname{conjunt d'extensions periòdiques}\label{def:conjunt-dextensions-periodiques}
+        Denotarem
+        \labelname{extensió periòdica}\label{def:extensio-periodica}
+        \[
+            \mathcal{P}=\{f\colon\mathbb{R}\longrightarrow\mathbb{C}\mid g\in\mathcal{C}\text{ i }f(x)=g(x-k)\text{ per }x\in[k,k+1),k\in\mathbb{Z}\}
+        \]
+        com el conjunt d'extensions periòdiques.
+        Direm que els elements de~\(\mathcal{P}\) són extensions periòdiques.
+    \end{definition}
+    \begin{lemma}
+        \label{lema:lespai-dextensions-periodiques-es-un-espai-vectorial}
+        Siguin~\(f\) i~\(g\) dues extensions periòdiques i~\(\lambda\) un nombre complex.
+        Aleshores el conjunt~\(\mathcal{P}\) amb les operacions
+        \[
+            (f+g)(x)=f(x)+g(x)\quad\text{i}\quad(\lambda f)(x)=\lambda f(x)
+        \]
+        és un espai vectorial.
+    \end{lemma}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}
+        \label{thm:lespai-dextensions-periodiques-es-un-espai-vectorial-euclidia}
+        Sigui~\(E\) un~\(\mathcal{P}\)-espai vectorial amb el producte escalar
+        \begin{equation}
+            \label{thm:lespai-dextensions-periodiques-es-un-espai-vectorial-euclidia:eq1}
+            \langle f,g\rangle=\int_{0}^{1}f(x)\conjugat{g(x)}\diff x.
+        \end{equation}
+        Aleshores~\(E\) amb la norma \eqref{thm:lespai-dextensions-periodiques-es-un-espai-vectorial-euclidia:eq1} és un espai vectorial euclidià.
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{example}
+        \label{ex:base-ortonormal-de-les-extensions-periodiques}
+        Volem veure que el conjunt
+        \[
+            \{e_{n}(x)=e^{2\uppi\iu nx}\mid n\in\mathbb{Z}\}
+        \]
+        és un conjunt ortonormal de~\(\mathcal{P}\).
+    \end{example}
+    \begin{solution}
+        %TODO
+    \end{solution}
+\section{Sèries de Fourier}
+    \subsection{Coeficients de Fourier}
+    \begin{definition}[Coeficients de Fourier]
+        \labelname{coeficients de Fourier}\label{def:coeficients-de-Fourier}
+        Sigui~\(f\) una extensió periòdica.
+        Definim
+        \[
+            \widehat{f}(n)=\langle f(x),\e^{2\uppi\iu nx}\rangle=\int_{0}^{1}f(x)\e^{-2\uppi\iu nx}\diff x
+        \]
+        com l'\(n\)-èsim coeficient de Fourier de~\(f\).
+    \end{definition}
+    \begin{proposition}
+        Siguin~\(f\) i~\(g\) dues extensions periòdiques i~\(\lambda\) i~\(\mu\) dos nombres complexos.
+        Aleshores
+        \[
+            \widehat{\lambda f+\mu g}(n)=\lambda\widehat{f}(n)+\mu\widehat{g}(n).
+        \]
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}
+        Sigui~\(f\) una extensió periòdica,~\(\tau\) un nombre de~\((0,1)\) i~\(f_{\tau}\) una funció definida com~\(f_{\tau}(x)=f(x-\tau)\).
+        Aleshores
+        \[
+            \widehat{f_{\tau}}(n)=\e^{-2\uppi\iu n\tau}\widehat{f}(n).
+        \]
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}
+        Sigui~\(f\) una extensió periòdica derivable.
+        Aleshores
+        \[
+            \widehat{f'}(n)=2\uppi\iu n\widehat{f}(n).
+        \]
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}
+        Siguin~\(f\) i~\(g\) dues extensions periòdiques.
+        Aleshores
+        \[
+            \widehat{f\convolucio g}(n)=\widehat{f}(n)\widehat{g}(n).
+        \]
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{definition}[Sèrie de Fourier]
+        \labelname{sèrie de Fourier}\label{def:serie-de-Fourier}
+        Sigui~\(f\) una extensió periòdica.
+        Aleshores definim
+        \[
+            \sfourier(f)(x)=\sum_{n\in\mathbb{Z}}\widehat{f}(n)\e^{2\uppi\iu nx}
+        \]
+        com la sèrie de Fourier de~\(f\).
+    \end{definition}
+    \begin{example}
+        \label{ex:trobar-una-serie-de-Fourier}
+        Volem trobar la sèrie de Fourier de l'extensió periòdica de la funció
+        \[f(x)=\begin{cases}
+            \sin(\uppi x) & \text{si } 0\leq x\leq\frac{1}{2} \\
+            0 & \text{si }\frac{1}{2}\leq x\leq 1
+        \end{cases}\]
+    \end{example}
+    \begin{solution}
+        \(\sfourier(f)(x)=\frac{1}{2}\sin(\uppi x)-\frac{4}{\uppi}\sum_{n=1}^{\infty}(-1)^{n}\frac{n}{4n^{2}-1}\sin(2\uppi nx)\).
+    \end{solution}
+    \begin{proposition}
+        \label{prop:les-series-de-Fourier-son-lineals}
+        Siguin~\(f\) i~\(g\) dues extensions periòdiques i~\(\lambda\) i~\(\mu\) dos nombres complexos.
+        Aleshores
+        \[
+            \sfourier(\lambda f+\mu g)(n)=\lambda\sfourier(f)(n)+\mu\sfourier(g)(n).
+        \]
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \subsection{Paritat d'una funció}
+    \begin{definition}[Paritat d'una funció]
+        \labelname{funció parell}\label{def:funcio-parell}
+        \labelname{funció senar}\label{def:funcio-senar}
+        Sigui~\(f\colon\mathbb{R}\longrightarrow\mathbb{C}\) una funció tal que per a tot~\(x\) real es satisfà
+        \begin{enumerate}
+            \item~\(f(x)=f(-x)\).
+            Aleshores direm que~\(f\) és una funció parell.
+            \item~\(f(x)=-f(-x)\).
+            Aleshores direm que~\(f\) és una funció senar.
+        \end{enumerate}
+    \end{definition}
+    \begin{example}
+        \label{ex:el-sinus-es-una-funcio-senar}
+        \label{ex:el-cosinus-es-una-funcio-parell}
+        Volem veure que la funció
+        \[
+            f(x)=\sin(x)
+        \]
+        és senar i que la funció
+        \[
+            g(x)=\cos(x)
+        \]
+        és parell.
+    \end{example}
+    \begin{solution}
+        %TODO
+    \end{solution}
+    \begin{proposition}
+        \label{prop:la-paritat-de-funcions-es-comporta-com-el-producte-de-signes}
+        Siguin~\(f\) una funció parell i~\(g\) una funció senar.
+        Aleshores les funcions~\(f^{2}\) i~\(g^{2}\) són parells i la funció~\(fg\) és senar.
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}
+        \label{prop:la-integral-duna-funcio-parell-en-un-interval-simetric-es-el-doble-que-en-mig-interval}
+        \label{prop:la-integral-duna-funcio-senar-en-un-interval-simetric-es-0}
+        Siguin~\(f\) una funció parell i~\(g\) una funció senar tals que~\(f\) i~\(g\) són integrables en l'interval~\([-a,a]\).
+        Aleshores
+        \[
+            \int_{-a}^{a}f(x)\diff x=2\int_{0}^{a}f(x)\diff x\quad\text{i}\quad\int_{-a}^{a}g(x)\diff x=0.
+        \]
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{lemma}
+        \label{lema:la-paritat-duna-funcio-es-conserva-en-els-coeficients-de-fourier}
+        Sigui~\(f\) una extensió periòdica tal que
+        \begin{enumerate}
+            \item~\(f\) és parell.
+            Aleshores~\(\widehat{f}\) és parell.
+            \item~\(f\) és senar.
+            Aleshores~\(\widehat{f}\) és senar.
+        \end{enumerate}
+    \end{lemma}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \subsection{Sèries de Fourier en termes de sinus i cosinus}
+    \begin{proposition}
+        \label{prop:serie-de-Fourier-duna-funcio-parell}
+        Sigui~\(f\) una extensió periòdica parell.
+        Aleshores
+        \[
+            \sfourier(f)(x)=A_{0}+2\sum_{n=1}^{\infty}A_{n}\cos(2\uppi nx),
+        \]
+        on
+        \[
+            A_{n}=\int_{0}^{1}f(x)\cos(2\uppi nx)\diff x.
+        \] % A_{0}=\int_{0}^{1}f(x)\diff x
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{proposition}
+        \label{prop:serie-de-Fourier-duna-funcio-senar}
+        Sigui~\(f\) una extensió periòdica senar.
+        Aleshores
+        \[
+            \sfourier(f)(x)=2\sum_{n=1}^{\infty}B_{n}\sin(2\uppi nx),
+        \]
+        on
+        \[
+            B_{n}=\int_{0}^{1}f(x)\sin(2\uppi nx)\diff x.
+        \]
+    \end{proposition}
+    \begin{proof}
+        %TODO
+    \end{proof}
+    \begin{theorem}
+        Sigui~\(f\) una extensió periòdica.
+        Aleshores
+        \[
+            \sfourier(f)(x)=A_{0}+2\sum_{n=1}^{\infty}A_{n}\cos(2\uppi nx)+2\sum_{n=1}^{\infty}B_{n}\sin(2\uppi nx),
+        \]
+        on
+        \[
+            A_{n}=\int_{0}^{1}f(x)\cos(2\uppi nx)\diff x\quad\text{i}\quad B_{n}=\int_{0}^{1}f(x)\sin(2\uppi nx)\diff x.
+        \]
+    \end{theorem}
+    \begin{proof}
+        %TODO
+    \end{proof}
+\section{Transformació de Fourier}
+    \subsection{Convolució de funcions \ensuremath{1}-periòdiques}
+    \begin{definition}[Convolució de dues extensions periòdiques]
+        \labelname{convolució de dues extensions periòdiques}\label{def:convolucio-de-dues-extensions-periodiques}
+        Siguin~\(f\) i~\(g\) dues extensions periòdiques.
+        Aleshores definim
+        \[
+            (f\convolucio g)(x)=\int_{0}^{1}f(t)g(x-t)\diff t
+        \]
+        com la convolució de~\(f\) amb~\(g\).
+    \end{definition}
+    \begin{definition}[Aproximació de la unitat en extensions periòdiques]
+        \labelname{aproximació de la unitat en extensions periòdiques}\label{def:aproximacio-de-la-unitat-en-extensions-periodiques}
+        Sigui~\((\phi_{\varepsilon})_{\varepsilon\in\mathbb{R}}\) una successió de funcions tals que~\(\phi_{\varepsilon}\) és una extensió periòdica satisfent
+        \begin{enumerate}
+            \item~\(\phi_{\varepsilon}\geq0\).
+            \item~\(\int_{0}^{1}\phi_{\varepsilon}(x)\diff x=1\).
+            \item per a tot~\(\delta>0\) tenim que
+            \[
+                \lim_{\varepsilon\to0}\sup_{x\in[\delta,1-\delta]}\abs{\phi_{\varepsilon}}=0.
+            \]
+        \end{enumerate}
+        Aleshores direm que~\((\phi_{\varepsilon})\) és una aproximació de la unitat.
+    \end{definition}
+    \begin{theorem}
+        \label{thm:la-convolucio-per-extensions-periodiques-es-invariant-per-aproximacions-de-la-unitat-en-extensions-periodiques}
+        Sigui~\(f\) una extensió periòdica contínua i~\((\phi_{\varepsilon})_{\varepsilon>0}\) una aproximació de la unitat en extensions periòdiques.
+        Aleshores~\(f\convolucio\phi_{\varepsilon}\) convergeix uniformement a~\(f\) en~\(\mathbb{R}\) quan~\(\varepsilon\) tendeix a~\(0\).
+    \end{theorem}
+    \begin{proof}
+        Per la definició d'\myref{def:aproximacio-de-la-unitat-en-extensions-periodiques} trobem que
+        \[
+            \int_{0}^{1}\phi_{\varepsilon}(x)\diff x=1,
+        \]
+        i per \myref{prop:podem-despla-ar-la-integral-duna-funcio-T-periodica} tenim que
+        \[
+            \int_{0}^{1}\phi_{\varepsilon}(x-t)\diff t=1,
+        \]
+        i per tant
+        \[
+            f(x)=\int_{0}^{1}f(x)\phi_{\varepsilon}(x-t)\diff t.
+        \]
+
+        Considerem
+        \[
+            \sup_{x\in[0,1]}\abs{(f\convolucio\phi_{\varepsilon})(x)-f(x)}.
+        \]
+        Tenim que
+        \begin{align*}
+            \sup_{x\in[0,1]}\abs{(f\convolucio\phi_{\varepsilon})(x)-f(x)}&=\sup_{x\in[0,1]}\abs{\int_{0}^{1}f(t)\phi_{\varepsilon}(x-t)\diff t-f(x)} \tag{\ref{def:convolucio-de-dues-extensions-periodiques}} \\
+            &=\sup_{x\in[0,1]}\abs{\int_{0}^{1}f(t)\phi_{\varepsilon}(x-t)\diff t-\int_{0}^{1}f(x)\phi_{\varepsilon}(x-t)\diff t} \\
+            &=\sup_{x\in[0,1]}\abs{\int_{0}^{1}(f(t)-f(x))\phi_{\varepsilon}(x-t)\diff t} \\
+            &\leq\sup_{x\in[0,1]}\int_{0}^{1}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t \tag{\ref{thm:la-norma-duna-integral-es-menys-que-lintegral-de-la-norma}} \\
+            &=\sup_{x\in[0,1]}\int_{x-\frac{1}{2}}^{x+\frac{1}{2}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t.
+            \tag{\ref{prop:podem-despla-ar-la-integral-duna-funcio-T-periodica}}
+        \end{align*}
+         Tenim per hipòtesi que~\(f\) és contínua, i per la definició de \myref{def:funcio-continua} trobem que per a tot~\(\eta>0\) existeix un~\(\delta>0\) tal que per a tot~\(t\) satisfent~\(\abs{x-t}>\delta\) tenim
+         \[
+             \abs{f(x)-f(x)}\leq\frac{\eta}{2}.
+         \]
+         Per tant, amb~\(I=[x-\frac{1}{2},x+\frac{1}{2}]\) i~\(J=[0,1]\), % Treure la notació de la J i arreglar el hspace % opció [intlimits] a {amsmath}
+         \begin{multline*}
+             \sup_{x\in J}\int_{x-\frac{1}{2}}^{x+\frac{1}{2}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t = \\
+             =\sup_{x\in J}\left(\int_{\substack{t\in I\\\abs{x-t}<\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t+\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t\right) \hfill\\
+             \leq\sup_{x\in J}\left(\frac{\eta}{2}\int_{\substack{t\in I\\\abs{x-t}<\delta}}\phi_{\varepsilon}(x-t)\diff t+\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t\right) \hfill\\
+             <\sup_{x\in J}\left(\frac{\eta}{2}+\int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t\right), \hfill
+         \end{multline*}
+         i, amb~\(y=x-t\) tenim que %REFS
+         \[
+             \int_{\substack{t\in I\\\abs{x-t}>\delta}}\abs{f(t)-f(x)}\phi_{\varepsilon}(x-t)\diff t=\int_{\substack{t\in[-\frac{1}{2},\frac{1}{2}]\\\abs{y}>\delta}}\abs{f(x-y)-f(x)}\phi_{\varepsilon}(y)\diff y
+         \]
+    \end{proof}
+    \subsection{Polinomis trigonomètrics}
+    \begin{definition}
+
+    \end{definition}
+\end{document}
