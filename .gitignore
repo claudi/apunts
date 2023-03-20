@@ -23,7 +23,7 @@
 *.pdf
 !imatges/*.pdf
 !imatges/*.eps
-!NovoTeX/FrontMatter/Portada/UABLogo.eps
+!front-matter/portada/UABLogo.eps
 !NovoTeX/FrontMatter/Portada/UABLogo.pdf
 
 ## Generated if empty string is given at "Please type another file name for output:"
