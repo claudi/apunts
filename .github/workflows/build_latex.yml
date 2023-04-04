@@ -1,7 +1,7 @@
 name: Build LaTeX document
 on:
   push:
-    branches: [ "main", "ghactions" ]
+    branches: [ "main" ]
 jobs:
   build_latex:
     runs-on: ubuntu-latest
@@ -30,9 +30,9 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source_file: 'ApuntsPublics.pdf'
-          destination_repo: 'aurelm95/aurelm95.github.io'
+          destination_repo: 'claudi/claudi.github.io'
           # destination_folder: ''
-          user_email: 'aurelm95@gmail.com'
-          user_name: 'aurelm95'
+          user_email: 'claudilleyda@gmail.com'
+          user_name: 'claudi'
           commit_message: '[BOT]: Github Action: Actualizar apuntes'
       
