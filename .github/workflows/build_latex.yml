@@ -6,23 +6,21 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
+      - name: Compilar los apuntes
+        uses: xu-cheng/texlive-action/full@v1
         with:
-          root_file: "src/cv_sparrow/Pirate Engineer Template/main.tex"
-          latexmk_use_lualatex: true # encesario para compilar la plantilla de jack sparrow
-          work_in_root_file_dir: true
+          run: cd front-matter/portada/ && epstopdf UABLogo.eps && pdflatex portada.tex && cd .. && cd .. && make
 
 
-      # - name: Upload PDF file
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: PDF
-      #     path: src/helloworld.pdf 
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v3
+        with:
+          name: PDF
+          path: main.pdf 
 
-      - run: mkdir curriculums_pdf
-      - run: mv "src/cv_sparrow/Pirate Engineer Template/main.pdf" curriculums_pdf/CURRICULUM_AURELIO_ES.pdf
-      - run: ls curriculums_pdf/
+      # - run: mkdir curriculums_pdf
+      # - run: mv "src/cv_sparrow/Pirate Engineer Template/main.pdf" curriculums_pdf/CURRICULUM_AURELIO_ES.pdf
+      # - run: ls curriculums_pdf/
 
       # - name: Upload pdf to Githug Pages
       #   uses: cpina/github-action-push-to-another-repository@main
@@ -37,15 +35,15 @@ jobs:
       #     commit-message: "Github Action: Actualizar CVs"
 
       # https://github.com/marketplace/actions/push-a-file-to-another-repository
-      - name: Pushes test file
-        uses: dmnemec/copy_file_to_another_repo_action@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source_file: 'curriculums_pdf/'
-          destination_repo: 'aurelm95/aurelm95.github.io'
-          destination_folder: 'static'
-          user_email: 'aurelm95@gmail.com'
-          user_name: 'aurelm95'
-          commit_message: '[BOT]: Github Action: Actualizar CVs'
+      # - name: Pushes test file
+      #   uses: dmnemec/copy_file_to_another_repo_action@main
+      #   env:
+      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      #   with:
+      #     source_file: 'curriculums_pdf/'
+      #     destination_repo: 'aurelm95/aurelm95.github.io'
+      #     destination_folder: 'static'
+      #     user_email: 'aurelm95@gmail.com'
+      #     user_name: 'aurelm95'
+      #     commit_message: '[BOT]: Github Action: Actualizar CVs'
       
