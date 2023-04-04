@@ -1,7 +1,7 @@
 name: Build LaTeX document
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "ghactions" ]
 jobs:
   build_latex:
     runs-on: ubuntu-latest
