@@ -25,7 +25,7 @@ clean:
 $(portada.dir)portada.pdf: $(portada.dir)portada.tex $(portada.dir)UABLogo.pdf
 	pdflatex -output-directory $(portada.dir) $(flags) $<
 
-$(portada.dir)UABLogo.pdf: | $(portada.dir)UABLogo.eps
+$(portada.dir)UABLogo.pdf: $(portada.dir)UABLogo.eps
 	epstopdf $<
 
 $(portada.dir)UABLogo.eps:

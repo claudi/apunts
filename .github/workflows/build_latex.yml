@@ -11,20 +11,20 @@ jobs:
       - name: Compilar los apuntes
         uses: xu-cheng/texlive-action/full@v1
         with:
-          run: cd front-matter/portada/ && epstopdf UABLogo.eps && pdflatex portada.tex && cd .. && cd .. && make
+          run: make
 
 
       # - name: Upload PDF file
       #   uses: actions/upload-artifact@v3
       #   with:
       #     name: PDF
-      #     path: main.pdf 
+      #     path: main.pdf
 
       # Rename
       - run: mv main.pdf ApuntsPublics.pdf
 
       # https://github.com/marketplace/actions/push-a-file-to-another-repository
-      - name: Pushes test file
+      - name: Pushes PDF to website
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
@@ -34,5 +34,4 @@ jobs:
           # destination_folder: ''
           user_email: 'claudilleyda@gmail.com'
           user_name: 'claudi'
-          commit_message: '[BOT]: Github Action: Actualizar apuntes'
-      
+          commit_message: '[BOT] Actualització del pdf'
